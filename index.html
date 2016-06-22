@@ -11,21 +11,7 @@
     <script src="js/react-dom.js"></script>
     <script src="js/browser.min.js"></script>
     <script src='js/sql.js'></script>
-    <script>
-        //Create the database
-        try {
-		var fs = require("fs");
-        var filebuffer = fs.readFileSync('userdata.sqlite');
-        var db = new SQL.Database(filebuffer);
-
-		} catch(error){
-		console.log(error);
-		var db = new SQL.Database();
-		var buffer = new Buffer("");
-        fs.writeFileSync("userdata.sqlite", buffer);
-		}
-
-    </script>
+    <script src='js/db-init.js'></script>
     <div id="content"></div>
     <script type="text/babel">
      ReactDOM.render(<div className="myDiv">Hello !</div>, document.getElementById('content'));

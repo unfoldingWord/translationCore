@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/WycliffeAssociates/8woc/issues"
   },
-  "homepage": "https://github.com/WycliffeAssociates/8woc#readme"
+  "homepage": "https://github.com/WycliffeAssociates/8woc#readme",
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-google": "^0.6.0"
+  }
 }
