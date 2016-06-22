@@ -1,0 +1,24 @@
+{
+  "name": "translator-core",
+  "version": "0.1.0",
+  "description": "A bridge between TS and TM",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WycliffeAssociates/8woc.git"
+  },
+  "keywords": [
+    "Translation",
+    "core",
+    "WYcliffe"
+  ],
+  "author": "Wycliffe Associates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WycliffeAssociates/8woc/issues"
+  },
+  "homepage": "https://github.com/WycliffeAssociates/8woc#readme"
+}
