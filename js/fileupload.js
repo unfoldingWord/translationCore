@@ -5,8 +5,10 @@
  ******************************************************************************/
 var Dropzone = require('react-dropzone');
 var uploadedFile;
+var uploadedFileContent;
 var FileUploader = React.createClass({
   onDrop: function(files) {
+    uploadedFile = files[0];
     readFile(files[0]);
   },
 
@@ -35,6 +37,6 @@ function readFile(file) {
   read.readAsBinaryString(file);
   read.onloadend = function() {
     openedFile = read.result;
-    uploadedFile = openedFile;
+    uploadedFileContent = openedFile;
   };
 }
