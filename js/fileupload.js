@@ -26,9 +26,7 @@ var FileUploader = React.createClass({
   }
 
 });
-function renderFileUpload() {
-  ReactDOM.render(<FileUploader />, document.getElementById('content'));
-}
+
 /** *****************************************************************************
  * @description: This function reads a file and returns the text that is
  *               contained within the file.
@@ -56,7 +54,7 @@ const template = [
       {
         label: 'Import Project',
         click(item, focusedWindow) {
-          renderFileUpload();
+          ReactDOM.render(<FileUploader />, document.getElementById('content'));
         }
       }
     ]
