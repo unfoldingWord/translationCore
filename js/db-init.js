@@ -1,10 +1,12 @@
-//Create the database
+// Create the database
+var db;
+var fs = require("fs");
+var SQL = require('./js/sql.js');
 try {
-  var fs = require("fs");
   var filebuffer = fs.readFileSync('userdata.sqlite');
-  var db = new SQL.Database(filebuffer);
-} catch(error){
-  var db = new SQL.Database();
+  db = new SQL.Database(filebuffer);
+} catch (error) {
+  db = new SQL.Database();
   var buffer = new Buffer("");
   fs.writeFileSync("userdata.sqlite", buffer);
 }
