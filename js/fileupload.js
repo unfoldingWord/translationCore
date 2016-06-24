@@ -1,4 +1,4 @@
-/** *****************************************************************************
+/**
  * @description: This file provides the drag and drop file upload, along with
  *               the more traditional click and open file upload system.
  * @author: Ian Hoegen
@@ -7,12 +7,12 @@ const Dropzone = require('react-dropzone');
 const app = require('electron');
 const {remote} = require('electron');
 const {Menu} = remote;
-var uploadedFile;
-var uploadedFileContent;
+const FM = require('./js/filemodule.js');
+
 var FileUploader = React.createClass({
   onDrop: function(files) {
-    uploadedFile = files[0];
-    readFile(files[0]);
+    FM.uploadedFile = files[0];
+    FM.readFile(FM.uploadedFile);
   },
 
   render: function() {
@@ -27,22 +27,7 @@ var FileUploader = React.createClass({
 
 });
 
-/** *****************************************************************************
- * @description: This function reads a file and returns the text that is
- *               contained within the file.
- * @author: Ian Hoegen
- * @param {File} file - A file that is to be uploaded by the user.
- ******************************************************************************/
-function readFile(file) {
-  var openedFile;
-  var read = new FileReader();
-  read.readAsBinaryString(file);
-  read.onloadend = function() {
-    openedFile = read.result;
-    uploadedFileContent = openedFile;
-  };
-}
-/** *****************************************************************************
+/** 
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
