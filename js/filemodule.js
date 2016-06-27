@@ -1,25 +1,21 @@
-var FM = (function() {
-  return {
-    uploadedFile: null,
-    uploadedFileContent: null,
 
+var FM = (function() {
+  const fs = require('fs');
+
+  return {
 /**
  * @description: This function reads a file and returns the text that is
  *               contained within the file.
  * @author: Ian Hoegen
- * @param {File} file - A file that is to be uploaded by the user.
+ * @param {string} file - A filepath that is chosen by a user
+ * @param {function} callback - A callback function to be executed after reading
+ * @param {string} source - The file path that the file is from
  ******************************************************************************/
-    readFile: function(file) {
-      var openedFile;
-      var read = new FileReader();
-      read.readAsBinaryString(file);
-
-      read.onloadend = function() {
-        openedFile = read.result;
-        uploadedFileContent = openedFile;
-      };
+    readFile: function(file, callback) {
+      var inputFile = fs.readFileSync(file).toString();
+      callback(inputFile);
     }
-
   };
-})();
+}
+)();
 module.exports = FM;
