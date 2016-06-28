@@ -1,60 +1,21 @@
-/** *****************************************************************************
- * @description: This file provides the drag and drop file upload, along with
- *               the more traditional click and open file upload system.
- * @author: Ian Hoegen
- ******************************************************************************/
-const Dropzone = require('react-dropzone');
-const app = require('electron');
-const {remote} = require('electron');
-const {Menu} = remote;
-var uploadedFile;
-var uploadedFileContent;
-var FileUploader = React.createClass({
-  onDrop: function(files) {
-    uploadedFile = files[0];
-    readFile(files[0]);
-  },
-
-  render: function() {
-    return (
-    <div>
-      <Dropzone onDrop = {this.onDrop}>
-        <div>Drag files here to upload, or click to select a file. </div>
-      </Dropzone>
-    </div>
-  );
-  }
-
-});
-
-/** *****************************************************************************
- * @description: This function reads a file and returns the text that is
- *               contained within the file.
- * @author: Ian Hoegen
- * @param {File} file - A file that is to be uploaded by the user.
- ******************************************************************************/
-function readFile(file) {
-  var openedFile;
-  var read = new FileReader();
-  read.readAsBinaryString(file);
-  read.onloadend = function() {
-    openedFile = read.result;
-    uploadedFileContent = openedFile;
-  };
-}
-/** *****************************************************************************
+/**
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const template = [
+const React = require('react');
+const ReactDOM = require('react-dom');
+const fileUpload = require('./fileupload');
+
+var template = [
   {
     label: 'File',
     submenu: [
       {
         label: 'Import Project',
-        click(item, focusedWindow) {
-          ReactDOM.render(<FileUploader />, document.getElementById('content'));
+        click() {
+          ReactDOM.render(<window.FileUploader />,
+            document.getElementById('content'));
         }
       }
     ]
@@ -108,8 +69,8 @@ const template = [
       },
       {
         label: 'Toggle Developer Tools',
-        accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl' +
-        '+Shift+I',
+        accelerator:
+        process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
         click(item, focusedWindow) {
           if (focusedWindow)
             focusedWindow.webContents.toggleDevTools();
@@ -140,7 +101,7 @@ const template = [
       {
         label: 'Learn More',
         click() {
-          require('electron').shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
+          window.electron.shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
         }
       }
     ]
@@ -148,7 +109,7 @@ const template = [
 ];
 
 if (process.platform === 'darwin') {
-  const name = require('electron').remote.app.getName();
+  const name = window.electron.remote.app.getName();
   template.unshift({
     label: name,
     submenu: [
@@ -193,8 +154,8 @@ if (process.platform === 'darwin') {
       }
     ]
   });
-  // Window menu.
-  template[3].submenu = [
+   // Window menu.
+  template[4].submenu = [
     {
       label: 'Close',
       accelerator: 'CmdOrCtrl+W',
@@ -219,5 +180,4 @@ if (process.platform === 'darwin') {
   ];
 }
 
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+module.exports = {template: template};
