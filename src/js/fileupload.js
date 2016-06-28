@@ -50,7 +50,7 @@ module.exports = FileUploader;
  ******************************************************************************/
 function sendToReader(file) {
   try {
-    localStorage.setItem('manifestSource', file);
+    window.manifestSource = file;
     FM.readFile(file + '\\manifest.json', readInManifest);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
@@ -65,19 +65,25 @@ function sendToReader(file) {
 function readInManifest(manifest) {
   let parsedManifest = JSON.parse(manifest);
   let finishedChunks = parsedManifest.finished_chunks;
-  localStorage.setItem('joinedChunks', JSON.stringify({}));
+  window.joinedChunks = {};
   for (let chapterVerse in finishedChunks) {
-    let splitted = finishedChunks[chapterVerse].split('-');
-    openUsfmFromChunks(splitted);
+    if (finishedChunks.hasOwnProperty(chapterVerse)) {
+      let splitted = finishedChunks[chapterVerse].split('-');
+      openUsfmFromChunks(splitted);
+    }
   }
+  var TPane = window.TPane;
+  var textInput = window.joinedChunks;
+  ReactDOM.render(<TPane gateway = {<Output input={textInput}/>} />,
+     document.getElementById('content'));
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
  * @param {array} chunk - An array of the chunks defined in manifest
  ******************************************************************************/
 function openUsfmFromChunks(chunk) {
-  var source = localStorage.getItem('manifestSource');
-  localStorage.setItem('currentChapter', chunk[0]);
+  var source = window.manifestSource;
+  window.currentChapter = chunk[0];
   try {
     FM.readFile(source + '\\' + chunk[0] + '\\' + chunk[1] +
   '.txt', saveChunksLocal);
@@ -87,23 +93,57 @@ function openUsfmFromChunks(chunk) {
   }
 }
 /**
- * @description This function saves the chunks locally as a localstorage object;
+ * @description This function saves the chunks locally as a window object;
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
 function saveChunksLocal(text) {
-  var currentJoined = JSON.parse(localStorage.getItem('joinedChunks'));
-  var currentChapter = localStorage.getItem('currentChapter');
+  var currentJoined = window.joinedChunks;
+  var currentChapter = window.currentChapter;
   if (currentChapter === '00') {
     currentJoined.title = text;
   } else {
     if (currentJoined[currentChapter] === undefined) {
-      currentJoined[currentChapter] = [];
+      currentJoined[currentChapter] = {};
     }
     var currentChunk = parser(text);
     for (let verse in currentChunk.verses) {
-      var currentVerse = currentChunk.verses[verse];
-      currentJoined[currentChapter].push(currentVerse);
+      if (currentChunk.verses.hasOwnProperty(verse)) {
+        var currentVerse = currentChunk.verses[verse];
+        currentJoined[currentChapter][verse] = currentVerse;
+      }
     }
   }
-  localStorage.setItem('joinedChunks', JSON.stringify(currentJoined));
+  window.joinedChunks = currentJoined;
 }
+var Output = React.createClass({
+  render: function() {
+    var finalForm = [];
+    finalForm.push(<h4>{this.props.input.title} </h4>);
+    for (var key in this.props.input) {
+      if (this.props.input.hasOwnProperty(key) && key !== 'title') {
+        var chapterNumber = parseInt(key);
+        var arrayOfVerses = [];
+        for (var verse in this.props.input[key]) {
+          if (this.props.input[key].hasOwnProperty(verse)) {
+            arrayOfVerses.push(
+              <p key={chapterNumber + ":" + verse}>
+                <strong>{verse} </strong>
+                {this.props.input[key][verse]}
+              </p>
+            );
+          }
+        }
+        finalForm.push(
+            <div>
+                <h5 key={chapterNumber}>
+                <strong>Chapter {chapterNumber}</strong></h5>
+                <div>{arrayOfVerses}</div>
+                </div>
+          );
+      }
+    }
+    return (
+        <div> {finalForm} </div>
+      );
+  }
+});
