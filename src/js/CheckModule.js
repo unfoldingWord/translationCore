@@ -1,10 +1,11 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 var CheckModule = React.createClass({
   render: function() {
     return (
       <div>
-        <RetainedButton />
-        <ReplacedButton />
-        <WrongButton />
+        <RetainedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
       </div>
     );
   }
@@ -12,7 +13,7 @@ var CheckModule = React.createClass({
 
 var RetainedButton = React.createClass({
   handleClick: function() {
-
+    this.props.onCheckedStatusChanged("RETAINED");
   },
   render: function() {
     return (
@@ -20,3 +21,5 @@ var RetainedButton = React.createClass({
     );
   }
 });
+
+module.exports = CheckModule;
