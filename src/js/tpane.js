@@ -1,8 +1,8 @@
-var Col = require('react-bootstrap/lib/Col.js');
-var Row = require('react-bootstrap/lib/Row.js');
-var Grid = require('react-bootstrap/lib/Grid.js');
-var React = require('react');
-var ReactDOM = require('react-dom');
+const Col = require('react-bootstrap/lib/Col.js');
+const Row = require('react-bootstrap/lib/Row.js');
+const Grid = require('react-bootstrap/lib/Grid.js');
+const React = require('react');
+const ManifestStore = require('./manifeststore');
 
 var style = {
   header: {
@@ -26,21 +26,32 @@ var Pane = React.createClass({
   }
 
 });
-
 var TPane = React.createClass({
-
+  getInitialState: function() {
+    return ({
+      ol: "",
+      tl: "",
+      gl: ""
+    });
+  },
+  componentWillMount: function() {
+    ManifestStore.on('change', this.updateTargetLanguage);
+  },
+  updateTargetLanguage: function(text) {
+    this.setState({
+      tl: ManifestStore.storedText
+    });
+  },
   render: function() {
     return (
       <Grid>
         <Row>
-          <Pane title = "Original Language" content = {this.props.original}/>
-          <Pane title = "Gateway Language" content = {this.props.gateway}/>
-          <Pane title = "Target Language" content = {this.props.target}/>
+          <Pane title = "Original Language" content = {this.state.ol}/>
+          <Pane title = "Gateway Language" content = {this.state.gl}/>
+          <Pane title = "Target Language" content = {this.state.tl}/>
           </Row>
       </Grid>
   );
   }
 });
-
 module.exports = TPane;
-window.TPane = TPane;

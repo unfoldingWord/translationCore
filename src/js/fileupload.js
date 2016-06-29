@@ -9,7 +9,8 @@ const remote = window.electron.remote;
 const parser = require('./usfm-parse.js');
 const {dialog} = remote;
 const React = require('react');
-const ReactDOM = require('react-dom');
+const TPane = require('./tpane');
+const ManifestStore = require('./manifeststore');
 
 var FileUploader = React.createClass({
   onDrop: function(files) {
@@ -51,7 +52,7 @@ module.exports = FileUploader;
 function sendToReader(file) {
   try {
     window.manifestSource = file;
-    FM.readFile(file + '\\manifest.json', readInManifest);
+    FM.readFile(file + '/manifest.json', readInManifest);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
     'your folder includes a manifest.json file.');
@@ -72,10 +73,9 @@ function readInManifest(manifest) {
       openUsfmFromChunks(splitted);
     }
   }
-  var TPane = window.TPane;
+
   var textInput = window.joinedChunks;
-  ReactDOM.render(<TPane gateway = {<Output input={textInput}/>} />,
-     document.getElementById('content'));
+  ManifestStore.changeText(<Output input={textInput}/>);
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
@@ -85,7 +85,7 @@ function openUsfmFromChunks(chunk) {
   var source = window.manifestSource;
   window.currentChapter = chunk[0];
   try {
-    FM.readFile(source + '\\' + chunk[0] + '\\' + chunk[1] +
+    FM.readFile(source + '/' + chunk[0] + '/' + chunk[1] +
   '.txt', saveChunksLocal);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Unknown error has occurred');
@@ -115,35 +115,60 @@ function saveChunksLocal(text) {
   }
   window.joinedChunks = currentJoined;
 }
+var Verse = React.createClass({
+  render: function() {
+    return (
+    <p key={this.props.id}>
+      <strong>{this.props.verseNumber} </strong>
+      {this.props.verseText}
+    </p>
+  );
+  }
+});
+var Chapter = React.createClass({
+  render: function() {
+    return (
+    <div>
+        <h5 key={this.props.chapterNumber}>
+        <strong>Chapter {this.props.chapterNumber}</strong></h5>
+        <div>{this.props.arrayOfVerses}</div>
+    </div>
+  );
+  }
+});
+var BookTitle = React.createClass({
+  render: function() {
+    return (
+    <h4>{this.props.title} </h4>
+  );
+  }
+});
 var Output = React.createClass({
   render: function() {
-    var finalForm = [];
-    finalForm.push(<h4>{this.props.input.title} </h4>);
+    var chapterArray = [];
     for (var key in this.props.input) {
       if (this.props.input.hasOwnProperty(key) && key !== 'title') {
-        var chapterNumber = parseInt(key);
+        var chapterNum = parseInt(key);
         var arrayOfVerses = [];
         for (var verse in this.props.input[key]) {
           if (this.props.input[key].hasOwnProperty(verse)) {
+            var verseId = key + ':' + verse;
+            var verseText = this.props.input[key][verse];
             arrayOfVerses.push(
-              <p key={chapterNumber + ":" + verse}>
-                <strong>{verse} </strong>
-                {this.props.input[key][verse]}
-              </p>
+              <Verse id={verseId} verseNumber={verse} verseText={verseText} />
             );
           }
         }
-        finalForm.push(
-            <div>
-                <h5 key={chapterNumber}>
-                <strong>Chapter {chapterNumber}</strong></h5>
-                <div>{arrayOfVerses}</div>
-                </div>
+        chapterArray.push(
+            <Chapter chapterNum={chapterNumber} arrayOfVerses={arrayOfVerses}/>
           );
       }
     }
     return (
-        <div> {finalForm} </div>
+        <div>
+        <BookTitle title = {this.props.input.title} />
+          {chapterArray}
+          </div>
       );
   }
 });
