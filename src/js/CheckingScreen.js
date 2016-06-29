@@ -3,14 +3,14 @@ var ReactDom = require('react-dom');
 var MenuItem = require('./MenuItem');
 var CheckModule = require('./CheckModule');
 
-var CheckingScreen = React.creatClass({   // checkecking screen is the parent
+var CheckingScreen = React.creatClass({   // checkecking screen has menu item and check module in it
   getInitialState: function(){
     return {
       checkedStatus:"NOT_CHECKED"// its either , retained,replaced,wrong,
                                  //or not checked
     };
   },
-  changeCheckedStatus: function(status){
+  changeCheckedStatus: function(status){ // changes the status of checked status to the parameter "status"
     this.setState({
       checkedStatus:status
     })

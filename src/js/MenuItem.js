@@ -6,7 +6,7 @@ var ReactDOM = require('react-dom');
 
 var MenuItem = React.createClass({
 
-  getInitialState: function() {
+  getInitialState: function() { // sets initial state of flagged as false color grey until user clicks it them it becomes true and looks blue
     return {
       flagged: false
     };
@@ -18,16 +18,8 @@ var MenuItem = React.createClass({
       flagged: !this.state.flagged
     });
   },
-
-  setCheckedStatus: function(status) {
-    this.setState({
-      checkedStatus: status
-    });
-  },
-
   render: function() {
-
-    var checkedStatus = this.props.checkedStatus;
+    var checkedStatus = this.props.checkedStatus; // getting check status as a prop and putting it in variable checkedStatus
 
     var style;
     if(this.state.flagged){
@@ -44,7 +36,7 @@ var MenuItem = React.createClass({
     }
 
     var style1;
-    if (checkedStatus === "WRONG") {
+    if (checkedStatus === "WRONG") { // if  checkedStatus equas wrong red X glypghicon appears
       style1 = {
         color:"red",
         display:'initial'
@@ -57,7 +49,7 @@ var MenuItem = React.createClass({
     }
 
     var style2;
-    if (checkedStatus === "REPLACED") {
+    if (checkedStatus === "REPLACED") { // gold glyphicon appears
       style2 = {
         color:"gold",
         display:'initial'
@@ -70,7 +62,7 @@ var MenuItem = React.createClass({
     }
 
     var style3;
-    if (checkedStatus === "RETAINED") {
+    if (checkedStatus === "RETAINED") { // green check glyphicon appears
       style3 = {
         color:"green",
         display:'initial'
@@ -92,7 +84,7 @@ var MenuItem = React.createClass({
           />
           <span>
             <button
-              onClick = {this.navigateChapter}
+              onClick = {this.navigateChapter} // makes a chapter button
             >
               Chapter
             </button>
@@ -100,7 +92,7 @@ var MenuItem = React.createClass({
 
           <span>
             <button
-              onClick = {this.navigateVerses}
+              onClick = {this.navigateVerses} // makes a verse button
             >
               Verse
             </button>
@@ -110,7 +102,6 @@ var MenuItem = React.createClass({
               <Glyphicon
                 glyph = "remove"
                 style = {style1}
-                display = {checkedStatus === "WRONG"}
                 onClick = {this.toggleWrong}
               />
             </span>
@@ -119,7 +110,6 @@ var MenuItem = React.createClass({
               <Glyphicon
                 glyph = "random"
                 style = {style2}
-                display = {checkedStatus === "REPLACED"}
                 onClick = {this.toggleSwitch}
               />
             </span>
@@ -128,7 +118,6 @@ var MenuItem = React.createClass({
               <Glyphicon
                 glyph = "ok"
                 style = {style3}
-                display = {checkedStatus === "RETAINED"}
                 onClick = {this.toggleOk}
               />
             </span>
