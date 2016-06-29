@@ -8,13 +8,13 @@
   const menubar = require('./menubar');
   const CommentBox = require('./CommentBox');
   const NextButton = require('./NextButton');
+  const NewProjectScreen = require('./NewProjectScreen');
 
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(menubar.template);
       Menu.setApplicationMenu(menu);
-      ReactDOM.render(<CommentBox />, document.getElementById('content'));
-      ReactDOM.render(<NextButton />, document.getElementById('content'));
+      ReactDOM.render(<NewProjectScreen />, document.getElementById('content'));
     }
   };
 
