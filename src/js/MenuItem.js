@@ -1,7 +1,8 @@
 //MenuItem.js
 var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 var Well = require('react-bootstrap/lib/Well.js');
-
+var React = require('react');
+var ReactDOM = require('react-dom');
 
 var MenuItem = React.createClass({
   getInitialState: function(){
@@ -162,3 +163,4 @@ var MenuItem = React.createClass({
 });
 
 ReactDOM.render(<MenuItem />, document.getElementById('content'));
+module.exports = MenuItem;
