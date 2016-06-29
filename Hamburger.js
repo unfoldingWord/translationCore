@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 class Hamburger extends React.Component{
     constructor(){
       super();
@@ -13,10 +16,10 @@ class Hamburger extends React.Component{
     _getMenu(){
       return(
         <div>
-        <ul>
-          <li><a href="#">Burger 1</a></li>
-          <li><a href="#">Burger 2</a></li>
-        </ul>
+          <ul>
+            <li><a href="#">Burger 1</a></li>
+            <li><a href="#">Burger 2</a></li>
+            </ul>
 
         </div>
         );
@@ -31,14 +34,12 @@ class Hamburger extends React.Component{
       }
       return(
           <div className="burgerButton">
-          <button onClick={this._handleClick.bind(this)}>Burger</button>
-          {burgerMenuNodes}
+            <button onClick={this._handleClick.bind(this)}>Burger</button>
+            {burgerMenuNodes}
           </div>
       );
     }
 
 }
 
-ReactDOM.render(
-  <Hamburger />, document.getElementById('slideRightMenu')
-);
+module.exports = Hamburger;
