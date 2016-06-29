@@ -6,7 +6,7 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const menubar = require('./menubar');
-  const CommentBox = require('./comment-box');
+  const CommentBox = require('./CommentBox');
 
   var App = {
     init: function() {
