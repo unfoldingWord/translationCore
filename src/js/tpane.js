@@ -1,8 +1,14 @@
+/**
+ * @author Ian Hoegen
+ * @description This component displays the Original Language, Gateway Language,
+ *              and the Target Language. It takes it's input from uploads.
+ ******************************************************************************/
 const Col = require('react-bootstrap/lib/Col.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
+const Well = require('react-bootstrap/lib/Well.js');
 const React = require('react');
-const ManifestStore = require('./manifeststore');
+const FileActions = require('./FileActions');
 
 var style = {
   header: {
@@ -18,9 +24,11 @@ var style = {
 var Pane = React.createClass({
   render: function() {
     return (
-      <Col md={4} xs={4}>
+      <Col md={4} sm={4} xs={12}>
           <h3 style={style.header}> {this.props.title} </h3>
-          <div style={style.content}>{this.props.content}</div>
+          <Well style={style.content}>
+          <div>{this.props.content}</div>
+          </Well>
       </Col>
     );
   }
@@ -35,11 +43,11 @@ var TPane = React.createClass({
     });
   },
   componentWillMount: function() {
-    ManifestStore.on('change', this.updateTargetLanguage);
+    FileActions.on('changeTL', this.updateTargetLanguage);
   },
   updateTargetLanguage: function(text) {
     this.setState({
-      tl: ManifestStore.storedText
+      tl: FileActions.storedText
     });
   },
   render: function() {

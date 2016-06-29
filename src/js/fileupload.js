@@ -10,7 +10,7 @@ const parser = require('./usfm-parse.js');
 const {dialog} = remote;
 const React = require('react');
 const TPane = require('./tpane');
-const ManifestStore = require('./manifeststore');
+const FileActions = require('./FileActions');
 
 var FileUploader = React.createClass({
   onDrop: function(files) {
@@ -29,10 +29,35 @@ var FileUploader = React.createClass({
   },
 
   render: function() {
+    var style = {
+      dropzone: {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        border: '2px dashed #727272',
+        borderRadius: '5px',
+        fontSize: '25px'
+      },
+      dropzoneActive: {
+        border: '2px solid #727272',
+        backgroundColor: '#f5f5f5'
+      },
+      dropzoneText: {
+        lineHeight: '200px',
+        verticalAlign: 'middle',
+        width: '100%'
+      }
+    };
     return (
-    <div onClick = {this.onClick}>
-      <Dropzone onDrop = {this.onDrop} disableClick={true} multiple={false}>
-        <div>Drag files here to upload, or click to select a file. </div>
+    <div onClick = {this.onClick} >
+      <Dropzone onDrop = {this.onDrop}
+        disableClick={true} multiple={false} style={style.dropzone}
+        activeStyle={style.dropzoneActive}>
+        <div style={style.dropzoneText}>
+          <center>
+            Drag files here to upload, or click to select a file
+          </center>
+          </div>
       </Dropzone>
     </div>
 
@@ -53,6 +78,7 @@ function sendToReader(file) {
   try {
     window.manifestSource = file;
     FM.readFile(file + '/manifest.json', readInManifest);
+    FileActions.setState(false);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
     'your folder includes a manifest.json file.');
@@ -75,7 +101,7 @@ function readInManifest(manifest) {
   }
 
   var textInput = window.joinedChunks;
-  ManifestStore.changeText(<Output input={textInput}/>);
+  FileActions.changeTargetText(<Output input={textInput}/>);
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
@@ -129,8 +155,8 @@ var Chapter = React.createClass({
   render: function() {
     return (
     <div>
-        <h5 key={this.props.chapterNumber}>
-        <strong>Chapter {this.props.chapterNumber}</strong></h5>
+        <h5 key={this.props.chapterNum}>
+        <strong>Chapter {this.props.chapterNum}</strong></h5>
         <div>{this.props.arrayOfVerses}</div>
     </div>
   );
@@ -160,7 +186,7 @@ var Output = React.createClass({
           }
         }
         chapterArray.push(
-            <Chapter chapterNum={chapterNumber} arrayOfVerses={arrayOfVerses}/>
+            <Chapter chapterNum={chapterNum} arrayOfVerses={arrayOfVerses}/>
           );
       }
     }

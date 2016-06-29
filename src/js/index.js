@@ -3,7 +3,7 @@
   const React = require('react');
   const TPane = require('./tpane');
 // var db = require('./db-init');
-  const FileUpload = require('./fileupload');
+  const UploadModal = require('./uploadmodal');
   const remote = window.electron.remote;
   const {Menu} = remote;
   const menubar = require('./menubar');
@@ -12,7 +12,13 @@
     init: function() {
       var menu = Menu.buildFromTemplate(menubar.template);
       Menu.setApplicationMenu(menu);
-      ReactDOM.render(<TPane />, document.getElementById('upload'));
+      var Application = (
+        <div>
+          <TPane />
+          <UploadModal />
+        </div>
+      );
+      ReactDOM.render(Application, document.getElementById('content'));
     }
   };
 
