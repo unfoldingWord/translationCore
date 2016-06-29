@@ -9,8 +9,6 @@ var Well = require('react-bootstrap/lib/Well.js');
 var Button = require('react-bootstrap/lib/Button.js');
 var ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 
-var TranslationNotesHTMLScraper = require('./HTMLScraper.js');
-
 var dummyDefinition = "WORD: A WORD";
 var targetLanguage = "a word and another word";
 
@@ -19,7 +17,7 @@ var RETAIN_TEXT = "Retain";
 				 
 var LexicalChecker = React.createClass({
     getInitialState: function() {
-	this.getAbbreviations();
+	//this.getAbbreviations();
 	return {};
     },
     
@@ -71,7 +69,7 @@ var LexicalChecker = React.createClass({
     },
 
     replaceWords: function() { //replace button callback
-
+    	
     },
 
     buttonDisable: function() { //disable the buttons

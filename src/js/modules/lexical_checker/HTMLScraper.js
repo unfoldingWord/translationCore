@@ -9,11 +9,11 @@ var BOOK_IDENTIFIER = 'class="name">',
 class TranslationNotesHTMLScraper {
     
     constructor() {
-	this._request = new XMLHttpRequest();
+		this._request = new XMLHttpRequest();
     }
 
     getBaseLink() {
-	return BASE_LINK + TN_LINK
+		return BASE_LINK + TN_LINK
     }
     
     /** This function will goto https://git.door43.org/Door43/tn-en 
@@ -115,7 +115,6 @@ class TranslationNotesHTMLScraper {
 							       function() {
 								   _this.doneVerses++;
 								   progressCallback(_this.doneVerses, _this.maxVerses);
-								   console.log('Checking if done');
 								   if (_this.doneVerses == _this.maxVerses) {
 								       doneCallback();
 								   }
@@ -165,7 +164,7 @@ class TranslationNotesHTMLScraper {
 	var _this = this;
 	var request = new XMLHttpRequest();
 	request.onload = function() {
-	    console.log('Getting Chapters for book: ' + bookAbr);
+	    //console.log('Getting Chapters for book: ' + bookAbr);
 	    var link = _this.bookAbbreviations[bookAbr];
 	    var chapters = getItemsBehindLink(this.response); //'this' refers to the XMLHttpRequest
 	    _this.bookAbbreviations[bookAbr] = {
@@ -230,13 +229,13 @@ class TranslationNotesHTMLScraper {
 		'file': this.response,
 		'link': link
 	    };
-	    console.log('BookAbr: ' + bookAbr + ', Chapter: ' + chapter + ', Verse: ' + verse);
+	    //console.log('BookAbr: ' + bookAbr + ', Chapter: ' + chapter + ', Verse: ' + verse);
 	    if (callback) {
 		callback();
 	    }
 	}
 	var url = BASE_LINK + link;
-	console.log('URL: ' + url);
+	//console.log('URL: ' + url);
 	request.open('get', url, true);
 	request.send();
     }

@@ -11,8 +11,13 @@
   <body>
 
     <div id="content"></div>
+    <script>
+      window.electron = require('electron');
+      </script>
     <!--<script type="text/babel" src="modules/TargetWord.js"></script>-->
-    <script src="./dist/bundle.app.js"></script>
+    <script src="http://localhost:8080/dist/webpack-dev-server.js"></script>
+    <script src="http://localhost:8080/dist/bundle.app.js"></script>
+
      </script>
 
   </body>
