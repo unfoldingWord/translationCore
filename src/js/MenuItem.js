@@ -19,6 +19,7 @@ var MenuItem = React.createClass({
     });
   },
 
+  setCheckedStatus: function(status) {
     this.setState({
       checkedStatus: status
     });
