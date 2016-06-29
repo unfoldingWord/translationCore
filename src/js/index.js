@@ -13,8 +13,6 @@
     init: function() {
       var menu = Menu.buildFromTemplate(menubar.template);
       Menu.setApplicationMenu(menu);
-      ReactDOM.render(<CommentBox />, document.getElementById('content'));
-      ReactDOM.render(<NextButton />, document.getElementById('content'));
     }
   };
 
