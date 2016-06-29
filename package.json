@@ -35,6 +35,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "event-emitter": "^0.3.4",
     "flux": "^2.1.1",
     "fs": "0.0.2",
