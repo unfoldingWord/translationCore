@@ -34,7 +34,7 @@ var MenuItem = React.createClass({
       style = {
         color:"blue",
         display:'initial' // when it is toggled it turns blue
-      }
+      };
     }
     else {
       style = {
@@ -45,10 +45,10 @@ var MenuItem = React.createClass({
 
     var style1;
     if (checkedStatus === "WRONG") {
-      style1={
+      style1 = {
         color:"red",
         display:'initial'
-      }
+      };
     }
     else {
       style1 = {
@@ -58,26 +58,26 @@ var MenuItem = React.createClass({
 
     var style2;
     if (checkedStatus === "REPLACED") {
-      style2={
+      style2 = {
         color:"gold",
         display:'initial'
-      }
+      };
     }
     else {
-      style2={
+      style2 = {
         display: 'none'
       };
     }
 
     var style3;
     if (checkedStatus === "RETAINED") {
-      style3={
+      style3 = {
         color:"green",
         display:'initial'
       }
     }
     else{
-      style3= {
+      style3 = {
        display:'none'
       };
     }
@@ -86,13 +86,13 @@ var MenuItem = React.createClass({
       <span>
         <Well>
           <Glyphicon
-            glyph="flag"
-            style={style}
-            onClick={this.toggleFlag}
+            glyph = "flag"
+            style = {style}
+            onClick = {this.toggleFlag}
           />
           <span>
             <button
-              onClick={this.navigateChapter}
+              onClick = {this.navigateChapter}
             >
               Chapter
             </button>
@@ -100,7 +100,7 @@ var MenuItem = React.createClass({
 
           <span>
             <button
-              onClick={this.navigateVerses}
+              onClick = {this.navigateVerses}
             >
               Verse
             </button>
@@ -120,16 +120,16 @@ var MenuItem = React.createClass({
                 glyph = "random"
                 style = {style2}
                 display = {checkedStatus === "REPLACED"}
-                onClick={this.toggleSwitch}
+                onClick = {this.toggleSwitch}
               />
             </span>
 
             <span>
               <Glyphicon
-                glyph="ok"
-                style={style3}
+                glyph = "ok"
+                style = {style3}
                 display = {checkedStatus === "RETAINED"}
-                onClick={this.toggleOk}
+                onClick = {this.toggleOk}
               />
             </span>
 
