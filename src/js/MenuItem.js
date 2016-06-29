@@ -5,16 +5,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var MenuItem = React.createClass({
-  getInitialState: function(){
-      return {
-        flagged: false,
-        wrong: false,
-        needSwitch: false,
-        isCorrect: false,
-        displayWrong: true,
-        displayNeedSwitch: true,
-        displayIsCorrect: true
-      };
+
+  getInitialState: function() {
+    return {
+      flagged: false
+    };
   },
 
   toggleFlag: function(e) { // this toggles the text as flagged or not flagged
@@ -24,29 +19,15 @@ var MenuItem = React.createClass({
     });
   },
 
-  toggleWrong: function(e) {
     this.setState({
-      wrong: !this.state.wrong,
-      displayWrong: !this.state.displayWrong
-    });
-  },
-
-  toggleSwitch: function(e) {
-    this.setState({
-      needSwitch:!this.state.needSwitch
-    });
-  },
-  toggleOk: function(e){
-    this.setState({
-      isCorrect:!this.state.isCorrect
+      checkedStatus: status
     });
   },
 
   render: function() {
 
-    var displayWrong = this.state.displayWrong;
-    var displayNeedSwitch = this.state.displayNeedSwitch;
-    var displayIsCorrect
+    var checkedStatus = this.props.checkedStatus;
+
     var style;
     if(this.state.flagged){
       style = {
@@ -62,7 +43,7 @@ var MenuItem = React.createClass({
     }
 
     var style1;
-    if (this.state.wrong) {
+    if (checkedStatus === "WRONG") {
       style1={
         color:"red",
         display:'initial'
@@ -75,7 +56,7 @@ var MenuItem = React.createClass({
     }
 
     var style2;
-    if (this.state.needSwitch) {
+    if (checkedStatus === "REPLACED") {
       style2={
         color:"gold",
         display:'initial'
@@ -86,8 +67,9 @@ var MenuItem = React.createClass({
         display: 'none'
       };
     }
+
     var style3;
-    if (this.state.isCorrect) {
+    if (checkedStatus === "RETAINED") {
       style3={
         color:"green",
         display:'initial'
@@ -127,7 +109,7 @@ var MenuItem = React.createClass({
               <Glyphicon
                 glyph = "remove"
                 style = {style1}
-                display={displayWrong}
+                display = {checkedStatus === "WRONG"}
                 onClick = {this.toggleWrong}
               />
             </span>
@@ -136,15 +118,18 @@ var MenuItem = React.createClass({
               <Glyphicon
                 glyph = "random"
                 style = {style2}
+                display = {checkedStatus === "REPLACED"}
                 onClick={this.toggleSwitch}
               />
             </span>
+
             <span>
-            <Glyphicon
-            glyph="ok"
-            style={style3}
-            onClick={this.toggleOk}
-            />
+              <Glyphicon
+                glyph="ok"
+                style={style3}
+                display = {checkedStatus === "RETAINED"}
+                onClick={this.toggleOk}
+              />
             </span>
 
         </Well>
@@ -159,8 +144,6 @@ var MenuItem = React.createClass({
     console.log("1")
   }
 
-
 });
 
-ReactDOM.render(<MenuItem />, document.getElementById('content'));
 module.exports = MenuItem;
