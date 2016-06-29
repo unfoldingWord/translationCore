@@ -1,6 +1,5 @@
-var Button = require('react-bootstrap/lib/Button.js');
 var React = require('react');
-var ReactDOM = require('react-dom');
+var Button = require('react-bootstrap/lib/Button.js');
 
 var NextButton = React.createClass({
 

@@ -1,7 +1,6 @@
+var React = require('react');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
-var React = require('react');
-var ReactDOM = require('react-dom');
 
 var CommentBox = React.createClass({
 
