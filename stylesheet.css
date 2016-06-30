@@ -1,8 +1,22 @@
 html, body {margin: 0; height: 100%; overflow: hidden}
+.burgerBody {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 150%;
+	background: #AEB6BF;
+	position: relative;
+	left:0;
+	transition: left 400ms ease;
+	-moz-transition: left 400ms ease;
+	-webkit-transition: left 400ms ease;
+	-o-transition: left 400ms ease;
+	-ms-transition: left 400ms ease;
+}
+
 .side {
   border: 2px solid grey;
   border-radius: 3px;
-  float: left;
   position: fixed;
   text-align: center;
   height: auto;
@@ -38,18 +52,16 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 .burgerButton{
 	float:left;
-	padding: 10px;
+	padding: auto;
 }
 
 .menu{
 	background: #5D6D7E;
 	position: fixed;
-	width: 300px;
-	height: 100%;
-	padding: 20px;
+	width: auto;
+	height: auto;
+	padding: auto;
 	z-index: 9999;
-	right: 0;
-	top:0;
 	text-decoration:underline;;
 }
 
@@ -58,7 +70,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	color: #FFF;
 	display: block;
 	font-size: 16px;
-	padding: 10px;
+	padding: auto;
 	margin-bottom: 1px;
 }
 
