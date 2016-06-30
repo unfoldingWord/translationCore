@@ -27,6 +27,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   text-align: center;
   position:relative;
   height: auto;
+	min-height: 100%;
 }
 .tpane {
 	max-height: 40vh;
@@ -78,10 +79,14 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	background: black;
 
 }
+
 .btn-group{
+  margin: 0px;
+  padding: 10px;
   width: 100%;
   border-radius: 0;
 }
+
 .well{
   margin-bottom: 0;
 }
@@ -91,6 +96,26 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   text-align: center;
 }
 
+.next-button{
+  float: right;
+}
+
 ::selection{
   background: yellow;
+}
+
+.listhead{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 100%;
+}
+
+.verseReference{
+  text-align: center;
+  color: #000;
+}
+
+.verseReference:hover{
+  color: #000;
+  text-decoration: none;
 }

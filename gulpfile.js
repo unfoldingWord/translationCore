@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 // Define paths
 var paths = {
   indexJS: ['./src/js/index.js'],
-  js: ['src/js/*.js']
+  js: ['src/js/*.js', 'src/js/Checks/lexical_checker/*.js', 'src/js/Checks/translation_notes/*.js', 'src/js/Checks/*.js']
 };
 
 // The default task (called when we run `gulp` from cli)
@@ -19,10 +19,8 @@ gulp.task('default', ['watch', 'js']);
 
 // Rerun tasks whenever a file changes.
 gulp.task('watch', function() {
-  gulp.watch(paths.js1, ['js']);
   gulp.watch(paths.js, ['js']);
   gulp.watch(paths.js, ['lint']);
-  gulp.watch(['src/js/Checks/*.js'], ['js']);
 });
 
 // An example of a dependency task, it will be run before the css/js tasks.

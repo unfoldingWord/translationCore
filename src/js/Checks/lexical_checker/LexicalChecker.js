@@ -9,8 +9,8 @@ var Well = require('react-bootstrap/lib/Well.js');
 var Button = require('react-bootstrap/lib/Button.js');
 var ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 
-var dummyDefinition = "WORD: A WORD";
-var targetLanguage = "a word and another word";
+var dummyDefinition = "BiblicalWord: biblical definition";
+var targetLanguage = "A verse from the Bible that you can select";
 
 var REPLACE_TEXT = "Replace";
 var RETAIN_TEXT = "Retain";

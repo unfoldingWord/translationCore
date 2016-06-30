@@ -1,5 +1,6 @@
 
-var BASE_LINK = "https://git.door43.org/Door43/tw-en/src/master/01";
+var BASE_LINK = "https://git.door43.org/";
+var TW_LINK = "Door43/tw-en/src/master/01";
 
 //TranslationWordsScraper.js//
 
@@ -12,11 +13,15 @@ class TranslationWordsScraper {
 		if (!this.wordList) {
 			return;
 		}
-
+		if (this.wordList[key]['link']) {
+			if (assignCallback) {
+				assignCallback(this.wordList[key]['file']);
+			}
+		}
 		var request = new XMLHttpRequest();
-		
+		var _this = this;
 		request.onload = function() {
-			var link = _this.wordList[key];
+			var link = _this.wordList[key].replace('src', 'raw');
 			_this.wordList[key] = {
 				link: link,
 				file: this.response //this refers to XMLHttpRequest
@@ -35,7 +40,7 @@ class TranslationWordsScraper {
 			}
 		}
 
-		var url = this.wordList[key];
+		var url = BASE_LINK + this.wordList[key];
 		url = url.replace('src', 'raw');
 		console.log('URL: ' + url);
 		request.open('get', url, true);
@@ -63,7 +68,7 @@ class TranslationWordsScraper {
 			}
 		}
 
-		var url = link || BASE_LINK;	
+		var url = link || BASE_LINK + TW_LINK;	
 		
 		request.open('get', url, true);
 		request.send();

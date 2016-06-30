@@ -30,13 +30,19 @@ var TPane = React.createClass({
     });
   },
   componentWillMount: function() {
-    FileActions.on('changeTL', this.updateTargetLanguage);
-  },
-  updateTargetLanguage: function(text) {
-    this.setState({
-      tl: FileActions.storedText
-    });
-  },
+   FileActions.on('changeTL', this.updateTargetLanguage);
+   FileActions.on('changeOL', this.updateOriginalLanguage);
+ },
+ updateTargetLanguage: function(text) {
+   this.setState({
+     tl: FileActions.tlText
+   });
+ },
+ updateOriginalLanguage: function(text) {
+   this.setState({
+     ol: FileActions.olText
+   });
+ },
   render: function() {
     return (
       <Grid>

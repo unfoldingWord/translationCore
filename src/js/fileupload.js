@@ -12,6 +12,7 @@ const React = require('react');
 const FileActions = require('./FileActions');
 const Book = require('./bibletext');
 var manifestSource = '';
+var bookName = '';
 var joinedChunks = {};
 var currentChapter = '';
 
@@ -76,7 +77,6 @@ module.exports = FileUploader;
  * module
  * @param {string} file The path of the directory as specified by the user.
  ******************************************************************************/
-
 function sendToReader(file) {
   try {
     manifestSource = file;
@@ -94,6 +94,15 @@ function sendToReader(file) {
  ******************************************************************************/
 function readInManifest(manifest) {
   let parsedManifest = JSON.parse(manifest);
+  let bookTitle = parsedManifest.project.name;
+  let bookTitleSplit = bookTitle.split(' ');
+  bookName = bookTitleSplit.join('');
+  let bookFileName = bookName + '.json';
+  try {
+    FM.readFile('data/ulgb/' + bookFileName, openOriginal);
+  } catch (error) {
+    console.log("File not found");
+  }
   let finishedChunks = parsedManifest.finished_chunks;
   for (let chapterVerse in finishedChunks) {
     if (finishedChunks.hasOwnProperty(chapterVerse)) {
@@ -138,4 +147,13 @@ function saveChunksLocal(text) {
     }
   }
   joinedChunks = currentJoined;
+}
+
+/**
+ * @description This function processes the original text.
+ * @param {string} text - The text being read from the JSON bible object
+ ******************************************************************************/
+function openOriginal(text) {
+  var input = JSON.parse(text);
+  FileActions.changeOriginalText(<Book input={input[bookName]} />);
 }

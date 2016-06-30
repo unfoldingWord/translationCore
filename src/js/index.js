@@ -8,9 +8,6 @@
   const menubar = require('./menubar');
 
 var Root = require('./root');
-const CommentBox = require('./CommentBox');
-const NextButton = require('./NextButton');
-const CheckingScreen =  require('./CheckingScreen');
 
   var App = {
     init: function() {
