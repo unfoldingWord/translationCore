@@ -49,11 +49,11 @@ var BOOK_QUERY = 'Type in Book Name',
     INVALID_BOOK_TITLE = "Unable to parse file";
 
 
-var TranslationWordsComponent = React.createClass({
+var TranslationNotesComponent = React.createClass({
     //this requires the internet, which at some point there needs to be a way to get the information
     //from local storage
     tNHtmlScraper: new TranslationNotesHTMLScraper(),
-    
+
     bookAbbreviations: null,
     currentlyLoadedBooks: {},
     currentBook: null,
@@ -76,6 +76,7 @@ var TranslationWordsComponent = React.createClass({
     
     componentWillMount: function() {
 		var _this = this;
+
 		this.tNHtmlScraper.getBookAbbreviations( 
 		    function(abbreviations) { //setter function
 				_this.bookAbbreviations = abbreviations;
@@ -129,6 +130,7 @@ var TranslationWordsComponent = React.createClass({
 		);
     },
 
+    //Sets the current modal, or if there already is one it pushes it onto a stack
     setCurrentModal: function(modal) {
     	if (this.currentModal) {
     		this.previousModals.push(this.currentModal);
@@ -601,4 +603,4 @@ var BookForm = React.createClass({
     }
 });
 
-module.exports = TranslationWordsComponent;
+module.exports = TranslationNotesComponent;
