@@ -1,4 +1,4 @@
-//MenuItem.js
+// MenuItem.js
 var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 var Well = require('react-bootstrap/lib/Well.js');
 var React = require('react');
@@ -22,15 +22,15 @@ var MenuItem = React.createClass({
     var checkedStatus = this.props.checkedStatus; // getting check status as a prop and putting it in variable checkedStatus
 
     var style;
-    if(this.state.flagged){
+    if (this.state.flagged) {
       style = {
-        color:"blue",
-        display:'initial' // when it is toggled it turns blue
+        color: "blue",
+        display: 'initial' // when it is toggled it turns blue
       };
     }
     else {
       style = {
-        color:"grey" // when it is not being used it dos not show itself to
+        color: "grey" // when it is not being used it dos not show itself to
         // the user
       };
     }
@@ -38,21 +38,21 @@ var MenuItem = React.createClass({
     var style1;
     if (checkedStatus === "WRONG") { // if  checkedStatus equas wrong red X glypghicon appears
       style1 = {
-        color:"red",
-        display:'initial'
+        color: "red",
+        display: 'initial'
       };
     }
     else {
       style1 = {
-        display:'none'
+        display: 'none'
       };
     }
 
     var style2;
     if (checkedStatus === "REPLACED") { // gold glyphicon appears
       style2 = {
-        color:"gold",
-        display:'initial'
+        color: "gold",
+        display: 'initial'
       };
     }
     else {
@@ -64,13 +64,13 @@ var MenuItem = React.createClass({
     var style3;
     if (checkedStatus === "RETAINED") { // green check glyphicon appears
       style3 = {
-        color:"green",
-        display:'initial'
-      }
+        color: "green",
+        display: 'initial'
+      };
     }
-    else{
+    else {
       style3 = {
-       display:'none'
+        display: 'none'
       };
     }
 
@@ -127,11 +127,11 @@ var MenuItem = React.createClass({
     );
   },
 
-  navigateChapter:function(){
-    console.log ("chapter 1")
+  navigateChapter: function() {
+    console.log("chapter 1");
   },
-  navigateVerses:function(){
-    console.log("1")
+  navigateVerses: function() {
+    console.log("1");
   }
 
 });

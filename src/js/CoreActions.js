@@ -7,7 +7,6 @@ one of the functions and the event will automatically
 be dispatched to all of the stores that have registered
 listener
 
-
 */
 module.exports = {
   nextCheck: function(newVerse) {

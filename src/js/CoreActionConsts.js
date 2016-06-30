@@ -1,8 +1,8 @@
 module.exports = {
   "AddCheck": "ADD_CHECK",
   "NextVerse": "NEW_VERSE",
-  "PrevVerse": "NEW_VERSE",
-}
+  "PrevVerse": "NEW_VERSE"
+};
 
 /**
 Object that maps words to consts for use in actions

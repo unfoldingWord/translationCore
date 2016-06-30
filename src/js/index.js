@@ -1,19 +1,27 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
+  const TPane = require('./tpane');
 // var db = require('./db-init');
-  const FileUpload = require('./fileupload');
+  const UploadModal = require('./uploadmodal');
   const remote = window.electron.remote;
   const {Menu} = remote;
   const menubar = require('./menubar');
   const CommentBox = require('./CommentBox');
   const NextButton = require('./NextButton');
-  const CheckingScreen =  require('./CheckingScreen');
+  const CheckingScreen = require('./CheckingScreen');
 
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(menubar.template);
       Menu.setApplicationMenu(menu);
+      var Application = (
+        <div>
+          <TPane />
+          <UploadModal />
+        </div>
+      );
+      ReactDOM.render(Application, document.getElementById('content'));
     }
   };
 

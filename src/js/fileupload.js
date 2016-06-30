@@ -9,7 +9,11 @@ const remote = window.electron.remote;
 const parser = require('./usfm-parse.js');
 const {dialog} = remote;
 const React = require('react');
-const ReactDOM = require('react-dom');
+const FileActions = require('./FileActions');
+const Book = require('./bibletext');
+var manifestSource = '';
+var joinedChunks = {};
+var currentChapter = '';
 
 var FileUploader = React.createClass({
   onDrop: function(files) {
@@ -28,10 +32,35 @@ var FileUploader = React.createClass({
   },
 
   render: function() {
+    var style = {
+      dropzone: {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        border: '2px dashed #727272',
+        borderRadius: '5px',
+        fontSize: '25px'
+      },
+      dropzoneActive: {
+        border: '2px solid #727272',
+        backgroundColor: '#f5f5f5'
+      },
+      dropzoneText: {
+        lineHeight: '200px',
+        verticalAlign: 'middle',
+        width: '100%'
+      }
+    };
     return (
-    <div onClick = {this.onClick}>
-      <Dropzone onDrop = {this.onDrop} disableClick={true} multiple={false}>
-        <div>Drag files here to upload, or click to select a file. </div>
+    <div onClick = {this.onClick} >
+      <Dropzone onDrop = {this.onDrop}
+        disableClick={true} multiple={false} style={style.dropzone}
+        activeStyle={style.dropzoneActive}>
+        <div style={style.dropzoneText}>
+          <center>
+            Drag files here to upload, or click to select a file
+          </center>
+          </div>
       </Dropzone>
     </div>
 
@@ -40,7 +69,6 @@ var FileUploader = React.createClass({
 
 });
 
-window.FileUploader = FileUploader;
 module.exports = FileUploader;
 
 /**
@@ -48,10 +76,12 @@ module.exports = FileUploader;
  * module
  * @param {string} file The path of the directory as specified by the user.
  ******************************************************************************/
+
 function sendToReader(file) {
   try {
-    localStorage.setItem('manifestSource', file);
-    FM.readFile(file + '\\manifest.json', readInManifest);
+    manifestSource = file;
+    FM.readFile(file + '/manifest.json', readInManifest);
+    FileActions.setState(false);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
     'your folder includes a manifest.json file.');
@@ -65,21 +95,22 @@ function sendToReader(file) {
 function readInManifest(manifest) {
   let parsedManifest = JSON.parse(manifest);
   let finishedChunks = parsedManifest.finished_chunks;
-  localStorage.setItem('joinedChunks', JSON.stringify({}));
   for (let chapterVerse in finishedChunks) {
-    let splitted = finishedChunks[chapterVerse].split('-');
-    openUsfmFromChunks(splitted);
+    if (finishedChunks.hasOwnProperty(chapterVerse)) {
+      let splitted = finishedChunks[chapterVerse].split('-');
+      openUsfmFromChunks(splitted);
+    }
   }
+  FileActions.changeTargetText(<Book input={joinedChunks}/>);
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
  * @param {array} chunk - An array of the chunks defined in manifest
  ******************************************************************************/
 function openUsfmFromChunks(chunk) {
-  var source = localStorage.getItem('manifestSource');
-  localStorage.setItem('currentChapter', chunk[0]);
+  currentChapter = chunk[0];
   try {
-    FM.readFile(source + '\\' + chunk[0] + '\\' + chunk[1] +
+    FM.readFile(manifestSource + '/' + chunk[0] + '/' + chunk[1] +
   '.txt', saveChunksLocal);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Unknown error has occurred');
@@ -87,23 +118,24 @@ function openUsfmFromChunks(chunk) {
   }
 }
 /**
- * @description This function saves the chunks locally as a localstorage object;
+ * @description This function saves the chunks locally as a window object;
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
 function saveChunksLocal(text) {
-  var currentJoined = JSON.parse(localStorage.getItem('joinedChunks'));
-  var currentChapter = localStorage.getItem('currentChapter');
+  var currentJoined = joinedChunks;
   if (currentChapter === '00') {
     currentJoined.title = text;
   } else {
     if (currentJoined[currentChapter] === undefined) {
-      currentJoined[currentChapter] = [];
+      currentJoined[currentChapter] = {};
     }
     var currentChunk = parser(text);
     for (let verse in currentChunk.verses) {
-      var currentVerse = currentChunk.verses[verse];
-      currentJoined[currentChapter].push(currentVerse);
+      if (currentChunk.verses.hasOwnProperty(verse)) {
+        var currentVerse = currentChunk.verses[verse];
+        currentJoined[currentChapter][verse] = currentVerse;
+      }
     }
   }
-  localStorage.setItem('joinedChunks', JSON.stringify(currentJoined));
+  joinedChunks = currentJoined;
 }

@@ -3,8 +3,8 @@ var Dispatcher = new fluxDispatch();
 
 Dispatcher.handleAction = function(action) {
   this.dispatch({
-      source: 'VIEW_ACTION',
-      action: action
+    source: 'VIEW_ACTION',
+    action: action
   });
 };
 
