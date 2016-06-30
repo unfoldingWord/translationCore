@@ -14,7 +14,7 @@ var CheckModule = React.createClass({
       <div>
       <Grid fluid>
       <Row>
-      <Col className='tpane' xsOffset={1}><Tpane data={data}/></Col>
+      <Col xsOffset={1}><Tpane data={data}/></Col>
       </Row>
       <Row>
       <Col className='checkModule' xsOffset={1}><PhraseChecker data={data}/></Col>

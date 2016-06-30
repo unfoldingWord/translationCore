@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 class Hamburger extends React.Component{
     constructor(){
       super();

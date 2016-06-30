@@ -6,6 +6,7 @@ var NextButton = require('./NextButton');
 var SideBar = require('./SideBar');
 var CommentBox = require('./CommentBox');
 var CheckModule = require('./Checks/CheckModule');
+var UploadModal = require('./uploadmodal')
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -13,6 +14,7 @@ var Root = React.createClass({
   render: function() {
     return (
       <div>
+        <UploadModal />
         <Grid fluid>
         <Row>
         <Col className='side' xs={2} md={2}><SideBar data={""}/></Col>

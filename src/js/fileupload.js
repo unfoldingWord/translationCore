@@ -9,8 +9,11 @@ const remote = window.electron.remote;
 const parser = require('./usfm-parse.js');
 const {dialog} = remote;
 const React = require('react');
-const TPane = require('./tpane');
 const FileActions = require('./FileActions');
+const Book = require('./bibletext');
+var manifestSource = '';
+var joinedChunks = {};
+var currentChapter = '';
 
 var FileUploader = React.createClass({
   onDrop: function(files) {
@@ -66,7 +69,6 @@ var FileUploader = React.createClass({
 
 });
 
-window.FileUploader = FileUploader;
 module.exports = FileUploader;
 
 /**
@@ -74,9 +76,10 @@ module.exports = FileUploader;
  * module
  * @param {string} file The path of the directory as specified by the user.
  ******************************************************************************/
+
 function sendToReader(file) {
   try {
-    window.manifestSource = file;
+    manifestSource = file;
     FM.readFile(file + '/manifest.json', readInManifest);
     FileActions.setState(false);
   } catch (error) {
@@ -92,26 +95,22 @@ function sendToReader(file) {
 function readInManifest(manifest) {
   let parsedManifest = JSON.parse(manifest);
   let finishedChunks = parsedManifest.finished_chunks;
-  window.joinedChunks = {};
   for (let chapterVerse in finishedChunks) {
     if (finishedChunks.hasOwnProperty(chapterVerse)) {
       let splitted = finishedChunks[chapterVerse].split('-');
       openUsfmFromChunks(splitted);
     }
   }
-
-  var textInput = window.joinedChunks;
-  FileActions.changeTargetText(<Output input={textInput}/>);
+  FileActions.changeTargetText(<Book input={joinedChunks}/>);
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
  * @param {array} chunk - An array of the chunks defined in manifest
  ******************************************************************************/
 function openUsfmFromChunks(chunk) {
-  var source = window.manifestSource;
-  window.currentChapter = chunk[0];
+  currentChapter = chunk[0];
   try {
-    FM.readFile(source + '/' + chunk[0] + '/' + chunk[1] +
+    FM.readFile(manifestSource + '/' + chunk[0] + '/' + chunk[1] +
   '.txt', saveChunksLocal);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Unknown error has occurred');
@@ -123,8 +122,7 @@ function openUsfmFromChunks(chunk) {
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
 function saveChunksLocal(text) {
-  var currentJoined = window.joinedChunks;
-  var currentChapter = window.currentChapter;
+  var currentJoined = joinedChunks;
   if (currentChapter === '00') {
     currentJoined.title = text;
   } else {
@@ -139,62 +137,5 @@ function saveChunksLocal(text) {
       }
     }
   }
-  window.joinedChunks = currentJoined;
+  joinedChunks = currentJoined;
 }
-var Verse = React.createClass({
-  render: function() {
-    return (
-    <p key={this.props.id}>
-      <strong>{this.props.verseNumber} </strong>
-      {this.props.verseText}
-    </p>
-  );
-  }
-});
-var Chapter = React.createClass({
-  render: function() {
-    return (
-    <div>
-        <h5 key={this.props.chapterNum}>
-        <strong>Chapter {this.props.chapterNum}</strong></h5>
-        <div>{this.props.arrayOfVerses}</div>
-    </div>
-  );
-  }
-});
-var BookTitle = React.createClass({
-  render: function() {
-    return (
-    <h4>{this.props.title} </h4>
-  );
-  }
-});
-var Output = React.createClass({
-  render: function() {
-    var chapterArray = [];
-    for (var key in this.props.input) {
-      if (this.props.input.hasOwnProperty(key) && key !== 'title') {
-        var chapterNum = parseInt(key);
-        var arrayOfVerses = [];
-        for (var verse in this.props.input[key]) {
-          if (this.props.input[key].hasOwnProperty(verse)) {
-            var verseId = key + ':' + verse;
-            var verseText = this.props.input[key][verse];
-            arrayOfVerses.push(
-              <Verse id={verseId} verseNumber={verse} verseText={verseText} />
-            );
-          }
-        }
-        chapterArray.push(
-            <Chapter chapterNum={chapterNum} arrayOfVerses={arrayOfVerses}/>
-          );
-      }
-    }
-    return (
-        <div>
-        <BookTitle title = {this.props.input.title} />
-          {chapterArray}
-          </div>
-      );
-  }
-});

@@ -19,8 +19,10 @@ gulp.task('default', ['watch', 'js']);
 
 // Rerun tasks whenever a file changes.
 gulp.task('watch', function() {
+  gulp.watch(paths.js1, ['js']);
   gulp.watch(paths.js, ['js']);
-  // gulp.watch(paths.js, ['lint']);
+  gulp.watch(paths.js, ['lint']);
+  gulp.watch(['src/js/Checks/*.js'], ['js']);
 });
 
 // An example of a dependency task, it will be run before the css/js tasks.

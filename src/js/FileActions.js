@@ -9,7 +9,6 @@ class FileActions extends EventEmitter {
   constructor(text) {
     super();
     this.storedText = text;
-    this.open = false;
   }
 
   changeTargetText(newText) {
@@ -18,8 +17,7 @@ class FileActions extends EventEmitter {
   }
 
   setState(boolean) {
-    this.open = boolean;
-    this.emit("upload", this.open);
+    this.emit("upload", boolean);
   }
 }
 

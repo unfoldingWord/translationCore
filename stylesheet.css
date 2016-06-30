@@ -29,10 +29,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   height: auto;
 }
 .tpane {
-  height: auto;
-  text-align: center;
-  position:relative;
-  margin-top: auto;
+	max-height: 40vh;
+	overflow-y: scroll;
+	padding-left: 3;
+	padding-right: 3;
 }
 .checkModule {
   height: auto;

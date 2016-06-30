@@ -1,7 +1,6 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
-  const TPane = require('./tpane');
 // var db = require('./db-init');
   const UploadModal = require('./uploadmodal');
   const remote = window.electron.remote;
