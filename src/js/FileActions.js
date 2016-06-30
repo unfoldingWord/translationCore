@@ -12,8 +12,13 @@ class FileActions extends EventEmitter {
   }
 
   changeTargetText(newText) {
-    this.storedText = newText;
-    this.emit("changeTL", this.storedText);
+    this.tlText = newText;
+    this.emit("changeTL", this.tlText);
+  }
+
+  changeOriginalText(newText) {
+    this.olText = newText;
+    this.emit('changeOL', this.olText);
   }
 
   setState(boolean) {

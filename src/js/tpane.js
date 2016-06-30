@@ -19,10 +19,16 @@ var TPane = React.createClass({
   },
   componentWillMount: function() {
     FileActions.on('changeTL', this.updateTargetLanguage);
+    FileActions.on('changeOL', this.updateOriginalLanguage);
   },
   updateTargetLanguage: function(text) {
     this.setState({
-      tl: FileActions.storedText
+      tl: FileActions.tlText
+    });
+  },
+  updateOriginalLanguage: function(text) {
+    this.setState({
+      ol: FileActions.olText
     });
   },
   render: function() {
