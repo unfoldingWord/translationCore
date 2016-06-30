@@ -7,20 +7,14 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const menubar = require('./menubar');
-  const CommentBox = require('./CommentBox');
-  const NextButton = require('./NextButton');
+  
+var Root = require('./root');
 
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(menubar.template);
       Menu.setApplicationMenu(menu);
-      var Application = (
-        <div>
-          <TPane />
-          <UploadModal />
-        </div>
-      );
-      ReactDOM.render(Application, document.getElementById('content'));
+      ReactDOM.render(<Root />, document.getElementById('content'));
     }
   };
 

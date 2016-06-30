@@ -1,26 +1,44 @@
-body{
-	margin: 0;
-	padding: 0;
-	font-size: 14px;
-	line-height: 150%;
-	background: #AEB6BF;
-	position: relative;
-	left:0;
-	transition: left 400ms ease;
-	-moz-transition: left 400ms ease;
-	-webkit-transition: left 400ms ease;
-	-o-transition: left 400ms ease;
-	-ms-transition: left 400ms ease;
-
-
-
-
+html, body {margin: 0; height: 100%; overflow: hidden}
+.side {
+  border: 2px solid grey;
+  border-radius: 3px;
+  float: left;
+  position: fixed;
+  text-align: center;
+  height: auto;
+}
+.check {
+  border: 2px solid grey;
+  border-radius: 3px;
+  text-align: center;
+  position:relative;
+  height: auto;
+}
+.tpane {
+  height: auto;
+  text-align: center;
+  position:relative;
+  margin-top: auto;
+}
+.checkModule {
+  height: auto;
+  text-align: center;
+  position:relative;
+  margin-top: auto;
+}
+.afterCheck {
+  border: 2px solid grey;
+  border-radius: 3px;
+  height: auto;
+  position:relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .burgerButton{
 	float:left;
 	padding: 10px;
-
 }
 
 .menu{
@@ -47,4 +65,20 @@ body{
 .menu a:hover{
 	background: black;
 
+}
+.btn-group{
+  width: 100%;
+  border-radius: 0;
+}
+.well{
+  margin-bottom: 0;
+}
+
+.confirm-area{
+  margin: 10px;
+  text-align: center;
+}
+
+::selection{
+  background: yellow;
 }
