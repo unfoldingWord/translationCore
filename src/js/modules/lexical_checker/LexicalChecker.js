@@ -16,33 +16,29 @@ var REPLACE_TEXT = "Replace";
 var RETAIN_TEXT = "Retain";
 				 
 var LexicalChecker = React.createClass({
-    getInitialState: function() {
-	//this.getAbbreviations();
-	return {};
-    },
     
     render: function() {
-	return (
-		<div id="lexical-checker">
-			<Well bsSize={'small'}>
-				<Definition 
-	    				definition={dummyDefinition} 
-				/>
-				<TargetLanguageSelectBox 
-	    				ref={'targetLanguageBox'}
-	    				buttonDisableCallback={this.buttonDisable}
-	    				buttonEnableCallback={this.buttonEnable}
-				/> 
-				<br />
-				<CustomButtonGroup
-	    				submitWordsCallback={this.submitWords}
-	    				replaceWordsCallback={this.replaceWords}
-	    				ref={'customButtonGroup'}
-				/>
-		
-	    </Well>
-		</div>
-	);
+		return (
+			<div id="lexical-checker">
+				<Well bsSize={'small'}>
+					<Definition 
+		    				definition={dummyDefinition} 
+					/>
+					<TargetLanguageSelectBox 
+		    				ref={'targetLanguageBox'}
+		    				buttonDisableCallback={this.buttonDisable}
+		    				buttonEnableCallback={this.buttonEnable}
+					/> 
+					<br />
+					<CustomButtonGroup
+		    				submitWordsCallback={this.submitWords}
+		    				replaceWordsCallback={this.replaceWords}
+		    				ref={'customButtonGroup'}
+					/>
+			
+		    </Well>
+			</div>
+		);
     },
 
     bookAbbreviations: {},
@@ -73,15 +69,15 @@ var LexicalChecker = React.createClass({
     },
 
     buttonDisable: function() { //disable the buttons
-	if (this.refs.customButtonGroup) {
-	    this.refs.customButtonGroup.disableButtons();
-	}
+		if (this.refs.customButtonGroup) {
+		    this.refs.customButtonGroup.disableButtons();
+		}
     },
 
     buttonEnable: function() { //enable the buttons
-	if (this.refs.customButtonGroup) {
-	    this.refs.customButtonGroup.enableButtons();
-	}
+		if (this.refs.customButtonGroup) {
+		    this.refs.customButtonGroup.enableButtons();
+		}
     }    
 });
 

@@ -11,13 +11,20 @@ var React = require('react');
 //Hard coded english strings
 var CLOSE = "Close";
 
-/*
-Requires isShown, glyph, title, message, and buttons 
+/**
+ * @description: An Error modal class that will animate and fall from the top of the screen
+ * and disappear whenever 'close' is clicked or user clicks off the screen
+ * @author: Sam Faulkner
+ * @param {boolean} isShown - displays the modal first time it's set to true
+ * @param {Glyphicon} glyph - Glyphicon that is displayed in top left corner
+ * @param {string} title - displays to the right of the glyph icon at the top of the modal
+ * @param {string} message - displays in the modal's body
+ * @param {function} closedCallback - if provided it's called whenever the modal is closed
 */
 var ErrorModal = React.createClass({
 	getInitialState: function() {
 	    return {
-	    	isShown: false
+	    	isShown: true
 	    };
 	},
 
@@ -34,6 +41,9 @@ var ErrorModal = React.createClass({
 			this.setState({
 				isShown: false
 			});
+		}
+		if (this.props.closeCallback) {
+			this.props.closeCallback();
 		}
 	},
 

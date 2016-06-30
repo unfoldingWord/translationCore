@@ -4,7 +4,7 @@
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
-    "watch": "./node_modules/.bin/webpack-dev-server"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -22,22 +22,28 @@
   },
   "homepage": "https://github.com/WycliffeAssociates/8woc#readme",
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-react": "^6.11.1",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "babel-preset-react": "^6.11.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "del": "^2.2.1",
+    "eslint": "^2.13.1",
+    "eslint-config-google": "^0.6.0",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-shell": "^0.5.2",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "electron": "^0.4.1",
-    "electron-prebuilt": "^1.2.5",
+    "event-emitter": "^0.3.4",
+    "flux": "^2.1.1",
     "fs": "0.0.2",
     "fs-extra": "^0.30.0",
+    "marked": "^0.3.5",
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0",
     "react-dropzone": "^3.5.1",
-    "remarkable": "^1.6.2"
+    "sql.js": "^0.3.2"
   }
 }

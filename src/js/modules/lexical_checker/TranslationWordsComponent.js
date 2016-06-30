@@ -4,12 +4,17 @@
 //Node modules
 var React = require('react');
 var ReactDOM = require('react-dom');
+var FS = require(window.__base + '/node_modules/fs-extra');
+var electron = window.electron;
+var remote = window.electron.remote;
+var {dialog} = remote;
 
 
 //Module imports
 var TranslationNotesHTMLScraper = require('./HTMLScraper.js');
 var FileUploader = require('./FileUploader.js');
 var ErrorModal = require('./ErrorModal.js');
+var UploadForm = require('./UploadForm');
 
 //Bootstrap for dayz
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
@@ -27,14 +32,21 @@ var ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 var BOOK_QUERY = 'Type in Book Name',
     BOOK_EXAMPLE = 'Ex: "Ephesians"',
     DOWNLOAD_BOOK = "Download Book",
-    UPLOAD_FROM_COMPUTER = "Retrieve Book",
+    UPLOAD_FROM_COMPUTER = "Upload Book",
     SAVE_TO_COMPUTER = "Save Book",
     QUERYING_BOOKS = "Retrieving information",
     DISCONNECTED_TITLE = "Disconnected From Internet",
     DISCONNECTED_MESSAGE = "Failed to retrieve a list of books from: ",
     CLOSE = "Close",
+    CANCEL = "Cancel",
     UPLOAD_FILE = "Upload File",
-    JSON_SPECIFIER = "Drag and drop or click to import .JSON file";
+    JSON_SPECIFIER = "Drag and drop or click to import .JSON file",
+    UNABLE_TO_SAVE_MES = "Unable to save file: ",
+    UNABLE_TO_SAVE_TITLE = "Save Failed",
+    UNABLE_TO_OPEN_MES = "Unable to open file: ",
+    UNABLE_TO_OPEN_TITLE = "Open failed",
+    INVALID_BOOK_MESSAGE = " is not a valid translationNotes object",
+    INVALID_BOOK_TITLE = "Unable to parse file";
 
 
 var TranslationWordsComponent = React.createClass({
@@ -46,14 +58,19 @@ var TranslationWordsComponent = React.createClass({
     currentlyLoadedBooks: {},
     currentBook: null,
     errorThrown: false,
+    currentModal: null,
+    previousModals: [],
 
     getInitialState: function() {
 		return {
 	    	downLoadButtonDisabled: true,
 	    	saveButtonDisabled: true,
+
 	    	showProgressBar: false,
 	    	currentDownloadProgress: 0,
-	    	maxDownloadProgress: 0
+	    	maxDownloadProgress: 0,
+
+	    	showModal: false
 		}
     },
     
@@ -77,27 +94,161 @@ var TranslationWordsComponent = React.createClass({
 		    },
 		    null, //finishedFunction
 		    function() { //error function
-				_this.showModal();
+		    	_this.setCurrentModal(
+		    		<ErrorModal
+						glyph={
+							<Glyphicon
+								glyph={"remove-circle"}
+								style={{
+									color: 'red'
+								}}
+							/>
+						}
+						buttons={[
+							<UploadButton 
+								callback={_this.uploadFile}
+								key={1}
+							/>
+						]}
+						message={DISCONNECTED_MESSAGE + ' ' + _this.tNHtmlScraper.getBaseLink()}
+						title={DISCONNECTED_TITLE}
+						closeCallback={
+							function() {
+								_this.modalClosed();
+								//disable the book form because we've had an error
+								if (_this.refs.BookForm) {
+									_this.refs.BookForm.disable();
+								}
+
+								_this.errorThrown = true; //this invalidates the bookform
+							}
+						}
+					/>
+		    	);
 		    }
 		);
     },
 
-    showModal: function() {
-    	if (this.refs.errorModal) {
-			this.refs.errorModal.show();
-		}
-		//disable the book form because we've had an error
-		if (this.refs.BookForm) {
-			this.refs.BookForm.changeDisabled(true); 
-			this.refs.BookForm.changeStyle({
-				cursor: 'not-allowed'
-			});
-		}
-
-		this.errorThrown = true;
+    setCurrentModal: function(modal) {
+    	if (this.currentModal) {
+    		this.previousModals.push(this.currentModal);
+    		this.currentModal = null;
+    	}
+    	this.currentModal = modal;
+    	this.setState({
+    		showModal: true
+    	});
     },
 
-    getUploadFile: function() {
+    modalClosed: function() {
+    	if (this.currentModal) { //sanity check
+    		this.currentModal = this.previousModals.pop() || null;
+    	}
+
+    	this.setState({
+    		showModal: (this.currentModal != null)
+    	});
+    },
+
+    uploadFile: function() {
+    	var _this = this;
+    	/*internal modal that needs to be it's own contained component so that
+    	  it can update it's own state
+    	*/
+    	var UploadModal = React.createClass({
+
+    		getInitialState: function() {
+    		    return {
+    		        buttons: []  
+    		    };
+    		},
+
+    		render: function() {
+    			return (
+    				<Modal show={true} onHide={_this.modalClosed}>
+		    			<Modal.Header>
+		    				<Modal.Title>
+		    					<span>
+		    						<Glyphicon
+		    							glyph="upload"
+		    						/>
+		    						{' ' + UPLOAD_FILE}
+		    					</span>
+		    				</Modal.Title>
+		    			</Modal.Header>
+		    			<Modal.Body>
+		    				{/* Mind the difference between _this and this!!! */}
+		    				<UploadForm
+		    					assignModalButtons={this.assignButtons}
+				    			postErrorModal={_this.setCurrentModal}
+				    			closeModal={_this.modalClosed}
+				    			assignCallback={
+				    				function(data, path) {
+				    					if (data) { //if we get an error this will be undefined
+				    						if (_this.validateData(data)) {
+				    							//This is where we actually assign the book!
+				    							_this.currentBook = data;
+				    							console.dir(_this.currentBook);
+				    							_this.setState({
+				    								saveButtonDisabled: (_this.currentBook == null)
+				    							});
+				    							_this.modalClosed();
+				    						}
+				    						else {
+				    							_this.setCurrentModal(
+				    								<ErrorModal
+														glyph={
+															<Glyphicon
+																glyph={"remove-circle"}
+																style={{
+																	color: 'red'
+																}}
+															/>
+														}
+														buttons={[]}
+														message={path + ' ' + INVALID_BOOK_MESSAGE}
+														title={INVALID_BOOK_TITLE}
+														closeCallback={_this.modalClosed}
+						
+													/>
+				    							);
+				    						}
+				    					}
+				    				}	
+				    			}
+		    				/>
+		    			</Modal.Body>
+		    			<Modal.Footer>
+		    				{this.state.buttons}
+		    				<Button
+		    					onClick={_this.modalClosed}
+		    				>
+		    					{CANCEL}
+		    				</Button>
+		    			</Modal.Footer>
+		    		</Modal>
+    			);
+    		},
+
+    		assignButtons: function(buttonArray) {
+    			this.setState({
+    				buttons: buttonArray
+    			});
+   			 }
+    	});	
+    	this.setCurrentModal(<UploadModal />);
+    },
+
+    /**
+     * @description: A function to verify that a given JSON is 
+     *	actually an object of translation notes
+     * @param {jsonObject} data - A valid json object, though not necessarily a 'valid book'
+     */
+    validateData: function(data) {
+    	if (data && data['abbreviation']) {
+    		return true;
+    	}
+    	return false;
     },
 
     disableDownloadButton: function() {
@@ -119,125 +270,149 @@ var TranslationWordsComponent = React.createClass({
 
     render: function() {
 		var _this = this;
-
-		if (false) {
-		    return (
-			    <UploadForm />
-		    );
+		var currentModal = null;
+		if (this.currentModal && this.state.showModal) {
+			currentModal = this.currentModal;
 		}
-		else {
-		    return (
-				<div>
-					<Well
-						style={{
-							display: this.state.showProgressBar ? 'block' : 'none'
-						}}
+			
+		
+	    // return (
+		   //  <UploadForm
+		   //  	assignCallback={
+		   //  		function(data) {
+		   //  			_this.currentBook = data;
+		   //  			console.dir(_this.currentBook);
+		   //  		}	
+		   //  	}
+		   //  	postErrorModal={this.setCurrentModal}
+		   //  	closeModal={this.modalClosed}
+		   //  />
+	    // );
+		
+	    return (
+			<div>
+				<Well
+					style={{
+						display: this.state.showProgressBar ? 'block' : 'none'
+					}}
+				>
+					<ProgressBar
+						
+						now={this.state.currentDownloadProgress}
+						min={0}
+						max={this.state.maxDownloadProgress}
+					/>
+				</Well>
+				{/* This isn't shown until showModal is called */ }
+				{
+					currentModal
+				}
+
+				<BookForm
+		    		validateBook = {this.validateBook}
+		    		ref = {'BookForm'}
+		    		enableDownload={this.enableDownloadButton}
+		    		disableDownload={this.disableDownloadButton}
+		    		callback={this.getBook}
+				/>
+				<br />
+				<ButtonGroup>
+					<UploadButton 
+						callback={this.uploadFile}
+					/>
+					{/* Download button */}
+					<Button 
+		    			onClick = {this.getBook}
+		    			disabled = {this.state.downLoadButtonDisabled}
 					>
-						<ProgressBar
-							
-							now={this.state.currentDownloadProgress}
-							min={0}
-							max={this.state.maxDownloadProgress}
+						<Glyphicon
+		    				glyph='download'
 						/>
-					</Well>
-					{/* This isn't shown until showModal is called */ }
-					<ErrorModal
-						ref={'errorModal'}
-						glyph={
-							<Glyphicon
-								glyph="remove-circle"
-								style={{
-									color: 'red'
-								}}
-							/>
-						}
-						buttons={[
-							<UploadButton 
-								callback={this.uploadFile}
-								key={1}
-							/>
-						]}
-						message={DISCONNECTED_MESSAGE + ' ' + this.tNHtmlScraper.getBaseLink()}
-						title={DISCONNECTED_TITLE}
-					/>
-
-					<BookForm
-			    		validateBook = {this.validateBook}
-			    		ref = {'BookForm'}
-			    		enableDownload={this.enableDownloadButton}
-			    		disableDownload={this.disableDownloadButton}
-					/>
-					<br />
-					<ButtonGroup>
-						<UploadButton 
-							callback={this.uploadFile}
+						<span>
+							{' ' + DOWNLOAD_BOOK}
+		    			</span>
+					</Button>
+					{/* Save button */}
+					<Button 
+						onClick = {this.saveBook}
+						disabled = {this.state.saveButtonDisabled}
+					>
+						<Glyphicon
+							glyph='floppy-disk'
 						/>
-						{/* Download button */}
-						<Button 
-			    			onClick = {this.getBook}
-			    			disabled = {this.state.downLoadButtonDisabled}
-						>
-							<Glyphicon
-			    				glyph='download'
-							/>
-							<span>
-								{' ' + DOWNLOAD_BOOK}
-			    			</span>
-						</Button>
-						{/* Save button */}
-						<Button 
-							onClick = {this.saveBook}
-							disabled = {this.state.saveButtonDisabled}
-						>
-							<Glyphicon
-								glyph='floppy-disk'
-							/>
-							<span>
-								{' ' + SAVE_TO_COMPUTER}
-							</span>
-						</Button>
-					</ButtonGroup>
-				</div>
-		    );
-		}
+						<span>
+							{' ' + SAVE_TO_COMPUTER}
+						</span>
+					</Button>
+				</ButtonGroup>
+			</div>
+	    );
+		
     },
 
     saveBook: function() {
-    	var filePath = '/assets/translationNotes/' + this.currentBook['abbreviation'] + '.json';
-    	FS.outputJson(filePath, this.currentBook, 
-    		function(err) {
-    			if (err) {
-    				//error
+    	var _this = this;
+    	if (this.currentBook) {
+    		var filePath = this.currentBook['abbreviation'] + '.json';
+    		dialog.showSaveDialog(
+    			{
+    				"title": "Save translationNotes for " + this.currentBook['abbreviation'],
+    				"defaultPath": filePath,
+    				"buttonLabel": SAVE_TO_COMPUTER,
+    			},
+    			function(path) { //dialog callback
+    				if (path) {
+	    				FS.outputJson(path, _this.currentBook, 
+		    				function(err) { //filestream's callback
+		    					if (err) {
+		    						_this.setCurrentModal(
+		    							<ErrorModal
+											glyph={
+												<Glyphicon
+													glyph={"remove-circle"}
+													style={{
+														color: 'red'
+													}}
+												/>
+											}
+											
+											message={UNABLE_TO_SAVE_MES + path + '\n\nError: ' + err}
+											title={UNABLE_TO_SAVE_TITLE}
+											closeCallback={
+												function() {
+													_this.modalClosed();
+
+												}
+											}
+										/>
+
+		    						);
+		    					}
+							}
+		    			);
+	    			}
     			}
-    		} 
-    	);
+    		);
+   		}
     },
 
+    //Downloads the book from the internet, fetches the name of the book from the book form
     getBook: function() {
-    	/*
-    	if (event && event.keyCode && event.keyCode == ENTER_KEY && 
-    		this.refs.BookForm && validateBook(this.refs.BookForm.getValue()) == 'success') {
-    		//just call the function again without an event
-    		this.getBook();
-    	}
-    	else if (event) {
-    		//event was passed but not enter_key
+    	
+			
+    	if (!this.refs.BookForm || 
+    		this.validateBook(this.refs.BookForm.getValue()) != 'success') { //sanity check
     		return;
     	}
-		*/	
-    	if (!this.refs.BookForm) { //sanity check
-    		return;
-    	}
+
     	var _this = this;
     	var bookAbr = this.refs.BookForm.getValue();
 
-    	this.setState({
-    		showProgressBar: true
-    	});
     	this.refs.BookForm.setHidden(true);
     	
     	this.setState({
-    		currentDownloadProgress: 0
+    		currentDownloadProgress: 0,
+    		showProgressBar: true
     	});
 
     	this.tNHtmlScraper.downloadEntireBook(bookAbr,
@@ -253,12 +428,12 @@ var TranslationWordsComponent = React.createClass({
     			_this.currentlyLoadedBooks[bookAbr]['abbreviation'] = bookAbr;
 
     			_this.refs.BookForm.setHidden(false);
-    			console.log('Done');
-    			var doesCurrentBookExist = _this.currentBook != null;
+    			
     			_this.currentBook = _this.currentlyLoadedBooks[bookAbr];
+    			var doesCurrentBookExist = _this.currentBook != undefined;
     			_this.setState({
     				showProgressBar: false,
-    				saveButtonDisabled: doesCurrentBookExist
+    				saveButtonDisabled: !doesCurrentBookExist
     			});
     		}
     	);
@@ -289,27 +464,6 @@ var TranslationWordsComponent = React.createClass({
 		    return 'error';
 		}
     }
-});
-
-//UploadForm
-var UploadForm = React.createClass({
-
-    uploadFile: function(text) {
-		
-    },
-    
-    render: function() {
-		return (
-			<Well
-		    	bsSize="sm"
-			>
-				<FileUploader 
-					callback={this.uploadFile}
-					prompt={JSON_SPECIFIER}
-				/>
-			</Well>
-		);
-    }  
 });
 
 /* A button that presumably triggers the upload form. Defined here so that it can
@@ -390,13 +544,19 @@ var BookForm = React.createClass({
 	    	style: style
 		});	    
     },
-
-    changeDisabled: function(disabled) {
-    	this.setState({
-    		disabled: disabled
-    	});
-    },
     
+    disable: function() {
+    	if (!this.state.disabled) {
+    		this.setState({
+    			disabled: true
+    		});
+
+    		this.changeStyle({
+    			cursor: 'not-allowed'
+    		});
+    	}
+    },
+
     setHidden: function(value) {
     	this.setState({
     		hidden: value
@@ -404,13 +564,21 @@ var BookForm = React.createClass({
     },
 
     render: function() {
+    	var _this = this;
 		return (
 			<Well
 				style={{
 					display: this.state.hidden ? 'none' : 'block'
 				}}
 				bsSize="sm">
-				<form>
+				<form
+					onSubmit={function(e) {
+						e.preventDefault();
+						if (_this.props.callback) {
+							_this.props.callback();
+						}
+					}}
+	    		>
 					<FormGroup
 	    				validationState={this.getValidationState()}
 					>
