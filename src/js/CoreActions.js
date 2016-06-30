@@ -6,19 +6,26 @@ Just require this file in your component, call
 one of the functions and the event will automatically
 be dispatched to all of the stores that have registered
 listener
+(See ExampleComponent.js)
 
 */
 module.exports = {
   nextCheck: function(newVerse) {
     Dispatcher.handleAction({
-      action: consts["NewVerse"],
+      type: consts["NewVerse"],
       newVerse: newVerse
     });
   },
   addCheck: function(newCheck) {
     Dispatcher.handleAction({
-      action: consts["AddCheck"],
+      type: consts["AddCheck"],
       newCheck: newCheck
+    });
+  },
+
+  addToExampleComponentText: function() {
+    Dispatcher.handleAction({
+      type: "ADD_TO_TEXT"
     });
   }
 
