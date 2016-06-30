@@ -11,10 +11,6 @@ body{
 	-webkit-transition: left 400ms ease;
 	-o-transition: left 400ms ease;
 	-ms-transition: left 400ms ease;
-
-
-
-
 }
 
 .burgerButton{
@@ -47,4 +43,52 @@ body{
 .menu a:hover{
 	background: black;
 
+}
+#login{
+  margin-top:10%;
+  float: left;
+  left: 40%;
+  position: relative;
+
+}
+
+.login-form{
+  position: absolute;
+  width: 300px;
+  height: 280px;
+  border: 2px solid;
+  border-radius: 7%;
+  font-size: 16px;
+  font-family: "Arial";
+  background-color: #51b46d;
+  text-align: center;
+  color: #555555;
+}
+.login-form-fields{
+  margin: 40px;
+
+}
+
+.login-form-fields input{
+
+  margin: 10px;
+  align-items: center;
+
+}
+
+button{
+ margin: 10px;
+ background-color: #555555;
+ color: white;
+ font-size: 14px;
+ border-radius: 8px;
+ border: none;
+ opacity: 0.8;
+ box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),
+  0 6px 20px 0 rgba(0,0,0,0.19);;
+}
+button:hover{
+  background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
 }
