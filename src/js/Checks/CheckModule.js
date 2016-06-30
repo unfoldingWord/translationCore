@@ -5,7 +5,8 @@ var PhraseChecker = require('./PhraseChecker');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Row = require('react-bootstrap/lib/Row.js');
-
+const LexicalChecker = require('./modules/lexical_checker/LexicalChecker');
+const TranslationNotesComponent = require('./modules/translation_notes/TranslationNotesComponent');
 
 var CheckModule = React.createClass({
   render: function() {

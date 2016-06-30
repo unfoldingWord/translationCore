@@ -21,7 +21,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   text-align: center;
   height: auto;
 }
-.check {
+.checkSection {
   border: 2px solid grey;
   border-radius: 3px;
   text-align: center;
@@ -62,7 +62,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	height: auto;
 	padding: auto;
 	z-index: 9999;
-	text-decoration:underline;;
+	text-decoration:none;
 }
 
 .menu a{
