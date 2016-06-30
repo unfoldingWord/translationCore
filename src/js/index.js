@@ -7,8 +7,14 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const menubar = require('./menubar');
+<<<<<<< HEAD
   
 var Root = require('./root');
+=======
+  const CommentBox = require('./CommentBox');
+  const NextButton = require('./NextButton');
+  const CheckingScreen =  require('./CheckingScreen');
+>>>>>>> 800bf3cdc31a5177a04f72fe581d5d4b2f2e794d
 
   var App = {
     init: function() {
