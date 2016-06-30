@@ -15,15 +15,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 .side {
-  border: 2px solid grey;
-  border-radius: 3px;
   position: fixed;
   text-align: center;
   height: auto;
 }
 .checkSection {
-  border: 2px solid grey;
-  border-radius: 3px;
   text-align: center;
   position:relative;
   height: auto;
@@ -42,8 +38,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   margin-top: auto;
 }
 .afterCheck {
-  border: 2px solid grey;
-  border-radius: 3px;
   height: auto;
   position:relative;
   text-align: center;

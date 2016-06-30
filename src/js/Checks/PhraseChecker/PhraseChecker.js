@@ -102,21 +102,21 @@ var PhraseChecker = React.createClass({
           </Col>
         </Row>
         <Row className="show-grid">
-          <Col xs={4} md={4}className="confirm-area">
+          <Col xs={6} md={6}className="confirm-area">
             <ConfirmDisplay
               note={this.state.note}
               toCheck={this.state.toCheck}
               selectedText={this.state.selectedText}
             />
           </Col>
-          <Col xs={4} md={4}>
+          <Col xs={6} md={6}>
             <FlagDisplay
               setFlagState={this.setFlagState}
             />
           </Col>
         </Row>
         <Row>
-          <Col xs={4} md={4}className="next-button">
+          <Col xs={6} md={6}className="next-button">
             <NextButton nextItem={this.appendReturnObject}/>
           </Col>
         </Row>
