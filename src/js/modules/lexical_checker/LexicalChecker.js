@@ -2,20 +2,20 @@
   lexicalChecker.js
 */
 
-var React = require('react');
+const React = require('react');
 
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-var Well = require('react-bootstrap/lib/Well.js');
-var Button = require('react-bootstrap/lib/Button.js');
-var ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const Well = require('react-bootstrap/lib/Well.js');
+const Button = require('react-bootstrap/lib/Button.js');
+const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 
-var dummyDefinition = "BiblicalWord: biblical definition";
-var targetLanguage = "A verse from the Bible that you can select";
+const dummyDefinition = "BiblicalWord: biblical definition";
+const targetLanguage = "A verse from the Bible that you can select";
 
-var REPLACE_TEXT = "Replace";
-var RETAIN_TEXT = "Retain";
+const REPLACE_TEXT = "Replace";
+const RETAIN_TEXT = "Retain";
 				 
-var LexicalChecker = React.createClass({
+const LexicalChecker = React.createClass({
     
     render: function() {
 		return (
