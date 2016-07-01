@@ -140,7 +140,7 @@ const FileUploader = React.createClass({
     */
 
     /**
-     * @Description: Gets json object from json file
+     * @description: Gets json object from json file
      * @param {string} path - file path
      * @param {function} assignCallback - callback that gets 
      	called with the parsed json as a param: assignCallback(data)
@@ -156,6 +156,7 @@ const FileUploader = React.createClass({
     			if (!err) {
     				assignCallback(data);
     			}
+                
   			}
   		);
   	}

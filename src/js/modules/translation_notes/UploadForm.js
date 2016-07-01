@@ -34,7 +34,7 @@ const UploadForm = React.createClass({
 						
 					}
 					/* Don't close it here, close it in Assign callback, 
-						after TranslationWordsComponent verifies it */
+						after TranslationNotesComponent verifies it */
 					// if (_this.props.closeModal) {
 					// 	_this.props.closeModal();
 					// }
@@ -79,7 +79,7 @@ const UploadForm = React.createClass({
     	if (this.props.assignModalButtons) {
     		console.log('assigning buttons');
     		this.props.assignModalButtons([ /* gives the parent modal object
-    											more buttons and more functionality
+    											more buttons
     										*/
     			//Upload file button
     			<Button 
