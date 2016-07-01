@@ -12,7 +12,7 @@ catch (error) {
 }
 
 
-db.exec('CREATE TABLE people (name text, shirt text);');
+db.exec('create table people (name text, shirt Text);');
 db.exec('insert into people (name, shirt) VALUES ("Joe", "Green");');
 
 module.exports = db.SQL;

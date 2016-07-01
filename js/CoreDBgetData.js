@@ -1,42 +1,43 @@
+var CoreDBGet = React.createClass({
 
-function errorHandler(transaction, error)
+errorHandler: function (transaction, error)
 {
   alert('Oops. Error was '+error.message+' (Code '+error.code+')');
   var we_think_this_error_is_fatal = true;
   if (we_think_this_error_is_fatal) return true;
   return false;
-}
+},
 
-function successHandler() {
-               alert("success!");
-}
+successHandler: function () {
+    alert("success!");
+},
 
-function myTransactionErrorCallback(error)
+myTransactionErrorCallback: function (error)
 {
     alert('Oops.  Error was '+error.message+' (Code '+error.code+')');
-}
+},
 
-function myTransactionSuccessCallback()
+myTransactionSuccessCallback: function ()
 {
     alert("Transaction complete.");
-}
+},
 
+GetData: function () {
+var db;
 try {
     if (!window.openDatabase) {
         alert('not supported');
     } else {
       //name for created database as stored on disk or library
-        var shortName = 'test.sqlite';
-
+      //TODO:Possibly require path and ask jay to do test data
+        var shortName = 'test';
         //statement for variabled to hold correct database version
         var version = '1.0';
-
-
         //name for database to be used by browser that describes database to user
         var displayName = 'flagDB';
         var maxSize = 65536; // in bytes
-        var db = window.openDatabase(shortName, version, displayName, maxSize);
-
+        db = window.openDatabase(shortName, version, displayName, maxSize);
+        //TODO: study update state
         //if statement doesnt work then use this for database version
         //var version = db.version;
 
@@ -50,7 +51,6 @@ try {
     } else {
         alert("Unknown error "+e+".");
     }
-
 }
 
 alert("Database is: "+db);
@@ -62,11 +62,8 @@ var colCount = false;
 //create mainData object to hold DB info
 var mainData;
 
-
-var db = window.openDatabase( shortName, version, displayName, maxSize);
-
 db.transaction(function(transaction) {
-    transaction.executeSql('SELECT * FROM SoccerPlayer;', [],
+    transaction.executeSql('SELECT * FROM Checks;', [],
     function(transaction, result) {
 
         if (result !== null && result.rows !== null) {
@@ -75,6 +72,7 @@ db.transaction(function(transaction) {
                 if (height === 0)
                 {
                   tableName[i] = result.rows.item(i);
+                  console.log(tableName);
 
                 }
                 else if (height >= 1)
@@ -87,7 +85,7 @@ db.transaction(function(transaction) {
                 if (colCount === true)
                 {
                     mainData += tableName[i] + ": " + result.rows.item(i);
-                    mainData = "<br/>";
+                    mainData += "\r\n" + "\n";
                 }
 
             }
@@ -98,9 +96,28 @@ db.transaction(function(transaction) {
         //test to see if database worked
         console.log("Its working!!!");
 
-
+        console.log(mainData);
         //return mainData js object so they can recieve DB data
         return (mainData);
     }, errorHandler);
 }, myTransactionErrorCallback, myTransactionSuccessCallback
 );
+},
+
+render: function() {
+  var data = this.DataGet().toString();
+  console.log(data);
+  return (
+    <div>
+      {data}
+    </div>
+  );
+}
+
+});
+
+ReactDOM.render(<CoreDBGet />, document.getElementById('app'));
+
+//TODO: Ask about requiring and not
+//TODO: Ask about es6 and es5
+//TODO: Ask about GitHub or study it
