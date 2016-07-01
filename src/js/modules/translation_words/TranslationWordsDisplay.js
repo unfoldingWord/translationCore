@@ -2,24 +2,24 @@
 //TranslationWordsDisplay.js//
 
 //Node Modules
-var React = require('react');
-var Markdown = require('react-remarkable');
+const React = require('react');
+const Markdown = require('react-remarkable');
 
 //Bootstrap
-var FormGroup = require('react-bootstrap/lib/FormGroup.js');
-var Well = require('react-bootstrap/lib/Well.js');
-var ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-var FormControl = require('react-bootstrap/lib/FormControl.js');
-var Modal = require('react-bootstrap/lib/Modal.js');
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-var Button = require('react-bootstrap/lib/Button.js');
+const FormGroup = require('react-bootstrap/lib/FormGroup.js');
+const Well = require('react-bootstrap/lib/Well.js');
+const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
+const FormControl = require('react-bootstrap/lib/FormControl.js');
+const Modal = require('react-bootstrap/lib/Modal.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const Button = require('react-bootstrap/lib/Button.js');
 
 //Components
-var TranslationWordsScraper = require('./TranslationWordsScraper');
-var ErrorModal = require('./ErrorModal');
+const TranslationWordsScraper = require('./TranslationWordsScraper');
+const ErrorModal = require('./ErrorModal');
 
 //english constants
-var DEFAULT = 'translationWords',
+const DEFAULT = 'translationWords',
 	WORD_QUERY = 'Type in word from translationWords',
 	DEFAULT_PLACEHOLDER = 'ex: rehoboam',
 	CLOSE = 'Close',
@@ -29,7 +29,7 @@ var DEFAULT = 'translationWords',
 	UNABLE_TO_GET_WORDS_TITLE = 'Unable to download information',
 	UNABLE_TO_GET_WORDS_SHORT = 'Unable to retrieve list of words';
 
-var TranslationWordsDisplay = React.createClass({
+const TranslationWordsDisplay = React.createClass({
 
 	tWHtmlScraper: null,
 

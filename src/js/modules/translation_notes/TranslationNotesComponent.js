@@ -2,34 +2,34 @@
 //TranslationWords//
 
 //Node modules
-var React = require('react');
-var ReactDOM = require('react-dom');
-var FS = require(window.__base + '/node_modules/fs-extra');
-var electron = window.electron;
-var remote = window.electron.remote;
-var {dialog} = remote;
+const React = require('react');
+const ReactDOM = require('react-dom');
+const FS = require(window.__base + '/node_modules/fs-extra');
+const electron = window.electron;
+const remote = window.electron.remote;
+const {dialog} = remote;
 
 
 //Module imports
-var TranslationNotesHTMLScraper = require('./HTMLScraper.js');
-var FileUploader = require('./FileUploader.js');
-var ErrorModal = require('./ErrorModal.js');
-var UploadForm = require('./UploadForm');
+const TranslationNotesHTMLScraper = require('./HTMLScraper.js');
+const FileUploader = require('./FileUploader.js');
+const ErrorModal = require('./ErrorModal.js');
+const UploadForm = require('./UploadForm');
 
 //Bootstrap for dayz
-var FormGroup = require('react-bootstrap/lib/FormGroup.js');
-var FormControl = require('react-bootstrap/lib/FormControl.js');
-var ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-var Well = require('react-bootstrap/lib/Well.js');
-var Button = require('react-bootstrap/lib/Button.js');
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-var ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
-var Modal = require('react-bootstrap/lib/Modal.js');
-var HelpBlock = require('react-bootstrap/lib/HelpBlock.js');
-var ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
+const FormGroup = require('react-bootstrap/lib/FormGroup.js');
+const FormControl = require('react-bootstrap/lib/FormControl.js');
+const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
+const Well = require('react-bootstrap/lib/Well.js');
+const Button = require('react-bootstrap/lib/Button.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
+const Modal = require('react-bootstrap/lib/Modal.js');
+const HelpBlock = require('react-bootstrap/lib/HelpBlock.js');
+const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 
 //hardcoded english constants
-var BOOK_QUERY = 'Type in Book Name',
+const BOOK_QUERY = 'Type in Book Name',
     BOOK_EXAMPLE = 'Ex: "Ephesians"',
     DOWNLOAD_BOOK = "Download Book",
     UPLOAD_FROM_COMPUTER = "Upload Book",
@@ -49,7 +49,7 @@ var BOOK_QUERY = 'Type in Book Name',
     INVALID_BOOK_TITLE = "Unable to parse file";
 
 
-var TranslationNotesComponent = React.createClass({
+const TranslationNotesComponent = React.createClass({
     //this requires the internet, which at some point there needs to be a way to get the information
     //from local storage
     tNHtmlScraper: new TranslationNotesHTMLScraper(),
@@ -457,12 +457,14 @@ var TranslationNotesComponent = React.createClass({
 			
 		    return 'warning';
 		}
+		if (str.length == 0) {
+			return;
+		}
 		if (str in this.bookAbbreviations) {
 				    
 		    return 'success';
 		}
 		else {
-			
 		    return 'error';
 		}
     }

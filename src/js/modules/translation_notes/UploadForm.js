@@ -2,26 +2,26 @@
 //UploadForm.js//
 
 //Node Modules
-var React = require('react');
+const React = require('react');
 
 //Components
-var FileUploader = require('./FileUploader');
-var ErrorModal = require('./ErrorModal');
+const FileUploader = require('./FileUploader');
+const ErrorModal = require('./ErrorModal');
 
 //Bootstrap
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-var Well = require('react-bootstrap/lib/Well.js');
-var Button = require('react-bootstrap/lib/Button.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const Well = require('react-bootstrap/lib/Well.js');
+const Button = require('react-bootstrap/lib/Button.js');
 
 //English constants
-var JSON_SPECIFIER = "Drag and drop or click to import .JSON file",
+const JSON_SPECIFIER = "Drag and drop or click to import .JSON file",
 	UPLOAD_FILE = "Upload File",
 	BACK = "Back",
 	UNABLE_TO_OPEN_MES = "Unable to open file: ",
     UNABLE_TO_OPEN_TITLE = "Open failed";
 
 //UploadForm
-var UploadForm = React.createClass({
+const UploadForm = React.createClass({
 
     uploadFile: function() {
     	var _this = this;

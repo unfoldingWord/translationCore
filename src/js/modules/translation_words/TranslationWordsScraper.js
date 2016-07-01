@@ -1,6 +1,6 @@
 
-var BASE_LINK = "https://git.door43.org/";
-var TW_LINK = "Door43/tw-en/src/master/01";
+const BASE_LINK = "https://git.door43.org/";
+const TW_LINK = "Door43/tw-en/src/master/01";
 
 //TranslationWordsScraper.js//
 

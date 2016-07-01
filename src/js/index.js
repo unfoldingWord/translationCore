@@ -29,7 +29,7 @@
   var App = {
     init: function() {
     	ReactDOM.render(
-    		<Lexical />,
+    		<TranslationNotesComponent />,
     		document.getElementById('content'));
     }
   };

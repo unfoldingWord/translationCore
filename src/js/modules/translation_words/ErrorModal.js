@@ -2,14 +2,14 @@
 //ErrorModal.js//
 
 //Bootstrap
-var Modal = require('react-bootstrap/lib/Modal.js');
-var Button = require('react-bootstrap/lib/Button.js');
+const Modal = require('react-bootstrap/lib/Modal.js');
+const Button = require('react-bootstrap/lib/Button.js');
 
 //Node modules
-var React = require('react');
+const React = require('react');
 
 //Hard coded english strings
-var CLOSE = "Close";
+const CLOSE = "Close";
 
 /**
  * @description: An Error modal class that will animate and fall from the top of the screen
@@ -21,7 +21,7 @@ var CLOSE = "Close";
  * @param {string} message - displays in the modal's body
  * @param {function} closedCallback - if provided it's called whenever the modal is closed
 */
-var ErrorModal = React.createClass({
+const ErrorModal = React.createClass({
 	getInitialState: function() {
 	    return {
 	    	isShown: true

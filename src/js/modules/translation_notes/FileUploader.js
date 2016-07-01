@@ -10,19 +10,19 @@ const remote = window.electron.remote;
 const {dialog} = remote;
 const React = require('react');
 const ReactDOM = require('react-dom');
-var FS = require(window.__base + '/node_modules/fs-extra');
+const FS = require(window.__base + '/node_modules/fs-extra');
 
 //Bootstrap modules
-var Well = require('react-bootstrap/lib/Well.js');
-var Grid = require('react-bootstrap/lib/Grid.js');
-var Col = require('react-bootstrap/lib/Col.js');
-var Row = require('react-bootstrap/lib/Row.js');
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const Well = require('react-bootstrap/lib/Well.js');
+const Grid = require('react-bootstrap/lib/Grid.js');
+const Col = require('react-bootstrap/lib/Col.js');
+const Row = require('react-bootstrap/lib/Row.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 
 //english constants
-var PROMPT = "Drag files here to upload, or click to select a file";
+const PROMPT = "Drag files here to upload, or click to select a file";
 
-var FileUploader = React.createClass({
+const FileUploader = React.createClass({
 
 	getInitialState: function() {
 	    return {
@@ -39,7 +39,6 @@ var FileUploader = React.createClass({
 	    	}
 	    }
 
-	    
   	},
 
   	getPath: function() {
@@ -150,7 +149,7 @@ var FileUploader = React.createClass({
   	getJsonFile: function(path, assignCallback, errorCallback) {
   		console.log('Path: ' + path);
   		FS.readJson(path, 
-  			function(err, data) {
+  			function(err, data) { //reads in a json object (data) from the path
   				if (err && errorCallback) {
     				errorCallback(err)
     			}

@@ -1,5 +1,5 @@
 
-var BOOK_IDENTIFIER = 'class="name">',
+const BOOK_IDENTIFIER = 'class="name">',
     CHAPTER_IDENTIFIER = '<td class="name">',
     BOOK_END_IDENTIFIER = '</td>',
     CHAPTER_END_IDENTIFIER = '</td>',
