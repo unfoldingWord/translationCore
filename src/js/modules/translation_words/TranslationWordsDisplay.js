@@ -10,16 +10,24 @@ var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var Well = require('react-bootstrap/lib/Well.js');
 var ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
-
+var Modal = require('react-bootstrap/lib/Modal.js');
+var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+var Button = require('react-bootstrap/lib/Button.js');
 
 //Components
 var TranslationWordsScraper = require('./TranslationWordsScraper');
-
+var ErrorModal = require('./ErrorModal');
 
 //english constants
 var DEFAULT = 'translationWords',
 	WORD_QUERY = 'Type in word from translationWords',
-	DEFAULT_PLACEHOLDER = 'ex: aaron'
+	DEFAULT_PLACEHOLDER = 'ex: rehoboam',
+	CLOSE = 'Close',
+	PLEASE_WAIT_TITLE = 'Please wait...',
+	PLEASE_WAIT_MESSAGE = 'Please wait while translationWords information is being downloaded',
+	UNABLE_TO_GET_WORDS_MESSAGE = 'Unable to get translationWords from URL: ',
+	UNABLE_TO_GET_WORDS_TITLE = 'Unable to download information',
+	UNABLE_TO_GET_WORDS_SHORT = 'Unable to retrieve list of words';
 
 var TranslationWordsDisplay = React.createClass({
 
@@ -29,6 +37,10 @@ var TranslationWordsDisplay = React.createClass({
 
 	currentMarkdown: null,
 
+	currentModal: null,
+
+	previousModals: [],
+
 	getInitialState: function() {
 	    return {
 	    	wordListEmpty: true,
@@ -36,7 +48,9 @@ var TranslationWordsDisplay = React.createClass({
 	    	dropdownPushed: false,
 	    	placeHolder: DEFAULT_PLACEHOLDER,
 	    	value: '',
-	    	markdownToggle: false
+	    	markdownToggle: false,
+	    	showModal: true,
+	    	shouldShowBox: false
 	    };
 	},
 
@@ -44,6 +58,36 @@ var TranslationWordsDisplay = React.createClass({
 		var _this = this;
 	    this.tWHtmlScraper = new TranslationWordsScraper();
 	    
+	    this.setCurrentModal(
+	    	<Modal show={true} onHide={_this.modalClosed}>
+    			<Modal.Header>
+    				<Modal.Title>
+    					<span>
+    						<Glyphicon
+    							glyph="alert"
+    							style={{
+    								color: "orange"
+    							}}
+    						/>
+    						{' ' + PLEASE_WAIT_TITLE}
+    					</span>
+    				</Modal.Title>
+    			</Modal.Header>
+    			<Modal.Body
+    				style={{
+    					textAlign: 'center'
+    				}}
+    			>
+    				<p>
+    					<img src="./src/js/modules/translation_words/default.gif"></img>
+    				</p>
+    				{PLEASE_WAIT_MESSAGE}
+    			</Modal.Body>
+    			<Modal.Footer>
+    			</Modal.Footer>
+    		</Modal>
+	    );
+
 	    this.tWHtmlScraper.getWordList(
 	    	null, //link
 
@@ -52,17 +96,65 @@ var TranslationWordsDisplay = React.createClass({
 				_this.setState({
 					wordListEmpty: false
 				});
-				console.log('done');
+				_this.modalClosed();
 			},
 
 			function() { //errorCallback
 				console.error('Words Scraper failed');
+				_this.modalClosed(); /* we're going to put up another modal
+										but we don't want to revert back to the old
+										one once user clicks out of the errormodal
+									*/
+				_this.changePlaceHolder(UNABLE_TO_GET_WORDS_SHORT);
+				_this.setCurrentModal(
+					<ErrorModal
+						glyph={
+							<Glyphicon
+								glyph={"remove-circle"}
+								style={{
+									color: 'red'
+								}}
+							/>
+						}
+						
+						message={UNABLE_TO_GET_WORDS_MESSAGE + _this.tWHtmlScraper.getLink()}
+						title={UNABLE_TO_GET_WORDS_TITLE}
+						closeCallback={
+							function() {
+								_this.modalClosed();
+							}
+						}
+					/>
+				);
 			}
 		);
 	},
 
+	//sets the current modal, or, if there already is one, pushes the old one onto a stack
+	setCurrentModal: function(modal) {
+    	if (this.currentModal) {
+    		this.previousModals.push(this.currentModal);
+    		this.currentModal = null;
+    	}
+    	this.currentModal = modal;
+    	this.setState({
+    		showModal: true
+    	});
+    },
+
+    modalClosed: function() {
+    	if (this.currentModal) { //sanity check
+    		this.currentModal = this.previousModals.pop() || null;
+    	}
+
+    	this.setState({
+    		showModal: (this.currentModal != null)
+    	});
+    },
+
 	render: function() {
 		var _this = this;
+		
 		return (
 			<Well>
 				<div
@@ -70,6 +162,7 @@ var TranslationWordsDisplay = React.createClass({
 						textAlign: "center"
 					}}
 				>
+					{this.currentModal}
 					<form
 						onSubmit={function(e) {
 							e.preventDefault();
@@ -86,17 +179,16 @@ var TranslationWordsDisplay = React.createClass({
 		    					value={this.state.value}
 		    					placeholder={this.state.placeHolder}
 		    					onChange={this.handleChange}
-		    					disabled={this.state.disabled}
 							/>
 							<FormControl.Feedback />
 						</FormGroup>
 					</form>
 				</div>
-				<br />
+				
 				<div
 					style={{
-						minHeight: "200px",
-						maxHeight: "300px",
+						minHeight: "250px",
+						maxHeight: "250px",
 						overflowY: "scroll"
 					}}
 				>
@@ -107,6 +199,10 @@ var TranslationWordsDisplay = React.createClass({
 		);
 	},
 
+	/**
+	 * Sets the attribute 'currentMarkdown' from the file returned from
+	 * the htmlscraper
+	*/ 
 	displayWord: function(word) {
 		this.setState({
 			currentWord: word
@@ -146,16 +242,19 @@ var TranslationWordsDisplay = React.createClass({
 	},
 
 	getValidationState: function() {
-		if (this.state.wordListEmpty) {
-			return 'warning';
+		if (!this.wordList) { //failed to get wordlist from internet
+			return 'error';
 		}
-		if (this.state.value + '.md' in this.wordList) {
+		if (this.state.value.length <= 0) { //user hasn't typed anything
+			return;
+		}
+		
+		if (this.state.value + '.md' in this.wordList) { //yay!
 			return 'success';
 		}
-		return 'error';
+		return 'error'; //boo
 	}
 
 });
-
 
 module.exports = TranslationWordsDisplay;

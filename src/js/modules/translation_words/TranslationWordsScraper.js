@@ -7,24 +7,31 @@ var TW_LINK = "Door43/tw-en/src/master/01";
 class TranslationWordsScraper {
 	constructor () {
 		this.wordList = null;
+		this.link = null;
+	}
+
+	getLink() {
+		return this.link;
 	}
 
 	getWord(key, assignCallback, errorCallback) {
 		if (!this.wordList) {
 			return;
 		}
-		if (this.wordList[key]['link']) {
+		if (this.wordList[key]['file']) {
+			console.log('assigning');
 			if (assignCallback) {
 				assignCallback(this.wordList[key]['file']);
 			}
 		}
+		else {
 		var request = new XMLHttpRequest();
 		var _this = this;
 		request.onload = function() {
 			var link = _this.wordList[key].replace('src', 'raw');
 			_this.wordList[key] = {
-				link: link,
-				file: this.response //this refers to XMLHttpRequest
+				"link": link,
+				"file": this.response //this refers to XMLHttpRequest
 			}
 			if (assignCallback) {
 				assignCallback(this.response); //pass the file to the callback
@@ -45,6 +52,7 @@ class TranslationWordsScraper {
 		console.log('URL: ' + url);
 		request.open('get', url, true);
 		request.send();
+		}
 	}
 
 	getWordList(link, assignCallback, errorCallback) {
@@ -69,7 +77,7 @@ class TranslationWordsScraper {
 		}
 
 		var url = link || BASE_LINK + TW_LINK;	
-		
+		this.link = url;
 		request.open('get', url, true);
 		request.send();
 	}
