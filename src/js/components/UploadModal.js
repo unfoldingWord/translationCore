@@ -2,20 +2,24 @@
  * @author Ian Hoegen
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
-const FileUpload = require('./fileupload');
 const React = require('react');
-const Modal = require('react-bootstrap/lib/Modal.js');
+
 const Button = require('react-bootstrap/lib/Button.js');
-const FileActions = require('./FileActions');
+const Modal = require('react-bootstrap/lib/Modal.js');
+
+const CoreStore = require('../stores/CoreStore.js');
+
+const FileUpload = require('./FileUpload');
+
 const UploadModal = React.createClass({
   componentWillMount: function() {
-    FileActions.on('upload', this.userChoice);
+    CoreStore.addChangeListener(this.updateModal);
+  },
+  updateModal: function() {
+    this.setState({showModal: CoreStore.getModal()});
   },
   getInitialState: function() {
     return {showModal: false};
-  },
-  userChoice: function(boolean) {
-    this.setState({showModal: boolean});
   },
   close: function() {
     this.setState({showModal: false});

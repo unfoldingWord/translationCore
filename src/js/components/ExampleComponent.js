@@ -1,10 +1,10 @@
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
-var CoreStore = require('./CoreStore.js');
-var CoreActions = require('./CoreActions.js');
+var CoreStore = require('../stores/CoreStore.js');
+var CoreActions = require('../actions/CoreActions.js');
 /**
 
-This is an example component that follows the Flux 
+This is an example component that follows the Flux
 pattern. Any time data needs to be changed, it sends
 out an actions using CoreActions. It also gets its
 data from CoreStore.
@@ -15,7 +15,7 @@ class ExampleComponent extends React.Component {
 
   constructor() {
     super();
-    this.state = { ptext: CoreStore.getExampleComponentText() };
+    this.state = {ptext: CoreStore.getExampleComponentText()};
   }
 
   getText() {
@@ -27,7 +27,7 @@ class ExampleComponent extends React.Component {
   addToText() {
     CoreActions.addToExampleComponentText();
   }
-  
+
   // ExampleComponent listens for CoreStore's emits
   // so it can know when it needs to update its data
   componentWillMount() {
@@ -46,5 +46,5 @@ class ExampleComponent extends React.Component {
       </div>
     );
   }
-};
+}
 module.exports = ExampleComponent;

@@ -3,20 +3,28 @@
  *               the more traditional click and open file upload system.
  * @author: Ian Hoegen
  ******************************************************************************/
-const Dropzone = require('react-dropzone');
-const FM = require('./filemodule.js');
-const remote = window.electron.remote;
-const parser = require('./usfm-parse.js');
-const {dialog} = remote;
 const React = require('react');
-const FileActions = require('./FileActions');
-const Book = require('./bibletext');
+
+const Dropzone = require('react-dropzone');
+const FileModule = require('./FileModule');
+
+const remote = window.electron.remote;
+const {dialog} = remote;
+
+const CoreActions = require('../actions/CoreActions.js');
+
+const Book = require('./Book');
+
+const parser = require('./usfm-parse.js');
+const style = require('./Style');
+
 var manifestSource = '';
 var bookName = '';
 var joinedChunks = {};
 var currentChapter = '';
+var bookTitle = "";
 
-var FileUploader = React.createClass({
+const FileUploader = React.createClass({
   onDrop: function(files) {
     if (files !== undefined) {
       sendToReader(files[0].path);
@@ -33,38 +41,18 @@ var FileUploader = React.createClass({
   },
 
   render: function() {
-    var style = {
-      dropzone: {
-        width: '100%',
-        color: '#212121',
-        height: '200px',
-        border: '2px dashed #727272',
-        borderRadius: '5px',
-        fontSize: '25px'
-      },
-      dropzoneActive: {
-        border: '2px solid #727272',
-        backgroundColor: '#f5f5f5'
-      },
-      dropzoneText: {
-        lineHeight: '200px',
-        verticalAlign: 'middle',
-        width: '100%'
-      }
-    };
     return (
     <div onClick = {this.onClick} >
-      <Dropzone onDrop = {this.onDrop}
-        disableClick={true} multiple={false} style={style.dropzone}
-        activeStyle={style.dropzoneActive}>
-        <div style={style.dropzoneText}>
-          <center>
-            Drag files here to upload, or click to select a file
-          </center>
-          </div>
+        <Dropzone onDrop = {this.onDrop}
+        disableClick={true} multiple={false} style={style.dropzone.main}
+        activeStyle={style.dropzone.active}>
+            <div style={style.dropzone.text}>
+              <center>
+                Drag files here to upload, or click to select a file
+              </center>
+            </div>
       </Dropzone>
     </div>
-
   );
   }
 
@@ -80,8 +68,7 @@ module.exports = FileUploader;
 function sendToReader(file) {
   try {
     manifestSource = file;
-    FM.readFile(file + '/manifest.json', readInManifest);
-    FileActions.setState(false);
+    FileModule.readFile(file + '/manifest.json', readInManifest);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
     'your folder includes a manifest.json file.');
@@ -93,15 +80,16 @@ function sendToReader(file) {
  * @param {string} manifest - The manifest.json file
  ******************************************************************************/
 function readInManifest(manifest) {
+  CoreActions.updateModal(false);
   let parsedManifest = JSON.parse(manifest);
-  let bookTitle = parsedManifest.project.name;
+  bookTitle = parsedManifest.project.name;
   let bookTitleSplit = bookTitle.split(' ');
   bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
   try {
-    FM.readFile('data/ulgb/' + bookFileName, openOriginal);
+    FileModule.readFile('data/ulgb/' + bookFileName, openOriginal);
   } catch (error) {
-    console.log("File not found");
+    console.log(error);
   }
   let finishedChunks = parsedManifest.finished_chunks;
   for (let chapterVerse in finishedChunks) {
@@ -110,7 +98,7 @@ function readInManifest(manifest) {
       openUsfmFromChunks(splitted);
     }
   }
-  FileActions.changeTargetText(<Book input={joinedChunks}/>);
+  CoreActions.updateTargetLanguage(joinedChunks);
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
@@ -119,8 +107,8 @@ function readInManifest(manifest) {
 function openUsfmFromChunks(chunk) {
   currentChapter = chunk[0];
   try {
-    FM.readFile(manifestSource + '/' + chunk[0] + '/' + chunk[1] +
-  '.txt', saveChunksLocal);
+    FileModule.readFile(manifestSource + '/' + chunk[0] + '/' + chunk[1] +
+  '.txt', joinChunks);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Unknown error has occurred');
     console.log(error);
@@ -130,7 +118,7 @@ function openUsfmFromChunks(chunk) {
  * @description This function saves the chunks locally as a window object;
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
-function saveChunksLocal(text) {
+function joinChunks(text) {
   var currentJoined = joinedChunks;
   if (currentChapter === '00') {
     currentJoined.title = text;
@@ -155,5 +143,6 @@ function saveChunksLocal(text) {
  ******************************************************************************/
 function openOriginal(text) {
   var input = JSON.parse(text);
-  FileActions.changeOriginalText(<Book input={input[bookName]} />);
+  input[bookName].title = bookTitle;
+  CoreActions.updateOriginalLanguage(input[bookName]);
 }
