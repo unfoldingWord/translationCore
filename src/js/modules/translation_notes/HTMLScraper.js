@@ -72,59 +72,59 @@ class TranslationNotesHTMLScraper {
     */    
 	
     downloadEntireBook(bookAbr, progressCallback, doneCallback) {
-	var _this = this;
-	if (!this.bookAbbreviations) { //getBookAbbreviations hasn't been called yet
-	    this.getBookAbbreviations(null,        //set the setterFunction to null
-				      function() { /* and the finishedCallback to this
-						      anonymous function that will call
-						      downloadEntireBook again, after the
-						      abbreviations have been retrieved
-						   */
-					  _this.downloadEntireBook(bookAbr, progressCallback, doneCallback);
-				      });
-	    return; //make sure we don't do it again
-	}
-	if (!this.bookAbbreviations[bookAbr]['chapters']) { /* getChapters hasn't been called for 
-							       this bookAbr yet
-							    */
-	    this.getChapters(bookAbr,
-			     function() {
-				 _this.downloadEntireBook(bookAbr, progressCallback, doneCallback);
-			     });
-	    return;
-	}
+		var _this = this;
+		if (!this.bookAbbreviations) { //getBookAbbreviations hasn't been called yet
+		    this.getBookAbbreviations(null,        //set the setterFunction to null
+					      function() { /* and the finishedCallback to this
+							      anonymous function that will call
+							      downloadEntireBook again, after the
+							      abbreviations have been retrieved
+							   */
+						  _this.downloadEntireBook(bookAbr, progressCallback, doneCallback);
+					      });
+		    return; //make sure we don't do it again
+		}
+		if (!this.bookAbbreviations[bookAbr]['chapters']) { /* getChapters hasn't been called for 
+								       this bookAbr yet
+								    */
+		    this.getChapters(bookAbr,
+				     function() {
+					 _this.downloadEntireBook(bookAbr, progressCallback, doneCallback);
+				     });
+		    return;
+		}
 
-	
-	this.maxChapters = this.getMaxChapters(bookAbr);
-	this.doneChapters = 0;
-	this.doneVerses = 0;
-	this.maxVerses = 0;
-	for (var chapter in this.bookAbbreviations[bookAbr]['chapters']) {
-	    this.getVerses(bookAbr, chapter,
-			   function() {
-			       /* if (_this.maxVerses == 0) {
-				   _this.maxVerses = _this.getMaxVerses(bookAbr);
-			       }
-			       */
-			       _this.doneChapters++;
-			       if (_this.doneChapters == _this.maxChapters) {
-				   _this.maxVerses = _this.getMaxVerses(bookAbr);
-				   for (var chapter in _this.bookAbbreviations[bookAbr]['chapters']) {
-				       for (var verse in _this.bookAbbreviations[bookAbr]['chapters'][chapter]['verses']) {	   
-					   _this.getVerseFiles(bookAbr, chapter, verse,
-							       function() {
-								   _this.doneVerses++;
-								   progressCallback(_this.doneVerses, _this.maxVerses);
-								   if (_this.doneVerses == _this.maxVerses) {
-								       doneCallback();
-								   }
-							       });
+		
+		this.maxChapters = this.getMaxChapters(bookAbr);
+		this.doneChapters = 0;
+		this.doneVerses = 0;
+		this.maxVerses = 0;
+		for (var chapter in this.bookAbbreviations[bookAbr]['chapters']) {
+		    this.getVerses(bookAbr, chapter,
+				   function() {
+				       /* if (_this.maxVerses == 0) {
+					   _this.maxVerses = _this.getMaxVerses(bookAbr);
 				       }
-				       
-				   }				  
-			       }
-			   });
-	}
+				       */
+				       _this.doneChapters++;
+				       if (_this.doneChapters == _this.maxChapters) {
+					   _this.maxVerses = _this.getMaxVerses(bookAbr);
+					   for (var chapter in _this.bookAbbreviations[bookAbr]['chapters']) {
+					       for (var verse in _this.bookAbbreviations[bookAbr]['chapters'][chapter]['verses']) {	   
+						   _this.getVerseFiles(bookAbr, chapter, verse,
+								       function() {
+									   _this.doneVerses++;
+									   progressCallback(_this.doneVerses, _this.maxVerses);
+									   if (_this.doneVerses == _this.maxVerses) {
+									       doneCallback();
+									   }
+								       });
+					       }
+					       
+					   }				  
+				       }
+				   });
+		}
     }
 
     getMaxVerses(bookAbr) {
