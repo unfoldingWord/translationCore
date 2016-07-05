@@ -10,8 +10,8 @@ var gulp = require('gulp'),
 
 // Define paths
 var paths = {
-  indexJS: ['./src/js/index.js'],
-  js: ['src/js/*.js']
+  indexJS: ['./src/js/pages/index.js'],
+  js: ['src/js/**/*.js']
 };
 
 // The default task (called when we run `gulp` from cli)
@@ -47,7 +47,7 @@ gulp.task('lint', shell.task([
 
 gulp.task('fixLint', shell.task([
   'eslint --fix src/js/*'
-])).on('error', silentError)
+])).on('error', silentError);
 /**
  * @description: Error handling to keep gulp open
  * @param {error} error - The error to be handled
@@ -61,5 +61,5 @@ function swallowError(error) {
  * @param {error} error - The error to be handled
  ******************************************************************************/
 function silentError(error) {
-  this.emit('end')
+  this.emit('end');
 }

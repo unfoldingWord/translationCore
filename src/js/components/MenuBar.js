@@ -3,7 +3,7 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const FileActions = require('./FileActions.js');
+const CoreActions = require('../actions/CoreActions.js');
 
 var template = [
   {
@@ -12,7 +12,7 @@ var template = [
       {
         label: 'Import Project',
         click() {
-          FileActions.setState(true);
+          CoreActions.updateModal(true);
         }
       }
     ]
