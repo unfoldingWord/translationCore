@@ -2,17 +2,12 @@ var fluxDispatch = require('flux').Dispatcher;
 var Dispatcher = new fluxDispatch();
 
 Dispatcher.handleAction = function(action) {
-<<<<<<< HEAD
-  this.dispatch({
-    source: 'VIEW_ACTION',
-    action: action
-  });
-=======
+
   action.source = 'VIEW_ACTION';
   this.dispatch(
       action
   );
->>>>>>> f9a902cd6ce4624b3751918a67ac67d29cbc6869
+
 };
 module.exports = Dispatcher;
 /**
