@@ -5,7 +5,8 @@ module.exports = {
   "UpdateOl": "UPDATE_ORIGINAL_LANGUAGE",
   "UpdateTl": "UPDATE_TARGET_LANGUAGE",
   "UpdateGl": "UPDATE_GATEWAY_LANGUAGE",
-  "UpdateModal": "CHANGE_UPLOAD_MODAL_VISIBILITY"
+  "UpdateModal": "CHANGE_UPLOAD_MODAL_VISIBILITY",
+  "ChangeCheck": "CHANGE_CHECK_TYPE"
 };
 
 /**

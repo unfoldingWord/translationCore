@@ -1,4 +1,6 @@
-import React from 'react';
+
+const React = require("react");
+
 class Hamburger extends React.Component{
     constructor(){
       super();
@@ -6,6 +8,8 @@ class Hamburger extends React.Component{
         visibleBurgerMenu: false
       };
     }
+
+
 
     _handleClick(){
       this.setState({visibleBurgerMenu: !this.state.visibleBurgerMenu});
