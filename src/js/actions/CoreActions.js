@@ -59,13 +59,19 @@ module.exports = {
       modalOption: boolean
     });
   },
-//manny
+
   updateLoginModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts["LoadLoginModal"],
       loginModalOption: boolean
     });
+  },
+
+  changeCheck: function(newCheck) {
+    Dispatcher.handleAction({
+      type: consts["ChangeCheck"],
+      newCheck: newCheck
+
+    });
   }
-
-
 };
