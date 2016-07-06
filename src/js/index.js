@@ -15,7 +15,8 @@
       // specific obect of TranslationAcademyScraper
       var translationAcademyScraper = new TranslationAcademyScraper;
       // once I have the obeject I call the getTranslationAcademySectionList function with the urls as the parameter
-      translationAcademyScraper.getTranslationAcademySectionList1("https://git.door43.org/Door43/en-ta-translate-vol1/src/master/content");
+      translationAcademyScraper.getTranslationAcademySectionList("https://git.door43.org/Door43/en-ta-translate-vol1/src/master/content");
+      translationAcademyScraper.getTranslationAcademySectionList("https://git.door43.org/Door43/en-ta-translate-vol2/src/master/content");
     },
 
     render: function() {

@@ -1,16 +1,13 @@
 
-const VOLUME1_URL = "https://git.door43.org/Door43/en-ta-translate-vol1/src/master/content";
-const VOLUME2_URL = "https://git.door43.org/Door43/en-ta-translate-vol2/src/master/content";
-
+const DEFAULT_URL = "https://git.door43.org/Door43/en-ta-translate-vol1/src/master/content";
 
 class TranslationAcademyScraper{
   constructor() {
     this.sectionList = {};
     this.link = null;
-
   }
 
-  getTranslationAcademySectionList1(url=VOLMUE1_URL) {
+  getTranslationAcademySectionList(url=DEFAULT_URL) {
     var _this = this;
     function reqListener() {
 // this defines a new function that will be called later
@@ -18,7 +15,6 @@ class TranslationAcademyScraper{
       _this.sectionList = mergeObjects(_this.sectionList, links);
       _this.link = url;
       console.dir(_this.sectionList);
-      _this.getTranslationAcademySectionList2();
     }
     // created a new httprequest
       var oReq = new XMLHttpRequest();
@@ -27,22 +23,6 @@ class TranslationAcademyScraper{
       oReq.send();
 
     }
-    getTranslationAcademySectionList2(url=VOLUME2_URL) {
-      var _this = this;
-      function reqListener() {
-  // this defines a new function that will be called later
-        var links = getItemsBehindLink(this.response);
-        _this.sectionList = mergeObjects(_this.sectionList, links);
-        _this.link = url;
-        console.dir(_this.sectionList);
-      }
-      // created a new httprequest
-        var oReq = new XMLHttpRequest();
-        oReq.onload = reqListener;
-        oReq.open("Get", url);
-        oReq.send();
-
-      }
 
   getSection(assignCallback) {
 
