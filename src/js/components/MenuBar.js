@@ -3,9 +3,7 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const React = require('react');
-const ReactDOM = require('react-dom');
-const fileUpload = require('./fileupload');
+const CoreActions = require('../actions/CoreActions.js');
 
 var template = [
   {
@@ -14,8 +12,7 @@ var template = [
       {
         label: 'Import Project',
         click() {
-          ReactDOM.render(<window.FileUploader />,
-            document.getElementById('content'));
+          CoreActions.updateModal(true);
         }
       }
     ]

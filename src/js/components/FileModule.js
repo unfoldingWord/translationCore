@@ -1,5 +1,8 @@
-
-var FM = (function() {
+/**
+ * @author Ian Hoegen
+ * @description: This module handles the uploading of files and the callback.
+ ******************************************************************************/
+const FileModule = (function() {
   const fs = require(window.__base + 'node_modules/fs-extra');
 
   return {
@@ -18,4 +21,4 @@ var FM = (function() {
   };
 }
 )();
-module.exports = FM;
+module.exports = FileModule;

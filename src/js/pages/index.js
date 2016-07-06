@@ -1,14 +1,15 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
-// var db = require('./db-init');
-  const FileUpload = require('./fileupload');
+
   const remote = window.electron.remote;
   const {Menu} = remote;
-  const menubar = require('./menubar');
-  const CheckingScreen =  require('./CheckingScreen');
 
-  const TranslationAcademyScraper = require('./TranslationAcademyScraper');
+  const TPane = require('../components/TPane');
+// var db = require('./db-init');
+  const UploadModal = require('../components/UploadModal');
+  const MenuBar = require('../components/MenuBar');
+  const TranslationAcademyScraper = require('../components/TranslationAcademyScraper');
   const DummyElement = React.createClass({
     //componentWillMount will run as soon as the dummy element is created
     componentWillMount: function() {                  // type
@@ -25,11 +26,19 @@
       );
     }
   });
-// the app is going to render the dummy element
+
   var App = {
     init: function() {
-
-      ReactDOM.render(<DummyElement />,document.getElementById('content'));
+      var menu = Menu.buildFromTemplate(MenuBar.template);
+      Menu.setApplicationMenu(menu);
+      var Application = (
+        <div>
+          <TPane />
+          <DummyElement />
+          <UploadModal />
+        </div>
+      );
+      ReactDOM.render(Application, document.getElementById('content'));
     }
   };
 

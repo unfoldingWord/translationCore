@@ -1,10 +1,12 @@
 // Create the database
 module.exports = function() {
+  const fs = require('fs');
+  const SQL = require('sql.js');
+
   var db = "";
-  var fs = require('fs');
-  var SQL = require('sql.js');
+
   try {
-    var filebuffer = fs.readFileSync('userdata.sqlite');
+    const filebuffer = fs.readFileSync('userdata.sqlite');
     db = new SQL.Database(filebuffer);
   } catch (error) {
     db = new SQL.Database();
