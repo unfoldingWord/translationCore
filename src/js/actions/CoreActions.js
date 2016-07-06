@@ -58,6 +58,14 @@ module.exports = {
       type: consts["UpdateModal"],
       modalOption: boolean
     });
+  },
+//manny
+  updateLoginModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts["LoadLoginModal"],
+      loginModalOption: boolean
+    });
   }
+
 
 };
