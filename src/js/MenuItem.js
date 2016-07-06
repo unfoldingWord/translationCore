@@ -5,38 +5,43 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var MenuItem = React.createClass({
+  // sets initial state of flagged as false color grey until
+  //user clicks it them it becomes true and looks blue
 
-  getInitialState: function() { // sets initial state of flagged as false color grey until user clicks it them it becomes true and looks blue
+  getInitialState: function() {
     return {
       flagged: false
     };
   },
-
-  toggleFlag: function(e) { // this toggles the text as flagged or not flagged
-                            // every time it is clicked
-    this.setState({ // this.setState makes the state able to be changed
+// this toggles the text as flagged or not flagged
+// every time it is clicked
+  toggleFlag: function(e) {
+    // this.setState makes the state able to be changed
+      this.setState({
       flagged: !this.state.flagged
     });
   },
+  // getting check status as a prop and putting it in variable checkedStatus
   render: function() {
-    var checkedStatus = this.props.checkedStatus; // getting check status as a prop and putting it in variable checkedStatus
-
+    var checkedStatus = this.props.checkedStatus;
+// when it is toggled it turns blue
     var style;
     if(this.state.flagged){
       style = {
         color:"blue",
-        display:'initial' // when it is toggled it turns blue
+        display:'initial'
       };
     }
+     // when it is not being used it dos not show itself to
     else {
       style = {
-        color:"grey" // when it is not being used it dos not show itself to
+        color:"grey"
         // the user
       };
     }
 
     var style1;
-    if (checkedStatus === "WRONG") { // if  checkedStatus equas wrong red X glypghicon appears
+    if (checkedStatus === "WRONG") { // if  checkedStatus equals wrong red X glypghicon appears
       style1 = {
         color:"red",
         display:'initial'

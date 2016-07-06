@@ -1,11 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var CheckModule = React.createClass({
+module.exports = React.createClass({
   render: function() {
     return (
+       // rendering the buttons and passing the call backs as props
       <div>
-        <RetainedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} /> // rendering the buttons and passing the call backs as props
+        <RetainedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
         <ReplacedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
         <WrongButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
         <UncheckButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
@@ -57,5 +58,3 @@ var UncheckButton = React.createClass({
     );
   }
 });
-
-module.exports = CheckModule;
