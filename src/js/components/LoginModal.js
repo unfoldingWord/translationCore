@@ -1,6 +1,9 @@
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
+const FormGroup = require('react-bootstrap/lib/FormGroup.js');
+const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
+const FormControl = require('react-bootstrap/lib/FormControl.js');
 
 const CoreActions = require('../actions/CoreActions.js');
 const CoreStore = require('../stores/CoreStore.js');
@@ -9,25 +12,25 @@ class LoginModal extends React.Component {
   constructor(){
     super();
     this.state = {visibleLogin: true};
-  },
+  }
 
   updateLoginModal(){
     this.setState({visibleLogin: CoreStore.getLoginModal()});
-  },
+  }
 
   _close(){
     this.setState({visibleLogin: false});
-  },
+  }
 
   _open(){
     this.setState({visibleLogin: true});
-  },
+  }
 
   _handleSubmit(event){
     event.preventDefault();//prevents page from reloading
     let userName = this._userName;
     let password = this._password;
-  },
+  }
 
   render(){
     return(
@@ -40,7 +43,7 @@ class LoginModal extends React.Component {
             <Modal.Body>
               <form>
                 <FormGroup controlId="login-form">
-                  <ControlLabel>Door43 Account</ControlLabel>
+                <ControlLabel>Door43 Account</ControlLabel>
                   <FormControl type="text" value={this.state.value} placeholder="Door43 Account" />
                   <FormControl type="password" value={this.state.value} placeholder="Password" />
                 </FormGroup>

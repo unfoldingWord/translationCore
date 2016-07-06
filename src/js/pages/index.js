@@ -17,9 +17,9 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
-        <LoginModal />
           <TPane />
           <UploadModal />
+          <LoginModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
