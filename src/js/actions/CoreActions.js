@@ -55,6 +55,13 @@ module.exports = {
       type: consts["UpdateModal"],
       modalOption: boolean
     });
+  },
+
+  changeCheck: function(newCheck) {
+    Dispatcher.handleAction({
+      type: consts["ChangeCheck"],
+      newCheck: newCheck
+    });
   }
 
 };
