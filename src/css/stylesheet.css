@@ -1,4 +1,5 @@
-body{
+html, body {margin: 0; height: 100%; overflow: hidden}
+.burgerBody {
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
@@ -11,28 +12,52 @@ body{
 	-webkit-transition: left 400ms ease;
 	-o-transition: left 400ms ease;
 	-ms-transition: left 400ms ease;
+}
 
-
-
-
+.side {
+  position: fixed;
+  text-align: center;
+  height: auto;
+}
+.checkSection {
+  text-align: center;
+  position:relative;
+  height: auto;
+	min-height: 100%;
+}
+.tpane {
+	max-height: 40vh;
+	overflow-y: scroll;
+	padding-left: 3;
+	padding-right: 3;
+}
+.checkModule {
+  height: auto;
+  text-align: center;
+  position:relative;
+  margin-top: auto;
+}
+.afterCheck {
+  height: auto;
+  position:relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .burgerButton{
 	float:left;
-	padding: 10px;
-
+	padding: auto;
 }
 
 .menu{
 	background: #5D6D7E;
 	position: fixed;
-	width: 300px;
-	height: 100%;
-	padding: 20px;
+	width: auto;
+	height: auto;
+	padding: auto;
 	z-index: 9999;
-	right: 0;
-	top:0;
-	text-decoration:underline;;
+	text-decoration:none;
 }
 
 .menu a{
@@ -40,11 +65,51 @@ body{
 	color: #FFF;
 	display: block;
 	font-size: 16px;
-	padding: 10px;
+	padding: auto;
 	margin-bottom: 1px;
 }
 
 .menu a:hover{
 	background: black;
 
+}
+
+.btn-group{
+  margin: 0px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 0;
+}
+
+.well{
+  margin-bottom: 0;
+}
+
+.confirm-area{
+  margin: 10px;
+  text-align: center;
+}
+
+.next-button{
+  float: right;
+}
+
+::selection{
+  background: yellow;
+}
+
+.listhead{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 100%;
+}
+
+.verseReference{
+  text-align: center;
+  color: #000;
+}
+
+.verseReference:hover{
+  color: #000;
+  text-decoration: none;
 }

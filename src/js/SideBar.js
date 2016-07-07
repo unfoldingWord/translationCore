@@ -1,7 +1,7 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-const React = require("react");
-
-class Hamburger extends React.Component{
+class SideBar extends React.Component{
     constructor(){
       super();
       this.state = {
@@ -9,19 +9,17 @@ class Hamburger extends React.Component{
       };
     }
 
-
-
     _handleClick(){
       this.setState({visibleBurgerMenu: !this.state.visibleBurgerMenu});
     }
 
     _getMenu(){
       return(
-        <div>
-          <ul>
-            <li><a href="#">Burger 1</a></li>
-            <li><a href="#">Burger 2</a></li>
-            </ul>
+        <div className='burgerBody'>
+        <ul>
+          <li><a href="#">Burger 1</a></li>
+          <li><a href="#">Burger 2</a></li>
+        </ul>
 
         </div>
         );
@@ -36,12 +34,11 @@ class Hamburger extends React.Component{
       }
       return(
           <div className="burgerButton">
-            <button onClick={this._handleClick.bind(this)}>Burger</button>
-            {burgerMenuNodes}
+          <button onClick={this._handleClick.bind(this)}>Burger</button>
+          {burgerMenuNodes}
           </div>
       );
     }
 
 }
-
-module.exports = Hamburger;
+module.exports = SideBar;

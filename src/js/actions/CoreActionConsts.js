@@ -6,7 +6,9 @@ module.exports = {
   "UpdateTl": "UPDATE_TARGET_LANGUAGE",
   "UpdateGl": "UPDATE_GATEWAY_LANGUAGE",
   "UpdateModal": "CHANGE_UPLOAD_MODAL_VISIBILITY",
+  "LoadLoginModal": "CHANGE_LOGIN_MODAL_VISIBILITY",
   "ChangeCheck": "CHANGE_CHECK_TYPE"
+
 };
 
 /**

@@ -4,11 +4,13 @@
 
   const remote = window.electron.remote;
   const {Menu} = remote;
-  
+
   const TPane = require('../components/TPane');
 // var db = require('./db-init');
   const UploadModal = require('../components/UploadModal');
   const MenuBar = require('../components/MenuBar');
+  const LoginModal = require('../components/LoginModal');
+  const NavBar= require('../components/NavBar');
 
   var App = {
     init: function() {
@@ -16,6 +18,8 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
+          <LoginModal />
+          <NavBar />
           <TPane />
           <UploadModal />
         </div>
