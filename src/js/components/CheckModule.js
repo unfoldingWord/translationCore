@@ -5,6 +5,7 @@ var CheckModule = React.createClass({
   render: function() {
     return (
       <div>
+        {/* rendering the buttons and passing the call backs as props */ }
         <RetainedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
         <ReplacedButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />
         <WrongButton onCheckedStatusChanged={this.props.onCheckedStatusChanged} />

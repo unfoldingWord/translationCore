@@ -1,22 +1,19 @@
-
 const React = require("react");
 
-class Hamburger extends React.Component{
-    constructor(){
-      super();
-      this.state = {
-        visibleBurgerMenu: false
-      };
-    }
+class Hamburger extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      visibleBurgerMenu: false
+    };
+  }
 
+  _handleClick() {
+    this.setState({visibleBurgerMenu: !this.state.visibleBurgerMenu});
+  }
 
-
-    _handleClick(){
-      this.setState({visibleBurgerMenu: !this.state.visibleBurgerMenu});
-    }
-
-    _getMenu(){
-      return(
+  _getMenu() {
+    return (
         <div>
           <ul>
             <li><a href="#">Burger 1</a></li>
@@ -25,22 +22,22 @@ class Hamburger extends React.Component{
 
         </div>
         );
+  }
+
+  render() {
+    const burgerMenu = this._getMenu();
+    let burgerMenuNodes;
+
+    if (this.state.visibleBurgerMenu) {
+      burgerMenuNodes = <div className="menu">{burgerMenu}</div>;
     }
-
-    render(){
-      const burgerMenu = this._getMenu();
-      let burgerMenuNodes;
-
-      if(this.state.visibleBurgerMenu){
-        burgerMenuNodes = <div className="menu">{burgerMenu}</div>;
-      }
-      return(
+    return (
           <div className="burgerButton">
             <button onClick={this._handleClick.bind(this)}>Burger</button>
             {burgerMenuNodes}
           </div>
       );
-    }
+  }
 
 }
 
