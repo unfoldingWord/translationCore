@@ -2,8 +2,9 @@
  * @author Ian Hoegen
  * @description: This module handles the uploading of files and the callback.
  ******************************************************************************/
-var FM = (function() {
+const FileModule = (function() {
   const fs = require(window.__base + 'node_modules/fs-extra');
+  const request = require('request');
 
   return {
 /**
@@ -17,8 +18,14 @@ var FM = (function() {
     readFile: function(file, callback) {
       var inputFile = fs.readFileSync(file).toString();
       callback(inputFile);
+    },
+
+    loadOnline: function(url, callback, currentChapter) {
+      request(url, function(error, response, body) {
+        callback(error, response, body, currentChapter);
+      });
     }
   };
 }
 )();
-module.exports = FM;
+module.exports = FileModule;

@@ -1,26 +1,25 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
-  const TPane = require('./tpane');
-  //var db = require('./db-init');
-  const UploadModal = require('./uploadmodal');
+
   const remote = window.electron.remote;
   const {Menu} = remote;
-  const menubar = require('./menubar');
-  const TimeStamp = require('./Timestamp');
-  const CheckLib = require('./Createproject');
 
+  const TPane = require('../components/TPane');
+// var db = require('./db-init');
+  const UploadModal = require('../components/UploadModal');
+  const MenuBar = require('../components/MenuBar');
+  const SettingsModal = require('../components/SettingsModal');
 
   var App = {
     init: function() {
-      var menu = Menu.buildFromTemplate(menubar.template);
+      var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
           <TPane />
           <UploadModal />
-          <CheckLib />
-          <TimeStamp />
+          <SettingsModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));

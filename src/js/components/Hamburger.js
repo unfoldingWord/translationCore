@@ -1,4 +1,4 @@
-import React from 'react';
+const React = require("react");
 
 class Hamburger extends React.Component {
   constructor() {

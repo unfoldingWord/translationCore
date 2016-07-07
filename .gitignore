@@ -198,6 +198,7 @@ $RECYCLE.BIN/
 /node*
 .es*
 *.sqlite*
+userdata.sqlite
 #############
 ## Python
 #############

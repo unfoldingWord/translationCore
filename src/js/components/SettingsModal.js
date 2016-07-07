@@ -2,27 +2,26 @@
  * @author Ian Hoegen
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
-const FileUpload = require('./fileupload');
 const React = require('react');
-const Modal = require('react-bootstrap/lib/Modal.js');
+
 const Button = require('react-bootstrap/lib/Button.js');
-const FileActions = require('./FileActions');
-const UploadModal = React.createClass({
+const Modal = require('react-bootstrap/lib/Modal.js');
+
+const CoreStore = require('../stores/CoreStore.js');
+const CoreActions = require('../actions/CoreActions.js');
+
+const SettingsModal = React.createClass({
   componentWillMount: function() {
-    FileActions.on('upload', this.userChoice);
+    CoreStore.addChangeListener(this.updateModal);
+  },
+  updateModal: function() {
+    this.setState({showModal: CoreStore.getSettingsView()});
   },
   getInitialState: function() {
     return {showModal: false};
   },
-  userChoice: function(boolean) {
-    this.setState({showModal: boolean});
-  },
   close: function() {
-    this.setState({showModal: false});
-  },
-
-  open: function() {
-    this.setState({showModal: true});
+    CoreActions.updateSettings(false);
   },
 
   render: function() {
@@ -30,10 +29,10 @@ const UploadModal = React.createClass({
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Import Project</Modal.Title>
+            <Modal.Title>Settings</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <FileUpload />
+            <h3>Settings Page </h3>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>
@@ -44,4 +43,4 @@ const UploadModal = React.createClass({
   }
 });
 
-module.exports = UploadModal;
+module.exports = SettingsModal;

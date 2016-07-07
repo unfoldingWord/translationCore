@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
   browserify = require('browserify'),  // Bundles JS.
   del = require('del'),  // Deletes files.
+  watchify = require('watchify'),
 // reactify = require('reactify'),  // Transforms React JSX to JS.
   babelify = require('babelify'),
   bablePresetReact = require('babel-preset-react'),
@@ -10,9 +11,10 @@ var gulp = require('gulp'),
 
 // Define paths
 var paths = {
-  indexJS: ['./src/js/index.js'],
-  js: ['src/js/*.js']
+  indexJS: ['./src/js/pages/index.js'],
+  js: ['src/js/**/*.js']
 };
+
 
 // The default task (called when we run `gulp` from cli)
 gulp.task('default', ['watch', 'js']);
@@ -31,7 +33,7 @@ gulp.task('watch', function() {
 // });
 
 // Our JS task. It will Browserify our code and compile React JSX files.
-gulp.task('js', function() {
+/* gulp.task('js', function() {
 // Browserify/bundle the JS.
   browserify(paths.indexJS)
   .transform('babelify', {presets: ['react']})
@@ -39,7 +41,20 @@ gulp.task('js', function() {
   .on('error', swallowError)
   .pipe(source('app.js'))
   .pipe(gulp.dest('./dist/js/'));
-});
+});*/
+
+ gulp.task('js', bundle);
+
+var b = watchify(browserify(paths.indexJS));
+b.on('update', bundle);
+b.transform('babelify', {presets: ['react']});
+
+function bundle() {
+    return b.bundle()
+    .on('error', swallowError)
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./dist/js/'));
+}
 
 gulp.task('lint', shell.task([
   'eslint src/js/*'
@@ -47,7 +62,7 @@ gulp.task('lint', shell.task([
 
 gulp.task('fixLint', shell.task([
   'eslint --fix src/js/*'
-])).on('error', silentError)
+])).on('error', silentError);
 /**
  * @description: Error handling to keep gulp open
  * @param {error} error - The error to be handled
@@ -61,5 +76,5 @@ function swallowError(error) {
  * @param {error} error - The error to be handled
  ******************************************************************************/
 function silentError(error) {
-  this.emit('end')
+  this.emit('end');
 }

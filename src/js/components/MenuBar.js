@@ -3,7 +3,7 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const FileActions = require('./FileActions.js');
+const CoreActions = require('../actions/CoreActions.js');
 
 var template = [
   {
@@ -11,8 +11,8 @@ var template = [
     submenu: [
       {
         label: 'Import Project',
-        click() {
-          FileActions.setState(true);
+        click: function() {
+          CoreActions.updateModal(true);
         }
       }
     ]
@@ -52,14 +52,14 @@ var template = [
       {
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
-        click(item, focusedWindow) {
+        click: function(item, focusedWindow) {
           if (focusedWindow) focusedWindow.reload();
         }
       },
       {
         label: 'Toggle Full Screen',
         accelerator: process.platform === 'darwin' ? 'Ctrl+Command+F' : 'F11',
-        click(item, focusedWindow) {
+        click: function(item, focusedWindow) {
           if (focusedWindow)
             focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
         }
@@ -68,9 +68,15 @@ var template = [
         label: 'Toggle Developer Tools',
         accelerator:
         process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click(item, focusedWindow) {
+        click: function(item, focusedWindow) {
           if (focusedWindow)
             focusedWindow.webContents.toggleDevTools();
+        }
+      },
+      {
+        label: 'Settings',
+        click: function() {
+          CoreActions.updateSettings(true);
         }
       }
     ]
@@ -97,84 +103,12 @@ var template = [
     submenu: [
       {
         label: 'Learn More',
-        click() {
+        click: function() {
           window.electron.shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
         }
       }
     ]
   }
 ];
-
-if (process.platform === 'darwin') {
-  const name = window.electron.remote.app.getName();
-  template.unshift({
-    label: name,
-    submenu: [
-      {
-        label: 'About ' + name,
-        role: 'about'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Services',
-        role: 'services',
-        submenu: []
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Hide ' + name,
-        accelerator: 'Command+H',
-        role: 'hide'
-      },
-      {
-        label: 'Hide Others',
-        accelerator: 'Command+Alt+H',
-        role: 'hideothers'
-      },
-      {
-        label: 'Show All',
-        role: 'unhide'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Quit',
-        accelerator: 'Command+Q',
-        click() {
-          app.quit();
-        }
-      }
-    ]
-  });
-   // Window menu.
-  template[4].submenu = [
-    {
-      label: 'Close',
-      accelerator: 'CmdOrCtrl+W',
-      role: 'close'
-    },
-    {
-      label: 'Minimize',
-      accelerator: 'CmdOrCtrl+M',
-      role: 'minimize'
-    },
-    {
-      label: 'Zoom',
-      role: 'zoom'
-    },
-    {
-      type: 'separator'
-    },
-    {
-      label: 'Bring All to Front',
-      role: 'front'
-    }
-  ];
-}
 
 module.exports = {template: template};
