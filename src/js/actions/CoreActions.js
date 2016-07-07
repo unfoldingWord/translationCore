@@ -7,7 +7,6 @@ one of the functions and the event will automatically
 be dispatched to all of the stores that have registered
 listener
 (See ExampleComponent.js)
-
 */
 module.exports = {
   nextCheck: function(newVerse) {
@@ -62,6 +61,12 @@ module.exports = {
       type: consts["ChangeCheck"],
       newCheck: newCheck
     });
-  }
+  },
 
+  updateSettings: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts["SettingsView"],
+      settingsView: boolean
+    });
+  }
 };
