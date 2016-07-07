@@ -1,13 +1,14 @@
 module.exports = {
-  "AddCheck": "ADD_CHECK",
-  "NextVerse": "NEW_VERSE",
-  "PrevVerse": "NEW_VERSE",
-  "UpdateOl": "UPDATE_ORIGINAL_LANGUAGE",
-  "UpdateTl": "UPDATE_TARGET_LANGUAGE",
-  "UpdateGl": "UPDATE_GATEWAY_LANGUAGE",
-  "UpdateModal": "CHANGE_UPLOAD_MODAL_VISIBILITY",
-  "ChangeCheck": "CHANGE_CHECK_TYPE",
-  "SettingsView": "CHANGE_SETTINGS_VISIBILITY"
+  ADD_CHECK: "ADD_CHECK",
+  NEXT_VERSE: "NEXT_VERSE",
+  PREV_VERSE: "PREV_VERSE",
+  UPDATE_ORIGINAL_LANGUAGE: "UPDATE_ORIGINAL_LANGUAGE",
+  UPDATE_TARGET_LANGUAGE: "UPDATE_TARGET_LANGUAGE",
+  UPDATE_GATEWAY_LANGUAGE: "UPDATE_GATEWAY_LANGUAGE",
+  CHANGE_UPLOAD_MODAL_VISIBILITY: "CHANGE_UPLOAD_MODAL_VISIBILITY",
+  CHANGE_CHECK_TYPE: "CHANGE_CHECK_TYPE",
+  ADD_TO_TEXT: "ADD_TO_TEXT",
+  SETTINGS_VIEW: "SETTINGS_VIEW"
 };
 
 /**
@@ -17,7 +18,7 @@ that when you check the action type, you do it in the following manner:
 
 var consts = require("CoreActionConsts.js");
 ...
-if (action == consts["AddCheck"])
+if (action == consts.ADD_CHECK)
 
 rather than
 
