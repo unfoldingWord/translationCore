@@ -67,11 +67,6 @@ class CoreStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-
-  getLoginModal(){
-    return this.loginModalVisibility;
-  }
-
   /**
    * @param {function} callback
    */
@@ -130,12 +125,6 @@ class CoreStore extends EventEmitter {
         break;
       case consts["ChangeCheck"]:
         this.checkType = action.newCheck;
-        this.emitChange();
-        break;
-
-        //manny
-      case consts["LoadLoginModal"]:
-        this.loginModalVisibility = action.loginModalOption;
         this.emitChange();
         break;
 
