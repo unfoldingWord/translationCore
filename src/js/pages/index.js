@@ -12,16 +12,14 @@
   const LoginModal = require('../components/LoginModal');
   const NavBar= require('../components/NavBar');
 
+
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
-          <LoginModal />
-          <NavBar />
-          <TPane />
-          <UploadModal />
+          <NavBar/>
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
