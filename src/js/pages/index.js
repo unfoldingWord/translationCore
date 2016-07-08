@@ -9,8 +9,7 @@
 // var db = require('./db-init');
   const UploadModal = require('../components/UploadModal');
   const MenuBar = require('../components/MenuBar');
-  const LoginModal = require('../components/LoginModal');
-  const NavBar= require('../components/NavBar');
+  const SettingsModal = require('../components/SettingsModal');
 
 
   var App = {
@@ -21,6 +20,9 @@
         <div>
           <NavBar/>
           <LoginModal />
+          <TPane />
+          <UploadModal />
+          <SettingsModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));

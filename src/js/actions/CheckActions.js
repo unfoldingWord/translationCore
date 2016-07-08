@@ -11,7 +11,7 @@ module.exports = {
    */
   changeCheckProperty: function(propertyName, propertyValue) {
     Dispatcher.handleAction({
-      type: consts['ChangeCheckProperty'],
+      type: consts.CHANGE_CHECK_PROPERTY,
       propertyName: propertyName,
       propertyValue: propertyValue
     });

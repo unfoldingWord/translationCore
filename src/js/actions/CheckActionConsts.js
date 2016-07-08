@@ -1,3 +1,3 @@
 module.exports = {
-  "ChangeCheckProperty": "CHANGE_CHECK_PROPERTY",
+  CHANGE_CHECK_PROPERTY: "CHANGE_CHECK_PROPERTY",
 };
