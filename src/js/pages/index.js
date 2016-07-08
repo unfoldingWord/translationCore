@@ -10,7 +10,8 @@
   const UploadModal = require('../components/UploadModal');
   const MenuBar = require('../components/MenuBar');
   const SettingsModal = require('../components/SettingsModal');
-
+  const NavBar = require('../components/NavBar');
+  const LoginModal = require('../components/LoginModal');
 
   var App = {
     init: function() {

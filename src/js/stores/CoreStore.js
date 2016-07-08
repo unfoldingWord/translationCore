@@ -63,6 +63,10 @@ class CoreStore extends EventEmitter {
     return this.modalVisibility;
   }
 
+  getLoginModal(){
+    return this.loginModalVisibility;
+  }
+
   getSettingsView() {
     return this.settingsVisibility;
   }
