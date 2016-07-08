@@ -20,6 +20,7 @@
       var Application = (
         <div>
           <NavBar/>
+          <LoginModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));

@@ -11,17 +11,15 @@ var style = {
     }
   },//close dropzone selector
 
-image:{
-  height: "30px",
-  width: "30px",
-  marginTop: "0px"
+logo:{
+  height: "60px",
+  width: "60px",
+  margin: "0px"
 },//close  image selector
 
-button:{
+NavBarbutton:{
   marginTop: "10px",
-  float: "right"
-
-}//close button selector
+},//close button selector
 
 };
 

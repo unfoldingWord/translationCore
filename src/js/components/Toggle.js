@@ -2,6 +2,7 @@ const React = require('react');
 const Button = require('react-bootstrap/lib/Button');
 const style = require('../styles/loginStyle');
 const LoginModal = require ('../components/LoginModal');
+const CoreActions = require('../actions/CoreActions.js');
 
 class Toggle extends React.Component{
   constructor() {
@@ -12,6 +13,9 @@ class Toggle extends React.Component{
     };
   }//close constructor
   handleClick(){
+    if(this.state.online == false){
+    CoreActions.updateLoginModal(true);
+    }
     this.setState({online: !this.state.online});
     this.setState({buttonColor: !this.state.buttonColor});
   }//close handleClick
@@ -21,7 +25,7 @@ class Toggle extends React.Component{
     const statusColor = this.state.buttonColor ? 'success' : 'danger';
     return(
       <div>
-        <Button bsStyle={statusColor} style={style.button}
+        <Button bsStyle={statusColor} style={style.NavBarbutton}
         onClick={this.handleClick.bind(this)}>{text}</Button>
       </div>
     );
