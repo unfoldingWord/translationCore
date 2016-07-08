@@ -42,6 +42,7 @@
     "fs-extra": "^0.30.0",
     "marked": "^0.3.5",
     "react": "^15.1.0",
+    "react-addons-update": "^15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0",
     "react-dropzone": "^3.5.1",

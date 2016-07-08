@@ -1,139 +1,68 @@
 // MenuItem.js
-var Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-var Well = require('react-bootstrap/lib/Well.js');
-var React = require('react');
-var ReactDOM = require('react-dom');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-var MenuItem = React.createClass({
+const CheckActions = require('../actions/CheckActions');
+const style = require('./Style');
 
-  getInitialState: function() { // sets initial state of flagged as false color grey until user clicks it them it becomes true and looks blue
-    return {
-      flagged: false
-    };
-  },
+class MenuItem extends React.Component {
+  constructor() {
+    super();
+    this.menuItemClicked = this.menuItemClicked.bind(this);
+  }
 
-  toggleFlag: function(e) { // this toggles the text as flagged or not flagged
-                            // every time it is clicked
-    this.setState({ // this.setState makes the state able to be changed
-      flagged: !this.state.flagged
-    });
-  },
-  render: function() {
-    var checkedStatus = this.props.checkedStatus; // getting check status as a prop and putting it in variable checkedStatus
+  menuItemClicked() {
+    CheckActions.goToCheck(this.props.checkIndex);
+  }
 
-    var style;
-    if (this.state.flagged) {
-      style = {
-        color: "blue",
-        display: 'initial' // when it is toggled it turns blue
-      };
+  render() {
+    var checkStatus = this.props.check.checkStatus;
+
+    // when the flag is toggled it turns blue
+    var flagStyle;
+    if (this.props.check.flagged) {
+      flagStyle = style.menuItem.flag.enabled;
     }
     else {
-      style = {
-        color: "grey" // when it is not being used it dos not show itself to
-        // the user
-      };
+      flagStyle = style.menuItem.flag.disabled;
     }
 
-    var style1;
-    if (checkedStatus === "WRONG") { // if  checkedStatus equas wrong red X glypghicon appears
-      style1 = {
-        color: "red",
-        display: 'initial'
-      };
-    }
-    else {
-      style1 = {
-        display: 'none'
-      };
-    }
-
-    var style2;
-    if (checkedStatus === "REPLACED") { // gold glyphicon appears
-      style2 = {
-        color: "gold",
-        display: 'initial'
-      };
-    }
-    else {
-      style2 = {
-        display: 'none'
-      };
-    }
-
-    var style3;
-    if (checkedStatus === "RETAINED") { // green check glyphicon appears
-      style3 = {
-        color: "green",
-        display: 'initial'
-      };
-    }
-    else {
-      style3 = {
-        display: 'none'
-      };
+    var checkStatusStyle;
+    var glyphIcon;
+    switch(checkStatus) {
+      case "RETAINED":
+        glyphIcon = "ok";
+        checkStatusStyle = style.menuItem.statusIcon.retained;
+        break;
+      case "REPLACED":
+        glyphIcon = "random";
+        checkStatusStyle = style.menuItem.statusIcon.replaced;
+        break;
+      case "WRONG": 
+        glyphIcon = "remove";
+        checkStatusStyle = style.menuItem.statusIcon.wrong;
+        break;
+      default:
+        glyphIcon = '';
+        checkStatusStyle = style.menuItem.statusIcon.unchecked;
     }
 
     return (
       <span>
-        <Well>
-          <Glyphicon
-            glyph = "flag"
-            style = {style}
-            onClick = {this.toggleFlag}
-          />
-          <span>
-            <button
-              onClick = {this.navigateChapter} // makes a chapter button
-            >
-              Chapter
-            </button>
-          </span>
-
-          <span>
-            <button
-              onClick = {this.navigateVerses} // makes a verse button
-            >
-              Verse
-            </button>
-          </span>
-
-            <span>
-              <Glyphicon
-                glyph = "remove"
-                style = {style1}
-                onClick = {this.toggleWrong}
-              />
-            </span>
-
-            <span>
-              <Glyphicon
-                glyph = "random"
-                style = {style2}
-                onClick = {this.toggleSwitch}
-              />
-            </span>
-
-            <span>
-              <Glyphicon
-                glyph = "ok"
-                style = {style3}
-                onClick = {this.toggleOk}
-              />
-            </span>
-
-        </Well>
+        <Glyphicon glyph="flag" style={flagStyle} />
+        <span style={style.menu_item_text}>
+          <a onClick={this.menuItemClicked}>
+            {" " + this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse + " "}
+          </a>
+        </span>
+        <span>
+          <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
+        </span>
       </span>
     );
-  },
-
-  navigateChapter: function() {
-    console.log("chapter 1");
-  },
-  navigateVerses: function() {
-    console.log("1");
   }
 
-});
+}
 
 module.exports = MenuItem;
