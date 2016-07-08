@@ -16,10 +16,6 @@ class PhraseChecker extends AbstractCheckModule{
     this.setSelectedText = this.setSelectedText.bind(this);
     this.setFlagState = this.setFlagState.bind(this);
     this.appendReturnObject = this.appendReturnObject.bind(this);
-    this.setNote = this.setNote.bind(this);
-    this.setRef = this.setRef.bind(this);
-    this.setProgress = this.setProgress.bind(this);
-    this.onParserCompletion = this.onParserCompletion.bind(this);
   }
   setSelectedText(e){
     this.setState({selectedText: e});
@@ -53,7 +49,6 @@ class PhraseChecker extends AbstractCheckModule{
       selectedText: "",
       flagState: "",
     });
-    var data = Fetcher('eph', this.setProgress, this.onParserCompletion);
   }
   appendReturnObject(){
     var object = this.state.returnObject;
