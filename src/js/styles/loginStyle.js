@@ -7,7 +7,7 @@ var style = {
 
   footer: {
     button: {
-      marginRight:'12px',
+      marginRight:'17px',
       float: 'right'
     }
   },
@@ -23,15 +23,18 @@ var style = {
   },
 
   loginGridLeft:{
-    textAlign: 'center',
+    top:'1vh',
     borderRight: '2px solid #D3D3D3',
     margin: '5px',
-    padding: '20px'
+    padding: '20px',
+    bottom:'2vh'
   },
 
   loginGridRight:{
-    margin: '55px',
-    textAlign: 'center'
+    top:'1vh',
+    marginTop: '160px',
+    textAlign: 'right',
+    bottom:'2vh'
   },
 
 };
