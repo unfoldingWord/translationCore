@@ -3,23 +3,37 @@ var style = {
       input: {
         margin: '12px'
       }
-  },//close loginbox selector
+  },
 
   footer: {
     button: {
-      marginRight:'12px'
+      marginRight:'12px',
+      float: 'right'
     }
-  },//close dropzone selector
+  },
 
 logo:{
-  height: "60px",
-  width: "60px",
-  margin: "0px"
-},//close  image selector
+  height: '60px',
+  width: '60px',
+  margin: '0px'
+},
 
 NavBarbutton:{
-  marginTop: "10px",
-},//close button selector
+  marginTop: '10px',
+},
+
+loginGridLeft:{
+  textAlign: 'center',
+  borderRight: '2px solid #D3D3D3',
+  margin: '5px',
+  padding: '20px'
+},
+
+loginGridRight:{
+  margin: '55px',
+  textAlign: 'center'
+
+},
 
 };
 

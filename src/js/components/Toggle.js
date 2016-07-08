@@ -14,7 +14,7 @@ class Toggle extends React.Component{
   }//close constructor
   handleClick(){
     if(this.state.online == false){
-    CoreActions.updateLoginModal(true);
+      CoreActions.updateLoginModal(true);
     }
     this.setState({online: !this.state.online});
     this.setState({buttonColor: !this.state.buttonColor});
