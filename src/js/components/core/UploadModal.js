@@ -9,8 +9,8 @@ const Nav = require('react-bootstrap/lib/Nav.js');
 const NavItem = require('react-bootstrap/lib/NavItem.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
-const CoreStore = require('../stores/CoreStore.js');
-const CoreActions = require('../actions/CoreActions.js');
+const CoreStore = require('../../stores/CoreStore.js');
+const CoreActions = require('../../actions/CoreActions.js');
 
 const OnlineInput = require('./OnlineInput');
 const FileUpload = require('./FileUpload');
