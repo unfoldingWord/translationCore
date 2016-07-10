@@ -5,13 +5,16 @@
  * represents the most up-to-date information.
  * @author - Samuel Faulkner
  */
-
+ // This file should probably be moved to a new location later
+ const USFMParser = require('./../lexical_check_module/translation_words/USFMParse');
+ const TNParser = require("./tNParser");
  //hardcoded github api calls
  const GITHUB_API_NOTES = "https://api.github.com/repositories/23808509/contents/bible/notes",
  	INVALID_DATA = "Invalid Data",
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
-
+  const AUTHENTICATION = "access_token=437c493b487faff00425fd7050866086542ceae0";
+// ONLY USE GETBOOK()
 class Door43DataFetcher {
 	contructor() {
 		this.bookList = null;
@@ -28,7 +31,7 @@ class Door43DataFetcher {
 		var url = url || GITHUB_API_NOTES;
 		var request = new XMLHttpRequest();
 
-		/** Retrieves the bookAbbreviation and api link from 
+		/** Retrieves the bookAbbreviation and api link from
 		 * the request
 		 */
 		function getChaptersFromObject(obj) {
@@ -56,14 +59,14 @@ class Door43DataFetcher {
 			callback(REQUEST_FAILURE);
 		}
 
-		request.open('GET', url, true);
+		request.open('GET', url + "?" + AUTHENTICATION, true);
 		request.send();
 	}
 
 	/**
 	 * @description: Downloads an entire book data from github
 	 * @param {string} bookAbbr: three letter string that denotes the book
-	 * @param {function} progress: progress callback that's 
+	 * @param {function} progress: progress callback that's
 	 * called with (downloadedVerses, totalVerses)
 	 * @param {function} callback: callback called with (error, bookObj)
 	 */
@@ -73,7 +76,7 @@ class Door43DataFetcher {
 			callback(null, this.bookList[bookAbbr]);
 		}
 		else {
-			this.getBookData(bookAbbr, 
+			this.getBookData(bookAbbr,
 				function(error, bookObj) {
 					if (error) {
 						callback(error);
@@ -88,7 +91,7 @@ class Door43DataFetcher {
 						var doneChapters = 0;
 						var totalChapters = bookObj['chapters'].length;
 						for (var chapter of bookObj['chapters']) {
-							_this.getChapter(chapter, 
+							_this.getChapter(chapter,
 								function(error, chapterObj) {
 									if (error) {
 										callback(error);
@@ -101,7 +104,7 @@ class Door43DataFetcher {
 										//this should only be called after the last chapter
 										if (doneChapters >= totalChapters) {
 											//reassign github objects to our objects
-											bookObj['chapters'] = chapters; 
+											bookObj['chapters'] = chapters;
 											totalVerses = _this.countVerses(bookObj['chapters']);
 											var numVerses = 0;
 											for (let _chapter of bookObj['chapters']) {
@@ -110,7 +113,7 @@ class Door43DataFetcher {
 												let numChapterVerses = 0;
 												for (let verse of _chapter['verses']) {
 													//push our own verse obj that's created from
-													_this.getVerse(verse, 
+													_this.getVerse(verse,
 														(error, verseData) => {
 															if (error) {
 																callback(error);
@@ -134,7 +137,7 @@ class Door43DataFetcher {
 															}
 														}
 													);
-												}											
+												}
 											}
 										}
 									}
@@ -151,7 +154,7 @@ class Door43DataFetcher {
 		var totalVerses = 0;
 		for (var chapter of chapterArray) {
 			//assuming chapter['verses'] is an array
-			totalVerses += chapter['verses'].length; 
+			totalVerses += chapter['verses'].length;
 		}
 		return totalVerses;
 	}
@@ -167,7 +170,7 @@ class Door43DataFetcher {
 
 		if (!this.bookList) {
 			//call this.getBooks
-			this.getBooks(null, 
+			this.getBooks(null,
 				function(error, obj) {
 					//if this.getBooks didn't have an error, call getBook again
 					if (!error) {
@@ -198,8 +201,8 @@ class Door43DataFetcher {
 					_this.bookList[bookAbbr] = {};
 					_this.bookList[bookAbbr]['chapters'] = chapterObj;
 					_this.bookList[bookAbbr]['link'] = bookLink;
-					
-					callback(null, _this.bookList[bookAbbr]);				
+
+					callback(null, _this.bookList[bookAbbr]);
 
 				}
 
@@ -207,7 +210,7 @@ class Door43DataFetcher {
 					callback(REQUEST_FAILURE);
 				}
 
-				request.open('GET', link, true);
+				request.open('GET', link + "&" + AUTHENTICATION, true);
 				request.send();
 			}
 		}
@@ -242,18 +245,18 @@ class Door43DataFetcher {
 				callback(REQUEST_FAILURE);
 			}
 
-			request.open('GET', link, true);
+			request.open('GET', link + "&" + AUTHENTICATION, true);
 			request.send();
 		}
 		else {
-			//we've hit a non directory, something like 'home.txt' that 
+			//we've hit a non directory, something like 'home.txt' that
 			// we don't care about
 			callback(null, null);
 		}
 	}
 
 	/**
-	 * @description - Downloads all the verse data from each verse from the given 
+	 * @description - Downloads all the verse data from each verse from the given
 	 * github object that contains data on where to get the verse
 	 */
 	getVerse(verseData, callback=() => ({})) {
@@ -274,17 +277,59 @@ class Door43DataFetcher {
 			callback(REQUEST_FAILURE);
 		}
 
-		request.open('GET', verseObj['link'], true);
+		request.open('GET', verseObj['link'] + "?" + AUTHENTICATION, true);
 		request.send();
 	}
+
+  /**
+   * @description - This function finds the ULB text within a book and returns it as
+   * an object
+   * @param {Object} book - book object from getBook() function that is to be parsed
+   */
+  getULBFromBook(book = {chapters: []}) {
+    let ulbData = {chapters: []};
+    if (!book.chapters) {
+      console.log("Error: Input object is in incorrect format");
+      return ulbData;
+    }
+    const usfmRegex = new RegExp("=+\\s*ulb:\\s*=+\\s*<usfm>([^<]+)<\\/usfm>", "i");
+    for (let ch of book.chapters) {
+      let chap = {num: -1, verses: []};
+      for (let v of ch.verses) {
+        let regRes;
+        try {
+          [,regRes] = usfmRegex.exec(v.file);
+        }
+        catch (e) {
+          console.log("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
+          console.log("File may be in incorrect format");
+          continue;
+        }
+        let parsed = USFMParser(regRes).chapters[0];
+        if (parsed.num != -1) chap.num = parsed.num;
+        chap.verses = chap.verses.concat(parsed.verses);
+      }
+      if (chap.verses.length != 0)
+        ulbData.chapters.push(chap);
+    }
+    return ulbData;
+  }
+
+  getTNFromBook(book = {chapters: []}, bookAbbr = "?") {
+    if (!book.chapters) {
+      console.log("Error: Input object is in incorrect format");
+      return {};
+    }
+    return TNParser(book, bookAbbr);
+  }
 }
 
 /**
- * @description - This function checks the responsetype of the given 
+ * @description - This function checks the responsetype of the given
  * request and does error checking to always return a json object if valid
  * or null if invalid
- * @param {XMLHttpRequest} httpRequest - request that is supposed to return 
- * json object 
+ * @param {XMLHttpRequest} httpRequest - request that is supposed to return
+ * json object
  */
 function getJSONFromData(httpRequest) {
 
@@ -296,5 +341,7 @@ function getJSONFromData(httpRequest) {
 		return null;
 	}
 }
+
+
 
 module.exports = Door43DataFetcher;

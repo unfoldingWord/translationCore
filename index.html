@@ -13,6 +13,19 @@
     <div id="content"></div>
     <script>
       window.electron = require('electron');
+      var door = require('./src/js/modules/translation_notes/Door43DataFetcher');
+      window.Door43 = new door();
+      var bookData;
+      Door43.getBook('3jn', () => {}, (err, data) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+          bookData = data;
+         console.log(bookData);
+         console.log(Door43.getULBFromBook(bookData));
+         console.log(Door43.getTNFromBook(bookData, '3jn'));
+       });
       </script>
     <!--<script type="text/babel" src="modules/TargetWord.js"></script>-->
 

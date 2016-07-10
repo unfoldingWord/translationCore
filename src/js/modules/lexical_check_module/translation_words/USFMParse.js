@@ -8,44 +8,43 @@
 
 function usfmToJSON(usfm_in) {
   var usfm = usfm_in.replace(/\\s5|\\p/g, "");
-  
+
   const chapterNumberExpression = new RegExp("^\\s*(\\d+)\\s+");
   const verseNumberExpression = new RegExp("^\\s*(\\d+)\\s+")
 
   let bookData = {bookAbbr: "???", chapters: []};
   let chapters = usfm.split("\\c ");
   for (let ch in chapters) {
-    if (chapters[ch] === "") continue;
+    if (/ [A-Za-z]+ /.test(chapters[ch]) == false) continue;
     if (/\\h /.test(chapters[ch])) {
       bookData.header = chapters[ch];
-    } 
+    }
     else {
       let chapNum;
       let newChap = {verses: []};
       var chapNumReg = chapterNumberExpression;
-      
+
       try {
         [,chapNum] = chapNumReg.exec(chapters[ch]);
-      } 
+      }
       catch (e) {
         chapNum = "-1";
       }
-      
+
       newChap.num = parseInt(chapNum);
       // get rid of chapter number
-      chapters[ch].replace(chapNumReg, ""); 
+      chapters[ch].replace(chapNumReg, "");
       let verses = chapters[ch].split("\\v ");
       for (let v in verses) {
-        if (/ \w+ /.test(verses[v]) == false) continue;
+        if (/ [A-Za-z]+ /.test(verses[v]) == false) continue;
         let newVerse = {};
         let verseNumReg = verseNumberExpression;
-        if (verses[v] === "") continue;
         let verseNum;
 
         // this should work the majority of the time
-        try { 
+        try {
           [, verseNum] = verseNumReg.exec(verses[v]);
-        } 
+        }
         catch (e) {
           verseNum = "-1";
         }
@@ -54,7 +53,8 @@ function usfmToJSON(usfm_in) {
         newVerse.text = verses[v];
         newChap.verses.push(newVerse);
       }
-      bookData.chapters.push(newChap);
+      if (newChap.verses.length != 0)
+        bookData.chapters.push(newChap);
     }
   }
   return bookData;
