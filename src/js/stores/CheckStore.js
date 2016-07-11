@@ -18,6 +18,7 @@ class CheckStore extends EventEmitter {
         phrase: "God the Father",
         checkStatus: "RETAINED",
         comments: "",
+        note: "asdfasdf",
         flagged: false
       },
       {
@@ -27,6 +28,7 @@ class CheckStore extends EventEmitter {
         phrase: "Jesus Christ",
         checkStatus: "NOT_CHECKED",
         comments: "",
+        note: "aosdfoansdfo",
         flagged: false
       },
       {
@@ -36,6 +38,7 @@ class CheckStore extends EventEmitter {
         phrase: "Holy Spirit",
         checkStatus: "NOT_CHECKED",
         comments: "",
+        note: "a;ksdnvoabo",
         flagged: false
       }
     ];
@@ -108,3 +111,4 @@ class CheckStore extends EventEmitter {
 const checkStore = new CheckStore;
 Dispatcher.register(checkStore.handleActions.bind(checkStore));
 module.exports = checkStore;
+window.checkStore = checkStore;

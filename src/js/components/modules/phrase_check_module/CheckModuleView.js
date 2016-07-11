@@ -7,6 +7,8 @@ const FlagDisplay = require('./subcomponents/FlagDisplay');
 const Menu = require('./subcomponents/Menu');
 const AbstractCheckModule = require('../../AbstractCheckModule');
 const CheckActions = require('../../../actions/CheckActions.js');
+const CheckStore = require('../../../stores/CheckStore.js')
+const Fetcher = require('./FetchData.js');
 
 
 class PhraseChecker extends AbstractCheckModule{
@@ -16,6 +18,8 @@ class PhraseChecker extends AbstractCheckModule{
     this.setSelectedText = this.setSelectedText.bind(this);
     this.setFlagState = this.setFlagState.bind(this);
     this.appendReturnObject = this.appendReturnObject.bind(this);
+    this.updateCheck = this.updateCheck.bind(this);
+    this.onComplete = this.onComplete.bind(this);
   }
   setSelectedText(e){
     this.setState({selectedText: e});
@@ -42,12 +46,30 @@ class PhraseChecker extends AbstractCheckModule{
   // }
   componentWillMount(){
     this.setState({
-      toCheck: "",
+      toCheck: CheckStore.getCurrentCheck().phrase,
+      note: CheckStore.getCurrentCheck().note,
       ref: "",
-      note: "",
       tlVerse: "This is selectable placeholder text. Eventually the target language text will appear here",
       selectedText: "",
       flagState: "",
+    });
+    CheckStore.addChangeListener(this.updateCheck);
+
+    /*
+    * Incoming rule breaking! This is just to have a working prototype
+    */
+
+    Fetcher('eph', () => {}, this.onComplete)
+  }
+  onComplete(book){
+    this.setState({
+      data: book
+    });
+  }
+  updateCheck(){
+    this.setState({
+      toCheck: super.getCurrentCheck().phrase,
+      note: super.getCurrentCheck().note
     });
   }
   appendReturnObject(){
@@ -77,8 +99,8 @@ class PhraseChecker extends AbstractCheckModule{
           <Row className="show-grid">
             <Col md={5} className="confirm-area">
               <ConfirmDisplay
-                phraseInfo={super.getCurrentCheck().checkStatus}
-                phrase={super.getCurrentCheck().comments}
+                phraseInfo={this.state.note}
+                phrase={this.state.toCheck}
                 selectedText={this.state.selectedText}
               />
             </Col>

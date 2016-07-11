@@ -3,7 +3,7 @@ const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const CheckActions = require('../actions/CheckActions');
+const CheckActions = require('../../actions/CheckActions');
 const style = require('./Style');
 
 class MenuItem extends React.Component {
@@ -39,7 +39,7 @@ class MenuItem extends React.Component {
         glyphIcon = "random";
         checkStatusStyle = style.menuItem.statusIcon.replaced;
         break;
-      case "WRONG": 
+      case "WRONG":
         glyphIcon = "remove";
         checkStatusStyle = style.menuItem.statusIcon.wrong;
         break;
