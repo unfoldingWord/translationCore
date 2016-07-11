@@ -8,7 +8,7 @@
 
 const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?ref=master",
 	REQUEST_FAILED = "Request failed",
-	AUTHENTICATION = "access_token=bcff5e3e21d803f7c9e0a24aa8f105694535b968",
+	AUTHENTICATION = "access_token=76b9f4e0bd8c7ff65529adb7ef4d98a7611f8e1d",
 	UNKNOWN_TYPE = "Unknown type: ",
 	WORD_NOT_FOUND = "Word not found in list";
 
