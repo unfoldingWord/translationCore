@@ -73,17 +73,25 @@ const Registration = React.createClass({
           console.log(reason);
         }
       });
+    } else if(unLen === 0){
+        dialog.showErrorBox('Account Creation Error', 'Username is empty');
+    } else if (this.state.email.length === 0) {
+        dialog.showErrorBox('Account Creation Error', 'Email is empty');
+    } else if(emailValid !== 'success'){
+        dialog.showErrorBox('Account Creation Error', 'Email is not valid');
+    } else if (this.state.password.length === 0) {
+        dialog.showErrorBox('Account Creation Error', 'Password is empty');
+    } else if (this.state.confirm.length === 0) {
+        dialog.showErrorBox('Account Creation Error', 'Confirm password is empty');
+    } else if(passwordMatch !== 'success'){
+        dialog.showErrorBox('Account Creation Error', 'Passwords do not match');
     }
   },
   validateEmail: function() {
     var email = this.state.email;
     if (email.length > 0) {
       var reg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,9}(?:\.[a-z]{2})?)$/;
-      if (reg.test(email)) {
-        return 'success';
-      } else {
-        return 'error';
-      }
+      return reg.test(email) ? 'success' : 'error';
     }
   },
   render: function() {
