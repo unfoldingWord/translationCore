@@ -20,7 +20,7 @@ const LexicalCheckModule = React.createClass({
 	componentWillMount: function() {
 		var lexicalData = null;
 
-		fetchDataFunction('eph', function(progress) {
+		fetchDataFunction('psa', function(progress) {
 			console.log('Progess: ' + progress);
 		}, function(error, data) {
 			if (error) {

@@ -24,8 +24,8 @@ function getData(bookAbbr, progressCallback, callback) {
 	//Get Bible
 	var bookData;
 	var Door43Fetcher = new Door43DataFetcher();
-	Door43Fetcher.getBook(bookAbbr, function(total, done) {
-			progressCallback((total / done) * 0.5)}, function(error, data) {
+	Door43Fetcher.getBook(bookAbbr, function(done, total) {
+			progressCallback((done / total) * 0.5)}, function(error, data) {
 		if (error) {
 			console.log('Door43Fetcher throwing error');
 			callback(error);
@@ -46,7 +46,7 @@ function getData(bookAbbr, progressCallback, callback) {
 						wordList = data;
 						
 						tWFetcher.getAliases(function(done, total) {
-							progressCallback(((total / done) * 0.5) + 0.5);
+							progressCallback(((done / total) * 0.5) + 0.5);
 						}, function(error) {
 							if (error) {
 								callback(error);
