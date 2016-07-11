@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
   }
 
   menuItemClicked() {
-    CheckActions.goToCheck(this.props.checkIndex);
+    CheckActions.goToCheck(this,props.groupIndex, this.props.checkIndex);
   }
 
   render() {

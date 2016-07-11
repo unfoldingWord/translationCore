@@ -96,7 +96,7 @@ class CheckStore extends EventEmitter {
   // Public function to return a deep clone of the current check
   // Why not just return this.checks[this.checkIndex]? See getCurrentGroup()
   getCurrentCheck() {
-    var check = this.getCurrentGroup[this.checkIndex];
+    var check = this.groups[this.groupIndex].checks[this.checkIndex];
     return utils.cloneObject(check);
   }
 
@@ -111,7 +111,7 @@ class CheckStore extends EventEmitter {
   }
 
   setCurrentCheckProperty(propertyName, propertyValue) {
-    this.checks[this.checkIndex][propertyName] = propertyValue;
+    this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
   }
 
   emitChange() {
@@ -138,10 +138,16 @@ class CheckStore extends EventEmitter {
 
       case consts.NEXT_CHECK:
         this.checkIndex++;
+        // If there are no more checks in the group, go to the next group
+        if(!this.getCurrentCheck()) {
+          this.groupIndex++;
+          this.checkIndex = 0;
+        }
         this.emitChange();
         break;
 
       case consts.GO_TO_CHECK:
+        this.groupIndex = action.groupIndex;
         this.checkIndex = action.checkIndex;
         this.emitChange();
         break;

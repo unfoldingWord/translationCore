@@ -38,6 +38,7 @@ class NavigationMenu extends React.Component {
           <div key={checkIndex}>
             <MenuItem
               check={check}
+              groupIndex={groupIndex}
               checkIndex={checkIndex}
               isCurrentCheck={checkIndex == CheckStore.getCheckIndex()}
             />
