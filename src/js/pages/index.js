@@ -8,8 +8,8 @@
   const TPane = require('../components/core/TPane');
 
 // var db = require('./db-init');
-  const NavBar = require('../components/NavBar');
-  const LoginModal = require('../components/LoginModal');
+  const NavBar = require('../components/core/NavBar');
+  const LoginModal = require('../components/core/LoginModal');
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
