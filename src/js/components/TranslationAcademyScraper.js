@@ -1,5 +1,6 @@
 
-const DEFAULT_URL = "https://git.door43.org/Door43/en-ta-translate-vol1/src/master/content";
+const BASE_URL = "https://git.door43.org/";
+const TA_URL = "Door43/en-ta-translate-vol1/src/master/content";
 
 class TranslationAcademyScraper{
   constructor() {
@@ -7,41 +8,45 @@ class TranslationAcademyScraper{
     this.link = null;
   }
 
-  getTranslationAcademySectionList(url=DEFAULT_URL) {
+  getTranslationAcademySectionList(url, callback) {
+    console.log('Scraper');
+    console.log(callback);
     var _this = this;
-    function reqListener() {
+    var oReq = new XMLHttpRequest();
+    oReq.onload = function() {
 // this defines a new function that will be called later
       var links = getItemsBehindLink(this.response);
       _this.sectionList = mergeObjects(_this.sectionList, links);
       _this.link = url;
       console.dir(_this.sectionList);
+      callback(_this.sectionList);
     }
     // created a new httprequest
-      var oReq = new XMLHttpRequest();
-      oReq.onload = reqListener;
-      oReq.open("Get", url);
+
+      oReq.open("Get", url || BASE_URL + TA_URL, true);
       oReq.send();
 
-    }
+  }
 
-  getSection(assignCallback) {
+  getSection(sectionName, assignCallback) {
 
     if (!this.sectionList) {
       return;
     }
-
-    if (this.sectionList[key]['file']) {
+    console.log(sectionName);
+    if (this.sectionList[sectionName]['file']) {
       if (assignCallback){
-          assignCallback(this.sectionList[key]['file']);
+          assignCallback(this.sectionList[sectionName]['file']);
       }
     }
+
     else {
       var _this = this;
       var request = new XMLHttpRequest();
-
+      var link = _this.sectionList[sectionName].replace('src','raw');
       request.onload = function(){
-        var link = _this.sectionList[key].replace('src','raw');
-        _this.sectionList[key] = {
+
+        _this.sectionList[sectionName] = {
           "file" : this.response,
           "link": link
         }
@@ -51,11 +56,12 @@ class TranslationAcademyScraper{
         }
       }
 
-      request.open("Get",url);
+      request.open("Get",BASE_URL + link, true);
+      request.send();
     }
   }
 }
-
+// the function that  merges object 2 in with object 1 (vol 1 and vol 2)
 function mergeObjects(obj1,obj2){
   var obj3={};
   for (var attrname in obj1){obj3[attrname]=obj1[attrname];}
