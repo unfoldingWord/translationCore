@@ -3,12 +3,12 @@
 /**
  * @description - Grabs a list of tW and then
  * returns individual files when queried
- * @author Samuel Faulkner
+ * @author Samuel Faulkner, Evan Wiederspan
  */
 
 const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?ref=master",
 	REQUEST_FAILED = "Request failed",
-	AUTHENTICATION = "access_token=130bfdc123d33443822ca1bd64d87aef36ea8dbf",
+	AUTHENTICATION = "access_token=bf3b6040fcf4a025e7a5fe3b9e1698d244475a78",
 	UNKNOWN_TYPE = "Unknown type: ",
 	WORD_NOT_FOUND = "Word not found in list";
 
@@ -154,7 +154,7 @@ class TranslationWordsFetcher {
 		}
 
 		function finished() {
-			progCallback(++numDone / numToDo);
+			progCallback(++numDone, numToDo);
 			if (numDone == numToDo) callback(undefined);
 		}
 	}
@@ -190,7 +190,7 @@ function search(list, boolFunction, first=0, last=-1) {
 	if (last == -1) {
 		last = list.length;
 	}
-	if (first == last) {
+	if (first > last) {
 		return;
 	}
 	var mid = Math.floor(((first - last) * 0.5)) + last;

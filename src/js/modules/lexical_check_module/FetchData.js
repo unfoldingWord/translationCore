@@ -24,14 +24,15 @@ function getData(bookAbbr, progressCallback, callback) {
 	//Get Bible
 	var bookData;
 	var Door43Fetcher = new Door43DataFetcher();
-	Door43Fetcher.getBook(bookAbbr, progressCallback, function(error, data) {
+	Door43Fetcher.getBook(bookAbbr, function(total, done) {
+			progressCallback((total / done) * 0.5)}, function(error, data) {
 		if (error) {
 			console.log('Door43Fetcher throwing error');
 			callback(error);
 		}
 		else {
 			bookData = Door43Fetcher.getULBFromBook(data);
-			console.dir(bookData);
+			//console.dir(bookData);
 			//Get list of words
 			var tWFetcher = new TranslationWordsFetcher();
 			var wordList;
@@ -43,23 +44,121 @@ function getData(bookAbbr, progressCallback, callback) {
 					}
 					else {
 						wordList = data;
-						//for word in wordList get aliases
-						for (var wordObject of wordList) {
-							wordObject['aliases'] = [wordObject.name.replace('.txt', '')];
-						}
-
-						var actualWordList = BookWordTest(wordList, bookData);
-						callback(null, actualWordList);
+						
+						tWFetcher.getAliases(function(done, total) {
+							progressCallback(((total / done) * 0.5) + 0.5);
+						}, function(error) {
+							if (error) {
+								callback(error);
+							}
+							else {
+								var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
+								console.log('WordSet');
+								console.dir(actualWordList);
+								var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
+								callback(null, checkObject);
+							}
+						});
 					}
-				})
+				});
 		}
 	});
 
-	
-	//get full list of words through out word files
-	//get all the words in that book
-	//search through entire book for each occurence of each word
-	//return big javascript object
+}
+
+const extensionRegex = new RegExp('\\.\\w+\\s*$');
+
+/**
+ * Outputs a JSON object in the format defined by what 'FetchData.js' should output
+ */
+function findWordsInBook(bookData, wordInBookSet, wordList) {
+	var returnObject = {};
+	returnObject['LexicalCheck'] = [];
+	for (var word of wordInBookSet) {
+		var wordReturnObject = {
+			"group": word.replace(extensionRegex, ''),
+			"checks": []
+		};
+		var wordObject = search(wordList, function(item) {
+			return stringCompare(word, item.name);
+		});
+		if (wordObject) {
+			for (var chapter of bookData.chapters) {
+				for (var verse of chapter.verses) {
+					var wordArray = findWordInBook(chapter.num, verse, wordObject);
+					for (var item of wordArray) {
+						wordReturnObject.checks.push(item);
+					}
+				}	
+			}
+			returnObject.LexicalCheck.push(wordReturnObject);
+		}
+	}
+	return returnObject;
+}
+
+function findWordInBook(chapterNumber, verseObject, wordObject) {
+	var returnArray = [];
+	var aliases = wordObject.aliases;
+	for (var alias of aliases) {
+		var index = verseObject.text.indexOf(alias, 0);
+		while (index != -1) {
+			returnArray.push({
+				"chapter": chapterNumber,
+				"verse": verseObject.num,
+				"checked": false,
+				"status": "UNCHECKED"
+			});
+			index = verseObject.text.indexOf(alias, index + 1);
+		}
+	}
+	return returnArray;
+}
+
+/**
+ * Compares two string alphabetically
+ * @param {string} first - string to be compared against
+ * @param {string} second - string to be compared with
+ */
+function stringCompare(first, second) {
+	if (first < second) {
+		return -1;
+	}
+	else if (first > second) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+/**
+ * Binary search of the list. I couldn't find this in the native methods of an array so
+ * I wrote it
+ * @param {array} list - array of items to be searched
+ * @param {function} boolFunction - returns # < 0, # > 0. or 0 depending on which path the
+ * search should take
+ * @param {int} first - beginnging of the current partition of the list
+ * @param {int} second - end of the current partition of the list
+ */
+function search(list, boolFunction, first=0, last=-1) {
+	if (last == -1) {
+		last = list.length;
+	}
+	if (first > last) {
+		return;
+	}
+	var mid = Math.floor(((first - last) * 0.5)) + last;
+	var result = boolFunction(list[mid]);
+	if (result < 0) {
+		return search(list, boolFunction, first, mid - 1);
+	}
+	else if (result > 0) {
+		return search(list, boolFunction, mid + 1, last);
+	}
+	else {
+		return list[mid];
+	}
 }
 
 module.exports = getData;

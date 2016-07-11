@@ -18,48 +18,17 @@ const LexicalCheckModule = React.createClass({
 
 	//Dummy function that only tests data right now
 	componentWillMount: function() {
-		var data = null;
-		// fetchDataFunction('eph',
-		// 	//progressCallback
-		// 	function(done, max) {
-		// 		console.log('Progress: ' + done + '/' + max);
-		// 	},
-		// 	//callback
-		// 	function(error, fetchData) {
-		// 		if (error) {
-		// 			console.error(error);
-		// 		}
-		// 		else {
-		// 			data = fetchData;
-		// 			console.dir(data);
-		// 		}
-		// 	}
-		// );
+		var lexicalData = null;
 
-		// var fetcher = new Door43DataFetcher();
-		// fetcher.getBook('eph', 
-		// 	function(current, total) {
-		// 		console.log('Current: ' + current + ' / Total: ' + total);
-		// 	},
-		// 	function(error, data) {
-		// 		if (error) {
-		// 			console.error(error);
-		// 		}
-		// 		else {
-		// 			console.dir(data);
-		// 		}
-		// 		fetcher.getBook('eph');
-		// 	}
-		// );
-
-		fetchDataFunction('eph', function(done, total) {
-			console.log('Done: ' + done + '/' + total);
+		fetchDataFunction('eph', function(progress) {
+			console.log('Progess: ' + progress);
 		}, function(error, data) {
 			if (error) {
 				console.error(error);
 			}
 			else {
-				console.dir(data);
+				lexicalData = data;
+				console.dir(lexicalData);
 			}
 		});
 	},
