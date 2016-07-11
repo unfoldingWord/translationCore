@@ -10,6 +10,7 @@
 const Door43DataFetcher = require('./../translation_notes/Door43DataFetcher.js');
 const TranslationWordsFetcher = require('./translation_words/TranslationWordsFetcher.js');
 const BookWordTest = require('./translation_words/WordTesterScript.js');
+const FS = require(window.__base + '/node_modules/fs-extra');
 
 /**
  * @description exported function that returns the JSON array of a list
@@ -56,6 +57,7 @@ function getData(bookAbbr, progressCallback, callback) {
 								// console.log('WordSet');
 								// console.dir(actualWordList);
 								var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
+								FS.outputJson("./check_data.json", checkObject);
 								callback(null, checkObject);
 							}
 						});
