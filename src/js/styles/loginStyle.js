@@ -32,8 +32,8 @@ var style = {
 
   loginGridRight:{
     top:'1vh',
-    marginTop: '160px',
-    textAlign: 'right',
+    marginTop: '80px',
+    textAlign: 'center',
     bottom:'2vh'
   },
 

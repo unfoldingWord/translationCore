@@ -28,9 +28,9 @@ module.exports = {
     });
   },
 
-  createAccount: function(user) {
+  login: function(user) {
     Dispatcher.handleAction({
-      type: consts.ACCOUNT_CREATION
+      type: consts.ACCOUNT_LOGIN
     });
   },
 
