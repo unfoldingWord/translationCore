@@ -3,7 +3,7 @@ const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const CheckActions = require('../actions/CheckActions');
+const CheckActions = require('../../actions/CheckActions');
 const style = require('./Style');
 
 class MenuItem extends React.Component {
@@ -50,11 +50,14 @@ class MenuItem extends React.Component {
 
     return (
       <span>
+        &nbsp;&nbsp;
         <Glyphicon glyph="flag" style={flagStyle} />
-        <span style={style.menu_item_text}>
+        <span style={style.menuItem.text}>
+          &nbsp;
           <a onClick={this.menuItemClicked}>
-            {" " + this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse + " "}
+            {this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
+          &nbsp;
         </span>
         <span>
           <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
