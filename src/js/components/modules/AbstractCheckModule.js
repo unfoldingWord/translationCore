@@ -1,6 +1,6 @@
 var React = require('react');
-var CheckStore = require('../stores/CheckStore.js');
-var CheckActions = require('../actions/CheckActions.js');
+var CheckStore = require('../../stores/CheckStore.js');
+var CheckActions = require('../../actions/CheckActions.js');
 
 /*
 Abstract class for Check Modules:
