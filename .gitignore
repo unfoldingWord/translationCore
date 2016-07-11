@@ -199,9 +199,8 @@ $RECYCLE.BIN/
 .es*
 *.sqlite*
 userdata.sqlite
-AuthToken.js
 .config
-
+AuthToken.js
 #############
 ## Python
 #############
