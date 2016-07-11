@@ -13,7 +13,7 @@ class CheckStore extends EventEmitter {
     this.checkIndex = 0;
     this.groups = [
       {
-        groupName: 'Figures of Speech',
+        group: 'Figures of Speech',
         checks: [
           {
             book: 'Ephesians',
@@ -45,7 +45,7 @@ class CheckStore extends EventEmitter {
         ]
       },
       {
-        groupName: 'Metaphors',
+        group: 'Metaphors',
         checks: [
           {
             book: 'Ephesians',

@@ -31,7 +31,7 @@ class NavigationMenu extends React.Component {
   render() {
     var menuList = this.state.groups.map(function(group, groupIndex) {
       var groupHeader = (
-        <div>{group.groupName}</div>
+        <div>{group.group}</div>
       );
       var checkMenuItems = group.checks.map(function(check, checkIndex) {
         return (
