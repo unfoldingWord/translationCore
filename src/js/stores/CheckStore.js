@@ -51,6 +51,15 @@ class CheckStore extends EventEmitter {
     return this.checks;
   }
 
+  //Public function to set all checks from some object in a module
+  //THIS IS PROBABLY NOT GOING TO STAY HERE
+  initializeAllChecks(checks){
+    for(let check in checks){
+      check.checkStatus = "NOT_CHECKED"
+    }
+    this.checks = checks;
+  }
+
   // Public function to return a deep clone of the current check
   // Why not just return this.checks[this.checkIndex]? Because that returns a reference to
   // the object, and we don't want any changes made here to be reflected elsewhere,

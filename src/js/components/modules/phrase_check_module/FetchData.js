@@ -40,7 +40,17 @@ var parseObject = function(object){
     }
     phraseObject["Phrase Checks"].push(newGroup);
   }
-  return phraseObject;
+  return menuify(phraseObject);
+}
+
+var menuify = function(object){
+  var menuObject = [];
+  for(let type in object){
+    for(let verse in type.verses){
+      menuObject.push(verse);
+    }
+  }
+  console.log(menuObject);
 }
 
 module.exports = DataFetcher;
