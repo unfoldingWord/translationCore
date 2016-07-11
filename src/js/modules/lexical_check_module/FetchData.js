@@ -53,8 +53,8 @@ function getData(bookAbbr, progressCallback, callback) {
 							}
 							else {
 								var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
-								console.log('WordSet');
-								console.dir(actualWordList);
+								// console.log('WordSet');
+								// console.dir(actualWordList);
 								var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
 								callback(null, checkObject);
 							}
