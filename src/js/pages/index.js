@@ -18,6 +18,7 @@
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
+      console.log('hi');
       var Application = (
         <div>
           <NavBar/>

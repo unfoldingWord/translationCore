@@ -13,24 +13,17 @@ const React = require('react');
 const fetchDataFunction = require('./FetchData.js');
 const Door43DataFetcher = require('../translation_notes/Door43DataFetcher.js');
 const tWFetcher = require('./translation_words/TranslationWordsFetcher.js');
+const LexicalView = require('./lexical_checker/LexicalChecker.js');
+const TranslationWordDisplay = require('./translation_words/TranslationWordsDisplay.js');
 
 const LexicalCheckModule = React.createClass({
 
-	//Dummy function that only tests data right now
 	componentWillMount: function() {
-		var lexicalData = null;
 
-		fetchDataFunction('psa', function(progress) {
-			console.log('Progess: ' + progress);
-		}, function(error, data) {
-			if (error) {
-				console.error(error);
-			}
-			else {
-				lexicalData = data;
-				console.dir(lexicalData);
-			}
-		});
+	},
+
+	componentWillUnmount: function() {
+	      
 	},
 
 	render: function() {
