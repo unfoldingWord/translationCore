@@ -52,12 +52,15 @@ const LexicalCheckModule = React.createClass({
 		// 	}
 		// );
 
-		var tWfetcher = new tWFetcher();
-		tWfetcher.getWordList(null, function(error, data) {
+		fetchDataFunction('eph', function(done, total) {
+			console.log('Done: ' + done + '/' + total);
+		}, function(error, data) {
 			if (error) {
 				console.error(error);
 			}
-			console.dir(data);
+			else {
+				console.dir(data);
+			}
 		});
 	},
 

@@ -3,18 +3,21 @@
 /**
  * @description - Grabs pages from the door43 github repository that
  * represents the most up-to-date information.
- * @author - Samuel Faulkner
+ * @author - Samuel Faulkner, Evan Wiederspan
  */
  // This file should probably be moved to a new location later
  const USFMParser = require('./../lexical_check_module/translation_words/USFMParse');
  const TNParser = require("./tNParser");
+
  //hardcoded github api calls
  const GITHUB_API_NOTES = "https://api.github.com/repositories/23808509/contents/bible/notes",
  	INVALID_DATA = "Invalid Data",
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
-  const AUTHENTICATION = "access_token=437c493b487faff00425fd7050866086542ceae0";
-// ONLY USE GETBOOK()
+
+  const AUTHENTICATION = "access_token=7c822e1614dfb1f699cbecccf57226e61272b160";
+
+// ONLY USE getBook()
 class Door43DataFetcher {
 	contructor() {
 		this.bookList = null;
@@ -277,7 +280,8 @@ class Door43DataFetcher {
 			callback(REQUEST_FAILURE);
 		}
 
-		request.open('GET', verseObj['link'] + "?" + AUTHENTICATION, true);
+		var link = verseObj['link'];
+		request.open('GET', link + (link.indexOf('?') == -1 ? '?' : '&') + AUTHENTICATION, true);
 		request.send();
 	}
 

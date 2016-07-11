@@ -3,31 +3,16 @@
   <head>
     <title></title>
 
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css" />
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="src\css\stylesheet.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   </head>
   <body>
 
 
     <div id="content"></div>
-    <script>
-      window.electron = require('electron');
-      var door = require('./src/js/modules/translation_notes/Door43DataFetcher');
-      window.Door43 = new door();
-      var bookData;
-      Door43.getBook('3jn', () => {}, (err, data) => {
-        if (err) {
-          console.log(err);
-          return;
-        }
-          bookData = data;
-         console.log(bookData);
-         console.log(Door43.getULBFromBook(bookData));
-         console.log(Door43.getTNFromBook(bookData, '3jn'));
-       });
-      </script>
-    <!--<script type="text/babel" src="modules/TargetWord.js"></script>-->
 
     <script src="requirements.js"></script>
     <script src="dist/js/app.js"></script>

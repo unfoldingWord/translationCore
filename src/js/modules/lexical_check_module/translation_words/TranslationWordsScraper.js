@@ -84,15 +84,15 @@ class TranslationWordsScraper {
 		console.log('Retrieving list');
 		var request = new XMLHttpRequest();
 
-		Fs.ensureFileSync(FILEPATH);
-		//See if we saved it first. Mostly for debugging purposes
-		this.wordList = Fs.readJsonSync(FILEPATH, {throws: false});
-		if (this.wordList != null) {
-			if (assignCallback) {
-				assignCallback(this.wordList);
-			}
-		}
-		else {
+		// Fs.ensureFileSync(FILEPATH);
+		// //See if we saved it first. Mostly for debugging purposes
+		// this.wordList = Fs.readJsonSync(FILEPATH, {throws: false});
+		// if (this.wordList != null) {
+		// 	if (assignCallback) {
+		// 		assignCallback(this.wordList);
+		// 	}
+		// }
+		// else {
 			var _this = this;
 			request.onload = function() {
 				_this.wordList = getItemsBehindLink(this.response);
@@ -116,7 +116,7 @@ class TranslationWordsScraper {
 			this.link = url;
 			request.open('get', url, true);
 			request.send();
-		}
+		// }
 	}
 }
 

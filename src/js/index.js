@@ -2,17 +2,16 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
-  const Well = require('react-bootstrap/lib/Well.js');
 
 // var db = require('./db-init');
   const remote = window.electron.remote;
   const {Menu} = remote;
-  const TestComponent = require('./modules/ULBTestComponent');
+  const LexicalCheck = require('./modules/lexical_check_module/CheckModuleView.js');
 
   var App = {
     init: function() {
     	ReactDOM.render(
-    		<TestComponent />,
+        <LexicalCheck />,
     		document.getElementById('content'));
     }
   };

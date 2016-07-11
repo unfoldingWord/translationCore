@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 // Define paths
 var paths = {
-  indexJS: ['./src/js/pages/index.js'],
+  indexJS: ['./src/js/index.js'],
   js: ['src/js/**/*.js']
 };
 

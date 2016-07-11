@@ -79,7 +79,7 @@ const TranslationWordsDisplay = React.createClass({
     				}}
     			>
     				<p>
-    					<img src="./src/js/modules/translation_words/default.gif"></img>
+    					<img src="./src/js/modules/lexical_check_module/translation_words/default.gif"></img>
     				</p>
     				{PLEASE_WAIT_MESSAGE}
     			</Modal.Body>
@@ -88,46 +88,46 @@ const TranslationWordsDisplay = React.createClass({
     		</Modal>
 	    );
 
-	 //    this.tWHtmlScraper.getWordList(
-	 //    	null, //link
+	    this.tWHtmlScraper.getWordList(
+	    	null, //link
 
-		// 	function(data) { //assignCallback
-		// 		_this.wordList = data;
-		// 		_this.setState({
-		// 			wordListEmpty: false
-		// 		});
-		// 		_this.modalClosed();
-		// 	},
+			function(data) { //assignCallback
+				_this.wordList = data;
+				_this.setState({
+					wordListEmpty: false
+				});
+				_this.modalClosed();
+			},
 
-		// 	function() { //errorCallback
-		// 		console.error('Words Scraper failed');
-		// 		_this.modalClosed(); /* we're going to put up another modal
-		// 								but we don't want to revert back to the old
-		// 								one once user clicks out of the errormodal
-		// 							*/
-		// 		_this.changePlaceHolder(UNABLE_TO_GET_WORDS_SHORT);
-		// 		_this.setCurrentModal(
-		// 			<ErrorModal
-		// 				glyph={
-		// 					<Glyphicon
-		// 						glyph={"remove-circle"}
-		// 						style={{
-		// 							color: 'red'
-		// 						}}
-		// 					/>
-		// 				}
+			function() { //errorCallback
+				console.error('Words Scraper failed');
+				_this.modalClosed(); /* we're going to put up another modal
+										but we don't want to revert back to the old
+										one once user clicks out of the errormodal
+									*/
+				_this.changePlaceHolder(UNABLE_TO_GET_WORDS_SHORT);
+				_this.setCurrentModal(
+					<ErrorModal
+						glyph={
+							<Glyphicon
+								glyph={"remove-circle"}
+								style={{
+									color: 'red'
+								}}
+							/>
+						}
 						
-		// 				message={UNABLE_TO_GET_WORDS_MESSAGE + _this.tWHtmlScraper.getLink()}
-		// 				title={UNABLE_TO_GET_WORDS_TITLE}
-		// 				closeCallback={
-		// 					function() {
-		// 						_this.modalClosed();
-		// 					}
-		// 				}
-		// 			/>
-		// 		);
-		// 	}
-		// );
+						message={UNABLE_TO_GET_WORDS_MESSAGE + _this.tWHtmlScraper.getLink()}
+						title={UNABLE_TO_GET_WORDS_TITLE}
+						closeCallback={
+							function() {
+								_this.modalClosed();
+							}
+						}
+					/>
+				);
+			}
+		);
 	},
 
 	//sets the current modal, or, if there already is one, pushes the old one onto a stack
