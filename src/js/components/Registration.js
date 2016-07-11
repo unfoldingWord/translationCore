@@ -1,10 +1,14 @@
 const React = require('react');
 
+const remote = window.electron.remote;
+const {dialog} = remote;
+
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
+const Token = require('./AuthToken');
 
-const GogsApi = require('./GogsApi')
+const GogsApi = require('./GogsApi');
 
 const Registration = React.createClass({
   getInitialState: function() {
@@ -47,12 +51,13 @@ const Registration = React.createClass({
     var passwordMatch = this.checkPass();
     var unLen = user.username.length;
     if (emailValid === 'success' && passwordMatch === 'success' && unLen > 0) {
-      var userdata = {
-        username:'royalsix',
-        password:'4thenations'
-        }
-      GogsApi(userdata).createAccount(user).then(function(data){
-        console.log(data);
+      GogsApi(Token)
+      .createAccount(user)
+      .then(function(data){
+        CoreActions.createAccount(data);
+      })
+      .catch(function(reason) {
+        dialog.showErrorBox('Account Creation Error', reason.message);
       });
     }
    },
