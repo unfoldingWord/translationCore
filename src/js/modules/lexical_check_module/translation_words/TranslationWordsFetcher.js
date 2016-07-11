@@ -8,7 +8,7 @@
 
 const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?ref=master",
 	REQUEST_FAILED = "Request failed",
-	AUTHENTICATION = "access_token=7c822e1614dfb1f699cbecccf57226e61272b160",
+	AUTHENTICATION = "access_token=130bfdc123d33443822ca1bd64d87aef36ea8dbf",
 	UNKNOWN_TYPE = "Unknown type: ",
 	WORD_NOT_FOUND = "Word not found in list";
 
@@ -19,9 +19,9 @@ class TranslationWordsFetcher {
 	}
 
 	/**
-	 * Gets the list of words using github api this must be called before getWord 
+	 * Gets the list of words using github api this must be called before getWord
 	 * will work!
-	 * @param {string} url - url that the request is made to. Leave undefined to get tW from 
+	 * @param {string} url - url that the request is made to. Leave undefined to get tW from
 	 * the door43 github repo
 	 * @param {function} callback - called with (error, data) once operation is finished
 	 */
@@ -43,12 +43,12 @@ class TranslationWordsFetcher {
 				// console.log('Reporting');
 				report();
 			}
-			/** 
-			 * this is a directory, recursively call getWordList with 
+			/**
+			 * this is a directory, recursively call getWordList with
 			 *  the directory's URL
 			 */
 			else if (entryObj.type == "dir"){
-				/** pass in report as the callback because we don't want callback to 
+				/** pass in report as the callback because we don't want callback to
 				 * be called with a subdirectory's words
 				 */
 				_this.getWordList(entryObj.url, report);
@@ -117,6 +117,45 @@ class TranslationWordsFetcher {
 
 			request.open('GET', url + (url.indexOf('?') == -1 ? '?' : '&') + AUTHENTICATION, true);
 			request.send();
+		}
+	}
+
+	getAliases(progCallback = () => {}, callback = () => {}) {
+		var numDone = 0;
+		const numToDo = this.wordList.length;
+		var _this = this;
+		for (let word of this.wordList) {
+			this.getWord(word.name, (err, file) => {
+				if (err) {
+					console.log(err);
+					callback(err);
+					return;
+				}
+				else {
+					word.aliases = parseFile(file);
+				}
+				finished(); // for the progCallback
+			});
+		}
+
+		function parseFile(file) {
+			const aliasReg = new RegExp("=+\\s*([^=]+)=+");
+			let aliasRes;
+			let returnVal = [];
+			try {
+				[,aliasRes] = aliasReg.exec(file);
+			}
+			catch (e) {
+				console.log(e);
+				return [];
+			}
+			// split by comma and take off hanging spaces
+			return aliasRes.split(",").map((str) => str.trim());
+		}
+
+		function finished() {
+			progCallback(++numDone / numToDo);
+			if (numDone == numToDo) callback(undefined);
 		}
 	}
 }
