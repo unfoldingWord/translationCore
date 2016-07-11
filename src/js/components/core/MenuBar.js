@@ -3,7 +3,7 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const CoreActions = require('../actions/CoreActions.js');
+const CoreActions = require('../../actions/CoreActions.js');
 
 var template = [
   {

@@ -2,7 +2,7 @@ const remote = window.electron.remote;
 const {dialog} = remote;
 
 const FileModule = require('./FileModule');
-const CoreActions = require('../actions/CoreActions.js');
+const CoreActions = require('../../actions/CoreActions.js');
 const parser = require('./usfm-parse.js');
 
 const path = require('path');

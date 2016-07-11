@@ -7,8 +7,8 @@ const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
-const CoreStore = require('../stores/CoreStore.js');
-const CoreActions = require('../actions/CoreActions.js');
+const CoreStore = require('../../stores/CoreStore.js');
+const CoreActions = require('../../actions/CoreActions.js');
 
 const SettingsModal = React.createClass({
   componentWillMount: function() {

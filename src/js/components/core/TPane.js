@@ -8,7 +8,7 @@
  const Grid = require('react-bootstrap/lib/Grid.js');
  const Row = require('react-bootstrap/lib/Row.js');
 
- const CoreStore = require('../stores/CoreStore.js');
+ const CoreStore = require('../../stores/CoreStore.js');
 
  const Pane = require('./Pane');
 
