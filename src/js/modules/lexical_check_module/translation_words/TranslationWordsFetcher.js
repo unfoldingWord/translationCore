@@ -151,6 +151,9 @@ function search(list, boolFunction, first=0, last=-1) {
 	if (last == -1) {
 		last = list.length;
 	}
+	if (first == last) {
+		return;
+	}
 	var mid = Math.floor(((first - last) * 0.5)) + last;
 	var result = boolFunction(list[mid]);
 	if (result < 0) {
