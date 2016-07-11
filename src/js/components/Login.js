@@ -15,10 +15,9 @@ const gogs = require('./GogsApi.js');
 class Login extends React.Component{
   constructor(){
     super();
-    this.state = {userName: "", pasword: ""};
+    this.state = {userName: "", password: ""};
   }
   handleSubmit(event){
-    event.preventDefault();//prevents page from reloading
     var userdata = {
         username: this.state.userName,
         password: this.state.password

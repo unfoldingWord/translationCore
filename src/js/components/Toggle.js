@@ -11,14 +11,14 @@ class Toggle extends React.Component{
       online: false,
       buttonColor: false
     };
-  }//close constructor
+  }
   handleClick(){
     if(this.state.online == false){
       CoreActions.updateLoginModal(true);
     }
     this.setState({online: !this.state.online});
     this.setState({buttonColor: !this.state.buttonColor});
-  }//close handleClick
+  }
 
   render(){
     const text = this.state.online ? 'Online' : 'Offline';
