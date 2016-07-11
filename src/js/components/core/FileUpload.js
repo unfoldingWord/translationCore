@@ -11,7 +11,9 @@ const FileModule = require('./FileModule');
 const remote = window.electron.remote;
 const {dialog} = remote;
 
-const CoreActions = require('../actions/CoreActions.js');
+const CoreActions = require('../../actions/CoreActions.js');
+
+const path = require('path');
 
 const Book = require('./Book');
 
@@ -68,7 +70,7 @@ module.exports = FileUploader;
 function sendToReader(file) {
   try {
     manifestSource = file;
-    FileModule.readFile(file + '/manifest.json', readInManifest);
+    FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Please make sure that ' +
     'your folder includes a manifest.json file.');
@@ -87,7 +89,7 @@ function readInManifest(manifest) {
   bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
   try {
-    FileModule.readFile('data/ulgb/' + bookFileName, openOriginal);
+    FileModule.readFile(path.join('data', 'ulgb', bookFileName), openOriginal);
   } catch (error) {
     console.log(error);
   }
@@ -107,8 +109,9 @@ function readInManifest(manifest) {
 function openUsfmFromChunks(chunk) {
   currentChapter = chunk[0];
   try {
-    FileModule.readFile(manifestSource + '/' + chunk[0] + '/' + chunk[1] +
-  '.txt', joinChunks);
+    var fileName = chunk[1] + '.txt';
+    var chunkLocation = path.join(manifestSource, chunk[0], fileName);
+    FileModule.readFile(chunkLocation, joinChunks);
   } catch (error) {
     dialog.showErrorBox('Import Error', 'Unknown error has occurred');
     console.log(error);

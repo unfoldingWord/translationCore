@@ -7,61 +7,66 @@ one of the functions and the event will automatically
 be dispatched to all of the stores that have registered
 listener
 (See ExampleComponent.js)
-
 */
 module.exports = {
   nextCheck: function(newVerse) {
     Dispatcher.handleAction({
-      type: consts["NewVerse"],
+      type: consts.NEXT_VERSE,
       newVerse: newVerse
     });
   },
   addCheck: function(newCheck) {
     Dispatcher.handleAction({
-      type: consts["AddCheck"],
+      type: consts.ADD_CHECK,
       newCheck: newCheck
     });
   },
 
   addToExampleComponentText: function() {
     Dispatcher.handleAction({
-      type: "ADD_TO_TEXT"
+      type: consts.ADD_TO_TEXT
     });
   },
 
   updateOriginalLanguage: function(book) {
     Dispatcher.handleAction({
-      type: consts["UpdateOl"],
+      type: consts.UPDATE_ORIGINAL_LANGUAGE,
       bookOl: book
     });
   },
 
   updateTargetLanguage: function(book) {
     Dispatcher.handleAction({
-      type: consts["UpdateTl"],
+      type: consts.UPDATE_TARGET_LANGUAGE,
       bookTl: book
     });
   },
 
   updateGatewayLanguage: function(book) {
     Dispatcher.handleAction({
-      type: consts["UpdateGl"],
+      type: consts.UPDATE_GATEWAY_LANGUAGE,
       bookGl: book
     });
   },
 
   updateModal: function(boolean) {
     Dispatcher.handleAction({
-      type: consts["UpdateModal"],
+      type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
       modalOption: boolean
     });
   },
 
   changeCheck: function(newCheck) {
     Dispatcher.handleAction({
-      type: consts["ChangeCheck"],
+      type: consts.CHANGE_CHECK_TYPE,
       newCheck: newCheck
     });
-  }
+  },
 
+  updateSettings: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.SETTINGS_VIEW,
+      settingsView: boolean
+    });
+  }
 };
