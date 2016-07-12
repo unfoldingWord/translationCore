@@ -9,8 +9,8 @@ const style = require('../../styles/loginStyle');
 class NavBar extends React.Component{
   render(){
     return(
-      <div>
-      <Navbar inverse>
+      <div style={style.bar}>
+      <Navbar inverse style={style.navbar}>
         <Navbar.Header>
           <Navbar.Brand>
             <img src="../8woc/images/TC_Icon.png" style={style.logo}/>
