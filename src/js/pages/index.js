@@ -1,18 +1,15 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
-  const PhrasseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
+  const PhraseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const LexicalModuleView = require('../components/modules/lexical_check_module/CheckModuleView');
 
-  const NavMenu = require('../components/NavigationMenu');
-  const CheckModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const NavMenu = require('../components/core/NavigationMenu');
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
 
 // var db = require('./db-init');
-  const LoginModal = require('../components/LoginModal');
   const NavBar = require('../components/core/NavBar');
   const LoginModal = require('../components/core/LoginModal');
   const UploadModal = require('../components/core/UploadModal');
@@ -22,6 +19,7 @@
   const Grid = require('react-bootstrap/lib/Grid.js');
   const Row = require('react-bootstrap/lib/Row.js');
   const Col = require('react-bootstrap/lib/Col.js');
+  const NextButton = require('../components/core/NextButton');
 
   var App = {
     init: function() {
@@ -42,7 +40,9 @@
             <Row>
               <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
                 <TPane />
-                <LexicalModuleView />
+
+                <PhraseModuleView />
+                <NextButton style={{float: 'right'}} />
               </Col>
             </Row>
           </Grid>

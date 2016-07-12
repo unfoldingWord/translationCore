@@ -54,7 +54,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <Well>
-          <div style={{overflowY: 'scroll', height: '1000px'}}>
+          <div style={{overflowY: 'scroll', height: '80vh', overflowX: 'none'}}>
             {menuList}
           </div>
         </Well>
