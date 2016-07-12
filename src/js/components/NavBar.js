@@ -10,7 +10,7 @@ class NavBar extends React.Component{
   render(){
     return(
       <div>
-      <Navbar inverse>
+      <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
             <img src="../../../../images/TC_Icon.png" style={style.logo}/>

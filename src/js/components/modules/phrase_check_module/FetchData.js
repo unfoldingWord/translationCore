@@ -3,10 +3,10 @@ var Parser = require('./parsers/tnParser.js');
 var Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
 var DataFetcher = function(bookAbbr, progress, onComplete){
-  var DataFetcher = new Door43DataFetcher();
+  var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
   var ulb = {};
-  DataFetcher.getBook(
+  DoorDataFetcher.getBook(
     bookAbbr,
     function(done, total){
       progress(done/total*100);
@@ -15,7 +15,7 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
       if(err){
         console.log("Error in on complete callback: " + err);
       }else{
-        chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
+        chapterData = DoorDataFetcher.getTNFromBook(book, bookAbbr);
         // ulb = DataFetcher.getULBFromBook(book);
         onComplete(null, parseObject(chapterData));
       }

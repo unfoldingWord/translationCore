@@ -6,7 +6,7 @@ const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const AbstractCheckModule = require('../AbstractCheckModule');
 const CheckActions = require('../../../actions/CheckActions.js');
-
+const TranslationAcademyDisplay = require ('../../TranslationAcademyDisplay');
 
 class PhraseChecker extends AbstractCheckModule{
   constructor(){
@@ -59,6 +59,12 @@ class PhraseChecker extends AbstractCheckModule{
                 <FlagDisplay
                   setFlagState={CheckActions.changeCheckProperty}
                 />
+              </Col>
+            </Row>
+            <br />
+            <Row classname="show-grid">
+              <Col md={12}>
+                <TranslationAcademyDisplay sectionName="figs_metaphor" />
               </Col>
             </Row>
         </Grid>

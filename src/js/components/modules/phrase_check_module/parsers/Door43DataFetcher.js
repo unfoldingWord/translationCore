@@ -15,7 +15,7 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
-  const AUTHENTICATION = "access_token=6141ec1ad56e4223d846e0ffcd620e2ab0155aa6";
+  const AUTHENTICATION = "access_token=d5f31d8551e6d23d62e4121cd3c1b89d4ff50c8c";
 
 // ONLY USE getBook()
 class Door43DataFetcher {
