@@ -1,5 +1,5 @@
 var HTMLScraper = require('./parsers/HTMLscraper');
-var Parser = require('./parsers/tnParser.js');
+var Parser = require('./parsers/tNParser.js');
 var Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
 var DataFetcher = function(bookAbbr, progress, onComplete){

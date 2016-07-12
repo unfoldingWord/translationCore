@@ -8,56 +8,16 @@ var CHANGE_EVENT = 'change';
 class CheckStore extends EventEmitter {
   constructor() {
     super();
-    // For ExampleCheckModule
-    this.checkIndex = 0;
-    this.checks = [
-      {
-        book: "Ephesians",
-        chapter: 1,
-        verse: 11,
-        phrase: "God the Father",
-        checkStatus: "RETAINED",
-        comments: "",
-        note: "asdfasdf",
-        flagged: false
-      },
-      {
-        book: "Ephesians",
-        chapter: 2,
-        verse: 12,
-        phrase: "Jesus Christ",
-        checkStatus: "NOT_CHECKED",
-        comments: "",
-        note: "aosdfoansdfo",
-        flagged: false
-      },
-      {
-        book: "Ephesians",
-        chapter: 3,
-        verse: 13,
-        phrase: "Holy Spirit",
-        checkStatus: "NOT_CHECKED",
-        comments: "",
-        note: "a;ksdnvoabo",
-        flagged: false
-      }
-    ];
+    this.retrieveAllChecks('eph'  );
+    this.allChecks = [];
   }
+
 
   // Public function to return a list of all of the checks.
   // Should usually be used by the navigation menu, not the check module, because
   // the check module only displays a single check
   getAllChecks() {
     return this.checks;
-  }
-
-  //Public function to set all checks from some object in a module
-  //THIS IS PROBABLY NOT GOING TO STAY HERE
-  initializeAllChecks(checks){
-    for(let check in checks){
-      check.checkStatus = "NOT_CHECKED"
-    }
-    this.checks = checks;
   }
 
   // Public function to return a deep clone of the current check
@@ -114,7 +74,6 @@ class CheckStore extends EventEmitter {
         // do nothing
     }
   }
-
 }
 
 const checkStore = new CheckStore;

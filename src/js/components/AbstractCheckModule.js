@@ -5,7 +5,7 @@ var CheckActions = require('../actions/CheckActions.js');
 /*
 Abstract class for Check Modules:
 
-Check Modules -- like LexicalCheckModule -- should extend AbstractCheckModule.
+Check Modules -- like PhraseCheckModule -- should extend AbstractCheckModule.
 Subclasses will call getCurrentCheck to get this.state.currentCheck. You usually
 won't have to mess with this file.
 */

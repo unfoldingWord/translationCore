@@ -9,28 +9,44 @@
 const React = require('react');
 
 //User imports
-//Won't be required in final version
-const fetchDataFunction = require('./FetchData.js');
-const Door43DataFetcher = require('../translation_notes/Door43DataFetcher.js');
-const tWFetcher = require('./translation_words/TranslationWordsFetcher.js');
 const LexicalView = require('./lexical_checker/LexicalChecker.js');
 const TranslationWordDisplay = require('./translation_words/TranslationWordsDisplay.js');
+const AbstractCheckModule = require('../../AbstractCheckModule.js');
+const CheckStore =  require('../../../stores/CheckStore.js');
 
-const LexicalCheckModule = React.createClass({
 
-	componentWillMount: function() {
+class LexicalCheckModule extends AbstractCheckModule {
+	constructor() {
+		super();
+	}
 
-	},
+	componentWillMount() {
+		// super.componentWillMount();
+		CheckStore.addChangeListener(this.changeListener);
 
-	componentWillUnmount: function() {
-	      
-	},
+	}
 
-	render: function() {
+	componentWillUnmount() {
+		CheckStore.removeChangeListener(this.changeListener);
+	}
+
+	changeListener() {
+		super.refreshCurrentCheck();
+		var currentCheck = super.getCurrentCheck();
+		this.setState({
+			chapter: currentCheck.chapter,
+			verse: currentCheck.verse,
+			text: currentCheck.text
+		});
+	}
+
+	render() {
 		return (
-			<div>hi</div>
+			<div>
+			
+			</div>
 		);
 	}
-});
+}
 
 module.exports = LexicalCheckModule;
