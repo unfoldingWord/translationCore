@@ -17,6 +17,7 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
     let bookData = {}; // return value
     for (let chap in book) {
       for (let verse in book[chap].verses) {
+        if (verse == "00.txt") continue;
         let tnReg = new RegExp("=+\\s*translationnotes:?\\s*=+([^=]+)", "i");
         let verseText;
         try {
