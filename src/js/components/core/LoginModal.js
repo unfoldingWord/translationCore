@@ -21,10 +21,6 @@ class LoginModal extends React.Component {
       CoreStore.removeChangeListener(this.updateLoginModal.bind(this));
     }
 
-    componentWillUnmount() {
-      CoreStore.removeChangeListener(this.updateLoginModal.bind(this));
-    }
-
     updateLoginModal(){
       this.setState({visibleLogin: CoreStore.getLoginModal()});
     }

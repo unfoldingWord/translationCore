@@ -2,9 +2,7 @@ const React = require('react');
 
 const remote = window.electron.remote;
 const {dialog} = remote;
-
 const CoreActions = require('../../actions/CoreActions.js');
-
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
@@ -29,6 +27,8 @@ class Login extends React.Component {
     var newuser = gogs().login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
+      CoreActions.updateButtonColor(true);
+      CoreActions.updateButtonText(true);
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {

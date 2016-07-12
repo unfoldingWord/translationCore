@@ -75,5 +75,20 @@ module.exports = {
       type: consts.SETTINGS_VIEW,
       settingsView: boolean
     });
-  }
+  },
+
+  updateButtonText: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_BUTTTON_TEXT,
+      buttonText: boolean
+    });
+  },
+
+  updateButtonColor: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_BUTTTON_COLOR,
+      buttonColor: boolean
+    });
+  },
+
 };
