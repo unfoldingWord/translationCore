@@ -1,5 +1,5 @@
 var React = require('react');
-var CheckActions = require('../actions/CheckActions.js');
+var CheckActions = require('../../actions/CheckActions.js');
 var AbstractCheckModule = require('./AbstractCheckModule.js');
 
 /*

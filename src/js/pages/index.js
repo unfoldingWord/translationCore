@@ -13,6 +13,7 @@
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
+  const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
   var App = {
     init: function() {
@@ -25,6 +26,7 @@
           <TPane />
           <UploadModal />
           <CheckModuleView />
+          <SwitchCheckModuleDropdown />
           <SettingsModal />
         </div>
       );
