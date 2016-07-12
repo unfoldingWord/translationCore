@@ -51,7 +51,7 @@ class PhraseChecker extends AbstractCheckModule{
             <Row className="show-grid">
               <Col md={6} className="confirm-area">
                 <ConfirmDisplay
-                  phraseInfo={super.getCurrentCheck().note}
+                  phraseInfo={super.getCurrentCheck().phraseInfo}
                   phrase={super.getCurrentCheck().phrase}
                 />
               </Col>

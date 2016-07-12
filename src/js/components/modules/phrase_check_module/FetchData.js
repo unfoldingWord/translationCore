@@ -17,6 +17,7 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
         console.log("Error in on complete callback: " + err);
       }else{
         chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
+        console.log(chapterData);
         // ulb = DataFetcher.getULBFromBook(book);
         // console.log(ulb);
         onComplete(null, parseObject(chapterData));
