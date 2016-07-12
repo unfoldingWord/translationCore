@@ -26,7 +26,7 @@
           <UploadModal />
           <Grid fluid>
             <Row>
-              <Col style={RootStyles.SideMenu} xs={2} md={2} lg={2}>
+              <Col style={RootStyles.SideMenu} md={2}>
                 <NavMenu />
               </Col>
             </Row>

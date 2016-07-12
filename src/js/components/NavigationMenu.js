@@ -8,42 +8,56 @@ const MenuItem = require('./core/MenuItem');
 class NavigationMenu extends React.Component {
   constructor() {
     super();
-    this.retrieveChecks = this.retrieveChecks.bind(this);
+    this.retrieveGroups = this.retrieveGroups.bind(this);
     this.state = {
-      checks: CheckStore.getAllChecks()
+      groups: CheckStore.getAllGroups()
     };
   }
 
-  retrieveChecks() {
+  retrieveGroups() {
     this.setState({
-      checks: CheckStore.getAllChecks()
+      groups: CheckStore.getAllGroups()
     });
   }
 
   componentWillMount() {
-    CheckStore.addChangeListener(this.retrieveChecks);
+    CheckStore.addChangeListener(this.retrieveGroups);
   }
 
   componentWillUnmount() {
-    CheckStore.removeChangeListener(this.retrieveChecks);
+    CheckStore.removeChangeListener(this.retrieveGroups);
   }
 
   render() {
-    var menuItems = this.state.checks.map(function(check, index){
+    var menuList = this.state.groups.map(function(group, groupIndex) {
+      var groupHeader = (
+        <div>{group.group}</div>
+      );
+      var checkMenuItems = group.checks.map(function(check, checkIndex) {
+        return (
+          <div key={checkIndex}>
+            <MenuItem
+              check={check}
+              groupIndex={groupIndex}
+              checkIndex={checkIndex}
+              isCurrentCheck={checkIndex == CheckStore.getCheckIndex()}
+            />
+          </div>
+        );
+      });
       return (
-        <div key={index}>
-          <MenuItem
-            check={check}
-            checkIndex={index}
-            isCurrentCheck={index == CheckStore.getCheckIndex()}
-          />
+        <div key={groupIndex}>
+          {groupHeader}
+          {checkMenuItems}
         </div>
       );
     });
     return (
       <div>
         <Well>
-          {menuItems}
+          <div style={{overflowY: 'scroll', height: '1000px'}}>
+            {menuList}
+          </div>
         </Well>
       </div>
     )
