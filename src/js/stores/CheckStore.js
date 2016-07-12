@@ -52,12 +52,12 @@ class CheckStore extends EventEmitter {
       {
           name: "Lexical Checks",
           id: 1,
-          filePath: "C:/Users/Logan Lebanoff/Desktop/8woc/8woc/data/projects/eph_mylanguage/check_modules/lexical_check_module/check_data.json"
+          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/lexical_check_module/check_data.json"
       },
       {
           name: "Phrase Checks",
           id: 2,
-          filePath: "C:/Users/Logan Lebanoff/Desktop/8woc/8woc/data/projects/eph_mylanguage/check_modules/phrase_check_module/check_data.json"
+          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/phrase_check_module/check_data.json"
       }
     ];
     // For ExampleCheckModule
