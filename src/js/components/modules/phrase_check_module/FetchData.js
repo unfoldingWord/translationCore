@@ -16,12 +16,8 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
         console.log("Error in on complete callback: " + err);
       }else{
         chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
-        ulb = DataFetcher.getULBFromBook(book);
-        console.log("ULB: ");
-        console.dir(ulb);
-        console.log("CHapterData: ");
-        console.dir(chapterData);
-        onComplete(parseObject(chapterData));
+        // ulb = DataFetcher.getULBFromBook(book);
+        onComplete(null, parseObject(chapterData));
       }
     }
   );
@@ -34,23 +30,15 @@ var parseObject = function(object){
     var newGroup = {group: type, checks: []};
     for(let verse of object[type].verses) {
       let newVerse = Object.assign({},verse);
-      delete newVerse.book;
-      newVerse.checked = false;
+      newVerse.chapter += 1;
+      newVerse.flagged = false;
+      newVerse.checkStatus = "NOT_CHECKED";
+      newVerse.comments = "";
       newGroup.checks.push(newVerse);
     }
     phraseObject["Phrase Checks"].push(newGroup);
   }
-  return menuify(phraseObject);
-}
-
-var menuify = function(object){
-  var menuObject = [];
-  for(let type in object){
-    for(let verse in type.verses){
-      menuObject.push(verse);
-    }
-  }
-  console.log(menuObject);
+  return phraseObject;
 }
 
 module.exports = DataFetcher;

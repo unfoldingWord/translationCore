@@ -1,6 +1,6 @@
 var React = require('react');
-var CheckStore = require('../stores/CheckStore.js');
-var CheckActions = require('../actions/CheckActions.js');
+var CheckStore = require('../../stores/CheckStore.js');
+var CheckActions = require('../../actions/CheckActions.js');
 
 /*
 Abstract class for Check Modules:
@@ -30,7 +30,9 @@ class AbstractCheckModule extends React.Component {
 
   // Gets the current check from CheckStore and saves it in this.state
   refreshCurrentCheck() {
+    console.log('CurrentCheck')
     this.setState({currentCheck: CheckStore.getCurrentCheck()});
+    console.log(CheckStore.getCurrentCheck());
   }
 
   // Returns the current check in this.state

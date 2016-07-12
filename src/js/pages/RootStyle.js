@@ -6,7 +6,7 @@ var RootStyles = {
     position: 'fixed',
     textAlign: 'center',
     height: 'auto',
-    minHeight:'100vh'
+    minHeight:'100vh',
   },
   AfterCheck: {
     minWidth:'100vh',

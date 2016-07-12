@@ -28,6 +28,12 @@ module.exports = {
     });
   },
 
+  login: function(user) {
+    Dispatcher.handleAction({
+      type: consts.ACCOUNT_LOGIN
+    });
+  },
+
   updateOriginalLanguage: function(book) {
     Dispatcher.handleAction({
       type: consts.UPDATE_ORIGINAL_LANGUAGE,

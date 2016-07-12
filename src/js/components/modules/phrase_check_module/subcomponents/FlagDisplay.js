@@ -9,17 +9,17 @@ class FlagDisplay extends React.Component{
       <ButtonGroup vertical block>
         <Button bsStyle="success" onClick={
             function() {
-              _this.props.setFlagState("Retained")
+              _this.props.setFlagState('checkStatus', "RETAINED")
             }
           }>&#10003; Retain</Button>
         <Button bsStyle="warning" onClick={
             function() {
-              _this.props.setFlagState("Changed")
+              _this.props.setFlagState('checkStatus', "REPLACED")
             }
           }>&#9872; Changed</Button>
         <Button bsStyle="danger" onClick={
             function() {
-              _this.props.setFlagState("Wrong")
+              _this.props.setFlagState('checkStatus', "WRONG")
             }
         }>&#10060; Wrong</Button>
       </ButtonGroup>

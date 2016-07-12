@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
   }
 
   menuItemClicked() {
-    CheckActions.goToCheck(this.props.checkIndex);
+    CheckActions.goToCheck(this.props.groupIndex, this.props.checkIndex);
   }
 
   render() {
@@ -50,11 +50,14 @@ class MenuItem extends React.Component {
 
     return (
       <span>
+        &nbsp;&nbsp;
         <Glyphicon glyph="flag" style={flagStyle} />
-        <span style={style.menu_item_text}>
+        <span style={style.menuItem.text}>
+          &nbsp;
           <a onClick={this.menuItemClicked}>
-            {" " + this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse + " "}
+            {this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
+          &nbsp;
         </span>
         <span>
           <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
