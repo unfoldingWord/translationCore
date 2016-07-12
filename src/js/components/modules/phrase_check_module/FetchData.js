@@ -1,6 +1,7 @@
 var HTMLScraper = require('./parsers/HTMLscraper');
 var Parser = require('./parsers/tnParser.js');
 var Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
+var CoreActions = require('../../../actions/CoreActions');
 
 var DataFetcher = function(bookAbbr, progress, onComplete){
   var DataFetcher = new Door43DataFetcher();
@@ -17,6 +18,7 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
       }else{
         chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
         // ulb = DataFetcher.getULBFromBook(book);
+        // console.log(ulb);
         onComplete(null, parseObject(chapterData));
       }
     }
@@ -31,6 +33,7 @@ var parseObject = function(object){
     for(let verse of object[type].verses) {
       let newVerse = Object.assign({},verse);
       newVerse.chapter += 1;
+      newVerse.verse += 1;
       newVerse.flagged = false;
       newVerse.checkStatus = "NOT_CHECKED";
       newVerse.comments = "";

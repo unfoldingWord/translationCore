@@ -18,6 +18,7 @@
   const Grid = require('react-bootstrap/lib/Grid.js');
   const Row = require('react-bootstrap/lib/Row.js');
   const Col = require('react-bootstrap/lib/Col.js');
+  const NextButton = require('../components/core/NextButton');
 
   var App = {
     init: function() {
@@ -38,6 +39,7 @@
               <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
                 <TPane />
                 <CheckModuleView />
+                <NextButton style={{float: 'right'}} />
               </Col>
             </Row>
           </Grid>

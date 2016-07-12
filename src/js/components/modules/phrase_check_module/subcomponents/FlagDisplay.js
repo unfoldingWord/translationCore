@@ -1,6 +1,6 @@
 const React = require('react');
 const RB = require('react-bootstrap');
-const {Button, ButtonGroup} = RB;
+const {Button, ButtonGroup, Glyphicon} = RB;
 
 class FlagDisplay extends React.Component{
   render(){
@@ -11,17 +11,17 @@ class FlagDisplay extends React.Component{
             function() {
               _this.props.setFlagState('checkStatus', "RETAINED")
             }
-          }>&#10003; Retain</Button>
+          }><Glyphicon glyph="ok" /> Retain</Button>
         <Button bsStyle="warning" onClick={
             function() {
               _this.props.setFlagState('checkStatus', "REPLACED")
             }
-          }>&#9872; Changed</Button>
+          }><Glyphicon glyph="random" /> Changed</Button>
         <Button bsStyle="danger" onClick={
             function() {
               _this.props.setFlagState('checkStatus', "WRONG")
             }
-        }>&#10060; Wrong</Button>
+        }><Glyphicon glyph="remove" /> Wrong</Button>
       </ButtonGroup>
     );
   }
