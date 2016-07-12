@@ -147,5 +147,6 @@ function joinChunks(text) {
 function openOriginal(text) {
   var input = JSON.parse(text);
   input[bookName].title = bookTitle;
+  console.log(input[bookName]);
   CoreActions.updateOriginalLanguage(input[bookName]);
 }
