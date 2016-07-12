@@ -12,7 +12,6 @@
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
-  const TranslationAcademyDisplay = require('../components/TranslationAcademyDisplay');
 
   var App = {
     init: function() {
@@ -23,7 +22,6 @@
           <NavBar/>
           <LoginModal />
           <TPane />
-          <TranslationAcademyDisplay />
           <UploadModal />
           <CheckModuleView />
           <SettingsModal />

@@ -7,7 +7,7 @@ const FlagDisplay = require('./subcomponents/FlagDisplay');
 const Menu = require('./subcomponents/Menu');
 const AbstractCheckModule = require('../../AbstractCheckModule');
 const CheckActions = require('../../../actions/CheckActions.js');
-
+const TranslationAcademyDisplay = require ('../../TranslationAcademyDisplay');
 
 class PhraseChecker extends AbstractCheckModule{
   constructor(){
@@ -93,6 +93,12 @@ class PhraseChecker extends AbstractCheckModule{
               <Menu verses={this.state.chapterData}
                         setNote={this.setNote}
                         setRef={this.setRef}/>
+            </Col>
+          </Row>
+          <br />
+          <Row classname="show-grid">
+            <Col md={12}>
+              <TranslationAcademyDisplay sectionName="figs_metaphor" />
             </Col>
           </Row>
       </Grid>
