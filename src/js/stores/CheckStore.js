@@ -18,6 +18,7 @@ class CheckStore extends EventEmitter {
         phrase: "God the Father",
         checkStatus: "RETAINED",
         comments: "",
+        note: "asdfasdf",
         flagged: false
       },
       {
@@ -27,6 +28,7 @@ class CheckStore extends EventEmitter {
         phrase: "Jesus Christ",
         checkStatus: "NOT_CHECKED",
         comments: "",
+        note: "aosdfoansdfo",
         flagged: false
       },
       {
@@ -36,6 +38,7 @@ class CheckStore extends EventEmitter {
         phrase: "Holy Spirit",
         checkStatus: "NOT_CHECKED",
         comments: "",
+        note: "a;ksdnvoabo",
         flagged: false
       }
     ];
@@ -46,6 +49,15 @@ class CheckStore extends EventEmitter {
   // the check module only displays a single check
   getAllChecks() {
     return this.checks;
+  }
+
+  //Public function to set all checks from some object in a module
+  //THIS IS PROBABLY NOT GOING TO STAY HERE
+  initializeAllChecks(checks){
+    for(let check in checks){
+      check.checkStatus = "NOT_CHECKED"
+    }
+    this.checks = checks;
   }
 
   // Public function to return a deep clone of the current check
@@ -108,3 +120,4 @@ class CheckStore extends EventEmitter {
 const checkStore = new CheckStore;
 Dispatcher.register(checkStore.handleActions.bind(checkStore));
 module.exports = checkStore;
+window.checkStore = checkStore;

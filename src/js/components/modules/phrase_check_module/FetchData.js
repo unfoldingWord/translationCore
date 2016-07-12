@@ -1,18 +1,28 @@
 var HTMLScraper = require('./parsers/HTMLscraper');
 var Parser = require('./parsers/tnParser.js');
+var Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
 var DataFetcher = function(bookAbbr, progress, onComplete){
-  var http = new HTMLScraper();
+  var DataFetcher = new Door43DataFetcher();
   var chapterData = {};
-  http.downloadEntireBook(
+  var ulb = {};
+  DataFetcher.getBook(
     bookAbbr,
     function(done, total){
       progress(done/total*100);
     },
-    function(){
-      var book = http.getBook(bookAbbr);
-      chapterData = Parser(book, bookAbbr, function(a){console.log(a*100+"%")});
-      onComplete(parseObject(chapterData));
+    function(err, book){
+      if(err){
+        console.log("Error in on complete callback: " + err);
+      }else{
+        chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
+        ulb = DataFetcher.getULBFromBook(book);
+        console.log("ULB: ");
+        console.dir(ulb);
+        console.log("CHapterData: ");
+        console.dir(chapterData);
+        onComplete(parseObject(chapterData));
+      }
     }
   );
 }
@@ -30,7 +40,17 @@ var parseObject = function(object){
     }
     phraseObject["Phrase Checks"].push(newGroup);
   }
-  return phraseObject;
+  return menuify(phraseObject);
+}
+
+var menuify = function(object){
+  var menuObject = [];
+  for(let type in object){
+    for(let verse in type.verses){
+      menuObject.push(verse);
+    }
+  }
+  console.log(menuObject);
 }
 
 module.exports = DataFetcher;
