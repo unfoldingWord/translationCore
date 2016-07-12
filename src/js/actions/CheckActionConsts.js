@@ -1,3 +1,5 @@
 module.exports = {
-  "ChangeCheckProperty": "CHANGE_CHECK_PROPERTY",
+  CHANGE_CHECK_PROPERTY: "CHANGE_CHECK_PROPERTY",
+  NEXT_CHECK: "NEXT_CHECK",
+  GO_TO_CHECK: "GO_TO_CHECK",
 };

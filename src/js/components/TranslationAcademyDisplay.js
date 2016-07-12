@@ -41,7 +41,7 @@ const TranslationAcademyDisplay = React.createClass({
         toggleDisplay: !_this.state.toggleDisplay
       });
       //passing display section as a prop
-      _this.displaySection(_this.props.sectionName);
+      _this.displaySection('choose_team');
     }
     // creates a new instance because its a class and classes need objects
 	  this.tAHtmlScraper = new TranslationAcademyScraper();

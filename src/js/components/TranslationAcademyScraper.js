@@ -56,7 +56,7 @@ class TranslationAcademyScraper{
         }
       }
 
-      request.open("Get",BASE_URL link, true);
+      request.open("Get",BASE_URL + link, true);
       request.send();
     }
   }

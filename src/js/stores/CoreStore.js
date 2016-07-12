@@ -63,6 +63,14 @@ class CoreStore extends EventEmitter {
     return this.modalVisibility;
   }
 
+  getLoginModal(){
+    return this.loginModalVisibility;
+  }
+
+  getSettingsView() {
+    return this.settingsVisibility;
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
@@ -80,7 +88,7 @@ class CoreStore extends EventEmitter {
 
   handleActions(action) {
     switch (action.type) {
-      case consts["AddCheck"]:
+      case consts.ADD_CHECK:
         // change some data here...
 
         // Emits that a change was made, so any component listening for
@@ -88,43 +96,54 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts["NextVerse"]:
+      case consts.NEXT_VERSE:
         // change some data here...
         this.emitChange();
         break;
 
-      case consts["PrevVerse"]:
+      case consts.PREV_VERSE:
         // change some data here...
         this.emitChange();
         break;
 
       // For ExampleComponent
-      case "ADD_TO_TEXT":
+      case consts.ADD_TO_TEXT:
         this.exampleComponentText += "a";
         this.emitChange();
         break;
 
-      case consts["UpdateOl"]:
+      case consts.UPDATE_ORIGINAL_LANGUAGE:
         this.ol = action.bookOl;
         this.emitChange();
         break;
 
-      case consts["UpdateTl"]:
+      case consts.UPDATE_TARGET_LANGUAGE:
         this.tl = action.bookTl;
         this.emitChange();
         break;
 
-      case consts["UpdateGl"]:
+      case consts.UPDATE_GATEWAY_LANGUAGE:
         this.gl = action.bookGl;
         this.emitChange();
         break;
 
-      case consts["UpdateModal"]:
+      case consts.CHANGE_UPLOAD_MODAL_VISIBILITY:
         this.modalVisibility = action.modalOption;
         this.emitChange();
         break;
-      case consts["ChangeCheck"]:
+
+      case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
+        this.loginModalVisibility = action.loginModalOption;
+        this.emitChange();
+        break;
+
+      case consts.CHANGE_CHECK_TYPE:
         this.checkType = action.newCheck;
+        this.emitChange();
+        break;
+
+      case consts.SETTINGS_VIEW:
+        this.settingsVisibility = action.settingsView;
         this.emitChange();
         break;
 

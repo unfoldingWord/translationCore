@@ -4,6 +4,7 @@
  ******************************************************************************/
 const FileModule = (function() {
   const fs = require(window.__base + 'node_modules/fs-extra');
+  const request = require('request');
 
   return {
 /**
@@ -17,6 +18,12 @@ const FileModule = (function() {
     readFile: function(file, callback) {
       var inputFile = fs.readFileSync(file).toString();
       callback(inputFile);
+    },
+
+    loadOnline: function(url, callback, currentChapter) {
+      request(url, function(error, response, body) {
+        callback(error, response, body, currentChapter);
+      });
     }
   };
 }

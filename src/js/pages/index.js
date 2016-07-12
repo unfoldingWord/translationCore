@@ -1,16 +1,18 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
+  const CheckModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
 
   const remote = window.electron.remote;
   const {Menu} = remote;
-
-  const TPane = require('../components/TPane');
+  const TPane = require('../components/core/TPane');
 // var db = require('./db-init');
-  const UploadModal = require('../components/UploadModal');
-  const MenuBar = require('../components/MenuBar');
+  const NavBar = require('../components/NavBar');
+  const LoginModal = require('../components/LoginModal');
+  const UploadModal = require('../components/core/UploadModal');
+  const MenuBar = require('../components/core/MenuBar');
+  const SettingsModal = require('../components/core/SettingsModal');
   const TranslationAcademyDisplay = require('../components/TranslationAcademyDisplay');
-
 
   var App = {
     init: function() {
@@ -18,7 +20,13 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
+          <NavBar/>
+          <LoginModal />
+          <TPane />
           <TranslationAcademyDisplay />
+          <UploadModal />
+          <CheckModuleView />
+          <SettingsModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
