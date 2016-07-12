@@ -30,6 +30,7 @@ var parseObject = function(object){
     var newGroup = {group: type, checks: []};
     for(let verse of object[type].verses) {
       let newVerse = Object.assign({},verse);
+      newVerse.chapter += 1;
       newVerse.flagged = false;
       newVerse.checkStatus = "NOT_CHECKED";
       newVerse.comments = "";
