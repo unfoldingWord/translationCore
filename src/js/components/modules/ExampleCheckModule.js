@@ -1,7 +1,6 @@
 var React = require('react');
 var CheckActions = require('../../actions/CheckActions.js');
-var AbstractCheckModule = require('../AbstractCheckModule.js');
-
+var AbstractCheckModule = require('./AbstractCheckModule.js');
 /*
 An example check module component:
 It just has a paragraph that displays the check status (default is UNCHECKED),

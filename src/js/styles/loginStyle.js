@@ -15,7 +15,7 @@ var style = {
   logo:{
     height: '60px',
     width: '60px',
-    margin: '0'
+    margin: '0px'
   },
 
   NavBarbutton:{

@@ -1,5 +1,6 @@
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('./CoreActionConsts');
+var FileModule = require('../components/core/FileModule');
 /**
 How to use the actions:
 Just require this file in your component, call
@@ -66,13 +67,6 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
       loginModalOption: boolean
-    });
-  },
-
-  changeCheck: function(newCheck) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_CHECK_TYPE,
-      newCheck: newCheck
     });
   },
 

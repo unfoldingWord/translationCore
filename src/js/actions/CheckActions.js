@@ -1,5 +1,6 @@
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('./CheckActionConsts');
+var FileModule = require('../components/core/FileModule');
 /*
 Creates actions related to checks
 */
@@ -36,5 +37,22 @@ module.exports = {
       checkIndex: checkIndex
     });
   },
+
+  // Async reads the Json file at the given path, then dispatches an action with
+  // the resulting object
+  changeCheckCategory: function(newCheckCategory) {
+    var this_ = this;
+    FileModule.readJsonFile(newCheckCategory.filePath, function(jsonObject) {
+      this_.changeCheckCategory_(jsonObject, newCheckCategory.id);
+    });
+  },
+
+  changeCheckCategory_: function(jsonObject, id) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CHECK_CATEGORY,
+      jsonObject: jsonObject,
+      id: id
+    });
+  }
 
 };
