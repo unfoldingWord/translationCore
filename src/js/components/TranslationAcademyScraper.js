@@ -1,13 +1,13 @@
 
 const BASE_URL = "https://git.door43.org/";
 const TA_URL = "Door43/en-ta-translate-vol1/src/master/content";
-
+//creates TranslationAcademyScraper class
 class TranslationAcademyScraper{
   constructor() {
     this.sectionList = {};
     this.link = null;
   }
-
+// gets the list of sections from tranlation academy by its url then fires the call back when done
   getTranslationAcademySectionList(url, callback) {
     console.log('Scraper');
     console.log(callback);
@@ -45,18 +45,18 @@ class TranslationAcademyScraper{
       var request = new XMLHttpRequest();
       var link = _this.sectionList[sectionName].replace('src','raw');
       request.onload = function(){
-
+        // this takes  the response im getting from TA  and saves it in a file
         _this.sectionList[sectionName] = {
           "file" : this.response,
           "link": link
         }
-        // passes the file to the call back
+        // This checks to see if the call back exists
         if (assignCallback){
           assignCallback(this.response);
         }
       }
 
-      request.open("Get",BASE_URL + link, true);
+      request.open("Get",BASE_URL link, true);
       request.send();
     }
   }

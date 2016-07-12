@@ -6,14 +6,16 @@ const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const Button = require('react-bootstrap/lib/Button.js');
 
 const TranslationAcademyScraper = require('./TranslationAcademyScraper.js');
+const EventEmitter = require('events').EventEmitter;
 
 const TranslationAcademyDisplay = React.createClass({
+  // this makes fields start off empty so they can be filled eventually
   sectionList: null,
 
   currentMarkdown: null,
 
   tAHtmlScraper: null,
-
+// gets the initial states of the fields so that when they are toggled they can be displayed
   getInitialState: function() {
     return {
       toggleDisplay: false,
@@ -30,19 +32,20 @@ const TranslationAcademyDisplay = React.createClass({
      * This callback will fire once the data has been retrieved from the internet
      * 'data' contains the list of words
      */
-      function setList(data){
-        //set our list to the data that was retrieved
-        _this.sectionList = data;
-        //toggle our display so that React re-renders the component
-        _this.setState({
-          toggleDisplay: !_this.state.toggleDisplay
-        });
-        _this.displaySection("choose_team");
-      }
-      console.log('Display');
-      console.log(setList);
+    function setList(data){
+      //set our list to the data that was retrieved, when done it calls display section
+      _this.sectionList = data;
+      //everytime the state changes React re-renders the component so the display changes
+      _this.setState({
+
+        toggleDisplay: !_this.state.toggleDisplay
+      });
+      //passing display section as a prop
+      _this.displaySection(_this.props.sectionName);
+    }
+    // creates a new instance because its a class and classes need objects
 	  this.tAHtmlScraper = new TranslationAcademyScraper();
-    //Get the list of sections in tA
+    //Get the list of sections in tA , undefined because i want the default url, when done it calls funtion set list
     this.tAHtmlScraper.getTranslationAcademySectionList(undefined, setList);
   },
 
@@ -57,7 +60,6 @@ const TranslationAcademyDisplay = React.createClass({
       <Well>
 				<div
 					style={{
-
 						overflowY: "scroll"
 					}}
 				>
