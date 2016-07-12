@@ -63,6 +63,7 @@ const TranslationAcademyDisplay = React.createClass({
 						overflowY: "scroll"
 					}}
 				>
+          <h1> Translation Academy</h1>
 					{this.currentMarkdown}
 				</div>
 			</Well>
@@ -82,9 +83,11 @@ displaySection: function(sectionName) {
 		this.tAHtmlScraper.getSection(sectionName + '.md',
 			function(file) { //assign callback
 				rawMarkdown = file;
+        console.log(rawMarkdown);
+        var markDownToDisplay = rawMarkdown.split("---")[2];
 				_this.setCurrentMarkdown(
 					<Markdown
-						source={rawMarkdown}
+						source={markDownToDisplay}
 					/>
 				);
 			}
