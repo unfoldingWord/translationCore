@@ -4,23 +4,17 @@
   const PhrasseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const LexicalModuleView = require('../components/modules/lexical_check_module/CheckModuleView');
 
-<<<<<<< HEAD
   const NavMenu = require('../components/NavigationMenu');
-=======
   const CheckModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const NavMenu = require('../components/core/NavigationMenu');
->>>>>>> lw-tuesday-demo
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
 
 // var db = require('./db-init');
-<<<<<<< HEAD
   const LoginModal = require('../components/LoginModal');
-=======
   const NavBar = require('../components/core/NavBar');
   const LoginModal = require('../components/core/LoginModal');
->>>>>>> lw-tuesday-demo
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
@@ -35,15 +29,9 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
-<<<<<<< HEAD
-          <LoginModal />
           <TPane />
-          <UploadModal />
-          <SettingsModal />
-=======
           <NavBar/>
           <LoginModal />
->>>>>>> lw-tuesday-demo
           <UploadModal />
           <Grid fluid>
             <Row>

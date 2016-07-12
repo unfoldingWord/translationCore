@@ -119,6 +119,7 @@ class CheckStore extends EventEmitter {
         // do nothing
     }
   }
+  
 }
 
 const checkStore = new CheckStore;
