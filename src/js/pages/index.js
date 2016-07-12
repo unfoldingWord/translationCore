@@ -27,7 +27,6 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
-          <TPane />
           <NavBar/>
           <LoginModal />
           <UploadModal />

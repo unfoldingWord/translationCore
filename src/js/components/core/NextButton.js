@@ -16,7 +16,7 @@ class NextButton extends React.Component {
   render() {
     return (
         <Button className='btn' onClick={this.buttonClicked}>
-          Save and Continue &nbsp;
+          Save and Continue
           <span className='glyphicon glyphicon-arrow-right'/>
         </Button>
     );

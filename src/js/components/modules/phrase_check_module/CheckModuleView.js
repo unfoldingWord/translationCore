@@ -39,7 +39,7 @@ class PhraseChecker extends AbstractCheckModule{
             <Row className="show-grid">
               <Col md={12}>
                 <ScriptureDisplay
-                  scripture={'this is some test stuff blah blah blah'}
+                  scripture={'This is where the target language verse will be displayed during the checking process for the phrase checker'}
                   setSelectedText={CheckActions.changeCheckProperty}
                   currentVerse={super.getCurrentCheck().book
                                 + " " + super.getCurrentCheck().chapter
