@@ -7,7 +7,7 @@
  */
  // This file should probably be moved to a new location later
  const USFMParser = require('./USFMParse');
- const TNParser = require("./tnParser");
+ const TNParser = require("./tNParser");
 
  //hardcoded github api calls
  const GITHUB_API_NOTES = "https://api.github.com/repositories/23808509/contents/bible/notes",
@@ -15,8 +15,7 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
-
-  const AUTHENTICATION = "access_token=" + require("../../../../../Authentication.js");
+  const AUTHENTICATION = "access_token=dfb11457207f96beb8fc634a49cd36da785b695a";
 
 // ONLY USE getBook()
 class Door43DataFetcher {
@@ -325,7 +324,6 @@ class Door43DataFetcher {
       console.log("Error: Input object is in incorrect format");
       return {};
     }
-    console.log('Book: ' + book);
     return TNParser(book, bookAbbr);
   }
 }

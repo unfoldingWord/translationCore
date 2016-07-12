@@ -35,6 +35,7 @@ class CheckStore extends EventEmitter {
     return this.groups;
   }
 
+
   // Public function to return a list of all of the checks.
   // Should usually be used by the navigation menu, not the check module, because
   // the check module only displays a single check
@@ -42,9 +43,9 @@ class CheckStore extends EventEmitter {
     return this.checks;
   }
 
-
   // Public function to return a deep clone of the current group
   // Why not just return this.groups[this.groupIndex]? Because that returns a reference to
+
   // the object, and we don't want any changes made here to be reflected elsewhere,
   // and vice versa
   getCurrentGroup() {
@@ -118,7 +119,7 @@ class CheckStore extends EventEmitter {
         // do nothing
     }
   }
-
+  
 }
 
 const checkStore = new CheckStore;

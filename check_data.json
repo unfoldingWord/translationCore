@@ -1,0 +1,7509 @@
+{
+  "LexicalCheck": [
+    {
+      "group": "adoption",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "age",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ai",
+      "checks": []
+    },
+    {
+      "group": "apostle",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "authority",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "believe",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "beloved",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "blameless",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "bless",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "blood",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "body",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "bond",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "call",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "christ",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "church",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "confidence",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "creation",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "death",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "deer",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "demon",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "destiny",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "dominion",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "earth",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ephesus",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "eve",
+      "checks": []
+    },
+    {
+      "group": "faith",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "faithful",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "falsegod",
+      "checks": []
+    },
+    {
+      "group": "father",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "fir",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "forgive",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "free",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "fulfill",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "glory",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "god",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "godthefather",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "goodnews",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "grace",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "hand",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "head",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "heart",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "heaven",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "holy",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "holyspirit",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "inchrist",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "inherit",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "iyahweh",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "jesus",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "kin",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "king",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "know",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "letter",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "light",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "lord",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "lordgod",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "love",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 33,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "mighty",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "mystery",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "name",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "paul",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "peace",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "plead",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "possess",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "power",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "praise",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "pray",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "predestine",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "promise",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "raise",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "redeem",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reveal",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "righthand",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ruler",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ruth",
+      "checks": []
+    },
+    {
+      "group": "salvation",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "seal",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "setapart",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sin",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "son",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sonofgod",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "spirit",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "strength",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "subject",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "time",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "true",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "understand",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ur",
+      "checks": []
+    },
+    {
+      "group": "willofgod",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "wise",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "word",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 29,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "wordoftruth",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "works",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 1,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "world",
+      "checks": [
+        {
+          "chapter": 1,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "amen",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "believer",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "bold",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "consecrate",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "courage",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "eternity",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "family",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "forever",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "generation",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "gentile",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "gift",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "heir",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "life",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "member",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 30,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "peoplegroup",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "prison",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "proclaim",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "prophet",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "rage",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "servant",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "suffer",
+      "checks": [
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 3,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "alms",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "angry",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ark",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ash",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "children",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "clean",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "darkness",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "deceive",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "disobey",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "drunk",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "evil",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "flesh",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "foolish",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "fornication",
+      "checks": []
+    },
+    {
+      "group": "fruit",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "good",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ham",
+      "checks": []
+    },
+    {
+      "group": "honor",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 33,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "idol",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "imitate",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "kingdom",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "obey",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "psalm",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "purify",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reed",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reverence",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "righteous",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 24,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ruin",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "run",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sacrifice",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "savior",
+      "checks": []
+    },
+    {
+      "group": "scribe",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "shame",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sleep",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "submit",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "walk",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 5,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "water",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 26,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "wine",
+      "checks": [
+        {
+          "chapter": 5,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "boast",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "circumcise",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "citizen",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "command",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "commander",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "cornerstone",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "covenant",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "cross",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "foreigner",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "foundation",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "house",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "household",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "israel",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "jacob",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "kind",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 7,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 31,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "law",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "lawofmoses",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 15,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "like",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "mercy",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "mind",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "philiptheapostle",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reconcile",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reign",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 19,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "save",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "stone",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "temple",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "trespass",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "unbeliever",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "uncircumcised",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "vision",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "well",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "wrath",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 3,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "yahwehofhosts",
+      "checks": [
+        {
+          "chapter": 2,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 2,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "angel",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "baptize",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 5,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "captive",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "evangelism",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "exhort",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "hard",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "humble",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "justice",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 32,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "labor",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 28,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "neighbor",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 25,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "pastor",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "patient",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 2,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "satan",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 27,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "serve",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sheep",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "teach",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "teacher",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "wordofgod",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "worthy",
+      "checks": [
+        {
+          "chapter": 4,
+          "verse": 1,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "ambassador",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 20,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "armor",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 11,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 13,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "breastplate",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 14,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "brother",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 23,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "comfort",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 22,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "discipline",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "favor",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 9,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "governor",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 12,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "instruct",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "perseverance",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "provoke",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 4,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "receive",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "reward",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 8,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "shield",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 16,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "sword",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 17,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "tychicus",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 21,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    },
+    {
+      "group": "watch",
+      "checks": [
+        {
+          "chapter": 6,
+          "verse": 6,
+          "checked": false,
+          "status": "UNCHECKED"
+        },
+        {
+          "chapter": 6,
+          "verse": 18,
+          "checked": false,
+          "status": "UNCHECKED"
+        }
+      ]
+    }
+  ]
+}

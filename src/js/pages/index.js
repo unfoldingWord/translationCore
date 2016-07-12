@@ -1,8 +1,9 @@
 (function() {
   const ReactDOM = require('react-dom');
   const React = require('react');
+  const PhraseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
+  const LexicalModuleView = require('../components/modules/lexical_check_module/CheckModuleView');
 
-  const CheckModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const NavMenu = require('../components/core/NavigationMenu');
   const remote = window.electron.remote;
   const {Menu} = remote;
@@ -26,6 +27,7 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
+          <TPane />
           <NavBar/>
           <LoginModal />
           <UploadModal />
@@ -38,7 +40,8 @@
             <Row>
               <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
                 <TPane />
-                <CheckModuleView />
+
+                <PhraseModuleView />
                 <NextButton style={{float: 'right'}} />
               </Col>
             </Row>

@@ -6,8 +6,8 @@ const Nav = require('react-bootstrap/lib/Nav');
 const Toggle= require('./Toggle');
 const style = require('../../styles/loginStyle');
 
-class NavBar extends React.Component{
-  render(){
+class MannysNavBar extends React.Component{
+  render() {
     return(
       <div>
       <Navbar inverse>
@@ -28,4 +28,4 @@ class NavBar extends React.Component{
 }
 
 
-module.exports = NavBar;
+module.exports = MannysNavBar;
