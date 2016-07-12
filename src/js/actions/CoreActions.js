@@ -28,6 +28,12 @@ module.exports = {
     });
   },
 
+  login: function(user) {
+    Dispatcher.handleAction({
+      type: consts.ACCOUNT_LOGIN
+    });
+  },
+
   updateOriginalLanguage: function(book) {
     Dispatcher.handleAction({
       type: consts.UPDATE_ORIGINAL_LANGUAGE,
@@ -53,6 +59,13 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
       modalOption: boolean
+    });
+  },
+
+  updateLoginModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
+      loginModalOption: boolean
     });
   },
 

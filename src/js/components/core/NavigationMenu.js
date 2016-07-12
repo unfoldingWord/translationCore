@@ -2,8 +2,8 @@ const React = require('react');
 const update = require('react-addons-update');
 const Well = require('react-bootstrap/lib/Well.js');
 
-const CheckStore = require('../stores/CheckStore');
-const MenuItem = require('./core/MenuItem');
+const CheckStore = require('../../stores/CheckStore');
+const MenuItem = require('./MenuItem');
 
 class NavigationMenu extends React.Component {
   constructor() {
