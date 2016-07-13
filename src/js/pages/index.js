@@ -8,10 +8,16 @@
   const TPane = require('../components/core/TPane');
 
 // var db = require('./db-init');
+  const NavBar = require('../components/NavBar');
+  const LoginModal = require('../components/LoginModal');
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
+<<<<<<< HEAD
   const CheckData = require('../components/modules/phrase_check_module/CheckDataGrabber.js');
+=======
+  const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
+>>>>>>> develop
 
   var App = {
     init: function() {
@@ -19,9 +25,12 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
+          <NavBar/>
+          <LoginModal />
           <TPane />
           <UploadModal />
           <CheckModuleView />
+          <SwitchCheckModuleDropdown />
           <SettingsModal />
           <CheckData />
         </div>

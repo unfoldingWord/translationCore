@@ -36,11 +36,6 @@ class CoreStore extends EventEmitter {
 
     // Initialize CoreStore's fields here...
     this.exampleComponentText = "init";
-    this.checkType = "Hamburger";
-  }
-
-  getCurrentCheckType() {
-    return this.checkType;
   }
 
   getExampleComponentText() {
@@ -61,6 +56,10 @@ class CoreStore extends EventEmitter {
 
   getModal() {
     return this.modalVisibility;
+  }
+
+  getLoginModal(){
+    return this.loginModalVisibility;
   }
 
   getSettingsView() {
@@ -127,10 +126,12 @@ class CoreStore extends EventEmitter {
         this.modalVisibility = action.modalOption;
         this.emitChange();
         break;
-      case consts.CHANGE_CHECK_TYPE:
-        this.checkType = action.newCheck;
+
+      case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
+        this.loginModalVisibility = action.loginModalOption;
         this.emitChange();
         break;
+
 
       case consts.SETTINGS_VIEW:
         this.settingsVisibility = action.settingsView;

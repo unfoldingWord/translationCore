@@ -1,6 +1,6 @@
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
-var CoreStore = require('../stores/CoreStore.js');
+var CoreStore = require('../../stores/CoreStore.js');
 var CoreActions = require('../../actions/CoreActions.js');
 /**
 

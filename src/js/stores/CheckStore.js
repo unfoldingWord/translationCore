@@ -1,6 +1,14 @@
+/**
+ * @author Logan Lebanoff
+ * @description Stores data relating to Check Modules.
+ *              It has data like: an array of all the checks, the id of the current
+ *              check category, and a list of all the check cateogry options.
+ ******************************************************************************/
+
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
-var consts = require("../actions/CheckActionConsts.js");
+var CheckConsts = require("../actions/CheckActionConsts.js");
+var FileModule = require("../components/core/FileModule.js");
 var utils = require("../utils.js");
 
 var CHANGE_EVENT = 'change';
@@ -8,8 +16,6 @@ var CHANGE_EVENT = 'change';
 class CheckStore extends EventEmitter {
   constructor() {
     super();
-    // For ExampleCheckModule
-    this.checkIndex = 0;
     this.checks = [
       {
         book: "Ephesians",
@@ -39,6 +45,23 @@ class CheckStore extends EventEmitter {
         flagged: false
       }
     ];
+    // -1 means no checkCategory is selected
+    this.checkCategoryId = -1;
+    // TODO: this needs to be filled with actual data when the project is loaded
+    this.checkCategoryOptions = [
+      {
+          name: "Lexical Checks",
+          id: 1,
+          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/lexical_check_module/check_data.json"
+      },
+      {
+          name: "Phrase Checks",
+          id: 2,
+          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/phrase_check_module/check_data.json"
+      }
+    ];
+    // For ExampleCheckModule
+    this.checkIndex = 0;
   }
 
   // Public function to return a list of all of the checks.
@@ -66,13 +89,38 @@ class CheckStore extends EventEmitter {
     this.checks[this.checkIndex][propertyName] = propertyValue;
   }
 
+  getCurrentCheckCategory() {
+    return this.getCheckCategory(this.checkCategoryId);
+  }
+
+  findById(source, id) {
+   return source.find(function(item) {
+      return item.id == id;
+   });
+  }
+
+  getCheckCategory(id) {
+    return this.findById(this.checkCategoryOptions, id);
+  }
+
+  getCheckCategoryOptions() {
+    return this.checkCategoryOptions;
+  }
+
+  // Fills the checks array with the data in jsonObject and the id
+  // from newCheckCategory
+  fillAllChecks(jsonObject, id) {
+    for(var el in jsonObject) {
+      this.checks = jsonObject[el];
+      break;
+    }
+    this.checkCategoryId = id;
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
 
-  /**
-   * @param {function} callback
-   */
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
@@ -83,24 +131,27 @@ class CheckStore extends EventEmitter {
 
   handleActions(action) {
     switch(action.type) {
-      case consts.CHANGE_CHECK_PROPERTY:
+      case CheckConsts.CHANGE_CHECK_PROPERTY:
         this.setCurrentCheckProperty(action.propertyName, action.propertyValue);
-        this.emitChange();
         break;
 
-      case consts.NEXT_CHECK:
+      case CheckConsts.CHANGE_CHECK_CATEGORY:
+        this.fillAllChecks(action.jsonObject, action.id);
+        break;
+
+      case CheckConsts.NEXT_CHECK:
         this.checkIndex++;
-        this.emitChange();
         break;
 
-      case consts.GO_TO_CHECK:
+      case CheckConsts.GO_TO_CHECK:
         this.checkIndex = action.checkIndex;
-        this.emitChange();
         break;
 
+      // do nothing
       default:
-        // do nothing
+        return;
     }
+    this.emitChange();
   }
 
 }

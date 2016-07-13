@@ -5,7 +5,7 @@ const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const Menu = require('./subcomponents/Menu');
-const AbstractCheckModule = require('../../AbstractCheckModule');
+const AbstractCheckModule = require('../AbstractCheckModule');
 const CheckActions = require('../../../actions/CheckActions.js');
 
 
