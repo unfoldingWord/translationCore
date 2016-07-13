@@ -7,7 +7,7 @@
  */
  // This file should probably be moved to a new location later
  const USFMParser = require('./USFMParse');
- const TNParser = require("./tnParser");
+ const TNParser = require("./tNParser");
 
  //hardcoded github api calls
  const GITHUB_API_NOTES = "https://api.github.com/repositories/23808509/contents/bible/notes",
@@ -16,6 +16,7 @@
  	REQUEST_FAILURE = "HttpRequest failed";
 
   const AUTHENTICATION = "access_token=" + require("../../../../../Authentication.js");
+
 
 // ONLY USE getBook()
 class Door43DataFetcher {
