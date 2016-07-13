@@ -1,6 +1,11 @@
 var RootStyles = {
   CheckSection: {
-    position: 'fixed'
+    position: 'relative',
+    overflowX: 'none',
+    overflowY: 'scroll'
+  },
+  CheckSectionRow: {
+
   },
   SideMenu: {
     position: 'fixed',

@@ -6,7 +6,7 @@ const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const AbstractCheckModule = require('../AbstractCheckModule');
 const CheckActions = require('../../../actions/CheckActions.js');
-
+const TranslationAcademyDisplay = require ('../../TranslationAcademyDisplay');
 
 class PhraseChecker extends AbstractCheckModule{
   constructor(){
@@ -16,14 +16,10 @@ class PhraseChecker extends AbstractCheckModule{
 
   // componentWillMount() {
   //   super.componentWillMount();
-  //   CheckStore.addChangeListener(this.emitListener);
-  //   this.setState({
-  //       currentChapter: null,
-  //       currentVerse: null,
-  //       currentBook: null
-  //   });
-  //
+  //   CheckStore.addChangeListener(this.emitListener.bind(this));
   // }
+
+
   //
   // emitListener() {
   //   super.refreshCurrentCheck();
@@ -31,6 +27,7 @@ class PhraseChecker extends AbstractCheckModule{
   //     currentVerse: this.state.currentCheck.scripture
   //   })
   // }
+
 
   render() {
     if(super.getCurrentCheck()){
@@ -59,6 +56,12 @@ class PhraseChecker extends AbstractCheckModule{
                 <FlagDisplay
                   setFlagState={CheckActions.changeCheckProperty}
                 />
+              </Col>
+            </Row>
+            <br />
+            <Row classname="show-grid">
+              <Col md={12}>
+                <TranslationAcademyDisplay ref={"Academy"}} />
               </Col>
             </Row>
         </Grid>

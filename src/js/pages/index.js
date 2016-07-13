@@ -8,7 +8,6 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
-
 // var db = require('./db-init');
   const NavBar = require('../components/core/NavBar');
   const LoginModal = require('../components/core/LoginModal');

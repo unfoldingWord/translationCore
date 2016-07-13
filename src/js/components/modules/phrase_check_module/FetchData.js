@@ -4,10 +4,10 @@ var Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 var CoreActions = require('../../../actions/CoreActions');
 
 var DataFetcher = function(bookAbbr, progress, onComplete){
-  var DataFetcher = new Door43DataFetcher();
+  var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
   var ulb = {};
-  DataFetcher.getBook(
+  DoorDataFetcher.getBook(
     bookAbbr,
     function(done, total){
       progress(done/total*100);
@@ -16,8 +16,8 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
       if(err){
         console.log("Error in on complete callback: " + err);
       }else{
-        chapterData = DataFetcher.getTNFromBook(book, bookAbbr);
-        ulb = DataFetcher.getULBFromBook(book);
+        chapterData = DoorDataFetcher.getTNFromBook(book, bookAbbr);
+        ulb = DoorDataFetcher.getULBFromBook(book);
         console.log('original');
         console.log(ulb);
         var newStructure = {title: ''};
@@ -53,7 +53,9 @@ var parseObject = function(object){
       newVerse.flagged = false;
       newVerse.checkStatus = "NOT_CHECKED";
       newVerse.comments = "";
+      newVerse.group = type;
       newGroup.checks.push(newVerse);
+
     }
     phraseObject["Phrase Checks"].push(newGroup);
   }

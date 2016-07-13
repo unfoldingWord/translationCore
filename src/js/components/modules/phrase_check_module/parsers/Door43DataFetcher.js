@@ -15,7 +15,6 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
-
   const AUTHENTICATION = "access_token=" + require("../../../../../Authentication.js");
 
 // ONLY USE getBook()
