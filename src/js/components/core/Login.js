@@ -27,8 +27,7 @@ class Login extends React.Component {
     var newuser = gogs().login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
-      CoreActions.updateButtonColor(true);
-      CoreActions.updateButtonText(true);
+      CoreActions.updateButtonStatus(true);
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {

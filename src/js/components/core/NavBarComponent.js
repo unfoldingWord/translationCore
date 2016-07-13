@@ -1,12 +1,11 @@
 const React = require('react');
-
 const Navbar = require('react-bootstrap/lib/Navbar');
 const NavItem = require('react-bootstrap/lib/NavItem');
 const Nav = require('react-bootstrap/lib/Nav');
 const Toggle= require('./Toggle');
 const style = require('../../styles/loginStyle');
 
-class NavBar extends React.Component{
+class NavBarComponent extends React.Component{
   render(){
     return(
       <div style={style.bar}>
@@ -27,5 +26,4 @@ class NavBar extends React.Component{
   }
 }
 
-
-module.exports = NavBar;
+module.exports = NavBarComponent;
