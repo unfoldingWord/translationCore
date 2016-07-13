@@ -77,17 +77,10 @@ module.exports = {
     });
   },
 
-  updateButtonText: function(boolean) {
+  updateButtonStatus: function(boolean) {
     Dispatcher.handleAction({
-      type: consts.CHANGE_BUTTTON_TEXT,
-      buttonText: boolean
-    });
-  },
-
-  updateButtonColor: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_BUTTTON_COLOR,
-      buttonColor: boolean
+      type: consts.CHANGE_BUTTTON_STATUS,
+      buttonStatus: boolean
     });
   },
 

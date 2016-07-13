@@ -69,12 +69,10 @@ class CoreStore extends EventEmitter {
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
-  getButtonText(){
-    return this.buttonText;
+  getButtonStatus(){
+    return this.buttonStatus;
   }
-  getButtonColor(){
-    return this.buttonColor;
-  }
+
   /**
    * @param {function} callback
    */
@@ -142,13 +140,8 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_BUTTTON_COLOR:
-        this.buttonColor = action.buttonColor;
-        this.emitChange();
-        break;
-
-      case consts.CHANGE_BUTTTON_TEXT:
-        this.buttonText = action.buttonText;
+      case consts.CHANGE_BUTTTON_STATUS:
+        this.buttonStatus = action.buttonStatus;
         this.emitChange();
         break;
 

@@ -10,38 +10,31 @@ class Toggle extends React.Component{
     super();
     this.state = {
       online: false,
-      buttonColor: false
     };
   }
   handleClick(){
-    if(this.state.online == false){
+    if(this.state.online === false){
       CoreActions.updateLoginModal(true);
     }else if(this.state.online === true){
-      CoreActions.updateButtonColor(false);
-      CoreActions.updateButtonText(false);
+      CoreActions.updateButtonStatus(false);
     }
 
   }
   componentWillMount() {
-    CoreStore.addChangeListener(this.updateButtonText.bind(this));
-    CoreStore.addChangeListener(this.updateButtonColor.bind(this));
+    CoreStore.addChangeListener(this.updateButtonStatus.bind(this));
   }
 
   componentWillUnmount() {
-    CoreStore.removeChangeListener(this.updateButtonText.bind(this));
-    CoreStore.removeChangeListener(this.updateButtonColor.bind(this));
+    CoreStore.removeChangeListener(this.updateButtonStatus.bind(this));
   }
 
-  updateButtonText(){
-    this.setState({online: CoreStore.getButtonText()});
-  }
-  updateButtonColor(){
-    this.setState({buttonColor: CoreStore.getButtonColor()});
+  updateButtonStatus(){
+    this.setState({online: CoreStore.getButtonStatus()});
   }
 
   render(){
     const text = this.state.online ? 'Online' : 'Offline';
-    const statusColor = this.state.buttonColor ? 'success' : 'danger';
+    const statusColor = this.state.online ? 'success' : 'danger';
     return(
       <div>
         <Button bsStyle={statusColor} style={style.NavBarbutton}
