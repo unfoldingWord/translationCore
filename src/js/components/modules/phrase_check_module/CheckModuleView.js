@@ -61,7 +61,7 @@ class PhraseChecker extends AbstractCheckModule{
             <br />
             <Row classname="show-grid">
               <Col md={12}>
-                <TranslationAcademyDisplay ref={"Academy"}} />
+                <TranslationAcademyDisplay sectionName={super.getCurrentCheck().group} />
               </Col>
             </Row>
         </Grid>

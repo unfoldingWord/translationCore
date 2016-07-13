@@ -1,4 +1,3 @@
-
 const BASE_URL = "https://git.door43.org/";
 const TA_URL = "Door43/en-ta-translate-vol1/src/master/content";
 //creates TranslationAcademyScraper class

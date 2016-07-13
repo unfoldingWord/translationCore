@@ -17,6 +17,7 @@ const TranslationAcademyDisplay = React.createClass({
   tAHtmlScraper: null,
 // gets the initial states of the fields so that when they are toggled they can be displayed
   getInitialState: function() {
+    this.getAndDisplaySection();
     return {
       toggleDisplay: false,
       currentSection: null,
@@ -26,6 +27,10 @@ const TranslationAcademyDisplay = React.createClass({
   },
 
   componentWillMount: function() {
+    this.getAndDisplaySection();
+  },
+
+  getAndDisplaySection: function() {
     var _this = this;
     //create new instance of the scraper
     /**
@@ -64,7 +69,7 @@ const TranslationAcademyDisplay = React.createClass({
 					}}
 				>
           <h1> Translation Academy</h1>
-					{this.currentMarkdown}
+					{_this.currentMarkdown}
 				</div>
 			</Well>
 	   	);
@@ -99,7 +104,7 @@ displaySection: function(sectionName) {
     this.setState({
       markdownToggle: !this.state.markdownToggle
     });
-    this.props.updateSelf();
+    this.forceUpdate();
   }
 });
 
