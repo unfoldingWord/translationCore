@@ -23,6 +23,11 @@
      CoreStore.addChangeListener(this.updateTargetLanguage);
      CoreStore.addChangeListener(this.updateGatewayLanguage);
    },
+   componentWillUnmount: function() {
+     CoreStore.removeChangeListener(this.updateOriginalLanguage);
+     CoreStore.removeChangeListener(this.updateTargetLanguage);
+     CoreStore.removeChangeListener(this.updateGatewayLanguage);
+   },
    updateTargetLanguage: function() {
      this.setState({
        tl: CoreStore.getTargetLanugage()

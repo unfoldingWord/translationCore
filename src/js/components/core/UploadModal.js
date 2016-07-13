@@ -16,14 +16,17 @@ const OnlineInput = require('./OnlineInput');
 const FileUpload = require('./FileUpload');
 
 const UploadModal = React.createClass({
+  getInitialState: function() {
+    return {showModal: false, active: 1, showFile: true};
+  },
   componentWillMount: function() {
     CoreStore.addChangeListener(this.updateModal);
   },
+  componentWillUnmount: function() {
+    CoreStore.removeChangeListener(this.updateModal);
+  },
   updateModal: function() {
     this.setState({showModal: CoreStore.getModal()});
-  },
-  getInitialState: function() {
-    return {showModal: false, active: 1, showFile: true};
   },
   close: function() {
     CoreActions.updateModal(false);
