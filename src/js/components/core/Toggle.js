@@ -21,10 +21,6 @@ class Toggle extends React.Component{
       CoreActions.updateButtonText(false);
     }
 
-    /*
-    this.setState({online: !this.state.online});
-    this.setState({buttonColor: !this.state.buttonColor});
-    */
   }
   componentWillMount() {
     CoreStore.addChangeListener(this.updateButtonText.bind(this));

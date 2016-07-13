@@ -20,7 +20,7 @@ var style = {
   navbar:{
     position: 'fixed',
     top:'0',
-    zIndex: '9999',
+    zIndex: '500',
     width: '100%',
     marginBottom: '10px',
     display: 'inlineBlock'
@@ -48,6 +48,9 @@ var style = {
     textAlign: 'center',
     bottom:'2vh'
   },
+  modal:{
+    zIndex: '9999'
+  }
 
 };
 

@@ -8,7 +8,7 @@
   const TPane = require('../components/core/TPane');
 
 // var db = require('./db-init');
-  const NavBar = require('../components/core/NavBar');
+  const NavBarComponent = require('../components/core/NavBarComponent');
   const LoginModal = require('../components/core/LoginModal');
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
@@ -21,7 +21,7 @@
       Menu.setApplicationMenu(menu);
       var Application = (
         <div>
-          <NavBar/>
+          <NavBarComponent />
           <LoginModal />
           <TPane />
           <UploadModal />
