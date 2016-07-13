@@ -6,11 +6,12 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
-  
+
 // var db = require('./db-init');
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
+  const CheckData = require('../components/modules/phrase_check_module/CheckDataGrabber.js');
 
   var App = {
     init: function() {
@@ -22,6 +23,7 @@
           <UploadModal />
           <CheckModuleView />
           <SettingsModal />
+          <CheckData />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));

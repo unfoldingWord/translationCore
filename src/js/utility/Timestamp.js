@@ -4,8 +4,6 @@ var React = require('react');
 //bible project component so that checker can be aware
 //when they save their progress throughout
 
-var TimeStamp = React.createClass({
-
 getInitialState: function() {
   var moment = new Date();
   var time;
@@ -60,67 +58,13 @@ CreateTimeStamp: function() {
   if (!(_this.state.time == now))
   {
     _this.setState({time: now});
-    return (now);
+    return ("Timestamp: " + now);
   }
   else
   {
-    return (_this.state.time);
+    return ("Timestamp: " + _this.state.time);
   }
 
 },
 
-
-render: function() {
-  var _this = this;
-  var fs = require(window.__base + 'node_modules/fs-extra');
-  var path = require('path');
-  var Timestamp = path.join('timestamp.txt');
-
-  fs.open(Timestamp, 'w', function(err, fd) {
-
-            if(err) {
-              return console.log(err);
-            }
-
-          });
-
-          var data = _this.state.time;
-
-
-  fs.writeFile(Timestamp, data, function(err) {
-            if(err) {
-              return console.log(err);
-            }
-          });
-
-  //File Created in directory to store the timestamps throughout the created project
-
-  var funct = ["TimeStamp: ", this.CreateTimeStamp().toString()];
-  if (typeof ar === undefined)
-  {
-    var count;
-    count = 0;
-    var arr = funct.slice(0);
-  }
-  funct.push("\r\n");
-  funct.push("\n");
-
-  if (count > 1)
-  {
-  arr = arr.concat(funct);
-  var output = arr.concat(funct);
-  funct = output.slice(0);
-  }
-
-  count ++;
-  return (
-    <div id="footer">
-     {funct}
-    </div>
-  );
-
-}
-});
-
-
-module.exports = TimeStamp;
+module.exports = CreateTimeStamp;
