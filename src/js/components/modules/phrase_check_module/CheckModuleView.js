@@ -21,7 +21,7 @@ class PhraseChecker extends AbstractCheckModule{
             <Row className="show-grid">
               <Col md={12}>
                 <ScriptureDisplay
-                  scripture={'PABLO, apóstol de Jesucristo por la voluntad de Dios, á los santos y fieles en Cristo Jesús que están en Efeso:'}
+                  scripture={'PABLO, apostol de Jesucristo por la voluntad de Dios, a los santos y fieles en Cristo Jesus que estan en Efeso:'}
                   setSelectedText={CheckActions.changeCheckProperty}
                   currentVerse={super.getCurrentCheck().book
                                 + " " + super.getCurrentCheck().chapter
