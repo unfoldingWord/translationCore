@@ -3,9 +3,7 @@
  *               the more traditional click and open file upload system.
  * @author: Ian Hoegen
  ******************************************************************************/
-const React = require('react');
 
-const Dropzone = require('react-dropzone');
 const FileModule = require('./FileModule');
 
 const remote = window.electron.remote;
@@ -18,49 +16,12 @@ const path = require('path');
 const Book = require('./Book');
 
 const parser = require('./usfm-parse.js');
-const style = require('./Style');
 
 var manifestSource = '';
 var bookName = '';
 var joinedChunks = {};
 var currentChapter = '';
 var bookTitle = "";
-
-const FileUploader = React.createClass({
-  onDrop: function(files) {
-    if (files !== undefined) {
-      sendToReader(files[0].path);
-    }
-  },
-  onClick: function() {
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        sendToReader(filename[0]);
-      }
-    });
-  },
-
-  render: function() {
-    return (
-    <div onClick = {this.onClick} >
-        <Dropzone onDrop = {this.onDrop}
-        disableClick={true} multiple={false} style={style.dropzone.main}
-        activeStyle={style.dropzone.active}>
-            <div style={style.dropzone.text}>
-              <center>
-                Drag files here to upload, or click to select a file
-              </center>
-            </div>
-      </Dropzone>
-    </div>
-  );
-  }
-
-});
-
-module.exports = FileUploader;
 
 /**
  * @description This function is used to send a file path to the readFile()
@@ -148,4 +109,8 @@ function openOriginal(text) {
   var input = JSON.parse(text);
   input[bookName].title = bookTitle;
   CoreActions.updateOriginalLanguage(input[bookName]);
+}
+
+module.exports = function(locate) {
+  sendToReader(locate);
 }
