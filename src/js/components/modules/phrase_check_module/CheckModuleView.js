@@ -14,21 +14,6 @@ class PhraseChecker extends AbstractCheckModule{
 
   }
 
-  // componentWillMount() {
-  //   super.componentWillMount();
-  //   CheckStore.addChangeListener(this.emitListener.bind(this));
-  // }
-
-
-  //
-  // emitListener() {
-  //   super.refreshCurrentCheck();
-  //   this.setState({
-  //     currentVerse: this.state.currentCheck.scripture
-  //   })
-  // }
-
-
   render() {
     if(super.getCurrentCheck()){
       return (
@@ -36,7 +21,7 @@ class PhraseChecker extends AbstractCheckModule{
             <Row className="show-grid">
               <Col md={12}>
                 <ScriptureDisplay
-                  scripture={'This is where the target language verse will be displayed during the checking process for the phrase checker'}
+                  scripture={'PABLO, apóstol de Jesucristo por la voluntad de Dios, á los santos y fieles en Cristo Jesús que están en Efeso:'}
                   setSelectedText={CheckActions.changeCheckProperty}
                   currentVerse={super.getCurrentCheck().book
                                 + " " + super.getCurrentCheck().chapter

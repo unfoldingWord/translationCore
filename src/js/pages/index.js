@@ -19,6 +19,7 @@
   const Row = require('react-bootstrap/lib/Row.js');
   const Col = require('react-bootstrap/lib/Col.js');
   const NextButton = require('../components/core/NextButton');
+  const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
   var App = {
     init: function() {
@@ -32,6 +33,7 @@
           <Grid fluid>
             <Row>
               <Col style={RootStyles.SideMenu} md={2} sm={2}>
+                <SettingsModal />
                 <NavMenu />
               </Col>
             </Row>
@@ -39,6 +41,7 @@
               <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
                 <TPane />
 
+                <SwitchCheckModuleDropdown />
                 <PhraseModuleView />
                 <NextButton style={{float: 'right'}} />
               </Col>
