@@ -32,34 +32,36 @@ class TranslationAcademyScraper{
     if (!this.sectionList) {
       return;
     }
-    console.log(sectionName);
+    
     if (!this.sectionList[sectionName]) {
       console.log('SectionListDoesnt contain: ' + sectionName);
     }
-    if (this.sectionList[sectionName]['file']) {
-      if (assignCallback){
-          assignCallback(this.sectionList[sectionName]['file']);
-      }
-    }
-
     else {
-      var _this = this;
-      var request = new XMLHttpRequest();
-      var link = _this.sectionList[sectionName].replace('src','raw');
-      request.onload = function(){
-        // this takes  the response im getting from TA  and saves it in a file
-        _this.sectionList[sectionName] = {
-          "file" : this.response,
-          "link": link
-        }
-        // This checks to see if the call back exists
+      if (this.sectionList[sectionName]['file']) {
         if (assignCallback){
-          assignCallback(this.response);
+            assignCallback(this.sectionList[sectionName]['file']);
         }
       }
 
-      request.open("Get",BASE_URL + link, true);
-      request.send();
+      else {
+        var _this = this;
+        var request = new XMLHttpRequest();
+        var link = _this.sectionList[sectionName].replace('src','raw');
+        request.onload = function(){
+          // this takes  the response im getting from TA  and saves it in a file
+          _this.sectionList[sectionName] = {
+            "file" : this.response,
+            "link": link
+          }
+          // This checks to see if the call back exists
+          if (assignCallback){
+            assignCallback(this.response);
+          }
+        }
+
+        request.open("Get",BASE_URL + link, true);
+        request.send();
+      }
     }
   }
 }
