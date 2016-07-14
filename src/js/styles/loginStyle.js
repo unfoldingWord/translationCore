@@ -18,6 +18,19 @@ var style = {
     margin: '0px'
   },
 
+  navbar:{
+    position: 'fixed',
+    top:'0',
+    zIndex: '500',
+    width: '100%',
+    marginBottom: '10px',
+    display: 'inlineBlock'
+  },
+  
+  bar:{
+    marginBottom: '75px'
+  },
+
   NavBarbutton:{
     marginTop: '10px',
   },
@@ -36,6 +49,9 @@ var style = {
     textAlign: 'center',
     bottom:'2vh'
   },
+  modal:{
+    zIndex: '9999'
+  }
 
 };
 

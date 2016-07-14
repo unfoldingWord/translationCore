@@ -69,6 +69,9 @@ class CoreStore extends EventEmitter {
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
+  getButtonStatus(){
+    return this.buttonStatus;
+  }
 
   /**
    * @param {function} callback
@@ -132,9 +135,13 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-
       case consts.SETTINGS_VIEW:
         this.settingsVisibility = action.settingsView;
+        this.emitChange();
+        break;
+
+      case consts.CHANGE_BUTTTON_STATUS:
+        this.buttonStatus = action.buttonStatus;
         this.emitChange();
         break;
 

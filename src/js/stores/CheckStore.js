@@ -38,6 +38,7 @@ class CheckStore extends EventEmitter {
           filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/phrase_check_module/check_data.json"
       }
     ];
+
     // For ExampleCheckModule
     this.checkIndex = 0;
   }
@@ -89,6 +90,34 @@ class CheckStore extends EventEmitter {
 
   setCurrentCheckProperty(propertyName, propertyValue) {
     this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
+  }
+
+  getCurrentCheckCategory() {
+    return this.getCheckCategory(this.checkCategoryId);
+  }
+
+  findById(source, id) {
+   return source.find(function(item) {
+      return item.id == id;
+   });
+  }
+
+  getCheckCategory(id) {
+    return this.findById(this.checkCategoryOptions, id);
+  }
+
+  getCheckCategoryOptions() {
+    return this.checkCategoryOptions;
+  }
+
+  // Fills the checks array with the data in jsonObject and the id
+  // from newCheckCategory
+  fillAllChecks(jsonObject, id) {
+    for(var el in jsonObject) {
+      this.checks = jsonObject[el];
+      break;
+    }
+    this.checkCategoryId = id;
   }
 
   getCurrentCheckCategory() {

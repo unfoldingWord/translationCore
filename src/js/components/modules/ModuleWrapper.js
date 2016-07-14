@@ -6,8 +6,8 @@ event from the CheckStore and automatically swap out the check module for the ne
 */
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
-var CoreStore = require('../../stores/CoreStore.js');
-var CoreActions = require('../../actions/CoreActions.js');
+var CheckStore = require('../../stores/CheckStore.js');
+var CheckActions = require('../../actions/CheckActions.js');
 // TODO: Require all components
 
 

@@ -1,16 +1,15 @@
 const React = require('react');
-
 const Navbar = require('react-bootstrap/lib/Navbar');
 const NavItem = require('react-bootstrap/lib/NavItem');
 const Nav = require('react-bootstrap/lib/Nav');
 const Toggle= require('./Toggle');
 const style = require('../../styles/loginStyle');
 
-class MannysNavBar extends React.Component{
-  render() {
+class NavBarComponent extends React.Component{
+  render(){
     return(
-      <div>
-      <Navbar inverse>
+      <div style={style.bar}>
+      <Navbar inverse style={style.navbar}>
         <Navbar.Header>
           <Navbar.Brand>
             <img src="images/TC_Icon.png" style={style.logo}/>
@@ -27,5 +26,4 @@ class MannysNavBar extends React.Component{
   }
 }
 
-
-module.exports = MannysNavBar;
+module.exports = NavBarComponent;

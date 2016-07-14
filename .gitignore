@@ -7,7 +7,6 @@ index.php
 bitnami.css
 applications.html
 
-src/Authentication.js
 
 #################
 ## Eclipse
@@ -202,7 +201,7 @@ $RECYCLE.BIN/
 userdata.sqlite
 .config
 AuthToken.js
-
+Authentication.js
 #############
 ## Python
 #############
