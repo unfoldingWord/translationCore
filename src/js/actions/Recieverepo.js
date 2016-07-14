@@ -1,7 +1,8 @@
-/** *
- @description: File to recieve a single repo and if you desired a single file
-and its data from that single repo
- @return (File Folder in current Filepath) whole repo or if wanted the data from a repo file
+/**
+ * @description: File to recieve a single repo and if you desired a single file
+ *               and its data from that single repo
+ * @return (File Folder in current Filepath) whole repo or if wanted the data
+           from a repo file
  **/
 
 

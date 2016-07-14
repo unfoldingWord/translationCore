@@ -1,15 +1,15 @@
 var React = require('react');
 
 
-/** *
- @description: File to create a timestamp
- @return (string) timestamp
-**/
+/**
+ * @description: File to create a timestamp
+ * @return {string} timestamp
+ **/
 
 
-/** *
- @description: Function to set state time
- @return (string) current time in get initial state
+/**
+ * @description: Function to set state time
+ * @return {string} current time in get initial state
 **/
 getInitialState: function() {
   var moment = new Date();
@@ -38,10 +38,10 @@ getInitialState: function() {
   };
 },
 
-/** *
- @description: Function to get correct timestamp which is compared to state time
- @return (string) timestamp
-**/
+/**
+ * @description: Function to get correct timestamp which is compared to state time
+ * @return {string} timestamp
+ **/
 CreateTimeStamp: function() {
   var _this = this;
   var now;

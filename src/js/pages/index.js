@@ -13,7 +13,6 @@
   const UploadModal = require('../components/core/UploadModal');
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
-  const CheckData = require('../components/modules/phrase_check_module/CheckDataGrabber.js');
   const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
   var App = {
@@ -29,7 +28,6 @@
           <CheckModuleView />
           <SwitchCheckModuleDropdown />
           <SettingsModal />
-          <CheckData />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
