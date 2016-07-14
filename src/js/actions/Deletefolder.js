@@ -1,8 +1,6 @@
 /** *
-@description: File to delete current and other folders except js files
- @param
- @return 
-  **/
+ @description: File to delete current and other folders except js files
+**/
 
 //install given package npm del
 

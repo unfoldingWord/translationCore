@@ -1,9 +1,16 @@
 var React = require('react');
 
-//File that is meant to be provided with the save
-//bible project component so that checker can be aware
-//when they save their progress throughout
 
+/** *
+ @description: File to create a timestamp
+ @return (string) timestamp
+**/
+
+
+/** *
+ @description: Function to set state time
+ @return (string) current time in get initial state
+**/
 getInitialState: function() {
   var moment = new Date();
   var time;
@@ -30,6 +37,11 @@ getInitialState: function() {
   time: (date[0] + "/" + date[1] + "/" + date[2] + " " + Hours[0] + ":" + Hours[1] + " " + nightday)
   };
 },
+
+/** *
+ @description: Function to get correct timestamp which is compared to state time
+ @return (string) timestamp
+**/
 CreateTimeStamp: function() {
   var _this = this;
   var now;
