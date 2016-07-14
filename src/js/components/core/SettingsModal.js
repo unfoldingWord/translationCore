@@ -11,14 +11,17 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 
 const SettingsModal = React.createClass({
+  getInitialState: function() {
+    return {showModal: false};
+  },
   componentWillMount: function() {
     CoreStore.addChangeListener(this.updateModal);
   },
+  componentWillUnmount: function() {
+    CoreStore.removeChangeListener(this.updateModal);
+  },
   updateModal: function() {
     this.setState({showModal: CoreStore.getSettingsView()});
-  },
-  getInitialState: function() {
-    return {showModal: false};
   },
   close: function() {
     CoreActions.updateSettings(false);

@@ -17,12 +17,6 @@ function UserManager(auth) {
         });
       });
     },
-    //   var userdata = {
-    //     username:'royalsix',
-    //     password:'4thenations'
-    //   }
-    //   var newuser = gogs.login(userdata).then(function (userdata) {
-    //   });
 
     createAccount: function (user) {
       return api.createUser(user, auth, true)
@@ -48,6 +42,5 @@ function UserManager(auth) {
     }
   }
 }
-
 
 module.exports = UserManager;

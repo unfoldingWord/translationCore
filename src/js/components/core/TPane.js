@@ -7,9 +7,7 @@
 
  const Grid = require('react-bootstrap/lib/Grid.js');
  const Row = require('react-bootstrap/lib/Row.js');
-
  const CoreStore = require('../../stores/CoreStore.js');
-
  const Pane = require('./Pane');
 
  const TPane = React.createClass({
@@ -24,6 +22,11 @@
      CoreStore.addChangeListener(this.updateOriginalLanguage);
      CoreStore.addChangeListener(this.updateTargetLanguage);
      CoreStore.addChangeListener(this.updateGatewayLanguage);
+   },
+   componentWillUnmount: function() {
+     CoreStore.removeChangeListener(this.updateOriginalLanguage);
+     CoreStore.removeChangeListener(this.updateTargetLanguage);
+     CoreStore.removeChangeListener(this.updateGatewayLanguage);
    },
    updateTargetLanguage: function() {
      this.setState({

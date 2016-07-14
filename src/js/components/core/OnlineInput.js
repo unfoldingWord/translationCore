@@ -24,7 +24,8 @@ const OnlineInput = React.createClass({
   },
 
   submitViaEnter: function(e) {
-    if (e.keyCode === 13) {
+    var EnterKey = 13;
+    if (e.keyCode === EnterKey) {
       this.submitLink();
     } else {
       return;
