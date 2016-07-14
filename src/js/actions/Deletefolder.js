@@ -1,5 +1,8 @@
-//file to delete folders and files that are
-//not needed for the user using app
+/** *
+@description: File to delete current and other folders except js files
+ @param no parameters
+ @return no return
+ **/
 
 //install given package npm del
 
@@ -15,5 +18,5 @@ var path = require('path');
 // 	console.log('Deleted files and folders:\n', paths.join('\n'));
 // });
 
-path = path.join('**');
-del.sync([path, '!*.js']);
+var newpath = path.join('**');
+del.sync([newpath, '!*.js']);

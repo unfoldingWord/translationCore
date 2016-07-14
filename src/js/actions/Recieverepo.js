@@ -1,5 +1,10 @@
-//Function of file is to Interact with Gogs by
-//Taking and storing an individual repo using nodegit
+/** *
+@description: File to recieve a single repo and if you desired a single file
+and its data from that single repo
+ @param no parameters just nodegit and promisify required packages
+ @return whole repo or if wanted the data from a repo file
+ **/
+
 
 var nodegit = require("nodegit");
 var promisify = require("promisify-node");
