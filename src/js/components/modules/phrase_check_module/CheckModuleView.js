@@ -11,7 +11,6 @@ const TranslationAcademyDisplay = require ('../../TranslationAcademyDisplay');
 class PhraseChecker extends AbstractCheckModule{
   constructor(){
     super();
-
   }
 
   render() {
@@ -21,12 +20,11 @@ class PhraseChecker extends AbstractCheckModule{
             <Row className="show-grid">
               <Col md={12}>
                 <ScriptureDisplay
-                  scripture={'PABLO, apostol de Jesucristo por la voluntad de Dios, a los santos y fieles en Cristo Jesus que estan en Efeso:'}
+                  scripture={"hello"}
                   setSelectedText={CheckActions.changeCheckProperty}
                   currentVerse={super.getCurrentCheck().book
                                 + " " + super.getCurrentCheck().chapter
                                 + ":" + super.getCurrentCheck().verse}
-                  ref="ScriptureDisplay"
                 />
               </Col>
             </Row>

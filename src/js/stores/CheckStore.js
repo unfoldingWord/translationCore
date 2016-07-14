@@ -21,50 +21,7 @@ class CheckStore extends EventEmitter {
     this.groupIndex = 0;
     this.checkIndex = 0;
 
-    this.groups = [
-            {
-               "group":"figs_you",
-               "checks":[
-                  {
-                    "book": "Ephesians",
-                     "chapter":1,
-                     "verse":1,
-                     "phrase":"grace be to you",
-                     "phraseInfo":"The word \"you\" refers to all the believers at Ephesus. (See: [[en:ta:vol1:translate:figs_you]])\n",
-                     "checked":false
-                  },
-                  {
-                    "book": "Ephesians",
-                     "chapter":4,
-                     "verse":1,
-                     "phrase":"I urge you to live worthily of the calling",
-                     "phraseInfo":"In all these verses the word \"you\" refers to all the believers at Ephesus. AT: \"I encourage with you to conduct yourself in a manner proper of the calling\" (See: [[en:ta:vol1:translate:figs_you]])\n",
-                     "checked":false
-                  }
-               ]
-            },
-            {
-               "group":"figs_activepassive",
-               "checks":[
-                  {
-                    "book": "Ephesians",
-                     "chapter":1,
-                     "verse":3,
-                     "phrase":"May the God and Father of our Lord Jesus Christ be praised",
-                     "phraseInfo":"This could be worded in the active form. AT: \"Let us praise the God and Father of our Lord Jesus Christ\" (See: [[en:ta:vol2:translate:figs_activepassive]])\n",
-                     "checked":false
-                  },
-                  {
-                    "book": "Ephesians",
-                     "chapter":4,
-                     "verse":7,
-                     "phrase":"To each one of us has been given a gift",
-                     "phraseInfo":"AT: \"A gift has been given to each believer\" or \"God gave a gift to each one of us\" (See: [[en:ta:vol2:translate:figs_activepassive]])\n",
-                     "checked":false
-                  }
-               ]
-            }
-         ];
+    this.groups = [];
 
     // -1 means no checkCategory is selected
     this.checkCategoryId = -1;
