@@ -20,7 +20,7 @@
   const Col = require('react-bootstrap/lib/Col.js');
   const NextButton = require('../components/core/NextButton');
   const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
-  const ProposeChanges = require('../components/core/ProposeChanges.js');
+  const ProposedChanges = require('../components/modules/proposed_changes_module/ProposedChanges.js');
 
   var App = {
     init: function() {
@@ -41,7 +41,7 @@
             <Row>
               <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
                 <TPane />
-
+                <ProposedChanges />
                 <SwitchCheckModuleDropdown />
                 {/* <PhraseModuleView /> OR <LexicalModuleView /> */}
                 <NextButton style={{float: 'right'}} />
