@@ -8,9 +8,7 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const MenuBar = require('../components/core/MenuBar');
-
-  const ProposedChanges = require('../components/modules/proposed_changes_module/ProposedChanges.js');
-
+  
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
