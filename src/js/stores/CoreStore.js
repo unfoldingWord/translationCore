@@ -103,72 +103,72 @@ class CoreStore extends EventEmitter {
 
       // Emits that a change was made, so any component listening for
       // this store can update its data
-      this.emitChange();
+        this.emitChange();
       break;
 
       case consts.NEXT_VERSE:
       // change some data here...
-      this.emitChange();
+        this.emitChange();
       break;
 
       case consts.PREV_VERSE:
       // change some data here...
-      this.emitChange();
+        this.emitChange();
       break;
 
       // For ExampleComponent
       case consts.ADD_TO_TEXT:
-      this.exampleComponentText += "a";
-      this.emitChange();
+        this.exampleComponentText += "a";
+        this.emitChange();
       break;
 
       case consts.UPDATE_ORIGINAL_LANGUAGE:
-      this.ol = action.bookOl;
-      this.emitChange();
+        this.ol = action.bookOl;
+        this.emitChange();
       break;
 
       case consts.UPDATE_TARGET_LANGUAGE:
-      this.tl = action.bookTl;
-      this.emitChange();
+        this.tl = action.bookTl;
+        this.emitChange();
       break;
 
       case consts.UPDATE_GATEWAY_LANGUAGE:
-      this.gl = action.bookGl;
-      this.emitChange();
+        this.gl = action.bookGl;
+        this.emitChange();
       break;
 
       case consts.CHANGE_UPLOAD_MODAL_VISIBILITY:
-      this.modalVisibility = action.modalOption;
-      this.emitChange();
+        this.modalVisibility = action.modalOption;
+        this.emitChange();
       break;
 
       case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
-      this.loginModalVisibility = action.loginModalOption;
-      this.emitChange();
+        this.loginModalVisibility = action.loginModalOption;
+        this.emitChange();
       break;
 
       case consts.SETTINGS_VIEW:
-      this.settingsVisibility = action.settingsView;
-      this.emitChange();
+        this.settingsVisibility = action.settingsView;
+        this.emitChange();
       break;
 
       case consts.CHANGE_BUTTTON_STATUS:
-      this.buttonStatus = action.buttonStatus;
-      this.emitChange();
+        this.buttonStatus = action.buttonStatus;
+        this.emitChange();
       break;
       case consts.CREATE_PROJECT:
-      this.projectModalVisibility = action.modalOption;
-      this.emitChange();
+        this.projectModalVisibility = action.modalOption;
+        this.emitChange();
       break;
 
       case consts.CHANGE_CREATE_PROJECT_TEXT:
-      this.projectText = action.currentText;
-      this.emitChange();
+        this.projectText = action.modalValue;
+        this.emitChange();
       break;
 
       case consts.SEND_FETCH_DATA:
-      this.FetchDataArray = action.FetchDataArray;
-      this.emitChange();
+        this.FetchDataArray = action.array;
+        this.emitChange();
       break;
 
       default:

@@ -94,15 +94,14 @@ module.exports = {
   changeCreateProjectText: function(string) {
     Dispatcher.handleAction({
       type: consts.CHANGE_CREATE_PROJECT_TEXT,
-      currentText: string
+      modalValue: string
     });
   },
+
   getFetchData: function(FetchDataArray) {
     Dispatcher.handleAction({
       type: consts.SEND_FETCH_DATA,
-      FetchDataArray: FetchDataArray
+      array: FetchDataArray
     });
   }
-
-
 };

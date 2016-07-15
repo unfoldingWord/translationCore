@@ -18,7 +18,7 @@ var template = [
       {
         label: 'Create Project',
         click() {
-          CoreActions.showCreateProject(true);
+          CoreActions.showCreateProject("Create");
         }
 
       }

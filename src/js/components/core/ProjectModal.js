@@ -12,64 +12,80 @@ const project = require('./CreateNewProject');
 const manifest = require(window.__base + 'test_files/Import From TS/manifest');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./CheckDataGrabber');
+const ENTER = 13;
 
 const ProjectModal = React.createClass({
   getInitialState: function() {
     return {
       projectname:"",
       showModal: false,
-      headerTitle:"",
       modalTitle:"Create Project",
-      controlLabelTitle:"",
-      placeHolderText:"",
+      controlLabelTitle:"Name",
+      placeHolderText:"Enter name of project",
       doneText:"Create",
-      currentText:"Create",
+      modalValue:"Create",
       FetchDataArray:[]      //FetchDataArray of checkmodules
     };
   },
   componentWillMount: function() {
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
-    CoreStore.addChangeListener(this.changeCreateProjectText);
     CheckDataGrabber.addListner();      //action to change text in project modal
   },
-
   showCreateProject: function() {
-    this.setState({showModal: CoreStore.getShowProjectModal()});
+    var modal = CoreStore.getShowProjectModal()
+    if (modal === "Create") {
+      this.setState({
+        showModal: true,
+        modalValue: modal,
+        modalTitle:"Create Project",
+        doneText:"Create"
+      });
+    } else if(modal === "Check") {
+      this.setState({
+        showModal: true,
+        modalValue: modal,
+        modalTitle:"Select Modules To Load",
+        doneText:"Finished"
+      });
+    }
   },
   close: function() {
     this.setState({
       showModal: false,
-      currentText:""
+      modalValue: null
     });
   },
-
+  setProjectName: function (e) {
+    this.setState({
+      projectname: e.target.value
+    });
+    if (e.charCode == ENTER) {
+      project.createProject(manifest, this.state.projectname);
+    }
+  },
+  pushFetchDataArray: function(element) {
+    this.state.FetchDataArray.push(element);
+  },
+  removeFromFetchDataArray: function(element) {
+    var toRemove = this.props.FetchDataArray.indexOf(element);
+    this.props.FetchDataArray.splice(toRemove, 1);
+  },
   onClick: function () {
-    var tempFetchDataArray= [];      //tempFetchDataArray to push checkmodule paths onto
-    if (this.state.currentText == "Check") {
-      for (var el of this.state.FetchDataArray) {
-        var newFetchDataArray = this.makePathForChecks(el);
-        tempFetchDataArray[el] = newFetchDataArray;
+    var tempFetchDataArray = [];      //tempFetchDataArray to push checkmodule paths onto
+    if (this.state.modalValue == "Check") {
+      for (var element of this.state.FetchDataArray) {
+        var pathOfCheck = this.makePathForChecks(element);
+        tempFetchDataArray[element] = pathOfCheck;
       }
       if (Object.keys(tempFetchDataArray).length > 0) {
-      CoreActions.getFetchData(tempFetchDataArray)
-    }
+        CoreActions.getFetchData(tempFetchDataArray);
+      }
       this.close();
     }
-    else {
-      this.setState({
-        modalTitle:"Select Check"
-      });
-      CoreActions.changeCreateProjectText("Check");
+    else if (this.state.modalValue == "Create") {
+      CoreActions.showCreateProject("Check");
     }
-
   },
-
-  changeCreateProjectText: function() {
-    this.setState({
-      currentText: CoreStore.getCreateProjectText()
-    });
-  },
-
   isModule: function(filepath, file){
     try {
       var stats = fs.lstatSync(filepath);
@@ -87,117 +103,105 @@ const ProjectModal = React.createClass({
       return false;
     }
   },
-  getCurrentText: function() {
-    if (this.state.currentText == "Check")
-    {
+  changeModalBody: function(modalBody) {
+    if (modalBody == "Check") {
       var currentChecks = [];
       try {
         var file = fs.readdirSync(window.__base + 'src/js/components/modules');
-        for (var el of file) {
-          if (this.isModule((window.__base + 'src/js/components/modules/' + el), el)) {
-            currentChecks.push(el);
+        for (var element of file) {
+          if (this.isModule((window.__base + 'src/js/components/modules/' + element), element)) {
+            currentChecks.push(element);
           }
         }
       } catch (e) {
         console.log(e);
       }
-      return <SelectCheckType ref="CheckMenu" checks={currentChecks} FetchDataArray={this.state.FetchDataArray}/>
-    }
-    else {
-      return <CreateProjectForm controlLabelTitle={"Name"} placeHolderText={"Enter name of project"}projectname={this.state.projectname}/>
-    }
-  },
-
-  makePathForChecks: function(check) {
-    var path = window.__base + 'src/js/components/modules/' + check;
-    return path;
-  },
-
-  render: function() {
-    return (
-      <div>
-      <Modal show={this.state.showModal} onHide={this.close}>
-      <Modal.Header>
-      <Modal.Title>{this.state.modalTitle}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-      {this.getCurrentText()}
-      </Modal.Body>
-      <Modal.Footer>
-      <Button type="button" onClick={this.onClick}>{this.state.doneText}</Button>
-      </Modal.Footer>
-      </Modal>
-      </div>
-    )}
-  });
-
-  const CreateProjectForm = React.createClass({
-    getInitialState: function() {
-      return {
-        projectname:this.props.projectname
+      return (<SelectCheckType ref={this.state.modalValue} checks={currentChecks} modalTitle={this.state.modalTitle}
+        controlLabelTitle={this.state.controlLabelTitle} placeHolderText={this.state.placeHolderText} FetchDataArray={this.state.FetchDataArray}
+        pushFetchDataArray={this.pushFetchDataArray} removeFromFetchDataArray={this.removeFromFetchDataArray}/>)
+      }
+      else if (modalBody == "Create") {
+        return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
+         placeHolderText={this.state.placeHolderText} setProjectName={this.setProjectName}/>)
       }
     },
-    handleKeyPress: function(e) {
-      if (e.charCode == 13) {
-        project.createProject(manifest, this.state.projectname);
-      }
+    makePathForChecks: function(check) {
+      var path = window.__base + 'src/js/components/modules/' + check;
+      return path;
     },
-    handleChange: function(e) {
-      this.setState({
-        projectname:e.target.value
-      });
-    },
+
     render: function() {
       return (
         <div>
-        <FormGroup>
-        <ControlLabel>{this.props.controlLabelTitle}</ControlLabel>
-        <FormControl type="text" placeholder={this.props.placeHolderText} onKeyPress={this.handleKeyPress}  onChange={this.handleChange}/>
-        </FormGroup>
+          <Modal show={this.state.showModal} onHide={this.close}>
+            {this.changeModalBody(this.state.modalValue)}
+            <Modal.Footer>
+              <Button type="button" onClick={this.onClick}>{this.state.doneText}</Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       )}
     });
 
-    const SelectCheckType = React.createClass({
-      getInitialState: function(){
-        return {
-          FetchDataArray:this.props.FetchDataArray,
-          projectname:this.props.projectname
-        };
-      },
-      onClick_: function(e) {
-        try {
-          if (e.target.control.checked === false) {
-            if (this.state.FetchDataArray.indexOf(e.target.control.id) == -1)
-            {
-              this.state.FetchDataArray.push(e.target.control.id);
-            }
-
-          }
-          else {
-            var el = this.state.FetchDataArray.indexOf(e.target.control.id);
-            this.state.FetchDataArray.splice(el, 1);
-
-          }
-        } catch (e) {
-        }
-      },
+    const CreateProjectForm = React.createClass({
       render: function() {
-        var checkButtonComponents = this.props.checks.map(function(checks) {
+        return (
+          <div>
+            <Modal.Header>
+              <Modal.Title>{this.props.modalTitle}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <FormGroup>
+              <ControlLabel>{this.props.controlLabelTitle}</ControlLabel>
+              <FormControl type="text" placeholder={this.props.placeHolderText} onKeyPress={this.setProjectName}  setProjectName={this.props.setProjectName}/>
+            </FormGroup>
+            </Modal.Body>
+          </div>
+        )}
+      });
+
+      const SelectCheckType = React.createClass({
+        handleClick_: function(e) {
+          //checks which modules user selects, removes if selects twice
+          try {
+            if (e.target.control.checked === false) {
+              if (this.props.FetchDataArray.indexOf(e.target.control.id) == -1)
+              {
+                this.props.pushFetchDataArray(e.target.control.id);
+              }
+
+            }
+            else {
+              this.props.removeFromFetchDataArray(e.target.control.id);
+            }
+          } catch (e) {
+          }
+        },
+        render: function() {
+          var checkButtonComponents = this.props.checks.map(function(checks) {
+            return (
+              <div>
+                <Checkbox id={checks} key={checks}>
+                  {checks}
+                </Checkbox>
+              </div>
+            )
+          });
           return (
             <div>
-            <Checkbox id={checks} ref={checks}>
-            {checks}
-            </Checkbox>
+              <Modal.Header>
+              <Modal.Title>
+                {this.props.modalTitle}
+              </Modal.Title>
+                </Modal.Header>
+              <Modal.Body>
+              <FormGroup onClick={this.handleClick_}>
+                {checkButtonComponents}
+              </FormGroup>
+              </Modal.Body>
             </div>
           )
-        });
-        return (
-          <FormGroup onClick={this.onClick_}>
-          {checkButtonComponents}
-          </FormGroup>
-        )
-      }
-    });
+        }
+      });
 
-    module.exports = ProjectModal;
+      module.exports = ProjectModal;

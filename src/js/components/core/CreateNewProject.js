@@ -4,7 +4,7 @@ const FileModule = require('./FileModule');
 
 var project = {
   createProject: function(manifest, projectName){
-    console.log(projectName);
+    //fields for project requirement may be changed
     var currentProject = {
       'Project Config': {
         'gogsID':""
@@ -14,14 +14,14 @@ var project = {
       'Report':{
       }
     };
-    for (var el in manifest) {
-      currentProject['Project Config'][el] = manifest[el];
+    for (var element in manifest) {
+      currentProject['Project Config'][element] = manifest[element];
     }
     try {
       var file = fs.readdirSync(window.__base + 'src/js/components/modules');
-      for (var el of file) {
-        currentProject['Report'][el] = [];
-        currentProject['CheckLibraries'][el] = {};
+      for (var element of file) {
+        currentProject['Report'][element] = [];
+        currentProject['CheckLibraries'][element] = {};
         //pick checks to display, username, optional email
       }
     } catch (e) {
