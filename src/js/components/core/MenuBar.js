@@ -11,9 +11,16 @@ var template = [
     submenu: [
       {
         label: 'Import Project',
-        click: function() {
+        click() {
           CoreActions.updateModal(true);
         }
+      },
+      {
+        label: 'Create Project',
+        click() {
+          CoreActions.showCreateProject(true);
+        }
+
       }
     ]
   },

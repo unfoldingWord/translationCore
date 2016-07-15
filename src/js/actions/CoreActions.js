@@ -84,4 +84,25 @@ module.exports = {
     });
   },
 
+  showCreateProject: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CREATE_PROJECT,
+      modalOption: boolean
+    });
+  },
+
+  changeCreateProjectText: function(string) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CREATE_PROJECT_TEXT,
+      currentText: string
+    });
+  },
+  getFetchData: function(FetchDataArray) {
+    Dispatcher.handleAction({
+      type: consts.SEND_FETCH_DATA,
+      FetchDataArray: FetchDataArray
+    });
+  }
+
+
 };

@@ -14,13 +14,13 @@ Require this file in your component, and call
 methods to get whatever data you need. Also include
 the following snippet in your component:
 
-  componentWillMount() {
-    CoreStore.addChangeListener(this.{YOUR METHOD HERE});
-  }
+componentWillMount() {
+CoreStore.addChangeListener(this.{YOUR METHOD HERE});
+}
 
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.{YOUR METHOD HERE});
-  }
+componentWillUnmount() {
+CoreStore.removeChangeListener(this.{YOUR METHOD HERE});
+}
 
 This will make it so your component will be subscribed
 to the store and listen for the store's emits. The store
@@ -66,6 +66,18 @@ class CoreStore extends EventEmitter {
     return this.settingsVisibility;
   }
 
+  getShowProjectModal() {
+    return this.projectModalVisibility;
+  }
+
+  getCreateProjectText() {
+    return this.projectText;
+  }
+
+  getDataFromProject() {
+    return this.FetchDataArray;
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
@@ -74,8 +86,8 @@ class CoreStore extends EventEmitter {
   }
 
   /**
-   * @param {function} callback
-   */
+  * @param {function} callback
+  */
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
@@ -87,66 +99,80 @@ class CoreStore extends EventEmitter {
   handleActions(action) {
     switch (action.type) {
       case consts.ADD_CHECK:
-        // change some data here...
+      // change some data here...
 
-        // Emits that a change was made, so any component listening for
-        // this store can update its data
-        this.emitChange();
-        break;
+      // Emits that a change was made, so any component listening for
+      // this store can update its data
+      this.emitChange();
+      break;
 
       case consts.NEXT_VERSE:
-        // change some data here...
-        this.emitChange();
-        break;
+      // change some data here...
+      this.emitChange();
+      break;
 
       case consts.PREV_VERSE:
-        // change some data here...
-        this.emitChange();
-        break;
+      // change some data here...
+      this.emitChange();
+      break;
 
       // For ExampleComponent
       case consts.ADD_TO_TEXT:
-        this.exampleComponentText += "a";
-        this.emitChange();
-        break;
+      this.exampleComponentText += "a";
+      this.emitChange();
+      break;
 
       case consts.UPDATE_ORIGINAL_LANGUAGE:
-        this.ol = action.bookOl;
-        this.emitChange();
-        break;
+      this.ol = action.bookOl;
+      this.emitChange();
+      break;
 
       case consts.UPDATE_TARGET_LANGUAGE:
-        this.tl = action.bookTl;
-        this.emitChange();
-        break;
+      this.tl = action.bookTl;
+      this.emitChange();
+      break;
 
       case consts.UPDATE_GATEWAY_LANGUAGE:
-        this.gl = action.bookGl;
-        this.emitChange();
-        break;
+      this.gl = action.bookGl;
+      this.emitChange();
+      break;
 
       case consts.CHANGE_UPLOAD_MODAL_VISIBILITY:
-        this.modalVisibility = action.modalOption;
-        this.emitChange();
-        break;
+      this.modalVisibility = action.modalOption;
+      this.emitChange();
+      break;
 
       case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
-        this.loginModalVisibility = action.loginModalOption;
-        this.emitChange();
-        break;
+      this.loginModalVisibility = action.loginModalOption;
+      this.emitChange();
+      break;
 
       case consts.SETTINGS_VIEW:
-        this.settingsVisibility = action.settingsView;
-        this.emitChange();
-        break;
+      this.settingsVisibility = action.settingsView;
+      this.emitChange();
+      break;
 
       case consts.CHANGE_BUTTTON_STATUS:
-        this.buttonStatus = action.buttonStatus;
-        this.emitChange();
-        break;
+      this.buttonStatus = action.buttonStatus;
+      this.emitChange();
+      break;
+      case consts.CREATE_PROJECT:
+      this.projectModalVisibility = action.modalOption;
+      this.emitChange();
+      break;
+
+      case consts.CHANGE_CREATE_PROJECT_TEXT:
+      this.projectText = action.currentText;
+      this.emitChange();
+      break;
+
+      case consts.SEND_FETCH_DATA:
+      this.FetchDataArray = action.FetchDataArray;
+      this.emitChange();
+      break;
 
       default:
-        // do nothing
+      // do nothing
     }
   }
 

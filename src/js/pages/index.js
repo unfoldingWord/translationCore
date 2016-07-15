@@ -14,6 +14,7 @@
   const MenuBar = require('../components/core/MenuBar');
   const SettingsModal = require('../components/core/SettingsModal');
   const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
+  const ProjectModal = require('../components/core/ProjectModal')
 
   var App = {
     init: function() {
@@ -28,6 +29,7 @@
           <CheckModuleView />
           <SwitchCheckModuleDropdown />
           <SettingsModal />
+          <ProjectModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
