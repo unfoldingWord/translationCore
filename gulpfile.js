@@ -17,8 +17,8 @@ var paths = {
 
 
 // The default task (called when we run `gulp` from cli)
-gulp.task('default', ['watch', 'js']);
-
+//gulp.task('default', ['watch', 'js']);
+gulp.task('default', function() {console.log("You don't need gulp anymore, silly!");})
 // Rerun tasks whenever a file changes.
 gulp.task('watch', function() {
   gulp.watch(paths.js, ['js']);
