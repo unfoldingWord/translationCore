@@ -49,7 +49,6 @@
               </Col>
             </Row>
           </Grid>
->>>>>>> d91e421eb5994d9177d05faec2d4fb5530c090f6
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));
