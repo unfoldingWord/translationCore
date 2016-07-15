@@ -23,17 +23,13 @@
   "homepage": "https://github.com/WycliffeAssociates/8woc#readme",
   "devDependencies": {
     "babel-preset-react": "^6.11.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
     "del": "^2.2.1",
     "eslint": "^2.13.1",
     "eslint-config-google": "^0.6.0",
     "gulp": "^3.9.1",
     "gulp-debug": "^2.1.2",
     "gulp-shell": "^0.5.2",
-    "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
