@@ -3,7 +3,7 @@ const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const CheckActions = require('../actions/CheckActions');
+const CheckActions = require('../../actions/CheckActions');
 const style = require('./Style');
 
 class MenuItem extends React.Component {
@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
   }
 
   menuItemClicked() {
-    CheckActions.goToCheck(this.props.checkIndex);
+    CheckActions.goToCheck(this.props.groupIndex, this.props.checkIndex);
   }
 
   render() {
@@ -39,7 +39,7 @@ class MenuItem extends React.Component {
         glyphIcon = "random";
         checkStatusStyle = style.menuItem.statusIcon.replaced;
         break;
-      case "WRONG": 
+      case "WRONG":
         glyphIcon = "remove";
         checkStatusStyle = style.menuItem.statusIcon.wrong;
         break;
@@ -51,9 +51,9 @@ class MenuItem extends React.Component {
     return (
       <span>
         <Glyphicon glyph="flag" style={flagStyle} />
-        <span style={style.menu_item_text}>
+        <span style={style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
-            {" " + this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse + " "}
+            {this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
         </span>
         <span>
