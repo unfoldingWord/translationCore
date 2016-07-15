@@ -80,10 +80,9 @@ class ScriptureDisplay extends React.Component{
         );
       }
     }
-    var verseDisplay = this.props.currentVerse.toString().split(" ");
     return (
       <div className="ScriptureDisplay">
-        <h1>{verseDisplay[0].toUpperCase()}<small>{verseDisplay[1]}</small></h1>
+        <h3>{this.props.currentVerse}</h3>
         <Glyph glyph="remove" style={{float: 'right'}} onClick={this.clearSelection}/>
         <Well>
           <p onClick={this.getSelectedText}>{spannedArray}</p>

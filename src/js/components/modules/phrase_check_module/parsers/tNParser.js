@@ -1,13 +1,15 @@
 /**
- * @param {Object} book - A book object retrived from the getBook call from
+ * @author Evan "He of the Squeaky Chair" Wiederspan
+ * @param book A book object retrived from the getBook call from
  * the HTMLParser
- * @param {function} progCallback - a function with a single parameter that is
+ * @param progCallback a function with a single parameter that is
  * called in order to tie the function to a progress bookAbbr
  * its parameter will be a decimal number between 0 and 1 representing
  * the percentage of the way through the function
- * @return {Object} The book data
- */
+ * @return The book data
+*/
 var TNParser = function(book, bookAbbr, progCallback = () => {}) {
+    console.log("Starting Parser");
     book = book.chapters;
     let numChapters = Object.keys(book).length;
     let i = 1;
@@ -15,15 +17,24 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
     let bookData = {}; // return value
     for (let chap in book) {
       for (let verse in book[chap].verses) {
-        let verseText = book[chap].verses[verse].file;
+        if (verse == "00.txt") continue;
+        let tnReg = new RegExp("=+\\s*translationnotes:?\\s*=+([^=]+)", "i");
+        let verseText;
+        try {
+          [,verseText] = tnReg.exec(book[chap].verses[verse].file);
+        } catch(e) {
+          console.log("TN Parse Warning: No TN Data for chapter " + chap.num + " verse " + verse.num);
+          console.log("File may be in incorrect format");
+          continue;
+        }
         let pieces = [];
-        let pieceReg = new RegExp("\\*\\*([\\w\\s]+)\\*\\*\\s*-\\s*([^*]*)", "g");
+        let pieceReg = new RegExp("\\*\\*([^*]+)\\*\\*\\s*-\\s*([^*]*)", "g");
         let temp;
         while(temp = pieceReg.exec(verseText)) {
           pieces.push({origText: temp[1], tNote: temp[2]});
         }
         pieces.map((piece) => {
-          let linkReg = new RegExp("\\[\\[\\w+:\\w+:(\\w+):\\w+:(\\w+)\\]\\]", "g");
+          let linkReg = new RegExp("\\[\\[:?\\w+:\\w+:(\\w+):\\w+:(\\w+)\\]\\]", "g");
           let linkRes = linkReg.exec(piece.tNote);
           if (linkRes != null) {
             let [,volNum,partOfSpeech] = linkRes;
@@ -63,6 +74,4 @@ book, chap, verse, text, phraseText
 }
 ]
 }],
-
-
 */

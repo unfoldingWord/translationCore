@@ -17,17 +17,18 @@ var style = {
     width: '60px',
     margin: '0px'
   },
+
   navbar:{
     position: 'fixed',
-    top:'0',
+    top:'0px',
     zIndex: '500',
     width: '100%',
     marginBottom: '10px',
     display: 'inlineBlock'
   },
+
   bar:{
     marginBottom: '75px'
-
   },
 
   NavBarbutton:{
