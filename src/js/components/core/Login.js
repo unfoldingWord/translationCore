@@ -35,8 +35,8 @@ class Login extends React.Component {
       } else if (reason.hasOwnProperty('message')) {
         dialog.showErrorBox('Login Failed', reason.message);
       } else if (reason.hasOwnProperty('data')) {
-        let errorMessage = JSON.parse(reason.data);
-        dialog.showErrorBox('Account Creation Error', errorMessage.message);
+        let errorMessage = reason.data;
+        dialog.showErrorBox('Login Failed', errorMessage);
       } else {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
         console.log(reason);

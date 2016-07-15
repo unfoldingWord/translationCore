@@ -1,8 +1,10 @@
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
+const Glyphicon  = require('react-bootstrap/lib/Glyphicon.js');
 
-const CheckActions = require('../actions/CheckActions');
+const CheckActions = require('../../actions/CheckActions');
 
+const SaveAndContinue = 'Save and Continue';
 class NextButton extends React.Component {
   constructor() {
     super();
@@ -15,9 +17,9 @@ class NextButton extends React.Component {
 
   render() {
     return (
-        <Button className='btn-success' onClick={this.buttonClicked}>
-          Save and Continue &nbsp;
-          <span className='glyphicon glyphicon-arrow-right'/>
+        <Button className='btn' onClick={this.buttonClicked}>
+          {SaveAndContinue}
+          <Glyphicon glyph="arrow-right" />
         </Button>
     );
   }

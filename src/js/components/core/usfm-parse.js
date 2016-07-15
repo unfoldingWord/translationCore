@@ -1,5 +1,5 @@
 /**
- * @author Evan Wiederspan
+ * @author Evan "He Who Catches Them All" Wiederspan
  * @description takes in usfm file as string
  * @param {string} usfm - A string in the USFM format
  * @return {string} A string that is the parsed version of the USFM input.

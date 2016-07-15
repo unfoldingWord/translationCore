@@ -4,7 +4,7 @@ var FileModule = require('../components/core/FileModule');
 /*
 Creates actions related to checks
 */
-module.exports = {
+var CheckActions = {
   /**
    * Sends an action which will update the current check in CheckStore
    * @param {String} propertyName
@@ -31,9 +31,10 @@ module.exports = {
    * Sends an action which will move the to the check at the specified index
    * @param {Integer} checkIndex
    */
-  goToCheck: function(checkIndex) {
+  goToCheck: function(groupIndex, checkIndex) {
     Dispatcher.handleAction({
       type: consts.GO_TO_CHECK,
+      groupIndex: groupIndex,
       checkIndex: checkIndex
     });
   },
@@ -56,3 +57,5 @@ module.exports = {
   }
 
 };
+
+module.exports = CheckActions;
