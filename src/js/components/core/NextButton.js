@@ -3,6 +3,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 
 const CheckActions = require('../../actions/CheckActions');
 
+const SaveAndContinue = 'Save and Continue';
 class NextButton extends React.Component {
   constructor() {
     super();
@@ -16,8 +17,8 @@ class NextButton extends React.Component {
   render() {
     return (
         <Button className='btn' onClick={this.buttonClicked}>
-          Save and Continue
-          <span className='glyphicon glyphicon-arrow-right'/>
+          {SaveAndContinue}
+          <Glyphicon glyph="arrow-right" />
         </Button>
     );
   }

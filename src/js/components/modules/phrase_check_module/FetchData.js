@@ -18,8 +18,6 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
       }else{
         chapterData = DoorDataFetcher.getTNFromBook(book, bookAbbr);
         ulb = DoorDataFetcher.getULBFromBook(book);
-        console.log('original');
-        console.log(ulb);
         var newStructure = {title: ''};
         for (chapter in ulb) {
           for (verses in ulb[chapter]) {
@@ -32,8 +30,6 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
             }
           }
         }
-        console.log('New');
-        console.log(newStructure);
         CoreActions.updateGatewayLanguage(newStructure);
         onComplete(null, parseObject(chapterData));
       }

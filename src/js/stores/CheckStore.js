@@ -197,4 +197,3 @@ class CheckStore extends EventEmitter {
 const checkStore = new CheckStore;
 Dispatcher.register(checkStore.handleActions.bind(checkStore));
 module.exports = checkStore;
-window.checkStore = checkStore;

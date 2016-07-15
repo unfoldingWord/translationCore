@@ -42,14 +42,16 @@ class PhraseChecker extends AbstractCheckModule{
               </Col>
             </Row>
             <br />
-            <Row classname="show-grid">
+            <Row className="show-grid">
               <Col md={12}>
                 <TranslationAcademyDisplay sectionName={super.getCurrentCheck().group} />
               </Col>
             </Row>
         </Grid>
       );
-    }else{return(<div></div>)}
+    } else {
+      return(<div></div>)
+    }
   }
 }
 

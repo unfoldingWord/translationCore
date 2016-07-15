@@ -1,52 +1,50 @@
-//CheckModuleView.js//
+// CheckModuleView.js//
 
 /**
- * @description - The main view for the Lexical Check Modules
- * @author Sam Faulkner
- */
+* @description - The main view for the Lexical Check Modules
+* @author Sam Faulkner
+*/
 
-//Node Module imports
+// Node Module imports
 const React = require('react');
 
-//User imports
+// User imports
 const LexicalView = require('./lexical_checker/LexicalChecker.js');
 const TranslationWordDisplay = require('./translation_words/TranslationWordsDisplay.js');
 const AbstractCheckModule = require('../AbstractCheckModule.js');
-const CheckStore =  require('../../../stores/CheckStore.js');
-
+const CheckStore = require('../../../stores/CheckStore.js');
 
 class LexicalCheckModule extends AbstractCheckModule {
-	constructor() {
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	componentWillMount() {
-		// super.componentWillMount();
-		CheckStore.addChangeListener(this.changeListener);
+  componentWillMount() {
+// super.componentWillMount();
+    CheckStore.addChangeListener(this.changeListener);
+  }
 
-	}
+  componentWillUnmount() {
+    CheckStore.removeChangeListener(this.changeListener);
+  }
 
-	componentWillUnmount() {
-		CheckStore.removeChangeListener(this.changeListener);
-	}
+  changeListener() {
+    super.refreshCurrentCheck();
+    var currentCheck = super.getCurrentCheck();
+    this.setState({
+      chapter: currentCheck.chapter,
+      verse: currentCheck.verse,
+      text: currentCheck.text
+    });
+  }
 
-	changeListener() {
-		super.refreshCurrentCheck();
-		var currentCheck = super.getCurrentCheck();
-		this.setState({
-			chapter: currentCheck.chapter,
-			verse: currentCheck.verse,
-			text: currentCheck.text
-		});
-	}
+  render() {
+    return (
+<div>
 
-	render() {
-		return (
-			<div>
-
-			</div>
-		);
-	}
+</div>
+);
+  }
 }
 
 module.exports = LexicalCheckModule;
