@@ -1,4 +1,8 @@
 (function() {
+  // added by EW, necessary for dynamic JSX compilation
+  require("babel-register")({
+    extensions: [".js", ".jsx"]
+  });
   const ReactDOM = require('react-dom');
   const React = require('react');
   const PhraseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
@@ -25,34 +29,11 @@
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-      var Application = (
-        <div>
-          <NavBarComponent />
-          <LoginModal />
-          <UploadModal />
-          <Grid fluid>
-            <Row>
-              <Col style={RootStyles.SideMenu} md={2} sm={2}>
-                <SettingsModal />
-                <NavMenu />
-              </Col>
-            </Row>
-            <Row>
-              <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
-                <TPane />
-
-                <SwitchCheckModuleDropdown />
-                {/* <PhraseModuleView /> OR <LexicalModuleView /> */}
-                <NextButton style={{float: 'right'}} />
-              </Col>
-            </Row>
-          </Grid>
-        </div>
-      );
+      var Application = require("./app");
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };
-
+  App.init();
   window.App = App;
 })();
-document.addEventListener('DOMContentLoaded', App.init);
+//document.addEventListener('DOMContentLoaded', App.init);

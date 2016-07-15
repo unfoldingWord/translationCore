@@ -1,6 +1,6 @@
 {
-  "name": "translation-core",
-  "version": "0.1.0",
+  "name": "Translation Core",
+  "version": "0.2.0",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -33,16 +33,17 @@
     "gulp-shell": "^0.5.2",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0",
-        "watchify": "^3.7.0"
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
+    "babel-register": "^6.9.0",
     "event-emitter": "^0.3.4",
     "flux": "^2.1.1",
     "fs": "0.0.2",
     "fs-extra": "^0.30.0",
-    "http": "0.0.0",
     "gogs-client": "^0.5.1",
+    "http": "0.0.0",
     "marked": "^0.3.5",
     "react": "^15.2.1",
     "react-bootstrap": "^0.29.5",
@@ -52,6 +53,5 @@
     "request": "^2.72.0",
     "sql.js": "^0.3.2",
     "url": "^0.11.0"
-  
   }
 }
