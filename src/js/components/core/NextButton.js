@@ -1,5 +1,6 @@
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
+const Glyphicon  = require('react-bootstrap/lib/Glyphicon.js');
 
 const CheckActions = require('../../actions/CheckActions');
 
