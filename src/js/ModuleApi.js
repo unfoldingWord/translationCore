@@ -28,8 +28,8 @@ class ModuleApi {
         return null;
     }
 
-    sendAction(type) {
-        Dispatcher.handleAction(type);
+    sendAction(action) {
+        Dispatcher.handleAction(action);
     }
 
     registerAction(type, callback) {

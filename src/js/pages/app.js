@@ -1,21 +1,16 @@
   const React = require('react');
   const bootstrap = require('react-bootstrap');
 // const NavBarComponent = require('../components/core/NavBarComponent');
-// const PhraseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
-// const LexicalModuleView = require('/home/samuel_faulkner/Documents/modules/CheckModuleView');
 
 // const NavMenu = require('../components/core/NavigationMenu');
-// const TPane = require('../components/core/TPane');
-
 
 // const LoginModal = require('../components/core/LoginModal');
 
 // const SettingsModal = require('../components/core/SettingsModal');
 // const RootStyles = require('./RootStyle');
-// const Grid = require('react-bootstrap/lib/Grid.js');
-// const Row = require('react-bootstrap/lib/Row.js');
-// const Col = require('react-bootstrap/lib/Col.js');
-// const NextButton = require('../components/core/NextButton');
+const Grid = require('react-bootstrap/lib/Grid.js');
+const Row = require('react-bootstrap/lib/Row.js');
+const Col = require('react-bootstrap/lib/Col.js');
 // const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
 const api = window.ModuleApi;
@@ -40,6 +35,20 @@ api.saveModule('TPane', TPane);
 const phraseFetcher = require("/home/samuel_faulkner/Documents/8woc/modules/phrase_check_module/FetchData.js");
 phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} ); 
 const Phrase = require("/home/samuel_faulkner/Documents/8woc/modules/phrase_check_module/View.js");
+
+const tAFetcher = require("/home/samuel_faulkner/Documents/8woc/modules/translation_academy/FetchData.js")
+tAFetcher(params, function() {}, function(err) {
+  if (err) {
+    console.error(err);
+  }
+  console.log('Callback fired');
+  console.dir(api.getDataFromCheckStore('TranslationAcademy', 'sectionList'));
+  api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
+});
+
+const tADisplay = require("/home/samuel_faulkner/Documents/8woc/modules/translation_academy/View.js")
+
+api.saveModule('TADisplay', tADisplay);
 
 // const lexicalFetcher = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/FetchData.js");
 // lexicalFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} ); 

@@ -1,3 +1,5 @@
+
+
 const BASE_URL = "https://git.door43.org/";
 const TA_URL = "Door43/en-ta-translate-vol1/src/master/content";
 // creates TranslationAcademyScraper class
@@ -82,5 +84,5 @@ in the returnObject
   }
   return returnValue;
 }
-
-module.exports = TranslationAcademyScraper;
+var scraper = new TranslationAcademyScraper();
+module.exports = scraper;

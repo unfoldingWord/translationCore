@@ -19,6 +19,7 @@ class PhraseChecker extends React.Component{
   componentWillMount() {
     api.registerEventListener('phraseDataLoaded', this.updateRender.bind(this));
     this.TPane = api.getModule('TPane');
+    this.TADisplay = api.getModule('TADisplay');
   }
 
   updateRender() {
@@ -79,6 +80,7 @@ class PhraseChecker extends React.Component{
               </Col>
             </Row>
         </Grid>
+        <this.TADisplay />
         </div>
       );
     } else {

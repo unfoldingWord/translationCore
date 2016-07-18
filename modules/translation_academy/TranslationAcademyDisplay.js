@@ -1,13 +1,47 @@
-const React = require('react');
-const Markdown = require('react-remarkable');
 
-const Well = require('react-bootstrap/lib/Well.js');
-const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-const Button = require('react-bootstrap/lib/Button.js');
 
-const TranslationAcademyScraper = require('./TranslationAcademyScraper.js');
-const EventEmitter = require('events').EventEmitter;
 
+const api = window.ModuleApi;
+const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+
+const Well = ReactBootstrap.Well;
+const Glyphicon = ReactBootstrap.Glyphicon;
+const Button = ReactBootstrap.Button;
+
+const Markdown = require('./react-remarkable');
+const TranslationAcademyScraper = require('./TranslationAcademyScraper');
+
+class TranslationAcademyDisplay extends React.Component {
+  constructor() {
+    super();
+    this.state = ({
+      currentSection: null
+    });
+  }
+
+  getAndDisplaySection(sectionName) {
+    var _this = this;
+    TranslationAcademyScraper.getSection(sectionName, function(data) {
+     
+        var markdown = <Markdown source={data} />;
+        _this.setState({
+          currentSection: markdown
+        });
+    });
+  }
+
+  render() {
+    var section = this.state.currentSection;
+    return (
+      <div>
+      {section}
+      </div>
+    );
+  }
+}
+
+/*
 const TranslationAcademyDisplay = React.createClass({
 // this makes fields start off empty so they can be filled eventually
   sectionList: null,
@@ -33,10 +67,7 @@ const TranslationAcademyDisplay = React.createClass({
   getAndDisplaySection: function() {
     var _this = this;
 // create new instance of the scraper
-/**
-* This callback will fire once the data has been retrieved from the internet
-* 'data' contains the list of words
-*/
+
     function setList(data) {
 // set our list to the data that was retrieved, when done it calls display section
       _this.sectionList = data;
@@ -69,10 +100,7 @@ const TranslationAcademyDisplay = React.createClass({
       </Well>
     );
   },
-/**
-* Sets the attribute 'currentMarkdown' from the file returned from
-* the htmlscraper
-*/
+
   displaySection: function(sectionName) {
     this.setState({
       currentSection: sectionName
@@ -98,5 +126,5 @@ const TranslationAcademyDisplay = React.createClass({
     this.forceUpdate();
   }
 });
-
+*/
 module.exports = TranslationAcademyDisplay;
