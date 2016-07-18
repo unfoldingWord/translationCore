@@ -9,6 +9,7 @@ const TPane = require('../components/core/TPane');
 
 const LoginModal = require('../components/core/LoginModal');
 const UploadModal = require('../components/core/UploadModal');
+const ProjectModal = require('../components/core/ProjectModal');
 
 const SettingsModal = require('../components/core/SettingsModal');
 const RootStyles = require('./RootStyle');
@@ -23,6 +24,7 @@ module.exports = (
     <NavBarComponent />
     <LoginModal />
     <UploadModal />
+    <ProjectModal />
     <Grid fluid>
       <Row>
         <Col style={RootStyles.SideMenu} md={2} sm={2}>
