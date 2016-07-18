@@ -1,199 +1,206 @@
 /**
- * @author Logan Lebanoff
- * @description Stores data relating to Check Modules.
- *              It has data like: an array of all the checks, the id of the current
- *              check category, and a list of all the check cateogry options.
+ * @author Logan Lebanoff, Sam Faulkner
+ * @description The CheckStore. Handles events and actions. Events and actions are both 
+ * registered by Components in their 'componentWillMount' functions. Actions are used by
+ * components to update data within the store. Events are used by components that based on
+ * that data if they need to communicate to another component to update that component's view
  ******************************************************************************/
 
-var EventEmitter = require('events').EventEmitter;
-var Dispatcher = require('../dispatchers/Dispatcher');
-var CheckConsts = require("../actions/CheckActionConsts.js");
-var FileModule = require("../components/core/FileModule.js");
-var utils = require("../utils.js");
-var Fetcher = require('../components/modules/phrase_check_module/FetchData');
-
-var CHANGE_EVENT = 'change';
+const EventEmitter = require('events').EventEmitter;
+const Dispatcher = require('../dispatchers/Dispatcher');
+const fs = require(window.__base + 'node_modules/fs-extra');
+const utils = require("../utils.js");
 
 class CheckStore extends EventEmitter {
   constructor() {
     super();
+    this.data = {};
+    this.actionCallbacks = {};
+  }
 
-    this.groupIndex = 0;
-    this.checkIndex = 0;
+  /**
+   * @description - This will put in the CheckStore. Under the CheckStore's object the params
+   * will be like so:
+   * this.data = {
+   *   field = {
+   *     key = value;
+   *   }
+   * }
+   * @param {string} field - The main field that the key and value will be saved under in 
+   * the CheckStore's object
+   * @param {string} key - The key that the value will be 'saved' in the field's object
+   * @param {anything} value - thing that is assigned to the key
+   */
+  putInData(field, key, value) {
+    if (!field in this.data) {
+      this.data.field = {};
+      
+    }
+    if (key in this.data.field) {
+      console.warn('Attempting to put in duplicate data for ' + key + ' in ' + field + ' in CheckStore');
+    }
+    this.data.field[key] = value;
+  }
 
-    this.groups = [];
+  /**
+   * @description - See {@link putInData} but puts it in a common field that is accessible by
+   * any module
+   */
+  putInCommon(key, value) {
+    putInData('common', key, value);
+  }
 
-    // -1 means no checkCategory is selected
-    this.checkCategoryId = -1;
-    // TODO: this needs to be filled with actual data when the project is loaded
-    this.checkCategoryOptions = [
-      {
-          name: "Lexical Checks",
-          id: 1,
-          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/lexical_check_module/check_data.json"
-      },
-      {
-          name: "Phrase Checks",
-          id: 2,
-          filePath: window.__base + "/data/projects/eph_mylanguage/check_modules/phrase_check_module/check_data.json"
+  // This needs to return immutable data
+  getModuleDataObject(field) {
+    if (!field) {
+      return this.data.common;
+    }
+
+    if (field in this.data) {
+      return this.data.field;
+    }
+
+    return null;
+  }
+
+  /**
+   * @description - Returns the object behind the 'common' key within the CheckStore's data
+   */
+  getCommonDataObject() {
+    return this.data.common;
+  }
+
+  /**
+   * @description - Returns a single value associated from a key within the common field in the
+   * CheckStore's data
+   * @param {string} key - the key that will you want to get the value from the common field
+   */
+  getFromCommon(key) {
+    if (this.data.common) {
+      return this.data.common.key;
+    }
+    return null;
+  }
+
+  /**
+   * @description - Retrieves the object behind the given field within CheckStore's data
+   * object and saves to the path
+   * @param {string} field - string that denotes which field to save to the disk from the data
+   * @param {string} path - the path to save the json file to
+   */
+  saveDataToDisk(field, path, callback=() => {}) {
+    if (this.data.field) {
+      fs.outputJson(this.data.field, path, callback);
+    }
+  }
+
+  /**
+   * @description - Retrieves a json object from disk and loads it in under CheckStore's
+   * data under the field specified
+   * @param {string} field - the field the loaded data will be saved under in CheckStore's data
+   * @param {string} path - the path the json will be loaded from
+   * @param {function} callback - optional callback parameter to be called on a successful load
+   * of the file
+   */
+  loadDataFromDisk(field, path, callback=() => {}) {
+    fs.readJson(path, function(error, data) {
+      //Temporary error checking
+      if (error) {
+        console.error(error)
       }
-    ];
-
-    // For ExampleCheckModule
-    this.checkIndex = 0;
+      else {
+        this.data.field = data;
+        callback();
+      }
+    });
   }
 
-  // Public function to return a list of all of the groups, which contain checks.
-  // Should usually be used by the navigation menu, not the check module, because
-  // the check module only displays a single check
-  getAllGroups() {
-    return this.groups;
+  /**
+   * @description - Removes the field object from the CheckStore's data
+   * @param {string} field - string denoting the field to remove
+   */
+  removeDataFromCheckStore(field) {
+    if (this.data.field) this.data.field = undefined;
   }
 
-
-  // Public function to return a list of all of the checks.
-  // Should usually be used by the navigation menu, not the check module, because
-  // the check module only displays a single check
-  getAllChecks() {
-    return this.groups;
+  /**
+   * @description - This adds a callback associated with an event that will be called when
+   * the event is emitted
+   * @param {string} eventType - string denoting the type of event
+   * @param {function} callback - callback that will be called when an event is emitted
+   * with a single 'params' parameter that could be undefined
+   */
+  addEventListener(eventType, callback) {
+    this.on(eventType, callback);
   }
 
-  // Public function to return a deep clone of the current group
-  // Why not just return this.groups[this.groupIndex]? Because that returns a reference to
-
-  // the object, and we don't want any changes made here to be reflected elsewhere,
-  // and vice versa
-  getCurrentGroup() {
-    var group = this.groups[this.groupIndex];
-    return utils.cloneObject(group);
+  /**
+   * @description - Removes the callback from the event type
+   * @param {string} eventType - the event type the callback is associated with
+   * @param {function} callback - the function to remove from the specified event
+   */
+  removeEventListener(eventType, callback) {
+    this.removeListener(eventType, callback);
   }
 
-  // Public function to return a deep clone of the current check
-  // Why not just return this.checks[this.checkIndex]? See getCurrentGroup()
-  getCurrentCheck() {
-    if(this.groups.length == 0){
-      return null;
+  /**
+   * @description - Emits and event and passes the given params
+   * @param {string} event - string that specifies the type of event to emit
+   * @param {object} params - an object that carries the params to an event listener
+   */
+  emitEvent(event, params) {
+    this.emit(event, params);
+  }
+
+  /**
+   * @description - Registers an action that can be used to change data within CheckStore
+   * @param {string} type - An action type that is used to distinguish actions
+   * @param {function} callback - a callback to be fired when the action is received from the
+   * dispatcher. Callback is called with the object from the CheckStore's data denoted by the 
+   * action's 'field' attribute. See register action
+   */
+  registerAction(type, callback) {
+    if (!type in this.actionCallbacks) {
+      this.actionCallbacks[type] = [];
     }
-    var check = this.groups[this.groupIndex].checks[this.checkIndex];
-    return utils.cloneObject(check);
+    this.actionCallbacks[type].push(callback);
   }
 
-  // Public function to return the current check's position in the groups array
-  getGroupIndex() {
-    return this.groupIndex;
-  }
-
-  // Public function to return the current check's position in the checks array
-  getCheckIndex() {
-    return this.checkIndex;
-  }
-
-  setCurrentCheckProperty(propertyName, propertyValue) {
-    this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
-  }
-
-  getCurrentCheckCategory() {
-    return this.getCheckCategory(this.checkCategoryId);
-  }
-
-  findById(source, id) {
-   return source.find(function(item) {
-      return item.id == id;
-   });
-  }
-
-  getCheckCategory(id) {
-    return this.findById(this.checkCategoryOptions, id);
-  }
-
-  getCheckCategoryOptions() {
-    return this.checkCategoryOptions;
-  }
-
-  // Fills the checks array with the data in jsonObject and the id
-  // from newCheckCategory
-  fillAllChecks(jsonObject, id) {
-    for(var el in jsonObject) {
-      this.checks = jsonObject[el];
-      break;
-    }
-    this.checkCategoryId = id;
-  }
-
-  getCurrentCheckCategory() {
-    return this.getCheckCategory(this.checkCategoryId);
-  }
-
-  findById(source, id) {
-   return source.find(function(item) {
-      return item.id == id;
-   });
-  }
-
-  getCheckCategory(id) {
-    return this.findById(this.checkCategoryOptions, id);
-  }
-
-  getCheckCategoryOptions() {
-    return this.checkCategoryOptions;
-  }
-
-  // Fills the checks array with the data in jsonObject and the id
-  // from newCheckCategory
-  fillAllChecks(jsonObject, id) {
-    for(var el in jsonObject) {
-      this.checks = jsonObject[el];
-      break;
-    }
-    this.checkCategoryId = id;
-  }
-
-  emitChange() {
-    this.emit(CHANGE_EVENT);
-  }
-
-  addChangeListener(callback) {
-    this.on(CHANGE_EVENT, callback);
-  }
-
-  removeChangeListener(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
-  }
-
-  handleActions(action) {
-    switch(action.type) {
-      case CheckConsts.CHANGE_CHECK_PROPERTY:
-        this.setCurrentCheckProperty(action.propertyName, action.propertyValue);
-        break;
-
-      case CheckConsts.CHANGE_CHECK_CATEGORY:
-        this.fillAllChecks(action.jsonObject, action.id);
-        break;
-
-      case CheckConsts.NEXT_CHECK:
-        this.checkIndex++;
-        // If there are no more checks in the group, go to the next group
-        if(!this.getCurrentCheck()) {
-          this.groupIndex++;
-          this.checkIndex = 0;
+  /**
+   * @description - Removes an action from the object of registered actions
+   * @param {string} type - the type of action to remove from
+   * @param {function} callback - the callback to remove
+   */
+  removeAction(type, callback) {
+    if (type in this.actionCallbacks) {
+      var i = 0;
+      for (var fun of this.actionCallbacks.type) {
+        if (fun === callback) {
+          this.actionCallbacks.splice(i, 0);
+          i++;
         }
-        this.emitChange();
-        break;
-
-      case CheckConsts.GO_TO_CHECK:
-        this.groupIndex = action.groupIndex;
-        this.checkIndex = action.checkIndex;
-        break;
-
-      // do nothing
-      default:
-        return;
+      }
     }
-    this.emitChange();
   }
 
+  /**
+   * @description - called whenever an action is received from the dispatcher, this function
+   * looks to see if it has any associated callbacks for the action and calls them
+   * @param {object} action - This is an object received from the dispatcher: MUST have a
+   * field and type attribute
+   */
+  handleAction(action) {
+    if (!action.type || !action.field) {
+      return
+    }
+    if (action.type in this.actionCallbacks) {
+      for (var actionCallback of this.actionCallbacks[action.type]) {
+        actionCallback(this.data[action.field]);
+      }
+    }
+  }
 }
 
 const checkStore = new CheckStore;
-Dispatcher.register(checkStore.handleActions.bind(checkStore));
+Dispatcher.register(checkStore.handleAction.bind(checkStore));
 module.exports = checkStore;

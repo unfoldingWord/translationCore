@@ -4,7 +4,7 @@
   const PhraseModuleView = require('../components/modules/phrase_check_module/CheckModuleView');
   const LexicalModuleView = require('../components/modules/lexical_check_module/CheckModuleView');
 
-  const NavMenu = require('../components/core/NavigationMenu');
+  // const NavMenu = require('../components/core/NavigationMenu');
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
@@ -21,10 +21,21 @@
   const NextButton = require('../components/core/NextButton');
   const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
+  class MyClass {
+    constructor() {
+
+    }
+  }
+
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
+      var myClass = new MyClass();
+      console.log("My Class: ");
+      console.dir(myClass);
+      console.log("String: " + myClass.toString());
+
       var Application = (
         <div>
           <NavBarComponent />
