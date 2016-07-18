@@ -157,7 +157,7 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
       case consts.CREATE_PROJECT:
-        this.projectModalVisibility = action.modalOption;
+        this.projectModalVisibility = action.createProjectModal;
         this.emitChange();
       break;
 
