@@ -5,6 +5,10 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Panel = require('react-bootstrap/lib/Panel.js');
 const CheckActions = require('../../../actions/CheckActions.js');
 
+const api = window.ModuleApi;
+//ProposedChanges is in the store
+const NAMESPACE = 'ProposedChanges';
+
 class ProposedChanges extends React.Component {
   constructor() {
     super();
@@ -13,12 +17,27 @@ class ProposedChanges extends React.Component {
     };
   }
 
+  componentWillMount() {
+    api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
+  }
+
+  actionHandleChange() {
+    api.putDataInCheckStore(NAMESPACE, 'currentChangedText', this.value);
+  }
+
+  handleChange(e){
+  //  let proposedChange = e.target.value;
+    this.value = e.target.value;
+    console.log(proposedChange);
+    //CheckActions.changeCheckProperty("proposedChange", proposedChange.value);
+    api.sendAction('proposedChangesUpdateText');
+  }
+  /*
   handleChange(e){
     let proposedChange = e.target.value;
     console.log(proposedChange);
     CheckActions.changeCheckProperty("proposedChange", proposedChange.value);
-  }
-
+  }*/
   render() {
     return (
       <div style={{width:'50%'}}>
