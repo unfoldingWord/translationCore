@@ -47,6 +47,29 @@ const Phrase = require("/home/samuel_faulkner/Documents/8woc/modules/phrase_chec
 
 module.exports = (
   <div>
+// <<<<<<< HEAD
     <Phrase />
+// =======
+//     <NavBarComponent />
+//     <LoginModal />
+//     <UploadModal />
+//     <Grid fluid>
+//       <Row>
+//         <Col style={RootStyles.SideMenu} md={2} sm={2}>
+//           <SettingsModal />
+//           <NavMenu />
+//         </Col>
+//       </Row>
+//       <Row>
+//         <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+//           <SwitchCheckModuleDropdown />
+//           <TPane />
+//           <PhraseModuleView />
+//           {/* <PhraseModuleView /> OR <LexicalModuleView /> */}
+//           <NextButton style={{float: 'right'}} />
+//         </Col>
+//       </Row>
+//     </Grid>
+// >>>>>>> develop
   </div>
 );
