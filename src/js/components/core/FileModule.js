@@ -33,9 +33,9 @@ const FileModule = (function() {
       callback(jsonObject);
     },
 
-    loadOnline: function(url, callback, currentChapter) {
+    loadOnline: function(url, callback, extraData) {
       request(url, function(error, response, body) {
-        callback(error, response, body, currentChapter);
+        callback(error, response, body, extraData);
       });
     }
   };

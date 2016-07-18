@@ -74,7 +74,6 @@ function openUsfmFromChunks(chunk) {
     var chunkLocation = path.join(manifestSource, chunk[0], fileName);
     FileModule.readFile(chunkLocation, joinChunks);
   } catch (error) {
-    dialog.showErrorBox('Import Error', 'Unknown error has occurred');
     console.log(error);
   }
 }
