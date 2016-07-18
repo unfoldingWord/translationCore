@@ -14,7 +14,7 @@ const utils = require("../utils.js");
 class CheckStore extends EventEmitter {
   constructor() {
     super();
-    this.data = {};
+    this.storeData = {};
     this.actionCallbacks = {};
   }
 
@@ -32,14 +32,15 @@ class CheckStore extends EventEmitter {
    * @param {anything} value - thing that is assigned to the key
    */
   putInData(field, key, value) {
-    if (!field in this.data) {
-      this.data.field = {};
-      
+    if (!(field in this.storeData)) {
+      this.storeData[field] = {};
     }
-    if (key in this.data.field) {
-      console.warn('Attempting to put in duplicate data for ' + key + ' in ' + field + ' in CheckStore');
+    if (key in this.storeData[field]) {
+      console.warn('Attempting to put in duplicate storeData for ' + key + ' in ' + field + ' in CheckStore');
     }
-    this.data.field[key] = value;
+    this.storeData[field][key] = value;
+    if ('common' in this.storeData) {
+    }
   }
 
   /**
@@ -47,27 +48,27 @@ class CheckStore extends EventEmitter {
    * any module
    */
   putInCommon(key, value) {
-    putInData('common', key, value);
+    this.putInData('common', key, value);
   }
 
   // This needs to return immutable data
   getModuleDataObject(field) {
     if (!field) {
-      return this.data.common;
+      return this.storeData.common;
     }
 
-    if (field in this.data) {
-      return this.data.field;
+    if (field in this.storeData) {
+      return this.storeData[field];
     }
 
     return null;
   }
 
   /**
-   * @description - Returns the object behind the 'common' key within the CheckStore's data
+   * @description - Returns the object behind the 'common' key within the CheckStore's storeData
    */
   getCommonDataObject() {
-    return this.data.common;
+    return this.storeData.common;
   }
 
   /**
@@ -76,9 +77,10 @@ class CheckStore extends EventEmitter {
    * @param {string} key - the key that will you want to get the value from the common field
    */
   getFromCommon(key) {
-    if (this.data.common) {
-      return this.data.common.key;
+    if (this.storeData['common']) {
+      return this.storeData.common[key];
     }
+  
     return null;
   }
 
@@ -89,8 +91,8 @@ class CheckStore extends EventEmitter {
    * @param {string} path - the path to save the json file to
    */
   saveDataToDisk(field, path, callback=() => {}) {
-    if (this.data.field) {
-      fs.outputJson(this.data.field, path, callback);
+    if (this.storeData.field) {
+      fs.outputJson(this.storeData.field, path, callback);
     }
   }
 
@@ -109,7 +111,7 @@ class CheckStore extends EventEmitter {
         console.error(error)
       }
       else {
-        this.data.field = data;
+        this.storeData.field = data;
         callback();
       }
     });
@@ -120,7 +122,7 @@ class CheckStore extends EventEmitter {
    * @param {string} field - string denoting the field to remove
    */
   removeDataFromCheckStore(field) {
-    if (this.data.field) this.data.field = undefined;
+    if (this.storeData.field) this.storeData.field = undefined;
   }
 
   /**
@@ -195,7 +197,7 @@ class CheckStore extends EventEmitter {
     }
     if (action.type in this.actionCallbacks) {
       for (var actionCallback of this.actionCallbacks[action.type]) {
-        actionCallback(this.data[action.field]);
+        actionCallback(this.storeData[action.field]);
       }
     }
   }

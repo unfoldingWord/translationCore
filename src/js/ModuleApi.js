@@ -1,17 +1,32 @@
 //ModuleApi.js//
 
 //node modules
-const React = require('react');
+const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
 const CheckStore = require('./stores/CheckStore.js');
 const Dispatcher = require('./dispatchers/Dispatcher.js');
 
+const React = require('react');
+const ReactBootstrap = require('react-bootstrap');
 
 class ModuleApi {
 	constructor() {
-        this.ReactComponent = React.Component;
+        this.React = React;
+        this.ReactBootstrap = ReactBootstrap;
+        this.modules = {};
 	}
+
+    saveModule(identifier, module) {
+        this.modules[identifier] = module;
+    }
+
+    getModule(identifier) {
+        if (identifier in this.modules) {
+            return this.modules[identifier];
+        }
+        return null;
+    }
 
     sendAction(type) {
         Dispatcher.handleAction(type);
@@ -25,11 +40,11 @@ class ModuleApi {
         CheckStore.removeAction(type, callback);
     }
 
-    registerEventListener() {
+    registerEventListener(eventType, callback) {
         CheckStore.addEventListener(eventType, callback);
     }
 
-    removeEventListener() {
+    removeEventListener(eventType, callback) {
         CheckStore.removeEventListener(eventType, callback);
     }
 
@@ -42,7 +57,10 @@ class ModuleApi {
          * if an evil developer tries to mutate the store directly it won't mutate
          */
         var obj = CheckStore.getModuleDataObject(field);
-        return Object.assign({}, obj);
+        if (obj != null && typeof obj == "object") {
+            return Object.assign({}, obj);
+        }
+        return null;
     }
 
     getDataFromCommon(key) {
@@ -50,7 +68,15 @@ class ModuleApi {
          * itself so it can't be mutated directly
          */
         var commonObj = CheckStore.getFromCommon(key);
-        return Object.assign({}, commonObj);
+        if (commonObj != null && typeof commonObj == "object") {
+            return Object.assign({}, commonObj);
+        }
+        //this should be obsolete
+        var commonDataObject = CheckStore.getCommonDataObject();
+        if (commonDataObject) {
+            return commonDataObject[key];
+        }
+        return null;
     }
 
     putDataInCheckStore(field, key, value) {
@@ -60,6 +86,23 @@ class ModuleApi {
     putDataInCommon(key, value) {
         CheckStore.putInCommon(key, value);
     }
+
+    inputJson(path, callback) {
+        fs.readJson(path, callback);
+    }
+
+    outputJson(path, data, callback) {
+        fs.outputJson(path, data, callback);
+    }
+
+    inputText(path, callback) {
+        fs.readFile(path, callback);
+    }
+
+    outputText(path, string, callback) {
+        fs.writeFile(path, string, callback);
+    }
 }
 
-module.exports = ModuleApi;
+const api = new ModuleApi();
+module.exports = api;
