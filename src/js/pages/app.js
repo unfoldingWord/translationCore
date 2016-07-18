@@ -24,7 +24,6 @@ module.exports = (
     <NavBarComponent />
     <LoginModal />
     <UploadModal />
-    <ProposedChanges />
     <Grid fluid>
       <Row>
         <Col style={RootStyles.SideMenu} md={2} sm={2}>
@@ -35,7 +34,7 @@ module.exports = (
       <Row>
         <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <TPane />
-
+          <ProposedChanges />
           <SwitchCheckModuleDropdown />
           {/* <PhraseModuleView /> OR <LexicalModuleView /> */}
           <NextButton style={{float: 'right'}} />
