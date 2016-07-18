@@ -29,17 +29,4 @@ class Pane extends React.Component {
     }
 }
 
-// const Pane = React.createClass({
-//     render: function() {
-//         return (
-//             <Col md={4} sm={4} xs={12}>
-//                 <h3 style={style.pane.header}>{this.props.title}</h3>
-//                 <Well style={style.pane.content}>
-//                     <Book input={this.props.content} />
-//                 </Well>
-//             </Col>
-//         );
-//     }
-// });
-
 module.exports = Pane;
