@@ -141,10 +141,7 @@ class CheckStore extends EventEmitter {
   // Fills the checks array with the data in jsonObject and the id
   // from newCheckCategory
   fillAllChecks(jsonObject, id) {
-    for(var el in jsonObject) {
-      this.checks = jsonObject[el];
-      break;
-    }
+    this.groups = jsonObject;
     this.checkCategoryId = id;
   }
 

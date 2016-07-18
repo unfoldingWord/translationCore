@@ -33,9 +33,10 @@ module.exports = (
       </Row>
       <Row>
         <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+          <SwitchCheckModuleDropdown />
           <TPane />
           <ProposedChanges />
-          <SwitchCheckModuleDropdown />
+          <PhraseModuleView />
           {/* <PhraseModuleView /> OR <LexicalModuleView /> */}
           <NextButton style={{float: 'right'}} />
         </Col>
