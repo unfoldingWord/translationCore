@@ -11,12 +11,12 @@ const React = require('react');
 // User imports
 const LexicalView = require('./lexical_checker/LexicalChecker.js');
 const TranslationWordDisplay = require('./translation_words/TranslationWordsDisplay.js');
-const AbstractCheckModule = require('../AbstractCheckModule.js');
+// const AbstractCheckModule = require('../AbstractCheckModule.js');
 const CheckStore = require('../../../stores/CheckStore.js');
 
-class LexicalCheckModule extends AbstractCheckModule {
+console.log('We being require');
+class LexicalCheckModule extends React.Component{
   constructor() {
-    super();
   }
 
   componentWillMount() {

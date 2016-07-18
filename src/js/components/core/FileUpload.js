@@ -11,8 +11,6 @@ const FileModule = require('./FileModule');
 const remote = window.electron.remote;
 const {dialog} = remote;
 
-const CoreActions = require('../../actions/CoreActions.js');
-
 const path = require('path');
 
 const Book = require('./Book');

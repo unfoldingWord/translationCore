@@ -2,10 +2,16 @@
  * @description: This file builds the chapters
  * @author: Ian Hoegen
  ******************************************************************************/
-const React = require('react');
+// const React = require('react');
 
-const Chapter = React.createClass({
-  render: function() {
+const api = window.ModuleApi;
+const React = api.React;
+
+class Chapter extends React.Component {
+  constructor() {
+    super();
+  }
+  render() {
     return (
       <div>
         <h5>
@@ -15,6 +21,6 @@ const Chapter = React.createClass({
       </div>
     );
   }
-});
+}
 
 module.exports = Chapter;
