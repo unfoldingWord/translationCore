@@ -22,21 +22,21 @@ const api = window.ModuleApi;
  */
 
  var params = {
-  targetLanguagePath: "/home/samuel_faulkner/Documents/8woc/test_files/Import From TS/",
-  originalLanguagePath: "/home/samuel_faulkner/Documents/8woc/data/ulgb",
+  targetLanguagePath: window.__base + "test_files/Import From TS/",
+  originalLanguagePath: window.__base + "data/ulgb",
   bookAbbr: "2ti"
 };
-const fetcher = require("/home/samuel_faulkner/Documents/8woc/modules/t_pane/FetchData.js");
+const fetcher = require(window.__base + "modules/t_pane/FetchData.js");
 fetcher(params, function(){ }, 
   function() { api.emitEvent('updateTargetLanguage'); 
   api.emitEvent('updateOriginalLanguage');} );
-const TPane = require("/home/samuel_faulkner/Documents/8woc/modules/t_pane/View");
+const TPane = require(window.__base + "modules/t_pane/View");
 api.saveModule('TPane', TPane);
-const phraseFetcher = require("/home/samuel_faulkner/Documents/8woc/modules/phrase_check_module/FetchData.js");
+const phraseFetcher = require(window.__base + "modules/phrase_check_module/FetchData.js");
 phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} ); 
-const Phrase = require("/home/samuel_faulkner/Documents/8woc/modules/phrase_check_module/View.js");
+const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
-const tAFetcher = require("/home/samuel_faulkner/Documents/8woc/modules/translation_academy/FetchData.js")
+const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js")
 tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
@@ -46,7 +46,7 @@ tAFetcher(params, function() {}, function(err) {
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
-const tADisplay = require("/home/samuel_faulkner/Documents/8woc/modules/translation_academy/View.js")
+const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 
 api.saveModule('TADisplay', tADisplay);
 
