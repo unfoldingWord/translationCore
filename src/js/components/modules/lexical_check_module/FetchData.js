@@ -7,7 +7,7 @@
 */
 
 // User imports
-const Door43DataFetcher = require('./../translation_notes/Door43DataFetcher.js');
+const Door43DataFetcher = require('./lexical_checker/Door43DataFetcher.js');
 const TranslationWordsFetcher = require('./translation_words/TranslationWordsFetcher.js');
 const BookWordTest = require('./translation_words/WordTesterScript.js');
 const FS = require(window.__base + '/node_modules/fs-extra');
