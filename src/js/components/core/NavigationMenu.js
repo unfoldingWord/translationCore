@@ -44,11 +44,7 @@ class NavigationMenu extends React.Component {
       var checkMenuItems = group.checks.map(function(check, checkIndex) {
         return (
           <div key={checkIndex}>
-            <MenuItem
-              check={check}
-              groupIndex={groupIndex}
-              checkIndex={checkIndex}
-            />
+            <MenuItem check={check} groupIndex={groupIndex} checkIndex={checkIndex} />
           </div>
         );
       });

@@ -47,7 +47,6 @@ class PhraseChecker extends React.Component{
      }
      */
      if (PhraseObj) {
-      // console.dir(PhraseObj);
     var currentGroupIndex = PhraseObj["currentGroupIndex"];
     var currentCheckIndex = PhraseObj['currentCheckIndex'];
     var currentCheck = PhraseObj["groups"][currentGroupIndex]["checks"][currentCheckIndex];
