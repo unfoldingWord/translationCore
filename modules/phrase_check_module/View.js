@@ -1,5 +1,6 @@
-
 const api = window.ModuleApi;
+const TPane = api.getModule('TPane');
+const TADisplay = api.getModule('TADisplay');
 
 const RB = api.ReactBootstrap;
 const {Grid, Row, Col} = RB;
@@ -11,27 +12,26 @@ const FlagDisplay = require('./subcomponents/FlagDisplay');
 class PhraseChecker extends React.Component{
   constructor(){
     super();
-    this.state = {
-      
-    }
+
+    this.splitCheck = this.splitCheck.bind(this);
+    this.newCheck = this.newCheck.bind(this);
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateRender.bind(this));
-    this.TPane = api.getModule('TPane');
-    this.TADisplay = api.getModule('TADisplay');
+    api.registerEventListener('phraseDataLoaded', this.newCheck);
   }
 
-  updateRender() {
-    this.setState({
-      toggle: !this.state.toggle
-    })
+  newCheck(){
+    var phraseCheck = api.getDataFromCheckStore('PhraseCheck');
+    var targetLanguage = api.getDataFromCommon('targetLanguage');
+    var newCheck = this.splitCheck(phraseCheck, targetLanguage);
+    console.log(newCheck);
+    this.setState(newCheck);
   }
 
-  render() {
-    var PhraseObj = api.getDataFromCheckStore("PhraseCheck");
+  splitCheck(phraseCheck, targetLanguage){
     /**
-     * PhrasesObj should be structed like this: 
+     * PhrasesObj structure:
      {
       [
         {
@@ -45,33 +45,57 @@ class PhraseChecker extends React.Component{
         }...
       ]
      }
-     */
-     if (PhraseObj) {
-      // console.dir(PhraseObj);
-    var currentGroupIndex = PhraseObj["currentGroupIndex"];
-    var currentCheckIndex = PhraseObj['currentCheckIndex'];
-    var currentCheck = PhraseObj["Phrase Checks"][currentGroupIndex]["checks"][currentCheckIndex];
-    var targetLanguage = api.getDataFromCommon('targetLanguage');
-    var currentVerse = targetLanguage["0" + currentCheck.chapter.toString()][currentCheck.verse.toString()];
+    */
+    if (phraseCheck && targetLanguage) {
+      var returnObj = {};
+
+      /**
+      * Pulls current check out of the larger phraseCheck object, we find it
+      * using the indices of our group and check from the phraseCheck object
+      **/
+      returnObj.currentCheck = phraseCheck["Phrase Checks"] //Top level object
+                                   [phraseCheck['currentGroupIndex']] //Group index
+                                   ["checks"] //Checks at that gropu index
+                                   [phraseCheck['currentCheckIndex']]; //Check index
+
+      /**
+      * Pulls the target language verse out of our target language object using
+      * the chapter and verse values from the current check object that we
+      * extracted data from above
+      **/
+      returnObj.currentVerse = targetLanguage //Target Language
+                                  ["0" + returnObj.currentCheck.chapter.toString()] //Current chapter
+                                  [returnObj.currentCheck.verse.toString()]; //Current verse
+
+      return returnObj
+    }else{
+      console.log("Check store is empty");
+    }
+  }
+
+  render() {
+    if(!this.state){
+      return <div></div>;
+    }
       return (
         <div>
-        <this.TPane />
+        <TPane />
         <Grid>
             <Row className="show-grid">
               <Col md={12}>
                 <ScriptureDisplay
-                  scripture={currentVerse}
-                  currentVerse={currentCheck.book
-                                + " " + currentCheck.chapter
-                                + ":" + currentCheck.verse}
+                  scripture={this.state.currentVerse}
+                  currentVerse={this.state.currentCheck.book
+                                + " " + this.state.currentCheck.chapter
+                                + ":" + this.state.currentCheck.verse}
                 />
               </Col>
             </Row>
             <Row className="show-grid">
               <Col md={6} className="confirm-area">
                 <ConfirmDisplay
-                  phraseInfo={currentCheck.phraseInfo}
-                  phrase={currentCheck.phrase}
+                  phraseInfo={this.state.currentCheck.phraseInfo}
+                  phrase={this.state.currentCheck.phrase}
                 />
               </Col>
               <Col md={6}>
@@ -80,12 +104,8 @@ class PhraseChecker extends React.Component{
               </Col>
             </Row>
         </Grid>
-        <this.TADisplay />
         </div>
       );
-    } else {
-      return(<div></div>)
-    }
   }
 }
 

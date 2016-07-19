@@ -5,23 +5,33 @@ const RB = api.ReactBootstrap;
 const {Button, ButtonGroup, Glyphicon} = RB;
 
 class FlagDisplay extends React.Component{
+
+  // componentWillMount(){
+  //   api.registerAction('setFlagState', (data, action) => {
+  //     var currentGroupIndex = data.currentGroupIndex;
+  //     var currentCheckIndex = data.currentCheckIndex;
+  //     var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
+  //     currentCheck.checkStatus = action.checkStatus;
+  //   });
+  // }
+
   render(){
     var _this = this;
     return (
       <ButtonGroup vertical block>
         <Button bsStyle="success" onClick={
             function() {
-              _this.props.setFlagState('checkStatus', "RETAINED")
+              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "RETAINED"})
             }
           }><Glyphicon glyph="ok" /> Retain</Button>
         <Button bsStyle="warning" onClick={
             function() {
-              _this.props.setFlagState('checkStatus', "REPLACED")
+              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "REPLACED"})
             }
           }><Glyphicon glyph="random" /> Changed</Button>
         <Button bsStyle="danger" onClick={
             function() {
-              _this.props.setFlagState('checkStatus', "WRONG")
+              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "WRONG"})
             }
         }><Glyphicon glyph="remove" /> Wrong</Button>
       </ButtonGroup>
