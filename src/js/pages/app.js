@@ -45,7 +45,6 @@ tAFetcher(params, function() {}, function(err) {
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
-
 const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 
 api.saveModule('TADisplay', tADisplay);
@@ -59,4 +58,4 @@ module.exports = (
   <div>
     <Lexical />
   </div>
-);
+};
