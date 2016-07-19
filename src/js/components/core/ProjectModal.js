@@ -6,12 +6,15 @@ const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
+const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const project = require('./CreateNewProject');
 const manifest = require(window.__base + 'test_files/Import From TS/manifest');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./CheckDataGrabber');
+const FileModule = require('./FileModule');
+const {dialog} = window.electron.remote;
 const ENTER = 13;
 
 const ProjectModal = React.createClass({
@@ -104,9 +107,29 @@ const ProjectModal = React.createClass({
       return false;
     }
   },
-  changeModalBody: function(modalBody) {
+  getModule: function() {
+  dialog.showOpenDialog({
+    properties: ['openDirectory']
+  }, function(filename) {
+    if (filename !== undefined) {
+      this.addMoreModules(filename);
+    }
+  });
+},
+addMoreModules: function(filename) {
+  try {
+    FileModule.readFile(file, readFile);
+    console.log(readFile);
+  } catch (error) {
+    dialog.showErrorBox('Import Error', 'Check Selected Module.');
+    console.log(error);
+  }
+  var filename = this.getModule();
+  var newModule = filename[0].split('/').pop();
+  this.changeModalBody("Check", newModule);
+},
+  changeModalBody: function(modalBody, currentChecks = []) {
     if (modalBody == "Check") {
-      var currentChecks = [];
       try {
         var file = fs.readdirSync(window.__base + 'src/js/components/modules');
         for (var element of file) {
@@ -119,7 +142,7 @@ const ProjectModal = React.createClass({
       }
       return (<SelectCheckType ref={this.state.modalValue} checks={currentChecks} modalTitle={this.state.modalTitle}
         controlLabelTitle={this.state.controlLabelTitle} placeHolderText={this.state.placeHolderText} FetchDataArray={this.state.FetchDataArray}
-        onClick={this.selectedModule}/>)
+        onClick={this.selectedModule} addMoreModules={this.getModule.bind(this)}/>)
       }
       else if (modalBody == "Create") {
         return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
@@ -162,41 +185,44 @@ const ProjectModal = React.createClass({
         });
 
         const SelectCheckType = React.createClass({
+          addMoreModules: function() {
+            this.props.addMoreModules();
+          },
           handleClick_: function(e) {
             try {
               this.props.onClick(e.target.control.id);
+            } catch (e) {
             }
-            else {
-            }
-          } catch (e) {
-          }
-          //checks which modules user selects, removes if selects twice
-        },
-        render: function() {
-          var checkButtonComponents = this.props.checks.map(function(checks) {
+            //checks which modules user selects, removes if selects twice
+          },
+          render: function() {
+            var checkButtonComponents = this.props.checks.map(function(checks) {
+              return (
+                <div>
+                <Checkbox id={checks} key={checks}>
+                {checks}
+                </Checkbox>
+                </div>
+              )
+            });
             return (
               <div>
-              <Checkbox id={checks} key={checks}>
-              {checks}
-              </Checkbox>
+              <Modal.Header>
+              <Modal.Title>
+              {this.props.modalTitle}
+              </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+              <FormGroup onClick={this.handleClick_}>
+              {checkButtonComponents}
+              <ButtonToolbar>
+              <Button bsSize="xsmall" onClick={this.addMoreModules}>Add More...</Button>
+              </ButtonToolbar>
+              </FormGroup>
+              </Modal.Body>
               </div>
             )
-          });
-          return (
-            <div>
-            <Modal.Header>
-            <Modal.Title>
-            {this.props.modalTitle}
-            </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <FormGroup onClick={this.handleClick_}>
-            {checkButtonComponents}
-            </FormGroup>
-            </Modal.Body>
-            </div>
-          )
-        }
-      });
+          }
+        });
 
-      module.exports = ProjectModal;
+        module.exports = ProjectModal;

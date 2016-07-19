@@ -4,6 +4,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const Report = require('./ChangesReportSaver');
 const path = require('path');
 const book = 'mat';
+//const api = window.ModuleApi;
 
 var currentCheckName;
 var gotFetch;
@@ -46,6 +47,7 @@ var CheckDataGrabber = {
   },
   getDataFromCheck: function(path) {
     var DataFetcher = require(path + '/FetchData');
+    //api.saveModule(currentCheckName, path + '/View');
     var checkDataJSON = DataFetcher(book, this.Progress.bind(this), this.onComplete.bind(this));
   }
 };

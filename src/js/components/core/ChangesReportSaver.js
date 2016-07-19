@@ -8,7 +8,9 @@ var SaveReport = {
     //var data = JSON.stringify(report);
     //creates folder path for only folders that need to be created
     fs.outputJson(filepath, report, function (err) {
-      console.log(err) // => null
+      if (err){
+        console.log(err) // => null
+      }
       fs.readJson(filepath, function(err, data) {
       });
     });
