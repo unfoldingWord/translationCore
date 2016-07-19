@@ -65,6 +65,7 @@ class CoreStore extends EventEmitter {
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
+
   getButtonStatus(){
     return this.buttonStatus;
   }
@@ -72,6 +73,7 @@ class CoreStore extends EventEmitter {
 /**
   * @param {function} callback
   */
+
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
