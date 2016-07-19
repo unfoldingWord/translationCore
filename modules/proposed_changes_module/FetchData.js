@@ -22,6 +22,7 @@ function fetchData(params, progress, callback) {
     }
   }
 
+  api.putDataInCheckStore("ProposedChanges", "currentChanges", '');
   //I'm not supposed to get the gateway language!
 }
 
@@ -124,5 +125,12 @@ function joinChunks(text, currentChapter, currentJoined) {
   }
 }
 
+function len(obj) {
+	var length = 0;
+	for (let item in obj) {
+		length++;
+	}
+	return length;
+}
 
 module.exports = fetchData;

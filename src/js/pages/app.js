@@ -51,6 +51,8 @@ tAFetcher(params, function() {}, function(err) {
 const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 api.saveModule('TADisplay', tADisplay);
 
+const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
+pFetcher(params, function() {}, function() {});
 
 const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
 api.saveModule('ProposedChanges', ProposedChanges);
