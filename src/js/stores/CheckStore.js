@@ -162,7 +162,7 @@ class CheckStore extends EventEmitter {
    * action's 'field' attribute. See register action
    */
   registerAction(type, callback) {
-    if (!type in this.actionCallbacks) {
+    if (!(type in this.actionCallbacks)) {
       this.actionCallbacks[type] = [];
     }
     this.actionCallbacks[type].push(callback);

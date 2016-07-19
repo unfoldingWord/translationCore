@@ -33,8 +33,6 @@ function getData(params, progressCallback, callback) {
         callback(error);
       }
       else {
-        console.log('data');
-        console.dir(data);
         bookData = Door43Fetcher.getULBFromBook(data);
         var tWFetcher = new TranslationWordsFetcher();
         var wordList;
