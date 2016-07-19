@@ -3,11 +3,13 @@
 /**
 * @description: This file defines the function that
 * fetches the data and populates a list of checks
-* @author Samuel Faulkner
+* @author Sam Faulkner
 */
 
+const api = window.ModuleApi;
+
 // User imports
-const Door43DataFetcher = require('./../translation_notes/Door43DataFetcher.js');
+const Door43DataFetcher = require('./Door43DataFetcher.js');
 const TranslationWordsFetcher = require('./translation_words/TranslationWordsFetcher.js');
 const BookWordTest = require('./translation_words/WordTesterScript.js');
 
@@ -27,13 +29,13 @@ function getData(params, progressCallback, callback) {
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
     progressCallback((done / total) * 0.5);}, function(error, data) {
       if (error) {
-        console.log('Door43Fetcher throwing error');
+        console.error('Door43Fetcher throwing error');
         callback(error);
       }
       else {
+        console.log('data');
+        console.dir(data);
         bookData = Door43Fetcher.getULBFromBook(data);
-// console.dir(bookData);
-// Get list of words
         var tWFetcher = new TranslationWordsFetcher();
         var wordList;
         tWFetcher.getWordList(undefined,
@@ -44,7 +46,6 @@ function(error, data) {
   }
   else {
     wordList = data;
-
     tWFetcher.getAliases(function(done, total) {
       progressCallback(((done / total) * 0.5) + 0.5);
     }, function(error) {
@@ -53,10 +54,11 @@ function(error, data) {
       }
       else {
         var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
-// console.log('WordSet');
-// console.dir(actualWordList);
         var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
-        callback(null, checkObject);
+        api.putDataInCheckStore('LexicalCheck', 'groups', checkObject['LexicalCheck']);
+        api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
+        api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
+        callback(null);
       }
     });
   }
