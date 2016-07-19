@@ -1,83 +1,57 @@
 {
-  "_args": [
-    [
-      "react-remarkable@^1.1.1",
-      "/home/samuel_faulkner/Documents/8woc"
-    ]
-  ],
-  "_from": "react-remarkable@>=1.1.1 <2.0.0",
-  "_id": "react-remarkable@1.1.1",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/react-remarkable",
-  "_nodeVersion": "1.2.0",
-  "_npmUser": {
-    "email": "acdlite@me.com",
-    "name": "acdlite"
-  },
-  "_npmVersion": "2.5.1",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "react-remarkable",
-    "raw": "react-remarkable@^1.1.1",
-    "rawSpec": "^1.1.1",
-    "scope": null,
-    "spec": ">=1.1.1 <2.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-remarkable/-/react-remarkable-1.1.1.tgz",
-  "_shasum": "37908ac95894576d0d39187bd289bc2cbb5ac6de",
-  "_shrinkwrap": null,
-  "_spec": "react-remarkable@^1.1.1",
-  "_where": "/home/samuel_faulkner/Documents/8woc",
-  "author": {
-    "email": "acdlite@me.com",
-    "name": "Andrew Clark"
-  },
-  "bugs": {
-    "url": "https://github.com/acdlite/react-remarkable/issues"
+  "name": "react-remarkable",
+  "version": "1.1.1",
+  "description": "A React component for rendering Markdown with remarkable",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acdlite/react-remarkable.git"
   },
   "dependencies": {
     "remarkable": "^1.4.1"
   },
-  "description": "A React component for rendering Markdown with remarkable",
   "devDependencies": {
     "babel": "^5.1.13"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "37908ac95894576d0d39187bd289bc2cbb5ac6de",
-    "tarball": "https://registry.npmjs.org/react-remarkable/-/react-remarkable-1.1.1.tgz"
+  "scripts": {
+    "build": "babel src -d dist --modules common",
+    "prepublish": "npm run build"
   },
-  "gitHead": "9c82de79bf4047c6d358dff3c8759f354c86b65a",
-  "homepage": "https://github.com/acdlite/react-remarkable",
   "keywords": [
-    "commonmark",
-    "markdown",
     "react",
-    "remarkable"
+    "remarkable",
+    "markdown",
+    "commonmark"
   ],
+  "author": {
+    "name": "Andrew Clark",
+    "email": "acdlite@me.com"
+  },
   "license": "MIT",
-  "main": "dist/index.js",
+  "gitHead": "9c82de79bf4047c6d358dff3c8759f354c86b65a",
+  "bugs": {
+    "url": "https://github.com/acdlite/react-remarkable/issues"
+  },
+  "homepage": "https://github.com/acdlite/react-remarkable",
+  "_id": "react-remarkable@1.1.1",
+  "_shasum": "37908ac95894576d0d39187bd289bc2cbb5ac6de",
+  "_from": "react-remarkable@latest",
+  "_npmVersion": "2.5.1",
+  "_nodeVersion": "1.2.0",
+  "_npmUser": {
+    "name": "acdlite",
+    "email": "acdlite@me.com"
+  },
   "maintainers": [
     {
       "name": "acdlite",
       "email": "acdlite@me.com"
     }
   ],
-  "name": "react-remarkable",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/acdlite/react-remarkable.git"
+  "dist": {
+    "shasum": "37908ac95894576d0d39187bd289bc2cbb5ac6de",
+    "tarball": "https://registry.npmjs.org/react-remarkable/-/react-remarkable-1.1.1.tgz"
   },
-  "scripts": {
-    "build": "babel src -d dist --modules common",
-    "prepublish": "npm run build"
-  },
-  "version": "1.1.1"
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/react-remarkable/-/react-remarkable-1.1.1.tgz"
 }
