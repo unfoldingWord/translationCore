@@ -1,10 +1,4 @@
 module.exports = {
-  ADD_CHECK: "ADD_CHECK",
-  NEXT_VERSE: "NEXT_VERSE",
-  PREV_VERSE: "PREV_VERSE",
-  UPDATE_ORIGINAL_LANGUAGE: "UPDATE_ORIGINAL_LANGUAGE",
-  UPDATE_TARGET_LANGUAGE: "UPDATE_TARGET_LANGUAGE",
-  UPDATE_GATEWAY_LANGUAGE: "UPDATE_GATEWAY_LANGUAGE",
   CHANGE_UPLOAD_MODAL_VISIBILITY: "CHANGE_UPLOAD_MODAL_VISIBILITY",
   CHANGE_LOGIN_MODAL_VISIBILITY:"CHANGE_LOGIN_MODAL_VISIBILITY",
   ADD_TO_TEXT: "ADD_TO_TEXT",
@@ -14,13 +8,20 @@ module.exports = {
   CREATE_PROJECT: "CREATE_PROJECT",
   CHANGE_CREATE_PROJECT_TEXT: "CHANGE_CREATE_PROJECT_TEXT",
   SEND_FETCH_DATA: "SEND_FETCH_DATA"
-
 };
 
 /**
 Object that maps words to consts for use in actions
 For example, in a register callback in a Store, it is recommended
 that when you check the action type, you do it in the following manner:
+<<<<<<< HEAD
+var consts = require("CoreActionConsts.js");
+...
+if (action == consts.ADD_CHECK)
+rather than
+if (action == "ADD_CHECK")
+This keeps it modular and stuff probably
+=======
 
 var consts = require("CoreActionConsts.js");
 ...
@@ -32,5 +33,6 @@ if (action == "ADD_CHECK")
 
 This keeps it modular and stuff probably
 
+>>>>>>> develop
 Just add in more actions as they are needed
 */

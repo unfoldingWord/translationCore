@@ -1,19 +1,18 @@
-CoreActions = require('../.././actions/CoreActions');
 
 /**
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-// const CoreActions = require('../../actions/CoreActions.js');
+const CoreActions = require('../../actions/CoreActions.js');
 
 var template = [
   {
     label: 'File',
     submenu: [
       {
-        label: 'Import Project',
-        click() {
+        label: 'Import TS Project',
+        click: function() {
           CoreActions.updateModal(true);
         }
       },
@@ -22,7 +21,6 @@ var template = [
         click() {
           CoreActions.showCreateProject("Create");
         }
-
       }
     ]
   },

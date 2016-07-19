@@ -38,7 +38,7 @@ const phraseFetcher = require(window.__base + "/modules/phrase_check_module/Fetc
 phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
 const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
-const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js")
+const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
 tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
@@ -54,9 +54,13 @@ api.saveModule('TADisplay', tADisplay);
 // const lexicalFetcher = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/FetchData.js");
 // lexicalFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
 // const Lexical = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/View.js");
+const UploadModal = require('../components/core/UploadModal.js');
+const SettingsModal = require('../components/core/SettingsModal.js');
 
 module.exports = (
   <div>
+  <UploadModal />
+  <SettingsModal />
     <Grid fluid>
       <Row>
         <Col style={RootStyles.SideMenu} md={2} sm={2}>
