@@ -50,9 +50,9 @@ const ProjectModal = React.createClass({
     }
   },
   close: function() {
+    CoreActions.showCreateProject("");
     this.setState({
-      showModal: false,
-      modalValue: null
+      showModal: false
     });
   },
   setProjectName: function (e) {
@@ -63,21 +63,22 @@ const ProjectModal = React.createClass({
       project.createProject(manifest, this.state.projectname);
     }
   },
-  pushFetchDataArray: function(element) {
-    this.state.FetchDataArray.push(element);
-  },
-  removeFromFetchDataArray: function(element) {
-    var toRemove = this.props.FetchDataArray.indexOf(element);
-    this.props.FetchDataArray.splice(toRemove, 1);
+  selectedModule: function(element) {
+    var elementIndex = this.state.FetchDataArray.indexOf(element);
+    if ( elementIndex == -1){
+      this.state.FetchDataArray.push(element);
+    } else {
+      this.state.FetchDataArray.splice(elementIndex, 1);
+    }
   },
   onClick: function () {
     var tempFetchDataArray = [];      //tempFetchDataArray to push checkmodule paths onto
     if (this.state.modalValue == "Check") {
-      for (var element of this.state.FetchDataArray) {
-        var pathOfCheck = this.makePathForChecks(element);
-        tempFetchDataArray[element] = pathOfCheck;
+      for (var element in this.state.FetchDataArray) {
+        var pathOfCheck = this.makePathForChecks(this.state.FetchDataArray[element]);
+        tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
       }
-      if (Object.keys(tempFetchDataArray).length > 0) {
+      if (tempFetchDataArray.length > 0) {
         CoreActions.getFetchData(tempFetchDataArray);
       }
       this.close();
@@ -118,87 +119,81 @@ const ProjectModal = React.createClass({
       }
       return (<SelectCheckType ref={this.state.modalValue} checks={currentChecks} modalTitle={this.state.modalTitle}
         controlLabelTitle={this.state.controlLabelTitle} placeHolderText={this.state.placeHolderText} FetchDataArray={this.state.FetchDataArray}
-        pushFetchDataArray={this.pushFetchDataArray} removeFromFetchDataArray={this.removeFromFetchDataArray}/>)
+        onClick={this.selectedModule}/>)
       }
       else if (modalBody == "Create") {
         return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
-         placeHolderText={this.state.placeHolderText} setProjectName={this.setProjectName}/>)
-      }
-    },
-    makePathForChecks: function(check) {
-      var path = window.__base + 'src/js/components/modules/' + check;
-      return path;
-    },
+          placeHolderText={this.state.placeHolderText} setProjectName={this.setProjectName}/>)
+        }
+      },
+      makePathForChecks: function(check) {
+        var path = window.__base + 'src/js/components/modules/' + check;
+        return path;
+      },
 
-    render: function() {
-      return (
-        <div>
-          <Modal show={this.state.showModal} onHide={this.close}>
-            {this.changeModalBody(this.state.modalValue)}
-            <Modal.Footer>
-              <Button type="button" onClick={this.onClick}>{this.state.doneText}</Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
-      )}
-    });
-
-    const CreateProjectForm = React.createClass({
       render: function() {
         return (
           <div>
-            <Modal.Header>
-              <Modal.Title>{this.props.modalTitle}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <FormGroup>
-              <ControlLabel>{this.props.controlLabelTitle}</ControlLabel>
-              <FormControl type="text" placeholder={this.props.placeHolderText} onKeyPress={this.setProjectName}  setProjectName={this.props.setProjectName}/>
-            </FormGroup>
-            </Modal.Body>
+          <Modal show={this.state.showModal} onHide={this.close}>
+          {this.changeModalBody(this.state.modalValue)}
+          <Modal.Footer>
+          <Button type="button" onClick={this.onClick}>{this.state.doneText}</Button>
+          </Modal.Footer>
+          </Modal>
           </div>
         )}
       });
 
-      const SelectCheckType = React.createClass({
-        handleClick_: function(e) {
-          //checks which modules user selects, removes if selects twice
-          try {
-            if (e.target.control.checked === false) {
-              if (this.props.FetchDataArray.indexOf(e.target.control.id) == -1)
-              {
-                this.props.pushFetchDataArray(e.target.control.id);
-              }
+      const CreateProjectForm = React.createClass({
+        render: function() {
+          return (
+            <div>
+            <Modal.Header>
+            <Modal.Title>{this.props.modalTitle}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <FormGroup>
+            <ControlLabel>{this.props.controlLabelTitle}</ControlLabel>
+            <FormControl type="text" placeholder={this.props.placeHolderText} onKeyPress={this.setProjectName}  setProjectName={this.props.setProjectName}/>
+            </FormGroup>
+            </Modal.Body>
+            </div>
+          )}
+        });
 
+        const SelectCheckType = React.createClass({
+          handleClick_: function(e) {
+            try {
+              this.props.onClick(e.target.control.id);
             }
             else {
-              this.props.removeFromFetchDataArray(e.target.control.id);
             }
           } catch (e) {
           }
+          //checks which modules user selects, removes if selects twice
         },
         render: function() {
           var checkButtonComponents = this.props.checks.map(function(checks) {
             return (
               <div>
-                <Checkbox id={checks} key={checks}>
-                  {checks}
-                </Checkbox>
+              <Checkbox id={checks} key={checks}>
+              {checks}
+              </Checkbox>
               </div>
             )
           });
           return (
             <div>
-              <Modal.Header>
-              <Modal.Title>
-                {this.props.modalTitle}
-              </Modal.Title>
-                </Modal.Header>
-              <Modal.Body>
-              <FormGroup onClick={this.handleClick_}>
-                {checkButtonComponents}
-              </FormGroup>
-              </Modal.Body>
+            <Modal.Header>
+            <Modal.Title>
+            {this.props.modalTitle}
+            </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <FormGroup onClick={this.handleClick_}>
+            {checkButtonComponents}
+            </FormGroup>
+            </Modal.Body>
             </div>
           )
         }

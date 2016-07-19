@@ -14,30 +14,30 @@ var CheckDataGrabber = {
     CoreStore.addChangeListener(this.sendFetchData.bind(this));
   },
   saveNextModule: function() {
-    if (indexOfModule < Object.keys(gotFetch).length) {
-      currentCheckName = Object.keys(gotFetch)[indexOfModule]
-      var path = gotFetch[currentCheckName]
+    if (gotFetch.length > 0) {
+      currentCheckName = gotFetch[0][0]
+      var path = gotFetch[0][1]
+      gotFetch.splice(0, 1);
       if (path){
       this.getDataFromCheck(path)
-      indexOfModule++
     } else {
       return;
     }
     }
     else {
-      gotFetch = null;
+      return;
     }
   },
   sendFetchData: function() {
-    gotFetch = CoreStore.getDataFromProject();
-    if (gotFetch) {
+    if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
+      gotFetch = CoreStore.getDataFromProject();
       this.saveNextModule();
     }
   },
   onComplete: function(err, data) {
     if (data) {
       Report.saveChecks(data, currentCheckName)
-      this.saveNextModule()
+      this.saveNextModule();
     } else {
       return;
     }
