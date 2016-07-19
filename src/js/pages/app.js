@@ -17,7 +17,6 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
-const ProposedChanges = require('../components/modules/proposed_changes_module/ProposedChanges.js');
 
 module.exports = (
   <div>

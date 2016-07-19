@@ -12,31 +12,40 @@ const NAMESPACE = 'ProposedChanges';
 class ProposedChanges extends React.Component {
   constructor() {
     super();
-    var targetLanguage = api.getDataFromCommon('targetLanguage');
     this.state = {
       open: false,
-      "targetLanguage": !targetLanguage ? "" : targetLanguage,
+      chapter: 0,
+      verse: 0
     };
   }
 
   componentWillMount() {
-    api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
-    api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+    //api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
+    //api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+    api.registerEventListener("changeCheck", this.updateCheck.bind(this));
   }
 
-  actionHandleChange() {
-    api.putDataInCheckStore(NAMESPACE, 'currentChangedText', this.value);
-    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+
+  componentWillUnmount(){
+    //api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+    api.removeEventListener("changeCheck", this.updateCheck.bind(this));
+  }
+
+  updateCheck() {
+    // may change later
+    let newCheck = api.getFromCommon('currentCheck');
+    this.setState({chapter: newCheck.chapter, verse: newCheck.verse});
   }
 
   handleChange(e){
     this.value = e.target.value;
-    console.log(proposedChange);
+    //console.log('test');
     api.sendAction('proposedChangesUpdateText');
+    api.putDataInCheckStore(NAMESPACE, 'currentChangedText', this.value);
   }
 
   updateTargetLanguage() {
-        var targetLanguage = api.getDataFromCommon("targetLanguage");
+        let targetLanguage = api.getDataFromCommon("targetLanguage");
         if (targetLanguage) {
             this.setState({
                 targetLanguage: targetLanguage
@@ -61,7 +70,7 @@ class ProposedChanges extends React.Component {
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <h3>Hey text here lol</h3>
+            <h3>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h3>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"
