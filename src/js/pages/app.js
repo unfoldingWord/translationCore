@@ -2,12 +2,12 @@
   const bootstrap = require('react-bootstrap');
 // const NavBarComponent = require('../components/core/NavBarComponent');
 
-// const NavMenu = require('../components/core/NavigationMenu');
+const NavMenu = require('../components/core/NavigationMenu');
 
 // const LoginModal = require('../components/core/LoginModal');
 
 // const SettingsModal = require('../components/core/SettingsModal');
-// const RootStyles = require('./RootStyle');
+const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
@@ -41,7 +41,7 @@ tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
   }
-  
+
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
@@ -57,8 +57,19 @@ const SettingsModal = require('../components/core/SettingsModal.js');
 
 module.exports = (
   <div>
-    <Phrase />
-    <UploadModal />
-    <SettingsModal />
+  <UploadModal />
+  <SettingsModal />
+    <Grid fluid>
+      <Row>
+        <Col style={RootStyles.SideMenu} md={2} sm={2}>
+          <NavMenu />
+        </Col>
+      </Row>
+      <Row>
+        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+          <Phrase />
+        </Col>
+      </Row>
+    </Grid>
   </div>
 );
