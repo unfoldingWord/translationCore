@@ -1,3 +1,5 @@
+CoreActions = require('../.././actions/CoreActions');
+
 /**
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
@@ -11,13 +13,8 @@ var template = [
     submenu: [
       {
         label: 'Import Project',
-<<<<<<< HEAD
         click() {
           CoreActions.updateModal(true);
-=======
-        click: function() {
-          //CoreActions.updateModal(true);
->>>>>>> develop
         }
       },
       {

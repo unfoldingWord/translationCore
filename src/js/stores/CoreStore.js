@@ -1,5 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
+var consts = require('../actions/CoreActionConsts');
+var CHANGE_EVENT = 'change';
 /**
 
 Keep pretty much all business logic and data in

@@ -142,7 +142,7 @@ addMoreModules: function(filename) {
       }
       return (<SelectCheckType ref={this.state.modalValue} checks={currentChecks} modalTitle={this.state.modalTitle}
         controlLabelTitle={this.state.controlLabelTitle} placeHolderText={this.state.placeHolderText} FetchDataArray={this.state.FetchDataArray}
-        onClick={this.selectedModule} addMoreModules={this.getModule.bind(this)}/>)
+        onClick={this.selectedModule} addMoreModules={this.getModule}/>)
       }
       else if (modalBody == "Create") {
         return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
