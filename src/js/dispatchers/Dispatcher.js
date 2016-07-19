@@ -2,7 +2,6 @@ var fluxDispatch = require('flux').Dispatcher;
 var Dispatcher = new fluxDispatch();
 
 Dispatcher.handleAction = function(action) {
-  action.source = 'VIEW_ACTION';
   this.dispatch(
       action
   );

@@ -3,7 +3,7 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const CoreActions = require('../../actions/CoreActions.js');
+// const CoreActions = require('../../actions/CoreActions.js');
 
 var template = [
   {
@@ -11,8 +11,13 @@ var template = [
     submenu: [
       {
         label: 'Import Project',
+<<<<<<< HEAD
         click() {
           CoreActions.updateModal(true);
+=======
+        click: function() {
+          //CoreActions.updateModal(true);
+>>>>>>> develop
         }
       },
       {

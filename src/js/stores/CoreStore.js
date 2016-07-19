@@ -1,8 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
-var consts = require("../actions/CoreActionConsts.js");
-
-var CHANGE_EVENT = 'change';
 /**
 
 Keep pretty much all business logic and data in
@@ -33,7 +30,6 @@ component will hear it and be able to ask for updated data.
 class CoreStore extends EventEmitter {
   constructor() {
     super();
-
     // Initialize CoreStore's fields here...
     this.exampleComponentText = "init";
   }
