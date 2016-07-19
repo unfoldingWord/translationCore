@@ -58,4 +58,4 @@ module.exports = (
   <div>
     <Lexical />
   </div>
-};
+);
