@@ -45,6 +45,7 @@ const DataFetcher = function(params, progress, onComplete){
         api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['groups']);
         api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
         api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
+        // TODO: this event should be called when the check type is selected, not in fetchData
         api.emitEvent('phraseDataLoaded');
         onComplete(null);
       }
