@@ -3,7 +3,6 @@ const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const CheckActions = require('../../actions/CheckActions');
 const style = require('./Style');
 
 class MenuItem extends React.Component {

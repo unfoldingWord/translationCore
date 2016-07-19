@@ -39,7 +39,7 @@ var DataFetcher = function(bookAbbr, progress, onComplete){
 
 var parseObject = function(object){
   let phraseObject = {};
-  phraseObject["Phrase Checks"] = [];
+  phraseObject["groups"] = [];
   for(let type in object){
     var newGroup = {group: type, checks: []};
     for(let verse of object[type].verses) {
@@ -53,7 +53,7 @@ var parseObject = function(object){
       newGroup.checks.push(newVerse);
 
     }
-    phraseObject["Phrase Checks"].push(newGroup);
+    phraseObject["groups"].push(newGroup);
   }
   return phraseObject;
 }
