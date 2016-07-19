@@ -41,8 +41,7 @@ tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
   }
-  console.log('Callback fired');
-  console.dir(api.getDataFromCheckStore('TranslationAcademy', 'sectionList'));
+  
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
@@ -50,12 +49,13 @@ const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 
 api.saveModule('TADisplay', tADisplay);
 
-// const lexicalFetcher = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/FetchData.js");
-// lexicalFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} ); 
-// const Lexical = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/View.js");
+const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
+lexicalFetcher(params, function() {}, function(error) { if (error) console.error(error); api.emitEvent('updateGatewayLanguage');
+console.dir(api.getDataFromCheckStore('LexicalCheck', 'groups'));} ); 
+const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 module.exports = (
   <div>
-    <Phrase />
+    <Lexical />
   </div>
 );
