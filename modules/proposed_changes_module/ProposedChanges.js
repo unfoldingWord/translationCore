@@ -1,9 +1,9 @@
-const React = require('react');
+  const React = require('react');
+
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Panel = require('react-bootstrap/lib/Panel.js');
-const CheckActions = require('../../../actions/CheckActions.js');
 
 const api = window.ModuleApi;
 //ProposedChanges is in the store
@@ -39,7 +39,7 @@ class ProposedChanges extends React.Component {
 
   handleChange(e){
     this.value = e.target.value;
-    //console.log('test');
+    console.log(this.value);
     api.sendAction('proposedChangesUpdateText');
     api.putDataInCheckStore(NAMESPACE, 'currentChangedText', this.value);
   }
@@ -70,7 +70,7 @@ class ProposedChanges extends React.Component {
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <h3>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h3>
+            <h4>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h4>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"

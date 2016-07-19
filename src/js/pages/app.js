@@ -49,8 +49,11 @@ tAFetcher(params, function() {}, function(err) {
 });
 
 const tADisplay = require(window.__base + "modules/translation_academy/View.js")
-
 api.saveModule('TADisplay', tADisplay);
+
+
+const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
+api.saveModule('ProposedChanges', ProposedChanges);
 
 // const lexicalFetcher = require("/home/samuel_faulkner/Documents/modules/lexical_check_module/FetchData.js");
 // lexicalFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
