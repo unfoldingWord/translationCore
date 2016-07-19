@@ -6,14 +6,14 @@ const {Button, ButtonGroup, Glyphicon} = RB;
 
 class FlagDisplay extends React.Component{
 
-  // componentWillMount(){
-  //   api.registerAction('setFlagState', (data, action) => {
-  //     var currentGroupIndex = data.currentGroupIndex;
-  //     var currentCheckIndex = data.currentCheckIndex;
-  //     var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
-  //     currentCheck.checkStatus = action.checkStatus;
-  //   });
-  // }
+  componentWillMount(){
+    api.registerAction('setFlagState', (data, action) => {
+      var currentGroupIndex = data.currentGroupIndex;
+      var currentCheckIndex = data.currentCheckIndex;
+      var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
+      currentCheck.checkStatus = action.checkStatus;
+    });
+  }
 
   render(){
     var _this = this;
@@ -21,7 +21,12 @@ class FlagDisplay extends React.Component{
       <ButtonGroup vertical block>
         <Button bsStyle="success" onClick={
             function() {
-              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "RETAINED"})
+              var action = {
+                type: "setFlagState",
+                field: "PhraseCheck",
+                checkStatus: "RETAIN"
+              };
+              api.sendAction(action);
             }
           }><Glyphicon glyph="ok" /> Retain</Button>
         <Button bsStyle="warning" onClick={
