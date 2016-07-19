@@ -10,49 +10,9 @@ listener
 (See ExampleComponent.js)
 */
 module.exports = {
-  nextCheck: function(newVerse) {
-    Dispatcher.handleAction({
-      type: consts.NEXT_VERSE,
-      newVerse: newVerse
-    });
-  },
-  addCheck: function(newCheck) {
-    Dispatcher.handleAction({
-      type: consts.ADD_CHECK,
-      newCheck: newCheck
-    });
-  },
-
-  addToExampleComponentText: function() {
-    Dispatcher.handleAction({
-      type: consts.ADD_TO_TEXT
-    });
-  },
-
   login: function(user) {
     Dispatcher.handleAction({
       type: consts.ACCOUNT_LOGIN
-    });
-  },
-
-  updateOriginalLanguage: function(book) {
-    Dispatcher.handleAction({
-      type: consts.UPDATE_ORIGINAL_LANGUAGE,
-      bookOl: book
-    });
-  },
-
-  updateTargetLanguage: function(book) {
-    Dispatcher.handleAction({
-      type: consts.UPDATE_TARGET_LANGUAGE,
-      bookTl: book
-    });
-  },
-
-  updateGatewayLanguage: function(book) {
-    Dispatcher.handleAction({
-      type: consts.UPDATE_GATEWAY_LANGUAGE,
-      bookGl: book
     });
   },
 
@@ -84,4 +44,24 @@ module.exports = {
     });
   },
 
+  showCreateProject: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CREATE_PROJECT,
+      createProjectModal: boolean
+    });
+  },
+
+  changeCreateProjectText: function(string) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CREATE_PROJECT_TEXT,
+      modalValue: string
+    });
+  },
+
+  getFetchData: function(FetchDataArray) {
+    Dispatcher.handleAction({
+      type: consts.SEND_FETCH_DATA,
+      array: FetchDataArray
+    });
+  }
 };

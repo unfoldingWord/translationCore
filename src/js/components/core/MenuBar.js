@@ -1,3 +1,4 @@
+
 /**
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
@@ -10,9 +11,15 @@ var template = [
     label: 'File',
     submenu: [
       {
-        label: 'Import Project',
+        label: 'Import TS Project',
         click: function() {
           CoreActions.updateModal(true);
+        }
+      },
+      {
+        label: 'Create Project',
+        click() {
+          CoreActions.showCreateProject("Create");
         }
       }
     ]

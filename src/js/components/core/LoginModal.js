@@ -2,8 +2,8 @@ const React = require('react');
 
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
-const CoreActions = require('../../actions/CoreActions.js');
 const CoreStore = require('../../stores/CoreStore.js');
+const CoreActions = require('../../actions/CoreActions.js');
 const style = require('../../styles/loginStyle');
 const Login = require('./Login.js');
 
@@ -25,12 +25,11 @@ class LoginModal extends React.Component {
       this.setState({visibleLogin: CoreStore.getLoginModal()});
     }
 
-    close(){
-      CoreActions.updateLoginModal(false);
-    }
-
     open(){
       this.setState({visibleLogin: true});
+    }
+    close(){
+      CoreActions.updateLoginModal(false);
     }
 
     render(){
@@ -44,7 +43,7 @@ class LoginModal extends React.Component {
               <Login />
             </Modal.Body>
             <Modal.Footer>
-              <Button type="button" onClick={this.close.bind(this)}>Close</Button>
+              <Button type={"button"}>Close</Button>
             </Modal.Footer>
           </Modal>
       </div>
