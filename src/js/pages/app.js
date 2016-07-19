@@ -3,6 +3,7 @@
 // const NavBarComponent = require('../components/core/NavBarComponent');
 
 const NavMenu = require('../components/core/NavigationMenu');
+const NextButton = require('../components/core/NextButton');
 
 // const LoginModal = require('../components/core/LoginModal');
 
@@ -71,6 +72,7 @@ module.exports = (
       <Row>
         <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <Phrase />
+          <NextButton />
         </Col>
       </Row>
     </Grid>
