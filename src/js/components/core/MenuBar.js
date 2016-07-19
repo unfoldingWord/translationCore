@@ -10,7 +10,7 @@ var template = [
     label: 'File',
     submenu: [
       {
-        label: 'Import Project',
+        label: 'Import TS Project',
         click: function() {
           CoreActions.updateModal(true);
         }
