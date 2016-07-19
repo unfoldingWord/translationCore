@@ -70,7 +70,7 @@ class ProposedChanges extends React.Component {
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <h4>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h4>
+            <h5>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h5>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"
