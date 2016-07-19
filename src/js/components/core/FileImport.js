@@ -9,11 +9,11 @@ const FileModule = require('./FileModule');
 const remote = window.electron.remote;
 const {dialog} = remote;
 
+const API = require('../../ModuleApi.js');
 const CoreActions = require('../../actions/CoreActions.js');
+const CheckStore = require('../../stores/CheckStore.js');
 
 const path = require('path');
-
-const Book = require('./Book');
 
 const parser = require('./usfm-parse.js');
 
@@ -61,7 +61,8 @@ function readInManifest(manifest) {
       openUsfmFromChunks(splitted);
     }
   }
-  CoreActions.updateTargetLanguage(joinedChunks);
+    API.putDataInCommon('targetLanguage', joinedChunks);
+    CheckStore.emitEvent('updateTargetLanguage');
 }
 /**
  * @description This function opens the chunks defined in the manifest file.
@@ -107,7 +108,8 @@ function joinChunks(text) {
 function openOriginal(text) {
   var input = JSON.parse(text);
   input[bookName].title = bookTitle;
-  CoreActions.updateOriginalLanguage(input[bookName]);
+  API.putDataInCommon('originalLanguage', input[bookName]);
+  CheckStore.emitEvent('updateOriginalLanguage');
 }
 
 module.exports = function(locate) {

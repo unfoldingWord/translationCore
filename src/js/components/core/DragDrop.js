@@ -7,7 +7,27 @@ const {dialog} = remote;
 
 const FileImport = require('./FileImport');
 
-const style = require('./Style');
+const style = {
+                dropzone: {
+                  active: {
+                    border: '2px solid #727272',
+                    backgroundColor: '#f5f5f5'
+                  },
+                  text: {
+                    lineHeight: '200px',
+                    verticalAlign: 'middle',
+                    width: '100%'
+                  },
+                  main: {
+                    width: '100%',
+                    color: '#212121',
+                    height: '200px',
+                    border: '2px dashed #727272',
+                    borderRadius: '5px',
+                    fontSize: '25px'
+                  }
+                }
+              }
 
 const DragDrop = React.createClass({
   onDrop: function(files) {
