@@ -1,14 +1,10 @@
 //FetchData.js//
 
 const api = window.ModuleApi;
-
 const path = require('path');
-
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-
-
 var targetLanguage = api.getDataFromCommon('targetLanguage');
 
   if (!targetLanguage) {
