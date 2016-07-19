@@ -41,8 +41,7 @@ tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
   }
-  console.log('Callback fired');
-  console.dir(api.getDataFromCheckStore('TranslationAcademy', 'sectionList'));
+  
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
