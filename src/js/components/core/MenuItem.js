@@ -4,6 +4,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 const style = require('./Style');
+const api = window.ModuleApi;
 
 class MenuItem extends React.Component {
   constructor() {
@@ -12,7 +13,12 @@ class MenuItem extends React.Component {
   }
 
   menuItemClicked() {
-    CheckActions.goToCheck(this.props.groupIndex, this.props.checkIndex);
+    ModuleApi.emitEvent('goToCheck',
+      {
+        'groupIndex': this.props.groupIndex,
+        'checkIndex': this.props.checkIndex
+      }
+    );
   }
 
   render() {

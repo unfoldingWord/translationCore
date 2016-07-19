@@ -1,10 +1,8 @@
-const api = window.ModuleApi;
-
 const React = require('react');
 const Well = require('react-bootstrap/lib/Well.js');
 
 const MenuItem = require('./MenuItem');
-
+const api = window.ModuleApi;
 
 class NavigationMenu extends React.Component {
   constructor() {
