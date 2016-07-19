@@ -7,6 +7,8 @@ const NavMenu = require('../components/core/NavigationMenu');
 // const LoginModal = require('../components/core/LoginModal');
 
 // const SettingsModal = require('../components/core/SettingsModal');
+// const RootStyles = require('./RootStyle');
+const ProjectModal = require('../components/core/ProjectModal');
 const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
@@ -63,6 +65,7 @@ module.exports = (
       <Row>
         <Col style={RootStyles.SideMenu} md={2} sm={2}>
           <NavMenu />
+          <ProjectModal />
         </Col>
       </Row>
       <Row>
