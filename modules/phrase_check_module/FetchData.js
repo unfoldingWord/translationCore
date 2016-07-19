@@ -42,7 +42,7 @@ const DataFetcher = function(params, progress, onComplete){
 
         var phraseObject = parseObject(chapterData);
         //put the data in the CheckStore
-        api.putDataInCheckStore('PhraseCheck', 'Phrase Checks', phraseObject['Phrase Checks']);
+        api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['groups']);
         api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
         api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
         api.emitEvent('phraseDataLoaded');
@@ -54,7 +54,7 @@ const DataFetcher = function(params, progress, onComplete){
 
 var parseObject = function(object){
   let phraseObject = {};
-  phraseObject["Phrase Checks"] = [];
+  phraseObject["groups"] = [];
   for(let type in object){
     var newGroup = {group: type, checks: []};
     for(let verse of object[type].verses) {
@@ -68,7 +68,7 @@ var parseObject = function(object){
       newGroup.checks.push(newVerse);
 
     }
-    phraseObject["Phrase Checks"].push(newGroup);
+    phraseObject["groups"].push(newGroup);
   }
   return phraseObject;
 }

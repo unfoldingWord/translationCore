@@ -1,50 +1,68 @@
-// const React = require('react');
-// const Well = require('react-bootstrap/lib/Well.js');
+const React = require('react');
+const Well = require('react-bootstrap/lib/Well.js');
 
-// const CheckStore = require('../../stores/CheckStore');
-// const MenuItem = require('./MenuItem');
+const MenuItem = require('./MenuItem');
+const api = window.ModuleApi;
 
-// class NavigationMenu extends React.Component {
-//   constructor() {
-//     super();
-//     this.retrieveChecks = this.retrieveChecks.bind(this);
-//     this.state = {
-//       groups: CheckStore.getAllChecks()
-//     };
-//   }
+class NavigationMenu extends React.Component {
+  constructor() {
+    super();
+    this.updateCheckObject = this.updateCheckObject.bind(this);
+    this.state = {
+      checkObject: this.getCheckObject()
+    };
+  }
 
-//   render() {
-//     var menuList = this.state.groups.map(function(group, groupIndex) {
-//       var groupHeader = (
-//         <div>{group.group}</div>
-//       );
-//       var checkMenuItems = group.checks.map(function(check, checkIndex) {
-//         return (
-//           <div key={checkIndex}>
-//             <MenuItem
-//               check={check}
-//               groupIndex={groupIndex}
-//               checkIndex={checkIndex}
-//               isCurrentCheck={checkIndex == CheckStore.getCheckIndex()}
-//             />
-//           </div>
-//         );
-//       });
-//       return (
-//         <div key={groupIndex}>
-//           {groupHeader}
-//           {checkMenuItems}
-//         </div>
-//       );
-//     });
-//     return (
-//       <div>
-//         <Well>
-//           {menuList}
-//         </Well>
-//       </div>
-//     )
-//   }
-// }
+  componentWillMount() {
+    api.registerEventListener('phraseDataLoaded', this.updateCheckObject);
+  }
 
-// module.exports = NavigationMenu;
+  componentWillUnmount() {
+    api.removeEventListener('phraseDataLoaded', this.updateCheckObject);
+  }
+  
+  updateCheckObject() {
+    this.setState({
+      checkObject: this.getCheckObject()
+    })
+  }
+  
+  getCheckObject() {
+    // TODO: get checkType using api.getDataFromCommon()
+    return api.getDataFromCheckStore("PhraseCheck");
+  }
+
+  render() {
+    var menuList;
+    if (!this.state.checkObject || !this.state.checkObject["groups"]) {
+      return <div></div>;
+    }
+    menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
+      var groupHeader = (
+        <div>{group.group}</div>
+      );
+      var checkMenuItems = group.checks.map(function(check, checkIndex) {
+        return (
+          <div key={checkIndex}>
+            <MenuItem check={check} groupIndex={groupIndex} checkIndex={checkIndex} />
+          </div>
+        );
+      });
+      return (
+        <div key={groupIndex}>
+          {groupHeader}
+          {checkMenuItems}
+        </div>
+      );
+    });
+    return (
+      <div>
+        <Well>
+          {menuList}
+        </Well>
+      </div>
+    )
+  }
+}
+
+module.exports = NavigationMenu;
