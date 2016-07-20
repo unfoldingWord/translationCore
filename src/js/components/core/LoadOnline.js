@@ -3,13 +3,12 @@ const {dialog} = remote;
 
 const path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const download = window.downloadModule;
-
+const download = require('download');
 
 const FileModule = require('./FileModule');
 const FileImport = require('./FileImport');
-const zip = window.zip;
 
+const zip = require('adm-zip');
 const zipFolder = path.join('tmp');
 const zipLocation = path.join(zipFolder, 'import.zip');
 

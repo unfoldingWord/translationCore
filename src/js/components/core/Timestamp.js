@@ -4,8 +4,7 @@ var React = require('react');
 //bible project component so that checker can be aware
 //when they save their progress throughout
 
-var TimeStamp = React.createClass({
-
+var TimeStamp = {
 getInitialState: function() {
   var moment = new Date();
   var time;
@@ -28,9 +27,7 @@ getInitialState: function() {
   {
     Hours[0] = "12";
   }
-  return {
-  time: (date[0] + "/" + date[1] + "/" + date[2] + " " + Hours[0] + ":" + Hours[1] + " " + nightday)
-  };
+  this.time = (date[0] + "/" + date[1] + "/" + date[2] + " " + Hours[0] + ":" + Hours[1] + " " + nightday)
 },
 CreateTimeStamp: function() {
   var _this = this;
@@ -57,20 +54,21 @@ CreateTimeStamp: function() {
   now = (day[0] + "/" + day[1] + "/" + day[2] + " " + hrs[0] + ":" + hrs[1] + " " + nightday);
 
 
-  if (!(_this.state.time == now))
+  if (!(_this.time == now))
   {
-    _this.setState({time: now});
+    _this.time = now;
     return (now);
   }
   else
   {
-    return (_this.state.time);
+    return (_this.time);
   }
 
 },
 
 
-render: function() {
+generate: function() {
+  this.getInitialState();
   var _this = this;
   var fs = require(window.__base + 'node_modules/fs-extra');
   var path = require('path');
@@ -84,7 +82,7 @@ render: function() {
 
           });
 
-          var data = _this.state.time;
+          var data = _this.time;
 
 
   fs.writeFile(Timestamp, data, function(err) {
@@ -113,14 +111,10 @@ render: function() {
   }
 
   count ++;
-  return (
-    <div id="footer">
-     {funct}
-    </div>
-  );
+  return funct;
 
 }
-});
+}
 
 
 module.exports = TimeStamp;
