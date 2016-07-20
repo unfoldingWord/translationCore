@@ -25,7 +25,6 @@ class TranslationWordsFetcher {
 * @param {function} callback - called with (error, data) once operation is finished
 */
   getWordList(url, callback = () => ({})) {
-    // console.log('Calling getWordList');
     var link = url || GITHUB_API_URL;
 
     var request = new XMLHttpRequest();
@@ -60,7 +59,7 @@ else {
 
     request.onload = function() {
       var listOfEntries = JSON.parse(this.response);
-// function that ensures we don't call the callback until we're completely done
+      // function that ensures we don't call the callback until we're completely done
       iterateOver(listOfEntries, parseEntry, function(error) {
         if (error) {
           callback(error);
@@ -69,7 +68,6 @@ else {
           _this.wordList.sort(function(first, second) {
             return stringCompare(first.name, second.name);
           });
-          // console.log("We're done with the first step");
           callback(null, _this.wordList);
         }
       });
@@ -128,26 +126,20 @@ else {
       if (start == end) {
         callback();
       }
-      // console.log('Being called with Start: ' + start + " and end: " + end);
       var callsNow = calls.slice(start, end);
       iterateOver(
         callsNow, 
         function(listItem, report) {
-          // console.log("We're now in the iterator function");
           listItem(function() {
             report();
             progCallback(1);
           });
         }, 
         function() {
-          // console.log("We're now in the report function passed to iterateOver," +
-            // "with start: " + start + " and end: " + end);
           if (end == calls.length) {
-            // console.log("We are done. calling callback");
             callback();
           }
           else {
-            // console.log("We're calling iterateOverCalls recursively");
             iterateOverCalls(start + 100, end + 100);
           }
         }
@@ -156,11 +148,8 @@ else {
 
     var _this = this;
     for (let word of this.wordList) {
-      // console.log("We're pushing");
       calls.push(function(report) {
-        // console.log("We're inside the push");
         _this.getWord(word.name, (err, file) => {
-          // console.log("We're in the getWord callback");
           if (err) {
             console.error(err);
             report(err);
@@ -169,7 +158,6 @@ else {
           else {
             word.aliases = parseFile(file);
           }
-          // console.log("We're about to call the report function from getWord callback");
           report(); // for the progCallback
         });
       });
@@ -241,7 +229,6 @@ else {
 }
 
 function iterateOver(list, iterator, callback) {
-// console.log('Iterating over list of length: ' + list.length);
   var doneCount = 0;
 
   function report(error) {
