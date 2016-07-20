@@ -1,5 +1,3 @@
-var React = require('react');
-
 //File that is meant to be provided with the save
 //bible project component so that checker can be aware
 //when they save their progress throughout
@@ -30,7 +28,6 @@ var TimeStamp = {
     this.time = (date[0] + "/" + date[1] + "/" + date[2] + " " + Hours[0] + ":" + Hours[1] + " " + nightday)
   },
   CreateTimeStamp: function() {
-    var _this = this;
     var now;
     var time = new Date();
     var nightday = "AM";
@@ -54,21 +51,20 @@ var TimeStamp = {
     now = (day[0] + "/" + day[1] + "/" + day[2] + " " + hrs[0] + ":" + hrs[1] + " " + nightday);
 
 
-    if (!(_this.time == now))
+    if (!(this.time == now))
     {
-      _this.time = now;
+      this.time = now;
       return (now);
     }
     else
     {
-      return (_this.time);
+      return (this.time);
     }
 
   },
 
   generate: function() {
     this.getInitialState();
-    var _this = this;
     var fs = require(window.__base + 'node_modules/fs-extra');
     var path = require('path');
     var Timestamp = path.join('timestamp.txt');
@@ -81,7 +77,7 @@ var TimeStamp = {
 
     });
 
-    var data = _this.time;
+    var data = this.time;
 
 
     fs.writeFile(Timestamp, data, function(err) {
