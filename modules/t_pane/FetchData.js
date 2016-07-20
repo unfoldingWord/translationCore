@@ -154,7 +154,8 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
 function joinChunks(text, currentChapter, currentJoined) {
-  if (currentChapter === '00') {
+  currentChapter = parseInt(currentChapter);
+  if (currentChapter == 0) {
     currentJoined.title = text;
   } else {
     if (currentJoined[currentChapter] === undefined) {
@@ -177,6 +178,13 @@ function joinChunks(text, currentChapter, currentJoined) {
 function openOriginal(text, bookName) {
   var input = JSON.parse(text);
   input[bookName].title = bookName;
+  var newData = {};
+  for (var chapter in input[bookName]) {
+    newData[parseInt(chapter)] = {};
+    for (var verse in input[bookName][chapter]) {
+      newData[parseInt(chapter)][parseInt(verse)] = input[bookName][chapter][verse];
+    }
+  }
   // CoreActions.updateOriginalLanguage(input[bookName]);
   api.putDataInCommon('originalLanguage', input[bookName]);
 }

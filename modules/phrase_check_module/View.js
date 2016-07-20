@@ -76,7 +76,6 @@ class PhraseChecker extends React.Component{
   render() {
     if(!this.state){
       return <div></div>;
-    }
       return (
         <div>
         <TPane />

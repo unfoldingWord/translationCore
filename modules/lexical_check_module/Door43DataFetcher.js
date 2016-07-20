@@ -17,6 +17,7 @@
 
   const AUTHENTICATION = "access_token=" + require("./Authentication.js");
 
+const suppress = true;
 
 // ONLY USE getBook()
 class Door43DataFetcher {
@@ -81,78 +82,85 @@ class Door43DataFetcher {
 		}
 		else {
 			this.getBookData(bookAbbr,
-				function(error, bookObj) {
-					if (error) {
-						callback(error);
-					}
-					else {
-						var totalVerses = 0;
-						/* create a new array that we can push our chapter objects onto
-						 * then we can clear the github chapter objects once they're
-						 * all finished
-						 */
-						var chapters = [];
-						var doneChapters = 0;
-						var totalChapters = bookObj['chapters'].length;
-						for (var chapter of bookObj['chapters']) {
-							_this.getChapter(chapter,
-								function(error, chapterObj) {
-									if (error) {
-										callback(error);
-									}
-									else {
-										doneChapters++;
-										if (chapterObj) {
-											chapters.push(chapterObj);
-										}
-										//this should only be called after the last chapter
-										if (doneChapters >= totalChapters) {
-											//reassign github objects to our objects
-											bookObj['chapters'] = chapters;
-											totalVerses = _this.countVerses(bookObj['chapters']);
-											var numVerses = 0;
-											for (let _chapter of bookObj['chapters']) {
-												let verses = [];
-												let totalChapterVerses = _chapter['verses'].length;
-												let numChapterVerses = 0;
-												for (let verse of _chapter['verses']) {
-													//push our own verse obj that's created from
-													_this.getVerse(verse,
-														(error, verseData) => {
-															if (error) {
-																callback(error);
-															}
-															else {
-																verses.push(verseData);
-																numVerses++;
-																numChapterVerses++;
-																progress(numVerses, totalVerses);
-																if (numChapterVerses >= totalChapterVerses) {
-																	/**reassign the array of github objects to our
-																	 * verse objects
-																	 */
-																	_chapter['verses'] = verses;
-																}
-
-																//We're completely done!
-																if (numVerses >= totalVerses) {
-																	callback(null, bookObj);
-																}
-															}
-														}
-													);
-												}
-											}
-										}
-									}
-								}
-							);
-						}
-					}
-				}
-			);
+                function(error, bookObj) {
+				    _this.getBookDataCallback(error, bookObj, progress, callback);
+                }
+            );
 		}
-	}
+  }
+
+    getBookDataCallback(error, bookObj, progress, callback) {
+        if (error) {
+            callback(error);
+        }
+        else {
+            var totalVerses = 0;
+            /* create a new array that we can push our chapter objects onto
+             * then we can clear the github chapter objects once they're
+             * all finished
+             */
+            var chapters = [];
+            var doneChapters = 0;
+            var totalChapters = bookObj['chapters'].length;
+
+            function getChapterCallback(error, chapterObj) {
+                if (error) {
+                    callback(error);
+                }
+                else {
+                    doneChapters++;
+                    if (chapterObj) {
+                        chapters.push(chapterObj);
+                    }
+                    //this should only be called after the last chapter
+                    if (doneChapters >= totalChapters) {
+                        //reassign github objects to our objects
+                        bookObj['chapters'] = chapters;
+                        totalVerses = this.countVerses(bookObj['chapters']);
+                        var numVerses = 0;
+                        for (let _chapter of bookObj['chapters']) {
+                            let verses = [];
+                            let totalChapterVerses = _chapter['verses'].length;
+                            let numChapterVerses = 0;
+
+                            function getVerseCallback(error, verseData) {
+                                if (error) {
+                                    callback(error);
+                                }
+                                else {
+                                    verses.push(verseData);
+                                    numVerses++;
+                                    numChapterVerses++;
+                                    //progress(numVerses, totalVerses);
+                                    if (numChapterVerses >= totalChapterVerses) {
+                                        /**reassign the array of github objects to our
+                                         * verse objects
+                                         */
+                                        _chapter['verses'] = verses;
+                                    }
+
+                                    //We're completely done!
+                                    if (numVerses >= totalVerses) {
+                                        callback(null, bookObj);
+                                    }
+                                }       
+                            }
+
+                            for (let verse of _chapter['verses']) {
+                                //push our own verse obj that's created from
+                                this.getVerse(verse, getVerseCallback);
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (var chapter of bookObj['chapters']) {
+                this.getChapter(chapter,
+                    getChapterCallback.bind(this));
+            }
+        }
+    }
 
 	countVerses(chapterArray) {
 		var totalVerses = 0;
@@ -294,7 +302,7 @@ class Door43DataFetcher {
   getULBFromBook(book = {chapters: []}) {
     let ulbData = {chapters: []};
     if (!book.chapters) {
-      console.log("Error: Input object is in incorrect format");
+      console.error("Error: Input object is in incorrect format");
       return ulbData;
     }
     const usfmRegex = new RegExp("=+\\s*ulb:\\s*=+\\s*<usfm>([^<]+)<\\/usfm>", "i");
@@ -306,8 +314,10 @@ class Door43DataFetcher {
           [,regRes] = usfmRegex.exec(v.file);
         }
         catch (e) {
-          console.log("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
-          console.log("File may be in incorrect format");
+          if (!suppress) {            
+            console.warn("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
+            console.warn("File may be in incorrect format");
+          }
           continue;
         }
         let parsed = USFMParser(regRes).chapters[0];
@@ -322,10 +332,9 @@ class Door43DataFetcher {
 
   getTNFromBook(book = {chapters: []}, bookAbbr = "?") {
     if (!book.chapters) {
-      console.log("Error: Input object is in incorrect format");
+      console.error("Error: Input object is in incorrect format");
       return {};
     }
-    console.log('Book: ' + book);
     return TNParser(book, bookAbbr);
   }
 }
@@ -347,7 +356,5 @@ function getJSONFromData(httpRequest) {
 		return null;
 	}
 }
-
-
 
 module.exports = Door43DataFetcher;

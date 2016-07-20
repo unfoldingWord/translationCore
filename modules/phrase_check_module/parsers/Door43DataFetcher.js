@@ -17,6 +17,7 @@
 
   const AUTHENTICATION = "access_token=" + require("../Authentication.js");
 
+var suppress = true
 
 // ONLY USE getBook()
 class Door43DataFetcher {
@@ -294,7 +295,7 @@ class Door43DataFetcher {
   getULBFromBook(book = {chapters: []}) {
     let ulbData = {chapters: []};
     if (!book.chapters) {
-      console.log("Error: Input object is in incorrect format");
+      console.error("Error: Input object is in incorrect format");
       return ulbData;
     }
     const usfmRegex = new RegExp("=+\\s*ulb:\\s*=+\\s*<usfm>([^<]+)<\\/usfm>", "i");
@@ -306,8 +307,10 @@ class Door43DataFetcher {
           [,regRes] = usfmRegex.exec(v.file);
         }
         catch (e) {
-          console.log("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
-          console.log("File may be in incorrect format");
+          if (!suppress) {
+            console.warn("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
+            console.warn("File may be in incorrect format");
+      	  }
           continue;
         }
         let parsed = USFMParser(regRes).chapters[0];
@@ -322,10 +325,9 @@ class Door43DataFetcher {
 
   getTNFromBook(book = {chapters: []}, bookAbbr = "?") {
     if (!book.chapters) {
-      console.log("Error: Input object is in incorrect format");
+      console.error("Error: Input object is in incorrect format");
       return {};
     }
-    console.log('Book: ' + book);
     return TNParser(book, bookAbbr);
   }
 }

@@ -13,7 +13,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 
 const OnlineInput = require('./OnlineInput');
-const FileUpload = require('./FileUpload');
+const DragDrop = require('./DragDrop');
 
 const UploadModal = React.createClass({
   getInitialState: function() {
@@ -45,7 +45,7 @@ const UploadModal = React.createClass({
   render: function() {
     var mainContent;
     if (this.state.showFile === true) {
-      mainContent = <FileUpload />;
+      mainContent = <DragDrop />;
     } else {
       mainContent = (<div>
                        <br />

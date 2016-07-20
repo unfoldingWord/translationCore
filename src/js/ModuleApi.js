@@ -9,6 +9,7 @@ const Dispatcher = require('./dispatchers/Dispatcher.js');
 
 const React = require('react');
 const ReactBootstrap = require('react-bootstrap');
+const ReactDOM = require('react-dom');
 
 class ModuleApi {
 	constructor() {
@@ -16,6 +17,10 @@ class ModuleApi {
         this.ReactBootstrap = ReactBootstrap;
         this.modules = {};
 	}
+
+    findDOMNode(component) {
+        return ReactDOM.findDOMNode(component);
+    }
 
     saveModule(identifier, module) {
         this.modules[identifier] = module;
@@ -52,13 +57,17 @@ class ModuleApi {
         CheckStore.emitEvent(event, params);
     }
 
-    getDataFromCheckStore(field) {
+    getDataFromCheckStore(field, key=null) {
         /* return a copy of the data from the check store so that even
          * if an evil developer tries to mutate the store directly it won't mutate
          */
         var obj = CheckStore.getModuleDataObject(field);
         if (obj != null && typeof obj == "object") {
-            return Object.assign({}, obj);
+            if (key) {
+                return obj[key];
+            }
+            return obj;
+            // return Object.assign({}, obj);
         }
         return null;
     }
@@ -91,7 +100,7 @@ class ModuleApi {
         fs.readJson(path, callback);
     }
 
-    outputJson(path, data, callback) {
+    outputJson(path, data, callback=(error)=>{if (error) console.error(error);}) {
         fs.outputJson(path, data, callback);
     }
 
@@ -101,6 +110,15 @@ class ModuleApi {
 
     outputText(path, string, callback) {
         fs.writeFile(path, string, callback);
+    }
+
+    convertToFullBookName(bookAbbr) {
+        switch(bookAbbr) {
+            case "2ti":
+                return "2 Timothy";
+            default:
+                return bookAbbr;
+        }
     }
 }
 
