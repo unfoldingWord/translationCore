@@ -16,19 +16,17 @@ class NavigationMenu extends React.Component {
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
     api.registerEventListener('changeCheckType', this.updateCheckObject.bind(this));
   }
 
   componentWillUnmount() {
-    api.removeEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
     api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
   }
   
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : params.currentCheckData);
     this.setState({
-      checkObject: checkData || this.getCheckObject()
+      checkObject: checkData
     });
   }
   
