@@ -20,11 +20,14 @@ class ProposedChanges extends React.Component {
   }
 
   componentWillMount() {
-    //api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
-    //api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+    api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
+    api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
     api.registerEventListener("changeCheck", this.updateCheck.bind(this));
   }
 
+  actionHandleChange(proposedChangesData, action) {
+    proposedChangesData.currentChanges = action.value;
+  }
 
   componentWillUnmount(){
     //api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
@@ -40,8 +43,9 @@ class ProposedChanges extends React.Component {
   handleChange(e){
     this.value = e.target.value;
     console.log(this.value);
-    api.sendAction('proposedChangesUpdateText');
-    api.putDataInCheckStore(NAMESPACE, 'currentChangedText', this.value);
+    //type and field are required
+    //the object below is passed as a argument to actionhandlechange
+    api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});
   }
 
   updateTargetLanguage() {

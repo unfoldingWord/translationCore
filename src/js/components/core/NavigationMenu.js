@@ -4,6 +4,8 @@ const Well = require('react-bootstrap/lib/Well.js');
 const MenuItem = require('./MenuItem');
 const api = window.ModuleApi;
 
+const extensionRegex = new RegExp('\\.\\w+\\s*$');
+
 class NavigationMenu extends React.Component {
   constructor() {
     super();
@@ -14,17 +16,20 @@ class NavigationMenu extends React.Component {
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateCheckObject);
+    api.registerEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckObject.bind(this));
   }
 
   componentWillUnmount() {
-    api.removeEventListener('phraseDataLoaded', this.updateCheckObject);
+    api.removeEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
   }
   
-  updateCheckObject() {
+  updateCheckObject(params) {
+    var checkData = (params === undefined ? undefined : params.currentCheckData);
     this.setState({
-      checkObject: this.getCheckObject()
-    })
+      checkObject: checkData || this.getCheckObject()
+    });
   }
   
   getCheckObject() {
@@ -39,7 +44,7 @@ class NavigationMenu extends React.Component {
     }
     menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
       var groupHeader = (
-        <div>{group.group}</div>
+        <div>{group.group.replace(extensionRegex, '')}</div>
       );
       var checkMenuItems = group.checks.map(function(check, checkIndex) {
         return (

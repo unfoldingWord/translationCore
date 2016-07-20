@@ -16,6 +16,16 @@ class Book extends React.Component {
     constructor() {
         super();
     }
+
+    componentWillMount() {
+        var _this = this;
+        api.registerEventListener('goToVerse', function(params) {
+            var verseComp = _this.refs[params.chapterNumber.toString() + ":" + params.verseNumber.toString()];
+            var element = api.findDOMNode(verseComp);
+            element.scrollIntoView();
+        });
+    }
+
     render() {
         var chapterArray = [];
         var title = "";
@@ -41,7 +51,13 @@ class Book extends React.Component {
                         var verseId = objectKey + ':' + verse;
                         var verseText = this.props.input[objectKey][verse];
                         arrayOfVerses.push(
-                            <Verse key={verseId} verseNumber={verse} verseText={verseText} />
+                            <Verse 
+                                key={verseId} 
+                                chapterNumber={chapterNum} 
+                                verseNumber={verse} 
+                                verseText={verseText}
+                                ref={chapterNum + ":" + verse}
+                            />
                         );
                     }
                 }

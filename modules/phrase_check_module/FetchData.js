@@ -37,6 +37,7 @@ const DataFetcher = function(params, progress, onComplete){
             }
           }
           //assign gatewayLanguage into CheckStore
+          newStructure.title = api.convertToFullBookName(params.bookAbbr);
           api.putDataInCommon('gatewayLanguage', newStructure);
         }
 
@@ -45,6 +46,7 @@ const DataFetcher = function(params, progress, onComplete){
         api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['groups']);
         api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
         api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
+        // TODO: eventually, this event will be called when the check type is selected, not in fetchData
         api.emitEvent('phraseDataLoaded');
         onComplete(null);
       }

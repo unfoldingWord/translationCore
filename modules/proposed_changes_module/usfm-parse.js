@@ -23,7 +23,6 @@ function usfmToJSON(usfm) {
         } catch (e) {
           verseNum = "-1";
         }
-        verseNum = parseInt(verseNum);
         chapData[chapNum][verseNum] = verses[v].replace(/^\s*(\d+)\s*/, "");
       }
     }

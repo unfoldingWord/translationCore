@@ -10,7 +10,6 @@
 const Door43DataFetcher = require('./lexical_checker/Door43DataFetcher.js');
 const TranslationWordsFetcher = require('./translation_words/TranslationWordsFetcher.js');
 const BookWordTest = require('./translation_words/WordTesterScript.js');
-const FS = require(window.__base + '/node_modules/fs-extra');
 
 /**
 * @description exported function that returns the JSON array of a list
@@ -21,14 +20,14 @@ const FS = require(window.__base + '/node_modules/fs-extra');
 * @param {function} callback - callback that gets called when function is finished,
 * if error ocurred it's called with an error, 2nd argument carries the result
 */
-function getData(bookAbbr, progressCallback, callback) {
+function getData(params, progressCallback, callback) {
 // Get Bible
   var bookData;
   var Door43Fetcher = new Door43DataFetcher();
-  Door43Fetcher.getBook(bookAbbr, function(done, total) {
+  Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
     progressCallback((done / total) * 0.5);}, function(error, data) {
       if (error) {
-        console.log('Door43Fetcher throwing error');
+        console.error('Door43Fetcher throwing error');
         callback(error);
       }
       else {
@@ -40,7 +39,7 @@ function getData(bookAbbr, progressCallback, callback) {
         tWFetcher.getWordList(undefined,
 function(error, data) {
   if (error) {
-    console.log('TWFetcher throwing error');
+    console.error('TWFetcher throwing error');
     callback(error);
   }
   else {
@@ -57,7 +56,6 @@ function(error, data) {
 // console.log('WordSet');
 // console.dir(actualWordList);
         var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
-        FS.outputJson("./check_data.json", checkObject);
         callback(null, checkObject);
       }
     });

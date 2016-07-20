@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
   }
 
   menuItemClicked() {
-    ModuleApi.emitEvent('goToCheck',
+    api.emitEvent('goToCheck',
       {
         'groupIndex': this.props.groupIndex,
         'checkIndex': this.props.checkIndex

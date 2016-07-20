@@ -1,6 +1,6 @@
 /**
  * @author Logan Lebanoff, Sam Faulkner
- * @description The CheckStore. Handles events and actions. Events and actions are both 
+ * @description The CheckStore. Handles events and actions. Events and actions are both
  * registered by Components in their 'componentWillMount' functions. Actions are used by
  * components to update data within the store. Events are used by components that based on
  * that data if they need to communicate to another component to update that component's view
@@ -26,7 +26,7 @@ class CheckStore extends EventEmitter {
    *     key = value;
    *   }
    * }
-   * @param {string} field - The main field that the key and value will be saved under in 
+   * @param {string} field - The main field that the key and value will be saved under in
    * the CheckStore's object
    * @param {string} key - The key that the value will be 'saved' in the field's object
    * @param {anything} value - thing that is assigned to the key
@@ -80,7 +80,7 @@ class CheckStore extends EventEmitter {
     if (this.storeData['common']) {
       return this.storeData.common[key];
     }
-  
+
     return null;
   }
 
@@ -158,11 +158,11 @@ class CheckStore extends EventEmitter {
    * @description - Registers an action that can be used to change data within CheckStore
    * @param {string} type - An action type that is used to distinguish actions
    * @param {function} callback - a callback to be fired when the action is received from the
-   * dispatcher. Callback is called with the object from the CheckStore's data denoted by the 
+   * dispatcher. Callback is called with the object from the CheckStore's data denoted by the
    * action's 'field' attribute. See register action
    */
   registerAction(type, callback) {
-    if (!type in this.actionCallbacks) {
+    if (!(type in this.actionCallbacks)) {
       this.actionCallbacks[type] = [];
     }
     this.actionCallbacks[type].push(callback);
@@ -197,7 +197,8 @@ class CheckStore extends EventEmitter {
     }
     if (action.type in this.actionCallbacks) {
       for (var actionCallback of this.actionCallbacks[action.type]) {
-        actionCallback(this.storeData[action.field]);
+
+        actionCallback(this.storeData[action.field], action);
       }
     }
   }

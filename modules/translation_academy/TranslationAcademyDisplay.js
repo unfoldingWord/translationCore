@@ -9,7 +9,7 @@ const Well = ReactBootstrap.Well;
 const Glyphicon = ReactBootstrap.Glyphicon;
 const Button = ReactBootstrap.Button;
 
-const Markdown = require('./react-remarkable');
+const Markdown = require('react-remarkable');
 const TranslationAcademyScraper = require('./TranslationAcademyScraper');
 
 class TranslationAcademyDisplay extends React.Component {
