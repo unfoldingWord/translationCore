@@ -12,7 +12,7 @@ class PhraseChecker extends React.Component{
   constructor(){
     super();
     this.state = {
-      
+
     }
   }
 
@@ -20,6 +20,8 @@ class PhraseChecker extends React.Component{
     api.registerEventListener('phraseDataLoaded', this.updateRender.bind(this));
     this.TPane = api.getModule('TPane');
     this.TADisplay = api.getModule('TADisplay');
+    this.ProposedChanges = api.getModule('ProposedChanges');
+
   }
 
   updateRender() {
@@ -31,7 +33,7 @@ class PhraseChecker extends React.Component{
   render() {
     var PhraseObj = api.getDataFromCheckStore("PhraseCheck");
     /**
-     * PhrasesObj should be structed like this: 
+     * PhrasesObj should be structed like this:
      {
       [
         {
@@ -47,7 +49,6 @@ class PhraseChecker extends React.Component{
      }
      */
      if (PhraseObj) {
-      // console.dir(PhraseObj);
     var currentGroupIndex = PhraseObj["currentGroupIndex"];
     var currentCheckIndex = PhraseObj['currentCheckIndex'];
     var currentCheck = PhraseObj["groups"][currentGroupIndex]["checks"][currentCheckIndex];
@@ -80,6 +81,7 @@ class PhraseChecker extends React.Component{
               </Col>
             </Row>
         </Grid>
+        <this.ProposedChanges />
         <this.TADisplay />
         </div>
       );

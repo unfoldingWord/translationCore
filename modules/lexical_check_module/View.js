@@ -67,7 +67,7 @@ class View extends React.Component {
      * from the event, we have to get the current indexes from the store and increment it
      * manually before sending the action to update the store
      */
-    api.registerEventListener('gotoNext', function(params) {
+    api.registerEventListener('goToNext', function(params) {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
         api.sendAction({
@@ -83,7 +83,7 @@ class View extends React.Component {
      * and sends the appropriate action. This and the above listener need to be two 
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
-    api.registerEventListener('gotoCheck', function(params) {
+    api.registerEventListener('goToCheck', function(params) {
         api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE, 
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
@@ -152,7 +152,7 @@ class View extends React.Component {
         currentWord: currentWord,
         currentFile: this.getWordFile(currentWord)  
     });
-    api.emitEvent('gotoVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
 
   /**
@@ -217,12 +217,11 @@ class View extends React.Component {
   		return (
   			<div>
   				<TPane />
-          <Well>
+
           <Grid
             style={{
               minWidth: "100%",
-              marginLeft: "2%",
-              marginRight: "2%"
+             
             }}
           >
             <Row className="show-grid">
@@ -251,7 +250,6 @@ class View extends React.Component {
                 }}
               >
                 <GatewayVerseDisplay 
-                  style={{minHeight: "50%"}}
                   wordObject={this.getWordObject(this.state.currentWord)}
                   verse={gatewayVerse}
                 />
@@ -285,7 +283,7 @@ class View extends React.Component {
                   
             </Row>
           </Grid>
-          </Well>
+          
           <span>
           </span>
   			</div>

@@ -109,6 +109,7 @@ function getData(params, progressCallback, callback) {
               newBookData[chapter.num][verse.num] = verse.text;
             }
           }
+          newBookData.title = api.convertToFullBookName(params.bookAbbr);
           //load it into checkstore
           api.putDataInCommon('gatewayLanguage', newBookData);
           //resume fetchData

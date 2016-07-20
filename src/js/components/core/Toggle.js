@@ -1,6 +1,6 @@
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button');
-// const CoreActions = require('../../actions/CoreActions.js');
+const CoreActions = require('../../actions/CoreActions.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const LoginModal = require ('./LoginModal');
 const style = require('../../styles/loginStyle');
