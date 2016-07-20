@@ -60,15 +60,14 @@ class ProposedChanges extends React.Component {
         }
     }
   render() {
-    var PhraseObj = api.getDataFromCheckStore("PhraseCheck");
-    if (PhraseObj) {
-   var currentGroupIndex = PhraseObj["currentGroupIndex"];
-   var currentCheckIndex = PhraseObj['currentCheckIndex'];
-   var currentCheck = PhraseObj["groups"][currentGroupIndex]["checks"][currentCheckIndex];
-   var targetLanguage = api.getDataFromCommon('targetLanguage');
-   var currentVerse = targetLanguage[currentCheck.chapter][currentCheck.verse];
+    let targetLanguage = api.getDataFromCommon('targetLanguage');
+    let currentVerse = null;
+    if(targetLanguage && this.state.chapter && this.state.verse){
+      currentVerse = targetLanguage[this.state.chapter][this.state.verse];
+    }
+
     return (
-      <div style={{width:'50%'}}>
+      <div style={{width:'100%'}}>
         <Button bsStyle="primary"
         onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
           Propose changes
