@@ -25,31 +25,31 @@ class TranslationWordsFetcher {
 * @param {function} callback - called with (error, data) once operation is finished
 */
   getWordList(url, callback = () => ({})) {
-// console.log('Calling getWordList');
+    // console.log('Calling getWordList');
     var link = url || GITHUB_API_URL;
 
     var request = new XMLHttpRequest();
 
     var _this = this;
 
-// Parses each github api object individually
+    // Parses each github api object individually
     function parseEntry(entryObj, report) {
       if (entryObj.type == "file") {
         _this.wordList.push({
           "name": entryObj.name,
           "link": entryObj.download_url
         });
-// console.log('Reporting');
         report();
       }
-/**
-* this is a directory, recursively call getWordList with
-*  the directory's URL
-*/
+      /**
+      * this is a directory, recursively call getWordList with
+      *  the directory's URL
+      */
       else if (entryObj.type == "dir") {
-/** pass in report as the callback because we don't want callback to
-* be called with a subdirectory's words
-*/
+        /*
+         * pass in report as the callback because we don't want callback to
+         * be called with a subdirectory's words
+         */
         _this.getWordList(entryObj.url, report);
       }
 else {
@@ -69,6 +69,7 @@ else {
           _this.wordList.sort(function(first, second) {
             return stringCompare(first.name, second.name);
           });
+          // console.log("We're done with the first step");
           callback(null, _this.wordList);
         }
       });
@@ -121,43 +122,58 @@ else {
 
   getAliases(progCallback = () => {}, callback = () => {}) {
     var calls = [];
-    var realFunc;
-    function formCalls(index=0) {
-      if (index == calls.length) {
-        return () => {};
+    function iterateOverCalls(start=0, end=100) {
+      end = Math.min(end, calls.length);
+      start = Math.min(start, end);
+      if (start == end) {
+        callback();
       }
-      var func = function() {
-        // console.log('Index: ' + index);
-        setTimeout(calls[index], 10);
-        var nextFun = formCalls(++index);
-        nextFun();
-      }
-      return func;
+      // console.log('Being called with Start: ' + start + " and end: " + end);
+      var callsNow = calls.slice(start, end);
+      iterateOver(
+        callsNow, 
+        function(listItem, report) {
+          // console.log("We're now in the iterator function");
+          listItem(function() {
+            report();
+            progCallback(1);
+          });
+        }, 
+        function() {
+          // console.log("We're now in the report function passed to iterateOver," +
+            // "with start: " + start + " and end: " + end);
+          if (end == calls.length) {
+            // console.log("We are done. calling callback");
+            callback();
+          }
+          else {
+            // console.log("We're calling iterateOverCalls recursively");
+            iterateOverCalls(start + 100, end + 100);
+          }
+        }
+      );
     }
 
-
-    var numDone = 0;
-    const numToDo = this.wordList.length;
     var _this = this;
     for (let word of this.wordList) {
-      calls.push(function() {
-        // console.log('This is getting called');
+      // console.log("We're pushing");
+      calls.push(function(report) {
+        // console.log("We're inside the push");
         _this.getWord(word.name, (err, file) => {
+          // console.log("We're in the getWord callback");
           if (err) {
             console.error(err);
-            callback(err);
+            report(err);
             return;
           }
           else {
             word.aliases = parseFile(file);
           }
-          finished(); // for the progCallback
+          // console.log("We're about to call the report function from getWord callback");
+          report(); // for the progCallback
         });
       });
     }
-
-    realFunc = formCalls();
-    realFunc();
 
     function parseFile(file) {
       const aliasReg = new RegExp("=+\\s*([^=]+)=+");
@@ -174,10 +190,7 @@ else {
       return aliasRes.split(",").map(str => str.trim());
     }
 
-    function finished() {
-      progCallback(++numDone, numToDo);
-      if (numDone == numToDo) callback(undefined);
-    }
+    iterateOverCalls();
   }
 }
 
