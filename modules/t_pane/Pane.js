@@ -19,7 +19,7 @@ class Pane extends React.Component {
     }
     render() {
         return (
-            <Col md={4} sm={4} xs={12}>
+            <Col md={3} sm={3} xs={12} lg={3}>
                 <h3 style={style.pane.header}>{this.props.title}</h3>
                 <Well style={style.pane.content}>
                     <Book input={this.props.content} />
