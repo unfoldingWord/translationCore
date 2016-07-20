@@ -88,8 +88,10 @@ class View extends React.Component {
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
 
-    api.registerEventListener('lexicalDataLoaded', function(params) {
-      _this.updateState();
+    api.registerEventListener('changeCheckType', function(params) {
+      if(params.currentCheckNamespace === NAMESPACE) {
+        _this.updateState();
+      }
     });
 	}
 

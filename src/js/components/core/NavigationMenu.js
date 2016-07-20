@@ -26,7 +26,7 @@ class NavigationMenu extends React.Component {
   }
   
   updateCheckObject(params) {
-    var checkData = (params === undefined ? undefined : params.currentCheckData);
+    var checkData = (params === undefined ? undefined : api.getDataFromCheckStore(params.currentCheckNamespace));
     this.setState({
       checkObject: checkData || this.getCheckObject()
     });
