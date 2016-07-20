@@ -19,7 +19,7 @@ class Book extends React.Component {
 
     componentWillMount() {
         var _this = this;
-        api.registerEventListener('gotoVerse', function(params) {
+        api.registerEventListener('goToVerse', function(params) {
             var verseComp = _this.refs[params.chapterNumber.toString() + ":" + params.verseNumber.toString()];
             var element = api.findDOMNode(verseComp);
             element.scrollIntoView();

@@ -50,6 +50,11 @@ function getData(params, progressCallback, callback) {
               checkObject.LexicalCheck.sort(function(first, second) {
                   return first.group - second.group;
               });
+              for (var group of checkObject['LexicalCheck']) {
+                for (var check of group.checks) {
+                  check.book = api.convertToFullBookName(params.bookAbbr);
+                }
+              }
               api.putDataInCheckStore('LexicalCheck', 'groups', checkObject['LexicalCheck']);
               api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);

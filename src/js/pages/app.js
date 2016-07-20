@@ -58,7 +58,8 @@ lexicalFetcher(params, function() {}, function(error) {
   if (error) console.error(error); 
   api.emitEvent('updateGatewayLanguage');
   api.emitEvent('lexicalDataLoaded'); 
-  api.emitEvent('phraseDataLoaded'); } 
+  api.emitEvent('phraseDataLoaded'); 
+api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("LexicalCheck")});} 
 ); 
 const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 

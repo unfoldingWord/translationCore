@@ -117,16 +117,16 @@ class View extends React.Component {
    */
   changeCurrentCheckInCheckStore(lexicalData, action) {
       //error check to make sure we're going to a legal group/check index
-      if (action.checkIndex && action.groupIndex) {
+      if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
         if (action.groupIndex < lexicalData.groups.length) {
           lexicalData.currentGroupIndex = action.groupIndex;
-          if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].length) {
-            lexicalData.checkIndex = action.checkIndex;
+          if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].checks.length) {
+            lexicalData.currentCheckIndex = action.checkIndex;
           }
           /* In the case that we're incrementing the check and now we're out of bounds
            * of the group, we increment the group.
            */
-          else if (action.checkIndex = lexicalData.groups[lexicalData.currentGroupIndex].length &&
+          else if (action.checkIndex == lexicalData.groups[lexicalData.currentGroupIndex].checks.length &&
             lexicalData.currentGroupIndex < lexicalData.groups.length - 1) {
             lexicalData.currentGroupIndex++;
             lexicalData.currentCheckIndex = 0;
@@ -215,7 +215,11 @@ class View extends React.Component {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
   		return (
-  			<div>
+  			<div
+          style={{
+            maxWidth: "100%"
+          }}
+        >
   				<TPane />
 
           <Grid
@@ -231,6 +235,15 @@ class View extends React.Component {
               }}
             >
                 <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
+              </Col>
+              <Col
+                sm={3} md={3} lg={3}
+                style={{
+                  textAlign: "center"
+                }}
+              >
+                <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' + 
+                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
               </Col>
             </Row>
             <Row className="show-grid">
