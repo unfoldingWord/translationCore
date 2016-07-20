@@ -15,6 +15,7 @@ const Col = require('react-bootstrap/lib/Col.js');
 
 const api = window.ModuleApi;
 
+const CheckStore = require('../stores/CheckStore.js');
 /**
  * These are very hard coded right now, but the fetchers and views will be loaded dynamically 
  * and given parameters acquired from the user. the api will save each module indiviually 
@@ -50,12 +51,16 @@ const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 api.saveModule('TADisplay', tADisplay);
 
 const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
-lexicalFetcher(params, function() {}, function(error) { if (error) console.error(error); api.emitEvent('updateGatewayLanguage');
-console.dir(api.getDataFromCheckStore('LexicalCheck', 'groups'));} ); 
+lexicalFetcher(params, function() {}, function(error) { 
+  if (error) console.error(error); 
+  api.emitEvent('updateGatewayLanguage');
+  api.emitEvent('lexicalDataLoaded'); 
+  api.emitEvent('phraseDataLoaded'); } 
+); 
 const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 module.exports = (
   <div>
-    <Lexical />
+    <Phrase />
   </div>
 );

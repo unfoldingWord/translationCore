@@ -16,7 +16,7 @@ function concatenateChapterIntoString(chapterData) {
 function testWord(word, chapterString) {
 // var word = word.replace('.md', '');
 // console.log('Word: ' + word);
-  var reg = new RegExp(word, 'i');
+  var reg = new RegExp('[\\W\\s]' + word + '[\\W\\s]', 'i');
   return reg.test(chapterString);
 }
 
@@ -25,6 +25,7 @@ function testWords(wordList, chapterString) {
   for (var word of wordList) {
     var isFound = false;
     for (var alias of word.aliases) {
+      if (alias)
       if (testWord(alias, chapterString)) {
         isFound = true;
         break;

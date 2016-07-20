@@ -27,7 +27,7 @@ function getData(params, progressCallback, callback) {
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
     progressCallback((done / total) * 0.5);}, function(error, data) {
       if (error) {
-        console.log('Door43Fetcher throwing error');
+        console.error('Door43Fetcher throwing error');
         callback(error);
       }
       else {
@@ -39,7 +39,7 @@ function getData(params, progressCallback, callback) {
         tWFetcher.getWordList(undefined,
 function(error, data) {
   if (error) {
-    console.log('TWFetcher throwing error');
+    console.error('TWFetcher throwing error');
     callback(error);
   }
   else {

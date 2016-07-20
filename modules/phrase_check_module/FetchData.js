@@ -37,16 +37,15 @@ const DataFetcher = function(params, progress, onComplete){
             }
           }
           //assign gatewayLanguage into CheckStore
-          newStructure.title = "2Timothy";
+          newStructure.title = api.convertToFullBookName(params.bookAbbr);
           api.putDataInCommon('gatewayLanguage', newStructure);
         }
 
         var phraseObject = parseObject(chapterData);
         //put the data in the CheckStore
-        api.putDataInCheckStore('PhraseCheck', 'Phrase Checks', phraseObject['Phrase Checks']);
+        api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['Phrase Checks']);
         api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
         api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
-        api.emitEvent('phraseDataLoaded');
         onComplete(null);
       }
     }
