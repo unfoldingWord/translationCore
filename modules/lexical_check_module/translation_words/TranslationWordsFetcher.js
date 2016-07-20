@@ -120,22 +120,44 @@ else {
   }
 
   getAliases(progCallback = () => {}, callback = () => {}) {
+    var calls = [];
+    var realFunc;
+    function formCalls(index=0) {
+      if (index == calls.length) {
+        return () => {};
+      }
+      var func = function() {
+        // console.log('Index: ' + index);
+        setTimeout(calls[index], 10);
+        var nextFun = formCalls(++index);
+        nextFun();
+      }
+      return func;
+    }
+
+
     var numDone = 0;
     const numToDo = this.wordList.length;
     var _this = this;
     for (let word of this.wordList) {
-      this.getWord(word.name, (err, file) => {
-        if (err) {
-          console.log(err);
-          callback(err);
-          return;
-        }
-        else {
-          word.aliases = parseFile(file);
-        }
-        finished(); // for the progCallback
+      calls.push(function() {
+        // console.log('This is getting called');
+        _this.getWord(word.name, (err, file) => {
+          if (err) {
+            console.error(err);
+            callback(err);
+            return;
+          }
+          else {
+            word.aliases = parseFile(file);
+          }
+          finished(); // for the progCallback
+        });
       });
     }
+
+    realFunc = formCalls();
+    realFunc();
 
     function parseFile(file) {
       const aliasReg = new RegExp("=+\\s*([^=]+)=+");
@@ -145,7 +167,7 @@ else {
         [, aliasRes] = aliasReg.exec(file);
       }
       catch (e) {
-        console.log(e);
+        console.error(e);
         return [];
       }
       // split by comma and take off hanging spaces
