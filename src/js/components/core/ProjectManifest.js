@@ -46,6 +46,7 @@ var template = {
  *    user: [{username, email}],
  *    checkLocations: [{filepath}]
  *  }
+ * @param {json=} tsManifest - A manifest from a Translation Studio project
  ******************************************************************************/
 function populate (data, tsManifest) {
   var projectManifest = template;
