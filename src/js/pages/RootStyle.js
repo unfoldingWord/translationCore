@@ -1,17 +1,9 @@
 var RootStyles = {
-  CheckSection: {
-    position: 'relative',
-    overflowX: 'none',
-    overflowY: 'scroll'
-  },
-  CheckSectionRow: {
-
-  },
-  SideMenu: {
+  ScrollableSection: {
+    height: '100%',
     position: 'fixed',
-    textAlign: 'center',
-    height: 'auto',
-    minHeight:'100vh',
+    overflowX: 'scroll',
+    overflowY: 'scroll'
   },
   AfterCheck: {
     minWidth:'100vh',
