@@ -7,7 +7,7 @@ const ReactBootstrap = api.ReactBootstrap;
 
 //Modules not defined within lexical_check_module
 const TPane = api.getModule('TPane');
-const ProposedChanges = null;//api.getModule('ProposedChanges');
+const ProposedChanges = api.getModule('ProposedChanges');
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -287,6 +287,7 @@ class View extends React.Component {
                     }
                   ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
                 </ButtonGroup>
+                <ProposedChanges />
               </Col>
             </Row>
           </Grid>
