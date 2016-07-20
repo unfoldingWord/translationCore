@@ -93,7 +93,7 @@ class View extends React.Component {
         _this.updateState();
       }
     });
-	}
+  }
 
   /**
    * @description - action callback to update the status of the check that is the current check
