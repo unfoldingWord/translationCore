@@ -87,7 +87,7 @@ class Door43DataFetcher {
                 }
             );
 		}
-	}
+  }
 
     getBookDataCallback(error, bookObj, progress, callback) {
         if (error) {

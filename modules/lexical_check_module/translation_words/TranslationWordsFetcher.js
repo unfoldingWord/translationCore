@@ -144,11 +144,11 @@ else {
       try {
         [, aliasRes] = aliasReg.exec(file);
       }
-catch (e) {
-  console.log(e);
-  return [];
-}
-// split by comma and take off hanging spaces
+      catch (e) {
+        console.log(e);
+        return [];
+      }
+      // split by comma and take off hanging spaces
       return aliasRes.split(",").map(str => str.trim());
     }
 

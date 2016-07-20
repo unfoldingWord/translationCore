@@ -3,7 +3,7 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
-const Markdown = require('../react-remarkable');
+const Markdown = require('react-remarkable');
 
 const Well = ReactBootstrap.Well;
 

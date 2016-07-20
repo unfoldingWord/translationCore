@@ -325,7 +325,7 @@ class Door43DataFetcher {
 
   getTNFromBook(book = {chapters: []}, bookAbbr = "?") {
     if (!book.chapters) {
-      console.log("Error: Input object is in incorrect format");
+      console.error("Error: Input object is in incorrect format");
       return {};
     }
     return TNParser(book, bookAbbr);

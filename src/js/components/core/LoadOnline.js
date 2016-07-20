@@ -8,7 +8,7 @@ const download = window.downloadModule;
 
 const FileModule = require('./FileModule');
 const FileImport = require('./FileImport');
-const zip = window.zip;
+const zip = require('adm-zip');
 
 const zipFolder = path.join('tmp');
 const zipLocation = path.join(zipFolder, 'import.zip');

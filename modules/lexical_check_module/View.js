@@ -215,13 +215,8 @@ class View extends React.Component {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
   		return (
-  			<div
-          style={{
-            maxWidth: "100%"
-          }}
-        >
+  			<div style={{maxWidth: "100%"}}>
   				<TPane />
-
           <Grid
             style={{
               minWidth: "100%",
@@ -293,12 +288,8 @@ class View extends React.Component {
                   ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
                 </ButtonGroup>
               </Col>
-                  
             </Row>
           </Grid>
-          
-          <span>
-          </span>
   			</div>
   		);
   	}
