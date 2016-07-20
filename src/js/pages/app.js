@@ -70,13 +70,13 @@ module.exports = (
   <LoginModal />
     <Grid fluid>
       <Row>
-        <Col style={RootStyles.SideMenu} md={2} sm={2}>
+        <Col style={RootStyles.ScrollableSection} md={2} sm={2}>
           <NavMenu />
           <ProjectModal />
         </Col>
       </Row>
       <Row>
-        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+        <Col style={RootStyles.ScrollableSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <Phrase />
           <NextButton />
         </Col>
