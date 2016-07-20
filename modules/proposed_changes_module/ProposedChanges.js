@@ -1,10 +1,12 @@
-  const React = require('react');
-
-const FormGroup = require('react-bootstrap/lib/FormGroup.js');
-const Button = require('react-bootstrap/lib/Button.js');
-const Panel = require('react-bootstrap/lib/Panel.js');
 
 const api = window.ModuleApi;
+const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+const Well = ReactBootstrap.Well;
+const FormGroup = ReactBootstrap.FormGroup;
+const Button = ReactBootstrap.Button;
+const Panel = ReactBootstrap.Panel;
+
 //ProposedChanges is in the store
 const NAMESPACE = 'ProposedChanges';
 
@@ -58,6 +60,13 @@ class ProposedChanges extends React.Component {
         }
     }
   render() {
+    var PhraseObj = api.getDataFromCheckStore("PhraseCheck");
+    if (PhraseObj) {
+   var currentGroupIndex = PhraseObj["currentGroupIndex"];
+   var currentCheckIndex = PhraseObj['currentCheckIndex'];
+   var currentCheck = PhraseObj["groups"][currentGroupIndex]["checks"][currentCheckIndex];
+   var targetLanguage = api.getDataFromCommon('targetLanguage');
+   var currentVerse = targetLanguage[currentCheck.chapter][currentCheck.verse];
     return (
       <div style={{width:'50%'}}>
         <Button bsStyle="primary"
@@ -66,7 +75,7 @@ class ProposedChanges extends React.Component {
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <h5>{[this.state.chapter][this.state.verse]}</h5>
+            <Well>{currentVerse}</Well>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"
