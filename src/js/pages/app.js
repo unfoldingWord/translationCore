@@ -44,11 +44,11 @@ phraseFetcher(params, function() {}, function() {
 const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
-tAFetcher(params, function() {}, function(err) {
+tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
   if (err) {
     console.error(err);
   }
-
+  api.emitEvent("changeGroupHeaders", sectionFileNamesToTitles);
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
