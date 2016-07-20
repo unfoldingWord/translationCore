@@ -8,7 +8,7 @@ class FlagDisplay extends React.Component{
   render(){
     var _this = this;
     return (
-      <ButtonGroup vertical block>
+      <ButtonGroup vertical={true} block>
         <Button bsStyle="success" onClick={
             function() {
               _this.props.setFlagState('checkStatus', "RETAINED")
