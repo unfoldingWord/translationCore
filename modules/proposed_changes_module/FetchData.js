@@ -90,6 +90,7 @@ function readFile(path, callback) {
 function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) {
   let currentChapter = chunk[0];
   try {
+    currentChapter = parseInt(currentChapter);
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
     readFile(chunkLocation, function(err, data) {
@@ -109,7 +110,7 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
  * @param {string} text - The text being read in from chunks
  ******************************************************************************/
 function joinChunks(text, currentChapter, currentJoined) {
-  if (currentChapter === '00') {
+  if (currentChapter === 0) {
     currentJoined.title = text;
   } else {
     if (currentJoined[currentChapter] === undefined) {
@@ -119,7 +120,7 @@ function joinChunks(text, currentChapter, currentJoined) {
     for (let verse in currentChunk.verses) {
       if (currentChunk.verses.hasOwnProperty(verse)) {
         var currentVerse = currentChunk.verses[verse];
-        currentJoined[currentChapter][verse] = currentVerse;
+        currentJoined[currentChapter][parseInt(verse)] = currentVerse;
       }
     }
   }

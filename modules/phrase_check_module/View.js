@@ -27,7 +27,7 @@ class PhraseChecker extends React.Component{
   updateRender() {
     this.setState({
       toggle: !this.state.toggle
-    })
+    });
   }
 
   render() {
@@ -53,7 +53,7 @@ class PhraseChecker extends React.Component{
     var currentCheckIndex = PhraseObj['currentCheckIndex'];
     var currentCheck = PhraseObj["groups"][currentGroupIndex]["checks"][currentCheckIndex];
     var targetLanguage = api.getDataFromCommon('targetLanguage');
-    var currentVerse = targetLanguage["0" + currentCheck.chapter.toString()][currentCheck.verse.toString()];
+    var currentVerse = targetLanguage[currentCheck.chapter][currentCheck.verse];
       return (
         <div>
         <this.TPane />
