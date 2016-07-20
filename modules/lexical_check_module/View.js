@@ -88,10 +88,12 @@ class View extends React.Component {
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
 
-    api.registerEventListener('lexicalDataLoaded', function(params) {
-      _this.updateState();
+    api.registerEventListener('changeCheckType', function(params) {
+      if(params.currentCheckNamespace === NAMESPACE) {
+        _this.updateState();
+      }
     });
-	}
+  }
 
   /**
    * @description - action callback to update the status of the check that is the current check
