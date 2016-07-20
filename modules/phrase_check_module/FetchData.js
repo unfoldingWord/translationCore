@@ -37,6 +37,7 @@ const DataFetcher = function(params, progress, onComplete){
             }
           }
           //assign gatewayLanguage into CheckStore
+          newStructure.title = api.convertToFullBookName(params.bookAbbr);
           api.putDataInCommon('gatewayLanguage', newStructure);
         }
 
