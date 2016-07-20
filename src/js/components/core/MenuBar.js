@@ -1,4 +1,3 @@
-
 /**
  *@author: Ian Hoegen
  *@description: The JSON outlines a template for the menu, and menu items can
