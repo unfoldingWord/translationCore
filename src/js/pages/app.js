@@ -53,6 +53,14 @@ const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 api.saveModule('TADisplay', tADisplay);
 
 
+
+
+const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
+pFetcher(params, function() {}, function() {});
+
+const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
+api.saveModule('ProposedChanges', ProposedChanges);
+
 const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
 lexicalFetcher(params, function() {}, function(error) { 
   if (error) console.error(error); 
@@ -63,13 +71,6 @@ api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});}
 ); 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 // const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
-
-const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
-pFetcher(params, function() {}, function() {});
-
-const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
-api.saveModule('ProposedChanges', ProposedChanges);
-
 
 
 module.exports = (

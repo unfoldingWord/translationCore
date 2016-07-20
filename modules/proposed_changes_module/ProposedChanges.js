@@ -1,4 +1,4 @@
-  const React = require('react');
+const React = require('react');
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
