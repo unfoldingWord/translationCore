@@ -37,15 +37,18 @@ fetcher(params, function(){ },
 const TPane = require(window.__base + "modules/t_pane/View");
 api.saveModule('TPane', TPane);
 const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
-phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
+phraseFetcher(params, function() {}, function() {
+  api.emitEvent('updateGatewayLanguage');
+  api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("PhraseCheck")});
+});
 const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
-tAFetcher(params, function() {}, function(err) {
+tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
   if (err) {
     console.error(err);
   }
-
+  api.emitEvent("changeGroupHeaders", sectionFileNamesToTitles);
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
@@ -53,7 +56,13 @@ const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 api.saveModule('TADisplay', tADisplay);
 
 
-
+// const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
+// lexicalFetcher(params, function() {}, function(error) { 
+//   if (error) console.error(error); 
+//   api.emitEvent('updateGatewayLanguage');
+//   api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("LexicalCheck")});
+// }); 
+// const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
 pFetcher(params, function() {}, function() {});
@@ -81,13 +90,13 @@ module.exports = (
   <LoginModal />
     <Grid fluid>
       <Row>
-        <Col style={RootStyles.ScrollableSection} md={2} sm={2}>
+        <Col style={RootStyles.ScrollableSection} xs={2} sm={2} md={2} lg={2}>
           <NavMenu />
           <ProjectModal />
         </Col>
       </Row>
       <Row>
-        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+        <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
           <NextButton />
