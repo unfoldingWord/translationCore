@@ -1,5 +1,6 @@
 const fs = require(window.__base + 'node_modules/fs-extra');
-
+const ManifestGenerator = require('./ProjectManifest');
+const path = require('path');
 var SaveReport = {
   saveChecks: function(report, checkName) {
     //array of file path to dynammically create folder
@@ -10,6 +11,14 @@ var SaveReport = {
     fs.outputJson(filepath, report, function (err) {
       if (err){
         console.log(err) // => null
+      }
+    });
+  },
+  saveManifest: function(saveLocation, data, tsManifest) {
+    var manifestLocation = path.join(saveLocation, 'manifest.json');
+    fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function() {
+      if (err) {
+        console.log(err);
       }
     });
   }
