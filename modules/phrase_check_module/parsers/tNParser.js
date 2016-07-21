@@ -8,6 +8,8 @@
  * the percentage of the way through the function
  * @return The book data
 */
+
+var suppress = true;
 var TNParser = function(book, bookAbbr, progCallback = () => {}) {
     
     book = book.chapters;
@@ -23,8 +25,10 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
         try {
           [,verseText] = tnReg.exec(book[chap].verses[verse].file);
         } catch(e) {
-          console.log("TN Parse Warning: No TN Data for chapter " + chap.num + " verse " + verse.num);
-          console.log("File may be in incorrect format");
+          if (!suppress) {
+            console.warn("TN Parse Warning: No TN Data for chapter " + chap.num + " verse " + verse.num);
+            console.warn("File may be in incorrect format");
+          }
           continue;
         }
         let pieces = [];

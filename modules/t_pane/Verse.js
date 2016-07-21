@@ -15,9 +15,9 @@ class Verse extends React.Component {
 	render() {
 		return (
 			<p>
-		        <strong>{this.props.verseNumber} </strong>
-		        {this.props.verseText}
-		    </p>
+        <strong>{this.props.verseNumber} </strong>
+        {this.props.verseText}
+			</p>
 		);
 	}
 }

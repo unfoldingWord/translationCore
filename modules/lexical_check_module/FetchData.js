@@ -26,6 +26,46 @@ function getData(params, progressCallback, callback) {
 // Get Bible
   var bookData;
   var Door43Fetcher = new Door43DataFetcher();
+
+  function parseDataFromBook(bookData) {
+    var tWFetcher = new TranslationWordsFetcher();
+    var wordList;
+    tWFetcher.getWordList(undefined,
+      function(error, data) {
+        if (error) {
+          console.log('TWFetcher throwing error');
+          callback(error);
+        }
+        else {
+          wordList = data;
+          tWFetcher.getAliases(function(done, total) {
+            progressCallback(((done / total) * 0.5) + 0.5);
+          }, function(error) {
+            if (error) {
+              callback(error);
+            }
+            else {
+              var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
+              var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
+              checkObject.LexicalCheck.sort(function(first, second) {
+                  return first.group - second.group;
+              });
+              for (var group of checkObject['LexicalCheck']) {
+                for (var check of group.checks) {
+                  check.book = api.convertToFullBookName(params.bookAbbr);
+                }
+              }
+              api.putDataInCheckStore('LexicalCheck', 'groups', checkObject['LexicalCheck']);
+              api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
+              api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
+              api.putDataInCheckStore('LexicalCheck', 'wordList', wordList);
+              callback(null);
+            }
+          });
+        }
+      });
+  }
+
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
     progressCallback((done / total) * 0.5);}, function(error, data) {
       if (error) {
@@ -33,41 +73,58 @@ function getData(params, progressCallback, callback) {
         callback(error);
       }
       else {
-        console.log('data');
-        console.dir(data);
-        bookData = Door43Fetcher.getULBFromBook(data);
-        var tWFetcher = new TranslationWordsFetcher();
-        var wordList;
-        tWFetcher.getWordList(undefined,
-function(error, data) {
-  if (error) {
-    console.log('TWFetcher throwing error');
-    callback(error);
-  }
-  else {
-    wordList = data;
-    tWFetcher.getAliases(function(done, total) {
-      progressCallback(((done / total) * 0.5) + 0.5);
-    }, function(error) {
-      if (error) {
-        callback(error);
+        var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+        var bookData;
+        /* 
+         * we found the gatewayLanguage already loaded, now we must convert it
+         * to the format needed by the parsers
+         */
+        if (gatewayLanguage) {
+          var reformattedBookData = {chapters: []};
+          for (var chapter in gatewayLanguage) {
+            var chapterObject = {
+              verses: [],
+              num: parseInt(chapter)
+            }
+            for (var verse in gatewayLanguage[chapter]) {
+              var verseObject = {
+                num: parseInt(verse),
+                text: gatewayLanguage[chapter][verse]
+              }
+              chapterObject.verses.push(verseObject);
+            }
+            chapterObject.verses.sort(function(first, second) {
+              return first.num - second.num;
+            });
+            reformattedBookData.chapters.push(chapterObject);
+          }
+          reformattedBookData.chapters.sort(function(first, second) {
+            return first.num - second.num;
+          });
+          parseDataFromBook(reformattedBookData);
+        }
+        // We need to load the data, and then reformat it for the store and store it 
+        else {
+          bookData = Door43Fetcher.getULBFromBook(data);
+          //reformat
+          var newBookData = {};
+          for (var chapter of bookData.chapters) {
+            newBookData[chapter.num] = {};
+            for (var verse of chapter.verses) {
+              newBookData[chapter.num][verse.num] = verse.text;
+            }
+          }
+          newBookData.title = api.convertToFullBookName(params.bookAbbr);
+          //load it into checkstore
+          api.putDataInCommon('gatewayLanguage', newBookData);
+          //resume fetchData
+          parseDataFromBook(bookData);
+        }
       }
-      else {
-        var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
-        var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
-        api.putDataInCheckStore('LexicalCheck', 'groups', checkObject['LexicalCheck']);
-        api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
-        api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
-        callback(null);
-      }
-    });
-  }
-});
-      }
-    });
+    }
+  );
 }
 
-const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 /**
 * Outputs a JSON object in the format defined by what 'FetchData.js' should output
@@ -77,7 +134,7 @@ function findWordsInBook(bookData, wordInBookSet, wordList) {
   returnObject['LexicalCheck'] = [];
   for (var word of wordInBookSet) {
     var wordReturnObject = {
-      "group": word.replace(extensionRegex, ''),
+      "group": word,
       "checks": []
     };
     var wordObject = search(wordList, function(item) {
@@ -92,6 +149,15 @@ function findWordsInBook(bookData, wordInBookSet, wordList) {
           }
         }
       }
+      if (wordReturnObject.checks.length <= 0) {
+        continue;
+      }
+      wordReturnObject.checks.sort(function(first, second) {
+        if (first.chapter != second.chapter) {
+            return first.chapter - second.chapter;
+        }
+        return first.verse - second.verse;
+      });
       returnObject.LexicalCheck.push(wordReturnObject);
     }
   }

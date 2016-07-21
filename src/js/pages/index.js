@@ -14,10 +14,10 @@
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-
       var moduleApi = require('../ModuleApi');
       window.ModuleApi = moduleApi;
       var Application = require("./app");
+
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };
