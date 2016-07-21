@@ -11,7 +11,10 @@ class FlagDisplay extends React.Component{
       var currentGroupIndex = data.currentGroupIndex;
       var currentCheckIndex = data.currentCheckIndex;
       var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
-      currentCheck.checkStatus = action.checkStatus;
+      if (currentCheck) {
+        currentCheck.checkStatus = action.checkStatus;
+      }
+      api.emitEvent('changedCheckStatus', {checkStatus: action.checkStatus})
     });
   }
 
