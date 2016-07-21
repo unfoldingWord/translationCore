@@ -7,7 +7,7 @@ const ReactBootstrap = api.ReactBootstrap;
 
 //Modules not defined within lexical_check_module
 const TPane = api.getModule('TPane');
-const ProposedChanges = null;//api.getModule('ProposedChanges');
+const ProposedChanges = api.getModule('ProposedChanges');
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -88,10 +88,12 @@ class View extends React.Component {
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
 
-    api.registerEventListener('lexicalDataLoaded', function(params) {
-      _this.updateState();
+    api.registerEventListener('changeCheckType', function(params) {
+      if(params.currentCheckNamespace === NAMESPACE) {
+        _this.updateState();
+      }
     });
-	}
+  }
 
   /**
    * @description - action callback to update the status of the check that is the current check
@@ -287,6 +289,7 @@ class View extends React.Component {
                     }
                   ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
                 </ButtonGroup>
+                <ProposedChanges />
               </Col>
             </Row>
           </Grid>

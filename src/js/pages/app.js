@@ -4,6 +4,7 @@
 
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
+const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const NavBarComponent = require('../components/core/NavBarComponent');
 const LoginModal = require('../components/core/LoginModal');
 const UploadModal = require('../components/core/UploadModal.js');
@@ -14,7 +15,6 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-// const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
 const api = window.ModuleApi;
 
@@ -70,6 +70,16 @@ pFetcher(params, function() {}, function() {});
 const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
 api.saveModule('ProposedChanges', ProposedChanges);
 
+const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
+lexicalFetcher(params, function() {}, function(error) { 
+  if (error) console.error(error); 
+  api.emitEvent('updateGatewayLanguage');
+  api.emitEvent('lexicalDataLoaded'); 
+  api.emitEvent('phraseDataLoaded'); 
+api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});} 
+); 
+const ModuleWrapper = require('../components/modules/ModuleWrapper');
+// const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 
 module.exports = (
@@ -86,8 +96,9 @@ module.exports = (
         </Col>
       </Row>
       <Row>
-        <Col style={RootStyles.ScrollableSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
-          <Phrase />
+        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+          <SwitchCheckModuleDropdown />
+          <ModuleWrapper />
           <NextButton />
         </Col>
       </Row>
