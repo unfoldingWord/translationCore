@@ -31,7 +31,6 @@ class Login extends React.Component {
       CoreActions.updateButtonStatus(true);
       CoreActions.updateLogoutButton(true);
       CoreActions.updateProfileVisibility(true);
-      console.log(userdata);
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {

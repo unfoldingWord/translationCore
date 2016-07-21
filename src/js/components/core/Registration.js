@@ -7,11 +7,8 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Token = require('./AuthToken');
-
 const CoreActions = require('../../actions/CoreActions.js');
-
 const GogsApi = require('./GogsApi');
-
 const Registration = React.createClass({
   getInitialState: function() {
     return {
@@ -56,7 +53,6 @@ const Registration = React.createClass({
       GogsApi(Token)
       .createAccount(user)
       .then(function(data) {
-        console.log(data);
         CoreActions.login(data);
         CoreActions.updateLoginModal(false);
       })
