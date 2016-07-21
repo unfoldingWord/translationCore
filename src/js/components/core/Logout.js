@@ -29,6 +29,7 @@ class Logout extends React.Component{
   handleLogout(){
     CoreActions.updateButtonStatus(false);
     CoreActions.updateLogoutButton(false);
+    CoreActions.updateProfileVisibility(false);
   }
 
   render(){

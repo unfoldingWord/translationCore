@@ -12,6 +12,7 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const style = require('../../styles/loginStyle');
 const gogs = require('./GogsApi.js');
+const Token = require('./AuthToken');
 const Registration = require('./Registration');
 
 class Login extends React.Component {
@@ -24,12 +25,13 @@ class Login extends React.Component {
       username: this.state.userName,
       password: this.state.password
     };
-    var newuser = gogs().login(userdata).then(function(userdata) {
+    var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
       CoreActions.updateButtonStatus(true);
       CoreActions.updateLogoutButton(true);
       CoreActions.updateProfileVisibility(true);
+      console.log(userdata);
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {

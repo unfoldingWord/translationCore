@@ -39,7 +39,6 @@ class LoginModal extends React.Component {
 
     render(){
       let display;
-      console.log(this.state.profile)
       if(this.state.profile === false){
         display = <Login />
       }else{
