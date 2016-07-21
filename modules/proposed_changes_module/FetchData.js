@@ -7,7 +7,7 @@ const path = require('path');
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-//Get original language
+//Get target Language
 //check if original language is already in common
 //get it if it isn't using parsers and params
 
@@ -15,7 +15,7 @@ function fetchData(params, progress, callback) {
 
   if (!targetLanguage) {
     if (!params.targetLanguagePath) {
-      console.error('TPane requires a filepath');
+      console.error('ProposedChanges requires a filepath');
     }
     else {
       sendToReader(params.targetLanguagePath, callback);
