@@ -70,6 +70,34 @@ class CoreStore extends EventEmitter {
     return this.buttonStatus;
   }
 
+  // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
+  // Mostly just for SwitchCheckModuleDropdown
+  getCheckCategoryOptions(){
+    // TODO: This is hard-coded -- it should be filled when CreateProject finishes
+    if(!this.checkCategoryOptions) {
+      this.checkCategoryOptions = [
+        {
+          view: require(window.__base + "modules/lexical_check_module/View.js"),
+          namespace: "LexicalCheck"
+        },
+        {
+          view: require(window.__base + "modules/phrase_check_module/View.js"),
+          namespace: "PhraseCheck"
+        }
+      ]
+    }
+    return this.checkCategoryOptions;
+  }
+
+  // Returns the Check Module (object) for the given namespace (string)
+  findCheckCategoryOptionByNamespace(namespace) {
+    for(let category of this.getCheckCategoryOptions()) {
+      if(category.namespace == namespace) {
+        return category;
+      }
+    }
+  }
+
 /**
   * @param {function} callback
   */

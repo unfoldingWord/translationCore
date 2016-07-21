@@ -1,6 +1,9 @@
 var RootStyles = {
+  // TODO: Ideally, these scrollable sections should have relative positions.
+  // This would allow us to use bootstrap properly and stop hard-coding component
+  // sizes and offsets
   ScrollableSection: {
-    height: '100%',
+    height: '85%',
     position: 'fixed',
     overflowX: 'scroll',
     overflowY: 'scroll'

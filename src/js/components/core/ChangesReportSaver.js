@@ -11,8 +11,6 @@ var SaveReport = {
       if (err){
         console.log(err) // => null
       }
-      fs.readJson(filepath, function(err, data) {
-      });
     });
   }
 };

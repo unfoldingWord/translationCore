@@ -24,7 +24,6 @@ const TranslationWordsDisplay = require('./translation_words/TranslationWordsDis
 const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
-const Styles = require('./Style.js');
 
 //String constants
 const NAMESPACE = "LexicalCheck",
@@ -89,10 +88,12 @@ class View extends React.Component {
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
 
-    api.registerEventListener('lexicalDataLoaded', function(params) {
-      _this.updateState();
+    api.registerEventListener('changeCheckType', function(params) {
+      if(params.currentCheckNamespace === NAMESPACE) {
+        _this.updateState();
+      }
     });
-	}
+  }
 
   /**
    * @description - action callback to update the status of the check that is the current check
@@ -273,8 +274,8 @@ class View extends React.Component {
                   buttonEnableCallback={()=>{}}
                   buttonDisableCallback={()=>{}}
                 />
-                <ButtonGroup>
-                  <Button onClick={
+                <ButtonGroup style={{width:'100%'}}>
+                  <Button style={{width:'50%'}} onClick={
                       function() {
                         api.sendAction({
                           type: 'updateCheckStatus',
@@ -283,7 +284,7 @@ class View extends React.Component {
                         })
                       }
                     }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                  <Button onClick={
+                  <Button style={{width:'50%'}} onClick={
                       function() {
                         api.sendAction({
                           type: 'updateCheckStatus',

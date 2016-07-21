@@ -9,8 +9,9 @@ var Well = require('react-bootstrap/lib/Well.js');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
-var CheckStore = require('../../stores/CheckStore.js');
-var CheckActions = require('../../actions/CheckActions.js');
+var CoreStore = require('../../stores/CoreStore.js');
+
+const api = window.ModuleApi;
 
 const NONE_SELECTED = "NONE_SELECTED";
 
@@ -19,41 +20,26 @@ class SwitchCheckModuleDropdown extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkCategory: CheckStore.getCurrentCheckCategory(),
-      checkCategoryOptions: CheckStore.getCheckCategoryOptions()
+      checkCategoryOptions: CoreStore.getCheckCategoryOptions()
     };
   }
 
-  refreshSelectedCheckModule() {
-    this.setState({
-      checkCategory: CheckStore.getCurrentCheckCategory(),
-      checkCategoryOptions: CheckStore.getCheckCategoryOptions()
-    });
-  }
-
-  // When the dropdown is changed, this sends out an action to change the check category
-  openCheckModule(e) {
-    var checkCategoryId = e.target.value;
-    var newCheckCategory = CheckStore.getCheckCategory(checkCategoryId);
-    CheckActions.changeCheckCategory(newCheckCategory);
-  }
-
-  getSelectedCheckCategoryId() {
-    return (this.state.checkCategory == undefined ? NONE_SELECTED : this.state.checkCategory.id);
+  // When the dropdown is changed, this sends out an event to change the check category
+  checkModuleChange(e) {
+    var newCheckCategory = e.target.value;
+    api.emitEvent('changeCheckType', {currentCheckNamespace: newCheckCategory});
   }
 
   componentWillMount() {
-    CheckStore.addChangeListener(this.refreshSelectedCheckModule.bind(this));
   }
 
   componentWillUnmount() {
-    CheckStore.removeChangeListener(this.refreshSelectedCheckModule.bind(this));
   }
 
   render() {
     var optionNodes = this.state.checkCategoryOptions.map(function(checkCategory){
       return (
-        <option key={checkCategory.id} value={checkCategory.id}>{checkCategory.name}</option>
+        <option key={checkCategory.namespace} value={checkCategory.namespace}>{checkCategory.namespace}</option>
       )
     });
 
@@ -61,8 +47,7 @@ class SwitchCheckModuleDropdown extends React.Component {
       <Well>
         <FormGroup>
           <ControlLabel>Select a Check Category</ControlLabel>
-          <FormControl componentClass="select" value={this.getSelectedCheckCategoryId()} onChange={this.openCheckModule}>
-            <option value={NONE_SELECTED} style={{display: "none"}}></option>
+          <FormControl componentClass="select" onChange={this.checkModuleChange}>
             {optionNodes}
           </FormControl>
         </FormGroup>
