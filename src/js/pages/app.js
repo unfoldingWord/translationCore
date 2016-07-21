@@ -84,10 +84,10 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 module.exports = (
   <div>
-  <NavBarComponent />
-  <UploadModal />
-  <SettingsModal />
-  <LoginModal />
+    <NavBarComponent />
+    <UploadModal />
+    <SettingsModal />
+    <LoginModal />
     <Grid fluid>
       <Row>
         <Col style={RootStyles.ScrollableSection} xs={2} sm={2} md={2} lg={2}>
@@ -99,7 +99,7 @@ module.exports = (
         <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
-          <NextButton />
+          <NextButton className={'pull-right'} />
         </Col>
       </Row>
     </Grid>
