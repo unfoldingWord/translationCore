@@ -16,7 +16,7 @@ const CheckDataGrabber = require('./CheckDataGrabber');
 const FileModule = require('./FileModule');
 const {dialog} = window.electron.remote;
 const ENTER = 13;
-const LanguageInput = require('./LanguageInput');
+const TargetLanguage = require('./UploadModal');
 
 const ProjectModal = React.createClass({
   getInitialState: function() {
@@ -27,7 +27,7 @@ const ProjectModal = React.createClass({
       controlLabelTitle:"Name",
       placeHolderText:"Enter name of project",
       doneText:"Create",
-      modalValue:"Create",
+      modalValue:"Languages",
       FetchDataArray:[]      //FetchDataArray of checkmodules
     };
   },
@@ -42,21 +42,21 @@ const ProjectModal = React.createClass({
         showModal: true,
         modalValue: modal,
         modalTitle:"Create Project",
-        doneText:"Create"
+        doneText:"Choose Modules"
       });
     } else if(modal === "Check") {
       this.setState({
         showModal: true,
         modalValue: modal,
         modalTitle:"Select Modules To Load",
-        doneText:"Choose Languages"
+        doneText:"Finished"
       });
     } else if (modal === 'Languages') {
       this.setState({
         showModal: true,
         modalValue: modal,
-        modalTitle: 'Select Original, Gateway, and Target Languages',
-        doneText: 'Finished'
+        modalTitle: '',
+        doneText: 'Create'
       });
     }
   },
@@ -92,12 +92,12 @@ const ProjectModal = React.createClass({
       if (tempFetchDataArray.length > 0) {
         CoreActions.getFetchData(tempFetchDataArray);
       }
-      CoreActions.showCreateProject("Languages");
+      this.close();
     }
     else if (this.state.modalValue == "Create") {
       CoreActions.showCreateProject("Check");
     } else if (this.state.modalValue === 'Languages') {
-      this.close();
+      CoreActions.showCreateProject("Create");
     }
   },
   isModule: function(filepath, file){
@@ -157,7 +157,7 @@ const ProjectModal = React.createClass({
         return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
           placeHolderText={this.state.placeHolderText} setProjectName={this.setProjectName}/>)
       } else if (modalBody === 'Languages') {
-        return (<LanguageInput modalTitle={this.state.modalTitle}/>);
+        return (<TargetLanguage />);
       }
 
       },

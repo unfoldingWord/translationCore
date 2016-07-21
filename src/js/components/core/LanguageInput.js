@@ -8,8 +8,6 @@ const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
-const ORIGINAL_LANGUAGE_URL = "Original Language URL";
-const GATEWAY_LANGUAGE_URL = "Gateway Language URL";
 const TARGET_LANGUAGE_URL = "Translation Studio Project URL";
 const ONLINE_BUTTON = 'Use Online Source';
 const UPLOAD_BUTTON = 'Use Local Source';
@@ -18,19 +16,14 @@ const LanguageInput = React.createClass({
   getInitialState: function() {
     return {
       gatewayLanguage: '',
-      originalLanguage: '',
       targetLanguage: '',
       local: true,
-      UPLOAD_ORIGINAL: 'Choose Original Language Folder',
       UPLOAD_GATEWAY: 'Choose Gateway Language Folder',
       UPLOAD_TARGET: 'Choose Translation Studio Project'
     };
   },
   handleGateway: function(e) {
     this.setState({gatewayLanguage: e.target.value});
-  },
-  handleOriginal: function(e) {
-    this.setState({originalLanguage: e.target.value});
   },
   handleTarget: function(e) {
     this.setState({targetLanguage: e.target.value});
@@ -45,16 +38,6 @@ const LanguageInput = React.createClass({
     }, function(filename) {
       if (filename !== undefined) {
         _this.setState({gatewayLanguage: filename[0], UPLOAD_GATEWAY: filename[0]});
-      }
-    });
-  },
-  saveOriginal: function() {
-    var _this = this;
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        _this.setState({originalLanguage: filename[0], UPLOAD_ORIGINAL: filename[0]});
       }
     });
   },
@@ -74,9 +57,6 @@ const LanguageInput = React.createClass({
     if (this.state.local === true) {
       content = (
         <div>
-          <Button block onClick={this.saveOriginal}>
-            {this.state.UPLOAD_ORIGINAL}
-          </Button>
           <Button block onClick={this.saveGateway}>
             {this.state.UPLOAD_GATEWAY}
           </Button>
@@ -92,9 +72,6 @@ const LanguageInput = React.createClass({
     } else {
       content = (
         <div>
-          <FormGroup controlId="originalLanguage">
-            <FormControl type="text" placeholder={ORIGINAL_LANGUAGE_URL} onChange={this.handleOriginal}/>
-          </FormGroup>
           <FormGroup controlId="gatewayLanguage">
             <FormControl type="text" placeholder={GATEWAY_LANGUAGE_URL} onChange={this.handleGateway}/>
           </FormGroup>
