@@ -55,7 +55,7 @@ class PhraseChecker extends React.Component{
   componentWillUnmount(){
     api.removeEventListener('phraseDataLoaded', this.updateState);
     api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('gotoNext', this.gotoNext);
+    api.removeEventListener('gotoNext', this.goToNext);
   }
 
   goToCheck(params){
@@ -129,7 +129,6 @@ class PhraseChecker extends React.Component{
    * data found in the store
    */
   updateState() {
-    console.log("updating");
     var newGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var newCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var newCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex]['checks'][newCheckIndex];

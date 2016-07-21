@@ -18,12 +18,16 @@ class ProposedChanges extends React.Component {
       chapter: 0,
       verse: 0
     };
+
+    this.actionHandleChange = this.actionHandleChange.bind(this);
+    this.updateTargetLanguage = this.updateTargetLanguage.bind(this);
+    this.updateCheck = this.updateCheck.bind(this);
   }
 
   componentWillMount() {
-    api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
-    api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-    api.registerEventListener("goToVerse", this.updateCheck.bind(this));
+    api.registerAction('proposedChangesUpdateText', this.actionHandleChange);
+    api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage);
+    api.registerEventListener("goToVerse", this.updateCheck);
   }
 
   actionHandleChange(proposedChangesData, action) {
@@ -31,8 +35,9 @@ class ProposedChanges extends React.Component {
   }
 
   componentWillUnmount(){
-    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-    api.removeEventListener("goToVerse", this.updateCheck.bind(this));
+    api.removeAction('proposedChangesUpdateText', this.actionHandleChange);
+    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage);
+    api.removeEventListener("goToVerse", this.updateCheck);
   }
 
 
