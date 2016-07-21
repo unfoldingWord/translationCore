@@ -14,6 +14,8 @@ class ModuleWrapper extends React.Component {
   constructor() {
     super();
     this.state = {};
+
+    this.updateCheckType = this.updateCheckType.bind(this);
   }
 
   render() {
@@ -30,11 +32,11 @@ class ModuleWrapper extends React.Component {
   }
 
   componentWillMount() {
-    api.registerEventListener('changeCheckType', this.updateCheckType.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckType);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.updateCheckType.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckType);
   }
 
   updateCheckType(params) {

@@ -37,13 +37,6 @@ fetcher(params, function(){ },
 const TPane = require(window.__base + "modules/t_pane/View");
 api.saveModule('TPane', TPane);
 
-const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
-phraseFetcher(params, function() {}, function() {
-  api.emitEvent('updateGatewayLanguage');
-  api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("PhraseCheck")});
-});
-const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
-
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
 tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
   if (err) {
