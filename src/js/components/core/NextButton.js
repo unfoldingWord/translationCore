@@ -17,9 +17,9 @@ class NextButton extends React.Component {
 
   render() {
     return (
-        <Button className='btn' onClick={this.buttonClicked}>
+        <Button className='btn btn-primary' onClick={this.buttonClicked}>
           {SaveAndContinue}
-          <Glyphicon glyph="arrow-right" />
+          &nbsp;<Glyphicon glyph="arrow-right" />
         </Button>
     );
   }

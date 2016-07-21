@@ -79,6 +79,7 @@ class PhraseChecker extends React.Component{
             />
           </Col>
         </Row>
+        <br />
         <this.ProposedChanges />
         <this.TADisplay />
         </div>
