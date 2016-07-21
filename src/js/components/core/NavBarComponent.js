@@ -14,7 +14,7 @@ class NavBarComponent extends React.Component{
       <Navbar inverse style={style.navbar}>
         <Navbar.Header>
           <Navbar.Brand>
-            <img src="images/TC_Icon.png" style={style.logo}/>
+            <img src="images/TC_Icon_logo.png" style={style.logo}/>
           </Navbar.Brand>
         </Navbar.Header>
         <Navbar.Collapse>
