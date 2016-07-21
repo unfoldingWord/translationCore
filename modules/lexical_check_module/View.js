@@ -153,7 +153,10 @@ class View extends React.Component {
   updateState() {
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    if (!currentGroupIndex || currentCheckIndex) return;
+    if (currentGroupIndex === null || currentCheckIndex === null) {
+      console.warn("LexicalCheck wasn't able to retrieve its indices");
+      return;
+    }
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({

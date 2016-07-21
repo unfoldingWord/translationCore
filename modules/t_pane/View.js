@@ -7,7 +7,6 @@ const React = api.React;
 
 
 class View extends React.Component {
-    
 
 	render() {
 		return (
