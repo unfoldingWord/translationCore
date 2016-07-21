@@ -8,7 +8,6 @@
 const api = window.ModuleApi;
 const React = api.React;
 
-const Grid = api.ReactBootstrap.Grid;
 const Row = api.ReactBootstrap.Row;
 const Pane = require('./Pane');
 
@@ -82,13 +81,11 @@ class TPane extends React.Component {
 
   render() {
     return (
-      <Grid>
-        <Row>
-          <Pane title="Original Language" content={this.state.originalLanguage}/>
-          <Pane title="Gateway Language" content={this.state.gatewayLanguage}/>
-          <Pane title="Target Language" content={this.state.targetLanguage}/>
-        </Row>
-      </Grid>
+      <Row>
+        <Pane title="Original Language" content={this.state.originalLanguage}/>
+        <Pane title="Gateway Language" content={this.state.gatewayLanguage}/>
+        <Pane title="Target Language" content={this.state.targetLanguage}/>
+      </Row>
     );
   }
 }

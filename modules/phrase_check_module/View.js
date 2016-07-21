@@ -2,7 +2,7 @@
 const api = window.ModuleApi;
 
 const RB = api.ReactBootstrap;
-const {Grid, Row, Col} = RB;
+const {Row, Col} = RB;
 const React = api.React;
 const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
@@ -56,30 +56,29 @@ class PhraseChecker extends React.Component{
       return (
         <div>
         <this.TPane />
-        <Grid>
-            <Row className="show-grid">
-              <Col md={12}>
-                <ScriptureDisplay
-                  scripture={currentVerse}
-                  currentVerse={currentCheck.book
-                                + " " + currentCheck.chapter
-                                + ":" + currentCheck.verse}
-                />
-              </Col>
-            </Row>
-            <Row className="show-grid">
-              <Col md={6} className="confirm-area">
-                <ConfirmDisplay
-                  phraseInfo={currentCheck.phraseInfo}
-                  phrase={currentCheck.phrase}
-                />
-              </Col>
-              <Col md={6}>
-                <FlagDisplay
-                />
-              </Col>
-            </Row>
-        </Grid>
+        <Row className="show-grid">
+          <Col md={12}>
+            <ScriptureDisplay
+              scripture={currentVerse}
+              currentVerse={currentCheck.book
+                            + " " + currentCheck.chapter
+                            + ":" + currentCheck.verse}
+            />
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Col md={6} className="confirm-area">
+            <ConfirmDisplay
+              phraseInfo={currentCheck.phraseInfo}
+              phrase={currentCheck.phrase}
+            />
+          </Col>
+          <Col md={6}>
+            <FlagDisplay
+            />
+          </Col>
+        </Row>
+        <br />
         <this.ProposedChanges />
         <this.TADisplay />
         </div>
