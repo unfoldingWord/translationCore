@@ -99,7 +99,7 @@ module.exports = (
         <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
-          <NextButton className={'pull-right'} />
+          <NextButton />
         </Col>
       </Row>
     </Grid>
