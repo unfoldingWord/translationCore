@@ -6,50 +6,42 @@ event from the CheckStore and automatically swap out the check module for the ne
 */
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
-var CheckStore = require('../../stores/CheckStore.js');
-var CheckActions = require('../../actions/CheckActions.js');
-// TODO: Require all components
+var CoreStore = require('../../stores/CoreStore');
 
+const api = window.ModuleApi;
 
 class ModuleWrapper extends React.Component {
   constructor() {
     super();
-    this.state = {
-      curCheck: "CheckModule" // TODO: pull a default from somewhere else?
-    };
+    this.state = {};
   }
 
   render() {
-    var CheckModule = require("./" + this.state.curCheck);
+    // TODO: should probably return an empty div if this.state.view doesn't exist
+    // but for now it has LexicalCheck as default
+    if(!this.state.view) {
+      var CheckModule = require(window.__base + "modules/lexical_check_module/View.js");
+      return <CheckModule />;
+    }
+    var CheckModule = this.state.view;
     return (
       <CheckModule />
     );
   }
 
   componentWillMount() {
-    CheckStore.addChangeListener(this.updateCheckType.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckType.bind(this));
   }
 
   componentWillUnmount() {
-    CheckStore.removeChangeListener(this.updateCheckType);
+    api.removeEventListener('changeCheckType', this.updateCheckType.bind(this));
   }
 
-  updateCheckType() {
-    console.log("Changing Type");
-    let newCheckType = CheckStore.getCurrentCheckType();
-    if (newCheckType == this.state.curCheck) {
-      return;
-    }
-    let newCheckModule;
-    try {
-      newCheckModule = require('./' + newCheckType);
-    }
-    catch (e) {
-      console.log("Error: could not load module ./" + newCheckType);
-      return;
-    }
+  updateCheckType(params) {
+    var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
+    var newView = newCheckCategory.view;
     this.setState({
-      curCheck: newCheckType
+      view: newView
     });
   }
 }
