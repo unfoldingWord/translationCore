@@ -62,6 +62,10 @@ class CoreStore extends EventEmitter {
     return this.FetchDataArray;
   }
 
+  getProgress() {
+  return this.progressKeyObj;
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
@@ -145,6 +149,11 @@ class CoreStore extends EventEmitter {
 
       case consts.SEND_FETCH_DATA:
         this.FetchDataArray = action.array;
+        this.emitChange();
+      break;
+
+      case consts.SEND_PROGRESS_FOR_KEY:
+        this.progressKeyObj = action.progressRecieved;
         this.emitChange();
       break;
 
