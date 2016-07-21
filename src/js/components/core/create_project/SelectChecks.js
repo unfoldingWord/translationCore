@@ -4,7 +4,7 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
-const FileModule = require('./FileModule');
+const FileModule = require('../FileModule');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
@@ -116,8 +116,8 @@ const SelectChecks = React.createClass({
     var i = 0;
     var checkButtonComponents = this.state.allModules.map((allModules) => {
       return (
-        <div>
-        <Checkbox id={this.state.allModules} key={i++}>
+        <div key={i++}>
+        <Checkbox id={this.state.allModules}>
         {this.beautifyString(allModules)}
         </Checkbox>
         </div>

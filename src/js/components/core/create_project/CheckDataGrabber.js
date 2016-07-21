@@ -1,10 +1,9 @@
-const CoreStore = require('../.././stores/CoreStore');
-const CoreActions = require('../.././actions/CoreActions');
-const CheckStore = require('../.././stores/CheckStore');
+const CoreStore = require('../../.././stores/CoreStore');
+const CoreActions = require('../../.././actions/CoreActions');
+const CheckStore = require('../../.././stores/CheckStore');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const path = require('path');
 const api = window.ModuleApi;
-const Books = require('./booksOfBible');
+const Books = require('../booksOfBible');
 
 var currentCheckName;
 var gotFetch;
@@ -30,7 +29,7 @@ var CheckDataGrabber = {
     }
   },
   sendFetchData: function() {
-    console.log('This is being run');
+    // console.log('This is being run');
     if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
       gotFetch = CoreStore.getDataFromProject();
       this.saveNextModule();

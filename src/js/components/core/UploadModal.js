@@ -39,7 +39,7 @@ const UploadModal = React.createClass({
       mainContent = (<div>
                        <br />
                        <OnlineInput />
-                     </div>);
+                     </div>); 
     }
     return (
           <div>
