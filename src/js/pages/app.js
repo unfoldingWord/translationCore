@@ -7,7 +7,6 @@ const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const NavBarComponent = require('../components/core/NavBarComponent');
 const LoginModal = require('../components/core/LoginModal');
-const UploadModal = require('../components/core/UploadModal.js');
 const SettingsModal = require('../components/core/SettingsModal.js');
 // const RootStyles = require('./RootStyle');
 const ProjectModal = require('../components/core/ProjectModal');
@@ -77,7 +76,6 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
 module.exports = (
   <div>
   <NavBarComponent />
-  <UploadModal />
   <SettingsModal />
   <LoginModal />
     <Grid fluid>
