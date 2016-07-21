@@ -70,6 +70,22 @@ class CoreStore extends EventEmitter {
     return this.buttonStatus;
   }
 
+  getLogoutButton(){
+    return this.logoutButtonVisibility;
+  }
+
+  getLoggedInUser() {
+    return this.userLoggedIn;
+  }
+
+  getProfileVisibility(){
+    if(this.profileVisibility) {
+    return this.profileVisibility;
+  } else {
+    return false;
+  }
+  }
+
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
   // Mostly just for SwitchCheckModuleDropdown
   getCheckCategoryOptions(){
@@ -148,6 +164,21 @@ class CoreStore extends EventEmitter {
         this.FetchDataArray = action.array;
         this.emitChange();
       break;
+
+      case consts.CHANGE_LOGOUT_VISIBILITY:
+        this.logoutButtonVisibility = action.logoutOption;
+        this.emitChange();
+        break;
+
+      case consts.ACCOUNT_LOGIN:
+        this.userLoggedIn = action.user;
+        this.emitChange();
+        break;
+
+      case consts.CHANGE_PROFILE_VISIBILITY:
+        this.profileVisibility = action.profileOption;
+        this.emitChange();
+        break;
 
       default:
       // do nothing
