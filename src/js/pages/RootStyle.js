@@ -3,8 +3,7 @@ var RootStyles = {
     height: '100%',
     position: 'fixed',
     overflowX: 'scroll',
-    overflowY: 'scroll',
-    window.scrollBy:(xnum,ynum)
+    overflowY: 'scroll'
   },
   AfterCheck: {
     minWidth:'100vh',

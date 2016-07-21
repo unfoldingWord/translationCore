@@ -73,7 +73,9 @@ const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 
 module.exports = (
-  <div>
+  <div style={{
+  backgroundImage: url("bgdesert.jpg");
+}}>
   <NavBarComponent />
   <UploadModal />
   <SettingsModal />
