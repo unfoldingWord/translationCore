@@ -61,6 +61,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <Well>
+          <h3>Checks</h3>
           {menuList}
         </Well>
       </div>
