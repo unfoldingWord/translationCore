@@ -3,14 +3,15 @@ var RootStyles = {
     height: '100%',
     position: 'fixed',
     overflowX: 'scroll',
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    window.scrollBy:(xnum,ynum)
   },
   AfterCheck: {
     minWidth:'100vh',
     top: '90vh',
     height: 'auto',
     position: 'fixed',
-    textAlign: 'center'
+    textAlign: 'center',
   }
 };
 module.exports = RootStyles;

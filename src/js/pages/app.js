@@ -62,13 +62,13 @@ const ProposedChanges = require(window.__base + "modules/proposed_changes_module
 api.saveModule('ProposedChanges', ProposedChanges);
 
 const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
-lexicalFetcher(params, function() {}, function(error) { 
-  if (error) console.error(error); 
+lexicalFetcher(params, function() {}, function(error) {
+  if (error) console.error(error);
   api.emitEvent('updateGatewayLanguage');
-  api.emitEvent('lexicalDataLoaded'); 
-  api.emitEvent('phraseDataLoaded'); 
-api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("LexicalCheck")});} 
-); 
+  api.emitEvent('lexicalDataLoaded');
+  api.emitEvent('phraseDataLoaded');
+api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("LexicalCheck")});}
+);
 const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
 
@@ -86,7 +86,7 @@ module.exports = (
         </Col>
       </Row>
       <Row>
-        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+        <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={3} mdOffset={2}>
           <Lexical />
           <NextButton />
         </Col>

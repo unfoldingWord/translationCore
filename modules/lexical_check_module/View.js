@@ -7,7 +7,7 @@ const ReactBootstrap = api.ReactBootstrap;
 
 //Modules not defined within lexical_check_module
 const TPane = api.getModule('TPane');
-const ProposedChanges = api.getModule('ProposedChanges');
+const ProposedChanges = null;//api.getModule('ProposedChanges');
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -24,6 +24,7 @@ const TranslationWordsDisplay = require('./translation_words/TranslationWordsDis
 const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
+const Styles = require('./Style.js');
 
 //String constants
 const NAMESPACE = "LexicalCheck",
@@ -48,21 +49,21 @@ class View extends React.Component {
 	}
 
   /**
-   * @description - This method is a lifecycle method of a react component and will 
+   * @description - This method is a lifecycle method of a react component and will
    * be called before the component mounts to the DOM. It's used to register event and action
    * callbacks using the API
    */
 	componentWillMount() {
     var _this = this;
-    
+
     //This action will update our indexes in the store
     api.registerAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore.bind(this));
-    
+
     //This action will update the status of the check that is the current check in the CheckStore
     api.registerAction('updateCheckStatus', this.updateCheckStatus.bind(this));
-    
-    /* 
-     * This event will call an action that increment the checkIndex by one, 
+
+    /*
+     * This event will call an action that increment the checkIndex by one,
      * and might increment the group index if needed. Because no parameters are given
      * from the event, we have to get the current indexes from the store and increment it
      * manually before sending the action to update the store
@@ -71,20 +72,20 @@ class View extends React.Component {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
         api.sendAction({
-          type: 'changeLexicalCheck', 
-          field: NAMESPACE, 
+          type: 'changeLexicalCheck',
+          field: NAMESPACE,
           checkIndex: currentCheckIndex + 1,
           groupIndex: currentGroupIndex
         });
     });
-    
-    /* 
+
+    /*
      * This event listens for an event that will tell us another check to go to,
-     * and sends the appropriate action. This and the above listener need to be two 
+     * and sends the appropriate action. This and the above listener need to be two
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
     api.registerEventListener('goToCheck', function(params) {
-        api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE, 
+        api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE,
             checkIndex: params.checkIndex, groupIndex: params.groupIndex});
     });
 
@@ -110,7 +111,7 @@ class View extends React.Component {
   /**
    * @description - This is an action callback. This is used to change our current check index
    * and group index within the store
-   * @param {object} lexicalData - This is the object found under the namespace that is 
+   * @param {object} lexicalData - This is the object found under the namespace that is
    * currently in the CheckStore's data
    * @param {object} action - This the exact action that is passed to api.sendAction, so that
    * we can have access to extra fields we might have put on it
@@ -150,7 +151,7 @@ class View extends React.Component {
     this.setState({
         currentCheck: currentCheck,
         currentWord: currentWord,
-        currentFile: this.getWordFile(currentWord)  
+        currentFile: this.getWordFile(currentWord)
     });
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
@@ -190,7 +191,7 @@ class View extends React.Component {
    * @description - Helper method for retrieving the verse from different languages
    * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'
    * that will be used to index into the 'common' namespace within CheckStore
-   */ 
+   */
   getVerse(language) {
     var currentCheck = this.state.currentCheck;
     var currentVerseNumber = currentCheck.verse;
@@ -215,12 +216,17 @@ class View extends React.Component {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
   		return (
-  			<div style={{maxWidth: "100%"}}>
+  			<div
+          style={{
+            maxWidth: "100%"
+          }}
+        >
   				<TPane />
+
           <Grid
             style={{
               minWidth: "100%",
-             
+
             }}
           >
             <Row className="show-grid">
@@ -229,22 +235,23 @@ class View extends React.Component {
                 textAlign: "center"
               }}
             >
-                <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
+                <WordComponent style={{height: "60px"}}word={this.state.currentWord.replace(extensionRegex, '')}/>
               </Col>
               <Col
                 sm={3} md={3} lg={3}
                 style={{
-                  textAlign: "center"
+                  textAlign: "center",
+									lineHeight:"35px"
                 }}
               >
-                <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' + 
+                <Well bsSize={'small'} style={{height: "60px"}}>{this.state.currentCheck.book + ' ' +
                   this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
               </Col>
             </Row>
             <Row className="show-grid">
-              <Col 
-                sm={2} 
-                md={2} 
+              <Col
+                sm={2}
+                md={2}
                 lg={2}
                 style={{
                   minWidth: "48%"
@@ -257,7 +264,7 @@ class View extends React.Component {
                   minWidth: "48%"
                 }}
               >
-                <GatewayVerseDisplay 
+                <GatewayVerseDisplay
                   wordObject={this.getWordObject(this.state.currentWord)}
                   verse={gatewayVerse}
                 />
@@ -287,10 +294,13 @@ class View extends React.Component {
                     }
                   ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
                 </ButtonGroup>
-                <ProposedChanges />
               </Col>
+
             </Row>
           </Grid>
+
+          <span>
+          </span>
   			</div>
   		);
   	}
