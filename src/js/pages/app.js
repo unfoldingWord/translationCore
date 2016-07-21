@@ -36,9 +36,6 @@ fetcher(params, function(){ },
   api.emitEvent('updateOriginalLanguage');} );
 const TPane = require(window.__base + "modules/t_pane/View");
 api.saveModule('TPane', TPane);
-const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
-phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
-const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
 tAFetcher(params, function() {}, function(err) {
@@ -69,6 +66,11 @@ pFetcher(params, function() {}, function() {});
 const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
 api.saveModule('ProposedChanges', ProposedChanges);
 
+
+const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
+phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
+const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
+
 module.exports = (
   <div>
   <NavBarComponent />
@@ -84,7 +86,7 @@ module.exports = (
       </Row>
       <Row>
         <Col style={RootStyles.CheckSection} xs={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
-          <Lexical />
+          <Phrase />
           <NextButton />
         </Col>
       </Row>
