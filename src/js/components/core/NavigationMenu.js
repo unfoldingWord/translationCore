@@ -11,30 +11,25 @@ class NavigationMenu extends React.Component {
     super();
     this.updateCheckObject = this.updateCheckObject.bind(this);
     this.state = {
-      checkObject: this.getCheckObject()
+      checkObject: {}
     };
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
-    api.registerEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckObject);
+    api.registerEventListener('changedCheckStatus', this.updateCheckObject);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
-    api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckObject);
+    api.removeEventListener('changedCheckStatus', this.updateCheckObject);
   }
   
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : api.getDataFromCheckStore(params.currentCheckNamespace));
     this.setState({
-      checkObject: checkData || this.getCheckObject()
+      checkObject: checkData
     });
-  }
-  
-  getCheckObject() {
-    // TODO: get checkType using api.getDataFromCommon()
-    return api.getDataFromCheckStore("PhraseCheck");
   }
 
   render() {
