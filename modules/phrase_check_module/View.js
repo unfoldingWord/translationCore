@@ -17,7 +17,6 @@ class PhraseChecker extends React.Component{
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateRender.bind(this));
     this.TPane = api.getModule('TPane');
     this.TADisplay = api.getModule('TADisplay');
     this.ProposedChanges = api.getModule('ProposedChanges');

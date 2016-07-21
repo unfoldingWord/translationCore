@@ -39,16 +39,14 @@ api.saveModule('TPane', TPane);
 const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
 phraseFetcher(params, function() {}, function() {
   api.emitEvent('updateGatewayLanguage');
-  api.emitEvent('changeCheckType', {currentCheckData: api.getDataFromCheckStore("PhraseCheck")});
 });
 const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
-tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
+tAFetcher(params, function() {}, function(err) {
   if (err) {
     console.error(err);
   }
-  api.emitEvent("changeGroupHeaders", sectionFileNamesToTitles);
   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
 });
 
@@ -75,7 +73,6 @@ lexicalFetcher(params, function() {}, function(error) {
   if (error) console.error(error); 
   api.emitEvent('updateGatewayLanguage');
   api.emitEvent('lexicalDataLoaded'); 
-  api.emitEvent('phraseDataLoaded'); 
 api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});} 
 ); 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
