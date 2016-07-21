@@ -10,10 +10,11 @@ var template = [
     label: 'File',
     submenu: [
       {
-        label: 'Import TS Project',
+        label: 'Save',
         click: function() {
-          CoreActions.updateModal(true);
-        }
+
+        },
+        accelerator: 'CmdOrCtrl+S'
       },
       {
         label: 'Create Project',
