@@ -77,24 +77,10 @@ module.exports = {
     });
   },
 
-  getProjectData: function(object) {
-    Dispatcher.handleAction({
-      type: consts.LOADED_PROJECT_DATA,
-      projData: object
-    });
-  },
-
   showOpenModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.OPEN_CREATED_PROJECT,
       visible: boolean
-    });
-  },
-
-  inputFilePath: function(file){
-    Dispatcher.handleAction({
-      type: consts.GET_PATH,
-      path: file
     });
   },
 

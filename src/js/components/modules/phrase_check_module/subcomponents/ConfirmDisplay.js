@@ -5,6 +5,7 @@ class ConfirmDisplay extends React.Component{
     return (
       <form>
         <label>{this.props.phrase}</label>
+        <br />
         <label>{this.props.phraseInfo}</label>
       </form>
     );
