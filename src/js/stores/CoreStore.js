@@ -75,16 +75,17 @@ class CoreStore extends EventEmitter {
   getCheckCategoryOptions(){
     // TODO: This is hard-coded -- it should be filled when CreateProject finishes
     if(!this.checkCategoryOptions) {
-      this.checkCategoryOptions = [
-        {
-          view: require(window.__base + "modules/lexical_check_module/View.js"),
-          namespace: "LexicalCheck"
-        },
-        {
-          view: require(window.__base + "modules/phrase_check_module/View.js"),
-          namespace: "PhraseCheck"
-        }
-      ]
+      // this.checkCategoryOptions = [
+      //   {
+      //     view: require(window.__base + "modules/lexical_check_module/View.js"),
+      //     namespace: "LexicalCheck"
+      //   },
+      //   {
+      //     view: require(window.__base + "modules/phrase_check_module/View.js"),
+      //     namespace: "PhraseCheck"
+      //   }
+      // ]
+      return null;
     }
     return this.checkCategoryOptions;
   }

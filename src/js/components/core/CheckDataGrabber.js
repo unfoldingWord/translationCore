@@ -30,6 +30,7 @@ var CheckDataGrabber = {
     }
   },
   sendFetchData: function() {
+    console.log('This is being run');
     if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
       gotFetch = CoreStore.getDataFromProject();
       this.saveNextModule();

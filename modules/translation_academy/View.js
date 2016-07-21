@@ -12,16 +12,18 @@ const Display = require('./TranslationAcademyDisplay');
 class View extends React.Component {
 	constructor() {
 		super();
+
+        this.updateSection = this.updateSection.bind(this);
 	}
 
 	componentWillMount() {
 		api.registerEventListener('changeTranslationAcademySection',
-			this.updateSection.bind(this));
+			this.updateSection);
 	}
 
 	componentWillUnmount() {
 		api.removeEventListener('changeTranslationAcademySection', 
-			this.updateSection.bind(this));
+			this.updateSection);
 	}
 
 	updateSection(params) {

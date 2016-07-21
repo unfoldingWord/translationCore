@@ -48,7 +48,7 @@ function getData(params, progressCallback, callback) {
               var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
               var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
               checkObject.LexicalCheck.sort(function(first, second) {
-                  return first.group - second.group;
+                  return stringCompare(first.group, second.group);
               });
               for (var group of checkObject['LexicalCheck']) {
                 for (var check of group.checks) {

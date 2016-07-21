@@ -30,44 +30,44 @@ const CheckStore = require('../stores/CheckStore.js');
   originalLanguagePath: window.__base + "data/ulgb",
   bookAbbr: "2ti"
 };
-const fetcher = require(window.__base + "modules/t_pane/FetchData.js");
-fetcher(params, function(){ },
-  function() { api.emitEvent('updateTargetLanguage');
-  api.emitEvent('updateOriginalLanguage');} );
-const TPane = require(window.__base + "modules/t_pane/View");
-api.saveModule('TPane', TPane);
+// const fetcher = require(window.__base + "modules/t_pane/FetchData.js");
+// fetcher(params, function(){ },
+//   function() { api.emitEvent('updateTargetLanguage');
+//   api.emitEvent('updateOriginalLanguage');} );
+// const TPane = require(window.__base + "modules/t_pane/View");
+// api.saveModule('TPane', TPane);
 
-const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
-tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
-  if (err) {
-    console.error(err);
-  }
-  api.emitEvent("changeGroupHeaders", sectionFileNamesToTitles);
-  api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
-});
+// const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
+// tAFetcher(params, function() {}, function(sectionFileNamesToTitles, err) {
+//   if (err) {
+//     console.error(err);
+//   }
+//   api.emitEvent("changeGroupHeaders", sectionFileNamesToTitles);
+//   api.emitEvent("changeTranslationAcademySection", {sectionName: "choose_team.md"})
+// });
 
-const tADisplay = require(window.__base + "modules/translation_academy/View.js")
-api.saveModule('TADisplay', tADisplay);
+// const tADisplay = require(window.__base + "modules/translation_academy/View.js")
+// api.saveModule('TADisplay', tADisplay);
 
-const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
-pFetcher(params, function() {}, function() {});
+// const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
+// pFetcher(params, function() {}, function() {});
 
-const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
-api.saveModule('ProposedChanges', ProposedChanges);
+// const ProposedChanges = require(window.__base + "modules/proposed_changes_module/View.js")
+// api.saveModule('ProposedChanges', ProposedChanges);
 
-const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
-lexicalFetcher(params, function() {}, function(error) {
-  if (error) console.error(error);
-  api.emitEvent('updateGatewayLanguage');
-  api.emitEvent('lexicalDataLoaded');
-  api.emitEvent('phraseDataLoaded');
-api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});}
-);
-const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
+// const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
+// lexicalFetcher(params, function() {}, function(error) {
+//   if (error) console.error(error);
+//   api.emitEvent('updateGatewayLanguage');
+//   api.emitEvent('lexicalDataLoaded');
+//   api.emitEvent('phraseDataLoaded');
+// api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});}
+// );
+// const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
-const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
-phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
-const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
+// const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
+// phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
+// const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
@@ -88,7 +88,6 @@ module.exports = (
         <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
-          <NextButton />
         </Col>
       </Row>
     </Grid>
