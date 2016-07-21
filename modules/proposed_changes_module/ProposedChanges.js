@@ -1,11 +1,12 @@
-const React = require('react');
-
-const FormGroup = require('react-bootstrap/lib/FormGroup.js');
-const FormControl = require('react-bootstrap/lib/FormControl.js');
-const Button = require('react-bootstrap/lib/Button.js');
-const Panel = require('react-bootstrap/lib/Panel.js');
 
 const api = window.ModuleApi;
+const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+const Well = ReactBootstrap.Well;
+const FormGroup = ReactBootstrap.FormGroup;
+const Button = ReactBootstrap.Button;
+const Panel = ReactBootstrap.Panel;
+
 //ProposedChanges is in the store
 const NAMESPACE = 'ProposedChanges';
 
@@ -22,7 +23,7 @@ class ProposedChanges extends React.Component {
   componentWillMount() {
     api.registerAction('proposedChangesUpdateText', this.actionHandleChange.bind(this));
     api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-    api.registerEventListener("changeCheck", this.updateCheck.bind(this));
+    api.registerEventListener("goToVerse", this.updateCheck.bind(this));
   }
 
   actionHandleChange(proposedChangesData, action) {
@@ -30,21 +31,20 @@ class ProposedChanges extends React.Component {
   }
 
   componentWillUnmount(){
-    //api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-    api.removeEventListener("changeCheck", this.updateCheck.bind(this));
+    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
+    api.removeEventListener("goToVerse", this.updateCheck.bind(this));
   }
 
-  updateCheck() {
-    // may change later
-    let newCheck = api.getFromCommon('currentCheck');
-    this.setState({chapter: newCheck.chapter, verse: newCheck.verse});
+
+  updateCheck(params) {
+    this.setState({chapter: params.chapterNumber, verse: params.verseNumber});
   }
 
   handleChange(e){
     this.value = e.target.value;
     console.log(this.value);
     //type and field are required
-    //the object below is passed as a argument to actionhandlechange
+    //the object below is passed as an argument to actionhandlechange()
     api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});
   }
 
@@ -59,22 +59,22 @@ class ProposedChanges extends React.Component {
             console.error(TARGET_LANGUAGE_ERROR);
         }
     }
-  /*
-  handleChange(e){
-    let proposedChange = e.target.value;
-    console.log(proposedChange);
-    CheckActions.changeCheckProperty("proposedChange", proposedChange.value);
-  }*/
   render() {
+    let targetLanguage = api.getDataFromCommon('targetLanguage');
+    let currentVerse = null;
+    if(targetLanguage && this.state.chapter && this.state.verse){
+      currentVerse = targetLanguage[this.state.chapter][this.state.verse];
+    }
+
     return (
-      <div style={{width:'50%'}}>
+      <div style={{width:'100%'}}>
         <Button bsStyle="primary"
         onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
           Propose changes
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <h5>{"Placeholder"/*api.getFromCommon("targetLanguage")[this.state.chapter][this.state.verse]*/}</h5>
+            <Well>{currentVerse}</Well>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"
