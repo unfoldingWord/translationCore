@@ -38,7 +38,7 @@ class NavigationMenu extends React.Component {
   render() {
     var menuList;
     if (!this.state.checkObject || !this.state.checkObject["groups"]) {
-      return <div></div>;
+      return <Well style={{minHeight:"100%"}}>{' '}</Well>;
     }
     menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
       var groupHeader = (
