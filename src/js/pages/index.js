@@ -6,7 +6,7 @@
   const remote = window.electron.remote;
   const {Menu} = remote;
   const TPane = require('../components/core/TPane');
-
+  const OpenModal = require('../components/core/AccessProjectModal');
 // var db = require('./db-init');
   const NavBarComponent = require('../components/core/NavBarComponent');
   const LoginModal = require('../components/core/LoginModal');
@@ -28,6 +28,7 @@
           <CheckModuleView />
           <SwitchCheckModuleDropdown />
           <SettingsModal />
+          <OpenModal />
         </div>
       );
       ReactDOM.render(Application, document.getElementById('content'));

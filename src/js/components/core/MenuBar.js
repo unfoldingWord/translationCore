@@ -14,6 +14,13 @@ var template = [
         click: function() {
           CoreActions.updateModal(true);
         }
+      },
+      {
+        label: "Open Project",
+        click: function() {
+          CoreActions.showOpenModal(true);
+        }
+
       }
     ]
   },

@@ -66,6 +66,18 @@ class CoreStore extends EventEmitter {
     return this.settingsVisibility;
   }
 
+  sendProjectData() {
+    return this.projectData;
+  }
+
+  getOpenModal() {
+    return this.openProjectModal;
+  }
+
+  getFilePath() {
+    return this.filepath;
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
@@ -104,6 +116,10 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
+      case consts.OPEN_CREATED_PROJECT:
+        this.openProjectModal = action.visible;
+        this.emitChange();
+        break;
       // For ExampleComponent
       case consts.ADD_TO_TEXT:
         this.exampleComponentText += "a";
