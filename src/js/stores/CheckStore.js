@@ -142,6 +142,7 @@ class CheckStore extends EventEmitter {
    * @param {function} callback - the function to remove from the specified event
    */
   removeEventListener(eventType, callback) {
+    console.log('Removing: ' + eventType);
     this.removeListener(eventType, callback);
   }
 
@@ -176,9 +177,10 @@ class CheckStore extends EventEmitter {
   removeAction(type, callback) {
     if (type in this.actionCallbacks) {
       var i = 0;
-      for (var fun of this.actionCallbacks.type) {
+      for (var fun of this.actionCallbacks[type]) {
         if (fun === callback) {
-          this.actionCallbacks.splice(i, 0);
+          console.log('we removed');
+          this.actionCallbacks[type].splice(i, 0);
           i++;
         }
       }

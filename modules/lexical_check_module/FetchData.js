@@ -168,7 +168,9 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
   var returnArray = [];
   var aliases = wordObject.aliases;
   for (var alias of aliases) {
-    var index = verseObject.text.indexOf(alias, 0);
+    var wordRegex = new RegExp('[\\W\\s]' + alias + '[\\W\\s]', 'i');
+    var currentText = verseObject.text;
+    var index = currentText.search(wordRegex);
     while (index != -1) {
       returnArray.push({
         "chapter": chapterNumber,
@@ -176,7 +178,8 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
         "checked": false,
         "status": "UNCHECKED"
       });
-      index = verseObject.text.indexOf(alias, index + 1);
+      currentText = currentText.slice(index + 1);
+      index = currentText.search(wordRegex);
     }
   }
   return returnArray;
