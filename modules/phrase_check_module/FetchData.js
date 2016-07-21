@@ -77,7 +77,8 @@ var parseObject = function(object){
   return phraseObject;
 }
 
-// Returns an object where the keys are TA section filenames and the values are titles
+// Saves an object where the keys are TA section filenames and the values are titles.
+// This will be called when TA is loaded
 function getSectionFileNamesToTitles(params) {
   var sections = params.sections;
 	var sectionFileNamesToTitles = {};
@@ -89,6 +90,8 @@ function getSectionFileNamesToTitles(params) {
 	translationAcademySectionTitles = sectionFileNamesToTitles;
 }
 
+// Waits until the translationAcademySectionTitles object exists,
+// then changes the group headers to TA section titles
 function checkIfTranslationAcademyIsLoaded() {
   if(translationAcademySectionTitles) {
     changeGroupHeaders(phraseData, translationAcademySectionTitles);
@@ -99,6 +102,7 @@ function checkIfTranslationAcademyIsLoaded() {
   }
 }
 
+// Changes the group headers from filenames to TA section titles
 function changeGroupHeaders(phraseObject, groupNamesToTitles) {
   for(var group of phraseObject.groups) {
     var filename = group['group'] + '.md';
@@ -109,13 +113,12 @@ function changeGroupHeaders(phraseObject, groupNamesToTitles) {
   }
 }
 
+// Saves phrase data into the CheckStore
 function saveData(phraseObject) {
-  //put the data in the CheckStore
   api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['groups']);
   api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
   api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
   // TODO: eventually, this event will be called when the check type is selected, not in fetchData
-  api.emitEvent('phraseDataLoaded');
   onCompleteFunction(null);
 }
 

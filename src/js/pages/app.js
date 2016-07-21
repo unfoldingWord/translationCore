@@ -73,7 +73,6 @@ lexicalFetcher(params, function() {}, function(error) {
   if (error) console.error(error); 
   api.emitEvent('updateGatewayLanguage');
   api.emitEvent('lexicalDataLoaded'); 
-  api.emitEvent('phraseDataLoaded'); 
 api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});} 
 ); 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
