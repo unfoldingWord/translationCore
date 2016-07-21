@@ -1,10 +1,19 @@
+/*
+ * Events emitted:
+ * 	translationAcademyLoaded:
+ * 		params:
+ * 			sections: an object where keys are section filenames, and values are section text
+ * 		listeners:
+ * 			PhraseChecker FetchData: waits for translation academy to load so it can use
+ * 			the section titles as its group headers
+ */
 
 const api = window.ModuleApi;
 
 const TranslationAcademyScraper = require('./TranslationAcademyScraper');
 
 function fetchData(params, progress, callback) {
-	TranslationAcademyScraper.getTranslationAcademySectionList(null, function(sectionList) {
+	TranslationAcademyScraper.getFullTranslationAcademySectionList(function(sectionList) {
 		fetchAllSections(sectionList, progress, callback)
 	});
 }
@@ -24,21 +33,11 @@ function fetchAllSections(sectionList, progress, callback) {
 		var sectionList = TranslationAcademyScraper.sectionList;
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
-		callback(getSectionFileNamesToTitles(sectionList), null);
+  	api.emitEvent("translationAcademyLoaded", {'sections': sectionList});
+		callback();
 	}, reason => {
-		callback(null, 'Translation Academy failed to fetch.');
+		callback('Translation Academy failed to fetch section text.');
 	});
-}
-
-// Returns an object where the keys are section filenames and the values are titles
-function getSectionFileNamesToTitles(sectionList) {
-	var sectionFileNamesToTitles = {};
-	for(var sectionFileName in sectionList) {
-		var titleKeyAndValue = sectionList[sectionFileName]['file'].match(/title: .*/)[0];
-		var title = titleKeyAndValue.substr(titleKeyAndValue.indexOf(':') + 1);
-		sectionFileNamesToTitles[sectionFileName] = title;
-	}
-	return sectionFileNamesToTitles;
 }
 
 module.exports = fetchData;

@@ -94,11 +94,13 @@ class CoreStore extends EventEmitter {
       this.checkCategoryOptions = [
         {
           view: require(window.__base + "modules/lexical_check_module/View.js"),
-          namespace: "LexicalCheck"
+          namespace: "LexicalCheck",
+          title: "Lexical Check"
         },
         {
           view: require(window.__base + "modules/phrase_check_module/View.js"),
-          namespace: "PhraseCheck"
+          namespace: "PhraseCheck",
+          title: "Figures of Speech, Morphology, Grammar Checks"
         }
       ]
     }

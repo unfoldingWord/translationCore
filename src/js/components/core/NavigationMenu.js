@@ -16,11 +16,11 @@ class NavigationMenu extends React.Component {
   }
 
   componentWillMount() {
-    api.registerEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckObject);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckObject);
   }
   
   updateCheckObject(params) {
@@ -61,6 +61,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <Well>
+          <h3>Checks</h3>
           {menuList}
         </Well>
       </div>

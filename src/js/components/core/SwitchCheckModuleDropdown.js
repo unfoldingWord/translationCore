@@ -39,7 +39,7 @@ class SwitchCheckModuleDropdown extends React.Component {
   render() {
     var optionNodes = this.state.checkCategoryOptions.map(function(checkCategory){
       return (
-        <option key={checkCategory.namespace} value={checkCategory.namespace}>{checkCategory.namespace}</option>
+        <option key={checkCategory.namespace} value={checkCategory.namespace}>{checkCategory.title}</option>
       )
     });
 

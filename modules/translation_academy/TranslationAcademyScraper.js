@@ -1,27 +1,41 @@
 
 
 const BASE_URL = "https://git.door43.org/";
-const TA_URL = "Door43/en-ta-translate-vol1/src/master/content";
+const TA_URLS = [
+  "Door43/en-ta-translate-vol1/src/master/content",
+  "Door43/en-ta-translate-vol2/src/master/content"
+];
 // creates TranslationAcademyScraper class
 class TranslationAcademyScraper {
   constructor() {
     this.sectionList = {};
-    this.link = null;
   }
-// gets the list of sections from tranlation academy by its url then fires the call back when done
-  getTranslationAcademySectionList(url, callback) {
+  
+  getFullTranslationAcademySectionList(callback) {
+    var promises = [];
+    for(let taUrl of TA_URLS) {
+		  var promise = new Promise((resolve, reject) => {
+        this.getTranslationAcademySectionListForUrl(taUrl, resolve);
+      });
+      promises.push(promise);
+    }
+	  Promise.all(promises).then(value => {
+      callback(this.sectionList);
+    }, reason => {
+      console.log('Translation Academy failed to load section list.');
+    });
+  }
+  
+  // Gets the list of sections from translation academy by its url then fires the call back when done
+  getTranslationAcademySectionListForUrl(taUrl, callback) {
     var _this = this;
     var oReq = new XMLHttpRequest();
     oReq.onload = function() {
-// this defines a new function that will be called later
       var links = getItemsBehindLink(this.response);
       _this.sectionList = mergeObjects(_this.sectionList, links);
-      _this.link = url;
       callback(_this.sectionList);
     };
-// created a new httprequest
-
-    oReq.open("Get", url || BASE_URL + TA_URL, true);
+    oReq.open("Get", BASE_URL + taUrl, true);
     oReq.send();
   }
 
