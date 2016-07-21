@@ -25,31 +25,30 @@ class TranslationWordsFetcher {
 * @param {function} callback - called with (error, data) once operation is finished
 */
   getWordList(url, callback = () => ({})) {
-// console.log('Calling getWordList');
     var link = url || GITHUB_API_URL;
 
     var request = new XMLHttpRequest();
 
     var _this = this;
 
-// Parses each github api object individually
+    // Parses each github api object individually
     function parseEntry(entryObj, report) {
       if (entryObj.type == "file") {
         _this.wordList.push({
           "name": entryObj.name,
           "link": entryObj.download_url
         });
-// console.log('Reporting');
         report();
       }
-/**
-* this is a directory, recursively call getWordList with
-*  the directory's URL
-*/
+      /**
+      * this is a directory, recursively call getWordList with
+      *  the directory's URL
+      */
       else if (entryObj.type == "dir") {
-/** pass in report as the callback because we don't want callback to
-* be called with a subdirectory's words
-*/
+        /*
+         * pass in report as the callback because we don't want callback to
+         * be called with a subdirectory's words
+         */
         _this.getWordList(entryObj.url, report);
       }
 else {
@@ -60,7 +59,7 @@ else {
 
     request.onload = function() {
       var listOfEntries = JSON.parse(this.response);
-// function that ensures we don't call the callback until we're completely done
+      // function that ensures we don't call the callback until we're completely done
       iterateOver(listOfEntries, parseEntry, function(error) {
         if (error) {
           callback(error);
@@ -120,20 +119,47 @@ else {
   }
 
   getAliases(progCallback = () => {}, callback = () => {}) {
-    var numDone = 0;
-    const numToDo = this.wordList.length;
+    var calls = [];
+    function iterateOverCalls(start=0, end=100) {
+      end = Math.min(end, calls.length);
+      start = Math.min(start, end);
+      if (start == end) {
+        callback();
+      }
+      var callsNow = calls.slice(start, end);
+      iterateOver(
+        callsNow, 
+        function(listItem, report) {
+          listItem(function() {
+            report();
+            progCallback(1);
+          });
+        }, 
+        function() {
+          if (end == calls.length) {
+            callback();
+          }
+          else {
+            iterateOverCalls(start + 100, end + 100);
+          }
+        }
+      );
+    }
+
     var _this = this;
     for (let word of this.wordList) {
-      this.getWord(word.name, (err, file) => {
-        if (err) {
-          console.log(err);
-          callback(err);
-          return;
-        }
-        else {
-          word.aliases = parseFile(file);
-        }
-        finished(); // for the progCallback
+      calls.push(function(report) {
+        _this.getWord(word.name, (err, file) => {
+          if (err) {
+            console.error(err);
+            report(err);
+            return;
+          }
+          else {
+            word.aliases = parseFile(file);
+          }
+          report(); // for the progCallback
+        });
       });
     }
 
@@ -145,17 +171,14 @@ else {
         [, aliasRes] = aliasReg.exec(file);
       }
       catch (e) {
-        console.log(e);
+        console.error(e);
         return [];
       }
       // split by comma and take off hanging spaces
       return aliasRes.split(",").map(str => str.trim());
     }
 
-    function finished() {
-      progCallback(++numDone, numToDo);
-      if (numDone == numToDo) callback(undefined);
-    }
+    iterateOverCalls();
   }
 }
 
@@ -206,7 +229,6 @@ else {
 }
 
 function iterateOver(list, iterator, callback) {
-// console.log('Iterating over list of length: ' + list.length);
   var doneCount = 0;
 
   function report(error) {

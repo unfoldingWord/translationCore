@@ -18,9 +18,13 @@ class PhraseChecker extends React.Component{
     this.state = {
       currentCheck: null
     }
+    this.updateState = this.updateState.bind(this);
+    this.goToNext = this.goToNext.bind(this);
+    this.goToCheck = this.goToCheck.bind(this);
   }
 
   componentWillMount(){
+    this.updateState();
     var _this = this;
     //This action will update our indexes in the store
     api.registerAction('changePhraseCheck', this.changeCurrentCheckInCheckStore.bind(this));
@@ -34,33 +38,43 @@ class PhraseChecker extends React.Component{
      * from the event, we have to get the current indexes from the store and increment it
      * manually before sending the action to update the store
      */
-    api.registerEventListener('goToNext', function(params) {
-        var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-        var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-        api.sendAction({
-          type: 'changePhraseCheck',
-          field: NAMESPACE,
-          checkIndex: currentCheckIndex + 1,
-          groupIndex: currentGroupIndex
-        });
-    });
+    api.registerEventListener('goToNext', this.goToNext);
 
     /*
      * This event listens for an event that will tell us another check to go to,
      * and sends the appropriate action. This and the above listener need to be two
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
-    api.registerEventListener('goToCheck', function(params) {
-        api.sendAction({
-          type: 'changePhraseCheck',
-          field: NAMESPACE,
-          checkIndex: params.checkIndex,
-          groupIndex: params.groupIndex
-        });
-    });
+    api.registerEventListener('goToCheck', this.goToCheck);
 
-    api.registerEventListener('phraseDataLoaded', function(params) {
-      _this.updateState();
+    api.registerEventListener('phraseDataLoaded', this.updateState);
+
+    // api.registerEventListener('changeCheckType', this.updateState.bind(this));
+  }
+
+  componentWillUnmount(){
+    api.removeEventListener('phraseDataLoaded', this.updateState);
+    api.removeEventListener('goToCheck', this.goToCheck);
+    api.removeEventListener('gotoNext', this.gotoNext);
+  }
+
+  goToCheck(params){
+    api.sendAction({
+      type: 'changePhraseCheck',
+      field: NAMESPACE,
+      checkIndex: params.checkIndex,
+      groupIndex: params.groupIndex
+    });
+  }
+
+  goToNext(params) {
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    api.sendAction({
+      type: 'changePhraseCheck',
+      field: NAMESPACE,
+      checkIndex: currentCheckIndex + 1,
+      groupIndex: currentGroupIndex
     });
   }
 
@@ -115,13 +129,14 @@ class PhraseChecker extends React.Component{
    * data found in the store
    */
   updateState() {
+    console.log("updating");
     var newGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var newCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var newCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex]['checks'][newCheckIndex];
     this.setState({
         currentCheck: newCheck,
     });
-    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+    api.emitEvent('goToVerse', {chapterNumber: newCheck.chapter, verseNumber: newCheck.verse});
   }
 
   /**

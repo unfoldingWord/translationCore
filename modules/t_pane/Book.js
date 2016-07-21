@@ -13,68 +13,76 @@ const api = window.ModuleApi;
 const React = api.React;
 
 class Book extends React.Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
+    this.goToVerseListener = this.goToVerseListener.bind(this);
+  }
+
+  componentWillMount() {
+    api.registerEventListener('goToVerse', this.goToVerseListener);
+  }
+
+  componentWillUnmount() {
+    api.removeEventListener('goToVerse', this.goToVerseListener);
+  }
+
+  goToVerseListener(params) {
+    var verseComp = this.refs[params.chapterNumber.toString() + ":" + params.verseNumber.toString()];
+    var element = api.findDOMNode(verseComp);
+    if (element) {
+      element.scrollIntoView();
+    }
+  }
+
+  render() {
+    var chapterArray = [];
+    var title = "";
+
+    var list = this.props.input;
+    if (typeof(list) === 'object') {
+      var keysSorted = Object.keys(list);
+      keysSorted.sort();
     }
 
-    componentWillMount() {
-        var _this = this;
-        api.registerEventListener('goToVerse', function(params) {
-            var verseComp = _this.refs[params.chapterNumber.toString() + ":" + params.verseNumber.toString()];
-            var element = api.findDOMNode(verseComp);
-            element.scrollIntoView();
-        });
+    if (this.props.input !== undefined) {
+      if (this.props.input.hasOwnProperty('title')) {
+        title = this.props.input.title;
+      }
     }
-
-    render() {
-        var chapterArray = [];
-        var title = "";
-
-        var list = this.props.input;
-        if (typeof(list) === 'object') {
-            var keysSorted = Object.keys(list);
-            keysSorted.sort();
+    for (var key in keysSorted) {
+      var objectKey = keysSorted[key];
+      if (this.props.input.hasOwnProperty(objectKey) && objectKey !== 'title') {
+        var chapterNum = parseInt(objectKey);
+        var arrayOfVerses = [];
+        for (var verse in this.props.input[objectKey]) {
+          if (this.props.input[objectKey].hasOwnProperty(verse)) {
+            var verseId = objectKey + ':' + verse;
+            var verseText = this.props.input[objectKey][verse];
+            arrayOfVerses.push(
+              <Verse
+                key={verseId}
+                chapterNumber={chapterNum}
+                verseNumber={verse}
+                verseText={verseText}
+                ref={chapterNum + ":" + verse}
+              />
+            );
+          }
         }
-
-        if (this.props.input !== undefined) {
-            if (this.props.input.hasOwnProperty('title')) {
-                title = this.props.input.title;
-            }
-        }
-        for (var key in keysSorted) {
-            var objectKey = keysSorted[key];
-            if (this.props.input.hasOwnProperty(objectKey) && objectKey !== 'title') {
-                var chapterNum = parseInt(objectKey);
-                var arrayOfVerses = [];
-                for (var verse in this.props.input[objectKey]) {
-                    if (this.props.input[objectKey].hasOwnProperty(verse)) {
-                        var verseId = objectKey + ':' + verse;
-                        var verseText = this.props.input[objectKey][verse];
-                        arrayOfVerses.push(
-                            <Verse 
-                                key={verseId} 
-                                chapterNumber={chapterNum} 
-                                verseNumber={verse} 
-                                verseText={verseText}
-                                ref={chapterNum + ":" + verse}
-                            />
-                        );
-                    }
-                }
-                chapterArray.push(
-                    <Chapter key = {chapterNum}
-                        chapterNum = {chapterNum}
-                        arrayOfVerses = {arrayOfVerses}/>
-                );
-            }
-        }
-        return (
-            <div>
-                <BookTitle title ={title} />
-                    {chapterArray}
-            </div>
+        chapterArray.push(
+          <Chapter key = {chapterNum}
+            chapterNum = {chapterNum}
+            arrayOfVerses = {arrayOfVerses}/>
         );
+      }
     }
+    return (
+      <div>
+        <BookTitle title ={title} />
+          {chapterArray}
+      </div>
+    );
+  }
 }
 
 

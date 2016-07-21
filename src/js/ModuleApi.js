@@ -120,6 +120,10 @@ class ModuleApi {
                 return bookAbbr;
         }
     }
+
+    logCheckStore() {
+        console.log(CheckStore.storeData);
+    }
 }
 
 const api = new ModuleApi();
