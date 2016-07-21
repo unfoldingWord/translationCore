@@ -36,9 +36,6 @@ fetcher(params, function(){ },
   api.emitEvent('updateOriginalLanguage');} );
 const TPane = require(window.__base + "modules/t_pane/View");
 api.saveModule('TPane', TPane);
-const phraseFetcher = require(window.__base + "modules/phrase_check_module/FetchData.js");
-phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} ); 
-const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
 
 const tAFetcher = require(window.__base + "modules/translation_academy/FetchData.js");
 tAFetcher(params, function() {}, function(err) {
@@ -52,9 +49,6 @@ tAFetcher(params, function() {}, function(err) {
 const tADisplay = require(window.__base + "modules/translation_academy/View.js")
 api.saveModule('TADisplay', tADisplay);
 
-
-
-
 const pFetcher = require(window.__base + "modules/proposed_changes_module/FetchData.js");
 pFetcher(params, function() {}, function() {});
 
@@ -62,16 +56,20 @@ const ProposedChanges = require(window.__base + "modules/proposed_changes_module
 api.saveModule('ProposedChanges', ProposedChanges);
 
 const lexicalFetcher = require(window.__base + "modules/lexical_check_module/FetchData.js");
-lexicalFetcher(params, function() {}, function(error) { 
-  if (error) console.error(error); 
+lexicalFetcher(params, function() {}, function(error) {
+  if (error) console.error(error);
   api.emitEvent('updateGatewayLanguage');
-  api.emitEvent('lexicalDataLoaded'); 
-  api.emitEvent('phraseDataLoaded'); 
-api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});} 
-); 
-const ModuleWrapper = require('../components/modules/ModuleWrapper');
-// const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
+  api.emitEvent('lexicalDataLoaded');
+  api.emitEvent('phraseDataLoaded');
+api.emitEvent('changeCheckType', {currentCheckNamespace: "LexicalCheck"});}
+);
+const Lexical = require(window.__base + "modules/lexical_check_module/View.js");
 
+const phraseFetcher = require(window.__base + "/modules/phrase_check_module/FetchData.js");
+phraseFetcher(params, function() {}, function() {api.emitEvent('updateGatewayLanguage');} );
+const Phrase = require(window.__base + "modules/phrase_check_module/View.js");
+
+const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 module.exports = (
   <div>
