@@ -28,6 +28,8 @@ class Login extends React.Component {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
       CoreActions.updateButtonStatus(true);
+      CoreActions.updateLogoutButton(true);
+      CoreActions.updateProfileVisibility(true);
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {
@@ -59,7 +61,7 @@ class Login extends React.Component {
       return (
         <Registration />
       );
-    } else {
+    }else{
       return (
         <Grid>
           <Row className="show-grid">

@@ -6,48 +6,61 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const style = require('../../styles/loginStyle');
 const Login = require('./Login.js');
+const Profile= require('./Profile');
 
 class LoginModal extends React.Component {
     constructor(){
       super();
-      this.state = {visibleLogin: false};
+      this.state = {visibleLoginModal: false, profile: false};
     }
 
     componentWillMount() {
       CoreStore.addChangeListener(this.updateLoginModal.bind(this));
+      CoreStore.addChangeListener(this.updateProfileVisibility.bind(this));
     }
 
     componentWillUnmount() {
       CoreStore.removeChangeListener(this.updateLoginModal.bind(this));
+      CoreStore.removeChangeListener(this.updateProfileVisibility.bind(this));
+
     }
 
     updateLoginModal(){
-      this.setState({visibleLogin: CoreStore.getLoginModal()});
+      this.setState({visibleLoginModal: CoreStore.getLoginModal()});
     }
 
-    open(){
-      this.setState({visibleLogin: true});
+    updateProfileVisibility(){
+      this.setState({profile: CoreStore.getProfileVisibility()});
     }
+
     close(){
       CoreActions.updateLoginModal(false);
     }
 
     render(){
+      let display;
+      console.log(this.state.profile)
+      if(this.state.profile === false){
+        display = <Login />
+      }else{
+        display = <Profile />
+      }
+
       return(
         <div style={style.modal}>
-          <Modal show={this.state.visibleLogin} onHide={this.close.bind(this)}>
+          <Modal show={this.state.visibleLoginModal} onHide={this.close.bind(this)}>
             <Modal.Header closeButton>
               <Modal.Title>Login Page</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Login />
+              {display}
             </Modal.Body>
             <Modal.Footer>
-              <Button type={"button"}>Close</Button>
+              <Button type={"button"} onClick={this.close.bind(this)}>Close</Button>
             </Modal.Footer>
           </Modal>
       </div>
-    );
+      );
   }
 }
 
