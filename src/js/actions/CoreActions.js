@@ -63,5 +63,12 @@ module.exports = {
       type: consts.SEND_FETCH_DATA,
       array: FetchDataArray
     });
-  }
+  },
+  
+  sendProgressForKey: function(progressKeyObj) {
+  Dispatcher.handleAction({
+    type: consts.SEND_PROGRESS_FOR_KEY,
+    progressRecieved: progressKeyObj
+  });
+}
 };

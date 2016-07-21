@@ -2,15 +2,14 @@ const CoreStore = require('../.././stores/CoreStore');
 const CoreActions = require('../.././actions/CoreActions');
 const CheckStore = require('../.././stores/CheckStore');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const Report = require('./ChangesReportSaver');
 const path = require('path');
-const book = 'mat';
 const api = window.ModuleApi;
+const Books = require('./booksOfBible');
 
 var currentCheckName;
 var gotFetch;
 var indexOfModule = 0;
-
+var book = '2jn';
 var CheckDataGrabber = {
   addListner: function() {
     CoreStore.addChangeListener(this.sendFetchData.bind(this));
@@ -43,10 +42,6 @@ var CheckDataGrabber = {
     }
   },
   onComplete: function(err, data) {
-    if (data) {
-      Report.saveChecks(data, currentCheckName);
-    }
-
       if (gotFetch.length == 0) {
         //CoreStore.sendViews(views);
         //var View = require(path + '/View');

@@ -10,13 +10,13 @@ const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const CheckStore = require('../.././stores/CheckStore');
-const project = require('./CreateNewProject');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const FileModule = require('./FileModule');
 const {dialog} = window.electron.remote;
 const Loader = require('./Loader');
 const ENTER = 13;
+const booksOfBible = require('./booksOfBible');
 
 const ProjectModal = React.createClass({
   getInitialState: function() {
