@@ -17,6 +17,9 @@ const path = require('path');
 
 const parser = require('./usfm-parse.js');
 
+const IMPORT_ERROR = 'Import Error';
+const MISSING_MANIFEST = 'Please make sure that your folder includes a manifest.json file';
+
 var manifestSource = '';
 var bookName = '';
 var joinedChunks = {};
@@ -33,9 +36,8 @@ function sendToReader(file) {
     manifestSource = file;
     FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
   } catch (error) {
-    dialog.showErrorBox('Import Error', 'Please make sure that ' +
-    'your folder includes a manifest.json file.');
-    console.log(error);
+    dialog.showErrorBox(IMPORT_ERROR, MISSING_MANIFEST);
+    console.error(error);
   }
 }
 /**
@@ -52,7 +54,7 @@ function readInManifest(manifest) {
   try {
     FileModule.readFile(path.join('data', 'ulgb', bookFileName), openOriginal);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
   let finishedChunks = parsedManifest.finished_chunks;
   for (let chapterVerse in finishedChunks) {
@@ -75,7 +77,7 @@ function openUsfmFromChunks(chunk) {
     var chunkLocation = path.join(manifestSource, chunk[0], fileName);
     FileModule.readFile(chunkLocation, joinChunks);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 /**

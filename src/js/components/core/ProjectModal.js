@@ -16,6 +16,7 @@ const CheckDataGrabber = require('./CheckDataGrabber');
 const FileModule = require('./FileModule');
 const {dialog} = window.electron.remote;
 const ENTER = 13;
+const LanguageInput = require('./LanguageInput');
 
 const ProjectModal = React.createClass({
   getInitialState: function() {
@@ -48,7 +49,14 @@ const ProjectModal = React.createClass({
         showModal: true,
         modalValue: modal,
         modalTitle:"Select Modules To Load",
-        doneText:"Finished"
+        doneText:"Choose Languages"
+      });
+    } else if (modal === 'Languages') {
+      this.setState({
+        showModal: true,
+        modalValue: modal,
+        modalTitle: 'Select Original, Gateway, and Target Languages',
+        doneText: 'Finished'
       });
     }
   },
@@ -84,10 +92,12 @@ const ProjectModal = React.createClass({
       if (tempFetchDataArray.length > 0) {
         CoreActions.getFetchData(tempFetchDataArray);
       }
-      this.close();
+      CoreActions.showCreateProject("Languages");
     }
     else if (this.state.modalValue == "Create") {
       CoreActions.showCreateProject("Check");
+    } else if (this.state.modalValue === 'Languages') {
+      this.close();
     }
   },
   isModule: function(filepath, file){
@@ -108,26 +118,26 @@ const ProjectModal = React.createClass({
     }
   },
   getModule: function() {
-  dialog.showOpenDialog({
-    properties: ['openDirectory']
-  }, function(filename) {
-    if (filename !== undefined) {
-      this.addMoreModules(filename);
+    dialog.showOpenDialog({
+      properties: ['openDirectory']
+    }, function(filename) {
+      if (filename !== undefined) {
+        this.addMoreModules(filename);
+      }
+    });
+  },
+  addMoreModules: function(filename) {
+    try {
+      FileModule.readFile(file, readFile);
+      console.log(readFile);
+    } catch (error) {
+      dialog.showErrorBox('Import Error', 'Check Selected Module.');
+      console.log(error);
     }
-  });
-},
-addMoreModules: function(filename) {
-  try {
-    FileModule.readFile(file, readFile);
-    console.log(readFile);
-  } catch (error) {
-    dialog.showErrorBox('Import Error', 'Check Selected Module.');
-    console.log(error);
-  }
-  var filename = this.getModule();
-  var newModule = filename[0].split('/').pop();
-  this.changeModalBody("Check", newModule);
-},
+    var filename = this.getModule();
+    var newModule = filename[0].split('/').pop();
+    this.changeModalBody("Check", newModule);
+  },
   changeModalBody: function(modalBody, currentChecks = []) {
     if (modalBody == "Check") {
       try {
@@ -143,11 +153,13 @@ addMoreModules: function(filename) {
       return (<SelectCheckType ref={this.state.modalValue} checks={currentChecks} modalTitle={this.state.modalTitle}
         controlLabelTitle={this.state.controlLabelTitle} placeHolderText={this.state.placeHolderText} FetchDataArray={this.state.FetchDataArray}
         onClick={this.selectedModule} addMoreModules={this.getModule}/>)
-      }
-      else if (modalBody == "Create") {
+      } else if (modalBody == "Create") {
         return (<CreateProjectForm modalTitle={this.state.modalTitle} ref={this.state.modalValue} controlLabelTitle={this.state.controlLabelTitle}
           placeHolderText={this.state.placeHolderText} setProjectName={this.setProjectName}/>)
-        }
+      } else if (modalBody === 'Languages') {
+        return (<LanguageInput modalTitle={this.state.modalTitle}/>);
+      }
+
       },
       makePathForChecks: function(check) {
         var path = window.__base + 'src/js/components/modules/' + check;
