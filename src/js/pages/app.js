@@ -8,7 +8,6 @@ const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleD
 const NavBarComponent = require('../components/core/NavBarComponent');
 const LoginModal = require('../components/core/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
-// const RootStyles = require('./RootStyle');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -30,20 +29,18 @@ const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 module.exports = (
-  <div>
+  <div className='fill-height'>
   <NavBarComponent />
   <SettingsModal />
   <LoginModal />
   <OpenProject />
-    <Grid fluid>
-      <Row>
-        <Col style={RootStyles.ScrollableSection} xs={2} sm={2} md={2} lg={2}>
+    <Grid fluid className='fill-height'>
+      <Row className='fill-height'>
+        <Col style={RootStyles.ScrollableSection} xs={5} sm={4} md={3} lg={2}>
           <NavMenu />
           <ProjectModal />
         </Col>
-      </Row>
-      <Row>
-        <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
+        <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />

@@ -1,0 +1,15 @@
+/* 
+** Fills the screen, so that the ScrollableSection in
+** RootStyles.js works. Every ancestor of the ScrollableSection
+** must have the fill-height class 
+*/
+body, html, #content, .fill-height {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+/* Padding for navbar */
+body {
+  padding-top: 65px;
+  padding-bottom: 5px;
+}
