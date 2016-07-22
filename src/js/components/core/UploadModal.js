@@ -46,7 +46,6 @@ const UploadModal = React.createClass({
     if (this.state.showFile === true) {
       mainContent = <DragDrop
                       sendFilePath={this.sendFilePath}
-                      passBack={this.props.passBack}
                     />;
     } else {
       mainContent = (<div>

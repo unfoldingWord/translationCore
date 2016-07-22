@@ -43,8 +43,7 @@ const DragDrop = React.createClass({
     var _this = this;
     if (files !== undefined) {
       // FileImport(files[0].path);
-      this.setState({filePath: files[0].path});
-      this.props.passBack(files[0].path);
+      _this.setState({filePath: files[0].path});
       _this.props.sendFilePath(files[0].path);
     }
   },
@@ -56,7 +55,6 @@ const DragDrop = React.createClass({
       if (filename !== undefined) {
         // FileImport(filename[0]);
         _this.setState({filePath: filename[0]});
-        _this.props.passBack(filename[0]);
         _this.props.sendFilePath(filename[0]);
       }
     });

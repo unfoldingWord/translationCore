@@ -95,7 +95,7 @@ const ProjectModal = React.createClass({
         CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
       }
       var _this = this;
-      var manifestLocation = path.join(this.targetLanugageLocation, 'manifest.json');
+      var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       FileModule.readFile(manifestLocation, function(data){
         var parsedManifest = JSON.parse(data);
         var bookTitle = parsedManifest.project.name.split(' ');
@@ -103,7 +103,7 @@ const ProjectModal = React.createClass({
 
         var projectData = {
           local: true,
-          target_language: _this.targetLanugageLocation,
+          target_language: _this.params.targetLanguagePath,
           original_language: ('data/ulgb/' + bookFileName),
           gateway_language: '',
           user: [{username: 'ihoegen', email: 'ianhoegen@gmail.com'}],
@@ -122,10 +122,7 @@ const ProjectModal = React.createClass({
       CoreActions.showCreateProject("Create");
     }
   },
-  getTargetLocation: function(data) {
-    this.targetLanugageLocation = data;
-  },
-  saveSaveLocation: function(data) {
+  setSaveLocation: function(data) {
     this.saveLocation = data;
   },
   setTargetLanguageFilePath: function(path) {
@@ -139,9 +136,9 @@ const ProjectModal = React.createClass({
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
-      return (<ProjectName projectName={this.state.projecName} ref={"ProjectName"} passBack={this.saveSaveLocation}/>);
+      return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"} passBack={this.setSaveLocation}/>);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath} passBack={this.getTargetLocation}/>);
+      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }
   },
 
