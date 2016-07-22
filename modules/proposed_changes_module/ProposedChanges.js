@@ -47,7 +47,7 @@ class ProposedChanges extends React.Component {
 
   handleChange(e){
     this.value = e.target.value;
-    console.log(this.value);
+    //console.log(this.value);
     //type and field are required
     //the object below is passed as an argument to actionhandlechange()
     api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});

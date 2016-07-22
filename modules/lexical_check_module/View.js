@@ -6,8 +6,8 @@ const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
 //Modules not defined within lexical_check_module
-const TPane = api.getModule('TPane');
-const ProposedChanges = api.getModule('ProposedChanges');
+var TPane = null;
+var ProposedChanges = null;
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -27,7 +27,7 @@ const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
-const NAMESPACE = "LexicalCheck",
+const NAMESPACE = "LexicalChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
   UNABLE_TO_FIND_WORD = "Unable to find wordobject",
@@ -46,6 +46,9 @@ class View extends React.Component {
         currentCheck: null,
         currentTranslationWordFile: null
     }
+    TPane = api.getModule('TPane');
+    ProposedChanges = api.getModule('ProposedChanges');
+
     this.updateState = this.updateState.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
@@ -83,7 +86,7 @@ class View extends React.Component {
     api.registerEventListener('goToCheck', this.goToCheckListener);
 
     /**
-     * This event listens for an event to change the check type, checks if we're switching to 
+     * This event listens for an event to change the check type, checks if we're switching to
      * LexicalCheck, then updates our state if we are
      */
     api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
@@ -283,7 +286,7 @@ class View extends React.Component {
                       function() {
                         api.sendAction({
                           type: 'updateCheckStatus',
-                          field: 'LexicalCheck',
+                          field: 'LexicalChecker',
                           checkStatus: 'RETAINED'
                         })
                       }
@@ -292,7 +295,7 @@ class View extends React.Component {
                       function() {
                         api.sendAction({
                           type: 'updateCheckStatus',
-                          field: 'LexicalCheck',
+                          field: 'LexicalChecker',
                           checkStatus: 'WRONG'
                         });
                       }
@@ -357,6 +360,6 @@ else {
 }
 
 module.exports = {
-  name: "LexicalChecker",
+  name: NAMESPACE,
   view: View
 }

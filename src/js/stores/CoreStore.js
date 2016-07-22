@@ -35,7 +35,7 @@ class CoreStore extends EventEmitter {
   }
 
   updateNumberOfFetchDatas(number) {
-    console.log('Number: ' + number);
+    //console.log('Number: ' + number);
     this.numberOfFetchDatas = number;
   }
 
@@ -86,27 +86,17 @@ class CoreStore extends EventEmitter {
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
   // Mostly just for SwitchCheckModuleDropdown
   getCheckCategoryOptions(){
-    // TODO: This is hard-coded -- it should be filled when CreateProject finishes
     if(!this.checkCategoryOptions) {
-      // this.checkCategoryOptions = [
-      //   {
-      //     view: require(window.__base + "modules/lexical_check_module/View.js"),
-      //     namespace: "LexicalCheck"
-      //   },
-      //   {
-      //     view: require(window.__base + "modules/phrase_check_module/View.js"),
-      //     namespace: "PhraseCheck"
-      //   }
-      // ]
       return null;
     }
+    //console.log(this.checkCategoryOptions);
     return this.checkCategoryOptions;
   }
 
   // Returns the Check Module (object) for the given namespace (string)
   findCheckCategoryOptionByNamespace(namespace) {
     for(let category of this.getCheckCategoryOptions()) {
-      if(category.namespace == namespace) {
+      if(category.name == namespace) {
         return category;
       }
     }
@@ -168,7 +158,7 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
-        this.checkCategoryOptions = action.checkCategoryOptions;
+        this.checkCategoryOptions = action.reportViews;
         this.emitChange();
       break;
 

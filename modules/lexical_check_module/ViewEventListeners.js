@@ -1,6 +1,6 @@
 
 const api = window.ModuleApi;
-const NAMESPACE = "LexicalCheck";
+const NAMESPACE = "LexicalChecker";
 
 module.exports = {
     goToNext: function(params) {

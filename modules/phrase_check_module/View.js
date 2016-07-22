@@ -1,6 +1,6 @@
 const api = window.ModuleApi;
-const TPane = api.getModule('TPane');
-const TADisplay = api.getModule('TADisplay');
+var TPane = null;
+var TADisplay = null;
 
 const RB = api.ReactBootstrap;
 const {Grid, Row, Col} = RB;
@@ -9,15 +9,18 @@ const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 
-const NAMESPACE = 'PhraseCheck';
+const NAMESPACE = 'PhraseChecker';
 
 class PhraseChecker extends React.Component{
   constructor(){
     super();
-
     this.state = {
       currentCheck: null
     }
+
+    TADisplay = api.getModule('TranslationAcademy');
+    TPane = api.getModule('TPane');
+
     this.updateState = this.updateState.bind(this);
     this.goToNext = this.goToNext.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
@@ -199,6 +202,6 @@ class PhraseChecker extends React.Component{
 }
 
 module.exports = {
-  name: "PhraseChecker",
+  name: NAMESPACE,
   view: PhraseChecker
 }

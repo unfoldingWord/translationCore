@@ -14,7 +14,7 @@ const TranslationWordDisplay = require('./translation_words/TranslationWordsDisp
 // const AbstractCheckModule = require('../AbstractCheckModule.js');
 const CheckStore = require('../../../stores/CheckStore.js');
 
-console.log('We being require');
+//console.log('We being require');
 class LexicalCheckModule extends React.Component{
   constructor() {
   }

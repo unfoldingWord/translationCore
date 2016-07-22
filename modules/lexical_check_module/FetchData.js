@@ -49,18 +49,18 @@ function getData(params, progressCallback, callback) {
             else {
               var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
               var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
-              checkObject.LexicalCheck.sort(function(first, second) {
+              checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
-              for (var group of checkObject['LexicalCheck']) {
+              for (var group of checkObject['LexicalChecker']) {
                 for (var check of group.checks) {
                   check.book = api.convertToFullBookName(params.bookAbbr);
                 }
               }
-              api.putDataInCheckStore('LexicalCheck', 'groups', checkObject['LexicalCheck']);
-              api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
-              api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
-              api.putDataInCheckStore('LexicalCheck', 'wordList', wordList);
+              api.putDataInCheckStore('LexicalChecker', 'groups', checkObject['LexicalChecker']);
+              api.putDataInCheckStore('LexicalChecker', 'currentCheckIndex', 0);
+              api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
+              api.putDataInCheckStore('LexicalChecker', 'wordList', wordList);
               // console.log('Lexical finished');
               callback(null);
             }
@@ -79,7 +79,7 @@ function getData(params, progressCallback, callback) {
       else {
         var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
         var bookData;
-        /* 
+        /*
          * we found the gatewayLanguage already loaded, now we must convert it
          * to the format needed by the parsers
          */
@@ -107,7 +107,7 @@ function getData(params, progressCallback, callback) {
           });
           parseDataFromBook(reformattedBookData);
         }
-        // We need to load the data, and then reformat it for the store and store it 
+        // We need to load the data, and then reformat it for the store and store it
         else {
           bookData = Door43Fetcher.getULBFromBook(data);
           //reformat
@@ -135,7 +135,7 @@ function getData(params, progressCallback, callback) {
 */
 function findWordsInBook(bookData, wordInBookSet, wordList) {
   var returnObject = {};
-  returnObject['LexicalCheck'] = [];
+  returnObject['LexicalChecker'] = [];
   for (var word of wordInBookSet) {
     var wordReturnObject = {
       "group": word,
@@ -162,7 +162,7 @@ function findWordsInBook(bookData, wordInBookSet, wordList) {
         }
         return first.verse - second.verse;
       });
-      returnObject.LexicalCheck.push(wordReturnObject);
+      returnObject.LexicalChecker.push(wordReturnObject);
     }
   }
   return returnObject;

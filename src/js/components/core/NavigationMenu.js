@@ -11,7 +11,7 @@ class NavigationMenu extends React.Component {
     super();
     this.updateCheckObject = this.updateCheckObject.bind(this);
     this.state = {
-      checkObject: this.getCheckObject()
+      checkObject: null
     };
   }
 
@@ -22,17 +22,12 @@ class NavigationMenu extends React.Component {
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
   }
-  
+
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : api.getDataFromCheckStore(params.currentCheckNamespace));
     this.setState({
       checkObject: checkData
     });
-  }
-  
-  getCheckObject() {
-    // TODO: get checkType using api.getDataFromCommon()
-    return api.getDataFromCheckStore("PhraseCheck");
   }
 
   render() {
