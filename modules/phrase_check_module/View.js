@@ -139,15 +139,6 @@ class PhraseChecker extends React.Component{
     api.emitEvent('goToVerse', {chapterNumber: newCheck.chapter, verseNumber: newCheck.verse});
   }
 
-  /**
-  * Pulls the target language verse out of our target language object using
-  * the chapter and verse values from the current check object that we
-  * extracted data from above
-  **/
-  getTLVerse(targetLanguage){
-      return targetLanguage[this.state.currentCheck.chapter][this.state.currentCheck.verse]
-  }
-
   getVerse(language){
     var currentVerseNumber = this.state.currentCheck.verse;
     var currentChapterNumber = this.state.currentCheck.chapter;
@@ -160,6 +151,7 @@ class PhraseChecker extends React.Component{
   }
 
   render() {
+    var targetVerse = this.getVerse('targetLanguage');
     if(!this.state.currentCheck){
       return <div></div>;
     }
@@ -169,18 +161,18 @@ class PhraseChecker extends React.Component{
         <Row className="show-grid">
           <Col md={12}>
             <ScriptureDisplay
-              scripture={currentVerse}
-              currentVerse={currentCheck.book
-                            + " " + currentCheck.chapter
-                            + ":" + currentCheck.verse}
+              scripture={targetVerse}
+              currentVerse={this.state.currentCheck.book
+                            + " " + this.state.currentCheck.chapter
+                            + ":" + this.state.currentCheck.verse}
             />
           </Col>
         </Row>
         <Row className="show-grid">
           <Col md={6} className="confirm-area">
             <ConfirmDisplay
-              phraseInfo={currentCheck.phraseInfo}
-              phrase={currentCheck.phrase}
+              phraseInfo={this.state.currentCheck.phraseInfo}
+              phrase={this.state.currentCheck.phrase}
             />
           </Col>
           <Col md={6}>
