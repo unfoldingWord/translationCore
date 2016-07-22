@@ -10,7 +10,7 @@ class TranslationAcademyScraper {
   constructor() {
     this.sectionList = {};
   }
-  
+
   getFullTranslationAcademySectionList(callback) {
     var promises = [];
     for(let taUrl of TA_URLS) {
@@ -25,7 +25,7 @@ class TranslationAcademyScraper {
       console.log('Translation Academy failed to load section list.');
     });
   }
-  
+
   // Gets the list of sections from translation academy by its url then fires the call back when done
   getTranslationAcademySectionListForUrl(taUrl, callback) {
     var _this = this;

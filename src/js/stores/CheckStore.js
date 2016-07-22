@@ -10,6 +10,7 @@ const EventEmitter = require('events').EventEmitter;
 const Dispatcher = require('../dispatchers/Dispatcher');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const utils = require("../utils.js");
+const pathModule = require('path');
 
 class CheckStore extends EventEmitter {
   constructor() {
@@ -91,9 +92,45 @@ class CheckStore extends EventEmitter {
    * @param {string} path - the path to save the json file to
    */
   saveDataToDisk(field, path, callback=() => {}) {
-    if (this.storeData.field) {
-      fs.outputJson(this.storeData.field, path, callback);
+    if (this.storeData[field]) {
+      var saveLocation = pathModule.join(path, field + '.json');
+      fs.outputJson(saveLocation, this.storeData[field], callback);
     }
+  }
+
+  saveAllToDisk(path, callback=() => {}) {
+    var _this = this;
+    function iterateOver(list, iterator, callback) {
+      var doneCount = 0;
+
+      function report(error) {
+        if (error) {
+          callback(error);
+        }
+        else {
+          doneCount++;
+          if (doneCount == list.length) {
+            callback();
+          }
+        }
+      }
+
+      for (var i = 0; i < list.length; i++) {
+        iterator(list[i], report);
+      }
+    }
+    var fieldList = [];
+    for (var field in this.storeData) {
+      fieldList.push(field);
+    }
+
+    iterateOver(fieldList, function(field, callbackReport) {
+      _this.saveDataToDisk(field, path, callbackReport);
+    }, callback);
+  }
+
+  saveStoreToDisk(path, callback=()=>{}) {
+    fs.outputJson(this.storeData, path, callback);
   }
 
   /**
@@ -176,9 +213,9 @@ class CheckStore extends EventEmitter {
   removeAction(type, callback) {
     if (type in this.actionCallbacks) {
       var i = 0;
-      for (var fun of this.actionCallbacks.type) {
+      for (var fun of this.actionCallbacks[type]) {
         if (fun === callback) {
-          this.actionCallbacks.splice(i, 0);
+          this.actionCallbacks[type].splice(i, 0);
           i++;
         }
       }

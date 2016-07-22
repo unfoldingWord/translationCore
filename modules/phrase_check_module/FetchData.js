@@ -10,6 +10,7 @@ var phraseData;
 var onCompleteFunction;
 
 const DataFetcher = function(params, progress, onComplete){
+  // console.log('Phrase is getting called');
   var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
   var ulb = {};
@@ -19,6 +20,7 @@ const DataFetcher = function(params, progress, onComplete){
   DoorDataFetcher.getBook(
     params.bookAbbr,
     function(done, total){
+      // console.log('Phrase: ' + ((done / total) * 100));
       progress(done/total*100);
     },
     function(err, book){
@@ -49,6 +51,13 @@ const DataFetcher = function(params, progress, onComplete){
         }
 
         phraseData = parseObject(chapterData);
+
+        //put the data in the CheckStore
+        api.putDataInCheckStore('PhraseChecker', 'groups', phraseData['groups']);
+        api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
+        api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
+        // TODO: eventually, this event will be called when the check type is selected, not in fetchData
+        onComplete(null);
         // wait until translation academy is loaded, then change group headers
         checkIfTranslationAcademyIsLoaded();
       }

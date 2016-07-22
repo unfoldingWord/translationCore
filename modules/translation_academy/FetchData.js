@@ -33,7 +33,8 @@ function fetchAllSections(sectionList, progress, callback) {
 		var sectionList = TranslationAcademyScraper.sectionList;
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
-  	api.emitEvent("translationAcademyLoaded", {'sections': sectionList});
+		api.emitEvent("translationAcademyLoaded", {'sections': sectionList});
+    progress(100);
 		callback();
 	}, reason => {
 		callback('Translation Academy failed to fetch section text.');

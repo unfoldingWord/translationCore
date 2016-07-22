@@ -20,8 +20,10 @@ class SwitchCheckModuleDropdown extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkCategoryOptions: CoreStore.getCheckCategoryOptions()
+      checkCategoryOptions: null
     };
+
+    this.getCheckCategoryOptions = this.getCheckCategoryOptions.bind(this);
   }
 
   // When the dropdown is changed, this sends out an event to change the check category
@@ -31,27 +33,44 @@ class SwitchCheckModuleDropdown extends React.Component {
   }
 
   componentWillMount() {
+    CoreStore.addChangeListener(this.getCheckCategoryOptions);
   }
 
   componentWillUnmount() {
+    CoreStore.removeChangeListener(this.getCheckCategoryOptions);
+  }
+
+  getCheckCategoryOptions() {
+    var options = CoreStore.getCheckCategoryOptions();
+    this.setState({
+      checkCategoryOptions: options
+    });
+    if (options) {
+      this.checkModuleChange({target: {value: options[0].name}});
+    }
   }
 
   render() {
-    var optionNodes = this.state.checkCategoryOptions.map(function(checkCategory){
-      return (
-        <option key={checkCategory.namespace} value={checkCategory.namespace}>{checkCategory.title}</option>
-      )
-    });
+    if (this.state.checkCategoryOptions) {
+      var optionNodes = this.state.checkCategoryOptions.map((checkCategory) => {
+        return (
+          <option key={checkCategory.name} value={checkCategory.name}>{checkCategory.name}</option>
+        )
+      });
 
+      return (
+        <Well>
+          <FormGroup>
+            <ControlLabel>Select a Check Category</ControlLabel>
+            <FormControl componentClass="select" onChange={this.checkModuleChange}>
+              {optionNodes}
+            </FormControl>
+          </FormGroup>
+        </Well>
+      );
+    }
     return (
-      <Well>
-        <FormGroup>
-          <ControlLabel>Select a Check Category</ControlLabel>
-          <FormControl componentClass="select" onChange={this.checkModuleChange}>
-            {optionNodes}
-          </FormControl>
-        </FormGroup>
-      </Well>
+      <Well style={{minHeight: "25px"}}>{' '}</Well>
     );
   }
 }
