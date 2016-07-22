@@ -66,6 +66,20 @@ module.exports = {
     });
   },
 
+  sendProgressForKey: function(progressKeyObj) {
+    Dispatcher.handleAction({
+      type: consts.SEND_PROGRESS_FOR_KEY,
+      progressRecieved: progressKeyObj
+    });
+  },
+
+  doneLoadingFetchData: function(data) {
+    Dispatcher.handleAction({
+      type: consts.DONE_LOADING,
+      reportViews:data
+    });
+  },
+
   updateLogoutButton: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_LOGOUT_VISIBILITY,

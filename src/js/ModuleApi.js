@@ -11,6 +11,8 @@ const React = require('react');
 const ReactBootstrap = require('react-bootstrap');
 const ReactDOM = require('react-dom');
 
+const BooksOfBible = require('./components/core/BooksOfBible');
+
 class ModuleApi {
 	constructor() {
         this.React = React;
@@ -113,12 +115,7 @@ class ModuleApi {
     }
 
     convertToFullBookName(bookAbbr) {
-        switch(bookAbbr) {
-            case "2ti":
-                return "2 Timothy";
-            default:
-                return bookAbbr;
-        }
+        return BooksOfBible[bookAbbr];
     }
 
     logCheckStore() {

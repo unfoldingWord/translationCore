@@ -7,6 +7,7 @@ event from the CheckStore and automatically swap out the check module for the ne
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore');
+var NextButton = require('../core/NextButton');
 
 const api = window.ModuleApi;
 
@@ -14,27 +15,31 @@ class ModuleWrapper extends React.Component {
   constructor() {
     super();
     this.state = {};
+
+    this.updateCheckType = this.updateCheckType.bind(this);
   }
 
   render() {
     // TODO: should probably return an empty div if this.state.view doesn't exist
     // but for now it has LexicalCheck as default
     if(!this.state.view) {
-      var CheckModule = require(window.__base + "modules/lexical_check_module/View.js");
-      return <CheckModule />;
+      return <div />;
     }
     var CheckModule = this.state.view;
     return (
+      <div>
       <CheckModule />
+      <NextButton />
+      </div>
     );
   }
 
   componentWillMount() {
-    api.registerEventListener('changeCheckType', this.updateCheckType.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckType);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.updateCheckType.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckType);
   }
 
   updateCheckType(params) {

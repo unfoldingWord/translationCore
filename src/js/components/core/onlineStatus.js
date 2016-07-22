@@ -8,15 +8,27 @@ class OnlineStatus extends React.Component{
     this.state ={
       online: window.navigator.onLine
     };
+
+    this.setOnline = this.setOnline.bind(this);
+    this.setOffline = this.setOffline.bind(this);
   }
   componentWillMount(){
-    window.addEventListener("offline", () => {this.setState({online: false});});
-    window.addEventListener("online", () => {this.setState({online: true});});
+    window.addEventListener("offline", this.setOffline);
+    window.addEventListener("online", this.setOnline);
   }
   componentWillUnmount(){
-    window.removeEventListener("offline", () => {this.setState({online: false});});
-    window.removeEventListener("online", () => {this.setState({online: true});});
+    window.removeEventListener("offline", this.setOffline);
+    window.removeEventListener("online", this.setOnline);
   }
+
+  setOnline() {
+    this.setState({online: true});
+  }
+
+  setOffline() {
+    this.setState({online: false});
+  }
+
   render(){
     const text = this.state.online ? 'Online' : 'Offline';
     const statusColor = this.state.online ? style.online : style.offline;

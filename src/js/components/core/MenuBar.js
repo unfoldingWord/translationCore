@@ -4,21 +4,25 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
+const CheckStore = require('../../stores/CheckStore.js')
+const api = require('../../ModuleApi.js');
 
 var template = [
   {
     label: 'File',
     submenu: [
       {
-        label: 'Import TS Project',
+        label: 'Save',
         click: function() {
-          CoreActions.updateModal(true);
-        }
+          var path = api.getDataFromCommon('saveLocation');
+          CheckStore.saveAllToDisk(path, function() {});
+        },
+        accelerator: 'CmdOrCtrl+S'
       },
       {
         label: 'Create Project',
         click() {
-          CoreActions.showCreateProject("Create");
+          CoreActions.showCreateProject("Languages");
         }
       }
     ]

@@ -34,6 +34,15 @@ class CoreStore extends EventEmitter {
     super();
   }
 
+  updateNumberOfFetchDatas(number) {
+    //console.log('Number: ' + number);
+    this.numberOfFetchDatas = number;
+  }
+
+  getNumberOfFetchDatas() {
+    return this.numberOfFetchDatas;
+  }
+
   getModal() {
     return this.modalVisibility;
   }
@@ -60,6 +69,10 @@ class CoreStore extends EventEmitter {
 
   getDataFromProject() {
     return this.FetchDataArray;
+  }
+
+  getProgress() {
+  return this.progressKeyObj;
   }
 
   emitChange() {
@@ -89,20 +102,8 @@ class CoreStore extends EventEmitter {
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
   // Mostly just for SwitchCheckModuleDropdown
   getCheckCategoryOptions(){
-    // TODO: This is hard-coded -- it should be filled when CreateProject finishes
     if(!this.checkCategoryOptions) {
-      this.checkCategoryOptions = [
-        {
-          view: require(window.__base + "modules/lexical_check_module/View.js"),
-          namespace: "LexicalCheck",
-          title: "Lexical Check"
-        },
-        {
-          view: require(window.__base + "modules/phrase_check_module/View.js"),
-          namespace: "PhraseCheck",
-          title: "Figures of Speech, Morphology, Grammar Checks"
-        }
-      ]
+      return null;
     }
     return this.checkCategoryOptions;
   }
@@ -110,7 +111,7 @@ class CoreStore extends EventEmitter {
   // Returns the Check Module (object) for the given namespace (string)
   findCheckCategoryOptionByNamespace(namespace) {
     for(let category of this.getCheckCategoryOptions()) {
-      if(category.namespace == namespace) {
+      if(category.name == namespace) {
         return category;
       }
     }
@@ -162,6 +163,17 @@ class CoreStore extends EventEmitter {
 
       case consts.SEND_FETCH_DATA:
         this.FetchDataArray = action.array;
+        this.emitChange();
+      break;
+
+      case consts.SEND_PROGRESS_FOR_KEY:
+        this.progressKeyObj = action.progressRecieved;
+        this.emitChange();
+      break;
+
+      case consts.DONE_LOADING:
+        this.doneLoading = true;
+        this.checkCategoryOptions = action.reportViews;
         this.emitChange();
       break;
 

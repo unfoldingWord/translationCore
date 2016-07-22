@@ -2,6 +2,7 @@
  * @description This module creates a project manifest.
  ******************************************************************************/
 const TimeStamp = require('./Timestamp').generate()[1];
+const api = window.ModuleApi;
 
 var template = {
   generator: {
@@ -22,9 +23,18 @@ var template = {
     name: ''
   },
   source: {
-      original_language: '',
-      gateway_language: '',
-      target_language: '',
+      original_language: {
+        local: '',
+        path: ''
+      },
+      gateway_language: {
+        local: '',
+        path: ''
+      },
+      target_language: {
+        local: '',
+        path: ''
+      }
     },
   translators: [],
   checkers: [],
@@ -40,6 +50,7 @@ var template = {
  * @param {json} data - The data to be fed to the template.
  * Sample data to be passed in:
  *   let data = {
+ *    local: {boolean}
  *    target_language: {filepath or url},
  *    original_language: {filepath or url},
  *    gateway_language: {filepath or url},
@@ -52,15 +63,19 @@ function populate (data, tsManifest) {
   var projectManifest = template;
   projectManifest.last_saved = TimeStamp;
   projectManifest.time_created = TimeStamp;
-  projectManifest.source.target_language = data.target_language;
-  projectManifest.source.original_language = data.original_language;
-  projectManifest.source.gateway_language = data.gateway_language;
+  projectManifest.source.target_language.path = data.target_language;
+  projectManifest.source.original_language.path = data.original_language;
+  projectManifest.source.gateway_language.path = data.gateway_language;
+  projectManifest.source.original_language.local = data.local;
+  projectManifest.source.gateway_language.local = data.local;
+  projectManifest.source.target_language.local = data.local;
+
   for (user of data.user) {
     projectManifest.checkers.push(user);
   }
-  for (checkLocation of data.checkLocations) {
-    projectManifest.check_data_locations.push(checkLocation);
-  }
+
+    projectManifest.check_data_locations = api.getDataFromCommon('arrayOfChecks');
+
 
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;

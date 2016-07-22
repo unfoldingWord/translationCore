@@ -29,18 +29,22 @@ class TPane extends React.Component {
           "targetLanguage": !targetLanguage ? "" : targetLanguage,
           "gatewayLanguage": !gatewayLanguage ? "" : gatewayLanguage,
       }
+
+      this.updateOriginalLanguage = this.updateOriginalLanguage.bind(this);
+      this.updateGatewayLanguage = this.updateGatewayLanguage.bind(this);
+      this.updateTargetLanguage = this.updateTargetLanguage.bind(this);
   }
 
   componentWillMount() {
-      api.registerEventListener("updateOriginalLanguage", this.updateOriginalLanguage.bind(this));
-      api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-      api.registerEventListener("updateGatewayLanguage", this.updateGatewayLanguage.bind(this));
+      api.registerEventListener("updateOriginalLanguage", this.updateOriginalLanguage);
+      api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage);
+      api.registerEventListener("updateGatewayLanguage", this.updateGatewayLanguage)
   }
 
   componentWillUnmount() {
-    api.removeEventListener("updateOriginalLanguage", this.updateOriginalLanguage.bind(this));
-    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage.bind(this));
-    api.removeEventListener("updateGatewayLanguage", this.updateGatewayLanguage.bind(this));
+    api.removeEventListener("updateOriginalLanguage", this.updateOriginalLanguage);
+    api.removeEventListener("updateTargetLanguage", this.updateTargetLanguage);
+    api.removeEventListener("updateGatewayLanguage", this.updateGatewayLanguage);
   }
 
   updateTargetLanguage() {

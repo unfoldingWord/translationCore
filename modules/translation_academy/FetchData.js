@@ -13,6 +13,7 @@ const api = window.ModuleApi;
 const TranslationAcademyScraper = require('./TranslationAcademyScraper');
 
 function fetchData(params, progress, callback) {
+
 	TranslationAcademyScraper.getFullTranslationAcademySectionList(function(sectionList) {
 		fetchAllSections(sectionList, progress, callback)
 	});
@@ -33,6 +34,7 @@ function fetchAllSections(sectionList, progress, callback) {
 		var sectionList = TranslationAcademyScraper.sectionList;
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
+		progress(100);
   	api.emitEvent("translationAcademyLoaded", {'sections': sectionList});
 		callback();
 	}, reason => {
