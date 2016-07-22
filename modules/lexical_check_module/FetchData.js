@@ -23,7 +23,7 @@ const BookWordTest = require('./translation_words/WordTesterScript.js');
 * if error ocurred it's called with an error, 2nd argument carries the result
 */
 function getData(params, progressCallback, callback) {
-  console.log('Lexical is good');
+  // console.log('Lexical is good');
 // Get Bible
   var bookData;
   var Door43Fetcher = new Door43DataFetcher();
@@ -34,13 +34,13 @@ function getData(params, progressCallback, callback) {
     tWFetcher.getWordList(undefined,
       function(error, data) {
         if (error) {
-          console.log('TWFetcher throwing error');
+          console.error('TWFetcher throwing error');
           callback(error);
         }
         else {
           wordList = data;
           tWFetcher.getAliases(function(done, total) {
-            console.log('Lexical progress: ' + (((done / total) * 50) + 50));
+            // console.log('Lexical progress: ' + (((done / total) * 50) + 50));
             progressCallback(((done / total) * 50) + 50);
           }, function(error) {
             if (error) {
@@ -61,7 +61,7 @@ function getData(params, progressCallback, callback) {
               api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
               api.putDataInCheckStore('LexicalCheck', 'wordList', wordList);
-              console.log('Lexical finished');
+              // console.log('Lexical finished');
               callback(null);
             }
           });
@@ -70,7 +70,7 @@ function getData(params, progressCallback, callback) {
   }
 
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
-    console.log('Lexical: ' + ((done / total) * 50));
+    // console.log('Lexical: ' + ((done / total) * 50));
     progressCallback((done / total) * 50);}, function(error, data) {
       if (error) {
         console.error('Door43Fetcher throwing error');

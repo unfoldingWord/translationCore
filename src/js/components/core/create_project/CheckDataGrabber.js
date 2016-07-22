@@ -43,12 +43,11 @@ var CheckDataGrabber = {
   },
 
   onComplete: function(err, data) {
-    console.log('Somebody called on complete');
     this.doneModules++;
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
-        console.log("We're done");
+        CoreActions.doneLoadingFetchData();
       }
     }
     else {

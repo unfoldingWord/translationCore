@@ -4,7 +4,7 @@ const api = window.ModuleApi;
 const TranslationAcademyScraper = require('./TranslationAcademyScraper');
 
 function fetchData(params, progress, callback) {
-  console.log('TA');
+  // console.log('TA');
 	TranslationAcademyScraper.getTranslationAcademySectionList(null, function(sectionList) {
 		fetchAllSections(sectionList, progress, callback)
 	});
@@ -25,7 +25,7 @@ function fetchAllSections(sectionList, progress, callback) {
 		var sectionList = TranslationAcademyScraper.sectionList;
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
-    console.log('TA is done');
+    // console.log('TA is done');
     progress(100);
 		callback(null, getSectionFileNamesToTitles(sectionList));
 	}, reason => {

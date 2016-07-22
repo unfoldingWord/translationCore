@@ -7,7 +7,7 @@ const path = require('path');
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-  console.log('ProposedChanges');
+  // console.log('ProposedChanges');
 //Get target Language
 //check if original language is already in common
 //get it if it isn't using parsers and params
@@ -23,7 +23,7 @@ function fetchData(params, progress, callback) {
     }
   }
 
-  console.log("Proposed Changes is done");
+  // console.log("Proposed Changes is done");
   progress(100);
   api.putDataInCheckStore("ProposedChanges", "currentChanges", '');
   //I'm not supposed to get the gateway language!
@@ -69,11 +69,10 @@ function readInManifest(manifest, source, callback, progress) {
       openUsfmFromChunks(splitted, currentJoined, total, source,
         function() {
           done++;
-          console.log('Proposed Changes: ' + (done / total) * 100);
           progress((done / total) * 100);
           if (done >= total) {
             api.putDataInCommon('targetLanguage', currentJoined);
-            console.log('Proposed changes is good');
+            // console.log('Proposed changes is good');
             callback();
           }
         });

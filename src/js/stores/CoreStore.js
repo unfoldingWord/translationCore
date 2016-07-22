@@ -167,6 +167,7 @@ class CoreStore extends EventEmitter {
       break;
 
       case consts.DONE_LOADING:
+        this.doneLoading = true;
         this.emitChange();
       break;
 
