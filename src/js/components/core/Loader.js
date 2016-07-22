@@ -10,8 +10,7 @@ const Loader = React.createClass({
   progressObject: {},
 
   getInitialState: function() {
-    console.log('CheckStore');
-    console.dir(CheckStore);
+    
     return {
       progress:0,
       showModal:false
@@ -29,6 +28,8 @@ const Loader = React.createClass({
 
   finishLoader: function() {
     if (CoreStore.doneLoading) {
+      console.log('CheckStore');
+      console.dir(CheckStore);
       this.setState({
         progess: 100,
         showModal: false

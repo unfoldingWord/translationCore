@@ -9,6 +9,7 @@ var indexOfModule = 0;
 var CheckDataGrabber = {
   doneModules: 0,
   totalModules: 0,
+  reportViews: [],
 
   saveNextModule: function(array, params) {
     for (var moduleInfo of array) {
@@ -47,7 +48,7 @@ var CheckDataGrabber = {
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
-        CoreActions.doneLoadingFetchData();
+        CoreActions.doneLoadingFetchData({checkCategoryOptions: reportViews});
       }
     }
     else {
@@ -63,6 +64,9 @@ var CheckDataGrabber = {
     var DataFetcher = require(path + '/FetchData');
     let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
+
+    //if they have a report view push onto the array
+
     var _this = this;
     DataFetcher(params, function(data) {
       _this.Progress(viewObj.name, data);}, this.onComplete.bind(this));

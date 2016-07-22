@@ -168,6 +168,7 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
+        this.checkCategoryOptions = action.checkCategoryOptions;
         this.emitChange();
       break;
 
