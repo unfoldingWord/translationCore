@@ -69,7 +69,7 @@ function readInManifest(manifest) {
  * @param {array} chunk - An array of the chunks defined in manifest
  ******************************************************************************/
 function openUsfmFromChunks(chunk) {
-  currentChapter = chunk[0];
+  currentChapter = parseInt(chunk[0]);
   try {
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(manifestSource, chunk[0], fileName);
@@ -84,7 +84,7 @@ function openUsfmFromChunks(chunk) {
  ******************************************************************************/
 function joinChunks(text) {
   var currentJoined = joinedChunks;
-  if (currentChapter === '00') {
+  if (currentChapter === 0) {
     currentJoined.title = text;
   } else {
     if (currentJoined[currentChapter] === undefined) {
@@ -94,7 +94,7 @@ function joinChunks(text) {
     for (let verse in currentChunk.verses) {
       if (currentChunk.verses.hasOwnProperty(verse)) {
         var currentVerse = currentChunk.verses[verse];
-        currentJoined[currentChapter][verse] = currentVerse;
+        currentJoined[currentChapter][parseInt(verse)] = currentVerse;
       }
     }
   }

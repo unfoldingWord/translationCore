@@ -3,13 +3,8 @@
  * @param (string) filepath from file dialog
  **/
 
-//TODO: Open project only works when logged in!!!!!!
-
 var React = require('react');
 var ReactDOM = require('react-dom');
-var FormGroup = require('react-bootstrap/lib/FormGroup.js');
-var ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-var FormControl = require('react-bootstrap/lib/FormControl.js');
 var Button = require('react-bootstrap/lib/Button.js');
 var Modal = require('react-bootstrap/lib/Modal.js');
 var CoreActions = require('../../actions/CoreActions.js');
@@ -28,9 +23,6 @@ var AccessProjectMod = React.createClass({
     fileArray: [],
   });
   },
-
-
-  //TODO: ask about adding listener for AccessProject
 
   componentWillMount: function() {
       CoreStore.addChangeListener(this.updateShow);
@@ -59,10 +51,8 @@ var AccessProjectMod = React.createClass({
       try {
         var file = filename[0];
         Access.openDir(path.join(file));
-        console.log('Went through OpenManifest');
-        //TODO:
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
 
     }
@@ -78,14 +68,10 @@ var AccessProjectMod = React.createClass({
             if (filename !== undefined) {
             try {
               var file = filename[0];
-              AccessProject.logginStatus(this.log()); //TODO
-              console.log(AccessProject);
-              AccessProject.openDir(path.join(file));
-            } catch (e) {
-              //dialog.showErrorBox('Import Error: ' + e.message);
-              console.log(e);
+              Access.openDir(path.join(file));
+            } catch (error) {
+              alert(error);
             }
-
           }
           });
         }
