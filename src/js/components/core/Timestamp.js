@@ -79,12 +79,6 @@ var TimeStamp = {
 
     var data = this.time;
 
-
-    fs.writeFile(Timestamp, data, function(err) {
-      if(err) {
-        return console.log(err);
-      }
-    });
     //File Created in directory to store the timestamps throughout the created project
     var funct = ["TimeStamp: ", this.CreateTimeStamp().toString()];
     if (typeof ar === undefined)

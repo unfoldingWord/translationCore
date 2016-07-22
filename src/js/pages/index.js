@@ -17,7 +17,6 @@
       var moduleApi = require('../ModuleApi');
       window.ModuleApi = moduleApi;
       var Application = require("./app");
-
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };
