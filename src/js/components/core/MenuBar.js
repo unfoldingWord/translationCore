@@ -10,6 +10,13 @@ var template = [
     label: 'File',
     submenu: [
       {
+        label: 'Save',
+        click: function() {
+
+        },
+        accelerator: 'CmdOrCtrl+S'
+      },
+      {
         label: 'Create Project',
         click() {
           CoreActions.showCreateProject("Languages");
