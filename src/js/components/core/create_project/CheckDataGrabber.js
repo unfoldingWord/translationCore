@@ -5,7 +5,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../booksOfBible');
 const path = require('path');
-const ManifestGenerator = require('../projectManifest');
+const ManifestGenerator = require('../ProjectManifest');
 
 var indexOfModule = 0;
 var CheckDataGrabber = {
@@ -28,12 +28,17 @@ var CheckDataGrabber = {
     api.putDataInCommon('arrayOfChecks', checkArray);
   },
   saveManifest: function(saveLocation, data, tsManifest) {
-    var manifestLocation = path.join(saveLocation, 'manifest.json');
-    fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function(err) {
-      if (err) {
-        console.log(err);
-      }
-    });
+    try {
+      var manifestLocation = path.join(saveLocation, 'manifest.json');
+      fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function(err) {
+        if (err) {
+          console.log(err);
+        }
+      });
+    }
+    catch(e) {
+      console.error(e);
+    }
   },
 
   // sendFetchData: function() {
