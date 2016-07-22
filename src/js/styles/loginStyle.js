@@ -52,7 +52,27 @@ var style = {
   },
   modal:{
     zIndex: '9999'
+  },
+
+  offline:{
+    margin: '20px auto',
+    width: '12px',
+    height: '12px',
+    backgroundColor: '#FF0000',
+    borderRadius: '50%',
+    boxShadow: '#000 0 -1px 7px 1px'
+  },
+
+  online:{
+    margin: '20px auto',
+    width: '12px',
+    height: '12px',
+    backgroundColor: '#00B233',
+    borderRadius: '50%',
+    boxShadow: '#000 0 -1px 7px 1px'
   }
+
+
 
 };
 
