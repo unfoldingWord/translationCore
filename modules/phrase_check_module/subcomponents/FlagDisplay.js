@@ -25,11 +25,11 @@ class FlagDisplay extends React.Component{
   setFlagStateFunction(data, action) {
     var currentGroupIndex = data.currentGroupIndex;
     var currentCheckIndex = data.currentCheckIndex;
-    var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
+    var currentCheck = data.groups[currentGroupIndex].checks[currentCheckIndex];
     if (currentCheck) {
       currentCheck.checkStatus = action.checkStatus;
+      api.emitEvent('changedCheckStatus', {currentCheckNamespace: 'PhraseChecker'});
     }
-    api.emitEvent('changedCheckStatus', {checkStatus: action.checkStatus})
   }
 
   render(){
@@ -41,7 +41,7 @@ class FlagDisplay extends React.Component{
               var action = {
                 type: "setFlagState",
                 field: "PhraseChecker",
-                checkStatus: "RETAIN"
+                checkStatus: "RETAINED"
               };
               api.sendAction(action);
             }
