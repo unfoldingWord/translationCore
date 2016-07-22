@@ -10,6 +10,9 @@ var {dialog} = remote;
 var path = require('path');
 var FileImport = require('./FileImport.js');
 var LoadOnline = require('./LoadOnline.js');
+var CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
+
+var params = {};
 
 var Access = {
   openDir: function(path) {
@@ -32,55 +35,54 @@ var Access = {
                   return console.log(err);
                 }
               input = JSON.parse(data);
-              console.log(input);
+              if (typeof input.ts_project !== undefined)
+              {
+                params.bookAbbr = input.ts_project.id;
+              }
+
               if (typeof input.source.original_language !== undefined)
               {
-                if (input.source.original_language.local == 'true')
+                if (input.source.original_language.local == true)
                 {
-                  console.log("Using Local Path");
-                  console.log(input.source.original_language.path);
-                  //API.FileImport(input.source.original_language.path);
+                  params.originalLanguagePath = window.__base + input.source.original_language.path;
                 }
                 else {
-                  console.log('Load Online');
                   //API.LoadOnline(input.source.original_language.path);
                 }
               }
               if (typeof input.source.target_language !== undefined)
               {
-                if (input.source.target_language.local == 'true')
+                if (input.source.target_language.local == true)
                 {
-                  console.log("Using Local Path");
-                  console.log(input.source.target_language.path);
-                  API.FileImport(input.source.target_language.path);
+                  params.targetLanguagePath = input.source.target_language.path;
+
                 }
                 else {
-                  console.log('Load Online');
-                  //API.LoadOnline(input.source.target_language.path);
                 }
               }
               if (typeof input.source.gateway_language !== undefined)
               {
-                if (input.source.gateway_language.local == 'true')
+                if (input.source.gateway_language.local == true)
                 {
-                  console.log("Using Local Path");
-                  console.log(input.source.gateway_language.path);
-                  //API.FileImport(input.source.gateway_language.path);
+                  // params.gatewayLangugePath = input.source.gateway_language.path;
                 }
                 else {
-                  console.log('Load Online');
                   //API.LoadOnline(input.source.gateway_language.path);
                 }
               }
-              if (typeof input.check_data_locations !== undefined)
+              var fetchDataArray = [];
+              if (typeof input.check_module_locations !== undefined)
               {
-                for (var k=0;k<input.check_data_locations.length;k++)
+                for (item in input.check_module_locations)
                 {
-                  console.log("Loading the fetch data");
+                  var currentItem = input.check_module_locations[item];
+                  fetchDataArray.push([currentItem.name, currentItem.location]);
                   //API.putDataInCommon(input.check_data_locations[k].name, input.check_data_locations[k].path);
                 }
               }
-
+              if (fetchDataArray.length > 0) {
+                CheckDataGrabber.getFetchData(fetchDataArray, params);
+              }
             });
           }
         }

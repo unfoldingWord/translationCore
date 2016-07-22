@@ -14,6 +14,7 @@ var Access = require('./AccessProject.js');
 var path = require('path');
 var remote = window.electron.remote;
 var {dialog} = remote;
+const api = window.ModuleApi;
 
 
 var AccessProjectMod = React.createClass({
@@ -50,7 +51,9 @@ var AccessProjectMod = React.createClass({
       if (filename !== undefined) {
       try {
         var file = filename[0];
+        api.putDataInCommon('saveLocation', file)
         Access.openDir(path.join(file));
+        CoreActions.showOpenModal(false);
       } catch (error) {
         alert(error);
       }

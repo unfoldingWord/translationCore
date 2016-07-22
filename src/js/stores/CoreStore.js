@@ -71,7 +71,6 @@ class CoreStore extends EventEmitter {
     return this.FetchDataArray;
   }
 
-<<<<<<< HEAD
   sendProjectData() {
     return this.projectData;
   }
@@ -82,7 +81,8 @@ class CoreStore extends EventEmitter {
 
   getFilePath() {
     return this.filepath;
-
+ }
+ 
   getProgress() {
   return this.progressKeyObj;
   }
