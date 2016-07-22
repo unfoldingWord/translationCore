@@ -19,6 +19,9 @@ class NavBarComponent extends React.Component{
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
+            <OnlineStatus />
+          </Nav>
+          <Nav pullRight>
            <Logout />
           </Nav>
           <Nav pullRight>
