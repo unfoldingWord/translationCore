@@ -10,7 +10,7 @@ const Loader = React.createClass({
   progressObject: {},
 
   getInitialState: function() {
-    
+
     return {
       progress:0,
       showModal:false
@@ -28,8 +28,8 @@ const Loader = React.createClass({
 
   finishLoader: function() {
     if (CoreStore.doneLoading) {
-      console.log('CheckStore');
-      console.dir(CheckStore);
+      //console.log('CheckStore');
+      //console.dir(CheckStore);
       this.setState({
         progess: 100,
         showModal: false
@@ -41,7 +41,7 @@ const Loader = React.createClass({
     var progressKey = CoreStore.getProgress();
     if (progressKey){
       // var progressKey = progressArray[0];
-      
+
       this.progressObject[progressKey.key] = progressKey.progress
       var currentProgress = 0;
       for (var key in this.progressObject){
@@ -53,7 +53,7 @@ const Loader = React.createClass({
         progress: currentProgress,
         showModal: true
       });
-    } 
+    }
   },
 
   handleClick: function(e) {

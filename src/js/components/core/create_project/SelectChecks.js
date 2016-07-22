@@ -44,7 +44,7 @@ const SelectChecks = React.createClass({
     }
   },
   selectedModule: function(e) {
-    
+
     var elementIndex = this.state.FetchDataArray.indexOf(e.target.id);
     if ( elementIndex == -1){
       var fetchData = this.state.FetchDataArray;
@@ -59,7 +59,7 @@ const SelectChecks = React.createClass({
         FetchDataArray: fetchData
       });
     }
-    
+
   },
   beautifyString: function(check) {
     const stringRegex = new RegExp("[^a-zA-Z0-9\s]", "g");
@@ -107,7 +107,7 @@ const SelectChecks = React.createClass({
   addMoreModules: function(filename) {
     try {
       FileModule.readFile(file, readFile);
-      console.log(readFile);
+      //console.log(readFile);
     } catch (error) {
       dialog.showErrorBox('Import Error', 'Check Selected Module.');
       console.log(error);
@@ -116,7 +116,7 @@ const SelectChecks = React.createClass({
     var newModule = filename[0].split('/').pop();
     //this.("Check", newModule);
   },
-  
+
   render: function() {
     var i = 0;
     var checkButtonComponents = this.state.allModules.map((currentModule) => {

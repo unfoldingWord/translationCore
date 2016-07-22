@@ -58,7 +58,7 @@ var CheckDataGrabber = {
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
-        CoreActions.doneLoadingFetchData({checkCategoryOptions: reportViews});
+        CoreActions.doneLoadingFetchData(this.reportViews);
       }
     }
     else {
@@ -70,17 +70,35 @@ var CheckDataGrabber = {
     CoreActions.sendProgressForKey({progress: data, key: name});
   },
 
+  isModule:function(filepath) {
+    try {
+      var stats = fs.lstatSync(filepath);
+      if (!stats.isDirectory()) {
+        return false;
+      }
+      try {
+        fs.accessSync(filepath + '/ReportView.js');
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    catch (e) {
+      return false;
+    }
+  },
+
   getDataFromCheck: function(path, params) {
     var DataFetcher = require(path + '/FetchData');
     let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
-
-    //if they have a report view push onto the array
-
+    if (this.isModule(path)) {
+      this.reportViews.push(viewObj);
+    }
     var _this = this;
     DataFetcher(params, function(data) {
       _this.Progress(viewObj.name, data);}, this.onComplete.bind(this));
-  }
-};
+    }
+  };
 
-module.exports = CheckDataGrabber;
+  module.exports = CheckDataGrabber;

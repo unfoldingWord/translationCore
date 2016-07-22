@@ -64,7 +64,7 @@ module.exports = {
       array: FetchDataArray
     });
   },
-  
+
   sendProgressForKey: function(progressKeyObj) {
     Dispatcher.handleAction({
       type: consts.SEND_PROGRESS_FOR_KEY,
@@ -72,9 +72,10 @@ module.exports = {
     });
   },
 
-  doneLoadingFetchData: function() {
+  doneLoadingFetchData: function(data) {
     Dispatcher.handleAction({
       type: consts.DONE_LOADING,
+      reportViews:data
     });
   }
 };
