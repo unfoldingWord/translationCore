@@ -4,6 +4,7 @@ const NavItem = require('react-bootstrap/lib/NavItem');
 const Nav = require('react-bootstrap/lib/Nav');
 const Toggle= require('./Toggle');
 const Logout = require('./Logout');
+const OnlineStatus = require('./OnlineStatus');
 const style = require('../../styles/loginStyle');
 
 class NavBarComponent extends React.Component{
@@ -17,6 +18,9 @@ class NavBarComponent extends React.Component{
           </Navbar.Brand>
         </Navbar.Header>
         <Navbar.Collapse>
+          <Nav pullRight>
+            <OnlineStatus />
+          </Nav>
           <Nav pullRight>
            <Logout />
           </Nav>
