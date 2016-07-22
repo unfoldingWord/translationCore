@@ -112,8 +112,9 @@ class View extends React.Component {
    */
   updateCheckStatus(lexicalData, action) {
     var currentCheck = lexicalData.groups[lexicalData.currentGroupIndex]['checks'][lexicalData.currentCheckIndex];
-    if (currentCheck.status) {
-      currentCheck.status = action.checkStatus;
+    if (currentCheck.checkStatus) {
+      currentCheck.checkStatus = action.checkStatus;
+      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
     }
   }
 

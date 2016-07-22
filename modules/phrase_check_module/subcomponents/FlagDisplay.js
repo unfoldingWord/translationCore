@@ -28,8 +28,8 @@ class FlagDisplay extends React.Component{
     var currentCheck = data.groups[currentGroupIndex].checks[currentCheckIndex];
     if (currentCheck) {
       currentCheck.checkStatus = action.checkStatus;
+      api.emitEvent('changedCheckStatus', {currentCheckNamespace: 'PhraseChecker'});
     }
-    api.emitEvent('changedCheckStatus', {currentCheckNamespace: 'PhraseChecker'});
   }
 
   render(){
