@@ -38,6 +38,7 @@ const ProjectModal = React.createClass({
       loadedChecks:[],
       currentChecks:[],
       modalValue:"Languages",
+      backButton:'hidden',
       FetchDataArray:[]     //FetchDataArray of checkmodule
     };
   },
@@ -91,15 +92,13 @@ const ProjectModal = React.createClass({
           tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
         }
       }
-      if (tempFetchDataArray.length > 0) {
-        // CoreActions.getFetchData(tempFetchDataArray);
-        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
-      }
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       FileModule.readFile(manifestLocation, function(data){
         var parsedManifest = JSON.parse(data);
         var bookTitle = parsedManifest.project.name.split(' ');
+        var bookName = _this.getBookAbbr(parsedManifest.project.name);
+        _this.setBookName(bookName);
         let bookFileName = bookTitle.join('') + '.json';
 
         var projectData = {
@@ -114,24 +113,45 @@ const ProjectModal = React.createClass({
         var checkArray = api.getDataFromCommon('arrayOfChecks');
         projectData.checkLocations = checkArray;
         CheckDataGrabber.saveManifest(_this.saveLocation, projectData, parsedManifest);
-        _this.close();
       });
-    }
-    else if (this.state.modalValue == "Create") {
-      CoreActions.showCreateProject("Check");
-      if (this.refs.ProjectName) {
-        this.params.bookAbbr = this.refs.ProjectName.getBookName();
+      if (tempFetchDataArray.length > 0) {
+        // CoreActions.getFetchData(tempFetchDataArray);
+        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
       }
-    } else if (this.state.modalValue === 'Languages') {
+      this.close();
+    }
+
+    else if (this.state.modalValue === 'Languages') {
       CoreActions.showCreateProject("Create");
     }
+
+    else if (this.state.modalValue == "Create") {
+      if (this.refs.ProjectName) {
+        if (!this.refs.ProjectName.allFieldsEntered()) {
+          alert("Enter All Fields Before Continuing.");
+          return;
+        }
+      }
+      CoreActions.showCreateProject("Check");
+    }
+
   },
+  getBookAbbr: function(book) {
+    for (var bookAbbr in booksOfBible) {
+      if (book.toLowerCase() == booksOfBible[bookAbbr].toLowerCase() || book.toLowerCase() == bookAbbr) {
+        return bookAbbr;
+      }
+    }
+    return null;
+  },
+
   setSaveLocation: function(data) {
     this.saveLocation = data;
     api.putDataInCommon('saveLocation', data);
   },
   setTargetLanguageFilePath: function(path) {
     this.params.targetLanguagePath = path;
+    this.onClick();
   },
 
   setBookName: function(abbr) {
@@ -139,11 +159,11 @@ const ProjectModal = React.createClass({
   },
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
-      return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
+      return (<SelectChecks currentChecks={this.state.currentChecks} ref={"SelectChecks"} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
       return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"} passBack={this.setSaveLocation}/>);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
+      return (<TargetLanguage ref={"TargetLanguage"} setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }
   },
 
@@ -153,7 +173,10 @@ const ProjectModal = React.createClass({
       <Modal show={this.state.showModal} onHide={this.close}>
       {this.changeModalBody(this.state.modalValue)}
       <Modal.Footer>
-      <Button type="button" onClick={this.onClick}>{this.state.doneText}</Button>
+      <ButtonToolbar>
+      <Button bsSize="xsmall" style={{visibility: this.state.backButton}}>Back</Button>
+      <Button type="button" onClick={this.onClick} style={{position:'fixed', right: 15, bottom:10}}>{this.state.doneText}</Button>
+      </ButtonToolbar>
       </Modal.Footer>
       </Modal>
       </div>
