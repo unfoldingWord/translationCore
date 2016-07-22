@@ -15,6 +15,7 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+const OpenProject = require('../components/core/AccessProjectModal.js');
 
 const api = window.ModuleApi;
 
@@ -33,6 +34,7 @@ module.exports = (
   <NavBarComponent />
   <SettingsModal />
   <LoginModal />
+  <OpenProject />
     <Grid fluid>
       <Row>
         <Col style={RootStyles.ScrollableSection} xs={2} sm={2} md={2} lg={2}>
