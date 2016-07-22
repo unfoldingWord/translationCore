@@ -31,16 +31,20 @@ const style = {
 
 const DragDrop = React.createClass({
   onDrop: function(files) {
+    var _this = this;
     if (files !== undefined) {
-      FileImport(files[0].path);
+      // FileImport(files[0].path);
+      _this.props.sendFilePath(files[0].path);
     }
   },
   onClick: function() {
+    var _this = this;
     dialog.showOpenDialog({
       properties: ['openDirectory']
     }, function(filename) {
       if (filename !== undefined) {
-        FileImport(filename[0]);
+        // FileImport(filename[0]);
+        _this.props.sendFilePath(filename[0]);
       }
     });
   },

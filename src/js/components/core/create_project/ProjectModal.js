@@ -11,7 +11,6 @@ const Checkbox = require('react-bootstrap/lib/Checkbox.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
-const CheckDataGrabber = require('./CheckDataGrabber');
 const {dialog} = window.electron.remote;
 const Loader = require('../Loader');
 const ENTER = 13;
@@ -20,7 +19,13 @@ const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
 const ProjectName = require('./ProjectName');
 
+const CheckDataGrabber = require('./CheckDataGrabber');
+
 const ProjectModal = React.createClass({
+  params: {
+    originalLanguagePath: window.__base + "data/ulgb"
+  },
+
   getInitialState: function() {
     return {
       projectName:"",
@@ -32,12 +37,12 @@ const ProjectModal = React.createClass({
       loadedChecks:[],
       currentChecks:[],
       modalValue:"Languages",
-      FetchDataArray:[]      //FetchDataArray of checkmodule
+      FetchDataArray:[]     //FetchDataArray of checkmodule
     };
   },
+
   componentWillMount: function() {
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
-    CheckDataGrabber.addListner();      //action to change text in project modal
   },
   showCreateProject: function() {
     var modal = CoreStore.getShowProjectModal()
@@ -56,7 +61,7 @@ const ProjectModal = React.createClass({
         showModal: true,
         modalValue: modal,
         modalTitle: '',
-        doneText: 'Create'
+        doneText: 'Create'  
       });
     }
   },
@@ -67,33 +72,58 @@ const ProjectModal = React.createClass({
       showModal: false
     });
   },
+
+  makePathForChecks: function(check) {
+    if (!check || check == '') {
+      return;
+    }
+    var path = window.__base + 'modules/' + check;
+    return path;
+  },
+
   onClick: function () {
     var tempFetchDataArray = [];      //tempFetchDataArray to push checkmodule paths onto
     if (this.state.modalValue == "Check") {
       for (var element in this.state.FetchDataArray) {
         var pathOfCheck = this.makePathForChecks(this.state.FetchDataArray[element]);
-        tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
+        if (pathOfCheck) {
+          tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
+        }
       }
       if (tempFetchDataArray.length > 0) {
-        CoreActions.getFetchData(tempFetchDataArray);
+        // CoreActions.getFetchData(tempFetchDataArray);
+        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
       }
       this.close();
     }
     else if (this.state.modalValue == "Create") {
       CoreActions.showCreateProject("Check");
+      if (this.refs.ProjectName) {
+        this.params.bookAbbr = this.refs.ProjectName.getBookName();
+      }
     } else if (this.state.modalValue === 'Languages') {
       CoreActions.showCreateProject("Create");
     }
   },
+
+  setTargetLanguageFilePath: function(path) {
+    this.params.targetLanguagePath = path;
+  },
+
+  setBookName: function(abbr) {
+    this.params.bookAbbr = abbr;
+  },
+
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
-      return (<ProjectName ProjectName={this.state.projecName}/>);
+      return (<ProjectName projectName={this.state.projecName} ref={"ProjectName"} />);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage />);
+      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath}/>);
     }
   },
+
   render: function() {
     return (
       <div>

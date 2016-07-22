@@ -5,35 +5,35 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../booksOfBible');
 
-var currentCheckName;
-var gotFetch;
 var indexOfModule = 0;
-var book = '2jn';
 var CheckDataGrabber = {
-  addListner: function() {
-    CoreStore.addChangeListener(this.sendFetchData.bind(this));
-  },
-  saveNextModule: function() {
-    if (gotFetch.length > 0) {
-      currentCheckName = gotFetch[0][0];
-      var path = gotFetch[0][1];
-      gotFetch.splice(0, 1);
-      if (path){
-      this.getDataFromCheck(path);
-    } else {
-      return;
-    }
-    }
-    else {
-      return;
+  doneModules: 0,
+  totalModules: 0,
+
+  saveNextModule: function(array, params) {
+    for (var moduleInfo of array) {
+      var path = moduleInfo[1];
+      if (path) {
+        this.getDataFromCheck(path, params);
+      }
+      else {
+        return;
+      }
     }
   },
-  sendFetchData: function() {
-    // console.log('This is being run');
-    if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
-      gotFetch = CoreStore.getDataFromProject();
-      this.saveNextModule();
-    }
+
+  // sendFetchData: function() {
+  //   // console.log('This is being run');
+  //   if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
+  //     gotFetch = CoreStore.getDataFromProject();
+  //     this.saveNextModule();
+  //   }
+  // },
+
+  getFetchData: function(array, params) {
+    CoreStore.updateNumberOfFetchDatas(array.length);
+    this.totalModules = array.length;
+    this.saveNextModule(array, params);
   },
   saveCheckStoreToDisk: function() {
     var namespaces = CheckStore.getNameSpaces();
@@ -41,26 +41,33 @@ var CheckDataGrabber = {
       CheckStore.saveDataToDisk(element, window.__base + '/myprojects/' + element);
     }
   },
+
   onComplete: function(err, data) {
-      if (gotFetch.length == 0) {
-        //CoreStore.sendViews(views);
-        //var View = require(path + '/View');
-        //this.saveCheckStoreToDisk();
-        CoreActions.sendProgressForKey(0);
+    console.log('Somebody called on complete');
+    this.doneModules++;
+    if (!err) {
+      if (this.doneModules >= this.totalModules) {
+        //update stuff
+        console.log("We're done");
       }
-      else {
-      CoreActions.sendProgressForKey(0);
-        return;
+    }
+    else {
+      console.error(err);
     }
   },
-  Progress: function(data) {
-    CoreActions.sendProgressForKey([currentCheckName, data]);
+
+  Progress: function(name, data) {
+    CoreActions.sendProgressForKey({progress: data, key: name});
   },
-  getDataFromCheck: function(path) {
+
+  getDataFromCheck: function(path, params) {
     var DataFetcher = require(path + '/FetchData');
-    var viewObj = require(path + '/View');
+    let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
-    DataFetcher({bookAbbr: book}, this.Progress.bind(this), this.onComplete.bind(this));
+    var _this = this;
+    DataFetcher(params, function(data) {
+      _this.Progress(viewObj.name, data);}, this.onComplete.bind(this));
   }
 };
+
 module.exports = CheckDataGrabber;

@@ -3,9 +3,12 @@ const CoreStore = require('../../stores/CoreStore.js');
 const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 var progressStack = [];
-var currentProgress = 0;
+
+const CheckStore = require('../../stores/CheckStore.js');
 
 const Loader = React.createClass({
+  progressObject: {},
+
   getInitialState: function() {
     return {
       progress:0,
@@ -14,33 +17,38 @@ const Loader = React.createClass({
   },
   componentWillMount: function() {
     CoreStore.addChangeListener(this.sendProgressForKey);
+    CoreStore.addChangeListener(this.finishLoader);
   },
+
+  componentWillUnMount: function() {
+    CoreStore.removeChangeListener(this.sendProgressForKey);
+    CoreStore.removeChangeListener(this.finishLoader);
+  }
+
+  finishLoader: function() {
+    this.setState({
+      progess: 100,
+      showModal: false
+    });
+  }
+
   sendProgressForKey: function(){
-    var progressArray = CoreStore.getProgress();
-    if (progressArray && currentProgress != 0) {
-      var progressKey = progressArray[0];
-      var specificProgressForKey = progressArray[1];
-      var elementIndex = progressStack[progressKey];
-      if ( elementIndex == undefined){
-        progressStack[progressKey] = specificProgressForKey;
-      } else {
-        var overallProgress = Object.keys(progressStack).length * 100;
-        for (var progressElement in progressStack) {
-          currentProgress += progressStack[progressElement];
-        }
-        this.setState({
-          progress: currentProgress,
-          showModal: true
-        });
+    var progressKey = CoreStore.getProgress();
+    if (progressKey){
+      // var progressKey = progressArray[0];
+      
+      this.progressObject[progressKey.key] = progressKey.progress
+      var currentProgress = 0;
+      for (var key in this.progressObject){
+        currentProgress += this.progressObject[key];
       }
-    } else {
-      currentProgress = 0;
-      progressStack = [];
+      var number = CoreStore.getNumberOfFetchDatas();
+      currentProgress = currentProgress / number;
       this.setState({
-        progress: 0,
-        showModal: false
+        progress: currentProgress,
+        showModal: true
       });
-    }
+    } 
   },
 
   handleClick: function(e) {
@@ -48,9 +56,9 @@ const Loader = React.createClass({
   render: function() {
     return (
       <div>
-      <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
-      <ProgressBar now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
-      </Modal>
+        <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
+          <ProgressBar now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
+        </Modal>
       </div>
     );
   }

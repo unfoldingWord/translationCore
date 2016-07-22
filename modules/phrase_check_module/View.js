@@ -198,4 +198,7 @@ class PhraseChecker extends React.Component{
   }
 }
 
-module.exports = PhraseChecker;
+module.exports = {
+  name: "PhraseChecker",
+  view: PhraseChecker
+}

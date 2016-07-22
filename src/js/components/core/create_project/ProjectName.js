@@ -9,6 +9,8 @@ const remote = window.electron.remote;
 const ENTER = 13;
 const {dialog} = remote;
 
+const bookMap = require('../BooksOfBible');
+
 const ProjectName = React.createClass({
   getInitialState: function() {
     return {
@@ -22,6 +24,33 @@ const ProjectName = React.createClass({
     if (e.charCode == ENTER) {
     }
   },
+
+  setBookName: function(e) {
+    this.value = e.target.value;
+  },
+
+  getBookName: function() {
+    if (!this.value) {
+      console.error("We can't find the value for the book abbr!");
+    }
+    else {
+      var bookName = this.value;
+      var bookAbbr = this.getBookAbbr(bookName);
+      if (bookAbbr) {
+        return bookAbbr;
+      }
+    }
+  },
+
+  getBookAbbr: function(bookName) {
+    for (var key in bookMap) {
+      if (bookName.toLowerCase() == bookMap[key].toLowerCase() || bookName.toLowerCase() == key) {
+        return key;
+      }
+    }
+    return null;
+  },  
+
   render: function() {
     return (
       <div>
@@ -31,7 +60,11 @@ const ProjectName = React.createClass({
       <Modal.Body>
       <FormGroup>
       <ControlLabel>Enter Project Name</ControlLabel>
-      <FormControl type="text" placeholder={"John 1 Jay Scott"} onKeyPress={this.setProjectName} setProjectName={this.props.setProjectName}/>
+      <FormControl type="text" placeholder={"John 1 Jay Scott"} onKeyPress={this.setProjectName} />
+      </FormGroup>
+      <FormGroup>
+      <ControlLabel>Enter Book Name</ControlLabel>
+      <FormControl type="text" placeholder={"2 Timothy"} onChange={this.setBookName} />
       </FormGroup>
       </Modal.Body>
       </div>

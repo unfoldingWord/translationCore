@@ -31,10 +31,22 @@ const UploadModal = React.createClass({
       this.setState({showFile: false});
     }
   },
+
+  sendFilePath: function(path) {
+    if (!this.props.setTargetLanguageFilePath) {
+      console.error("Can't find setTargetLanguageFilePath!");
+    }
+    else {
+      this.props.setTargetLanguageFilePath(path);
+    }
+  },
+
   render: function() {
     var mainContent;
     if (this.state.showFile === true) {
-      mainContent = <DragDrop />;
+      mainContent = <DragDrop
+                      sendFilePath={this.sendFilePath} 
+                    />;
     } else {
       mainContent = (<div>
                        <br />

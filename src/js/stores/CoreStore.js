@@ -34,6 +34,15 @@ class CoreStore extends EventEmitter {
     super();
   }
 
+  updateNumberOfFetchDatas(number) {
+    console.log('Number: ' + number);
+    this.numberOfFetchDatas = number;
+  }
+
+  getNumberOfFetchDatas() {
+    return this.numberOfFetchDatas;
+  }
+
   getModal() {
     return this.modalVisibility;
   }
@@ -154,6 +163,10 @@ class CoreStore extends EventEmitter {
 
       case consts.SEND_PROGRESS_FOR_KEY:
         this.progressKeyObj = action.progressRecieved;
+        this.emitChange();
+      break;
+
+      case consts.DONE_LOADING:
         this.emitChange();
       break;
 

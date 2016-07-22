@@ -40,16 +40,26 @@ const SelectChecks = React.createClass({
       modules = this.state.loadedChecks.concat(modules);
       return modules;
       } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   },
-  selectedModule: function(element) {
-    var elementIndex = this.state.FetchDataArray.indexOf(element);
+  selectedModule: function(e) {
+    
+    var elementIndex = this.state.FetchDataArray.indexOf(e.target.id);
     if ( elementIndex == -1){
-      this.state.FetchDataArray.push(element);
+      var fetchData = this.state.FetchDataArray;
+      fetchData.push(e.target.id);
+      this.setState({
+        FetchDataArray: fetchData
+      });
     } else {
-      this.state.FetchDataArray.splice(elementIndex, 1);
+      var fetchData = this.state.FetchDataArray;
+      fetchData.splice(elementIndex, 1);
+      this.setState({
+        FetchDataArray: fetchData
+      });
     }
+    
   },
   beautifyString: function(check) {
     const stringRegex = new RegExp("[^a-zA-Z0-9\s]", "g");
@@ -70,20 +80,18 @@ const SelectChecks = React.createClass({
   isModule: function(filepath, file){
     try {
       var stats = fs.lstatSync(filepath);
-      if (stats.isDirectory()) {
-      }
-      else {
+      if (!stats.isDirectory()) {
         return false;
       }
       try {
         fs.accessSync(filepath + '/FetchData.js');
         return true;
       } catch (e) {
-        console.log(e);
+        console.error(e);
       }
     }
     catch (e) {
-      console.log(e);
+      console.error(e);
       return false;
     }
   },
@@ -108,19 +116,14 @@ const SelectChecks = React.createClass({
     var newModule = filename[0].split('/').pop();
     //this.("Check", newModule);
   },
-  makePathForChecks: function(check) {
-    var path = window.__base + 'modules/' + check;
-    return path;
-  },
+  
   render: function() {
     var i = 0;
-    var checkButtonComponents = this.state.allModules.map((allModules) => {
+    var checkButtonComponents = this.state.allModules.map((currentModule) => {
       return (
-        <div key={i++}>
-        <Checkbox id={this.state.allModules}>
-        {this.beautifyString(allModules)}
+        <Checkbox id={currentModule} key={i++}>
+          {this.beautifyString(currentModule)}
         </Checkbox>
-        </div>
       )
     });
     return (

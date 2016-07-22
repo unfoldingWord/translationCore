@@ -43,4 +43,7 @@ class View extends React.Component {
 	}
 }
 
-module.exports = View;
+module.exports = {
+    name: "TranslationAcademy",
+    view: View
+}

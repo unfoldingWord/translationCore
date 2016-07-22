@@ -356,4 +356,7 @@ else {
   }
 }
 
-module.exports = View;
+module.exports = {
+  name: "LexicalChecker",
+  view: View
+}

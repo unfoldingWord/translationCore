@@ -15,4 +15,7 @@ class View extends React.Component {
 	}
 }
 
-module.exports = View;
+module.exports = {
+  name: "TPane",
+  view: View
+}
