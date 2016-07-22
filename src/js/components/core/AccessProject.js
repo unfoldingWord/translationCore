@@ -28,14 +28,14 @@ var Access = {
           if (items[j] == "manifest.json") {
             fs.readFile(fileArr[j], function(err,data){
               if (err) {
-                return dialog.showErrorBox(err);
+                return dialog.showErrorBox('Open Manifest File error', err);
               }
               input = JSON.parse(data);
-              if (typeof input.ts_project !=== undefined) {
+              if (typeof input.ts_project !== undefined) {
                 params.bookAbbr = input.ts_project.id;
               }
 
-              if (typeof input.source.original_language !=== undefined) {
+              if (typeof input.source.original_language !== undefined) {
                 if (input.source.original_language.local === true) {
                   params.originalLanguagePath = window.__base + input.source.original_language.path;
                 }
@@ -43,14 +43,15 @@ var Access = {
                   //API.LoadOnline(input.source.original_language.path);
                 }
               }
-              if (typeof input.source.target_language !=== undefined) {
+              if (typeof input.source.target_language !== undefined) {
                 if (input.source.target_language.local === true) {
                   params.targetLanguagePath = input.source.target_language.path;
                 }
                 else {
+                  //TODO:
                 }
               }
-              if (typeof input.source.gateway_language !=== undefined) {
+              if (typeof input.source.gateway_language !== undefined) {
                 if (input.source.gateway_language.local === true) {
                   // params.gatewayLangugePath = input.source.gateway_language.path;
                 }
@@ -59,7 +60,7 @@ var Access = {
                 }
               }
               var fetchDataArray = [];
-              if (typeof input.check_module_locations !=== undefined) {
+              if (typeof input.check_module_locations !== undefined) {
                 for (item in input.check_module_locations) {
                   var currentItem = input.check_module_locations[item];
                   fetchDataArray.push([currentItem.name, currentItem.location]);
@@ -76,7 +77,7 @@ var Access = {
         });
 
       } catch (e) {
-      dialog.showErrorBox('An error has occurred: '+ e.message);
+      dialog.showErrorBox('Open TC project error', e.message);
       }
   },
 };

@@ -54,7 +54,7 @@ var AccessProjectMod = React.createClass({
         Access.openDir(path.join(file));
         CoreActions.showOpenModal(false);
       } catch (e) {
-        dialog.showErrorBox(e);
+        dialog.showErrorBox('Read directory error', e);
       }
 
     }
@@ -72,7 +72,7 @@ var AccessProjectMod = React.createClass({
               var file = filename[0];
               Access.openDir(path.join(file));
             } catch (e) {
-              dialog.showErrorBox(e);
+              dialog.showErrorBox('Read directory error', e);
             }
           }
           });
