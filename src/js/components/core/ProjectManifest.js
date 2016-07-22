@@ -2,6 +2,7 @@
  * @description This module creates a project manifest.
  ******************************************************************************/
 const TimeStamp = require('./Timestamp').generate()[1];
+const api = window.ModuleApi;
 
 var template = {
   generator: {
@@ -72,9 +73,9 @@ function populate (data, tsManifest) {
   for (user of data.user) {
     projectManifest.checkers.push(user);
   }
-  for (checkLocation of data.checkLocations) {
-    projectManifest.check_data_locations.push(checkLocation);
-  }
+
+    projectManifest.check_data_locations = api.getDataFromCommon('arrayOfChecks');
+
 
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;

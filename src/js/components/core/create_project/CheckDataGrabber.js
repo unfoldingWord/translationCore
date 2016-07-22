@@ -14,8 +14,10 @@ var CheckDataGrabber = {
   reportViews: [],
 
   saveNextModule: function(array, params) {
+    var checkArray = [];
     for (var moduleInfo of array) {
       var path = moduleInfo[1];
+      checkArray.push({name: moduleInfo[0], location: moduleInfo[1]});
       if (path) {
         this.getDataFromCheck(path, params);
       }
@@ -23,6 +25,7 @@ var CheckDataGrabber = {
         return;
       }
     }
+    api.putDataInCommon('arrayOfChecks', checkArray);
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     var manifestLocation = path.join(saveLocation, 'manifest.json');

@@ -107,9 +107,11 @@ const ProjectModal = React.createClass({
           target_language: _this.params.targetLanguagePath,
           original_language: ('data/ulgb/' + bookFileName),
           gateway_language: '',
-          user: [{username: 'ihoegen', email: 'ianhoegen@gmail.com'}],
-          checkLocations: [{name: 'lexical', location: 'C://Test'}]
+          user: [{username: '', email: ''}],
+          checkLocations: []
         }
+        var checkArray = api.getDataFromCommon('arrayOfChecks');
+        projectData.checkLocations = checkArray;
         CheckDataGrabber.saveManifest(_this.saveLocation, projectData, parsedManifest);
         _this.close();
       });
