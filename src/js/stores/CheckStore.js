@@ -91,9 +91,43 @@ class CheckStore extends EventEmitter {
    * @param {string} path - the path to save the json file to
    */
   saveDataToDisk(field, path, callback=() => {}) {
-    if (this.storeData.field) {
-      fs.outputJson(this.storeData.field, path, callback);
+    if (this.storeData[field]) {
+      fs.outputJson(this.storeData[field], path + field + '.json', callback);
     }
+  }
+
+  saveAllToDisk(path, callback=() => {}) {
+    function iterateOver(list, iterator, callback) {
+      var doneCount = 0;
+
+      function report(error) {
+        if (error) {
+          callback(error);
+        }
+        else {
+          doneCount++;
+          if (doneCount == list.length) {
+            callback();
+          }
+        }
+      }
+
+      for (var i = 0; i < list.length; i++) {
+        iterator(list[i], report);
+      }
+    }
+    var fieldList = [];
+    for (var field in this.storeData) {
+      fieldList.push(field);
+    }
+
+    iterateOver(fieldList, function(field, callbackReport) {
+      saveDataToDisk(field, path, callbackReport);
+    }, callback);
+  }
+
+  saveStoreToDisk(path, callback=()=>{}) {
+    fs.outputJson(this.storeData, path, callback);
   }
 
   /**
