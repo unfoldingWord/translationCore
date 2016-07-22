@@ -34,11 +34,11 @@ module.exports = (
   <LoginModal />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
-        <Col style={RootStyles.ScrollableSection} xs={2} sm={2} md={2} lg={2}>
+        <Col style={RootStyles.ScrollableSection} xs={5} sm={4} md={3} lg={2}>
           <NavMenu />
           <ProjectModal />
         </Col>
-        <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10}>
+        <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
