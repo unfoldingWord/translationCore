@@ -27,10 +27,6 @@ var style = {
     display: 'inlineBlock'
   },
 
-  bar:{
-    marginBottom: '75px'
-  },
-
   NavBarbutton:{
     marginTop: '10px',
     marginRight: '8px'

@@ -71,6 +71,18 @@ class CoreStore extends EventEmitter {
     return this.FetchDataArray;
   }
 
+  sendProjectData() {
+    return this.projectData;
+  }
+
+  getOpenModal() {
+    return this.openProjectModal;
+  }
+
+  getFilePath() {
+    return this.filepath;
+ }
+ 
   getProgress() {
   return this.progressKeyObj;
   }
@@ -148,6 +160,11 @@ class CoreStore extends EventEmitter {
 
       case consts.CHANGE_BUTTTON_STATUS:
         this.buttonStatus = action.buttonStatus;
+        this.emitChange();
+      break;
+
+      case consts.OPEN_CREATED_PROJECT:
+        this.openProjectModal = action.visible;
         this.emitChange();
       break;
 

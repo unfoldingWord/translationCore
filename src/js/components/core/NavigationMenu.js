@@ -11,16 +11,18 @@ class NavigationMenu extends React.Component {
     super();
     this.updateCheckObject = this.updateCheckObject.bind(this);
     this.state = {
-      checkObject: null
+      checkObject: {}
     };
   }
 
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.updateCheckObject);
+    api.registerEventListener('changedCheckStatus', this.updateCheckObject);
   }
 
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.updateCheckObject);
+    api.removeEventListener('changedCheckStatus', this.updateCheckObject);
   }
 
   updateCheckObject(params) {

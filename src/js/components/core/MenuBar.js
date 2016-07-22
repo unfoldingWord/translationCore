@@ -20,6 +20,12 @@ var template = [
         accelerator: 'CmdOrCtrl+S'
       },
       {
+        label: "Open Project",
+        click: function() {
+          CoreActions.showOpenModal(true);
+        }
+      },
+      {
         label: 'Create Project',
         click() {
           CoreActions.showCreateProject("Languages");
