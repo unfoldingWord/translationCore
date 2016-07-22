@@ -24,12 +24,12 @@ class Logout extends React.Component{
   updateLogoutButton(){
     this.setState({visibleLogout: CoreStore.getLogoutButton()});
   }
-//handleLogout is not fully functional we still have to work on actually Logout
-//from Door43
+
   handleLogout(){
     CoreActions.updateButtonStatus(false);
     CoreActions.updateLogoutButton(false);
     CoreActions.updateProfileVisibility(false);
+    CoreActions.login(null);
   }
 
   render(){
