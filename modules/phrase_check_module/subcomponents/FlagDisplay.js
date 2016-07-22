@@ -40,7 +40,7 @@ class FlagDisplay extends React.Component{
             function() {
               var action = {
                 type: "setFlagState",
-                field: "PhraseCheck",
+                field: "PhraseChecker",
                 checkStatus: "RETAIN"
               };
               api.sendAction(action);
@@ -48,12 +48,12 @@ class FlagDisplay extends React.Component{
           }><Glyphicon glyph="ok" /> Retain</Button>
         <Button bsStyle="warning" onClick={
             function() {
-              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "REPLACED"})
+              api.sendAction({type: "setFlagState", field: "PhraseChecker", checkStatus: "REPLACED"})
             }
           }><Glyphicon glyph="random" /> Changed</Button>
         <Button bsStyle="danger" onClick={
             function() {
-              api.sendAction({type: "setFlagState", field: "PhraseCheck", checkStatus: "WRONG"})
+              api.sendAction({type: "setFlagState", field: "PhraseChecker", checkStatus: "WRONG"})
             }
         }><Glyphicon glyph="remove" /> Wrong</Button>
       </ButtonGroup>

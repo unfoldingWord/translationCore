@@ -29,7 +29,7 @@ class Login extends React.Component {
       CoreActions.updateLoginModal(false);
       CoreActions.updateButtonStatus(true);
     }).catch(function(reason) {
-      console.log(reason);
+      //console.log(reason);
       if (reason.status === 401) {
         dialog.showErrorBox('Login Failed', 'Incorrect username or password');
       } else if (reason.hasOwnProperty('message')) {
@@ -39,7 +39,7 @@ class Login extends React.Component {
         dialog.showErrorBox('Login Failed', errorMessage);
       } else {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
-        console.log(reason);
+        //console.log(reason);
       }
     });
   }
