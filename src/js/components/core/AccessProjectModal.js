@@ -21,7 +21,6 @@ var AccessProjectMod = React.createClass({
   getInitialState: function() {
     return ({
     visibleAccess: false,
-    fileArray: [],
   });
   },
 
@@ -54,8 +53,8 @@ var AccessProjectMod = React.createClass({
         api.putDataInCommon('saveLocation', file)
         Access.openDir(path.join(file));
         CoreActions.showOpenModal(false);
-      } catch (error) {
-        alert(error);
+      } catch (e) {
+        dialog.showErrorBox(e);
       }
 
     }
@@ -72,8 +71,8 @@ var AccessProjectMod = React.createClass({
             try {
               var file = filename[0];
               Access.openDir(path.join(file));
-            } catch (error) {
-              alert(error);
+            } catch (e) {
+              dialog.showErrorBox(e);
             }
           }
           });

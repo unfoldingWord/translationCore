@@ -8,8 +8,6 @@ var remote = window.electron.remote;
 var fs = require(window.__base + 'node_modules/fs-extra');
 var {dialog} = remote;
 var path = require('path');
-var FileImport = require('./FileImport.js');
-var LoadOnline = require('./LoadOnline.js');
 var CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 
 var params = {};
@@ -27,43 +25,33 @@ var Access = {
           fileArr.push(newpath);
           }
         for (var j=0;j<items.length;j++) {
-          if (items[j] == "manifest.json")
-          {
+          if (items[j] == "manifest.json") {
             fs.readFile(fileArr[j], function(err,data){
-              if (err)
-                {
-                  return console.log(err);
-                }
+              if (err) {
+                return dialog.showErrorBox(err);
+              }
               input = JSON.parse(data);
-              if (typeof input.ts_project !== undefined)
-              {
+              if (typeof input.ts_project !=== undefined) {
                 params.bookAbbr = input.ts_project.id;
               }
 
-              if (typeof input.source.original_language !== undefined)
-              {
-                if (input.source.original_language.local == true)
-                {
+              if (typeof input.source.original_language !=== undefined) {
+                if (input.source.original_language.local === true) {
                   params.originalLanguagePath = window.__base + input.source.original_language.path;
                 }
                 else {
                   //API.LoadOnline(input.source.original_language.path);
                 }
               }
-              if (typeof input.source.target_language !== undefined)
-              {
-                if (input.source.target_language.local == true)
-                {
+              if (typeof input.source.target_language !=== undefined) {
+                if (input.source.target_language.local === true) {
                   params.targetLanguagePath = input.source.target_language.path;
-
                 }
                 else {
                 }
               }
-              if (typeof input.source.gateway_language !== undefined)
-              {
-                if (input.source.gateway_language.local == true)
-                {
+              if (typeof input.source.gateway_language !=== undefined) {
+                if (input.source.gateway_language.local === true) {
                   // params.gatewayLangugePath = input.source.gateway_language.path;
                 }
                 else {
@@ -71,10 +59,8 @@ var Access = {
                 }
               }
               var fetchDataArray = [];
-              if (typeof input.check_module_locations !== undefined)
-              {
-                for (item in input.check_module_locations)
-                {
+              if (typeof input.check_module_locations !=== undefined) {
+                for (item in input.check_module_locations) {
                   var currentItem = input.check_module_locations[item];
                   fetchDataArray.push([currentItem.name, currentItem.location]);
                   //API.putDataInCommon(input.check_data_locations[k].name, input.check_data_locations[k].path);
@@ -89,12 +75,10 @@ var Access = {
 
         });
 
-      } catch (e){
-      alert('An error has occurred: '+ e.message);
+      } catch (e) {
+      dialog.showErrorBox('An error has occurred: '+ e.message);
       }
   },
 };
 
 module.exports = Access;
-
-//call callback with directory and possilby display file folders
