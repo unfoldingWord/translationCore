@@ -13,13 +13,15 @@ const CheckStore = require('../.././stores/CheckStore');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const {dialog} = window.electron.remote;
+const FileModule= require('./FileModule');
 const Loader = require('./Loader');
 const ENTER = 13;
 const booksOfBible = require('./booksOfBible');
 const TargetLanguage = require('./UploadModal');
 const SelectChecks = require('./SelectChecks');
 const ProjectName = require('./ProjectName');
-
+const path = require('path');
+const SaveFunctions = require('./ChangesReportSaver');
 const ProjectModal = React.createClass({
   getInitialState: function() {
     return {
@@ -77,7 +79,24 @@ const ProjectModal = React.createClass({
       if (tempFetchDataArray.length > 0) {
         CoreActions.getFetchData(tempFetchDataArray);
       }
-      this.close();
+      var _this = this;
+      var manifestLocation = path.join(this.targetLanugageLocation, 'manifest.json');
+      FileModule.readFile(manifestLocation, function(data){
+        var parsedManifest = JSON.parse(data);
+        var bookTitle = parsedManifest.project.name.split(' ');
+        let bookFileName = bookTitle.join('') + '.json';
+
+        var projectData = {
+          local: true,
+          target_language: _this.targetLanugageLocation,
+          original_language: ('data/ulgb/' + bookFileName),
+          gateway_language: '',
+          user: [{username: 'ihoegen', email: 'ianhoegen@gmail.com'}],
+          checkLocations: [{name: 'lexical', location: 'C://Test'}]
+        }
+        SaveFunctions.saveManifest(_this.saveLocation, projectData, parsedManifest);
+        _this.close();
+      });
     }
     else if (this.state.modalValue == "Create") {
       CoreActions.showCreateProject("Check");
@@ -85,13 +104,19 @@ const ProjectModal = React.createClass({
       CoreActions.showCreateProject("Create");
     }
   },
+  getTargetLocation: function(data) {
+    this.targetLanugageLocation = data;
+  },
+  saveSaveLocation: function(data) {
+    this.saveLocation = data;
+  },
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
-      return (<ProjectName ProjectName={this.state.projecName}/>);
+      return (<ProjectName ProjectName={this.state.projecName} passBack={this.saveSaveLocation}/>);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage />);
+      return (<TargetLanguage passBack={this.getTargetLocation}/>);
     }
   },
   render: function() {

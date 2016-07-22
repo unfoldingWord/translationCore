@@ -16,7 +16,7 @@ var SaveReport = {
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     var manifestLocation = path.join(saveLocation, 'manifest.json');
-    fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function() {
+    fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function(err) {
       if (err) {
         console.log(err);
       }

@@ -34,7 +34,7 @@ const UploadModal = React.createClass({
   render: function() {
     var mainContent;
     if (this.state.showFile === true) {
-      mainContent = <DragDrop />;
+      mainContent = <DragDrop passBack={this.props.passBack}/>;
     } else {
       mainContent = (<div>
                        <br />
