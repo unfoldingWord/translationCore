@@ -12,16 +12,33 @@ const {dialog} = remote;
 
 const bookMap = require('../BooksOfBible');
 
-const ProjectName = React.createClass({
+const projectname = React.createClass({
   getInitialState: function() {
     return {
-      projectName:this.props.projectName,
-      saveLocation: ''
+      projectname:this.props.projectname,
+      saveLocation: null,
+      bookName: null
     }
   },
-  setProjectName: function (e) {
+  allFieldsEntered: function() {
+    tempBookName = this.state.projectname;
+    if (this.getBookAbbr(tempBookName)) {
+      this.setState({
+        bookName: e.target.value
+      });
+    } else {
+      alert("Book Name: " + tempBookName + " Is Invlaid.");
+    }
+    if(!this.state.projectname || !this.state.saveLocation || !this.state.bookName) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+  setprojectname: function (e) {
+    var newName = e.target.value;
     this.setState({
-      projectname: e.target.value
+      projectname: newName
     });
     if (e.charCode == ENTER) {
     }
@@ -33,22 +50,34 @@ const ProjectName = React.createClass({
     }, function(filename) {
       if (filename !== undefined) {
         // FileImport(filename[0]);
+        if (!_this.state.projectname){
+          alert("Enter All Fields");
+          return;
+        }
         _this.setState({saveLocation: path.join(filename[0], _this.state.projectname)});
         _this.props.passBack(path.join(filename[0], _this.state.projectname));
       }
+
     });
   },
 
   setBookName: function(e) {
-    this.value = e.target.value;
+    tempBookName = e.target.value;
+    if (this.getBookAbbr(tempBookName)) {
+      this.setState({
+        bookName: e.target.value
+      });
+    } else {
+      alert("Book Name: " + tempBookName + " Is Invlaid.");
+    }
   },
 
   getBookName: function() {
-    if (!this.value) {
+    if (!this.state.bookName) {
       console.error("We can't find the value for the book abbr!");
     }
     else {
-      var bookName = this.value;
+      var bookName = this.state.bookName;
       var bookAbbr = this.getBookAbbr(bookName);
       if (bookAbbr) {
         return bookAbbr;
@@ -74,7 +103,7 @@ const ProjectName = React.createClass({
       <Modal.Body>
       <FormGroup>
       <ControlLabel>Enter Project Name</ControlLabel>
-      <FormControl type="text" placeholder={"John 1 Jay Scott"} onChange={this.setProjectName} />
+      <FormControl type="text" placeholder={"John Wycliffe"} onChange={this.setprojectname} />
       </FormGroup>
       <FormGroup>
       <ControlLabel>Enter Book Name</ControlLabel>
@@ -88,5 +117,5 @@ const ProjectName = React.createClass({
       </Modal.Body>
       </div>
     )}
-});
-module.exports = ProjectName;
+  });
+  module.exports = projectname;

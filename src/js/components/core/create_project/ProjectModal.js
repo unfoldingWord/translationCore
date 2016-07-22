@@ -116,14 +116,22 @@ const ProjectModal = React.createClass({
         _this.close();
       });
     }
-    else if (this.state.modalValue == "Create") {
-      CoreActions.showCreateProject("Check");
-      if (this.refs.ProjectName) {
-        this.params.bookAbbr = this.refs.ProjectName.getBookName();
-      }
-    } else if (this.state.modalValue === 'Languages') {
+
+    else if (this.state.modalValue === 'Languages') {
       CoreActions.showCreateProject("Create");
     }
+
+    else if (this.state.modalValue == "Create") {
+      if (this.refs.ProjectName) {
+        this.params.bookAbbr = this.refs.ProjectName.getBookName();
+        if (!this.refs.ProjectName.allFieldsEntered()) {
+          alert("Enter All Fields Before Continuing.");
+          return;
+        }
+      }
+      CoreActions.showCreateProject("Check");
+    }
+
   },
   setSaveLocation: function(data) {
     this.saveLocation = data;
@@ -131,6 +139,7 @@ const ProjectModal = React.createClass({
   },
   setTargetLanguageFilePath: function(path) {
     this.params.targetLanguagePath = path;
+    CoreActions.showCreateProject("Create");
   },
 
   setBookName: function(abbr) {
@@ -138,11 +147,11 @@ const ProjectModal = React.createClass({
   },
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
-      return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
+      return (<SelectChecks currentChecks={this.state.currentChecks} ref={"SelectChecks"} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
       return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"} passBack={this.setSaveLocation}/>);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
+      return (<TargetLanguage ref={"TargetLanguage"} setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }
   },
 
