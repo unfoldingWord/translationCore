@@ -4,6 +4,8 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
+const CheckStore = require('../../stores/CheckStore.js')
+const api = window.ModuleApi;
 
 var template = [
   {
@@ -12,7 +14,8 @@ var template = [
       {
         label: 'Save',
         click: function() {
-
+          var path = api.getDataFromCommon('saveLocation');
+          CheckStore.saveAllToDisk(path, function() {});
         },
         accelerator: 'CmdOrCtrl+S'
       },

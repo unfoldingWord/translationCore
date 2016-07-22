@@ -14,6 +14,7 @@ const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
 const FileModule= require('../FileModule');
 const ENTER = 13;
+const api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
@@ -124,6 +125,7 @@ const ProjectModal = React.createClass({
   },
   setSaveLocation: function(data) {
     this.saveLocation = data;
+    api.putDataInCommon('saveLocation', data);
   },
   setTargetLanguageFilePath: function(path) {
     this.params.targetLanguagePath = path;
