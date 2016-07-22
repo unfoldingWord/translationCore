@@ -11,7 +11,6 @@ var ProposedChanges = null;
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
-const Grid = ReactBootstrap.Grid;
 const Well = ReactBootstrap.Well;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
@@ -230,82 +229,65 @@ class View extends React.Component {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
   		return (
-  			<div style={{maxWidth: "100%"}}>
+  			<div>
   				<TPane />
-          <Grid
+          <Row className="show-grid">
+            <Col sm={3} md={3} lg={3}
             style={{
-              minWidth: "100%",
-
+              textAlign: "center"
             }}
           >
-            <Row className="show-grid">
-              <Col sm={3} md={3} lg={3}
+              <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
+            </Col>
+            <Col
+              sm={3} md={3} lg={3}
               style={{
                 textAlign: "center"
               }}
             >
-                <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
-              </Col>
-              <Col
-                sm={3} md={3} lg={3}
-                style={{
-                  textAlign: "center"
-                }}
-              >
-                <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
-                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
-              </Col>
-            </Row>
-            <Row className="show-grid">
-              <Col
-                sm={2}
-                md={2}
-                lg={2}
-                style={{
-                  minWidth: "48%"
-                }}
-              >
-                <TranslationWordsDisplay file={this.state.currentFile} />
-              </Col>
-              <Col sm={2} md={2} lg={2}
-                style={{
-                  minWidth: "48%"
-                }}
-              >
-                <GatewayVerseDisplay
-                  wordObject={this.getWordObject(this.state.currentWord)}
-                  verse={gatewayVerse}
-                />
-                <TargetVerseDisplay
-                  verse={targetVerse}
-                  buttonEnableCallback={()=>{}}
-                  buttonDisableCallback={()=>{}}
-                />
-                <ButtonGroup style={{width:'100%'}}>
-                  <Button style={{width:'50%'}} onClick={
-                      function() {
-                        api.sendAction({
-                          type: 'updateCheckStatus',
-                          field: 'LexicalChecker',
-                          checkStatus: 'RETAINED'
-                        })
-                      }
-                    }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                  <Button style={{width:'50%'}} onClick={
-                      function() {
-                        api.sendAction({
-                          type: 'updateCheckStatus',
-                          field: 'LexicalChecker',
-                          checkStatus: 'WRONG'
-                        });
-                      }
+              <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
+                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col sm={6} md={6} lg={6}>
+              <TranslationWordsDisplay file={this.state.currentFile} />
+            </Col>
+            <Col sm={6} md={6} lg={6}>
+              <GatewayVerseDisplay
+                wordObject={this.getWordObject(this.state.currentWord)}
+                verse={gatewayVerse}
+              />
+              <TargetVerseDisplay
+                verse={targetVerse}
+                buttonEnableCallback={()=>{}}
+                buttonDisableCallback={()=>{}}
+              />
+              <ButtonGroup style={{width:'100%'}}>
+                <Button style={{width:'50%'}} onClick={
+                    function() {
+                      api.sendAction({
+                        type: 'updateCheckStatus',
+                        field: 'LexicalCheck',
+                        checkStatus: 'RETAINED'
+                      })
                     }
-                  ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
-                </ButtonGroup>
-                <ProposedChanges />
-              </Col>
-            </Row>
-          </Grid>
+                  }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
+                <Button style={{width:'50%'}} onClick={
+                    function() {
+                      api.sendAction({
+                        type: 'updateCheckStatus',
+                        field: 'LexicalCheck',
+                        checkStatus: 'WRONG'
+                      });
+                    }
+                  }
+                ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
+              </ButtonGroup>
+              <br /><br />
+              <ProposedChanges />
+            </Col>
+          </Row>
   			</div>
   		);
   	}

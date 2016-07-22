@@ -41,10 +41,13 @@ class SwitchCheckModuleDropdown extends React.Component {
   }
 
   getCheckCategoryOptions() {
+    var options = CoreStore.getCheckCategoryOptions();
     this.setState({
-      checkCategoryOptions: CoreStore.getCheckCategoryOptions()
+      checkCategoryOptions: options
     });
-    //console.log(CoreStore.getCheckCategoryOptions());
+    if (options) {
+      this.checkModuleChange({target: {value: options[0].name}});
+    }
   }
 
   render() {

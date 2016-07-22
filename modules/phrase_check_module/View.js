@@ -3,7 +3,7 @@ var TPane = null;
 var TADisplay = null;
 
 const RB = api.ReactBootstrap;
-const {Grid, Row, Col} = RB;
+const {Row, Col} = RB;
 const React = api.React;
 const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
@@ -94,7 +94,6 @@ class PhraseChecker extends React.Component{
       currentCheck.status = action.checkStatus;
     }
   }
-
   /**
    * @description - This is an action callback. This is used to change our current check index
    * and group index within the store
@@ -103,7 +102,6 @@ class PhraseChecker extends React.Component{
    * @param {object} action - This the exact action that is passed to api.sendAction, so that
    * we can have access to extra fields we might have put on it
    */
-
   changeCurrentCheckInCheckStore(phraseData, action) {
       //error check to make sure we're goingd to a legal group/check index
       if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
@@ -167,35 +165,31 @@ class PhraseChecker extends React.Component{
     }
       return (
         <div>
-          <TPane />
-          <Grid>
-              <Row className="show-grid">
-                <Col md={6}>
-                  <TADisplay />
-                </Col>
-                <Col md={6}>
-                  <Row className="show-grid">
-                    <ScriptureDisplay
-                      scripture={this.getVerse('targetLanguage')}
-                      currentVerse={this.state.currentCheck.book
-                                    + " " + this.state.currentCheck.chapter
-                                    + ":" + this.state.currentCheck.verse}
-                    />
-                  </Row>
-                <Row className="show-grid">
-                  <Col md={6} className="confirm-area">
-                    <ConfirmDisplay
-                      phraseInfo={this.state.currentCheck.phraseInfo}
-                      phrase={this.state.currentCheck.phrase}
-                    />
-                  </Col>
-                  <Col md={6}>
-                    <FlagDisplay/>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Grid>
+        <TPane />
+        <Row className="show-grid">
+          <Col md={12}>
+            <ScriptureDisplay
+              scripture={currentVerse}
+              currentVerse={currentCheck.book
+                            + " " + currentCheck.chapter
+                            + ":" + currentCheck.verse}
+            />
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Col md={6} className="confirm-area">
+            <ConfirmDisplay
+              phraseInfo={currentCheck.phraseInfo}
+              phrase={currentCheck.phrase}
+            />
+          </Col>
+          <Col md={6}>
+            <FlagDisplay
+            />
+          </Col>
+        </Row>
+        <br />
+        <TADisplay />
         </div>
       );
   }

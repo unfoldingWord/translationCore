@@ -25,11 +25,6 @@ const CheckStore = require('../stores/CheckStore.js');
  * and the checks will be able to require them dynamically
  */
 
- var params = {
-  targetLanguagePath: window.__base + "test_files/Import From TS/",
-  originalLanguagePath: window.__base + "data/ulgb",
-  bookAbbr: "2ti"
-};
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
@@ -47,7 +42,7 @@ module.exports = (
       </Row>
       <Row>
         <Col style={RootStyles.ScrollableSection} xs={10} sm={10} md={10} lg={10} xsOffset={2} mdOffset={2}>
-          <Loader />  
+          <Loader />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>

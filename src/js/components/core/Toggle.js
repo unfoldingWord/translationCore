@@ -12,14 +12,7 @@ class Toggle extends React.Component{
       online: false,
     };
   }
-  handleClick(){
-    if(this.state.online === false){
-      CoreActions.updateLoginModal(true);
-    }else if(this.state.online === true){
-      CoreActions.updateButtonStatus(false);
-    }
 
-  }
   componentWillMount() {
     CoreStore.addChangeListener(this.updateButtonStatus.bind(this));
   }
@@ -28,13 +21,17 @@ class Toggle extends React.Component{
     CoreStore.removeChangeListener(this.updateButtonStatus.bind(this));
   }
 
+  handleClick(){
+    CoreActions.updateLoginModal(true);
+  }
+
   updateButtonStatus(){
     this.setState({online: CoreStore.getButtonStatus()});
   }
 
   render(){
-    const text = this.state.online ? 'Online' : 'Offline';
-    const statusColor = this.state.online ? 'success' : 'danger';
+    const text = this.state.online ? 'Profile' : 'Log in';
+    const statusColor = this.state.online ? 'success' : 'info';
     return(
       <div>
         <Button bsStyle={statusColor} style={style.NavBarbutton}

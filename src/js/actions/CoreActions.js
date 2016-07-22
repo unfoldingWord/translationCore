@@ -12,7 +12,8 @@ listener
 module.exports = {
   login: function(user) {
     Dispatcher.handleAction({
-      type: consts.ACCOUNT_LOGIN
+      type: consts.ACCOUNT_LOGIN,
+      user: user
     });
   },
 
@@ -77,5 +78,20 @@ module.exports = {
       type: consts.DONE_LOADING,
       reportViews:data
     });
+  },
+
+  updateLogoutButton: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_LOGOUT_VISIBILITY,
+      logoutOption: boolean
+    });
+  },
+
+  updateProfileVisibility: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_PROFILE_VISIBILITY,
+      profileOption: boolean
+    });
   }
+
 };

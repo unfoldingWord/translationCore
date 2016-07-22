@@ -22,6 +22,7 @@ class ProposedChanges extends React.Component {
     this.actionHandleChange = this.actionHandleChange.bind(this);
     this.updateTargetLanguage = this.updateTargetLanguage.bind(this);
     this.updateCheck = this.updateCheck.bind(this);
+
   }
 
   componentWillMount() {
@@ -52,6 +53,10 @@ class ProposedChanges extends React.Component {
     //the object below is passed as an argument to actionhandlechange()
     api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});
   }
+/*
+  clearTextBox(){
+    setState({});
+  }*/
 
   updateTargetLanguage() {
         let targetLanguage = api.getDataFromCommon("targetLanguage");
