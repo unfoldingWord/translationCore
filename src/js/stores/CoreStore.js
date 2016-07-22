@@ -34,6 +34,15 @@ class CoreStore extends EventEmitter {
     super();
   }
 
+  updateNumberOfFetchDatas(number) {
+    console.log('Number: ' + number);
+    this.numberOfFetchDatas = number;
+  }
+
+  getNumberOfFetchDatas() {
+    return this.numberOfFetchDatas;
+  }
+
   getModal() {
     return this.modalVisibility;
   }
@@ -79,16 +88,17 @@ class CoreStore extends EventEmitter {
   getCheckCategoryOptions(){
     // TODO: This is hard-coded -- it should be filled when CreateProject finishes
     if(!this.checkCategoryOptions) {
-      this.checkCategoryOptions = [
-        {
-          view: require(window.__base + "modules/lexical_check_module/View.js"),
-          namespace: "LexicalCheck"
-        },
-        {
-          view: require(window.__base + "modules/phrase_check_module/View.js"),
-          namespace: "PhraseCheck"
-        }
-      ]
+      // this.checkCategoryOptions = [
+      //   {
+      //     view: require(window.__base + "modules/lexical_check_module/View.js"),
+      //     namespace: "LexicalCheck"
+      //   },
+      //   {
+      //     view: require(window.__base + "modules/phrase_check_module/View.js"),
+      //     namespace: "PhraseCheck"
+      //   }
+      // ]
+      return null;
     }
     return this.checkCategoryOptions;
   }
@@ -153,6 +163,12 @@ class CoreStore extends EventEmitter {
 
       case consts.SEND_PROGRESS_FOR_KEY:
         this.progressKeyObj = action.progressRecieved;
+        this.emitChange();
+      break;
+
+      case consts.DONE_LOADING:
+        this.doneLoading = true;
+        this.checkCategoryOptions = action.checkCategoryOptions;
         this.emitChange();
       break;
 

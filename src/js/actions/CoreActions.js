@@ -66,9 +66,15 @@ module.exports = {
   },
   
   sendProgressForKey: function(progressKeyObj) {
-  Dispatcher.handleAction({
-    type: consts.SEND_PROGRESS_FOR_KEY,
-    progressRecieved: progressKeyObj
-  });
-}
+    Dispatcher.handleAction({
+      type: consts.SEND_PROGRESS_FOR_KEY,
+      progressRecieved: progressKeyObj
+    });
+  },
+
+  doneLoadingFetchData: function() {
+    Dispatcher.handleAction({
+      type: consts.DONE_LOADING,
+    });
+  }
 };

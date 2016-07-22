@@ -210,9 +210,9 @@ class CheckStore extends EventEmitter {
   removeAction(type, callback) {
     if (type in this.actionCallbacks) {
       var i = 0;
-      for (var fun of this.actionCallbacks.type) {
+      for (var fun of this.actionCallbacks[type]) {
         if (fun === callback) {
-          this.actionCallbacks.splice(i, 0);
+          this.actionCallbacks[type].splice(i, 0);
           i++;
         }
       }

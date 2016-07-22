@@ -6,12 +6,14 @@ const Parser = require('./parsers/tNParser.js');
 const Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
 const DataFetcher = function(params, progress, onComplete){
+  // console.log('Phrase is getting called');
   var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
   var ulb = {};
   DoorDataFetcher.getBook(
     params.bookAbbr,
     function(done, total){
+      // console.log('Phrase: ' + ((done / total) * 100));
       progress(done/total*100);
     },
     function(err, book){
@@ -47,7 +49,8 @@ const DataFetcher = function(params, progress, onComplete){
         api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
         api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
         // TODO: eventually, this event will be called when the check type is selected, not in fetchData
-        api.emitEvent('phraseDataLoaded');
+        // api.emitEvent('phraseDataLoaded');
+        // console.log('Phrase Finished');
         onComplete(null);
       }
     }

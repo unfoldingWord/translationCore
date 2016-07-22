@@ -116,6 +116,8 @@ class ModuleApi {
         switch(bookAbbr) {
             case "2ti":
                 return "2 Timothy";
+            case "mat":
+                return "Matthew";
             default:
                 return bookAbbr;
         }

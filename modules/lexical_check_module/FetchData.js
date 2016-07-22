@@ -23,6 +23,7 @@ const BookWordTest = require('./translation_words/WordTesterScript.js');
 * if error ocurred it's called with an error, 2nd argument carries the result
 */
 function getData(params, progressCallback, callback) {
+  // console.log('Lexical is good');
 // Get Bible
   var bookData;
   var Door43Fetcher = new Door43DataFetcher();
@@ -33,13 +34,14 @@ function getData(params, progressCallback, callback) {
     tWFetcher.getWordList(undefined,
       function(error, data) {
         if (error) {
-          console.log('TWFetcher throwing error');
+          console.error('TWFetcher throwing error');
           callback(error);
         }
         else {
           wordList = data;
           tWFetcher.getAliases(function(done, total) {
-            progressCallback(((done / total) * 0.5) + 0.5);
+            // console.log('Lexical progress: ' + (((done / total) * 50) + 50));
+            progressCallback(((done / total) * 50) + 50);
           }, function(error) {
             if (error) {
               callback(error);
@@ -48,7 +50,7 @@ function getData(params, progressCallback, callback) {
               var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
               var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
               checkObject.LexicalCheck.sort(function(first, second) {
-                  return first.group - second.group;
+                  return stringCompare(first.group, second.group);
               });
               for (var group of checkObject['LexicalCheck']) {
                 for (var check of group.checks) {
@@ -59,6 +61,7 @@ function getData(params, progressCallback, callback) {
               api.putDataInCheckStore('LexicalCheck', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalCheck', 'currentGroupIndex', 0);
               api.putDataInCheckStore('LexicalCheck', 'wordList', wordList);
+              // console.log('Lexical finished');
               callback(null);
             }
           });
@@ -67,7 +70,8 @@ function getData(params, progressCallback, callback) {
   }
 
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
-    progressCallback((done / total) * 0.5);}, function(error, data) {
+    // console.log('Lexical: ' + ((done / total) * 50));
+    progressCallback((done / total) * 50);}, function(error, data) {
       if (error) {
         console.error('Door43Fetcher throwing error');
         callback(error);
@@ -168,7 +172,9 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
   var returnArray = [];
   var aliases = wordObject.aliases;
   for (var alias of aliases) {
-    var index = verseObject.text.indexOf(alias, 0);
+    var wordRegex = new RegExp('[\\W\\s]' + alias + '[\\W\\s]', 'i');
+    var currentText = verseObject.text;
+    var index = currentText.search(wordRegex);
     while (index != -1) {
       returnArray.push({
         "chapter": chapterNumber,
@@ -176,7 +182,8 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
         "checked": false,
         "status": "UNCHECKED"
       });
-      index = verseObject.text.indexOf(alias, index + 1);
+      currentText = currentText.slice(index + 1);
+      index = currentText.search(wordRegex);
     }
   }
   return returnArray;

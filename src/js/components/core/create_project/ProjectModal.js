@@ -8,21 +8,24 @@ const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
-const CoreStore = require('../../stores/CoreStore.js');
-const CheckStore = require('../.././stores/CheckStore');
-const CoreActions = require('../../actions/CoreActions.js');
-const CheckDataGrabber = require('./CheckDataGrabber');
+const CoreStore = require('../../../stores/CoreStore.js');
+const CheckStore = require('../../../stores/CheckStore');
+const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
-const FileModule= require('./FileModule');
-const Loader = require('./Loader');
+const FileModule= require('../FileModule');
 const ENTER = 13;
-const booksOfBible = require('./booksOfBible');
-const TargetLanguage = require('./UploadModal');
+const booksOfBible = require('../booksOfBible');
+const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
 const ProjectName = require('./ProjectName');
 const path = require('path');
-const SaveFunctions = require('./ChangesReportSaver');
+const CheckDataGrabber = require('./CheckDataGrabber');
+
 const ProjectModal = React.createClass({
+  params: {
+    originalLanguagePath: window.__base + "data/ulgb"
+  },
+
   getInitialState: function() {
     return {
       projectName:"",
@@ -34,12 +37,12 @@ const ProjectModal = React.createClass({
       loadedChecks:[],
       currentChecks:[],
       modalValue:"Languages",
-      FetchDataArray:[]      //FetchDataArray of checkmodule
+      FetchDataArray:[]     //FetchDataArray of checkmodule
     };
   },
+
   componentWillMount: function() {
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
-    CheckDataGrabber.addListner();      //action to change text in project modal
   },
   showCreateProject: function() {
     var modal = CoreStore.getShowProjectModal()
@@ -69,15 +72,27 @@ const ProjectModal = React.createClass({
       showModal: false
     });
   },
+
+  makePathForChecks: function(check) {
+    if (!check || check == '') {
+      return;
+    }
+    var path = window.__base + 'modules/' + check;
+    return path;
+  },
+
   onClick: function () {
     var tempFetchDataArray = [];      //tempFetchDataArray to push checkmodule paths onto
     if (this.state.modalValue == "Check") {
       for (var element in this.state.FetchDataArray) {
         var pathOfCheck = this.makePathForChecks(this.state.FetchDataArray[element]);
-        tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
+        if (pathOfCheck) {
+          tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
+        }
       }
       if (tempFetchDataArray.length > 0) {
-        CoreActions.getFetchData(tempFetchDataArray);
+        // CoreActions.getFetchData(tempFetchDataArray);
+        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
       }
       var _this = this;
       var manifestLocation = path.join(this.targetLanugageLocation, 'manifest.json');
@@ -94,12 +109,15 @@ const ProjectModal = React.createClass({
           user: [{username: 'ihoegen', email: 'ianhoegen@gmail.com'}],
           checkLocations: [{name: 'lexical', location: 'C://Test'}]
         }
-        SaveFunctions.saveManifest(_this.saveLocation, projectData, parsedManifest);
+        CheckDataGrabber.saveManifest(_this.saveLocation, projectData, parsedManifest);
         _this.close();
       });
     }
     else if (this.state.modalValue == "Create") {
       CoreActions.showCreateProject("Check");
+      if (this.refs.ProjectName) {
+        this.params.bookAbbr = this.refs.ProjectName.getBookName();
+      }
     } else if (this.state.modalValue === 'Languages') {
       CoreActions.showCreateProject("Create");
     }
@@ -110,15 +128,23 @@ const ProjectModal = React.createClass({
   saveSaveLocation: function(data) {
     this.saveLocation = data;
   },
+  setTargetLanguageFilePath: function(path) {
+    this.params.targetLanguagePath = path;
+  },
+
+  setBookName: function(abbr) {
+    this.params.bookAbbr = abbr;
+  },
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
-      return (<ProjectName ProjectName={this.state.projecName} passBack={this.saveSaveLocation}/>);
+      return (<ProjectName projectName={this.state.projecName} ref={"ProjectName"} passBack={this.saveSaveLocation}/>);
     } else if (modalBody === 'Languages') {
-      return (<TargetLanguage passBack={this.getTargetLocation}/>);
+      return (<TargetLanguage setTargetLanguageFilePath={this.setTargetLanguageFilePath} passBack={this.getTargetLocation}/>);
     }
   },
+
   render: function() {
     return (
       <div>
