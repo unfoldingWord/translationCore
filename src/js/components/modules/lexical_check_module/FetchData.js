@@ -72,7 +72,7 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 */
 function findWordsInBook(bookData, wordInBookSet, wordList) {
   var returnObject = {};
-  returnObject['LexicalCheck'] = [];
+  returnObject['LexicalChecker'] = [];
   for (var word of wordInBookSet) {
     var wordReturnObject = {
       "group": word.replace(extensionRegex, ''),
@@ -90,7 +90,7 @@ function findWordsInBook(bookData, wordInBookSet, wordList) {
           }
         }
       }
-      returnObject.LexicalCheck.push(wordReturnObject);
+      returnObject.LexicalChecker.push(wordReturnObject);
     }
   }
   return returnObject;

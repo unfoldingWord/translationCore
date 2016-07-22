@@ -7,7 +7,6 @@ const React = api.React;
 
 
 class View extends React.Component {
-    
 
 	render() {
 		return (
@@ -16,4 +15,7 @@ class View extends React.Component {
 	}
 }
 
-module.exports = View;
+module.exports = {
+  name: "TPane",
+  view: View
+}

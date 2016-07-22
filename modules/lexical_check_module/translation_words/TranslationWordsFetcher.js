@@ -120,6 +120,7 @@ else {
 
   getAliases(progCallback = () => {}, callback = () => {}) {
     var calls = [];
+    var numberDone = 0;
     function iterateOverCalls(start=0, end=100) {
       end = Math.min(end, calls.length);
       start = Math.min(start, end);
@@ -132,7 +133,7 @@ else {
         function(listItem, report) {
           listItem(function() {
             report();
-            progCallback(1);
+            progCallback(++numberDone, calls.length);
           });
         }, 
         function() {

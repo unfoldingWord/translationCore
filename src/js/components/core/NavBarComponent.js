@@ -3,6 +3,7 @@ const Navbar = require('react-bootstrap/lib/Navbar');
 const NavItem = require('react-bootstrap/lib/NavItem');
 const Nav = require('react-bootstrap/lib/Nav');
 const Toggle= require('./Toggle');
+const Logout = require('./Logout');
 const style = require('../../styles/loginStyle');
 
 class NavBarComponent extends React.Component{
@@ -12,10 +13,13 @@ class NavBarComponent extends React.Component{
       <Navbar inverse style={style.navbar}>
         <Navbar.Header>
           <Navbar.Brand>
-            <img src="images/TC_Icon.png" style={style.logo}/>
+            <img src="images/TC_Icon_logo.png" style={style.logo}/>
           </Navbar.Brand>
         </Navbar.Header>
         <Navbar.Collapse>
+          <Nav pullRight>
+           <Logout />
+          </Nav>
           <Nav pullRight>
           <Toggle />
           </Nav>

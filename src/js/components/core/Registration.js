@@ -7,10 +7,26 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Token = require('./AuthToken');
-
 const CoreActions = require('../../actions/CoreActions.js');
-
 const GogsApi = require('./GogsApi');
+const ACCOUNT_CREATION_ERROR = 'Account Creation Error';
+const UNKNOWN_ERROR = 'Unknown Error';
+const EMPTY = {
+  email: 'Email is empty',
+  username: 'Username is empty',
+  password: 'Password is empty',
+  confirm: 'Confirm password is empty'
+}
+const INVALID = {
+  email: 'Email is not valid',
+  password: 'Passwords do not match'
+}
+const ENTER = {
+  username: 'Username',
+  email: 'Email',
+  password: 'Password',
+  confirm: 'Confirm Password'
+}
 
 const Registration = React.createClass({
   getInitialState: function() {
@@ -56,35 +72,34 @@ const Registration = React.createClass({
       GogsApi(Token)
       .createAccount(user)
       .then(function(data) {
-        console.log(data);
         CoreActions.login(data);
         CoreActions.updateLoginModal(false);
       })
       .catch(function(reason) {
         console.log(reason);
         if (reason.hasOwnProperty('message')) {
-          dialog.showErrorBox('Account Creation Error', reason.message);
+          dialog.showErrorBox('', reason.message);
         } else if (reason.hasOwnProperty('data')) {
           let errorMessage = JSON.parse(reason.data);
           console.log(errorMessage.message);
-          dialog.showErrorBox('Account Creation Error', errorMessage.message);
+          dialog.showErrorBox(ACCOUNT_CREATION_ERROR, errorMessage.message);
         } else {
-          dialog.showErrorBox('Account Creation Error', 'Unknown Error');
+          dialog.showErrorBox(ACCOUNT_CREATION_ERROR, UNKNOWN_ERROR);
           console.log(reason);
         }
       });
     } else if(unLen === 0){
-        dialog.showErrorBox('Account Creation Error', 'Username is empty');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.username);
     } else if (this.state.email.length === 0) {
-        dialog.showErrorBox('Account Creation Error', 'Email is empty');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.email);
     } else if(emailValid !== 'success'){
-        dialog.showErrorBox('Account Creation Error', 'Email is not valid');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.email);
     } else if (this.state.password.length === 0) {
-        dialog.showErrorBox('Account Creation Error', 'Password is empty');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.password);
     } else if (this.state.confirm.length === 0) {
-        dialog.showErrorBox('Account Creation Error', 'Confirm password is empty');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.confirm);
     } else if(passwordMatch !== 'success'){
-        dialog.showErrorBox('Account Creation Error', 'Passwords do not match');
+        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.password);
     }
   },
   validateEmail: function() {
@@ -98,18 +113,18 @@ const Registration = React.createClass({
     return (
         <div>
           <FormGroup controlId="username">
-            <FormControl type="text" placeholder="Username" onChange={this.handleUser}/>
+            <FormControl type="text" placeholder={ENTER.username} onChange={this.handleUser}/>
           </FormGroup>
           <FormGroup controlId="email" validationState={this.validateEmail()}>
-            <FormControl type="text" placeholder="Email" onChange={this.handleEmail}/>
+            <FormControl type="text" placeholder={ENTER.email} onChange={this.handleEmail}/>
             <FormControl.Feedback />
           </FormGroup>
           <FormGroup controlId="password" validationState={this.checkPass()}>
-            <FormControl type="password" placeholder="Password" onChange={this.handlePass}/>
+            <FormControl type="password" placeholder={ENTER.password} onChange={this.handlePass}/>
             <FormControl.Feedback />
           </FormGroup>
           <FormGroup controlId="confirm" validationState={this.checkPass()}>
-            <FormControl type="password" placeholder="Confirm Password" onChange={this.handleConfirm}/>
+            <FormControl type="password" placeholder={ENTER.confirm} onChange={this.handleConfirm}/>
             <FormControl.Feedback />
           </FormGroup>
           <Button onClick={this.createUser} bsStyle="primary">

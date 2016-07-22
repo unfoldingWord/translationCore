@@ -4,22 +4,24 @@ const Glyphicon  = require('react-bootstrap/lib/Glyphicon.js');
 
 const api = window.ModuleApi;
 
-const SaveAndContinue = 'Save and Continue';
+const SaveAndContinue = 'Save and Continue ';
 class NextButton extends React.Component {
   constructor() {
     super();
     this.buttonClicked = this.buttonClicked.bind(this);
   }
 
+
+
   buttonClicked() {
     api.emitEvent('goToNext');
   }
 
-  render() {
+  render() { 
     return (
-        <Button className='btn' onClick={this.buttonClicked}>
+        <Button bsStyle='primary' onClick={this.buttonClicked}>
           {SaveAndContinue}
-          <Glyphicon glyph="arrow-right" />
+          &nbsp;<Glyphicon glyph="arrow-right" />
         </Button>
     );
   }

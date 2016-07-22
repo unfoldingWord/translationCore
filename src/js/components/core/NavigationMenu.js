@@ -24,7 +24,7 @@ class NavigationMenu extends React.Component {
     api.removeEventListener('changeCheckType', this.updateCheckObject);
     api.removeEventListener('changedCheckStatus', this.updateCheckObject);
   }
-  
+
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : api.getDataFromCheckStore(params.currentCheckNamespace));
     this.setState({
@@ -35,7 +35,7 @@ class NavigationMenu extends React.Component {
   render() {
     var menuList;
     if (!this.state.checkObject || !this.state.checkObject["groups"]) {
-      return <div></div>;
+      return <Well style={{minHeight:"100%"}}>{' '}</Well>;
     }
     menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
       var groupHeader = (
@@ -58,6 +58,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <Well>
+          <h3>Checks</h3>
           {menuList}
         </Well>
       </div>
