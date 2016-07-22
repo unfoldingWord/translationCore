@@ -74,7 +74,7 @@ const ProjectName = React.createClass({
       <Modal.Body>
       <FormGroup>
       <ControlLabel>Enter Project Name</ControlLabel>
-      <FormControl type="text" placeholder={"John 1 Jay Scott"} onKeyPress={this.setProjectName} />
+      <FormControl type="text" placeholder={"John 1 Jay Scott"} onChange={this.setProjectName} />
       </FormGroup>
       <FormGroup>
       <ControlLabel>Enter Book Name</ControlLabel>

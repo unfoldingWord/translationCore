@@ -10,6 +10,7 @@ const EventEmitter = require('events').EventEmitter;
 const Dispatcher = require('../dispatchers/Dispatcher');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const utils = require("../utils.js");
+const pathModule = require('path');
 
 class CheckStore extends EventEmitter {
   constructor() {
@@ -92,11 +93,13 @@ class CheckStore extends EventEmitter {
    */
   saveDataToDisk(field, path, callback=() => {}) {
     if (this.storeData[field]) {
-      fs.outputJson(this.storeData[field], path + field + '.json', callback);
+      var saveLocation = pathModule.join(path, field + '.json');
+      fs.outputJson(saveLocation, this.storeData[field], callback);
     }
   }
 
   saveAllToDisk(path, callback=() => {}) {
+    var _this = this;
     function iterateOver(list, iterator, callback) {
       var doneCount = 0;
 
@@ -122,7 +125,7 @@ class CheckStore extends EventEmitter {
     }
 
     iterateOver(fieldList, function(field, callbackReport) {
-      saveDataToDisk(field, path, callbackReport);
+      _this.saveDataToDisk(field, path, callbackReport);
     }, callback);
   }
 

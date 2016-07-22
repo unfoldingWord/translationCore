@@ -5,7 +5,7 @@
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckStore = require('../../stores/CheckStore.js')
-const api = window.ModuleApi;
+const api = require('../../ModuleApi.js');
 
 var template = [
   {
