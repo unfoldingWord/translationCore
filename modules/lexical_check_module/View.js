@@ -30,8 +30,8 @@ const NAMESPACE = "LexicalChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
   UNABLE_TO_FIND_WORD = "Unable to find wordobject",
-  RETAINED = "Retained",
-  WRONG = "Wrong";
+  RETAINED = "Correct in Context",
+  WRONG = "Flag for Review";
 //Other constants
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
