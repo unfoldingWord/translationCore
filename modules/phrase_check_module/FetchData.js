@@ -52,12 +52,6 @@ const DataFetcher = function(params, progress, onComplete){
 
         phraseData = parseObject(chapterData);
 
-        //put the data in the CheckStore
-        api.putDataInCheckStore('PhraseChecker', 'groups', phraseData['groups']);
-        api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
-        api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
-        // TODO: eventually, this event will be called when the check type is selected, not in fetchData
-        onComplete(null);
         // wait until translation academy is loaded, then change group headers
         checkIfTranslationAcademyIsLoaded();
       }
@@ -124,9 +118,9 @@ function changeGroupHeaders(phraseObject, groupNamesToTitles) {
 
 // Saves phrase data into the CheckStore
 function saveData(phraseObject) {
-  api.putDataInCheckStore('PhraseCheck', 'groups', phraseObject['groups']);
-  api.putDataInCheckStore('PhraseCheck', 'currentCheckIndex', 0);
-  api.putDataInCheckStore('PhraseCheck', 'currentGroupIndex', 0);
+  api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
+  api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
+  api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
   // TODO: eventually, this event will be called when the check type is selected, not in fetchData
   onCompleteFunction(null);
 }
