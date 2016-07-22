@@ -268,7 +268,7 @@ class View extends React.Component {
                     function() {
                       api.sendAction({
                         type: 'updateCheckStatus',
-                        field: 'LexicalCheck',
+                        field: 'LexicalChecker',
                         checkStatus: 'RETAINED'
                       })
                     }
@@ -277,7 +277,7 @@ class View extends React.Component {
                     function() {
                       api.sendAction({
                         type: 'updateCheckStatus',
-                        field: 'LexicalCheck',
+                        field: 'LexicalChecker',
                         checkStatus: 'WRONG'
                       });
                     }
