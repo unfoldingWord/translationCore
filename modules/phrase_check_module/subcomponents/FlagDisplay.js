@@ -6,16 +6,30 @@ const {Button, ButtonGroup, Glyphicon} = RB;
 
 class FlagDisplay extends React.Component{
 
+  constructor() {
+    super();
+    this.state = {
+
+    };
+    this.setFlagStateFunction = this.setFlagStateFunction.bind(this);
+  }
+
   componentWillMount(){
-    api.registerAction('setFlagState', (data, action) => {
-      var currentGroupIndex = data.currentGroupIndex;
-      var currentCheckIndex = data.currentCheckIndex;
-      var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
-      if (currentCheck) {
-        currentCheck.checkStatus = action.checkStatus;
-      }
-      api.emitEvent('changedCheckStatus', {checkStatus: action.checkStatus})
-    });
+    api.registerAction('setFlagState', this.setFlagStateFunction);
+  }
+
+  componentWillUnmount() {
+    api.removeAction('setFlagState', this.setFlagStateFunction);
+  }
+
+  setFlagStateFunction(data, action) {
+    var currentGroupIndex = data.currentGroupIndex;
+    var currentCheckIndex = data.currentCheckIndex;
+    var currentCheck = data.groups[currentGroupIndex][currentCheckIndex];
+    if (currentCheck) {
+      currentCheck.checkStatus = action.checkStatus;
+    }
+    api.emitEvent('changedCheckStatus', {checkStatus: action.checkStatus})
   }
 
   render(){
