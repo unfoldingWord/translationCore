@@ -16,20 +16,11 @@ const projectname = React.createClass({
   getInitialState: function() {
     return {
       projectname:this.props.projectname,
-      saveLocation: null,
-      bookName: null
+      saveLocation: null
     }
   },
   allFieldsEntered: function() {
-    tempBookName = this.state.projectname;
-    if (this.getBookAbbr(tempBookName)) {
-      this.setState({
-        bookName: e.target.value
-      });
-    } else {
-      alert("Book Name: " + tempBookName + " Is Invlaid.");
-    }
-    if(!this.state.projectname || !this.state.saveLocation || !this.state.bookName) {
+    if(!this.state.projectname || !this.state.saveLocation) {
       return false;
     } else {
       return true;
@@ -51,7 +42,7 @@ const projectname = React.createClass({
       if (filename !== undefined) {
         // FileImport(filename[0]);
         if (!_this.state.projectname){
-          alert("Enter All Fields");
+          alert("Enter Project Name.");
           return;
         }
         _this.setState({saveLocation: path.join(filename[0], _this.state.projectname)});
@@ -60,40 +51,6 @@ const projectname = React.createClass({
 
     });
   },
-
-  setBookName: function(e) {
-    tempBookName = e.target.value;
-    if (this.getBookAbbr(tempBookName)) {
-      this.setState({
-        bookName: e.target.value
-      });
-    } else {
-      alert("Book Name: " + tempBookName + " Is Invlaid.");
-    }
-  },
-
-  getBookName: function() {
-    if (!this.state.bookName) {
-      console.error("We can't find the value for the book abbr!");
-    }
-    else {
-      var bookName = this.state.bookName;
-      var bookAbbr = this.getBookAbbr(bookName);
-      if (bookAbbr) {
-        return bookAbbr;
-      }
-    }
-  },
-
-  getBookAbbr: function(bookName) {
-    for (var key in bookMap) {
-      if (bookName.toLowerCase() == bookMap[key].toLowerCase() || bookName.toLowerCase() == key) {
-        return key;
-      }
-    }
-    return null;
-  },
-
   render: function() {
     return (
       <div>
@@ -104,10 +61,6 @@ const projectname = React.createClass({
       <FormGroup>
       <ControlLabel>Enter Project Name</ControlLabel>
       <FormControl type="text" placeholder={"John Wycliffe"} onChange={this.setprojectname} />
-      </FormGroup>
-      <FormGroup>
-      <ControlLabel>Enter Book Name</ControlLabel>
-      <FormControl type="text" placeholder={"2 Timothy"} onChange={this.setBookName} />
       </FormGroup>
       <div>
       <Button onClick={this.sendBackSaveLocation}>Choose Save Location</Button>

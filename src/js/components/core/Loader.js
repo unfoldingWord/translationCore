@@ -62,7 +62,7 @@ const Loader = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
-          <ProgressBar now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
+          <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
         </Modal>
       </div>
     );
