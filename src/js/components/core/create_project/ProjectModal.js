@@ -105,10 +105,11 @@ const ProjectModal = React.createClass({
         var projectData = {
           local: true,
           target_language: _this.params.targetLanguagePath,
-          original_language: ('data/ulgb/' + bookFileName),
+          original_language: ('data/ulgb/'),
           gateway_language: '',
           user: [{username: '', email: ''}],
-          checkLocations: []
+          checkLocations: [],
+          saveLocation: _this.saveLocation
         }
         var checkArray = api.getDataFromCommon('arrayOfChecks');
         projectData.checkLocations = checkArray;
