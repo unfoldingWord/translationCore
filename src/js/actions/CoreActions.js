@@ -31,7 +31,8 @@ module.exports = {
 
   login: function(user) {
     Dispatcher.handleAction({
-      type: consts.ACCOUNT_LOGIN
+      type: consts.ACCOUNT_LOGIN,
+      user: user
     });
   },
 
@@ -90,5 +91,40 @@ module.exports = {
       buttonStatus: boolean
     });
   },
+
+  getFetchData: function(FetchDataArray) {
+    Dispatcher.handleAction({
+      type: consts.SEND_FETCH_DATA,
+      array: FetchDataArray
+    });
+  },
+
+  sendProgressForKey: function(progressKeyObj) {
+    Dispatcher.handleAction({
+      type: consts.SEND_PROGRESS_FOR_KEY,
+      progressRecieved: progressKeyObj
+    });
+  },
+
+  doneLoadingFetchData: function(data) {
+    Dispatcher.handleAction({
+      type: consts.DONE_LOADING,
+      reportViews:data
+    });
+  },
+
+  updateLogoutButton: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_LOGOUT_VISIBILITY,
+      logoutOption: boolean
+    });
+  },
+
+  updateProfileVisibility: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_PROFILE_VISIBILITY,
+      profileOption: boolean
+    });
+  }
 
 };

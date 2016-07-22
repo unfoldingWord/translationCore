@@ -12,6 +12,7 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const style = require('../../styles/loginStyle');
 const gogs = require('./GogsApi.js');
+const Token = require('./AuthToken');
 const Registration = require('./Registration');
 
 class Login extends React.Component {
@@ -24,12 +25,14 @@ class Login extends React.Component {
       username: this.state.userName,
       password: this.state.password
     };
-    var newuser = gogs().login(userdata).then(function(userdata) {
+    var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
       CoreActions.updateButtonStatus(true);
+      CoreActions.updateLogoutButton(true);
+      CoreActions.updateProfileVisibility(true);
     }).catch(function(reason) {
-      console.log(reason);
+      //console.log(reason);
       if (reason.status === 401) {
         dialog.showErrorBox('Login Failed', 'Incorrect username or password');
       } else if (reason.hasOwnProperty('message')) {
@@ -39,7 +42,7 @@ class Login extends React.Component {
         dialog.showErrorBox('Login Failed', errorMessage);
       } else {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
-        console.log(reason);
+        //console.log(reason);
       }
     });
   }
@@ -59,7 +62,7 @@ class Login extends React.Component {
       return (
         <Registration />
       );
-    } else {
+    }else{
       return (
         <Grid>
           <Row className="show-grid">

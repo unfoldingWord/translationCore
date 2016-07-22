@@ -15,24 +15,13 @@ const CoreActions = require('../../actions/CoreActions.js');
 const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 
+const IMPORT_PROJECT = 'Import Translation Studio Project';
+const IMPORT_LOCAL = 'Import Project Locally';
+const IMPORT_ONLINE = 'Import From Online';
+
 const UploadModal = React.createClass({
   getInitialState: function() {
-    return {showModal: false, active: 1, showFile: true};
-  },
-  componentWillMount: function() {
-    CoreStore.addChangeListener(this.updateModal);
-  },
-  componentWillUnmount: function() {
-    CoreStore.removeChangeListener(this.updateModal);
-  },
-  updateModal: function() {
-    this.setState({showModal: CoreStore.getModal()});
-  },
-  close: function() {
-    CoreActions.updateModal(false);
-  },
-  open: function() {
-    this.setState({showModal: true});
+    return {active: 1, showFile: true};
   },
   handleSelect: function(eventKey) {
     this.setState({active: eventKey});
@@ -42,10 +31,22 @@ const UploadModal = React.createClass({
       this.setState({showFile: false});
     }
   },
+
+  sendFilePath: function(path) {
+    if (!this.props.setTargetLanguageFilePath) {
+      console.error("Can't find setTargetLanguageFilePath!");
+    }
+    else {
+      this.props.setTargetLanguageFilePath(path);
+    }
+  },
+
   render: function() {
     var mainContent;
     if (this.state.showFile === true) {
-      mainContent = <DragDrop />;
+      mainContent = <DragDrop
+                      sendFilePath={this.sendFilePath}
+                    />;
     } else {
       mainContent = (<div>
                        <br />
@@ -53,21 +54,18 @@ const UploadModal = React.createClass({
                      </div>);
     }
     return (
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>Import Project</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
-            <NavItem eventKey={1}>Import Project Locally</NavItem>
-            <NavItem eventKey={2}>Import From Online</NavItem>
-          </Nav>
-          {mainContent}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+          <div>
+            <Modal.Header>
+              <Modal.Title>{IMPORT_PROJECT}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
+              <NavItem eventKey={1}>{IMPORT_LOCAL}</NavItem>
+              <NavItem eventKey={2}>{IMPORT_ONLINE}</NavItem>
+            </Nav>
+            {mainContent}
+            </Modal.Body>
+          </div>
     );
   }
 });

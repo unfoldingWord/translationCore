@@ -14,7 +14,7 @@ var style = {
 
   logo:{
     height: '60px',
-    width: '60px',
+    width: '165px',
     margin: '0px'
   },
 
@@ -33,6 +33,7 @@ var style = {
 
   NavBarbutton:{
     marginTop: '10px',
+    marginRight: '8px'
   },
 
   loginGridLeft:{

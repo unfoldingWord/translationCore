@@ -6,12 +6,11 @@ const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
 //Modules not defined within lexical_check_module
-const TPane = api.getModule('TPane');
-const ProposedChanges = api.getModule('ProposedChanges');
+var TPane = null;
+var ProposedChanges = null;
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
-const Grid = ReactBootstrap.Grid;
 const Well = ReactBootstrap.Well;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
@@ -24,9 +23,10 @@ const TranslationWordsDisplay = require('./translation_words/TranslationWordsDis
 const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
+const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
-const NAMESPACE = "LexicalCheck",
+const NAMESPACE = "LexicalChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
   UNABLE_TO_FIND_WORD = "Unable to find wordobject",
@@ -41,10 +41,19 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 class View extends React.Component {
 	constructor() {
 		super();
-        this.state = {
-            currentCheck: null,
-            currentTranslationWordFile: null
-        }
+    this.state = {
+        currentCheck: null,
+        currentTranslationWordFile: null
+    }
+    TPane = api.getModule('TPane');
+    ProposedChanges = api.getModule('ProposedChanges');
+
+    this.updateState = this.updateState.bind(this);
+    this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
+    this.updateCheckStatus = this.updateCheckStatus.bind(this);
+    this.goToNextListener = EventListeners.goToNext.bind(this);
+    this.goToCheckListener = EventListeners.goToCheck.bind(this);
+    this.changeCheckTypeListener = EventListeners.changeCheckType.bind(this);
 	}
 
   /**
@@ -53,13 +62,12 @@ class View extends React.Component {
    * callbacks using the API
    */
 	componentWillMount() {
-    var _this = this;
 
     //This action will update our indexes in the store
-    api.registerAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore.bind(this));
+    api.registerAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
 
     //This action will update the status of the check that is the current check in the CheckStore
-    api.registerAction('updateCheckStatus', this.updateCheckStatus.bind(this));
+    api.registerAction('updateCheckStatus', this.updateCheckStatus);
 
     /*
      * This event will call an action that increment the checkIndex by one,
@@ -67,32 +75,32 @@ class View extends React.Component {
      * from the event, we have to get the current indexes from the store and increment it
      * manually before sending the action to update the store
      */
-    api.registerEventListener('goToNext', function(params) {
-        var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-        var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-        api.sendAction({
-          type: 'changeLexicalCheck',
-          field: NAMESPACE,
-          checkIndex: currentCheckIndex + 1,
-          groupIndex: currentGroupIndex
-        });
-    });
+    api.registerEventListener('goToNext', this.goToNextListener);
 
     /*
      * This event listens for an event that will tell us another check to go to,
      * and sends the appropriate action. This and the above listener need to be two
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
-    api.registerEventListener('goToCheck', function(params) {
-        api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE,
-            checkIndex: params.checkIndex, groupIndex: params.groupIndex});
-    });
+    api.registerEventListener('goToCheck', this.goToCheckListener);
 
-    api.registerEventListener('changeCheckType', function(params) {
-      if(params.currentCheckNamespace === NAMESPACE) {
-        _this.updateState();
-      }
-    });
+    /**
+     * This event listens for an event to change the check type, checks if we're switching to
+     * LexicalCheck, then updates our state if we are
+     */
+    api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
+
+    this.updateState();
+  }
+
+  componentWillUnmount() {
+    api.removeAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
+    api.removeAction('updateCheckStatus', this.updateCheckStatus);
+
+    api.removeEventListener('goToNext', this.goToNextListener);
+
+    api.removeEventListener('goToCheck', this.goToCheckListener);
+    api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
   /**
@@ -147,6 +155,10 @@ class View extends React.Component {
   updateState() {
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    if (currentGroupIndex === null || currentCheckIndex === null) {
+      console.warn("LexicalCheck wasn't able to retrieve its indices");
+      return;
+    }
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
@@ -217,82 +229,65 @@ class View extends React.Component {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
   		return (
-  			<div style={{maxWidth: "100%"}}>
+  			<div>
   				<TPane />
-          <Grid
+          <Row className="show-grid">
+            <Col sm={3} md={3} lg={3}
             style={{
-              minWidth: "100%",
-
+              textAlign: "center"
             }}
           >
-            <Row className="show-grid">
-              <Col sm={3} md={3} lg={3}
+              <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
+            </Col>
+            <Col
+              sm={3} md={3} lg={3}
               style={{
                 textAlign: "center"
               }}
             >
-                <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
-              </Col>
-              <Col
-                sm={3} md={3} lg={3}
-                style={{
-                  textAlign: "center"
-                }}
-              >
-                <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
-                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
-              </Col>
-            </Row>
-            <Row className="show-grid">
-              <Col
-                sm={2}
-                md={2}
-                lg={2}
-                style={{
-                  minWidth: "48%"
-                }}
-              >
-                <TranslationWordsDisplay file={this.state.currentFile} />
-              </Col>
-              <Col sm={2} md={2} lg={2}
-                style={{
-                  minWidth: "48%"
-                }}
-              >
-                <GatewayVerseDisplay
-                  wordObject={this.getWordObject(this.state.currentWord)}
-                  verse={gatewayVerse}
-                />
-                <TargetVerseDisplay
-                  verse={targetVerse}
-                  buttonEnableCallback={()=>{}}
-                  buttonDisableCallback={()=>{}}
-                />
-                <ButtonGroup style={{width:'100%'}}>
-                  <Button style={{width:'50%'}} onClick={
-                      function() {
-                        api.sendAction({
-                          type: 'updateCheckStatus',
-                          field: 'LexicalCheck',
-                          checkStatus: 'RETAINED'
-                        })
-                      }
-                    }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                  <Button style={{width:'50%'}} onClick={
-                      function() {
-                        api.sendAction({
-                          type: 'updateCheckStatus',
-                          field: 'LexicalCheck',
-                          checkStatus: 'WRONG'
-                        });
-                      }
+              <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
+                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col sm={6} md={6} lg={6}>
+              <TranslationWordsDisplay file={this.state.currentFile} />
+            </Col>
+            <Col sm={6} md={6} lg={6}>
+              <GatewayVerseDisplay
+                wordObject={this.getWordObject(this.state.currentWord)}
+                verse={gatewayVerse}
+              />
+              <TargetVerseDisplay
+                verse={targetVerse}
+                buttonEnableCallback={()=>{}}
+                buttonDisableCallback={()=>{}}
+              />
+              <ButtonGroup style={{width:'100%'}}>
+                <Button style={{width:'50%'}} onClick={
+                    function() {
+                      api.sendAction({
+                        type: 'updateCheckStatus',
+                        field: 'LexicalCheck',
+                        checkStatus: 'RETAINED'
+                      })
                     }
-                  ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
-                </ButtonGroup>
-                <ProposedChanges />
-              </Col>
-            </Row>
-          </Grid>
+                  }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
+                <Button style={{width:'50%'}} onClick={
+                    function() {
+                      api.sendAction({
+                        type: 'updateCheckStatus',
+                        field: 'LexicalCheck',
+                        checkStatus: 'WRONG'
+                      });
+                    }
+                  }
+                ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
+              </ButtonGroup>
+              <br /><br />
+              <ProposedChanges />
+            </Col>
+          </Row>
   			</div>
   		);
   	}
@@ -346,4 +341,7 @@ else {
   }
 }
 
-module.exports = View;
+module.exports = {
+  name: NAMESPACE,
+  view: View
+}

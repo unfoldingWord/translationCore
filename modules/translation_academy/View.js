@@ -12,16 +12,18 @@ const Display = require('./TranslationAcademyDisplay');
 class View extends React.Component {
 	constructor() {
 		super();
+
+        this.updateSection = this.updateSection.bind(this);
 	}
 
 	componentWillMount() {
 		api.registerEventListener('changeTranslationAcademySection',
-			this.updateSection.bind(this));
+			this.updateSection);
 	}
 
 	componentWillUnmount() {
 		api.removeEventListener('changeTranslationAcademySection', 
-			this.updateSection.bind(this));
+			this.updateSection);
 	}
 
 	updateSection(params) {
@@ -41,4 +43,7 @@ class View extends React.Component {
 	}
 }
 
-module.exports = View;
+module.exports = {
+    name: "TranslationAcademy",
+    view: View
+}

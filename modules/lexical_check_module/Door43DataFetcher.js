@@ -131,7 +131,7 @@ class Door43DataFetcher {
                                     verses.push(verseData);
                                     numVerses++;
                                     numChapterVerses++;
-                                    //progress(numVerses, totalVerses);
+                                    progress(numVerses, totalVerses);
                                     if (numChapterVerses >= totalChapterVerses) {
                                         /**reassign the array of github objects to our
                                          * verse objects

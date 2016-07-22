@@ -2,7 +2,6 @@
 const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const React = require('react');
 const ReactDOM = require('react-dom');
-
 const style = require('./Style');
 const api = window.ModuleApi;
 

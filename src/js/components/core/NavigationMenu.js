@@ -11,36 +11,29 @@ class NavigationMenu extends React.Component {
     super();
     this.updateCheckObject = this.updateCheckObject.bind(this);
     this.state = {
-      checkObject: this.getCheckObject()
+      checkObject: null
     };
   }
 
   componentWillMount() {
-    api.registerEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
-    api.registerEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.registerEventListener('changeCheckType', this.updateCheckObject);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('phraseDataLoaded', this.updateCheckObject.bind(this));
-    api.removeEventListener('changeCheckType', this.updateCheckObject.bind(this));
+    api.removeEventListener('changeCheckType', this.updateCheckObject);
   }
-  
+
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : api.getDataFromCheckStore(params.currentCheckNamespace));
     this.setState({
-      checkObject: checkData || this.getCheckObject()
+      checkObject: checkData
     });
-  }
-  
-  getCheckObject() {
-    // TODO: get checkType using api.getDataFromCommon()
-    return api.getDataFromCheckStore("PhraseCheck");
   }
 
   render() {
     var menuList;
     if (!this.state.checkObject || !this.state.checkObject["groups"]) {
-      return <div></div>;
+      return <Well style={{minHeight:"100%"}}>{' '}</Well>;
     }
     menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
       var groupHeader = (
@@ -63,6 +56,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <Well>
+          <h3>Checks</h3>
           {menuList}
         </Well>
       </div>
