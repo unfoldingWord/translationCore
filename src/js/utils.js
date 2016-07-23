@@ -15,5 +15,17 @@ module.exports = {
             temp[key] = this.cloneObject(obj[key]);
         }
         return temp;
+    },
+
+    /**
+     * @description - Returns a string stripped of its spaces
+     * @param {string} str - string to have its spaces stripped
+     */
+    stripSpaces: function(str) {
+        var wordArray = str.split(' ');
+        var returnStr = '';
+        for (var word of wordArray)
+            returnStr += word
+        return returnStr;
     }
 };
