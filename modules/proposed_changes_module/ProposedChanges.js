@@ -15,14 +15,13 @@ class ProposedChanges extends React.Component {
     super();
     this.state = {
       open: false,
+      text:"e",
       chapter: 0,
       verse: 0
     };
-
     this.actionHandleChange = this.actionHandleChange.bind(this);
     this.updateTargetLanguage = this.updateTargetLanguage.bind(this);
     this.updateCheck = this.updateCheck.bind(this);
-
   }
 
   componentWillMount() {
@@ -41,17 +40,21 @@ class ProposedChanges extends React.Component {
     api.removeEventListener("goToVerse", this.updateCheck);
   }
 
-
   updateCheck(params) {
     this.setState({chapter: params.chapterNumber, verse: params.verseNumber});
   }
 
   handleChange(e){
     this.value = e.target.value;
-    //console.log(this.value);
+    this.setState({text: this.value});
     //type and field are required
     //the object below is passed as an argument to actionhandlechange()
-    api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});
+  }
+
+  handleSubmit(event){
+    this.setState({ open: !this.state.open });
+    api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.state.text});
+    console.log(this.state.text);
   }
 /*
   clearTextBox(){
@@ -84,12 +87,12 @@ class ProposedChanges extends React.Component {
         </Button>
           <Panel collapsible expanded={this.state.open}>
             <form className="comment-form">
-            <Well>{currentVerse}</Well>
+            <Well contentEditable={true}>{currentVerse}</Well>
             <FormGroup controlId="formControlsTextarea">
               <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
               placeholder="Please type in the changes you would like to propose"
-               value={this.props.text}
-               onChange={this.handleChange.bind(this)}></textarea>
+               value={this.props.text} onChange={this.handleChange.bind(this)}></textarea>
+               <Button bsStyle="success" onClick={this.handleSubmit.bind(this)} style={{width:'100%'}}>Submit</Button>
             </FormGroup>
             </form>
           </Panel>

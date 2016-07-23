@@ -1,0 +1,92 @@
+{
+  "generator": {
+    "name": "tc-desktop",
+    "build": ""
+  },
+  "target_language": {
+    "id": "ceb",
+    "name": "Cebuano",
+    "direction": "ltr"
+  },
+  "ts_project": {
+    "id": "2ti",
+    "name": "2 Timothy"
+  },
+  "type": {
+    "id": "text",
+    "name": "Text"
+  },
+  "source": {
+    "original_language": {
+      "local": true,
+      "path": "data/ulgb/2Timothy.json"
+    },
+    "gateway_language": {
+      "local": true,
+      "path": ""
+    },
+    "target_language": {
+      "local": true,
+      "path": "/Users/mannycolon/Sites/8woc/test_files/Import From TS"
+    }
+  },
+  "translators": [
+    "Johnny Ray Lumawan"
+  ],
+  "checkers": [
+    {
+      "username": "",
+      "email": ""
+    }
+  ],
+  "time_created": "7/22/2016 10:00 PM",
+  "last_saved": "7/22/2016 10:00 PM",
+  "finished_chunks": [
+    "00-title",
+    "01-01",
+    "01-03",
+    "01-06",
+    "01-08",
+    "01-12",
+    "01-15",
+    "02-01",
+    "02-03",
+    "02-06",
+    "02-08",
+    "02-11",
+    "02-14",
+    "02-16",
+    "02-19",
+    "02-22",
+    "02-24",
+    "03-01",
+    "03-05",
+    "03-08",
+    "03-10",
+    "03-14",
+    "03-16",
+    "04-01",
+    "04-03",
+    "04-06",
+    "04-09",
+    "04-11",
+    "04-14",
+    "04-17",
+    "04-19"
+  ],
+  "checked_chunks": [],
+  "check_data_locations": {
+    "0": {
+      "name": "lexical_check_module",
+      "location": "/Users/mannycolon/Sites/8woc/modules/lexical_check_module"
+    },
+    "1": {
+      "name": "proposed_changes_module",
+      "location": "/Users/mannycolon/Sites/8woc/modules/proposed_changes_module"
+    },
+    "2": {
+      "name": "t_pane",
+      "location": "/Users/mannycolon/Sites/8woc/modules/t_pane"
+    }
+  }
+}
