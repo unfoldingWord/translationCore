@@ -19,7 +19,7 @@
   "source": {
     "original_language": {
       "local": true,
-      "path": "data/ulgb/2Timothy.json"
+      "path": "data/ulgb/"
     },
     "gateway_language": {
       "local": true,
@@ -39,8 +39,8 @@
       "email": ""
     }
   ],
-  "time_created": "7/23/2016 11:27 PM",
-  "last_saved": "7/23/2016 11:27 PM",
+  "time_created": "7/23/2016 11:51 PM",
+  "last_saved": "7/23/2016 11:51 PM",
   "finished_chunks": [
     "00-title",
     "01-01",
@@ -75,18 +75,6 @@
     "04-19"
   ],
   "checked_chunks": [],
-  "check_data_locations": {
-    "0": {
-      "name": "lexical_check_module",
-      "location": "/Users/mannycolon/Sites/8woc/modules/lexical_check_module"
-    },
-    "1": {
-      "name": "proposed_changes_module",
-      "location": "/Users/mannycolon/Sites/8woc/modules/proposed_changes_module"
-    },
-    "2": {
-      "name": "t_pane",
-      "location": "/Users/mannycolon/Sites/8woc/modules/t_pane"
-    }
-  }
+  "check_module_locations": [],
+  "check_data_locations": "/Users/mannycolon/Sites/8woc/test_files/we/checkdata"
 }

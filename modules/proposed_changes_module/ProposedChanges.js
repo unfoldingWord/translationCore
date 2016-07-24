@@ -55,7 +55,8 @@ class ProposedChanges extends React.Component {
   handleSubmit(event){
     this.setState({ open: !this.state.open });
     api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.state.currentVerse});
-    console.log(this.state.currentVerse);
+    //testing the text being sent to checkStore
+    //console.log(this.state.currentVerse);
   }
 
   updateTargetLanguage() {
