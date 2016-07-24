@@ -1,38 +1,62 @@
 var style = {
 
-  div: {
-    backgroundColor: "#f5f5f5",
-    width: "600px",
-    margin: "0px",
-    padding: "0px",
-  },
-
-  text:{
-    color: "#555",
-    fontSize: "22px",
-    padding: "0px",
+  background: {
+    backgroundColor: "#D3D3D3",
+    margin: "0px 0px 10px",
+    padding: "10px",
     width: "100%",
-    fontFamily: "courier, monospace",
-    border: "1px solid #dedede",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 
-  text: {
-    p: {
-      borderBottom: "1px dotted #ccc",
-      textIndent: "25px",
-      height: "auto",
-      padding: "10px",
-      textTransform: "capitalize",
-    }
+  sideline: {
+    content: '',
+    position: "absolute",
+    top: "0px", bottom: "0px", left: "0px",
+    width: "60px",
+    background: "radial-gradient(#575450 6px, transparent 7px) repeat-y",
+    backgroundSize: "30px 30px",
+    borderRight: "3px solid #D44147",
+    boxSizing: "border-box",
+},
+
+  paper:{
+    position: "relative",
+    width: "90%",
+    maxWidth: "400px",
+    minWidth: "250px",
+    height: "380px",
+    margin: "0px auto",
+    background: "#fafafa",
+    borderRadius: "10px",
+    boxShadow: "0px 2px 8px rgba(0,0,0,.3)",
+    overflow: "hidden",
   },
 
-  lines: {
-    borderLeft: "1px solid #ffaa9f",
-    borderRight: "1px solid #ffaa9f",
-    width: "2px",
-    float: "left",
-    height: "100vh",
-    marginLeft: "40px",
+  paperContent:{
+    position: "absolute",
+    top: "30px",
+    right: "0px",
+    bottom: "30px",
+    left: "60px",
+    background: "linear-gradient(transparent, transparent 28px, #91D1D3 28px)",
+    backgroundSize: "30px 30px",
+  },
+
+  textarea: {
+    width: "100%",
+    maxWidth: "100%",
+    height: "100%",
+    maxHeight: "100%",
+    lineHeight: "30px",
+    padding: "0px 10px",
+    border: "0px",
+    outline: "0px",
+    background: "transparent",
+    color: "black",
+    fontSize: "18px",
+    boxSizing: "border-box",
+    zIndex: "1",
   }
 
 
@@ -41,14 +65,3 @@ var style = {
 
 
 module.exports = style;
-/*
-
-.list p:hover {
-  backgroundcolor: #f0f0f0,
-  webkittransition: all 0.2s,
-  moztransition:    all 0.2s,
-  -ms-transition:     all 0.2s,
-  -o-transition:      all 0.2s,
-}
-
-*/
