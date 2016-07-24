@@ -180,7 +180,7 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
         "chapter": chapterNumber,
         "verse": verseObject.num,
         "checked": false,
-        "status": "UNCHECKED"
+        "checkStatus": "UNCHECKED"
       });
       currentText = currentText.slice(index + 1);
       index = currentText.search(wordRegex);

@@ -42,7 +42,8 @@ var template = {
   last_saved : '',
   finished_chunks: [],
   checked_chunks: [],
-  check_data_locations: []
+  check_module_locations: [],
+  check_data_locations: ''
 }
 
 /**
@@ -69,12 +70,16 @@ function populate (data, tsManifest) {
   projectManifest.source.original_language.local = data.local;
   projectManifest.source.gateway_language.local = data.local;
   projectManifest.source.target_language.local = data.local;
+  projectManifest.check_data_locations = data.saveLocation + '/checkdata';
 
   for (user of data.user) {
     projectManifest.checkers.push(user);
   }
 
-    projectManifest.check_data_locations = api.getDataFromCommon('arrayOfChecks');
+  for (item in data.checkLocations) {
+    var currentItem = data.checkLocations[item];
+    projectManifest.check_module_locations.push({name: currentItem.name, location: currentItem.location});
+  }
 
 
   if (tsManifest) {

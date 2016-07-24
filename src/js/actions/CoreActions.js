@@ -38,6 +38,13 @@ module.exports = {
     });
   },
 
+  showOpenModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.OPEN_CREATED_PROJECT,
+      visible: boolean
+    });
+  },
+
   updateButtonStatus: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_BUTTTON_STATUS,
@@ -46,17 +53,17 @@ module.exports = {
   },
 
   showCreateProject: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CREATE_PROJECT,
-      createProjectModal: boolean
-    });
+      Dispatcher.handleAction({
+        type: consts.CREATE_PROJECT,
+        createProjectModal: boolean
+      });
   },
 
   changeCreateProjectText: function(string) {
     Dispatcher.handleAction({
-      type: consts.CHANGE_CREATE_PROJECT_TEXT,
+      type:  consts.CHANGE_CREATE_PROJECT_TEXT,
       modalValue: string
-    });
+    })
   },
 
   getFetchData: function(FetchDataArray) {
