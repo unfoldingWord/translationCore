@@ -234,7 +234,7 @@ class View extends React.Component {
   			<div>
   				<TPane />
           <Row className="show-grid">
-            <Col sm={3} md={3} lg={3}
+            <Col sm={4} md={4} lg={4}
             style={{
               textAlign: "center"
             }}
@@ -248,7 +248,7 @@ class View extends React.Component {
               }}
             >
               <Well bsSize={'small'} style={{
-                height: "60px",
+                height: '60px',
                 lineHeight:'35px'}}>{this.state.currentCheck.book + ' ' +
                 this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
             </Col>
