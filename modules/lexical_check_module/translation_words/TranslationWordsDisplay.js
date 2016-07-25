@@ -32,8 +32,8 @@ class TranslationWordsDisplay extends React.Component {
         var source = this.props.file;
         if (source) {
             return (
-                <Well>
-                    <div style={{overflowY: "scroll", minWidth: "100%", minHeight: "300px", maxHeight: "300px"}}>
+                <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "300px", maxHeight: "300px"}}>
+                    <div>
                         <Markdown source={source.split('==').join('#')} />
                     </div>
                 </Well>
