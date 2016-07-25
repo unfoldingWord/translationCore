@@ -6,6 +6,8 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const remote = window.electron.remote;
+const CoreActions = require('../../../actions/CoreActions.js');
+const CoreStore = require('../../../stores/CoreStore.js');
 const ENTER = 13;
 const path = require('path');
 const {dialog} = remote;
@@ -31,7 +33,21 @@ const projectname = React.createClass({
     this.setState({
       projectname: newName
     });
+    this.projectName = newName;
+    if (this.filePath) {
+      this.setState({saveLocation: path.join(this.filePath, newName)});
+      this.saveLocation = this.state.saveLocation;
+    }
     if (e.charCode == ENTER) {
+    }
+  },
+  checkInput: function() {
+    var validator = /[^a-zA-Z0-9-_\.]/g
+    var text = this.state.projectname;
+    if (text) {
+      if (text.length >0) {
+        return validator.test(text) ? 'error' : 'success';
+      }
     }
   },
   sendBackSaveLocation: function() {
@@ -45,11 +61,18 @@ const projectname = React.createClass({
           alert("Enter Project Name.");
           return;
         }
+        _this.filePath = filename[0];
         _this.setState({saveLocation: path.join(filename[0], _this.state.projectname)});
-        _this.props.passBack(path.join(filename[0], _this.state.projectname));
+        _this.saveLocation = _this.state.saveLocation;
       }
 
     });
+  },
+  getCheckBox: function(e) {
+    this.createGogs = e.target.checked;
+    if (!CoreStore.getLoggedInUser()) {
+      CoreActions.updateLoginModal(true);
+    }
   },
   render: function() {
     return (
@@ -58,13 +81,18 @@ const projectname = React.createClass({
       <Modal.Title>{this.props.modalTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <FormGroup>
+      <FormGroup validationState={this.checkInput()}>
       <ControlLabel>Enter Project Name</ControlLabel>
-      <FormControl type="text" placeholder={"John Wycliffe"} onChange={this.setprojectname} />
+      <FormControl type="text" placeholder={"John-Wycliffe"} onChange={this.setprojectname} />
+      <FormControl.Feedback />
       </FormGroup>
+      <label><input type="checkbox" onClick={this.getCheckBox}/>Create project on Door43?</label>
       <div>
+      <br />
       <Button onClick={this.sendBackSaveLocation}>Choose Save Location</Button>
       <ControlLabel>{this.state.saveLocation}</ControlLabel>
+      <br />
+
 
       </div>
       </Modal.Body>

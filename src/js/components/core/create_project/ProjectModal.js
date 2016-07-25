@@ -4,6 +4,7 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
+const GogsApi = require('../GogsApi.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
@@ -100,7 +101,7 @@ const ProjectModal = React.createClass({
         var bookName = _this.getBookAbbr(parsedManifest.project.name);
         _this.setBookName(bookName);
         let bookFileName = bookTitle.join('') + '.json';
-
+        var saveLocation = _this.saveLocation;
         var projectData = {
           local: true,
           target_language: _this.params.targetLanguagePath,
@@ -108,11 +109,12 @@ const ProjectModal = React.createClass({
           gateway_language: '',
           user: [{username: '', email: ''}],
           checkLocations: [],
-          saveLocation: _this.saveLocation
+          saveLocation: saveLocation
         }
         var checkArray = api.getDataFromCommon('arrayOfChecks');
         projectData.checkLocations = checkArray;
-        CheckDataGrabber.saveManifest(_this.saveLocation, projectData, parsedManifest);
+        api.putDataInCommon('saveLocation', saveLocation);
+        CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
       });
       if (tempFetchDataArray.length > 0) {
         // CoreActions.getFetchData(tempFetchDataArray);
@@ -126,9 +128,28 @@ const ProjectModal = React.createClass({
     }
 
     else if (this.state.modalValue == "Create") {
+      var validator = /[^a-zA-Z0-9-_\.]/g
+      this.saveLocation = this.refs.ProjectName.saveLocation;
+      var projectName = this.refs.ProjectName.projectName;
+      var projectRef = this.refs.ProjectName;
       if (this.refs.ProjectName) {
-        if (!this.refs.ProjectName.allFieldsEntered()) {
+        if (!projectRef.allFieldsEntered()) {
           alert("Enter All Fields Before Continuing.");
+          return;
+        } else if (validator.test(projectName)) {
+          alert("Project name must be valid alpha or numeric or dash(-_) or dot characters.");
+          return;
+        }
+        console.log(projectRef.allFieldsEntered());
+        console.log(!validator.test(projectName));
+        console.log(CoreStore.getLoggedInUser());
+        console.log(projectRef.createGogs);
+        if (CoreStore.getLoggedInUser() && projectRef.createGogs && projectRef.allFieldsEntered() && !validator.test(projectName)) {
+          var user = CoreStore.getLoggedInUser();
+          GogsApi(user.token).createRepo(user, projectName);
+          console.log('Created Projected');
+        } else if (this.refs.ProjectName.createGogs) {
+          alert('You must be logged in to create a Door43 Project');
           return;
         }
       }
@@ -145,10 +166,6 @@ const ProjectModal = React.createClass({
     return null;
   },
 
-  setSaveLocation: function(data) {
-    this.saveLocation = data;
-    api.putDataInCommon('saveLocation', data);
-  },
   setTargetLanguageFilePath: function(path) {
     this.params.targetLanguagePath = path;
     this.onClick();
@@ -161,7 +178,7 @@ const ProjectModal = React.createClass({
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} ref={"SelectChecks"} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
     } else if (modalBody == "Create") {
-      return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"} passBack={this.setSaveLocation}/>);
+      return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"}/>);
     } else if (modalBody === 'Languages') {
       return (<TargetLanguage ref={"TargetLanguage"} setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }
