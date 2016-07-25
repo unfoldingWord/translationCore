@@ -1,10 +1,10 @@
 var style = {
   width: {
     width:'100%'
-  }
+  },
   panelBackgroundColor:{
     backgroundColor: "#D3D3D3"
-  }
+  },
 
   background: {
     backgroundColor: "#D3D3D3",
