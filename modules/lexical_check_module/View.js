@@ -111,10 +111,15 @@ class View extends React.Component {
    * @param {object} action - this is the exact action that was passed to api.sendAction
    */
   updateCheckStatus(lexicalData, action) {
+    var groupIndex = lexicalData.currentGroupIndex;
+    var checkIndex = lexicalData.currentCheckIndex;
     var currentCheck = lexicalData.groups[lexicalData.currentGroupIndex]['checks'][lexicalData.currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = action.checkStatus;
-      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
+      currentCheck.selectedWords = action.selectedWords;
+      api.emitEvent('changedCheckStatus', {groupIndex: groupIndex, checkIndex: checkIndex,
+        checkStatus: action.checkStatus});
+
     }
   }
 
@@ -219,10 +224,27 @@ class View extends React.Component {
     }
   }
 
+  enableButtons() {
+    if (this.state.buttonsDisable) {
+      this.setState({
+        buttonsDisable: false
+      });
+    }
+  }
+
+  disableButtons() {
+    if (!this.state.buttonsDisable) {
+      this.setState({
+        buttonsDisable: true
+      });
+    }
+  }
+
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
 	render() {
+    var _this = this;
     if (!this.state.currentCheck) {
       return (<div></div>);
     }
@@ -261,8 +283,9 @@ class View extends React.Component {
               />
               <TargetVerseDisplay
                 verse={targetVerse}
-                buttonEnableCallback={()=>{}}
-                buttonDisableCallback={()=>{}}
+                buttonEnableCallback={this.enableButtons.bind(this)}
+                buttonDisableCallback={this.disableButtons.bind(this)}
+                ref={"TargetVerseDisplay"}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
@@ -270,7 +293,8 @@ class View extends React.Component {
                       api.sendAction({
                         type: 'updateCheckStatus',
                         field: 'LexicalChecker',
-                        checkStatus: 'RETAINED'
+                        checkStatus: 'RETAINED',
+                        selectedWords: _this.refs.TargetVerseDisplay.getWords()
                       })
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
@@ -279,7 +303,8 @@ class View extends React.Component {
                       api.sendAction({
                         type: 'updateCheckStatus',
                         field: 'LexicalChecker',
-                        checkStatus: 'WRONG'
+                        checkStatus: 'WRONG',
+                        selectedWords: _this.refs.TargetVerseDisplay.getWords()
                       });
                     }
                   }

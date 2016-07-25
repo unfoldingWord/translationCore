@@ -67,28 +67,26 @@ const TargetLanguageSelectBox = React.createClass({
     // populate an array with html elements then return the array
     var wordArray = this.props.verse.split(' ');
     var words = [];
+    //This is used for react in mounting components within in an array
+    var tokenKey = 0;
+    /* This is used for just only words, not spaces, so that we can know where the word is
+     * located within the target verse
+     */
     var wordKey = 0;
-    // if (this.selectedWords.length <= 0) {
-    //   this.props.buttonDisableCallback();
-    // }
-    // else {
-    //   this.props.buttonEnableCallback();
-    // }
     for (var i = 0; i < wordArray.length; i++) {
       words.push(
         <TargetWord
           selectCallback={this.addSelectedWord}
           removeCallback={this.removeFromSelectedWords}
-          key={wordKey++} 
-          keyId={wordKey} 
+          key={tokenKey++} 
+          keyId={wordKey++} 
           style={this.cursorPointerStyle}
           word={wordArray[i]}
         />);
       if (i != wordArray.length - 1) { // add a space if we're not at the end of the line
         words.push(
           <span
-            style={this.cursorPointerStyle}
-            key={wordKey++}
+            key={tokenKey++}
           >
             {' '}
           </span>
@@ -150,8 +148,26 @@ const TargetLanguageSelectBox = React.createClass({
     });
   },
 
+  /**
+   * @description - This returns the currently selected words, but formats in 
+   * an array with adjacent words concatenated into one string
+   */
   getWords: function() {
-    return this.selectedWords;
+    var lastKey = -100;
+    var returnArray = [];
+    for (var wordObj of this.selectedWords){
+      if (lastKey < wordObj.key - 1) {
+        returnArray.push(wordObj.word);
+        lastKey = wordObj.key
+      }
+      else if (lastKey == wordObj.key - 1) {
+        var lastWord = returnArray.pop();
+        lastWord += ' ' + wordObj.word;
+        returnArray.push(lastWord);
+        lastKey = wordObj.key
+      }
+    }
+    return returnArray;
   }
 });
 
