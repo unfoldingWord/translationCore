@@ -132,24 +132,36 @@ class View extends React.Component {
    * we can have access to extra fields we might have put on it
    */
   changeCurrentCheckInCheckStore(lexicalData, action) {
-      //error check to make sure we're going to a legal group/check index
-      if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
-        if (action.groupIndex < lexicalData.groups.length) {
-          lexicalData.currentGroupIndex = action.groupIndex;
-          if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].checks.length) {
-            lexicalData.currentCheckIndex = action.checkIndex;
-          }
-          /* In the case that we're incrementing the check and now we're out of bounds
-           * of the group, we increment the group.
-           */
-          else if (action.checkIndex == lexicalData.groups[lexicalData.currentGroupIndex].checks.length &&
-            lexicalData.currentGroupIndex < lexicalData.groups.length - 1) {
-            lexicalData.currentGroupIndex++;
-            lexicalData.currentCheckIndex = 0;
-          }
+    //Get the proposed changes and add it to the check
+    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
+    var currentCheck = this.state.currentCheck;
+    if (currentCheck && proposedChanges != this.getVerse('targetLanguage')) {
+      currentCheck.proposedChanges = proposedChanges;
+    }
+
+    //error check to make sure we're going to a legal group/check index
+    if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
+      if (action.groupIndex < lexicalData.groups.length) {
+        lexicalData.currentGroupIndex = action.groupIndex;
+        if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].checks.length) {
+          lexicalData.currentCheckIndex = action.checkIndex;
         }
+        /* In the case that we're incrementing the check and now we're out of bounds
+         * of the group, we increment the group.
+         */
+        else if (action.checkIndex == lexicalData.groups[lexicalData.currentGroupIndex].checks.length &&
+          lexicalData.currentGroupIndex < lexicalData.groups.length - 1) {
+          lexicalData.currentGroupIndex++;
+          lexicalData.currentCheckIndex = 0;
+        }
+        //invalid indices: don't do anything else
+        else {
+          return;
+        }
+
       }
-      this.updateState();
+    }
+    this.updateState();
   }
 
   /**
@@ -306,6 +318,8 @@ class View extends React.Component {
                         checkStatus: 'WRONG',
                         selectedWords: _this.refs.TargetVerseDisplay.getWords()
                       });
+                      console.log('CheckStore');
+                      console.dir(api.getDataFromCheckStore(NAMESPACE, 'groups'));
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
