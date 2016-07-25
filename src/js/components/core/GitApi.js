@@ -1,4 +1,7 @@
-var GitApi = (function() {
+var GitApi = (function(directory) {
+
+  var git = require('simple-git')(directory);
+
   return: {
     init: function() {
 
