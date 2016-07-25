@@ -55,7 +55,6 @@ class ProposedChanges extends React.Component {
   handleSubmit(event){
     this.setState({ open: !this.state.open });
     api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.state.currentVerse});
-    //testing the text being sent to checkStore
     //console.log(this.state.currentVerse);
   }
 
@@ -70,12 +69,12 @@ class ProposedChanges extends React.Component {
     }
   render() {
     return (
-      <div style={{width:'100%'}}>
+      <div style={style.width}>
         <Button bsStyle="primary"
-        onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
+        onClick={ ()=> this.setState({ open: !this.state.open })} style={style.width}>
           Propose changes
         </Button>
-          <Panel collapsible expanded={this.state.open} style={{backgroundColor: "#D3D3D3"}}>
+          <Panel collapsible expanded={this.state.open} style={style.panelBackgroundColor}>
             <div style={style.background}>
               <div style={style.paper}>
                 <div style={style.sideline}></div>
@@ -86,7 +85,7 @@ class ProposedChanges extends React.Component {
               </div>
             </div>
             <Button bsStyle="success" onClick={this.handleSubmit.bind(this)}
-            style={{width:'100%'}}>Submit</Button>
+            style={style.width}>Submit</Button>
           </Panel>
       </div>
     );
