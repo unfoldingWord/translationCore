@@ -1,6 +1,7 @@
 const React = require('react');
 const Well = require('react-bootstrap/lib/Well.js');
 
+const RootStyle = require('../../pages/RootStyle');
 const MenuItem = require('./MenuItem');
 const api = window.ModuleApi;
 
@@ -54,10 +55,12 @@ class NavigationMenu extends React.Component {
       );
     });
     return (
-      <div>
-        <Well>
-          <h3>Checks</h3>
-          {menuList}
+      <div className='fill-height'>
+        <Well className='fill-height'>
+          <div style={{height: '100%', overflowY: 'scroll'}}>
+            <h3>Checks</h3>
+            {menuList}
+          </div>
         </Well>
       </div>
     )
