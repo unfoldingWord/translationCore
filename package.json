@@ -47,6 +47,7 @@
     "react-dropzone": "^3.5.1",
     "react-remarkable": "^1.1.1",
     "request": "^2.72.0",
+    "simple-git": "^1.43.0",
     "sql.js": "^0.3.2",
     "url": "^0.11.0"
   }
