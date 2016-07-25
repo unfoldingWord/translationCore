@@ -1,6 +1,7 @@
 /**
  * Utility functions
  */
+const spaceRegex = new RegExp('\\s', 'g');
 
 module.exports = {
 
@@ -15,5 +16,13 @@ module.exports = {
             temp[key] = this.cloneObject(obj[key]);
         }
         return temp;
+    },
+
+    /**
+     * @description - Returns a string stripped of its spaces
+     * @param {string} str - string to have its spaces stripped
+     */
+    stripSpaces: function(str) {
+        return str.replace(spaceRegex, '');
     }
 };
