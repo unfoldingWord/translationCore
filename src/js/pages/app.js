@@ -15,7 +15,7 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 
 const OpenProject = require('../components/core/AccessProjectModal.js');
-
+const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
 const api = window.ModuleApi;
 

@@ -7,14 +7,14 @@ var RootStyles = {
     position: 'relative',
     top: '0px',
     bottom: 0,
-    overflowY: 'scroll' 
+    overflowY: 'scroll'
   },
   AfterCheck: {
     minWidth:'100vh',
     top: '90vh',
     height: 'auto',
     position: 'fixed',
-    textAlign: 'center',
+    textAlign: 'center'
   }
 };
 module.exports = RootStyles;
