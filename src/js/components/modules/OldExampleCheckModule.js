@@ -8,14 +8,14 @@ It just has a paragraph that displays the check status (default is UNCHECKED),
 and a button to change it to RETAINED.
 
 Things to notice:
-- class ExampleCheckModule extends AbstractCheckModule
+- class OldExampleCheckModule extends AbstractCheckModule
 - super.getCurrentCheck() -- equivalent to this.state.currentCheck
   * this is how you get data
 - CheckActions.changeCheckProperty(propertyName, propertyValue)
   * this is how you change data
 */
 
-class ExampleCheckModule extends AbstractCheckModule {
+class OldExampleCheckModule extends AbstractCheckModule {
 
   constructor() {
     super();
@@ -38,4 +38,4 @@ class ExampleCheckModule extends AbstractCheckModule {
     );
   }
 };
-module.exports = ExampleCheckModule;
+module.exports = OldExampleCheckModule;

@@ -121,7 +121,6 @@ function saveData(phraseObject) {
   api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
   api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
   api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
-  // TODO: eventually, this event will be called when the check type is selected, not in fetchData
   onCompleteFunction(null);
 }
 
