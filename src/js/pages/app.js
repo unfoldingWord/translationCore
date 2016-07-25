@@ -24,6 +24,7 @@ const CheckStore = require('../stores/CheckStore.js');
  * and given parameters acquired from the user. the api will save each module indiviually
  * and the checks will be able to require them dynamically
  */
+const ExampleChecker = require('../../../modules/example_check_module/View.js').view;
 
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
@@ -44,6 +45,7 @@ module.exports = (
           <Loader />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
+          <ExampleChecker />
         </Col>
       </Row>
     </Grid>

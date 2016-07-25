@@ -15,8 +15,18 @@ const ReactBootstrap = api.ReactBootstrap;
 const NAMESPACE = "ExampleChecker";
 
 class View extends React.Component {
+  
   constructor() {
     super();
+    
+    this.state = {
+      currentCheck: {
+        checkStatus: 'UNCHECKED'
+      }
+    };
+    
+    // Bind the function to the View object so the "this" context isn't lost
+    this.retainedButtonClicked = this.retainedButtonClicked.bind(this);
   }
   
   componentWillMount() {
@@ -27,8 +37,25 @@ class View extends React.Component {
     
   }
   
-  render() {
+  retainedButtonClicked() {
+    api.sendAction({
+      type: 'updateCheckStatus',
+      field: 'ExampleChecker',
+      checkStatus: 'RETAINED'
+    });
+  }
+  
+  updateCheckStatus() {
     
+  }
+  
+  render() {
+    return (
+      <div>
+        <p>{this.state.currentCheck.checkStatus}</p>
+        <button onClick={this.retainedButtonClicked}>Retained</button>
+      </div>
+    );
   }
 }
 
