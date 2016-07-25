@@ -1,4 +1,4 @@
-//FetchData.js//
+  //FetchData.js//
 
 const api = window.ModuleApi;
 
@@ -30,12 +30,24 @@ function fetchData(params, progress, callback) {
 		}
 		else {
 			dispatcher.schedule(function(subCallback) {
-				readInOriginal(path.join(params.originalLanguagePath, '2Timothy.json'), subCallback);
+				readInOriginal(path.join(params.originalLanguagePath, bookAbbreviationToBookPath(params.bookAbbr)), 
+          params.bookAbbr, subCallback);
 			});
 		}
 	}
 	dispatcher.run(callback, progress);
 	//I'm not supposed to get the gateway language!
+}
+
+function bookAbbreviationToBookPath(bookAbbr) {
+  var bookName = api.convertToFullBookName(bookAbbr);
+  bookName = stripSpaces(bookName) + '.json';
+  return bookName;
+}
+
+const spaceRegex = new RegExp('\\s', 'g');
+function stripSpaces(str) {
+  return str.replace(spaceRegex, '');
 }
 
 class Dispatcher {
@@ -126,14 +138,14 @@ function readFile(path, callback) {
 	});
 }
 
-function readInOriginal(path, callback) {
+function readInOriginal(path, bookAbbr, callback) {
 	readFile(path, function(err, data) {
 		if (err) {
 			console.error(err);
 		}
 		else {
 			var betterData = typeof data == 'object' ? JSON.stringify(data) : data;
-			openOriginal(betterData, "2Timothy");
+			openOriginal(betterData, api.convertToFullBookName(bookAbbr));
 			callback();
 		}
 	});
@@ -188,7 +200,7 @@ function joinChunks(text, currentChapter, currentJoined) {
  ******************************************************************************/
 function openOriginal(text, bookName) {
   var input = JSON.parse(text);
-  input[bookName].title = bookName;
+  input[stripSpaces(bookName)].title = bookName;
   var newData = {};
   for (var chapter in input[bookName]) {
     newData[parseInt(chapter)] = {};
@@ -197,7 +209,7 @@ function openOriginal(text, bookName) {
     }
   }
   // CoreActions.updateOriginalLanguage(input[bookName]);
-  api.putDataInCommon('originalLanguage', input[bookName]);
+  api.putDataInCommon('originalLanguage', input[stripSpaces(bookName)]);
 }
 
 function len(obj) {

@@ -12,16 +12,24 @@ const {dialog} = remote;
 
 const bookMap = require('../BooksOfBible');
 
-const ProjectName = React.createClass({
+const projectname = React.createClass({
   getInitialState: function() {
     return {
-      projectName:this.props.projectName,
-      saveLocation: ''
+      projectname:this.props.projectname,
+      saveLocation: null
     }
   },
-  setProjectName: function (e) {
+  allFieldsEntered: function() {
+    if(!this.state.projectname || !this.state.saveLocation) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+  setprojectname: function (e) {
+    var newName = e.target.value;
     this.setState({
-      projectname: e.target.value
+      projectname: newName
     });
     if (e.charCode == ENTER) {
     }
@@ -33,38 +41,16 @@ const ProjectName = React.createClass({
     }, function(filename) {
       if (filename !== undefined) {
         // FileImport(filename[0]);
+        if (!_this.state.projectname){
+          alert("Enter Project Name.");
+          return;
+        }
         _this.setState({saveLocation: path.join(filename[0], _this.state.projectname)});
         _this.props.passBack(path.join(filename[0], _this.state.projectname));
       }
+
     });
   },
-
-  setBookName: function(e) {
-    this.value = e.target.value;
-  },
-
-  getBookName: function() {
-    if (!this.value) {
-      console.error("We can't find the value for the book abbr!");
-    }
-    else {
-      var bookName = this.value;
-      var bookAbbr = this.getBookAbbr(bookName);
-      if (bookAbbr) {
-        return bookAbbr;
-      }
-    }
-  },
-
-  getBookAbbr: function(bookName) {
-    for (var key in bookMap) {
-      if (bookName.toLowerCase() == bookMap[key].toLowerCase() || bookName.toLowerCase() == key) {
-        return key;
-      }
-    }
-    return null;
-  },
-
   render: function() {
     return (
       <div>
@@ -74,11 +60,7 @@ const ProjectName = React.createClass({
       <Modal.Body>
       <FormGroup>
       <ControlLabel>Enter Project Name</ControlLabel>
-      <FormControl type="text" placeholder={"John 1 Jay Scott"} onChange={this.setProjectName} />
-      </FormGroup>
-      <FormGroup>
-      <ControlLabel>Enter Book Name</ControlLabel>
-      <FormControl type="text" placeholder={"2 Timothy"} onChange={this.setBookName} />
+      <FormControl type="text" placeholder={"John Wycliffe"} onChange={this.setprojectname} />
       </FormGroup>
       <div>
       <Button onClick={this.sendBackSaveLocation}>Choose Save Location</Button>
@@ -88,5 +70,5 @@ const ProjectName = React.createClass({
       </Modal.Body>
       </div>
     )}
-});
-module.exports = ProjectName;
+  });
+  module.exports = projectname;
