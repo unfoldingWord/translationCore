@@ -45,8 +45,15 @@ class View extends React.Component {
     });
   }
   
-  updateCheckStatus() {
-    
+  updateCheckStatus(exampleCheckData, action) {
+    var currentCheckFromStore = exampleCheckData.groups[exampleCheckData.currentGroupIndex]['checks'][exampleCheckData.currentCheckIndex];
+    if (currentCheckFromStore.checkStatus) {
+      currentCheckFromStore.checkStatus = action.checkStatus;
+      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
+    }
+    this.setState({
+      currentCheck: currentCheckFromStore
+    });
   }
   
   render() {
