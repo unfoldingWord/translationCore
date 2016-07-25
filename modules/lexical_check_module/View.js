@@ -246,13 +246,15 @@ class View extends React.Component {
                 textAlign: "center"
               }}
             >
-              <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
+              <Well bsSize={'small'} style={{
+                height: "60px",
+                lineHeight:'35px'}}>{this.state.currentCheck.book + ' ' +
                 this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
             </Col>
           </Row>
           <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile} />
+              <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay
