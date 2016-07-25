@@ -36,7 +36,7 @@ module.exports = (
   <OpenProject />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
-        <Col style={RootStyles.ScrollableSection} xs={5} sm={4} md={3} lg={2}>
+        <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
           <NavMenu />
           <ProjectModal />
         </Col>
