@@ -4,7 +4,6 @@
 
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const NavBarComponent = require('../components/core/NavBarComponent');
 const LoginModal = require('../components/core/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
@@ -14,7 +13,9 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+
 const OpenProject = require('../components/core/AccessProjectModal.js');
+
 
 const api = window.ModuleApi;
 
@@ -24,7 +25,6 @@ const CheckStore = require('../stores/CheckStore.js');
  * and given parameters acquired from the user. the api will save each module indiviually
  * and the checks will be able to require them dynamically
  */
-
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 

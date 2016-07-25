@@ -14,7 +14,7 @@ var RootStyles = {
     top: '90vh',
     height: 'auto',
     position: 'fixed',
-    textAlign: 'center'
+    textAlign: 'center',
   }
 };
 module.exports = RootStyles;

@@ -8,6 +8,7 @@ const ReactBootstrap = api.ReactBootstrap;
 //Modules not defined within lexical_check_module
 var TPane = null;
 var ProposedChanges = null;
+
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
