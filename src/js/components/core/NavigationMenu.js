@@ -1,7 +1,6 @@
 const React = require('react');
 const Well = require('react-bootstrap/lib/Well.js');
 
-const RootStyle = require('../../pages/RootStyle');
 const MenuItem = require('./MenuItem');
 const api = window.ModuleApi;
 
