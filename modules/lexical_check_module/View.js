@@ -24,6 +24,7 @@ const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
+const ReportView = require('./ReportView.js');
 
 //String constants
 const NAMESPACE = "LexicalChecker",
@@ -231,6 +232,7 @@ class View extends React.Component {
       var targetVerse = this.getVerse('targetLanguage');
   		return (
   			<div>
+          {ReportView(1,5)}
   				<TPane />
           <Row className="show-grid">
             <Col sm={3} md={3} lg={3}
