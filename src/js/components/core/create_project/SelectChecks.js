@@ -44,7 +44,6 @@ const SelectChecks = React.createClass({
     }
   },
   selectedModule: function(e) {
-
     var elementIndex = this.state.FetchDataArray.indexOf(e.target.id);
     if ( elementIndex == -1){
       var fetchData = this.state.FetchDataArray;

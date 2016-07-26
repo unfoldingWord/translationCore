@@ -82,7 +82,7 @@ class CoreStore extends EventEmitter {
   getFilePath() {
     return this.filepath;
  }
- 
+
   getProgress() {
   return this.progressKeyObj;
   }
@@ -128,7 +128,6 @@ class CoreStore extends EventEmitter {
       }
     }
   }
-
 /**
   * @param {function} callback
   */
@@ -191,6 +190,12 @@ class CoreStore extends EventEmitter {
       case consts.DONE_LOADING:
         this.doneLoading = true;
         this.checkCategoryOptions = action.reportViews;
+        this.emitChange();
+      break;
+
+      case consts.NEW_PROJECT:
+        this.doneLoading = false;
+        this.checkCategoryOptions = null;
         this.emitChange();
       break;
 

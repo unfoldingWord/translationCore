@@ -25,7 +25,7 @@ var CheckDataGrabber = {
         return;
       }
     }
-    api.putDataInCommon('arrayOfChecks', checkArray);
+    CheckStore.storeData.common['arrayOfChecks'] = checkArray;
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     try {

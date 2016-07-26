@@ -108,7 +108,6 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
         fs.accessSync(filepath + '/FetchData.js');
         return true;
       } catch (e) {
-        console.error(e);
       }
     }
     catch (e) {
@@ -132,7 +131,12 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
     if (_this.isModule(path)) {
     reportViews.push(viewObj);
   }
-  }
+},
+clearOldData: function(){
+  CoreStore = CoreStore.WIPE_ALL_DATA();
+  CheckStore = CheckStore.WIPE_ALL_DATA();
+  api.modules = {};
+}
 };
 
 module.exports = Access;
