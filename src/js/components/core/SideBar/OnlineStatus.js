@@ -1,6 +1,9 @@
-const React = require('react');
-const Button = require('react-bootstrap/lib/Button');
-const style = require('../../styles/loginStyle');
+
+const api = window.ModuleApi;
+const React = api.React;
+const RB = api.ReactBootstrap;
+const {Button, ButtonGroup, Glyphicon} = RB;
+const style = require("./Style");
 
 class OnlineStatus extends React.Component{
   constructor(){
@@ -30,12 +33,12 @@ class OnlineStatus extends React.Component{
   }
 
   render(){
-    const text = this.state.online ? 'Online' : 'Offline';
-    const statusColor = this.state.online ? style.online : style.offline;
+    const statusColor = this.state.online ? style.glyphiconOnline : style.glyphiconOffline;
 
     return(
       <div>
-          <div style={statusColor}></div>
+        <li style={style.li}>
+          <Glyphicon glyph="signal" style={statusColor}/></li>
       </div>
       );
   }
