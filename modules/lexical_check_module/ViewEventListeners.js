@@ -10,8 +10,7 @@ module.exports = {
     },
 
     goToCheck: function(params) {
-      api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE,
-        checkIndex: params.checkIndex, groupIndex: params.groupIndex});
+      this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
     },
 
     changeCheckType: function(params) {
