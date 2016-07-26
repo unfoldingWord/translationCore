@@ -73,7 +73,7 @@ var CheckDataGrabber = {
         //update stuff
         var path = api.getDataFromCommon('saveLocation');
         git(path).init(function() {
-          Save();
+          Save('Initial Commit');
         });
         CoreActions.doneLoadingFetchData(this.reportViews);
 
