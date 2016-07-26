@@ -25,9 +25,6 @@ var Access = {
     } catch (e) {
       dialog.showErrorBox('Open TC project error', e.message);
     }
-    console.log(CoreStore);
-    console.log(CheckStore);
-    console.log(api);
   },
 
   loadCheckData: function() {
