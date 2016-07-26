@@ -1,6 +1,7 @@
 /**
  * Utility functions
  */
+const spaceRegex = new RegExp('\\s', 'g');
 
 module.exports = {
 
@@ -22,10 +23,6 @@ module.exports = {
      * @param {string} str - string to have its spaces stripped
      */
     stripSpaces: function(str) {
-        var wordArray = str.split(' ');
-        var returnStr = '';
-        for (var word of wordArray)
-            returnStr += word
-        return returnStr;
+        return str.replace(spaceRegex, '');
     }
 };

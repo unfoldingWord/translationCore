@@ -45,13 +45,9 @@ function bookAbbreviationToBookPath(bookAbbr) {
   return bookName;
 }
 
+const spaceRegex = new RegExp('\\s', 'g');
 function stripSpaces(str) {
-  var wordArray = str.split(' ');
-  var returnStr = '';
-  for (var word of wordArray) {
-    returnStr += word;
-  }
-  return returnStr;
+  return str.replace(spaceRegex, '');
 }
 
 class Dispatcher {

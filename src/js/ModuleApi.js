@@ -115,9 +115,7 @@ class ModuleApi {
     }
 
     convertToFullBookName(bookAbbr) {
-        var returnValue = BooksOfBible[bookAbbr];
-        if (returnValue) 
-            return returnValue
+        return BooksOfBible[bookAbbr];
     }
 
     logCheckStore() {
