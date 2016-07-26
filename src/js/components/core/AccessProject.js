@@ -9,32 +9,38 @@ var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 const api = window.ModuleApi;
 var reportViews = [];
-var fileObj = {}; //make own obj of file paths
 
 var Access = {
   loadFromFilePath: function(filepath) {
     _this = this;
+    var fileObj = {};
+    //iterratively goes through file system and
+    //loads the data into the project
     try {
-      var API = window.ModuleApi;
       fs.readdir(filepath, function(err, items){
         for (var i=0; i<items.length; i++) {
           fileObj[items[i]] = path.join(filepath, items[i]);
+          //fileObj = {{checkdata: Users/username/Desktop/project_name/checkdata}...}
         }
-        _this.loadCheckData();
+        _this.loadCheckData(fileObj);
+        //loads into project with object of file paths
       });
     } catch (e) {
       dialog.showErrorBox('Open TC project error', e.message);
     }
   },
 
-  loadCheckData: function() {
+  loadCheckData: function(fileObj) {
     _this = this;
     for (var item in fileObj) {
       if (item == "checkdata") {
+        //if it is the checkdata folder
         var checkDataFolderPath = fileObj[item];
         _this.readDisk(checkDataFolderPath, (checkDataFiles) => {
+          //open the file path and read in the files
           for (var file of checkDataFiles){
             _this.putDataInFileProject(file, checkDataFolderPath);
+            //calls other functions that puts data in stores
           }
         });
       }
@@ -44,15 +50,18 @@ var Access = {
 putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
   if (_this.containsTC(file)) {
     var tcFilePath = path.join(checkDataFolderPath, file);
+    //tcFilePath = Users/username/Desktop/project_name/common.tc
     fileWithoutTC = _this.removeTC(file);
       _this.readTheJSON(tcFilePath, (json) => {
         if (fileWithoutTC == "common") {
           _this.makeCommon(json);
-          _this.saveModuleData(json);
+          //puts common in api common
+          _this.saveModuleInAPI(json);
+          //saving module in api
         }
         else {
           _this.makeModuleCheckData(json, fileWithoutTC);
-          //CheckStore.putDataInCommon(packageObj);
+          //saving module data (checks) in CheckStore
         }
         callback();
     });
@@ -95,6 +104,7 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
   },
 
   isModule: function(filepath){
+    //checks for /ReportView && FetchData in folder structure
     try {
       var stats = fs.lstatSync(filepath);
       if (!stats.isDirectory()) {
@@ -112,7 +122,8 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
       return false;
     }
   },
-  saveModuleData: function(json) {
+  saveModuleInAPI: function(json) {
+    //gets paths from loaded path
   if (json.arrayOfChecks != undefined) {
     for (var element of json.arrayOfChecks){
       var path = element.location;
@@ -125,12 +136,14 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
   reportViewPush: function(path) {
     let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
+    //stores module in api
     if (_this.isModule(path)) {
     reportViews.push(viewObj);
   }
 },
 clearOldData: function(){
   CheckStore.WIPE_ALL_DATA();
+  //clears relevant data from store
   api.modules = {};
 }
 };
