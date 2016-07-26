@@ -32,6 +32,15 @@ const TargetWord = React.createClass({
     }
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      wordObj: {
+        'word': nextProps.word,
+        'key': this.props.keyId
+      }
+    });
+  },
+
   toggleHighlight: function() {
     if (!this.state.highlighted) {
       this.props.selectCallback(this.state.wordObj);
@@ -66,6 +75,7 @@ const TargetLanguageSelectBox = React.createClass({
   shouldComponentUpdate: function(nextProps, nextState) {
     for (key in this.refs)
       this.refs[key].removeHighlight();
+    this.selectedWords = [];
     return true;
   },
 
