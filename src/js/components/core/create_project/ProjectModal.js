@@ -156,10 +156,10 @@ const ProjectModal = React.createClass({
   setSaveLocation: function(data) {
     this.saveLocation = data;
     if (CheckStore.storeData.common != undefined){
-      CheckStore.storeData.common.saveLocation = data;
+      api.putDataInCommon('saveLocation', data);
     } else {
       CheckStore.storeData['common'] = {};
-      CheckStore.storeData.common['saveLocation'] = data;
+      api.putDataInCommon('saveLocation', data);
     }
 
   },
