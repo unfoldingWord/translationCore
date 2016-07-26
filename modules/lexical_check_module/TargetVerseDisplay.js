@@ -24,6 +24,23 @@ const TargetWord = React.createClass({
     this.toggleHighlight();
   },
 
+  removeHighlight: function() {
+    if (this.state.highlighted) {
+      this.setState({
+        highlighted: false
+      });
+    }
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      wordObj: {
+        'word': nextProps.word,
+        'key': this.props.keyId
+      }
+    });
+  },
+
   toggleHighlight: function() {
     if (!this.state.highlighted) {
       this.props.selectCallback(this.state.wordObj);
@@ -35,14 +52,6 @@ const TargetWord = React.createClass({
   },
 
   render: function() {
-    // if (this.state.highlighted) { //add the word to the parent's 'selectedWords' array
-    //  this.props.selectCallback(this.state.wordObj)   have to pass in an object because we have to check against
-    //                      each word's key
-
-    // }
-    // else {
-    //  this.props.removeCallback(this.state.wordObj);
-    // }
 
     return (
       <span
@@ -63,38 +72,47 @@ const TargetLanguageSelectBox = React.createClass({
     cursor: 'pointer'
   },
 
+  shouldComponentUpdate: function(nextProps, nextState) {
+    for (key in this.refs)
+      this.refs[key].removeHighlight();
+    this.selectedWords = [];
+    return true;
+  },
+
   render: function() {
     // populate an array with html elements then return the array
     var wordArray = this.props.verse.split(' ');
     var words = [];
+    //This is used for react in mounting components within in an array
+    var tokenKey = 0;
+    /* This is used for just only words, not spaces, so that we can know where the word is
+     * located within the target verse
+     */
     var wordKey = 0;
-    // if (this.selectedWords.length <= 0) {
-    //   this.props.buttonDisableCallback();
-    // }
-    // else {
-    //   this.props.buttonEnableCallback();
-    // }
     for (var i = 0; i < wordArray.length; i++) {
-      words.push(
-        <TargetWord
-          selectCallback={this.addSelectedWord}
-          removeCallback={this.removeFromSelectedWords}
-          key={wordKey++} 
-          keyId={wordKey} 
-          style={this.cursorPointerStyle}
-          word={wordArray[i]}
-        />);
+      var targetWordComponent = <TargetWord
+                                  selectCallback={this.addSelectedWord}
+                                  removeCallback={this.removeFromSelectedWords}
+                                  key={tokenKey++} 
+                                  keyId={wordKey++} 
+                                  style={this.cursorPointerStyle}
+                                  word={wordArray[i]}
+                                  ref={wordKey.toString()}
+                                />
+      words.push(targetWordComponent);
       if (i != wordArray.length - 1) { // add a space if we're not at the end of the line
         words.push(
           <span
-            style={this.cursorPointerStyle}
-            key={wordKey++}
+            key={tokenKey++}
           >
             {' '}
           </span>
         ); // even the spaces need keys! (but not keyId)
       }
     }
+    // for (var key in this.refs) {
+    //   this.refs[key].removeHighlight();
+    // }
     return (
       <Well 
         bsSize={'small'}
@@ -150,8 +168,26 @@ const TargetLanguageSelectBox = React.createClass({
     });
   },
 
+  /**
+   * @description - This returns the currently selected words, but formats in 
+   * an array with adjacent words concatenated into one string
+   */
   getWords: function() {
-    return this.selectedWords;
+    var lastKey = -100;
+    var returnArray = [];
+    for (var wordObj of this.selectedWords){
+      if (lastKey < wordObj.key - 1) {
+        returnArray.push(wordObj.word);
+        lastKey = wordObj.key
+      }
+      else if (lastKey == wordObj.key - 1) {
+        var lastWord = returnArray.pop();
+        lastWord += ' ' + wordObj.word;
+        returnArray.push(lastWord);
+        lastKey = wordObj.key
+      }
+    }
+    return returnArray;
   }
 });
 

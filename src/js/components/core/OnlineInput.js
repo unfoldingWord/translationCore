@@ -19,7 +19,7 @@ const OnlineInput = React.createClass({
 
   submitLink: function() {
     var link = this.state.value;
-    loadOnline(link);
+    loadOnline(link, this.props.sendFilePath);
     this.state.value = "";
   },
 

@@ -110,6 +110,7 @@ else {
       };
 
       request.onerror = function() {
+        console.log('We called the callback with an error');
         callback(REQUEST_FAILED);
       };
 
