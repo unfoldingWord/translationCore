@@ -14,7 +14,6 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const AccessProjectModal = require('../components/core/AccessProjectModal.js');
 
 const api = window.ModuleApi;
 
