@@ -106,7 +106,7 @@ const ProjectModal = React.createClass({
         var user = CoreStore.getLoggedInUser();
         var repo;
         if (user) {
-          repo = 'https://git.door43.org/' + user.username + '/' + _this.projectName;
+          repo = 'git.door43.org/' + user.username + '/' + _this.projectName;
         } else {
           repo = '';
         }
@@ -141,6 +141,7 @@ const ProjectModal = React.createClass({
       this.saveLocation = this.refs.ProjectName.saveLocation;
       var projectName = this.refs.ProjectName.projectName;
       var projectRef = this.refs.ProjectName;
+      api.putDataInCommon('createGogs', projectRef.createGogs);
       this.projectName = projectName;
       if (this.refs.ProjectName) {
         if (!projectRef.allFieldsEntered()) {

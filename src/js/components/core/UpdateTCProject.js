@@ -1,19 +1,26 @@
-var UpdateTC = (function(path, remote, branch) {
-
+var UpdateTC = (function(remoteRepo, branch, first) {
+var api = window.ModuleApi;
 var remote = window.electron.remote;
 var {dialog} = remote;
-var git = require('simple-git')(directory);
+var path = api.getDataFromCommon('saveLocation');
 var GitApi = require('./GitApi.js');
-
-GitApi(path).pull(remote, branch, function(err) {
-  if (err) {
-    dialog.showErrorBox('Error', err);
-  }
-  GitApi(path).push(remote, branch, function(err) {
+if (first) {
+  GitApi(path).push(remoteRepo, branch, function(err) {
     if (err)
       dialog.showErrorBox('Error', err);
     });
-});
+} else {
+  GitApi(path).pull(remoteRepo, branch, function(err) {
+    if (err) {
+      dialog.showErrorBox('Error', err);
+    }
+    GitApi(path).push(remoteRepo, branch, function(err) {
+      if (err)
+        dialog.showErrorBox('Error', err);
+      });
+  });
+}
+
 
 
 });

@@ -12,7 +12,7 @@ var template = [
       {
         label: 'Save',
         click: function() {
-          require('./Save.js')();
+          require('./Save.js')('Manual Save');
         },
         accelerator: 'CmdOrCtrl+S'
       },
