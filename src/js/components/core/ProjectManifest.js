@@ -43,7 +43,8 @@ var template = {
   finished_chunks: [],
   checked_chunks: [],
   check_modules: [],
-  check_data_locations: ''
+  check_data_locations: '',
+  repo: ''
 }
 
 /**
@@ -71,6 +72,7 @@ function populate (data, tsManifest) {
   projectManifest.source.gateway_language.local = data.local;
   projectManifest.source.target_language.local = data.local;
   projectManifest.check_data_locations = data.saveLocation + '/checkdata';
+  projectManifest.repo = data.repo;
 
   for (user of data.user) {
     projectManifest.checkers.push(user);

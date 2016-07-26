@@ -103,6 +103,14 @@ const ProjectModal = React.createClass({
         _this.setBookName(bookName);
         let bookFileName = bookTitle.join('') + '.json';
         var saveLocation = _this.saveLocation;
+        var user = CoreStore.getLoggedInUser();
+        var repo;
+        if (user.username) {
+          repo = 'https://git.door43.org/' + user.username + '/' + _this.projectName;
+        } else {
+          repo = '';
+        }
+        console.log(repo);
         var projectData = {
           local: true,
           target_language: _this.params.targetLanguagePath,
@@ -110,7 +118,8 @@ const ProjectModal = React.createClass({
           gateway_language: '',
           user: [{username: '', email: ''}],
           checkLocations: [],
-          saveLocation: saveLocation
+          saveLocation: saveLocation,
+          repo: repo
         }
         var checkArray = api.getDataFromCommon('arrayOfChecks');
         projectData.checkLocations = checkArray;
@@ -133,6 +142,7 @@ const ProjectModal = React.createClass({
       this.saveLocation = this.refs.ProjectName.saveLocation;
       var projectName = this.refs.ProjectName.projectName;
       var projectRef = this.refs.ProjectName;
+      this.projectName = projectName;
       if (this.refs.ProjectName) {
         if (!projectRef.allFieldsEntered()) {
           alert("Enter All Fields Before Continuing.");
@@ -144,7 +154,6 @@ const ProjectModal = React.createClass({
         if (CoreStore.getLoggedInUser() && projectRef.createGogs && projectRef.allFieldsEntered() && !validator.test(projectName)) {
           var user = CoreStore.getLoggedInUser();
           GogsApi(user.token).createRepo(user, projectName);
-          console.log('Created Projected');
         } else if (this.refs.ProjectName.createGogs) {
           alert('You must be logged in to create a Door43 Project');
           return;

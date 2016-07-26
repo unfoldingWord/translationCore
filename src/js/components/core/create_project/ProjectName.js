@@ -35,8 +35,9 @@ const projectname = React.createClass({
     });
     this.projectName = newName;
     if (this.filePath) {
-      this.setState({saveLocation: path.join(this.filePath, newName)});
-      this.saveLocation = this.state.saveLocation;
+      var joined = path.join(this.filePath, newName);
+      this.setState({saveLocation: joined});
+      this.saveLocation = joined;
     }
     if (e.charCode == ENTER) {
     }
@@ -62,8 +63,9 @@ const projectname = React.createClass({
           return;
         }
         _this.filePath = filename[0];
-        _this.setState({saveLocation: path.join(filename[0], _this.state.projectname)});
-        _this.saveLocation = _this.state.saveLocation;
+        var joined = path.join(filename[0], _this.state.projectname);
+        _this.setState({saveLocation: joined});
+        _this.saveLocation = joined;
       }
 
     });
