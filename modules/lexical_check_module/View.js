@@ -110,10 +110,13 @@ class View extends React.Component {
    * CheckStore
    * @param {object} action - this is the exact action that was passed to api.sendAction
    */
-  updateCheckStatus(lexicalData, action) {
-    var currentCheck = lexicalData.groups[lexicalData.currentGroupIndex]['checks'][lexicalData.currentCheckIndex];
+  updateCheckStatus(newCheckStatus) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
-      currentCheck.checkStatus = action.checkStatus;
+      currentCheck.checkStatus = newCheckStatus;
       api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
     }
   }
@@ -229,6 +232,7 @@ class View extends React.Component {
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
+      var _this = this;
   		return (
   			<div>
   				<TPane />
@@ -267,20 +271,12 @@ class View extends React.Component {
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      api.sendAction({
-                        type: 'updateCheckStatus',
-                        field: 'LexicalChecker',
-                        checkStatus: 'RETAINED'
-                      })
+                      _this.updateCheckStatus('RETAINED');
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      api.sendAction({
-                        type: 'updateCheckStatus',
-                        field: 'LexicalChecker',
-                        checkStatus: 'WRONG'
-                      });
+                      _this.updateCheckStatus('WRONG');
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
