@@ -1,10 +1,36 @@
 # translationCore API Guide
+## Overview
+This guide will help you create your own plugin for translationCore. Although translationCore is tailored for plugins made for checking Bible translations, it can support other types of plugins as well. The API is general enough for almost any kind of app to be plugged in to the tC system.
+
+### Necessary Files
+A plugin must be contained in a folder consisting of at least the three following files:
+* View.js
+* FetchData.js
+* ReportView.js
+
+#### View.js
+This is your user interface in translationCore. This file's main export is a React component (https://facebook.github.io/react/).
+
+#### FetchData.js
+This is where you give us your data. This file's export is a function which should pass your data to a callback function.
+
+#### ReportView.js
+This is how your data is displayed in a report. This file's export is a function that returns JSX (very similar to a React component).
+
+For more information on these files, see our example check modules.
+
+### CheckStore
+CheckStore is where all of your data is held in memory. Any data you store should go here. You don't need to handle saving to disk -- we do all of that for you.
+
+Our API contains functions to interact with the CheckStore, like getting and setting data.
+
+
 ## Features
 
 ### Events
 The key idea behind events is that a module can register a callback function to a type of event, and when any component emits an event of that type, every callback function that has registered will be called asynchronously.
 
-Their main use is to allow for asynchronous communication between the CheckStore and modules so that modules can listen for changes to data held in the CheckStore
+Their main use is to allow for asynchronous communication between the CheckStore and modules so that modules can listen for changes to data held in the CheckStore.
 
 Events have the following functions:
 
@@ -69,7 +95,7 @@ When using the majority of the functions that deal with data in the CheckStore, 
 
 The CheckStore only has one reserved field: *common*. Data placed in common will be available to all modules across all check types. This field is meant for data that is likely to be used by everything in the application, such as the biblical text being checked or the original Greek text.
 
-The API has the following functions for working with data in the checkstore:
+The API has the following functions for working with data in the Checkstore:
 
 #### `putDataInCheckStore(field, key, value)`
 As apparent by the name, this function will place *value* (any data type) into your namespace *field* tagged with the *key*. This data can be retrieved later with `getDataFromCheckStore()`.
