@@ -241,6 +241,7 @@ class CheckStore extends EventEmitter {
   }
 
   WIPE_ALL_DATA() {
+    //THIS SHOULD NOT BE USED EXCEPT ON CREATE AND NEW PROJECT
     this.storeData = {};
     this.storeData['common'] = {};
   }

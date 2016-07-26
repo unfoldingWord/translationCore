@@ -31,7 +31,6 @@ var Access = {
   },
 
   loadCheckData: function(fileObj) {
-    _this = this;
     for (var item in fileObj) {
       if (item == "checkdata") {
         //if it is the checkdata folder

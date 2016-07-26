@@ -45,7 +45,6 @@ var AccessProjectMod = React.createClass({
 
 
   readDir: function() {
-    _this = this;
     dialog.showOpenDialog({
       properties: ['openDirectory']
     }, function(filename) {
