@@ -32,12 +32,12 @@ const UploadModal = React.createClass({
     }
   },
 
-  sendFilePath: function(path) {
+  sendFilePath: function(path, link) {
     if (!this.props.setTargetLanguageFilePath) {
       console.error("Can't find setTargetLanguageFilePath!");
     }
     else {
-      this.props.setTargetLanguageFilePath(path);
+      this.props.setTargetLanguageFilePath(path, link);
     }
   },
 

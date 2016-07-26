@@ -4,7 +4,6 @@
 
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const NavBarComponent = require('../components/core/NavBarComponent');
 const LoginModal = require('../components/core/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
@@ -14,7 +13,10 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+
 const OpenProject = require('../components/core/AccessProjectModal.js');
+const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
+
 
 const api = window.ModuleApi;
 
@@ -25,7 +27,6 @@ const CheckStore = require('../stores/CheckStore.js');
  * and the checks will be able to require them dynamically
  */
 
-
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 module.exports = (
@@ -33,7 +34,6 @@ module.exports = (
   <NavBarComponent />
   <SettingsModal />
   <LoginModal />
-  <OpenProject />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
         <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>

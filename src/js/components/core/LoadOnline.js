@@ -33,8 +33,7 @@ module.exports = (function() {
         }
         try {
           fs.readFileSync(path.join(savePath,  'manifest.json'));
-          splitUrl.pop();
-          callback(savePath, splitUrl.join('.'));
+          callback(savePath, url);
         } catch(error) {
           dialog.showErrorBox('Import Error', 'Please make sure that this ' +
           'is a valid project.');

@@ -10,18 +10,20 @@ const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
-const CoreStore = require('../../../stores/CoreStore.js');
-const CheckStore = require('../../../stores/CheckStore');
+var CoreStore = require('../../../stores/CoreStore.js');
+var CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
 const FileModule= require('../FileModule');
 const ENTER = 13;
-const api = window.ModuleApi;
+var api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
+const utils = require('../../../utils');
+const AccessProjectModal = require('../AccessProjectModal');
 
 const ProjectModal = React.createClass({
   params: {
@@ -45,6 +47,7 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
+    AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function() {
@@ -114,7 +117,7 @@ const ProjectModal = React.createClass({
         CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
       });
       if (tempFetchDataArray.length > 0) {
-        // CoreActions.getFetchData(tempFetchDataArray);
+        this.clearOldData();
         CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
       }
       this.close();
@@ -124,6 +127,16 @@ const ProjectModal = React.createClass({
       CoreActions.showCreateProject("Check");
     }
   },
+
+  clearOldData: function(){
+    var manifest = api.getDataFromCommon('tcManifest');
+    CoreActions.newProject();
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
+    this.setSaveLocation(this.saveLocation);
+    api.putDataInCommon('tcManifest', manifest);
+  },
+
   getBookAbbr: function(book) {
     for (var bookAbbr in booksOfBible) {
       if (book.toLowerCase() == booksOfBible[bookAbbr].toLowerCase() || book.toLowerCase() == bookAbbr) {
@@ -133,7 +146,18 @@ const ProjectModal = React.createClass({
     return null;
   },
 
+  setSaveLocation: function(data) {
+    this.saveLocation = data;
+    if (CheckStore.storeData.common != undefined){
+      api.putDataInCommon('saveLocation', data);
+    } else {
+      CheckStore.storeData['common'] = {};
+      api.putDataInCommon('saveLocation', data);
+    }
+  },
+
   setTargetLanguageFilePath: function(path, link) {
+    this.saveLocation = path;
     this.params.targetLanguagePath = path;
     this.params.repo = link;
     this.onClick();

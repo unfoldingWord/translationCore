@@ -32,7 +32,11 @@ var template = [
             git(path).save('Updating with Door43', path, function() {
                 var manifest = api.getDataFromCommon('tcManifest');
                 if (manifest.repo) {
-                  var remote = 'https://' + user.token + '@' + manifest.repo + '.git';
+                  var urlArray = manifest.repo.split('.');
+                  urlArray.pop();
+                  var finalPath = urlArray.pop().split('/');
+                  var repoPath = finalPath[1] + '/' + finalPath[2];
+                  var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
                   git(path).update(remote, 'master', false);
                 } else {
                   alert('There is no associated repository with this project');

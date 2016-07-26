@@ -42,6 +42,7 @@ function GitApi(directory) {
     },
 
     update: function(remoteRepo, branch, first) {
+      var _this = this;
       if (first) {
         this.push(remoteRepo, branch, function(err) {
           if (err)
@@ -52,7 +53,7 @@ function GitApi(directory) {
           if (err) {
             dialog.showErrorBox('Error', err);
           }
-          this.push(remoteRepo, branch, function(err) {
+          _this.push(remoteRepo, branch, function(err) {
             if (err)
               dialog.showErrorBox('Error', err);
             });
