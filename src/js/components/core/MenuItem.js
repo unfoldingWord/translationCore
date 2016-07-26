@@ -8,6 +8,9 @@ const api = window.ModuleApi;
 class MenuItem extends React.Component {
   constructor() {
     super();
+    this.state = {
+      checkStatus: "UNCHECKED"
+    };
     this.menuItemClicked = this.menuItemClicked.bind(this);
   }
 
@@ -20,8 +23,20 @@ class MenuItem extends React.Component {
     );
   }
 
+  changeCheckStatus(checkStatus) {
+    this.setState({
+      checkStatus: checkStatus
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      checkStatus: nextProps.check.checkStatus
+    });
+  }
+
   render() {
-    var checkStatus = this.props.check.checkStatus;
+    var checkStatus = this.state.checkStatus;
 
     // when the flag is toggled it turns blue
     var flagStyle;

@@ -87,6 +87,13 @@ module.exports = {
     });
   },
 
+  newProject: function(){
+    Dispatcher.handleAction({
+      type: consts.NEW_PROJECT,
+      reportViews:[]
+    });
+  },
+
   updateProfileVisibility: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_PROFILE_VISIBILITY,
