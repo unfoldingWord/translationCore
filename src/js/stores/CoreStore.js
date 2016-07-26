@@ -1,7 +1,6 @@
 var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
-
 var consts = require('../actions/CoreActionConsts');
 var CHANGE_EVENT = 'change';
 
@@ -82,7 +81,7 @@ class CoreStore extends EventEmitter {
   getFilePath() {
     return this.filepath;
  }
- 
+
   getProgress() {
   return this.progressKeyObj;
   }
@@ -91,12 +90,8 @@ class CoreStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-  getButtonStatus(){
-    return this.buttonStatus;
-  }
-
-  getLogoutButton(){
-    return this.logoutButtonVisibility;
+  getOnlineStatus(){
+    return this.onlineStatus;
   }
 
   getLoggedInUser() {
@@ -158,8 +153,8 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_BUTTTON_STATUS:
-        this.buttonStatus = action.buttonStatus;
+      case consts.CHANGE_ONLINE_STATUS:
+        this.onlineStatus = action.onlineStatus;
         this.emitChange();
       break;
 
@@ -193,11 +188,6 @@ class CoreStore extends EventEmitter {
         this.checkCategoryOptions = action.reportViews;
         this.emitChange();
       break;
-
-      case consts.CHANGE_LOGOUT_VISIBILITY:
-        this.logoutButtonVisibility = action.logoutOption;
-        this.emitChange();
-        break;
 
       case consts.ACCOUNT_LOGIN:
         this.userLoggedIn = action.user;

@@ -45,10 +45,10 @@ module.exports = {
     });
   },
 
-  updateButtonStatus: function(boolean) {
+  updateOnlineStatus: function(boolean) {
     Dispatcher.handleAction({
-      type: consts.CHANGE_BUTTTON_STATUS,
-      buttonStatus: boolean
+      type: consts.CHANGE_ONLINE_STATUS,
+      onlineStatus: boolean
     });
   },
 
@@ -84,13 +84,6 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.DONE_LOADING,
       reportViews:data
-    });
-  },
-
-  updateLogoutButton: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_LOGOUT_VISIBILITY,
-      logoutOption: boolean
     });
   },
 

@@ -5,9 +5,8 @@ const bootstrap = require('react-bootstrap');
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
-const NavBarComponent = require('../components/core/NavBarComponent');
 const SideNavBar = require('../components/core/sideBar/SideNavBar');
-const LoginModal = require('../components/core/LoginModal');
+const LoginModal = require('../components/core/login/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -31,7 +30,6 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 module.exports = (
 <div className='fill-height'>
-<NavBarComponent />
 <SettingsModal />
 <LoginModal />
 <OpenProject />

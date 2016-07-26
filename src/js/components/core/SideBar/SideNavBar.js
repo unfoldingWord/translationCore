@@ -3,36 +3,16 @@ const api = window.ModuleApi;
 const React = api.React;
 const CoreActions = require('../../../actions/CoreActions.js');
 const CoreStore = require('../../../stores/CoreStore.js');
+const CheckStore = require('../../../stores/CheckStore.js');
+const LoginButton = require("./LoginButton");
+const SideBarButton = require("./SideBarButton");
+const OnlineStatus = require('./OnlineStatus');
 const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const Image = require('react-bootstrap/lib/Image.js');
-const style = require("./sideBarStyle");
+const style = require("./Style");
 
 class SideNavBar extends React.Component{
-  constructor(){
-    super();
-    this.state ={
-      hover: false,
-      online: false,
-    }
-  }
-
-  componentWillMount() {
-    CoreStore.addChangeListener(this.updateButtonStatus.bind(this));
-  }
-
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.updateButtonStatus.bind(this));
-  }
-
-  handleClick(){
-    CoreActions.updateLoginModal(true);
-  }
-
-  updateButtonStatus(){
-    this.setState({online: CoreStore.getButtonStatus()});
-  }
-
   handleCreateProject(){
     CoreActions.showCreateProject("Languages");
   }
@@ -43,45 +23,33 @@ class SideNavBar extends React.Component{
 
   handleSaveProject(){
   let path = api.getDataFromCommon('saveLocation');
-  CheckStore.saveAllToDisk(path, function() {});
+    CheckStore.saveAllToDisk(path, function() {});
   }
 
   handleSettings(){
-  CoreActions.updateSettings(true);
+    CoreActions.updateSettings(true);
   }
 
-  toggleHover(){/*
-    this.setState({hover: !this.state.hover});*/
+  handleRecentProject(){
+    console.log("Recent Project modal not designed yet");
   }
 
+  handleChangeCheckCategory(){
+    console.log("Change Check Category modal not designed yet");
+  }
     render(){
-      const linkStyle = this.state.hover ? style.hover : style.li;
-      const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
-
-      let userName = "Sign in";
-      let profilePicture = <Glyphicon glyph="user" style={style.glyphicon}/>
-      if(this.state.online === true){
-      let user = CoreStore.getLoggedInUser();
-      userName = user.username;
-      let pic = user.avatar_url;
-      profilePicture = <Image style={{height: '45px', width:'45px'}} src={pic} circle />
-      }
       return(
         <div style={style.container}>
           <ul style={style.ul}>
-
-            <li style={style.li} onClick={this.handleClick.bind(this)} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-                {profilePicture}<br/>{userName}</li>
-            <li style={linkStyle} onClick={this.handleCreateProject.bind(this)} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-                <Glyphicon glyph="file" style={GlyphStyle}/><br/>New</li>
-            <li style={linkStyle} onClick="" onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-                <Glyphicon glyph="time" style={GlyphStyle}/><br/>Recent</li>
-            <li style={linkStyle} onClick={this.handleOpenProject.bind(this)} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-                <Glyphicon glyph="folder-open" style={GlyphStyle}/><br/>Open</li>
-            <li style={linkStyle} onClick={this.handleSaveProject.bind(this)} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-                <Glyphicon glyph="floppy-save" style={GlyphStyle}/><br/>Save</li>
-            <li style={linkStyle} onClick={this.handleSettings.bind(this)} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-                <Glyphicon glyph="cog" style={GlyphStyle}/><br/>Settings</li>
+            <img src="images/TC_Icon_logo.png" style={style.logo}/>
+            <LoginButton />
+            <SideBarButton handleButtonClick={this.handleCreateProject.bind(this)} glyphicon={"file"} value={"New"} />
+            <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Open"} />
+            <SideBarButton handleButtonClick={this.handleRecentProject.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
+            <SideBarButton handleButtonClick={this.handleSaveProject.bind(this)} glyphicon={"floppy-save"} value={"Save"} />
+            <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"check"} value={"Check Category"} />
+            <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
+            <OnlineStatus />
           </ul>
         </div>
       );

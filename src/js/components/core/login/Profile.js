@@ -1,16 +1,16 @@
 const React = require('react');
-const CoreStore = require('../../stores/CoreStore.js');
-const CoreActions = require('../../actions/CoreActions.js');
+const CoreStore = require('../../../stores/CoreStore.js');
+const CoreActions = require('../../../actions/CoreActions.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Image = require('react-bootstrap/lib/Image.js');
-const style = require('../../styles/loginStyle');
+const style = require('./loginStyle');
 
 class Profile extends React.Component {
 
   handleLogout(){
-    CoreActions.updateButtonStatus(false);
+    CoreActions.updateOnlineStatus(false);
     CoreActions.updateProfileVisibility(false);
     CoreActions.login(null);
   }
