@@ -72,10 +72,20 @@ const ProjectModal = React.createClass({
   },
   close: function() {
     //CheckStore.getNameSpaces();
-    CoreActions.showCreateProject("");
-    this.setState({
-      showModal: false
-    });
+    if (getProjectStatus()) {
+      CoreActions.showCreateProject("");
+      this.setState({
+        showModal: false
+      });
+    }
+
+  },
+
+  getProjectStatus: function() {
+    var projectStatus = CoreStore.getShowProjectModal();
+    if (projectStatus != "Create") {
+      var confirm = confirm("Are you sure you want to cancel?");
+    }
   },
 
   makePathForChecks: function(check) {
