@@ -9,20 +9,26 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 class NavigationMenu extends React.Component {
   constructor() {
     super();
-    this.updateCheckObject = this.updateCheckObject.bind(this);
     this.state = {
       checkObject: {}
     };
+    this.updateCheckObject = this.updateCheckObject.bind(this);
+    this.updateMenuItem = this.updateMenuItem.bind(this);
   }
 
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.updateCheckObject);
-    api.registerEventListener('changedCheckStatus', this.updateCheckObject);
+    api.registerEventListener('changedCheckStatus', this.updateMenuItem);
   }
 
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.updateCheckObject);
-    api.removeEventListener('changedCheckStatus', this.updateCheckObject);
+    api.removeEventListener('changedCheckStatus', this.updateMenuItem);
+  }
+
+  updateMenuItem(params) {
+    var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
+    menuItem.changeCheckStatus(params.checkStatus);
   }
 
   updateCheckObject(params) {
@@ -44,7 +50,11 @@ class NavigationMenu extends React.Component {
       var checkMenuItems = group.checks.map(function(check, checkIndex) {
         return (
           <div key={checkIndex}>
-            <MenuItem check={check} groupIndex={groupIndex} checkIndex={checkIndex} />
+            <MenuItem 
+              check={check} 
+              groupIndex={groupIndex} 
+              checkIndex={checkIndex}
+              ref={groupIndex.toString() + ' ' + checkIndex.toString()} />
           </div>
         );
       });
