@@ -30,6 +30,8 @@ Our API contains functions to interact with the CheckStore, like getting and set
 ### Events
 The key idea behind events is that a module can register a callback function to a type of event, and when any component emits an event of that type, every callback function that has registered will be called asynchronously.
 
+A module can register a callback function -- let's say: doSomething() -- to a type of event -- say: 'buttonClick.' Now when that event ('buttonClick') fires, every callback function that has registered to that event will be called asynchronously.
+
 Their main use is to allow for asynchronous communication between the CheckStore and modules so that modules can listen for changes to data held in the CheckStore.
 
 Events have the following functions:
@@ -39,9 +41,9 @@ This function takes in two parameters: *eventType*, a string, and *callback*, a 
 
 When a component registers a callback with a certain *eventType*, every time `emitEvent()` is called with that same *eventType*, that callback will run automatically.
 
-The callback should take one parameter called *params*.
+The callback function should take one parameter called *params*.
 
-This function should be called during a components' `componentWillMount()`.
+`registerEventListener` should be called during a components' `componentWillMount()`.
 
 There is no limit on how many listeners can listen for a type of event.
 
@@ -121,9 +123,7 @@ api.putDataInCommon('gatewayLanguage', 'Jesus wept');
 ```
 
 #### `getDataFromCommon(key)`
-After putting data into *common* with `putDataInCommon()`, you can retrieve that data with this function. This function returns a deep copy of the data, so modifying the return value of this function will not modify the data held in common.
-
-This function will return **null** if the key has no data associated with it.
+After putting data into *common* with `putDataInCommon()`, you can retrieve that data with this function. This function will return **null** if the key has no data associated with it.
 
 ```javascript
 var originalLanguageText = api.getDataFromCommon('originalLanguage');
