@@ -35,18 +35,6 @@ class ModuleApi {
         return null;
     }
 
-    sendAction(action) {
-        Dispatcher.handleAction(action);
-    }
-
-    registerAction(type, callback) {
-        CheckStore.registerAction(type, callback);
-    }
-
-    removeAction(type, callback) {
-        CheckStore.removeAction(type, callback);
-    }
-
     registerEventListener(eventType, callback) {
         CheckStore.addEventListener(eventType, callback);
     }
