@@ -20,7 +20,6 @@ const api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
-const ProjectName = require('./ProjectName');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 
@@ -50,12 +49,7 @@ const ProjectModal = React.createClass({
   },
   showCreateProject: function() {
     var modal = CoreStore.getShowProjectModal()
-    if (modal === "Create") {
-      this.setState({
-        showModal: true,
-        modalValue: modal
-      });
-    } else if(modal === "Check") {
+    if(modal === "Check") {
       this.setState({
         showModal: true,
         modalValue: modal
@@ -65,7 +59,7 @@ const ProjectModal = React.createClass({
         showModal: true,
         modalValue: modal,
         modalTitle: '',
-        doneText: 'Create'
+        doneText: 'Check'
       });
     }
   },
@@ -102,14 +96,8 @@ const ProjectModal = React.createClass({
         var bookName = _this.getBookAbbr(parsedManifest.project.name);
         _this.setBookName(bookName);
         let bookFileName = bookTitle.join('') + '.json';
-        var saveLocation = _this.saveLocation;
+        var saveLocation = _this.params.targetLanguagePath;
         var user = CoreStore.getLoggedInUser();
-        var repo;
-        if (user) {
-          repo = 'git.door43.org/' + user.username + '/' + _this.projectName;
-        } else {
-          repo = '';
-        }
         var projectData = {
           local: true,
           target_language: _this.params.targetLanguagePath,
@@ -118,7 +106,7 @@ const ProjectModal = React.createClass({
           user: [{username: '', email: ''}],
           checkLocations: [],
           saveLocation: saveLocation,
-          repo: repo
+          repo: _this.params.repo
         }
         var checkArray = api.getDataFromCommon('arrayOfChecks');
         projectData.checkLocations = checkArray;
@@ -133,35 +121,8 @@ const ProjectModal = React.createClass({
     }
 
     else if (this.state.modalValue === 'Languages') {
-      CoreActions.showCreateProject("Create");
-    }
-
-    else if (this.state.modalValue == "Create") {
-      var validator = /[^a-zA-Z0-9-_\.]/g
-      this.saveLocation = this.refs.ProjectName.saveLocation;
-      var projectName = this.refs.ProjectName.projectName;
-      var projectRef = this.refs.ProjectName;
-      api.putDataInCommon('createGogs', projectRef.createGogs);
-      this.projectName = projectName;
-      if (this.refs.ProjectName) {
-        if (!projectRef.allFieldsEntered()) {
-          alert("Enter All Fields Before Continuing.");
-          return;
-        } else if (validator.test(projectName)) {
-          alert("Project name must be valid alpha or numeric or dash(-_) or dot characters.");
-          return;
-        }
-        if (CoreStore.getLoggedInUser() && projectRef.createGogs && projectRef.allFieldsEntered() && !validator.test(projectName)) {
-          var user = CoreStore.getLoggedInUser();
-          GogsApi(user.token).createRepo(user, projectName);
-        } else if (this.refs.ProjectName.createGogs) {
-          alert('You must be logged in to create a Door43 Project');
-          return;
-        }
-      }
       CoreActions.showCreateProject("Check");
     }
-
   },
   getBookAbbr: function(book) {
     for (var bookAbbr in booksOfBible) {
@@ -172,8 +133,9 @@ const ProjectModal = React.createClass({
     return null;
   },
 
-  setTargetLanguageFilePath: function(path) {
+  setTargetLanguageFilePath: function(path, link) {
     this.params.targetLanguagePath = path;
+    this.params.repo = link;
     this.onClick();
   },
 
@@ -183,8 +145,6 @@ const ProjectModal = React.createClass({
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} ref={"SelectChecks"} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
-    } else if (modalBody == "Create") {
-      return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"}/>);
     } else if (modalBody === 'Languages') {
       return (<TargetLanguage ref={"TargetLanguage"} setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }

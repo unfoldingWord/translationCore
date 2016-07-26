@@ -7,7 +7,6 @@ const Books = require('../booksOfBible');
 const path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
 const Save = require('../Save.js');
-const Update = require('../UpdateTCProject.js');
 const git = require('../GitApi.js');
 
 var indexOfModule = 0;
@@ -32,7 +31,7 @@ var CheckDataGrabber = {
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
-      var manifestLocation = path.join(saveLocation, 'manifest.json');
+      var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
       var manifest = ManifestGenerator(data, tsManifest);
       api.putDataInCommon('tcManifest', manifest);
 
@@ -74,13 +73,7 @@ var CheckDataGrabber = {
         //update stuff
         var path = api.getDataFromCommon('saveLocation');
         git(path).init(function() {
-          Save('Initial Commit', function() {
-            if (api.getDataFromCommon('createGogs')) {
-              var user = CoreStore.getLoggedInUser();
-              var manifest = api.getDataFromCommon('tcManifest');
-              var remote = 'https://' + user.token + '@' + manifest.repo + '.git';
-              Update(remote, 'master', true);
-            }
+          git(path).save('Initial TC Commit', path, function() {
           });
         });
 

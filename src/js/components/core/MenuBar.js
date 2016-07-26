@@ -4,6 +4,9 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
+const CoreStore = require('../../stores/CoreStore.js');
+const git = require('./GitApi.js');
+
 
 var template = [
   {
@@ -12,9 +15,34 @@ var template = [
       {
         label: 'Save',
         click: function() {
-          require('./Save.js')('Manual Save');
+          const api = window.ModuleApi;
+          const path = api.getDataFromCommon('saveLocation');
+          git(path).save('Manual Save', path, function() {
+          });
         },
         accelerator: 'CmdOrCtrl+S'
+      },
+      {
+        label: "Update with Door43",
+        click: function() {
+          const api = window.ModuleApi;
+          const path = api.getDataFromCommon('saveLocation');
+          var user = CoreStore.getLoggedInUser();
+          if (user) {
+            git(path).save('Updating with Door43', path, function() {
+                var manifest = api.getDataFromCommon('tcManifest');
+                if (manifest.repo) {
+                  var remote = 'https://' + user.token + '@' + manifest.repo + '.git';
+                  git(path).update(remote, 'master', false);
+                } else {
+                  alert('There is no associated repository with this project');
+                }
+            });
+          } else {
+            alert('Login then try again');
+            CoreActions.updateLoginModal(true);
+          }
+        }
       },
       {
         label: "Open Project",
