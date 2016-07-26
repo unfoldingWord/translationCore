@@ -3,7 +3,7 @@
 This guide will help you create your own plugin for translationCore. Although translationCore is tailored for plugins made for checking Bible translations, it can support other types of plugins as well. The API is general enough for almost any kind of app to be plugged in to the tC system.
 
 ### Necessary Files
-A plugin must be contained in a folder consisting of at least the three following files:
+A plugin must be contained in a folder consisting of at least the following three files:
 * View.js
 * FetchData.js
 * ReportView.js
