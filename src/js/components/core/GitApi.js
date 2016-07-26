@@ -31,3 +31,5 @@ var GitApi = (function(directory) {
     }
   }
 });
+
+module.exports = GitApi;
