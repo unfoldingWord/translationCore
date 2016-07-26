@@ -155,7 +155,13 @@ const ProjectModal = React.createClass({
 
   setSaveLocation: function(data) {
     this.saveLocation = data;
-    CheckStore.storeData.common['saveLocation'] = data;
+    if (CheckStore.storeData.common != undefined){
+      CheckStore.storeData.common.saveLocation = data;
+    } else {
+      CheckStore.storeData['common'] = {};
+      CheckStore.storeData.common['saveLocation'] = data;
+    }
+
   },
   setTargetLanguageFilePath: function(path) {
     this.params.targetLanguagePath = path;
