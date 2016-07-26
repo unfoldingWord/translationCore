@@ -17,6 +17,7 @@ const Col = require('react-bootstrap/lib/Col.js');
 const OpenProject = require('../components/core/AccessProjectModal.js');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 
+
 const api = window.ModuleApi;
 
 const CheckStore = require('../stores/CheckStore.js');
@@ -33,7 +34,6 @@ module.exports = (
   <NavBarComponent />
   <SettingsModal />
   <LoginModal />
-  <OpenProject />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
         <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
