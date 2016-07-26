@@ -133,8 +133,7 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
   }
 },
 clearOldData: function(){
-  CoreStore = CoreStore.WIPE_ALL_DATA();
-  CheckStore = CheckStore.WIPE_ALL_DATA();
+  CheckStore.WIPE_ALL_DATA();
   api.modules = {};
 }
 };
