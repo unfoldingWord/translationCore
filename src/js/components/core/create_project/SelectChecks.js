@@ -44,7 +44,6 @@ const SelectChecks = React.createClass({
     }
   },
   selectedModule: function(e) {
-
     var elementIndex = this.state.FetchDataArray.indexOf(e.target.id);
     if ( elementIndex == -1){
       var fetchData = this.state.FetchDataArray;
@@ -85,6 +84,24 @@ const SelectChecks = React.createClass({
       }
       try {
         fs.accessSync(filepath + '/FetchData.js');
+        return true;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    catch (e) {
+      console.error(e);
+      return false;
+    }
+  },
+  isReportViewModule: function(filepath, file){
+    try {
+      var stats = fs.lstatSync(filepath);
+      if (!stats.isDirectory()) {
+        return false;
+      }
+      try {
+        fs.accessSync(filepath + '/ReportView.js');
         return true;
       } catch (e) {
         console.error(e);
