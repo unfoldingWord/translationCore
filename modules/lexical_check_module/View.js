@@ -1,4 +1,4 @@
-//View.js//
+  //View.js//
 
 //Api Consts
 const api = window.ModuleApi;
@@ -97,14 +97,19 @@ class View extends React.Component {
    * @description - updates the status of the check that is the current check in the check store
    * @param {object} newCheckStatus - the new status chosen by the user
    */
-  updateCheckStatus(newCheckStatus) {
+  updateCheckStatus(newCheckStatus, selectedWords) {
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
-      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
+      currentCheck.selectedWords = selectedWords;
+      api.emitEvent('changedCheckStatus', {
+        groupIndex: currentGroupIndex,
+        checkIndex: currentCheckIndex,
+        checkStatus: newCheckStatus
+      });
     }
   }
 
@@ -114,27 +119,39 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-      var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-      var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-      var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-      //error check to make sure we're going to a legal group/check index
-      if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-        if (newGroupIndex < groups.length) {
-          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
-          if (newCheckIndex < groups[currentGroupIndex].checks.length) {
-            api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
-          }
-          /* In the case that we're incrementing the check and now we're out of bounds
-           * of the group, we increment the group.
-           */
-          else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
-            currentGroupIndex < groups.length - 1) {
-            api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
-            api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
-          }
+    //Get the proposed changes and add it to the check
+    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
+    var currentCheck = this.state.currentCheck;
+    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
+      currentCheck.proposedChanges = proposedChanges;
+    }
+    
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    //error check to make sure we're going to a legal group/check index
+    if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
+      if (newGroupIndex < groups.length) {
+        api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
+        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
         }
+        /* In the case that we're incrementing the check and now we're out of bounds
+          * of the group, we increment the group.
+          */
+        else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
+          currentGroupIndex < groups.length - 1) {
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
+        }
+        //invalid indices: don't do anything else
+        else {
+          return;
+        }
+
       }
-      this.updateState();
+    }
+    this.updateState();
   }
 
   /**
@@ -209,17 +226,33 @@ class View extends React.Component {
     }
   }
 
+  enableButtons() {
+    if (this.state.buttonsDisable) {
+      this.setState({
+        buttonsDisable: false
+      });
+    }
+  }
+
+  disableButtons() {
+    if (!this.state.buttonsDisable) {
+      this.setState({
+        buttonsDisable: true
+      });
+    }
+  }
+
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
 	render() {
+    var _this = this;
     if (!this.state.currentCheck) {
       return (<div></div>);
     }
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
-      var _this = this;
   		return (
   			<div>
   				<TPane />
@@ -252,18 +285,19 @@ class View extends React.Component {
               />
               <TargetVerseDisplay
                 verse={targetVerse}
-                buttonEnableCallback={()=>{}}
-                buttonDisableCallback={()=>{}}
+                buttonEnableCallback={this.enableButtons.bind(this)}
+                buttonDisableCallback={this.disableButtons.bind(this)}
+                ref={"TargetVerseDisplay"}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      _this.updateCheckStatus('RETAINED');
+                      _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      _this.updateCheckStatus('WRONG');
+                      _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
