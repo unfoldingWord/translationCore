@@ -318,8 +318,6 @@ class View extends React.Component {
                         checkStatus: 'WRONG',
                         selectedWords: _this.refs.TargetVerseDisplay.getWords()
                       });
-                      console.log('CheckStore');
-                      console.dir(api.getDataFromCheckStore(NAMESPACE, 'groups'));
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
