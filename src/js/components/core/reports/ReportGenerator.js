@@ -57,6 +57,7 @@ class Report extends React.Component {
     // loop through all verses and chapters in the target language
     // and pass them into the ReortView functions
     let verses = [];
+    let bookName = targetLang.title || "-bookName-";
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)
       if (/^[0-9]+$/.test(ch) == false) {
@@ -71,14 +72,14 @@ class Report extends React.Component {
           }
         }
         if (reports.length > 0) {
-          verses.push(<span><h3>{`-bookname- ${ch}:${v}`}</h3><div>{reports}</div></span>);
+          verses.push(<span><h3>{`${bookName} ${ch}:${v}`}</h3><div>{reports}</div></span>);
         }
       }
     }
     // TODO: Get name of book and authors
     return (
       <div className="page-header">
-      <h1>{"Report for -bookName- "}<small>{"By -authors-, created on " + new Date().toDateString()}</small></h1>
+      <h1>{`Report for ${bookName} `}<small>{"By -authors-, created on " + new Date().toDateString()}</small></h1>
       {verses}
       </div>
     );
@@ -101,10 +102,10 @@ module.exports = function(callback = (err) => {}) {
         callback(err);
         return;
       }
-      window.reportView = new BrowserWindow({width: 600, height: 600, icon: 'images/TC_Icon.png'});
+      window.reportView = new BrowserWindow({width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
       window.reportView.loadURL(`file://${__dirname}\\report.html`);
       window.reportView.on('closed', () => {
-        window.reportView = null;
+        window.reportView = undefined;
       });
       callback(null);
     });
