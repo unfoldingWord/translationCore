@@ -8,13 +8,13 @@ A plugin must be contained in a folder consisting of at least the three followin
 * FetchData.js
 * ReportView.js
 
-#### View.js
+##### View.js
 This is your user interface in translationCore. This file's main export is a React component (https://facebook.github.io/react/).
 
-#### FetchData.js
+##### FetchData.js
 This is where you give us your data. This file's export is a function which should pass your data to a callback function.
 
-#### ReportView.js
+##### ReportView.js
 This is how your data is displayed in a report. This file's export is a function that returns JSX (very similar to a React component).
 
 For more information on these files, see our example check modules.
