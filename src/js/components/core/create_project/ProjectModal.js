@@ -118,12 +118,23 @@ const ProjectModal = React.createClass({
       if (tempFetchDataArray.length > 0) {
         this.clearOldData();
         CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
-      }
       this.close();
     }
-
+  }
     else if (this.state.modalValue === 'Languages') {
-      CoreActions.showCreateProject("Check");
+      try {
+        var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
+        FileModule.readFile(manifestLocation, function(data){
+          var parsedManifest = JSON.parse(data);
+          if (parsedManifest.generator.name !== 'ts-desktop') {
+            dialog.showErrorBox('Error', 'This does not appear to be a translation studio project');
+          } else {
+            CoreActions.showCreateProject("Check");
+          }
+        });
+      } catch(error) {
+        dialog.showErrorBox('Error', 'This does not appear to be a translation studio project');
+      }
     }
   },
 
