@@ -10,12 +10,12 @@ module.exports = function() {
   CheckStore.saveAllToDisk(path);
   GitApi.add(function(err, data) {
     if (err)
-      dialog.showErrorBox(err);
+      dialog.showErrorBox('Error', err);
   });
 
   var message = "Updating TC project from: " + directory;
   GitApi.commit(message, function(err) {
     if (err)
-      dialog.showErrorBox(err);
+      dialog.showErrorBox('Error', err);
   });
 };
