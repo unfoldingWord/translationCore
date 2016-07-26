@@ -5,17 +5,17 @@ const {dialog} = remote;
 const GitApi = require('./GitApi.js');
 
 
-module.exports = function() {
+module.exports = function(message) {
   var path = api.getDataFromCommon('saveLocation');
-  CheckStore.saveAllToDisk(path);
-  GitApi.add(function(err, data) {
-    if (err)
-      dialog.showErrorBox('Error', err);
-  });
-
-  var message = "Updating TC project from: " + directory;
-  GitApi.commit(message, function(err) {
-    if (err)
-      dialog.showErrorBox('Error', err);
+  CheckStore.saveAllToDisk(path, function(){
+    GitApi(path).add(function(err, data) {
+      if (err) {
+        dialog.showErrorBox('Error', err);
+      }
+      GitApi(path).commit(message, function(err) {
+          if (err)
+            dialog.showErrorBox('Error', err);
+      });
+    });
   });
 };

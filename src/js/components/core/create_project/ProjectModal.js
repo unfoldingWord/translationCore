@@ -105,12 +105,11 @@ const ProjectModal = React.createClass({
         var saveLocation = _this.saveLocation;
         var user = CoreStore.getLoggedInUser();
         var repo;
-        if (user.username) {
+        if (user) {
           repo = 'https://git.door43.org/' + user.username + '/' + _this.projectName;
         } else {
           repo = '';
         }
-        console.log(repo);
         var projectData = {
           local: true,
           target_language: _this.params.targetLanguagePath,
