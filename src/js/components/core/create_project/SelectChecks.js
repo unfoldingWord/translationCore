@@ -95,6 +95,24 @@ const SelectChecks = React.createClass({
       return false;
     }
   },
+  isReportViewModule: function(filepath, file){
+    try {
+      var stats = fs.lstatSync(filepath);
+      if (!stats.isDirectory()) {
+        return false;
+      }
+      try {
+        fs.accessSync(filepath + '/ReportView.js');
+        return true;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    catch (e) {
+      console.error(e);
+      return false;
+    }
+  },
   getModule: function() {
     dialog.showOpenDialog({
       properties: ['openDirectory']

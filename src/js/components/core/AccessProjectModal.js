@@ -9,6 +9,7 @@ var Button = require('react-bootstrap/lib/Button.js');
 var Modal = require('react-bootstrap/lib/Modal.js');
 var CoreActions = require('../../actions/CoreActions.js');
 var CoreStore = require('../../stores/CoreStore.js');
+var CheckStore = require('../../stores/CheckStore');
 var style = require('../../styles/AccessStyle.js');
 var Access = require('./AccessProject.js');
 var path = require('path');
@@ -44,6 +45,7 @@ var AccessProjectMod = React.createClass({
 
 
   readDir: function() {
+    _this = this;
     dialog.showOpenDialog({
       properties: ['openDirectory']
     }, function(filename) {
@@ -51,7 +53,7 @@ var AccessProjectMod = React.createClass({
       try {
         var file = filename[0];
         api.putDataInCommon('saveLocation', file)
-        Access.openDir(path.join(file));
+        Access.loadFromFilePath(path.join(file));
         CoreActions.showOpenModal(false);
       } catch (e) {
         dialog.showErrorBox('Read directory error', e);
@@ -60,7 +62,6 @@ var AccessProjectMod = React.createClass({
     }
   });
 },
-
   handleKeyPress: function(e) {
         var enterKey = 13;
         if (e.charCode == enterKey) {
@@ -70,7 +71,7 @@ var AccessProjectMod = React.createClass({
             if (filename !== undefined) {
             try {
               var file = filename[0];
-              Access.openDir(path.join(file));
+              Access.loadFromFilePath(path.join(file));
             } catch (e) {
               dialog.showErrorBox('Read directory error', e);
             }

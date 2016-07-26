@@ -239,6 +239,9 @@ class CheckStore extends EventEmitter {
       }
     }
   }
+
+  clearCheckStore() {
+   }
 }
 
 const checkStore = new CheckStore;

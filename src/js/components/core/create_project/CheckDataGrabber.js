@@ -67,6 +67,9 @@ var CheckDataGrabber = {
       if (this.doneModules >= this.totalModules) {
         //update stuff
         CoreActions.doneLoadingFetchData(this.reportViews);
+        console.log(CoreStore);
+        console.log(CheckStore);
+        console.log(api);
       }
     }
     else {
