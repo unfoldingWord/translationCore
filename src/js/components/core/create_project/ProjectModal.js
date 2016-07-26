@@ -4,7 +4,6 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
-const GogsApi = require('../GogsApi.js');
 const GitApi = require('../GitApi.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
