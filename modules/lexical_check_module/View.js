@@ -58,28 +58,22 @@ class View extends React.Component {
 
   /**
    * @description - This method is a lifecycle method of a react component and will
-   * be called before the component mounts to the DOM. It's used to register event and action
+   * be called before the component mounts to the DOM. It's used to register event
    * callbacks using the API
    */
 	componentWillMount() {
 
-    //This action will update our indexes in the store
-    api.registerAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
-
-    //This action will update the status of the check that is the current check in the CheckStore
-    api.registerAction('updateCheckStatus', this.updateCheckStatus);
-
     /*
-     * This event will call an action that increment the checkIndex by one,
+     * This event will  increment the checkIndex by one,
      * and might increment the group index if needed. Because no parameters are given
      * from the event, we have to get the current indexes from the store and increment it
-     * manually before sending the action to update the store
+     * manually before updating the store
      */
     api.registerEventListener('goToNext', this.goToNextListener);
 
     /*
-     * This event listens for an event that will tell us another check to go to,
-     * and sends the appropriate action. This and the above listener need to be two
+     * This event listens for an event that will tell us another check to go to.
+     * This and the above listener need to be two
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
     api.registerEventListener('goToCheck', this.goToCheckListener);
@@ -94,21 +88,14 @@ class View extends React.Component {
   }
 
   componentWillUnmount() {
-    api.removeAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
-    api.removeAction('updateCheckStatus', this.updateCheckStatus);
-
     api.removeEventListener('goToNext', this.goToNextListener);
-
     api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
   /**
-   * @description - action callback to update the status of the check that is the current check
-   * in the check store
-   * @param {object} lexicalData - the object that is referenced under the given namespace in the
-   * CheckStore
-   * @param {object} action - this is the exact action that was passed to api.sendAction
+   * @description - updates the status of the check that is the current check in the check store
+   * @param {object} newCheckStatus - the new status chosen by the user
    */
   updateCheckStatus(newCheckStatus) {
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
@@ -122,12 +109,9 @@ class View extends React.Component {
   }
 
   /**
-   * @description - This is an action callback. This is used to change our current check index
-   * and group index within the store
-   * @param {object} lexicalData - This is the object found under the namespace that is
-   * currently in the CheckStore's data
-   * @param {object} action - This the exact action that is passed to api.sendAction, so that
-   * we can have access to extra fields we might have put on it
+   * @description - This is used to change our current check index and group index within the store
+   * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
+   * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
       var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
@@ -156,7 +140,7 @@ class View extends React.Component {
   /**
    * @description - This method grabs the information that is currently in the
    * store and uses it to update our state which in turn updates our view. This method is
-   * typically called after actions are sent so that our view updates to the latest
+   * typically called after the store is updated so that our view updates to the latest
    * data found in the store
    */
   updateState() {
