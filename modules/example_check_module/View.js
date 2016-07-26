@@ -11,9 +11,6 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
-// Define a namespace for this specific module
-const NAMESPACE = "ExampleChecker";
-
 class View extends React.Component {
   
   constructor() {
@@ -49,7 +46,7 @@ class View extends React.Component {
     var currentCheckFromStore = exampleCheckData.groups[exampleCheckData.currentGroupIndex]['checks'][exampleCheckData.currentCheckIndex];
     if (currentCheckFromStore.checkStatus) {
       currentCheckFromStore.checkStatus = action.checkStatus;
-      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
+      api.emitEvent('changedCheckStatus', {currentCheckNamespace: 'ExampleChecker'});
     }
     this.setState({
       currentCheck: currentCheckFromStore
@@ -67,6 +64,6 @@ class View extends React.Component {
 }
 
 module.exports = {
-  name: NAMESPACE,
+  name: 'ExampleChecker',
   view: View
 }
