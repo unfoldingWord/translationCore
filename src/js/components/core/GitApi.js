@@ -1,4 +1,4 @@
-var GitApi = (function(directory) {
+function GitApi(directory) {
 
   var git = require('simple-git')(directory);
 
@@ -30,4 +30,6 @@ var GitApi = (function(directory) {
       //Array can be one or more files
     }
   }
-});
+}
+
+module.exports = GitApi;
