@@ -2,7 +2,7 @@ const React = require('react');
 
 const remote = window.electron.remote;
 const {dialog} = remote;
-const CoreActions = require('../../actions/CoreActions.js');
+const CoreActions = require('../../../actions/CoreActions.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
@@ -10,9 +10,9 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const style = require('../../styles/loginStyle');
+const style = require('./loginStyle');
 const gogs = require('./GogsApi.js');
-const Token = require('./AuthToken');
+const Token = require('../AuthToken');
 const Registration = require('./Registration');
 
 class Login extends React.Component {
@@ -28,8 +28,7 @@ class Login extends React.Component {
     var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
-      CoreActions.updateButtonStatus(true);
-      CoreActions.updateLogoutButton(true);
+      CoreActions.updateOnlineStatus(true);
       CoreActions.updateProfileVisibility(true);
     }).catch(function(reason) {
       //console.log(reason);
