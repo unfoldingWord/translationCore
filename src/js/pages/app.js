@@ -14,7 +14,7 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const OpenProject = require('../components/core/AccessProjectModal.js');
+const AccessProjectModal = require('../components/core/AccessProjectModal.js');
 
 const api = window.ModuleApi;
 
@@ -33,7 +33,6 @@ module.exports = (
   <NavBarComponent />
   <SettingsModal />
   <LoginModal />
-  <OpenProject />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
         <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>

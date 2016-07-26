@@ -22,6 +22,7 @@ const ProjectName = require('./ProjectName');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
+const AccessProjectModal = require('../AccessProjectModal');
 
 const ProjectModal = React.createClass({
   params: {
@@ -45,6 +46,7 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
+    AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function() {
