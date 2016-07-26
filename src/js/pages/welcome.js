@@ -3,7 +3,34 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button} = RB;
 
-const RootStyles = require('./RootStyle');
+// const RootStyles = require('./RootStyle');
+
+const Styles = {
+  navButtons: {
+    float: 'right',
+    margin: '0px 50px',
+    height: '50px',
+    alignSelf: 'center',
+    fontSize: '200%',
+    color: '#fff'
+  },
+  welcomePage: {
+    width: '100%',
+    margin: 'auto',
+    alignSelf: 'center',
+    textAlign: 'center',
+    color: '#fff'
+  },
+  welcomeFrame: {
+    backgroundColor: '#2ecc71',
+    height: '100%',
+    display: 'flex'
+  },
+  bigGlyph: {
+    color: '#fff',
+    fontSize: '1000%'
+  }
+}
 
 class Welcome extends React.Component{
 
@@ -28,23 +55,26 @@ class Welcome extends React.Component{
     switch(e){
       case 1:
         return (
-          <div>
+          <div style={Styles.welcomePage}>
+            <img src="./images/TC_Icon_White.png" />
             <h1>Welcome to translationCore</h1>
-            <p>Ad minim velit Lorem anim ipsum qui deserunt deserunt.</p>
+            <p>We are glad that you are here. We just need to set up a few things before we can begin.</p>
           </div>
         )
         break;
       case 2:
         return(
-          <div>
-            <h1>Please login to your gogs account</h1>
-            <p>Cillum dolor eu ea aliquip fugiat incididunt sunt aute.</p>
+          <div style={Styles.welcomePage}>
+            <Glyphicon style={Styles.bigGlyph} glyph="user" />
+            <h1>Connect a Door43 account</h1>
+            <p>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
+            <Button>Login</Button><Button>Create Account</Button>
           </div>
         )
         break;
       case 3:
         return(
-          <div>
+          <div style={Styles.welcomePage}>
             <h1>load your first project</h1>
             <p>Aliquip velit duis laborum aliquip exercitation dolore consequat fugiat anim laboris ex excepteur ea deserunt voluptate ea.</p>
           </div>
@@ -60,15 +90,23 @@ class Welcome extends React.Component{
   render(){
     var _this = this;
     return(
-      <div style={RootStyles.WelcomeFrame}>
+      <div style={Styles.welcomeFrame}>
 
-        <Button onClick={()=>{_this.setState({index:this.state.index-1})}}>
+        <Button
+          bsStyle='link'
+          onClick={()=>{_this.setState({index:this.state.index-1})}}
+          style={Styles.navButtons}
+        >
           <Glyphicon glyph='chevron-left' />
         </Button>
 
         {this.getPage(this.state.index)}
 
-        <Button onClick={()=>{_this.setState({index: this.state.index+1})}}>
+        <Button
+          bsStyle='link'
+          onClick={()=>{_this.setState({index: this.state.index+1})}}
+          style={Styles.navButtons}
+        >
           <Glyphicon glyph='chevron-right' />
         </Button>
 

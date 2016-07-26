@@ -9,10 +9,10 @@ body, html, #content, .fill-height {
   height:100%;
 }
 /* Padding for navbar */
-body {
+/*body {
   padding-top: 65px;
   padding-bottom: 5px;
-}
+}*/
 
 /* Removes gradient from behind the buttons in a bootstrap carousel */
 .carousel-control.right, .carousel-control.left {

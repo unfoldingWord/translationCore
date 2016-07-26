@@ -18,7 +18,11 @@ var RootStyles = {
   },
   WelcomeFrame: {
     backgroundColor: '#2ecc71',
-    
+    height: '100%'
+  },
+  WelcomePage: {
+    width: '100%',
+    margin: 'auto'
   }
 };
 module.exports = RootStyles;
