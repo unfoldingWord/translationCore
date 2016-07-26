@@ -142,6 +142,7 @@ const ProjectModal = React.createClass({
     CoreActions.newProject();
     CheckStore.WIPE_ALL_DATA();
     api.modules = {};
+    this.setSaveLocation(this.saveLocation);
   },
 
   getBookAbbr: function(book) {
