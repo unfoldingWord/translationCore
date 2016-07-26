@@ -1,7 +1,9 @@
 const React = require('react');
 
 const RB = require('react-bootstrap');
-const {Glyphicon} = RB;
+const {Glyphicon, Button} = RB;
+
+const RootStyles = require('./RootStyle');
 
 class Welcome extends React.Component{
 
@@ -11,6 +13,7 @@ class Welcome extends React.Component{
     this.state = {
       index: 1
     }
+
     this.getPage = this.getPage.bind(this);
     this.setIndex = this.setIndex.bind(this);
   }
@@ -46,23 +49,29 @@ class Welcome extends React.Component{
             <p>Aliquip velit duis laborum aliquip exercitation dolore consequat fugiat anim laboris ex excepteur ea deserunt voluptate ea.</p>
           </div>
         )
+        break;
+      case 4:
+          this.props.initialize();
+      break;
     }
   }
 
-  goToApp(){
-    return(
-      <p>Now youre in the app</p>
-    )
-  }
 
   render(){
-    var localIndex = 1;
     var _this = this;
     return(
-      <div>
-      <Glyphicon glyph='chevron-left' onClick={() => {_this.setIndex(localIndex--)}} />
-      {this.getPage(localIndex)}
-      <Glyphicon glyph='chevron-right' onClick={() => {_this.setIndex(localIndex++)}} />
+      <div style={RootStyles.WelcomeFrame}>
+
+        <Button onClick={()=>{_this.setState({index:this.state.index-1})}}>
+          <Glyphicon glyph='chevron-left' />
+        </Button>
+
+        {this.getPage(this.state.index)}
+
+        <Button onClick={()=>{_this.setState({index: this.state.index+1})}}>
+          <Glyphicon glyph='chevron-right' />
+        </Button>
+
       </div>
     )
   }

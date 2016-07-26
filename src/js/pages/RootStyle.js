@@ -15,6 +15,10 @@ var RootStyles = {
     height: 'auto',
     position: 'fixed',
     textAlign: 'center'
+  },
+  WelcomeFrame: {
+    backgroundColor: '#2ecc71',
+    
   }
 };
 module.exports = RootStyles;

@@ -36,9 +36,10 @@ var Main = React.createClass({
   },
 
   render: function(){
+    var _this = this;
     if(this.state.firstTime){
       return(
-        <Welcome />
+        <Welcome initialize={() => {_this.setState({firstTime:false})}}/>
       )
     }else{
       return(
