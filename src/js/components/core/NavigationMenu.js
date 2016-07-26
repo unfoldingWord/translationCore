@@ -66,10 +66,12 @@ class NavigationMenu extends React.Component {
       );
     });
     return (
-      <div>
-        <Well>
-          <h3>Checks</h3>
-          {menuList}
+      <div className='fill-height'>
+        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+          <div>
+            <h3>Checks</h3>
+            {menuList}
+          </div>
         </Well>
       </div>
     )

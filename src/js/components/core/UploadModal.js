@@ -50,7 +50,7 @@ const UploadModal = React.createClass({
     } else {
       mainContent = (<div>
                        <br />
-                       <OnlineInput />
+                       <OnlineInput sendFilePath={this.sendFilePath}/>
                      </div>);
     }
     return (
