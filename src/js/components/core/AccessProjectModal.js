@@ -43,6 +43,7 @@ var AccessProjectMod = {
           dialog.showErrorBox('Read directory error', e);
         }
       }
+      CoreActions.showOpenModal(false);
     });
   }
 }
