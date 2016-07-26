@@ -24,6 +24,14 @@ const TargetWord = React.createClass({
     this.toggleHighlight();
   },
 
+  removeHighlight: function() {
+    if (this.state.highlighted) {
+      this.setState({
+        highlighted: false
+      });
+    }
+  },
+
   toggleHighlight: function() {
     if (!this.state.highlighted) {
       this.props.selectCallback(this.state.wordObj);
@@ -35,14 +43,6 @@ const TargetWord = React.createClass({
   },
 
   render: function() {
-    // if (this.state.highlighted) { //add the word to the parent's 'selectedWords' array
-    //  this.props.selectCallback(this.state.wordObj)   have to pass in an object because we have to check against
-    //                      each word's key
-
-    // }
-    // else {
-    //  this.props.removeCallback(this.state.wordObj);
-    // }
 
     return (
       <span
@@ -63,6 +63,12 @@ const TargetLanguageSelectBox = React.createClass({
     cursor: 'pointer'
   },
 
+  shouldComponentUpdate: function(nextProps, nextState) {
+    for (key in this.refs)
+      this.refs[key].removeHighlight();
+    return true;
+  },
+
   render: function() {
     // populate an array with html elements then return the array
     var wordArray = this.props.verse.split(' ');
@@ -74,15 +80,16 @@ const TargetLanguageSelectBox = React.createClass({
      */
     var wordKey = 0;
     for (var i = 0; i < wordArray.length; i++) {
-      words.push(
-        <TargetWord
-          selectCallback={this.addSelectedWord}
-          removeCallback={this.removeFromSelectedWords}
-          key={tokenKey++} 
-          keyId={wordKey++} 
-          style={this.cursorPointerStyle}
-          word={wordArray[i]}
-        />);
+      var targetWordComponent = <TargetWord
+                                  selectCallback={this.addSelectedWord}
+                                  removeCallback={this.removeFromSelectedWords}
+                                  key={tokenKey++} 
+                                  keyId={wordKey++} 
+                                  style={this.cursorPointerStyle}
+                                  word={wordArray[i]}
+                                  ref={wordKey.toString()}
+                                />
+      words.push(targetWordComponent);
       if (i != wordArray.length - 1) { // add a space if we're not at the end of the line
         words.push(
           <span
@@ -93,6 +100,9 @@ const TargetLanguageSelectBox = React.createClass({
         ); // even the spaces need keys! (but not keyId)
       }
     }
+    // for (var key in this.refs) {
+    //   this.refs[key].removeHighlight();
+    // }
     return (
       <Well 
         bsSize={'small'}

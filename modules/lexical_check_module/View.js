@@ -1,4 +1,4 @@
-//View.js//
+  //View.js//
 
 //Api Consts
 const api = window.ModuleApi;
@@ -135,7 +135,7 @@ class View extends React.Component {
     //Get the proposed changes and add it to the check
     var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
     var currentCheck = this.state.currentCheck;
-    if (currentCheck && proposedChanges != this.getVerse('targetLanguage')) {
+    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
       currentCheck.proposedChanges = proposedChanges;
     }
 
