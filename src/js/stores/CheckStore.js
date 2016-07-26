@@ -20,18 +20,18 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - This will put in the CheckStore. Under the CheckStore's object the params
-   * will be like so:
-   * this.data = {
-   *   field = {
-   *     key = value;
-   *   }
-   * }
-   * @param {string} field - The main field that the key and value will be saved under in
-   * the CheckStore's object
-   * @param {string} key - The key that the value will be 'saved' in the field's object
-   * @param {anything} value - thing that is assigned to the key
-   */
+  * @description - This will put in the CheckStore. Under the CheckStore's object the params
+  * will be like so:
+  * this.data = {
+  *   field = {
+  *     key = value;
+  *   }
+  * }
+  * @param {string} field - The main field that the key and value will be saved under in
+  * the CheckStore's object
+  * @param {string} key - The key that the value will be 'saved' in the field's object
+  * @param {anything} value - thing that is assigned to the key
+  */
   putInData(field, key, value) {
     if (!(field in this.storeData)) {
       this.storeData[field] = {};
@@ -42,9 +42,9 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - See {@link putInData} but puts it in a common field that is accessible by
-   * any module
-   */
+  * @description - See {@link putInData} but puts it in a common field that is accessible by
+  * any module
+  */
   putInCommon(key, value) {
     this.putInData('common', key, value);
   }
@@ -63,17 +63,17 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - Returns the object behind the 'common' key within the CheckStore's storeData
-   */
+  * @description - Returns the object behind the 'common' key within the CheckStore's storeData
+  */
   getCommonDataObject() {
     return this.storeData.common;
   }
 
   /**
-   * @description - Returns a single value associated from a key within the common field in the
-   * CheckStore's data
-   * @param {string} key - the key that will you want to get the value from the common field
-   */
+  * @description - Returns a single value associated from a key within the common field in the
+  * CheckStore's data
+  * @param {string} key - the key that will you want to get the value from the common field
+  */
   getFromCommon(key) {
     if (this.storeData['common']) {
       return this.storeData.common[key];
@@ -83,11 +83,11 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - Retrieves the object behind the given field within CheckStore's data
-   * object and saves to the path
-   * @param {string} field - string that denotes which field to save to the disk from the data
-   * @param {string} path - the path to save the json file to
-   */
+  * @description - Retrieves the object behind the given field within CheckStore's data
+  * object and saves to the path
+  * @param {string} field - string that denotes which field to save to the disk from the data
+  * @param {string} path - the path to save the json file to
+  */
   saveDataToDisk(field, path, callback=() => {}) {
     if (this.storeData[field]) {
       var saveLocation = pathModule.join(path,'checkdata', field + '.tc');
@@ -131,13 +131,13 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - Retrieves a json object from disk and loads it in under CheckStore's
-   * data under the field specified
-   * @param {string} field - the field the loaded data will be saved under in CheckStore's data
-   * @param {string} path - the path the json will be loaded from
-   * @param {function} callback - optional callback parameter to be called on a successful load
-   * of the file
-   */
+  * @description - Retrieves a json object from disk and loads it in under CheckStore's
+  * data under the field specified
+  * @param {string} field - the field the loaded data will be saved under in CheckStore's data
+  * @param {string} path - the path the json will be loaded from
+  * @param {function} callback - optional callback parameter to be called on a successful load
+  * of the file
+  */
   loadDataFromDisk(field, path, callback=() => {}) {
     fs.readJson(path, function(error, data) {
       //Temporary error checking
@@ -152,40 +152,46 @@ class CheckStore extends EventEmitter {
   }
 
   /**
-   * @description - Removes the field object from the CheckStore's data
-   * @param {string} field - string denoting the field to remove
-   */
+  * @description - Removes the field object from the CheckStore's data
+  * @param {string} field - string denoting the field to remove
+  */
   removeDataFromCheckStore(field) {
     if (this.storeData.field) this.storeData.field = undefined;
   }
 
   /**
-   * @description - This adds a callback associated with an event that will be called when
-   * the event is emitted
-   * @param {string} eventType - string denoting the type of event
-   * @param {function} callback - callback that will be called when an event is emitted
-   * with a single 'params' parameter that could be undefined
-   */
+  * @description - This adds a callback associated with an event that will be called when
+  * the event is emitted
+  * @param {string} eventType - string denoting the type of event
+  * @param {function} callback - callback that will be called when an event is emitted
+  * with a single 'params' parameter that could be undefined
+  */
   addEventListener(eventType, callback) {
     this.on(eventType, callback);
   }
 
   /**
-   * @description - Removes the callback from the event type
-   * @param {string} eventType - the event type the callback is associated with
-   * @param {function} callback - the function to remove from the specified event
-   */
+  * @description - Removes the callback from the event type
+  * @param {string} eventType - the event type the callback is associated with
+  * @param {function} callback - the function to remove from the specified event
+  */
   removeEventListener(eventType, callback) {
     this.removeListener(eventType, callback);
   }
 
   /**
-   * @description - Emits and event and passes the given params
-   * @param {string} event - string that specifies the type of event to emit
-   * @param {object} params - an object that carries the params to an event listener
-   */
+  * @description - Emits and event and passes the given params
+  * @param {string} event - string that specifies the type of event to emit
+  * @param {object} params - an object that carries the params to an event listener
+  */
   emitEvent(event, params) {
     this.emit(event, params);
+  }
+
+  WIPE_ALL_DATA() {
+    //THIS SHOULD NOT BE USED EXCEPT ON CREATE AND NEW PROJECT
+    this.storeData = {};
+    this.storeData['common'] = {};
   }
 }
 

@@ -87,6 +87,13 @@ module.exports = {
     });
   },
 
+  newProject: function(){
+    Dispatcher.handleAction({
+    type: consts.NEW_PROJECT,
+    reportViews:[]
+  });
+},
+
   updateLogoutButton: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_LOGOUT_VISIBILITY,
