@@ -28,6 +28,7 @@ class Login extends React.Component {
     var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
+      
       CoreActions.updateButtonStatus(true);
       CoreActions.updateLogoutButton(true);
       CoreActions.updateProfileVisibility(true);
