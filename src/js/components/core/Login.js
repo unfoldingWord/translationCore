@@ -42,7 +42,6 @@ class Login extends React.Component {
         dialog.showErrorBox('Login Failed', errorMessage);
       } else {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
-        //console.log(reason);
       }
     });
   }

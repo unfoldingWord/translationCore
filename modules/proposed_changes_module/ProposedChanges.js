@@ -2,12 +2,10 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
-const Well = ReactBootstrap.Well;
-const FormGroup = ReactBootstrap.FormGroup;
 const Button = ReactBootstrap.Button;
 const Panel = ReactBootstrap.Panel;
+const style = require('./style');
 
-//ProposedChanges is in the store
 const NAMESPACE = 'ProposedChanges';
 
 class ProposedChanges extends React.Component {
@@ -15,14 +13,11 @@ class ProposedChanges extends React.Component {
     super();
     this.state = {
       open: false,
-      chapter: 0,
-      verse: 0
+      currentVerse: ""
     };
-
     this.actionHandleChange = this.actionHandleChange.bind(this);
     this.updateTargetLanguage = this.updateTargetLanguage.bind(this);
     this.updateCheck = this.updateCheck.bind(this);
-
   }
 
   componentWillMount() {
@@ -41,57 +36,56 @@ class ProposedChanges extends React.Component {
     api.removeEventListener("goToVerse", this.updateCheck);
   }
 
-
   updateCheck(params) {
-    this.setState({chapter: params.chapterNumber, verse: params.verseNumber});
+    let targetLanguage = api.getDataFromCommon('targetLanguage');
+    let currentVerse = "";
+      if(targetLanguage && params.chapterNumber && params.verseNumber){
+        currentVerse = targetLanguage[params.chapterNumber][params.verseNumber];
+        this.setState({currentVerse: currentVerse});
+      }
   }
 
   handleChange(e){
+
     this.value = e.target.value;
-    //console.log(this.value);
-    //type and field are required
-    //the object below is passed as an argument to actionhandlechange()
-    api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.value});
+    this.setState({currentVerse: this.value});
+
   }
-/*
-  clearTextBox(){
-    setState({});
-  }*/
+
+  handleSubmit(event){
+    this.setState({ open: !this.state.open });
+    api.sendAction({type: 'proposedChangesUpdateText', field: NAMESPACE, value: this.state.currentVerse});
+    //console.log(this.state.currentVerse);
+  }
 
   updateTargetLanguage() {
         let targetLanguage = api.getDataFromCommon("targetLanguage");
         if (targetLanguage) {
-            this.setState({
-                targetLanguage: targetLanguage
-            });
+            this.setState({targetLanguage: targetLanguage});
         }
         else {
             console.error(TARGET_LANGUAGE_ERROR);
         }
     }
   render() {
-    let targetLanguage = api.getDataFromCommon('targetLanguage');
-    let currentVerse = null;
-    if(targetLanguage && this.state.chapter && this.state.verse){
-      currentVerse = targetLanguage[this.state.chapter][this.state.verse];
-    }
-
     return (
-      <div style={{width:'100%'}}>
+      <div style={style.width}>
         <Button bsStyle="primary"
-        onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
+        onClick={ ()=> this.setState({ open: !this.state.open })} style={style.width}>
           Propose changes
         </Button>
-          <Panel collapsible expanded={this.state.open}>
-            <form className="comment-form">
-            <Well>{currentVerse}</Well>
-            <FormGroup controlId="formControlsTextarea">
-              <textarea style={{width:'100%', borderRadius:'4px', borderColor:'#D3D3D3'}}
-              placeholder="Please type in the changes you would like to propose"
-               value={this.props.text}
-               onChange={this.handleChange.bind(this)}></textarea>
-            </FormGroup>
-            </form>
+          <Panel collapsible expanded={this.state.open} style={style.panelBackgroundColor}>
+            <div style={style.background}>
+              <div style={style.paper}>
+                <div style={style.sideline}></div>
+                  <div style={style.paperContent}>
+                    <textarea autofocus style={style.textarea} value={this.state.currentVerse}
+                    onChange={this.handleChange.bind(this)} />
+                  </div>
+              </div>
+            </div>
+            <Button bsStyle="success" onClick={this.handleSubmit.bind(this)}
+            style={style.width}>Submit</Button>
           </Panel>
       </div>
     );
