@@ -141,10 +141,6 @@ const ProjectModal = React.createClass({
           alert("Project name must be valid alpha or numeric or dash(-_) or dot characters.");
           return;
         }
-        console.log(projectRef.allFieldsEntered());
-        console.log(!validator.test(projectName));
-        console.log(CoreStore.getLoggedInUser());
-        console.log(projectRef.createGogs);
         if (CoreStore.getLoggedInUser() && projectRef.createGogs && projectRef.allFieldsEntered() && !validator.test(projectName)) {
           var user = CoreStore.getLoggedInUser();
           GogsApi(user.token).createRepo(user, projectName);

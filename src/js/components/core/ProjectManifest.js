@@ -42,7 +42,7 @@ var template = {
   last_saved : '',
   finished_chunks: [],
   checked_chunks: [],
-  check_module_locations: [],
+  check_modules: [],
   check_data_locations: ''
 }
 
@@ -78,7 +78,7 @@ function populate (data, tsManifest) {
 
   for (item in data.checkLocations) {
     var currentItem = data.checkLocations[item];
-    projectManifest.check_module_locations.push({name: currentItem.name, location: currentItem.location});
+    projectManifest.check_modules.push(currentItem.name);
   }
 
 
