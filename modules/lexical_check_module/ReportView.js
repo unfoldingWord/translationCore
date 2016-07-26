@@ -22,7 +22,7 @@ function ReportView(chapter, verse) {
   }
   return (
     <Well>
-      <h3>Lexical Checker</h3>
+      <h3 style={{marginTop: '-5px'}}>Lexical Check</h3>
       {checkList}
     </Well>
   );
@@ -49,14 +49,12 @@ class ReportItem extends React.Component {
 
   render() {
     return (
-      <Row>
-        <Col xs={3} style={{paddingRight:'20px', borderRight: '1px solid #ccc'}}>
-          <label>{this.props.check.wordFile.replace(extensionRegex, '')}</label>
-        </Col>
-        <Col xs={9}>
-          <p>{this.props.check.checkStatus}</p>
-        </Col>
-      </Row>
+      <Well>
+        <h3 style={{marginTop: '-5px'}}>{this.props.check.wordFile.replace(extensionRegex, '')}</h3>
+        <div>Selected word: {this.props.check.mappedWord}</div>
+        <div>Check status: {this.props.check.checkStatus}</div>
+        <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{this.props.check.user} - {this.props.check.timeStamp}</div>
+      </Well>
     );
   }
 }
