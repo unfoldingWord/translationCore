@@ -129,6 +129,7 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
       _this.reportViewPush(path);
     }
     CoreActions.doneLoadingFetchData(reportViews);
+    CoreActions.showOpenModal(false);
   }
 },
 
