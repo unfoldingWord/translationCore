@@ -6,12 +6,7 @@ module.exports = {
     goToNext: function(params) {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-        api.sendAction({
-          type: 'changeLexicalCheck',
-          field: NAMESPACE,
-          checkIndex: currentCheckIndex + 1,
-          groupIndex: currentGroupIndex
-        });
+        this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
     },
 
     goToCheck: function(params) {

@@ -129,21 +129,24 @@ class View extends React.Component {
    * @param {object} action - This the exact action that is passed to api.sendAction, so that
    * we can have access to extra fields we might have put on it
    */
-  changeCurrentCheckInCheckStore(lexicalData, action) {
+  changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
+      var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+      var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+      var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
       //error check to make sure we're going to a legal group/check index
-      if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
-        if (action.groupIndex < lexicalData.groups.length) {
-          lexicalData.currentGroupIndex = action.groupIndex;
-          if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].checks.length) {
-            lexicalData.currentCheckIndex = action.checkIndex;
+      if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
+        if (newGroupIndex < groups.length) {
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
+          if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+            api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
           }
           /* In the case that we're incrementing the check and now we're out of bounds
            * of the group, we increment the group.
            */
-          else if (action.checkIndex == lexicalData.groups[lexicalData.currentGroupIndex].checks.length &&
-            lexicalData.currentGroupIndex < lexicalData.groups.length - 1) {
-            lexicalData.currentGroupIndex++;
-            lexicalData.currentCheckIndex = 0;
+          else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
+            currentGroupIndex < groups.length - 1) {
+            api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
+            api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
           }
         }
       }
