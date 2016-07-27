@@ -128,18 +128,14 @@ class View extends React.Component {
           <ButtonGroup>
             <Button
               onClick={
-                function() {
-                  _this.updateCheckStatus('YES');
-                }
+                function() { _this.updateCheckStatus('YES'); }
               }
             >
               <span style={{color: 'green'}}>Yes</span>
             </Button>
             <Button
               onClick={
-                function() {
-                  _this.updateCheckStatus('NO');
-                }
+                function() { _this.updateCheckStatus('NO'); }
               }
             >
               <span style={{color: 'red'}}>No</span>
