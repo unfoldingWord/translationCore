@@ -97,8 +97,6 @@ class View extends React.Component {
     this.setState({
         currentCheck: currentCheckFromStore
     });
-    // TODO: include TPane?
-    // api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
   
   updateCheckStatus(newCheckStatus) {
