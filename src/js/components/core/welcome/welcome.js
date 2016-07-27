@@ -113,7 +113,15 @@ class Welcome extends React.Component{
 
         <Button
           bsStyle='link'
-          onClick={()=>{_this.setState({index:this.state.index-1})}}
+          onClick={
+            ()=>{
+              if(this.state.index == 1){
+                return;
+              } else {
+                _this.setState({index:this.state.index-1})
+              }
+            }
+          }
           style={Styles.navButtons}
         >
           <Glyphicon glyph='chevron-left' />

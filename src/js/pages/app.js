@@ -32,9 +32,15 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
 var Main = React.createClass({
   getInitialState() {
-    return({
-      firstTime: true
-    })
+    if (localStorage.getItem('showTutorial') == 'true') {
+      return({
+        firstTime: true
+      })
+    } else {
+      return({
+        firstTime: false
+      })
+    }
   },
 
   finishWelcome: function(){
