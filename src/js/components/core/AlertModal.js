@@ -6,13 +6,10 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 var alertMessage = {};
-// var Alert = {
-//   title: "Warning",
-//   content: "You Did Something Wrong",
-//   leftButtonText: "Ok",
-//   rightButtonText: "Cancel",
-//   visibility: true
-// }
+var alertStyle;
+var alertDiv;
+var alertContent;
+
 const AlertModal = React.createClass({
   getInitialState() {
     return {
@@ -81,14 +78,14 @@ const AlertModal = React.createClass({
   },
 
   render() {
-    var alertStyle = {
+    alertStyle = {
       display:'tableCell',
       verticalAlign:'middle',
       width:'450px',
       height:'200px'
     }
 
-    var alertDiv = {
+    alertDiv = {
       padding: '1em',
       position: 'absolute',
       top: '20%',
@@ -97,7 +94,7 @@ const AlertModal = React.createClass({
       transform:' translate(-50%, -50%)'
     }
 
-    var alertContent = {
+    alertContent = {
       padding: '1em',
       position: 'absolute',
       top: '100%',
