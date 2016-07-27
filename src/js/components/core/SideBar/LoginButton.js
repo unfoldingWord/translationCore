@@ -13,7 +13,7 @@ class LoginButton extends React.Component{
     super();
     this.state ={
       hover: false,
-      online: false,
+      online: CoreStore.getOnlineStatus(),
     }
   }
 
