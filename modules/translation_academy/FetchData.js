@@ -35,7 +35,6 @@ function fetchAllSections(sectionList, progress, callback) {
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
 		progress(100);
-  	api.emitEvent("translationAcademyLoaded", {'sections': sectionList});
 		callback();
 	}, reason => {
 		callback('Translation Academy failed to fetch section text.');

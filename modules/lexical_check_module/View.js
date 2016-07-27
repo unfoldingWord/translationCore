@@ -8,6 +8,7 @@ const ReactBootstrap = api.ReactBootstrap;
 //Modules not defined within lexical_check_module
 var TPane = null;
 var ProposedChanges = null;
+
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -58,28 +59,22 @@ class View extends React.Component {
 
   /**
    * @description - This method is a lifecycle method of a react component and will
-   * be called before the component mounts to the DOM. It's used to register event and action
+   * be called before the component mounts to the DOM. It's used to register event
    * callbacks using the API
    */
 	componentWillMount() {
 
-    //This action will update our indexes in the store
-    api.registerAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
-
-    //This action will update the status of the check that is the current check in the CheckStore
-    api.registerAction('updateCheckStatus', this.updateCheckStatus);
-
     /*
-     * This event will call an action that increment the checkIndex by one,
+     * This event will  increment the checkIndex by one,
      * and might increment the group index if needed. Because no parameters are given
      * from the event, we have to get the current indexes from the store and increment it
-     * manually before sending the action to update the store
+     * manually before updating the store
      */
     api.registerEventListener('goToNext', this.goToNextListener);
 
     /*
-     * This event listens for an event that will tell us another check to go to,
-     * and sends the appropriate action. This and the above listener need to be two
+     * This event listens for an event that will tell us another check to go to.
+     * This and the above listener need to be two
      * seperate listeners because the 'gotoNext' event won't have parameters attached to it
      */
     api.registerEventListener('goToCheck', this.goToCheckListener);
@@ -94,65 +89,61 @@ class View extends React.Component {
   }
 
   componentWillUnmount() {
-    api.removeAction('changeLexicalCheck', this.changeCurrentCheckInCheckStore);
-    api.removeAction('updateCheckStatus', this.updateCheckStatus);
-
     api.removeEventListener('goToNext', this.goToNextListener);
-
     api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
   /**
-   * @description - action callback to update the status of the check that is the current check
-   * in the check store
-   * @param {object} lexicalData - the object that is referenced under the given namespace in the
-   * CheckStore
-   * @param {object} action - this is the exact action that was passed to api.sendAction
+   * @description - updates the status of the check that is the current check in the check store
+   * @param {object} newCheckStatus - the new status chosen by the user
    */
-  updateCheckStatus(lexicalData, action) {
-    var groupIndex = lexicalData.currentGroupIndex;
-    var checkIndex = lexicalData.currentCheckIndex;
-    var currentCheck = lexicalData.groups[lexicalData.currentGroupIndex]['checks'][lexicalData.currentCheckIndex];
+  updateCheckStatus(newCheckStatus, selectedWords) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
-      currentCheck.checkStatus = action.checkStatus;
-      currentCheck.selectedWords = action.selectedWords;
-      api.emitEvent('changedCheckStatus', {groupIndex: groupIndex, checkIndex: checkIndex,
-        checkStatus: action.checkStatus});
-
+      currentCheck.checkStatus = newCheckStatus;
+      currentCheck.selectedWords = selectedWords;
+      api.emitEvent('changedCheckStatus', {
+        groupIndex: currentGroupIndex,
+        checkIndex: currentCheckIndex,
+        checkStatus: newCheckStatus
+      });
     }
   }
 
   /**
-   * @description - This is an action callback. This is used to change our current check index
-   * and group index within the store
-   * @param {object} lexicalData - This is the object found under the namespace that is
-   * currently in the CheckStore's data
-   * @param {object} action - This the exact action that is passed to api.sendAction, so that
-   * we can have access to extra fields we might have put on it
+   * @description - This is used to change our current check index and group index within the store
+   * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
+   * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
-  changeCurrentCheckInCheckStore(lexicalData, action) {
+  changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
     //Get the proposed changes and add it to the check
     var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
     var currentCheck = this.state.currentCheck;
     if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
       currentCheck.proposedChanges = proposedChanges;
     }
-
+    
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     //error check to make sure we're going to a legal group/check index
-    if (action.checkIndex !== undefined && action.groupIndex !== undefined) {
-      if (action.groupIndex < lexicalData.groups.length) {
-        lexicalData.currentGroupIndex = action.groupIndex;
-        if (action.checkIndex < lexicalData.groups[lexicalData.currentGroupIndex].checks.length) {
-          lexicalData.currentCheckIndex = action.checkIndex;
+    if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
+      if (newGroupIndex < groups.length) {
+        api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
+        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
         }
         /* In the case that we're incrementing the check and now we're out of bounds
-         * of the group, we increment the group.
-         */
-        else if (action.checkIndex == lexicalData.groups[lexicalData.currentGroupIndex].checks.length &&
-          lexicalData.currentGroupIndex < lexicalData.groups.length - 1) {
-          lexicalData.currentGroupIndex++;
-          lexicalData.currentCheckIndex = 0;
+          * of the group, we increment the group.
+          */
+        else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
+          currentGroupIndex < groups.length - 1) {
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
         }
         //invalid indices: don't do anything else
         else {
@@ -167,7 +158,7 @@ class View extends React.Component {
   /**
    * @description - This method grabs the information that is currently in the
    * store and uses it to update our state which in turn updates our view. This method is
-   * typically called after actions are sent so that our view updates to the latest
+   * typically called after the store is updated so that our view updates to the latest
    * data found in the store
    */
   updateState() {
@@ -180,9 +171,10 @@ class View extends React.Component {
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: currentCheck,
-        currentWord: currentWord,
-        currentFile: this.getWordFile(currentWord)
+      book: api.getDataFromCheckStore(NAMESPACE, 'book'),
+      currentCheck: currentCheck,
+      currentWord: currentWord,
+      currentFile: this.getWordFile(currentWord)
     });
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
@@ -267,7 +259,7 @@ class View extends React.Component {
   			<div>
   				<TPane />
           <Row className="show-grid">
-            <Col sm={3} md={3} lg={3}
+            <Col sm={4} md={4} lg={4}
             style={{
               textAlign: "center"
             }}
@@ -280,13 +272,19 @@ class View extends React.Component {
                 textAlign: "center"
               }}
             >
-              <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
+              <Well bsSize={'small'} style={{
+                height: '60px',
+                lineHeight:'35px'}}
+              >
+                {this.state.book + ' ' +
+                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse
+                }
+              </Well>
             </Col>
           </Row>
           <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile} />
+              <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay
@@ -302,22 +300,12 @@ class View extends React.Component {
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      api.sendAction({
-                        type: 'updateCheckStatus',
-                        field: 'LexicalChecker',
-                        checkStatus: 'RETAINED',
-                        selectedWords: _this.refs.TargetVerseDisplay.getWords()
-                      })
+                      _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
                 <Button style={{width:'50%'}} onClick={
                     function() {
-                      api.sendAction({
-                        type: 'updateCheckStatus',
-                        field: 'LexicalChecker',
-                        checkStatus: 'WRONG',
-                        selectedWords: _this.refs.TargetVerseDisplay.getWords()
-                      });
+                      _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
