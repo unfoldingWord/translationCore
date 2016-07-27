@@ -87,14 +87,21 @@ class Report extends React.Component {
 }
 
 module.exports = function(callback = (err) => {}) {
+  // don't run if a report is already open
+  if (window.reportView) {
+    window.reportView.focus();
+    return;
+  }
   fs.readFile("./src/js/components/core/reports/report-template.html", 'utf-8', (err, data) => {
     if (err) {
       console.log(err, "Report template seems to be missing");
       callback(err);
       return;
     }
+    // create a new html fragment in memory based on report-template.html
     let reportHTML = document.createElement("html");
     reportHTML.innerHTML = data;
+    // render the ReportView output to new file report.html
     ReactDOM.render(<Report />, reportHTML.getElementsByTagName('div')[0]);
     fs.writeFile(`${__dirname}\\report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
@@ -102,6 +109,7 @@ module.exports = function(callback = (err) => {}) {
         callback(err);
         return;
       }
+      // display the file in a new browser window
       window.reportView = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
       window.reportView.loadURL(`file://${__dirname}\\report.html`);
       window.reportView.on('closed', () => {
