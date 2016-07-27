@@ -108,4 +108,18 @@ module.exports = {
     });
   },
 
+  sendAlert: function(alertObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL,
+      alert: alertObj
+    });
+  },
+
+    sendAlertResponse: function(alertResponseObj) {
+      Dispatcher.handleAction({
+        type: consts.ALERT_MODAL_RESPONSE,
+        alertResponse: alertResponseObj
+      });
+    }
+
 };

@@ -25,12 +25,12 @@ class SideNavBar extends React.Component{
     console.log("Update Project not designed yet");
   }
 
-  handleReportsProject(){
-    console.log("Reports Project modal not designed yet");
-  }
-
-  handleRecentProject(){
-    console.log("Recent Project modal not designed yet");
+  handleReport(){
+    require("./../reports/ReportGenerator")(err => {
+      if (err) {
+        console.log(err);
+      }
+    });
   }
 
   handleChangeCheckCategory(){
@@ -49,11 +49,11 @@ class SideNavBar extends React.Component{
             <LoginButton />
             <SideBarButton handleButtonClick={this.handleCreateProject.bind(this)} glyphicon={"file"} value={"New"} />
             <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Open"} />
-            <SideBarButton handleButtonClick={this.handleRecentProject.bind(this)} glyphicon={"cloud-upload"} value={"Sync"} />
-            <SideBarButton handleButtonClick={this.handleReportsProject.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
+            <SideBarButton handleButtonClick={this.handleSyncProject.bind(this)} glyphicon={"cloud-upload"} value={"Sync"} />
+            <SideBarButton handleButtonClick={this.handleReport.bind(this)} glyphicon={"list-alt"} value={"Create Report"} />
             <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"check"} value={"Check Category"} />
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
-            <OnlineStatus />
+            {/*<OnlineStatus />*/}
           </ul>
         </div>
       );

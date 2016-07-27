@@ -21,23 +21,23 @@ const IMPORT_ONLINE = 'Import From Online';
 
 const UploadModal = React.createClass({
   getInitialState: function() {
-    return {active: 1, showFile: true};
+    return {active: 1, showFile: false};
   },
   handleSelect: function(eventKey) {
     this.setState({active: eventKey});
     if (eventKey === 1) {
-      this.setState({showFile: true});
-    } else {
       this.setState({showFile: false});
+    } else {
+      this.setState({showFile: true});
     }
   },
 
-  sendFilePath: function(path) {
+  sendFilePath: function(path, link) {
     if (!this.props.setTargetLanguageFilePath) {
       console.error("Can't find setTargetLanguageFilePath!");
     }
     else {
-      this.props.setTargetLanguageFilePath(path);
+      this.props.setTargetLanguageFilePath(path, link);
     }
   },
 
@@ -60,8 +60,8 @@ const UploadModal = React.createClass({
             </Modal.Header>
             <Modal.Body>
             <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
-              <NavItem eventKey={1}>{IMPORT_LOCAL}</NavItem>
-              <NavItem eventKey={2}>{IMPORT_ONLINE}</NavItem>
+              <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
+              <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
             </Nav>
             {mainContent}
             </Modal.Body>

@@ -135,6 +135,15 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
   reportViewPush: function(path) {
     let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
+
+    try {
+      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+    }
+    catch (e) {
+      if (e.code != "MODULE_NOT_FOUND") {
+        console.error(e);
+      }
+    }
     //stores module in api
     if (_this.isModule(path)) {
     reportViews.push(viewObj);

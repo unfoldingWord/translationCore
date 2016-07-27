@@ -4,7 +4,7 @@ const bootstrap = require('react-bootstrap');
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
-const SideNavBar = require('../components/core/sideBar/SideNavBar');
+const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
@@ -14,6 +14,7 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+const AlertModal = require('../components/core/AlertModal');
 
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
@@ -39,6 +40,7 @@ module.exports = (
         </Col>
         <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
+          <AlertModal />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>
