@@ -3,10 +3,10 @@ const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/sideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
+const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -26,8 +26,9 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
 module.exports = (
 
   <div className='fill-height'>
-  <SettingsModal />
   <LoginModal />
+  <SettingsModal />
+  <SwitchCheckModal />
   <SideNavBar />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
@@ -37,7 +38,6 @@ module.exports = (
         </Col>
         <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
-          <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>
       </Row>

@@ -35,7 +35,7 @@ class SideNavBar extends React.Component{
   }
 
   handleChangeCheckCategory(){
-    console.log("Change Check Category modal not designed yet");
+    CoreActions.updateCheckModal(true);
   }
     render(){
       return(

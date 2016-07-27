@@ -14,8 +14,12 @@ class SideBarButton extends React.Component{
     }
   }
 
-  toggleHover(){
-    this.setState({hover: !this.state.hover});
+  mouseEnter(){
+    this.setState({hover: true});
+  }
+
+  mouseLeave(){
+    this.setState({hover: false});
   }
 
       render(){
@@ -23,7 +27,7 @@ class SideBarButton extends React.Component{
         const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
         return(
           <div>
-            <li style={linkStyle} onClick={this.props.handleButtonClick} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
+            <li style={linkStyle} onClick={this.props.handleButtonClick} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)}>
               <Glyphicon glyph={this.props.glyphicon} style={GlyphStyle}/><br/>{this.props.value}</li>
           </div>
         );

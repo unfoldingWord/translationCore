@@ -33,10 +33,13 @@ class LoginButton extends React.Component{
     this.setState({online: CoreStore.getOnlineStatus()});
   }
 
-  toggleHover(){
-    this.setState({hover: !this.state.hover});
+  mouseEnter(){
+    this.setState({hover: true});
   }
 
+  mouseLeave(){
+    this.setState({hover: false});
+  }
 
       render(){
         const linkStyle = this.state.hover ? style.hover : style.li;
@@ -52,7 +55,7 @@ class LoginButton extends React.Component{
         }
         return(
           <div>
-              <li style={linkStyle} onClick={this.handleClick.bind(this)} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
+              <li style={linkStyle} onClick={this.handleClick.bind(this)} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)}>
                   {profilePicture}<br/>{userName}</li>
           </div>
         );

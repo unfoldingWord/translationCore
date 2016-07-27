@@ -25,6 +25,7 @@ var style = {
     paddingBottom: "20px",
     color: "white",
     cursor: "pointer",
+    userSelect: "none",
   },
 
   glyphicon: {
@@ -40,11 +41,13 @@ var style = {
   hover: {
     backgroundColor: "#2b2b2b",
     color: "#a4c639",
+    cursor: "pointer",
     display: "block",
     textAlign: "center",
     borderBottom: "2px solid #1E1D1F",
     paddingTop: "20px",
     paddingBottom: "20px",
+    userSelect: "none",
   },
 
   logo:{
