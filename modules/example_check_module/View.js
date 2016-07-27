@@ -12,10 +12,17 @@ const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
 // Get Bootstrap elements
+const Row = ReactBootstrap.Row;
+const Col = ReactBootstrap.Col;
 const Well = ReactBootstrap.Well;
 const Button = ReactBootstrap.Button;
 const ButtonGroup = ReactBootstrap.ButtonGroup;
 const Glyphicon = ReactBootstrap.Glyphicon;
+
+// Declare modules that are not defined within our ExampleChecker
+// They will be initialized in the constructor
+var TPane = null;
+var ProposedChanges = null;
 
 const NAMESPACE = 'ExampleChecker';
 
@@ -27,6 +34,11 @@ class View extends React.Component {
     this.state = {
       currentCheck: null
     };
+    
+    // Initialize modules that are not defined within our ExampleChecker
+    // They will be rendered in the render() function
+    TPane = api.getModule('TPane');
+    ProposedChanges = api.getModule('ProposedChanges');
     
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
@@ -42,8 +54,8 @@ class View extends React.Component {
   }
   
   componentWillUnmount() {
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToCheck', this.goToCheck);
+    api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToCheck', this.goToCheck);
   }
   
   goToNext() {
@@ -62,6 +74,13 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
+    //Get the proposed changes and add it to the check
+    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
+    var currentCheck = this.state.currentCheck;
+    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
+      currentCheck.proposedChanges = proposedChanges;
+    }
+    
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -90,6 +109,24 @@ class View extends React.Component {
   }
   
   /**
+   * @description - Helper method for retrieving the verse from different languages
+   * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'
+   * that will be used to index into the 'common' namespace within CheckStore
+   */
+  getVerse(language) {
+    var currentCheck = this.state.currentCheck;
+    var currentVerseNumber = currentCheck.verse;
+    var currentChapterNumber = currentCheck.chapter;
+    var actualLanguage = api.getDataFromCommon(language);
+    if (actualLanguage) {
+      return actualLanguage[currentChapterNumber][currentVerseNumber];
+    }
+    else {
+      console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
+    }
+  }
+  
+  /**
    * @description - This method grabs the information that is currently in the
    * store and uses it to update our state, which in turn updates our view. This method is
    * typically called after the store is updated so that our view updates to the latest
@@ -101,7 +138,11 @@ class View extends React.Component {
     var currentCheckFromStore = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: currentCheckFromStore
+      currentCheck: currentCheckFromStore
+    });
+    api.emitEvent('goToVerse', {
+      chapterNumber: currentCheckFromStore.chapter,
+      verseNumber: currentCheckFromStore.verse
     });
   }
   
@@ -123,25 +164,34 @@ class View extends React.Component {
     var _this = this;
     return (
       <div>
-        <Well>
-          <p>Is this verse written in the correct language?</p>
-          <ButtonGroup>
-            <Button
-              onClick={
-                function() { _this.updateCheckStatus('YES'); }
-              }
-            >
-              <span style={{color: 'green'}}>Yes</span>
-            </Button>
-            <Button
-              onClick={
-                function() { _this.updateCheckStatus('NO'); }
-              }
-            >
-              <span style={{color: 'red'}}>No</span>
-            </Button>
-          </ButtonGroup>
-        </Well>
+        <TPane />
+        <Row className='show-grid'>
+          <Col sm={6}>
+            
+          </Col>
+          <Col sm={6}>
+            <Well>
+              <p>Is this verse written in the correct language?</p>
+              <ButtonGroup>
+                <Button
+                  onClick={
+                    function() { _this.updateCheckStatus('YES'); }
+                  }
+                >
+                  <span style={{color: 'green'}}>Yes</span>
+                </Button>
+                <Button
+                  onClick={
+                    function() { _this.updateCheckStatus('NO'); }
+                  }
+                >
+                  <span style={{color: 'red'}}>No</span>
+                </Button>
+              </ButtonGroup>
+            </Well>
+            <ProposedChanges />
+          </Col>
+        </Row>
       </div>
     );
   }
