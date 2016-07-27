@@ -103,7 +103,7 @@ module.exports = function(callback = (err) => {}) {
     reportHTML.innerHTML = data;
     // render the ReportView output to new file report.html
     ReactDOM.render(<Report />, reportHTML.getElementsByTagName('div')[0]);
-    fs.writeFile(`${__dirname}\\report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
+    fs.writeFile(`${__dirname}/report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
         console.log("Error writing rendered report to disk");
         callback(err);
@@ -111,7 +111,7 @@ module.exports = function(callback = (err) => {}) {
       }
       // display the file in a new browser window
       window.reportView = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
-      window.reportView.loadURL(`file://${__dirname}\\report.html`);
+      window.reportView.loadURL(`file://${__dirname}/report.html`);
       window.reportView.on('closed', () => {
         window.reportView = undefined;
       });
