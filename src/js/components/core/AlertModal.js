@@ -5,7 +5,6 @@ const Alert = require('react-bootstrap/lib/Alert.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
-
 var alertMessage = {};
 // var Alert = {
 //   title: "Warning",

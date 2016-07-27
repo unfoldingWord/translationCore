@@ -99,11 +99,6 @@ const ProjectModal = React.createClass({
       	}
       });
   },
-
-  gotAlertReponse(data) {
-    console.log(data);
-  },
-
   makePathForChecks: function(check) {
     if (!check || check == '') {
       return;
