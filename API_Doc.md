@@ -28,8 +28,6 @@ Our API contains functions to interact with the CheckStore, like getting and set
 ## Features
 
 ### Events
-The key idea behind events is that a module can register a callback function to a type of event, and when any component emits an event of that type, every callback function that has registered will be called asynchronously.
-
 A module can register a callback function -- let's say: doSomething() -- to a type of event -- say: 'buttonClick.' Now when that event ('buttonClick') fires, every callback function that has registered to that event will be called asynchronously.
 
 Their main use is to allow for asynchronous communication between the CheckStore and modules so that modules can listen for changes to data held in the CheckStore.
