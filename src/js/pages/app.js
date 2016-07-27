@@ -13,6 +13,7 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+const AlertModal = require('../components/core/AlertModal');
 
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
@@ -37,6 +38,7 @@ module.exports = (
         </Col>
         <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
+          <AlertModal />
           <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>

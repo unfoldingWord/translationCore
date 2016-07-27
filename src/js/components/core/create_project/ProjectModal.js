@@ -23,6 +23,7 @@ const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
+const AlertModal = require('../AlertModal');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
@@ -70,12 +71,34 @@ const ProjectModal = React.createClass({
   },
   close: function() {
     //CheckStore.getNameSpaces();
-    CoreActions.showCreateProject("");
-    this.setState({
-      showModal: false
+    this.getProjectStatus((result)=>{
+      if(result) {
+        this.setState({
+          showModal: false
+        });
+      }
     });
+    CoreActions.showCreateProject("");
   },
 
+  getProjectStatus: function(callback) {
+    var projectStatus = CoreStore.getShowProjectModal();
+    if (projectStatus != "Create") {
+      	var Alert = {
+      		title: "You are currently making a project",
+      		content: "Are you sure you want to cancel?",
+      		leftButtonText: "Cancel",
+      		rightButtonText: "Yes"
+      	}
+      }
+      api.createAlert(Alert, function(result){
+      	if(result == 'Yes') {
+          callback(true);
+      	} else {
+      		callback(false);
+      	}
+      });
+  },
   makePathForChecks: function(check) {
     if (!check || check == '') {
       return;
