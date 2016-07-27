@@ -6,6 +6,7 @@ const api = window.ModuleApi;
 const Books = require('../booksOfBible');
 const path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
+const git = require('../GitApi.js');
 
 const REQUIRE_ERROR = "Unable to require file";
 
@@ -31,8 +32,11 @@ var CheckDataGrabber = {
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
-      var manifestLocation = path.join(saveLocation, 'manifest.json');
-      fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function(err) {
+      var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
+      var manifest = ManifestGenerator(data, tsManifest);
+      api.putDataInCommon('tcManifest', manifest);
+
+      fs.outputJson(manifestLocation, manifest, function(err) {
         if (err) {
           console.log(err);
         }
@@ -68,7 +72,18 @@ var CheckDataGrabber = {
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
+        var path = api.getDataFromCommon('saveLocation');
+        if (path) {
+          git(path).init(function() {
+            git(path).save('Initial TC Commit', path, function() {
+            });
+          });
+        } else {
+          alert('Save location is not defined');
+        }
+
         CoreActions.doneLoadingFetchData(this.reportViews);
+
       }
     }
     else {

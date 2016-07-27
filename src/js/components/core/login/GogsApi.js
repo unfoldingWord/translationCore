@@ -35,7 +35,7 @@ function UserManager(auth) {
       }).then(function (repo) {
         return repo ? repo : api.createRepo({
           name: reponame,
-          description: 'ts-desktop: ' + reponame,
+          description: 'tc-desktop: ' + reponame,
           private: false
         }, user);
       });

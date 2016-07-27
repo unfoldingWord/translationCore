@@ -1,8 +1,6 @@
 {
-  "package_version": 6,
-  "format": "usfm",
   "generator": {
-    "name": "ts-desktop",
+    "name": "tc-desktop",
     "build": ""
   },
   "target_language": {
@@ -10,7 +8,7 @@
     "name": "Cebuano",
     "direction": "ltr"
   },
-  "project": {
+  "ts_project": {
     "id": "2ti",
     "name": "2 Timothy"
   },
@@ -18,23 +16,31 @@
     "id": "text",
     "name": "Text"
   },
-  "resource": {
-    "id": "ulb",
-    "name": "Unlocked Literal Bible"
-  },
-  "source_translations": [
-    {
-      "language_id": "en",
-      "resource_id": "ulb",
-      "checking_level": 3,
-      "date_modified": 20160223,
-      "version": "4"
+  "source": {
+    "original_language": {
+      "local": true,
+      "path": "data/ulgb/"
+    },
+    "gateway_language": {
+      "local": true,
+      "path": ""
+    },
+    "target_language": {
+      "local": true,
+      "path": "C:\\Users\\Ian\\Documents\\Work\\8WeeksofCode\\TC\\8woc\\test_files\\Import From TS"
     }
-  ],
-  "parent_draft": {},
+  },
   "translators": [
     "Johnny Ray Lumawan"
   ],
+  "checkers": [
+    {
+      "username": "",
+      "email": ""
+    }
+  ],
+  "time_created": "7/27/2016 10:22 AM",
+  "last_saved": "7/27/2016 10:22 AM",
   "finished_chunks": [
     "00-title",
     "01-01",
@@ -67,5 +73,8 @@
     "04-14",
     "04-17",
     "04-19"
-  ]
+  ],
+  "checked_chunks": [],
+  "check_modules": [],
+  "check_data_locations": "C:\\Users\\Ian\\Documents\\Work\\8WeeksofCode\\TC\\8woc\\test_files\\Import From TS/checkdata"
 }
