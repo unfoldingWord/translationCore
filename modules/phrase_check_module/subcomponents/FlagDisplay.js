@@ -4,6 +4,8 @@ const React = api.React;
 const RB = api.ReactBootstrap;
 const {Button, ButtonGroup, Glyphicon} = RB;
 
+const NAMESPACE = 'PhraseChecker';
+
 class FlagDisplay extends React.Component{
 
   constructor() {
@@ -15,21 +17,25 @@ class FlagDisplay extends React.Component{
   }
 
   componentWillMount(){
-    api.registerAction('setFlagState', this.setFlagStateFunction);
+    
   }
 
   componentWillUnmount() {
-    api.removeAction('setFlagState', this.setFlagStateFunction);
+    
   }
 
-  setFlagStateFunction(data, action) {
-    var currentGroupIndex = data.currentGroupIndex;
-    var currentCheckIndex = data.currentCheckIndex;
-    var currentCheck = data.groups[currentGroupIndex].checks[currentCheckIndex];
+  setFlagStateFunction(newCheckStatus) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
     if (currentCheck) {
-      currentCheck.checkStatus = action.checkStatus;
-      api.emitEvent('changedCheckStatus', {checkStatus: action.checkStatus, 
-        groupIndex: currentGroupIndex, checkIndex: currentCheckIndex});
+      currentCheck.checkStatus = newCheckStatus;
+      api.emitEvent('changedCheckStatus', {
+        checkStatus: newCheckStatus, 
+        groupIndex: currentGroupIndex,
+        checkIndex: currentCheckIndex
+      });
     }
   }
 
@@ -39,22 +45,17 @@ class FlagDisplay extends React.Component{
       <ButtonGroup vertical={true} block>
         <Button bsStyle="success" onClick={
             function() {
-              var action = {
-                type: "setFlagState",
-                field: "PhraseChecker",
-                checkStatus: "RETAINED"
-              };
-              api.sendAction(action);
+              _this.setFlagStateFunction('RETAINED');
             }
           }><Glyphicon glyph="ok" /> Retain</Button>
         <Button bsStyle="warning" onClick={
             function() {
-              api.sendAction({type: "setFlagState", field: "PhraseChecker", checkStatus: "REPLACED"})
+              _this.setFlagStateFunction('REPLACED');
             }
           }><Glyphicon glyph="random" /> Changed</Button>
         <Button bsStyle="danger" onClick={
             function() {
-              api.sendAction({type: "setFlagState", field: "PhraseChecker", checkStatus: "WRONG"})
+              _this.setFlagStateFunction('WRONG');
             }
         }><Glyphicon glyph="remove" /> Wrong</Button>
       </ButtonGroup>
