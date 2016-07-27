@@ -45,10 +45,10 @@ module.exports = {
     });
   },
 
-  updateButtonStatus: function(boolean) {
+  updateOnlineStatus: function(boolean) {
     Dispatcher.handleAction({
-      type: consts.CHANGE_BUTTTON_STATUS,
-      buttonStatus: boolean
+      type: consts.CHANGE_ONLINE_STATUS,
+      onlineStatus: boolean
     });
   },
 
@@ -87,10 +87,10 @@ module.exports = {
     });
   },
 
-  updateLogoutButton: function(boolean) {
+  newProject: function(){
     Dispatcher.handleAction({
-      type: consts.CHANGE_LOGOUT_VISIBILITY,
-      logoutOption: boolean
+      type: consts.NEW_PROJECT,
+      reportViews:[]
     });
   },
 
