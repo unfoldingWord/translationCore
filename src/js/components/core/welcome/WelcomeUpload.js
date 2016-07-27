@@ -1,6 +1,7 @@
 /**
- * @author Ian Hoegen
+ * @author Luke Wilson & Ian Hoegen
  * @description: This is the modal for the drag and drop upload feature.
+ * This version is specifically modified for the welcome process.
  ******************************************************************************/
 const React = require('react');
 
@@ -21,23 +22,24 @@ const IMPORT_ONLINE = 'Import From Online';
 
 const UploadModal = React.createClass({
   getInitialState: function() {
-    return {active: 1, showFile: false};
+    return {active: 1, showFile: true};
   },
   handleSelect: function(eventKey) {
     this.setState({active: eventKey});
     if (eventKey === 1) {
-      this.setState({showFile: false});
-    } else {
       this.setState({showFile: true});
+    } else {
+      this.setState({showFile: false});
     }
   },
 
-  sendFilePath: function(path, link) {
+  sendFilePath: function(path) {
     if (!this.props.setTargetLanguageFilePath) {
       console.error("Can't find setTargetLanguageFilePath!");
     }
     else {
-      this.props.setTargetLanguageFilePath(path, link);
+      this.props.setTargetLanguageFilePath(path);
+      this.props.success();
     }
   },
 
@@ -55,13 +57,13 @@ const UploadModal = React.createClass({
     }
     return (
           <div>
-            <Modal.Header>
-              <Modal.Title>{IMPORT_PROJECT}</Modal.Title>
-            </Modal.Header>
             <Modal.Body>
-            <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
-              <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
-              <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
+            <Nav bsStyle="tabs"
+                 justified
+                 activeKey={this.state.active}
+                 onSelect={this.handleSelect}>
+              <NavItem eventKey={1}>{IMPORT_LOCAL}</NavItem>
+              <NavItem eventKey={2}>{IMPORT_ONLINE}</NavItem>
             </Nav>
             {mainContent}
             </Modal.Body>

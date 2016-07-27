@@ -1,7 +1,6 @@
 var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
-
 var consts = require('../actions/CoreActionConsts');
 var CHANGE_EVENT = 'change';
 
@@ -32,6 +31,7 @@ component will hear it and be able to ask for updated data.
 class CoreStore extends EventEmitter {
   constructor() {
     super();
+    this.setMaxListeners(20);
   }
 
   updateNumberOfFetchDatas(number) {
@@ -82,7 +82,7 @@ class CoreStore extends EventEmitter {
   getFilePath() {
     return this.filepath;
  }
- 
+
   getProgress() {
   return this.progressKeyObj;
   }
@@ -91,24 +91,33 @@ class CoreStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-  getButtonStatus(){
-    return this.buttonStatus;
-  }
-
-  getLogoutButton(){
-    return this.logoutButtonVisibility;
+  getOnlineStatus(){
+    return this.onlineStatus;
   }
 
   getLoggedInUser() {
     return this.userLoggedIn;
   }
 
+  getAlertMessage() {
+    return this.alertObj;
+  }
+
+  getAlertResponseMessage() {
+    this.alertObj['alertObj'] = null;
+    return this.alertResponseObj;
+  }
+
   getProfileVisibility(){
     if(this.profileVisibility) {
-    return this.profileVisibility;
-  } else {
-    return false;
+      return this.profileVisibility;
+    }else {
+      return false;
+    }
   }
+
+  getCheckModal(){
+    return this.checkModalVisibility;
   }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
@@ -128,7 +137,6 @@ class CoreStore extends EventEmitter {
       }
     }
   }
-
 /**
   * @param {function} callback
   */
@@ -158,8 +166,8 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_BUTTTON_STATUS:
-        this.buttonStatus = action.buttonStatus;
+      case consts.CHANGE_ONLINE_STATUS:
+        this.onlineStatus = action.onlineStatus;
         this.emitChange();
       break;
 
@@ -194,10 +202,11 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
-      case consts.CHANGE_LOGOUT_VISIBILITY:
-        this.logoutButtonVisibility = action.logoutOption;
+      case consts.NEW_PROJECT:
+        this.doneLoading = false;
+        this.checkCategoryOptions = null;
         this.emitChange();
-        break;
+      break;
 
       case consts.ACCOUNT_LOGIN:
         this.userLoggedIn = action.user;
@@ -208,6 +217,21 @@ class CoreStore extends EventEmitter {
         this.profileVisibility = action.profileOption;
         this.emitChange();
         break;
+
+      case consts.CHANGE_CHECK_MODAL_VISIBILITY:
+        this.checkModalVisibility = action.checkModalOption;
+        this.emitChange();
+        break;
+
+      case consts.ALERT_MODAL:
+        this.alertObj = action.alert;
+        this.emitChange();
+      break;
+
+      case consts.ALERT_MODAL_RESPONSE:
+        this.alertResponseObj = action.alertResponse;
+        this.emitChange();
+      break;
 
       default:
       // do nothing

@@ -1,4 +1,4 @@
-var style = {
+ var style = {
   menuItem: {
     text: {
       cursor: 'pointer'
