@@ -46,7 +46,9 @@ class SwitchCheckModuleDropdown extends React.Component {
       checkCategoryOptions: options
     });
     if (options) {
+      if (options.length > 0){
       this.checkModuleChange({target: {value: options[0].name}});
+    }
     }
   }
 
