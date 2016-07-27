@@ -11,14 +11,15 @@ class SwitchCheckModal extends React.Component{
     this.state ={
       showModal: false,
     }
+    this.updateCheckModal = this.updateCheckModal.bind(this);
   }
 
   componentWillMount() {
-    CoreStore.addChangeListener(this.updateCheckModal.bind(this));
+    CoreStore.addChangeListener(this.updateCheckModal);
   }
 
   componentWillUnmount() {
-    CoreStore.removeChangeListener(this.updateCheckModal.bind(this));
+    CoreStore.removeChangeListener(this.updateCheckModal);
   }
 
   updateCheckModal() {
