@@ -109,6 +109,7 @@ class CoreStore extends EventEmitter {
   }
 
   getAlertResponseMessage() {
+    this.alertObj['alertObj'] = null;
     return this.alertResponseObj;
   }
 

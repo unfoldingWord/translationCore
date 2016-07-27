@@ -73,7 +73,7 @@ const ProjectModal = React.createClass({
   },
   close: function() {
     //CheckStore.getNameSpaces();
-    this.getProjectStatus(function(result){
+    this.getProjectStatus((result)=>{
       if(result) {
         this.setState({
           showModal: false
@@ -87,11 +87,10 @@ const ProjectModal = React.createClass({
     var projectStatus = CoreStore.getShowProjectModal();
     if (projectStatus != "Create") {
       	var Alert = {
-      		title: "This is a test of spacing",
-      		content: "What do you think? Does it fit?",
+      		title: "Are you sure you want to cancel?",
+      		content: "You will lose all data",
       		leftButtonText: "Cancel",
-      		rightButtonText: "Yes",
-      		visibility: true
+      		rightButtonText: "Yes"
       	}
       }
       api.createAlert(Alert, function(result){

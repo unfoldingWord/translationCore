@@ -2,7 +2,7 @@ const CoreStore = require('../.././stores/CoreStore');
 const CoreActions = require('../.././actions/CoreActions');
 const CheckStore = require('../.././stores/CheckStore');
 var alertCallBack = () => {};
-var AlertStuff = {
+var Alert = {
   startListener(callback) {
     if (callback) {
       alertCallBack = callback;
@@ -14,13 +14,15 @@ var AlertStuff = {
     if(data) {
       try {
         var callback = this.alertObj['alertCallback'];
+        callback(data);
+        this.alertObj['alertCallback'] = null;
       }
       catch(e){
-
       }
-      callback(data);
+      data = null;
+      this.alertResponseObj = null;
     }
   }
 };
 
-module.exports = AlertStuff;
+module.exports = Alert;

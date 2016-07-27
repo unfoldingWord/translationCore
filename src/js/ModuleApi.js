@@ -4,7 +4,7 @@
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
-const AlertStuff = require('./components/core/AlertStuff.js')
+const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
@@ -127,22 +127,21 @@ class ModuleApi {
     }
 
 		createAlert(obj, callback) {
-			AlertStuff.startListener(callback);
+			Alert.startListener(callback);
 			CoreActions.sendAlert({
 					alertObj:obj,
 					alertCallback: callback
 				});
 		}
-	// 	var Alert = {
-	// 		title: "Warning",
-	// 		content: "You Did Something Wrong",
-	// 		leftButtonText: "Cancel",
-	// 		rightButtonText: "Ok",
-	// 		visibility: true
-	// 	}
+		// var Alert = {
+		// 	title: "Are you sure you want to cancel?",
+		// 	content: "You will lose all data",
+		// 	leftButtonText: "Cancel",
+		// 	rightButtonText: "Yes"
+		// }
 	// }
 	// api.createAlert(Alert, function(result){
-	// 	if(result == 'OK') {
+	// 	if(result == my_ok_string) {
 	// 		//do something
 	// 	}else {
 	// 		//do something

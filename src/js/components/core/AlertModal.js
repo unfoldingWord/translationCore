@@ -39,14 +39,14 @@ const AlertModal = React.createClass({
     }
 
     //{title:Warning, content:YOU MESSED UP, leftButtonText:OK...}
-    if (alertMessage) {
+    if (data) {
       try {
         this.setState({
           title: alertMessage['title'],
           content: alertMessage['content'],
           leftButtonText: alertMessage['leftButtonText'],
           rightButtonText: alertMessage['rightButtonText'],
-          visibility: alertMessage['visibility']
+          visibility: true
         });
       } catch (e) {
       }
@@ -61,13 +61,8 @@ const AlertModal = React.createClass({
 
   handleAlertOK() {
     var response = this.state.rightButtonText;
-    this.setState({visibility: false}, CoreActions.sendAlertResponse(response)
-  );
+    this.setState({visibility: false}, CoreActions.sendAlertResponse(response));
   alertMessage = {};
-},
-
-handleAlertShow() {
-  this.setState({visibility: true});
 },
 
 getStyleFromState(value) {
@@ -93,10 +88,19 @@ render() {
     height:'200px'
   }
 
+  var alertDiv = {
+    padding: '1em',
+    position: 'absolute',
+    top: '20%',
+    left: '50%',
+    marginRight: '-50%',
+    transform:' translate(-50%, -50%)'
+  }
+
   var alertContent = {
     padding: '1em',
     position: 'absolute',
-    top: '30%',
+    top: '100%',
     left: '50%',
     marginRight: '-50%',
     transform:' translate(-50%, -50%)'
@@ -106,9 +110,9 @@ render() {
     <Modal show={this.state.visibility}>
     <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60}}>
     <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
-    <div style={alertContent}>
+    <div style={alertDiv}>
     <h3>{this.state.title}</h3>
-    <p style={{paddingTop:'5%', marginRight:'8%'}}>{this.state.content}</p>
+    <p style={alertContent}>{this.state.content}</p>
     </div>
     <ButtonToolbar style={{position:'absolute', top:'70%', left: '50%',marginRight: '-50%', transform: 'translate(-50%, -50%)'}}>
     <Button bsStyle="danger" style={{height:'30px', width:'60px', textAlign:'center', verticalAlign:'middle', padding:0}} onClick={this.handleAlertDismiss}>{this.state.leftButtonText}</Button>
