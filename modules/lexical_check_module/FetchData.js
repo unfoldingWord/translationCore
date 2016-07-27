@@ -58,7 +58,6 @@ function getData(params, progressCallback, callback) {
               api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
               api.putDataInCheckStore('LexicalChecker', 'wordList', wordList);
               //TODO: This shouldn't be put in the check store because we don't want this saved to disk
-              api.putDataInCheckStore('LexicalChecker', 'menu', require('./MenuView'));
               callback(null);
             }
           });

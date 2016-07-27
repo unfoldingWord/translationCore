@@ -106,7 +106,6 @@ var parseObject = function(object){
 function saveData(phraseObject, params, onCompleteFunction) {
   api.putDataInCheckStore('PhraseChecker', 'book', api.convertToFullBookName(params.bookAbbr));
   //TODO: This shouldn't be put in check store because we don't want it to be saved
-  api.putDataInCheckStore('PhraseChecker', 'menu', require('./MenuView.js')); 
   api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
   api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
   api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
