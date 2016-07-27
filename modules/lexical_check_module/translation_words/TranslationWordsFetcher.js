@@ -110,6 +110,7 @@ else {
       };
 
       request.onerror = function() {
+        console.log('We called the callback with an error');
         callback(REQUEST_FAILED);
       };
 
@@ -176,7 +177,8 @@ else {
         return [];
       }
       // split by comma and take off hanging spaces
-      return aliasRes.split(",").map(str => str.trim());
+      let res = aliasRes.split(",").map(str => str.trim().toLowerCase());
+      return res.filter((item, pos) => {return res.indexOf(item) == pos;});
     }
 
     iterateOverCalls();

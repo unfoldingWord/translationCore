@@ -6,17 +6,11 @@ module.exports = {
     goToNext: function(params) {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-        api.sendAction({
-          type: 'changeLexicalCheck',
-          field: NAMESPACE,
-          checkIndex: currentCheckIndex + 1,
-          groupIndex: currentGroupIndex
-        });
+        this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
     },
 
     goToCheck: function(params) {
-      api.sendAction({type: 'changeLexicalCheck', field: NAMESPACE,
-        checkIndex: params.checkIndex, groupIndex: params.groupIndex});
+      this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
     },
 
     changeCheckType: function(params) {

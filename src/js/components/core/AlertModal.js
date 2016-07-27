@@ -62,68 +62,69 @@ const AlertModal = React.createClass({
   handleAlertOK() {
     var response = this.state.rightButtonText;
     this.setState({visibility: false}, CoreActions.sendAlertResponse(response));
-  alertMessage = {};
-},
+    alertMessage = {};
+  },
 
-getStyleFromState(value) {
-  //style={this.getStyleFromState(this.state.visibility)}
-  if (value){
-    return {
-      zIndex:100,
-      display: 'inline'
+  getStyleFromState(value) {
+    if (value){
+      return {
+        height:'30px',
+        width:'60px',
+        textAlign:'center',
+        verticalAlign:'middle',
+        padding:0
+      }
+    } else {
+      return {
+        display: 'none'
+      }
     }
-  } else {
-    return {
-      zIndex:100,
-      display: 'none'
+  },
+
+  render() {
+    var alertStyle = {
+      display:'tableCell',
+      verticalAlign:'middle',
+      width:'450px',
+      height:'200px'
     }
-  }
-},
 
-render() {
-  var alertStyle = {
-    display:'tableCell',
-    verticalAlign:'middle',
-    width:'450px',
-    height:'200px'
-  }
+    var alertDiv = {
+      padding: '1em',
+      position: 'absolute',
+      top: '20%',
+      left: '50%',
+      marginRight: '-50%',
+      transform:' translate(-50%, -50%)'
+    }
 
-  var alertDiv = {
-    padding: '1em',
-    position: 'absolute',
-    top: '20%',
-    left: '50%',
-    marginRight: '-50%',
-    transform:' translate(-50%, -50%)'
+    var alertContent = {
+      padding: '1em',
+      position: 'absolute',
+      top: '100%',
+      left: '50%',
+      marginRight: '-50%',
+      transform:' translate(-50%, -50%)'
+    }
+    return (
+      <div >
+      <Modal show={this.state.visibility}>
+      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60}}>
+      <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
+      <div style={alertDiv}>
+      <h3>{this.state.title}</h3>
+      <p style={alertContent}>{this.state.content}</p>
+      </div>
+      <ButtonToolbar style={{position:'absolute', top:'70%', left: '50%',marginRight: '-50%', transform: 'translate(-50%, -50%)'}}>
+      <Button bsStyle="danger" style={this.getStyleFromState(this.state.leftButtonText)} onClick={this.handleAlertDismiss}>{this.state.leftButtonText}</Button>
+      <Button style={this.getStyleFromState(this.state.rightButtonText)} onClick={this.handleAlertOK}>{this.state.rightButtonText}</Button>
+      </ButtonToolbar>
+      </Alert>
+      </Modal.Footer>
+      </Modal>
+      </div>
+    );
   }
-
-  var alertContent = {
-    padding: '1em',
-    position: 'absolute',
-    top: '100%',
-    left: '50%',
-    marginRight: '-50%',
-    transform:' translate(-50%, -50%)'
-  }
-  return (
-    <div >
-    <Modal show={this.state.visibility}>
-    <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60}}>
-    <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
-    <div style={alertDiv}>
-    <h3>{this.state.title}</h3>
-    <p style={alertContent}>{this.state.content}</p>
-    </div>
-    <ButtonToolbar style={{position:'absolute', top:'70%', left: '50%',marginRight: '-50%', transform: 'translate(-50%, -50%)'}}>
-    <Button bsStyle="danger" style={{height:'30px', width:'60px', textAlign:'center', verticalAlign:'middle', padding:0}} onClick={this.handleAlertDismiss}>{this.state.leftButtonText}</Button>
-    <Button style={{height:'30px', width:'60px', textAlign:'center', verticalAlign:'middle', padding:0}} onClick={this.handleAlertOK}>{this.state.rightButtonText}</Button>
-    </ButtonToolbar>
-    </Alert>
-    </Modal.Footer>
-    </Modal>
-    </div>
-  );
-}
 
 });
 
