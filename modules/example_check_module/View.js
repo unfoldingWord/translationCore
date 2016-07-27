@@ -22,31 +22,65 @@ class View extends React.Component {
       currentCheck: null
     };
     
-    // Bind the function to the View object so the "this" context isn't lost
-    this.retainedButtonClicked = this.retainedButtonClicked.bind(this);
+    // Bind functions to the View object so the "this" context isn't lost
+    this.updateCheckStatus = this.updateCheckStatus.bind(this);
+    this.goToNext = this.goToNext.bind(this);
+    this.goToCheck = this.goToCheck.bind(this);
+    this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
   
   componentWillMount() {
+    api.registerEventListener('goToNext', this.goToNext);
+    api.registerEventListener('goToCheck', this.goToCheck);
     this.updateState();
   }
   
   componentWillUnmount() {
-    
+    api.registerEventListener('goToNext', this.goToNext);
+    api.registerEventListener('goToCheck', this.goToCheck);
   }
   
-  retainedButtonClicked() {
-    
+  goToNext() {
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
   }
   
-  updateCheckStatus(exampleCheckData, action) {
-    var currentCheckFromStore = exampleCheckData.groups[exampleCheckData.currentGroupIndex]['checks'][exampleCheckData.currentCheckIndex];
-    if (currentCheckFromStore.checkStatus) {
-      currentCheckFromStore.checkStatus = action.checkStatus;
-      api.emitEvent('changedCheckStatus', {currentCheckNamespace: NAMESPACE});
+  goToCheck(params) {
+    this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
+  }
+  
+  /**
+   * @description - This is used to change our current check index and group index within the store
+   * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
+   * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
+   */
+  changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    //error check to make sure we're going to a legal group/check index
+    if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
+      if (newGroupIndex < groups.length) {
+        api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
+        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
+        }
+        /* In the case that we're incrementing the check and now we're out of bounds
+          * of the group, we increment the group.
+          */
+        else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
+          currentGroupIndex < groups.length - 1) {
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
+        }
+        //invalid indices: don't do anything else
+        else {
+          return;
+        }
+      }
     }
-    this.setState({
-      currentCheck: currentCheckFromStore
-    });
+    this.updateState();
   }
   
   /**
@@ -58,21 +92,42 @@ class View extends React.Component {
   updateState() {
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
+    var currentCheckFromStore = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: currentCheck
+        currentCheck: currentCheckFromStore
     });
     // TODO: include TPane?
     // api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
   
+  updateCheckStatus(newCheckStatus) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    currentCheck.checkStatus = newCheckStatus;
+    api.emitEvent('changedCheckStatus', {
+      groupIndex: currentGroupIndex,
+      checkIndex: currentCheckIndex,
+      checkStatus: newCheckStatus
+    });
+    this.updateState();
+  }
+  
   render() {
+    var _this = this;
     return (
       <div>
         <p>{this.state.currentCheck.textToCheck}</p>
         <p>{this.state.currentCheck.checkStatus}</p>
-        <button onClick={this.retainedButtonClicked}>Retained</button>
+        <button
+          onClick={
+            function() {
+              _this.updateCheckStatus('RETAINED');
+            }
+          }
+        >Retained</button>
       </div>
     );
   }
