@@ -30,17 +30,7 @@ var template = [
         click() {
           CoreActions.showCreateProject("Languages");
         }
-      },
-      {
-        label: "Generate Report",
-        click: function() {
-          require("./reports/ReportGenerator")(err => {
-            if (err) {
-              console.log(err);
-            }
-          });
-        }
-    }
+      }
     ]
   },
   {
