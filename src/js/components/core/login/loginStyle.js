@@ -21,6 +21,7 @@ var style = {
   navbar:{
     position: 'fixed',
     top:'0px',
+    left: '0px',
     zIndex: '500',
     width: '100%',
     marginBottom: '10px',
@@ -50,23 +51,13 @@ var style = {
     zIndex: '9999'
   },
 
-  offline:{
-    margin: '20px auto',
-    width: '12px',
-    height: '12px',
-    backgroundColor: '#FF0000',
-    borderRadius: '50%',
-    boxShadow: '#000 0 -1px 7px 1px'
+  glyphiconOffline:{
+    color: "#FF0000",
   },
 
-  online:{
-    margin: '20px auto',
-    width: '12px',
-    height: '12px',
-    backgroundColor: '#00B233',
-    borderRadius: '50%',
-    boxShadow: '#000 0 -1px 7px 1px'
-  }
+  glyphiconOnline:{
+    color: "#00B233",
+  },
 
 
 

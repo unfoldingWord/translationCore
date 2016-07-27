@@ -4,23 +4,29 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
+const GitApi = require('../GitApi.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
-const CoreStore = require('../../../stores/CoreStore.js');
-const CheckStore = require('../../../stores/CheckStore');
+var CoreStore = require('../../../stores/CoreStore.js');
+var CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
 const FileModule= require('../FileModule');
 const ENTER = 13;
-const api = window.ModuleApi;
+var api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
-const ProjectName = require('./ProjectName');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
+const utils = require('../../../utils');
+const AccessProjectModal = require('../AccessProjectModal');
+const AlertModal = require('../AlertModal');
+
+const INVALID_PROJECT = 'This does not appear to be a translation studio project';
+const DEFAULT_ERROR = 'Error';
 
 const ProjectModal = React.createClass({
   params: {
@@ -44,16 +50,12 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
+    AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function() {
     var modal = CoreStore.getShowProjectModal()
-    if (modal === "Create") {
-      this.setState({
-        showModal: true,
-        modalValue: modal
-      });
-    } else if(modal === "Check") {
+    if(modal === "Check") {
       this.setState({
         showModal: true,
         modalValue: modal
@@ -63,18 +65,40 @@ const ProjectModal = React.createClass({
         showModal: true,
         modalValue: modal,
         modalTitle: '',
-        doneText: 'Create'
+        doneText: 'Check'
       });
     }
   },
   close: function() {
     //CheckStore.getNameSpaces();
-    CoreActions.showCreateProject("");
-    this.setState({
-      showModal: false
+    this.getProjectStatus((result)=>{
+      if(result) {
+        this.setState({
+          showModal: false
+        });
+      }
     });
+    CoreActions.showCreateProject("");
   },
 
+  getProjectStatus: function(callback) {
+    var projectStatus = CoreStore.getShowProjectModal();
+    if (projectStatus != "Create") {
+      	var Alert = {
+      		title: "You are currently making a project",
+      		content: "Are you sure you want to cancel?",
+      		leftButtonText: "Cancel",
+      		rightButtonText: "Yes"
+      	}
+      }
+      api.createAlert(Alert, function(result){
+      	if(result == 'Yes') {
+          callback(true);
+      	} else {
+      		callback(false);
+      	}
+      });
+  },
   makePathForChecks: function(check) {
     if (!check || check == '') {
       return;
@@ -94,48 +118,63 @@ const ProjectModal = React.createClass({
       }
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
-      FileModule.readFile(manifestLocation, function(data){
-        var parsedManifest = JSON.parse(data);
-        var bookTitle = parsedManifest.project.name.split(' ');
-        var bookName = _this.getBookAbbr(parsedManifest.project.name);
-        _this.setBookName(bookName);
-        let bookFileName = bookTitle.join('') + '.json';
-
-        var projectData = {
-          local: true,
-          target_language: _this.params.targetLanguagePath,
-          original_language: ('data/ulgb/'),
-          gateway_language: '',
-          user: [{username: '', email: ''}],
-          checkLocations: [],
-          saveLocation: _this.saveLocation
+      fs.readJson(manifestLocation, function(err, parsedManifest){
+        if (parsedManifest && parsedManifest.project && parsedManifest.project.name) {
+              var bookTitle = parsedManifest.project.name.split(' ');
+              var bookName = _this.getBookAbbr(parsedManifest.project.name);
+              _this.setBookName(bookName);
+              let bookFileName = bookTitle.join('') + '.json';
+              var saveLocation = _this.params.targetLanguagePath;
+              var user = CoreStore.getLoggedInUser();
+              var projectData = {
+                local: true,
+                target_language: _this.params.targetLanguagePath,
+                original_language: ('data/ulgb/'),
+                gateway_language: '',
+                user: [{username: '', email: ''}],
+                checkLocations: [],
+                saveLocation: saveLocation,
+                repo: _this.params.repo
+              }
+              var checkArray = api.getDataFromCommon('arrayOfChecks');
+              projectData.checkLocations = checkArray;
+              api.putDataInCommon('saveLocation', saveLocation);
+              CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
+              if (tempFetchDataArray.length > 0) {
+                _this.clearOldData();
+                CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
+                _this.close();
+              }
+        } else {
+          dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
-        var checkArray = api.getDataFromCommon('arrayOfChecks');
-        projectData.checkLocations = checkArray;
-        CheckDataGrabber.saveManifest(_this.saveLocation, projectData, parsedManifest);
       });
-      if (tempFetchDataArray.length > 0) {
-        // CoreActions.getFetchData(tempFetchDataArray);
-        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
-      }
-      this.close();
-    }
-
+  }
     else if (this.state.modalValue === 'Languages') {
-      CoreActions.showCreateProject("Create");
-    }
-
-    else if (this.state.modalValue == "Create") {
-      if (this.refs.ProjectName) {
-        if (!this.refs.ProjectName.allFieldsEntered()) {
-          alert("Enter All Fields Before Continuing.");
-          return;
-        }
+      try {
+        var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
+        fs.readJson(manifestLocation, function(err, parsedManifest){
+          if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
+                CoreActions.showCreateProject("Check");
+          } else {
+              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+          }
+        });
+      } catch(error) {
+        dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
       }
-      CoreActions.showCreateProject("Check");
     }
-
   },
+
+  clearOldData: function(){
+    var manifest = api.getDataFromCommon('tcManifest');
+    CoreActions.newProject();
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
+    this.setSaveLocation(this.saveLocation);
+    api.putDataInCommon('tcManifest', manifest);
+  },
+
   getBookAbbr: function(book) {
     for (var bookAbbr in booksOfBible) {
       if (book.toLowerCase() == booksOfBible[bookAbbr].toLowerCase() || book.toLowerCase() == bookAbbr) {
@@ -147,10 +186,18 @@ const ProjectModal = React.createClass({
 
   setSaveLocation: function(data) {
     this.saveLocation = data;
-    api.putDataInCommon('saveLocation', data);
+    if (CheckStore.storeData.common != undefined){
+      api.putDataInCommon('saveLocation', data);
+    } else {
+      CheckStore.storeData['common'] = {};
+      api.putDataInCommon('saveLocation', data);
+    }
   },
-  setTargetLanguageFilePath: function(path) {
+
+  setTargetLanguageFilePath: function(path, link) {
+    this.saveLocation = path;
     this.params.targetLanguagePath = path;
+    this.params.repo = link;
     this.onClick();
   },
 
@@ -160,8 +207,6 @@ const ProjectModal = React.createClass({
   changeModalBody: function(modalBody) {
     if (modalBody == "Check") {
       return (<SelectChecks currentChecks={this.state.currentChecks} ref={"SelectChecks"} loadedChecks={this.state.loadedChecks} FetchDataArray={this.state.FetchDataArray}/>);
-    } else if (modalBody == "Create") {
-      return (<ProjectName projectName={this.state.projectName} ref={"ProjectName"} passBack={this.setSaveLocation}/>);
     } else if (modalBody === 'Languages') {
       return (<TargetLanguage ref={"TargetLanguage"} setTargetLanguageFilePath={this.setTargetLanguageFilePath} />);
     }

@@ -45,10 +45,10 @@ module.exports = {
     });
   },
 
-  updateButtonStatus: function(boolean) {
+  updateOnlineStatus: function(boolean) {
     Dispatcher.handleAction({
-      type: consts.CHANGE_BUTTTON_STATUS,
-      buttonStatus: boolean
+      type: consts.CHANGE_ONLINE_STATUS,
+      onlineStatus: boolean
     });
   },
 
@@ -87,10 +87,10 @@ module.exports = {
     });
   },
 
-  updateLogoutButton: function(boolean) {
+  newProject: function(){
     Dispatcher.handleAction({
-      type: consts.CHANGE_LOGOUT_VISIBILITY,
-      logoutOption: boolean
+      type: consts.NEW_PROJECT,
+      reportViews:[]
     });
   },
 
@@ -99,6 +99,27 @@ module.exports = {
       type: consts.CHANGE_PROFILE_VISIBILITY,
       profileOption: boolean
     });
-  }
+  },
+
+  updateCheckModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CHECK_MODAL_VISIBILITY,
+      checkModalOption: boolean
+    });
+  },
+
+  sendAlert: function(alertObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL,
+      alert: alertObj
+    });
+  },
+
+    sendAlertResponse: function(alertResponseObj) {
+      Dispatcher.handleAction({
+        type: consts.ALERT_MODAL_RESPONSE,
+        alertResponse: alertResponseObj
+      });
+    }
 
 };

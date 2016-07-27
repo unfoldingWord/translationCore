@@ -1,13 +1,18 @@
-// MenuItem.js
-const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const style = require('./Style');
+// MenuItem.js//
+//api imports
 const api = window.ModuleApi;
+const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+
+const Glyphicon = ReactBootstrap.Glyphicon;
+const style = require('./Style');
 
 class MenuItem extends React.Component {
   constructor() {
     super();
+    this.state = {
+      checkStatus: "UNCHECKED"
+    };
     this.menuItemClicked = this.menuItemClicked.bind(this);
   }
 
@@ -20,8 +25,26 @@ class MenuItem extends React.Component {
     );
   }
 
+  changeCheckStatus(checkStatus) {
+    this.setState({
+      checkStatus: checkStatus
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      checkStatus: nextProps.check.checkStatus
+    });
+  }
+
+  componentWillMount() {
+    this.setState({
+      checkStatus: this.props.check.checkStatus
+    });
+  }
+
   render() {
-    var checkStatus = this.props.check.checkStatus;
+    var checkStatus = this.state.checkStatus;
 
     // when the flag is toggled it turns blue
     var flagStyle;
@@ -57,7 +80,7 @@ class MenuItem extends React.Component {
         <Glyphicon glyph="flag" style={flagStyle} />
         <span style={style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
-            {this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
+            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
         </span>
         <span>

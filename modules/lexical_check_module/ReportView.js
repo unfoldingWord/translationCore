@@ -60,4 +60,3 @@ class ReportItem extends React.Component {
 }
 
 module.exports = ReportView;
-window.ReportView = ReportView;
