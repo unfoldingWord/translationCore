@@ -31,6 +31,12 @@ class MenuItem extends React.Component {
     });
   }
 
+  componentWillMount() {
+    this.setState({
+      checkStatus: this.props.check.checkStatus
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       checkStatus: nextProps.check.checkStatus
