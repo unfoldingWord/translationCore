@@ -3,6 +3,8 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button} = RB;
 
+const Login = require('./WelcomeLogin')
+
 // const RootStyles = require('./RootStyle');
 
 const Styles = {
@@ -13,6 +15,10 @@ const Styles = {
     alignSelf: 'center',
     fontSize: '200%',
     color: '#fff'
+  },
+  menuButtons: {
+    width: '25%',
+    margin: '5px'
   },
   welcomePage: {
     width: '100%',
@@ -29,6 +35,10 @@ const Styles = {
   bigGlyph: {
     color: '#fff',
     fontSize: '1000%'
+  },
+  loginBox: {
+    width: '50%',
+    margin: 'auto'
   }
 }
 
@@ -68,15 +78,20 @@ class Welcome extends React.Component{
             <Glyphicon style={Styles.bigGlyph} glyph="user" />
             <h1>Connect a Door43 account</h1>
             <p>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
-            <Button>Login</Button><Button>Create Account</Button>
+            <div style={Styles.loginBox}>
+              <Login success={()=>{this.setState({index:this.state.index+1})}}/>
+            </div>
           </div>
         )
         break;
       case 3:
         return(
           <div style={Styles.welcomePage}>
-            <h1>load your first project</h1>
-            <p>Aliquip velit duis laborum aliquip exercitation dolore consequat fugiat anim laboris ex excepteur ea deserunt voluptate ea.</p>
+          <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
+            <h1>Load your first project</h1>
+            <p>You can load in your first project from Door43 or from your hard drive.</p>
+            <Button style={Styles.menuButtons}>Load from URL</Button>
+            <Button style={Styles.menuButtons}>Load from hard drive</Button>
           </div>
         )
         break;
