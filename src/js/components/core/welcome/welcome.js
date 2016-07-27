@@ -3,9 +3,8 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button} = RB;
 
-const Login = require('./WelcomeLogin')
-
-// const RootStyles = require('./RootStyle');
+const Login = require('./WelcomeLogin');
+const CreateProject = require('./WelcomeCreateProject');
 
 const Styles = {
   navButtons: {
@@ -39,6 +38,12 @@ const Styles = {
   loginBox: {
     width: '50%',
     margin: 'auto'
+  },
+  uploadBox: {
+    width: '50%',
+    margin: 'auto',
+    backgroundColor: '#fff',
+    borderRadius: '5px'
   }
 }
 
@@ -90,8 +95,8 @@ class Welcome extends React.Component{
           <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
             <h1>Load your first project</h1>
             <p>You can load in your first project from Door43 or from your hard drive.</p>
-            <Button style={Styles.menuButtons}>Load from URL</Button>
-            <Button style={Styles.menuButtons}>Load from hard drive</Button>
+            <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', minHeight: '100px'}}>
+            </div>
           </div>
         )
         break;

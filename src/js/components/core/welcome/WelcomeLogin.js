@@ -2,7 +2,7 @@ const React = require('react');
 
 const remote = window.electron.remote;
 const {dialog} = remote;
-const CoreActions = require('../../actions/CoreActions.js');
+const CoreActions = require('../../../actions/CoreActions.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
@@ -10,10 +10,10 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const style = require('../../styles/loginStyle');
-const gogs = require('./GogsApi.js');
-const Token = require('./AuthToken');
-const Registration = require('./Registration');
+const style = require('../../../styles/loginStyle');
+const gogs = require('../GogsApi.js');
+const Token = require('../AuthToken');
+const Registration = require('../Registration');
 
 class Login extends React.Component {
   constructor() {
@@ -21,6 +21,7 @@ class Login extends React.Component {
     this.state = {userName: "", password: "", register: false};
   }
   handleSubmit(event) {
+    var _this = this;
     var userdata = {
       username: this.state.userName,
       password: this.state.password
@@ -31,6 +32,7 @@ class Login extends React.Component {
       CoreActions.updateButtonStatus(true);
       CoreActions.updateLogoutButton(true);
       CoreActions.updateProfileVisibility(true);
+      _this.props.success();
     }).catch(function(reason) {
       //console.log(reason);
       if (reason.status === 401) {
@@ -44,6 +46,7 @@ class Login extends React.Component {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
       }
     });
+
   }
   handleUserName(e) {
     this.setState({userName: e.target.value});
