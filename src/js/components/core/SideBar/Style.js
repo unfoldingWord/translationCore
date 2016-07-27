@@ -23,7 +23,8 @@ var style = {
     borderBottom: "2px solid #1E1D1F",
     paddingTop: "20px",
     paddingBottom: "20px",
-    color: "white"
+    color: "white",
+    userSelect: "none",
   },
 
   glyphicon: {
@@ -43,13 +44,14 @@ var style = {
     display: "block",
     textAlign: "center",
     borderBottom: "2px solid #1E1D1F",
+    userSelect: "none",
     paddingTop: "18px",
     paddingBottom: "18px"
   },
 
   logo:{
     height: "60px",
-    width: "60px",
+    width: "55px",
     display: "block",
     padding: "5px",
     marginLeft: "auto",

@@ -110,10 +110,14 @@ class CoreStore extends EventEmitter {
 
   getProfileVisibility(){
     if(this.profileVisibility) {
-    return this.profileVisibility;
-  } else {
-    return false;
+      return this.profileVisibility;
+    }else {
+      return false;
+    }
   }
+
+  getCheckModal(){
+    return this.checkModalVisibility;
   }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
@@ -211,6 +215,11 @@ class CoreStore extends EventEmitter {
 
       case consts.CHANGE_PROFILE_VISIBILITY:
         this.profileVisibility = action.profileOption;
+        this.emitChange();
+        break;
+
+      case consts.CHANGE_CHECK_MODAL_VISIBILITY:
+        this.checkModalVisibility = action.checkModalOption;
         this.emitChange();
         break;
 
