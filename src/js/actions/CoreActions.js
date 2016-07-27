@@ -99,6 +99,20 @@ module.exports = {
       type: consts.CHANGE_PROFILE_VISIBILITY,
       profileOption: boolean
     });
-  }
+  },
+
+  sendAlert: function(alertObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL,
+      alert: alertObj
+    });
+  },
+
+    sendAlertResponse: function(alertResponseObj) {
+      Dispatcher.handleAction({
+        type: consts.ALERT_MODAL_RESPONSE,
+        alertResponse: alertResponseObj
+      });
+    }
 
 };
