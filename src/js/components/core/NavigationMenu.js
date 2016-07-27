@@ -8,7 +8,7 @@ class NavigationMenu extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkObject: null
+      checkMenu: null
     };
     this.updateCheckObject = this.updateCheckObject.bind(this);
     // this.updateMenuItem = this.updateMenuItem.bind(this);
@@ -25,16 +25,16 @@ class NavigationMenu extends React.Component {
   updateCheckObject(params) {
     var checkData = (params === undefined ? undefined : api.getMenu(params.currentCheckNamespace));
     this.setState({
-      checkObject: checkData
+      checkMenu: checkData
     });
   }
 
   render() {
-    if (!this.state.checkObject || this.state.checkObject == null) {
+    if (!this.state.checkMenu) {
       return <Well style={{minHeight:"100%"}}>{' '}</Well>;
     }
     return (
-      <this.state.checkObject />
+      <this.state.checkMenu />
     );
   }
 }

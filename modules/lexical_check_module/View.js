@@ -285,8 +285,11 @@ class View extends React.Component {
               <Well bsSize={'small'} style={{
                 height: '60px',
                 lineHeight:'35px'}}
-              >{this.state.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
+              >
+                {this.state.book + ' ' +
+                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse
+                }
+              </Well>
             </Col>
           </Row>
           <Row className="show-grid">
