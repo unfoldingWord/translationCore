@@ -8,6 +8,7 @@ const ReactBootstrap = api.ReactBootstrap;
 //Modules not defined within lexical_check_module
 var TPane = null;
 var ProposedChanges = null;
+
 const CommentBox = null; //api.getModule('CommentBox');
 
 //Bootstrap consts
@@ -268,7 +269,7 @@ class View extends React.Component {
   			<div>
   				<TPane />
           <Row className="show-grid">
-            <Col sm={3} md={3} lg={3}
+            <Col sm={4} md={4} lg={4}
             style={{
               textAlign: "center"
             }}
@@ -281,13 +282,16 @@ class View extends React.Component {
                 textAlign: "center"
               }}
             >
-              <Well bsSize={'small'}>{this.state.book + ' ' +
+              <Well bsSize={'small'} style={{
+                height: '60px',
+                lineHeight:'35px'}}
+              >{this.state.book + ' ' +
                 this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
             </Col>
           </Row>
           <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile} />
+              <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay

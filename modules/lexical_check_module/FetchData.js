@@ -23,7 +23,6 @@ const BookWordTest = require('./translation_words/WordTesterScript.js');
 * if error ocurred it's called with an error, 2nd argument carries the result
 */
 function getData(params, progressCallback, callback) {
-  // console.log('Lexical is good');
 // Get Bible
   var bookData;
   var Door43Fetcher = new Door43DataFetcher();
@@ -40,7 +39,6 @@ function getData(params, progressCallback, callback) {
         else {
           wordList = data;
           tWFetcher.getAliases(function(done, total) {
-            // console.log('Lexical progress: ' + (((done / total) * 50) + 50));
             progressCallback(((done / total) * 50) + 50);
           }, function(error) {
             if (error) {
@@ -59,7 +57,7 @@ function getData(params, progressCallback, callback) {
               api.putDataInCheckStore('LexicalChecker', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
               api.putDataInCheckStore('LexicalChecker', 'wordList', wordList);
-              // console.log('Lexical finished');
+              //TODO: This shouldn't be put in the check store because we don't want this saved to disk
               callback(null);
             }
           });
@@ -68,7 +66,6 @@ function getData(params, progressCallback, callback) {
   }
 
   Door43Fetcher.getBook(params.bookAbbr, function(done, total) {
-    // console.log('Lexical: ' + ((done / total) * 50));
     progressCallback((done / total) * 50);}, function(error, data) {
       if (error) {
         console.error('Door43Fetcher throwing error');
@@ -137,10 +134,6 @@ function findWordsInBook(bookData, actualWordList) {
   //sort the set of words by how long their aliases are
   for (var word of actualWordList) {
     var wordReturnObject = {
-      /* 
-       * This changes the group name from something like falsegod.txt to false god.
-       * this should make the navigation menu headers prettier
-       */
       "group": word.name,
       "checks": []
     };

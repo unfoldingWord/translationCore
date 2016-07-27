@@ -7,6 +7,8 @@ const Books = require('../booksOfBible');
 const path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
 
+const REQUIRE_ERROR = "Unable to require file";
+
 var indexOfModule = 0;
 var CheckDataGrabber = {
   doneModules: 0,
@@ -25,7 +27,7 @@ var CheckDataGrabber = {
         return;
       }
     }
-    api.putDataInCommon('arrayOfChecks', checkArray);
+    CheckStore.storeData.common['arrayOfChecks'] = checkArray;
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
@@ -99,6 +101,16 @@ var CheckDataGrabber = {
   getDataFromCheck: function(path, params) {
     var DataFetcher = require(path + '/FetchData');
     let viewObj = require(path + '/View');
+    
+    try {
+      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+    }
+    catch (e) {
+      if (e.code != "MODULE_NOT_FOUND") {
+        console.error(e);
+      }
+    }
+
     api.saveModule(viewObj.name, viewObj.view);
     if (this.isModule(path)) {
       this.reportViews.push(viewObj);

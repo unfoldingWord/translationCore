@@ -13,6 +13,8 @@ const ReactDOM = require('react-dom');
 
 const BooksOfBible = require('./components/core/BooksOfBible');
 
+const MENU_WARN = 'Attempting to save another menu over namespace: ';
+
 class ModuleApi {
 	constructor() {
         this.React = React;
@@ -22,6 +24,22 @@ class ModuleApi {
 
     findDOMNode(component) {
         return ReactDOM.findDOMNode(component);
+    }
+
+    saveMenu(namespace, menu) {
+        if (!this.menus) {
+            this.menus = {};
+        }
+        if (namespace in this.menus) {
+            console.warn(MENU_WARN + namespace);
+        }
+        this.menus[namespace] = menu;
+    }
+
+    getMenu(namespace) {
+        if (this.menus) {
+            return this.menus[namespace];
+        }
     }
 
     saveModule(identifier, module) {

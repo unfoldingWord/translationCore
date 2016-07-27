@@ -1,9 +1,11 @@
-// MenuItem.js
-const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const style = require('./Style');
+// MenuItem.js//
+//api imports
 const api = window.ModuleApi;
+const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+
+const Glyphicon = ReactBootstrap.Glyphicon;
+const style = require('./Style');
 
 class MenuItem extends React.Component {
   constructor() {
