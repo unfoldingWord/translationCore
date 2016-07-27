@@ -5,22 +5,16 @@ const HTMLScraper = require('./parsers/HTMLscraper');
 const Parser = require('./parsers/tNParser.js');
 const Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
-var translationAcademySectionTitles;
-var phraseData;
-var onCompleteFunction;
-
 const DataFetcher = function(params, progress, onComplete){
-  // console.log('Phrase is getting called');
+  var phraseData;
+  params = params;
   var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
   var ulb = {};
   onCompleteFunction = onComplete;
-  // This might break if TA emits the event before PhraseChecker starts listening
-  api.registerEventListener('translationAcademyLoaded', getSectionFileNamesToTitles);
   DoorDataFetcher.getBook(
     params.bookAbbr,
     function(done, total){
-      // console.log('Phrase: ' + ((done / total) * 100));
       progress(done/total*100);
     },
     function(err, book){
@@ -51,9 +45,7 @@ const DataFetcher = function(params, progress, onComplete){
         }
 
         phraseData = parseObject(chapterData);
-
-        // wait until translation academy is loaded, then change group headers
-        checkIfTranslationAcademyIsLoaded();
+        saveData(phraseData, params, onComplete);
       }
     }
   );
@@ -73,51 +65,16 @@ var parseObject = function(object){
       newVerse.comments = "";
       newVerse.group = type;
       newGroup.checks.push(newVerse);
-
     }
     phraseObject["groups"].push(newGroup);
   }
   return phraseObject;
 }
 
-// Saves an object where the keys are TA section filenames and the values are titles.
-// This will be called when TA is loaded
-function getSectionFileNamesToTitles(params) {
-  var sections = params.sections;
-	var sectionFileNamesToTitles = {};
-	for(var sectionFileName in sections) {
-		var titleKeyAndValue = sections[sectionFileName]['file'].match(/title: .*/)[0];
-		var title = titleKeyAndValue.substr(titleKeyAndValue.indexOf(':') + 1);
-		sectionFileNamesToTitles[sectionFileName] = title;
-	}
-	translationAcademySectionTitles = sectionFileNamesToTitles;
-}
-
-// Waits until the translationAcademySectionTitles object exists,
-// then changes the group headers to TA section titles
-function checkIfTranslationAcademyIsLoaded() {
-  if(translationAcademySectionTitles) {
-    changeGroupHeaders(phraseData, translationAcademySectionTitles);
-    saveData(phraseData);
-  }
-  else {
-    setTimeout(checkIfTranslationAcademyIsLoaded, 500);
-  }
-}
-
-// Changes the group headers from filenames to TA section titles
-function changeGroupHeaders(phraseObject, groupNamesToTitles) {
-  for(var group of phraseObject.groups) {
-    var filename = group['group'] + '.md';
-    var title = groupNamesToTitles[filename];
-    if(title) {
-      group['group'] = title;
-    }
-  }
-}
-
 // Saves phrase data into the CheckStore
-function saveData(phraseObject) {
+function saveData(phraseObject, params, onCompleteFunction) {
+  api.putDataInCheckStore('PhraseChecker', 'book', api.convertToFullBookName(params.bookAbbr));
+  //TODO: This shouldn't be put in check store because we don't want it to be saved
   api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
   api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
   api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);

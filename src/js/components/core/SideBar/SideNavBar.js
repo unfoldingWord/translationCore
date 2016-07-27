@@ -30,8 +30,12 @@ class SideNavBar extends React.Component{
     CoreActions.updateSettings(true);
   }
 
-  handleRecentProject(){
-    console.log("Recent Project modal not designed yet");
+  handleReport(){
+    require("./../reports/ReportGenerator")(err => {
+      if (err) {
+        console.log(err);
+      }
+    });
   }
 
   handleChangeCheckCategory(){
@@ -45,7 +49,7 @@ class SideNavBar extends React.Component{
             <LoginButton />
             <SideBarButton handleButtonClick={this.handleCreateProject.bind(this)} glyphicon={"file"} value={"New"} />
             <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Open"} />
-            <SideBarButton handleButtonClick={this.handleRecentProject.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
+            <SideBarButton handleButtonClick={this.handleReport.bind(this)} glyphicon={"list-alt"} value={"Create Report"} />
             <SideBarButton handleButtonClick={this.handleSaveProject.bind(this)} glyphicon={"floppy-save"} value={"Save"} />
             <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"check"} value={"Check Category"} />
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
