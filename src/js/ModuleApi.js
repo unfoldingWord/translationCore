@@ -13,6 +13,8 @@ const ReactDOM = require('react-dom');
 
 const BooksOfBible = require('./components/core/BooksOfBible');
 
+const MENU_WARN = 'Attempting to save another menu over namespace: ';
+
 class ModuleApi {
 	constructor() {
         this.React = React;
@@ -24,6 +26,22 @@ class ModuleApi {
         return ReactDOM.findDOMNode(component);
     }
 
+    saveMenu(namespace, menu) {
+        if (!this.menus) {
+            this.menus = {};
+        }
+        if (namespace in this.menus) {
+            console.warn(MENU_WARN + namespace);
+        }
+        this.menus[namespace] = menu;
+    }
+
+    getMenu(namespace) {
+        if (this.menus) {
+            return this.menus[namespace];
+        }
+    }
+
     saveModule(identifier, module) {
         this.modules[identifier] = module;
     }
@@ -33,18 +51,6 @@ class ModuleApi {
             return this.modules[identifier];
         }
         return null;
-    }
-
-    sendAction(action) {
-        Dispatcher.handleAction(action);
-    }
-
-    registerAction(type, callback) {
-        CheckStore.registerAction(type, callback);
-    }
-
-    removeAction(type, callback) {
-        CheckStore.removeAction(type, callback);
     }
 
     registerEventListener(eventType, callback) {
@@ -60,32 +66,23 @@ class ModuleApi {
     }
 
     getDataFromCheckStore(field, key=null) {
-        /* return a copy of the data from the check store so that even
-         * if an evil developer tries to mutate the store directly it won't mutate
-         */
         var obj = CheckStore.getModuleDataObject(field);
         if (obj != null && typeof obj == "object") {
             if (key) {
                 return obj[key];
             }
             return obj;
-            // return Object.assign({}, obj);
         }
         return null;
     }
 
     getDataFromCommon(key) {
-        /* return a copy of the data from check store rather than the data
-         * itself so it can't be mutated directly
-         */
-        var commonObj = CheckStore.getFromCommon(key);
-        if (commonObj != null && typeof commonObj == "object") {
-            return Object.assign({}, commonObj);
-        }
-        //this should be obsolete
         var commonDataObject = CheckStore.getCommonDataObject();
-        if (commonDataObject) {
-            return commonDataObject[key];
+        if (commonDataObject != null && typeof commonDataObject == "object") {
+            if (key) {
+                return commonDataObject[key];
+            }
+            return commonDataObject;
         }
         return null;
     }

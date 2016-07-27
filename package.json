@@ -41,6 +41,7 @@
     "gogs-client": "^0.5.1",
     "http": "0.0.0",
     "marked": "^0.3.5",
+    "natural": "^0.4.0",
     "path-extra": "^3.0.0",
     "react": "15.1.0",
     "react-bootstrap": "^0.29.5",
@@ -50,6 +51,7 @@
     "request": "^2.72.0",
     "simple-git": "^1.43.0",
     "sql.js": "^0.3.2",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "xregexp": "^3.1.1"
   }
 }

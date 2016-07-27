@@ -96,9 +96,7 @@ const ProjectModal = React.createClass({
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       fs.readJson(manifestLocation, function(err, parsedManifest){
-        if (parsedManifest) {
-          if (parsedManifest.project) {
-            if (parsedManifest.project.name) {
+        if (parsedManifest && parsedManifest.project && parsedManifest.project.name) {
               var bookTitle = parsedManifest.project.name.split(' ');
               var bookName = _this.getBookAbbr(parsedManifest.project.name);
               _this.setBookName(bookName);
@@ -124,12 +122,6 @@ const ProjectModal = React.createClass({
                 CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
                 _this.close();
               }
-            } else {
-              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
-            }
-          } else {
-            dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
-          }
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
@@ -139,18 +131,10 @@ const ProjectModal = React.createClass({
       try {
         var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
         fs.readJson(manifestLocation, function(err, parsedManifest){
-          if (parsedManifest) {
-            if (parsedManifest.generator) {
-              if (parsedManifest.generator.name === 'ts-desktop') {
+          if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
                 CoreActions.showCreateProject("Check");
-              } else {
-                dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
-              }
-            } else {
-              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
-            }
           } else {
-            dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
         });
       } catch(error) {
