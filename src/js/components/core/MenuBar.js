@@ -22,7 +22,8 @@ var template = [
       {
         label: "Open Project",
         click: function() {
-          CoreActions.showOpenModal(true);
+          console.log('trying to Open');
+          CoreActions.updateOpenView(true);
         }
       },
       {

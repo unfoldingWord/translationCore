@@ -23,6 +23,7 @@ const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
+const Open = require('../OpenForReal.js');
 
 const ProjectModal = React.createClass({
   params: {

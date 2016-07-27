@@ -51,6 +51,10 @@ class CoreStore extends EventEmitter {
     return this.loginModalVisibility;
   }
 
+  getOpenView() {
+    return this.getView;
+  }
+
   getSettingsView() {
     return this.settingsVisibility;
   }
@@ -154,6 +158,11 @@ class CoreStore extends EventEmitter {
 
       case consts.SETTINGS_VIEW:
         this.settingsVisibility = action.settingsView;
+        this.emitChange();
+        break;
+
+      case consts.OPEN_VIEW:
+        this.getView = action.view;
         this.emitChange();
         break;
 
