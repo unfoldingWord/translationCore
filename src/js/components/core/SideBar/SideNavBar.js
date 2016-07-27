@@ -21,13 +21,12 @@ class SideNavBar extends React.Component{
     CoreActions.showOpenModal(true);
   }
 
-  handleSaveProject(){
-  let path = api.getDataFromCommon('saveLocation');
-    CheckStore.saveAllToDisk(path, function() {});
+  handleSyncProject(){
+    console.log("Update Project not designed yet");
   }
 
-  handleSettings(){
-    CoreActions.updateSettings(true);
+  handleReportsProject(){
+    console.log("Reports Project modal not designed yet");
   }
 
   handleRecentProject(){
@@ -35,8 +34,13 @@ class SideNavBar extends React.Component{
   }
 
   handleChangeCheckCategory(){
-    CoreActions.updateCheckModal(true);
+    
   }
+
+  handleSettings(){
+    CoreActions.updateSettings(true);
+  }
+
     render(){
       return(
         <div style={style.container}>
@@ -45,8 +49,8 @@ class SideNavBar extends React.Component{
             <LoginButton />
             <SideBarButton handleButtonClick={this.handleCreateProject.bind(this)} glyphicon={"file"} value={"New"} />
             <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Open"} />
-            <SideBarButton handleButtonClick={this.handleRecentProject.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
-            <SideBarButton handleButtonClick={this.handleSaveProject.bind(this)} glyphicon={"floppy-save"} value={"Save"} />
+            <SideBarButton handleButtonClick={this.handleRecentProject.bind(this)} glyphicon={"cloud-upload"} value={"Sync"} />
+            <SideBarButton handleButtonClick={this.handleReportsProject.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
             <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"check"} value={"Check Category"} />
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
             <OnlineStatus />
