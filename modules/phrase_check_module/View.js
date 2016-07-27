@@ -40,7 +40,7 @@ class PhraseChecker extends React.Component{
   componentWillUnmount(){
     api.removeEventListener('phraseDataLoaded', this.updateState);
     api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('gotoNext', this.goToNext);
+    api.removeEventListener('goToNext', this.goToNext);
   }
 
   goToCheck(params){
