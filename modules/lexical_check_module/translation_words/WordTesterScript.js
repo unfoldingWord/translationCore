@@ -23,6 +23,9 @@ function concatenateChapterIntoString(chapterData) {
 function testWord(word, chapterString) {
 // var word = word.replace('.md', '');
 // console.log('Word: ' + word);
+  word.aliases.sort(function(first, second) {
+    return tokenizer.tokenize(second).length - tokenizer.tokenize(first).length;
+  });
   var wordRegexString = '\\PL(?:';
   for (var i = 0; i < word.aliases.length; i++) {
     var alias = word.aliases[i];
@@ -72,8 +75,9 @@ function getMaxNumOfWordsInAliases(wordObject) {
   var maxNumOfWords = 0;
   for (var alias of wordObject.aliases) {
     var numOfWords = tokenizer.tokenize(alias).length;
-    if (maxNumOfWords < numOfWords); 
+    if (maxNumOfWords < numOfWords) {
       maxNumOfWords = numOfWords;
+    }
   }
   return maxNumOfWords;
 }

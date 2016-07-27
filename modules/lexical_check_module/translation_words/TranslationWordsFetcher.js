@@ -125,7 +125,6 @@ else {
     function iterateOverCalls(start=0, end=100) {
       end = Math.min(end, calls.length);
       start = Math.min(start, end);
-      console.log('Start: ' + start + ', end: ' + end);
       if (start == end) {
         callback();
       }
