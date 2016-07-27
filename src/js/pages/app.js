@@ -4,8 +4,8 @@ const bootstrap = require('react-bootstrap');
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
-const NavBarComponent = require('../components/core/NavBarComponent');
-const LoginModal = require('../components/core/LoginModal');
+const SideNavBar = require('../components/core/SideBar/SideNavBar');
+const LoginModal = require('../components/core/login/LoginModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -17,14 +17,12 @@ const Welcome = require('../components/core/welcome/welcome');
 const OpenProject = require('../components/core/AccessProjectModal.js');
 
 const api = window.ModuleApi;
-
 const CheckStore = require('../stores/CheckStore.js');
 /**
- * These are very hard coded right now, but the fetchers and views will be loaded dynamically
- * and given parameters acquired from the user. the api will save each module indiviually
- * and the checks will be able to require them dynamically
- */
-
+* These are very hard coded right now, but the fetchers and views will be loaded dynamically
+* and given parameters acquired from the user. the api will save each module indiviually
+* and the checks will be able to require them dynamically
+*/
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
@@ -35,20 +33,23 @@ var Main = React.createClass({
     })
   },
 
+  finishWelcome: function(){
+    this.setState({firstTime: false});
+  },
+
   render: function(){
     var _this = this;
     if(this.state.firstTime){
       return(
-        <Welcome initialize={() => {_this.setState({firstTime:false})}}/>
+        <Welcome initialize={this.finishWelcome}/>
       )
     }else{
       return(
-      <div className='fill-height'>
-        <NavBarComponent />
+        <div className='fill-height'>
         <SettingsModal />
         <LoginModal />
-        <OpenProject />
-          <Grid fluid className='fill-height'>
+        <SideNavBar />
+          <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
             <Row className='fill-height'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
@@ -61,7 +62,7 @@ var Main = React.createClass({
               </Col>
             </Row>
           </Grid>
-      </div>
+        </div>
       )
     }
   }

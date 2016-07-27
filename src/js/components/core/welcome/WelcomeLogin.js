@@ -10,10 +10,10 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const style = require('../../../styles/loginStyle');
-const gogs = require('../GogsApi.js');
+const style = require('../login/loginStyle');
+const gogs = require('../login/GogsApi.js');
 const Token = require('../AuthToken');
-const Registration = require('../Registration');
+const Registration = require('../login/Registration');
 
 class Login extends React.Component {
   constructor() {
@@ -28,9 +28,7 @@ class Login extends React.Component {
     };
     var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
-      CoreActions.updateLoginModal(false);
-      CoreActions.updateButtonStatus(true);
-      CoreActions.updateLogoutButton(true);
+      CoreActions.updateOnlineStatus(true);
       CoreActions.updateProfileVisibility(true);
       _this.props.success();
     }).catch(function(reason) {

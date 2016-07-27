@@ -101,11 +101,10 @@ class Welcome extends React.Component{
         )
         break;
       case 4:
-          this.props.initialize();
+          console.log("Flow is now #<Main />");
       break;
     }
   }
-
 
   render(){
     var _this = this;
@@ -124,7 +123,14 @@ class Welcome extends React.Component{
 
         <Button
           bsStyle='link'
-          onClick={()=>{_this.setState({index: this.state.index+1})}}
+          onClick={ () => {
+              if(this.state.index == 3){
+                this.props.initialize()
+              } else {
+                _this.setState({index: this.state.index+1})
+              }
+            }
+          }
           style={Styles.navButtons}
         >
           <Glyphicon glyph='chevron-right' />

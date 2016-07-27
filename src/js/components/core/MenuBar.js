@@ -4,8 +4,9 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
-const CheckStore = require('../../stores/CheckStore.js')
-const api = require('../../ModuleApi.js');
+const CoreStore = require('../../stores/CoreStore.js');
+const git = require('./GitApi.js');
+
 
 var template = [
   {
@@ -14,10 +15,41 @@ var template = [
       {
         label: 'Save',
         click: function() {
-          var path = api.getDataFromCommon('saveLocation');
-          CheckStore.saveAllToDisk(path, function() {});
+          const api = window.ModuleApi;
+          const path = api.getDataFromCommon('saveLocation');
+          if (path) {
+            git(path).save('Manual Save', path);
+          } else {
+            alert('Save location is not defined');
+          }
         },
         accelerator: 'CmdOrCtrl+S'
+      },
+      {
+        label: "Update with Door43",
+        click: function() {
+          const api = window.ModuleApi;
+          const path = api.getDataFromCommon('saveLocation');
+          var user = CoreStore.getLoggedInUser();
+          if (user) {
+            git(path).save('Updating with Door43', path, function() {
+                var manifest = api.getDataFromCommon('tcManifest');
+                if (manifest.repo) {
+                  var urlArray = manifest.repo.split('.');
+                  urlArray.pop();
+                  var finalPath = urlArray.pop().split('/');
+                  var repoPath = finalPath[1] + '/' + finalPath[2];
+                  var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
+                  git(path).update(remote, 'master', false);
+                } else {
+                  alert('There is no associated repository with this project');
+                }
+            });
+          } else {
+            alert('Login then try again');
+            CoreActions.updateLoginModal(true);
+          }
+        }
       },
       {
         label: "Open Project",
