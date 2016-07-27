@@ -83,14 +83,13 @@ const ProjectModal = React.createClass({
 
   getProjectStatus: function(callback) {
     var projectStatus = CoreStore.getShowProjectModal();
-    if (projectStatus != "Create") {
+    if (projectStatus != "Create" && projectStatus != "Check") {
       	var Alert = {
       		title: "You are currently making a project",
       		content: "Are you sure you want to cancel?",
-      		leftButtonText: "Cancel",
+      		leftButtonText: "No",
       		rightButtonText: "Yes"
       	}
-      }
       api.createAlert(Alert, function(result){
       	if(result == 'Yes') {
           callback(true);
@@ -98,6 +97,8 @@ const ProjectModal = React.createClass({
       		callback(false);
       	}
       });
+    }
+    callback(true);
   },
   makePathForChecks: function(check) {
     if (!check || check == '') {
