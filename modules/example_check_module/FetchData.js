@@ -3,35 +3,31 @@ const api = window.ModuleApi;
 function getData(params, progressCallback, onCompleteCallback) {
   var groups = [
     {
-      group: 'Alliteration',
+      group: 'Language',
       checks: [
         {
           chapter: 1,
-          verse: 2,
-          textToCheck: 'God is good',
+          verse: 1,
           checkStatus: 'UNCHECKED'
         },
         {
           chapter: 1,
-          verse: 4,
-          textToCheck: 'Jesus is just',
+          verse: 2,
           checkStatus: 'UNCHECKED'
         }
       ]
     },
     {
-      group: 'Onomatopoeia',
+      group: 'Naturalness',
       checks: [
         {
           chapter: 3,
           verse: 2,
-          textToCheck: 'Moo',
           checkStatus: 'UNCHECKED'
         },
         {
           chapter: 3,
           verse: 4,
-          textToCheck: 'Chirp',
           checkStatus: 'UNCHECKED'
         }
       ]

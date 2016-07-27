@@ -1,33 +1,20 @@
  var style = {
-  menuItem: {
-    text: {
-      cursor: 'pointer'
+  text: {
+    cursor: 'pointer',
+    paddingLeft: '15px',
+    paddingRight: '5px'
+  },
+  statusIcon: {
+    yes: {
+      color: 'green',
+      display: 'initial'
     },
-    flag: {
-      enabled: {
-        color: '#CC0000',
-        visibility: 'visible'
-      },
-      disabled: {
-        visibility: 'hidden'
-      }
+    no: {
+      color: 'red',
+      display: 'initial'
     },
-    statusIcon: {
-      retained: {
-        color: 'green',
-        display: 'initial'
-      },
-      replaced: {
-        color: 'gold',
-        display: 'initial'
-      },
-      wrong: {
-        color: 'red',
-        display: 'initial'
-      },
-      unchecked: {
-        display: 'none'
-      }
+    unchecked: {
+      display: 'none'
     }
   }
 };

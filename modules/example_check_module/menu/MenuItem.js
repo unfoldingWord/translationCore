@@ -40,46 +40,29 @@ class MenuItem extends React.Component {
   render() {
     var checkStatus = this.state.checkStatus;
 
-    // when the flag is toggled it turns blue
-    var flagStyle;
-    if (this.props.check.flagged) {
-      flagStyle = style.menuItem.flag.enabled;
-    }
-    else {
-      flagStyle = style.menuItem.flag.disabled;
-    }
-
+    // Set the style of the menu item, depending on the check status
     var checkStatusStyle;
     var glyphIcon;
     switch(checkStatus) {
-      case "RETAINED":
+      case "YES":
         glyphIcon = "ok";
-        checkStatusStyle = style.menuItem.statusIcon.retained;
+        checkStatusStyle = style.statusIcon.yes;
         break;
-      case "REPLACED":
-        glyphIcon = "random";
-        checkStatusStyle = style.menuItem.statusIcon.replaced;
-        break;
-      case "WRONG":
+      case "NO":
         glyphIcon = "remove";
-        checkStatusStyle = style.menuItem.statusIcon.wrong;
+        checkStatusStyle = style.statusIcon.no;
         break;
       default:
         glyphIcon = '';
-        checkStatusStyle = style.menuItem.statusIcon.unchecked;
+        checkStatusStyle = style.statusIcon.unchecked;
     }
 
     return (
       <span>
-        <Glyphicon glyph="flag" style={flagStyle} />
-        <span style={style.menuItem.text}>
-          <a onClick={this.menuItemClicked}>
-            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
-          </a>
-        </span>
-        <span>
-          <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
-        </span>
+        <a style={style.text} onClick={this.menuItemClicked}>
+          {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
+        </a>
+        <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
       </span>
     );
   }

@@ -62,7 +62,7 @@ class MenuView extends React.Component {
           );
         });
         return (
-          <div key={groupIndex}>
+          <div key={groupIndex} style={{paddingBottom: '15px'}}>
             {groupHeader}
             {checkMenuItems}
           </div>
@@ -70,7 +70,7 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+        <Well className='fill-height' style={{overflow: 'scroll', whiteSpace: 'nowrap'}}>
           <div>
             <h3>Checks</h3>
             {menuList}

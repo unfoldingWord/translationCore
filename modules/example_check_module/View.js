@@ -11,6 +11,12 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
+// Get Bootstrap elements
+const Well = ReactBootstrap.Well;
+const Button = ReactBootstrap.Button;
+const ButtonGroup = ReactBootstrap.ButtonGroup;
+const Glyphicon = ReactBootstrap.Glyphicon;
+
 const NAMESPACE = 'ExampleChecker';
 
 class View extends React.Component {
@@ -113,15 +119,29 @@ class View extends React.Component {
     var _this = this;
     return (
       <div>
-        <p>{this.state.currentCheck.textToCheck}</p>
-        <p>{this.state.currentCheck.checkStatus}</p>
-        <button
-          onClick={
-            function() {
-              _this.updateCheckStatus('RETAINED');
-            }
-          }
-        >Retained</button>
+        <Well>
+          <p>Is this verse written in the correct language?</p>
+          <ButtonGroup>
+            <Button
+              onClick={
+                function() {
+                  _this.updateCheckStatus('YES');
+                }
+              }
+            >
+              <span style={{color: 'green'}}>Yes</span>
+            </Button>
+            <Button
+              onClick={
+                function() {
+                  _this.updateCheckStatus('NO');
+                }
+              }
+            >
+              <span style={{color: 'red'}}>No</span>
+            </Button>
+          </ButtonGroup>
+        </Well>
       </div>
     );
   }
