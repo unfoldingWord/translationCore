@@ -65,14 +65,14 @@ class Report extends React.Component {
       }
       for (let v in targetLang[ch]) {
         let reports = [];
-        for (let view of reportViews) {
-          let viewResult = view(ch, v);
+        for (let view in reportViews) {
+          let viewResult = reportViews[view](ch, v);
           if (viewResult) {
-            reports.push(viewResult);
+            reports.push(<span key={`${ch}-${v}-${view}`}>{viewResult}</span>);
           }
         }
         if (reports.length > 0) {
-          verses.push(<span><h3>{`${bookName} ${ch}:${v}`}</h3><div>{reports}</div></span>);
+          verses.push(<span key={`${ch}-${v}`}><h3>{`${bookName} ${ch}:${v}`}</h3><div>{reports}</div></span>);
         }
       }
     }
@@ -102,12 +102,12 @@ module.exports = function(callback = (err) => {}) {
         callback(err);
         return;
       }
-      window.reportView = new BrowserWindow({width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
+      window.reportView = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
       window.reportView.loadURL(`file://${__dirname}\\report.html`);
       window.reportView.on('closed', () => {
         window.reportView = undefined;
       });
-      callback(null);
+      callback();
     });
   });
 
