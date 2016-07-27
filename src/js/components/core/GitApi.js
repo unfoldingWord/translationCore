@@ -34,6 +34,7 @@ function GitApi(directory) {
           dialog.showErrorBox('Clone Error', err);
           if (callback) {
               callback(err);
+              return;
           }
         }
         if (callback) {
