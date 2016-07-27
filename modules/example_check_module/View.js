@@ -90,20 +90,16 @@ class View extends React.Component {
    * data found in the store
    */
   updateState() {
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentCheckFromStore = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
-    var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
+    var currentCheckFromStore = api.getCurrentCheck(NAMESPACE);
     this.setState({
         currentCheck: currentCheckFromStore
     });
   }
   
   updateCheckStatus(newCheckStatus) {
-    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    var currentCheck = api.getCurrentCheck(NAMESPACE);
     currentCheck.checkStatus = newCheckStatus;
     api.emitEvent('changedCheckStatus', {
       groupIndex: currentGroupIndex,

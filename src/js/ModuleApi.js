@@ -100,6 +100,14 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
+    
+    getCurrentCheck(field) {
+        var groups = this.getDataFromCheckStore(field, 'groups');
+        var currentGroupIndex = this.getDataFromCheckStore(field, 'currentGroupIndex');
+        var currentCheckIndex = this.getDataFromCheckStore(field, 'currentCheckIndex');
+        var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+        return currentCheck;
+    }
 }
 
 const api = new ModuleApi();
