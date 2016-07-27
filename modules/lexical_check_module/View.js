@@ -171,9 +171,10 @@ class View extends React.Component {
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: currentCheck,
-        currentWord: currentWord,
-        currentFile: this.getWordFile(currentWord)
+      book: api.getDataFromCheckStore(NAMESPACE, 'book'),
+      currentCheck: currentCheck,
+      currentWord: currentWord,
+      currentFile: this.getWordFile(currentWord)
     });
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
@@ -273,8 +274,12 @@ class View extends React.Component {
             >
               <Well bsSize={'small'} style={{
                 height: '60px',
-                lineHeight:'35px'}}>{this.state.currentCheck.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
+                lineHeight:'35px'}}
+              >
+                {this.state.book + ' ' +
+                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse
+                }
+              </Well>
             </Col>
           </Row>
           <Row className="show-grid">

@@ -23,8 +23,7 @@ var style = {
     borderBottom: "2px solid #1E1D1F",
     paddingTop: "20px",
     paddingBottom: "20px",
-    color: "white",
-    cursor: "pointer",
+    color: "white"
   },
 
   glyphicon: {
@@ -33,18 +32,19 @@ var style = {
   },
 
   glyphiconHover: {
-    fontSize: "28px",
+    fontSize: "29px",
     color: "#a4c639",
   },
 
   hover: {
     backgroundColor: "#2b2b2b",
     color: "#a4c639",
+    cursor: "pointer",
     display: "block",
     textAlign: "center",
     borderBottom: "2px solid #1E1D1F",
-    paddingTop: "20px",
-    paddingBottom: "20px",
+    paddingTop: "18px",
+    paddingBottom: "18px"
   },
 
   logo:{
