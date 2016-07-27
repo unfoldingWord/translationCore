@@ -23,6 +23,7 @@ const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
+const AlertModal = require('../AlertModal');
 
 const ProjectModal = React.createClass({
   params: {
@@ -72,20 +73,38 @@ const ProjectModal = React.createClass({
   },
   close: function() {
     //CheckStore.getNameSpaces();
-    if (getProjectStatus()) {
-      CoreActions.showCreateProject("");
-      this.setState({
-        showModal: false
-      });
-    }
-
+    this.getProjectStatus(function(result){
+      if(result) {
+        this.setState({
+          showModal: false
+        });
+      }
+    });
+    CoreActions.showCreateProject("");
   },
 
-  getProjectStatus: function() {
+  getProjectStatus: function(callback) {
     var projectStatus = CoreStore.getShowProjectModal();
     if (projectStatus != "Create") {
-      var confirm = confirm("Are you sure you want to cancel?");
-    }
+      	var Alert = {
+      		title: "This is a test of spacing",
+      		content: "What do you think? Does it fit?",
+      		leftButtonText: "Cancel",
+      		rightButtonText: "Yes",
+      		visibility: true
+      	}
+      }
+      api.createAlert(Alert, function(result){
+      	if(result == 'Yes') {
+          callback(true);
+      	} else {
+      		callback(false);
+      	}
+      });
+  },
+
+  gotAlertReponse(data) {
+    console.log(data);
   },
 
   makePathForChecks: function(check) {

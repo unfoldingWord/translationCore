@@ -32,6 +32,7 @@ component will hear it and be able to ask for updated data.
 class CoreStore extends EventEmitter {
   constructor() {
     super();
+    this.setMaxListeners(20);
   }
 
   updateNumberOfFetchDatas(number) {
@@ -101,6 +102,14 @@ class CoreStore extends EventEmitter {
 
   getLoggedInUser() {
     return this.userLoggedIn;
+  }
+
+  getAlertMessage() {
+    return this.alertObj;
+  }
+
+  getAlertResponseMessage() {
+    return this.alertResponseObj;
   }
 
   getProfileVisibility(){
@@ -213,6 +222,16 @@ class CoreStore extends EventEmitter {
         this.profileVisibility = action.profileOption;
         this.emitChange();
         break;
+
+      case consts.ALERT_MODAL:
+        this.alertObj = action.alert;
+        this.emitChange();
+      break;
+
+      case consts.ALERT_MODAL_RESPONSE:
+        this.alertResponseObj = action.alertResponse;
+        this.emitChange();
+      break;
 
       default:
       // do nothing

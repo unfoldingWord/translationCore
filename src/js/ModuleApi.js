@@ -4,7 +4,10 @@
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
+const AlertStuff = require('./components/core/AlertStuff.js')
 const CheckStore = require('./stores/CheckStore.js');
+const CoreStore = require('./stores/CoreStore.js');
+const CoreActions = require('./actions/CoreActions.js');
 const Dispatcher = require('./dispatchers/Dispatcher.js');
 
 const React = require('react');
@@ -12,6 +15,7 @@ const ReactBootstrap = require('react-bootstrap');
 const ReactDOM = require('react-dom');
 
 const BooksOfBible = require('./components/core/BooksOfBible');
+var alertCallback = () => {};
 
 class ModuleApi {
 	constructor() {
@@ -121,6 +125,29 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
+
+		createAlert(obj, callback) {
+			AlertStuff.startListener(callback);
+			CoreActions.sendAlert({
+					alertObj:obj,
+					alertCallback: callback
+				});
+		}
+	// 	var Alert = {
+	// 		title: "Warning",
+	// 		content: "You Did Something Wrong",
+	// 		leftButtonText: "Cancel",
+	// 		rightButtonText: "Ok",
+	// 		visibility: true
+	// 	}
+	// }
+	// api.createAlert(Alert, function(result){
+	// 	if(result == 'OK') {
+	// 		//do something
+	// 	}else {
+	// 		//do something
+	// 	}
+	// });
 }
 
 const api = new ModuleApi();
