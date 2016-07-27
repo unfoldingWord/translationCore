@@ -180,9 +180,10 @@ class View extends React.Component {
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: currentCheck,
-        currentWord: currentWord,
-        currentFile: this.getWordFile(currentWord)
+      book: api.getDataFromCheckStore(NAMESPACE, 'book'),
+      currentCheck: currentCheck,
+      currentWord: currentWord,
+      currentFile: this.getWordFile(currentWord)
     });
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
@@ -280,7 +281,7 @@ class View extends React.Component {
                 textAlign: "center"
               }}
             >
-              <Well bsSize={'small'}>{this.state.currentCheck.book + ' ' +
+              <Well bsSize={'small'}>{this.state.book + ' ' +
                 this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}</Well>
             </Col>
           </Row>

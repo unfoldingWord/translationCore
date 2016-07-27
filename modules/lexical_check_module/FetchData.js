@@ -48,15 +48,13 @@ function getData(params, progressCallback, callback) {
             }
             else {
               var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
-              var checkObject = findWordsInBook(bookData, actualWordList, tWFetcher.wordList);
+              var checkObject = findWordsInBook(bookData, actualWordList);
               checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
-              for (var group of checkObject['LexicalChecker']) {
-                for (var check of group.checks) {
-                  check.book = api.convertToFullBookName(params.bookAbbr);
-                }
-              }
+              
+              api.putDataInCheckStore('LexicalChecker', 'book', 
+                api.convertToFullBookName(params.bookAbbr));
               api.putDataInCheckStore('LexicalChecker', 'groups', checkObject['LexicalChecker']);
               api.putDataInCheckStore('LexicalChecker', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
@@ -133,60 +131,76 @@ function getData(params, progressCallback, callback) {
 /**
 * Outputs a JSON object in the format defined by what 'FetchData.js' should output
 */
-function findWordsInBook(bookData, wordInBookSet, wordList) {
+function findWordsInBook(bookData, actualWordList) {
   var returnObject = {};
   returnObject['LexicalChecker'] = [];
-  for (var word of wordInBookSet) {
+  //sort the set of words by how long their aliases are
+  for (var word of actualWordList) {
     var wordReturnObject = {
-      "group": word,
+      /* 
+       * This changes the group name from something like falsegod.txt to false god.
+       * this should make the navigation menu headers prettier
+       */
+      "group": word.name,
       "checks": []
     };
-    var wordObject = search(wordList, function(item) {
-      return stringCompare(word, item.name);
-    });
-    if (wordObject) {
-      for (var chapter of bookData.chapters) {
-        for (var verse of chapter.verses) {
-          var wordArray = findWordInBook(chapter.num, verse, wordObject);
-          for (var item of wordArray) {
-            wordReturnObject.checks.push(item);
-          }
+    for (var chapter of bookData.chapters) {
+      for (var verse of chapter.verses) {
+        var wordArray = findWordInBook(chapter.num, verse, word);
+        for (var item of wordArray) {
+          wordReturnObject.checks.push(item);
         }
       }
-      if (wordReturnObject.checks.length <= 0) {
-        continue;
-      }
-      wordReturnObject.checks.sort(function(first, second) {
-        if (first.chapter != second.chapter) {
-            return first.chapter - second.chapter;
-        }
-        return first.verse - second.verse;
-      });
-      returnObject.LexicalChecker.push(wordReturnObject);
     }
+    if (wordReturnObject.checks.length <= 0) {
+      continue;
+    }
+    wordReturnObject.checks.sort(function(first, second) {
+      if (first.chapter != second.chapter) {
+          return first.chapter - second.chapter;
+      }
+      return first.verse - second.verse;
+    });
+    returnObject.LexicalChecker.push(wordReturnObject);
   }
   return returnObject;
 }
 
 function findWordInBook(chapterNumber, verseObject, wordObject) {
   var returnArray = [];
-  var aliases = wordObject.aliases;
-  for (var alias of aliases) {
-    var wordRegex = new RegExp('[\\W\\s]' + alias + '[\\W\\s]', 'i');
-    var currentText = verseObject.text;
-    var index = currentText.search(wordRegex);
-    while (index != -1) {
-      returnArray.push({
-        "chapter": chapterNumber,
-        "verse": verseObject.num,
-        "checked": false,
-        "checkStatus": "UNCHECKED"
-      });
-      currentText = currentText.slice(index + 1);
-      index = currentText.search(wordRegex);
+  var wordRegex = wordObject.regex;
+  var currentText = verseObject.text;
+  var index = currentText.search(wordRegex);
+  while (index != -1) {
+    returnArray.push({
+      "chapter": chapterNumber,
+      "verse": verseObject.num,
+      "checkStatus": "UNCHECKED"
+    });
+    currentText = currentText.replace(wordRegex, ' ');
+    index = currentText.search(wordRegex);
+  }
+  verseObject.text = currentText;
+  return returnArray;
+}
+
+
+/**
+ * @description - Used to sort the set of words by max number of words within all of their aliases
+ * @param {set} wordSet - set of words, but it contains the title of the tW file. like falsegod.txt
+ * @param {array} wordList - array of word objects. Each object contains word, link, file, and aliases
+ * @return {array} - Returns an array of wordObjects sorted described as above
+ */
+function sortWordSet(wordSet, wordList) {
+  var returnArray = [];
+  for (var word of wordSet) {
+    var wordObject = search(wordList, function(item) {
+      return stringCompare(word, item.name);
+    });
+    if (wordObject) {
+      returnArray.push(wordObject);
     }
   }
-  return returnArray;
 }
 
 /**

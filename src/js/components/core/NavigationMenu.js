@@ -40,6 +40,7 @@ class NavigationMenu extends React.Component {
 
   render() {
     var menuList;
+    var _this = this;
     if (!this.state.checkObject || !this.state.checkObject["groups"]) {
       return <Well style={{minHeight:"100%"}}>{' '}</Well>;
     }
@@ -51,6 +52,7 @@ class NavigationMenu extends React.Component {
         return (
           <div key={checkIndex}>
             <MenuItem 
+              book={_this.state.checkObject.book}
               check={check} 
               groupIndex={groupIndex} 
               checkIndex={checkIndex}

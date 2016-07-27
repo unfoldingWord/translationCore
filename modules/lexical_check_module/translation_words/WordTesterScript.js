@@ -1,5 +1,12 @@
 // WordTesterScript.js//
 
+var natural = require('natural');
+var XRegExp = require('xregexp');
+var nonUnicodeLetter = XRegExp('\\PL');
+
+//Wordlength tokenizer
+const tokenizer = new natural.RegexpTokenizer({pattern: nonUnicodeLetter});
+
 /**
 * @description - These functions are used to see which words in wordList are in
 * bookData. {@link testBook}
@@ -16,24 +23,26 @@ function concatenateChapterIntoString(chapterData) {
 function testWord(word, chapterString) {
 // var word = word.replace('.md', '');
 // console.log('Word: ' + word);
-  var reg = new RegExp('[\\W\\s]' + word + '[\\W\\s]', 'i');
-  return reg.test(chapterString);
+  var wordRegexString = '\\PL(?:';
+  for (var i = 0; i < word.aliases.length; i++) {
+    var alias = word.aliases[i];
+    if (alias) {
+      wordRegexString += alias
+    }
+    if (i < word.aliases.length - 1) {
+      wordRegexString += '|';
+    }
+  }
+  wordRegexString += ')\\PL';
+  word.regex = new XRegExp(wordRegexString, 'i');
+  return word.regex.test(chapterString);
 }
 
 function testWords(wordList, chapterString) {
   var returnList = [];
   for (var word of wordList) {
-    var isFound = false;
-    for (var alias of word.aliases) {
-      if (alias)
-      if (testWord(alias, chapterString)) {
-        isFound = true;
-        break;
-      }
-    }
-    if (isFound) {
-      returnList.push(word.name);
-    }
+    if (testWord(word, chapterString))
+      returnList.push(word);
   }
   return returnList;
 }
@@ -53,7 +62,20 @@ function testBook(wordList, bookData) {
       wordListInBook.add(word);
     }
   }
-  return wordListInBook;
+  var actualArray = Array.from(wordListInBook).sort(function(first, second) {
+    return getMaxNumOfWordsInAliases(second) - getMaxNumOfWordsInAliases(first);
+  });
+  return actualArray;
+}
+
+function getMaxNumOfWordsInAliases(wordObject) {
+  var maxNumOfWords = 0;
+  for (var alias of wordObject.aliases) {
+    var numOfWords = tokenizer.tokenize(alias).length;
+    if (maxNumOfWords < numOfWords); 
+      maxNumOfWords = numOfWords;
+  }
+  return maxNumOfWords;
 }
 
 module.exports = testBook;

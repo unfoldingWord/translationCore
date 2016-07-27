@@ -72,7 +72,7 @@ class MenuItem extends React.Component {
         <Glyphicon glyph="flag" style={flagStyle} />
         <span style={style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
-            {this.props.check.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
+            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
         </span>
         <span>

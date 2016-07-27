@@ -10,6 +10,7 @@ var phraseData;
 var onCompleteFunction;
 
 const DataFetcher = function(params, progress, onComplete){
+  params = params;
   // console.log('Phrase is getting called');
   var DoorDataFetcher = new Door43DataFetcher();
   var chapterData = {};
@@ -53,7 +54,7 @@ const DataFetcher = function(params, progress, onComplete){
         phraseData = parseObject(chapterData);
 
         // wait until translation academy is loaded, then change group headers
-        checkIfTranslationAcademyIsLoaded();
+        checkIfTranslationAcademyIsLoaded(params);
       }
     }
   );
@@ -73,7 +74,6 @@ var parseObject = function(object){
       newVerse.comments = "";
       newVerse.group = type;
       newGroup.checks.push(newVerse);
-
     }
     phraseObject["groups"].push(newGroup);
   }
@@ -95,13 +95,13 @@ function getSectionFileNamesToTitles(params) {
 
 // Waits until the translationAcademySectionTitles object exists,
 // then changes the group headers to TA section titles
-function checkIfTranslationAcademyIsLoaded() {
+function checkIfTranslationAcademyIsLoaded(params) {
   if(translationAcademySectionTitles) {
     changeGroupHeaders(phraseData, translationAcademySectionTitles);
-    saveData(phraseData);
+    saveData(phraseData, params);
   }
   else {
-    setTimeout(checkIfTranslationAcademyIsLoaded, 500);
+    setTimeout(function() {checkIfTranslationAcademyIsLoaded(params)}, 500);
   }
 }
 
@@ -117,7 +117,8 @@ function changeGroupHeaders(phraseObject, groupNamesToTitles) {
 }
 
 // Saves phrase data into the CheckStore
-function saveData(phraseObject) {
+function saveData(phraseObject, params) {
+  api.putDataInCheckStore('PhraseChecker', 'book', api.convertToFullBookName(params.bookAbbr));
   api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
   api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
   api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);

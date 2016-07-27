@@ -125,6 +125,7 @@ else {
     function iterateOverCalls(start=0, end=100) {
       end = Math.min(end, calls.length);
       start = Math.min(start, end);
+      console.log('Start: ' + start + ', end: ' + end);
       if (start == end) {
         callback();
       }
@@ -177,7 +178,8 @@ else {
         return [];
       }
       // split by comma and take off hanging spaces
-      return aliasRes.split(",").map(str => str.trim());
+      let res = aliasRes.split(",").map(str => str.trim().toLowerCase());
+      return res.filter((item, pos) => {return res.indexOf(item) == pos;});
     }
 
     iterateOverCalls();
