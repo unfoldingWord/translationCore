@@ -34,7 +34,7 @@ class SideNavBar extends React.Component{
   }
 
   handleChangeCheckCategory(){
-    
+    CoreActions.updateCheckModal(true);
   }
 
   handleSettings(){

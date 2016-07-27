@@ -101,4 +101,11 @@ module.exports = {
     });
   },
 
+  updateCheckModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CHECK_MODAL_VISIBILITY,
+      checkModalOption: boolean
+    });
+  },
+
 };

@@ -6,6 +6,7 @@ const NextButton = require('../components/core/NextButton');
 const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/sideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
+const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -29,6 +30,7 @@ module.exports = (
   <LoginModal />
   <SettingsModal />
   <SideNavBar />
+  <SwitchCheckModal />
     <Grid fluid className='fill-height'>
       <Row className='fill-height'>
         <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
