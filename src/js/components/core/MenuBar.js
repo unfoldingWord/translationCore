@@ -21,7 +21,7 @@ var template = [
             localStorage.setItem('showTutorial', true);
           }
         },
-        accelerator: ''
+        accelerator: 'CmdOrCtrl+T'
       },
       {
         label: 'Save',

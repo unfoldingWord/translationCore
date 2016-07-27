@@ -6,6 +6,8 @@ const {Glyphicon, Button} = RB;
 const Login = require('./WelcomeLogin');
 const CreateProject = require('./WelcomeCreateProject');
 
+const NUM_OF_SLIDES = 3;
+
 const Styles = {
   navButtons: {
     float: 'right',
@@ -115,6 +117,7 @@ class Welcome extends React.Component{
           bsStyle='link'
           onClick={
             ()=>{
+              //If you are on the first slide you cant go backwards
               if(this.state.index == 1){
                 return;
               } else {
@@ -132,7 +135,7 @@ class Welcome extends React.Component{
         <Button
           bsStyle='link'
           onClick={ () => {
-              if(this.state.index == 3){
+              if(this.state.index == NUM_OF_SLIDES){
                 this.props.initialize()
               } else {
                 _this.setState({index: this.state.index+1})
