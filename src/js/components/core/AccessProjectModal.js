@@ -12,7 +12,7 @@ var path = require('path');
 var remote = window.electron.remote;
 var {dialog} = remote;
 const api = window.ModuleApi;
-
+var isOpen = false;
 
 var AccessProjectMod = {
   startListener: function(){
@@ -30,21 +30,25 @@ var AccessProjectMod = {
   },
 
   readDir: function(callback = () => {}) {
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        try {
-          var file = filename[0];
-          api.putDataInCommon('saveLocation', file)
-          Access.loadFromFilePath(path.join(file));
-          callback();
-        } catch (e) {
-          dialog.showErrorBox('Read directory error', e);
+    if (!isOpen) {
+      dialog.showOpenDialog({
+        properties: ['openDirectory']
+      }, function(filename) {
+        isOpen = true;
+        if (filename !== undefined) {
+          try {
+            var file = filename[0];
+            api.putDataInCommon('saveLocation', file)
+            Access.loadFromFilePath(path.join(file));
+            callback();
+          } catch (e) {
+            dialog.showErrorBox('Read directory error', e);
+          }
         }
-      }
-      CoreActions.showOpenModal(false);
-    });
+        CoreActions.showOpenModal(false);
+        isOpen = false;
+      });
+    }
   }
 }
 

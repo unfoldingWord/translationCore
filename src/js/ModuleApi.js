@@ -15,7 +15,6 @@ const ReactBootstrap = require('react-bootstrap');
 const ReactDOM = require('react-dom');
 
 const BooksOfBible = require('./components/core/BooksOfBible');
-var alertCallback = () => {};
 
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
 
@@ -130,20 +129,6 @@ class ModuleApi {
 					alertCallback: callback
 				});
 		}
-		// var Alert = {
-		// 	title: "Are you sure you want to cancel?",
-		// 	content: "You will lose all data",
-		// 	leftButtonText: "Cancel",
-		// 	rightButtonText: "Yes"
-		// }
-	// }
-	// api.createAlert(Alert, function(result){
-	// 	if(result == my_ok_string) {
-	// 		//do something
-	// 	}else {
-	// 		//do something
-	// 	}
-	// });
 }
 
 const api = new ModuleApi();
