@@ -17,8 +17,11 @@ var template = [
         click: function() {
           const api = window.ModuleApi;
           const path = api.getDataFromCommon('saveLocation');
-          git(path).save('Manual Save', path, function() {
-          });
+          if (path) {
+            git(path).save('Manual Save', path);
+          } else {
+            alert('Save location is not defined');
+          }
         },
         accelerator: 'CmdOrCtrl+S'
       },

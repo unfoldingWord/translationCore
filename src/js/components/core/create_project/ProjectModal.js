@@ -24,6 +24,9 @@ const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
 
+const INVALID_PROJECT = 'This does not appear to be a translation studio project';
+const DEFAULT_ERROR = 'Error';
+
 const ProjectModal = React.createClass({
   params: {
     originalLanguagePath: window.__base + "data/ulgb"
@@ -92,48 +95,66 @@ const ProjectModal = React.createClass({
       }
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
-      FileModule.readFile(manifestLocation, function(data){
-        var parsedManifest = JSON.parse(data);
-        var bookTitle = parsedManifest.project.name.split(' ');
-        var bookName = _this.getBookAbbr(parsedManifest.project.name);
-        _this.setBookName(bookName);
-        let bookFileName = bookTitle.join('') + '.json';
-        var saveLocation = _this.params.targetLanguagePath;
-        var user = CoreStore.getLoggedInUser();
-        var projectData = {
-          local: true,
-          target_language: _this.params.targetLanguagePath,
-          original_language: ('data/ulgb/'),
-          gateway_language: '',
-          user: [{username: '', email: ''}],
-          checkLocations: [],
-          saveLocation: saveLocation,
-          repo: _this.params.repo
+      fs.readJson(manifestLocation, function(err, parsedManifest){
+        if (parsedManifest) {
+          if (parsedManifest.project) {
+            if (parsedManifest.project.name) {
+              var bookTitle = parsedManifest.project.name.split(' ');
+              var bookName = _this.getBookAbbr(parsedManifest.project.name);
+              _this.setBookName(bookName);
+              let bookFileName = bookTitle.join('') + '.json';
+              var saveLocation = _this.params.targetLanguagePath;
+              var user = CoreStore.getLoggedInUser();
+              var projectData = {
+                local: true,
+                target_language: _this.params.targetLanguagePath,
+                original_language: ('data/ulgb/'),
+                gateway_language: '',
+                user: [{username: '', email: ''}],
+                checkLocations: [],
+                saveLocation: saveLocation,
+                repo: _this.params.repo
+              }
+              var checkArray = api.getDataFromCommon('arrayOfChecks');
+              projectData.checkLocations = checkArray;
+              api.putDataInCommon('saveLocation', saveLocation);
+              CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
+              if (tempFetchDataArray.length > 0) {
+                _this.clearOldData();
+                CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
+                _this.close();
+              }
+            } else {
+              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+            }
+          } else {
+            dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+          }
+        } else {
+          dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
-        var checkArray = api.getDataFromCommon('arrayOfChecks');
-        projectData.checkLocations = checkArray;
-        api.putDataInCommon('saveLocation', saveLocation);
-        CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
       });
-      if (tempFetchDataArray.length > 0) {
-        this.clearOldData();
-        CheckDataGrabber.getFetchData(tempFetchDataArray, this.params);
-      this.close();
-    }
   }
     else if (this.state.modalValue === 'Languages') {
       try {
         var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
-        FileModule.readFile(manifestLocation, function(data){
-          var parsedManifest = JSON.parse(data);
-          if (parsedManifest.generator.name !== 'ts-desktop') {
-            dialog.showErrorBox('Error', 'This does not appear to be a translation studio project');
+        fs.readJson(manifestLocation, function(err, parsedManifest){
+          if (parsedManifest) {
+            if (parsedManifest.generator) {
+              if (parsedManifest.generator.name === 'ts-desktop') {
+                CoreActions.showCreateProject("Check");
+              } else {
+                dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+              }
+            } else {
+              dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
+            }
           } else {
-            CoreActions.showCreateProject("Check");
+            dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
         });
       } catch(error) {
-        dialog.showErrorBox('Error', 'This does not appear to be a translation studio project');
+        dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
       }
     }
   },

@@ -30,9 +30,15 @@ function GitApi(directory) {
 
     mirror: function(url, path, callback) {
       git.clone(url, path, function(err) {
-        if (err)
+        if (err) {
           dialog.showErrorBox('Clone Error', err);
-        callback(err);
+          if (callback) {
+              callback(err);
+          }
+        }
+        if (callback) {
+          callback()
+        }
       });
     },
 

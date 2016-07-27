@@ -6,7 +6,6 @@ const api = window.ModuleApi;
 const Books = require('../booksOfBible');
 const path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
-const Save = require('../Save.js');
 const git = require('../GitApi.js');
 
 var indexOfModule = 0;
@@ -72,10 +71,14 @@ var CheckDataGrabber = {
       if (this.doneModules >= this.totalModules) {
         //update stuff
         var path = api.getDataFromCommon('saveLocation');
-        git(path).init(function() {
-          git(path).save('Initial TC Commit', path, function() {
+        if (path) {
+          git(path).init(function() {
+            git(path).save('Initial TC Commit', path, function() {
+            });
           });
-        });
+        } else {
+          alert('Save location is not defined');
+        }
 
         CoreActions.doneLoadingFetchData(this.reportViews);
 
