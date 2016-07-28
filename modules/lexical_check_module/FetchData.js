@@ -8,6 +8,9 @@
 
 const api = window.ModuleApi;
 
+//node modules
+const XRegExp = require('xregexp');
+
 // User imports
 const Door43DataFetcher = require('./Door43DataFetcher.js');
 const TranslationWordsFetcher = require('./translation_words/TranslationWordsFetcher.js');
@@ -45,7 +48,8 @@ function getData(params, progressCallback, callback) {
               callback(error);
             }
             else {
-              var actualWordList = BookWordTest(tWFetcher.wordList, bookData);
+              var actualWordList = BookWordTest(tWFetcher.wordList, bookData, 
+                tWFetcher.caseSensitiveAliases);
               var checkObject = findWordsInBook(bookData, actualWordList);
               checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
@@ -152,7 +156,10 @@ function findWordsInBook(bookData, actualWordList) {
       if (first.chapter != second.chapter) {
           return first.chapter - second.chapter;
       }
-      return first.verse - second.verse;
+      if (first.verse != second.verse) {
+        return first.verse - second.verse;
+      }
+      return first.occurrence - second.occurrence;
     });
     returnObject.LexicalChecker.push(wordReturnObject);
   }
@@ -161,17 +168,20 @@ function findWordsInBook(bookData, actualWordList) {
 
 function findWordInBook(chapterNumber, verseObject, wordObject) {
   var returnArray = [];
-  var wordRegex = wordObject.regex;
   var currentText = verseObject.text;
-  var index = currentText.search(wordRegex);
-  while (index != -1) {
-    returnArray.push({
-      "chapter": chapterNumber,
-      "verse": verseObject.num,
-      "checkStatus": "UNCHECKED"
-    });
-    currentText = currentText.replace(wordRegex, ' ');
-    index = currentText.search(wordRegex);
+  var occurrence = 0;
+  for (var wordRegex of wordObject.regex) {
+    var index = currentText.search(wordRegex);
+    while (index != -1) {
+      returnArray.push({
+        "chapter": chapterNumber,
+        "verse": verseObject.num,
+        "checkStatus": "UNCHECKED",
+        "occurrence": ++occurrence
+      });
+      currentText = currentText.replace(wordRegex, ' ');
+      index = currentText.search(wordRegex);
+    }
   }
   verseObject.text = currentText;
   return returnArray;

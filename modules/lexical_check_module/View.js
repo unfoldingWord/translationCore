@@ -290,6 +290,7 @@ class View extends React.Component {
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
                 verse={gatewayVerse}
+                occurrence={this.state.currentCheck.occurrence}
               />
               <TargetVerseDisplay
                 verse={targetVerse}
