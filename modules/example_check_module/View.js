@@ -1,7 +1,5 @@
 /**
- * An example check module component:
- * It just has a paragraph that displays the check status (default is UNCHECKED),
- * and a button to change it to RETAINED.
+ * An example check module
  */
 
 // Get the Translation Core Module API
@@ -23,6 +21,7 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 // They will be initialized in the constructor
 var TPane = null;
 var ProposedChanges = null;
+var QualityAssurance = null;
 
 const NAMESPACE = 'ExampleChecker';
 
@@ -39,6 +38,7 @@ class View extends React.Component {
     // They will be rendered in the render() function
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
+    QualityAssurance = api.getModule('QualityAssurance');
     
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
@@ -167,7 +167,7 @@ class View extends React.Component {
         <TPane />
         <Row className='show-grid'>
           <Col sm={6}>
-            
+            <QualityAssurance />
           </Col>
           <Col sm={6}>
             <Well>
