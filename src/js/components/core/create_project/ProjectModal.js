@@ -91,7 +91,8 @@ const ProjectModal = React.createClass({
     //CheckStore.getNameSpaces();
     CoreStore.projectModalVisibility = "";
     this.setState({
-      showModal: false
+      showModal: false,
+      FetchDataArray: []
     });
   },
 
@@ -110,6 +111,8 @@ const ProjectModal = React.createClass({
           doneCallback(true);
       	}
       });
+    } else {
+      doneCallback(true);
     }
   },
   makePathForChecks: function(check) {
@@ -157,6 +160,7 @@ const ProjectModal = React.createClass({
               if (tempFetchDataArray.length > 0) {
                 _this.clearOldData();
                 CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
+
               }
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
