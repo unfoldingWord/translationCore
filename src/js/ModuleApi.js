@@ -122,13 +122,13 @@ class ModuleApi {
         console.log(CheckStore.storeData);
     }
 
-		createAlert(obj, callback = () => {}) {
-			Alert.startListener(callback);
-			CoreActions.sendAlert({
-					alertObj:obj,
-					alertCallback: callback
-				});
-		}
+    createAlert(obj, callback = () => {}) {
+        Alert.startListener(callback);
+        CoreActions.sendAlert({
+                alertObj:obj,
+                alertCallback: callback
+            });
+    }
 }
 
 const api = new ModuleApi();
