@@ -65,7 +65,25 @@ class Report extends React.Component {
     // loop through all verses and chapters in the target language
     // and pass them into the ReportView functions
     let output = [];
-    let bookName = targetLang.title || "-bookName-";
+    let bookName = "-bookName-";
+    let authors = "-authors-";
+    let manifest = ModuleApi.getDataFromCommon("tcManifest");
+    if (manifest && manifest.ts_project) {
+      bookName = manifest.ts_project.name || "-bookName-";
+    }
+    if (manifest && manifest.checkers) {
+      if (manifest.checkers.length > 1) {
+        authors = manifest.checkers.reduce((prev, cur, i) => {
+          return (i == 0 ? "" : prev + ", ") + cur.username;
+        });
+      }
+      else {
+        authors = manifest.checkers[0].username;
+      }
+    }
+    if (authors == "") {
+      authors = "various checkers";
+    }
     // render report header data from reportViews
     for (let view in reportViews) {
       let viewResult = reportViews[view](0,0);
@@ -102,7 +120,7 @@ class Report extends React.Component {
     // TODO: Get name of book and authors
     return (
       <div className="page-header">
-      <h1>{`Report for ${bookName} `}<small>{"By -authors-, created on " + new Date().toDateString()}</small></h1>
+      <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
       {output}
       </div>
     );
