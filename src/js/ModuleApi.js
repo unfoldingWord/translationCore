@@ -122,6 +122,10 @@ class ModuleApi {
         console.log(CheckStore.storeData);
     }
 
+		clearAlertCallback() {
+			CoreStore.alertObj = null;
+		}
+
 		createAlert(obj, callback = () => {}) {
 			Alert.startListener(callback);
 			CoreActions.sendAlert({
