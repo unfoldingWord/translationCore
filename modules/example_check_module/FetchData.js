@@ -3,25 +3,11 @@ const api = window.ModuleApi;
 const Door43DataFetcher = require('./Door43DataFetcher.js');
 
 function getData(params, progressCallback, onCompleteCallback) {
-  var promises = [];
-  promises.push(
-    new Promise((resolve, reject) => {
-      getChecks(params, resolve);
-    })
-  );
-  promises.push(
-    new Promise((resolve, reject) => {
-      getGatewayLanguage(params, progressCallback, resolve, reject);
-    })
-  );
-  Promise.all(promises).then(value => {
-    onCompleteCallback();
-  }, reason => {
-    onCompleteCallback(reason);
-  });
+  getChecks(params);
+  getGatewayLanguage(params, progressCallback, onCompleteCallback);
 }
 
-function getChecks(params, callback) {
+function getChecks(params) {
   var groups = [
     {
       group: 'Language',
@@ -58,7 +44,6 @@ function getChecks(params, callback) {
   api.putDataInCheckStore('ExampleChecker', 'currentCheckIndex', 0);
   api.putDataInCheckStore('ExampleChecker', 'currentGroupIndex', 0);
   api.putDataInCheckStore('ExampleChecker', 'book', api.convertToFullBookName(params.bookAbbr));
-  callback();
 }
 
 function getGatewayLanguage(params, progressCallback, callback) {
