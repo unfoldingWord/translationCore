@@ -56,7 +56,6 @@ var CheckDataGrabber = {
   // },
 
   getFetchData: function(array, params) {
-    debugger;
     CoreStore.updateNumberOfFetchDatas(array.length);
     this.totalModules = array.length;
     this.saveNextModule(array, params);
