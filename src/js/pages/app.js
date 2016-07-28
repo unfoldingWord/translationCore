@@ -22,7 +22,7 @@ const AlertModal = require('../components/core/AlertModal');
 
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
-const ModuleWrapper = require('../components/modules/ModuleWrapper');
+const ModuleWrapper = require('../components/core/ModuleWrapper');
 
 var Main = React.createClass({
   getInitialState() {
