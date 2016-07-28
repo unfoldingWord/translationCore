@@ -53,8 +53,11 @@ const ProjectModal = React.createClass({
     AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
-  showCreateProject: function() {
-    var modal = CoreStore.getShowProjectModal()
+  showCreateProject: function(input) {
+    var modal = CoreStore.getShowProjectModal()    
+    if (input) {
+      modal = input; 
+    }
     if(modal === "Check") {
       this.setState({
         showModal: true,
@@ -152,11 +155,29 @@ const ProjectModal = React.createClass({
       });
   }
     else if (this.state.modalValue === 'Languages') {
+      var _this = this;
       try {
         var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
         fs.readJson(manifestLocation, function(err, parsedManifest){
           if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
-                CoreActions.showCreateProject("Check");
+              var tcManifestLocation = path.join(_this.params.targetLanguagePath, 'tc-manifest.json');        
+              fs.readJson(tcManifestLocation, function(err, data) {
+                if (err) {
+                  CoreActions.showCreateProject("Check");                  
+                } else {
+                    var Confirm = {
+                      title: "This project already exists",
+                      content: "Do you want to overwrite it? Data will be lost.",
+                      leftButtonText: "No",
+                      rightButtonText: "Yes"
+                    }
+                    api.createAlert(Confirm, function(result){
+                      if(result == 'Yes') {
+                        _this.showCreateProject("Check");                                          
+                      }
+                    }); 
+                }
+              });
           } else {
               dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
