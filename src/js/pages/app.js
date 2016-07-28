@@ -69,8 +69,8 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
                 <AlertModal />
-                <SwitchCheckModuleDropdown />
                 <ModuleWrapper />
+                <SwitchCheckModuleDropdown />
               </Col>
             </Row>
           </Grid>
