@@ -70,20 +70,24 @@ const ProjectModal = React.createClass({
     }
   },
   close: function() {
-    //CheckStore.getNameSpaces();
-    this.getProjectStatus((result)=>{
-      if(result) {
-        this.setState({
-          showModal: false
-        });
-      }
+    this.setState({
+      showModal: false
     });
     CoreActions.showCreateProject("");
   },
 
+  hideModal: function() {
+    this.getProjectStatus((result)=>{
+      if(result) {
+        this.close();
+      }
+    });
+  },
+
   getProjectStatus: function(callback) {
     var projectStatus = CoreStore.getShowProjectModal();
-    if (projectStatus != "Create" && projectStatus != "Check") {
+    var selectedModudles = this.state.FetchDataArray;
+    if (projectStatus != "Languages" || (Object.keys(selectedModudles) == [] && projectStatus == 'Check')) {
       	var Alert = {
       		title: "You are currently making a project",
       		content: "Are you sure you want to cancel?",
@@ -97,8 +101,9 @@ const ProjectModal = React.createClass({
       		callback(false);
       	}
       });
+    } else{
+      callback(true);
     }
-    callback(true);
   },
   makePathForChecks: function(check) {
     if (!check || check == '') {
@@ -117,6 +122,7 @@ const ProjectModal = React.createClass({
           tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
         }
       }
+      this.close();
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       fs.readJson(manifestLocation, function(err, parsedManifest){
@@ -141,11 +147,11 @@ const ProjectModal = React.createClass({
               projectData.checkLocations = checkArray;
               api.putDataInCommon('saveLocation', saveLocation);
               CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
-              if (tempFetchDataArray.length > 0) {
-                _this.clearOldData();
-                CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
-                _this.close();
-              }
+              _this.clearOldData();
+              CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
+              _this.setState({
+                FetchDataArray: []
+              });
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
@@ -216,7 +222,7 @@ const ProjectModal = React.createClass({
   render: function() {
     return (
       <div>
-      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal show={this.state.showModal} onHide={this.hideModal}>
       {this.changeModalBody(this.state.modalValue)}
       <Modal.Footer>
       <ButtonToolbar>
