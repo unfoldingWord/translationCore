@@ -5,15 +5,15 @@ const CommentBox = require("./CommentBox");
 
 
 class View extends React.Component {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-	render() {
-		return (
-			<CommentBox />
-		);
-	}
+  render() {
+    return (
+      <CommentBox />
+    );
+  }
 }
 
 module.exports = {
