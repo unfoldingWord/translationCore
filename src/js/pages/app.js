@@ -14,7 +14,7 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const Open = require('../components/core/OpenForReal.js');
+const Open = require('../components/core/OpenModal.js');
 
 const Welcome = require('../components/core/welcome/welcome');
 

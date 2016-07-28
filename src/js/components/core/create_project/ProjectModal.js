@@ -22,7 +22,6 @@ const SelectChecks = require('./SelectChecks');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
-const Open = require('../OpenForReal.js');
 const AlertModal = require('../AlertModal');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
