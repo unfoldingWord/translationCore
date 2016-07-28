@@ -1,0 +1,41 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./../../../../css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./../../../../css/bootstrap-theme.min.css">
+
+  <script type="text/javascript">
+    function saveAsPDF() {
+      const saveOptions = {
+        title: 'Save Report',
+        filters: [
+          { name: 'PDF', extensions: ['pdf'] }
+        ]
+      };
+      let dialog = require("electron").remote.dialog;
+      dialog.showSaveDialog(saveOptions, function(savePath) {
+        if (savePath && savePath != "") {
+          // allows us to get the webContents of the window
+          let remote = require('electron').remote;
+          remote.getCurrentWebContents().printToPDF({}, (err, data) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            require('fs').writeFile(savePath, data, err => {
+              if (err) console.log(err);
+              else console.log("PDF Write Complete!");
+            });
+          });
+        }
+      });
+    }
+  </script></head>
+  
+  <body>
+    <button class="btn btn-primary hidden-print" onclick="saveAsPDF()" style="position: fixed;z-index: 100;top: 10px; right: 10px;">Save as PDF</button>
+    <div id="content"><div data-reactroot="">No project data for checks found</div></div>
+  
+
+</body>

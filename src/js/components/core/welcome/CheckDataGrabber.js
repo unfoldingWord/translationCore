@@ -6,9 +6,6 @@ const api = window.ModuleApi;
 const Books = require('../booksOfBible');
 const path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
-const git = require('../GitApi.js');
-
-const REQUIRE_ERROR = "Unable to require file";
 
 var indexOfModule = 0;
 var CheckDataGrabber = {
@@ -28,15 +25,12 @@ var CheckDataGrabber = {
         return;
       }
     }
-    CheckStore.storeData.common['arrayOfChecks'] = checkArray;
+    api.putDataInCommon('arrayOfChecks', checkArray);
   },
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
-      var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-      var manifest = ManifestGenerator(data, tsManifest);
-      api.putDataInCommon('tcManifest', manifest);
-
-      fs.outputJson(manifestLocation, manifest, function(err) {
+      var manifestLocation = path.join(saveLocation, 'manifest.json');
+      fs.outputJson(manifestLocation, ManifestGenerator(data, tsManifest), function(err) {
         if (err) {
           console.log(err);
         }
@@ -72,23 +66,7 @@ var CheckDataGrabber = {
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
-        var path = api.getDataFromCommon('saveLocation');
-        if (path) {
-          git(path).init(function() {
-            git(path).save('Initial TC Commit', path, function() {
-            });
-          });
-        } else {
-          var Alert = {
-            title: "Warning",
-            content: "Save location is not defined",
-            leftButtonText: "Ok"
-          }
-          api.createAlert(Alert);
-        }
-
         CoreActions.doneLoadingFetchData(this.reportViews);
-
       }
     }
     else {
@@ -121,16 +99,6 @@ var CheckDataGrabber = {
   getDataFromCheck: function(path, params) {
     var DataFetcher = require(path + '/FetchData');
     let viewObj = require(path + '/View');
-
-    try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
-    }
-    catch (e) {
-      if (e.code != "MODULE_NOT_FOUND") {
-        console.error(e);
-      }
-    }
-
     api.saveModule(viewObj.name, viewObj.view);
     if (this.isModule(path)) {
       this.reportViews.push(viewObj);
