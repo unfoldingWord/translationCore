@@ -36,6 +36,7 @@ class SwitchCheckModal extends React.Component{
 
   moduleClick(folderName) {
     FileModule.readJsonFile(window.__base + "/modules/" + folderName + "/manifest.json", (jsonObject) => {
+      debugger;
       // jsonObject has title, name, and includes (modules that this module needs)
       // TODO: get the includes and do everyone's FetchDatas
     });
