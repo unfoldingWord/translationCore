@@ -9,8 +9,8 @@ const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
-var CoreStore = require('../../../stores/CoreStore.js');
-var CheckStore = require('../../../stores/CheckStore');
+const CoreStore = require('../../../stores/CoreStore.js');
+const CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
 const FileModule= require('../FileModule');
@@ -22,7 +22,6 @@ const SelectChecks = require('./SelectChecks');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
-const AccessProjectModal = require('../AccessProjectModal');
 const Open = require('../OpenForReal.js');
 const AlertModal = require('../AlertModal');
 
@@ -51,7 +50,6 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
-    AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function() {

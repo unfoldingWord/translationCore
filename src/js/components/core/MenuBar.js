@@ -54,7 +54,6 @@ var template = [
       {
         label: "Open Project",
         click: function() {
-          console.log('trying to Open');
           CoreActions.updateOpenView(true);
         }
       },

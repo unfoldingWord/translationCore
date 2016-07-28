@@ -2,18 +2,19 @@ var React = require('react');
 var remote = window.electron.remote;
 var {dialog} = remote;
 var OpenOnline = require('./GitClone.js');
-//var OpenLocal = require('./AccessProjectModal.js')
 var api = window.ModuleApi;
 var directory = require('path');
 var Access = require('./AccessProject.js');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
+var path = require('path');
+var pathex = require('path-extra');
 
 var Button = require('react-bootstrap/lib/Button.js');
 var Nav = require('react-bootstrap/lib/Nav.js');
 var NavItem = require('react-bootstrap/lib/NavItem.js');
 var Modal = require('react-bootstrap/lib/Modal.js');
-
+var LoadOnline = require('./LoadOnline.js');
 
 var CoreStore = require('../../stores/CoreStore.js');
 var CoreActions = require('../../actions/CoreActions.js');
@@ -67,27 +68,35 @@ var OpenForReal = React.createClass({
   handleOnline: function() {
     var url = this.state.value;
     var remote = url;
-    var projectName = url.split('/').pop(); //pops last element of
+    var projectName = url.split('/').pop();
     var local = path.join(pathex.homedir(), 'Translation Core', projectName);
 
 
-    OpenOnline(local).mirror(url, local, function(err) {
-      if (err)
-      dialog.showErrorBox("Cloning Repo Error:", err.message);
-      OpenOnline(local).pull(remote, 'master', function(err) {
-        if (err)
-        dialog.showErrorBox("Pulling Repo Error:", err.message);
+      //location of project loaded online
+      LoadOnline(url, function(local, url) {
+        if (err) {
+          dialog.showErrorBox("Load Online Error", err.message);
+        }
+        OpenOnline(local).pull(remote, 'master', function(err) {
+          if (err)
+          dialog.showErrorBox("Pulling Repo Error:", err.message);
+        });
+
       });
-    });
+
+
+
     console.log('Git Online save to local save:');
     console.log("Localpath: " + local);
     console.log("Git online save to local parent:");
-    console.log(local.join('../'));
-    api.putDataInCommon('saveLocation', data);
-    Access.loadFromFilePath(local.join('../'));
+
+    //TODO: Errors from here
+    api.putDataInCommon('saveLocation', local);
+    Access.loadFromFilePath(local);
 
     this.state.value = "";
-    console.log("State value: " + this.stata.value);
+    var stateVal = this.state.value;
+    console.log("State value: " + stateVal);
   },
 
   OpenLocal: function(data) {
