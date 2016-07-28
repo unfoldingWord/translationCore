@@ -13,6 +13,17 @@ var template = [
     label: 'File',
     submenu: [
       {
+        label: 'Toggle Tutorial',
+        click: function() {
+          if (localStorage.getItem('showTutorial') == 'true') {
+            localStorage.setItem('showTutorial', false);
+          } else {
+            localStorage.setItem('showTutorial', true);
+          }
+        },
+        accelerator: 'CmdOrCtrl+T'
+      },
+      {
         label: 'Save',
         click: function() {
           const api = window.ModuleApi;

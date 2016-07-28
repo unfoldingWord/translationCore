@@ -8,9 +8,9 @@ body, html, #content, .fill-height {
   overflow: hidden;
   height:100%;
 }
-/* Padding for navbar */
+
 body {
-  padding-top: 0px;
+  /*padding-top: 0px;
   padding-left: 85px;
-  padding-bottom: 5px;
+  padding-bottom: 5px;*/
 }
