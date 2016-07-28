@@ -1,5 +1,6 @@
 {
   "name": "translation-core",
+  "productName": "Translation Core",
   "version": "0.2.0",
   "description": "A bridge between TS and TM",
   "main": "main.js",

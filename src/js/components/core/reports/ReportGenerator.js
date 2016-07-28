@@ -17,11 +17,11 @@ const ReactDOM = require("react-dom");
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
-
-ipcRenderer.on("report-closed", (event) => {
+// listener event from the main process listening for the report window closing
+ipcRenderer.on("report-closed", (event, path) => {
   reportOpened = false;
 });
-
+// boolean to keep track of if a report window is currently open
 let reportOpened = false;
 
 class Report extends React.Component {
@@ -101,6 +101,7 @@ module.exports = function(callback = (err) => {}) {
   }
   fs.readFile("./src/js/components/core/reports/report-template.html", 'utf-8', (err, data) => {
     if (err) {
+      // These errors should not happen
       console.log(err, "Report template seems to be missing");
       callback(err);
       return;
@@ -116,8 +117,8 @@ module.exports = function(callback = (err) => {}) {
         callback(err);
         return;
       }
-      // display the file in a new browser window
-      ipcRenderer.send('open-report', `file://${__dirname}/report.html`);
+      // send the file path to the main process to be opened in a new window
+      ipcRenderer.send('open-report', `${__dirname}/report.html`);
       reportOpened = true;
       callback();
     });
