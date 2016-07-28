@@ -17,12 +17,7 @@ var Access = {
     //iterratively goes through file system and
     //loads the data into the project
     try {
-      var index = filepath.indexOf('.git');
-      filepath = filepath.slice(0, index);
-      console.log("Filepath:")
-      console.log(filepath);
       fs.readdir(filepath, function(err, items){
-        console.log(items);
         for (var i=0; i<items.length; i++) {
           fileObj[items[i]] = path.join(filepath, items[i]);
           //fileObj = {{checkdata: Users/username/Desktop/project_name/checkdata}...}

@@ -17,7 +17,6 @@ const Col = require('react-bootstrap/lib/Col.js');
 const Open = require('../components/core/OpenForReal.js');
 
 const Welcome = require('../components/core/welcome/welcome');
-const OpenProject = require('../components/core/AccessProjectModal.js');
 
 const AlertModal = require('../components/core/AlertModal');
 
@@ -31,7 +30,6 @@ const CheckStore = require('../stores/CheckStore.js');
 
 const ModuleWrapper = require('../components/modules/ModuleWrapper');
 
-<<<<<<< HEAD
   <div className='fill-height'>
   <SettingsModal />
   <LoginModal />
@@ -52,7 +50,7 @@ const ModuleWrapper = require('../components/modules/ModuleWrapper');
       </Row>
     </Grid>
   </div>
-=======
+
 var Main = React.createClass({
   getInitialState() {
     if (localStorage.getItem('showTutorial') == 'true') {
@@ -65,7 +63,7 @@ var Main = React.createClass({
       })
     }
   },
->>>>>>> 91d7bd3e17252ee0fa57fb9c4371dbc5c1a5cb03
+
 
   finishWelcome: function(){
     this.setState({firstTime: false});
@@ -89,6 +87,7 @@ var Main = React.createClass({
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
                 <ProjectModal />
+                <Open />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />

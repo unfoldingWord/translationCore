@@ -3,12 +3,10 @@ var remote = window.electron.remote;
 var {dialog} = remote;
 var OpenOnline = require('./GitClone.js');
 var api = window.ModuleApi;
-var directory = require('path');
 var Access = require('./AccessProject.js');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
 var path = require('path');
-var pathex = require('path-extra');
 
 var Button = require('react-bootstrap/lib/Button.js');
 var Nav = require('react-bootstrap/lib/Nav.js');
@@ -19,10 +17,7 @@ var LoadOnline = require('./LoadOnline.js');
 var CoreStore = require('../../stores/CoreStore.js');
 var CoreActions = require('../../actions/CoreActions.js');
 var DragDrop = require('./DragDrop.js');
-//Ask about API and Gulp
-//TODO: borders?
-//TODO: Center? margin: auto
-//TODO: Text align
+
 var OpenForReal = React.createClass({
   componentWillMount: function() {
     CoreStore.addChangeListener(this.updateModal)
@@ -67,36 +62,16 @@ var OpenForReal = React.createClass({
 
   handleOnline: function() {
     var url = this.state.value;
-    var remote = url;
     var projectName = url.split('/').pop();
     var local = path.join(pathex.homedir(), 'Translation Core', projectName);
+    var _this = this;
 
-
-      //location of project loaded online
       LoadOnline(url, function(local, url) {
-        if (err) {
-          dialog.showErrorBox("Load Online Error", err.message);
-        }
-        OpenOnline(local).pull(remote, 'master', function(err) {
-          if (err)
-          dialog.showErrorBox("Pulling Repo Error:", err.message);
-        });
-
+        _this.OpenLocal(local);
+        api.putDataInCommon('saveLocation', local);
       });
 
-
-
-    console.log('Git Online save to local save:');
-    console.log("Localpath: " + local);
-    console.log("Git online save to local parent:");
-
-    //TODO: Errors from here
-    api.putDataInCommon('saveLocation', local);
-    Access.loadFromFilePath(local);
-
     this.state.value = "";
-    var stateVal = this.state.value;
-    console.log("State value: " + stateVal);
   },
 
   OpenLocal: function(data) {
