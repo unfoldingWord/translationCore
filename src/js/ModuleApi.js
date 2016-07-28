@@ -121,7 +121,6 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
-
 		clearAlertCallback() {
 			CoreStore.alertObj = null;
 		}
