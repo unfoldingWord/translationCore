@@ -17,6 +17,7 @@ const ReactDOM = require("react-dom");
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
+const path = require('path');
 // listener event from the main process listening for the report window closing
 ipcRenderer.on("report-closed", (event, path) => {
   reportOpened = false;
@@ -44,9 +45,9 @@ class Report extends React.Component {
     for (let i in listOfChecks){
       let check = listOfChecks[i];
       try {
-        let reportView = require(check.location + "\\ReportView" );
+        let reportView = require(path.join(check.location, "ReportView"));
         if (typeof reportView != "function") {
-          console.log(check.location + "\\ReportView.js did not export a function");
+          console.log(check.location + "/ReportView.js did not export a function");
         }
         else {
           reportViews.push(reportView);
@@ -62,13 +63,28 @@ class Report extends React.Component {
     }
     // array of JSX to be rendered
     // loop through all verses and chapters in the target language
-    // and pass them into the ReortView functions
-    let verses = [];
+    // and pass them into the ReportView functions
+    let output = [];
     let bookName = targetLang.title || "-bookName-";
+    // render report header data from reportViews
+    for (let view in reportViews) {
+      let viewResult = reportViews[view](0,0);
+      if (viewResult) {
+        output.push(<span key={`0-0-${view}`}>{viewResult}</span>);
+      }
+    }
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)
       if (/^[0-9]+$/.test(ch) == false) {
         continue;
+      }
+      // create chapter header
+      output.push(<h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>);
+      for (let view in reportViews) {
+        let viewResult = reportViews[view](ch, 0);
+        if (viewResult) {
+          output.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
+        }
       }
       for (let v in targetLang[ch]) {
         let reports = [];
@@ -79,7 +95,7 @@ class Report extends React.Component {
           }
         }
         if (reports.length > 0) {
-          verses.push(<span key={`${ch}-${v}`}><h3>{`${bookName} ${ch}:${v}`}</h3><div>{reports}</div></span>);
+          output.push(<span key={`${ch}-${v}`}><h4>{`${bookName} ${ch}:${v}`}</h4><div>{reports}</div></span>);
         }
       }
     }
@@ -87,7 +103,7 @@ class Report extends React.Component {
     return (
       <div className="page-header">
       <h1>{`Report for ${bookName} `}<small>{"By -authors-, created on " + new Date().toDateString()}</small></h1>
-      {verses}
+      {output}
       </div>
     );
   }
@@ -111,14 +127,14 @@ module.exports = function(callback = (err) => {}) {
     reportHTML.innerHTML = data;
     // render the ReportView output to new file report.html
     ReactDOM.render(<Report />, reportHTML.getElementsByTagName('div')[0]);
-    fs.writeFile(`${__dirname}/report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
+    fs.writeFile(path.join(__dirname, 'report.html'), reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
         console.log("Error writing rendered report to disk");
         callback(err);
         return;
       }
       // send the file path to the main process to be opened in a new window
-      ipcRenderer.send('open-report', `${__dirname}/report.html`);
+      ipcRenderer.send('open-report', path.join(__dirname, 'report.html'));
       reportOpened = true;
       callback();
     });

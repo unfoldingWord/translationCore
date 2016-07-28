@@ -16,7 +16,7 @@ var PhraseReport = React.createClass({
       //left unfinished for the time being
     }
     return (
-
+      <div></div>
     );
   }
 });

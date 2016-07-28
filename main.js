@@ -55,6 +55,9 @@ ipc.on('open-report', (event, path) => {
           if (err) console.log(err);
         });
       }
+      else {
+        console.log(err);
+      }
     });
 
   });
