@@ -16,6 +16,13 @@ const React = require("react");
 const ReactDOM = require("react-dom");
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
+const {ipcRenderer} = require('electron');
+
+ipcRenderer.on("report-closed", (event) => {
+  reportOpened = false;
+});
+
+let reportOpened = false;
 
 class Report extends React.Component {
   constructor() {
@@ -88,8 +95,8 @@ class Report extends React.Component {
 
 module.exports = function(callback = (err) => {}) {
   // don't run if a report is already open
-  if (window.reportView) {
-    window.reportView.focus();
+  if (reportOpened) {
+    ipcRenderer.send('open-report', "");
     return;
   }
   fs.readFile("./src/js/components/core/reports/report-template.html", 'utf-8', (err, data) => {
@@ -110,11 +117,8 @@ module.exports = function(callback = (err) => {}) {
         return;
       }
       // display the file in a new browser window
-      window.reportView = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
-      window.reportView.loadURL(`file://${__dirname}/report.html`);
-      window.reportView.on('closed', () => {
-        window.reportView = undefined;
-      });
+      ipcRenderer.send('open-report', `file://${__dirname}/report.html`);
+      reportOpened = true;
       callback();
     });
   });

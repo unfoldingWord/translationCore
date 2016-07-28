@@ -4,9 +4,12 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+const ipc = require('electron').ipcMain;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let reportWindow;
 
 function createWindow () {
   // Create the browser window.
@@ -27,6 +30,21 @@ function createWindow () {
     mainWindow = null
   })
 }
+
+ipc.on('open-report', (event, path) => {
+  if (reportWindow) {
+    reportWindow.focus();
+    return;
+  }
+  reportWindow = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
+  reportWindow.loadURL(path);
+  reportWindow.on('closed', () => {
+    reportWindow = undefined;
+    if (mainWindow) {
+      mainWindow.webContents.send("report-closed");
+    }
+  });
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
