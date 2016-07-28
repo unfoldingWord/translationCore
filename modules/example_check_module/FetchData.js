@@ -1,6 +1,6 @@
 const api = window.ModuleApi;
 
-const Door43DataFetcher = require('./Door43DataFetcher.js');
+const Door43DataFetcher = require('./parsers/Door43DataFetcher.js');
 
 function getData(params, progressCallback, onCompleteCallback) {
   getChecks(params);
