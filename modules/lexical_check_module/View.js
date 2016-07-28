@@ -258,6 +258,7 @@ class View extends React.Component {
       var targetVerse = this.getVerse('targetLanguage');
   		return (
   			<div>
+          {ReportView(1,5)}
   				<TPane />
           <Row className="show-grid">
             <Col sm={4} md={4} lg={4}
