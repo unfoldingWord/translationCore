@@ -99,6 +99,27 @@ module.exports = {
       type: consts.CHANGE_PROFILE_VISIBILITY,
       profileOption: boolean
     });
-  }
+  },
+
+  updateCheckModal: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_CHECK_MODAL_VISIBILITY,
+      checkModalOption: boolean
+    });
+  },
+
+  sendAlert: function(alertObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL,
+      alert: alertObj
+    });
+  },
+
+    sendAlertResponse: function(alertResponseObj) {
+      Dispatcher.handleAction({
+        type: consts.ALERT_MODAL_RESPONSE,
+        alertResponse: alertResponseObj
+      });
+    }
 
 };

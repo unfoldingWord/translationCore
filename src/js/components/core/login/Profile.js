@@ -23,12 +23,13 @@ class Profile extends React.Component {
     return(
         <div>
           <center>
-            <Image style={{height: '100px', width:'100px', marginTop:"50px"}} src={profilePicture} circle />
-            <h3> {fullName} </h3>
-            <span><strong>User Name:</strong></span> <span className="label label-success">{userName}</span>
-            <p> {emailAccount} </p>
-
-            <Button bsStyle="warning" style={{marginTop:"50px", marginBottom:"50px"}}
+            <Image style={{height: '100px', width:'100px', marginTop:"50px"}}
+                   src={profilePicture} circle />
+              <span><h3>{fullName}</h3></span>
+              <span><strong>User Name: </strong></span>
+              <span className="label label-success">{userName}</span>
+              <span><p>{emailAccount}</p></span>
+              <Button bsStyle="primary" style={{width: "100%",marginTop:"50px", marginBottom:"50px"}}
               onClick={this.handleLogout.bind(this)}>Logout</Button>
           </center>
         </div>

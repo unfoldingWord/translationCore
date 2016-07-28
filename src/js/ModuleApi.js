@@ -4,7 +4,10 @@
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
+const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
+const CoreStore = require('./stores/CoreStore.js');
+const CoreActions = require('./actions/CoreActions.js');
 const Dispatcher = require('./dispatchers/Dispatcher.js');
 
 const React = require('react');
@@ -118,6 +121,14 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
+
+		createAlert(obj, callback = () => {}) {
+			Alert.startListener(callback);
+			CoreActions.sendAlert({
+					alertObj:obj,
+					alertCallback: callback
+				});
+		}
 }
 
 const api = new ModuleApi();

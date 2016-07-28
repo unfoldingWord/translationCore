@@ -16,6 +16,13 @@ const React = require("react");
 const ReactDOM = require("react-dom");
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
+const {ipcRenderer} = require('electron');
+// listener event from the main process listening for the report window closing
+ipcRenderer.on("report-closed", (event, path) => {
+  reportOpened = false;
+});
+// boolean to keep track of if a report window is currently open
+let reportOpened = false;
 
 class Report extends React.Component {
   constructor() {
@@ -88,12 +95,13 @@ class Report extends React.Component {
 
 module.exports = function(callback = (err) => {}) {
   // don't run if a report is already open
-  if (window.reportView) {
-    window.reportView.focus();
+  if (reportOpened) {
+    ipcRenderer.send('open-report', "");
     return;
   }
   fs.readFile("./src/js/components/core/reports/report-template.html", 'utf-8', (err, data) => {
     if (err) {
+      // These errors should not happen
       console.log(err, "Report template seems to be missing");
       callback(err);
       return;
@@ -103,18 +111,15 @@ module.exports = function(callback = (err) => {}) {
     reportHTML.innerHTML = data;
     // render the ReportView output to new file report.html
     ReactDOM.render(<Report />, reportHTML.getElementsByTagName('div')[0]);
-    fs.writeFile(`${__dirname}\\report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
+    fs.writeFile(`${__dirname}/report.html`, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
         console.log("Error writing rendered report to disk");
         callback(err);
         return;
       }
-      // display the file in a new browser window
-      window.reportView = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
-      window.reportView.loadURL(`file://${__dirname}\\report.html`);
-      window.reportView.on('closed', () => {
-        window.reportView = undefined;
-      });
+      // send the file path to the main process to be opened in a new window
+      ipcRenderer.send('open-report', `${__dirname}/report.html`);
+      reportOpened = true;
       callback();
     });
   });

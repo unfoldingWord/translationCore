@@ -10,10 +10,10 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const style = require('./loginStyle');
-const gogs = require('./GogsApi.js');
+const style = require('../login/loginStyle');
+const gogs = require('../login/GogsApi.js');
 const Token = require('../AuthToken');
-const Registration = require('./Registration');
+const Registration = require('../login/Registration');
 
 class Login extends React.Component {
   constructor() {
@@ -21,15 +21,16 @@ class Login extends React.Component {
     this.state = {userName: "", password: "", register: false};
   }
   handleSubmit(event) {
+    var _this = this;
     var userdata = {
       username: this.state.userName,
       password: this.state.password
     };
     var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
-      CoreActions.updateLoginModal(false);
       CoreActions.updateOnlineStatus(true);
       CoreActions.updateProfileVisibility(true);
+      _this.props.success();
     }).catch(function(reason) {
       //console.log(reason);
       if (reason.status === 401) {
@@ -43,6 +44,7 @@ class Login extends React.Component {
         dialog.showErrorBox('Login Failed', 'Unknown Error');
       }
     });
+
   }
   handleUserName(e) {
     this.setState({userName: e.target.value});
@@ -67,7 +69,6 @@ class Login extends React.Component {
             <Col md={12} sm={12} xs={12}>
 
                 <FormGroup controlId="login-form">
-                    <ControlLabel>Door43 Account</ControlLabel><br/><br/>
                     <FormControl type="text" placeholder="Username"
                                  style={{width: '100%', marginBottom: '10px'}}
                                  onChange={this.handleUserName.bind(this)}/>
@@ -76,7 +77,8 @@ class Login extends React.Component {
                                  style={{width: '100%'}}
                                  onChange={this.handlePassword.bind(this)}/>
                 </FormGroup>
-                <Button bsStyle="primary"
+
+                <Button bsStyle="default"
                         type="submit"
                         onClick={this.handleSubmit.bind(this)}
                         style={{width: '100%', margin: 'auto'}}>
@@ -86,9 +88,9 @@ class Login extends React.Component {
                 <span>{"Don't have an account?"}</span>
                 <Button onClick={this.showRegistration.bind(this)}
                         bsStyle="link"
-                        style={{color: 'blue', display: 'inline'}}>
+                        style={{color: '#fff', display: 'inline'}}>
                         Register
-                </Button><br/><br/>
+                </Button>
             </Col>
            </Row>
         </div>

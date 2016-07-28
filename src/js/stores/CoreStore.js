@@ -31,6 +31,7 @@ component will hear it and be able to ask for updated data.
 class CoreStore extends EventEmitter {
   constructor() {
     super();
+    this.setMaxListeners(20);
   }
 
   updateNumberOfFetchDatas(number) {
@@ -98,12 +99,25 @@ class CoreStore extends EventEmitter {
     return this.userLoggedIn;
   }
 
+  getAlertMessage() {
+    return this.alertObj;
+  }
+
+  getAlertResponseMessage() {
+    this.alertObj['alertObj'] = null;
+    return this.alertResponseObj;
+  }
+
   getProfileVisibility(){
     if(this.profileVisibility) {
-    return this.profileVisibility;
-  } else {
-    return false;
+      return this.profileVisibility;
+    }else {
+      return false;
+    }
   }
+
+  getCheckModal(){
+    return this.checkModalVisibility;
   }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
@@ -203,6 +217,21 @@ class CoreStore extends EventEmitter {
         this.profileVisibility = action.profileOption;
         this.emitChange();
         break;
+
+      case consts.CHANGE_CHECK_MODAL_VISIBILITY:
+        this.checkModalVisibility = action.checkModalOption;
+        this.emitChange();
+        break;
+
+      case consts.ALERT_MODAL:
+        this.alertObj = action.alert;
+        this.emitChange();
+      break;
+
+      case consts.ALERT_MODAL_RESPONSE:
+        this.alertResponseObj = action.alertResponse;
+        this.emitChange();
+      break;
 
       default:
       // do nothing
