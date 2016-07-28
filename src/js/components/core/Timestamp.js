@@ -65,18 +65,6 @@ var TimeStamp = {
 
   generate: function() {
     this.getInitialState();
-    var fs = require(window.__base + 'node_modules/fs-extra');
-    var path = require('path');
-    var Timestamp = path.join('timestamp.txt');
-
-    fs.open(Timestamp, 'w', function(err, fd) {
-
-      if(err) {
-        return console.log(err);
-      }
-
-    });
-
     var data = this.time;
 
     //File Created in directory to store the timestamps throughout the created project
