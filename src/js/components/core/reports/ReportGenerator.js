@@ -127,14 +127,15 @@ module.exports = function(callback = (err) => {}) {
     reportHTML.innerHTML = data;
     // render the ReportView output to new file report.html
     ReactDOM.render(<Report />, reportHTML.getElementsByTagName('div')[0]);
-    fs.writeFile(path.join(__dirname, 'report.html'), reportHTML.innerHTML, 'utf-8', (err) => {
+    let reportPath = path.join(__dirname, 'report.html');
+    fs.writeFile(reportPath, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
         console.log("Error writing rendered report to disk");
         callback(err);
         return;
       }
       // send the file path to the main process to be opened in a new window
-      ipcRenderer.send('open-report', path.join(__dirname, 'report.html'));
+      ipcRenderer.send('open-report', reportPath);
       reportOpened = true;
       callback();
     });
