@@ -42,8 +42,6 @@ var template = {
   last_saved : '',
   finished_chunks: [],
   checked_chunks: [],
-  check_modules: [],
-  check_data_locations: '',
   repo: ''
 }
 
