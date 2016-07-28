@@ -25,7 +25,6 @@ const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
-const ReportView = require('./ReportView.js');
 
 //String constants
 const NAMESPACE = "LexicalChecker",
