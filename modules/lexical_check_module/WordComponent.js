@@ -17,7 +17,7 @@ class WordComponent extends React.Component {
 
   render() {
     return (
-      <Well bsSize={'small'} style={{height: "60px"}}><span>{CURRENT_WORD}</span><div className={"text-primary"}>
+      <Well bsSize={'small'} style={{height: "60px", textAlign: "center"}}><span>{CURRENT_WORD}</span><div className={"text-primary"}>
         {this.props.word}
       </div></Well>);
   }
