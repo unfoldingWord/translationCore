@@ -34,12 +34,12 @@ var style = {
 
   glyphiconHover: {
     fontSize: "29px",
-    color: "#a4c639",
+    color: "#27E1FC",
   },
 
   hover: {
     backgroundColor: "#2b2b2b",
-    color: "#a4c639",
+    color: "#27E1FC",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
