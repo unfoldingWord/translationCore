@@ -62,25 +62,36 @@ class Login extends React.Component {
       );
     }else{
       return (
-        <Grid>
+        <div>
           <Row className="show-grid">
-            <Col md={3} sm={5} xs={12} style={style.loginGridLeft}>
+            <Col md={12} sm={12} xs={12}>
+
                 <FormGroup controlId="login-form">
-                  <ControlLabel>Door43 Account</ControlLabel>
-                    <FormControl type="text" placeholder="Door43 Account"
-                    style={style.loginbox.input} onChange={this.handleUserName.bind(this)}/>
-                    <FormControl type="password" placeholder="Password"
-                    style={style.loginbox.input} onChange={this.handlePassword.bind(this)}/>
+                    <ControlLabel>Door43 Account</ControlLabel><br/><br/>
+                    <FormControl type="text" placeholder="Username"
+                                 style={{width: '100%', marginBottom: '10px'}}
+                                 onChange={this.handleUserName.bind(this)}/>
+                    <FormControl type="password"
+                                 placeholder="Password"
+                                 style={{width: '100%'}}
+                                 onChange={this.handlePassword.bind(this)}/>
                 </FormGroup>
-                <Button bsStyle="primary" type="submit"
-                onClick={this.handleSubmit.bind(this)}
-                style={style.footer.button}>Sign In</Button>
-            </Col>
-            <Col md={3} sm={4} xs={12} style={style.loginGridRight}>
-              <Button onClick={this.showRegistration.bind(this)} bsStyle="primary">Register</Button>
+                <Button bsStyle="primary"
+                        type="submit"
+                        onClick={this.handleSubmit.bind(this)}
+                        style={{width: '100%', margin: 'auto'}}>
+                        Sign In
+                </Button>
+
+                <span>{"Don't have an account?"}</span>
+                <Button onClick={this.showRegistration.bind(this)}
+                        bsStyle="link"
+                        style={{color: 'blue', display: 'inline'}}>
+                        Register
+                </Button><br/><br/>
             </Col>
            </Row>
-        </Grid>
+        </div>
       );
     }
   }
