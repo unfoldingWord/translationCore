@@ -28,7 +28,7 @@ const CheckStore = require('../stores/CheckStore.js');
 * and the checks will be able to require them dynamically
 */
 
-const ModuleWrapper = require('../components/modules/ModuleWrapper');
+const ModuleWrapper = require('../components/core/ModuleWrapper');
 
 var Main = React.createClass({
   getInitialState() {
