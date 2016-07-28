@@ -110,8 +110,8 @@ class ReportItem extends React.Component {
     return (
       <Well style={{background: 'rgb(255, 255, 255)'}}>
         {this.headerDiv()}
-        {this.selectedWordsDiv()}
         {this.checkStatusDiv()}
+        {this.selectedWordsDiv()}
         {this.proposedChangesDiv()}
         {this.commentsDiv()}
         {this.footerDiv()}
