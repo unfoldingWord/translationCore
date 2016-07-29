@@ -23,7 +23,6 @@ class SwitchCheckModal extends React.Component{
     CoreStore.addChangeListener(this.updateCheckModal);
     FileModule.readJsonFile(window.__base + "modules/module_list.json", (moduleFolderNameList) => {
       this.fillDefaultModules(moduleFolderNameList, (metadatas) => {
-        debugger;
         this.setState({moduleMetadatas: metadatas});
       });
     });
