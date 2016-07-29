@@ -22,7 +22,9 @@ var Access = {
           fileObj[items[i]] = path.join(filepath, items[i]);
           //fileObj = {{checkdata: Users/username/Desktop/project_name/checkdata}...}
         }
-        _this.loadCheckData(fileObj);
+        _this.loadCheckData(fileObj, function() {
+          api.putDataInCommon('saveLocation', filepath);
+        });
         //loads into project with object of file paths
       });
     } catch (e) {
@@ -30,7 +32,7 @@ var Access = {
     }
   },
 
-  loadCheckData: function(fileObj) {
+  loadCheckData: function(fileObj, callback) {
     for (var item in fileObj) {
       if (item == "checkdata") {
         //if it is the checkdata folder
@@ -38,7 +40,7 @@ var Access = {
         _this.readDisk(checkDataFolderPath, (checkDataFiles) => {
           //open the file path and read in the files
           for (var file of checkDataFiles){
-            _this.putDataInFileProject(file, checkDataFolderPath);
+            _this.putDataInFileProject(file, checkDataFolderPath, callback);
             //calls other functions that puts data in stores
           }
         });
@@ -133,11 +135,11 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
 },
 
   reportViewPush: function(path) {
-    let viewObj = require(path + '/View');
+    let viewObj = require(window.__base + path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
 
     try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {

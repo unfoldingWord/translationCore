@@ -47,19 +47,17 @@ class SideNavBar extends React.Component{
                   if(result == 'Yes') {
                     const projectName = path.split(pathFinder.sep);
                     gogs(user.token).createRepo(user, projectName.pop()).then(function(repo) {
-                      var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';                      
+                      var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
                       git(path).update(newRemote, 'master', true, function(){});
-                    }); 
-                  } 
+                    });
+                  }
                 });
               } else {
-                alert('Update succesful');                
+                alert('Update succesful');
               }
             });
           } else {
                 alert('There is no associated repository with this project. Would you like to make one?');
-                console.log('project name');
-                console.log(path.split('/').pop());            
           }
       });
     } else {
@@ -84,11 +82,22 @@ class SideNavBar extends React.Component{
     CoreActions.updateSettings(true);
   }
 
+  sayHello() {
+    const user = CoreStore.getLoggedInUser();
+    if (user) {
+      var msg = new SpeechSynthesisUtterance('Hello ' + user.username + ', I am Translation Core');
+    } else {
+      var msg = new SpeechSynthesisUtterance('Hello I am Translation Core');
+    }
+    window.speechSynthesis.speak(msg);
+
+  }
+
     render(){
       return(
         <div style={style.container}>
           <ul style={style.ul}>
-            <img src="images/TC_Icon_logo.png" style={style.logo}/>
+            <img src="images/TC_Icon_logo.png" onClick={this.sayHello.bind(this)} style={style.logo}/>
             <LoginButton />
             <SideBarButton handleButtonClick={this.handleCreateProject.bind(this)} glyphicon={"file"} value={"New"} />
             <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Open"} />
