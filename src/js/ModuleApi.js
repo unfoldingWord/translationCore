@@ -124,6 +124,9 @@ class ModuleApi {
 
     getLoggedInUser(){
        let user = CoreStore.getLoggedInUser();
+       if(!user){
+          return undefined;
+       }
        let fullName = user.full_name;
        let userName = user.username;
        return {fullName, userName};
