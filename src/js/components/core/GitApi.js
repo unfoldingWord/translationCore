@@ -52,11 +52,7 @@ function GitApi(directory) {
       var _this = this;
       if (first) {
         this.push(remoteRepo, branch, function(err) {
-          if (err) {
-            callback(err);
-          } else {
-            callback();            
-          }
+          callback(err);
           });
       } else {
         this.pull(remoteRepo, branch, function(err) {
@@ -64,14 +60,10 @@ function GitApi(directory) {
             callback(err);
           }
           _this.push(remoteRepo, branch, function(err) {
-            if (err) {
-              callback(err);
-            } else {
-              callback();              
-            }
+            callback(err);
           });
         });
-      } 
+      }
     },
 
     save: function(message, path, callback) {
