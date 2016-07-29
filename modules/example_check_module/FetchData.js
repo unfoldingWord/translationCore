@@ -1,11 +1,12 @@
 const api = window.ModuleApi;
 
 function getData(params, progressCallback, onCompleteCallback) {
-  getChecks(params);
+  var groups = getGroupsOfChecks(params);
+  api.initializeCheckStore('ExampleChecker', params, groups);
   api.putGatewayLanguageInCheckStore(params, progressCallback, onCompleteCallback);
 }
 
-function getChecks(params) {
+function getGroupsOfChecks(params) {
   var groups = [
     {
       group: 'Language',
@@ -38,10 +39,7 @@ function getChecks(params) {
       ]
     }
   ];
-  api.putDataInCheckStore('ExampleChecker', 'groups', groups);
-  api.putDataInCheckStore('ExampleChecker', 'currentCheckIndex', 0);
-  api.putDataInCheckStore('ExampleChecker', 'currentGroupIndex', 0);
-  api.putDataInCheckStore('ExampleChecker', 'book', api.convertToFullBookName(params.bookAbbr));
+  return groups;
 }
 
 module.exports = getData;

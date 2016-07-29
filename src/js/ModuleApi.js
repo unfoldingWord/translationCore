@@ -171,7 +171,14 @@ class ModuleApi {
                 }
             }
         );
-    }    
+    }
+    
+    initializeCheckStore(nameSpace, params, groups) {
+        this.putDataInCheckStore(nameSpace, 'groups', groups);
+        this.putDataInCheckStore(nameSpace, 'currentCheckIndex', 0);
+        this.putDataInCheckStore(nameSpace, 'currentGroupIndex', 0);
+        this.putDataInCheckStore(nameSpace, 'book', this.convertToFullBookName(params.bookAbbr));
+    }
 }
 
 const api = new ModuleApi();
