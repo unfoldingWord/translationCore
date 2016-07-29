@@ -233,7 +233,6 @@ const ProjectModal = React.createClass({
     this.params.repo = link;
     this.onClick();
   },
-
   setBookName: function(abbr) {
     this.params.bookAbbr = abbr;
   },

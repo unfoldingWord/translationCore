@@ -15,10 +15,9 @@ const style = {
                     borderRadius: '10px',
                     marginTop: '10px',
                     backgroundColor: '#ffffff',
-                    color: '#ffffff',
+                    color: '#34495e',
                     fontSize: '30px',
-                    height: '200px',
-                    paddingTop: '75px',
+                    height: '50px',
                     verticalAlign: 'middle',
                     width: '100%'
                   },

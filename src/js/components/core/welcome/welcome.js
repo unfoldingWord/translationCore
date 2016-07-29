@@ -98,7 +98,7 @@ class Welcome extends React.Component{
           <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
             <h1>Load your first project</h1>
             <p>You can load in your first project from Door43 or from your hard drive.</p>
-            <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', minHeight: '100px'}}>
+            <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '150px'}}>
             <WelcomeUpload />
             </div>
           </div>
