@@ -3,6 +3,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Glyphicon  = require('react-bootstrap/lib/Glyphicon.js');
 
 const api = window.ModuleApi;
+const git = require('./GitApi.js');
 
 const SaveAndContinue = 'Save and Continue ';
 class NextButton extends React.Component {
