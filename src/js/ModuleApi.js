@@ -1,5 +1,9 @@
 //ModuleApi.js//
 
+const React = require('react');
+const ReactBootstrap = require('react-bootstrap');
+const ReactDOM = require('react-dom');
+
 //node modules
 const fs = require(window.__base + 'node_modules/fs-extra');
 
@@ -9,11 +13,7 @@ const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
 const Dispatcher = require('./dispatchers/Dispatcher.js');
-
-const React = require('react');
-const ReactBootstrap = require('react-bootstrap');
-const ReactDOM = require('react-dom');
-
+const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');
 
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
@@ -129,6 +129,49 @@ class ModuleApi {
             alertCallback: callback
         });
     }
+    
+    /**
+     * Asynchronously fetches the gateway language from Door43, puts it in the check store,
+     * and calls the callback parameter.
+     * If this is the only asynchronous part of your FetchData function, then pass in
+     * the callback from your FetchData as the 'callback' parameter to this function.
+     * Otherwise, wait until all subfunctions of FetchData are complete before calling
+     * the callback.
+     */
+    putGatewayLanguageInCheckStore(params, progressCallback, callback) {
+        var Door43Fetcher = new Door43DataFetcher();
+        Door43Fetcher.getBook(
+            params.bookAbbr,
+            function(done, total) {
+                progressCallback((done / total) * 50);
+            },
+            function(error, data) {
+                if (error) {
+                    console.error('Door43Fetcher throwing error');
+                    callback(error);
+                }
+                else {
+                    var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+                    var bookData;
+                    if (!gatewayLanguage) {
+                        bookData = Door43Fetcher.getULBFromBook(data);
+                        //reformat
+                        var newBookData = {};
+                        for (var chapter of bookData.chapters) {
+                            newBookData[chapter.num] = {};
+                            for (var verse of chapter.verses) {
+                                newBookData[chapter.num][verse.num] = verse.text;
+                            }
+                        }
+                        newBookData.title = api.convertToFullBookName(params.bookAbbr);
+                        //load it into checkstore
+                        api.putDataInCommon('gatewayLanguage', newBookData);
+                        callback();
+                    }
+                }
+            }
+        );
+    }    
 }
 
 const api = new ModuleApi();
