@@ -19,11 +19,11 @@ const BooksOfBible = require('./components/core/BooksOfBible');
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
 
 class ModuleApi {
-	constructor() {
+  constructor() {
         this.React = React;
         this.ReactBootstrap = ReactBootstrap;
         this.modules = {};
-	}
+  }
 
     findDOMNode(component) {
         return ReactDOM.findDOMNode(component);
@@ -121,17 +121,29 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
-		clearAlertCallback() {
-			CoreStore.alertObj = null;
-		}
 
-		createAlert(obj, callback = () => {}) {
-			Alert.startListener(callback);
-			CoreActions.sendAlert({
-					alertObj:obj,
-					alertCallback: callback
-				});
-		}
+    getLoggedInUser(){
+       let user = CoreStore.getLoggedInUser();
+       if(!user){
+          return undefined;
+       }
+       let fullName = user.full_name;
+       let userName = user.username;
+       return {fullName, userName};
+    }
+
+    clearAlertCallback() {
+      CoreStore.alertObj = null;
+    }
+
+    createAlert(obj, callback = () => {}) {
+        Alert.startListener(callback);
+        CoreActions.sendAlert({
+                alertObj:obj,
+                alertCallback: callback
+            });
+    }
+
 }
 
 const api = new ModuleApi();
