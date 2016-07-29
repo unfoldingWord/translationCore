@@ -49,15 +49,12 @@ class Report extends React.Component {
       let check = listOfChecks[i];
       try {
         let reportView = require(path.join(__base, check.location, "ReportView"));
-        if (typeof reportView != "function") {
-          console.log(__base, check.location + "/ReportView.js did not export a function");
-        }
-        else {
+        if (typeof reportView == "function") {
           reportViews.push(reportView);
         }
       }
       catch(e) {
-        console.log("No report view found in " + path.join(__base, check.location));
+        // silently fail, this will probably happen a lot
       }
     }
     if (reportViews.length == 0) {
