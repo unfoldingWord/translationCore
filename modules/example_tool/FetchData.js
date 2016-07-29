@@ -12,7 +12,7 @@ function fetchData(params, progress, callback) {
                        .replace('</img>')
                        .replace('content-container', '')
                        .replace('container', '');
-    api.putDataInCheckStore('QualityAssurance', 'resourceHtml', html);
+    api.putDataInCheckStore('ExampleTool', 'resourceHtml', html);
     callback();
   };
 }
