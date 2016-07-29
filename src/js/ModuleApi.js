@@ -121,7 +121,6 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
-<<<<<<< HEAD
 
     getLoggedInUser(){
        let user = CoreStore.getLoggedInUser();
@@ -133,6 +132,9 @@ class ModuleApi {
        return {fullName, userName};
     }
 
+    clearAlertCallback() {
+      CoreStore.alertObj = null;
+    }
 
     createAlert(obj, callback = () => {}) {
         Alert.startListener(callback);
@@ -141,19 +143,7 @@ class ModuleApi {
                 alertCallback: callback
             });
     }
-=======
-		clearAlertCallback() {
-			CoreStore.alertObj = null;
-		}
 
-		createAlert(obj, callback = () => {}) {
-			Alert.startListener(callback);
-			CoreActions.sendAlert({
-					alertObj:obj,
-					alertCallback: callback
-				});
-		}
->>>>>>> develop
 }
 
 const api = new ModuleApi();
