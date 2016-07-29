@@ -40,7 +40,6 @@ const projectname = React.createClass({
       properties: ['openDirectory']
     }, function(filename) {
       if (filename !== undefined) {
-        // FileImport(filename[0]);
         if (!_this.state.projectname){
           alert("Enter Project Name.");
           return;

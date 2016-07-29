@@ -44,7 +44,9 @@ module.exports = (function() {
           }
         }); 
       } else {
-        runGitCommand(savePath, url);
+        fs.ensureDir(savePath, function() {
+          runGitCommand(savePath, url, callback);          
+        });
       }
     });
   }

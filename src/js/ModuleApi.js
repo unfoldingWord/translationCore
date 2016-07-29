@@ -121,14 +121,17 @@ class ModuleApi {
     logCheckStore() {
         console.log(CheckStore.storeData);
     }
+		clearAlertCallback() {
+			CoreStore.alertObj = null;
+		}
 
-    createAlert(obj, callback = () => {}) {
-        Alert.startListener(callback);
-        CoreActions.sendAlert({
-                alertObj:obj,
-                alertCallback: callback
-            });
-    }
+		createAlert(obj, callback = () => {}) {
+			Alert.startListener(callback);
+			CoreActions.sendAlert({
+					alertObj:obj,
+					alertCallback: callback
+				});
+		}
 }
 
 const api = new ModuleApi();

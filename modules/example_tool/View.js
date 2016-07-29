@@ -11,7 +11,7 @@ class View extends React.Component {
    }
 
   render() {
-    var html = api.getDataFromCheckStore('QualityAssurance', 'resourceHtml');
+    var html = api.getDataFromCheckStore('ExampleTool', 'resourceHtml');
     return (
       <Well style={{width:'100%', height:'400px', overflowX: 'hidden', overflowY: 'scroll'}}>
         <div dangerouslySetInnerHTML={createMarkup(html)} style={{width: '100%'}} />
@@ -25,6 +25,6 @@ function createMarkup(html) {
 };
 
 module.exports = {
-    name: "QualityAssurance",
+    name: "ExampleTool",
     view: View
 }

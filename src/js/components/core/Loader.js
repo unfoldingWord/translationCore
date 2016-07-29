@@ -63,6 +63,7 @@ const Loader = React.createClass({
       <div>
         <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
           <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
+          <img src="images/TC_ANIMATED_Logo.gif"/>
         </Modal>
       </div>
     );
