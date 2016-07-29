@@ -51,7 +51,7 @@ class MenuView extends React.Component {
             return stringCompare(group.group, item.name);
           });
         if (header) {
-          header = header.aliases[0];
+          header = header.header;
         }
         else {
           header = group.group;
