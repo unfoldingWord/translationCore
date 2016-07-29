@@ -175,8 +175,10 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_BUTTTON_STATUS:
+      case consts.CHANGE_BUTTON_STATUS:
         this.buttonStatus = action.buttonStatus;
+        this.emitChange();
+        break;
 
       case consts.CHANGE_ONLINE_STATUS:
         this.onlineStatus = action.onlineStatus;

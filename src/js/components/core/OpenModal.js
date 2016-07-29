@@ -12,6 +12,7 @@ var Access = require('./AccessProject.js');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
 var FormControl = require('react-bootstrap/lib/FormControl.js');
 var path = require('path');
+var pathex = require('path-extra');
 
 var Button = require('react-bootstrap/lib/Button.js');
 var Nav = require('react-bootstrap/lib/Nav.js');
