@@ -119,11 +119,11 @@ var CheckDataGrabber = {
   },
 
   getDataFromCheck: function(path, params) {
-    var DataFetcher = require(path + '/FetchData');
-    let viewObj = require(path + '/View');
+    var DataFetcher = require(window.__base + path + '/FetchData');
+    let viewObj = require(window.__base + path + '/View');
 
     try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {

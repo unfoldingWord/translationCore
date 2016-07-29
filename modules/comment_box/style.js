@@ -32,7 +32,7 @@ var style = {
     width: "90%",
     maxWidth: "400px",
     minWidth: "250px",
-    height: "320px",
+    height: "200px",
     margin: "0px auto",
     background: "#fafafa",
     borderRadius: "10px",
