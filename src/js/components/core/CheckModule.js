@@ -101,18 +101,18 @@ class CheckModule extends React.Component {
   }
   
   /**
-   * @description - Changes the current check index and group index within the store
+   * @description - Changes the current check index and group index within the store,
+   * gets data from tools and saves it to the current check in the check store.
    * @param {integer} newGroupIndex - the group index of the check selected in the navigation menu
    * @param {integer} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    //Get the proposed changes and add it to the check
-    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    var currentCheck = this.state.currentCheck;
-    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-      currentCheck.proposedChanges = proposedChanges;
+    var dataFromTools = this.getDataFromTools();
+    var currentCheck = this.getCurrentCheckFromCheckStore();
+    for (var key in dataFromTools) {
+      currentCheck[key] = dataFromTools[key];
     }
-
+    
     var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
     var currentGroupIndex = this.getCurrentGroupIndex();
     var currentCheckIndex = this.getCurrentCheckIndex();

@@ -22,15 +22,19 @@ var TPane = null;
 var ProposedChanges = null;
 var ExampleTool = null;
 
+// Initialize the namespace to be used inside the check store.
 const NAMESPACE = 'ExampleChecker';
 
+// Extends CheckModule class, which handles most aspects of a check module,
+// such as events when the user clicks the next button or menu items in the navigation menu,
+// saving checks in the check store, and updating the view.
+// If you don't want to extend CheckModule, then extend the React.Component class instead.
 class View extends api.CheckModule {
 
   constructor() {
     super();
     
-    // Initialize the namespace to be used inside the check store. Required for
-    // extending the CheckModule class
+    // Save the namespace inside the view. Required for extending the CheckModule class.
     this.nameSpace = NAMESPACE;
 
     // Initialize modules that are not defined within our ExampleChecker
