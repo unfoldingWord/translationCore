@@ -119,16 +119,14 @@ class Welcome extends React.Component{
             <h1>Load your first project</h1>
             <p>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
-            <WelcomeUpload />
+            <WelcomeUpload success={()=>{this.setState({index:this.state.index+1,
+                                                        tutorial: true})}} />
             </div>
           </div>
         )
         break;
       case 4:
           console.log("Flow is now #<Main />");
-          console.log(CoreStore);
-          console.log(CheckStore);
-          console.log(api);
       break;
     }
   }
