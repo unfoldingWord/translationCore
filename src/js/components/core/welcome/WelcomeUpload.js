@@ -24,7 +24,7 @@ const path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const booksOfBible = require('../booksOfBible');
 
-const UploadModal = React.createClass({
+const WelcomeUpload = React.createClass({
   getInitialState: function() {
     return {active: 1,
        showFile: true,
@@ -66,9 +66,6 @@ const UploadModal = React.createClass({
         if (result) {
         _this.makeTCManifest(function(result) {
           if (result) {
-            console.log(CoreStore);
-            console.log(CheckStore);
-            console.log(api);
             console.log("Ready to load next screen");
           }
         });
@@ -129,34 +126,21 @@ const UploadModal = React.createClass({
     var mainContent;
     if (this.state.showFile === true) {
       mainContent = <DragDrop
-                      sendFilePath={this.sendFilePath} style={{color:'black'}}
+                      sendFilePath={this.sendFilePath}
                     />;
     } else {
       mainContent = (<div>
                        <br />
-                       <OnlineInput sendFilePath={this.sendFilePath}/> style={{color:'black'}}
+                       <OnlineInput sendFilePath={this.sendFilePath}/>
                      </div>);
     }
     return (
           <div>
             <Modal.Body>
-            <Tab.Container activeKey={this.state.active} id = {"Load"}
-                 onSelect={this.handleSelect} style={{color:'black', backgroundColor: '#ffffff', borderRadius:'10px'}}>
-              <Nav bsStyle="" justified>
-              <NavItem
-                eventKey={1}
-                className={"loaderButton"}
-                style={{marginLeft: '5px', color: 'black'}}
-              >
-                {IMPORT_LOCAL}
-              </NavItem>
-              <NavItem
-                eventKey={2}
-                className={"loaderButton"} 
-                style={{marginLeft: '5px', color: 'black'}}
-              >
-                {IMPORT_ONLINE}
-              </NavItem>
+            <Tab.Container activeKey={this.state.active} onSelect={this.handleSelect} style={{backgroundColor: '#ffffff', borderRadius:'10px'}}>
+              <Nav justified>
+              <NavItem eventKey={1} className={"loaderButton"} style={{marginLeft: '5px'}}>{IMPORT_LOCAL}</NavItem>
+              <NavItem eventKey={2} className={"loaderButton"} style={{marginLeft: '5px'}}>{IMPORT_ONLINE}</NavItem>
               </Nav>
             </Tab.Container>
             {mainContent}
@@ -166,4 +150,4 @@ const UploadModal = React.createClass({
   }
 });
 
-module.exports = UploadModal;
+module.exports = WelcomeUpload;
