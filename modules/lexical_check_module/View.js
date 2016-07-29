@@ -88,6 +88,16 @@ class View extends React.Component {
     this.updateState();
   }
 
+  /**
+   * This method is necessary because on the first mount of the LexicalChecker all of it's listeners
+   * won't be mounted yet, so necessary to emit its events
+   */
+  componentDidMount() {
+    //this should already be set in the state from componentWillMount
+    var currentCheck = this.state.currentCheck;
+    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+  }
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
@@ -228,22 +238,6 @@ class View extends React.Component {
     }
   }
 
-  enableButtons() {
-    if (this.state.buttonsDisable) {
-      this.setState({
-        buttonsDisable: false
-      });
-    }
-  }
-
-  disableButtons() {
-    if (!this.state.buttonsDisable) {
-      this.setState({
-        buttonsDisable: true
-      });
-    }
-  }
-
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
@@ -294,8 +288,6 @@ class View extends React.Component {
               />
               <TargetVerseDisplay
                 verse={targetVerse}
-                buttonEnableCallback={this.enableButtons.bind(this)}
-                buttonDisableCallback={this.disableButtons.bind(this)}
                 ref={"TargetVerseDisplay"}
               />
               <ButtonGroup style={{width:'100%'}}>
@@ -320,7 +312,6 @@ class View extends React.Component {
   	}
   }
 }
-
 
 /**
 * Compares two string alphabetically

@@ -10,8 +10,11 @@ const XRegExp = require('xregexp');
 module.exports = function(data) {
   for (var wordObject of data.wordList) {
     if ('regex' in wordObject) {
-      var currentRegexObject = wordObject.regex.xregexp;
-      wordObject.regex = new XRegExp(currentRegexObject.source, currentRegexObject.flags);
+      var currentRegexArray = wordObject.regex;
+      wordObject.regex = [];
+      for (var regex of currentRegexArray) {
+        wordObject.regex.push(new XRegExp(regex.xregexp.source, regex.xregexp.flags));
+      }
     }
   }
 }

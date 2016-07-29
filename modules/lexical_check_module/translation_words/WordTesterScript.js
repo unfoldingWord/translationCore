@@ -30,15 +30,6 @@ function concatenateChapterIntoString(chapterData) {
  * case sensitive
  */
 function testWord(word, chapterString, caseSensitiveAliases) {
-  word.header = word.aliases[0];
-  console.log('Header: ' + word.header);
-  /* Sort the aliases by how many words are in their alias, so that we
-   * search by the largest alias first
-   */
-  word.aliases.sort(function(first, second) {
-    return tokenizer.tokenize(second).length - tokenizer.tokenize(first).length;
-  });
-
   var regexStrings = [];
   for (var alias of word.aliases) {
     var currentRegexStringArray = regexStrings[regexStrings.length - 1];
@@ -101,6 +92,18 @@ function testWords(wordList, chapterString, caseSensitiveAliases) {
   return returnList;
 }
 
+function sortAliases(wordList) {
+  for (var word of wordList) {
+    word.header = word.aliases[0];
+    /* Sort the aliases by how many words are in their alias, so that we
+     * search by the largest alias first
+     */
+    word.aliases.sort(function(first, second) {
+      return tokenizer.tokenize(second).length - tokenizer.tokenize(first).length;
+    });
+  }
+}
+
 /**
 * Tests every word in wordList if it is in bookData. Returns a list of the words that
 * are located in bookData
@@ -109,6 +112,7 @@ function testWords(wordList, chapterString, caseSensitiveAliases) {
 * @param {object} bookData - ULB book data retrieved from Door43DataFetcher
 */
 function testBook(wordList, bookData, caseSensitiveAliases) {
+  sortAliases(wordList);
   var wordListInBook = new Set();
   for (var chapter of bookData.chapters) {
     var chapterString = concatenateChapterIntoString(chapter);
