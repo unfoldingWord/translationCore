@@ -13,12 +13,13 @@ const MenuItem = require('./menu/MenuItem.js');
 
 //other consts
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
+const NAMESPACE = 'ExampleChecker';
 
 class MenuView extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkObject: api.getDataFromCheckStore('LexicalChecker')
+      checkObject: api.getDataFromCheckStore(NAMESPACE)
     };
 
     this.updateMenuItem = this.updateMenuItem.bind(this);
@@ -27,7 +28,7 @@ class MenuView extends React.Component {
   componentWillMount() {
     api.registerEventListener('changedCheckStatus', this.updateMenuItem);
     this.setState({
-      checkObject: api.getDataFromCheckStore('LexicalChecker')
+      checkObject: api.getDataFromCheckStore(NAMESPACE)
     });
   }
 
@@ -45,19 +46,8 @@ class MenuView extends React.Component {
     var menuList;
     if (this.state.checkObject) {
       menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
-        //This will get us the proper header 
-        var header = search(api.getDataFromCheckStore('LexicalChecker', 'wordList'),
-          function(item) {
-            return stringCompare(group.group, item.name);
-          });
-        if (header) {
-          header = header.header;
-        }
-        else {
-          header = group.group;
-        }
         var groupHeader = (
-          <div>{header.replace(extensionRegex, '')}</div>
+          <div>{group.group}</div>
         );
         var checkMenuItems = group.checks.map(function(check, checkIndex) {
           return (
@@ -72,7 +62,7 @@ class MenuView extends React.Component {
           );
         });
         return (
-          <div key={groupIndex}>
+          <div key={groupIndex} style={{paddingBottom: '15px'}}>
             {groupHeader}
             {checkMenuItems}
           </div>
@@ -80,7 +70,7 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+        <Well className='fill-height' style={{overflow: 'scroll', whiteSpace: 'nowrap'}}>
           <div>
             <h3>Checks</h3>
             {menuList}

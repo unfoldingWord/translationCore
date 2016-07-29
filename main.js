@@ -37,7 +37,7 @@ ipc.on('open-report', (event, path) => {
     return;
   }
   reportWindow = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
-  reportWindow.loadURL(path);
+  reportWindow.loadURL("file:///" + path);
   reportWindow.on('closed', () => {
     reportWindow = undefined;
     // send event to the mainWindow if its open still
@@ -54,6 +54,9 @@ ipc.on('open-report', (event, path) => {
         fs.unlink(path, err => {
           if (err) console.log(err);
         });
+      }
+      else {
+        console.log(err);
       }
     });
 

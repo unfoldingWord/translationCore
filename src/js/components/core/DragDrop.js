@@ -5,7 +5,6 @@ const Dropzone = require('react-dropzone');
 const remote = window.electron.remote;
 const {dialog} = remote;
 
-const FileImport = require('./FileImport');
 
 const style = {
                 dropzone: {
@@ -44,7 +43,6 @@ const DragDrop = React.createClass({
   onDrop: function(files) {
     var _this = this;
     if (files !== undefined) {
-      // FileImport(files[0].path);
       _this.setState({filePath: files[0].path});
       _this.props.sendFilePath(files[0].path);
     }
@@ -55,7 +53,6 @@ const DragDrop = React.createClass({
       properties: ['openDirectory']
     }, function(filename) {
       if (filename !== undefined) {
-        // FileImport(filename[0]);
         _this.setState({filePath: filename[0]});
         _this.props.sendFilePath(filename[0]);
       }
