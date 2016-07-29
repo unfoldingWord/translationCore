@@ -9,7 +9,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const Well = ReactBootstrap.Well;
 
 //dev imports
-const MenuItem = require('./menu/MenuItem.js');
+const MenuItem = require('./MenuItem.js');
 
 //other consts
 const extensionRegex = new RegExp('\\.\\w+\\s*$');

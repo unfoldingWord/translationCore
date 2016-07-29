@@ -42,9 +42,13 @@ class ModuleApi {
     }       
 
     getMenu(namespace) {
-        if (this.menus) {
-            return this.menus[namespace];
+        if (!this.menus) {
+            this.menus = {};
         }
+        if (!(namespace in this.menus)) {
+            this.menus[namespace] = require('./components/core/navigation_menu/MenuView.js');
+        }
+        return this.menus[namespace];
     }
 
     saveModule(identifier, module) {

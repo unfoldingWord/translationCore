@@ -15,7 +15,6 @@ const Col = ReactBootstrap.Col;
 const Well = ReactBootstrap.Well;
 const Button = ReactBootstrap.Button;
 const ButtonGroup = ReactBootstrap.ButtonGroup;
-const Glyphicon = ReactBootstrap.Glyphicon;
 
 // Declare modules that are not defined within our ExampleChecker
 // They will be initialized in the constructor
@@ -30,6 +29,8 @@ class View extends api.CheckModule {
   constructor() {
     super();
     
+    // Initialize the namespace to be used inside the check store. Required for
+    // extending the CheckModule class
     this.nameSpace = NAMESPACE;
 
     // Initialize modules that are not defined within our ExampleChecker
@@ -37,35 +38,10 @@ class View extends api.CheckModule {
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
     ExampleTool = api.getModule('ExampleTool');
-
-    // Bind functions to the View object so the "this" context isn't lost
-    this.updateCheckStatus = this.updateCheckStatus.bind(this);
-    this.goToNext = this.goToNext.bind(this);
-    this.goToCheck = this.goToCheck.bind(this);
-    this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
-  }
-
-  componentWillMount() {
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToCheck', this.goToCheck);
-    this.updateState();
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('goToNext', this.goToNext);
-    api.removeEventListener('goToCheck', this.goToCheck);
-  }
-  goToNext() {
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
-  }
-  goToCheck(params) {
-    this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
   }
   
   /**
-   * Implements abstract method required by the CheckModule class.
+   * @description - Implements abstract method required by the CheckModule class.
    * This is called when the user clicks the NextButton or a MenuItem in the NavigationMenu.
    * Gets data from tools that are in the check module view and
    * returns an object with keys and values that will be stored in the current check.
@@ -114,14 +90,14 @@ class View extends api.CheckModule {
               <ButtonGroup>
                 <Button
                   onClick={
-                    function() { _this.updateCheckStatus('YES'); }
+                    function() { _this.updateCheckStatus('RETAINED'); }
                   }
                 >
                   <span style={{color: 'green'}}>Yes</span>
                 </Button>
                 <Button
                   onClick={
-                    function() { _this.updateCheckStatus('NO'); }
+                    function() { _this.updateCheckStatus('WRONG'); }
                   }
                 >
                   <span style={{color: 'red'}}>No</span>
