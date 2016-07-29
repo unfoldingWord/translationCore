@@ -7,6 +7,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const FileModule = require('./FileModule.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
+const AppDescription = require('./AppDescription');
 
 class SwitchCheckModal extends React.Component{
   constructor(){
@@ -33,11 +34,8 @@ class SwitchCheckModal extends React.Component{
   }
 
   moduleClick(folderName) {
+    this.close();
     CheckDataGrabber.loadModuleAndDependencies(folderName);
-    this.setState({
-      showModal: false
-    }, CoreActions.updateCheckModal(false));
-
   }
 
   updateCheckModal() {
@@ -45,7 +43,7 @@ class SwitchCheckModal extends React.Component{
   }
 
   close() {
-
+    CoreActions.updateCheckModal(false);
   }
 
   render() {
@@ -65,7 +63,12 @@ class SwitchCheckModal extends React.Component{
             <Modal.Title>Change Check category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {buttons}
+            <AppDescription imagePath="modules/lexical_check_module/icon.png"
+                            title="translationWords Check"
+                            description="Test Description"
+                            useApp={this.moduleClick.bind(this)}
+                            folderName='lexical_check_module'
+            />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>
