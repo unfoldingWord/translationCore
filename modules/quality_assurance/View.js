@@ -6,10 +6,10 @@ const ReactBootstrap = api.ReactBootstrap;
 const Well = ReactBootstrap.Well;
 
 class View extends React.Component {
-	constructor() {
-		super();
-  }
-  
+   constructor() {
+    super();
+   }
+
   render() {
     var html = api.getDataFromCheckStore('QualityAssurance', 'resourceHtml');
     return (
@@ -19,7 +19,7 @@ class View extends React.Component {
     );
   }
 }
-  
+
 function createMarkup(html) {
   return {__html: html};
 };

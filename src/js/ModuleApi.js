@@ -129,8 +129,6 @@ class ModuleApi {
             alertCallback: callback
         });
     }
-    
-    
 }
 
 const api = new ModuleApi();

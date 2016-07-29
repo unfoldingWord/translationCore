@@ -57,7 +57,7 @@ class ProposedChanges extends React.Component {
         console.error(TARGET_LANGUAGE_ERROR);
     }
   }
-  
+
   render() {
     return (
       <div style={style.width}>

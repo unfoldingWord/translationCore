@@ -26,48 +26,45 @@ var QualityAssurance = null;
 const NAMESPACE = 'ExampleChecker';
 
 class View extends React.Component {
-  
+
   constructor() {
     super();
-    
+
     this.state = {
       currentCheck: null
     };
-    
+
     // Initialize modules that are not defined within our ExampleChecker
     // They will be rendered in the render() function
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
     QualityAssurance = api.getModule('QualityAssurance');
-    
+
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
     this.goToNext = this.goToNext.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
-  
+
   componentWillMount() {
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToCheck', this.goToCheck);
     this.updateState();
   }
-  
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNext);
     api.removeEventListener('goToCheck', this.goToCheck);
   }
-  
   goToNext() {
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
   }
-  
   goToCheck(params) {
     this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
   }
-  
   /**
    * @description - This is used to change our current check index and group index within the store
    * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
@@ -80,7 +77,7 @@ class View extends React.Component {
     if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
       currentCheck.proposedChanges = proposedChanges;
     }
-    
+
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -107,7 +104,6 @@ class View extends React.Component {
     }
     this.updateState();
   }
-  
   /**
    * @description - Helper method for retrieving the verse from different languages
    * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'
@@ -125,7 +121,7 @@ class View extends React.Component {
       console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
     }
   }
-  
+
   /**
    * @description - This method grabs the information that is currently in the
    * store and uses it to update our state, which in turn updates our view. This method is
@@ -145,7 +141,7 @@ class View extends React.Component {
       verseNumber: currentCheckFromStore.verse
     });
   }
-  
+
   updateCheckStatus(newCheckStatus) {
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
@@ -159,7 +155,7 @@ class View extends React.Component {
     });
     this.updateState();
   }
-  
+
   render() {
     var _this = this;
     return (
