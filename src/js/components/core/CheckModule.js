@@ -6,6 +6,57 @@ const React = require('react');
 var api;
 
 class CheckModule extends React.Component {
+  
+  /**
+   * @description - Public method that your check module can call to get the data for the current check.
+   * You should only call this method to get data, not to save data.
+   * To save data, use the updateCheckStatus(), updateCheckProperty(), and getDataFromTools() methods.
+   */
+  getCurrentCheck() {
+    return this.state.currentCheck;
+  }
+
+  /**
+   * @description - Public method to update the status of the check to be displayed in the navigation menu.
+   * @param {string} newCheckStatus - the check status selected by the user, one of three possible values:
+   *  * 'RETAINED': displays a green check in the menu
+   *  * 'REPLACED': displays a yellow shuffle icon in the menu
+   *  * 'WRONG': displays a red X in the menu
+   *  * 'UNCHECKED': displays nothing in the menu
+   */
+  updateCheckStatus(newCheckStatus) {
+    var currentCheck = this.getCurrentCheckFromCheckStore();
+    currentCheck.checkStatus = newCheckStatus;
+    api.emitEvent('changedCheckStatus', {
+      groupIndex: this.getCurrentGroupIndex(),
+      checkIndex: this.getCurrentCheckIndex(),
+      checkStatus: newCheckStatus
+    });
+    this.updateState();
+  }
+
+  /**
+   * @description - Public method to change any property of the current check.
+   * @param {string} key - the key used to identify the data in the current check
+   * @param {object} value - the value to save in the current check, as selected by the user
+   */
+  updateCheckProperty(key, value) {
+    var currentCheck = this.getCurrentCheckFromCheckStore();
+    currentCheck[key] = value;
+    this.updateState();
+  }
+  
+  /**
+   * @description - Abstract method that must be implemented in your check module if you want
+   * to save data that comes from tools within your check module, such as ProposedChanges.
+   * This is called when the user clicks the NextButton or a MenuItem in the NavigationMenu.
+   * Gets data from tools that are in the check module view and returns an object with
+   * keys and values that will be stored in the current check.
+   */
+  getDataFromTools() {
+    return {};
+  }
+  
   constructor() {
     super();
     api = window.ModuleApi;
@@ -32,32 +83,39 @@ class CheckModule extends React.Component {
     api.removeEventListener('goToCheck', this.goToCheck);
   }
   
+  /**
+   * @description - Called when the user clicks the next button
+   */
   goToNext() {
-    var currentCheckIndex = api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
   }
   
+  /**
+   * @description - Called when the user clicks a menu item in the navigation menu
+   * @param {params} object - contains groupIndex and checkIndex of the menu item clicked
+   */
   goToCheck(params) {
     this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
   }
   
   /**
-   * @description - This is used to change our current check index and group index within the store
-   * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
-   * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
+   * @description - Changes the current check index and group index within the store
+   * @param {integer} newGroupIndex - the group index of the check selected in the navigation menu
+   * @param {integer} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    // //Get the proposed changes and add it to the check
-    // var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    // var currentCheck = this.state.currentCheck;
-    // if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-    //   currentCheck.proposedChanges = proposedChanges;
-    // }
+    //Get the proposed changes and add it to the check
+    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
+    var currentCheck = this.state.currentCheck;
+    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
+      currentCheck.proposedChanges = proposedChanges;
+    }
 
     var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length) {
@@ -89,10 +147,9 @@ class CheckModule extends React.Component {
    * data found in the store
    */
   updateState() {
-    var currentGroupIndex = api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
-    var currentCheckFromStore = api.getDataFromCheckStore(this.nameSpace, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
-    var currentWord = api.getDataFromCheckStore(this.nameSpace, 'groups')[currentGroupIndex].group;
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
+    var currentCheckFromStore = this.getCurrentCheckFromCheckStore();
     this.setState({
       currentCheck: currentCheckFromStore
     });
@@ -101,19 +158,25 @@ class CheckModule extends React.Component {
       verseNumber: currentCheckFromStore.verse
     });
   }
-
-  updateCheckStatus(newCheckStatus) {
+  
+  /**
+   * @description - Returns the current check from the check store. This is not a copy.
+   * If it is modified, the changes will be reflected in the check store.
+   */
+  getCurrentCheckFromCheckStore() {
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
     var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
-    currentCheck.checkStatus = newCheckStatus;
-    api.emitEvent('changedCheckStatus', {
-      groupIndex: currentGroupIndex,
-      checkIndex: currentCheckIndex,
-      checkStatus: newCheckStatus
-    });
-    this.updateState();
+    return currentCheck;
+  }
+  
+  getCurrentGroupIndex() {
+    return api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
+  }
+  
+  getCurrentCheckIndex() {
+    return api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
   }
 }
 

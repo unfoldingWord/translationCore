@@ -40,12 +40,29 @@ class View extends api.CheckModule {
   }
   
   /**
+   * Implements abstract method required by the CheckModule class.
+   * This is called when the user clicks the NextButton or a MenuItem in the NavigationMenu.
+   * Gets data from tools that are in the check module view and
+   * returns an object with keys and values that will be stored in the current check.
+   */
+  getDataFromTools() {
+    var dataFromTools = {};
+    // Get text from proposed changes tool
+    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
+    // Save proposed changes if the text box is not empty or unchanged
+    if (proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
+      dataFromTools.proposedChanges = proposedChanges;
+    }
+    return dataFromTools;
+  }
+  
+  /**
    * @description - Helper method for retrieving the verse from different languages
    * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'
    * that will be used to index into the 'common' namespace within CheckStore
    */
   getVerse(language) {
-    var currentCheck = this.state.currentCheck;
+    var currentCheck = this.getCurrentCheck();
     var currentVerseNumber = currentCheck.verse;
     var currentChapterNumber = currentCheck.chapter;
     var actualLanguage = api.getDataFromCommon(language);
