@@ -137,7 +137,7 @@ const WelcomeUpload = React.createClass({
     return (
           <div>
             <Modal.Body>
-            <Tab.Container activeKey={this.state.active} onSelect={this.handleSelect} style={{backgroundColor: '#ffffff', borderRadius:'10px'}}>
+            <Tab.Container id={"loadOnline"} activeKey={this.state.active} onSelect={this.handleSelect} style={{backgroundColor: '#ffffff', borderRadius:'10px'}}>
               <Nav justified>
               <NavItem eventKey={1} className={"loaderButton"} style={{marginLeft: '5px'}}>{IMPORT_LOCAL}</NavItem>
               <NavItem eventKey={2} className={"loaderButton"} style={{marginLeft: '5px'}}>{IMPORT_ONLINE}</NavItem>
