@@ -1,4 +1,10 @@
 var style = {
+container2:{
+  height: "100%",
+
+  overflow: "hidden",
+},
+
   container:{
       backgroundColor: "#222",
       width: "85px",
@@ -9,7 +15,10 @@ var style = {
       zIndex: "99",
       left: "0px",
       fontSize: "12px",
-      overflowY: "scroll",
+
+
+ height: "99%",
+ overflow: "auto",
   },
 
   ul: {

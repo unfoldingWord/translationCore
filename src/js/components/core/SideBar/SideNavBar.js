@@ -54,6 +54,7 @@ class SideNavBar extends React.Component{
 
     render(){
       return(
+        <div style={style.container2}>
         <div style={style.container}>
           <ul style={style.ul}>
             <img src="images/TC_Icon_logo.png" onClick={this.sayHello.bind(this)} style={style.logo}/>
@@ -66,7 +67,7 @@ class SideNavBar extends React.Component{
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
             {/*<OnlineStatus />*/}
           </ul>
-        </div>
+        </div></div>
       );
     }
 
