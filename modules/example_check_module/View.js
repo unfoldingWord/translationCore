@@ -21,7 +21,7 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 // They will be initialized in the constructor
 var TPane = null;
 var ProposedChanges = null;
-var QualityAssurance = null;
+var ExampleTool = null;
 
 const NAMESPACE = 'ExampleChecker';
 
@@ -38,7 +38,7 @@ class View extends React.Component {
     // They will be rendered in the render() function
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
-    QualityAssurance = api.getModule('QualityAssurance');
+    ExampleTool = api.getModule('ExampleTool');
 
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
@@ -163,7 +163,7 @@ class View extends React.Component {
         <TPane />
         <Row className='show-grid'>
           <Col sm={6}>
-            <QualityAssurance />
+            <ExampleTool />
           </Col>
           <Col sm={6}>
             <Well>
