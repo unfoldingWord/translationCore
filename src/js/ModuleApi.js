@@ -122,7 +122,7 @@ class ModuleApi {
         console.log(CheckStore.storeData);
     }
 
-    getUserData(){
+    getLoggedInUser(){
        let user = CoreStore.getLoggedInUser();
        let fullName = user.full_name;
        let userName = user.username;

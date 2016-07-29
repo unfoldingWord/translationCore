@@ -46,9 +46,6 @@ class ProposedChanges extends React.Component {
   handleSubmit(event){
     this.setState({ open: !this.state.open });
     api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.currentVerse;
-    let user = api.getUserData();
-    let userName = user.userName;
-    console.log(userName);
   }
 
   updateTargetLanguage() {
