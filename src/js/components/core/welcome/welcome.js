@@ -4,6 +4,7 @@ const RB = require('react-bootstrap');
 const {Glyphicon, Button} = RB;
 
 const Login = require('./WelcomeLogin');
+const WelcomeUpload = require('./WelcomeUpload');
 const CreateProject = require('./WelcomeCreateProject');
 
 const NUM_OF_SLIDES = 3;
@@ -98,12 +99,16 @@ class Welcome extends React.Component{
             <h1>Load your first project</h1>
             <p>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', minHeight: '100px'}}>
+            <WelcomeUpload />
             </div>
           </div>
         )
         break;
       case 4:
           console.log("Flow is now #<Main />");
+          console.log(CoreStore);
+          console.log(CheckStore);
+          console.log(api);
       break;
     }
   }

@@ -10,10 +10,14 @@ const FileImport = require('./FileImport');
 const style = {
                 dropzone: {
                   active: {
-                    border: '2px solid #727272',
-                    backgroundColor: '#f5f5f5'
+                    border: '2px solid #727272'
                   },
                   text: {
+                    borderRadius: '10px',
+                    marginTop: '10px',
+                    backgroundColor: '#ffffff',
+                    color: '#ffffff',
+                    fontSize: '30px',
                     height: '200px',
                     paddingTop: '75px',
                     verticalAlign: 'middle',
@@ -21,10 +25,8 @@ const style = {
                   },
                   main: {
                     width: '100%',
-                    color: '#212121',
+                    color: '#ffffff',
                     height: '200px',
-                    border: '2px dashed #727272',
-                    borderRadius: '5px',
                     fontSize: '25px'
                   },
                   inner: {
@@ -68,7 +70,7 @@ const DragDrop = React.createClass({
         activeStyle={style.dropzone.active}>
             <div style={style.dropzone.text}>
               <center>
-                Drag files here to upload, or click to select a file
+                Click To Open A Project
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>
               </center>
             </div>
