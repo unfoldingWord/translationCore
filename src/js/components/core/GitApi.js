@@ -58,6 +58,7 @@ function GitApi(directory) {
         this.pull(remoteRepo, branch, function(err) {
           if (err) {
             callback(err);
+            return;
           }
           _this.push(remoteRepo, branch, function(err) {
             callback(err);
