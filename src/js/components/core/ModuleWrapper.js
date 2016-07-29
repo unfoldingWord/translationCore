@@ -25,7 +25,7 @@ class ModuleWrapper extends React.Component {
     if(!this.state.view) {
       return(
         <div>
-          <p>Click the checks button to load your first check</p>
+          <p>Click the apps button to start checking</p>
         </div>
       );
     }

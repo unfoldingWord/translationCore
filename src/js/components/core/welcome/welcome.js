@@ -234,13 +234,13 @@ class Welcome extends React.Component{
       case 6:
         return(
           <Popover
-            id="loadCheck"
+            id="loadApp"
             placement="right"
             positionLeft={88}
             positionTop={469}
             title="Loading a Check">
             <div style={Styles.tutorialPopover}>
-              <p>This is where you load in a checking tool so that you can perform a check on your draft.</p>
+              <p>This is where you load in an app so that you can perform a check on your draft.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -264,15 +264,15 @@ class Welcome extends React.Component{
             </div>
             <Button
               style={Styles.nextTutorialButton}
-              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
+              onClick={() => {this.props.initialize()}}
               bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
+              {'Done'} <Glyphicon glyph="chevron-right" />
             </Button>
           </Popover>
         )
       break;
-    }
   }
+}
 
   render(){
     var _this = this;
