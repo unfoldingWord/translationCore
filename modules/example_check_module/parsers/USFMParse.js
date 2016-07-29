@@ -59,4 +59,5 @@ function usfmToJSON(usfm_in) {
   }
   return bookData;
 }
+
 module.exports = usfmToJSON;
