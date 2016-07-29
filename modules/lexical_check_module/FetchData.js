@@ -172,25 +172,16 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
   var occurrence = 0;
   for (var wordRegex of wordObject.regex) {
     var match = currentText.match(wordRegex);
-    if (match) {
-      var index = match.index;
-      while (index != -1) {
-        returnArray.push({
-          "chapter": chapterNumber,
-          "verse": verseObject.num,
-          "checkStatus": "UNCHECKED",
-          "occurrence": ++occurrence,
-          "word": match[0]
-        });
-        currentText = currentText.replace(wordRegex, ' ');
-        match = currentText.match(wordRegex);
-        if (match) {
-          index = match.index;
-        }
-        else {
-          break;
-        }
-      }
+    while (match) {
+      returnArray.push({
+        "chapter": chapterNumber,
+        "verse": verseObject.num,
+        "checkStatus": "UNCHECKED",
+        "occurrence": ++occurrence,
+        "word": match[0]
+      });
+      currentText = currentText.replace(wordRegex, ' ');
+      match = currentText.match(wordRegex);
     }
   }
   verseObject.text = currentText;
