@@ -22,7 +22,9 @@ var Access = {
           fileObj[items[i]] = path.join(filepath, items[i]);
           //fileObj = {{checkdata: Users/username/Desktop/project_name/checkdata}...}
         }
-        _this.loadCheckData(fileObj);
+        _this.loadCheckData(fileObj, function() {
+          api.putDataInCommon('saveLocation', filepath);
+        });
         //loads into project with object of file paths
       });
     } catch (e) {
@@ -30,42 +32,46 @@ var Access = {
     }
   },
 
-  loadCheckData: function(fileObj) {
+  loadCheckData: function(fileObj, callback) {
     for (var item in fileObj) {
       if (item == "checkdata") {
         //if it is the checkdata folder
         var checkDataFolderPath = fileObj[item];
         _this.readDisk(checkDataFolderPath, (checkDataFiles) => {
           //open the file path and read in the files
+          var listOfChecks = null;
           for (var file of checkDataFiles){
-            _this.putDataInFileProject(file, checkDataFolderPath);
+            listOfChecks = _this.putDataInFileProject(file, checkDataFolderPath, callback);
             //calls other functions that puts data in stores
+          }
+          if (listOfChecks) {
+            _this.saveModuleInAPI(listOfChecks);
           }
         });
       }
     }
   },
 
-putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
-  if (_this.containsTC(file)) {
-    var tcFilePath = path.join(checkDataFolderPath, file);
-    //tcFilePath = Users/username/Desktop/project_name/common.tc
-    fileWithoutTC = _this.removeTC(file);
+  putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
+    var listOfChecks = null;
+    if (_this.containsTC(file)) {
+      var tcFilePath = path.join(checkDataFolderPath, file);
+      //tcFilePath = Users/username/Desktop/project_name/common.tc
+      fileWithoutTC = _this.removeTC(file);
       _this.readTheJSON(tcFilePath, (json) => {
         if (fileWithoutTC == "common") {
-          _this.makeCommon(json);
           //puts common in api common
-          _this.saveModuleInAPI(json);
-          //saving module in api
+          listOfChecks = _this.makeCommon(json);
         }
         else {
-          _this.makeModuleCheckData(json, fileWithoutTC);
           //saving module data (checks) in CheckStore
+          _this.makeModuleCheckData(json, fileWithoutTC);
         }
         callback();
-    });
-  }
-},
+      });
+    }
+    return listOfChecks;
+  },
 
   readTheJSON: function(path, callback) {
     try {
@@ -96,6 +102,7 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
 
   makeCommon: function(data) {
     CheckStore.storeData.common = data;
+    return data.arrayOfChecks;
   },
 
   makeModuleCheckData: function(moduleData, moduleName){
@@ -121,39 +128,52 @@ putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
       return false;
     }
   },
-  saveModuleInAPI: function(json) {
-    //gets paths from loaded path
-  if (json.arrayOfChecks != undefined) {
-    for (var element of json.arrayOfChecks){
-      var path = element.location;
-      _this.reportViewPush(path);
+
+  saveModuleInAPI: function(listOfChecks) {
+      //gets paths from loaded path
+    if (listOfChecks != undefined) {
+      for (var element of listOfChecks){
+        var path = element.location;
+        _this.reportViewPush(path);
+      }
+      CoreActions.doneLoadingFetchData(reportViews);
     }
-    CoreActions.doneLoadingFetchData(reportViews);
-  }
-},
+  },
 
   reportViewPush: function(path) {
-    let viewObj = require(path + '/View');
+    let viewObj = require(window.__base + path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
 
     try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {
         console.error(e);
       }
     }
+
+    try {
+      var loader = require(path + '/Loader.js');
+      loader(api.getDataFromCheckStore(viewObj.name));
+    }
+    catch(e) {
+      if (e.code != "MODULE_NOT_FOUND") {
+        console.error(e);
+      }
+    }
+
     //stores module in api
     if (_this.isModule(path)) {
-    reportViews.push(viewObj);
+      reportViews.push(viewObj);
+    }
+  },
+
+  clearOldData: function(){
+    CheckStore.WIPE_ALL_DATA();
+    //clears relevant data from store
+    api.modules = {};
   }
-},
-clearOldData: function(){
-  CheckStore.WIPE_ALL_DATA();
-  //clears relevant data from store
-  api.modules = {};
-}
 };
 
 module.exports = Access;
