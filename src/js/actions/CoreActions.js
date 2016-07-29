@@ -17,6 +17,13 @@ module.exports = {
     });
   },
 
+  updateOpenView: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.OPEN_VIEW,
+      view: boolean
+    });
+  },
+
   updateModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
