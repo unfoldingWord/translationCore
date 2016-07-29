@@ -24,6 +24,7 @@ const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
 const AlertModal = require('../AlertModal');
+const Access = require('../AccessProject.js');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
@@ -178,17 +179,8 @@ const ProjectModal = React.createClass({
                 if (err || !_this.isLocal) {
                   CoreActions.showCreateProject("Check");
                 } else {
-                    var Confirm = {
-                      title: "This project already exists",
-                      content: "Do you want to overwrite it? Data will be lost.",
-                      leftButtonText: "No",
-                      rightButtonText: "Yes"
-                    }
-                    api.createAlert(Confirm, function(result){
-                      if(result == 'Yes') {
-                        _this.showCreateProject("Check");
-                      }
-                    });
+                  Access.loadFromFilePath(_this.params.targetLanguagePath);
+                  _this.close();
                 }
               });
           } else {
