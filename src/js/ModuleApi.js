@@ -15,6 +15,7 @@ const CoreActions = require('./actions/CoreActions.js');
 const Dispatcher = require('./dispatchers/Dispatcher.js');
 const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');
+const CheckModule = require('./components/core/CheckModule');
 
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
 
@@ -22,6 +23,7 @@ class ModuleApi {
 	constructor() {
         this.React = React;
         this.ReactBootstrap = ReactBootstrap;
+        this.CheckModule = CheckModule;
         this.modules = {};
 	}
 
