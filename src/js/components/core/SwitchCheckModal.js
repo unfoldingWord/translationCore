@@ -6,6 +6,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const FileModule = require('./FileModule.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
+const AppDescription = require('./AppDescription');
 
 var _this;
 
@@ -36,7 +37,6 @@ class SwitchCheckModal extends React.Component{
 
   moduleClick(folderName) {
     FileModule.readJsonFile(window.__base + "/modules/" + folderName + "/manifest.json", (jsonObject) => {
-      debugger;
       // jsonObject has title, name, and includes (modules that this module needs)
       // TODO: get the includes and do everyone's FetchDatas
     });
@@ -59,7 +59,7 @@ class SwitchCheckModal extends React.Component{
         <Button key={moduleFolderName} onClick={this.moduleClick.bind(this, moduleFolderName)}>{moduleFolderName}</Button>
       );
     });
-    
+
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
@@ -67,7 +67,12 @@ class SwitchCheckModal extends React.Component{
             <Modal.Title>Change Check category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {buttons}
+            <AppDescription imagePath="modules/lexical_check_module/icon.png"
+                            title="translationWords Check"
+                            description="Test Description"
+                            useApp={this.moduleClick}
+                            folderName='lexical_check_module'
+            />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>
