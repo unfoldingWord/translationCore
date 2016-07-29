@@ -56,7 +56,7 @@ const DragDrop = React.createClass({
         if (filename !== undefined) {
           _this.opened = false;
           _this.setState({filePath: filename[0]});
-          _this.props.sendFilePath(filename[0]);
+          _this.props.sendFilePath(filename[0], null, true);
         }
       });
     }
