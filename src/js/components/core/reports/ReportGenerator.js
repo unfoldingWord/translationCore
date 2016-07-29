@@ -2,7 +2,7 @@
  * @author Evan "Vegan and Proud" Wiederspan
  * This function will generate and display a report when called. It first opens
  * a local report template HTML file, reads that text into a Node object, then renders
- * the gathered JSX from the above class into that page and saves it to another file in the root
+ * the gathered JSX from the Report class into that page and saves it to another file in the root
  * directory of the project. Using electron-remote, that file is then opened in a new window
  * where the user can then save the rendered report. The main reason it was done this way is
  * that I wanted the report to be displayed in a new Browser window, but browser windows live in
@@ -14,6 +14,9 @@
 
 const React = require("react");
 const ReactDOM = require("react-dom");
+const ReactBootstrap = ModuleApi.ReactBootstrap;
+const Row = ReactBootstrap.Row;
+const Col = ReactBootstrap.Col;
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
@@ -104,6 +107,7 @@ class Report extends React.Component {
           output.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
         }
       }
+      // now start getting data for each verse in the chapter
       for (let v in targetLang[ch]) {
         let reports = [];
         for (let view in reportViews) {
@@ -112,8 +116,9 @@ class Report extends React.Component {
             reports.push(<span key={`${ch}-${v}-${view}`}>{viewResult}</span>);
           }
         }
+        // only display a row for this verse if it has report view data
         if (reports.length > 0) {
-          output.push(<span key={`${ch}-${v}`}><h4>{`${bookName} ${ch}:${v}`}</h4><div>{reports}</div></span>);
+          output.push(<Row key={`${ch}-${v}`}><Col xs={3}><h4>{`${ch}:${v}`}</h4></Col><Col xs={9}>{reports}</Col></Row>);
         }
       }
     }
