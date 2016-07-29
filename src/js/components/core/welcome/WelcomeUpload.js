@@ -143,8 +143,20 @@ const UploadModal = React.createClass({
             <Tab.Container activeKey={this.state.active} id = {"Load"}
                  onSelect={this.handleSelect} style={{color:'black', backgroundColor: '#ffffff', borderRadius:'10px'}}>
               <Nav bsStyle="" justified>
-              <NavItem eventKey={1} className={"loaderButton"} style={{marginLeft: '5px', color: 'black'}} id={"local"} >{IMPORT_LOCAL}</NavItem>
-              <NavItem eventKey={2} className={"loaderButton"} style={{marginLeft: '5px', color: 'black'}} id={"online"}>{IMPORT_ONLINE}</NavItem>
+              <NavItem
+                eventKey={1}
+                className={"loaderButton"}
+                style={{marginLeft: '5px', color: 'black'}}
+              >
+                {IMPORT_LOCAL}
+              </NavItem>
+              <NavItem
+                eventKey={2}
+                className={"loaderButton"} 
+                style={{marginLeft: '5px', color: 'black'}}
+              >
+                {IMPORT_ONLINE}
+              </NavItem>
               </Nav>
             </Tab.Container>
             {mainContent}
