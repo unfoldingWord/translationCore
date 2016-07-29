@@ -48,22 +48,21 @@ function GitApi(directory) {
       //Array can be one or more files
     },
 
-    update: function(remoteRepo, branch, first) {
+    update: function(remoteRepo, branch, first, callback) {
       var _this = this;
       if (first) {
         this.push(remoteRepo, branch, function(err) {
-          if (err)
-            dialog.showErrorBox('Error', err);
+          callback(err);
           });
       } else {
         this.pull(remoteRepo, branch, function(err) {
           if (err) {
-            dialog.showErrorBox('Error', err);
+            callback(err);
+            return;
           }
           _this.push(remoteRepo, branch, function(err) {
-            if (err)
-              dialog.showErrorBox('Error', err);
-            });
+            callback(err);
+          });
         });
       }
     },

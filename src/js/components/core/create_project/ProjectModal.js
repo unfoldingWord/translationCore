@@ -23,6 +23,7 @@ const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
 const AccessProjectModal = require('../AccessProjectModal');
+const AlertModal = require('../AlertModal');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
@@ -52,8 +53,12 @@ const ProjectModal = React.createClass({
     AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
-  showCreateProject: function() {
+  showCreateProject: function(input) {
     var modal = CoreStore.getShowProjectModal()
+    if (input) {
+      modal = input;
+      CoreStore.projectModalVisibility = input;
+    }
     if(modal === "Check") {
       this.setState({
         showModal: true,
@@ -67,15 +72,49 @@ const ProjectModal = React.createClass({
         doneText: 'Check'
       });
     }
+    else if (modal === "") {
+      this.setState({
+        showModal: false
+      });
+    }
   },
+
+  hideModal: function() {
+    this.getProjectStatus((result) => {
+      if(result) {
+        this.close();
+      }
+      });
+    },
+
   close: function() {
     //CheckStore.getNameSpaces();
-    CoreActions.showCreateProject("");
+    CoreStore.projectModalVisibility = "";
     this.setState({
-      showModal: false
+      showModal: false,
+      FetchDataArray: []
     });
   },
 
+  getProjectStatus: function(doneCallback) {
+    var projectStatus = CoreStore.projectModalVisibility;
+    var selectedModudles = this.state.FetchDataArray;
+    if (projectStatus != "Languages" || (Object.keys(selectedModudles) == [] && projectStatus == 'Check')) {
+      	var Alert = {
+      		title: "You are currently making a project",
+      		content: "Are you sure you want to cancel?",
+      		leftButtonText: "No",
+      		rightButtonText: "Yes"
+      	}
+      api.createAlert(Alert, function(result){
+      	if(result == 'Yes') {
+          doneCallback(true);
+      	}
+      });
+    } else {
+      doneCallback(true);
+    }
+  },
   makePathForChecks: function(check) {
     if (!check || check == '') {
       return;
@@ -93,6 +132,7 @@ const ProjectModal = React.createClass({
           tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
         }
       }
+      this.close();
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       fs.readJson(manifestLocation, function(err, parsedManifest){
@@ -120,7 +160,7 @@ const ProjectModal = React.createClass({
               if (tempFetchDataArray.length > 0) {
                 _this.clearOldData();
                 CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
-                _this.close();
+
               }
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
@@ -128,11 +168,29 @@ const ProjectModal = React.createClass({
       });
   }
     else if (this.state.modalValue === 'Languages') {
+      var _this = this;
       try {
         var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
         fs.readJson(manifestLocation, function(err, parsedManifest){
           if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
-                CoreActions.showCreateProject("Check");
+              var tcManifestLocation = path.join(_this.params.targetLanguagePath, 'tc-manifest.json');
+              fs.readJson(tcManifestLocation, function(err, data) {
+                if (err) {
+                  CoreActions.showCreateProject("Check");
+                } else {
+                    var Confirm = {
+                      title: "This project already exists",
+                      content: "Do you want to overwrite it? Data will be lost.",
+                      leftButtonText: "No",
+                      rightButtonText: "Yes"
+                    }
+                    api.createAlert(Confirm, function(result){
+                      if(result == 'Yes') {
+                        _this.showCreateProject("Check");
+                      }
+                    });
+                }
+              });
           } else {
               dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
@@ -192,7 +250,7 @@ const ProjectModal = React.createClass({
   render: function() {
     return (
       <div>
-      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal show={this.state.showModal} onHide={this.hideModal}>
       {this.changeModalBody(this.state.modalValue)}
       <Modal.Footer>
       <ButtonToolbar>

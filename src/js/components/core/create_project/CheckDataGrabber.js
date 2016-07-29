@@ -79,7 +79,12 @@ var CheckDataGrabber = {
             });
           });
         } else {
-          alert('Save location is not defined');
+          var Alert = {
+            title: "Warning",
+            content: "Save location is not defined",
+            leftButtonText: "Ok"
+          }
+          api.createAlert(Alert);
         }
 
         CoreActions.doneLoadingFetchData(this.reportViews);
@@ -116,7 +121,7 @@ var CheckDataGrabber = {
   getDataFromCheck: function(path, params) {
     var DataFetcher = require(path + '/FetchData');
     let viewObj = require(path + '/View');
-    
+
     try {
       api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
     }
