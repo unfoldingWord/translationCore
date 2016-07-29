@@ -50,7 +50,7 @@ const AlertModal = React.createClass({
   },
 
   handleAlertDismiss() {
-    var response = this.state.lefttButtonText;
+    var response = this.state.leftButtonText;
     this.setState({visibility: false}, CoreActions.sendAlertResponse(response));
     alertMessage = {};
   },

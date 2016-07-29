@@ -1,9 +1,10 @@
 const CoreStore = require('../.././stores/CoreStore');
 const CoreActions = require('../.././actions/CoreActions');
 const CheckStore = require('../.././stores/CheckStore');
+const api = window.ModuleApi;
 var alertCallBack = () => {};
 var Alert = {
-  startListener(callback) {
+  startListener(callback, finishedCallback) {
     if (callback) {
       alertCallBack = callback;
     }
@@ -16,6 +17,7 @@ var Alert = {
         var callback = this.alertObj['alertCallback'];
         callback(data);
         this.alertObj['alertCallback'] = null;
+        api.clearAlertCallback();
       }
       catch(e){
       }
