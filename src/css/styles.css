@@ -14,3 +14,7 @@ body {
   padding-left: 85px;
   padding-bottom: 5px;*/
 }
+
+.nav-pills:hover {
+  border-radius: 10px;
+}

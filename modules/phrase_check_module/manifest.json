@@ -1,0 +1,8 @@
+{
+    "title": "Figures of Speech, Morphology, Grammar Checks",
+    "name": "PhraseChecker",
+    "include": [
+        "translation_academy",
+        "t_pane"
+    ]
+}

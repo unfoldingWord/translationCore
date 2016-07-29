@@ -1,0 +1,8 @@
+{
+    "title": "Lexical Check",
+    "name": "LexicalChecker",
+    "include": [
+        "proposed_changes_module",
+        "t_pane"
+    ]
+}
