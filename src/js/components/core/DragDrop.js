@@ -34,6 +34,7 @@ const style = {
 
 const DragDrop = React.createClass({
   getInitialState: function() {
+    this.opened = false;
     return {
       filePath: ''
     }
@@ -47,14 +48,18 @@ const DragDrop = React.createClass({
   },
   onClick: function() {
     var _this = this;
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        _this.setState({filePath: filename[0]});
-        _this.props.sendFilePath(filename[0]);
-      }
-    });
+    if (!this.opened) {
+      this.opened = true;
+      dialog.showOpenDialog({
+        properties: ['openDirectory']
+      }, function(filename) {
+        if (filename !== undefined) {
+          _this.opened = false;
+          _this.setState({filePath: filename[0]});
+          _this.props.sendFilePath(filename[0]);
+        }
+      });
+    }
   },
 
   render: function() {
