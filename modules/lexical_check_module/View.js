@@ -262,7 +262,7 @@ class View extends React.Component {
           <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
-              <ProposedChanges />
+              <CommentBox />
             </Col>
             <Col sm={3} md={3} lg={3}>
               <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
@@ -300,7 +300,7 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <CommentBox />
+              <ProposedChanges selectedWord={"spongegar"} />
             </Col>
           </Row>
   			</div>

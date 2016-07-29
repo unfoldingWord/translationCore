@@ -8,10 +8,10 @@ class View extends React.Component {
     constructor() {
         super();
     }
-    
+
 	render() {
 		return (
-			<ProposedChanges />
+			<ProposedChanges selectedWord={this.props.selectedWord}/>
 		);
 	}
 }
