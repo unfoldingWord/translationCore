@@ -17,9 +17,9 @@ class NextButton extends React.Component {
     api.emitEvent('goToNext');
   }
 
-  render() { 
+  render() {
     return (
-        <Button bsStyle='primary' onClick={this.buttonClicked}>
+        <Button bsStyle='primary' onClick={this.buttonClicked} style={{marginBottom: "10px"}}> 
           {SaveAndContinue}
           &nbsp;<Glyphicon glyph="arrow-right" />
         </Button>
