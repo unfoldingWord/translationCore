@@ -66,7 +66,7 @@ const WelcomeUpload = React.createClass({
         if (result) {
         _this.makeTCManifest(function(result) {
           if (result) {
-            console.log("Ready to load next screen");
+            _this.props.success();
           }
         });
       }
