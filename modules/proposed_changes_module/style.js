@@ -2,6 +2,7 @@ var style = {
   width: {
     width:'100%'
   },
+
   panelBackgroundColor:{
     backgroundColor: "#D3D3D3"
   },
@@ -31,7 +32,7 @@ var style = {
     width: "90%",
     maxWidth: "400px",
     minWidth: "250px",
-    height: "380px",
+    height: "320px",
     margin: "0px auto",
     background: "#fafafa",
     borderRadius: "10px",

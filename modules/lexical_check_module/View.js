@@ -8,8 +8,7 @@ const ReactBootstrap = api.ReactBootstrap;
 //Modules not defined within lexical_check_module
 var TPane = null;
 var ProposedChanges = null;
-
-const CommentBox = null; //api.getModule('CommentBox');
+var CommentBox = null;
 
 //Bootstrap consts
 const Well = ReactBootstrap.Well;
@@ -48,6 +47,8 @@ class View extends React.Component {
     }
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
+    CommentBox = api.getModule('CommentBox');
+
 
     this.updateState = this.updateState.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
@@ -88,6 +89,16 @@ class View extends React.Component {
     this.updateState();
   }
 
+  /**
+   * This method is necessary because on the first mount of the LexicalChecker all of it's listeners
+   * won't be mounted yet, so necessary to emit its events
+   */
+  componentDidMount() {
+    //this should already be set in the state from componentWillMount
+    var currentCheck = this.state.currentCheck;
+    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+  }
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
@@ -126,7 +137,7 @@ class View extends React.Component {
     if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
       currentCheck.proposedChanges = proposedChanges;
     }
-    
+
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -228,22 +239,6 @@ class View extends React.Component {
     }
   }
 
-  enableButtons() {
-    if (this.state.buttonsDisable) {
-      this.setState({
-        buttonsDisable: false
-      });
-    }
-  }
-
-  disableButtons() {
-    if (!this.state.buttonsDisable) {
-      this.setState({
-        buttonsDisable: true
-      });
-    }
-  }
-
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
@@ -259,42 +254,29 @@ class View extends React.Component {
   			<div>
   				<TPane />
           <Row className="show-grid">
-            <Col sm={4} md={4} lg={4}
-            style={{
-              textAlign: "center"
-            }}
-          >
-              <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
-            </Col>
-            <Col
-              sm={3} md={3} lg={3}
-              style={{
-                textAlign: "center"
-              }}
-            >
-              <Well bsSize={'small'} style={{
-                height: '60px',
-                lineHeight:'35px'}}
-              >
-                {this.state.book + ' ' +
-                  this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse
-                }
-              </Well>
-            </Col>
-          </Row>
-          <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
+              <ProposedChanges />
+            </Col>
+            <Col sm={3} md={3} lg={3}>
+              <WordComponent word={this.state.currentCheck.word} />
+            </Col>
+            <Col sm={3} md={3} lg={3}>
+              <Well bsSize={'small'} style={{
+                height: '60px',
+                lineHeight:'35px', textAlign: "center"}}>
+                {this.state.book + ' ' +
+                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}
+            </Well>
             </Col>
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
                 verse={gatewayVerse}
+                occurrence={this.state.currentCheck.occurrence}
               />
               <TargetVerseDisplay
                 verse={targetVerse}
-                buttonEnableCallback={this.enableButtons.bind(this)}
-                buttonDisableCallback={this.disableButtons.bind(this)}
                 ref={"TargetVerseDisplay"}
               />
               <ButtonGroup style={{width:'100%'}}>
@@ -311,7 +293,7 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges />
+              <CommentBox />
             </Col>
           </Row>
   			</div>
@@ -319,7 +301,6 @@ class View extends React.Component {
   	}
   }
 }
-
 
 /**
 * Compares two string alphabetically

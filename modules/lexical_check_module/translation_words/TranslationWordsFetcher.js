@@ -15,6 +15,7 @@ const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?
 class TranslationWordsFetcher {
   constructor() {
     this.wordList = [];
+    this.caseSensitiveAliases = new Set();
   }
 
 /**
@@ -120,6 +121,32 @@ else {
   }
 
   getAliases(progCallback = () => {}, callback = () => {}) {
+    /**
+     * This is a convenience class that is used as a set, but the 
+     * collisions are based on lowercased strings
+     */
+    class LowercasedSet {
+      constructor() {
+        this.values = {};
+      }
+
+      add(string) {
+        if (!(string.toLowerCase() in this.values)) {
+          this.values[string.toLowerCase()] = string;
+        }
+      }
+
+      has(string) {
+        return string.toLowerCase() in this.values;
+      }
+
+      index(string) {
+        return this.values[string.toLowerCase()];
+      }
+    }
+
+    var aliases = new LowercasedSet();
+
     var calls = [];
     var numberDone = 0;
     function iterateOverCalls(start=0, end=100) {
@@ -177,10 +204,21 @@ else {
         return [];
       }
       // split by comma and take off hanging spaces
-      let res = aliasRes.split(",").map(str => str.trim().toLowerCase());
-      return res.filter((item, pos) => {return res.indexOf(item) == pos;});
+      let res = aliasRes.split(aliasRes.indexOf(';') != -1 ? ";" : ',').map(str => str.trim());
+      for (var al of res) { 
+        if (!aliases.has(al)) {
+          aliases.add(al);
+        }
+        else {
+          /* We need to add both aliases to the case sensitive set, because they only 
+           * differ in case
+           */
+          _this.caseSensitiveAliases.add(al);
+          _this.caseSensitiveAliases.add(aliases.index(al));
+        }
+      }
+      return res; //.filter((item, pos) => {return res.indexOf(item) == pos;});
     }
-
     iterateOverCalls();
   }
 }
