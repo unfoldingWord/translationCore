@@ -1,3 +1,8 @@
+/**
+ * @author Gregory Fuentes
+ * @description: This is the modal for Opening Project Functionality both online and offline.
+ ******************************************************************************/
+
 var React = require('react');
 var remote = window.electron.remote;
 var {dialog} = remote;
@@ -90,32 +95,32 @@ render: function() {
    if (this.state.active === 1) {
      mainContent = (
        <FormGroup>
-             <FormControl type="text" value={this.state.value} placeholder="Enter URL" onChange={this.handleChange} onKeyDown={this.submitViaEnter} />
+            <FormControl type="text" value={this.state.value} placeholder="Enter URL" onChange={this.handleChange} onKeyDown={this.submitViaEnter} />
              <Button bsStyle="primary" onClick={this.handleOnline} pullRight>
                Submit
              </Button>
-             <FormControl.Feedback />
+            <FormControl.Feedback />
            </FormGroup>
                    );
    } else {
-     mainContent = (<div>
+     mainContent = ( <div>
                       <DragDrop sendFilePath={this.OpenLocal}/>
                      </div>);
    }
   return (
             <div>
               <Modal show={this.state.showModal} onHide={this.close} data-toggle="collapse">
-              <Modal.Header closeButton>
-                 <Modal.Title>Open Translation Project</Modal.Title>
-               </Modal.Header>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Open Translation Project</Modal.Title>
+                  </Modal.Header>
                <Modal.Body>
-               <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
+                <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
                  <NavItem eventKey={1}>{'Open Project from Online'}</NavItem>
                  <NavItem eventKey={2}>{'Open Project Locally'}</NavItem>
-               </Nav>
-               {mainContent}
+                </Nav>
+                {mainContent}
                </Modal.Body>
-               </Modal>
+              </Modal>
              </div>
   );
 }
