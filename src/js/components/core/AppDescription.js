@@ -22,7 +22,7 @@ class AppDescription extends React.Component{
         <img style={{width: '60px'}} src={this.props.imagePath} />
         <h3 style={{display: 'inline-block', marginLeft:'10px'}}>{this.props.title}</h3>
         <p style={{padding: '20px'}}>{this.props.description}</p>
-        <Button onClick={this.props.useApp(this.props.folderName)}>
+        <Button onClick={this.props.useApp.bind(this, this.props.folderName)}>
           Use App
         </Button>
       </div>

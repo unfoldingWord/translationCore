@@ -66,7 +66,7 @@ class SwitchCheckModal extends React.Component{
             <AppDescription imagePath="modules/lexical_check_module/icon.png"
                             title="translationWords Check"
                             description="Test Description"
-                            useApp={this.moduleClick}
+                            useApp={this.moduleClick.bind(this)}
                             folderName='lexical_check_module'
             />
           </Modal.Body>
