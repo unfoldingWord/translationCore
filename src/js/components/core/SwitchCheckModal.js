@@ -33,8 +33,11 @@ class SwitchCheckModal extends React.Component{
   }
 
   moduleClick(folderName) {
-    this.close();
     CheckDataGrabber.loadModuleAndDependencies(folderName);
+    this.setState({
+      showModal: false
+    }, CoreActions.updateCheckModal(false));
+
   }
 
   updateCheckModal() {
@@ -42,7 +45,7 @@ class SwitchCheckModal extends React.Component{
   }
 
   close() {
-    CoreActions.updateCheckModal(false);
+
   }
 
   render() {
@@ -54,7 +57,7 @@ class SwitchCheckModal extends React.Component{
         <Button key={moduleFolderName} onClick={this.moduleClick.bind(this, moduleFolderName)}>{moduleFolderName}</Button>
       );
     });
-    
+
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
