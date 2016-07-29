@@ -9,11 +9,11 @@ class View extends React.Component {
         super();
     }
 
-	render() {
-		return (
-			<ProposedChanges selectedWord={this.props.selectedWord}/>
-		);
-	}
+    render() {
+    return (
+      <ProposedChanges selectedWord={this.props.selectedWord}/>
+    );
+  }
 }
 
 module.exports = {

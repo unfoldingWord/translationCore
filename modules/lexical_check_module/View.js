@@ -242,7 +242,7 @@ class View extends React.Component {
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
-	render() {
+   render() {
     var _this = this;
     if (!this.state.currentCheck) {
       return (<div></div>);
@@ -250,9 +250,9 @@ class View extends React.Component {
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
-  		return (
-  			<div>
-  				<TPane />
+      return (
+        <div>
+          <TPane />
           <Row className="show-grid">
             <Col sm={6} md={6} lg={6}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
@@ -296,9 +296,9 @@ class View extends React.Component {
               <ProposedChanges selectedWord={"spongegar"} />
             </Col>
           </Row>
-  			</div>
-  		);
-  	}
+        </div>
+      );
+    }
   }
 }
 
