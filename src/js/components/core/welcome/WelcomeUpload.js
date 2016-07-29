@@ -66,6 +66,9 @@ const WelcomeUpload = React.createClass({
         if (result) {
         _this.makeTCManifest(function(result) {
           if (result) {
+            api.putDataInCommon('params', _this.state.params);
+            api.putDataInCommon('saveLocation', _this.state.saveLocation);
+            console.log(CheckStore);
             console.log("Ready to load next screen");
           }
         });

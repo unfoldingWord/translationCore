@@ -58,17 +58,11 @@ var CheckDataGrabber = {
 
   loadModuleAndDependencies: function(moduleFolderName) {
     FileModule.readJsonFile(path.join(window.__base, "modules", moduleFolderName, "manifest.json"), (moduleMetadata) => {
-      // hard coded
-      var params = {originalLanguagePath: "C:/Users/Logan Lebanoff/Desktop/8woc/8woc/data/ulgb", targetLanguagePath: "C:/Users/Logan Lebanoff/Desktop/8woc/test_files/Ephesians", repo: undefined, bookAbbr: "eph"}
+      var params = api.getDataFromCommon('params');
       var modulesPaths = [];
       modulesPaths.push([moduleMetadata.name, path.join(window.__base, "modules", moduleFolderName)]);
       for(let childFolderName of moduleMetadata.include) {
           modulesPaths.push([childFolderName, path.join(window.__base, "modules", childFolderName)]);
-      }
-      // hard coded
-      if(!CheckStore.storeData.common) {
-          CheckStore.storeData.common = {};
-          CheckStore.storeData.common.saveLocation = "C:/Users/Logan Lebanoff/Desktop/8woc/test_files/Ephesians";
       }
       this.getFetchData(modulesPaths, params);
     });
