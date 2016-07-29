@@ -3,6 +3,7 @@
     "name": "LexicalChecker",
     "include": [
         "proposed_changes_module",
-        "t_pane"
+        "t_pane",
+        "comment_box"
     ]
 }
