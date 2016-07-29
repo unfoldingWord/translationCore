@@ -15,6 +15,7 @@ const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Open = require('../components/core/OpenModal.js');
+const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar.js');
 
 const Welcome = require('../components/core/welcome/welcome');
 
@@ -92,6 +93,7 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
                 <AlertModal />
+                <ModuleProgress />
                 <ModuleWrapper />
                 <SwitchCheckModuleDropdown />
               </Col>
