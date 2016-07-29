@@ -259,7 +259,7 @@ class View extends React.Component {
               <ProposedChanges />
             </Col>
             <Col sm={3} md={3} lg={3}>
-              <WordComponent word={this.state.currentWord.replace(extensionRegex, '')} />
+              <WordComponent word={this.state.currentCheck.word} />
             </Col>
             <Col sm={3} md={3} lg={3}>
               <Well bsSize={'small'} style={{
