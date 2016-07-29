@@ -27,6 +27,15 @@ const SelectChecks = React.createClass({
       allModules:modules
     });
   },
+
+  allFieldsEntered: function() {
+    var modulesSelected = this.state.FetchDataArray;
+    if (modulesSelected != undefined && modulesSelected.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   getChecksFromFilesystem: function(){
     var modules = [];
     var allModules = [];
