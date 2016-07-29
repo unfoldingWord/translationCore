@@ -37,7 +37,7 @@ class ModuleApi {
             console.warn(MENU_WARN + namespace);
         }
         this.menus[namespace] = menu;
-    }
+    }       
 
     getMenu(namespace) {
         if (this.menus) {

@@ -4,6 +4,13 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
+var natural = require('natural');
+var XRegExp = require('xregexp');
+var nonUnicodeLetter = XRegExp('\\PL');
+
+//Wordlength tokenizer
+const tokenizer = new natural.RegexpTokenizer({pattern: nonUnicodeLetter});
+
 const Well = ReactBootstrap.Well;
 
 /* Contains a word from the target language, defines a lot of listeners for clicks */
@@ -79,40 +86,42 @@ const TargetLanguageSelectBox = React.createClass({
     return true;
   },
 
-  render: function() {
-    // populate an array with html elements then return the array
-    var wordArray = this.props.verse.split(' ');
-    var words = [];
-    //This is used for react in mounting components within in an array
-    var tokenKey = 0;
-    /* This is used for just only words, not spaces, so that we can know where the word is
-     * located within the target verse
-     */
-    var wordKey = 0;
-    for (var i = 0; i < wordArray.length; i++) {
-      var targetWordComponent = <TargetWord
-                                  selectCallback={this.addSelectedWord}
-                                  removeCallback={this.removeFromSelectedWords}
-                                  key={tokenKey++} 
-                                  keyId={wordKey++} 
-                                  style={this.cursorPointerStyle}
-                                  word={wordArray[i]}
-                                  ref={wordKey.toString()}
-                                />
-      words.push(targetWordComponent);
-      if (i != wordArray.length - 1) { // add a space if we're not at the end of the line
-        words.push(
-          <span
-            key={tokenKey++}
+  generateWordArray: function() {
+    var words = tokenizer.tokenize(this.props.verse),
+      wordArray = [],
+      index = 0,
+      tokenKey = 0,
+      wordKey = 0;
+    for (var word of words) {
+      var wordIndex = this.props.verse.indexOf(word, index);
+      if (wordIndex > index) {
+        wordArray.push(
+          <span 
+            key={wordKey++} 
+            style={this.cursorPointerStyle}
           >
-            {' '}
+            {this.props.verse.substring(index, wordIndex)}
           </span>
-        ); // even the spaces need keys! (but not keyId)
+        );
       }
+      wordArray.push(
+        <TargetWord 
+          word={word} 
+          key={wordKey++} 
+          keyId={tokenKey++} 
+          style={this.cursorPointerStyle}
+          selectCallback={this.addSelectedWord}
+          removeCallback={this.removeFromSelectedWords}
+          ref={tokenKey.toString()}
+        />
+      );
+      index = wordIndex + word.length;
     }
-    // for (var key in this.refs) {
-    //   this.refs[key].removeHighlight();
-    // }
+    return wordArray;
+  },
+
+  render: function() {
+    var words = this.generateWordArray();
     return (
       <Well 
         bsSize={'small'}
@@ -139,9 +148,12 @@ const TargetLanguageSelectBox = React.createClass({
       this.sortSelectedWords();
     }
 
-    if (this.selectedWords.length > 0) {
-      this.props.buttonEnableCallback();
-    }
+    /* This is used for if you want to enable disabled buttons after the user has 
+     * selected at least one word
+     */
+    // if (this.selectedWords.length > 0) {
+    //   this.props.buttonEnableCallback();
+    // }
   },
 
   removeFromSelectedWords: function(wordObj) {
@@ -156,9 +168,10 @@ const TargetLanguageSelectBox = React.createClass({
       this.selectedWords.splice(index, 1);
     }
 
-    if (this.selectedWords.length <= 0) {
-      this.props.buttonDisableCallback();
-    }
+    //This is used for if you want to disable the buttons if no words are selected
+    // if (this.selectedWords.length <= 0) {
+    //   this.props.buttonDisableCallback();
+    // }
   },
 
 /* Sorts the selected words by their 'key' attribute */
