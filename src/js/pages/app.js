@@ -38,7 +38,9 @@ var Main = React.createClass({
   },
 
   finishWelcome: function(){
-    this.setState({firstTime: false});
+    this.setState({
+      firstTime: false
+    });
   },
 
   render: function(){
