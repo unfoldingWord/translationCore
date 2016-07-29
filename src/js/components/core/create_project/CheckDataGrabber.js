@@ -1,6 +1,7 @@
 const CoreStore = require('../../.././stores/CoreStore');
 const CoreActions = require('../../.././actions/CoreActions');
 const CheckStore = require('../../.././stores/CheckStore');
+const FileModule = require('../FileModule');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../booksOfBible');
@@ -55,6 +56,24 @@ var CheckDataGrabber = {
   //   }
   // },
 
+  loadModuleAndDependencies: function(folderName) {
+    FileModule.readJsonFile(path.join(window.__base, "modules", folderName, "manifest.json"), (jsonObject) => {
+      // hard coded
+      var params = {originalLanguagePath: "C:/Users/Logan Lebanoff/Desktop/8woc/8woc/data/ulgb", targetLanguagePath: "C:/Users/Logan Lebanoff/Desktop/8woc/test_files/Ephesians", repo: undefined, bookAbbr: "eph"}
+      var array = [];
+      array.push([jsonObject.name, path.join(window.__base, "modules", folderName)]);
+      for(let childFolderName of jsonObject.include) {
+          array.push([childFolderName, path.join(window.__base, "modules", childFolderName)]);
+      }
+      // hard coded
+      if(!CheckStore.storeData.common) {
+          CheckStore.storeData.common = {};
+          CheckStore.storeData.common.saveLocation = "C:/Users/Logan Lebanoff/Desktop/8woc/test_files/Ephesians";
+      }
+      // debugger;
+      this.getFetchData(array, params);
+    });
+  },
   getFetchData: function(array, params) {
     CoreStore.updateNumberOfFetchDatas(array.length);
     this.totalModules = array.length;
