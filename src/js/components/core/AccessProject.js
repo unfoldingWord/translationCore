@@ -7,7 +7,7 @@ var CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 var CoreStore = require('../../stores/CoreStore');
 var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
-const api = window.ModuleApi;
+var api = window.ModuleApi;
 var reportViews = [];
 
 var Access = {

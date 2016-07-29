@@ -18,7 +18,7 @@ class SideNavBar extends React.Component{
   }
 
   handleOpenProject(){
-    CoreActions.showOpenModal(true);
+    CoreActions.updateOpenView(true);
   }
 
   handleSyncProject(){
