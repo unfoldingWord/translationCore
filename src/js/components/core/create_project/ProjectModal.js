@@ -54,9 +54,10 @@ const ProjectModal = React.createClass({
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function(input) {
-    var modal = CoreStore.getShowProjectModal()    
+    var modal = CoreStore.getShowProjectModal()
     if (input) {
-      modal = input; 
+      modal = input;
+      CoreStore.projectModalVisibility = input;
     }
     if(modal === "Check") {
       this.setState({
@@ -71,22 +72,34 @@ const ProjectModal = React.createClass({
         doneText: 'Check'
       });
     }
-  },
-  close: function() {
-    //CheckStore.getNameSpaces();
-    this.getProjectStatus((result)=>{
-      if(result) {
-        this.setState({
-          showModal: false
-        });
-      }
-    });
-    CoreActions.showCreateProject("");
+    else if (modal === "") {
+      this.setState({
+        showModal: false
+      });
+    }
   },
 
-  getProjectStatus: function(callback) {
-    var projectStatus = CoreStore.getShowProjectModal();
-    if (projectStatus != "Create" && projectStatus != "Check") {
+  hideModal: function() {
+    this.getProjectStatus((result) => {
+      if(result) {
+        this.close();
+      }
+      });
+    },
+
+  close: function() {
+    //CheckStore.getNameSpaces();
+    CoreStore.projectModalVisibility = "";
+    this.setState({
+      showModal: false,
+      FetchDataArray: []
+    });
+  },
+
+  getProjectStatus: function(doneCallback) {
+    var projectStatus = CoreStore.projectModalVisibility;
+    var selectedModudles = this.state.FetchDataArray;
+    if (projectStatus != "Languages" || (Object.keys(selectedModudles) == [] && projectStatus == 'Check')) {
       	var Alert = {
       		title: "You are currently making a project",
       		content: "Are you sure you want to cancel?",
@@ -95,13 +108,12 @@ const ProjectModal = React.createClass({
       	}
       api.createAlert(Alert, function(result){
       	if(result == 'Yes') {
-          callback(true);
-      	} else {
-      		callback(false);
+          doneCallback(true);
       	}
       });
+    } else {
+      doneCallback(true);
     }
-    callback(true);
   },
   makePathForChecks: function(check) {
     if (!check || check == '') {
@@ -120,6 +132,7 @@ const ProjectModal = React.createClass({
           tempFetchDataArray.push([this.state.FetchDataArray[element], pathOfCheck]);
         }
       }
+      this.close();
       var _this = this;
       var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
       fs.readJson(manifestLocation, function(err, parsedManifest){
@@ -147,7 +160,7 @@ const ProjectModal = React.createClass({
               if (tempFetchDataArray.length > 0) {
                 _this.clearOldData();
                 CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
-                _this.close();
+
               }
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
@@ -160,10 +173,10 @@ const ProjectModal = React.createClass({
         var manifestLocation = path.join(this.params.targetLanguagePath, 'manifest.json');
         fs.readJson(manifestLocation, function(err, parsedManifest){
           if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
-              var tcManifestLocation = path.join(_this.params.targetLanguagePath, 'tc-manifest.json');        
+              var tcManifestLocation = path.join(_this.params.targetLanguagePath, 'tc-manifest.json');
               fs.readJson(tcManifestLocation, function(err, data) {
                 if (err) {
-                  CoreActions.showCreateProject("Check");                  
+                  CoreActions.showCreateProject("Check");
                 } else {
                     var Confirm = {
                       title: "This project already exists",
@@ -173,9 +186,9 @@ const ProjectModal = React.createClass({
                     }
                     api.createAlert(Confirm, function(result){
                       if(result == 'Yes') {
-                        _this.showCreateProject("Check");                                          
+                        _this.showCreateProject("Check");
                       }
-                    }); 
+                    });
                 }
               });
           } else {
@@ -237,7 +250,7 @@ const ProjectModal = React.createClass({
   render: function() {
     return (
       <div>
-      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal show={this.state.showModal} onHide={this.hideModal}>
       {this.changeModalBody(this.state.modalValue)}
       <Modal.Footer>
       <ButtonToolbar>
