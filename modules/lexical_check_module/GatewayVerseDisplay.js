@@ -15,52 +15,37 @@ class GatewayVerseDisplay extends React.Component {
   }
 
   generateWordArray() {
-    var wordRegex = this.props.wordObject.regex
-    var currentVerse = this.props.verse,
-      occurrence = 0,
-      index = 0,
-      saveVerse = currentVerse,
-      matches = null;
-    for (var wordRegex of this.props.wordObject.regex) {
-      matches = currentVerse.match(wordRegex);
-      index += matches ? matches.index : 0;
-      occurrence += matches ? 1 : 0;
-      if (occurrence == this.props.occurrence) {
-        break;
-      }
-      while (occurrence < this.props.occurrence && matches) {
-        index += matches[0].length;
-        currentVerse = currentVerse.slice(index);
-        matches = currentVerse.match(wordRegex);
-        if (!matches) {
-          // console.error('Unable to find the word: ' + this.props.wordObject.name);
-          break;
-        }
-        else {
-          occurrence++;
-          index += matches.index;
-        }
-      }
-    }
+    // var wordRegex = this.props.regex;
+    // match = currentVerse.match(wordRegex);
+    // index += match ? match.index : 0;
+    // var occurrence = match ? 1 : 0;
+    // while (occurrence < this.props.occurrence && match) {
+    //   index += match[0].length;
+    //   currentVerse = currentVerse.slice(index);
+    //   match = currentVerse.match(wordRegex);
+    //   if (!match) {
+    //     // console.error('Unable to find the word: ' + this.props.wordObject.name);
+    //     break;
+    //   }
+    //   else {
+    //     occurrence++;
+    //     index += match.index;
+    //   }
+    // }
 
-    if (index != -1) {
-      /* 
-       * Split the verse on either side of the actual word. This assumes that the | character
-       * will never be found in the Bible
-       */
-      //We need to get the actual word that was in the verse, the regex could contain several
-      var actualWord = matches[0];
+    /* 
+     * Split the verse on either side of the actual word. This assumes that the | character
+     * will never be found in the Bible
+     */
+    //We need to get the actual word that was in the verse, the regex could contain several
 
-      var first, last;
-      var newStr = replaceFrom(saveVerse, index, index + actualWord.length, '|');
-      [first, last] = newStr.split('|');
-      return [<span key={0}>{first}</span>,
-        <span key={1} className={"text-primary"}>{actualWord}</span>,
-        <span key={2}>{last}</span>];
-    }
-    else {
-      console.error('Unable to display GatewayVerse');
-    }
+    var first, last;
+    var newStr = replaceFrom(this.props.verse, this.props.check.index, 
+      this.props.check.index + this.props.check.word.length, '|');
+    [first, last] = newStr.split('|');
+    return [<span key={0}>{first}</span>,
+      <span key={1} className={"text-primary"}>{this.props.check.word}</span>,
+      <span key={2}>{last}</span>];
   }
 
   render() {

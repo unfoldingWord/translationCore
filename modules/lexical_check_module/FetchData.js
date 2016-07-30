@@ -10,6 +10,8 @@ const api = window.ModuleApi;
 
 //node modules
 const XRegExp = require('xregexp');
+const natural = require('natural');
+const tokenizer = new natural.RegexpTokenizer({pattern: new XRegExp('\\PL')});
 
 // User imports
 const Door43DataFetcher = require('./Door43DataFetcher.js');
@@ -50,11 +52,17 @@ function getData(params, progressCallback, callback) {
             else {
               var actualWordList = BookWordTest(tWFetcher.wordList, bookData, 
                 tWFetcher.caseSensitiveAliases);
-              var checkObject = findWordsInBook(bookData, actualWordList);
+              var mappedBook = mapVerses(bookData);
+            
+              // var checkObject = findWordsInBook(bookData, actualWordList);
+              var checkObject = findWords(bookData, mappedBook, actualWordList);
+              console.log('CheckObject');
+              console.dir(checkObject);
               checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
               
+
               api.putDataInCheckStore('LexicalChecker', 'book', 
                 api.convertToFullBookName(params.bookAbbr));
               api.putDataInCheckStore('LexicalChecker', 'groups', checkObject['LexicalChecker']);
@@ -128,6 +136,144 @@ function getData(params, progressCallback, callback) {
   );
 }
 
+function mapVerseToObject(verse) {
+  
+  var words = tokenizer.tokenize(verse);
+  var returnObject = {};
+  var currentText = verse;
+  var currentIndex = 0;
+  for (var word of words) {
+    var index = currentText.indexOf(word);
+    currentIndex += index;
+    returnObject[currentIndex] = {'word': word, 'marked': false};
+    currentIndex += word.length;
+    currentText = verse.slice(currentIndex);
+  }
+  return returnObject;
+}
+
+function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObject) {
+  var checkArray = []
+  var sortOrder = 0;
+  for (var regex of wordObject.regex) {
+    var match = verseObject.text.match(regex);
+    while(match) {
+      if (!checkIfWordsAreMarked(match, mappedVerseObject)) {
+        checkArray.push({
+          "chapter": chapterNumber,
+          "verse": verseObject.num,
+          "checkStatus": "UNCHECKED",
+          "sortOrder": sortOrder++,
+          "word": match[0],
+          "index": match.index,
+        });
+      }
+      match = stringMatch(verseObject.text, regex, match.index + incrementIndexByWord(match));
+    }
+  }
+  return checkArray;
+}
+
+/**
+ * @description - This function will tokenize the matched string from the given match and return the length of 
+ * the first word in the match
+ * @param {objecy} match - the object returned from a string.match(regexp) method call
+ */
+function incrementIndexByWord(match) {
+  if (!match) {
+    console.error("Can't increment an index with an invalid match!");
+    return 0;
+  }
+  var string = match[0];
+  var words = tokenizer.tokenize(string);
+  return words[0].length;
+}
+
+function stringMatch(string, regex, index) {
+  var match = string.match(regex);
+  var lastIndex = 0;
+  while (match && match.index < index) {
+    lastIndex = match.index + incrementIndexByWord(match);
+    match = string.slice(lastIndex).match(regex);
+    if (match) {
+      match.index += lastIndex;
+    }
+  }
+  return match;
+}
+
+function checkIfWordsAreMarked(match, verseObject) {
+  var matchedWords = tokenizer.tokenize(match[0]);
+  var indexes = [];
+  for (var word of matchedWords) {
+    indexes.push(match.index + match[0].indexOf(word));
+  }
+  var matchedWordObjects = [];
+  for (var index of indexes) {
+    if (verseObject[index]) {
+      if (verseObject[index].marked) {
+        return true;
+      }
+      else {
+        matchedWordObjects.push(verseObject[index]);
+      }
+    }
+    else {
+      console.error("Can't find index: " + index + " in verseObject");
+      console.dir(verseObject);
+    }
+  }
+  for (var matchedObject of matchedWordObjects) {
+    matchedObject.marked = true;
+  }
+  return false;
+}
+
+function mapVerses(bookData) {
+  var mapVerse = [];
+  for (var chapter of bookData.chapters) {
+    var chapterMap = [];
+    for (var verse of chapter.verses) {
+      chapterMap[verse.num] = mapVerseToObject(verse.text);
+    }
+    mapVerse[chapter.num] = chapterMap;
+  }
+  return mapVerse;
+}
+
+function findWords(bookData, mapBook, wordList) {
+  var returnObject = {};
+  returnObject['LexicalChecker'] = [];
+
+  for (var word of wordList) {
+    var wordReturnObject = {
+      "group": word.name,
+      "checks": []
+    };
+    for (var chapter of bookData.chapters) {
+      for (var verse of chapter.verses) {
+        for (var item of findWordInVerse(chapter.num, verse, 
+          mapBook[chapter.num][verse.num], word)) {
+          wordReturnObject.checks.push(item);
+        }
+      }
+    }
+    if (wordReturnObject.checks.length <= 0) {
+      continue;
+    }
+    wordReturnObject.checks.sort(function(first, second) {
+      if (first.chapter != second.chapter) {
+          return first.chapter - second.chapter;
+      }
+      if (first.verse != second.verse) {
+        return first.verse - second.verse;
+      }
+      return first.sortOrder - second.sortOrder;
+    });
+    returnObject.LexicalChecker.push(wordReturnObject);
+  }
+  return returnObject;
+}
 
 /**
 * Outputs a JSON object in the format defined by what 'FetchData.js' should output
@@ -135,7 +281,7 @@ function getData(params, progressCallback, callback) {
 function findWordsInBook(bookData, actualWordList) {
   var returnObject = {};
   returnObject['LexicalChecker'] = [];
-  //sort the set of words by how long their aliases are
+  
   for (var word of actualWordList) {
     var wordReturnObject = {
       "group": word.name,
@@ -159,7 +305,7 @@ function findWordsInBook(bookData, actualWordList) {
       if (first.verse != second.verse) {
         return first.verse - second.verse;
       }
-      return first.occurrence - second.occurrence;
+      return first.sortOrder - second.sortOrder;
     });
     returnObject.LexicalChecker.push(wordReturnObject);
   }
@@ -169,8 +315,9 @@ function findWordsInBook(bookData, actualWordList) {
 function findWordInBook(chapterNumber, verseObject, wordObject) {
   var returnArray = [];
   var currentText = verseObject.text;
-  var occurrence = 0;
+  var sortOrder = 0;
   for (var wordRegex of wordObject.regex) {
+    var occurrence = 0;
     var match = currentText.match(wordRegex);
     while (match) {
       returnArray.push({
@@ -178,7 +325,9 @@ function findWordInBook(chapterNumber, verseObject, wordObject) {
         "verse": verseObject.num,
         "checkStatus": "UNCHECKED",
         "occurrence": ++occurrence,
-        "word": match[0]
+        "sortOrder": sortOrder++,
+        "word": match[0],
+        "regex": wordRegex  
       });
       currentText = currentText.replace(wordRegex, ' ');
       match = currentText.match(wordRegex);

@@ -30,6 +30,15 @@ function concatenateChapterIntoString(chapterData) {
  * case sensitive
  */
 function testWord(word, chapterString, caseSensitiveAliases) {
+
+  // var regexes = [];
+  // for (var alias of word.aliases) {
+  //   regexes.push(new XRegExp('(?=\\PL|\\b)(?:' + alias + ')(?=\\PL|\\b)',
+  //     caseSensitiveAliases.has(alias) ? '' : 'i'));
+  // }
+
+  //Create an array of regexes that preserves the sorted order while still accounting for
+  // case sensitive and case insensitive requirements
   var regexStrings = [];
   for (var alias of word.aliases) {
     var currentRegexStringArray = regexStrings[regexStrings.length - 1];
@@ -62,10 +71,8 @@ function testWord(word, chapterString, caseSensitiveAliases) {
   return false;
 }
 
-function isCaseSensitive(arrayOfWords, caseSensitiveAliases) {
-  if (arrayOfWords[arrayOfWords.length - 1]) {
-    return caseSensitiveAliases.has(arrayOfWords[arrayOfWords.length - 1]);
-  }
+function isCaseSensitive(stringArray, caseSensitiveAliases) {
+  return caseSensitiveAliases.has(stringArray[stringArray.length - 1]);
 }
 
 function constructRegexString(arrayOfWords) {
