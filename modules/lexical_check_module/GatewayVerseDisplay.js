@@ -15,34 +15,18 @@ class GatewayVerseDisplay extends React.Component {
   }
 
   generateWordArray() {
-    // var wordRegex = this.props.regex;
-    // match = currentVerse.match(wordRegex);
-    // index += match ? match.index : 0;
-    // var occurrence = match ? 1 : 0;
-    // while (occurrence < this.props.occurrence && match) {
-    //   index += match[0].length;
-    //   currentVerse = currentVerse.slice(index);
-    //   match = currentVerse.match(wordRegex);
-    //   if (!match) {
-    //     // console.error('Unable to find the word: ' + this.props.wordObject.name);
-    //     break;
-    //   }
-    //   else {
-    //     occurrence++;
-    //     index += match.index;
-    //   }
-    // }
 
     /* 
      * Split the verse on either side of the actual word. This assumes that the | character
      * will never be found in the Bible
      */
-    //We need to get the actual word that was in the verse, the regex could contain several
-
     var first, last;
     var newStr = replaceFrom(this.props.verse, this.props.check.index, 
       this.props.check.index + this.props.check.word.length, '|');
     [first, last] = newStr.split('|');
+    /* this return every up to the word, then the word itself with highlighting,
+     * the rest of the verse until the end
+     */
     return [<span key={0}>{first}</span>,
       <span key={1} className={"text-primary"}>{this.props.check.word}</span>,
       <span key={2}>{last}</span>];

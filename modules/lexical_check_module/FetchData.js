@@ -56,8 +56,6 @@ function getData(params, progressCallback, callback) {
             
               // var checkObject = findWordsInBook(bookData, actualWordList);
               var checkObject = findWords(bookData, mappedBook, actualWordList);
-              console.log('CheckObject');
-              console.dir(checkObject);
               checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
@@ -136,14 +134,22 @@ function getData(params, progressCallback, callback) {
   );
 }
 
-function mapVerseToObject(verse) {
-  
-  var words = tokenizer.tokenize(verse);
-  var returnObject = {};
-  var currentText = verse;
-  var currentIndex = 0;
+/** 
+ * @description - This creates an object from a string, in this case it'll always be a verse.
+ * The object's keys are the indices of each word found in the string. The keys' values are objects
+ * that contain the word, and a 'marked' boolean
+ * @param {string} verse - a verse that can be tokenized to create the object
+ */
+function mapVerseToObject(verse) {  
+  var words = tokenizer.tokenize(verse),
+    returnObject = {},
+    currentText = verse,
+    currentIndex = 0;
   for (var word of words) {
     var index = currentText.indexOf(word);
+    /* currentIndex is used to keep track of where we are in the whole verse, because the slicing 
+     * returns an invalid index within the context of the entire verse
+     */
     currentIndex += index;
     returnObject[currentIndex] = {'word': word, 'marked': false};
     currentIndex += word.length;
@@ -152,6 +158,20 @@ function mapVerseToObject(verse) {
   return returnObject;
 }
 
+/**
+ * @description = This finds a specific word from wordObject within the given verse. 
+ * It then will create a new check object when a valid word is found and push it onto 
+ * an array which is returned
+ * @param {int} chapterNumber - an integer indicating the current chapter so that it can be
+ * added to the check object once a check object is created
+ * @param {object} verseObject - an object with two fields: 'num' which is an int indicating
+ * the verse number within the current chapter, and 'text' which is a string holding the actual text
+ * of the verse
+ * @param {object} mappedVerseObject - This is an object containing index keys to the individual words
+ * of the verse. See {@link mapVerseToObject}
+ * @param {object} wordObject - This is an object containing various fields about the word we're 
+ * currently searching for, primary key for this methods are the wordObject's regexes
+ */
 function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObject) {
   var checkArray = []
   var sortOrder = 0;
@@ -176,8 +196,8 @@ function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObje
 
 /**
  * @description - This function will tokenize the matched string from the given match and return the length of 
- * the first word in the match
- * @param {objecy} match - the object returned from a string.match(regexp) method call
+ * the length of first word in the match
+ * @param {object} match - the object returned from a string.match(regexp) method call
  */
 function incrementIndexByWord(match) {
   if (!match) {
@@ -189,6 +209,15 @@ function incrementIndexByWord(match) {
   return words[0].length;
 }
 
+/**
+ * @description - Does a string.match method for the given regex but only returns the first match
+ * who's index is > the given index. Also supports regexes with alternating groups that might have 
+ * sub matches within the string, which is an edge case but definitely occurs in the Lexical Check
+ * @param {string} string - the string to match against
+ * @param {XRegExp or RegExp} - the regex that the string will be matched with
+ * @param {int} index - an integer indicator to only return a match if the match's index if > this 
+ * indicator
+ */
 function stringMatch(string, regex, index) {
   var match = string.match(regex);
   var lastIndex = 0;
@@ -202,6 +231,13 @@ function stringMatch(string, regex, index) {
   return match;
 }
 
+/**
+ * @description - This method checks to see if any of the words contained in the match
+ * have already been 'marked' within the given verse object
+ * @param {object} match - match that is returned from string.match(XRegExp) or string.match(RegExp)
+ * @param {object} verseObject - a mapped verse object that contains index keys to individual words
+ * of a verse. See {@link mapVerseToObject}
+ */
 function checkIfWordsAreMarked(match, verseObject) {
   var matchedWords = tokenizer.tokenize(match[0]);
   var indexes = [];
@@ -229,6 +265,12 @@ function checkIfWordsAreMarked(match, verseObject) {
   return false;
 }
 
+/**
+ * @description - This takes the data from a book of the Bible returned by 
+ * Door43DataFetcher and returns an array of arrays containing mappedVerseObjects for
+ * each verse for each chapter. See {@link mapVerseToObject}
+ * @param {object} - the data from downloading a book returned by Door43DataFetcher
+ */
 function mapVerses(bookData) {
   var mapVerse = [];
   for (var chapter of bookData.chapters) {
@@ -241,6 +283,17 @@ function mapVerses(bookData) {
   return mapVerse;
 }
 
+
+/**
+ * @description - This does a {@link findWordInVerse} for every word given in wordList and returns
+ * the list of checks for the LexicalChecker
+ * @param {object} bookData - This is the data returned by Door43DataFetcher after downloading
+ * an entire book of the Bible
+ * @param {array} mapBook - This is the array containing arrays of mappedVerses. See {@link mapVerses}
+ * @param {array} wordList - list of objects containing all the necessary data to look for words 
+ * in the book data. This list should be a filtered list from the entire translationWords list as 
+ * this method has many inner loops 
+ */
 function findWords(bookData, mapBook, wordList) {
   var returnObject = {};
   returnObject['LexicalChecker'] = [];
@@ -273,87 +326,6 @@ function findWords(bookData, mapBook, wordList) {
     returnObject.LexicalChecker.push(wordReturnObject);
   }
   return returnObject;
-}
-
-/**
-* Outputs a JSON object in the format defined by what 'FetchData.js' should output
-*/
-function findWordsInBook(bookData, actualWordList) {
-  var returnObject = {};
-  returnObject['LexicalChecker'] = [];
-  
-  for (var word of actualWordList) {
-    var wordReturnObject = {
-      "group": word.name,
-      "checks": []
-    };
-    for (var chapter of bookData.chapters) {
-      for (var verse of chapter.verses) {
-        var wordArray = findWordInBook(chapter.num, verse, word);
-        for (var item of wordArray) {
-          wordReturnObject.checks.push(item);
-        }
-      }
-    }
-    if (wordReturnObject.checks.length <= 0) {
-      continue;
-    }
-    wordReturnObject.checks.sort(function(first, second) {
-      if (first.chapter != second.chapter) {
-          return first.chapter - second.chapter;
-      }
-      if (first.verse != second.verse) {
-        return first.verse - second.verse;
-      }
-      return first.sortOrder - second.sortOrder;
-    });
-    returnObject.LexicalChecker.push(wordReturnObject);
-  }
-  return returnObject;
-}
-
-function findWordInBook(chapterNumber, verseObject, wordObject) {
-  var returnArray = [];
-  var currentText = verseObject.text;
-  var sortOrder = 0;
-  for (var wordRegex of wordObject.regex) {
-    var occurrence = 0;
-    var match = currentText.match(wordRegex);
-    while (match) {
-      returnArray.push({
-        "chapter": chapterNumber,
-        "verse": verseObject.num,
-        "checkStatus": "UNCHECKED",
-        "occurrence": ++occurrence,
-        "sortOrder": sortOrder++,
-        "word": match[0],
-        "regex": wordRegex  
-      });
-      currentText = currentText.replace(wordRegex, ' ');
-      match = currentText.match(wordRegex);
-    }
-  }
-  verseObject.text = currentText;
-  return returnArray;
-}
-
-
-/**
- * @description - Used to sort the set of words by max number of words within all of their aliases
- * @param {set} wordSet - set of words, but it contains the title of the tW file. like falsegod.txt
- * @param {array} wordList - array of word objects. Each object contains word, link, file, and aliases
- * @return {array} - Returns an array of wordObjects sorted described as above
- */
-function sortWordSet(wordSet, wordList) {
-  var returnArray = [];
-  for (var word of wordSet) {
-    var wordObject = search(wordList, function(item) {
-      return stringCompare(word, item.name);
-    });
-    if (wordObject) {
-      returnArray.push(wordObject);
-    }
-  }
 }
 
 /**
