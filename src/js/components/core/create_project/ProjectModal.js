@@ -1,28 +1,18 @@
 const fs = require(window.__base + 'node_modules/fs-extra');
 const React = require('react');
 const Modal = require('react-bootstrap/lib/Modal.js');
-const FormGroup = require('react-bootstrap/lib/FormGroup.js');
-const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-const FormControl = require('react-bootstrap/lib/FormControl.js');
-const GitApi = require('../GitApi.js');
 const Button = require('react-bootstrap/lib/Button.js');
-const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
-const Checkbox = require('react-bootstrap/lib/Checkbox.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
-const FileModule= require('../FileModule');
-const ENTER = 13;
 const api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
-const utils = require('../../../utils');
-const AlertModal = require('../AlertModal');
 const Access = require('../AccessProject.js');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
@@ -35,11 +25,8 @@ const ProjectModal = React.createClass({
 
   getInitialState: function() {
     return {
-      projectName:"",
       showModal: false,
       modalTitle:"Create Project",
-      controlLabelTitle:"Name",
-      placeHolderText:"Enter name of project",
       doneText:"Create",
       loadedChecks:[],
       currentChecks:[],
@@ -52,6 +39,11 @@ const ProjectModal = React.createClass({
   componentWillMount: function() {
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
+
+  componentWillUnmount: function() {
+    CoreStore.removeChangeListener(this.showCreateProject);
+  },
+
   showCreateProject: function(input) {
     var modal = CoreStore.getShowProjectModal()
     if (input) {

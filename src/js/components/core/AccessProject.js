@@ -141,11 +141,11 @@ var Access = {
   },
 
   reportViewPush: function(path) {
-    let viewObj = require(window.__base + path + '/View');
+    let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
 
     try {
-      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {
