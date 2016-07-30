@@ -10,6 +10,7 @@ const git = require('./GitApi.js');
 const api = window.ModuleApi;
 
 const FileModule = require('./FileModule');
+const Access = require('./AccessProject');
 
 const CoreActions = require('../../actions/CoreActions.js');
 
@@ -30,22 +31,11 @@ module.exports = (function() {
     const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
     fs.readdir(savePath, function (err, contents){
       if (!err) {
-        var Confirm = {
-          title: "This project already exists",
-          content: "Do you want to overwrite it? Data will be lost.",
-          leftButtonText: "Cancel",
-          rightButtonText: "Overwrite"
-        }
-        api.createAlert(Confirm, function(result){
-          if(result == 'Overwrite') {
-            fs.emptyDir(savePath, function() {
-              runGitCommand(savePath, url, callback);
-            });
-          }
-        }); 
+        Access.loadFromFilePath(savePath);
+        CoreActions.showCreateProject("");
       } else {
         fs.ensureDir(savePath, function() {
-          runGitCommand(savePath, url, callback);          
+          runGitCommand(savePath, url, callback);
         });
       }
     });

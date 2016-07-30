@@ -65,7 +65,7 @@ var template = [
       {
         label: "Open Project",
         click: function() {
-          CoreActions.showOpenModal(true);
+          CoreActions.updateOpenView(true);
         }
       },
       {

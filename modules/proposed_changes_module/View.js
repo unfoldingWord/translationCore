@@ -8,12 +8,12 @@ class View extends React.Component {
     constructor() {
         super();
     }
-    
-	render() {
-		return (
-			<ProposedChanges />
-		);
-	}
+
+    render() {
+    return (
+      <ProposedChanges selectedWord={this.props.selectedWord}/>
+    );
+  }
 }
 
 module.exports = {
