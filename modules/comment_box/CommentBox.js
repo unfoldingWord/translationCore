@@ -23,6 +23,7 @@ class CommentBox extends React.Component {
 
   handleSubmit(e) {
     api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
+    this.setState({open: false});
   }
 
   render() {
