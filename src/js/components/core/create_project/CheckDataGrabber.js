@@ -60,9 +60,9 @@ var CheckDataGrabber = {
     FileModule.readJsonFile(path.join(window.__base, "modules", moduleFolderName, "manifest.json"), (moduleMetadata) => {
       var params = api.getDataFromCommon('params');
       var modulesPaths = [];
-      modulesPaths.push([moduleMetadata.name, path.join(window.__base, "modules", moduleFolderName)]);
+      modulesPaths.push([moduleMetadata.name, path.join("modules", moduleFolderName)]);
       for(let childFolderName of moduleMetadata.include) {
-          modulesPaths.push([childFolderName, path.join(window.__base, "modules", childFolderName)]);
+          modulesPaths.push([childFolderName, path.join("modules", childFolderName)]);
       }
       this.getFetchData(modulesPaths, params);
     });
