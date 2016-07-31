@@ -19,7 +19,7 @@ const ButtonGroup = ReactBootstrap.ButtonGroup;
 // Declare modules that are not defined within our ExampleChecker
 // They will be initialized in the constructor
 var TPane = null;
-var ProposedChanges = null;
+var CommentBox = null;
 var ExampleTool = null;
 
 // Initialize the namespace to be used inside the check store.
@@ -40,7 +40,7 @@ class View extends api.CheckModule {
     // Initialize modules that are not defined within our ExampleChecker
     // They will be rendered in the render() function
     TPane = api.getModule('TPane');
-    ProposedChanges = api.getModule('ProposedChanges');
+    CommentBox = api.getModule('CommentBox');
     ExampleTool = api.getModule('ExampleTool');
   }
   
@@ -52,11 +52,11 @@ class View extends api.CheckModule {
    */
   getDataFromTools() {
     var dataFromTools = {};
-    // Get text from proposed changes tool
-    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    // Save proposed changes if the text box is not empty or unchanged
-    if (proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-      dataFromTools.proposedChanges = proposedChanges;
+    // Get text from comment box tool
+    var comment = api.getDataFromCheckStore('CommentBox', 'currentChanges');
+    // Save proposed changes if the text box is not empty
+    if (comment != "") {
+      dataFromTools.comment = comment;
     }
     return dataFromTools;
   }
@@ -108,7 +108,7 @@ class View extends api.CheckModule {
                 </Button>
               </ButtonGroup>
             </Well>
-            <ProposedChanges />
+            <CommentBox />
           </Col>
         </Row>
       </div>
