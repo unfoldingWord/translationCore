@@ -47,21 +47,21 @@ const DragDrop = React.createClass({
       _this.props.sendFilePath(files[0].path, null, true);
     }
   },
-  // onClick: function() {
-  //   var _this = this;
-  //   if (!this.opened) {
-  //     this.opened = true;
-  //     dialog.showOpenDialog({
-  //       properties: ['openDirectory']
-  //     }, function(filename) {
-  //       if (filename !== undefined) {
-  //         _this.opened = false;
-  //         _this.setState({filePath: filename[0]});
-  //         _this.props.sendFilePath(filename[0], null, true);
-  //       }
-  //     });
-  //   }
-  // },
+  onClick: function() {
+    var _this = this;
+    if (!this.opened) {
+      this.opened = true;
+      dialog.showOpenDialog({
+        properties: ['openDirectory']
+      }, function(filename) {
+        if (filename !== undefined) {
+          _this.opened = false;
+          _this.setState({filePath: filename[0]});
+          _this.props.sendFilePath(filename[0], null, true);
+        }
+      });
+    }
+  },
 
   render: function() {
     return (
