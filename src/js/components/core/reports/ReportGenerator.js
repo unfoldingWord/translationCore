@@ -84,11 +84,15 @@ class Report extends React.Component {
       authors = "various checkers";
     }
     // render report header data from reportViews
+    let reportHeaders = [];
     for (let view in reportViews) {
       let viewResult = reportViews[view](0,0);
       if (viewResult) {
-        output.push(<span key={`0-0-${view}`}>{viewResult}</span>);
+        reportHeaders.push(<Col className="pull-right" key={`0-0-${view}`} xs={6}><span>{viewResult}</span></Col>);
       }
+    }
+    if (reportHeaders.length > 0) {
+      output.push(<Row key="header">{reportHeaders}</Row>);
     }
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)
