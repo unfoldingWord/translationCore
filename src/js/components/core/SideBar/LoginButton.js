@@ -15,14 +15,15 @@ class LoginButton extends React.Component{
       hover: false,
       online: CoreStore.getOnlineStatus(),
     }
+    this.updateOnlineStatus = this.updateOnlineStatus.bind(this);
   }
 
   componentWillMount() {
-    CoreStore.addChangeListener(this.updateOnlineStatus.bind(this));
+    CoreStore.addChangeListener(this.updateOnlineStatus);
   }
 
   componentWillUnmount() {
-    CoreStore.removeChangeListener(this.updateOnlineStatus.bind(this));
+    CoreStore.removeChangeListener(this.updateOnlineStatus);
   }
 
   handleClick(){

@@ -146,8 +146,8 @@ const TargetLanguageSelectBox = React.createClass({
       var wordIndex = this.props.verse.indexOf(word, index);
       if (wordIndex > index) {
         wordArray.push(
-          <span 
-            key={wordKey++} 
+          <span
+            key={wordKey++}
             style={this.cursorPointerStyle}
           >
             {this.props.verse.substring(index, wordIndex)}
@@ -155,10 +155,10 @@ const TargetLanguageSelectBox = React.createClass({
         );
       }
       wordArray.push(
-        <TargetWord 
-          word={word} 
-          key={wordKey++} 
-          keyId={tokenKey++} 
+        <TargetWord
+          word={word}
+          key={wordKey++}
+          keyId={tokenKey++}
           style={this.cursorPointerStyle}
           selectCallback={this.addSelectedWord}
           removeCallback={this.removeFromSelectedWords}
@@ -173,7 +173,7 @@ const TargetLanguageSelectBox = React.createClass({
   render: function() {
     var words = this.generateWordArray();
     return (
-      <Well 
+      <Well
         bsSize={'small'}
         style={{
           overflowY: "scroll"
@@ -198,7 +198,7 @@ const TargetLanguageSelectBox = React.createClass({
       this.sortSelectedWords();
     }
 
-    /* This is used for if you want to enable disabled buttons after the user has 
+    /* This is used for if you want to enable disabled buttons after the user has
      * selected at least one word
      */
     // if (this.selectedWords.length > 0) {
@@ -232,7 +232,7 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   /**
-   * @description - This returns the currently selected words, but formats in 
+   * @description - This returns the currently selected words, but formats in
    * an array with adjacent words concatenated into one string
    */
   getWords: function() {

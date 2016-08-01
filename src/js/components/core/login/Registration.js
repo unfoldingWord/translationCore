@@ -74,6 +74,8 @@ const Registration = React.createClass({
       .then(function(data) {
         CoreActions.login(data);
         CoreActions.updateLoginModal(false);
+        CoreActions.updateOnlineStatus(true);
+        CoreActions.updateProfileVisibility(true);
       })
       .catch(function(reason) {
         console.log(reason);

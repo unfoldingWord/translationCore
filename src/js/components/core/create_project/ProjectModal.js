@@ -144,8 +144,6 @@ const ProjectModal = React.createClass({
                 saveLocation: saveLocation,
                 repo: _this.params.repo
               }
-              var checkArray = api.getDataFromCommon('arrayOfChecks');
-              projectData.checkLocations = checkArray;
               api.putDataInCommon('saveLocation', saveLocation);
               CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
               if (tempFetchDataArray.length > 0) {
@@ -218,7 +216,6 @@ const ProjectModal = React.createClass({
     this.params.repo = link;
     this.onClick();
   },
-
   setBookName: function(abbr) {
     this.params.bookAbbr = abbr;
   },
