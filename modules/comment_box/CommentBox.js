@@ -24,6 +24,7 @@ class CommentBox extends React.Component {
   handleSubmit(e) {
     api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
     this.setState({open: false});
+    this.setState({comment: ""});
   }
 
   render() {
@@ -38,7 +39,7 @@ class CommentBox extends React.Component {
             <div style={style.paper}>
               <div style={style.sideline}></div>
                 <div style={style.paperContent}>
-                  <textarea autofocus style={style.textarea}
+                  <textarea autofocus style={style.textarea} value={this.state.comment}
                     onChange={this.handleComment.bind(this)} />
                 </div>
             </div>
