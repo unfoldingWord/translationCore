@@ -114,6 +114,8 @@ const WelcomeUpload = React.createClass({
           repo: _this.state.params.repo
         }
         api.putDataInCommon('saveLocation', saveLocation);
+        localStorage.setItem('showTutorial', false);
+        localStorage.setItem('lastProject', saveLocation);
         CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
         callback(true);
       } else {
