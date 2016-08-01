@@ -57,22 +57,24 @@ class SwitchCheckModal extends React.Component{
   }
 
   render() {
-    if(!this.state.moduleMetadatas) {
+    var buttons;
+    if(!this.state.moduleMetadatas || this.state.moduleMetadatas.length == 0) {
       console.error('No tC default modules found.');
+      buttons = <div>No tC default modules found.</div>;
     }
-
-    var buttons = this.state.moduleMetadatas.map((metadata) => {
-      return (
-        <AppDescription key={metadata.folderName}
-                        imagePath={metadata.imagePath}
-                        title={metadata.title}
-                        description={metadata.description}
-                        useApp={this.moduleClick.bind(this)}
-                        folderName={metadata.folderName}
-        />
-      );
-    });
-
+    else {
+      buttons = this.state.moduleMetadatas.map((metadata) => {
+        return (
+          <AppDescription key={metadata.folderName}
+                          imagePath={metadata.imagePath}
+                          title={metadata.title}
+                          description={metadata.description}
+                          useApp={this.moduleClick.bind(this)}
+                          folderName={metadata.folderName}
+          />
+        );
+      });
+    }
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
