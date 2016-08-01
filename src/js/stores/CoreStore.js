@@ -2,6 +2,7 @@ var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('../actions/CoreActionConsts');
+var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 
 /**
@@ -125,7 +126,7 @@ class CoreStore extends EventEmitter {
   }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
-  // Mostly just for SwitchCheckModuleDropdown
+  // Mostly just for ModuleWrapper
   getCheckCategoryOptions(){
     if(!this.checkCategoryOptions) {
       return null;
@@ -213,6 +214,13 @@ class CoreStore extends EventEmitter {
       case consts.DONE_LOADING:
         this.doneLoading = true;
         this.checkCategoryOptions = action.reportViews;
+        if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
+          var firstCheckCategory = this.checkCategoryOptions[0];
+          CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: firstCheckCategory.name});
+        }
+        else {
+          console.error('Problem when loading check. No check found.');
+        }
         this.emitChange();
       break;
 
