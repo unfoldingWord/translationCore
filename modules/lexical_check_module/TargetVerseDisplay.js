@@ -88,7 +88,7 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   componentWillMount: function() {
-    this.fetchSelectedWords(); 
+    this.fetchSelectedWords();
   },
 
   /**
@@ -101,7 +101,9 @@ const TargetLanguageSelectBox = React.createClass({
     if (currentCheckIndex && currentGroupIndex) {
       var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
-        if (currrentCheck.selectedWordsRaw) {
+        console.log('CurrentCheck');
+        console.dir(currentCheck);
+        if (currentCheck.selectedWordsRaw) {
           this.selectedWords = currentCheck.selectedWordsRaw;
         }
       }
@@ -118,7 +120,6 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   shouldComponentUpdate: function(nextProps, nextState) {
-    console.log('This is being run');
     //remove everybody's highlighting
     for (key in this.refs)
       this.refs[key].removeHighlight();
@@ -127,6 +128,7 @@ const TargetLanguageSelectBox = React.createClass({
     //Maybe we've already done this check? If we have update the highlighting on the selected words
     this.fetchSelectedWords();
     for (var word of this.selectedWords) {
+      console.log('Word', word);  
       var targetWord = this.refs[word.key];
       if (targetWord) {
         targetWord.setHighlight();
