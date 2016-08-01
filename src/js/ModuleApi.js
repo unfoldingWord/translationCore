@@ -37,7 +37,7 @@ class ModuleApi {
             console.warn(MENU_WARN + namespace);
         }
         this.menus[namespace] = menu;
-    }       
+    }
 
     getMenu(namespace) {
         if (this.menus) {
@@ -144,6 +144,17 @@ class ModuleApi {
             });
     }
 
+    updateManifest(field, data, callback = () => {}) {
+      var manifest = this.getDataFromCommon('tcManifest');
+      var saveLocation = this.getDataFromCommon('saveLocation');
+      if (manifest && saveLocation) {
+        manifest[field] = data;
+        saveLocation += '/tc-manifest.json';
+        fs.outputJson(saveLocation, manifest, callback);
+      } else {
+        callback("No manifest found")
+      }
+    }
 }
 
 const api = new ModuleApi();

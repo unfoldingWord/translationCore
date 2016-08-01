@@ -24,6 +24,8 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const booksOfBible = require('../booksOfBible');
 const remote = window.electron.remote;
 const {dialog} = remote;
+const DEFAULT_ERROR = 'Import Error';
+const INVALID_PROJECT = 'This does not appear to be a Translation Studio project'
 
 const WelcomeUpload = React.createClass({
   getInitialState: function() {

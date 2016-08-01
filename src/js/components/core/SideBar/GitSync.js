@@ -6,6 +6,7 @@ function syncToGit() {
   const pathFinder = require('path');
   const path = api.getDataFromCommon('saveLocation');
   const user = CoreStore.getLoggedInUser();
+  const gogs = require('../login/GogsApi.js');
 
   if (user) {
     git(path).save('Updating with Door43', path, function() {
@@ -13,8 +14,10 @@ function syncToGit() {
         if (manifest.repo) {
           var urlArray = manifest.repo.split('.');
           urlArray.pop();
-          var finalPath = urlArray.pop().split('/');
-          var repoPath = finalPath[1] + '/' + finalPath[2];
+          var finalPath = urlArray.join('.').split('/');
+          var repoName = finalPath.pop();
+          var userName = finalPath.pop();
+          var repoPath = userName + '/' + repoName;
           var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
           git(path).update(remote, 'master', false, function(err){
             if (err) {
@@ -26,9 +29,12 @@ function syncToGit() {
               }
               api.createAlert(Confirm, function(result){
                 if(result == 'Yes') {
-                  const projectName = path.split(pathFinder.sep);
-                  gogs(user.token).createRepo(user, projectName.pop()).then(function(repo) {
+                  const projectName = repoPath;
+                  gogs(user.token).createRepo(user, projectName).then(function(repo) {
                     var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+                    var remoteLink = 'https://git.door43.org/' + repo.full_name;
+                    api.updateManifest('repo', remoteLink);
+
                     git(path).update(newRemote, 'master', true, function(){});
                   });
                 }
@@ -50,10 +56,14 @@ function syncToGit() {
                   var nameOfProject = projectName.pop();
                   var repoPath = user.username + '/' + nameOfProject;
                   var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
+                  var remoteLink = 'https://git.door43.org/' + repoPath;
+                  api.updateManifest('repo', remoteLink);
                   git(path).update(remote, 'master', true, function(err){
                     if (err) {
                       gogs(user.token).createRepo(user, nameOfProject).then(function(repo) {
                         var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+                        remoteLink = 'https://git.door43.org/' + repo.full_name;
+                        api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
                           alert('Update succesful');
                         });
