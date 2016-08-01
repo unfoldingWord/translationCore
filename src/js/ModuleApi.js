@@ -152,47 +152,80 @@ class ModuleApi {
         });
     }
     
+
     /**
-     * Asynchronously fetches the gateway language from Door43, puts it in the check store,
-     * and calls the callback parameter.
-     * If this is the only asynchronous part of your FetchData function, then pass in
-     * the callback from your FetchData as the 'callback' parameter to this function.
-     * Otherwise, wait until all subfunctions of FetchData are complete before calling
-     * the callback.
+     * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
+     * and calls the callback function with the gateway language book as an argument.
+     * The book that is saved to the check store has the chapters and verses formatted
+     * as JavaScript objects, while the book that is passed as an argument to the callback
+     * has the chapters and verses formatted as arrays.
      */
-    putGatewayLanguageInCheckStore(params, progressCallback, callback) {
+    getGatewayLanguageAndSaveInCheckStore(params, progressCallback, callback) {
         var Door43Fetcher = new Door43DataFetcher();
-        Door43Fetcher.getBook(
-            params.bookAbbr,
-            function(done, total) {
-                progressCallback((done / total) * 50);
-            },
-            function(error, data) {
-                if (error) {
-                    console.error('Door43Fetcher throwing error');
-                    callback(error);
-                }
-                else {
-                    var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
-                    var bookData;
-                    if (!gatewayLanguage) {
-                        bookData = Door43Fetcher.getULBFromBook(data);
-                        //reformat
-                        var newBookData = {};
-                        for (var chapter of bookData.chapters) {
-                            newBookData[chapter.num] = {};
-                            for (var verse of chapter.verses) {
-                                newBookData[chapter.num][verse.num] = verse.text;
-                            }
+        Door43Fetcher.getBook(params.bookAbbr, function (done, total) {
+            progressCallback((done / total) * 50);
+        }, function (error, data) {
+            if (error) {
+                console.error('Door43Fetcher throwing error');
+            }
+            else {
+                var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+                var bookData;
+                /*
+                * we found the gatewayLanguage already loaded, now we must convert it
+                * to the format needed by the parsers
+                */
+                if (gatewayLanguage) {
+                    var reformattedBookData = { chapters: [] };
+                    for (var chapter in gatewayLanguage) {
+                        var chapterObject = {
+                            verses: [],
+                            num: parseInt(chapter)
                         }
-                        newBookData.title = api.convertToFullBookName(params.bookAbbr);
-                        //load it into checkstore
-                        api.putDataInCommon('gatewayLanguage', newBookData);
+                        for (var verse in gatewayLanguage[chapter]) {
+                            var verseObject = {
+                                num: parseInt(verse),
+                                text: gatewayLanguage[chapter][verse]
+                            }
+                            chapterObject.verses.push(verseObject);
+                        }
+                        chapterObject.verses.sort(function (first, second) {
+                            return first.num - second.num;
+                        });
+                        reformattedBookData.chapters.push(chapterObject);
                     }
-                    callback();
+                    reformattedBookData.chapters.sort(function (first, second) {
+                        return first.num - second.num;
+                    });
+                    callback(reformattedBookData);
+                }
+                // We need to load the data, and then reformat it for the store and store it
+                else {
+                    bookData = Door43Fetcher.getULBFromBook(data);
+                    //reformat
+                    var newBookData = {};
+                    for (var chapter of bookData.chapters) {
+                        newBookData[chapter.num] = {};
+                        for (var verse of chapter.verses) {
+                            newBookData[chapter.num][verse.num] = verse.text;
+                        }
+                    }
+                    newBookData.title = api.convertToFullBookName(params.bookAbbr);
+                    //load it into checkstore
+                    api.putDataInCommon('gatewayLanguage', newBookData);
+                    //resume fetchData
+                    for (var chapter of bookData.chapters) {
+                        chapter.verses.sort(function (first, second) {
+                            return first.num - second.num;
+                        });
+                    }
+                    bookData.chapters.sort(function (first, second) {
+                        return first.num - second.num;
+                    });
+                    callback(bookData);
                 }
             }
-        );
+        });
     }
     
     initializeCheckStore(nameSpace, params, groups) {
