@@ -9,22 +9,21 @@ const {dialog} = remote;
 const style = {
                 dropzone: {
                   active: {
-                    border: '2px solid #727272'
+                    border: '2px solid #727272',
+                    backgroundColor: '#f5f5f5'
                   },
                   text: {
-                    borderRadius: '10px',
-                    marginTop: '10px',
-                    backgroundColor: '#ffffff',
-                    color: '#34495e',
-                    fontSize: '30px',
-                    height: '50px',
+                    height: '200px',
+                    paddingTop: '75px',
                     verticalAlign: 'middle',
                     width: '100%'
                   },
                   main: {
                     width: '100%',
-                    color: '#ffffff',
+                    color: '#212121',
                     height: '200px',
+                    border: '2px dashed #727272',
+                    borderRadius: '5px',
                     fontSize: '25px'
                   },
                   inner: {
@@ -71,7 +70,7 @@ const DragDrop = React.createClass({
         activeStyle={style.dropzone.active}>
             <div style={style.dropzone.text}>
               <center>
-                Click To Open A Project
+                Drag files here to upload, or click to select a file
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>
               </center>
             </div>
