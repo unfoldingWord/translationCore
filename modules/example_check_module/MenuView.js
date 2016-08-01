@@ -52,10 +52,10 @@ class MenuView extends React.Component {
         var checkMenuItems = group.checks.map(function(check, checkIndex) {
           return (
             <div key={checkIndex}>
-              <MenuItem 
+              <MenuItem
                 book={_this.state.checkObject.book}
-                check={check} 
-                groupIndex={groupIndex} 
+                check={check}
+                groupIndex={groupIndex}
                 checkIndex={checkIndex}
                 ref={groupIndex.toString() + ' ' + checkIndex.toString()} />
             </div>
@@ -70,9 +70,9 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
+        <center><h3>Checks</h3></center>
         <Well className='fill-height' style={{overflow: 'scroll', whiteSpace: 'nowrap'}}>
           <div>
-            <h3>Checks</h3>
             {menuList}
           </div>
         </Well>
