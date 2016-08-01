@@ -54,7 +54,7 @@ class View extends api.CheckModule {
     var dataFromTools = {};
     // Get text from comment box tool
     var comment = api.getDataFromCheckStore('CommentBox', 'currentChanges');
-    // Save proposed changes if the text box is not empty
+    // Save comment if the text box is not empty
     if (comment != "") {
       dataFromTools.comment = comment;
     }
@@ -79,13 +79,19 @@ class View extends api.CheckModule {
     }
   }
 
+  /**
+   * @description - Displays the entire view of the screen, except for the side menu and
+   * navigation menu.
+   */
   render() {
     var _this = this;
     return (
       <div>
+        {/* Render TPane tool */}
         <TPane />
         <Row className='show-grid'>
           <Col sm={6}>
+            {/* Render ExampleTool tool */}
             <ExampleTool />
           </Col>
           <Col sm={6}>
@@ -108,6 +114,7 @@ class View extends api.CheckModule {
                 </Button>
               </ButtonGroup>
             </Well>
+            {/* Render CommentBox tool */}
             <CommentBox />
           </Col>
         </Row>

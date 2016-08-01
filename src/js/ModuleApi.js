@@ -188,8 +188,8 @@ class ModuleApi {
                         newBookData.title = api.convertToFullBookName(params.bookAbbr);
                         //load it into checkstore
                         api.putDataInCommon('gatewayLanguage', newBookData);
-                        callback();
                     }
+                    callback();
                 }
             }
         );
