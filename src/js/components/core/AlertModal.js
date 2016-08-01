@@ -27,15 +27,14 @@ const AlertModal = React.createClass({
 
   alertMessage() {
     var data = CoreStore.getAlertMessage();
+    if (data) {
     try {
       alertMessage = data['alertObj'];
     }
     catch(e){
-
     }
 
     //{title:Warning, content:YOU MESSED UP, leftButtonText:OK...}
-    if (data) {
       try {
         this.setState({
           title: alertMessage['title'],

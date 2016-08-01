@@ -1,0 +1,9 @@
+{
+    "title": "Example Check",
+    "name": "ExampleChecker",
+    "include": [
+        "t_pane",
+        "example_tool",
+        "comment_box"
+    ]
+}

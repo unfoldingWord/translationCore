@@ -5,24 +5,26 @@ const Dropzone = require('react-dropzone');
 const remote = window.electron.remote;
 const {dialog} = remote;
 
+
 const style = {
                 dropzone: {
                   active: {
-                    border: '2px solid #727272',
-                    backgroundColor: '#f5f5f5'
+                    border: '2px solid #727272'
                   },
                   text: {
-                    height: '200px',
-                    paddingTop: '75px',
+                    borderRadius: '10px',
+                    marginTop: '10px',
+                    backgroundColor: '#ffffff',
+                    color: '#34495e',
+                    fontSize: '30px',
+                    height: '50px',
                     verticalAlign: 'middle',
                     width: '100%'
                   },
                   main: {
                     width: '100%',
-                    color: '#212121',
+                    color: '#ffffff',
                     height: '200px',
-                    border: '2px dashed #727272',
-                    borderRadius: '5px',
                     fontSize: '25px'
                   },
                   inner: {
@@ -31,7 +33,7 @@ const style = {
                 }
               }
 
-const DragDrop = React.createClass({
+const OpenLocal = React.createClass({
   getInitialState: function() {
     return {
       filePath: ''
@@ -40,7 +42,6 @@ const DragDrop = React.createClass({
   onDrop: function(files) {
     var _this = this;
     if (files !== undefined) {
-      // FileImport(files[0].path);
       _this.setState({filePath: files[0].path});
       _this.props.sendFilePath(files[0].path);
     }
@@ -51,7 +52,6 @@ const DragDrop = React.createClass({
       properties: ['openDirectory']
     }, function(filename) {
       if (filename !== undefined) {
-        // FileImport(filename[0]);
         _this.setState({filePath: filename[0]});
         _this.props.sendFilePath(filename[0]);
       }
@@ -66,7 +66,7 @@ const DragDrop = React.createClass({
         activeStyle={style.dropzone.active}>
             <div style={style.dropzone.text}>
               <center>
-                Drag files here to upload, or click to select a file
+                Click To Open A Project
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>
               </center>
             </div>
@@ -77,4 +77,4 @@ const DragDrop = React.createClass({
 
 });
 
-module.exports = DragDrop;
+module.exports = OpenLocal;

@@ -1,6 +1,7 @@
 const CoreStore = require('../../.././stores/CoreStore');
 const CoreActions = require('../../.././actions/CoreActions');
 const CheckStore = require('../../.././stores/CheckStore');
+const FileModule = require('../FileModule');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../booksOfBible');
@@ -55,6 +56,17 @@ var CheckDataGrabber = {
   //   }
   // },
 
+  loadModuleAndDependencies: function(moduleFolderName) {
+    FileModule.readJsonFile(path.join(window.__base, "modules", moduleFolderName, "manifest.json"), (moduleMetadata) => {
+      var params = api.getDataFromCommon('params');
+      var modulesPaths = [];
+      modulesPaths.push([moduleMetadata.name, path.join("modules", moduleFolderName)]);
+      for(let childFolderName of moduleMetadata.include) {
+          modulesPaths.push([childFolderName, path.join("modules", childFolderName)]);
+      }
+      this.getFetchData(modulesPaths, params);
+    });
+  },
   getFetchData: function(array, params) {
     CoreStore.updateNumberOfFetchDatas(array.length);
     this.totalModules = array.length;

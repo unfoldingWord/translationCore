@@ -32,8 +32,15 @@ const OnlineInput = React.createClass({
   },
 
   render: function() {
+    var main =  {
+      width: '100%',
+      color: '#ffffff',
+      height: '200px',
+      fontSize: '25px'
+    }
+
     return (
-        <FormGroup controlId="onlineInput">
+        <FormGroup controlId="onlineInput" style={main}>
           <FormControl type="text" value={this.state.value} placeholder="Enter URL" onChange={this.handleChange} onKeyDown={this.submitViaEnter} />
           <Button bsStyle="primary" onClick={this.submitLink} pullRight>
             Submit

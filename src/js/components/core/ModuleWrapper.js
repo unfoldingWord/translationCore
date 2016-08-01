@@ -23,7 +23,11 @@ class ModuleWrapper extends React.Component {
     // TODO: should probably return an empty div if this.state.view doesn't exist
     // but for now it has LexicalCheck as default
     if(!this.state.view) {
-      return <div />;
+      return(
+        <div>
+          <p>Click the apps button to start checking</p>
+        </div>
+      );
     }
     var CheckModule = this.state.view;
     return (
@@ -48,7 +52,7 @@ class ModuleWrapper extends React.Component {
       var newView = newCheckCategory.view;
       this.setState({
         view: newView
-      }); 
+      });
     }
   }
 }
