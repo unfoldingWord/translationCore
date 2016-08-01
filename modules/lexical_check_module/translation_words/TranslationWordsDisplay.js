@@ -23,10 +23,18 @@ class TranslationWordsDisplay extends React.Component {
         });
     }
 
-    // getRelevantDataFromFile(file) {
-    //     var matches = fileRegex.match(file);
-    //     return matches;
-    // }
+    convertToMarkdown(src) {
+        return src.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
+            switch(equals.length) {
+                case 6:
+                    return "##" + header;
+                case 5:
+                    return "####" + header;
+                default:
+                    return "#####" + header;
+            }
+        });
+    }
 
     render() {
         var source = this.props.file;
@@ -34,7 +42,7 @@ class TranslationWordsDisplay extends React.Component {
             return (
                 <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "300px", maxHeight: "300px"}}>
                     <div>
-                        <Markdown source={source.split('==').join('#')} />
+                        <Markdown source={this.convertToMarkdown(source)} />
                     </div>
                 </Well>
             );
