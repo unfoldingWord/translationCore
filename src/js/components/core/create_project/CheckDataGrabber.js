@@ -60,9 +60,9 @@ var CheckDataGrabber = {
     FileModule.readJsonFile(path.join(window.__base, "modules", moduleFolderName, "manifest.json"), (moduleMetadata) => {
       var params = api.getDataFromCommon('params');
       var modulesPaths = [];
-      modulesPaths.push([moduleMetadata.name, path.join(window.__base, "modules", moduleFolderName)]);
+      modulesPaths.push([moduleMetadata.name, path.join("modules", moduleFolderName)]);
       for(let childFolderName of moduleMetadata.include) {
-          modulesPaths.push([childFolderName, path.join(window.__base, "modules", childFolderName)]);
+          modulesPaths.push([childFolderName, path.join("modules", childFolderName)]);
       }
       this.getFetchData(modulesPaths, params);
     });
@@ -131,11 +131,11 @@ var CheckDataGrabber = {
   },
 
   getDataFromCheck: function(path, params) {
-    var DataFetcher = require(path + '/FetchData');
-    let viewObj = require(path + '/View');
+    var DataFetcher = require(window.__base + path + '/FetchData');
+    let viewObj = require(window.__base + path + '/View');
 
     try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {

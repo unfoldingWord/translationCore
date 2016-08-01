@@ -14,23 +14,33 @@ class SwitchCheckModal extends React.Component{
     super();
     this.state ={
       showModal: false,
+      moduleMetadatas: []
     }
     this.updateCheckModal = this.updateCheckModal.bind(this);
-    FileModule.readJsonFile(window.__base + "modules/module_list.json", (jsonObject) => {
-      this.defaultModules = jsonObject;
-    });
   }
 
   componentWillMount() {
     CoreStore.addChangeListener(this.updateCheckModal);
+    FileModule.readJsonFile(window.__base + "modules/module_list.json", (moduleFolderNameList) => {
+      this.fillDefaultModules(moduleFolderNameList, (metadatas) => {
+        this.setState({moduleMetadatas: metadatas});
+      });
+    });
   }
 
   componentWillUnmount() {
     CoreStore.removeChangeListener(this.updateCheckModal);
   }
 
-  fillDefaultModules(jsonObject) {
-    this.defaultModules = jsonObject;
+  fillDefaultModules(moduleFolderNameList, callback) {
+    var tempMetadatas = [];
+    for(var folderName of moduleFolderNameList) {
+      FileModule.readJsonFile(window.__base + "modules/" + folderName + "/manifest.json", (metadata) => {
+        metadata.folderName = folderName;
+        tempMetadatas.push(metadata);
+      });
+    }
+    callback(tempMetadatas);
   }
 
   moduleClick(folderName) {
@@ -47,15 +57,24 @@ class SwitchCheckModal extends React.Component{
   }
 
   render() {
-    if(!this.defaultModules)
+    var buttons;
+    if(!this.state.moduleMetadatas || this.state.moduleMetadatas.length == 0) {
       console.error('No tC default modules found.');
-
-    var buttons = this.defaultModules.map((moduleFolderName) => {
-      return (
-        <Button key={moduleFolderName} onClick={this.moduleClick.bind(this, moduleFolderName)}>{moduleFolderName}</Button>
-      );
-    });
-
+      buttons = <div>No tC default modules found.</div>;
+    }
+    else {
+      buttons = this.state.moduleMetadatas.map((metadata) => {
+        return (
+          <AppDescription key={metadata.folderName}
+                          imagePath={metadata.imagePath}
+                          title={metadata.title}
+                          description={metadata.description}
+                          useApp={this.moduleClick.bind(this)}
+                          folderName={metadata.folderName}
+          />
+        );
+      });
+    }
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
@@ -63,12 +82,7 @@ class SwitchCheckModal extends React.Component{
             <Modal.Title>Change Check category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <AppDescription imagePath="modules/lexical_check_module/icon.png"
-                            title="translationWords Check"
-                            description="Test Description"
-                            useApp={this.moduleClick.bind(this)}
-                            folderName='lexical_check_module'
-            />
+            {buttons}
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>

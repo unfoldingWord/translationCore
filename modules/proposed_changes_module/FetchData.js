@@ -25,7 +25,7 @@ function fetchData(params, progress, callback) {
 
   // console.log("Proposed Changes is done");
   progress(100);
-  api.putDataInCheckStore("ProposedChanges", "currentChanges", '');
+  api.putDataInCheckStore("ProposedChanges", "newWord", '');
   //I'm not supposed to get the gateway language!
 }
 

@@ -9,21 +9,21 @@ const Button = require('react-bootstrap/lib/Button.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Checkbox = require('react-bootstrap/lib/Checkbox.js');
-var CoreStore = require('../../../stores/CoreStore.js');
-var CheckStore = require('../../../stores/CheckStore');
+const CoreStore = require('../../../stores/CoreStore.js');
+const CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
 const FileModule= require('../FileModule');
 const ENTER = 13;
-var api = window.ModuleApi;
+const api = window.ModuleApi;
 const booksOfBible = require('../booksOfBible');
 const TargetLanguage = require('../UploadModal');
 const SelectChecks = require('./SelectChecks');
 const path = require('path');
 const CheckDataGrabber = require('./CheckDataGrabber');
 const utils = require('../../../utils');
-const AccessProjectModal = require('../AccessProjectModal');
 const AlertModal = require('../AlertModal');
+const Access = require('../AccessProject.js');
 
 const INVALID_PROJECT = 'This does not appear to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
@@ -50,7 +50,6 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
-    AccessProjectModal.startListener();
     CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
   },
   showCreateProject: function(input) {
@@ -119,7 +118,7 @@ const ProjectModal = React.createClass({
     if (!check || check == '') {
       return;
     }
-    var path = window.__base + 'modules/' + check;
+    var path = 'modules/' + check;
     return path;
   },
 
@@ -143,12 +142,12 @@ const ProjectModal = React.createClass({
               let bookFileName = bookTitle.join('') + '.json';
               var saveLocation = _this.params.targetLanguagePath;
               var user = CoreStore.getLoggedInUser();
+              var username;
+              if (user) {
+                username = user.username;
+              }
               var projectData = {
-                local: true,
-                target_language: _this.params.targetLanguagePath,
-                original_language: ('data/ulgb/'),
-                gateway_language: '',
-                user: [{username: '', email: ''}],
+                user: [{username: username}],
                 checkLocations: [],
                 saveLocation: saveLocation,
                 repo: _this.params.repo
@@ -173,20 +172,11 @@ const ProjectModal = React.createClass({
           if (parsedManifest && parsedManifest.generator && parsedManifest.generator.name === 'ts-desktop') {
               var tcManifestLocation = path.join(_this.params.targetLanguagePath, 'tc-manifest.json');
               fs.readJson(tcManifestLocation, function(err, data) {
-                if (err) {
+                if (err || !_this.isLocal) {
                   CoreActions.showCreateProject("Check");
                 } else {
-                    var Confirm = {
-                      title: "This project already exists",
-                      content: "Do you want to overwrite it? Data will be lost.",
-                      leftButtonText: "No",
-                      rightButtonText: "Yes"
-                    }
-                    api.createAlert(Confirm, function(result){
-                      if(result == 'Yes') {
-                        _this.showCreateProject("Check");
-                      }
-                    });
+                  Access.loadFromFilePath(_this.params.targetLanguagePath);
+                  _this.close();
                 }
               });
           } else {
@@ -227,7 +217,8 @@ const ProjectModal = React.createClass({
     }
   },
 
-  setTargetLanguageFilePath: function(path, link) {
+  setTargetLanguageFilePath: function(path, link, local) {
+    this.isLocal = local;
     this.saveLocation = path;
     this.params.targetLanguagePath = path;
     this.params.repo = link;
