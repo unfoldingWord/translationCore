@@ -162,7 +162,6 @@ class ModuleApi {
       var path = this.getDataFromCommon('saveLocation');
       if (path) {
         git(path).save(message, path, function() {
-          _this.emitEvent('goToNext');
         });
       } else {
         var Alert = {

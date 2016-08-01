@@ -15,7 +15,7 @@ class NextButton extends React.Component {
 
 
   buttonClicked() {
-    api.saveProject('Saving and continuing');
+    api.emitEvent('goToNext');
   }
 
   render() {
