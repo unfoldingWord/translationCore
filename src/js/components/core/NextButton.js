@@ -15,19 +15,7 @@ class NextButton extends React.Component {
 
 
   buttonClicked() {
-    var path = api.getDataFromCommon('saveLocation');
-    if (path) {
-      git(path).save('Save and continue', path, function() {
-        api.emitEvent('goToNext');
-      });
-    } else {
-      var Alert = {
-        title: "Warning",
-        content: "Save location is not defined",
-        leftButtonText: "Ok"
-      }
-      api.createAlert(Alert);
-    }
+    api.saveProject('Saving and continuing');
   }
 
   render() {

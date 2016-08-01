@@ -155,6 +155,24 @@ class ModuleApi {
         callback("No manifest found")
       }
     }
+
+    saveProject(message) {
+      var _this = this;
+      var git = require('./components/core/GitApi.js');
+      var path = this.getDataFromCommon('saveLocation');
+      if (path) {
+        git(path).save(message, path, function() {
+          _this.emitEvent('goToNext');
+        });
+      } else {
+        var Alert = {
+          title: "Warning",
+          content: "Save location is not defined",
+          leftButtonText: "Ok"
+        }
+        this.createAlert(Alert);
+      }
+    }
 }
 
 const api = new ModuleApi();
