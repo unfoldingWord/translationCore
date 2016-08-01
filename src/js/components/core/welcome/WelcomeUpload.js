@@ -24,6 +24,8 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const booksOfBible = require('../booksOfBible');
 const remote = window.electron.remote;
 const {dialog} = remote;
+const DEFAULT_ERROR = 'Import Error';
+const INVALID_PROJECT = 'This does not appear to be a Translation Studio project'
 
 const WelcomeUpload = React.createClass({
   getInitialState: function() {
@@ -112,6 +114,8 @@ const WelcomeUpload = React.createClass({
           repo: _this.state.params.repo
         }
         api.putDataInCommon('saveLocation', saveLocation);
+        localStorage.setItem('showTutorial', false);
+        localStorage.setItem('lastProject', saveLocation);
         CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
         callback(true);
       } else {
