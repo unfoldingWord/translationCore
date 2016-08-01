@@ -85,6 +85,10 @@ class View extends api.CheckModule {
    */
   render() {
     var _this = this;
+    const LANGUAGE_QUESTION = 'Is this verse written in the correct language?';
+    const NATURALNESS_QUESTION = 'Is this translation a meaning-based translation that ' +
+      'attempts to communicate the meaning of the original text in ways that are natural, ' +
+      'clear, and accurate in the target language?';
     return (
       <div>
         {/* Render TPane tool */}
@@ -96,7 +100,10 @@ class View extends api.CheckModule {
           </Col>
           <Col sm={6}>
             <Well>
-              <p>Is this verse written in the correct language?</p>
+              <p>
+                { /* Displays a different question depending on the group */ }
+                { _this.getCurrentGroup().group == 'Language' ? LANGUAGE_QUESTION : NATURALNESS_QUESTION }
+              </p>
               <ButtonGroup>
                 <Button
                   onClick={

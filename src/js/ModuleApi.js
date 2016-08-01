@@ -156,9 +156,13 @@ class ModuleApi {
     /**
      * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
      * and calls the callback function with the gateway language book as an argument.
+     * 
      * The book that is saved to the check store has the chapters and verses formatted
-     * as JavaScript objects, while the book that is passed as an argument to the callback
-     * has the chapters and verses formatted as arrays.
+     * as key-value pairs. This format is used by the TPane, which sorts the keys in its render
+     * method. This is bad and should be refactored to format the chapters and verses as arrays.
+     * 
+     * The book that is passed as an argument to the callback has the chapters and verses
+     * formatted as arrays.
      */
     getGatewayLanguageAndSaveInCheckStore(params, progressCallback, callback) {
         var Door43Fetcher = new Door43DataFetcher();

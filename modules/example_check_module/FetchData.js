@@ -1,11 +1,15 @@
 const api = window.ModuleApi;
 
 function getData(params, progressCallback, onCompleteCallback) {
+  // Get the gateway language and generate a check for each verse
   api.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function(bookData) {
     generateChecks(bookData, params, progressCallback, onCompleteCallback);
   });
 }
 
+/**
+ * Generates two groups of checks, where each group has a check for each verse.
+ */
 function generateChecks(bookData, params, progressCallback, callback) {
   var groupNames = ['Language', 'Naturalness'];
   var groups = [];
@@ -30,7 +34,10 @@ function generateChecks(bookData, params, progressCallback, callback) {
   callback();
 }
 
-/** The groups created by the generateChecks() method will be in this format:
+/**
+ * The groups created by the generateChecks() method must be in this format
+ * to work with the CheckModule class and be displayed in the navigation menu:
+ * 
 var groups = [
   {
     group: 'Language',

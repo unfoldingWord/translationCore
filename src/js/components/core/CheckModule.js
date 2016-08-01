@@ -8,12 +8,21 @@ var api;
 class CheckModule extends React.Component {
   
   /**
-   * @description - Public method that your check module can call to get the data for the current check.
-   * You should only call this method to get data, not to save data.
+   * @description - Public method that your check module can use to get the data for the current check.
+   * You should only use this method to get data, and you should not modify the return value to save data.
    * To save data, use the updateCheckStatus(), updateCheckProperty(), and getDataFromTools() methods.
    */
   getCurrentCheck() {
     return this.state.currentCheck;
+  }
+  
+  /**
+   * @description - Public method that your check module can use to get the data for the current group.
+   * You should only use this method to get data, and you should not modify the return value to save data.
+   * To save data, use the updateCheckStatus(), updateCheckProperty(), and getDataFromTools() methods.
+   */
+  getCurrentGroup() {
+    return this.state.currentGroup;
   }
 
   /**
@@ -60,11 +69,11 @@ class CheckModule extends React.Component {
   constructor() {
     super();
     api = window.ModuleApi;
-    
+    // Initialize the state to be empty. These will be populated in the updateState() method
     this.state = {
+      currentGroup: null,
       currentCheck: null
     };
-    
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
     this.goToNext = this.goToNext.bind(this);
@@ -149,8 +158,10 @@ class CheckModule extends React.Component {
   updateState() {
     var currentGroupIndex = this.getCurrentGroupIndex();
     var currentCheckIndex = this.getCurrentCheckIndex();
+    var currentGroupFromStore = this.getCurrentGroupFromCheckStore();
     var currentCheckFromStore = this.getCurrentCheckFromCheckStore();
     this.setState({
+      currentGroup: currentGroupFromStore,
       currentCheck: currentCheckFromStore
     });
     api.emitEvent('goToVerse', {
@@ -169,6 +180,17 @@ class CheckModule extends React.Component {
     var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     return currentCheck;
+  }
+  
+  /**
+   * @description - Returns the current group from the check store. This is not a copy.
+   * If it is modified, the changes will be reflected in the check store.
+   */
+  getCurrentGroupFromCheckStore() {
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
+    var currentGroup = groups[currentGroupIndex];
+    return currentGroup;
   }
   
   getCurrentGroupIndex() {
