@@ -9,22 +9,21 @@ const {dialog} = remote;
 const style = {
                 dropzone: {
                   active: {
-                    border: '2px solid #727272'
+                    border: '2px solid #727272',
+                    backgroundColor: '#f5f5f5'
                   },
                   text: {
-                    borderRadius: '10px',
-                    marginTop: '10px',
-                    backgroundColor: '#ffffff',
-                    color: '#34495e',
-                    fontSize: '30px',
-                    height: '50px',
+                    height: '200px',
+                    paddingTop: '75px',
                     verticalAlign: 'middle',
                     width: '100%'
                   },
                   main: {
                     width: '100%',
-                    color: '#ffffff',
+                    color: '#212121',
                     height: '200px',
+                    border: '2px dashed #727272',
+                    borderRadius: '5px',
                     fontSize: '25px'
                   },
                   inner: {
@@ -35,7 +34,6 @@ const style = {
 
 const DragDrop = React.createClass({
   getInitialState: function() {
-    this.opened = false;
     return {
       filePath: ''
     }
@@ -43,25 +41,23 @@ const DragDrop = React.createClass({
   onDrop: function(files) {
     var _this = this;
     if (files !== undefined) {
+      // FileImport(files[0].path);
       _this.setState({filePath: files[0].path});
-      _this.props.sendFilePath(files[0].path, null, true);
+      _this.props.sendFilePath(files[0].path);
     }
   },
-  // onClick: function() {
-  //   var _this = this;
-  //   if (!this.opened) {
-  //     this.opened = true;
-  //     dialog.showOpenDialog({
-  //       properties: ['openDirectory']
-  //     }, function(filename) {
-  //       if (filename !== undefined) {
-  //         _this.opened = false;
-  //         _this.setState({filePath: filename[0]});
-  //         _this.props.sendFilePath(filename[0], null, true);
-  //       }
-  //     });
-  //   }
-  // },
+  onClick: function() {
+    var _this = this;
+    dialog.showOpenDialog({
+      properties: ['openDirectory']
+    }, function(filename) {
+      if (filename !== undefined) {
+        // FileImport(filename[0]);
+        _this.setState({filePath: filename[0]});
+        _this.props.sendFilePath(filename[0]);
+      }
+    });
+  },
 
   render: function() {
     return (
@@ -71,7 +67,7 @@ const DragDrop = React.createClass({
         activeStyle={style.dropzone.active}>
             <div style={style.dropzone.text}>
               <center>
-                Click To Open A Project
+                Drag files here to upload, or click to select a file
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>
               </center>
             </div>
