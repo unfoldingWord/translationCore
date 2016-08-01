@@ -62,9 +62,6 @@ var Main = React.createClass({
     var saveLocation = localStorage.getItem('lastProject');
     if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
         Access.loadFromFilePath(saveLocation);
-        console.log(saveLocation);
-    } else {
-      console.log(saveLocation);
     }
   },
 
