@@ -96,7 +96,14 @@ class View extends React.Component {
   componentDidMount() {
     //this should already be set in the state from componentWillMount
     var currentCheck = this.state.currentCheck;
-    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+    if (currentCheck) {
+      //Let T Pane know to scroll to are current verse
+      api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+      //Tell ProposedChanges what it should be displaying if we already have a proposed change there
+      if (this.refs.ProposedChanges) {
+        this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -116,8 +123,8 @@ class View extends React.Component {
   updateUserAndTimestamp() {
     let currentCheck = this.getCurrentCheck();
     let currentUser = api.getLoggedInUser();
-    let timestamp = new Date();
-    currentCheck.user = currentUser;
+    let timestamp = new Date().toDateString();
+    currentCheck.user = currentUser ? currentUser.fullName : null;
     currentCheck.timestamp = timestamp;
   }
 
@@ -141,9 +148,11 @@ class View extends React.Component {
     }
   }
 
-  updateSelectedWords(selectedWords) {
+  updateSelectedWords(selectedWords, selectedWordsRaw) {
     var currentCheck = this.getCurrentCheck();
     currentCheck.selectedWords = selectedWords;
+    //This is needed to make the display persistent, but won't be needed in reports
+    currentCheck.selectedWordsRaw = selectedWordsRaw;
     this.updateUserAndTimestamp();
   }
 
@@ -282,31 +291,18 @@ class View extends React.Component {
         <div>
           <TPane />
           <Row className="show-grid">
-            <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile}/>
-              <CommentBox />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <WordComponent word={this.state.currentCheck.word} />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <Well bsSize={'small'} style={{
-                height: '60px',
-                lineHeight:'35px', textAlign: "center"}}>
-                {this.state.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}
-            </Well>
-            </Col>
-            <Col sm={6} md={6} lg={6}>
+            <Col sm={6} md={6} lg={6} style={{paddingRight: '2.5px'}}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
+                check={this.state.currentCheck}
                 verse={gatewayVerse}
-                occurrence={this.state.currentCheck.occurrence}
               />
               <TargetVerseDisplay
                 verse={targetVerse}
                 ref={"TargetVerseDisplay"}
                 onWordSelected={this.updateSelectedWords.bind(this)}
+                style={{minHeight: '120px',
+                        margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
@@ -322,7 +318,11 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges selectedWord={"spongegar"} />
+              <ProposedChanges ref={"ProposedChanges"} />
+              <CommentBox />
+            </Col>
+            <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
+              <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
           </Row>
         </div>
