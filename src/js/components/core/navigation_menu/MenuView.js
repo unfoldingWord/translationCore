@@ -109,7 +109,7 @@ module.exports = function(NAMESPACE) {
         });
         return (
         <div className='fill-height'>
-          <Well className='fill-height' style={{overflow: 'scroll', whiteSpace: 'nowrap'}}>
+          <Well className='fill-height' style={{overflowY: 'scroll'}}>
             <div>
               <h3>Checks</h3>
               {menuList}
