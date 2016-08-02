@@ -161,6 +161,7 @@ const ProjectModal = React.createClass({
                 CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
 
               }
+
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
@@ -185,6 +186,7 @@ const ProjectModal = React.createClass({
               dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
         });
+
       } catch(error) {
         dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
       }
@@ -194,6 +196,9 @@ const ProjectModal = React.createClass({
   clearOldData: function(){
     var manifest = api.getDataFromCommon('tcManifest');
     CoreActions.newProject();
+    //TODO: Add CoreAction?
+    CoreActions.updateModProg(false);
+    //TODO:
     CheckStore.WIPE_ALL_DATA();
     api.modules = {};
     this.setSaveLocation(this.saveLocation);

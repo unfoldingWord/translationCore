@@ -24,6 +24,13 @@ module.exports = {
     });
   },
 
+  updateModProg: function(boolean) {
+    Dispatcher.handleAction({
+      type: consts.MOD_PROGRESS_VIEW,
+      view: boolean
+    });
+  },
+
   updateModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,

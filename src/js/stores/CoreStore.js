@@ -67,6 +67,10 @@ class CoreStore extends EventEmitter {
     return this.projectModalVisibility;
   }
 
+  getModProg() {
+    return this.modProgressView;
+  }
+
   getCreateProjectText() {
     return this.projectText;
   }
@@ -175,9 +179,6 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_BUTTTON_STATUS:
-        this.buttonStatus = action.buttonStatus;
-
       case consts.CHANGE_ONLINE_STATUS:
         this.onlineStatus = action.onlineStatus;
         this.emitChange();
@@ -208,8 +209,14 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.MOD_PROGRESS_VIEW:
+        this.modProgressView = action.view;
+        this.emitChange();
+      break;
+
       case consts.DONE_LOADING:
         this.doneLoading = true;
+        this.modProgressView = true;
         this.checkCategoryOptions = action.reportViews;
         this.emitChange();
       break;

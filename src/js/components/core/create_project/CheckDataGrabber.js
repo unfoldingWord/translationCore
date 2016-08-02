@@ -88,7 +88,6 @@ var CheckDataGrabber = {
         }
 
         CoreActions.doneLoadingFetchData(this.reportViews);
-
       }
     }
     else {

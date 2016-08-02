@@ -1,14 +1,8 @@
 var style = {
   container:{
-    backgroundColor: "pink",
-    width: "150px",
-    position: "absolute",
-    right: "0px"
+    minHeight: "50px",
+    backgroundColor: "dark-grey",
   },
-
-  bar:{
-    margin: "auto"
-  }
 
 };
 

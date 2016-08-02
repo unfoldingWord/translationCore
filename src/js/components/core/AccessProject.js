@@ -27,6 +27,8 @@ var Access = {
         });
         //loads into project with object of file paths
       });
+
+
     } catch (e) {
       dialog.showErrorBox('Open TC project error', e.message);
     }
@@ -170,6 +172,8 @@ var Access = {
   },
 
   clearOldData: function(){
+    //TODO: CoreAction
+    CoreActions.updateModProg(false);
     CheckStore.WIPE_ALL_DATA();
     //clears relevant data from store
     api.modules = {};
