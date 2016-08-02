@@ -8,14 +8,14 @@
   const React = require('react');
   const remote = window.electron.remote;
   const {Menu} = remote;
+  var moduleApi = require('../ModuleApi');
+  window.ModuleApi = moduleApi;
   const MenuBar = require('../components/core/MenuBar');
 
   var App = {
     init: function() {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-      var moduleApi = require('../ModuleApi');
-      window.ModuleApi = moduleApi;
       var Application = require("./app");
       ReactDOM.render(Application, document.getElementById('content'));
     }
