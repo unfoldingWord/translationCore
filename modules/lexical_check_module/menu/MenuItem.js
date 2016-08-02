@@ -11,7 +11,8 @@ class MenuItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkStatus: "UNCHECKED"
+      checkStatus: "UNCHECKED",
+      active: "false"
     };
     this.menuItemClicked = this.menuItemClicked.bind(this);
   }
@@ -23,6 +24,11 @@ class MenuItem extends React.Component {
         'checkIndex': this.props.checkIndex
       }
     );
+    this.setActive(true);
+  }
+
+  setActive(active) {
+    this.setState({active: active});
   }
 
   changeCheckStatus(checkStatus) {
@@ -78,7 +84,7 @@ class MenuItem extends React.Component {
     return (
       <span>
         <Glyphicon glyph="flag" style={flagStyle} />
-        <span style={style.menuItem.text}>
+        <span style={this.state.active === true ? style.menuItem.current : style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
             {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
           </a>
