@@ -122,13 +122,6 @@ module.exports = {
     });
   },
 
-    sendAlertResponse: function(alertResponseObj) {
-      Dispatcher.handleAction({
-        type: consts.ALERT_MODAL_RESPONSE,
-        alertResponse: alertResponseObj
-      });
-    },
-
     sendNotificationToast: function(boolean, toastParamsObj) {
       Dispatcher.handleAction({
         type: consts.SHOW_TOAST_PARAMS,

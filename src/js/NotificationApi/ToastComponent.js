@@ -51,7 +51,6 @@ class ToastComponent extends React.Component{
       return (<span></span>);
     }else{
       this.countToHide(this.state.time);
-      console.log(this.state.time);
       let linkStyle;
       switch(this.state.theme){
         case 'success':
