@@ -45,8 +45,8 @@ function getChecksByVerse(chapter, verse) {
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {
-        // Also appends the gateway language word that we're checking.
-        // This is taken from the group.
+        // Also appends the group name to the check
+        check.group = group.group;
         res.push(check);
       }
     }
@@ -58,6 +58,11 @@ function getChecksByVerse(chapter, verse) {
 class ReportItem extends React.Component {
 	constructor() {
 		super();
+  }
+  headerDiv() {
+    return (
+      <h4 style={{marginTop: '-5px'}}>{this.props.check.group}</h4>
+    );
   }
   checkStatusDiv() {
     if(!this.props.check.checkStatus) 
@@ -81,6 +86,7 @@ class ReportItem extends React.Component {
   render() {
     return (
       <Well style={{background: 'rgb(255, 255, 255)'}}>
+        {this.headerDiv()}
         {this.checkStatusDiv()}
         {this.proposedChangesDiv()}
         {this.footerDiv()}
