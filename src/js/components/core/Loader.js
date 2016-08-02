@@ -17,44 +17,32 @@ const Loader = React.createClass({
     };
   },
   componentWillMount: function() {
-    CoreStore.addChangeListener(this.sendProgressForKey);
-    CoreStore.addChangeListener(this.finishLoader);
+    CoreStore.addChangeListener(this.update);
   },
 
   componentWillUnMount: function() {
-    CoreStore.removeChangeListener(this.sendProgressForKey);
-    CoreStore.removeChangeListener(this.finishLoader);
+    CoreStore.removeChangeListener(this.update);
   },
 
-  finishLoader: function() {
-    if (CoreStore.doneLoading) {
-      //console.log('CheckStore');
-      //console.dir(CheckStore);
-      this.setState({
-        progess: 100,
-        showModal: false
-      });
-    }
+  update: function() {
+    this.setState({
+      progress: CoreStore.getProgress(),
+      showModal: CoreStore.loaderModalVisibility
+    });
   },
 
-  sendProgressForKey: function(){
+  getCurrentProgress: function(){
     var progressKey = CoreStore.getProgress();
     if (progressKey){
       // var progressKey = progressArray[0];
 
-      this.progressObject[progressKey.key] = progressKey.progress
-      var currentProgress = 0;
-      for (var key in this.progressObject){
-        currentProgress += this.progressObject[key];
-      }
-      var number = CoreStore.getNumberOfFetchDatas();
-      currentProgress = currentProgress / number;
-      this.setState({
-        progress: currentProgress,
-        showModal: true
-      });
+      return currentProgress;
+    }
+    else {
+      return 0;
     }
   },
+    
 
   handleClick: function(e) {
   },
