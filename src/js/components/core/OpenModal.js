@@ -6,7 +6,7 @@
 var React = require('react');
 var remote = window.electron.remote;
 var {dialog} = remote;
-var OpenOnline = require('./GitClone.js');
+var OpenOnline = require('./GitApi.js');
 var api = window.ModuleApi;
 var Access = require('./AccessProject.js');
 var FormGroup = require('react-bootstrap/lib/FormGroup.js');
@@ -112,7 +112,7 @@ render: function() {
             <div>
               <Modal show={this.state.showModal} onHide={this.close} data-toggle="collapse">
                   <Modal.Header closeButton>
-                    <Modal.Title>Open Translation Project</Modal.Title>
+                    <Modal.Title>Load Translation Project</Modal.Title>
                   </Modal.Header>
                <Modal.Body>
                 <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
