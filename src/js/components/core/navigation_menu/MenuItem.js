@@ -73,7 +73,7 @@ class MenuItem extends React.Component {
         checkStatusStyle = style.menuItem.statusIcon.unchecked;
     }
     // Set the style of the text, depending on whether this menu item represents the current check
-    var textStyle = this.state.isCurrentCheck ? style.menuItem.current : style.menuItem.text;
+    var textStyle = this.state.isCurrentCheck ? style.menuItem.text.current : style.menuItem.text.normal;
 
     return (
       <span>
