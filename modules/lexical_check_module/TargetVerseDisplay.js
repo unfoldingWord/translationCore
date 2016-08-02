@@ -147,6 +147,7 @@ const TargetLanguageSelectBox = React.createClass({
       this.selectedWords.push(wordObj);
       this.sortSelectedWords();
     }
+    this.props.onWordSelected(this.getWords());
 
     /* This is used for if you want to enable disabled buttons after the user has
      * selected at least one word
@@ -167,6 +168,7 @@ const TargetLanguageSelectBox = React.createClass({
     if (index != -1) {
       this.selectedWords.splice(index, 1);
     }
+    this.props.onWordSelected(this.getWords());
 
     //This is used for if you want to disable the buttons if no words are selected
     // if (this.selectedWords.length <= 0) {

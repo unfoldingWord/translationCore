@@ -105,6 +105,14 @@ class View extends React.Component {
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
+  getCurrentCheck() {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    return currentCheck;
+  }
+
   /**
    * @description - updates the status of the check that is the current check in the check store
    * @param {object} newCheckStatus - the new status chosen by the user
@@ -116,13 +124,17 @@ class View extends React.Component {
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
-      currentCheck.selectedWords = selectedWords;
       api.emitEvent('changedCheckStatus', {
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex,
         checkStatus: newCheckStatus
       });
     }
+  }
+
+  updateSelectedWords(selectedWords) {
+    var currentCheck = this.getCurrentCheck();
+    currentCheck.selectedWords = selectedWords;
   }
 
   /**
@@ -278,6 +290,7 @@ class View extends React.Component {
               <TargetVerseDisplay
                 verse={targetVerse}
                 ref={"TargetVerseDisplay"}
+                onWordSelected={this.updateSelectedWords.bind(this)}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
