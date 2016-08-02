@@ -80,7 +80,7 @@ class ReportItem extends React.Component {
   }
   footerDiv() {
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{this.props.check.user || 'USER'} - {this.props.check.timeStamp || 'TIMESTAMP'}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{this.props.check.user || 'Anonymous'} - {this.props.check.timestamp || ''}</div>
     );
   }
   render() {

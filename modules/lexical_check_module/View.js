@@ -113,6 +113,14 @@ class View extends React.Component {
     return currentCheck;
   }
 
+  updateUserAndTimestamp() {
+    let currentCheck = this.getCurrentCheck();
+    let currentUser = api.getLoggedInUser();
+    let timestamp = new Date();
+    currentCheck.user = currentUser;
+    currentCheck.timestamp = timestamp;
+  }
+
   /**
    * @description - updates the status of the check that is the current check in the check store
    * @param {object} newCheckStatus - the new status chosen by the user
@@ -129,12 +137,14 @@ class View extends React.Component {
         checkIndex: currentCheckIndex,
         checkStatus: newCheckStatus
       });
+      this.updateUserAndTimestamp();
     }
   }
 
   updateSelectedWords(selectedWords) {
     var currentCheck = this.getCurrentCheck();
     currentCheck.selectedWords = selectedWords;
+    this.updateUserAndTimestamp();
   }
 
   /**
