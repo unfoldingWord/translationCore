@@ -37,6 +37,7 @@ class SwitchCheckModal extends React.Component{
     for(var folderName of moduleFolderNameList) {
       FileModule.readJsonFile(window.__base + "modules/" + folderName + "/manifest.json", (metadata) => {
         metadata.folderName = folderName;
+        metadata.imagePath = path.join(window.__base, "modules", folderName, "icon.png");
         tempMetadatas.push(metadata);
       });
     }
