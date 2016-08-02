@@ -23,6 +23,7 @@ class ModuleApi {
         this.React = React;
         this.ReactBootstrap = ReactBootstrap;
         this.modules = {};
+        this.Toast = require('./NotificationApi/ToastApi');
   }
 
     findDOMNode(component) {
@@ -37,7 +38,7 @@ class ModuleApi {
             console.warn(MENU_WARN + namespace);
         }
         this.menus[namespace] = menu;
-    }       
+    }
 
     getMenu(namespace) {
         if (this.menus) {

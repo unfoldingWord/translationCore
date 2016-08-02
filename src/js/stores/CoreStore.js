@@ -124,6 +124,14 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
+  getNotificationToastParams() {
+    return this.toastParamsObj;
+  }
+
+  getToastVisibility(){
+    return this.toastVisibility;
+  }
+
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
   // Mostly just for SwitchCheckModuleDropdown
   getCheckCategoryOptions(){
@@ -244,6 +252,12 @@ class CoreStore extends EventEmitter {
 
       case consts.ALERT_MODAL_RESPONSE:
         this.alertResponseObj = action.alertResponse;
+        this.emitChange();
+      break;
+
+      case consts.SHOW_TOAST_PARAMS:
+        this.toastVisibility = action.toastOption;
+        this.toastParamsObj = action.toastParams;
         this.emitChange();
       break;
 
