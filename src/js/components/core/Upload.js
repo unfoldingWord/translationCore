@@ -67,6 +67,14 @@ const UploadModal = React.createClass({
   },
 
   /**
+   * @description - grabs the translationCore manifest from the folder and returns it
+   * @param {string} folderpath - Path to the folder where the translationStudio is located
+   */
+  getManifest: function(folderPath, callback) {
+    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), callback);
+  },
+
+  /**
    * @desription - This generates the default params from the path and saves it in the CheckStore
    * @param {string} path - The path to the folder containing the translationStudio project
    * @param {object} translationStudioManifest - The parsed json object of the translationStudio
@@ -121,6 +129,14 @@ const UploadModal = React.createClass({
                 repo: link || null}, translationStudioManifest);
             }
             else {
+              _this.getManifest(path, function(error, tcManifest) {
+                if (error) {
+                  console.error(error);
+                }
+                else {
+                  api.putDataInCommon('tcManifest', tcManifest);
+                }
+              });
               Access.loadFromFilePath(path);
             }
 
