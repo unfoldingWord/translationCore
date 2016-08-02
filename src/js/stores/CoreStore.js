@@ -33,6 +33,7 @@ class CoreStore extends EventEmitter {
   constructor() {
     super();
     this.setMaxListeners(20);
+    this.doneLoading = true;
   }
 
   updateNumberOfFetchDatas(number) {
@@ -231,7 +232,7 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
-        this.progressObject = null;
+        this.progressObject = [];
         this.checkCategoryOptions = action.reportViews;
         if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
           var firstCheckCategory = this.checkCategoryOptions[0];
