@@ -77,7 +77,6 @@ var CheckDataGrabber = {
           api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
         }
         catch (e) {
-          console.log("Error: " + e);
           if (e.code != "MODULE_NOT_FOUND") {
             console.error(e);
           }
