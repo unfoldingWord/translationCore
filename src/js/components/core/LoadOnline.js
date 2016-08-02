@@ -31,6 +31,7 @@ module.exports = (function() {
     var projectPath = splitUrl.pop().split('/');
     var projectName = projectPath.pop();
     const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
+
     fs.readdir(savePath, function(err, contents) {
       if (err) {
         fs.ensureDir(savePath, function() {
@@ -42,6 +43,7 @@ module.exports = (function() {
       }
     });
   }
+
   /**
   * @description Runs the git command to clone a repo.
   * @param {string} savePath - The location of the git repo
@@ -54,14 +56,16 @@ module.exports = (function() {
         return;
       }
       try {
+
         fs.readFileSync(path.join(savePath, 'manifest.json'));
         callback(savePath, url);
       } catch (error) {
             // dialog.showErrorBox('Import Error', error);
-        console.error(error);
+          console.error(error);
         return;
       }
     });
   }
+
   return openManifest;
 })();

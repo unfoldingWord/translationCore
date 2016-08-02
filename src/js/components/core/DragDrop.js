@@ -45,17 +45,21 @@ const DragDrop = React.createClass({
       _this.props.sendFilePath(files[0].path);
     }
   },
+
   onClick: function() {
     var _this = this;
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        // FileImport(filename[0]);
-        _this.setState({filePath: filename[0]});
-        _this.props.sendFilePath(filename[0]);
-      }
-    });
+    if (!this.opened) {
+      this.opened = true;
+      dialog.showOpenDialog({
+        properties: ['openDirectory']
+      }, function(filename) {
+        if (filename !== undefined) {
+          _this.setState({filePath: filename[0]});
+          _this.props.sendFilePath(filename[0], null, true);
+        }
+        _this.opened = false;
+      });
+    }
   },
 
   render: function() {
