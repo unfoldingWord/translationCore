@@ -23,7 +23,6 @@ const ProjectModal = React.createClass({
       currentChecks:[],
       modalValue:"Languages",
       backButton:'hidden',
-      FetchDataArray:[]     //FetchDataArray of checkmodule
     };
   },
 
@@ -61,7 +60,6 @@ const ProjectModal = React.createClass({
     CoreStore.projectModalVisibility = "";
     this.setState({
       showModal: false,
-      FetchDataArray: []
     });
   },
 
@@ -73,7 +71,7 @@ const ProjectModal = React.createClass({
   render: function() {
     return (
       <div>
-        <Modal show={this.state.showModal}>
+        <Modal show={this.state.showModal} onHide={this.close}>
           <Upload ref={"TargetLanguage"} />
           <Modal.Footer>
             <ButtonToolbar>
