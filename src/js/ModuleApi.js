@@ -42,8 +42,9 @@ class ModuleApi {
   }
   
   getMenu(namespace) {
-    // console.log('Namespace: ' + namespace);
-    // console.dir(this.menus);
+    if (!namespace) {
+      return null;
+    }
     if (!this.menus) {
         this.menus = {};
     }

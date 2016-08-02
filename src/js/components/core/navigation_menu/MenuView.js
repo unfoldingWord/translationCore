@@ -81,6 +81,7 @@ module.exports = function(NAMESPACE) {
     }
 
     render() {
+      console.log('lance menuview');
       var _this = this;
       var menuList;
       if (this.state.checkObject['groups']) {
