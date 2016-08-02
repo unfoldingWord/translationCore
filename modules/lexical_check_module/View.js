@@ -286,10 +286,10 @@ class View extends React.Component {
               </ButtonGroup>
               <br /><br />
               <ProposedChanges selectedWord={"spongegar"} />
+              <CommentBox />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
-              <CommentBox />
             </Col>
           </Row>
         </div>

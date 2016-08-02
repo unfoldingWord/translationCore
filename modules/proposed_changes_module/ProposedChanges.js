@@ -35,7 +35,7 @@ class ProposedChanges extends React.Component {
         onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
           Propose Changes
         </Button>
-        <Panel collapsible expanded={this.state.open} style={{backgroundColor: "#D3D3D3"}}>
+        <Panel collapsible expanded={this.state.open} style={{backgroundColor: "#D3D3D3", marginBottom:'5px'}}>
 
           <Well style={{fontSize: "16px", color: "white", textAlign: "center", background:"#d9534f"}}>{this.props.selectedWord}
           </Well>
