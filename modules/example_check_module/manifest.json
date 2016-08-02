@@ -2,8 +2,8 @@
     "title": "Example Check",
     "name": "ExampleChecker",
     "include": [
-        "proposed_changes_module",
         "t_pane",
-        "example_tool"
+        "example_tool",
+        "comment_box"
     ]
 }
