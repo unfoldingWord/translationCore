@@ -62,7 +62,7 @@ var Main = React.createClass({
         <SwitchCheckModal />
         <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
-            <Row className='fill-height'>
+            <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
                 <ProjectModal />
