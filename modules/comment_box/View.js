@@ -16,20 +16,37 @@ class CommentBox extends React.Component {
       comment: ""
     };
   }
+  
+  componentWillMount() {
+    if (typeof this.props.val == "string") {
+      this.setState({comment: this.props.val});
+      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
+    } 
+  }
 
-  handleComment(e){
-    this.value = e.target.value;
-    this.setState({comment: this.value});
+  componentWillReceiveProps(nextProps) {
+    if (typeof nextProps.val == "string") {
+      this.setState({comment: nextProps.val});
+      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
+    } 
+  }
+
+  handleComment(e) {
+    this.setState({comment: e.target.value});
   }
 
   handleSubmit(e) {
     api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
-    this.setState({open: false});
-    this.setState({comment: ""});
+    this.setState({open: false, comment: ""});
   }
-
+  // these next two functions will be used through a ref
   getComment() {
     return api.getDataFromCheckStore(NAMESPACE, 'currentChanges');
+  }
+
+  setComment(comment = "") {
+    this.setState({comment: comment});
+    api.putDataInCheckStore(NAMESPACE, "currentChanges", comment);
   }
 
   render() {

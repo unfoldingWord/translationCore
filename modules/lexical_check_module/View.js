@@ -152,9 +152,11 @@ class View extends React.Component {
     if (currentCheck && proposedChanges != "") {
       if (proposedChanges && proposedChanges != "") {
         currentCheck.proposedChanges = proposedChanges;
+        this.refs.ProposedChanges.setNewWord("");
       }
       if (comment && comment != "") {
         currentCheck.comment = comment;
+        this.refs.CommentBox.setComment("");
       }
     }
     
@@ -303,8 +305,8 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges ref={"ProposedChanges"} />
-              <CommentBox ref={"CommentBox"} />
+              <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
+              <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
