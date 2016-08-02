@@ -25,19 +25,14 @@ var Access = {
       fs.readdir(folderpath, function(err, files){
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
-            _this.loadCheckData(Path.join(folderpath, file));
+            _this.loadCheckData(Path.join(folderpath, file), function() {
+              api.putDataInCommon('saveLocation', filepath);
+              localStorage.setItem('showTutorial', false);
+              localStorage.setItem('lastProject', filepath);
+            });
           }
         }
-<<<<<<< HEAD
-        api.putDataInCommon('saveLocation', folderpath);
-=======
-        _this.loadCheckData(fileObj, function() {
-          api.putDataInCommon('saveLocation', filepath);
-          localStorage.setItem('showTutorial', false);
-          localStorage.setItem('lastProject', filepath);
-        });
-        //loads into project with object of file paths
->>>>>>> develop
+
       });
     } catch (e) {
       console.error(e);

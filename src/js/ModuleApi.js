@@ -29,26 +29,10 @@ class ModuleApi {
     return ReactDOM.findDOMNode(component);
   }
 
-<<<<<<< HEAD
   saveMenu(namespace, menu) {
     if (!this.menus) {
       this.menus = {};
-=======
-    saveMenu(namespace, menu) {
-        if (!this.menus) {
-            this.menus = {};
-        }
-        if (namespace in this.menus) {
-            console.warn(MENU_WARN + namespace);
-        }
-        this.menus[namespace] = menu;
-    }
 
-    getMenu(namespace) {
-        if (this.menus) {
-            return this.menus[namespace];
-        }
->>>>>>> develop
     }
     if (namespace in this.menus) {
       console.warn(MENU_WARN + namespace);

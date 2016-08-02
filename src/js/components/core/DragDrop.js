@@ -48,7 +48,6 @@ const DragDrop = React.createClass({
 
   onClick: function() {
     var _this = this;
-<<<<<<< HEAD
     if (!this.opened) {
       this.opened = true;
       dialog.showOpenDialog({
@@ -61,17 +60,6 @@ const DragDrop = React.createClass({
         _this.opened = false;
       });
     }
-=======
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        // FileImport(filename[0]);
-        _this.setState({filePath: filename[0]});
-        _this.props.sendFilePath(filename[0]);
-      }
-    });
->>>>>>> develop
   },
 
   render: function() {
