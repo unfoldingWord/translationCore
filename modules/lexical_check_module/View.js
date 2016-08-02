@@ -142,16 +142,22 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    //Get the proposed changes and add it to the check
-    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    var currentCheck = this.state.currentCheck;
-    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-      currentCheck.proposedChanges = proposedChanges;
-    }
-
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    //Get the proposed changes and add it to the check
+    var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
+    let comment = this.refs.CommentBox.getComment();
+    var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
+    if (currentCheck && proposedChanges != "") {
+      if (proposedChanges && proposedChanges != "") {
+        currentCheck.proposedChanges = proposedChanges;
+      }
+      if (comment && comment != "") {
+        currentCheck.comment = comment;
+      }
+    }
+    
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length) {
@@ -298,7 +304,7 @@ class View extends React.Component {
               </ButtonGroup>
               <br /><br />
               <ProposedChanges ref={"ProposedChanges"} />
-              <CommentBox />
+              <CommentBox ref={"CommentBox"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>

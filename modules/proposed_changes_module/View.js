@@ -33,6 +33,10 @@ class ProposedChanges extends React.Component {
     this.setState({ open: !this.state.open });
   }
 
+  getProposedChanges() {
+    return api.getDataFromCheckStore(NAMESPACE, 'newWord');
+  }
+
   update(newCurrentWord) {
     this.setState({currentWord: newCurrentWord});
   }
