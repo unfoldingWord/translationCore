@@ -271,31 +271,17 @@ class View extends React.Component {
         <div>
           <TPane />
           <Row className="show-grid">
-            <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile}/>
-              <CommentBox />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <WordComponent word={this.state.currentCheck.word} />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <Well bsSize={'small'} style={{
-                height: '60px',
-                lineHeight:'35px', textAlign: "center"}}>
-                {this.state.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}
-            </Well>
-            </Col>
-            <Col sm={6} md={6} lg={6}>
+            <Col sm={6} md={6} lg={6} style={{paddingRight: '2.5px'}}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
                 check={this.state.currentCheck}
                 verse={gatewayVerse}
-                occurrence={this.state.currentCheck.occurrence}
               />
               <TargetVerseDisplay
                 verse={targetVerse}
                 ref={"TargetVerseDisplay"}
+                style={{minHeight: '120px',
+                        margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
@@ -311,7 +297,11 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges ref={'ProposedChanges'} />
+              <ProposedChanges selectedWord={"spongegar"} />
+              <CommentBox />
+            </Col>
+            <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
+              <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
           </Row>
         </div>

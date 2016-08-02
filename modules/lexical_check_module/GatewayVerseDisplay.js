@@ -15,13 +15,12 @@ class GatewayVerseDisplay extends React.Component {
   }
 
   generateWordArray() {
-
-    /* 
+    /*
      * Split the verse on either side of the actual word. This assumes that the | character
      * will never be found in the Bible
      */
     var first, last;
-    var newStr = replaceFrom(this.props.verse, this.props.check.index, 
+    var newStr = replaceFrom(this.props.verse, this.props.check.index,
       this.props.check.index + this.props.check.word.length, '|');
     [first, last] = newStr.split('|');
     /* this return every up to the word, then the word itself with highlighting,
@@ -34,7 +33,7 @@ class GatewayVerseDisplay extends React.Component {
 
   render() {
     return(
-      <Well bsSize={'small'}>
+      <Well bsSize={'small'} style={{minHeight: '128px', marginBottom: '5px'}}>
         <div
           style={{
             textAlign: "center",
