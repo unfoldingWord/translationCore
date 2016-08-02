@@ -83,7 +83,7 @@ module.exports = function(NAMESPACE) {
     render() {
       var _this = this;
       var menuList;
-      if (this.state.checkObject) {
+      if (this.state.checkObject['groups']) {
         menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
           var groupHeader = (
             <div>{group.group}</div>

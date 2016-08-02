@@ -62,6 +62,9 @@ var CheckDataGrabber = {
     var _this = this;
     var moduleBasePath = Path.join(window.__base, 'modules');
     var modulePath = Path.join(moduleFolderName, 'manifest.json');
+    //If this module has a menu associated with it, check for it and save it within the API if so
+    
+
     fs.readJson(modulePath, function(error, dataObject) {
       if (error) {
         console.error(error);
@@ -70,6 +73,17 @@ var CheckDataGrabber = {
         var params = api.getDataFromCommon('params');
         var modulePaths = [];
         modulePaths.push({name: dataObject.name, location: moduleFolderName});
+        try {
+          api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
+        }
+        catch (e) {
+          console.log("Error: " + e);
+          if (e.code != "MODULE_NOT_FOUND") {
+            console.error(e);
+          }
+        }
+
+
         CoreStore.setCurrentCheckCategory(dataObject.name);
         for (let childFolderName of dataObject.include) {
           //If a developer hasn't defined their module in the corret way, this'll probably throw an error
@@ -181,16 +195,6 @@ var CheckDataGrabber = {
 
   saveModule: function(path) {
     let viewObj = require(Path.join(path, 'View'));
-
-    //If this module has a menu associated with it, check for it and save it within the API if so
-    try {
-      api.saveMenu(viewObj.name, require(Path.join(path, 'MenuView.js')));
-    }
-    catch (e) {
-      if (e.code != "MODULE_NOT_FOUND") {
-        console.error(e);
-      }
-    }
 
     //save the view associated with the module so that modules may be able to reference them later
     api.saveModule(viewObj.name, viewObj.view);
