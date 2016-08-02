@@ -72,6 +72,7 @@ class Dispatcher {
           progress((doneJobs / _this.jobs.length) * 100);
           if (doneJobs >= _this.jobs.length) {
             // console.log('TPANE finished');
+            console.log('TPane callback');
 				    callback();
           }
         }

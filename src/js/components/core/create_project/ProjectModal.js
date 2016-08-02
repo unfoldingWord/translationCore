@@ -63,14 +63,6 @@ const ProjectModal = React.createClass({
     }
   },
 
-  hideModal: function() {
-    this.getProjectStatus((result) => {
-      if(result) {
-        this.close();
-      }
-    });
-  },
-
   close: function() {
     //CheckStore.getNameSpaces();
     CoreStore.projectModalVisibility = "";
@@ -80,31 +72,15 @@ const ProjectModal = React.createClass({
     });
   },
 
-  getProjectStatus: function(doneCallback) {
-    var projectStatus = CoreStore.projectModalVisibility;
-    var selectedModules = this.state.FetchDataArray;
-    if (projectStatus != "Languages" || 
-      (Object.keys(selectedModules) == [] && projectStatus == 'Check')) {
-      	var Alert = {
-      		title: "You are currently making a project",
-      		content: "Are you sure you want to cancel?",
-      		leftButtonText: "No",
-      		rightButtonText: "Yes"
-      	}
-      api.createAlert(Alert, function(result){
-      	if(result == 'Yes') {
-          doneCallback(true);
-      	}
-      });
-    } else {
-      doneCallback(true);
-    }
+  onClick: function(e) {
+    api.emitEvent('changeCheckType', {currentCheckNamespace: null});
+    this.close();
   },
 
   render: function() {
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.hideModal}>
+        <Modal show={this.state.showModal}>
           <Upload ref={"TargetLanguage"} />
           <Modal.Footer>
             <ButtonToolbar>

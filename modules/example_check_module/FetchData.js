@@ -74,6 +74,11 @@ function getGatewayLanguage(params, progressCallback, callback) {
           newBookData.title = api.convertToFullBookName(params.bookAbbr);
           //load it into checkstore
           api.putDataInCommon('gatewayLanguage', newBookData);
+          console.log('Example Check Module');
+          callback();
+        }
+        else {
+          console.log('Example Check Module');
           callback();
         }
       }

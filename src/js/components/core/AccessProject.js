@@ -28,7 +28,7 @@ var Access = {
             _this.loadCheckData(Path.join(folderpath, file));
           }
         }
-          api.putDataInCommon('saveLocation', folderpath);
+        api.putDataInCommon('saveLocation', folderpath);
       });
     } catch (e) {
       console.error(e);
@@ -94,7 +94,11 @@ var Access = {
   },
 
   makeCommon: function(data) {
-    CheckStore.storeData.common = data;
+    for (var key in data) {
+      if (!CheckStore.hasData('common', key)) {
+        api.putDataInCommon(key, data[key]);
+      }
+    }
     return data.arrayOfChecks;
   },
 

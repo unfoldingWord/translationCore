@@ -27,7 +27,8 @@ var CheckDataGrabber = {
    */
   fetchModules: function(modulePaths, params) {
     var checkArray = [];
-    var checksThatNeedToBeFetched = [];
+    let checksThatNeedToBeFetched = [];
+    this.doneModules = 0;
     for (let moduleObj of modulePaths) {
       checkArray.push(moduleObj);
       this.saveModule(moduleObj.location);
@@ -37,6 +38,7 @@ var CheckDataGrabber = {
       }
     }
     CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+    this.totalModules = checksThatNeedToBeFetched.length;
     for (let moduleObj of checksThatNeedToBeFetched) {
       try {
         this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
@@ -45,7 +47,7 @@ var CheckDataGrabber = {
         console.error("Unable to load and run FetchData from module '" + moduleObj.name + "': " + error);
       }
     }
-    CheckStore.storeData.common['arrayOfChecks'] = checkArray;
+    api.putDataInCommon('arrayOfChecks', checkArray);
   },
 
   
@@ -69,6 +71,7 @@ var CheckDataGrabber = {
         var params = api.getDataFromCommon('params');
         var modulePaths = [];
         modulePaths.push({name: dataObject.name, location: moduleFolderName});
+        CoreStore.setCurrentCheckCategory(dataObject.name);
         for (let childFolderName of dataObject.include) {
           //If a developer hasn't defined their module in the corret way, this'll probably throw an error
           try {
@@ -79,8 +82,8 @@ var CheckDataGrabber = {
             console.error(e);
           }
         }
+        _this.fetchModules(modulePaths, params);
       }
-      _this.fetchModules(modulePaths, params);
     });
   },
 

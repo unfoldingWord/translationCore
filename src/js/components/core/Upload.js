@@ -15,6 +15,7 @@ const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
 const Access = require('./AccessProject');
 const ManifestGenerator = require('./ProjectManifest');
+const CheckStore = require('../../stores/CheckStore');
 const api = window.ModuleApi;
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
@@ -73,8 +74,6 @@ const UploadModal = React.createClass({
    * manifest
    */
   getParams: function(path, translationStudioManifest) {
-    console.log('TranslationStudioManifest');
-    console.dir(translationStudioManifest);
     var params = {
       'originalLanguagePath': Path.join(window.__base, 'data', 'ulgb')
     }
@@ -84,6 +83,11 @@ const UploadModal = React.createClass({
     params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
 
     return params;
+  },
+
+  clearPreviousData: function() {
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
   },
 
   /**
@@ -97,40 +101,36 @@ const UploadModal = React.createClass({
    */
   sendFilePath: function(path, link) {
     var _this = this;
+    this.clearPreviousData();
     if (path) {
-      //check to see if there is a tcManifest in this folder. If there isn't, this also assumes
-      // there is no checkdata
-      if (!this.translationCoreManifestPresent(path)) {
-        this.loadTranslationStudioManifest(path,
-          function(err, translationStudioManifest) {
-            if (err) {
-              console.error(err);
+      this.loadTranslationStudioManifest(path, 
+        function(err, translationStudioManifest) {
+          if (err) {
+            console.error(err);
+          }
+          else {
+            try {
+              api.putDataInCommon('saveLocation', path);
+              api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
+            }
+            catch(error) {
+              console.error(error);
+            }
+
+            if (!_this.translationCoreManifestPresent(path)) {
+              _this.saveManifest(path, {user: [CoreStore.getLoggedInUser()],
+                repo: link || 'none'}, translationStudioManifest);
             }
             else {
-              _this.saveManifest(
-                path, 
-                {user: [CoreStore.getLoggedInUser()], 
-                  repo: link || 'none'},
-                translationStudioManifest
-              );
-              try {
-                console.log('Putting the parameters in the checkstore');
-                api.putDataInCommon('saveLocation', path);
-                api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
-              }
-              catch(error) {
-                console.error('Unable to generate parameters: ' + error);
-              }
+              Access.loadFromFilePath(path);
+            }
+
+            if (_this.props.success) {
+              _this.props.success();
             }
           }
-        );
-      }
-      else {
-        Access.loadFromFilePath(path);
-      }
-    }
-    if (this.props.success) {
-      this.props.success();
+        }
+      );
     }
   },
 
