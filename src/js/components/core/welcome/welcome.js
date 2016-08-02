@@ -3,9 +3,8 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button, Popover} = RB;
 
-const Login = require('./WelcomeLogin');
-const WelcomeUpload = require('./WelcomeUpload');
-const CreateProject = require('./WelcomeCreateProject');
+const Login = require('../login/Login');
+const Upload = require('../Upload');
 const SideNavBar = require('../SideBar/SideNavBar');
 
 const NUM_OF_SLIDES = 3;
@@ -119,14 +118,14 @@ class Welcome extends React.Component{
             <h1>Load your first project</h1>
             <p>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
-            <WelcomeUpload success={()=>{this.setState({index:this.state.index+1,
+            <Upload success={()=>{this.setState({index:this.state.index+1,
                                                         tutorial: true})}} />
             </div>
           </div>
         )
         break;
       case 4:
-          console.log("Flow is now #<Main />");
+          // console.log("Flow is now #<Main />");
       break;
     }
   }

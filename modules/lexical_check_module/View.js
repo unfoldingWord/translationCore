@@ -96,7 +96,14 @@ class View extends React.Component {
   componentDidMount() {
     //this should already be set in the state from componentWillMount
     var currentCheck = this.state.currentCheck;
-    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+    if (currentCheck) {
+      //Let T Pane know to scroll to are current verse
+      api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+      //Tell ProposedChanges what it should be displaying if we already have a proposed change there
+      if (this.refs.ProposedChanges) {
+        this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -117,6 +124,10 @@ class View extends React.Component {
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
       currentCheck.selectedWords = selectedWords;
+      //This is needed to make the display persistent, but won't be needed in reports
+      if (this.refs.TargetVerseDisplay) {
+        currentCheck.selectedWordsRaw = this.refs.TargetVerseDisplay.getWordsRaw();
+      }
       api.emitEvent('changedCheckStatus', {
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex,
@@ -278,6 +289,7 @@ class View extends React.Component {
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
+                check={this.state.currentCheck}
                 verse={gatewayVerse}
                 occurrence={this.state.currentCheck.occurrence}
               />
@@ -299,7 +311,7 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges selectedWord={"spongegar"} />
+              <ProposedChanges ref={'ProposedChanges'} />
             </Col>
           </Row>
         </div>

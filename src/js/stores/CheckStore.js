@@ -193,6 +193,26 @@ class CheckStore extends EventEmitter {
     this.storeData = {};
     this.storeData['common'] = {};
   }
+
+  /**
+   * @description - This returns a boolean if the parameters exist within the checkstore
+   * @param {string} namespace - The namespace to check under, or if the second parameter 
+   * doesn't exist, check this parameter by itself
+   * @param {string} key - optional, if supplied will check if this key is defined under
+   * the given namespace
+   */
+  hasData(namespace, key) {
+    if (this.storeData[namespace]) {
+      if (!key) {
+        return true;
+      }
+      else {
+        return !(this.storeData[namespace][key] === null || 
+          this.storeData[namespace][key] === undefined);
+      }
+    }
+    return false;
+  }
 }
 
 const checkStore = new CheckStore;
