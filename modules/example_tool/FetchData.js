@@ -12,7 +12,6 @@ function fetchData(params, progress, callback) {
                        .replace('content-container', '')
                        .replace('container', '');
     api.putDataInCheckStore('ExampleTool', 'resourceHtml', html);
-    console.log('ExampleTool');
     callback();
   };
 

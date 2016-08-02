@@ -7,7 +7,6 @@ const path = require('path');
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-  // console.log('TPANE');
 	//Get original language
 	//check if original language is already in common
 	//get it if it isn't using parsers and params
@@ -68,11 +67,8 @@ class Dispatcher {
 			job(
         function() {
           doneJobs++;
-          // console.log('TPane progress' + (doneJobs / _this.jobs.length) * 100);
           progress((doneJobs / _this.jobs.length) * 100);
           if (doneJobs >= _this.jobs.length) {
-            // console.log('TPANE finished');
-            console.log('TPane callback');
 				    callback();
           }
         }

@@ -101,8 +101,6 @@ const TargetLanguageSelectBox = React.createClass({
     if (currentCheckIndex && currentGroupIndex) {
       var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
-        console.log('CurrentCheck');
-        console.dir(currentCheck);
         if (currentCheck.selectedWordsRaw) {
           this.selectedWords = currentCheck.selectedWordsRaw;
         }
@@ -128,7 +126,6 @@ const TargetLanguageSelectBox = React.createClass({
     //Maybe we've already done this check? If we have update the highlighting on the selected words
     this.fetchSelectedWords();
     for (var word of this.selectedWords) {
-      console.log('Word', word);  
       var targetWord = this.refs[word.key];
       if (targetWord) {
         targetWord.setHighlight();
