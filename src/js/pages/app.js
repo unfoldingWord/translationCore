@@ -3,7 +3,6 @@ const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('../components/core/NavigationMenu');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
@@ -17,6 +16,7 @@ const Col = require('react-bootstrap/lib/Col.js');
 const Open = require('../components/core/OpenModal.js');
 const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar')
 
+const Access = require('../components/core/AccessProject.js');
 const Welcome = require('../components/core/welcome/welcome');
 
 const AlertModal = require('../components/core/AlertModal');
@@ -39,7 +39,6 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
         <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
           <AlertModal />
-          <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>
       </Row>
@@ -59,9 +58,17 @@ var Main = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var saveLocation = localStorage.getItem('lastProject');
+    if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
+        Access.loadFromFilePath(saveLocation);
+    }
+  },
 
   finishWelcome: function(){
-    this.setState({firstTime: false});
+    this.setState({
+      firstTime: false
+    });
   },
 
   render: function(){

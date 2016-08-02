@@ -24,6 +24,8 @@ var Access = {
         }
         _this.loadCheckData(fileObj, function() {
           api.putDataInCommon('saveLocation', filepath);
+          localStorage.setItem('showTutorial', false);
+          localStorage.setItem('lastProject', filepath);
         });
         //loads into project with object of file paths
       });

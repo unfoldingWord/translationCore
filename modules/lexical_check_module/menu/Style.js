@@ -2,6 +2,10 @@
   menuItem: {
     text: {
       cursor: 'pointer'
+    },   
+    current: {
+      cursor: 'pointer',
+      fontWeight: 'bold'
     },
     flag: {
       enabled: {

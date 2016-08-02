@@ -1,3 +1,7 @@
+/**
+ *@author: Ian Hoegen
+ *@description: The file handles the submit box for a git url to be cloned.
+ ******************************************************************************/
 const React = require('react');
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
@@ -32,9 +36,19 @@ const OnlineInput = React.createClass({
   },
 
   render: function() {
+    var main = {
+      width: '100%',
+      color: '#ffffff',
+      height: '200px',
+      fontSize: '25px'
+    };
+
     return (
-        <FormGroup controlId="onlineInput">
-          <FormControl type="text" value={this.state.value} placeholder="Enter URL" onChange={this.handleChange} onKeyDown={this.submitViaEnter} />
+        <FormGroup controlId="onlineInput" style={main}>
+          <FormControl type="text" value={this.state.value}
+          placeholder="Enter URL"
+          onChange={this.handleChange}
+          onKeyDown={this.submitViaEnter} />
           <Button bsStyle="primary" onClick={this.submitLink} pullRight>
             Submit
           </Button>

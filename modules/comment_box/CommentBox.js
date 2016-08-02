@@ -2,7 +2,8 @@
 const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
-const {Button, FormControl, FormGroup, ControlLabel} = RB;
+const {Button, FormGroup, Panel} = RB;
+const style = require('./style');
 
 const NAMESPACE = 'CommentBox';
 
@@ -10,6 +11,7 @@ class CommentBox extends React.Component {
   constructor() {
     super();
     this.state = {
+      open: false,
       comment: ""
     };
   }
@@ -21,17 +23,30 @@ class CommentBox extends React.Component {
 
   handleSubmit(e) {
     api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
-    console.log(this.state.comment);
+    this.setState({open: false});
+    this.setState({comment: ""});
   }
 
   render() {
     return (
-      <div>
-        <FormGroup>
-          <ControlLabel>Comment:</ControlLabel>
-          <FormControl componentClass="textarea" style={{width: "100%", height: "100px", marginBottom:"10px"}} onChange={this.handleComment.bind(this)} />
-          <Button bsStyle="success" style={{width: "100%"}} onClick={this.handleSubmit.bind(this)}>Submit</Button>
-        </FormGroup>
+      <div style={style.width}>
+        <Button bsStyle="primary"
+          onClick={ ()=> this.setState({ open: !this.state.open })} style={style.width}>
+            Comment
+        </Button>
+        <Panel collapsible expanded={this.state.open} style={style.panelBackgroundColor}>
+          <div style={style.background}>
+            <div style={style.paper}>
+              <div style={style.sideline}></div>
+                <div style={style.paperContent}>
+                  <textarea autofocus style={style.textarea} value={this.state.comment}
+                    onChange={this.handleComment.bind(this)} />
+                </div>
+            </div>
+          </div>
+          <Button bsStyle="success" onClick={this.handleSubmit.bind(this)}
+            style={style.width}>Submit</Button>
+        </Panel>
       </div>
     );
   }

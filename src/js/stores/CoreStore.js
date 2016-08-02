@@ -2,6 +2,7 @@ var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('../actions/CoreActionConsts');
+var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 
 /**
@@ -32,6 +33,7 @@ class CoreStore extends EventEmitter {
   constructor() {
     super();
     this.setMaxListeners(20);
+    this.doneLoading = true;
   }
 
   updateNumberOfFetchDatas(number) {
@@ -92,7 +94,18 @@ class CoreStore extends EventEmitter {
  }
 
   getProgress() {
-  return this.progressKeyObj;
+    return this.progress;
+  }
+
+  calculateProgress(progressKey) {
+    this.progressObject[progressKey.key] = progressKey.progress;
+    var currentProgress = 0;
+    for (var key in this.progressObject){
+      currentProgress += this.progressObject[key];
+    }
+    var number = this.getNumberOfFetchDatas();
+    currentProgress = currentProgress / number;
+    this.progress = currentProgress;
   }
 
   emitChange() {
@@ -128,10 +141,12 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
-  
+  getCurrentCheckCategory() {
+    return this.currentCheckCategory;
+  }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
-  // Mostly just for SwitchCheckModuleDropdown
+  // Mostly just for ModuleWrapper
   getCheckCategoryOptions(){
     if(!this.checkCategoryOptions) {
       return null;
@@ -181,6 +196,11 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
+      case consts.CHANGE_BUTTON_STATUS:
+        this.buttonStatus = action.buttonStatus;
+        this.emitChange();
+        break;
+
       case consts.CHANGE_ONLINE_STATUS:
         this.onlineStatus = action.onlineStatus;
         this.emitChange();
@@ -206,8 +226,15 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.START_LOADING:
+        this.doneLoading = false;
+        this.progressObject = [];
+        this.emitChange();
+      break;
+
       case consts.SEND_PROGRESS_FOR_KEY:
-        this.progressKeyObj = action.progressRecieved;
+        var progressKey = action.progressRecieved;
+        this.calculateProgress(progressKey);
         this.emitChange();
       break;
 
@@ -218,8 +245,20 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
+<<<<<<< HEAD
         this.modProgressView = true;
+=======
+        this.progressObject = [];
+>>>>>>> develop
         this.checkCategoryOptions = action.reportViews;
+        if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
+          var firstCheckCategory = this.checkCategoryOptions[0];
+          this.currentCheckCategory = firstCheckCategory;
+          CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: firstCheckCategory.name});
+        }
+        else {
+          console.error('Problem when loading check. No check found.');
+        }
         this.emitChange();
       break;
 

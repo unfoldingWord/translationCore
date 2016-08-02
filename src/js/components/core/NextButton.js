@@ -3,6 +3,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Glyphicon  = require('react-bootstrap/lib/Glyphicon.js');
 
 const api = window.ModuleApi;
+const git = require('./GitApi.js');
 
 const SaveAndContinue = 'Save and Continue ';
 class NextButton extends React.Component {
@@ -14,19 +15,7 @@ class NextButton extends React.Component {
 
 
   buttonClicked() {
-    var path = api.getDataFromCommon('saveLocation');
-    if (path) {
-      git(path).save('Save and continue', path, function() {
-        api.emitEvent('goToNext');
-      });
-    } else {
-      var Alert = {
-        title: "Warning",
-        content: "Save location is not defined",
-        leftButtonText: "Ok"
-      }
-      api.createAlert(Alert);
-    }
+    api.emitEvent('goToNext');
   }
 
   render() {
