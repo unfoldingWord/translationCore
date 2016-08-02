@@ -252,23 +252,8 @@ class View extends React.Component {
       var targetVerse = this.getVerse('targetLanguage');
       return (
         <div>
-          <TPane />
+          <TPane style={{height: '30%'}}/>
           <Row className="show-grid">
-            <Col sm={6} md={6} lg={6}>
-              <TranslationWordsDisplay file={this.state.currentFile}/>
-              <CommentBox />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <WordComponent word={this.state.currentCheck.word} />
-            </Col>
-            <Col sm={3} md={3} lg={3}>
-              <Well bsSize={'small'} style={{
-                height: '60px',
-                lineHeight:'35px', textAlign: "center"}}>
-                {this.state.book + ' ' +
-                this.state.currentCheck.chapter + ":" + this.state.currentCheck.verse}
-            </Well>
-            </Col>
             <Col sm={6} md={6} lg={6}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
@@ -294,6 +279,10 @@ class View extends React.Component {
               </ButtonGroup>
               <br /><br />
               <ProposedChanges selectedWord={"spongegar"} />
+            </Col>
+            <Col sm={6} md={6} lg={6}>
+              <TranslationWordsDisplay file={this.state.currentFile}/>
+              <CommentBox />
             </Col>
           </Row>
         </div>
