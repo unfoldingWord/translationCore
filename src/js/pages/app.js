@@ -3,7 +3,6 @@ const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
@@ -38,7 +37,6 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
         <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
           <Loader />
           <AlertModal />
-          <SwitchCheckModuleDropdown />
           <ModuleWrapper />
         </Col>
       </Row>
@@ -95,7 +93,6 @@ var Main = React.createClass({
                 <Loader />
                 <AlertModal />
                 <ModuleWrapper />
-                <SwitchCheckModuleDropdown />
               </Col>
             </Row>
           </Grid>
