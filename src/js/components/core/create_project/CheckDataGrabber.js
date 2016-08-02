@@ -67,7 +67,31 @@ var CheckDataGrabber = {
       this.getFetchData(modulesPaths, params);
     });
   },
+
+  clearOldData: function(params){
+    this.reportViews = [];
+    this.doneModules = 0;
+    this.totalModules = 0;
+    this.tempParams = params;
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
+    this.setSaveLocation(this.tempParams.targetLanguagePath);
+    api.putDataInCommon('params', this.tempParams);
+  },
+
+    setSaveLocation: function(data) {
+    this.saveLocation = data;
+    if (CheckStore.storeData.common != undefined){
+      api.putDataInCommon('saveLocation', data);
+    } else {
+      CheckStore.storeData['common'] = {};
+      api.putDataInCommon('saveLocation', data);
+    }
+  },
+
+
   getFetchData: function(array, params) {
+    this.clearOldData(params);
     CoreStore.updateNumberOfFetchDatas(array.length);
     this.totalModules = array.length;
     this.saveNextModule(array, params);

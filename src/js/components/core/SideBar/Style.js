@@ -9,7 +9,7 @@ var style = {
       zIndex: "99",
       left: "0px",
       fontSize: "12px",
-      overflowY: "scroll",
+      overflowY: "auto",
   },
 
   ul: {
