@@ -19,15 +19,21 @@ module.exports = function(NAMESPACE) {
   class MenuView extends React.Component {
     constructor() {
       super();
+      var checkData = api.getDataFromCheckStore(NAMESPACE);
       this.state = {
-        checkObject: api.getDataFromCheckStore(NAMESPACE)
+        checkObject: checkData
       };
 
+      this.currentGroupIndex = checkData.currentGroupIndex;
+      this.currentCheckIndex = checkData.currentCheckIndex;
       this.updateMenuItem = this.updateMenuItem.bind(this);
+      this.updateCurrentCheck = this.updateCurrentCheck.bind(this);
     }
 
     componentWillMount() {
       api.registerEventListener('changedCheckStatus', this.updateMenuItem);
+      api.registerEventListener('goToCheck', this.updateCurrentCheck);
+      api.registerEventListener('goToNext', this.updateCurrentCheck);
       this.setState({
         checkObject: api.getDataFromCheckStore(NAMESPACE)
       });
@@ -35,11 +41,43 @@ module.exports = function(NAMESPACE) {
 
     componentWillUnmount() {
       api.removeEventListener('changedCheckStatus', this.updateMenuItem);
+      api.removeEventListener('goToCheck', this.updateCurrentCheck);
+      api.removeEventListener('goToNext', this.updateCurrentCheck);
+    }
+    
+    componentDidMount() {
+      this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
     }
 
     updateMenuItem(params) {
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
       menuItem.changeCheckStatus(params.checkStatus);
+    }
+    
+    updateCurrentCheck(params) {
+      this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
+      // goToNext handler
+      if (params === undefined) {
+        // if we need to move to the next group
+        if (this.currentCheckIndex >= this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1) {
+          // if we're on the last group
+          if (this.currentGroupIndex >= this.state.checkObject.groups.length - 1) {
+            return;
+          }
+          else {
+            this.currentGroupIndex++;
+            this.currentCheckIndex = 0;
+          }
+        }
+        else { // if we still have more in the group
+          this.currentCheckIndex++;
+        }
+        this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
+      }
+      else { // goToCheck handler
+        this.currentGroupIndex = params.groupIndex;
+        this.currentCheckIndex = params.checkIndex;
+      }
     }
 
     render() {

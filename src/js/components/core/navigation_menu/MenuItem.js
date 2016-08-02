@@ -11,7 +11,8 @@ class MenuItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkStatus: "UNCHECKED"
+      checkStatus: "UNCHECKED",
+      isCurrentCheck: false
     };
     this.menuItemClicked = this.menuItemClicked.bind(this);
   }
@@ -23,6 +24,11 @@ class MenuItem extends React.Component {
         'checkIndex': this.props.checkIndex
       }
     );
+    this.setIsCurrentCheck(true);
+  }
+  
+  setIsCurrentCheck(isCurrentCheck) {
+    this.setState({isCurrentCheck: isCurrentCheck});
   }
 
   changeCheckStatus(checkStatus) {
@@ -66,10 +72,12 @@ class MenuItem extends React.Component {
         glyphIcon = '';
         checkStatusStyle = style.menuItem.statusIcon.unchecked;
     }
+    // Set the style of the text, depending on whether this menu item represents the current check
+    var textStyle = this.state.isCurrentCheck ? style.menuItem.current : style.menuItem.text;
 
     return (
       <span>
-        <a style={style.menuItem.text} onClick={this.menuItemClicked}>
+        <a style={textStyle} onClick={this.menuItemClicked}>
           {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
         </a>
         <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
