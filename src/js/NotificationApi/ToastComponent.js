@@ -15,6 +15,7 @@ class ToastComponent extends React.Component{
   }
 
   componentWillMount() {
+    CoreActions.sendNotificationToast(false, {title:"", msg: "", time: "", theme: ""});
     CoreStore.addChangeListener(this.updateToastVisibility);
     CoreStore.addChangeListener(this.updateToastParams);
   }

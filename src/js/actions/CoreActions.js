@@ -137,4 +137,17 @@ module.exports = {
       });
     },
 
+  sendAlertResponse: function(alertResponseObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL_RESPONSE,
+      alertResponse: alertResponseObj
+    });
+  },
+
+  startLoading: function() {
+    Dispatcher.handleAction({
+      type: consts.START_LOADING
+    });
+  }
+
 };

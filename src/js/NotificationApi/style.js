@@ -44,7 +44,7 @@ var style={
       width: "250px",
       margin: "5px 10px",
       borderRadius: "5px",
-      backgroundColor: "#cc0001",
+      backgroundColor: "#D43F3A",
     },
 
     info: {

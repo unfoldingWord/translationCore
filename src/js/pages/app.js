@@ -1,9 +1,8 @@
 const React = require('react');
 const bootstrap = require('react-bootstrap');
 
-const NavMenu = require('../components/core/NavigationMenu');
+const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
@@ -16,10 +15,8 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Open = require('../components/core/OpenModal.js');
 const Toast = require('../NotificationApi/ToastComponent');
-
-
+const Access = require('../components/core/AccessProject.js');
 const Welcome = require('../components/core/welcome/welcome');
-
 const AlertModal = require('../components/core/AlertModal');
 
 const api = window.ModuleApi;
@@ -39,6 +36,12 @@ var Main = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var saveLocation = localStorage.getItem('lastProject');
+    if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
+        Access.loadFromFilePath(saveLocation);
+    }
+  },
 
   finishWelcome: function(){
     this.setState({
@@ -71,7 +74,6 @@ var Main = React.createClass({
                 <Loader />
                 <AlertModal />
                 <ModuleWrapper />
-                <SwitchCheckModuleDropdown />
               </Col>
             </Row>
           </Grid>

@@ -1,19 +1,17 @@
  var style = {
   menuItem: {
     text: {
-      cursor: 'pointer'
-    },   
-    current: {
-      cursor: 'pointer',
-      fontWeight: 'bold'
-    },
-    flag: {
-      enabled: {
-        color: '#CC0000',
-        visibility: 'visible'
+      normal: {
+        cursor: 'pointer',
+        fontWeight: 'normal',
+        paddingLeft: '15px',
+        paddingRight: '5px'
       },
-      disabled: {
-        visibility: 'hidden'
+      current: {
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        paddingLeft: '15px',
+        paddingRight: '5px'
       }
     },
     statusIcon: {
