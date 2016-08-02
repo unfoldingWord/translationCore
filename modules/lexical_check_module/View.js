@@ -297,7 +297,7 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges selectedWord={"spongegar"} />
+              <ProposedChanges ref={"ProposedChanges"} />
               <CommentBox />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
