@@ -163,6 +163,13 @@ class View extends React.Component {
 
       }
     }
+    // Save project
+    var loggedInUser = api.getLoggedInUser();
+    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
+        ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
+    api.saveProject(commitMessage);
+    // Update state to render the next check
     this.updateState();
   }
 

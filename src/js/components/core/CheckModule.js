@@ -146,7 +146,18 @@ class CheckModule extends React.Component {
         }
       }
     }
+    this.saveProject();
     this.updateState();
+  }
+  
+  saveProject() {
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
+    var loggedInUser = api.getLoggedInUser();
+    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    var commitMessage = 'user: ' + userName + ', namespace: ' + this.nameSpace +
+        ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
+    api.saveProject(commitMessage);
   }
 
   /**
