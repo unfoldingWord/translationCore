@@ -92,7 +92,7 @@ const AlertModal = React.createClass({
     return (
       <div >
       <Modal show={this.state.visibility}>
-      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'0'}}>
+      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
       <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
       <center> 
       <div style={alertDiv}>
