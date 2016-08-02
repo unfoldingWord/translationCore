@@ -128,6 +128,8 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
+  
+
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
   // Mostly just for SwitchCheckModuleDropdown
   getCheckCategoryOptions(){
