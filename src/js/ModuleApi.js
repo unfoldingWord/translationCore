@@ -20,129 +20,144 @@ const MENU_WARN = 'Attempting to save another menu over namespace: ';
 
 class ModuleApi {
   constructor() {
-        this.React = React;
-        this.ReactBootstrap = ReactBootstrap;
-        this.modules = {};
+    this.React = React;
+    this.ReactBootstrap = ReactBootstrap;
+    this.modules = {};
   }
 
-    findDOMNode(component) {
-        return ReactDOM.findDOMNode(component);
-    }
+  findDOMNode(component) {
+    return ReactDOM.findDOMNode(component);
+  }
 
-    saveMenu(namespace, menu) {
-        if (!this.menus) {
-            this.menus = {};
-        }
-        if (namespace in this.menus) {
-            console.warn(MENU_WARN + namespace);
-        }
-        this.menus[namespace] = menu;
-    }       
-
-    getMenu(namespace) {
-        if (this.menus) {
-            return this.menus[namespace];
-        }
+  saveMenu(namespace, menu) {
+    if (!this.menus) {
+      this.menus = {};
     }
-
-    saveModule(identifier, module) {
-        this.modules[identifier] = module;
+    if (namespace in this.menus) {
+      console.warn(MENU_WARN + namespace);
     }
+    this.menus[namespace] = menu;
+  }       
 
-    getModule(identifier) {
-        if (identifier in this.modules) {
-            return this.modules[identifier];
-        }
-        return null;
+  getMenu(namespace) {
+    if (this.menus) {
+      return this.menus[namespace];
     }
+  }
 
-    registerEventListener(eventType, callback) {
-        CheckStore.addEventListener(eventType, callback);
-    }
+  saveModule(identifier, module) {
+    this.modules[identifier] = module;
+  }
 
-    removeEventListener(eventType, callback) {
-        CheckStore.removeEventListener(eventType, callback);
+  getModule(identifier) {
+    if (identifier in this.modules) {
+      return this.modules[identifier];
     }
+    return null;
+  }
 
-    emitEvent(event, params) {
-        CheckStore.emitEvent(event, params);
-    }
+  registerEventListener(eventType, callback) {
+    CheckStore.addEventListener(eventType, callback);
+  }
 
-    getDataFromCheckStore(field, key=null) {
-        var obj = CheckStore.getModuleDataObject(field);
-        if (obj != null && typeof obj == "object") {
-            if (key) {
-                return obj[key];
-            }
-            return obj;
-        }
-        return null;
-    }
+  removeEventListener(eventType, callback) {
+    CheckStore.removeEventListener(eventType, callback);
+  }
 
-    getDataFromCommon(key) {
-        var commonDataObject = CheckStore.getCommonDataObject();
-        if (commonDataObject != null && typeof commonDataObject == "object") {
-            if (key) {
-                return commonDataObject[key];
-            }
-            return commonDataObject;
-        }
-        return null;
-    }
+  emitEvent(event, params) {
+    CheckStore.emitEvent(event, params);
+  }
 
-    putDataInCheckStore(field, key, value) {
-        CheckStore.putInData(field, key, value);
+  getDataFromCheckStore(field, key=null) {
+    var obj = CheckStore.getModuleDataObject(field);
+    if (obj != null && typeof obj == "object") {
+      if (key) {
+        return obj[key];
+      }
+      return obj;
     }
+    return null;
+  }
 
-    putDataInCommon(key, value) {
-        CheckStore.putInCommon(key, value);
+  getDataFromCommon(key) {
+    var commonDataObject = CheckStore.getCommonDataObject();
+    if (commonDataObject != null && typeof commonDataObject == "object") {
+      if (key) {
+        return commonDataObject[key];
+      }
+      return commonDataObject;
     }
+    return null;
+  }
 
-    inputJson(path, callback) {
-        fs.readJson(path, callback);
-    }
+  putDataInCheckStore(field, key, value) {
+    CheckStore.putInData(field, key, value);
+  }
 
-    outputJson(path, data, callback=(error)=>{if (error) console.error(error);}) {
-        fs.outputJson(path, data, callback);
-    }
+  putDataInCommon(key, value) {
+    CheckStore.putInCommon(key, value);
+  }
 
-    inputText(path, callback) {
-        fs.readFile(path, callback);
-    }
+  inputJson(path, callback) {
+    fs.readJson(path, callback);
+  }
 
-    outputText(path, string, callback) {
-        fs.writeFile(path, string, callback);
-    }
+  outputJson(path, data, callback=(error)=>{if (error) console.error(error);}) {
+    fs.outputJson(path, data, callback);
+  }
 
-    convertToFullBookName(bookAbbr) {
-        return BooksOfBible[bookAbbr];
-    }
+  inputText(path, callback) {
+    fs.readFile(path, callback);
+  }
 
-    logCheckStore() {
-        console.log(CheckStore.storeData);
-    }
+  outputText(path, string, callback) {
+    fs.writeFile(path, string, callback);
+  }
 
-    getLoggedInUser(){
-       let user = CoreStore.getLoggedInUser();
-       if(!user){
-          return undefined;
-       }
-       let fullName = user.full_name;
-       let userName = user.username;
-       return {fullName, userName};
-    }
+  convertToFullBookName(bookAbbr) {
+    return BooksOfBible[bookAbbr];
+  }
 
-    clearAlertCallback() {
-      CoreStore.alertObj = null;
+  /**
+   * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
+   * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
+   * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the 
+   * abbreviation will just be returned
+   */
+  convertToBookAbbreviation(fullBookName) {
+    for (var key in BooksOfBible) {
+      if (BooksOfBible[key].toLowerCase() == fullBookName.toLowerCase() ||
+        fullBookName.toLowerCase() == key) {
+        return key; 
+      }
     }
+  }
 
-    createAlert(obj, callback = () => {}) {
-        Alert.startListener(callback);
-        CoreActions.sendAlert({
-                alertObj:obj,
-                alertCallback: callback
-            });
+  logCheckStore() {
+    console.log(CheckStore.storeData);
+  }
+
+  getLoggedInUser(){
+    let user = CoreStore.getLoggedInUser();
+    if(!user){
+      return undefined;
     }
+    let fullName = user.full_name;
+    let userName = user.username;
+    return {fullName, userName};
+  }
+
+  clearAlertCallback() {
+    CoreStore.alertObj = null;
+  }
+
+  createAlert(obj, callback = () => {}) {
+    Alert.startListener(callback);
+    CoreActions.sendAlert({
+      alertObj:obj,
+      alertCallback: callback
+    });
+  }
 
 }
 

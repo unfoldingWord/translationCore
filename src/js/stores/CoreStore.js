@@ -251,7 +251,6 @@ class CoreStore extends EventEmitter {
       // do nothing
     }
   }
-
 }
 
 const coreStore = new CoreStore;

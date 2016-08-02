@@ -17,68 +17,85 @@ var CheckDataGrabber = {
   totalModules: 0,
   reportViews: [],
 
-  saveNextModule: function(array, params) {
+  /**
+   * @description - This calls helper methods to call each fetch data function within the 
+   * array of modules given to this method through the parameters
+   * @param {array} modulePaths - Array of arrays, each sub array contains two elements:
+   * the first being the name of the module and the second being the path to the module
+   * @param {object} params - This is an object containing params that was gotten from CheckStore
+   * and is passed to the FetchDatas
+   */
+  fetchModules: function(modulePaths, params) {
     var checkArray = [];
-    for (var moduleInfo of array) {
-      var path = moduleInfo[1];
-      checkArray.push({name: moduleInfo[0], location: moduleInfo[1]});
-      if (path) {
-        this.getDataFromCheck(path, params);
+    var checksThatNeedToBeFetched = [];
+    for (var moduleInfo of modulePaths) {
+      var name = moduleInfo[0],
+        path = moduleInfo[1];
+      checkArray.push({name: name, location: path});
+      if (path && !CheckStore.hasData(name)) {
+        checksThatNeedToBeFetched.push(path);
       }
-      else {
-        return;
-      }
+    }
+    CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+    for (var path of checksThatNeedToBeFetched) {
+      this.getDataFromCheck(path, params);
     }
     CheckStore.storeData.common['arrayOfChecks'] = checkArray;
   },
-  saveManifest: function(saveLocation, data, tsManifest) {
-    try {
-      var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-      var manifest = ManifestGenerator(data, tsManifest);
-      api.putDataInCommon('tcManifest', manifest);
 
-      fs.outputJson(manifestLocation, manifest, function(err) {
-        if (err) {
-          console.log(err);
-        }
-      });
-    }
-    catch(e) {
-      console.error(e);
-    }
-  },
+  
 
-  // sendFetchData: function() {
-  //   // console.log('This is being run');
-  //   if (CoreStore.getDataFromProject() && (CoreStore.getShowProjectModal() != "")) {
-  //     gotFetch = CoreStore.getDataFromProject();
-  //     this.saveNextModule();
-  //   }
-  // },
-
+  /** 
+   * @description - Loads in a module and dependencies depending on the dependencies found in 
+   * the manifest file within the main module folder. Doesn't load a module if it is already
+   * found in the CheckStore
+   * @param {string} moduleFolderPath - the name of the folder the module and manifest file for 
+   * that module is located in
+   */
   loadModuleAndDependencies: function(moduleFolderName) {
-    FileModule.readJsonFile(path.join(window.__base, "modules", moduleFolderName, "manifest.json"), (moduleMetadata) => {
+    var moduleBasePath = path.join(window.__base, 'modules');
+    var modulePath = path.join(moduleBasePath, moduleFolderName, 'manifest.json');
+    fs.readJson(modulePath, function(error, dataObject) {
       var params = api.getDataFromCommon('params');
-      var modulesPaths = [];
-      modulesPaths.push([moduleMetadata.name, path.join("modules", moduleFolderName)]);
-      for(let childFolderName of moduleMetadata.include) {
-          modulesPaths.push([childFolderName, path.join("modules", childFolderName)]);
+      var modulePaths = [];
+      modulePaths.push([dataObject.name, modulePath]);
+      for (let childFolderName of dataObject.include) {
+        //If a developer hasn't defined their module in the corret way, this'll probably throw an error
+        try {
+          modulePaths.push([this.getModuleNameFromFolderPath(path.join(moduleBasePath, childFolderName)), 
+            path.join(moduleBasePath, childFolderName)]);
+        }
+        catch (e) {
+          console.error(e);
+        }
       }
-      this.getFetchData(modulesPaths, params);
+      this.fetchModules(modulePaths, params);
     });
   },
-  getFetchData: function(array, params) {
-    CoreStore.updateNumberOfFetchDatas(array.length);
-    this.totalModules = array.length;
-    this.saveNextModule(array, params);
-  },
-  saveCheckStoreToDisk: function() {
-    var namespaces = CheckStore.getNameSpaces();
-    for (var element of namespaces) {
-      CheckStore.saveDataToDisk(element, window.__base + '/myprojects/' + element);
-    }
-  },
 
+  /** 
+   * @description - This returns the name of the module as defined by the View.js in the path
+   * @param {string} path - This is the folderpath that points to the location of the modules
+   * main folder. This must be an absolute path
+   */
+  getModuleNameFromFolderPath: function(folderPath) {
+    if (fs.accessSync(path.join(folderPath, 'manifest.json'))) {
+      return fs.readJsonSync(path.join(folderPath, 'manifest.json'), {throws: false}).name;
+    }
+    else if (fs.accessSync(path.join(folderPath, 'View.js'))) {
+      return require(path.join(folderPath, 'View.js')).name;
+    }
+    else {
+      return null;
+    }
+  }
+
+  /**
+   * @description - This is called whenever each FetchData finishes. See {@link getDataFromCheck}.
+   * @param {string || null} - An potential error string if one happened, null if it didn't
+   * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure 
+   * if still needed
+   */
   onComplete: function(err, data) {
     this.doneModules++;
     if (!err) {
@@ -90,7 +107,8 @@ var CheckDataGrabber = {
             git(path).save('Initial TC Commit', path, function() {
             });
           });
-        } else {
+        } 
+        else {
           var Alert = {
             title: "Warning",
             content: "Save location is not defined",
@@ -108,11 +126,25 @@ var CheckDataGrabber = {
     }
   },
 
+  /**
+   * @description - This sends a CoreAction that in turn updates the progress bar according
+   * to the name and progress of a single FetchData see {@link getDataFromCheck}
+   * @param {string} name - The name or 'namespace' of the module's FetchData that is updating
+   * their progress
+   * @param {integer} data - the quantifiable number of how far done a FetchData has fetched their
+   * appropriate data. Should be from 0-100, but no error checking to make it sure
+   */
   Progress: function(name, data) {
     CoreActions.sendProgressForKey({progress: data, key: name});
   },
 
-  isModule:function(filepath) {
+  /**
+   * @description - This function tests to see if a module is a 'main' module as opposed to a 
+   * 'tool'. Main modules define the layout for nearly the entire page while tools are what 
+   * supplment the main module in that layout and are enclosed in the main module
+   * @param {string} folderpath - absolute file path to the enclosing module's folder
+   */
+  isMainModule:function(filepath) {
     try {
       var stats = fs.lstatSync(filepath);
       if (!stats.isDirectory()) {
@@ -130,10 +162,17 @@ var CheckDataGrabber = {
     }
   },
 
+  /**
+   * @description - This loads a single FetchData
+   * @param {string} path - This is a relative path to the enclosing module's folder
+   * @param {object} params - Object that gets passed to FetchData's, contains necessary 
+   * params for the FetchData's to load their data
+   */
   getDataFromCheck: function(path, params) {
     var DataFetcher = require(window.__base + path + '/FetchData');
     let viewObj = require(window.__base + path + '/View');
 
+    //If this module has a menu associated with it, check for it and save it within the API if so
     try {
       api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
     }
@@ -143,14 +182,22 @@ var CheckDataGrabber = {
       }
     }
 
+    //save the view associated with the module so that modules may be able to reference them later
     api.saveModule(viewObj.name, viewObj.view);
-    if (this.isModule(path)) {
+    //Save their report view if they have it
+    if (this.isMainModule(path)) {
       this.reportViews.push(viewObj);
     }
+    //call the FetchData function
     var _this = this;
-    DataFetcher(params, function(data) {
-      _this.Progress(viewObj.name, data);}, this.onComplete.bind(this));
-    }
-  };
+    DataFetcher(
+      params, 
+      function(data) {
+        _this.Progress(viewObj.name, data);
+      }, 
+      this.onComplete.bind(this)
+    );
+  }
+};
 
   module.exports = CheckDataGrabber;

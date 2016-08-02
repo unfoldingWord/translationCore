@@ -52,12 +52,12 @@ function populate (data, tsManifest) {
     projectManifest.checkers.push(user);
   }
 
-  for (item in data.checkLocations) {
-    var currentItem = data.checkLocations[item];
-    projectManifest.check_modules.push(currentItem.name);
+  if (data.checkLocations) {
+    for (item in data.checkLocations) {
+      var currentItem = data.checkLocations[item];
+      projectManifest.check_modules.push(currentItem.name);
+    }
   }
-
-
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;

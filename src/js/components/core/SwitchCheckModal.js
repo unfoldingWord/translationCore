@@ -21,8 +21,8 @@ class SwitchCheckModal extends React.Component{
 
   componentWillMount() {
     CoreStore.addChangeListener(this.updateCheckModal);
-    FileModule.readJsonFile(window.__base + "modules/module_list.json", (moduleFolderNameList) => {
-      this.fillDefaultModules(moduleFolderNameList, (metadatas) => {
+    this.getDefaultModules((moduleFolderPathList) => {
+      this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         this.setState({moduleMetadatas: metadatas});
       });
     });
@@ -32,11 +32,35 @@ class SwitchCheckModal extends React.Component{
     CoreStore.removeChangeListener(this.updateCheckModal);
   }
 
-  fillDefaultModules(moduleFolderNameList, callback) {
+  /**
+   * @description - This returns a list of module's which have manifest files within their
+   * main folder. All of these modules are located in the window.__base + 'modules/' folder
+   * within the repository
+   * @param {function} callback - callback that will be called with an array of folder paths to
+   * modules that contain 'manifest.json' files
+   */
+  getDefaultModules(callback) {
+    var defaultModules = [];
+    fs.readDir(path.join(window.__base, 'modules'), function(error, folders) {
+      if (error) {
+        console.error(error);
+      }
+      else {
+        for (var folder of folders) {
+          if (fs.accessSync(path.join(folder, 'manifest.json')) {
+            defaultModules.push(folder);
+          }
+        }
+      }
+      callback(defaultModules);
+    });
+  }
+
+  fillDefaultModules(moduleFolderPathList, callback) {
     var tempMetadatas = [];
-    for(var folderName of moduleFolderNameList) {
-      FileModule.readJsonFile(window.__base + "modules/" + folderName + "/manifest.json", (metadata) => {
-        metadata.folderName = folderName;
+    for(var folderPath of moduleFolderPathList) {
+      fs.readJson(path.join(folderPath, "manifest.json"), (metadata) => {
+        metadata.folderName = path.basename(folderPath);
         tempMetadatas.push(metadata);
       });
     }

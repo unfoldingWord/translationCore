@@ -31,7 +31,6 @@ module.exports = (function() {
     const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
     fs.readdir(savePath, function (err, contents){
       if (!err) {
-        Access.loadFromFilePath(savePath);
         CoreActions.showCreateProject("");
       } else {
         fs.ensureDir(savePath, function() {
@@ -41,20 +40,21 @@ module.exports = (function() {
     });
   }
 
-      function runGitCommand(savePath, url, callback) {
-        git(savePath).mirror(url, savePath, function(err){
-          if (err) {
-            return;
-          }
-          try {
-            fs.readFileSync(path.join(savePath,  'manifest.json'));
-            callback(savePath, url);
-          } catch(error) {
-            // dialog.showErrorBox('Import Error', error);
-            console.error(error);
-            return;
-          }
-        });
+  function runGitCommand(savePath, url, callback) {
+    git(savePath).mirror(url, savePath, function(err){
+      if (err) {
+        return;
       }
+      try {
+        fs.readFileSync(path.join(savePath,  'manifest.json'));
+        callback(savePath, url);
+      } catch(error) {
+        // dialog.showErrorBox('Import Error', error);
+        console.error(error);
+        return;
+      }
+    });
+  }
+
   return openManifest;
 })();

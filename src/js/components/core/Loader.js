@@ -16,12 +16,13 @@ const Loader = React.createClass({
       showModal:false
     };
   },
+
   componentWillMount: function() {
     CoreStore.addChangeListener(this.sendProgressForKey);
     CoreStore.addChangeListener(this.finishLoader);
   },
 
-  componentWillUnMount: function() {
+  componentWillUnmount: function() {
     CoreStore.removeChangeListener(this.sendProgressForKey);
     CoreStore.removeChangeListener(this.finishLoader);
   },

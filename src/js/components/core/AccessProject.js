@@ -3,11 +3,10 @@ var remote = window.electron.remote;
 var fs = require(window.__base + 'node_modules/fs-extra');
 var {dialog} = remote;
 var path = require('path');
-var CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
-var CoreStore = require('../../stores/CoreStore');
 var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
+
 var reportViews = [];
 
 var Access = {
