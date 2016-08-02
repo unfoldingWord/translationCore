@@ -1,7 +1,7 @@
 const React = require('react');
 const bootstrap = require('react-bootstrap');
 
-const NavMenu = require('../components/core/NavigationMenu');
+const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
