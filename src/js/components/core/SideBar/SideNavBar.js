@@ -35,8 +35,7 @@ class SideNavBar extends React.Component{
   }
 
   handleSettings(){
-    //CoreActions.updateSettings(true);
-    api.Toast.success("title", "Update succesful", 3);
+    CoreActions.updateSettings(true);
   }
 
   sayHello() {
