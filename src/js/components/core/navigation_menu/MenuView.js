@@ -59,7 +59,7 @@ module.exports = function(NAMESPACE) {
     }
     
     goToNext() {
-      this.unselectOldCheck();
+      this.unselectOldMenuItem();
       // if we need to move to the next group
       if (this.currentCheckIndex >= this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1) {
         // if we're not on the last group
@@ -71,11 +71,11 @@ module.exports = function(NAMESPACE) {
       else { // if we still have more in the group
         this.currentCheckIndex++;
       }
-      this.selectNewCheck();
+      this.selectNewMenuItem();
     }
     
     goToPrevious() {
-      this.unselectOldCheck();
+      this.unselectOldMenuItem();
       // if we need to move to the previous group
       if (this.currentCheckIndex <= 0) {
         // if we're not on the first group
@@ -87,21 +87,21 @@ module.exports = function(NAMESPACE) {
       else { // if we still have more in the group
         this.currentCheckIndex--;
       }
-      this.selectNewCheck();
+      this.selectNewMenuItem();
     }
     
     goToCheck(params) {
-      this.unselectOldCheck();
+      this.unselectOldMenuItem();
       this.currentGroupIndex = params.groupIndex;
       this.currentCheckIndex = params.checkIndex;
-      this.selectNewCheck();
+      this.selectNewMenuItem();
     }
     
-    unselectOldCheck() {
+    unselectOldMenuItem() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
     }
     
-    selectNewCheck() {
+    selectNewMenuItem() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
     }
 

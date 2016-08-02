@@ -139,7 +139,7 @@ class CheckModule extends React.Component {
     var currentCheckIndex = this.getCurrentCheckIndex();
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-      if (newGroupIndex < groups.length) {
+      if (newGroupIndex < groups.length && newGroupIndex >= 0) {
         api.putDataInCheckStore(this.nameSpace, 'currentGroupIndex', newGroupIndex);
         if (newCheckIndex < groups[currentGroupIndex].checks.length && newCheckIndex >= 0) {
           api.putDataInCheckStore(this.nameSpace, 'currentCheckIndex', newCheckIndex);
@@ -148,7 +148,7 @@ class CheckModule extends React.Component {
           * of the group, we increment the group.
           */
         else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
-          currentGroupIndex < groups.length - 1) {
+            currentGroupIndex < groups.length - 1) {
           api.putDataInCheckStore(this.nameSpace, 'currentGroupIndex', currentGroupIndex + 1);
           api.putDataInCheckStore(this.nameSpace, 'currentCheckIndex', 0);
         }
@@ -157,8 +157,8 @@ class CheckModule extends React.Component {
           */
         else if (newCheckIndex == -1 && currentGroupIndex > 0) {
           var newGroupLength = groups[currentGroupIndex - 1].checks.length;
-          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
-          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
+          api.putDataInCheckStore(this.nameSpace, 'currentGroupIndex', currentGroupIndex - 1);
+          api.putDataInCheckStore(this.nameSpace, 'currentCheckIndex', newGroupLength - 1);
         }
         //invalid indices: don't do anything else
         else {

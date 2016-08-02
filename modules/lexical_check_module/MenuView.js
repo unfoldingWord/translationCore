@@ -21,17 +21,19 @@ class MenuView extends React.Component {
     this.state = {
       checkObject: checkData
     };
-    this.curGroupIndex = checkData.currentGroupIndex;
-    this.curVerseIndex = checkData.currentCheckIndex;
+    this.currentGroupIndex = checkData.currentGroupIndex;
+    this.currentCheckIndex = checkData.currentCheckIndex;
     this.updateMenuItem = this.updateMenuItem.bind(this);
-    this.updateActive = this.updateActive.bind(this);
+    this.goToNext = this.goToNext.bind(this);
+    this.goToPrevious = this.goToPrevious.bind(this);
+    this.goToCheck = this.goToCheck.bind(this);
   }
 
   componentWillMount() {
     api.registerEventListener('changedCheckStatus', this.updateMenuItem);
-    api.registerEventListener('goToCheck', this.updateActive);
-    api.registerEventListener('goToNext', this.updateActive);
-    api.registerEventListener('goToPrevious', this.updateActive);
+    api.registerEventListener('goToCheck', this.goToCheck);
+    api.registerEventListener('goToNext', this.goToNext);
+    api.registerEventListener('goToPrevious', this.goToPrevious);
     this.setState({
       checkObject: api.getDataFromCheckStore('LexicalChecker')
     });
@@ -39,40 +41,60 @@ class MenuView extends React.Component {
 
   componentWillUnmount() {
     api.removeEventListener('changedCheckStatus', this.updateMenuItem);
-    api.removeEventListener('goToCheck', this.updateActive);
-    api.removeEventListener('goToNext', this.updateActive);
-    api.removeEventListener('goToPrevious', this.updateActive);
+    api.removeEventListener('goToCheck', this.goToCheck);
+    api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToPrevious', this.goToPrevious);
   }
 
   componentDidMount() {
-    this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(true);
+    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(true);
   }
-
-  updateActive(params) {
-    this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(false);
-    // goToNext/goToPrevious handler
-    if (params === undefined) {
-      // if we need to move to the next group
-      if (this.curVerseIndex >= this.state.checkObject.groups[this.curGroupIndex].checks.length - 1) {
-        // if we need to wrap all the way back around
-        if (this.curGroupIndex >= this.state.checkObject.groups.length - 1) {
-          return;
-        }
-        else {
-          this.curGroupIndex++;
-          this.curVerseIndex = 0;
-        }
+    
+  goToNext() {
+    this.unselectOldMenuItem();
+    // if we need to move to the next group
+    if (this.currentCheckIndex >= this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1) {
+      // if we're not on the last group
+      if (this.currentGroupIndex < this.state.checkObject.groups.length - 1) {
+        this.currentGroupIndex++;
+        this.currentCheckIndex = 0;
       }
-      else { // if we still have more in the group
-        this.curVerseIndex++;
+    }
+    else { // if we still have more in the group
+      this.currentCheckIndex++;
+    }
+    this.selectNewMenuItem();
+  }
+  
+  goToPrevious() {
+    this.unselectOldMenuItem();
+    // if we need to move to the previous group
+    if (this.currentCheckIndex <= 0) {
+      // if we're not on the first group
+      if (this.currentGroupIndex > 0) {
+        this.currentGroupIndex--;
+        this.currentCheckIndex = this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1;
       }
-      this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(true);
     }
-    else { // goToCheck handler
-      this.curGroupIndex = params.groupIndex;
-      this.curVerseIndex = params.checkIndex;
+    else { // if we still have more in the group
+      this.currentCheckIndex--;
     }
-
+    this.selectNewMenuItem();
+  }
+  
+  goToCheck(params) {
+    this.unselectOldMenuItem();
+    this.currentGroupIndex = params.groupIndex;
+    this.currentCheckIndex = params.checkIndex;
+    this.selectNewMenuItem();
+  }
+  
+  unselectOldMenuItem() {
+    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(false);
+  }
+  
+  selectNewMenuItem() {
+    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(true);
   }
 
   updateMenuItem(params) {

@@ -146,9 +146,9 @@ class View extends React.Component {
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-      if (newGroupIndex < groups.length) {
+      if (newGroupIndex < groups.length && newGroupIndex >= 0) {
         api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
-        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+        if (newCheckIndex < groups[currentGroupIndex].checks.length && newCheckIndex >= 0) {
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
         }
         /* In the case that we're incrementing the check and now we're out of bounds
@@ -162,7 +162,7 @@ class View extends React.Component {
         /* In the case that we're decrementing the check and now we're out of bounds
           * of the group, we decrement the group.
           */
-        else if (newCheckIndex == -1 && currentGroupIndex >= 0) {
+        else if (newCheckIndex == -1 && currentGroupIndex > 0) {
           var newGroupLength = groups[currentGroupIndex - 1].checks.length;
           api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
