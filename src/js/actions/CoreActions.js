@@ -129,10 +129,9 @@ module.exports = {
     });
   },
 
-  loadApp: function() {
+  startLoading: function() {
     Dispatcher.handleAction({
-      type: consts.CHANGE_LOADER_MODAL_VISIBILITY,
-      visible: true
+      type: consts.START_LOADING
     });
   }
 
