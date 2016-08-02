@@ -21,6 +21,7 @@ class Login extends React.Component {
     this.state = {userName: "", password: "", register: false};
   }
   handleSubmit(event) {
+    var _this = this;
     var userdata = {
       username: this.state.userName,
       password: this.state.password
@@ -30,6 +31,9 @@ class Login extends React.Component {
       CoreActions.updateLoginModal(false);
       CoreActions.updateOnlineStatus(true);
       CoreActions.updateProfileVisibility(true);
+      if (_this.props.success) {
+        _this.props.success();
+      }
     }).catch(function(reason) {
       //console.log(reason);
       if (reason.status === 401) {

@@ -34,7 +34,6 @@ class Menu extends React.Component{
         let Chapter = scripture[type].verses[verse].chapter;
         let thisVerse = scripture[type].verses[verse].verse;
         let referenceString = Chapter + ":" + thisVerse;
-        console.log(referenceString);
         verseList.push(
           <a
             key={i++}
