@@ -117,7 +117,7 @@ class MenuView extends React.Component {
         );
       });
       return (
-      <div className='scrollbar-hide fill-height'>
+      <div className='fill-height'>
         <center><h3>Checks</h3></center>
         <Well className='fill-height' style={{overflowY: 'scroll'}}>
           <div>
