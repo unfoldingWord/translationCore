@@ -18,3 +18,7 @@ body {
 .Tab.Container {
   background-color: black;
 }
+
+.scrollbar-hide ::-webkit-scrollbar {
+  width: 0;
+}
