@@ -17,7 +17,7 @@ const Col = require('react-bootstrap/lib/Col.js');
 const Welcome = require('../components/core/welcome/welcome');
 
 const AlertModal = require('../components/core/AlertModal');
-
+const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');

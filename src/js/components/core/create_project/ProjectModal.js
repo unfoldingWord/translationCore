@@ -4,23 +4,10 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const CoreStore = require('../../../stores/CoreStore.js');
-const CheckStore = require('../../../stores/CheckStore');
-const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
-<<<<<<< HEAD
-=======
-const ENTER = 13;
->>>>>>> develop
 const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
 const Upload = require('../Upload');
-const ManifestGenerator = require('../ProjectManifest');
-const path = require('path');
-<<<<<<< HEAD
-=======
-const CheckDataGrabber = require('./CheckDataGrabber');
->>>>>>> develop
-const Access = require('../AccessProject.js');
 
 const INVALID_PROJECT = 'This does not seem to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
@@ -29,7 +16,6 @@ const ProjectModal = React.createClass({
 
   getInitialState: function() {
     return {
-<<<<<<< HEAD
       showModal: false,
       modalTitle:"Create Project",
       doneText:"Load",

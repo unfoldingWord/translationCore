@@ -119,7 +119,7 @@ const UploadModal = React.createClass({
 
             if (!_this.translationCoreManifestPresent(path)) {
               _this.saveManifest(path, {user: [CoreStore.getLoggedInUser()],
-                repo: link || 'none'}, translationStudioManifest);
+                repo: link || null}, translationStudioManifest);
             }
             else {
               Access.loadFromFilePath(path);

@@ -25,14 +25,13 @@ var Access = {
       fs.readdir(folderpath, function(err, files){
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
-            _this.loadCheckData(Path.join(folderpath, file), function() {
-              api.putDataInCommon('saveLocation', filepath);
-              localStorage.setItem('showTutorial', false);
-              localStorage.setItem('lastProject', filepath);
-            });
+            var filepath = Path.join(folderpath, file);
+            _this.loadCheckData(filepath);
           }
         }
-
+        api.putDataInCommon('saveLocation', folderpath);
+        localStorage.setItem('showTutorial', false);
+        localStorage.setItem('lastProject', folderpath);
       });
     } catch (e) {
       console.error(e);

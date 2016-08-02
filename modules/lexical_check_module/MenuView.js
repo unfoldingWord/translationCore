@@ -117,7 +117,6 @@ class MenuView extends React.Component {
         );
       });
       return (
-<<<<<<< HEAD
         <div className='fill-height'>
           <Well className='fill-height' style={{overflowY: 'scroll'}}>
             <div>
@@ -130,17 +129,6 @@ class MenuView extends React.Component {
     }
     else {
       return (<div></div>);
-=======
-      <div className='fill-height'>
-        <center><h3>Checks</h3></center>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
-          <div>
-            {menuList}
-          </div>
-        </Well>
-      </div>
-    )
->>>>>>> develop
     }
   }
 }
