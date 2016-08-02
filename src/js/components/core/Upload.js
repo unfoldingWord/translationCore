@@ -52,7 +52,6 @@ const UploadModal = React.createClass({
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
       var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
-      console.log('ManifestLocation: ' + manifestLocation);
       var manifest = ManifestGenerator(data, tsManifest);
       api.putDataInCommon('tcManifest', manifest);
 

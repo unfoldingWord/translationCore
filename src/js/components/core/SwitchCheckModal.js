@@ -95,7 +95,6 @@ class SwitchCheckModal extends React.Component{
         }
         else {
           metadata.folderName = Path.dirname(filePath);
-          console.log('FolderName: ' + metadata.folderName);
           tempMetadatas.push(metadata);
         }
         onComplete();

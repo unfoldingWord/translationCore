@@ -32,7 +32,6 @@ var CheckDataGrabber = {
     for (let moduleObj of modulePaths) {
       checkArray.push(moduleObj);
       this.saveModule(moduleObj.location);
-      console.log('Name: ' + moduleObj.name + ' and does checkstore have it: ' + CheckStore.hasData(moduleObj.name));
       if (moduleObj.location && !CheckStore.hasData(moduleObj.name)) {
         checksThatNeedToBeFetched.push(moduleObj);
       }
@@ -208,10 +207,6 @@ var CheckDataGrabber = {
    * params for the FetchData's to load their data
    */
   getDataFromCheck: function(name, path, params) {
-    console.log(name + ' is calling their fetch data');
-    console.log('Their path is; ' + path);
-    console.log("params");
-    console.dir(params);
     var DataFetcher = require(Path.join(path, 'FetchData'));
     
     //call the FetchData function
