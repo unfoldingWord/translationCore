@@ -123,8 +123,8 @@ class View extends React.Component {
   updateUserAndTimestamp() {
     let currentCheck = this.getCurrentCheck();
     let currentUser = api.getLoggedInUser();
-    let timestamp = new Date().toDateString();
-    currentCheck.user = currentUser ? currentUser.fullName : null;
+    let timestamp = new Date();
+    currentCheck.user = currentUser;
     currentCheck.timestamp = timestamp;
   }
 
