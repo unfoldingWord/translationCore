@@ -141,6 +141,8 @@ const ProjectModal = React.createClass({
               _this.setBookName(bookName);
               let bookFileName = bookTitle.join('') + '.json';
               var saveLocation = _this.params.targetLanguagePath;
+              localStorage.setItem('showTutorial', false);
+              localStorage.setItem('lastProject', saveLocation);
               var user = CoreStore.getLoggedInUser();
               var username;
               if (user) {

@@ -14,7 +14,7 @@ const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Open = require('../components/core/OpenModal.js');
-
+const Access = require('../components/core/AccessProject.js');
 const Welcome = require('../components/core/welcome/welcome');
 
 const AlertModal = require('../components/core/AlertModal');
@@ -56,6 +56,12 @@ var Main = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var saveLocation = localStorage.getItem('lastProject');
+    if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
+        Access.loadFromFilePath(saveLocation);
+    }
+  },
 
   finishWelcome: function(){
     this.setState({
