@@ -44,7 +44,7 @@ class GatewayVerseDisplay extends React.Component {
     }
 
     if (index != -1) {
-      /* 
+      /*
        * Split the verse on either side of the actual word. This assumes that the | character
        * will never be found in the Bible
        */
@@ -65,7 +65,7 @@ class GatewayVerseDisplay extends React.Component {
 
   render() {
     return(
-      <Well bsSize={'small'}>
+      <Well bsSize={'small'} style={{minHeight: '128px', marginBottom: '5px'}}>
         <div
           style={{
             textAlign: "center",

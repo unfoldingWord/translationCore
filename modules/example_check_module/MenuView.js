@@ -70,7 +70,9 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <center><h3>Checks</h3></center>
+        <div style={{backgroundColor: '#1a2133'}}>
+          <h3>Checks</h3>
+        </div>
         <Well className='fill-height' style={{overflow: 'scroll', whiteSpace: 'nowrap'}}>
           <div>
             {menuList}

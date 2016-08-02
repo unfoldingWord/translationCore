@@ -258,17 +258,18 @@ class View extends React.Component {
       var targetVerse = this.getVerse('targetLanguage');
       return (
         <div>
-          <TPane style={{height: '30%'}}/>
+          <TPane />
           <Row className="show-grid">
-            <Col sm={6} md={6} lg={6}>
+            <Col sm={6} md={6} lg={6} style={{paddingRight: '2.5px'}}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
                 verse={gatewayVerse}
-                occurrence={this.state.currentCheck.occurrence}
               />
               <TargetVerseDisplay
                 verse={targetVerse}
                 ref={"TargetVerseDisplay"}
+                style={{minHeight: '120px',
+                        margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} onClick={
@@ -286,7 +287,7 @@ class View extends React.Component {
               <br /><br />
               <ProposedChanges selectedWord={"spongegar"} />
             </Col>
-            <Col sm={6} md={6} lg={6}>
+            <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
               <CommentBox />
             </Col>

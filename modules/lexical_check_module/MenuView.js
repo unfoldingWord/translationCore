@@ -118,9 +118,9 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <center><h3>Checks</h3></center>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+        <Well className='fill-height' style={{overflowY: 'scroll', marginTop: '55px', maxHeight: '750px'}}>
           <div>
+            <center><h3>Checks</h3></center>
             {menuList}
           </div>
         </Well>

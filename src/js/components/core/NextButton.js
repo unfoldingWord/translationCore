@@ -20,7 +20,7 @@ class NextButton extends React.Component {
 
   render() {
     return (
-        <Button bsStyle='primary' onClick={this.buttonClicked} style={{marginBottom: "10px"}}>
+        <Button bsStyle='primary' onClick={this.buttonClicked} style={{marginBottom: "10px", float: 'right'}}>
           {SaveAndContinue}
           &nbsp;<Glyphicon glyph="arrow-right" />
         </Button>

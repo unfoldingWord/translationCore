@@ -126,7 +126,9 @@ const TargetLanguageSelectBox = React.createClass({
       <Well
         bsSize={'small'}
         style={{
-          overflowY: "scroll"
+          overflowY: "scroll",
+          minHeight: '128px',
+          marginBottom: '5px'
         }}
       >
         <span>{words}</span>
