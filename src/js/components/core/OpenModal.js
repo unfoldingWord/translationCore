@@ -112,7 +112,7 @@ render: function() {
             <div>
               <Modal show={this.state.showModal} onHide={this.close} data-toggle="collapse">
                   <Modal.Header closeButton>
-                    <Modal.Title>Open Translation Project</Modal.Title>
+                    <Modal.Title>Load Translation Project</Modal.Title>
                   </Modal.Header>
                <Modal.Body>
                 <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
