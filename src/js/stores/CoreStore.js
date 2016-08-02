@@ -33,6 +33,7 @@ class CoreStore extends EventEmitter {
   constructor() {
     super();
     this.setMaxListeners(20);
+    this.doneLoading = true;
   }
 
   updateNumberOfFetchDatas(number) {
@@ -89,7 +90,18 @@ class CoreStore extends EventEmitter {
  }
 
   getProgress() {
-  return this.progress;
+    return this.progress;
+  }
+
+  calculateProgress(progressKey) {
+    this.progressObject[progressKey.key] = progressKey.progress;
+    var currentProgress = 0;
+    for (var key in this.progressObject){
+      currentProgress += this.progressObject[key];
+    }
+    var number = this.getNumberOfFetchDatas();
+    currentProgress = currentProgress / number;
+    this.progress = currentProgress;
   }
 
   emitChange() {
@@ -193,24 +205,15 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
-      case consts.CHANGE_LOADER_MODAL_VISIBILITY:
-        this.loaderModalVisibility = action.visible;
+      case consts.START_LOADING:
         this.doneLoading = false;
         this.progressObject = [];
         this.emitChange();
       break;
 
       case consts.SEND_PROGRESS_FOR_KEY:
-        // this.doneLoading = false;
         var progressKey = action.progressRecieved;
-        this.progressObject[progressKey.key] = progressKey.progress;
-        var currentProgress = 0;
-        for (var key in this.progressObject){
-          currentProgress += this.progressObject[key];
-        }
-        var number = this.getNumberOfFetchDatas();
-        currentProgress = currentProgress / number;
-        this.progress = currentProgress;
+        this.calculateProgress(progressKey);
         this.emitChange();
       break;
 
@@ -218,13 +221,6 @@ class CoreStore extends EventEmitter {
         this.doneLoading = true;
         this.progressKeyObj = null;
         this.loaderModalVisibility = false;
-        // this.checkCategoryOptions = action.reportViews;
-        // if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
-        //   CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckCategory.name});
-        // }
-        // else {
-        //   console.error('Problem when loading check. No check found.');
-        // }
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
         this.emitChange();
       break;

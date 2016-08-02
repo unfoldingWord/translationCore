@@ -29,9 +29,26 @@ class ModuleApi {
     return ReactDOM.findDOMNode(component);
   }
 
+<<<<<<< HEAD
   saveMenu(namespace, menu) {
     if (!this.menus) {
       this.menus = {};
+=======
+    saveMenu(namespace, menu) {
+        if (!this.menus) {
+            this.menus = {};
+        }
+        if (namespace in this.menus) {
+            console.warn(MENU_WARN + namespace);
+        }
+        this.menus[namespace] = menu;
+    }
+
+    getMenu(namespace) {
+        if (this.menus) {
+            return this.menus[namespace];
+        }
+>>>>>>> develop
     }
     if (namespace in this.menus) {
       console.warn(MENU_WARN + namespace);
@@ -159,6 +176,34 @@ class ModuleApi {
     });
   }
 
+    updateManifest(field, data, callback = () => {}) {
+      var manifest = this.getDataFromCommon('tcManifest');
+      var saveLocation = this.getDataFromCommon('saveLocation');
+      if (manifest && saveLocation) {
+        manifest[field] = data;
+        saveLocation += '/tc-manifest.json';
+        fs.outputJson(saveLocation, manifest, callback);
+      } else {
+        callback("No manifest found")
+      }
+    }
+
+    saveProject(message) {
+      var _this = this;
+      var git = require('./components/core/GitApi.js');
+      var path = this.getDataFromCommon('saveLocation');
+      if (path) {
+        git(path).save(message, path, function() {
+        });
+      } else {
+        var Alert = {
+          title: "Warning",
+          content: "Save location is not defined",
+          leftButtonText: "Ok"
+        }
+        this.createAlert(Alert);
+      }
+    }
 }
 
 const api = new ModuleApi();

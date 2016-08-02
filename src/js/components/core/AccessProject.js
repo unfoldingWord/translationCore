@@ -28,7 +28,16 @@ var Access = {
             _this.loadCheckData(Path.join(folderpath, file));
           }
         }
+<<<<<<< HEAD
         api.putDataInCommon('saveLocation', folderpath);
+=======
+        _this.loadCheckData(fileObj, function() {
+          api.putDataInCommon('saveLocation', filepath);
+          localStorage.setItem('showTutorial', false);
+          localStorage.setItem('lastProject', filepath);
+        });
+        //loads into project with object of file paths
+>>>>>>> develop
       });
     } catch (e) {
       console.error(e);

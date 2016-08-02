@@ -1,3 +1,8 @@
+/**
+ * @description This file registers a user then logs them in.
+ * @author Ian Hoegen
+ **/
+
 const React = require('react');
 
 const remote = window.electron.remote;
@@ -16,17 +21,17 @@ const EMPTY = {
   username: 'Username is empty',
   password: 'Password is empty',
   confirm: 'Confirm password is empty'
-}
+};
 const INVALID = {
   email: 'Email is not valid',
   password: 'Passwords do not match'
-}
+};
 const ENTER = {
   username: 'Username',
   email: 'Email',
   password: 'Password',
   confirm: 'Confirm Password'
-}
+};
 
 const Registration = React.createClass({
   getInitialState: function() {
@@ -90,18 +95,18 @@ const Registration = React.createClass({
           console.log(reason);
         }
       });
-    } else if(unLen === 0){
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.username);
+    } else if (unLen === 0) {
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.username);
     } else if (this.state.email.length === 0) {
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.email);
-    } else if(emailValid !== 'success'){
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.email);
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.email);
+    } else if (emailValid !== 'success') {
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.email);
     } else if (this.state.password.length === 0) {
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.password);
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.password);
     } else if (this.state.confirm.length === 0) {
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.confirm);
-    } else if(passwordMatch !== 'success'){
-        dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.password);
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, EMPTY.confirm);
+    } else if (passwordMatch !== 'success') {
+      dialog.showErrorBox(ACCOUNT_CREATION_ERROR, INVALID.password);
     }
   },
   validateEmail: function() {

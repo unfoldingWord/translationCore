@@ -4,7 +4,6 @@
  ******************************************************************************/
 const FileModule = (function() {
   const fs = require(window.__base + 'node_modules/fs-extra');
-  const request = require('request');
 
   return {
     /**
@@ -31,12 +30,6 @@ const FileModule = (function() {
       var inputFile = fs.readFileSync(file).toString();
       var jsonObject = JSON.parse(inputFile);
       callback(jsonObject);
-    },
-
-    loadOnline: function(url, callback, extraData) {
-      request(url, function(error, response, body) {
-        callback(error, response, body, extraData);
-      });
     }
   };
 }

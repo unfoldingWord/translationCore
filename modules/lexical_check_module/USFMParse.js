@@ -7,7 +7,7 @@
 
 
 function usfmToJSON(usfm_in) {
-  var usfm = usfm_in.replace(/\\[^vc][\w\*]*\s?|\+\s/g, "");
+  var usfm = usfm_in.replace(/\\[abd-uw-z][\w\*]*\s?|\+\s/gi, "");
 
   const chapterNumberExpression = /^\s*(\d+)\s+/;
   const verseNumberExpression = /^\s*(\d+)\s+/;

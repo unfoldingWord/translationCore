@@ -30,16 +30,16 @@ const Loader = React.createClass({
   update: function() {
     this.setState({
       progress: CoreStore.getProgress(),
-      showModal: CoreStore.loaderModalVisibility
+      showModal: !CoreStore.doneLoading
     });
   },
-    
+
   render: function() {
     return (
       <div>
         <Modal show={this.state.showModal}>
           <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
-          <img src="images/TC_ANIMATED_Logo.gif"/>
+          <center><img src="images/TC_ANIMATED_Logo.gif"/></center>
         </Modal>
       </div>
     );

@@ -156,30 +156,10 @@ class Welcome extends React.Component{
       case 2:
         return(
           <Popover
-            id="newProject"
-            placement="right"
-            positionLeft={88}
-            positionTop={113}
-            title="Starting A New Project">
-            <div style={Styles.tutorialPopover}>
-              <p>This will start a brand new project from a target language draft</p>
-            </div>
-            <Button
-              style={Styles.nextTutorialButton}
-              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
-          </Popover>
-        )
-      break;
-      case 3:
-        return(
-          <Popover
             id="openProject"
             placement="right"
             positionLeft={88}
-            positionTop={202}
+            positionTop={113}
             title="Opening an Existing Project">
             <div style={Styles.tutorialPopover}>
               <p>You can also open an existing translationCore project and continue yours or someone elses work.</p>
@@ -193,13 +173,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 4:
+      case 3:
         return(
           <Popover
             id="syncProject"
             placement="right"
             positionLeft={88}
-            positionTop={293}
+            positionTop={202}
             title="Sync Your Work To Door43">
             <div style={Styles.tutorialPopover}>
               <p>Clicking here while connected to the internet will save a copy of what you are working on to Door43</p>
@@ -213,13 +193,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 5:
+      case 4:
         return(
           <Popover
             id="generateReport"
             placement="right"
             positionLeft={88}
-            positionTop={379}
+            positionTop={293}
             title="Generating a Report">
             <div style={Styles.tutorialPopover}>
               <p>This will generate a report for all of the checks performed by you or anyone else working on the project you have open.</p>
@@ -233,13 +213,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 6:
+      case 5:
         return(
           <Popover
             id="loadApp"
             placement="right"
             positionLeft={88}
-            positionTop={469}
+            positionTop={379}
             title="Loading a Check">
             <div style={Styles.tutorialPopover}>
               <p>This is where you load in an app so that you can perform a check on your draft.</p>
@@ -253,13 +233,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 7:
+      case 6:
         return(
           <Popover
             id="appSettings"
             placement="right"
             positionLeft={88}
-            positionTop={571}
+            positionTop={465}
             title="Settings">
             <div style={Styles.tutorialPopover}>
               <p>Here you can access various settings relating to how translationCore looks and functions</p>

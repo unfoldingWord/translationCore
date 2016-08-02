@@ -12,6 +12,7 @@ const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
 const gogs = require('../login/GogsApi.js');
 const sync = require('./GitSync.js');
+
 class SideNavBar extends React.Component{
   handleOpenProject(){
     CoreActions.showCreateProject("Languages");

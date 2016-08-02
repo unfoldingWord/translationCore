@@ -7,20 +7,29 @@ const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
 const CoreActions = require('../../../actions/CoreActions.js');
 const {dialog} = window.electron.remote;
+<<<<<<< HEAD
+=======
+const ENTER = 13;
+>>>>>>> develop
 const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
 const Upload = require('../Upload');
 const ManifestGenerator = require('../ProjectManifest');
 const path = require('path');
+<<<<<<< HEAD
+=======
+const CheckDataGrabber = require('./CheckDataGrabber');
+>>>>>>> develop
 const Access = require('../AccessProject.js');
 
-const INVALID_PROJECT = 'This does not appear to be a translation studio project';
+const INVALID_PROJECT = 'This does not seem to be a translation studio project';
 const DEFAULT_ERROR = 'Error';
 
 const ProjectModal = React.createClass({
 
   getInitialState: function() {
     return {
+<<<<<<< HEAD
       showModal: false,
       modalTitle:"Create Project",
       doneText:"Load",
@@ -33,7 +42,7 @@ const ProjectModal = React.createClass({
   },
 
   componentWillMount: function() {
-    CoreStore.addChangeListener(this.showCreateProject);      //action to show create project modal
+    CoreStore.addChangeListener(this.showCreateProject);      // action to show create project modal
   },
 
   componentWillUnmount: function() {
@@ -42,21 +51,19 @@ const ProjectModal = React.createClass({
 
   showCreateProject: function(input) {
     var modal = CoreStore.getShowProjectModal()
-    
     if (input) {
       modal = input;
       CoreStore.projectModalVisibility = input;
-    }
-    
+    }    
     if (modal === 'Languages') {
+
       this.setState({
         showModal: true,
         modalValue: modal,
         modalTitle: '',
         doneText: 'Load'
       });
-    }
-    else if (modal === "") {
+    } else if (modal === "") {
       this.setState({
         showModal: false
       });
@@ -64,7 +71,7 @@ const ProjectModal = React.createClass({
   },
 
   close: function() {
-    //CheckStore.getNameSpaces();
+// CheckStore.getNameSpaces();
     CoreStore.projectModalVisibility = "";
     this.setState({
       showModal: false,
@@ -94,5 +101,4 @@ const ProjectModal = React.createClass({
   }
 });
 
-
-  module.exports = ProjectModal;
+module.exports = ProjectModal;

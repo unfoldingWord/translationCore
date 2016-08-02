@@ -1,4 +1,5 @@
 /**
+ * @author Ian Hoegen
  * @description This module creates a project manifest.
  ******************************************************************************/
 const TimeStamp = require('./Timestamp').generate()[1];
@@ -26,8 +27,8 @@ var template = {
   checkers: [],
   time_created: '',
   check_modules: [],
-  repo: '',
-}
+  repo: ''
+};
 
 /**
  * @description This function populates the template manifest with the data.
@@ -42,13 +43,14 @@ var template = {
  *    checkLocations: [{filepath}]
  *  }
  * @param {json=} tsManifest - A manifest from a Translation Studio project
+ * @return {json} projectManifest - A TC project manifest
  ******************************************************************************/
-function populate (data, tsManifest) {
+function populate(data, tsManifest) {
   var projectManifest = template;
   projectManifest.time_created = TimeStamp;
   projectManifest.repo = data.repo;
 
-  for (user of data.user) {
+  for (var user of data.user) {
     projectManifest.checkers.push(user);
   }
 
@@ -58,11 +60,12 @@ function populate (data, tsManifest) {
       projectManifest.check_modules.push(currentItem.name);
     }
   }
+
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
     projectManifest.ts_project = tsManifest.project;
-    for (translator of tsManifest.translators) {
+    for (var translator of tsManifest.translators) {
       projectManifest.translators.push(translator);
     }
   }
