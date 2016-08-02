@@ -31,6 +31,7 @@ class MenuView extends React.Component {
     api.registerEventListener('changedCheckStatus', this.updateMenuItem);
     api.registerEventListener('goToCheck', this.updateActive);
     api.registerEventListener('goToNext', this.updateActive);
+    api.registerEventListener('goToPrevious', this.updateActive);
     this.setState({
       checkObject: api.getDataFromCheckStore('LexicalChecker')
     });
@@ -40,6 +41,7 @@ class MenuView extends React.Component {
     api.removeEventListener('changedCheckStatus', this.updateMenuItem);
     api.removeEventListener('goToCheck', this.updateActive);
     api.removeEventListener('goToNext', this.updateActive);
+    api.removeEventListener('goToPrevious', this.updateActive);
   }
 
   componentDidMount() {
@@ -48,7 +50,7 @@ class MenuView extends React.Component {
 
   updateActive(params) {
     this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(false);
-    // goToNext handler
+    // goToNext/goToPrevious handler
     if (params === undefined) {
       // if we need to move to the next group
       if (this.curVerseIndex >= this.state.checkObject.groups[this.curGroupIndex].checks.length - 1) {

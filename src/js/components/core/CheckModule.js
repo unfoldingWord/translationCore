@@ -77,18 +77,21 @@ class CheckModule extends React.Component {
     // Bind functions to the View object so the "this" context isn't lost
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
     this.goToNext = this.goToNext.bind(this);
+    this.goToPrevious = this.goToPrevious.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
   
   componentWillMount() {
     api.registerEventListener('goToNext', this.goToNext);
+    api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
     this.updateState();
   }
   
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToPrevious', this.goToPrevious);
     api.removeEventListener('goToCheck', this.goToCheck);
   }
   
@@ -99,6 +102,15 @@ class CheckModule extends React.Component {
     var currentGroupIndex = this.getCurrentGroupIndex();
     var currentCheckIndex = this.getCurrentCheckIndex();
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
+  }
+  
+  /**
+   * @description - Called when the user clicks the previous button
+   */
+  goToPrevious() {
+    var currentGroupIndex = this.getCurrentGroupIndex();
+    var currentCheckIndex = this.getCurrentCheckIndex();
+    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
   }
   
   /**
@@ -129,7 +141,7 @@ class CheckModule extends React.Component {
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length) {
         api.putDataInCheckStore(this.nameSpace, 'currentGroupIndex', newGroupIndex);
-        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+        if (newCheckIndex < groups[currentGroupIndex].checks.length && newCheckIndex >= 0) {
           api.putDataInCheckStore(this.nameSpace, 'currentCheckIndex', newCheckIndex);
         }
         /* In the case that we're incrementing the check and now we're out of bounds
@@ -139,6 +151,14 @@ class CheckModule extends React.Component {
           currentGroupIndex < groups.length - 1) {
           api.putDataInCheckStore(this.nameSpace, 'currentGroupIndex', currentGroupIndex + 1);
           api.putDataInCheckStore(this.nameSpace, 'currentCheckIndex', 0);
+        }
+        /* In the case that we're decrementing the check and now we're out of bounds
+          * of the group, we decrement the group.
+          */
+        else if (newCheckIndex == -1 && currentGroupIndex > 0) {
+          var newGroupLength = groups[currentGroupIndex - 1].checks.length;
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
         }
         //invalid indices: don't do anything else
         else {

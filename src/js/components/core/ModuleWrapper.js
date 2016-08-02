@@ -8,6 +8,7 @@ var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore');
 var NextButton = require('../core/NextButton');
+var PreviousButton = require('../core/PreviousButton');
 
 const api = window.ModuleApi;
 
@@ -33,6 +34,9 @@ class ModuleWrapper extends React.Component {
     return (
       <div>
         <CheckModule />
+        <div style={{float: 'left'}}>
+          <PreviousButton />
+        </div>
         <div style={{float: 'right'}}>
           <NextButton />
         </div>

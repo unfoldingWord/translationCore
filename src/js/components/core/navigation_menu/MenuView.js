@@ -27,13 +27,16 @@ module.exports = function(NAMESPACE) {
       this.currentGroupIndex = checkData.currentGroupIndex;
       this.currentCheckIndex = checkData.currentCheckIndex;
       this.updateMenuItem = this.updateMenuItem.bind(this);
-      this.updateCurrentCheck = this.updateCurrentCheck.bind(this);
+      this.goToCheck = this.goToCheck.bind(this);
+      this.goToNext = this.goToNext.bind(this);
+      this.goToPrevious = this.goToPrevious.bind(this);
     }
 
     componentWillMount() {
       api.registerEventListener('changedCheckStatus', this.updateMenuItem);
-      api.registerEventListener('goToCheck', this.updateCurrentCheck);
-      api.registerEventListener('goToNext', this.updateCurrentCheck);
+      api.registerEventListener('goToCheck', this.goToCheck);
+      api.registerEventListener('goToNext', this.goToNext);
+      api.registerEventListener('goToPrevious', this.goToPrevious);
       this.setState({
         checkObject: api.getDataFromCheckStore(NAMESPACE)
       });
@@ -41,8 +44,9 @@ module.exports = function(NAMESPACE) {
 
     componentWillUnmount() {
       api.removeEventListener('changedCheckStatus', this.updateMenuItem);
-      api.removeEventListener('goToCheck', this.updateCurrentCheck);
-      api.removeEventListener('goToNext', this.updateCurrentCheck);
+      api.removeEventListener('goToCheck', this.goToCheck);
+      api.removeEventListener('goToNext', this.goToNext);
+      api.removeEventListener('goToPrevious', this.goToPrevious);
     }
     
     componentDidMount() {
@@ -54,30 +58,51 @@ module.exports = function(NAMESPACE) {
       menuItem.changeCheckStatus(params.checkStatus);
     }
     
-    updateCurrentCheck(params) {
+    goToNext() {
+      this.unselectOldCheck();
+      // if we need to move to the next group
+      if (this.currentCheckIndex >= this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1) {
+        // if we're not on the last group
+        if (this.currentGroupIndex < this.state.checkObject.groups.length - 1) {
+          this.currentGroupIndex++;
+          this.currentCheckIndex = 0;
+        }
+      }
+      else { // if we still have more in the group
+        this.currentCheckIndex++;
+      }
+      this.selectNewCheck();
+    }
+    
+    goToPrevious() {
+      this.unselectOldCheck();
+      // if we need to move to the previous group
+      if (this.currentCheckIndex <= 0) {
+        // if we're not on the first group
+        if (this.currentGroupIndex > 0) {
+          this.currentGroupIndex--;
+          this.currentCheckIndex = this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1;
+        }
+      }
+      else { // if we still have more in the group
+        this.currentCheckIndex--;
+      }
+      this.selectNewCheck();
+    }
+    
+    goToCheck(params) {
+      this.unselectOldCheck();
+      this.currentGroupIndex = params.groupIndex;
+      this.currentCheckIndex = params.checkIndex;
+      this.selectNewCheck();
+    }
+    
+    unselectOldCheck() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
-      // goToNext handler
-      if (params === undefined) {
-        // if we need to move to the next group
-        if (this.currentCheckIndex >= this.state.checkObject.groups[this.currentGroupIndex].checks.length - 1) {
-          // if we're on the last group
-          if (this.currentGroupIndex >= this.state.checkObject.groups.length - 1) {
-            return;
-          }
-          else {
-            this.currentGroupIndex++;
-            this.currentCheckIndex = 0;
-          }
-        }
-        else { // if we still have more in the group
-          this.currentCheckIndex++;
-        }
-        this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
-      }
-      else { // goToCheck handler
-        this.currentGroupIndex = params.groupIndex;
-        this.currentCheckIndex = params.checkIndex;
-      }
+    }
+    
+    selectNewCheck() {
+      this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
     }
 
     render() {
