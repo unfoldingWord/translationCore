@@ -2,6 +2,7 @@ var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('../actions/CoreActionConsts');
+var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 
 /**
@@ -88,7 +89,7 @@ class CoreStore extends EventEmitter {
  }
 
   getProgress() {
-  return this.progressKeyObj;
+  return this.progress;
   }
 
   emitChange() {
@@ -125,7 +126,7 @@ class CoreStore extends EventEmitter {
   }
 
   // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
-  // Mostly just for SwitchCheckModuleDropdown
+  // Mostly just for ModuleWrapper
   getCheckCategoryOptions(){
     if(!this.checkCategoryOptions) {
       return null;
@@ -205,14 +206,39 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.CHANGE_LOADER_MODAL_VISIBILITY:
+        this.loaderModalVisibility = action.visible;
+        this.doneLoading = false;
+        this.progressObject = [];
+        this.emitChange();
+      break;
+
       case consts.SEND_PROGRESS_FOR_KEY:
-        this.progressKeyObj = action.progressRecieved;
+        // this.doneLoading = false;
+        var progressKey = action.progressRecieved;
+        this.progressObject[progressKey.key] = progressKey.progress;
+        var currentProgress = 0;
+        for (var key in this.progressObject){
+          currentProgress += this.progressObject[key];
+        }
+        var number = this.getNumberOfFetchDatas();
+        currentProgress = currentProgress / number;
+        this.progress = currentProgress;
         this.emitChange();
       break;
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
+        this.progressKeyObj = null;
+        this.loaderModalVisibility = false;
         this.checkCategoryOptions = action.reportViews;
+        if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
+          var firstCheckCategory = this.checkCategoryOptions[0];
+          CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: firstCheckCategory.name});
+        }
+        else {
+          console.error('Problem when loading check. No check found.');
+        }
         this.emitChange();
       break;
 

@@ -15,54 +15,29 @@ const Loader = React.createClass({
       progress:0,
       showModal:false
     };
+
+    this.update = this.update.bind(this);
   },
 
   componentWillMount: function() {
-    CoreStore.addChangeListener(this.sendProgressForKey);
-    CoreStore.addChangeListener(this.finishLoader);
+    CoreStore.addChangeListener(this.update);
   },
 
   componentWillUnmount: function() {
-    CoreStore.removeChangeListener(this.sendProgressForKey);
-    CoreStore.removeChangeListener(this.finishLoader);
+    CoreStore.removeChangeListener(this.update);
   },
 
-  finishLoader: function() {
-    if (CoreStore.doneLoading) {
-      //console.log('CheckStore');
-      //console.dir(CheckStore);
-      this.setState({
-        progess: 100,
-        showModal: false
-      });
-    }
+  update: function() {
+    this.setState({
+      progress: CoreStore.getProgress(),
+      showModal: CoreStore.loaderModalVisibility
+    });
   },
-
-  sendProgressForKey: function(){
-    var progressKey = CoreStore.getProgress();
-    if (progressKey){
-      // var progressKey = progressArray[0];
-
-      this.progressObject[progressKey.key] = progressKey.progress
-      var currentProgress = 0;
-      for (var key in this.progressObject){
-        currentProgress += this.progressObject[key];
-      }
-      var number = CoreStore.getNumberOfFetchDatas();
-      currentProgress = currentProgress / number;
-      this.setState({
-        progress: currentProgress,
-        showModal: true
-      });
-    }
-  },
-
-  handleClick: function(e) {
-  },
+    
   render: function() {
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
+        <Modal show={this.state.showModal}>
           <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
           <img src="images/TC_ANIMATED_Logo.gif"/>
         </Modal>

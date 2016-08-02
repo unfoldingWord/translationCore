@@ -122,11 +122,18 @@ module.exports = {
     });
   },
 
-    sendAlertResponse: function(alertResponseObj) {
-      Dispatcher.handleAction({
-        type: consts.ALERT_MODAL_RESPONSE,
-        alertResponse: alertResponseObj
-      });
-    }
+  sendAlertResponse: function(alertResponseObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL_RESPONSE,
+      alertResponse: alertResponseObj
+    });
+  },
+
+  loadApp: function() {
+    Dispatcher.handleAction({
+      type: consts.CHANGE_LOADER_MODAL_VISIBILITY,
+      visible: true
+    });
+  }
 
 };

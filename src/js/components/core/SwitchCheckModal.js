@@ -69,6 +69,7 @@ class SwitchCheckModal extends React.Component{
 
   moduleClick(folderName) {
     this.close();
+    CoreActions.loadApp();
     CheckDataGrabber.loadModuleAndDependencies(folderName);
   }
 

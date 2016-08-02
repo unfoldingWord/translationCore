@@ -73,6 +73,7 @@ var CheckDataGrabber = {
     });
   },
 
+// <<<<<<< HEAD
   /** 
    * @description - This returns the name of the module as defined by the View.js in the path
    * @param {string} path - This is the folderpath that points to the location of the modules
@@ -81,6 +82,40 @@ var CheckDataGrabber = {
   getModuleNameFromFolderPath: function(folderPath) {
     if (fs.accessSync(path.join(folderPath, 'manifest.json'))) {
       return fs.readJsonSync(path.join(folderPath, 'manifest.json'), {throws: false}).name;
+// =======
+//   clearOldData: function(params){
+//     this.reportViews = [];
+//     this.doneModules = 0;
+//     this.totalModules = 0;
+//     this.tempParams = params;
+//     CheckStore.WIPE_ALL_DATA();
+//     api.modules = {};
+//     this.setSaveLocation(this.tempParams.targetLanguagePath);
+//     api.putDataInCommon('params', this.tempParams);
+//   },
+
+//     setSaveLocation: function(data) {
+//     this.saveLocation = data;
+//     if (CheckStore.storeData.common != undefined){
+//       api.putDataInCommon('saveLocation', data);
+//     } else {
+//       CheckStore.storeData['common'] = {};
+//       api.putDataInCommon('saveLocation', data);
+//     }
+//   },
+
+
+//   getFetchData: function(array, params) {
+//     this.clearOldData(params);
+//     CoreStore.updateNumberOfFetchDatas(array.length);
+//     this.totalModules = array.length;
+//     this.saveNextModule(array, params);
+//   },
+//   saveCheckStoreToDisk: function() {
+//     var namespaces = CheckStore.getNameSpaces();
+//     for (var element of namespaces) {
+//       CheckStore.saveDataToDisk(element, window.__base + '/myprojects/' + element);
+// >>>>>>> lol-remove-dropdown
     }
     else if (fs.accessSync(path.join(folderPath, 'View.js'))) {
       return require(path.join(folderPath, 'View.js')).name;
