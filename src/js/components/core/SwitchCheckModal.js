@@ -1,11 +1,22 @@
+//SwitchCheckModal.js//
+/**
+ * @description - This file describes the modal that lists out the available modules that a 
+ * checker may choose to check
+ * @author: Logan Lebanoff
+ */
 
+ //node module imports
 const React = require('react');
-const path = require('path');
+const Path = require('path');
+const fs = require(window.__base + 'node_modules/fs-extra');
+
+//bootstrap imports
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
+
+//locally defined imports
 const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
-const FileModule = require('./FileModule.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const AppDescription = require('./AppDescription');
 
@@ -20,10 +31,11 @@ class SwitchCheckModal extends React.Component{
   }
 
   componentWillMount() {
+    var _this = this;
     CoreStore.addChangeListener(this.updateCheckModal);
     this.getDefaultModules((moduleFolderPathList) => {
-      this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
-        this.setState({moduleMetadatas: metadatas});
+      _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
+        _this.setState({moduleMetadatas: metadatas});
       });
     });
   }
@@ -41,14 +53,21 @@ class SwitchCheckModal extends React.Component{
    */
   getDefaultModules(callback) {
     var defaultModules = [];
-    fs.readDir(path.join(window.__base, 'modules'), function(error, folders) {
+    var moduleBasePath = Path.join(window.__base, 'modules');
+    fs.readdir(moduleBasePath, function(error, folders) {
       if (error) {
         console.error(error);
       }
       else {
         for (var folder of folders) {
-          if (fs.accessSync(path.join(folder, 'manifest.json')) {
-            defaultModules.push(folder);
+          try {
+            var manifestPath = Path.join(moduleBasePath, folder, 'manifest.json');
+            fs.accessSync(manifestPath);
+            defaultModules.push(manifestPath);
+            
+          }
+          catch(e) {
+
           }
         }
       }
@@ -56,15 +75,32 @@ class SwitchCheckModal extends React.Component{
     });
   }
 
-  fillDefaultModules(moduleFolderPathList, callback) {
+  fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
-    for(var folderPath of moduleFolderPathList) {
-      fs.readJson(path.join(folderPath, "manifest.json"), (metadata) => {
-        metadata.folderName = path.basename(folderPath);
-        tempMetadatas.push(metadata);
+
+    //This makes sure we're done with all the files first before we call the callback
+    var totalFiles = moduleFilePathList.length,
+      doneFiles = 0;
+    function onComplete() {
+      doneFiles++;
+      if (doneFiles == totalFiles) {
+        callback(tempMetadatas);
+      }
+    }
+
+    for(let filePath of moduleFilePathList) {
+      fs.readJson(filePath, (error, metadata) => {
+        if (error) {
+          console.error(error);
+        }
+        else {
+          metadata.folderName = Path.dirname(filePath);
+          console.log('FolderName: ' + metadata.folderName);
+          tempMetadatas.push(metadata);
+        }
+        onComplete();
       });
     }
-    callback(tempMetadatas);
   }
 
   moduleClick(folderName) {
@@ -88,9 +124,10 @@ class SwitchCheckModal extends React.Component{
       buttons = <div>No tC default modules found.</div>;
     }
     else {
+      var key = 0;
       buttons = this.state.moduleMetadatas.map((metadata) => {
         return (
-          <AppDescription key={metadata.folderName}
+          <AppDescription key={key++}
                           imagePath={metadata.imagePath}
                           title={metadata.title}
                           description={metadata.description}

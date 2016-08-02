@@ -2,96 +2,90 @@ var React = require('react');
 var remote = window.electron.remote;
 var fs = require(window.__base + 'node_modules/fs-extra');
 var {dialog} = remote;
-var path = require('path');
+var Path = require('path');
 var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
 
+const extensionRegex = new RegExp('(\\.\\w+)', 'i');
+
 var reportViews = [];
 
 var Access = {
-  loadFromFilePath: function(filepath) {
-    _this = this;
+  /**
+   * @description - This finds the checkdata folder within a translationStudio project. This
+   * project should contain a tcManifest folder and a checkData folder
+   * @param {string} folderpath - Path that points to the folder where the translationStudio 
+   * project lives
+   */
+  loadFromFilePath: function(folderpath) {
+    var _this = this;
     var fileObj = {};
-    //iterratively goes through file system and
-    //loads the data into the project
     try {
-      fs.readdir(filepath, function(err, items){
-        for (var i=0; i<items.length; i++) {
-          fileObj[items[i]] = path.join(filepath, items[i]);
-          //fileObj = {{checkdata: Users/username/Desktop/project_name/checkdata}...}
+      fs.readdir(folderpath, function(err, files){
+        for (var file of files) {
+          if (file.toLowerCase() == 'checkdata') {
+            _this.loadCheckData(Path.join(folderpath, file));
+          }
         }
-        _this.loadCheckData(fileObj, function() {
-          api.putDataInCommon('saveLocation', filepath);
-        });
-        //loads into project with object of file paths
+          api.putDataInCommon('saveLocation', folderpath);
       });
     } catch (e) {
+      console.error(e);
       dialog.showErrorBox('Open TC project error', e.message);
     }
   },
 
-  loadCheckData: function(fileObj, callback) {
-    for (var item in fileObj) {
-      if (item == "checkdata") {
-        //if it is the checkdata folder
-        var checkDataFolderPath = fileObj[item];
-        _this.readDisk(checkDataFolderPath, (checkDataFiles) => {
-          //open the file path and read in the files
-          var listOfChecks = null;
-          for (var file of checkDataFiles){
-            listOfChecks = _this.putDataInFileProject(file, checkDataFolderPath, callback);
-            //calls other functions that puts data in stores
-          }
-          if (listOfChecks) {
-            _this.saveModuleInAPI(listOfChecks);
-          }
-        });
+  /**
+   * @description - This loads in the check data from the given path to the checkdata folder
+   * @param {string} checkDataFolderPath - path that points to the check data folder
+   * @param {function} callback - Callback that is called whenever all of the check data within
+   * the checkData folder is loaded
+   */
+  loadCheckData: function(checkDataFolderPath, callback) {
+    var _this = this;
+    fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
+      if (error) {
+        console.error(error);
       }
-    }
-  },
-
-  putDataInFileProject: function(file, checkDataFolderPath, callback = () => {} ){
-    var listOfChecks = null;
-    if (_this.containsTC(file)) {
-      var tcFilePath = path.join(checkDataFolderPath, file);
-      //tcFilePath = Users/username/Desktop/project_name/common.tc
-      fileWithoutTC = _this.removeTC(file);
-      _this.readTheJSON(tcFilePath, (json) => {
-        if (fileWithoutTC == "common") {
-          //puts common in api common
-          listOfChecks = _this.makeCommon(json);
+      else {
+        var listOfChecks = null;
+        for (var file of checkDataFiles){
+          //calls other functions that puts data in stores
+          listOfChecks = _this.putDataInFileProject(Path.join(checkDataFolderPath, file), callback);
         }
-        else {
-          //saving module data (checks) in CheckStore
-          _this.makeModuleCheckData(json, fileWithoutTC);
+        if (listOfChecks) {
+          _this.saveModuleInAPI(listOfChecks);
         }
-        callback();
-      });
-    }
-    return listOfChecks;
-  },
-
-  readTheJSON: function(path, callback) {
-    try {
-      var obj = fs.readJsonSync(path);
-    } catch(e) {
-      obj = [];
-      console.error(e);
-    }
-    callback(obj);
-  },
-
-  readDisk: function(path, callback) {
-    fs.readdir(path, function(err, folder) {
-      callback(folder);
+      }
     });
   },
 
-  removeTC: function(string) {
-    var index = string.length - 3;
-    string = string.slice(0, index);
-    return string;
+  putDataInFileProject: function(file, callback = () => {} ){
+    var _this = this;
+    var listOfChecks = null;
+    if (this.containsTC(file)) {
+      //file = /home/user/.../common.tc
+      //fileWithoutTC = common
+      var fileWithoutTC = Path.basename(file).replace(extensionRegex, '');
+      fs.readJson(file, (err, json) => {
+        if (err) {
+          console.error(err);
+        }
+        else {
+          if (fileWithoutTC == "common") {
+            //puts common in api common
+            listOfChecks = _this.makeCommon(json);
+          }
+          else {
+            //saving module data (checks) in CheckStore
+            _this.makeModuleCheckData(json, fileWithoutTC);
+          }
+          callback();
+        }
+      });
+    }
+    return listOfChecks;
   },
 
   containsTC: function(data){
@@ -116,8 +110,8 @@ var Access = {
         return false;
       }
       try {
-        fs.accessSync(filepath + '/ReportView.js');
-        fs.accessSync(filepath + '/FetchData.js');
+        fs.accessSync(Path.join(filepath, 'ReportView.js'));
+        fs.accessSync(Path.join(filepath, 'FetchData.js'));
         return true;
       } catch (e) {
       }
@@ -166,12 +160,6 @@ var Access = {
     if (_this.isModule(path)) {
       reportViews.push(viewObj);
     }
-  },
-
-  clearOldData: function(){
-    CheckStore.WIPE_ALL_DATA();
-    //clears relevant data from store
-    api.modules = {};
   }
 };
 

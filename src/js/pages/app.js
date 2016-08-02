@@ -13,7 +13,6 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const Open = require('../components/core/OpenModal.js');
 
 const Welcome = require('../components/core/welcome/welcome');
 
@@ -23,25 +22,7 @@ const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
 
-  <div className='fill-height'>
-  <SettingsModal />
-  <LoginModal />
-  <SideNavBar />
-    <Grid fluid className='fill-height'>
-      <Row className='fill-height'>
-        <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
-          <NavMenu />
-          <ProjectModal />
-          <Open />
-        </Col>
-        <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-          <Loader />
-          <AlertModal />
-          <ModuleWrapper />
-        </Col>
-      </Row>
-    </Grid>
-  </div>
+  
 
 var Main = React.createClass({
   getInitialState() {
@@ -81,7 +62,6 @@ var Main = React.createClass({
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
                 <ProjectModal />
-                <Open />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />

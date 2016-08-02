@@ -4,8 +4,8 @@ const CheckStore = require('../../.././stores/CheckStore');
 const FileModule = require('../FileModule');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
-const Books = require('../booksOfBible');
-const path = require('path');
+const Books = require('../BooksOfBible');
+const Path = require('path');
 const ManifestGenerator = require('../ProjectManifest');
 const git = require('../GitApi.js');
 
@@ -28,17 +28,22 @@ var CheckDataGrabber = {
   fetchModules: function(modulePaths, params) {
     var checkArray = [];
     var checksThatNeedToBeFetched = [];
-    for (var moduleInfo of modulePaths) {
-      var name = moduleInfo[0],
-        path = moduleInfo[1];
-      checkArray.push({name: name, location: path});
-      if (path && !CheckStore.hasData(name)) {
-        checksThatNeedToBeFetched.push(path);
+    for (let moduleObj of modulePaths) {
+      checkArray.push(moduleObj);
+      this.saveModule(moduleObj.location);
+      console.log('Name: ' + moduleObj.name + ' and does checkstore have it: ' + CheckStore.hasData(moduleObj.name));
+      if (moduleObj.location && !CheckStore.hasData(moduleObj.name)) {
+        checksThatNeedToBeFetched.push(moduleObj);
       }
     }
     CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
-    for (var path of checksThatNeedToBeFetched) {
-      this.getDataFromCheck(path, params);
+    for (let moduleObj of checksThatNeedToBeFetched) {
+      try {
+        this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
+      }
+      catch(error) {
+        console.error("Unable to load and run FetchData from module '" + moduleObj.name + "': " + error);
+      }
     }
     CheckStore.storeData.common['arrayOfChecks'] = checkArray;
   },
@@ -53,77 +58,54 @@ var CheckDataGrabber = {
    * that module is located in
    */
   loadModuleAndDependencies: function(moduleFolderName) {
-    var moduleBasePath = path.join(window.__base, 'modules');
-    var modulePath = path.join(moduleBasePath, moduleFolderName, 'manifest.json');
+    var _this = this;
+    var moduleBasePath = Path.join(window.__base, 'modules');
+    var modulePath = Path.join(moduleFolderName, 'manifest.json');
     fs.readJson(modulePath, function(error, dataObject) {
-      var params = api.getDataFromCommon('params');
-      var modulePaths = [];
-      modulePaths.push([dataObject.name, modulePath]);
-      for (let childFolderName of dataObject.include) {
-        //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-        try {
-          modulePaths.push([this.getModuleNameFromFolderPath(path.join(moduleBasePath, childFolderName)), 
-            path.join(moduleBasePath, childFolderName)]);
-        }
-        catch (e) {
-          console.error(e);
+      if (error) {
+        console.error(error);
+      }
+      else {
+        var params = api.getDataFromCommon('params');
+        var modulePaths = [];
+        modulePaths.push({name: dataObject.name, location: moduleFolderName});
+        for (let childFolderName of dataObject.include) {
+          //If a developer hasn't defined their module in the corret way, this'll probably throw an error
+          try {
+            modulePaths.push({name: _this.getModuleNameFromFolderPath(Path.join(moduleBasePath, childFolderName)), 
+              location: Path.join(moduleBasePath, childFolderName)});
+          }
+          catch (e) {
+            console.error(e);
+          }
         }
       }
-      this.fetchModules(modulePaths, params);
+      _this.fetchModules(modulePaths, params);
     });
   },
 
-// <<<<<<< HEAD
   /** 
    * @description - This returns the name of the module as defined by the View.js in the path
    * @param {string} path - This is the folderpath that points to the location of the modules
    * main folder. This must be an absolute path
    */
   getModuleNameFromFolderPath: function(folderPath) {
-    if (fs.accessSync(path.join(folderPath, 'manifest.json'))) {
-      return fs.readJsonSync(path.join(folderPath, 'manifest.json'), {throws: false}).name;
-// =======
-//   clearOldData: function(params){
-//     this.reportViews = [];
-//     this.doneModules = 0;
-//     this.totalModules = 0;
-//     this.tempParams = params;
-//     CheckStore.WIPE_ALL_DATA();
-//     api.modules = {};
-//     this.setSaveLocation(this.tempParams.targetLanguagePath);
-//     api.putDataInCommon('params', this.tempParams);
-//   },
-
-//     setSaveLocation: function(data) {
-//     this.saveLocation = data;
-//     if (CheckStore.storeData.common != undefined){
-//       api.putDataInCommon('saveLocation', data);
-//     } else {
-//       CheckStore.storeData['common'] = {};
-//       api.putDataInCommon('saveLocation', data);
-//     }
-//   },
-
-
-//   getFetchData: function(array, params) {
-//     this.clearOldData(params);
-//     CoreStore.updateNumberOfFetchDatas(array.length);
-//     this.totalModules = array.length;
-//     this.saveNextModule(array, params);
-//   },
-//   saveCheckStoreToDisk: function() {
-//     var namespaces = CheckStore.getNameSpaces();
-//     for (var element of namespaces) {
-//       CheckStore.saveDataToDisk(element, window.__base + '/myprojects/' + element);
-// >>>>>>> lol-remove-dropdown
+    try {
+      fs.accessSync(Path.join(folderPath, 'manifest.json'));
+      return fs.readJsonSync(Path.join(folderPath, 'manifest.json')).name;
     }
-    else if (fs.accessSync(path.join(folderPath, 'View.js'))) {
-      return require(path.join(folderPath, 'View.js')).name;
+    catch(e) {
+      try {
+        fs.accessSync(Path.join(folderPath, 'View.js'));
+        return require(Path.join(folderPath, 'View.js')).name;
+      }
+      catch(error) {
+        console.error(e);
+        console.error(error);
+      }
     }
-    else {
-      return null;
-    }
-  }
+    return null;
+  },
 
   /**
    * @description - This is called whenever each FetchData finishes. See {@link getDataFromCheck}.
@@ -151,9 +133,7 @@ var CheckDataGrabber = {
           }
           api.createAlert(Alert);
         }
-
         CoreActions.doneLoadingFetchData(this.reportViews);
-
       }
     }
     else {
@@ -186,7 +166,7 @@ var CheckDataGrabber = {
         return false;
       }
       try {
-        fs.accessSync(filepath + '/ReportView.js');
+        fs.accessSync(Path.join(filepath, 'ReportView.js'));
         return true;
       } catch (e) {
         return false;
@@ -197,19 +177,12 @@ var CheckDataGrabber = {
     }
   },
 
-  /**
-   * @description - This loads a single FetchData
-   * @param {string} path - This is a relative path to the enclosing module's folder
-   * @param {object} params - Object that gets passed to FetchData's, contains necessary 
-   * params for the FetchData's to load their data
-   */
-  getDataFromCheck: function(path, params) {
-    var DataFetcher = require(window.__base + path + '/FetchData');
-    let viewObj = require(window.__base + path + '/View');
+  saveModule: function(path) {
+    let viewObj = require(Path.join(path, 'View'));
 
     //If this module has a menu associated with it, check for it and save it within the API if so
     try {
-      api.saveMenu(viewObj.name, require(window.__base + path + '/MenuView.js'));
+      api.saveMenu(viewObj.name, require(Path.join(path, 'MenuView.js')));
     }
     catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {
@@ -223,12 +196,27 @@ var CheckDataGrabber = {
     if (this.isMainModule(path)) {
       this.reportViews.push(viewObj);
     }
+  },
+
+  /**
+   * @description - This loads a single FetchData
+   * @param {string} path - This is a relative path to the enclosing module's folder
+   * @param {object} params - Object that gets passed to FetchData's, contains necessary 
+   * params for the FetchData's to load their data
+   */
+  getDataFromCheck: function(name, path, params) {
+    console.log(name + ' is calling their fetch data');
+    console.log('Their path is; ' + path);
+    console.log("params");
+    console.dir(params);
+    var DataFetcher = require(Path.join(path, 'FetchData'));
+    
     //call the FetchData function
     var _this = this;
     DataFetcher(
       params, 
       function(data) {
-        _this.Progress(viewObj.name, data);
+        _this.Progress(name, data);
       }, 
       this.onComplete.bind(this)
     );

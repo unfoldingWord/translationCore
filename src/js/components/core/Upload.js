@@ -3,6 +3,8 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 const React = require('react');
+const Path = require('path');
+const fs = require(window.__base + 'node_modules/fs-extra');
 
 const Button = require('react-bootstrap/lib/Button.js');
 const Nav = require('react-bootstrap/lib/Nav.js');
@@ -10,7 +12,10 @@ const NavItem = require('react-bootstrap/lib/NavItem.js');
 
 const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
-const CoreStore = require('../stores/CoreStore');
+const CoreStore = require('../../stores/CoreStore');
+const Access = require('./AccessProject');
+const ManifestGenerator = require('./ProjectManifest');
+const api = window.ModuleApi;
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import Project Locally';
@@ -35,19 +40,6 @@ const UploadModal = React.createClass({
     }
   },
 
-  // *
-  //  * @description - Sets the targetLanguageFilePath within this context
-  //  * @param {string} path - the folderpath to the translationStudio project folder, which should
-  //  * contain the translationStudio manifest
-  //  * @param {string} link - the URL pointing to the location of a translationStudio project located on
-  //  * the GOGS server
-  //  * @param {function} callback - A callback that will be called with 'true' after 'this' component's state
-  //  * has been set
-   
-  // setTargetLanguageFilePath: function(path, link, callback) {
-
-  // },
-
   /**
    * @description - Generates and saves a translationCore manifest file
    * @param {string} saveLocation - Filepath of where the translationCore manifest file will 
@@ -58,7 +50,8 @@ const UploadModal = React.createClass({
    */
   saveManifest: function(saveLocation, data, tsManifest) {
     try {
-      var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
+      var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
+      console.log('ManifestLocation: ' + manifestLocation);
       var manifest = ManifestGenerator(data, tsManifest);
       api.putDataInCommon('tcManifest', manifest);
 
@@ -74,6 +67,26 @@ const UploadModal = React.createClass({
   },
 
   /**
+   * @desription - This generates the default params from the path and saves it in the CheckStore
+   * @param {string} path - The path to the folder containing the translationStudio project
+   * @param {object} translationStudioManifest - The parsed json object of the translationStudio
+   * manifest
+   */
+  getParams: function(path, translationStudioManifest) {
+    console.log('TranslationStudioManifest');
+    console.dir(translationStudioManifest);
+    var params = {
+      'originalLanguagePath': Path.join(window.__base, 'data', 'ulgb')
+    }
+    params.targetLanguagePath = path;
+    params.bookAbbr = translationStudioManifest.project.id;
+    //not actually used right now because we're hard coded for english
+    params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
+
+    return params;
+  },
+
+  /**
    * @description - Sets the target language filepath and/or link, while also generatering a TC 
    * manifest file and saving the params and saveLocation under the 'common' namespace in the
    * CheckStore
@@ -85,18 +98,39 @@ const UploadModal = React.createClass({
   sendFilePath: function(path, link) {
     var _this = this;
     if (path) {
+      //check to see if there is a tcManifest in this folder. If there isn't, this also assumes
+      // there is no checkdata
       if (!this.translationCoreManifestPresent(path)) {
         this.loadTranslationStudioManifest(path,
           function(err, translationStudioManifest) {
-            _this.saveManifest(
-              path, 
-              {user: [CoreStore.getLoggedInUser()], 
-                repo: link || 'none'},
-              translationStudioManifest
-            );
-          });
+            if (err) {
+              console.error(err);
+            }
+            else {
+              _this.saveManifest(
+                path, 
+                {user: [CoreStore.getLoggedInUser()], 
+                  repo: link || 'none'},
+                translationStudioManifest
+              );
+              try {
+                console.log('Putting the parameters in the checkstore');
+                api.putDataInCommon('saveLocation', path);
+                api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
+              }
+              catch(error) {
+                console.error('Unable to generate parameters: ' + error);
+              }
+            }
+          }
         );
       }
+      else {
+        Access.loadFromFilePath(path);
+      }
+    }
+    if (this.props.success) {
+      this.props.success();
     }
   },
 
@@ -104,9 +138,9 @@ const UploadModal = React.createClass({
    * @description - Loads in a translationStudio manifest
    */
   loadTranslationStudioManifest: function(path, callback) {
-    var manifestLocation = path.join(path, 'manifest.json');
+    var manifestLocation = Path.join(path, 'manifest.json');
     fs.readJson(manifestLocation, callback);
-  }
+  },
 
   /**
    * @description - This checks to see if a valid translationCore manifest file is present. 
@@ -115,7 +149,7 @@ const UploadModal = React.createClass({
   translationCoreManifestPresent: function(path) {
     //this currently just uses 'require' and if it throws an error it will return false
     try {
-      require(path.join(path, 'tc-manifest.json'));
+      require(Path.join(path, 'tc-manifest.json'));
       return true;
     }
     catch(e) {
@@ -124,7 +158,7 @@ const UploadModal = React.createClass({
       }
     }
     return false;
-  }
+  },
 
   /**
    * @description - Renders the upload modal
