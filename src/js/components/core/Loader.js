@@ -31,19 +31,6 @@ const Loader = React.createClass({
     });
   },
 
-  getCurrentProgress: function(){
-    var progressKey = CoreStore.getProgress();
-    if (progressKey){
-      // var progressKey = progressArray[0];
-
-      return currentProgress;
-    }
-    else {
-      return 0;
-    }
-  },
-    
-
   handleClick: function(e) {
   },
   render: function() {
