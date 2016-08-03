@@ -120,7 +120,7 @@ class Welcome extends React.Component{
           <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
             <h1>Load your first project</h1>
             <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
-            <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
+            <div style={{width: '50%', padding: '10px', borderRadius: '5px', backgroundColor: '#fff', margin: 'auto', maxHeight: '160px'}}>
             <Upload
               success={
                 () => {
@@ -131,8 +131,8 @@ class Welcome extends React.Component{
                 }
               }
               styles={{
-                color: '#fff',
-                fontSize: '23px',
+                color: '#1f273b',
+                fontSize: '22px',
                 padding: '20px'
               }}
               isWelcome={true} />
