@@ -2,8 +2,7 @@ const api = window.ModuleApi;
 
 function fetchData(params, progress, callback) {
   var request = makeHttpObject();
-  request.open('GET', 'https://unfoldingword.org/quality/', true);
-  request.send();
+  
   request.onload = function() {
     var html = request.responseText.replace(/<head>([\s\S]*?)<\/head>/g, '')
                        .replace(/<header class=\"site-header\"([\s\S]*?)<\/header>/g, '')
@@ -15,6 +14,14 @@ function fetchData(params, progress, callback) {
     api.putDataInCheckStore('ExampleTool', 'resourceHtml', html);
     callback();
   };
+
+  request.onerror = function() {
+    console.error('ExampleTool failed');
+  }
+
+  request.open('GET', 'https://unfoldingword.org/quality/', true);
+  request.send();
+
 }
 
 function makeHttpObject() {
