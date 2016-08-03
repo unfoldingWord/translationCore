@@ -51,7 +51,8 @@ function populate(data, tsManifest) {
   projectManifest.repo = data.repo;
 
   for (var user of data.user) {
-    projectManifest.checkers.push(user);
+    if(user)
+      projectManifest.checkers.push(user);
   }
 
   if (data.checkLocations) {

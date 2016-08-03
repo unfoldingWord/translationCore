@@ -58,6 +58,7 @@ class Report extends React.Component {
     if (manifest && manifest.ts_project) {
       bookName = manifest.ts_project.name || "-bookName-";
     }
+    // This isn't working yet I think, so it pretty much always returns "various checkers"
     if (manifest && manifest.checkers) {
       if (manifest.checkers.length > 1) {
         authors = manifest.checkers.reduce((prev, cur, i) => {
