@@ -121,8 +121,21 @@ class Welcome extends React.Component{
             <h1>Load your first project</h1>
             <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
-            <Upload success={()=>{this.setState({index:this.state.index+1,
-                                                        tutorial: true})}} />
+            <Upload
+              success={
+                () => {
+                  this.setState({
+                    index:this.state.index+1,
+                    tutorial: true
+                  });
+                }
+              }
+              styles={{
+                color: '#fff',
+                fontSize: '23px',
+                padding: '20px'
+              }}
+              isWelcome={true} />
             </div>
           </div>
         )
