@@ -15,13 +15,14 @@ class ProposedChanges extends React.Component {
       currentWord: ""
     };
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedWord) {
-      this.update(nextProps.selectedWord);
+  
+  componentWillMount() {
+    if (this.props.val) {
+      this.setState({newWord: this.props.val});
+      api.getDataFromCheckStore(NAMESPACE)['newWord'] = this.props.val;
     }
   }
-
+  
   handleChange(e) {
     this.value = e.target.value;
     this.setState({newWord: this.value});
@@ -31,6 +32,15 @@ class ProposedChanges extends React.Component {
     api.getDataFromCheckStore(NAMESPACE)['newWord'] = this.state.newWord;
     api.getDataFromCheckStore(NAMESPACE)['previousWord'] = this.props.selectedWord;
     this.setState({ open: !this.state.open });
+  }
+  // these next two functions will be used through a ref
+  getProposedChanges() {
+    return api.getDataFromCheckStore(NAMESPACE, 'newWord');
+  }
+
+  setNewWord(newWord) {
+    this.setState({newWord: newWord});
+    api.getDataFromCheckStore(NAMESPACE)['newWord'] = newWord;
   }
 
   update(newCurrentWord) {
@@ -64,6 +74,7 @@ class ProposedChanges extends React.Component {
           <FormControl
             type="text"
             placeholder="Proposed Word"
+            value={this.state.newWord}
             style={{marginBottom: "15px", marginTop: "15px"}}
             onChange={this.handleChange.bind(this)}
           />

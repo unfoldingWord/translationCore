@@ -86,7 +86,7 @@ class TPane extends React.Component {
 
   render() {
     return (
-      <Well style={{margin: '55px 0 5px 0'}}>
+      <Well style={{margin: '5px 0 5px 0'}}>
       <h3 style={{width: '100%', marginTop: '-8px'}}>Scriptural Context</h3>
         <Row>
           <Pane content={this.state.originalLanguage}/>

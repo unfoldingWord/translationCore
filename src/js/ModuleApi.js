@@ -25,6 +25,7 @@ class ModuleApi {
     this.ReactBootstrap = ReactBootstrap;
     this.CheckModule = CheckModule;
     this.modules = {};
+    this.Toast = require('./NotificationApi/ToastApi');
   }
 
   findDOMNode(component) {
@@ -40,7 +41,7 @@ class ModuleApi {
     }
     this.menus[namespace] = menu;
   }
-  
+
   getMenu(namespace) {
     if (!namespace) {
       return null;
@@ -54,7 +55,7 @@ class ModuleApi {
       this.menus[namespace] = menu;
     }
     return this.menus[namespace];
-  }       
+  }
 
   saveModule(identifier, module) {
     this.modules[identifier] = module;
@@ -132,14 +133,14 @@ class ModuleApi {
   /**
    * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
    * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
-   * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the 
+   * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the
    * abbreviation will just be returned
    */
   convertToBookAbbreviation(fullBookName) {
     for (var key in BooksOfBible) {
       if (BooksOfBible[key].toLowerCase() == fullBookName.toLowerCase() ||
         fullBookName.toLowerCase() == key) {
-        return key; 
+        return key;
       }
     }
   }
@@ -155,15 +156,15 @@ class ModuleApi {
           alertCallback: callback
       });
   }
-    
+
   /**
    * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
    * and calls the callback function with the gateway language book as an argument.
-   * 
+   *
    * The book that is saved to the check store has the chapters and verses formatted
    * as key-value pairs. This format is used by the TPane, which sorts the keys in its render
    * method. This is bad and should be refactored to format the chapters and verses as arrays.
-   * 
+   *
    * The book that is passed as an argument to the callback has the chapters and verses
    * formatted as arrays.
    */
@@ -234,7 +235,7 @@ class ModuleApi {
           }
       });
   }
-    
+
   initializeCheckStore(nameSpace, params, groups) {
     this.putDataInCheckStore(nameSpace, 'groups', groups);
     this.putDataInCheckStore(nameSpace, 'currentCheckIndex', 0);

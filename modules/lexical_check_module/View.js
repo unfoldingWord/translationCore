@@ -142,16 +142,24 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    //Get the proposed changes and add it to the check
-    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    var currentCheck = this.state.currentCheck;
-    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-      currentCheck.proposedChanges = proposedChanges;
-    }
-
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    //Get the proposed changes and add it to the check
+    var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
+    let comment = this.refs.CommentBox.getComment();
+    var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
+    if (currentCheck) {
+      if (proposedChanges && proposedChanges != "") {
+        currentCheck.proposedChanges = proposedChanges;
+        this.refs.ProposedChanges.setNewWord("");
+      }
+      if (comment && comment != "") {
+        currentCheck.comment = comment;
+        this.refs.CommentBox.setComment("");
+      }
+    }
+    
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length) {
@@ -204,6 +212,11 @@ class View extends React.Component {
       currentWord: currentWord,
       currentFile: this.getWordFile(currentWord)
     });
+    console.log(currentCheck);
+    if (this.refs.CommentBox) {
+      this.refs.CommentBox.setComment(currentCheck.comment || "");
+      this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
+    }
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
 
@@ -297,8 +310,8 @@ class View extends React.Component {
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
               <br /><br />
-              <ProposedChanges ref={"ProposedChanges"} />
-              <CommentBox />
+              <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
+              <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
