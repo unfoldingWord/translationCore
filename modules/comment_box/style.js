@@ -29,15 +29,16 @@ var style = {
 
   paper:{
     position: "relative",
-    width: "90%",
-    maxWidth: "400px",
-    minWidth: "250px",
+    width: "100%",
+    maxWidth: "100%",
+    minWidth: "100%",
     height: "200px",
-    margin: "0px auto",
+    marginTop: "0px",
     background: "#fafafa",
     borderRadius: "10px",
     boxShadow: "0px 2px 8px rgba(0,0,0,.3)",
     overflow: "hidden",
+    marginBottom: "15px",
   },
 
   paperContent:{

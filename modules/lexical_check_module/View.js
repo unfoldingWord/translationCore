@@ -184,7 +184,7 @@ class View extends React.Component {
         this.refs.CommentBox.setComment("");
       }
     }
-    
+
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -345,14 +345,13 @@ class View extends React.Component {
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
-              <br /><br />
               <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
-              <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
           </Row>
+            <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
         </div>
       );
     }
