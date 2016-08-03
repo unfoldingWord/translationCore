@@ -89,7 +89,7 @@ class View extends api.CheckModule {
     const NATURALNESS_QUESTION = 'Is this translation a meaning-based translation that ' +
       'attempts to communicate the meaning of the original text in ways that are natural, ' +
       'clear, and accurate in the target language?';
-    var checkStatus = this.state.currentCheck.checkStatus;
+    var checkStatus = this.getCurrentCheck().checkStatus;
     return (
       <div>
         {/* Render TPane tool */}
