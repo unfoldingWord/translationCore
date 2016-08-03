@@ -18,14 +18,20 @@ function fetchData(params, progress, callback) {
       console.error('ProposedChanges requires a filepath');
     }
     else {
-      sendToReader(params.targetLanguagePath, callback, progress);
+      sendToReader(params.targetLanguagePath, 
+        function() {
+          progress(100);
+          api.putDataInCheckStore("ProposedChanges", "newWord", '');
+          callback();
+        }, 
+        progress
+      );
     }
   }
-  else {
-    progress(100);
-    api.putDataInCheckStore("ProposedChanges", "newWord", '');
-    callback();
-  }
+  
+  progress(100);
+  api.putDataInCheckStore("ProposedChanges", "newWord", '');
+  callback();
 }
 
 /**
