@@ -245,11 +245,8 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
-<<<<<<< HEAD
         this.modProgressView = true;
-=======
         this.progressObject = [];
->>>>>>> develop
         this.checkCategoryOptions = action.reportViews;
         if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
           var firstCheckCategory = this.checkCategoryOptions[0];

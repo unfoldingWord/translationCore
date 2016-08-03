@@ -4,97 +4,144 @@ var {dialog} = remote;
 var path = require('path');
 var ProgressBar = require('react-bootstrap/lib/ProgressBar');
 var Collapse = require('react-bootstrap/lib/Collapse');
-var SwitchCheckModuleDropdown = require('../SwitchCheckModuleDropdown.js');
 var style = require('./ProgressStyle.js');
 var api = window.ModuleApi;
 var CoreStore = require('../../../stores/CoreStore.js');
+var CheckStore = require('../../../stores/CheckStore.js');
+var Nav = require('../NavigationMenu.js');
+var currentcounter = 0;
+var totalCheck = 100;
 
 var Progress = React.createClass({
+
   getInitialState: function() {
     return {
-      lexicalGroups:0,
-      lexicalWordList:0,
-      lexicalProgress:0,
-      phraseblah:0,
-      phraseblah2:0,
+      progress:0,
+      checkObj: [],
+      warning:0,
+      success:0,
+      percent: "",
+      currentCheck: "",
+      max: 0,
       showModal: false
     };
   },
 
   componentWillMount: function() {
     CoreStore.addChangeListener(this.updateModuleProgress);
+    CheckStore.addEventListener('changedCheckStatus', this.updateModuleProgress);
   },
+
+  beautifyString: function(check) {
+    var stringRegex = new RegExp("[^a-zA-Z0-9\s]", "g");
+    let regRes;
+    try {
+      check = check.replace(stringRegex, " ");
+    }
+    catch (e) {
+    }
+    completeWord = [];
+    check = check.split(" ");
+    for (var word of check) {
+      word = word.charAt(0).toUpperCase() + word.slice(1);
+      completeWord.push(word);
+    }
+    completeWord = completeWord[0] + completeWord[1];
+    return completeWord;
+  },
+
 
   componentWillUnMount: function() {
     CoreStore.removeChangeListener(this.updateModuleProgress);
   },
 
-  updateModuleProgress: function() {
-    var _this = this;
-    console.log(CoreStore.getModProg());
-    this.setState({showModal: CoreStore.getModProg()})
-    if (CoreStore.getModProg() === true) {
-      _this.ModuleProgressBar();
+  updateModuleProgress: function(data) {
+    if (data)
+    {
+
+      var listOfChecks = api.getDataFromCommon("arrayOfChecks");
+      // for (var i in listOfChecks) {
+      //   listOfChecks[i].name = this.beautifyString(listOfChecks[i].name);
+      // }
+      console.log(listOfChecks);
+      var _this = this;
+      this.setState({showModal: CoreStore.getModProg()})
+      if (CoreStore.getModProg() === true) {
+        _this.updateBar(data);
+        _this.ModuleProgressBar();
+      }
+    }
+  },
+
+  updateBar: function(status) {
+    var modName = CoreStore.getCurrentCheckCategory();
+    this.totalCheck = CheckStore.getModuleDataObject(modName.name);
+    this.totalCheck = this.totalCheck.groups.length;
+    this.setState({max: this.totalCheck});
+    var temp = this.state.progress;
+    try {
+      if ((status.checkStatus) && temp<=this.totalCheck) {
+        var objectIndex = status.groupIndex.toString() + status.checkIndex.toString();
+        if (this.compare(this.checkObj, objectIndex)) {
+          this.currentcounter = this.currentcounter + 1;
+          var tempobject = objectIndex;
+          this.setState({checkObj: objectIndex});
+        }
+      }
+    }
+    catch(e) {
     }
   },
 
   ModuleProgressBar: function() {
-    var viewObj = require(window.__base + path + '/View');
-    if (api.getModule(viewObj.name) === null) {
-      console.log("Module not yet created");
+    if (CoreStore.getCurrentCheckCategory() === null) {
+      dialog.showErrorBox("Module not yet created");
     }
     else {
-        var selectedModule = viewObj.name;
-        console.log("Current Module being used");
-        console.log(selectedModule);
-        if (selectedModule == "Lexical Checker") {
-          console.log("Module object of checks and type of lexical checker");
-          var currentlexicalgroupobj = api.getDataFromCheckStore("LexicalChecker","groups");
-          console.log(currentlexicalgroupobj);
-          var currentlexicalwordobj = api.getDataFromCheckStore("LexicalChecker", "wordList");
-          console.log(currentlexicalwordobj);
-        }
-        else if (selectedModule == "Phrase Checker") {
-          console.log("Module object of checks and type of phrase checker");
-          var currentphrasewordobj = api.getDataFromCheckStore("PhraseChecker", "groups");
-          console.log(currentphrasewordobj);
-        }
+      var temp = CoreStore.getCurrentCheckCategory();
+      this.setState({currentCheck: temp.name});
+
+      // for (var i in list) {
+      //   var index = temp.name.search(list[i].name);
+      //   if (index != -1) {
+      //     console.log("found it");
+      //   }
+      // }
+
+      var bar = this.currentcounter/this.totalCheck;
+      this.setState({progress: bar});
+      console.log(bar);
+      var per = bar.toString() + "%";
+      this.setState({percent: per});
+      console.log(per);
     }
   },
 
-//TODO: use GetModule from ModuleApi
-//TODO: use ModuleApi getDataFromCheckStore using params from FetchData for all possible checks
-//TODO: use ReportView possibly for reported checks
-//TODO: Lexical and Phrase do stacked
+  compare: function(index, key) {
+    for (var i in index.length) {
+      if (index[i] !== key) {
+        return true;
+      }
+    }
+    return false;
+  },
 
-
-render: function() {
-  var content;
-  if (CoreStore.getModProg()) {
-      content =
-      (<div>
-          <div>Phrase Check Module Progress</div>
-          <ProgressBar max-width={"500px"} margin={"auto"}>
-            <ProgressBar striped key={1} bsStyle="success" now={35} label="35%"/>
-            <ProgressBar striped key={2} bsStyle="info" now={60} label="60%"/>
-          </ProgressBar>
-        <div>Lexical Check Module Progress</div>
-          <ProgressBar max-width={"500px"} margin={"auto"}>
-            <ProgressBar striped key={1} bsStyle="success" now={35} label="35%"/>
-            <ProgressBar striped key={2} bsStyle="info" now={20} label="20%"/>
-            <ProgressBar striped key={3} bsStyle="danger" now={20} label="20%"/>
-          </ProgressBar>
-        </div>);
-  }
-  else {
-    content = null;
-  }
-  return(
-    <div style={style.container} max-width={"1000px"} margin={"auto"}>
-      {content}
-    </div>
-
-  );
+  render: function() {
+    var displayElement = [];
+    if (CoreStore.getModProg()) {
+      displayElement = [<ProgressBar striped key={1} bsStyle="success" now={this.state.progress} max={this.state.max} label={this.state.percent}/>
+  ]
+} else {
+  displayElement = [<ProgressBar key={1} label={this.state.percent}/>]
+}
+return(
+  <div style={style.container} max-width={"1000px"} margin={"auto"}>
+    <div>{this.state.currentCheck}</div>
+    <ProgressBar max-width={"500px"} margin={"auto"}>
+      {displayElement}
+    </ProgressBar>
+  </div>
+);
 }
 
 });

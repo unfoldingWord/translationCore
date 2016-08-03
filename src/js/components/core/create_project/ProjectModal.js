@@ -126,34 +126,6 @@ const ProjectModal = React.createClass({
       var _this = this;
       fs.readJson(manifestLocation, function(err, parsedManifest) {
         if (parsedManifest && parsedManifest.project && parsedManifest.project.name) {
-<<<<<<< HEAD
-              var bookTitle = parsedManifest.project.name.split(' ');
-              var bookName = _this.getBookAbbr(parsedManifest.project.name);
-              _this.setBookName(bookName);
-              let bookFileName = bookTitle.join('') + '.json';
-              var saveLocation = _this.params.targetLanguagePath;
-              var user = CoreStore.getLoggedInUser();
-              var username;
-              if (user) {
-                username = user.username;
-              }
-              var projectData = {
-                user: [{username: username}],
-                checkLocations: [],
-                saveLocation: saveLocation,
-                repo: _this.params.repo
-              }
-              var checkArray = api.getDataFromCommon('arrayOfChecks');
-              projectData.checkLocations = checkArray;
-              api.putDataInCommon('saveLocation', saveLocation);
-              CheckDataGrabber.saveManifest(saveLocation, projectData, parsedManifest);
-              if (tempFetchDataArray.length > 0) {
-                _this.clearOldData();
-                CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
-
-              }
-
-=======
           var bookTitle = parsedManifest.project.name.split(' ');
           var bookName = _this.getBookAbbr(parsedManifest.project.name);
           _this.setBookName(bookName);
@@ -177,7 +149,6 @@ const ProjectModal = React.createClass({
             _this.clearOldData();
             CheckDataGrabber.getFetchData(tempFetchDataArray, _this.params);
           }
->>>>>>> develop
         } else {
           dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
         }
@@ -201,12 +172,7 @@ const ProjectModal = React.createClass({
             dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
           }
         });
-<<<<<<< HEAD
-
-      } catch(error) {
-=======
       } catch (error) {
->>>>>>> develop
         dialog.showErrorBox(DEFAULT_ERROR, INVALID_PROJECT);
       }
     }

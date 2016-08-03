@@ -95,7 +95,6 @@ var Main = React.createClass({
                 <Loader />
                 <AlertModal />
                 <ModuleWrapper />
-                <SwitchCheckModuleDropdown />
                 <ModuleProgress />
               </Col>
             </Row>
