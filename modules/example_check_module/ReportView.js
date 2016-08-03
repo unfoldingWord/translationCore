@@ -16,7 +16,6 @@ function ExampleCheckerReport(chapter, verse) {
   if(checks.length == 0) {
     return undefined;
   }
-  debugger;
   var checkList = [];
   var numChecked = 0;
   for(let i in checks) {
