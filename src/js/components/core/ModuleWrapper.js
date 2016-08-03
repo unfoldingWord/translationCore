@@ -54,10 +54,16 @@ class ModuleWrapper extends React.Component {
 
   updateCheckType(params) {
     if (params.currentCheckNamespace) {
-      var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
-      var newView = newCheckCategory.view;
+      // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
+      var newCheckCategory = api.getModule(params.currentCheckNamespace);
+      var newView = newCheckCategory;
       this.setState({
         view: newView
+      });
+    }
+    else {
+      this.setState({
+        view: null
       });
     }
   }

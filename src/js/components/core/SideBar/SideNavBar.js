@@ -15,7 +15,7 @@ const sync = require('./GitSync.js');
 
 class SideNavBar extends React.Component{
   handleOpenProject(){
-    CoreActions.updateOpenView(true);
+    CoreActions.showCreateProject("Languages");
   }
 
   handleSyncProject(){

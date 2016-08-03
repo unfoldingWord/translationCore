@@ -15,12 +15,15 @@ const Loader = React.createClass({
       progress:0,
       showModal:false
     };
+
+    this.update = this.update.bind(this);
   },
+
   componentWillMount: function() {
     CoreStore.addChangeListener(this.update);
   },
 
-  componentWillUnMount: function() {
+  componentWillUnmount: function() {
     CoreStore.removeChangeListener(this.update);
   },
 
@@ -31,12 +34,10 @@ const Loader = React.createClass({
     });
   },
 
-  handleClick: function(e) {
-  },
   render: function() {
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.handleClick} onClick={this.handleClick}>
+        <Modal show={this.state.showModal}>
           <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
           <center><img src="images/TC_ANIMATED_Logo.gif"/></center>
         </Modal>
