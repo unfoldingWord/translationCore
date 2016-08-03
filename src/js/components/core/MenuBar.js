@@ -6,7 +6,7 @@
 const CoreActions = require('../../actions/CoreActions.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const git = require('./GitApi.js');
-const toast = require('../../NotificationApi/ToastApi.js');
+const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
 
 var template = [
@@ -32,8 +32,7 @@ var template = [
           if (path) {
             git(path).save('Manual Save', path);
           } else {
-              success(title, msg, time)
-            toast.error('Save location is not defined', 'Load a project first', 3)
+            api.Toast.error('Save location is not defined', 'Load a project first', 3)
           }
         },
         accelerator: 'CmdOrCtrl+S'

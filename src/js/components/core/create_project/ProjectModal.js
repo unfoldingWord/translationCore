@@ -39,7 +39,7 @@ const ProjectModal = React.createClass({
     if (input) {
       modal = input;
       CoreStore.projectModalVisibility = input;
-    }    
+    }
     if (modal === 'Languages') {
 
       this.setState({
@@ -62,7 +62,7 @@ const ProjectModal = React.createClass({
     });
   },
     /**
-   * @description - This keeps the currentCheckNamespace in tact
+   * @description - This keeps the currentCheckNamespace intact
    */
   onClick: function(e) {
     api.emitEvent('changeCheckType', {currentCheckNamespace: null});

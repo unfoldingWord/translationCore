@@ -20,7 +20,6 @@ const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const AppDescription = require('./AppDescription');
 const api = window.ModuleApi;
-const toast = require('../../NotificationApi/ToastApi.js');
 
 class SwitchCheckModal extends React.Component{
   constructor(){
@@ -110,7 +109,7 @@ class SwitchCheckModal extends React.Component{
       CoreActions.startLoading();
       CheckDataGrabber.loadModuleAndDependencies(folderName);
     } else {
-      toast.error('No save location selected', '', 3);
+      api.Toast.error('No save location selected', '', 3);
       return;
     }
   }
