@@ -27,6 +27,7 @@ var Access = {
     });
     try {
       fs.readdir(folderpath, function(err, files){
+        try {
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
             var filepath = Path.join(folderpath, file);
@@ -36,6 +37,10 @@ var Access = {
         api.putDataInCommon('saveLocation', folderpath);
         localStorage.setItem('showTutorial', false);
         localStorage.setItem('lastProject', folderpath);
+      } catch (err) {
+        localStorage.removeItem('lastProject');
+        api.putDataInCommon('saveLocation', null);
+      }
       });
     } catch (e) {
       console.error(e);
