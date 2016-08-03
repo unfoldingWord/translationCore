@@ -18,11 +18,11 @@ var Access = {
    * @param {string} folderpath - Path that points to the folder where the translationStudio 
    * project lives
    */
-  loadFromFilePath: function(folderpath) {
+  loadFromFilePath: function (folderpath) {
     var _this = this;
     var fileObj = {};
     try {
-      fs.readdir(folderpath, function(err, files){
+      fs.readdir(folderpath, function (err, files) {
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
             var filepath = Path.join(folderpath, file);
@@ -35,7 +35,12 @@ var Access = {
       });
     } catch (e) {
       console.error(e);
-      dialog.showErrorBox('Open TC project error', e.message);
+      const alert = {
+        title: 'Open TC Project Error',
+        content: e.message,
+        leftButtonText: 'Ok'
+      }
+      api.createAlert(alert);
     }
   },
 
@@ -45,15 +50,20 @@ var Access = {
    * @param {function} callback - Callback that is called whenever all of the check data within
    * the checkData folder is loaded
    */
-  loadCheckData: function(checkDataFolderPath, callback) {
+  loadCheckData: function (checkDataFolderPath, callback) {
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
       if (error) {
-        console.error(error);
+        const alert = {
+          title: 'Error Opening Project',
+          content: error.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
       }
       else {
         var listOfChecks = null;
-        for (var file of checkDataFiles){
+        for (var file of checkDataFiles) {
           //calls other functions that puts data in stores
           listOfChecks = _this.putDataInFileProject(Path.join(checkDataFolderPath, file), callback);
         }
@@ -64,7 +74,7 @@ var Access = {
     });
   },
 
-  putDataInFileProject: function(file, callback = () => {} ){
+  putDataInFileProject: function (file, callback = () => { }) {
     var _this = this;
     var listOfChecks = null;
     if (this.containsTC(file)) {
@@ -74,6 +84,12 @@ var Access = {
       fs.readJson(file, (err, json) => {
         if (err) {
           console.error(err);
+          const alert = {
+            title: 'Error Opening Project',
+            content: err.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
         }
         else {
           if (fileWithoutTC == "common") {
@@ -91,12 +107,12 @@ var Access = {
     return listOfChecks;
   },
 
-  containsTC: function(data){
+  containsTC: function (data) {
     var tc = data.includes(".tc");
     return tc;
   },
 
-  makeCommon: function(data) {
+  makeCommon: function (data) {
     for (var key in data) {
       if (!CheckStore.hasData('common', key)) {
         api.putDataInCommon(key, data[key]);
@@ -105,11 +121,11 @@ var Access = {
     return data.arrayOfChecks;
   },
 
-  makeModuleCheckData: function(moduleData, moduleName){
+  makeModuleCheckData: function (moduleData, moduleName) {
     CheckStore.storeData[moduleName] = moduleData;
   },
 
-  isModule: function(filepath){
+  isModule: function (filepath) {
     //checks for /ReportView && FetchData in folder structure
     try {
       var stats = fs.lstatSync(filepath);
@@ -129,10 +145,10 @@ var Access = {
     }
   },
 
-  saveModuleInAPI: function(listOfChecks) {
-      //gets paths from loaded path
+  saveModuleInAPI: function (listOfChecks) {
+    //gets paths from loaded path
     if (listOfChecks != undefined) {
-      for (var element of listOfChecks){
+      for (var element of listOfChecks) {
         var path = element.location;
         _this.reportViewPush(path);
       }
@@ -140,7 +156,8 @@ var Access = {
     }
   },
 
-  reportViewPush: function(path) {
+  //stores moduel view objects into an array for the api
+  reportViewPush: function (path) {
     let viewObj = require(path + '/View');
     api.saveModule(viewObj.name, viewObj.view);
 
@@ -157,9 +174,14 @@ var Access = {
       var loader = require(path + '/Loader.js');
       loader(api.getDataFromCheckStore(viewObj.name));
     }
-    catch(e) {
+    catch (e) {
       if (e.code != "MODULE_NOT_FOUND") {
-        console.error(e);
+        const alert = {
+          title: 'Error Opening Project',
+          content: e.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
       }
     }
 

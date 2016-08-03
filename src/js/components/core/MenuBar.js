@@ -52,7 +52,12 @@ var template = [
                 var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
                 git(path).update(remote, 'master', false);
               } else {
-                alert('There is no associated repository with this project');
+                const alert = {
+                  title: 'Cannot Load Project',
+                  content: 'There is no associated repository with this project',
+                  leftButtonText: 'Ok'
+                }
+                api.createAlert(alert);
               }
             });
           } else {

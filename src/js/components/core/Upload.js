@@ -57,12 +57,24 @@ const UploadModal = React.createClass({
 
       fs.outputJson(manifestLocation, manifest, function(err) {
         if (err) {
+            const alert = {
+            title: 'Error Saving Manifest',
+            content: err.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
           console.error(err);
         }
       });
     }
-    catch(e) {
-      console.error(e);
+    catch(err) {
+      console.error(err);
+      const alert = {
+            title: 'Error Saving Translation Studio Manifest',
+            content: err.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
     }
   },
 
@@ -71,7 +83,17 @@ const UploadModal = React.createClass({
    * @param {string} folderpath - Path to the folder where the translationStudio is located
    */
   getManifest: function(folderPath, callback) {
-    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), callback);
+    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), function(err) {
+      if (err) {
+        const alert = {
+            title: 'Error Getting Transaltion Studio Manifest',
+            content: err.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
+          console.log(err);
+      }
+    });
   },
 
   /**
@@ -113,6 +135,12 @@ const UploadModal = React.createClass({
       this.loadTranslationStudioManifest(path, 
         function(err, translationStudioManifest) {
           if (err) {
+            const alert = {
+            title: 'Error Getting Transaltion Studio Manifest',
+            content: err.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
             console.error(err);
           }
           else {
@@ -132,6 +160,12 @@ const UploadModal = React.createClass({
               _this.getManifest(path, function(error, tcManifest) {
                 if (error) {
                   console.error(error);
+                  const alert = {
+                    title: 'Warning',
+                    content: error.message,
+                    leftButtonText: 'Ok'
+                  }
+                  api.createAlert(alert);
                 }
                 else {
                   api.putDataInCommon('tcManifest', tcManifest);

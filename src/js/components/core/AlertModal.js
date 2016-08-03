@@ -1,3 +1,7 @@
+
+/**
+* @description - Displays alert and returns user response
+*/
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
@@ -34,7 +38,7 @@ const AlertModal = React.createClass({
     catch(e){
     }
 
-    //{title:Warning, content:YOU MESSED UP, leftButtonText:OK...}
+
       try {
         this.setState({
           title: alertMessage['title'],

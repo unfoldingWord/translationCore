@@ -149,7 +149,12 @@ module.exports = function(callback = (err) => {}) {
     let reportPath = path.join(__dirname, 'report.html');
     fs.writeFile(reportPath, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
-        console.log("Error writing rendered report to disk");
+        const alert = {
+          title: 'Error writing rendered report to disk',
+          content: err.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
         callback(err);
         return;
       }
