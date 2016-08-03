@@ -122,10 +122,10 @@ module.exports = {
     });
   },
 
-    sendNotificationToast: function(boolean, toastParamsObj) {
+    sendNotificationToast: function(visible, toastParamsObj) {
       Dispatcher.handleAction({
         type: consts.SHOW_TOAST_PARAMS,
-        toastOption: boolean,
+        toastOption: visible,
         toastParams: toastParamsObj
       });
     },

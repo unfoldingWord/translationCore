@@ -40,9 +40,9 @@ class ToastComponent extends React.Component{
   countToHide(duration){
     //converting duration from sec to milliseconds
     duration *= 1000;
-    let that = this;
+    let _this = this;
     setTimeout(function() {
-      that.hideNotification();
+      _this.hideNotification();
     }, duration);
   }
 
