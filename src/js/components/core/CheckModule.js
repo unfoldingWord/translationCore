@@ -92,6 +92,10 @@ class CheckModule extends React.Component {
     api.removeEventListener('goToCheck', this.goToCheck);
   }
   
+  componentDidMount() {
+    this.updateState();
+  }
+  
   /**
    * @description - Called when the user clicks the next button
    */
