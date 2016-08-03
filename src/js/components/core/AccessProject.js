@@ -15,12 +15,16 @@ var Access = {
   /**
    * @description - This finds the checkdata folder within a translationStudio project. This
    * project should contain a tcManifest folder and a checkData folder
-   * @param {string} folderpath - Path that points to the folder where the translationStudio 
+   * @param {string} folderpath - Path that points to the folder where the translationStudio
    * project lives
    */
   loadFromFilePath: function(folderpath) {
     var _this = this;
     var fileObj = {};
+    var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
+    fs.readJson(manifestLocation, function(err, jsonObject) {
+      api.putDataInCommon('tcManifest', jsonObject);
+    });
     try {
       fs.readdir(folderpath, function(err, files){
         for (var file of files) {

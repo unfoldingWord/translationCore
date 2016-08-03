@@ -19,7 +19,12 @@ class SideNavBar extends React.Component{
   }
 
   handleSyncProject(){
-    sync();
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      sync();
+    } else {
+      alert('Open a project first, then try again');
+      CoreActions.showCreateProject("Languages");
+    }
   }
 
   handleReport(){
@@ -31,7 +36,12 @@ class SideNavBar extends React.Component{
   }
 
   handleChangeCheckCategory(){
-    CoreActions.updateCheckModal(true);
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      CoreActions.updateCheckModal(true);
+    } else {
+      alert('Open a project first, then try again');
+      CoreActions.showCreateProject("Languages");
+    }
   }
 
   handleSettings(){

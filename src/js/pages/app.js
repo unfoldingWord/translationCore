@@ -22,11 +22,12 @@ const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
 
-  
+
 
 var Main = React.createClass({
   getInitialState() {
-    if (localStorage.getItem('showTutorial') == 'true') {
+    var tutorialState = localStorage.getItem('showTutorial');
+    if (tutorialState == 'true' || tutorialState === null) {
       return({
         firstTime: true
       })
