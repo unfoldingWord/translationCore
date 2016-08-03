@@ -13,9 +13,8 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-
+const Toast = require('../NotificationApi/ToastComponent');
 const Welcome = require('../components/core/welcome/welcome');
-
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
@@ -62,6 +61,7 @@ var Main = React.createClass({
         <LoginModal />
         <SideNavBar />
         <SwitchCheckModal />
+        <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
