@@ -165,13 +165,14 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     //Get the proposed changes and add it to the check
     var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
     let comment = this.refs.CommentBox.getComment();
-    var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
+    var currentCheck = this.getCurrentCheck();
+
+    var loggedInUser = api.getLoggedInUser();
+    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+
     if (currentCheck) {
       if (proposedChanges && proposedChanges != "") {
         currentCheck.proposedChanges = proposedChanges;
@@ -183,6 +184,10 @@ class View extends React.Component {
       }
     }
     
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length && newGroupIndex >= 0) {
@@ -212,9 +217,7 @@ class View extends React.Component {
         }
       }
     }
-    // Save project
-    var loggedInUser = api.getLoggedInUser();
-    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    //Save Project
     var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
         ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
     api.saveProject(commitMessage);
@@ -243,7 +246,6 @@ class View extends React.Component {
       currentWord: currentWord,
       currentFile: this.getWordFile(currentWord)
     });
-    console.log(currentCheck);
     if (this.refs.CommentBox) {
       this.refs.CommentBox.setComment(currentCheck.comment || "");
       this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");

@@ -98,7 +98,7 @@ const TargetLanguageSelectBox = React.createClass({
   fetchSelectedWords: function() {
     var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
     var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
-    if (currentCheckIndex && currentGroupIndex) {
+    if (currentCheckIndex != null && currentGroupIndex != null) {
       var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
         if (currentCheck.selectedWordsRaw) {
@@ -119,27 +119,31 @@ const TargetLanguageSelectBox = React.createClass({
 
   shouldComponentUpdate: function(nextProps, nextState) {
     //remove everybody's highlighting
-    for (key in this.refs)
+    for (key in this.refs) {
       this.refs[key].removeHighlight();
+    }
     this.selectedWords = [];
 
     //Maybe we've already done this check? If we have update the highlighting on the selected words
     this.fetchSelectedWords();
+    
+    return true;
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
     for (var word of this.selectedWords) {
       var targetWord = this.refs[word.key];
       if (targetWord) {
         targetWord.setHighlight();
       }
     }
-
-    return true;
   },
 
   generateWordArray: function() {
     var words = tokenizer.tokenize(this.props.verse),
       wordArray = [],
       index = 0,
-      tokenKey = 0,
+      tokenKey = 1,
       wordKey = 0;
     for (var word of words) {
       var wordIndex = this.props.verse.indexOf(word, index);
@@ -157,13 +161,14 @@ const TargetLanguageSelectBox = React.createClass({
         <TargetWord
           word={word}
           key={wordKey++}
-          keyId={tokenKey++}
+          keyId={tokenKey}
           style={this.cursorPointerStyle}
           selectCallback={this.addSelectedWord}
           removeCallback={this.removeFromSelectedWords}
           ref={tokenKey.toString()}
         />
       );
+      tokenKey++;
       index = wordIndex + word.length;
     }
     return wordArray;
