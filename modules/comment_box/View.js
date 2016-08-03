@@ -20,14 +20,14 @@ class CommentBox extends React.Component {
   componentWillMount() {
     if (typeof this.props.val == "string") {
       this.setState({comment: this.props.val});
-      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
+      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.props.val;
     } 
   }
 
   componentWillReceiveProps(nextProps) {
     if (typeof nextProps.val == "string") {
       this.setState({comment: nextProps.val});
-      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = this.state.comment;
+      api.getDataFromCheckStore(NAMESPACE)['currentChanges'] = nextProps.val;
     } 
   }
 
@@ -45,6 +45,7 @@ class CommentBox extends React.Component {
   }
 
   setComment(comment = "") {
+    debugger;
     this.setState({comment: comment});
     api.putDataInCheckStore(NAMESPACE, "currentChanges", comment);
   }
