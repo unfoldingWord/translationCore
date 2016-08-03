@@ -35,7 +35,6 @@ class Book extends React.Component {
   }
 
   render() {
-    debugger;
     var chapterArray = [];
     var title = "";
 

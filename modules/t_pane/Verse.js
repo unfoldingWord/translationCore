@@ -5,6 +5,7 @@
 
 const api = window.ModuleApi;
 const React = api.React;
+const lookup = require("./LexiconLookup");
 
 class Verse extends React.Component {
 	constructor() {
@@ -21,20 +22,21 @@ class Verse extends React.Component {
 	}
 }
 
-var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+(G\d{2,6})\s+(?:G\d{2,6})*\s*([A-Z0-9\-]+)/g;
+var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+G(\d{2,6})\s+(?:G\d{2,6})*\s*([A-Z0-9\-]+)/g;
 
 function parseGreek(text = "") {
 	let result;
 	let words = [];
 	let i = 0;
+	debugger;
 	while (result = greekRegex.exec(text)) {
 		try {
-			var [,word,strong,speech] = result;
+			let [,word,strong,speech] = result;
+			words.push(<span key={i++} strong={strong} speech={speech} onClick={() => api.Toast.success(word, lookup(strong).brief, 3)}>{word + " "}</span>);
 		}
 		catch(e) {
 			console.log("parse error");
 		}
-		words.push(<span key={i++} strong={strong} speech={speech} onClick={() => {console.log(word)}}>{word}</span>);
 	}
 	return words;
 }
