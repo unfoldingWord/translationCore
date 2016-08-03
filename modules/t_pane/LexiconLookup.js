@@ -1,10 +1,12 @@
-var Lexicon = require('./Lexicon.js');
+var Lexicon = require('./Lexicon.json');
 
-function LexiconLookup(strong){
-  if (Lexicon.hasOwnProperty(strong)) {
-    return Lexicon[strong];
+function LexiconLookup(strong, concise){
+  if (Lexicon[strong] && concise) {
+    return Lexicon[strong].brief;
+  } else if (Lexicon[strong] && !concise) {
+    return Lexicon[strong].long;
   } else {
-    return undefined;
+    return 'No definition found.'
   }
 }
 

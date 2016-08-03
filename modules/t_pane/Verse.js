@@ -6,6 +6,8 @@
 const api = window.ModuleApi;
 const React = api.React;
 const lookup = require("./LexiconLookup");
+const Popover = require('react-bootstrap/lib/popover');
+const OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 class Verse extends React.Component {
 	constructor() {
@@ -28,13 +30,24 @@ function parseGreek(text = "") {
 	let result;
 	let words = [];
 	let i = 0;
-	debugger;
 	while (result = greekRegex.exec(text)) {
 		try {
 			let [,word,strong,speech] = result;
-			words.push(<span key={i++} strong={strong} speech={speech} onClick={() => api.Toast.success(word, lookup(strong).brief, 3)}>{word + " "}</span>);
+			var popover = (<Popover id="popover-trigger-click-root-close" title={word}>
+										 		{lookup(strong, true)}
+									   </Popover>);
+			words.push(
+								<OverlayTrigger key={i++} trigger="click" rootClose placement="bottom" overlay={popover}>
+									 <span
+										strong={strong}
+										speech={speech}>
+			 							{word + " "}
+									</span>
+									</OverlayTrigger>
+								);
 		}
 		catch(e) {
+			console.error(e);
 			console.log("parse error");
 		}
 	}

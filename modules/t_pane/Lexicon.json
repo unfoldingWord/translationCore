@@ -1,4 +1,4 @@
-var Lexicon = {
+{
   "1": {
     "brief": "the first letter of the Greek alphabet",
     "long": "alpha; the first letter of the Greek alphabet."
@@ -21632,5 +21632,3 @@ var Lexicon = {
     "long": "profitable, beneficial, useful."
   }
 }
-
-module.exports = Lexicon;
