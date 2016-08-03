@@ -15,6 +15,7 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
 const ReactBootstrap = ModuleApi.ReactBootstrap;
+const Grid = ReactBootstrap.Grid;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
 const fs = require('fs');
@@ -119,10 +120,10 @@ class Report extends React.Component {
     }
     // TODO: Get name of book and authors
     return (
-      <div className="page-header">
-      <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
-      {output}
-      </div>
+      <Grid className="page-header">
+        <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
+        {output}
+      </Grid>
     );
   }
 }
@@ -165,7 +166,12 @@ module.exports = function(callback = (err) => {}) {
     let reportPath = path.join(__dirname, 'report.html');
     fs.writeFile(reportPath, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
-        console.log("Error writing rendered report to disk");
+        const alert = {
+          title: 'Error writing rendered report to disk',
+          content: err.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
         callback(err);
         return;
       }
