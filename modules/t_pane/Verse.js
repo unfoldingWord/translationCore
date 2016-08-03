@@ -12,13 +12,26 @@ const OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 class Verse extends React.Component {
 	constructor() {
 		super();
+		this.state = {
+			highlighted: false
+		}
+	}
+
+	setHighlighted(highlighted) {
+		this.setState({
+			highlighted: highlighted
+		});
 	}
 
 	render() {
 		return (
 			<p>
-        <strong>{this.props.verseNumber} </strong>
-        {this.props.greek ? parseGreek(this.props.verseText) : this.props.verseText}
+        <strong className={this.state.highlighted ? 'text-primary' : ''}>
+			 		{this.props.verseNumber + " "}
+				</strong>
+				<span className={this.state.highlighted ? 'text-primary' : ''}>
+					{this.props.greek ? parseGreek(this.props.verseText) : this.props.verseText}
+				</span>
 			</p>
 		);
 	}

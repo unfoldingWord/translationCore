@@ -23,7 +23,8 @@ const CoreActions = require('../actions/CoreActions.js')
 
 var Main = React.createClass({
   getInitialState() {
-    if (localStorage.getItem('showTutorial') == 'true') {
+    var tutorialState = localStorage.getItem('showTutorial');
+    if (tutorialState == 'true' || tutorialState === null) {
       return({
         firstTime: true
       })

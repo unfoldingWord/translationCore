@@ -1,6 +1,6 @@
 //SwitchCheckModal.js//
 /**
- * @description - This file describes the modal that lists out the available modules that a 
+ * @description - This file describes the modal that lists out the available modules that a
  * checker may choose to check
  * @author: Logan Lebanoff
  */
@@ -19,6 +19,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const AppDescription = require('./AppDescription');
+const api = window.ModuleApi;
 
 class SwitchCheckModal extends React.Component{
   constructor(){
@@ -64,7 +65,7 @@ class SwitchCheckModal extends React.Component{
             var manifestPath = Path.join(moduleBasePath, folder, 'manifest.json');
             fs.accessSync(manifestPath);
             defaultModules.push(manifestPath);
-            
+
           }
           catch(e) {
 
@@ -95,6 +96,7 @@ class SwitchCheckModal extends React.Component{
         }
         else {
           metadata.folderName = Path.dirname(filePath);
+          metadata.imagePath = Path.resolve(filePath, '../icon.png');
           tempMetadatas.push(metadata);
         }
         onComplete();
@@ -104,8 +106,13 @@ class SwitchCheckModal extends React.Component{
 
   moduleClick(folderName) {
     this.close();
-    CoreActions.startLoading();
-    CheckDataGrabber.loadModuleAndDependencies(folderName);
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      CoreActions.startLoading();
+      CheckDataGrabber.loadModuleAndDependencies(folderName);
+    } else {
+      api.Toast.error('No save location selected', '', 3);
+      return;
+    }
   }
 
   updateCheckModal() {

@@ -149,6 +149,7 @@ class View extends React.Component {
       });
       this.updateUserAndTimestamp();
     }
+    this.updateState();
   }
 
   updateSelectedWords(selectedWords, selectedWordsRaw) {
@@ -183,7 +184,7 @@ class View extends React.Component {
         this.refs.CommentBox.setComment("");
       }
     }
-    
+
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -313,6 +314,7 @@ class View extends React.Component {
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
+      var checkStatus = this.state.currentCheck.checkStatus;
       return (
         <div>
           <TPane />
@@ -331,26 +333,25 @@ class View extends React.Component {
                         margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'WRONG' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }
                 ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
               </ButtonGroup>
-              <br /><br />
               <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
-              <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>
               <TranslationWordsDisplay file={this.state.currentFile}/>
             </Col>
           </Row>
+            <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
         </div>
       );
     }
