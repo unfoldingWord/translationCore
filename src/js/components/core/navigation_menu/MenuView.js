@@ -15,7 +15,7 @@ const MenuItem = require('./MenuItem.js');
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 module.exports = function(NAMESPACE) {
-  
+
   class MenuView extends React.Component {
     constructor() {
       super();
@@ -44,7 +44,7 @@ module.exports = function(NAMESPACE) {
       api.removeEventListener('goToCheck', this.updateCurrentCheck);
       api.removeEventListener('goToNext', this.updateCurrentCheck);
     }
-    
+
     componentDidMount() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
     }
@@ -53,7 +53,7 @@ module.exports = function(NAMESPACE) {
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
       menuItem.changeCheckStatus(params.checkStatus);
     }
-    
+
     updateCurrentCheck(params) {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
       // goToNext handler
@@ -92,10 +92,10 @@ module.exports = function(NAMESPACE) {
           var checkMenuItems = group.checks.map(function(check, checkIndex) {
             return (
               <div key={checkIndex}>
-                <MenuItem 
+                <MenuItem
                   book={_this.state.checkObject.book}
-                  check={check} 
-                  groupIndex={groupIndex} 
+                  check={check}
+                  groupIndex={groupIndex}
                   checkIndex={checkIndex}
                   ref={groupIndex.toString() + ' ' + checkIndex.toString()} />
               </div>
@@ -168,7 +168,7 @@ module.exports = function(NAMESPACE) {
       return list[mid];
     }
   }
-  
+
   return MenuView;
 
 };
