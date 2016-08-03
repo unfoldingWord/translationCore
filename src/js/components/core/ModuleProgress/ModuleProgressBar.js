@@ -8,19 +8,21 @@ var style = require('./ProgressStyle.js');
 var api = window.ModuleApi;
 var CoreStore = require('../../../stores/CoreStore.js');
 var CheckStore = require('../../../stores/CheckStore.js');
-var Nav = require('../NavigationMenu.js');
-var currentcounter = 0;
-var totalCheck = 100;
 
 var Progress = React.createClass({
+  successcounter: 0,
+  warningcounter: 0,
+  currentcounter: 0,
+  totalCheck: 100,
 
   getInitialState: function() {
     return {
-      progress:0,
+      overallprogress:0,
       checkObj: [],
-      warning:0,
-      success:0,
-      percent: "",
+      warningprogess:0,
+      successprogress:0,
+      successpercent: "",
+      warningpercent: "",
       currentCheck: "",
       max: 0,
       showModal: false
@@ -58,12 +60,6 @@ var Progress = React.createClass({
   updateModuleProgress: function(data) {
     if (data)
     {
-
-      var listOfChecks = api.getDataFromCommon("arrayOfChecks");
-      // for (var i in listOfChecks) {
-      //   listOfChecks[i].name = this.beautifyString(listOfChecks[i].name);
-      // }
-      console.log(listOfChecks);
       var _this = this;
       this.setState({showModal: CoreStore.getModProg()})
       if (CoreStore.getModProg() === true) {
@@ -83,6 +79,14 @@ var Progress = React.createClass({
       if ((status.checkStatus) && temp<=this.totalCheck) {
         var objectIndex = status.groupIndex.toString() + status.checkIndex.toString();
         if (this.compare(this.checkObj, objectIndex)) {
+          if (status.checkStatus == "RETAINED") {
+            this.successcounter = this.successcounter + 1;
+            this.setState({successprogress: this.successcounter});
+          }
+          else if (status.checkStatus == "WRONG") {
+            this.warningcounter = this.warningcounter + 1;
+            this.setState({warningprogress: this.warningcounter});
+          }
           this.currentcounter = this.currentcounter + 1;
           var tempobject = objectIndex;
           this.setState({checkObj: objectIndex});
@@ -100,14 +104,11 @@ var Progress = React.createClass({
     else {
       var temp = CoreStore.getCurrentCheckCategory();
       this.setState({currentCheck: temp.name});
-
-      // for (var i in list) {
-      //   var index = temp.name.search(list[i].name);
-      //   if (index != -1) {
-      //     console.log("found it");
-      //   }
-      // }
-
+      var sucper = this.successcounter.toString() + "%";
+      this.setState({successpercent: sucper});
+      var warper = this.successcounter.toString() + "%";
+      this.setState({warningpercent: warper});
+      this.currentcounter = this.successcounter + this.warningcounter;
       var bar = this.currentcounter/this.totalCheck;
       this.setState({progress: bar});
       console.log(bar);
@@ -129,7 +130,8 @@ var Progress = React.createClass({
   render: function() {
     var displayElement = [];
     if (CoreStore.getModProg()) {
-      displayElement = [<ProgressBar striped key={1} bsStyle="success" now={this.state.progress} max={this.state.max} label={this.state.percent}/>
+      displayElement = [<ProgressBar striped key={1} bsStyle="success" now={this.state.successprogress} max={this.state.max} label={this.state.successpercent}/>,
+    <ProgressBar striped key={2} bsStyle="warning" now={this.state.warningprogress} max={this.state.max} label={this.state.warningpercent}/>
   ]
 } else {
   displayElement = [<ProgressBar key={1} label={this.state.percent}/>]
