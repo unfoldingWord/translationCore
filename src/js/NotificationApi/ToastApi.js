@@ -1,6 +1,9 @@
 /*
+Below is an exampple explanation how to use the Toast Notification Api:
+
 api.Toast.info(title, msg, time);
-time in seconds
+                        (time in seconds)
+                        
 api.Toast.info("title", "Update succesful", 3);
 api.Toast.error("error title", "error body", 3);
 api.Toast.success("error title", "error body", 3);
