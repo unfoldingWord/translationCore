@@ -8,6 +8,12 @@ module.exports = {
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
         this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
     },
+    
+    goToPrevious: function(params) {
+        var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+        var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+        this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
+    },
 
     goToCheck: function(params) {
       this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);

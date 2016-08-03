@@ -23,6 +23,7 @@ class PhraseChecker extends React.Component{
 
     this.updateState = this.updateState.bind(this);
     this.goToNext = this.goToNext.bind(this);
+    this.goToPrevious = this.goToPrevious.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
   }
 
@@ -31,6 +32,7 @@ class PhraseChecker extends React.Component{
     var _this = this;
     
     api.registerEventListener('goToNext', this.goToNext);
+    api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
     api.registerEventListener('phraseDataLoaded', this.updateState);
 
@@ -41,6 +43,7 @@ class PhraseChecker extends React.Component{
     api.removeEventListener('phraseDataLoaded', this.updateState);
     api.removeEventListener('goToCheck', this.goToCheck);
     api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToPrevious', this.goToPrevious);
   }
 
   goToCheck(params){
@@ -51,6 +54,12 @@ class PhraseChecker extends React.Component{
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
+  }
+
+  goToPrevious(params) {
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
   }
 
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
@@ -71,6 +80,18 @@ class PhraseChecker extends React.Component{
             currentGroupIndex < groups.length - 1) {
             api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
             api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
+          }
+          /* In the case that we're decrementing the check and now we're out of bounds
+            * of the group, we decrement the group.
+            */
+          else if (newCheckIndex == -1 && currentGroupIndex >= 0) {
+            var newGroupLength = groups[currentGroupIndex - 1].checks.length;
+            api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
+            api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
+          }
+          //invalid indices: don't do anything else
+          else {
+            return;
           }
         }
       }
