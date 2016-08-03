@@ -104,6 +104,7 @@ class View extends React.Component {
         this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
       }
     }
+    this.updateState();
   }
 
   componentWillUnmount() {
@@ -134,6 +135,7 @@ class View extends React.Component {
         checkStatus: newCheckStatus
       });
     }
+    this.updateState();
   }
 
   /**
@@ -280,6 +282,7 @@ class View extends React.Component {
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
+      var checkStatus = this.state.currentCheck.checkStatus;
       return (
         <div>
           <TPane />
@@ -297,12 +300,12 @@ class View extends React.Component {
                         margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'WRONG' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
                     }
