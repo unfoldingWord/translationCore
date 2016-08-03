@@ -7,6 +7,7 @@ const Well = ReactBootstrap.Well;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'ExampleChecker';
+const TITLE = 'Example Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function ExampleCheckerReport(chapter, verse) {
@@ -31,7 +32,7 @@ function ExampleCheckerReport(chapter, verse) {
   }
   return (
     <Well>
-      <h4 style={{marginTop: '-5px', display: 'inline'}}>Example Check</h4>
+      <h4 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h4>
       <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
       {checkList}
     </Well>
@@ -42,6 +43,9 @@ function ExampleCheckerReport(chapter, verse) {
 function getChecksByVerse(chapter, verse) {
   var res = [];
   var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+  if (!groups) {
+    return res;
+  }
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {
@@ -79,8 +83,15 @@ class ReportItem extends React.Component {
     );
   }
   footerDiv() {
+    if(this.props.check.user) {
+      var user = this.props.check.user.fullName;
+    }
+    if(this.props.check.timestamp) {
+      // We do 'new Date(...)' because it could be a string or a Date object.
+      var timestamp = new Date(this.props.check.timestamp).toDateString();
+    }
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{this.props.check.user || 'USER'} - {this.props.check.timeStamp || 'TIMESTAMP'}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user || 'Anonymous'} - {timestamp || ''}</div>
     );
   }
   render() {

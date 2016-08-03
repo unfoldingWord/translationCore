@@ -15,6 +15,7 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
 const ReactBootstrap = ModuleApi.ReactBootstrap;
+const Grid = ReactBootstrap.Grid;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
 const fs = require('fs');
@@ -44,19 +45,7 @@ class Report extends React.Component {
       return (<div>{"No target language found"}</div>);
     }
     // array of the functions in the ReportView.js's for the project
-    let reportViews = [];
-    for (let i in listOfChecks){
-      let check = listOfChecks[i];
-      try {
-        let reportView = require(path.join(__base, check.location, "ReportView"));
-        if (typeof reportView == "function") {
-          reportViews.push(reportView);
-        }
-      }
-      catch(e) {
-        // silently fail, this will probably happen a lot
-      }
-    }
+    let reportViews = getReportViews();
     if (reportViews.length == 0) {
       return (<div>{"No report views found"}</div>);
     }
@@ -70,25 +59,36 @@ class Report extends React.Component {
     if (manifest && manifest.ts_project) {
       bookName = manifest.ts_project.name || "-bookName-";
     }
+    // This isn't working yet I think, so it pretty much always returns "various checkers"
     if (manifest && manifest.checkers) {
       if (manifest.checkers.length > 1) {
         authors = manifest.checkers.reduce((prev, cur, i) => {
           return (i == 0 ? "" : prev + ", ") + cur.username;
         });
       }
-      else {
+      else if (manifest.checkers.length == 1 && manifest.checkers[0] != null) {
         authors = manifest.checkers[0].username;
       }
-    }
-    if (authors == "") {
-      authors = "various checkers";
+      else {
+        authors = "various checkers";
+      }
     }
     // render report header data from reportViews
+    let reportHeaders = [];
     for (let view in reportViews) {
-      let viewResult = reportViews[view](0,0);
-      if (viewResult) {
-        output.push(<span key={`0-0-${view}`}>{viewResult}</span>);
+      let viewResult;
+      try { // in case their report view has errors
+         viewResult = reportViews[view](0,0);
       }
+      catch (e) {
+        continue;
+      }
+      if (viewResult) {
+        reportHeaders.push(<Col className="pull-right" key={`0-0-${view}`} xs={6}><span>{viewResult}</span></Col>);
+      }
+    }
+    if (reportHeaders.length > 0) {
+      output.push(<Row key="header">{reportHeaders}</Row>);
     }
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)
@@ -120,12 +120,29 @@ class Report extends React.Component {
     }
     // TODO: Get name of book and authors
     return (
-      <div className="page-header">
-      <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
-      {output}
-      </div>
+      <Grid className="page-header">
+        <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
+        {output}
+      </Grid>
     );
   }
+}
+
+function getReportViews() {
+  // get folders in the modules directory
+  // TODO: probably should make this asynchronous
+  let modulesFolder = path.join(__base, "modules");
+  // get only the folders and make them absolute paths
+  let modules = fs.readdirSync(modulesFolder);
+  modules = modules.map((dir) => path.join(modulesFolder, dir));
+  modules = modules.filter((dir) => fs.statSync(dir).isDirectory());
+  let reports = [];
+  modules.forEach((dir) => {
+    if(fs.readdirSync(dir).includes('ReportView.js')) {
+      reports.push(require(path.join(dir, "ReportView")));
+    }
+  });
+  return reports;
 }
 
 module.exports = function(callback = (err) => {}) {
@@ -149,7 +166,12 @@ module.exports = function(callback = (err) => {}) {
     let reportPath = path.join(__dirname, 'report.html');
     fs.writeFile(reportPath, reportHTML.innerHTML, 'utf-8', (err) => {
       if (err) {
-        console.log("Error writing rendered report to disk");
+        const alert = {
+          title: 'Error writing rendered report to disk',
+          content: err.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
         callback(err);
         return;
       }

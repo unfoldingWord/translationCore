@@ -89,6 +89,7 @@ class View extends api.CheckModule {
     const NATURALNESS_QUESTION = 'Is this translation a meaning-based translation that ' +
       'attempts to communicate the meaning of the original text in ways that are natural, ' +
       'clear, and accurate in the target language?';
+    var checkStatus = this.getCurrentCheck().checkStatus;
     return (
       <div>
         {/* Render TPane tool */}
@@ -105,14 +106,14 @@ class View extends api.CheckModule {
                 { _this.getCurrentGroup().group == 'Language' ? LANGUAGE_QUESTION : NATURALNESS_QUESTION }
               </p>
               <ButtonGroup>
-                <Button
+                <Button className={checkStatus == 'RETAINED' ? 'active':''}
                   onClick={
                     function() { _this.updateCheckStatus('RETAINED'); }
                   }
                 >
                   <span style={{color: 'green'}}>Yes</span>
                 </Button>
-                <Button
+                <Button className={checkStatus == 'WRONG' ? 'active':''}
                   onClick={
                     function() { _this.updateCheckStatus('WRONG'); }
                   }

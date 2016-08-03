@@ -98,7 +98,7 @@ const TargetLanguageSelectBox = React.createClass({
   fetchSelectedWords: function() {
     var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
     var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
-    if (currentCheckIndex && currentGroupIndex) {
+    if (currentCheckIndex != null && currentGroupIndex != null) {
       var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
         if (currentCheck.selectedWordsRaw) {
@@ -119,27 +119,31 @@ const TargetLanguageSelectBox = React.createClass({
 
   shouldComponentUpdate: function(nextProps, nextState) {
     //remove everybody's highlighting
-    for (key in this.refs)
+    for (key in this.refs) {
       this.refs[key].removeHighlight();
+    }
     this.selectedWords = [];
 
     //Maybe we've already done this check? If we have update the highlighting on the selected words
     this.fetchSelectedWords();
+    
+    return true;
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
     for (var word of this.selectedWords) {
       var targetWord = this.refs[word.key];
       if (targetWord) {
         targetWord.setHighlight();
       }
     }
-
-    return true;
   },
 
   generateWordArray: function() {
     var words = tokenizer.tokenize(this.props.verse),
       wordArray = [],
       index = 0,
-      tokenKey = 0,
+      tokenKey = 1,
       wordKey = 0;
     for (var word of words) {
       var wordIndex = this.props.verse.indexOf(word, index);
@@ -157,13 +161,14 @@ const TargetLanguageSelectBox = React.createClass({
         <TargetWord
           word={word}
           key={wordKey++}
-          keyId={tokenKey++}
+          keyId={tokenKey}
           style={this.cursorPointerStyle}
           selectCallback={this.addSelectedWord}
           removeCallback={this.removeFromSelectedWords}
           ref={tokenKey.toString()}
         />
       );
+      tokenKey++;
       index = wordIndex + word.length;
     }
     return wordArray;
@@ -198,6 +203,7 @@ const TargetLanguageSelectBox = React.createClass({
       this.selectedWords.push(wordObj);
       this.sortSelectedWords();
     }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
 
     /* This is used for if you want to enable disabled buttons after the user has
      * selected at least one word
@@ -218,6 +224,7 @@ const TargetLanguageSelectBox = React.createClass({
     if (index != -1) {
       this.selectedWords.splice(index, 1);
     }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
 
     //This is used for if you want to disable the buttons if no words are selected
     // if (this.selectedWords.length <= 0) {

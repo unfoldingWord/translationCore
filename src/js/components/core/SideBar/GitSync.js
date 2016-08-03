@@ -1,13 +1,13 @@
-function syncToGit() {
-  const git = require('../GitApi.js');
-  const api = window.ModuleApi;
-  const CoreActions = require('../../../actions/CoreActions.js');
-  const CoreStore = require('../../../stores/CoreStore.js');
-  const pathFinder = require('path');
-  const path = api.getDataFromCommon('saveLocation');
-  const user = CoreStore.getLoggedInUser();
-  const gogs = require('../login/GogsApi.js');
+const git = require('../GitApi.js');
+const api = window.ModuleApi;
+const CoreActions = require('../../../actions/CoreActions.js');
+const CoreStore = require('../../../stores/CoreStore.js');
+const pathFinder = require('path');
+const path = api.getDataFromCommon('saveLocation');
+const user = CoreStore.getLoggedInUser();
+const gogs = require('../login/GogsApi.js');
 
+function syncToGit() {
   if (user) {
     git(path).save('Updating with Door43', path, function() {
         var manifest = api.getDataFromCommon('tcManifest');
@@ -32,15 +32,14 @@ function syncToGit() {
                   const projectName = repoPath;
                   gogs(user.token).createRepo(user, projectName).then(function(repo) {
                     var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
-                    var remoteLink = 'https://git.door43.org/' + repo.full_name;
+                    var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                     api.updateManifest('repo', remoteLink);
-
                     git(path).update(newRemote, 'master', true, function(){});
                   });
                 }
               });
             } else {
-              alert('Update succesful');
+              api.Toast.success('Update succesful', '', 3);
             }
           });
         } else {
@@ -54,22 +53,23 @@ function syncToGit() {
                 if(result == 'Yes') {
                   const projectName = path.split(pathFinder.sep);
                   var nameOfProject = projectName.pop();
+                  nameOfProject = nameOfProject.replace(/[^A-Za-z-_]/g, '-')
                   var repoPath = user.username + '/' + nameOfProject;
                   var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
-                  var remoteLink = 'https://git.door43.org/' + repoPath;
+                  var remoteLink = 'https://git.door43.org/' + repoPath + '.git';
                   api.updateManifest('repo', remoteLink);
                   git(path).update(remote, 'master', true, function(err){
                     if (err) {
                       gogs(user.token).createRepo(user, nameOfProject).then(function(repo) {
                         var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
-                        remoteLink = 'https://git.door43.org/' + repo.full_name;
+                        remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                         api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
-                          alert('Update succesful');
+                          api.Toast.success('Update succesful', '', 3);
                         });
                       });
                     } else {
-                      alert('Update succesful');
+                      api.Toast.success('Update succesful', '', 3);
                     }
                   });
                 }
@@ -77,7 +77,7 @@ function syncToGit() {
         }
     });
   } else {
-    alert('Login then try again');
+    api.Toast.info('Login then try again', '', 3);
     CoreActions.updateLoginModal(true);
   }
 }

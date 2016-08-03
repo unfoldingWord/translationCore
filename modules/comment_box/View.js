@@ -39,7 +39,6 @@ class CommentBox extends React.Component {
   }
 
   setComment(comment = "") {
-    debugger;
     this.setState({comment: comment});
     api.putDataInCheckStore(NAMESPACE, "currentChanges", comment);
   }

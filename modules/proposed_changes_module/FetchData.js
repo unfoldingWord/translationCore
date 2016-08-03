@@ -18,13 +18,21 @@ function fetchData(params, progress, callback) {
       console.error('ProposedChanges requires a filepath');
     }
     else {
-      sendToReader(params.targetLanguagePath, callback, progress);
+      sendToReader(params.targetLanguagePath, 
+        function() {
+          progress(100);
+          api.putDataInCheckStore("ProposedChanges", "newWord", '');
+          callback();
+        }, 
+        progress
+      );
     }
   }
-
-  progress(100);
-  api.putDataInCheckStore("ProposedChanges", "newWord", '');
-  //I'm not supposed to get the gateway language!
+  else {
+    progress(100);
+    api.putDataInCheckStore("ProposedChanges", "newWord", '');
+    callback();
+  }
 }
 
 /**
