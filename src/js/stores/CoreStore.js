@@ -137,6 +137,18 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
+  getNotificationToastParams() {
+    return this.toastParamsObj;
+  }
+
+  getToastVisibility(){
+    return this.toastVisibility;
+  }
+
+  getCurrentCheckCategory() {
+    return this.currentCheckCategory;
+  }
+
   setCurrentCheckCategory(value) {
     this.currentCheckNamespace = value;
   }
@@ -253,6 +265,12 @@ class CoreStore extends EventEmitter {
 
       case consts.ALERT_MODAL_RESPONSE:
         this.alertResponseObj = action.alertResponse;
+        this.emitChange();
+      break;
+
+      case consts.SHOW_TOAST_PARAMS:
+        this.toastVisibility = action.toastOption;
+        this.toastParamsObj = action.toastParams;
         this.emitChange();
       break;
 

@@ -48,7 +48,7 @@ class Report extends React.Component {
     for (let i in listOfChecks){
       let check = listOfChecks[i];
       try {
-        let reportView = require(path.join(__base, check.location, "ReportView"));
+        let reportView = require(path.join(check.location, "ReportView"));
         if (typeof reportView == "function") {
           reportViews.push(reportView);
         }
@@ -70,18 +70,19 @@ class Report extends React.Component {
     if (manifest && manifest.ts_project) {
       bookName = manifest.ts_project.name || "-bookName-";
     }
+    // This isn't working yet I think, so it pretty much always returns "various checkers"
     if (manifest && manifest.checkers) {
       if (manifest.checkers.length > 1) {
         authors = manifest.checkers.reduce((prev, cur, i) => {
           return (i == 0 ? "" : prev + ", ") + cur.username;
         });
       }
-      else {
+      else if (manifest.checkers.length == 1) {
         authors = manifest.checkers[0].username;
       }
-    }
-    if (authors == "") {
-      authors = "various checkers";
+      else {
+        authors = "various checkers";
+      }
     }
     // render report header data from reportViews
     for (let view in reportViews) {

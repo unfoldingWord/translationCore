@@ -115,6 +115,22 @@ class View extends React.Component {
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
+  getCurrentCheck() {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    return currentCheck;
+  }
+
+  updateUserAndTimestamp() {
+    let currentCheck = this.getCurrentCheck();
+    let currentUser = api.getLoggedInUser();
+    let timestamp = new Date();
+    currentCheck.user = currentUser;
+    currentCheck.timestamp = timestamp;
+  }
+
   /**
    * @description - updates the status of the check that is the current check in the check store
    * @param {object} newCheckStatus - the new status chosen by the user
@@ -126,17 +142,21 @@ class View extends React.Component {
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
-      currentCheck.selectedWords = selectedWords;
-      //This is needed to make the display persistent, but won't be needed in reports
-      if (this.refs.TargetVerseDisplay) {
-        currentCheck.selectedWordsRaw = this.refs.TargetVerseDisplay.getWordsRaw();
-      }
       api.emitEvent('changedCheckStatus', {
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex,
         checkStatus: newCheckStatus
       });
+      this.updateUserAndTimestamp();
     }
+  }
+
+  updateSelectedWords(selectedWords, selectedWordsRaw) {
+    var currentCheck = this.getCurrentCheck();
+    currentCheck.selectedWords = selectedWords;
+    //This is needed to make the display persistent, but won't be needed in reports
+    currentCheck.selectedWordsRaw = selectedWordsRaw;
+    this.updateUserAndTimestamp();
   }
 
   /**
@@ -304,6 +324,7 @@ class View extends React.Component {
               <TargetVerseDisplay
                 verse={targetVerse}
                 ref={"TargetVerseDisplay"}
+                onWordSelected={this.updateSelectedWords.bind(this)}
                 style={{minHeight: '120px',
                         margin: '0 2.5px 5px 0'}}
               />

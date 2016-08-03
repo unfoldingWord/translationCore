@@ -41,6 +41,7 @@ class CheckModule extends React.Component {
       checkIndex: this.getCurrentCheckIndex(),
       checkStatus: newCheckStatus
     });
+    this.updateUserAndTimestamp();
     this.updateState();
   }
 
@@ -52,6 +53,7 @@ class CheckModule extends React.Component {
   updateCheckProperty(key, value) {
     var currentCheck = this.getCurrentCheckFromCheckStore();
     currentCheck[key] = value;
+    this.updateUserAndTimestamp();
     this.updateState();
   }
   
@@ -93,6 +95,18 @@ class CheckModule extends React.Component {
     api.removeEventListener('goToNext', this.goToNext);
     api.removeEventListener('goToPrevious', this.goToPrevious);
     api.removeEventListener('goToCheck', this.goToCheck);
+  }
+
+  updateUserAndTimestamp() {
+    var currentCheck = this.getCurrentCheckFromCheckStore();
+    let currentUser = api.getLoggedInUser();
+    let timestamp = new Date();
+    currentCheck.user = currentUser;
+    currentCheck.timestamp = timestamp;
+  }
+  
+  componentDidMount() {
+    this.updateState();
   }
   
   /**
