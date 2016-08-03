@@ -149,7 +149,7 @@ class View extends React.Component {
     var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
     let comment = this.refs.CommentBox.getComment();
     var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
-    if (currentCheck && proposedChanges != "") {
+    if (currentCheck) {
       if (proposedChanges && proposedChanges != "") {
         currentCheck.proposedChanges = proposedChanges;
         this.refs.ProposedChanges.setNewWord("");
@@ -212,6 +212,11 @@ class View extends React.Component {
       currentWord: currentWord,
       currentFile: this.getWordFile(currentWord)
     });
+    console.log(currentCheck);
+    if (this.refs.CommentBox) {
+      this.refs.CommentBox.setComment(currentCheck.comment || "");
+      this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
+    }
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
 
