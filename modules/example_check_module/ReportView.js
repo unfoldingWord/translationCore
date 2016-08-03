@@ -16,6 +16,7 @@ function ExampleCheckerReport(chapter, verse) {
   if(checks.length == 0) {
     return undefined;
   }
+  debugger;
   var checkList = [];
   var numChecked = 0;
   for(let i in checks) {
@@ -42,6 +43,9 @@ function ExampleCheckerReport(chapter, verse) {
 function getChecksByVerse(chapter, verse) {
   var res = [];
   var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+  if (!groups) {
+    return res;
+  }
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {

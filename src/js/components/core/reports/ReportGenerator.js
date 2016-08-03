@@ -44,19 +44,7 @@ class Report extends React.Component {
       return (<div>{"No target language found"}</div>);
     }
     // array of the functions in the ReportView.js's for the project
-    let reportViews = [];
-    for (let i in listOfChecks){
-      let check = listOfChecks[i];
-      try {
-        let reportView = require(path.join(__base, check.location, "ReportView"));
-        if (typeof reportView == "function") {
-          reportViews.push(reportView);
-        }
-      }
-      catch(e) {
-        // silently fail, this will probably happen a lot
-      }
-    }
+    let reportViews = getReportViews();
     if (reportViews.length == 0) {
       return (<div>{"No report views found"}</div>);
     }
@@ -76,17 +64,23 @@ class Report extends React.Component {
           return (i == 0 ? "" : prev + ", ") + cur.username;
         });
       }
-      else {
+      else if (manifest.checkers.length == 1 && manifest.checkers[0] != null) {
         authors = manifest.checkers[0].username;
       }
-    }
-    if (authors == "") {
-      authors = "various checkers";
+      else {
+        authors = "various checkers";
+      }
     }
     // render report header data from reportViews
     let reportHeaders = [];
     for (let view in reportViews) {
-      let viewResult = reportViews[view](0,0);
+      let viewResult;
+      try { // in case their report view has errors
+         viewResult = reportViews[view](0,0);
+      }
+      catch (e) {
+        continue;
+      }
       if (viewResult) {
         reportHeaders.push(<Col className="pull-right" key={`0-0-${view}`} xs={6}><span>{viewResult}</span></Col>);
       }
@@ -130,6 +124,23 @@ class Report extends React.Component {
       </div>
     );
   }
+}
+
+function getReportViews() {
+  // get folders in the modules directory
+  // TODO: probably should make this asynchronous
+  let modulesFolder = path.join(__base, "modules");
+  // get only the folders and make them absolute paths
+  let modules = fs.readdirSync(modulesFolder);
+  modules = modules.map((dir) => path.join(modulesFolder, dir));
+  modules = modules.filter((dir) => fs.statSync(dir).isDirectory());
+  let reports = [];
+  modules.forEach((dir) => {
+    if(fs.readdirSync(dir).includes('ReportView.js')) {
+      reports.push(require(path.join(dir, "ReportView")));
+    }
+  });
+  return reports;
 }
 
 module.exports = function(callback = (err) => {}) {
