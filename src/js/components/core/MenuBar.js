@@ -62,13 +62,7 @@ var template = [
         }
       },
       {
-        label: "Open Project",
-        click: function() {
-          CoreActions.updateOpenView(true);
-        }
-      },
-      {
-        label: 'Create Project',
+        label: 'Load',
         click() {
           CoreActions.showCreateProject("Languages");
         }
@@ -93,15 +87,6 @@ var template = [
         accelerator: 'CmdOrCtrl+V',
         role: 'paste'
       },
-      {
-        label: 'Delete',
-        role: 'delete'
-      },
-      {
-        label: 'Select All',
-        accelerator: 'CmdOrCtrl+A',
-        role: 'selectall'
-      }
     ]
   },
   {
