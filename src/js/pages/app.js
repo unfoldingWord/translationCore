@@ -22,8 +22,6 @@ const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
 
-
-
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = localStorage.getItem('showTutorial');
@@ -65,7 +63,7 @@ var Main = React.createClass({
         <SideNavBar />
         <SwitchCheckModal />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
-            <Row className='fill-height'>
+            <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
                 <ProjectModal />

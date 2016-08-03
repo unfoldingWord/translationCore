@@ -46,7 +46,7 @@ const Styles = {
     maxWidth: '200px'
   },
   welcomeFrame: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#1a2133',
     height: '100%',
     display: 'flex'
   },
@@ -63,6 +63,9 @@ const Styles = {
     margin: 'auto',
     backgroundColor: '#fff',
     borderRadius: '5px'
+  },
+  tutorialInfo: {
+    fontSize: '1.5em'
   }
 }
 
@@ -95,7 +98,7 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
             <img src="./images/TC_Icon_White.png" />
             <h1>Welcome to translationCore</h1>
-            <p>We are glad that you are here. We just need to set up a few things before we can begin.</p>
+            <p style={Styles.tutorialInfo}>We are glad that you are here. We just need to set up a few things before we can begin.</p>
           </div>
         )
         break;
@@ -104,7 +107,7 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
             <Glyphicon style={Styles.bigGlyph} glyph="user" />
             <h1>Connect a Door43 account</h1>
-            <p>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
+            <p style={Styles.tutorialInfo}>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
             <div style={Styles.loginBox}>
               <Login success={()=>{this.setState({index:this.state.index+1})}}/>
             </div>
@@ -116,7 +119,7 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
           <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
             <h1>Load your first project</h1>
-            <p>You can load in your first project from Door43 or from your hard drive.</p>
+            <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
             <Upload success={()=>{this.setState({index:this.state.index+1,
                                                         tutorial: true})}} />
@@ -125,7 +128,6 @@ class Welcome extends React.Component{
         )
         break;
       case 4:
-          // console.log("Flow is now #<Main />");
       break;
     }
   }
