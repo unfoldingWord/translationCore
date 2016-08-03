@@ -126,7 +126,6 @@ class SwitchCheckModal extends React.Component{
   render() {
     var buttons;
     if(!this.state.moduleMetadatas || this.state.moduleMetadatas.length == 0) {
-      console.error('No tC default modules found.');
       buttons = <div>No tC default modules found.</div>;
     }
     else {
