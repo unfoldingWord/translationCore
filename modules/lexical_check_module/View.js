@@ -106,7 +106,6 @@ class View extends React.Component {
         this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
       }
     }
-    this.updateState();
   }
 
   componentWillUnmount() {
