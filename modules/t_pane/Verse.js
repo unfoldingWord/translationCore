@@ -2,7 +2,6 @@
  * @description: This file builds the verses
  * @author: Ian Hoegen
  ******************************************************************************/
-// const React = require('react');
 
 const api = window.ModuleApi;
 const React = api.React;
@@ -16,10 +15,14 @@ class Verse extends React.Component {
 		return (
 			<p>
         <strong>{this.props.verseNumber} </strong>
-        {this.props.verseText}
+        {this.props.greek ? parseGreek(this.props.verseText) : this.props.verseText}
 			</p>
 		);
 	}
+}
+
+function parseGreek(text) {
+	
 }
 
 module.exports = Verse;

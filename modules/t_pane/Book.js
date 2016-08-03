@@ -35,6 +35,7 @@ class Book extends React.Component {
   }
 
   render() {
+    debugger;
     var chapterArray = [];
     var title = "";
 
@@ -61,6 +62,7 @@ class Book extends React.Component {
             arrayOfVerses.push(
               <Verse 
                 key={verseId} 
+                greek={this.props.greek} 
                 chapterNumber={chapterNum} 
                 verseNumber={verse} 
                 verseText={verseText}
