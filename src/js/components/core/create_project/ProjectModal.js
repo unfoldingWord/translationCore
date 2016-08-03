@@ -1,16 +1,11 @@
-const fs = require(window.__base + 'node_modules/fs-extra');
 const React = require('react');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const CoreStore = require('../../../stores/CoreStore.js');
-const {dialog} = window.electron.remote;
 const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
 const Upload = require('../Upload');
-
-const INVALID_PROJECT = 'This does not seem to be a translation studio project';
-const DEFAULT_ERROR = 'Error';
 
 const ProjectModal = React.createClass({
 
@@ -34,8 +29,13 @@ const ProjectModal = React.createClass({
     CoreStore.removeChangeListener(this.showCreateProject);
   },
 
+    /**
+   * @description - This is called to change the status of the project modal
+   * @param {string} input - string to set modal state, this string is specific
+   * to the form to be display
+   */
   showCreateProject: function(input) {
-    var modal = CoreStore.getShowProjectModal()
+    var modal = CoreStore.getShowProjectModal();
     if (input) {
       modal = input;
       CoreStore.projectModalVisibility = input;
@@ -56,13 +56,14 @@ const ProjectModal = React.createClass({
   },
 
   close: function() {
-// CheckStore.getNameSpaces();
     CoreStore.projectModalVisibility = "";
     this.setState({
       showModal: false,
     });
   },
-
+    /**
+   * @description - This keeps the currentCheckNamespace in tact
+   */
   onClick: function(e) {
     api.emitEvent('changeCheckType', {currentCheckNamespace: null});
     this.close();

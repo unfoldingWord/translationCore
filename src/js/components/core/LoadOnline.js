@@ -9,7 +9,7 @@ const {dialog} = remote;
 const path = require('path');
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
-
+const api = window.ModuleApi;
 const git = require('./GitApi.js');
 const Access = require('./AccessProject');
 
@@ -24,8 +24,12 @@ module.exports = (function() {
   function openManifest(url, callback) {
     var splitUrl = url.split('.');
     if (splitUrl.pop() !== 'git') {
-      dialog.showErrorBox('Import Error', 'Please make sure that this ' +
-      'is a valid project.');
+      const alert = {
+            title: 'Import Error',
+            content: 'Please Make Sure That This Is a Valid Project.',
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
       return;
     }
     var projectPath = splitUrl.pop().split('/');
@@ -60,7 +64,12 @@ module.exports = (function() {
         fs.readFileSync(path.join(savePath, 'manifest.json'));
         callback(savePath, url);
       } catch (error) {
-            // dialog.showErrorBox('Import Error', error);
+          const alert = {
+            title: 'Error Getting Transaltion Studio Manifest',
+            content: error.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
           console.error(error);
         return;
       }

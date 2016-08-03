@@ -43,7 +43,13 @@ var CheckDataGrabber = {
         this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
       }
       catch(error) {
-        console.error("Unable to load and run FetchData from module '" + moduleObj.name + "': " + error);
+        const alert = {
+          title: 'Unable to load and run FetchData from module',
+          content: error.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
+        console.log(error);
       }
     }
     api.putDataInCommon('arrayOfChecks', checkArray);
@@ -91,6 +97,12 @@ var CheckDataGrabber = {
               location: Path.join(moduleBasePath, childFolderName)});
           }
           catch (e) {
+            const alert = {
+            title: 'Error Loading Module',
+            content: 'Check Module Format',
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
             console.error(e);
           }
         }
@@ -115,6 +127,12 @@ var CheckDataGrabber = {
         return require(Path.join(folderPath, 'View.js')).name;
       }
       catch(error) {
+        const alert = {
+            title: 'Error Loading Module',
+            content: error.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
         console.error(e);
         console.error(error);
       }
