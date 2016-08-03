@@ -21,10 +21,11 @@ function fetchData(params, progress, callback) {
       sendToReader(params.targetLanguagePath, callback, progress);
     }
   }
-
-  progress(100);
-  api.putDataInCheckStore("ProposedChanges", "newWord", '');
-  //I'm not supposed to get the gateway language!
+  else {
+    progress(100);
+    api.putDataInCheckStore("ProposedChanges", "newWord", '');
+    callback();
+  }
 }
 
 /**
