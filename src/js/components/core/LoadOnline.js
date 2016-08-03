@@ -38,8 +38,10 @@ module.exports = (function() {
           runGitCommand(savePath, url, callback);
         });
       } else {
-        Access.loadFromFilePath(savePath);
-        CoreActions.showCreateProject("");
+        callback(savePath, url);
+        // Access.loadFromFilePath(savePath);
+        // CoreActions.showCreateProject("");
+
       }
     });
   }
