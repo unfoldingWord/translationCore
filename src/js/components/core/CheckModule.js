@@ -102,6 +102,10 @@ class CheckModule extends React.Component {
     currentCheck.timestamp = timestamp;
   }
   
+  componentDidMount() {
+    this.updateState();
+  }
+  
   /**
    * @description - Called when the user clicks the next button
    */
