@@ -28,10 +28,11 @@ function fetchData(params, progress, callback) {
       );
     }
   }
-  
-  progress(100);
-  api.putDataInCheckStore("ProposedChanges", "newWord", '');
-  callback();
+  else {
+    progress(100);
+    api.putDataInCheckStore("ProposedChanges", "newWord", '');
+    callback();
+  }
 }
 
 /**
