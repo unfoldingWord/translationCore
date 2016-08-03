@@ -18,7 +18,7 @@ var CheckDataGrabber = {
   reportViews: [],
 
   /**
-   * @description - This calls helper methods to call each fetch data function within the 
+   * @description - This calls helper methods to call each fetch data function within the
    * array of modules given to this method through the parameters
    * @param {array} modulePaths - Array of arrays, each sub array contains two elements:
    * the first being the name of the module and the second being the path to the module
@@ -43,19 +43,25 @@ var CheckDataGrabber = {
         this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
       }
       catch(error) {
-        console.error("Unable to load and run FetchData from module '" + moduleObj.name + "': " + error);
+        const alert = {
+          title: 'Unable to load and run FetchData from module',
+          content: error.message,
+          leftButtonText: 'Ok'
+        }
+        api.createAlert(alert);
+        console.log(error);
       }
     }
     api.putDataInCommon('arrayOfChecks', checkArray);
   },
 
-  
 
-  /** 
-   * @description - Loads in a module and dependencies depending on the dependencies found in 
+
+  /**
+   * @description - Loads in a module and dependencies depending on the dependencies found in
    * the manifest file within the main module folder. Doesn't load a module if it is already
    * found in the CheckStore
-   * @param {string} moduleFolderPath - the name of the folder the module and manifest file for 
+   * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
   loadModuleAndDependencies: function(moduleFolderName) {
@@ -63,7 +69,7 @@ var CheckDataGrabber = {
     var moduleBasePath = Path.join(window.__base, 'modules');
     var modulePath = Path.join(moduleFolderName, 'manifest.json');
     //If this module has a menu associated with it, check for it and save it within the API if so
-    
+
 
     fs.readJson(modulePath, function(error, dataObject) {
       if (error) {
@@ -87,10 +93,16 @@ var CheckDataGrabber = {
         for (let childFolderName of dataObject.include) {
           //If a developer hasn't defined their module in the corret way, this'll probably throw an error
           try {
-            modulePaths.push({name: _this.getModuleNameFromFolderPath(Path.join(moduleBasePath, childFolderName)), 
+            modulePaths.push({name: _this.getModuleNameFromFolderPath(Path.join(moduleBasePath, childFolderName)),
               location: Path.join(moduleBasePath, childFolderName)});
           }
           catch (e) {
+            const alert = {
+            title: 'Error Loading Module',
+            content: 'Check Module Format',
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
             console.error(e);
           }
         }
@@ -99,7 +111,7 @@ var CheckDataGrabber = {
     });
   },
 
-  /** 
+  /**
    * @description - This returns the name of the module as defined by the View.js in the path
    * @param {string} path - This is the folderpath that points to the location of the modules
    * main folder. This must be an absolute path
@@ -115,6 +127,12 @@ var CheckDataGrabber = {
         return require(Path.join(folderPath, 'View.js')).name;
       }
       catch(error) {
+        const alert = {
+            title: 'Error Loading Module',
+            content: error.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
         console.error(e);
         console.error(error);
       }
@@ -125,7 +143,7 @@ var CheckDataGrabber = {
   /**
    * @description - This is called whenever each FetchData finishes. See {@link getDataFromCheck}.
    * @param {string || null} - An potential error string if one happened, null if it didn't
-   * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure 
+   * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure
    * if still needed
    */
   onComplete: function(err, data) {
@@ -139,7 +157,7 @@ var CheckDataGrabber = {
             git(path).save('Initial TC Commit', path, function() {
             });
           });
-        } 
+        }
         else {
           var Alert = {
             title: "Warning",
@@ -169,8 +187,8 @@ var CheckDataGrabber = {
   },
 
   /**
-   * @description - This function tests to see if a module is a 'main' module as opposed to a 
-   * 'tool'. Main modules define the layout for nearly the entire page while tools are what 
+   * @description - This function tests to see if a module is a 'main' module as opposed to a
+   * 'tool'. Main modules define the layout for nearly the entire page while tools are what
    * supplment the main module in that layout and are enclosed in the main module
    * @param {string} folderpath - absolute file path to the enclosing module's folder
    */
@@ -206,19 +224,19 @@ var CheckDataGrabber = {
   /**
    * @description - This loads a single FetchData
    * @param {string} path - This is a relative path to the enclosing module's folder
-   * @param {object} params - Object that gets passed to FetchData's, contains necessary 
+   * @param {object} params - Object that gets passed to FetchData's, contains necessary
    * params for the FetchData's to load their data
    */
   getDataFromCheck: function(name, path, params) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
-    
+
     //call the FetchData function
     var _this = this;
     DataFetcher(
-      params, 
+      params,
       function(data) {
         _this.Progress(name, data);
-      }, 
+      },
       this.onComplete.bind(this)
     );
   }
