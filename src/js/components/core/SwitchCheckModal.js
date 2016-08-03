@@ -96,6 +96,7 @@ class SwitchCheckModal extends React.Component{
         }
         else {
           metadata.folderName = Path.dirname(filePath);
+          metadata.imagePath = Path.resolve(filePath, '../icon.png');
           tempMetadatas.push(metadata);
         }
         onComplete();
