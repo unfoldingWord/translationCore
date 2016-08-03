@@ -161,7 +161,7 @@ const UploadModal = React.createClass({
                 if (error) {
                   console.error(error);
                   const alert = {
-                    title: 'Warning',
+                    title: 'Error Getting Transaltion Studio Manifest',
                     content: error.message,
                     leftButtonText: 'Ok'
                   }

@@ -65,7 +65,7 @@ module.exports = (function() {
         callback(savePath, url);
       } catch (error) {
           const alert = {
-            title: 'Warning',
+            title: 'Error Getting Transaltion Studio Manifest',
             content: error.message,
             leftButtonText: 'Ok'
           }
