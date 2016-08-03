@@ -1,7 +1,7 @@
 /**
- * @description: This file builds the verses
- * @author: Ian Hoegen
- ******************************************************************************/
+	* @description: This file builds the verses
+	* @author: Ian Hoegen
+******************************************************************************/
 
 const api = window.ModuleApi;
 const React = api.React;
@@ -26,12 +26,12 @@ class Verse extends React.Component {
 	render() {
 		return (
 			<p>
-        <strong className={this.state.highlighted ? 'text-primary' : ''}>
-			 		{this.props.verseNumber + " "}
-				</strong>
-				<span className={this.state.highlighted ? 'text-primary' : ''}>
-					{this.props.greek ? parseGreek(this.props.verseText) : this.props.verseText}
-				</span>
+			<strong className={this.state.highlighted ? 'text-primary' : ''}>
+			{this.props.verseNumber + " "}
+			</strong>
+			<span className={this.state.highlighted ? 'text-primary' : ''}>
+			{this.props.greek ? parseGreek(this.props.verseText) : this.props.verseText}
+			</span>
 			</p>
 		);
 	}
@@ -47,17 +47,17 @@ function parseGreek(text = "") {
 		try {
 			let [,word,strong,speech] = result;
 			var popover = (<Popover id="popover-trigger-click-root-close" title={word}>
-										 		{lookup(strong, true)}
-									   </Popover>);
+			{lookup(strong, true)}
+			</Popover>);
 			words.push(
-								<OverlayTrigger key={i++} trigger="click" rootClose placement="bottom" overlay={popover}>
-									 <span
-										strong={strong}
-										speech={speech}>
-			 							{word + " "}
-									</span>
-									</OverlayTrigger>
-								);
+				<OverlayTrigger key={i++} trigger="click" rootClose placement="bottom" overlay={popover}>
+				<span
+				strong={strong}
+				speech={speech}>
+				{word + " "}
+				</span>
+				</OverlayTrigger>
+			);
 		}
 		catch(e) {
 			console.error(e);
