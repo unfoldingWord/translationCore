@@ -54,6 +54,7 @@ class View extends React.Component {
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
     this.goToNextListener = EventListeners.goToNext.bind(this);
+    this.goToPreviousListener = EventListeners.goToPrevious.bind(this);
     this.goToCheckListener = EventListeners.goToCheck.bind(this);
     this.changeCheckTypeListener = EventListeners.changeCheckType.bind(this);
 	}
@@ -72,6 +73,7 @@ class View extends React.Component {
      * manually before updating the store
      */
     api.registerEventListener('goToNext', this.goToNextListener);
+    api.registerEventListener('goToPrevious', this.goToPreviousListener);
 
     /*
      * This event listens for an event that will tell us another check to go to.
@@ -108,6 +110,7 @@ class View extends React.Component {
 
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
+    api.removeEventListener('goToPrevious', this.goToPreviousListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
@@ -182,18 +185,26 @@ class View extends React.Component {
     
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-      if (newGroupIndex < groups.length) {
+      if (newGroupIndex < groups.length && newGroupIndex >= 0) {
         api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
-        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+        if (newCheckIndex < groups[currentGroupIndex].checks.length && newCheckIndex >= 0) {
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
         }
         /* In the case that we're incrementing the check and now we're out of bounds
           * of the group, we increment the group.
           */
         else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
-          currentGroupIndex < groups.length - 1) {
+            currentGroupIndex < groups.length - 1) {
           api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
+        }
+        /* In the case that we're decrementing the check and now we're out of bounds
+          * of the group, we decrement the group.
+          */
+        else if (newCheckIndex == -1 && currentGroupIndex > 0) {
+          var newGroupLength = groups[currentGroupIndex - 1].checks.length;
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
         }
         //invalid indices: don't do anything else
         else {
