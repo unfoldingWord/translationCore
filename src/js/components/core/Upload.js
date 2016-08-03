@@ -27,8 +27,8 @@ const UploadModal = React.createClass({
     return {active: 1, showFile: false};
   },
 
-  /** 
-   * @description - This toggles our view to change from importing from online to importing 
+  /**
+   * @description - This toggles our view to change from importing from online to importing
    * from disk
    * @param {integer} eventKey - The 'key' that the tabs send their 'onSelect' event listener
    */
@@ -43,7 +43,7 @@ const UploadModal = React.createClass({
 
   /**
    * @description - Generates and saves a translationCore manifest file
-   * @param {string} saveLocation - Filepath of where the translationCore manifest file will 
+   * @param {string} saveLocation - Filepath of where the translationCore manifest file will
    * be saved. This is an ABSOLUTE PATH
    * @param {object} data - The translationCore manifest data to be saved
    * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
@@ -98,7 +98,7 @@ const UploadModal = React.createClass({
   },
 
   /**
-   * @description - Sets the target language filepath and/or link, while also generatering a TC 
+   * @description - Sets the target language filepath and/or link, while also generatering a TC
    * manifest file and saving the params and saveLocation under the 'common' namespace in the
    * CheckStore
    * @param {string} path - The folder path that points to the directory that the translationStudio
@@ -110,7 +110,7 @@ const UploadModal = React.createClass({
     var _this = this;
     this.clearPreviousData();
     if (path) {
-      this.loadTranslationStudioManifest(path, 
+      this.loadTranslationStudioManifest(path,
         function(err, translationStudioManifest) {
           if (err) {
             console.error(err);
@@ -158,7 +158,7 @@ const UploadModal = React.createClass({
   },
 
   /**
-   * @description - This checks to see if a valid translationCore manifest file is present. 
+   * @description - This checks to see if a valid translationCore manifest file is present.
    * @param {string} path - absolute path to a translationStudio project folder
    */
   translationCoreManifestPresent: function(path) {
@@ -181,18 +181,22 @@ const UploadModal = React.createClass({
   render: function() {
     var mainContent;
     if (this.state.showFile === true) {
-      mainContent = <DragDrop sendFilePath={this.sendFilePath} />;
-    } 
+      mainContent = <DragDrop
+                     styles={this.props.styles}
+                     sendFilePath={this.sendFilePath}
+                     isWelcome={this.props.isWelcome}
+                     />;
+    }
     else {
       mainContent = (
         <div>
           <br />
           <OnlineInput sendFilePath={this.sendFilePath}/>
-        </div>  
+        </div>
       );
     }
     return (
-      <div>        
+      <div>
         <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
           <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
           <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
