@@ -1,8 +1,3 @@
-    /**
-   * @description - This function uses AI to dynammically traspile the bible into byte
-   * code and binary search the tree of values from highest to lowest into a node package of bible names
-   * @author - RoyalSix
-   **/
 const Books = {
 gen: 'Genesis',
 exo: 'Exodus',
