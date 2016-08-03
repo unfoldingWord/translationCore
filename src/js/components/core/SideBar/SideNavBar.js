@@ -12,6 +12,7 @@ const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
 const gogs = require('../login/GogsApi.js');
 const sync = require('./GitSync.js');
+const toast = require('../../../NotificationApi/ToastApi.js');
 
 class SideNavBar extends React.Component{
   handleOpenProject(){
@@ -22,7 +23,7 @@ class SideNavBar extends React.Component{
     if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
       sync();
     } else {
-      alert('Open a project first, then try again');
+      toast.info('Open a project first, then try again', '', 3);
       CoreActions.showCreateProject("Languages");
     }
   }
@@ -39,7 +40,7 @@ class SideNavBar extends React.Component{
     if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
       CoreActions.updateCheckModal(true);
     } else {
-      alert('Open a project first, then try again');
+      toast.info('Open a project first, then try again', '', 3);
       CoreActions.showCreateProject("Languages");
     }
   }

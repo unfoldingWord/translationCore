@@ -1,13 +1,14 @@
-function syncToGit() {
-  const git = require('../GitApi.js');
-  const api = window.ModuleApi;
-  const CoreActions = require('../../../actions/CoreActions.js');
-  const CoreStore = require('../../../stores/CoreStore.js');
-  const pathFinder = require('path');
-  const path = api.getDataFromCommon('saveLocation');
-  const user = CoreStore.getLoggedInUser();
-  const gogs = require('../login/GogsApi.js');
+const git = require('../GitApi.js');
+const api = window.ModuleApi;
+const CoreActions = require('../../../actions/CoreActions.js');
+const CoreStore = require('../../../stores/CoreStore.js');
+const pathFinder = require('path');
+const path = api.getDataFromCommon('saveLocation');
+const user = CoreStore.getLoggedInUser();
+const gogs = require('../login/GogsApi.js');
+const toast = require('../../../NotificationApi/ToastApi.js');
 
+function syncToGit() {
   if (user) {
     git(path).save('Updating with Door43', path, function() {
         var manifest = api.getDataFromCommon('tcManifest');
@@ -39,7 +40,7 @@ function syncToGit() {
                 }
               });
             } else {
-              alert('Update succesful');
+              toast.success('Update succesful', '', 3);
             }
           });
         } else {
@@ -65,11 +66,11 @@ function syncToGit() {
                         remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                         api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
-                          alert('Update succesful');
+                          toast.success('Update succesful', '', 3);
                         });
                       });
                     } else {
-                      alert('Update succesful');
+                      toast.success('Update succesful', '', 3);
                     }
                   });
                 }
@@ -77,7 +78,7 @@ function syncToGit() {
         }
     });
   } else {
-    alert('Login then try again');
+    toast.info('Login then try again', '', 3);
     CoreActions.updateLoginModal(true);
   }
 }
