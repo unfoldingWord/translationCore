@@ -1,10 +1,16 @@
+
+/**
+ * @author: RoyalSix
+ * @description: This is the file associated with the alert response
+ * to handle transferring of data through a callback
+ ******************************************************************************/
 const CoreStore = require('../.././stores/CoreStore');
 const CoreActions = require('../.././actions/CoreActions');
 const CheckStore = require('../.././stores/CheckStore');
 const api = window.ModuleApi;
 var alertCallBack = () => {};
 var Alert = {
-  startListener(callback, finishedCallback) {
+  startListener(callback) {
     if (callback) {
       alertCallBack = callback;
     }

@@ -2,7 +2,6 @@ const React = require('react');
 const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
-const NextButton = require('../components/core/NextButton');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
@@ -20,10 +19,12 @@ const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
+const CoreActions = require('../actions/CoreActions.js')
 
 var Main = React.createClass({
   getInitialState() {
-    if (localStorage.getItem('showTutorial') == 'true') {
+    var tutorialState = localStorage.getItem('showTutorial');
+    if (tutorialState == 'true' || tutorialState === null) {
       return({
         firstTime: true
       })
@@ -41,10 +42,18 @@ var Main = React.createClass({
     }
   },
 
+  componentDidUpdate: function(prevProps, prevState){
+    if (this.showCheck == true) {
+      CoreActions.updateCheckModal(true);
+      this.showCheck = false;
+    }
+  },
+
   finishWelcome: function(){
     this.setState({
       firstTime: false
     });
+    this.showCheck = true;
   },
 
   render: function(){

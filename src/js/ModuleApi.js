@@ -256,7 +256,9 @@ class ModuleApi {
   clearAlertCallback() {
     CoreStore.alertObj = null;
   }
-
+    /**
+   * @description - Displays alert and returns user response
+   */
   createAlert(obj, callback = () => {}) {
     Alert.startListener(callback);
     CoreActions.sendAlert({

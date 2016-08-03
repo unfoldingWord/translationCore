@@ -54,6 +54,7 @@ class View extends React.Component {
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
     this.updateCheckStatus = this.updateCheckStatus.bind(this);
     this.goToNextListener = EventListeners.goToNext.bind(this);
+    this.goToPreviousListener = EventListeners.goToPrevious.bind(this);
     this.goToCheckListener = EventListeners.goToCheck.bind(this);
     this.changeCheckTypeListener = EventListeners.changeCheckType.bind(this);
 	}
@@ -72,6 +73,7 @@ class View extends React.Component {
      * manually before updating the store
      */
     api.registerEventListener('goToNext', this.goToNextListener);
+    api.registerEventListener('goToPrevious', this.goToPreviousListener);
 
     /*
      * This event listens for an event that will tell us another check to go to.
@@ -108,6 +110,7 @@ class View extends React.Component {
 
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
+    api.removeEventListener('goToPrevious', this.goToPreviousListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
   }
@@ -146,6 +149,7 @@ class View extends React.Component {
       });
       this.updateUserAndTimestamp();
     }
+    this.updateState();
   }
 
   updateSelectedWords(selectedWords, selectedWordsRaw) {
@@ -162,13 +166,14 @@ class View extends React.Component {
    * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     //Get the proposed changes and add it to the check
     var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
     let comment = this.refs.CommentBox.getComment();
-    var currentCheck = groups[currentGroupIndex].checks[currentCheckIndex];
+    var currentCheck = this.getCurrentCheck();
+
+    var loggedInUser = api.getLoggedInUser();
+    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+
     if (currentCheck) {
       if (proposedChanges && proposedChanges != "") {
         currentCheck.proposedChanges = proposedChanges;
@@ -180,20 +185,32 @@ class View extends React.Component {
       }
     }
     
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-      if (newGroupIndex < groups.length) {
+      if (newGroupIndex < groups.length && newGroupIndex >= 0) {
         api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
-        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
+        if (newCheckIndex < groups[currentGroupIndex].checks.length && newCheckIndex >= 0) {
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
         }
         /* In the case that we're incrementing the check and now we're out of bounds
           * of the group, we increment the group.
           */
         else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
-          currentGroupIndex < groups.length - 1) {
+            currentGroupIndex < groups.length - 1) {
           api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
           api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
+        }
+        /* In the case that we're decrementing the check and now we're out of bounds
+          * of the group, we decrement the group.
+          */
+        else if (newCheckIndex == -1 && currentGroupIndex > 0) {
+          var newGroupLength = groups[currentGroupIndex - 1].checks.length;
+          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex - 1);
+          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newGroupLength - 1);
         }
         //invalid indices: don't do anything else
         else {
@@ -201,9 +218,7 @@ class View extends React.Component {
         }
       }
     }
-    // Save project
-    var loggedInUser = api.getLoggedInUser();
-    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    //Save Project
     var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
         ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
     api.saveProject(commitMessage);
@@ -232,7 +247,6 @@ class View extends React.Component {
       currentWord: currentWord,
       currentFile: this.getWordFile(currentWord)
     });
-    console.log(currentCheck);
     if (this.refs.CommentBox) {
       this.refs.CommentBox.setComment(currentCheck.comment || "");
       this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
@@ -300,6 +314,7 @@ class View extends React.Component {
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
+      var checkStatus = this.state.currentCheck.checkStatus;
       return (
         <div>
           <TPane />
@@ -318,12 +333,12 @@ class View extends React.Component {
                         margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                <Button style={{width:'50%'}} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'WRONG' ? 'active':''} onClick={
                     function() {
                       _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
                     }

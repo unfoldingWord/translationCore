@@ -1,4 +1,7 @@
-
+/**
+  * @description - The mapping of the book abbreviations to the full names.
+  * @author - RoyalSix
+**/
 const Books = {
 gen: 'Genesis',
 exo: 'Exodus',

@@ -37,6 +37,26 @@ const DragDrop = React.createClass({
       filePath: ''
     };
   },
+  componentWillMount: function(){
+    if(this.props.isWelcome){
+      this.mainStyle = {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        borderRadius: '5px',
+        fontSize: '25px'
+      }
+    } else {
+      this.mainStyle = {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        border: '2px dashed #727272',
+        borderRadius: '5px',
+        fontSize: '25px'
+      }
+    }
+  },
   onDrop: function(files) {
     var _this = this;
     if (files !== undefined) {
@@ -66,9 +86,9 @@ const DragDrop = React.createClass({
     return (
     <div onClick = {this.onClick} >
         <Dropzone onDrop = {this.onDrop}
-        disableClick={true} multiple={false} style={style.dropzone.main}
+        disableClick={true} multiple={false} style={this.mainStyle}
         activeStyle={style.dropzone.active}>
-            <div style={style.dropzone.text}>
+            <div style={this.props.styles}>
               <center>
                 Drag files here to upload, or click to select a file
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>
