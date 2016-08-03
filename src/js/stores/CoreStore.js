@@ -2,6 +2,7 @@ var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('../actions/CoreActionConsts');
+var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 
 /**
@@ -32,6 +33,7 @@ class CoreStore extends EventEmitter {
   constructor() {
     super();
     this.setMaxListeners(20);
+    this.doneLoading = true;
   }
 
   updateNumberOfFetchDatas(number) {
@@ -88,7 +90,18 @@ class CoreStore extends EventEmitter {
  }
 
   getProgress() {
-  return this.progressKeyObj;
+    return this.progress;
+  }
+
+  calculateProgress(progressKey) {
+    this.progressObject[progressKey.key] = progressKey.progress;
+    var currentProgress = 0;
+    for (var key in this.progressObject){
+      currentProgress += this.progressObject[key];
+    }
+    var number = this.getNumberOfFetchDatas();
+    currentProgress = currentProgress / number;
+    this.progress = currentProgress;
   }
 
   emitChange() {
@@ -124,23 +137,22 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
-  // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
-  // Mostly just for SwitchCheckModuleDropdown
-  getCheckCategoryOptions(){
-    if(!this.checkCategoryOptions) {
-      return null;
-    }
-    return this.checkCategoryOptions;
+  getNotificationToastParams() {
+    return this.toastParamsObj;
   }
 
-  // Returns the Check Module (object) for the given namespace (string)
-  findCheckCategoryOptionByNamespace(namespace) {
-    for(let category of this.getCheckCategoryOptions()) {
-      if(category.name == namespace) {
-        return category;
-      }
-    }
+  getToastVisibility(){
+    return this.toastVisibility;
   }
+
+  getCurrentCheckCategory() {
+    return this.currentCheckCategory;
+  }
+
+  setCurrentCheckCategory(value) {
+    this.currentCheckNamespace = value;
+  }
+
 /**
   * @param {function} callback
   */
@@ -205,14 +217,23 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.START_LOADING:
+        this.doneLoading = false;
+        this.progressObject = [];
+        this.emitChange();
+      break;
+
       case consts.SEND_PROGRESS_FOR_KEY:
-        this.progressKeyObj = action.progressRecieved;
+        var progressKey = action.progressRecieved;
+        this.calculateProgress(progressKey);
         this.emitChange();
       break;
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
-        this.checkCategoryOptions = action.reportViews;
+        this.progressKeyObj = null;
+        this.loaderModalVisibility = false;
+        CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
         this.emitChange();
       break;
 
@@ -247,11 +268,16 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.SHOW_TOAST_PARAMS:
+        this.toastVisibility = action.toastOption;
+        this.toastParamsObj = action.toastParams;
+        this.emitChange();
+      break;
+
       default:
       // do nothing
     }
   }
-
 }
 
 const coreStore = new CoreStore;

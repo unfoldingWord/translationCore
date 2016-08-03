@@ -17,15 +17,20 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 class MenuView extends React.Component {
   constructor() {
     super();
+    let checkData = api.getDataFromCheckStore('LexicalChecker');
     this.state = {
-      checkObject: api.getDataFromCheckStore('LexicalChecker')
+      checkObject: checkData
     };
-
+    this.curGroupIndex = checkData.currentGroupIndex;
+    this.curVerseIndex = checkData.currentCheckIndex;
     this.updateMenuItem = this.updateMenuItem.bind(this);
+    this.updateActive = this.updateActive.bind(this);
   }
 
   componentWillMount() {
     api.registerEventListener('changedCheckStatus', this.updateMenuItem);
+    api.registerEventListener('goToCheck', this.updateActive);
+    api.registerEventListener('goToNext', this.updateActive);
     this.setState({
       checkObject: api.getDataFromCheckStore('LexicalChecker')
     });
@@ -33,6 +38,39 @@ class MenuView extends React.Component {
 
   componentWillUnmount() {
     api.removeEventListener('changedCheckStatus', this.updateMenuItem);
+    api.removeEventListener('goToCheck', this.updateActive);
+    api.removeEventListener('goToNext', this.updateActive);
+  }
+
+  componentDidMount() {
+    this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(true);
+  }
+
+  updateActive(params) {
+    this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(false);
+    // goToNext handler
+    if (params === undefined) {
+      // if we need to move to the next group
+      if (this.curVerseIndex >= this.state.checkObject.groups[this.curGroupIndex].checks.length - 1) {
+        // if we need to wrap all the way back around
+        if (this.curGroupIndex >= this.state.checkObject.groups.length - 1) {
+          return;
+        }
+        else {
+          this.curGroupIndex++;
+          this.curVerseIndex = 0;
+        }
+      }
+      else { // if we still have more in the group
+        this.curVerseIndex++;
+      }
+      this.refs[`${this.curGroupIndex} ${this.curVerseIndex}`].setActive(true);
+    }
+    else { // goToCheck handler
+      this.curGroupIndex = params.groupIndex;
+      this.curVerseIndex = params.checkIndex;
+    }
+
   }
 
   updateMenuItem(params) {
@@ -80,9 +118,9 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <center><h3>Checks</h3></center>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+        <Well className='fill-height' style={{overflowY: 'scroll', maxHeight: '750px', marginTop: "5px"}}>
           <div>
+            <center><h3>Checks</h3></center>
             {menuList}
           </div>
         </Well>

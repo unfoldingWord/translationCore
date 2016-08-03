@@ -122,11 +122,25 @@ module.exports = {
     });
   },
 
-    sendAlertResponse: function(alertResponseObj) {
+    sendNotificationToast: function(visible, toastParamsObj) {
       Dispatcher.handleAction({
-        type: consts.ALERT_MODAL_RESPONSE,
-        alertResponse: alertResponseObj
+        type: consts.SHOW_TOAST_PARAMS,
+        toastOption: visible,
+        toastParams: toastParamsObj
       });
-    }
+    },
+
+  sendAlertResponse: function(alertResponseObj) {
+    Dispatcher.handleAction({
+      type: consts.ALERT_MODAL_RESPONSE,
+      alertResponse: alertResponseObj
+    });
+  },
+
+  startLoading: function() {
+    Dispatcher.handleAction({
+      type: consts.START_LOADING
+    });
+  }
 
 };

@@ -1,6 +1,6 @@
 var style = {
   container:{
-      backgroundColor: "#222",
+      backgroundColor: "#1a2133",
       width: "85px",
       height: "100vh",
       marginLeft: "0px",
@@ -9,7 +9,7 @@ var style = {
       zIndex: "99",
       left: "0px",
       fontSize: "12px",
-      overflowY: "scroll",
+      overflowY: "auto",
   },
 
   ul: {
@@ -20,7 +20,7 @@ var style = {
   li: {
     display: "block",
     textAlign: "center",
-    borderBottom: "2px solid #1E1D1F",
+    borderBottom: "2px solid #1f273b",
     paddingTop: "20px",
     paddingBottom: "20px",
     color: "white",
@@ -34,16 +34,16 @@ var style = {
 
   glyphiconHover: {
     fontSize: "29px",
-    color: "#27E1FC",
+    color: "#f4f4f4",
   },
 
   hover: {
-    backgroundColor: "#2b2b2b",
-    color: "#27E1FC",
+    backgroundColor: "#1a2133",
+    color: "#f4f4f4",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
-    borderBottom: "2px solid #1E1D1F",
+    borderBottom: "2px solid #1f273b",
     userSelect: "none",
     paddingTop: "18px",
     paddingBottom: "18px"

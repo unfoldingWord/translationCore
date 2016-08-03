@@ -1,9 +1,8 @@
 const React = require('react');
 const bootstrap = require('react-bootstrap');
 
-const NavMenu = require('../components/core/NavigationMenu');
+const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const NextButton = require('../components/core/NextButton');
-const SwitchCheckModuleDropdown = require('../components/core/SwitchCheckModuleDropdown');
 const SideNavBar = require('../components/core/SideBar/SideNavBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
@@ -14,36 +13,13 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
-const Open = require('../components/core/OpenModal.js');
-
+const Toast = require('../NotificationApi/ToastComponent');
 const Welcome = require('../components/core/welcome/welcome');
-
 const AlertModal = require('../components/core/AlertModal');
-
+const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-
-  <div className='fill-height'>
-  <SettingsModal />
-  <LoginModal />
-  <SideNavBar />
-    <Grid fluid className='fill-height'>
-      <Row className='fill-height'>
-        <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
-          <NavMenu />
-          <ProjectModal />
-          <Open />
-        </Col>
-        <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-          <Loader />
-          <AlertModal />
-          <SwitchCheckModuleDropdown />
-          <ModuleWrapper />
-        </Col>
-      </Row>
-    </Grid>
-  </div>
 
 var Main = React.createClass({
   getInitialState() {
@@ -58,6 +34,12 @@ var Main = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    var saveLocation = localStorage.getItem('lastProject');
+    if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
+        Access.loadFromFilePath(saveLocation);
+    }
+  },
 
   finishWelcome: function(){
     this.setState({
@@ -78,18 +60,17 @@ var Main = React.createClass({
         <LoginModal />
         <SideNavBar />
         <SwitchCheckModal />
+        <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
-            <Row className='fill-height'>
+            <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
                 <NavMenu />
                 <ProjectModal />
-                <Open />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
                 <AlertModal />
                 <ModuleWrapper />
-                <SwitchCheckModuleDropdown />
               </Col>
             </Row>
           </Grid>

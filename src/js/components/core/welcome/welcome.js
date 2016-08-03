@@ -3,9 +3,8 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button, Popover} = RB;
 
-const Login = require('./WelcomeLogin');
-const WelcomeUpload = require('./WelcomeUpload');
-const CreateProject = require('./WelcomeCreateProject');
+const Login = require('../login/Login');
+const Upload = require('../Upload');
 const SideNavBar = require('../SideBar/SideNavBar');
 
 const NUM_OF_SLIDES = 3;
@@ -47,7 +46,7 @@ const Styles = {
     maxWidth: '200px'
   },
   welcomeFrame: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#1a2133',
     height: '100%',
     display: 'flex'
   },
@@ -64,6 +63,9 @@ const Styles = {
     margin: 'auto',
     backgroundColor: '#fff',
     borderRadius: '5px'
+  },
+  tutorialInfo: {
+    fontSize: '1.5em'
   }
 }
 
@@ -96,7 +98,7 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
             <img src="./images/TC_Icon_White.png" />
             <h1>Welcome to translationCore</h1>
-            <p>We are glad that you are here. We just need to set up a few things before we can begin.</p>
+            <p style={Styles.tutorialInfo}>We are glad that you are here. We just need to set up a few things before we can begin.</p>
           </div>
         )
         break;
@@ -105,7 +107,7 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
             <Glyphicon style={Styles.bigGlyph} glyph="user" />
             <h1>Connect a Door43 account</h1>
-            <p>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
+            <p style={Styles.tutorialInfo}>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
             <div style={Styles.loginBox}>
               <Login success={()=>{this.setState({index:this.state.index+1})}}/>
             </div>
@@ -117,16 +119,15 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
           <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
             <h1>Load your first project</h1>
-            <p>You can load in your first project from Door43 or from your hard drive.</p>
+            <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '50%', borderStyle: 'dashed', margin: 'auto', maxHeight: '160px'}}>
-            <WelcomeUpload success={()=>{this.setState({index:this.state.index+1,
+            <Upload success={()=>{this.setState({index:this.state.index+1,
                                                         tutorial: true})}} />
             </div>
           </div>
         )
         break;
       case 4:
-          console.log("Flow is now #<Main />");
       break;
     }
   }
@@ -157,30 +158,10 @@ class Welcome extends React.Component{
       case 2:
         return(
           <Popover
-            id="newProject"
-            placement="right"
-            positionLeft={88}
-            positionTop={113}
-            title="Starting A New Project">
-            <div style={Styles.tutorialPopover}>
-              <p>This will start a brand new project from a target language draft</p>
-            </div>
-            <Button
-              style={Styles.nextTutorialButton}
-              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
-          </Popover>
-        )
-      break;
-      case 3:
-        return(
-          <Popover
             id="openProject"
             placement="right"
             positionLeft={88}
-            positionTop={202}
+            positionTop={113}
             title="Opening an Existing Project">
             <div style={Styles.tutorialPopover}>
               <p>You can also open an existing translationCore project and continue yours or someone elses work.</p>
@@ -194,13 +175,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 4:
+      case 3:
         return(
           <Popover
             id="syncProject"
             placement="right"
             positionLeft={88}
-            positionTop={293}
+            positionTop={202}
             title="Sync Your Work To Door43">
             <div style={Styles.tutorialPopover}>
               <p>Clicking here while connected to the internet will save a copy of what you are working on to Door43</p>
@@ -214,13 +195,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 5:
+      case 4:
         return(
           <Popover
             id="generateReport"
             placement="right"
             positionLeft={88}
-            positionTop={379}
+            positionTop={293}
             title="Generating a Report">
             <div style={Styles.tutorialPopover}>
               <p>This will generate a report for all of the checks performed by you or anyone else working on the project you have open.</p>
@@ -234,13 +215,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 6:
+      case 5:
         return(
           <Popover
             id="loadApp"
             placement="right"
             positionLeft={88}
-            positionTop={469}
+            positionTop={379}
             title="Loading a Check">
             <div style={Styles.tutorialPopover}>
               <p>This is where you load in an app so that you can perform a check on your draft.</p>
@@ -254,13 +235,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 7:
+      case 6:
         return(
           <Popover
             id="appSettings"
             placement="right"
             positionLeft={88}
-            positionTop={571}
+            positionTop={465}
             title="Settings">
             <div style={Styles.tutorialPopover}>
               <p>Here you can access various settings relating to how translationCore looks and functions</p>

@@ -15,24 +15,12 @@ class NextButton extends React.Component {
 
 
   buttonClicked() {
-    var path = api.getDataFromCommon('saveLocation');
-    if (path) {
-      git(path).save('Save and continue', path, function() {
-        api.emitEvent('goToNext');
-      });
-    } else {
-      var Alert = {
-        title: "Warning",
-        content: "Save location is not defined",
-        leftButtonText: "Ok"
-      }
-      api.createAlert(Alert);
-    }
+    api.emitEvent('goToNext');
   }
 
   render() {
     return (
-        <Button bsStyle='primary' onClick={this.buttonClicked} style={{marginBottom: "10px"}}>
+        <Button bsStyle='primary' onClick={this.buttonClicked} style={{marginBottom: "10px", float: 'right'}}>
           {SaveAndContinue}
           &nbsp;<Glyphicon glyph="arrow-right" />
         </Button>

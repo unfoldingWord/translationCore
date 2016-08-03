@@ -21,15 +21,20 @@ class SideBarButton extends React.Component{
   mouseLeave(){
     this.setState({hover: false});
   }
-
-      render(){
-        const linkStyle = this.state.hover ? style.hover : style.li;
-        const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
-        return(
-          <div>
-            <li style={linkStyle} onClick={this.props.handleButtonClick} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)}>
-              <Glyphicon glyph={this.props.glyphicon} style={GlyphStyle}/><br/>{this.props.value}</li>
-          </div>
+    render(){
+    const linkStyle = this.state.hover ? style.hover : style.li;
+    const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
+    return(
+        <div>
+          <li style={linkStyle} onClick={this.props.handleButtonClick}
+              onMouseEnter={this.mouseEnter.bind(this)}
+              onMouseLeave={this.mouseLeave.bind(this)}>
+            <Glyphicon glyph={this.props.glyphicon}
+                      style={GlyphStyle}
+            /><br/>
+              {this.props.value}
+          </li>
+        </div>
         );
       }
 

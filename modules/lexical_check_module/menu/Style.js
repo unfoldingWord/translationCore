@@ -2,6 +2,10 @@
   menuItem: {
     text: {
       cursor: 'pointer'
+    },   
+    current: {
+      cursor: 'pointer',
+      fontWeight: 'bold'
     },
     flag: {
       enabled: {
@@ -15,18 +19,18 @@
     statusIcon: {
       retained: {
         color: 'green',
-        display: 'initial'
+        visibility: 'visible'
       },
       replaced: {
         color: 'gold',
-        display: 'initial'
+        visibility: 'visible'
       },
       wrong: {
         color: 'red',
-        display: 'initial'
+        visibility: 'visible'
       },
       unchecked: {
-        display: 'none'
+        visibility: 'hidden'
       }
     }
   }
