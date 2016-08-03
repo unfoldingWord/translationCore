@@ -7,6 +7,7 @@ const Well = ReactBootstrap.Well;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'LexicalChecker';
+const TITLE = 'translationWords Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function LexicalReport(chapter, verse) {
@@ -31,7 +32,7 @@ function LexicalReport(chapter, verse) {
   }
   return (
     <Well>
-      <h4 style={{marginTop: '-5px', display: 'inline'}}>Lexical Check</h4>
+      <h4 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h4>
       <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
       {checkList}
     </Well>
