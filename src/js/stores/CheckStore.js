@@ -56,7 +56,6 @@ class CheckStore extends EventEmitter {
     }
 
     if (field in this.storeData) {
-      console.log(this.storeData[field]);
       return this.storeData[field];
     }
 
