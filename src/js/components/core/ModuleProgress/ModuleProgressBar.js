@@ -72,11 +72,16 @@ var Progress = React.createClass({
       for (var element of indexArrays) {
         valIndex.push(data[element]);
       }
-
+      var tempData = this.state.data;
+	    var currentName = modName.name;
+      if (tempData[currentName] == undefined) {
+         tempData[currentName]  = {};
+      }
       if (this.state.max == 0) {
         this.setState({
           max: total,
-          label: modName.name
+          label: currentName,
+          data: tempData
         });
       }
       var show = CoreStore.getModProg();
@@ -84,28 +89,28 @@ var Progress = React.createClass({
         showModal: show
       });
       if (show) {
-        this.updateBar(data, valIndex);
+        this.updateBar(data, modName.name, valIndex);
       }
     }
   },
 
-  updateBar: function (data, index) {
+  updateBar: function (data, name, index) {
     var currentProgress = this.state.progress;
-    if (!this.isNewData(index)) {
+    if (this.isNewData(name, index)) {
       this.addToProgress();
     }
   },
 
-  isNewData: function (index) {
+  isNewData: function (name, index) {
     var progressObj = this.state.data;
-    if (!progressObj[index]) {
-      progressObj[index] = 1;
+    if (!progressObj[name][index]) {
+      progressObj[name][index] = 1;
       this.setState({
         data: progressObj
       });
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   },
 
