@@ -24,7 +24,6 @@ class Verse extends React.Component {
 	}
 
 	render() {
-		console.log("rendered");
 		return (
 			<p>
         <strong className={this.state.highlighted ? 'text-primary' : ''}>
@@ -42,19 +41,17 @@ class Verse extends React.Component {
 function displayGreek(text = []) {
 	let i = 0;
 	return text.map((word) => {
-		var popover = (<Popover id="popover-positioned-scrolling-bottom" title={word.word}>{word.brief}</Popover>);
-				return (<OverlayTrigger 
-								key={i++} 
-								trigger="click" 
-								rootClose 
-								placement="bottom" 
-								overlay={popover}>
-								<span
+				return (<span
+									key={i++}
 									strong={word.strong}
-									speech={word.speech}>
+									speech={word.speech}
+									onClick={function(e){
+										var x = e.target.getBoundingClientRect().left;
+										var y = e.target.getBoundingClientRect().bottom;
+										api.Popover(true, word.word, word.brief, x, y);
+									}}>
 									{word.word + " "}
 								</span>
-							</OverlayTrigger>
 						);
 	});
 }

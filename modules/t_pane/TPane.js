@@ -23,7 +23,6 @@ class TPane extends React.Component {
   constructor() {
       super();
       var originalLanguage = api.getDataFromCheckStore("TPane", 'parsedGreek');
-      console.log(originalLanguage);
       var targetLanguage = api.getDataFromCommon('targetLanguage');
       var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
       this.state = {
