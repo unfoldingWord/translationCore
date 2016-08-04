@@ -19,7 +19,8 @@ const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-const CoreActions = require('../actions/CoreActions.js')
+const CoreActions = require('../actions/CoreActions.js');
+const Popover = require('../components/core/Popover');
 
 var Main = React.createClass({
   getInitialState() {
@@ -69,6 +70,7 @@ var Main = React.createClass({
         <LoginModal />
         <SideNavBar />
         <SwitchCheckModal />
+        <Popover />
         <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
             <Row className='fill-height main-view'>

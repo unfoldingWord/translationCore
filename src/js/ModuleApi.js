@@ -25,6 +25,7 @@ class ModuleApi {
     this.ReactBootstrap = ReactBootstrap;
     this.CheckModule = CheckModule;
     this.modules = {};
+    this.Popover = require('./components/core/PopoverApi');
     this.Toast = require('./NotificationApi/ToastApi');
   }
 
