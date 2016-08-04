@@ -65,11 +65,11 @@ function syncToGit() {
                         remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                         api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
-                          api.Toast.success('Update succesful', '', 70);
+                          api.Toast.success('Update succesful', '', 7);
                         });
                       });
                     } else {
-                      api.Toast.success('Update succesful', '', 70);
+                      api.Toast.success('Update succesful', '', 7);
                     }
                   });
                 }
@@ -77,7 +77,7 @@ function syncToGit() {
         }
     });
   } else {
-    api.Toast.info('Login then try again', '', 70);
+    api.Toast.info('Login then try again', '', 7);
     CoreActions.updateLoginModal(true);
   }
 }
