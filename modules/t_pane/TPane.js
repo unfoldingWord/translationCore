@@ -9,6 +9,7 @@ const api = window.ModuleApi;
 const React = api.React;
 
 const Row = api.ReactBootstrap.Row;
+const Well = api.ReactBootstrap.Well;
 const Pane = require('./Pane');
 
 
@@ -85,11 +86,14 @@ class TPane extends React.Component {
 
   render() {
     return (
-      <Row>
-        <Pane title="Original Language" content={this.state.originalLanguage}/>
-        <Pane title="Gateway Language" content={this.state.gatewayLanguage}/>
-        <Pane title="Target Language" content={this.state.targetLanguage}/>
-      </Row>
+      <Well style={{margin: '5px 0 5px 0'}}>
+      <h3 style={{width: '100%', marginTop: '-8px'}}>Scriptural Context</h3>
+        <Row>
+          <Pane content={this.state.originalLanguage}/>
+          <Pane content={this.state.gatewayLanguage}/>
+          <Pane last={true} content={this.state.targetLanguage}/>
+        </Row>
+      </Well>
     );
   }
 }

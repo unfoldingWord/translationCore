@@ -37,6 +37,26 @@ const DragDrop = React.createClass({
       filePath: ''
     };
   },
+  componentWillMount: function(){
+    if(this.props.isWelcome){
+      this.mainStyle = {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        borderRadius: '5px',
+        fontSize: '25px'
+      }
+    } else {
+      this.mainStyle = {
+        width: '100%',
+        color: '#212121',
+        height: '200px',
+        border: '2px dashed #727272',
+        borderRadius: '5px',
+        fontSize: '25px'
+      }
+    }
+  },
   onDrop: function(files) {
     var _this = this;
     if (files !== undefined) {
@@ -45,26 +65,30 @@ const DragDrop = React.createClass({
       _this.props.sendFilePath(files[0].path);
     }
   },
+
   onClick: function() {
     var _this = this;
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }, function(filename) {
-      if (filename !== undefined) {
-        // FileImport(filename[0]);
-        _this.setState({filePath: filename[0]});
-        _this.props.sendFilePath(filename[0]);
-      }
-    });
+    if (!this.opened) {
+      this.opened = true;
+      dialog.showOpenDialog({
+        properties: ['openDirectory']
+      }, function(filename) {
+        if (filename !== undefined) {
+          _this.setState({filePath: filename[0]});
+          _this.props.sendFilePath(filename[0], null, true);
+        }
+        _this.opened = false;
+      });
+    }
   },
 
   render: function() {
     return (
     <div onClick = {this.onClick} >
         <Dropzone onDrop = {this.onDrop}
-        disableClick={true} multiple={false} style={style.dropzone.main}
+        disableClick={true} multiple={false} style={this.mainStyle}
         activeStyle={style.dropzone.active}>
-            <div style={style.dropzone.text}>
+            <div style={this.props.styles}>
               <center>
                 Drag files here to upload, or click to select a file
                 <span style={style.dropzone.inner}> {this.state.filePath} </span>

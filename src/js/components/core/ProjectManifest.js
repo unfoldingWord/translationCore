@@ -51,12 +51,15 @@ function populate(data, tsManifest) {
   projectManifest.repo = data.repo;
 
   for (var user of data.user) {
-    projectManifest.checkers.push(user);
+    if(user)
+      projectManifest.checkers.push(user);
   }
 
-  for (var item in data.checkLocations) {
-    var currentItem = data.checkLocations[item];
-    projectManifest.check_modules.push(currentItem.name);
+  if (data.checkLocations) {
+    for (item in data.checkLocations) {
+      var currentItem = data.checkLocations[item];
+      projectManifest.check_modules.push(currentItem.name);
+    }
   }
 
   if (tsManifest) {

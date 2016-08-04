@@ -9,7 +9,7 @@ const {dialog} = remote;
 const path = require('path');
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
-
+const api = window.ModuleApi;
 const git = require('./GitApi.js');
 const Access = require('./AccessProject');
 
@@ -24,24 +24,32 @@ module.exports = (function() {
   function openManifest(url, callback) {
     var splitUrl = url.split('.');
     if (splitUrl.pop() !== 'git') {
-      dialog.showErrorBox('Import Error', 'Please make sure that this ' +
-      'is a valid project.');
+      const alert = {
+            title: 'Import Error',
+            content: 'Please Make Sure That This Is a Valid Project.',
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
       return;
     }
     var projectPath = splitUrl.pop().split('/');
     var projectName = projectPath.pop();
     const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
+
     fs.readdir(savePath, function(err, contents) {
       if (err) {
         fs.ensureDir(savePath, function() {
           runGitCommand(savePath, url, callback);
         });
       } else {
-        Access.loadFromFilePath(savePath);
-        CoreActions.showCreateProject("");
+        callback(savePath, url);
+        // Access.loadFromFilePath(savePath);
+        // CoreActions.showCreateProject("");
+
       }
     });
   }
+
   /**
   * @description Runs the git command to clone a repo.
   * @param {string} savePath - The location of the git repo
@@ -54,14 +62,21 @@ module.exports = (function() {
         return;
       }
       try {
+
         fs.readFileSync(path.join(savePath, 'manifest.json'));
         callback(savePath, url);
       } catch (error) {
-            // dialog.showErrorBox('Import Error', error);
-        console.error(error);
+          const alert = {
+            title: 'Error Getting Transaltion Studio Manifest',
+            content: error.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
+          console.error(error);
         return;
       }
     });
   }
+
   return openManifest;
 })();

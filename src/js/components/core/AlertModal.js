@@ -1,3 +1,7 @@
+
+/**
+* @description - Displays alert and returns user response
+*/
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
@@ -34,7 +38,7 @@ const AlertModal = React.createClass({
     catch(e){
     }
 
-    //{title:Warning, content:YOU MESSED UP, leftButtonText:OK...}
+
       try {
         this.setState({
           title: alertMessage['title'],
@@ -67,7 +71,8 @@ const AlertModal = React.createClass({
         width:'60px',
         textAlign:'center',
         verticalAlign:'middle',
-        padding:0
+        padding:0,
+        left:'50%'
       }
     } else {
       return {
@@ -85,35 +90,24 @@ const AlertModal = React.createClass({
     }
 
     alertDiv = {
-      padding: '1em',
-      position: 'absolute',
-      top: '20%',
-      left: '50%',
-      marginRight: '-50%',
-      transform:' translate(-50%, -50%)'
+      position: 'relative'
     }
 
-    alertContent = {
-      padding: '1em',
-      position: 'absolute',
-      top: '100%',
-      left: '50%',
-      marginRight: '-50%',
-      transform:' translate(-50%, -50%)'
-    }
     return (
       <div >
       <Modal show={this.state.visibility}>
-      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60}}>
+      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
       <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
+      <center> 
       <div style={alertDiv}>
       <h3>{this.state.title}</h3>
       <p style={alertContent}>{this.state.content}</p>
       </div>
-      <ButtonToolbar style={{position:'absolute', top:'70%', left: '50%',marginRight: '-50%', transform: 'translate(-50%, -50%)'}}>
+      <div  style={{paddingTop:'50px'}}>
       <Button bsStyle="danger" style={this.getStyleFromState(this.state.leftButtonText)} onClick={this.handleAlertDismiss}>{this.state.leftButtonText}</Button>
       <Button style={this.getStyleFromState(this.state.rightButtonText)} onClick={this.handleAlertOK}>{this.state.rightButtonText}</Button>
-      </ButtonToolbar>
+      </div>
+      </center>
       </Alert>
       </Modal.Footer>
       </Modal>

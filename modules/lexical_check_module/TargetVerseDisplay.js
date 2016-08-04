@@ -15,7 +15,7 @@ const Well = ReactBootstrap.Well;
 
 /* Contains a word from the target language, defines a lot of listeners for clicks */
 const TargetWord = React.createClass({
-// highlighted: false,
+  // highlighted: false,
   getInitialState: function() {
     return {
       highlighted: false,
@@ -35,6 +35,14 @@ const TargetWord = React.createClass({
     if (this.state.highlighted) {
       this.setState({
         highlighted: false
+      });
+    }
+  },
+
+  setHighlight: function() {
+    if (!this.state.highlighted) {
+      this.setState({
+        highlighted: true
       });
     }
   },
@@ -79,18 +87,63 @@ const TargetLanguageSelectBox = React.createClass({
     cursor: 'pointer'
   },
 
+  componentWillMount: function() {
+    this.fetchSelectedWords();
+  },
+
+  /**
+   * @description - This looks to see if selected words are already in the check store, so to be persistent 
+   * we have to go and look for those 
+   */
+  fetchSelectedWords: function() {
+    var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
+    if (currentCheckIndex != null && currentGroupIndex != null) {
+      var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
+      if (currentCheck) {
+        if (currentCheck.selectedWordsRaw) {
+          this.selectedWords = currentCheck.selectedWordsRaw;
+        }
+      }
+    }  
+  },
+
+  componentDidMount: function() {
+    for (var word of this.selectedWords) {
+      var targetWord = this.refs[word.key];
+      if (targetWord) {
+        targetWord.setHighlight();
+      }
+    }
+  },
+
   shouldComponentUpdate: function(nextProps, nextState) {
-    for (key in this.refs)
+    //remove everybody's highlighting
+    for (key in this.refs) {
       this.refs[key].removeHighlight();
+    }
     this.selectedWords = [];
+
+    //Maybe we've already done this check? If we have update the highlighting on the selected words
+    this.fetchSelectedWords();
+    
     return true;
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
+    for (var word of this.selectedWords) {
+      var targetWord = this.refs[word.key];
+      if (targetWord) {
+        targetWord.setHighlight();
+      }
+    }
   },
 
   generateWordArray: function() {
     var words = tokenizer.tokenize(this.props.verse),
       wordArray = [],
       index = 0,
-      tokenKey = 0,
+      tokenKey = 1,
       wordKey = 0;
     for (var word of words) {
       var wordIndex = this.props.verse.indexOf(word, index);
@@ -108,13 +161,14 @@ const TargetLanguageSelectBox = React.createClass({
         <TargetWord
           word={word}
           key={wordKey++}
-          keyId={tokenKey++}
+          keyId={tokenKey}
           style={this.cursorPointerStyle}
           selectCallback={this.addSelectedWord}
           removeCallback={this.removeFromSelectedWords}
           ref={tokenKey.toString()}
         />
       );
+      tokenKey++;
       index = wordIndex + word.length;
     }
     return wordArray;
@@ -126,7 +180,9 @@ const TargetLanguageSelectBox = React.createClass({
       <Well
         bsSize={'small'}
         style={{
-          overflowY: "scroll"
+          overflowY: "scroll",
+          minHeight: '128px',
+          marginBottom: '5px'
         }}
       >
         <span>{words}</span>
@@ -136,7 +192,7 @@ const TargetLanguageSelectBox = React.createClass({
 
   addSelectedWord: function(wordObj) {
     // check to see if we already have this word
-    // an inefficient search, but shouldn't have >10 words to search through
+    // an inefficient search, but shouldn't have >20 words to search through
     var idFound = false;
     for (var i = 0; i < this.selectedWords.length; i++) {
       if (this.selectedWords[i].key == wordObj.key) {
@@ -147,6 +203,7 @@ const TargetLanguageSelectBox = React.createClass({
       this.selectedWords.push(wordObj);
       this.sortSelectedWords();
     }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
 
     /* This is used for if you want to enable disabled buttons after the user has
      * selected at least one word
@@ -167,6 +224,7 @@ const TargetLanguageSelectBox = React.createClass({
     if (index != -1) {
       this.selectedWords.splice(index, 1);
     }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
 
     //This is used for if you want to disable the buttons if no words are selected
     // if (this.selectedWords.length <= 0) {
@@ -201,6 +259,13 @@ const TargetLanguageSelectBox = React.createClass({
       }
     }
     return returnArray;
+  },
+
+  /**
+   * @description - This returns the array object of word objects so that the data can be persistent
+   */
+  getWordsRaw: function() {
+    return this.selectedWords;
   }
 });
 

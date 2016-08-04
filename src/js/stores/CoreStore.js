@@ -141,27 +141,22 @@ class CoreStore extends EventEmitter {
     return this.checkModalVisibility;
   }
 
+  getNotificationToastParams() {
+    return this.toastParamsObj;
+  }
+
+  getToastVisibility(){
+    return this.toastVisibility;
+  }
+
   getCurrentCheckCategory() {
     return this.currentCheckCategory;
   }
 
-  // Returns an array of objects of the Check Modules (the ones with a ReportView.js)
-  // Mostly just for ModuleWrapper
-  getCheckCategoryOptions(){
-    if(!this.checkCategoryOptions) {
-      return null;
-    }
-    return this.checkCategoryOptions;
+  setCurrentCheckCategory(value) {
+    this.currentCheckNamespace = value;
   }
 
-  // Returns the Check Module (object) for the given namespace (string)
-  findCheckCategoryOptionByNamespace(namespace) {
-    for(let category of this.getCheckCategoryOptions()) {
-      if(category.name == namespace) {
-        return category;
-      }
-    }
-  }
 /**
   * @param {function} callback
   */
@@ -256,6 +251,9 @@ class CoreStore extends EventEmitter {
         else {
           console.error('Problem when loading check. No check found.');
         }
+        this.progressKeyObj = null;
+        this.loaderModalVisibility = false;
+        CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
         this.emitChange();
       break;
 
@@ -290,11 +288,16 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.SHOW_TOAST_PARAMS:
+        this.toastVisibility = action.toastOption;
+        this.toastParamsObj = action.toastParams;
+        this.emitChange();
+      break;
+
       default:
       // do nothing
     }
   }
-
 }
 
 const coreStore = new CoreStore;

@@ -15,102 +15,59 @@ const Col = ReactBootstrap.Col;
 const Well = ReactBootstrap.Well;
 const Button = ReactBootstrap.Button;
 const ButtonGroup = ReactBootstrap.ButtonGroup;
-const Glyphicon = ReactBootstrap.Glyphicon;
 
 // Declare modules that are not defined within our ExampleChecker
 // They will be initialized in the constructor
 var TPane = null;
-var ProposedChanges = null;
+var CommentBox = null;
 var ExampleTool = null;
 
+// Initialize the namespace to be used inside the check store.
 const NAMESPACE = 'ExampleChecker';
 
-class View extends React.Component {
+// Extends CheckModule class, which handles most aspects of a check module,
+// such as events when the user clicks the next button or menu items in the navigation menu,
+// saving checks in the check store, and updating the view.
+// If you don't want to extend CheckModule, then extend the React.Component class instead.
+class View extends api.CheckModule {
 
   constructor() {
     super();
-
-    this.state = {
-      currentCheck: null
-    };
+    
+    // Save the namespace inside the view. Required for extending the CheckModule class.
+    this.nameSpace = NAMESPACE;
 
     // Initialize modules that are not defined within our ExampleChecker
     // They will be rendered in the render() function
     TPane = api.getModule('TPane');
-    ProposedChanges = api.getModule('ProposedChanges');
+    CommentBox = api.getModule('CommentBox');
     ExampleTool = api.getModule('ExampleTool');
-
-    // Bind functions to the View object so the "this" context isn't lost
-    this.updateCheckStatus = this.updateCheckStatus.bind(this);
-    this.goToNext = this.goToNext.bind(this);
-    this.goToCheck = this.goToCheck.bind(this);
-    this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
-
-  componentWillMount() {
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToCheck', this.goToCheck);
-    this.updateState();
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('goToNext', this.goToNext);
-    api.removeEventListener('goToCheck', this.goToCheck);
-  }
-  goToNext() {
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
-  }
-  goToCheck(params) {
-    this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
-  }
+  
   /**
-   * @description - This is used to change our current check index and group index within the store
-   * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
-   * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
+   * @description - Implements abstract method required by the CheckModule class.
+   * This is called when the user clicks the NextButton or a MenuItem in the NavigationMenu.
+   * Gets data from tools that are in the check module view and
+   * returns an object with keys and values that will be stored in the current check.
    */
-  changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
-    //Get the proposed changes and add it to the check
-    var proposedChanges = api.getDataFromCheckStore('ProposedChanges', 'currentChanges');
-    var currentCheck = this.state.currentCheck;
-    if (currentCheck && proposedChanges != "" && proposedChanges != this.getVerse('targetLanguage')) {
-      currentCheck.proposedChanges = proposedChanges;
+  getDataFromTools() {
+    var dataFromTools = {};
+    // Get text from comment box tool
+    var comment = api.getDataFromCheckStore('CommentBox', 'currentChanges');
+    // Save comment if the text box is not empty
+    if (comment != "") {
+      dataFromTools.comment = comment;
     }
-
-    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    //error check to make sure we're going to a legal group/check index
-    if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
-      if (newGroupIndex < groups.length) {
-        api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
-        if (newCheckIndex < groups[currentGroupIndex].checks.length) {
-          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
-        }
-        /* In the case that we're incrementing the check and now we're out of bounds
-          * of the group, we increment the group.
-          */
-        else if (newCheckIndex == groups[currentGroupIndex].checks.length &&
-          currentGroupIndex < groups.length - 1) {
-          api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', currentGroupIndex + 1);
-          api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', 0);
-        }
-        //invalid indices: don't do anything else
-        else {
-          return;
-        }
-      }
-    }
-    this.updateState();
+    return dataFromTools;
   }
+  
   /**
    * @description - Helper method for retrieving the verse from different languages
    * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'
    * that will be used to index into the 'common' namespace within CheckStore
    */
   getVerse(language) {
-    var currentCheck = this.state.currentCheck;
+    var currentCheck = this.getCurrentCheck();
     var currentVerseNumber = currentCheck.verse;
     var currentChapterNumber = currentCheck.chapter;
     var actualLanguage = api.getDataFromCommon(language);
@@ -123,69 +80,49 @@ class View extends React.Component {
   }
 
   /**
-   * @description - This method grabs the information that is currently in the
-   * store and uses it to update our state, which in turn updates our view. This method is
-   * typically called after the store is updated so that our view updates to the latest
-   * data found in the store
+   * @description - Displays the entire view of the screen, except for the side menu and
+   * navigation menu.
    */
-  updateState() {
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentCheckFromStore = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
-    var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
-    this.setState({
-      currentCheck: currentCheckFromStore
-    });
-    api.emitEvent('goToVerse', {
-      chapterNumber: currentCheckFromStore.chapter,
-      verseNumber: currentCheckFromStore.verse
-    });
-  }
-
-  updateCheckStatus(newCheckStatus) {
-    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
-    currentCheck.checkStatus = newCheckStatus;
-    api.emitEvent('changedCheckStatus', {
-      groupIndex: currentGroupIndex,
-      checkIndex: currentCheckIndex,
-      checkStatus: newCheckStatus
-    });
-    this.updateState();
-  }
-
   render() {
     var _this = this;
+    const LANGUAGE_QUESTION = 'Is this verse written in the correct language?';
+    const NATURALNESS_QUESTION = 'Is this translation a meaning-based translation that ' +
+      'attempts to communicate the meaning of the original text in ways that are natural, ' +
+      'clear, and accurate in the target language?';
     return (
       <div>
+        {/* Render TPane tool */}
         <TPane />
         <Row className='show-grid'>
           <Col sm={6}>
+            {/* Render ExampleTool tool */}
             <ExampleTool />
           </Col>
           <Col sm={6}>
             <Well>
-              <p>Is this verse written in the correct language?</p>
+              <p>
+                { /* Displays a different question depending on the group */ }
+                { _this.getCurrentGroup().group == 'Language' ? LANGUAGE_QUESTION : NATURALNESS_QUESTION }
+              </p>
               <ButtonGroup>
                 <Button
                   onClick={
-                    function() { _this.updateCheckStatus('YES'); }
+                    function() { _this.updateCheckStatus('RETAINED'); }
                   }
                 >
                   <span style={{color: 'green'}}>Yes</span>
                 </Button>
                 <Button
                   onClick={
-                    function() { _this.updateCheckStatus('NO'); }
+                    function() { _this.updateCheckStatus('WRONG'); }
                   }
                 >
                   <span style={{color: 'red'}}>No</span>
                 </Button>
               </ButtonGroup>
             </Well>
-            <ProposedChanges />
+            {/* Render CommentBox tool */}
+            <CommentBox />
           </Col>
         </Row>
       </div>

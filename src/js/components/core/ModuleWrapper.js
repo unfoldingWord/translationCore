@@ -8,6 +8,7 @@ var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore');
 var NextButton = require('../core/NextButton');
+var PreviousButton = require('../core/PreviousButton');
 
 const api = window.ModuleApi;
 
@@ -32,8 +33,13 @@ class ModuleWrapper extends React.Component {
     var CheckModule = this.state.view;
     return (
       <div>
-      <CheckModule />
-      <NextButton />
+        <CheckModule />
+        <div style={{float: 'left'}}>
+          <PreviousButton />
+        </div>
+        <div style={{float: 'right'}}>
+          <NextButton />
+        </div>
       </div>
     );
   }
@@ -48,10 +54,16 @@ class ModuleWrapper extends React.Component {
 
   updateCheckType(params) {
     if (params.currentCheckNamespace) {
-      var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
-      var newView = newCheckCategory.view;
+      // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
+      var newCheckCategory = api.getModule(params.currentCheckNamespace);
+      var newView = newCheckCategory;
       this.setState({
         view: newView
+      });
+    }
+    else {
+      this.setState({
+        view: null
       });
     }
   }

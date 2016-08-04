@@ -40,25 +40,6 @@ var Progress = React.createClass({
 
   },
 
-  beautifyString: function (check) {
-    var stringRegex = new RegExp("[^a-zA-Z0-9\s]", "g");
-    let regRes;
-    try {
-      check = check.replace(stringRegex, " ");
-    }
-    catch (e) {
-    }
-    completeWord = [];
-    check = check.split(" ");
-    for (var word of check) {
-      word = word.charAt(0).toUpperCase() + word.slice(1);
-      completeWord.push(word);
-    }
-    completeWord = completeWord[0] + completeWord[1];
-    return completeWord;
-  },
-
-
   componentWillUnMount: function () {
     CoreStore.removeChangeListener(this.updateModuleProgress);
   },
@@ -74,8 +55,13 @@ var Progress = React.createClass({
       }
       var tempData = this.state.data;
 	    var currentName = modName.name;
+      if (this.state.label != currentName) {
       if (tempData[currentName] == undefined) {
          tempData[currentName]  = {};
+      }
+      this.setState({
+        label: currentName
+      });
       }
       if (this.state.max == 0) {
         this.setState({

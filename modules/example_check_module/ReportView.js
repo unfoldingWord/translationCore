@@ -45,8 +45,8 @@ function getChecksByVerse(chapter, verse) {
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {
-        // Also appends the gateway language word that we're checking.
-        // This is taken from the group.
+        // Also appends the group name to the check
+        check.group = group.group;
         res.push(check);
       }
     }
@@ -58,6 +58,11 @@ function getChecksByVerse(chapter, verse) {
 class ReportItem extends React.Component {
 	constructor() {
 		super();
+  }
+  headerDiv() {
+    return (
+      <h4 style={{marginTop: '-5px'}}>{this.props.check.group}</h4>
+    );
   }
   checkStatusDiv() {
     if(!this.props.check.checkStatus) 
@@ -74,13 +79,21 @@ class ReportItem extends React.Component {
     );
   }
   footerDiv() {
+    if(this.props.check.user) {
+      var user = this.props.check.user.fullName;
+    }
+    if(this.props.check.timestamp) {
+      // We do 'new Date(...)' because it could be a string or a Date object.
+      var timestamp = new Date(this.props.check.timestamp).toDateString();
+    }
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{this.props.check.user || 'USER'} - {this.props.check.timeStamp || 'TIMESTAMP'}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user || 'Anonymous'} - {timestamp || ''}</div>
     );
   }
   render() {
     return (
       <Well style={{background: 'rgb(255, 255, 255)'}}>
+        {this.headerDiv()}
         {this.checkStatusDiv()}
         {this.proposedChangesDiv()}
         {this.footerDiv()}

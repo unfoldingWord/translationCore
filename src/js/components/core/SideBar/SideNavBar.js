@@ -15,11 +15,16 @@ const sync = require('./GitSync.js');
 
 class SideNavBar extends React.Component{
   handleOpenProject(){
-    CoreActions.updateOpenView(true);
+    CoreActions.showCreateProject("Languages");
   }
 
   handleSyncProject(){
-    sync();
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      sync();
+    } else {
+      api.Toast.info('Open a project first, then try again', '', 3);
+      CoreActions.showCreateProject("Languages");
+    }
   }
 
   handleReport(){
@@ -31,7 +36,12 @@ class SideNavBar extends React.Component{
   }
 
   handleChangeCheckCategory(){
-    CoreActions.updateCheckModal(true);
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      CoreActions.updateCheckModal(true);
+    } else {
+      api.Toast.info('Open a project first, then try again', '', 3);
+      CoreActions.showCreateProject("Languages");
+    }
   }
 
   handleSettings(){

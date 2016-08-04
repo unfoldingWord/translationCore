@@ -129,6 +129,14 @@ module.exports = {
     });
   },
 
+    sendNotificationToast: function(visible, toastParamsObj) {
+      Dispatcher.handleAction({
+        type: consts.SHOW_TOAST_PARAMS,
+        toastOption: visible,
+        toastParams: toastParamsObj
+      });
+    },
+
   sendAlertResponse: function(alertResponseObj) {
     Dispatcher.handleAction({
       type: consts.ALERT_MODAL_RESPONSE,
