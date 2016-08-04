@@ -24,7 +24,6 @@ class Verse extends React.Component {
 	}
 
 	render() {
-		console.log("rendered");
 		return (
 			<p>
         <strong className={this.state.highlighted ? 'text-primary' : ''}>

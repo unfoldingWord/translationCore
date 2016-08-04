@@ -23,7 +23,10 @@ class TPane extends React.Component {
   constructor() {
       super();
       var originalLanguage = api.getDataFromCheckStore("TPane", 'parsedGreek');
-      console.log(originalLanguage);
+      if (!originalLanguage) {
+		parseGreek();
+        originalLanguage = api.getDataFromCheckStore("TPane", 'parsedGreek');
+      }
       var targetLanguage = api.getDataFromCommon('targetLanguage');
       var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
       this.state = {
@@ -100,3 +103,40 @@ class TPane extends React.Component {
 }
 
  module.exports = TPane;
+
+/**
+ * @author Evan Wiederspan
+ * @description parses the incoming greek and modifies it to be ready 
+ */
+function parseGreek() {
+	// looking at it now, this method with the regex may be way less efficient
+	// than just splitting the verse by spaces and going word by word
+	// this might want to be reworked later for efficiency
+	var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+G(\d{1,6})\s+(?:G\d{1,6})*\s*([A-Z0-9\-]+)/g;
+	var lex = require("./Lexicon.json");
+	let origText = api.getDataFromCommon("originalLanguage");
+	let parsedText = {};
+	for (let ch in origText) {
+		if (!parseInt(ch)) { // skip the title
+			continue;
+		}
+		parsedText[ch] = {};
+		let chap = origText[ch];
+		for (let v in chap) {
+			let origVerse = origText[ch][v];
+			let verse = parsedText[ch][v] = [];
+			let result = [];
+			while(result = greekRegex.exec(origVerse)) {
+				try {
+					let [,word,strong,speech] = result;
+					let {brief, long} = lex[strong];
+					verse.push({word, strong, speech, brief, long});
+				}
+				catch(e) {
+					console.log("parse error");
+				}
+			}
+		}
+	}
+	api.putDataInCheckStore("TPane", "parsedGreek", parsedText);
+}
