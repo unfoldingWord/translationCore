@@ -24,7 +24,7 @@ const IMPORT_ONLINE = 'Import From Online';
 
 const UploadModal = React.createClass({
   getInitialState: function() {
-    return {active: 1, showFile: false};
+    return {active: 1, showFile: false, link:""};
   },
 
   /**
@@ -39,6 +39,10 @@ const UploadModal = React.createClass({
     } else {
       this.setState({showFile: true});
     }
+  },
+
+  getLink() {
+    return this.refs.Online.state.value;
   },
 
   /**
@@ -225,7 +229,7 @@ const UploadModal = React.createClass({
       mainContent = (
         <div>
           <br />
-          <OnlineInput sendFilePath={this.sendFilePath}/>
+          <OnlineInput ref={"Online"} sendFilePath={this.sendFilePath}/>
         </div>
       );
     }

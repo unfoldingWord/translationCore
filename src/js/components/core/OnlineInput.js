@@ -13,17 +13,12 @@ const loadOnline = require('./LoadOnline');
 const OnlineInput = React.createClass({
   getInitialState: function() {
     return {
-      value: ''
+      value: ""
     };
   },
 
   handleChange: function(e) {
     this.setState({value: e.target.value});
-  },
-
-  submitLink: function() {
-    var link = this.state.value;
-    loadOnline(link, this.props.sendFilePath);
   },
 
   submitViaEnter: function(e) {
@@ -49,9 +44,6 @@ const OnlineInput = React.createClass({
           placeholder="Enter URL"
           onChange={this.handleChange}
           onKeyDown={this.submitViaEnter} />
-          <Button bsStyle="primary" onClick={this.submitLink} pullRight>
-            Submit
-          </Button>
           <FormControl.Feedback />
         </FormGroup>
     );
