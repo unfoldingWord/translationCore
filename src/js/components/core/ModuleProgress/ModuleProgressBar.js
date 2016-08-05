@@ -20,8 +20,8 @@ var Progress = React.createClass({
   },
 
   componentWillMount: function () {
-        CoreStore.addChangeListener(this.updateModuleProgress);
-        CheckStore.addEventListener('changedCheckStatus', this.emitProgress);
+    CoreStore.addChangeListener(this.updateModuleProgress);
+    CheckStore.addEventListener('changedCheckStatus', this.emitProgress);
   },
 
 
@@ -48,20 +48,20 @@ var Progress = React.createClass({
     if (data) {
       var modName = CoreStore.getCurrentCheckCategory();
       var viewObj = CheckStore.getModuleDataObject(modName.name);
-      var total = viewObj.groups.length;
+      var total = this.getTotal(viewObj);
       var valIndex = [];
       for (var element of indexArrays) {
         valIndex.push(data[element]);
       }
       var tempData = this.state.data;
-	    var currentName = modName.name;
+      var currentName = modName.name;
       if (this.state.label != currentName) {
-      if (tempData[currentName] == undefined) {
-         tempData[currentName]  = {};
-      }
-      this.setState({
-        label: currentName
-      });
+        if (tempData[currentName] == undefined) {
+          tempData[currentName] = {};
+        }
+        this.setState({
+          label: currentName
+        });
       }
       if (this.state.max == 0) {
         this.setState({
@@ -78,6 +78,17 @@ var Progress = React.createClass({
         this.updateBar(data, modName.name, valIndex);
       }
     }
+  },
+
+  getTotal(viewObj) {
+    var total = 0;
+    for (var group in viewObj['groups']) {
+      var groupObj = viewObj['groups'][group];
+      for (var check in groupObj['checks']) {
+        total += 1;
+      }
+    }
+    return total;
   },
 
   updateBar: function (data, name, index) {
