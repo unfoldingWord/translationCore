@@ -10,29 +10,25 @@ class ProposedChanges extends React.Component {
   constructor() {
     super();
     this.state = {
-      open: false,
       newWord: "",
       currentWord: ""
     };
   }
-  
+
   componentWillMount() {
     if (this.props.val) {
       this.setState({newWord: this.props.val});
       api.getDataFromCheckStore(NAMESPACE)['newWord'] = this.props.val;
     }
   }
-  
+
   handleChange(e) {
     this.value = e.target.value;
     this.setState({newWord: this.value});
+    api.getDataFromCheckStore(NAMESPACE)['newWord'] = this.value;
+    api.getDataFromCheckStore(NAMESPACE)['previousWord'] = this.props.selectedWord;
   }
 
-  handleSubmit(event){
-    api.getDataFromCheckStore(NAMESPACE)['newWord'] = this.state.newWord;
-    api.getDataFromCheckStore(NAMESPACE)['previousWord'] = this.props.selectedWord;
-    this.setState({ open: !this.state.open });
-  }
   // these next two functions will be used through a ref
   getProposedChanges() {
     return api.getDataFromCheckStore(NAMESPACE, 'newWord');
@@ -44,7 +40,15 @@ class ProposedChanges extends React.Component {
   }
 
   update(newCurrentWord) {
-    this.setState({currentWord: newCurrentWord});
+    var newWord = "";
+    for (var i = 0; i < newCurrentWord.length; i++){
+      var word = newCurrentWord[i];
+      newWord += word;
+      if (i < newCurrentWord.length - 1) {
+        newWord += ', ';
+      }
+    }
+    this.setState({currentWord: newWord});
   }
 
   render() {
@@ -61,32 +65,22 @@ class ProposedChanges extends React.Component {
       }
     }
     return (
-      <div style={{width:'100%'}}>
-        <Button bsStyle="primary"
-        onClick={ ()=> this.setState({ open: !this.state.open })} style={{width:'100%'}}>
-          Propose Changes
-        </Button>
-        <Panel collapsible expanded={this.state.open} style={{backgroundColor: "#D3D3D3"}}>
-
-          <Well style={{fontSize: "16px", color: "white", textAlign: "center", background:"#d9534f"}}>{wordArray}
+      <Well style={{width:'100%', padding: "10px", marginTop: "2.5px"}}>
+        <center>
+          <span style={{fontSize: "24px", color: "#000", fontFamily: "Helvetica", marginBottom: "5px"}}>
+            Propose Changes
+          </span>
+        </center>
+        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{this.state.currentWord}
           </Well>
-
-          <FormControl
+        <FormControl
             type="text"
             placeholder="Proposed Word"
             value={this.state.newWord}
-            style={{marginBottom: "15px", marginTop: "15px"}}
+            style={{marginBottom: "0px", marginTop: "0px",fontSize: "16px" }}
             onChange={this.handleChange.bind(this)}
-          />
-
-          <Button bsStyle="success"
-                  type="submit"
-                  onClick={this.handleSubmit.bind(this)}
-                  style={{width:'100%'}}>
-                  Submit
-          </Button>
-        </Panel>
-      </div>
+        />
+      </Well>
     );
   }
 }

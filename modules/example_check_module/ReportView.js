@@ -7,6 +7,7 @@ const Well = ReactBootstrap.Well;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'ExampleChecker';
+const TITLE = 'Example Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function ExampleCheckerReport(chapter, verse) {
@@ -31,7 +32,7 @@ function ExampleCheckerReport(chapter, verse) {
   }
   return (
     <Well>
-      <h4 style={{marginTop: '-5px', display: 'inline'}}>Example Check</h4>
+      <h4 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h4>
       <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
       {checkList}
     </Well>
@@ -42,6 +43,9 @@ function ExampleCheckerReport(chapter, verse) {
 function getChecksByVerse(chapter, verse) {
   var res = [];
   var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+  if (!groups) {
+    return res;
+  }
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {
