@@ -136,7 +136,10 @@ class View extends React.Component {
    * @param {object} newCheckStatus - the new status chosen by the user
    */
   updateCheckStatus(newCheckStatus, selectedWords) {
-    var currentCheck = this.getCurrentCheck();
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
       api.emitEvent('changedCheckStatus', {
@@ -181,6 +184,10 @@ class View extends React.Component {
       }
     }
     
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+
     //error check to make sure we're going to a legal group/check index
     if (newGroupIndex !== undefined && newCheckIndex !== undefined) {
       if (newGroupIndex < groups.length && newGroupIndex >= 0) {
