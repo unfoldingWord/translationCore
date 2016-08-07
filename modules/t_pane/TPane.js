@@ -22,10 +22,10 @@ const TARGET_LANGUAGE_ERROR = "Unable to load target language from CheckStore",
 class TPane extends React.Component {
   constructor() {
       super();
-      var originalLanguage = api.getDataFromCheckStore("TPane", 'parsedGreek');
+      var originalLanguage = api.getDataFromCommon('parsedGreek');
       if (!originalLanguage) {
 		parseGreek();
-        originalLanguage = api.getDataFromCheckStore("TPane", 'parsedGreek');
+        originalLanguage = api.getDataFromCommon('parsedGreek');
       }
       var targetLanguage = api.getDataFromCommon('targetLanguage');
       var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
@@ -138,5 +138,5 @@ function parseGreek() {
 			}
 		}
 	}
-	api.putDataInCheckStore("TPane", "parsedGreek", parsedText);
+	api.putDataInCommon("parsedGreek", parsedText);
 }
