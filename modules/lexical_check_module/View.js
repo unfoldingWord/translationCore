@@ -108,6 +108,12 @@ class View extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.refs.ProposedChanges) {
+      this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
+    }     
+  }
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToPrevious', this.goToPreviousListener);
