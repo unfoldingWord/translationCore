@@ -4,7 +4,6 @@ var {dialog} = remote;
 var path = require('path');
 var ProgressBar = require('react-bootstrap/lib/ProgressBar');
 var Collapse = require('react-bootstrap/lib/Collapse');
-var style = require('./ProgressStyle.js');
 var api = window.ModuleApi;
 var CoreStore = require('../../../stores/CoreStore.js');
 var CheckStore = require('../../../stores/CheckStore.js');
