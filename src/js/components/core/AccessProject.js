@@ -22,28 +22,26 @@ var Access = {
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
-    fs.readJson(manifestLocation, function(err, jsonObject) {
+    fs.readJson(manifestLocation, function (err, jsonObject) {
       api.putDataInCommon('tcManifest', jsonObject);
     });
     try {
-      fs.readdir(folderpath, function(err, files){
+      fs.readdir(folderpath, function (err, files) {
         try {
-        for (var file of files) {
-          if (file.toLowerCase() == 'checkdata') {
-            var filepath = Path.join(folderpath, file);
-            _this.loadCheckData(filepath);
+          for (var file of files) {
+            if (file.toLowerCase() == 'checkdata') {
+              var filepath = Path.join(folderpath, file);
+              _this.loadCheckData(filepath);
+            }
           }
+          api.putDataInCommon('saveLocation', folderpath);
+          localStorage.setItem('showTutorial', false);
+          localStorage.setItem('lastProject', folderpath);
+        } catch (err) {
+          localStorage.removeItem('lastProject');
+          api.putDataInCommon('saveLocation', null);
         }
-        api.putDataInCommon('saveLocation', folderpath);
-        localStorage.setItem('showTutorial', false);
-        localStorage.setItem('lastProject', folderpath);
-      } catch (err) {
-        localStorage.removeItem('lastProject');
-        api.putDataInCommon('saveLocation', null);
-      }
       });
-
-
     } catch (e) {
       console.error(e);
       const alert = {
