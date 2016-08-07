@@ -12,7 +12,11 @@ var CheckStore = require('../../../stores/CheckStore.js');
 var Progress = React.createClass({
   getInitialState: function () {
     return {
-      data: {},
+      style: {
+        minHeight: "50px",
+        backgroundColor: "dark-grey",
+        display:'none'
+      },
       label: "",
       progress: 0,
       max: 0
@@ -20,110 +24,63 @@ var Progress = React.createClass({
   },
 
   componentWillMount: function () {
-    CoreStore.addChangeListener(this.updateModuleProgress);
-    CheckStore.addEventListener('changedCheckStatus', this.emitProgress);
-  },
-
-
-  emitProgress(viewObj) {
-    var indexArrays = [];
-    if (this.state.data != {}) {
-      for (var element in viewObj) {
-        var stringRegex = new RegExp("index", "i");
-        var val = stringRegex.test(element);
-        if (val) {
-          indexArrays.push(element);
-        }
-      }
-      this.updateModuleProgress(viewObj, indexArrays);
-    }
-
+    CoreStore.addChangeListener(this.showProgress);
+    CheckStore.addEventListener('changedCheckStatus', this.updateProgress);
+    CheckStore.addEventListener('changeCheckType', this.updateProgress);
   },
 
   componentWillUnMount: function () {
-    CoreStore.removeChangeListener(this.updateModuleProgress);
+    CoreStore.removeChangeListener(this.showProgress);
   },
 
-  updateModuleProgress: function (data, indexArrays) {
-    if (data) {
-      var modName = CoreStore.getCurrentCheckCategory();
-      var viewObj = CheckStore.getModuleDataObject(modName.name);
-      var total = this.getTotal(viewObj);
-      var valIndex = [];
-      for (var element of indexArrays) {
-        valIndex.push(data[element]);
-      }
-      var tempData = this.state.data;
-      var currentName = modName.name;
-      if (this.state.label != currentName) {
-        if (tempData[currentName] == undefined) {
-          tempData[currentName] = {};
-        }
-        this.setState({
-          label: currentName
-        });
-      }
-      if (this.state.max == 0) {
-        this.setState({
-          max: total,
-          label: currentName,
-          data: tempData
-        });
-      }
-      var show = CoreStore.getModProg();
+  showProgress() {
+    var show = CoreStore.getModProg();
+    if (show) {
       this.setState({
-        showModal: show
+        style: {
+        minHeight: "50px",
+        backgroundColor: "dark-grey",
+        display:'inline'
+      } 
       });
-      if (show) {
-        this.updateBar(data, modName.name, valIndex);
-      }
     }
   },
 
-  getTotal(viewObj) {
+
+  updateProgress(data) {
+    var _this = this;
+    if (data) {
+      var name = CoreStore.currentCheckNamespace;
+      var viewObj = CheckStore.getModuleDataObject(name);
+      this.getChecked(viewObj, function (totalChecked, total) {
+        _this.setState({
+          progress: totalChecked,
+          max: total,
+          label: name
+        });
+      });
+    }
+  },
+
+  getChecked(viewObj, callback) {
+    var totalChecked = 0;
     var total = 0;
     for (var group in viewObj['groups']) {
-      var groupObj = viewObj['groups'][group];
-      for (var check in groupObj['checks']) {
+      for (var check in viewObj['groups'][group]['checks']) {
+        var checkStatus = viewObj['groups'][group]['checks'][check]["checkStatus"];
+        if ( checkStatus != "UNCHECKED" && checkStatus != "NOT_CHECKED") {
+          totalChecked += 1;
+        }
         total += 1;
       }
     }
-    return total;
-  },
-
-  updateBar: function (data, name, index) {
-    var currentProgress = this.state.progress;
-    if (this.isNewData(name, index)) {
-      this.addToProgress();
-    }
-  },
-
-  isNewData: function (name, index) {
-    var progressObj = this.state.data;
-    if (!progressObj[name][index]) {
-      progressObj[name][index] = 1;
-      this.setState({
-        data: progressObj
-      });
-      return true;
-    } else {
-      return false;
-    }
-  },
-
-  addToProgress: function () {
-    var currentProgress = this.state.progress;
-    var total = this.state.max;
-    currentProgress += 1;
-    this.setState({
-      progress: currentProgress
-    });
+    callback(totalChecked, total);
   },
 
   render: function () {
     return (
-      <div style={style.container} max-width={"1000px"} margin={"auto"}>
-        <ProgressBar striped key={2} bsStyle="warning" now={this.state.progress} max={this.state.max} label={this.state.label}/>
+      <div style={this.state.style} max-width={"1000px"} margin={"auto"}>
+        <ProgressBar striped bsStyle="warning" now={this.state.progress} max={this.state.max} label={this.state.label}/>
       </div>
     );
   }
