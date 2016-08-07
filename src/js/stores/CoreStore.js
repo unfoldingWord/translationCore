@@ -240,17 +240,6 @@ class CoreStore extends EventEmitter {
 
       case consts.DONE_LOADING:
         this.doneLoading = true;
-        this.modProgressView = true;
-        this.progressObject = [];
-        this.checkCategoryOptions = action.reportViews;
-        if(this.checkCategoryOptions && this.checkCategoryOptions.length != 0) {
-          var firstCheckCategory = this.checkCategoryOptions[0];
-          this.currentCheckCategory = firstCheckCategory;
-          CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: firstCheckCategory.name});
-        }
-        else {
-          console.error('Problem when loading check. No check found.');
-        }
         this.progressKeyObj = null;
         this.loaderModalVisibility = false;
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
