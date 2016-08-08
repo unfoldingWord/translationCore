@@ -1,6 +1,5 @@
 var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('./CoreActionConsts');
-var FileModule = require('../components/core/FileModule');
 /**
 How to use the actions:
 Just require this file in your component, call
@@ -87,10 +86,9 @@ module.exports = {
     });
   },
 
-  doneLoadingFetchData: function(data) {
+  doneLoadingFetchData: function() {
     Dispatcher.handleAction({
-      type: consts.DONE_LOADING,
-      reportViews:data
+      type: consts.DONE_LOADING
     });
   },
 

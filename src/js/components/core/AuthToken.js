@@ -1,7 +1,9 @@
-const FileModule = require('./FileModule');
+const fs = require(window.__base + 'node_modules/fs-extra');
 
-FileModule.readFile('.config', function(data){
-	module.exports = {
-		token: data.trim()
-	}
+fs.readFile('.config', 'utf8', function(error, data){
+    if (!error) {
+	   module.exports = {
+		  token: data.trim()
+	   }
+    }
 });
