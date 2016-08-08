@@ -39,7 +39,7 @@ class View extends api.CheckModule {
 
     // Initialize modules that are not defined within our ExampleChecker
     // They will be rendered in the render() function
-    TPane = api.getModule('TPane');
+    // TPane = api.getModule('TPane');
     CommentBox = api.getModule('CommentBox');
     ExampleTool = api.getModule('ExampleTool');
   }

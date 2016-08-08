@@ -108,6 +108,12 @@ class View extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.refs.ProposedChanges) {
+      this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
+    }     
+  }
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToPrevious', this.goToPreviousListener);
@@ -153,6 +159,9 @@ class View extends React.Component {
   }
 
   updateSelectedWords(selectedWords, selectedWordsRaw) {
+    if (this.refs.ProposedChanges) {
+      this.refs.ProposedChanges.update(selectedWords);
+    }
     var currentCheck = this.getCurrentCheck();
     currentCheck.selectedWords = selectedWords;
     //This is needed to make the display persistent, but won't be needed in reports

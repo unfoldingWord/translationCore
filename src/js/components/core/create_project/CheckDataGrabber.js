@@ -1,7 +1,6 @@
 const CoreStore = require('../../.././stores/CoreStore');
 const CoreActions = require('../../.././actions/CoreActions');
 const CheckStore = require('../../.././stores/CheckStore');
-const FileModule = require('../FileModule');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../BooksOfBible');
@@ -36,21 +35,26 @@ var CheckDataGrabber = {
         checksThatNeedToBeFetched.push(moduleObj);
       }
     }
-    CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
-    this.totalModules = checksThatNeedToBeFetched.length;
-    for (let moduleObj of checksThatNeedToBeFetched) {
-      try {
-        this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
-      }
-      catch(error) {
-        const alert = {
-          title: 'Unable to load and run FetchData from module',
-          content: error.message,
-          leftButtonText: 'Ok'
+    if (checksThatNeedToBeFetched.length > 0) {
+      CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+      this.totalModules = checksThatNeedToBeFetched.length;
+      for (let moduleObj of checksThatNeedToBeFetched) {
+        try {
+          this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
         }
-        api.createAlert(alert);
-        console.log(error);
+        catch(error) {
+          const alert = {
+            title: 'Unable to load and run FetchData from module',
+            content: error.message,
+            leftButtonText: 'Ok'
+          }
+          api.createAlert(alert);
+          console.error(error);
+        }
       }
+    }
+    else {
+      CoreActions.doneLoadingFetchData();
     }
     api.putDataInCommon('arrayOfChecks', checkArray);
   },
@@ -68,9 +72,6 @@ var CheckDataGrabber = {
     var _this = this;
     var moduleBasePath = Path.join(window.__base, 'modules');
     var modulePath = Path.join(moduleFolderName, 'manifest.json');
-    //If this module has a menu associated with it, check for it and save it within the API if so
-
-
     fs.readJson(modulePath, function(error, dataObject) {
       if (error) {
         console.error(error);
@@ -79,6 +80,7 @@ var CheckDataGrabber = {
         var params = api.getDataFromCommon('params');
         var modulePaths = [];
         modulePaths.push({name: dataObject.name, location: moduleFolderName});
+        //Try to find and save the menu. Most modules don't
         try {
           api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
         }
@@ -166,7 +168,7 @@ var CheckDataGrabber = {
           }
           api.createAlert(Alert);
         }
-        CoreActions.doneLoadingFetchData(this.reportViews);
+        CoreActions.doneLoadingFetchData();
       }
     }
     else {
