@@ -142,6 +142,7 @@ function readInOriginal(path, bookAbbr, callback) {
     else {
       var betterData = typeof data == 'object' ? JSON.stringify(data) : data;
       openOriginal(betterData, api.convertToFullBookName(bookAbbr));
+      parseGreek();
       callback();
     }
   });
@@ -214,6 +215,44 @@ function len(obj) {
     length++;
   }
   return length;
+}
+
+/**
+  * @author Evan Wiederspan
+  * @description parses the incoming greek and modifies it to be ready
+*/
+function parseGreek() {
+  // looking at it now, this method with the regex may be way less efficient
+  // than just splitting the verse by spaces and going word by word
+  // this might want to be reworked later for efficiency
+  var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+G(\d{1,6})\s+(?:G\d{1,6})*\s*([A-Z0-9\-]+)/g;
+  var lex = require("./Lexicon.json");
+  let origText = api.getDataFromCommon("originalLanguage");
+  let parsedText = {};
+  for (let ch in origText) {
+    if (!parseInt(ch)) { // skip the title
+      continue;
+    }
+    parsedText[ch] = {};
+    let chap = origText[ch];
+    for (let v in chap) {
+      let origVerse = origText[ch][v];
+      let verse = parsedText[ch][v] = [];
+      let result = [];
+      while (result = greekRegex.exec(origVerse)) {
+        let [, word, strong, speech] = result;
+        try {
+          let {brief, long} = lex[strong];
+          verse.push({word, strong, speech, brief, long});
+        } 
+        catch(e) {
+          verse.push({word, strong, speech, brief: "No definition found", long: "No definition found"});
+        }
+
+      }
+    }
+  }
+  api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
 }
 
 module.exports = fetchData;

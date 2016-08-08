@@ -10,6 +10,7 @@ const React = api.React;
 const Row = api.ReactBootstrap.Row;
 const Well = api.ReactBootstrap.Well;
 const Pane = require('./Pane');
+const NAMESPACE = "TPane";
 
 // string constants
 const TARGET_LANGUAGE_ERROR = "Unable to load target language from CheckStore",
@@ -19,10 +20,10 @@ const TARGET_LANGUAGE_ERROR = "Unable to load target language from CheckStore",
 class TPane extends React.Component {
   constructor() {
     super();
-    var originalLanguage = api.getDataFromCommon('parsedGreek');
+    var originalLanguage = api.getDataFromCheckStore(NAMESPACE, 'parsedGreek');
     if (!originalLanguage) {
       parseGreek();
-      originalLanguage = api.getDataFromCommon('parsedGreek');
+      originalLanguage = api.getDataFromCheckStore(NAMESPACE, 'parsedGreek');
     }
     var targetLanguage = api.getDataFromCommon('targetLanguage');
     var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
@@ -101,39 +102,4 @@ class TPane extends React.Component {
 
 module.exports = TPane;
 
-/**
-  * @author Evan Wiederspan
-  * @description parses the incoming greek and modifies it to be ready
-*/
-function parseGreek() {
-  // looking at it now, this method with the regex may be way less efficient
-  // than just splitting the verse by spaces and going word by word
-  // this might want to be reworked later for efficiency
-  var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+G(\d{1,6})\s+(?:G\d{1,6})*\s*([A-Z0-9\-]+)/g;
-  var lex = require("./Lexicon.json");
-  let origText = api.getDataFromCommon("originalLanguage");
-  let parsedText = {};
-  for (let ch in origText) {
-    if (!parseInt(ch)) { // skip the title
-      continue;
-    }
-    parsedText[ch] = {};
-    let chap = origText[ch];
-    for (let v in chap) {
-      let origVerse = origText[ch][v];
-      let verse = parsedText[ch][v] = [];
-      let result = [];
-      while (result = greekRegex.exec(origVerse)) {
-        try {
-          let [, word, strong, speech] = result;
-          let {brief, long} = lex[strong];
-          verse.push({word, strong, speech, brief, long});
-        }
-        catch (e) {
-          console.log("parse error");
-        }
-      }
-    }
-  }
-  api.putDataInCommon("parsedGreek", parsedText);
-}
+
