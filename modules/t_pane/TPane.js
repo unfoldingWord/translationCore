@@ -4,7 +4,6 @@
   *              and the Target Language. It takes it's input from uploads.
 ******************************************************************************/
 
-
 const api = window.ModuleApi;
 const React = api.React;
 
@@ -12,10 +11,10 @@ const Row = api.ReactBootstrap.Row;
 const Well = api.ReactBootstrap.Well;
 const Pane = require('./Pane');
 
-//string constants
+// string constants
 const TARGET_LANGUAGE_ERROR = "Unable to load target language from CheckStore",
-ORIGINAL_LANGUAGE_ERROR = "Unable to load original language from CheckStore",
-GATEWAY_LANGUAGE_ERROR = "Unable to load gateway language from CheckStore";
+  ORIGINAL_LANGUAGE_ERROR = "Unable to load original language from CheckStore",
+  GATEWAY_LANGUAGE_ERROR = "Unable to load gateway language from CheckStore";
 
 class TPane extends React.Component {
   constructor() {
@@ -30,8 +29,8 @@ class TPane extends React.Component {
     this.state = {
       "originalLanguage": !originalLanguage ? "" : originalLanguage,
       "targetLanguage": !targetLanguage ? "" : targetLanguage,
-      "gatewayLanguage": !gatewayLanguage ? "" : gatewayLanguage,
-    }
+      "gatewayLanguage": !gatewayLanguage ? "" : gatewayLanguage
+    };
 
     this.updateOriginalLanguage = this.updateOriginalLanguage.bind(this);
     this.updateGatewayLanguage = this.updateGatewayLanguage.bind(this);
@@ -41,7 +40,7 @@ class TPane extends React.Component {
   componentWillMount() {
     api.registerEventListener("updateOriginalLanguage", this.updateOriginalLanguage);
     api.registerEventListener("updateTargetLanguage", this.updateTargetLanguage);
-    api.registerEventListener("updateGatewayLanguage", this.updateGatewayLanguage)
+    api.registerEventListener("updateGatewayLanguage", this.updateGatewayLanguage);
   }
 
   componentWillUnmount() {
@@ -124,13 +123,13 @@ function parseGreek() {
       let origVerse = origText[ch][v];
       let verse = parsedText[ch][v] = [];
       let result = [];
-      while(result = greekRegex.exec(origVerse)) {
+      while (result = greekRegex.exec(origVerse)) {
         try {
-          let [,word,strong,speech] = result;
+          let [, word, strong, speech] = result;
           let {brief, long} = lex[strong];
           verse.push({word, strong, speech, brief, long});
         }
-        catch(e) {
+        catch (e) {
           console.log("parse error");
         }
       }
