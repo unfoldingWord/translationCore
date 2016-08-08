@@ -23,9 +23,6 @@ function createWindow () {
     mainWindow.show()
   });
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
-
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
@@ -40,8 +37,12 @@ ipc.on('open-report', (event, path) => {
     reportWindow.focus();
     return;
   }
-  reportWindow = new BrowserWindow({autoHideMenuBar: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
+  reportWindow = new BrowserWindow({autoHideMenuBar: true, show: false, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
   reportWindow.loadURL("file:///" + path);
+    //Doesn't display until ready
+  reportWindow.once('ready-to-show', () => {
+    reportWindow.show()
+  });
   reportWindow.on('closed', () => {
     reportWindow = undefined;
     // send event to the mainWindow if its open still
