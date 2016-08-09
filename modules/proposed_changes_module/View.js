@@ -40,7 +40,15 @@ class ProposedChanges extends React.Component {
   }
 
   update(newCurrentWord) {
-    this.setState({currentWord: newCurrentWord});
+    var newWord = "";
+    for (var i = 0; i < newCurrentWord.length; i++){
+      var word = newCurrentWord[i];
+      newWord += word;
+      if (i < newCurrentWord.length - 1) {
+        newWord += ', ';
+      }
+    }
+    this.setState({currentWord: newWord});
   }
 
   render() {
@@ -63,7 +71,7 @@ class ProposedChanges extends React.Component {
             Propose Changes
           </span>
         </center>
-        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>Previous Word
+        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{this.state.currentWord}
           </Well>
         <FormControl
             type="text"

@@ -1,6 +1,6 @@
 /**
-	* @description: This file builds the verses
-	* @author: Ian Hoegen
+  * @description: This file builds the verses
+  * @author: Ian Hoegen
 ******************************************************************************/
 
 const api = window.ModuleApi;
@@ -10,50 +10,51 @@ const Popover = require('react-bootstrap/lib/popover');
 const OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 class Verse extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			highlighted: false
-		}
-	}
+  constructor() {
+    super();
+    this.state = {
+      highlighted: false
+    }
+  }
 
-	setHighlighted(highlighted) {
-		this.setState({
-			highlighted: highlighted
-		});
-	}
+  setHighlighted(highlighted) {
+    this.setState({
+      highlighted: highlighted
+    });
+  }
 
-	render() {
-		return (
-			<p>
+  render() {
+    return (
+      <p>
         <strong className={this.state.highlighted ? 'text-primary' : ''}>
-			 		{this.props.verseNumber + " "}
-				</strong>
-				<span className={this.state.highlighted ? 'text-primary' : ''}>
-					{this.props.greek ? displayGreek(this.props.verseText) : this.props.verseText}
-				</span>
-			</p>
-		);
-	}
+          {this.props.verseNumber + " "}
+        </strong>
+        <span className={this.state.highlighted ? 'text-primary' : ''}>
+          {this.props.greek ? displayGreek(this.props.verseText) : this.props.verseText}
+        </span>
+      </p>
+    );
+  }
 }
 
 
 function displayGreek(text = []) {
-	let i = 0;
-	return text.map((word) => {
-				return (<span
-									key={i++}
-									strong={word.strong}
-									speech={word.speech}
-									onClick={function(e){
-										var x = e.target.getBoundingClientRect().left;
-										var y = e.target.getBoundingClientRect().bottom;
-										api.Popover(true, word.word, word.brief, x, y);
-									}}>
-									{word.word + " "}
-								</span>
-						);
-	});
+  let i = 0;
+  return text.map((word) => {
+    return (<span
+              key={i++}
+              strong={word.strong}
+              style={{cursor: 'pointer'}}
+              speech={word.speech}
+              onClick={function(e){
+                var x = e.target.getBoundingClientRect().left;
+                var y = e.target.getBoundingClientRect().bottom;
+                api.Popover(true, word.word, word.brief, x, y);
+              }}>
+                {word.word + " "}
+              </span>
+            );
+  });
 }
 
 module.exports = Verse;
