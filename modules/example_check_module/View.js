@@ -33,17 +33,17 @@ class View extends api.CheckModule {
 
   constructor() {
     super();
-    
+
     // Save the namespace inside the view. Required for extending the CheckModule class.
     this.nameSpace = NAMESPACE;
 
     // Initialize modules that are not defined within our ExampleChecker
     // They will be rendered in the render() function
-    // TPane = api.getModule('TPane');
+    TPane = api.getModule('TPane');
     CommentBox = api.getModule('CommentBox');
     ExampleTool = api.getModule('ExampleTool');
   }
-  
+
   /**
    * @description - Implements abstract method required by the CheckModule class.
    * This is called when the user clicks the NextButton or a MenuItem in the NavigationMenu.
@@ -60,7 +60,7 @@ class View extends api.CheckModule {
     }
     return dataFromTools;
   }
-  
+
   /**
    * @description - Helper method for retrieving the verse from different languages
    * @param {string} language - string denoting either 'gatewayLanguage' or 'targetLanguage'

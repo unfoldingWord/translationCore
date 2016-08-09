@@ -139,6 +139,17 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.START_LOADING
     });
+  },
+
+  updatePopover: function(visibility, title, body, left, top) {
+    Dispatcher.handleAction({
+      type: consts.UPDATE_POPOVER,
+      visibility,
+      title,
+      body,
+      left,
+      top
+    })
   }
 
 };

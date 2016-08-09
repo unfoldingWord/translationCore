@@ -15,9 +15,7 @@ const React = api.React;
 class Book extends React.Component {
   constructor() {
     super();
-    this.state = {
-      currentVerse: ''
-    };
+    this.currentVerse = "";
     this.goToVerseListener = this.goToVerseListener.bind(this);
   }
 
@@ -31,7 +29,7 @@ class Book extends React.Component {
 
   goToVerseListener(params) {
     // Unhighlight the old verse
-    var oldVerse = this.refs[this.state.currentVerse];
+    var oldVerse = this.refs[this.currentVerse];
     if (oldVerse) {
       oldVerse.setHighlighted(false);
     }
@@ -40,9 +38,7 @@ class Book extends React.Component {
     var newVerse = this.refs[newVerseReference];
     newVerse.setHighlighted(true);
     // Save the new verse's reference so that it can be unhighlighted later
-    this.setState({
-      currentVerse: newVerseReference
-    });
+    this.currentVerse = newVerseReference;
     // Scroll to new verse
     var element = api.findDOMNode(newVerse);
     if (element) {
@@ -77,6 +73,7 @@ class Book extends React.Component {
             arrayOfVerses.push(
               <Verse 
                 key={verseId} 
+                greek={this.props.greek} 
                 chapterNumber={chapterNum} 
                 verseNumber={verse} 
                 verseText={verseText}
