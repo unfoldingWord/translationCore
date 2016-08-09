@@ -69,6 +69,10 @@ class CoreStore extends EventEmitter {
     return this.projectModalVisibility;
   }
 
+  getModProg() {
+    return this.modProgressView;
+  }
+
   getCreateProjectText() {
     return this.projectText;
   }
@@ -229,8 +233,14 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.MOD_PROGRESS_VIEW:
+        this.modProgressView = action.view;
+        this.emitChange();
+      break;
+
       case consts.DONE_LOADING:
         this.doneLoading = true;
+        this.modProgressView = true;
         this.progressKeyObj = null;
         this.loaderModalVisibility = false;
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});

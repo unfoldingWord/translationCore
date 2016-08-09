@@ -12,7 +12,9 @@ const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
+const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar')
 const Toast = require('../NotificationApi/ToastComponent');
+
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
@@ -80,6 +82,7 @@ var Main = React.createClass({
                 <Loader />
                 <AlertModal />
                 <ModuleWrapper />
+                <ModuleProgress />
               </Col>
             </Row>
           </Grid>
