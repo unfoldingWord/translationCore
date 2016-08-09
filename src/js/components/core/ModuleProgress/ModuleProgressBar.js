@@ -30,6 +30,8 @@ var Progress = React.createClass({
 
   componentWillUnMount: function () {
     CoreStore.removeChangeListener(this.showProgress);
+    CheckStore.removeEventListener('changedCheckStatus', this.updateProgress);
+    CheckStore.removeEventListener('changeCheckType', this.updateProgress);
   },
 
   showProgress() {
@@ -40,7 +42,7 @@ var Progress = React.createClass({
         minHeight: "50px",
         backgroundColor: "dark-grey",
         display:'inline'
-      } 
+      }
       });
     }
   },
