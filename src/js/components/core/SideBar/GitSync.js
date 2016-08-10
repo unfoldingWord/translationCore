@@ -3,11 +3,11 @@ const api = window.ModuleApi;
 const CoreActions = require('../../../actions/CoreActions.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const pathFinder = require('path');
-const path = api.getDataFromCommon('saveLocation');
-const user = CoreStore.getLoggedInUser();
 const gogs = require('../login/GogsApi.js');
 
 function syncToGit() {
+  const user = CoreStore.getLoggedInUser();
+  const path = api.getDataFromCommon('saveLocation');
   if (user) {
     git(path).save('Updating with Door43', path, function() {
         var manifest = api.getDataFromCommon('tcManifest');
@@ -39,7 +39,7 @@ function syncToGit() {
                 }
               });
             } else {
-              api.Toast.success('Update succesful', '', 3);
+              api.Toast.success('Update succesful', '', 7);
             }
           });
         } else {
@@ -65,11 +65,11 @@ function syncToGit() {
                         remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                         api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
-                          api.Toast.success('Update succesful', '', 3);
+                          api.Toast.success('Update succesful', '', 7);
                         });
                       });
                     } else {
-                      api.Toast.success('Update succesful', '', 3);
+                      api.Toast.success('Update succesful', '', 7);
                     }
                   });
                 }
@@ -77,7 +77,7 @@ function syncToGit() {
         }
     });
   } else {
-    api.Toast.info('Login then try again', '', 3);
+    api.Toast.info('Login then try again', '', 7);
     CoreActions.updateLoginModal(true);
   }
 }

@@ -157,6 +157,16 @@ class CoreStore extends EventEmitter {
     this.currentCheckNamespace = value;
   }
 
+  getPopoverVisibility() {
+    return {
+      visibility: this.popoverVisibility,
+      title: this.popoverTitle,
+      body: this.popoverBody,
+      left: this.popoverLeft,
+      top: this.popoverTop
+    }
+  }
+
 /**
   * @param {function} callback
   */
@@ -281,6 +291,15 @@ class CoreStore extends EventEmitter {
       case consts.SHOW_TOAST_PARAMS:
         this.toastVisibility = action.toastOption;
         this.toastParamsObj = action.toastParams;
+        this.emitChange();
+      break;
+
+      case consts.UPDATE_POPOVER:
+        this.popoverVisibility = action.visibility;
+        this.popoverBody = action.body;
+        this.popoverTitle = action.title;
+        this.popoverTop = action.top;
+        this.popoverLeft = action.left;
         this.emitChange();
       break;
 
