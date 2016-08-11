@@ -36,8 +36,8 @@ class SwitchCheckModal extends React.Component{
     CoreStore.addChangeListener(this.updateCheckModal);
     this.getDefaultModules((moduleFolderPathList) => {
       _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
-        var sortedMetadatas = this.sortMetadatas(metadatas);
-        _this.setState({moduleMetadatas: sortedMetadatas});
+        this.sortMetadatas(metadatas);
+        _this.setState({moduleMetadatas: metadatas});
       });
     });
   }
@@ -110,7 +110,6 @@ class SwitchCheckModal extends React.Component{
     metadatas.sort((a, b) => {
       return a.index - b.index;
     });
-    return metadatas;
   }
 
   moduleClick(folderName) {
