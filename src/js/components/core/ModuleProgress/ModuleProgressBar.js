@@ -7,6 +7,7 @@ var Collapse = require('react-bootstrap/lib/Collapse');
 var api = window.ModuleApi;
 var CoreStore = require('../../../stores/CoreStore.js');
 var CheckStore = require('../../../stores/CheckStore.js');
+var CoreActions = require('../../../actions/CoreActions.js');
 
 var Progress = React.createClass({
   getInitialState: function () {
@@ -44,13 +45,21 @@ var Progress = React.createClass({
         display:'inline'
       }
       });
-    }
+    } else {
+      this.setState({
+        style: {
+        minHeight: "50px",
+        backgroundColor: "dark-grey",
+        display:'none'
+      }
+    });
+  }
   },
 
 
   updateProgress(data) {
     var _this = this;
-    if (data) {
+    if (data.checkIndex != null || data.currentCheckNamespace != null) {
       var name = CoreStore.currentCheckNamespace;
       var viewObj = CheckStore.getModuleDataObject(name);
       this.getChecked(viewObj, function (totalChecked, total) {
@@ -60,6 +69,9 @@ var Progress = React.createClass({
           label: name
         });
       });
+    } else {
+        CoreStore.modProgressView = false;
+        this.showProgress();
     }
   },
 
