@@ -46,6 +46,11 @@ class TPane extends React.Component {
     api.removeEventListener("updateGatewayLanguage", this.updateGatewayLanguage);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // Stops TPane from re-rendering when the check module changes state
+    return nextState !== this.state;
+  }
+
   updateTargetLanguage() {
     var targetLanguage = api.getDataFromCommon("targetLanguage");
     if (targetLanguage) {
