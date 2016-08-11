@@ -1,6 +1,7 @@
 {
     "title": "translationWords Check",
     "name": "LexicalChecker",
+    "index": 0,
     "description": "The translationWords check works by providing translators with clear, concise definitions and translation suggestions for every important word in the Bible.",
     "include": [
         "proposed_changes_module",

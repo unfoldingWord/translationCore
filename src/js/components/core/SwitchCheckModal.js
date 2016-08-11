@@ -36,7 +36,8 @@ class SwitchCheckModal extends React.Component{
     CoreStore.addChangeListener(this.updateCheckModal);
     this.getDefaultModules((moduleFolderPathList) => {
       _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
-        _this.setState({moduleMetadatas: metadatas});
+        var sortedMetadatas = this.sortMetadatas(metadatas);
+        _this.setState({moduleMetadatas: sortedMetadatas});
       });
     });
   }
@@ -102,6 +103,14 @@ class SwitchCheckModal extends React.Component{
         onComplete();
       });
     }
+  }
+
+  // Sorts check apps by their 'index' properties from their manifest files
+  sortMetadatas(metadatas) {
+    metadatas.sort((a, b) => {
+      return a.index - b.index;
+    });
+    return metadatas;
   }
 
   moduleClick(folderName) {
