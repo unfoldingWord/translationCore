@@ -7,7 +7,6 @@ var Collapse = require('react-bootstrap/lib/Collapse');
 var api = window.ModuleApi;
 var CoreStore = require('../../../stores/CoreStore.js');
 var CheckStore = require('../../../stores/CheckStore.js');
-var CoreActions = require('../../../actions/CoreActions.js');
 
 var Progress = React.createClass({
   getInitialState: function () {
