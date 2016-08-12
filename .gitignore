@@ -11,7 +11,6 @@ check_data.json
 .vscode/
 report.html
 jsconfig.json
-.auth
 #################
 ## Eclipse
 #################
@@ -204,6 +203,7 @@ $RECYCLE.BIN/
 *.sqlite*
 userdata.sqlite
 .config
+.auth
 Authentication.js
 #############
 ## Python
