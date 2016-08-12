@@ -1,5 +1,5 @@
 const React = require('react');
-
+const api = window.ModuleApi;
 const remote = window.electron.remote;
 const {dialog} = remote;
 const CoreActions = require('../../../actions/CoreActions.js');
@@ -12,7 +12,6 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const style = require('./loginStyle');
 const gogs = require('./GogsApi.js');
-const Token = require('../AuthToken');
 const Registration = require('./Registration');
 
 class Login extends React.Component {
@@ -26,6 +25,7 @@ class Login extends React.Component {
       username: this.state.userName,
       password: this.state.password
     };
+    var Token = api.getAuthToken('gogs');
     var newuser = gogs(Token).login(userdata).then(function(userdata) {
       CoreActions.login(userdata);
       CoreActions.updateLoginModal(false);
