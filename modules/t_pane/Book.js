@@ -28,13 +28,17 @@ class Book extends React.Component {
   }
 
   goToVerseListener(params) {
+    var newVerseReference = params.chapterNumber.toString() + ":" + params.verseNumber.toString();
+    // If the new verse is the same as the old verse, don't do anything
+    if (this.currentVerse === newVerseReference) {
+      return;
+    }
     // Unhighlight the old verse
     var oldVerse = this.refs[this.currentVerse];
     if (oldVerse) {
       oldVerse.setHighlighted(false);
     }
     // Highlight the new verse
-    var newVerseReference = params.chapterNumber.toString() + ":" + params.verseNumber.toString();
     var newVerse = this.refs[newVerseReference];
     newVerse.setHighlighted(true);
     // Save the new verse's reference so that it can be unhighlighted later
