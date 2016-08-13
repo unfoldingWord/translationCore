@@ -203,6 +203,7 @@ $RECYCLE.BIN/
 *.sqlite*
 userdata.sqlite
 .config
+.auth
 Authentication.js
 #############
 ## Python
