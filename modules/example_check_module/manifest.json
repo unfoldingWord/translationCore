@@ -1,7 +1,6 @@
 {
     "title": "Example Check",
     "name": "ExampleChecker",
-    "index": 2,
     "description": "This is an example check app for reference for developers.",
     "include": [
         "t_pane",
