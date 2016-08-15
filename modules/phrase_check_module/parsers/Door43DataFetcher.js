@@ -15,6 +15,8 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
+  const AUTHENTICATION = window.ModuleApi.getAuthToken('git');
+
 var suppress = true
 
 // ONLY USE getBook()
@@ -62,7 +64,7 @@ class Door43DataFetcher {
 			callback(REQUEST_FAILURE);
 		}
 
-		request.open('GET', url, true);
+		request.open('GET', url + "?" + AUTHENTICATION, true);
 		request.send();
 	}
 
@@ -213,7 +215,7 @@ class Door43DataFetcher {
 					callback(REQUEST_FAILURE);
 				}
 
-				request.open('GET', link, true);
+				request.open('GET', link + "&" + AUTHENTICATION, true);
 				request.send();
 			}
 		}
@@ -248,7 +250,7 @@ class Door43DataFetcher {
 				callback(REQUEST_FAILURE);
 			}
 
-			request.open('GET', link, true);
+			request.open('GET', link + "&" + AUTHENTICATION, true);
 			request.send();
 		}
 		else {
@@ -281,7 +283,7 @@ class Door43DataFetcher {
 		}
 
 		var link = verseObj['link'];
-		request.open('GET', link, true);
+		request.open('GET', link + (link.indexOf('?') == -1 ? '?' : '&') + AUTHENTICATION, true);
 		request.send();
 	}
 

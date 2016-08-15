@@ -21,6 +21,7 @@ const suppress = true;
 // ONLY USE getBook()
 class Door43DataFetcher {
 	contructor() {
+		this.AUTHENTICATION = window.ModuleApi.getAuthToken('git');
 		this.bookList = null;
 	}
 
@@ -63,7 +64,7 @@ class Door43DataFetcher {
 			callback(REQUEST_FAILURE);
 		}
 
-		request.open('GET', url, true);
+		request.open('GET', url + "?" + this.AUTHENTICATION, true);
 		request.send();
 	}
 
@@ -221,7 +222,7 @@ class Door43DataFetcher {
 					callback(REQUEST_FAILURE);
 				}
 
-				request.open('GET', link, true);
+				request.open('GET', link + "&" + this.AUTHENTICATION, true);
 				request.send();
 			}
 		}
@@ -256,7 +257,7 @@ class Door43DataFetcher {
 				callback(REQUEST_FAILURE);
 			}
 
-			request.open('GET', link, true);
+			request.open('GET', link + "&" + this.AUTHENTICATION, true);
 			request.send();
 		}
 		else {
@@ -289,7 +290,7 @@ class Door43DataFetcher {
 		}
 
 		var link = verseObj['link'];
-		request.open('GET', link, true);
+		request.open('GET', link + (link.indexOf('?') == -1 ? '?' : '&') + this.AUTHENTICATION, true);
 		request.send();
 	}
 

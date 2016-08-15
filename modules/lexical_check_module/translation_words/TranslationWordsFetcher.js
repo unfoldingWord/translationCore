@@ -8,6 +8,7 @@
 
 const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?ref=master",
   REQUEST_FAILED = "Request failed",
+  AUTHENTICATION = window.ModuleApi.getAuthToken('git'),
   UNKNOWN_TYPE = "Unknown type: ",
   WORD_NOT_FOUND = "Word not found in list";
 
@@ -77,7 +78,7 @@ else {
       callback(REQUEST_FAILED);
     };
 
-    request.open('GET', link, true);
+    request.open('GET', link + (link.indexOf('?') == -1 ? '?' : '&') + AUTHENTICATION, true);
     request.send();
   }
 
@@ -113,7 +114,7 @@ else {
         callback(REQUEST_FAILED);
       };
 
-      request.open('GET', url, true);
+      request.open('GET', url + (url.indexOf('?') == -1 ? '?' : '&') + AUTHENTICATION, true);
       request.send();
     }
   }
