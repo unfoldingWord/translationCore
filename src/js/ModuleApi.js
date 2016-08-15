@@ -299,17 +299,23 @@ class ModuleApi {
   }
 
   getAuthToken(type) {
-    var obj = fs.readJsonSync(window.__base + '.auth', {throws: false})
-    if (obj) {
-      return obj[type];
+    if (this.authToken == undefined) {
+      var obj = fs.readJsonSync(window.__base + '.auth', { throws: false })
+      if (obj) {
+        this.authToken = obj;
+        return obj[type];
+      }
+      else {
+        var Alert = {
+          title: "Authentication Error",
+          content: "Please check token.",
+          leftButtonText: "Ok"
+        }
+        this.createAlert(Alert);
+      }
     }
     else {
-      var Alert = {
-        title: "Authentication Error",
-        content: "Please check token.",
-        leftButtonText: "Ok"
-      }
-      this.createAlert(Alert);
+      return this.authToken[type];
     }
   }
 }
