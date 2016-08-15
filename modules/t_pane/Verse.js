@@ -5,9 +5,10 @@
 
 const api = window.ModuleApi;
 const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
 const lookup = require("./LexiconLookup");
-const Popover = require('react-bootstrap/lib/popover');
-const OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
+const Popover = ReactBootstrap.Popover;
+const OverlayTrigger = ReactBootstrap.OverlayTrigger;
 
 class Verse extends React.Component {
   constructor() {
