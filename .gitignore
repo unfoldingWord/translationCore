@@ -196,12 +196,9 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 #############
-## Eslint and node files
+## Auth tokens and node modules
 #############
-/node*
-.es*
-*.sqlite*
-userdata.sqlite
+/node_modules/
 .config
 Authentication.js
 #############
