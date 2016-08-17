@@ -263,7 +263,12 @@ const TargetLanguageSelectBox = React.createClass({
           marginBottom: '5px'
         }}
       >
-        <span>{words}</span>
+        <div style={{
+            direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+          }}
+        >
+          {words}
+        </div>
       </Well>
     );
   }

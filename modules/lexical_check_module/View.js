@@ -317,7 +317,6 @@ class View extends React.Component {
    */
    render() {
     var _this = this;
-    var direction = api.getDataFromCommon('params').direction;
     if (!this.state.currentCheck) {
       return (<div></div>);
     }
@@ -340,8 +339,7 @@ class View extends React.Component {
                 ref={"TargetVerseDisplay"}
                 onWordSelected={this.updateSelectedWords.bind(this)}
                 style={{minHeight: '120px',
-                        margin: '0 2.5px 5px 0',
-                        direction: direction == 'ltr' ? 'ltr' : 'rtl'}}
+                        margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
