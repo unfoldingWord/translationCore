@@ -16,11 +16,19 @@ const Book = require('./Book');
 class Pane extends React.Component {
     constructor() {
         super();
+        this.contentStyle = style.pane.content;
+        if(this.props.dir == rtl){
+          this.contentStyle.dir = 'rtl';
+          console.log("Target language is rtl");
+        }else{
+          this.contentStyle.dir = 'ltr';
+          console.log("Target Language is ltr");
+        }
     }
     render() {
         return (
             <Col md={4} sm={4} xs={4} lg={4} style={this.props.last ? {} : {borderRight: '1px solid #1f273b'}}>
-                <div style={style.pane.content}>
+                <div style={this.contentStyle}>
                     <Book input={this.props.content} greek={this.props.greek} />
                 </div>
             </Col>
