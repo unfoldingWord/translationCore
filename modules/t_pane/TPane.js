@@ -23,6 +23,8 @@ class TPane extends React.Component {
     var originalLanguage = api.getDataFromCheckStore(NAMESPACE, 'parsedGreek');
     var targetLanguage = api.getDataFromCommon('targetLanguage');
     var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+    var targetLanguageDirection = api.getDataFromCommon('params').direction;
+    console.log("Direction is: " + targetLanguageDirection);
     this.state = {
       "originalLanguage": !originalLanguage ? "" : originalLanguage,
       "targetLanguage": !targetLanguage ? "" : targetLanguage,
@@ -102,5 +104,3 @@ class TPane extends React.Component {
 }
 
 module.exports = TPane;
-
-
