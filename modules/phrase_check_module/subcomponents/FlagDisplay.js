@@ -17,11 +17,11 @@ class FlagDisplay extends React.Component{
   }
 
   componentWillMount(){
-    
+
   }
 
   componentWillUnmount() {
-    
+
   }
 
   setFlagStateFunction(newCheckStatus) {
@@ -32,7 +32,7 @@ class FlagDisplay extends React.Component{
     if (currentCheck) {
       currentCheck.checkStatus = newCheckStatus;
       api.emitEvent('changedCheckStatus', {
-        checkStatus: newCheckStatus, 
+        checkStatus: newCheckStatus,
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex
       });
@@ -42,7 +42,7 @@ class FlagDisplay extends React.Component{
   render(){
     var _this = this;
     return (
-      <ButtonGroup vertical={true} block>
+      <ButtonGroup vertical={true} style={{marginTop: "2.5pxpx"}} block >
         <Button bsStyle="success" onClick={
             function() {
               _this.setFlagStateFunction('RETAINED');

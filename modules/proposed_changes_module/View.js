@@ -75,7 +75,7 @@ class ProposedChanges extends React.Component {
           </Well>
         <FormControl
             type="text"
-            placeholder="Proposed Word"
+            placeholder="Proposed Word/Pharse"
             value={this.state.newWord}
             style={{marginBottom: "0px", marginTop: "0px",fontSize: "16px" }}
             onChange={this.handleChange.bind(this)}

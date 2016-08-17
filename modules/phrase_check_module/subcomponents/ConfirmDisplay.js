@@ -1,15 +1,16 @@
 
 const api = window.ModuleApi;
 const React = api.React;
+const ReactBootstrap = api.ReactBootstrap;
+const Well = ReactBootstrap.Well;
 
 class ConfirmDisplay extends React.Component{
   render(){
     return (
-      <form>
-        <label>{this.props.phrase}</label>
-        <br />
+      <Well style={{marginBottom: "2.5px"}}>
+        <Well style={{background: "white"}}>{this.props.phrase}</Well>
         <label>{this.props.phraseInfo}</label>
-      </form>
+      </Well>
     );
   }
 }

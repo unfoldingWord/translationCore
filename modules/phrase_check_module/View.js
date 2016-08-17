@@ -1,17 +1,21 @@
 const api = window.ModuleApi;
-var TPane = null;
-var TADisplay = null;
+const React = api.React;
 
 const RB = api.ReactBootstrap;
 const {Row, Col} = RB;
-const React = api.React;
 const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 
+var TPane = null;
+var TADisplay = null;
+var ProposedChanges = null;
+var CommentBox = null;
+var ExampleTool = null;
+
 const NAMESPACE = 'PhraseChecker';
 
-class PhraseChecker extends React.Component{
+class View extends React.Component{
   constructor(){
     super();
     this.state = {
@@ -20,6 +24,10 @@ class PhraseChecker extends React.Component{
 
     TADisplay = api.getModule('TranslationAcademy');
     TPane = api.getModule('TPane');
+    ProposedChanges = api.getModule('ProposedChanges');
+    CommentBox = api.getModule('CommentBox');
+
+    ExampleTool = api.getModule('ExampleTool');
 
     this.updateState = this.updateState.bind(this);
     this.goToNext = this.goToNext.bind(this);
@@ -30,7 +38,7 @@ class PhraseChecker extends React.Component{
   componentWillMount(){
     this.updateState();
     var _this = this;
-    
+
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
@@ -128,27 +136,29 @@ class PhraseChecker extends React.Component{
         <div>
         <TPane />
         <Row className="show-grid">
-          <Col md={12}>
+          <Col md={6} className="confirm-area" style={{paddingRight: '2.5px'}}>
+            <ConfirmDisplay
+              phraseInfo={this.state.currentCheck.phraseInfo}
+              phrase={this.state.currentCheck.phrase}
+            />
+            <FlagDisplay />
+          </Col>
+          <Col md={6} style={{paddingLeft: '2.5px'}}>
             <ScriptureDisplay
               scripture={targetVerse}
               currentVerse={this.state.currentCheck.book
                             + " " + this.state.currentCheck.chapter
                             + ":" + this.state.currentCheck.verse}
             />
+
           </Col>
         </Row>
-        <Row className="show-grid">
-          <Col md={6} className="confirm-area">
-            <ConfirmDisplay
-              phraseInfo={this.state.currentCheck.phraseInfo}
-              phrase={this.state.currentCheck.phrase}
-            />
-          </Col>
-          <Col md={6}>
-            <FlagDisplay
-            />
-          </Col>
+        <Row>
+        <Col md={12}>
+        
+        </Col>
         </Row>
+
         <br />
         <TADisplay />
         </div>
@@ -158,5 +168,5 @@ class PhraseChecker extends React.Component{
 
 module.exports = {
   name: NAMESPACE,
-  view: PhraseChecker
+  view: View
 }
