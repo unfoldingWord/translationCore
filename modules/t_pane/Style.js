@@ -4,7 +4,7 @@ var style = {
       overflowY: 'scroll',
       width: '100%',
       height: '250px',
-      dir: 'ltr'
+      direction: 'ltr'
     },
     header: {
       textAlign: 'center'

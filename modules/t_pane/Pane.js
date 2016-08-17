@@ -21,19 +21,17 @@ class Pane extends React.Component {
 
     render() {
       if(this.props.dir == 'ltr'){
-        this.contentStyle.dir = 'rtl';
-        console.log("rtl");
+        this.contentStyle.direction = 'ltr';
       }else{
-        this.contentStyle.dir = 'ltr';
-        console.log("ltr");
+        this.contentStyle.direction = 'rtl';
       }
-        return (
-            <Col md={4} sm={4} xs={4} lg={4} style={this.props.last ? {} : {borderRight: '1px solid #1f273b'}}>
-                <div style={this.contentStyle}>
-                    <Book input={this.props.content} greek={this.props.greek} />
-                </div>
-            </Col>
-        );
+      return (
+          <Col md={4} sm={4} xs={4} lg={4} style={this.props.last ? {} : {borderRight: '1px solid #1f273b'}}>
+              <div style={this.contentStyle}>
+                  <Book input={this.props.content} greek={this.props.greek} />
+              </div>
+          </Col>
+      );
     }
 }
 
