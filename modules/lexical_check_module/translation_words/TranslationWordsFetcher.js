@@ -8,7 +8,7 @@
 
 const GITHUB_API_URL = "https://api.github.com/repos/Door43/d43-en/contents/obe?ref=master",
   REQUEST_FAILED = "Request failed",
-  AUTHENTICATION = "access_token=" + require("../Authentication.js"),
+  AUTHENTICATION = window.ModuleApi.getAuthToken('git'),
   UNKNOWN_TYPE = "Unknown type: ",
   WORD_NOT_FOUND = "Word not found in list";
 
