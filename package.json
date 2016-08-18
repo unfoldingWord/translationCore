@@ -7,12 +7,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel src --out-dir out",
-    "build": "npm run compile && build --win --lin --mac",
+    "build": "npm run compile && build -mwl",
     "build-win": "npm run compile && build --win",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --lin",
     "start": "npm run compile && electron .",
-    "watch": "watch \"echo \"Compiling\" && npm run compile\" ./src/js/"
+    "watch": "babel src --out-dir out --watch"
   },
   "build": {
     "appId": "wa.translation.core",
