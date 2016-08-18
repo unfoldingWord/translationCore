@@ -1,9 +1,4 @@
 (function() {
-  // added by EW, necessary for dynamic JSX compilation
-  require("babel-register")({
-    extensions: [".jsx"],
-    presets: ["react"]
-  });
   const ReactDOM = require('react-dom');
   const React = require('react');
   const remote = require('electron').remote;

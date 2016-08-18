@@ -125,8 +125,8 @@ var CheckDataGrabber = {
     }
     catch(e) {
       try {
-        fs.accessSync(Path.join(folderPath, 'View.jsx'));
-        return require(Path.join(folderPath, 'View.jsx')).name;
+        fs.accessSync(Path.join(folderPath, 'View.js'));
+        return require(Path.join(folderPath, 'View.js')).name;
       }
       catch(error) {
         const alert = {
