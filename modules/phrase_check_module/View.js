@@ -1,33 +1,40 @@
+//View.js//
+
+//Api Consts
 const api = window.ModuleApi;
 const React = api.React;
 
-const RB = api.ReactBootstrap;
-const {Row, Col} = RB;
-const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
-const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
-const FlagDisplay = require('./subcomponents/FlagDisplay');
-
+//Modules not defined within phrase_check_module
 var TPane = null;
 var TADisplay = null;
 var ProposedChanges = null;
 var CommentBox = null;
-var ExampleTool = null;
+//Bootstrap consts
+const RB = api.ReactBootstrap;
+const {Row, Col} = RB;
 
+//Modules that are defined within phrase_check_module
+const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
+const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
+const FlagDisplay = require('./subcomponents/FlagDisplay');
+
+//String constants
 const NAMESPACE = 'PhraseChecker';
 
+
+/**
+ * @description - This class defines the entire view for the Phrase Check Module
+ */
 class View extends React.Component{
   constructor(){
     super();
     this.state = {
       currentCheck: null
     }
-
-    TADisplay = api.getModule('TranslationAcademy');
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
     CommentBox = api.getModule('CommentBox');
-
-    ExampleTool = api.getModule('ExampleTool');
+    TADisplay = api.getModule('TranslationAcademy');
 
     this.updateState = this.updateState.bind(this);
     this.goToNext = this.goToNext.bind(this);
@@ -43,8 +50,6 @@ class View extends React.Component{
     api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
     api.registerEventListener('phraseDataLoaded', this.updateState);
-
-    // api.registerEventListener('changeCheckType', this.updateState.bind(this));
   }
 
   componentWillUnmount(){
@@ -137,28 +142,27 @@ class View extends React.Component{
         <TPane />
         <Row className="show-grid">
           <Col md={6} className="confirm-area" style={{paddingRight: '2.5px'}}>
-            <ConfirmDisplay
-              phraseInfo={this.state.currentCheck.phraseInfo}
-              phrase={this.state.currentCheck.phrase}
+            <ScriptureDisplay
+              scripture={targetVerse}
+              currentVerse={this.state.currentCheck.book
+                          + " " + this.state.currentCheck.chapter
+                          + ":" + this.state.currentCheck.verse}
             />
             <FlagDisplay />
           </Col>
           <Col md={6} style={{paddingLeft: '2.5px'}}>
-            <ScriptureDisplay
-              scripture={targetVerse}
-              currentVerse={this.state.currentCheck.book
-                            + " " + this.state.currentCheck.chapter
-                            + ":" + this.state.currentCheck.verse}
+            <ConfirmDisplay
+              phraseInfo={this.state.currentCheck.phraseInfo}
+              phrase={this.state.currentCheck.phrase}
             />
-
+            <ProposedChanges />
           </Col>
         </Row>
         <Row>
         <Col md={12}>
-        
+          <CommentBox />
         </Col>
         </Row>
-
         <br />
         <TADisplay />
         </div>

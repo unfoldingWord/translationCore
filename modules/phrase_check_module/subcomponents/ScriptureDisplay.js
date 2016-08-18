@@ -86,7 +86,7 @@ class ScriptureDisplay extends React.Component{
     return (
       <div>
         {/*<Glyph glyph="remove" style={{float: 'right'}} onClick={this.clearSelection}/>*/}
-        <Well style={{marginBottom: "2.5px"}} >
+        <Well style={{marginBottom: "2.5px", overflowY: "scroll", minHeight: '215px'}} >
         <h3>{this.props.currentVerse}</h3>
           <p onClick={this.getSelectedText}>{spannedArray}</p>
         </Well>

@@ -65,7 +65,7 @@ class ProposedChanges extends React.Component {
       }
     }
     return (
-      <Well style={{width:'100%', padding: "10px", marginTop: "2.5px"}}>
+      <Well style={{width:"100%", padding: "10px", marginTop: "2.5px", marginBottom: "2.5px"}}>
         <center>
           <span style={{fontSize: "24px", color: "#000", fontFamily: "Helvetica", marginBottom: "5px"}}>
             Propose Changes

@@ -42,7 +42,8 @@ class FlagDisplay extends React.Component{
   render(){
     var _this = this;
     return (
-      <ButtonGroup vertical={true} style={{marginTop: "2.5pxpx"}} block >
+      <div>
+      <ButtonGroup vertical={true} style={{marginTop: "2.5px", marginBottom: "2.5px"}} block >
         <Button bsStyle="success" onClick={
             function() {
               _this.setFlagStateFunction('RETAINED');
@@ -59,6 +60,8 @@ class FlagDisplay extends React.Component{
             }
         }><Glyphicon glyph="remove" /> Wrong</Button>
       </ButtonGroup>
+
+      </div>
     );
   }
 }
