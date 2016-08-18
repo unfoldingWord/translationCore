@@ -129,7 +129,7 @@ var template = [
       {
         label: 'Learn More',
         click: function() {
-          window.electron.shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
+          require('electron').shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
         }
       }
     ]

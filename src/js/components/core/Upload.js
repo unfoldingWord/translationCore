@@ -14,7 +14,7 @@ const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
 const Access = require('./AccessProject');
-const ManifestGenerator = require('./ProjectManifest');
+const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const api = window.ModuleApi;
 

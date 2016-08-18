@@ -5,7 +5,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../BooksOfBible');
 const Path = require('path');
-const ManifestGenerator = require('../ProjectManifest');
+const ManifestGenerator = require('./ProjectManifest');
 const git = require('../GitApi.js');
 
 const REQUIRE_ERROR = "Unable to require file";
@@ -125,8 +125,8 @@ var CheckDataGrabber = {
     }
     catch(e) {
       try {
-        fs.accessSync(Path.join(folderPath, 'View.js'));
-        return require(Path.join(folderPath, 'View.js')).name;
+        fs.accessSync(Path.join(folderPath, 'View.jsx'));
+        return require(Path.join(folderPath, 'View.jsx')).name;
       }
       catch(error) {
         const alert = {

@@ -15,10 +15,12 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
   mainWindow.maximize();
+  mainWindow.webContents.openDevTools();
+
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
-	
+
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()

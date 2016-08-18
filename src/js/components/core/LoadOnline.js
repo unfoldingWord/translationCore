@@ -3,7 +3,7 @@
  * @description: The file downloads a git repo and passes back the location it is
  *               downloaded to.
  ******************************************************************************/
-const remote = window.electron.remote;
+const remote = require('electron').remote;
 const {dialog} = remote;
 
 const path = require('path');

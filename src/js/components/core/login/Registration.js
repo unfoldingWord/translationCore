@@ -5,7 +5,7 @@
 
 const React = require('react');
 
-const remote = window.electron.remote;
+const remote = require('electron').remote;
 const {dialog} = remote;
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
