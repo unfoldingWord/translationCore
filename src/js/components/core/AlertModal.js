@@ -90,7 +90,8 @@ const AlertModal = React.createClass({
     }
 
     alertDiv = {
-      position: 'relative'
+      position: 'relative',
+      maxHeight: '60px'
     }
 
     return (
@@ -98,7 +99,7 @@ const AlertModal = React.createClass({
       <Modal show={this.state.visibility}>
       <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
       <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
-      <center> 
+      <center>
       <div style={alertDiv}>
       <h3>{this.state.title}</h3>
       <p style={alertContent}>{this.state.content}</p>

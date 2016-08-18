@@ -132,12 +132,12 @@ class ModuleApi {
     return BooksOfBible[bookAbbr];
   }
 
-/**
+  /**
   * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
   * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
   * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the
   * abbreviation will just be returned
-*/
+  */
   convertToBookAbbreviation(fullBookName) {
     for (var key in BooksOfBible) {
       if (BooksOfBible[key].toLowerCase() == fullBookName.toLowerCase() ||
@@ -159,7 +159,7 @@ class ModuleApi {
     });
   }
 
-/**
+  /**
   * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
   * and calls the callback function with the gateway language book as an argument.
   *
@@ -169,7 +169,7 @@ class ModuleApi {
   *
   * The book that is passed as an argument to the callback has the chapters and verses
   * formatted as arrays.
-*/
+  */
   getGatewayLanguageAndSaveInCheckStore(params, progressCallback, callback) {
     var Door43Fetcher = new Door43DataFetcher();
     Door43Fetcher.getBook(params.bookAbbr, function (done, total) {
@@ -295,6 +295,27 @@ class ModuleApi {
         leftButtonText: "Ok"
       }
       this.createAlert(Alert);
+    }
+  }
+
+  getAuthToken(type) {
+    if (this.authToken == undefined) {
+      var obj = fs.readJsonSync(window.__base + '.auth', { throws: false })
+      if (obj) {
+        this.authToken = obj;
+        return obj[type];
+      }
+      else {
+        var Alert = {
+          title: "Authentication Error",
+          content: "Please check token.",
+          leftButtonText: "Ok"
+        }
+        this.createAlert(Alert);
+      }
+    }
+    else {
+      return this.authToken[type];
     }
   }
 }
