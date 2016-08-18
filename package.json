@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel src --out-dir out",
+    "compile-modules": "babel modules --out-dir modules",
     "build": "npm run compile && build -mwl",
     "build-win": "npm run compile && build --dir && node build_scripts/build-win.js",
     "build-mac": "npm run compile && build --mac",
