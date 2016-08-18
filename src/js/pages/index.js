@@ -1,4 +1,8 @@
 (function() {
+  require("babel-register")({
+    extensions: [".js", ".jsx"],
+    presets: ["react"]
+  });
   const ReactDOM = require('react-dom');
   const React = require('react');
   const remote = require('electron').remote;

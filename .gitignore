@@ -199,6 +199,8 @@ $RECYCLE.BIN/
 ## Auth tokens and node modules
 #############
 /node_modules/
+.auth
+Auth.json
 .config
 Authentication.js
 #############

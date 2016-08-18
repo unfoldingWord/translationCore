@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "babel-core": "^6.13.2",
+    "babel-register": "^6.11.6",
     "bootstrap": "^3.3.7",
     "event-emitter": "^0.3.4",
     "flux": "^2.1.1",

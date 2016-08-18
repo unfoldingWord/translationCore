@@ -202,7 +202,7 @@ const UploadModal = React.createClass({
   translationCoreManifestPresent: function(path) {
     //this currently just uses 'require' and if it throws an error it will return false
     try {
-      fs.accessSync(Path.join(path, 'tc-manifest.json'));
+      require(Path.join(path, 'tc-manifest.json'));
       return true;
     }
     catch(e) {
