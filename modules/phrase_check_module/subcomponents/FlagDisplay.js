@@ -2,7 +2,8 @@
 const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
-const {Button, ButtonGroup, Glyphicon} = RB;
+const {Glyphicon} = RB;
+const FlagDisplayButton = require("./FlagDisplayButton");
 
 const NAMESPACE = 'PhraseChecker';
 
@@ -14,14 +15,6 @@ class FlagDisplay extends React.Component{
 
     };
     this.setFlagStateFunction = this.setFlagStateFunction.bind(this);
-  }
-
-  componentWillMount(){
-
-  }
-
-  componentWillUnmount() {
-
   }
 
   setFlagStateFunction(newCheckStatus) {
@@ -43,24 +36,14 @@ class FlagDisplay extends React.Component{
     var _this = this;
     return (
       <div>
-      <ButtonGroup vertical={true} style={{marginTop: "2.5px", marginBottom: "2.5px"}} block >
-        <Button bsStyle="success" onClick={
-            function() {
-              _this.setFlagStateFunction('RETAINED');
-            }
-          }><Glyphicon glyph="ok" /> Retain</Button>
-        <Button bsStyle="warning" onClick={
-            function() {
-              _this.setFlagStateFunction('REPLACED');
-            }
-          }><Glyphicon glyph="random" /> Changed</Button>
-        <Button bsStyle="danger" onClick={
-            function() {
-              _this.setFlagStateFunction('WRONG');
-            }
-        }><Glyphicon glyph="remove" /> Wrong</Button>
-      </ButtonGroup>
+        <FlagDisplayButton handleButtonClick={function() {_this.setFlagStateFunction('RETAINED');}}
+        glyphicon={"ok"} value={"Retain"} color={"green"} />
 
+        <FlagDisplayButton handleButtonClick={function() {_this.setFlagStateFunction('REPLACED');}}
+        glyphicon={"random"} value={"Changed"} color={"yellow"} />
+
+        <FlagDisplayButton handleButtonClick={function() {_this.setFlagStateFunction('WRONG');}}
+        glyphicon={"remove"} value={"Wrong"} color={"red"} />
       </div>
     );
   }

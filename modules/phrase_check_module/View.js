@@ -29,7 +29,7 @@ class View extends React.Component{
   constructor(){
     super();
     this.state = {
-      currentCheck: null
+      currentCheck: null,
     }
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
@@ -40,23 +40,41 @@ class View extends React.Component{
     this.goToNext = this.goToNext.bind(this);
     this.goToPrevious = this.goToPrevious.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
+    this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
 
   componentWillMount(){
     this.updateState();
-    var _this = this;
-
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
     api.registerEventListener('phraseDataLoaded', this.updateState);
   }
 
+  componentDidMount() {
+    //this should already be set in the state from componentWillMount
+    var currentCheck = this.state.currentCheck;
+    if (currentCheck) {
+      //Let T Pane know to scroll to are current verse
+      api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+      //Tell ProposedChanges what it should be displaying if we already have a proposed change there
+      if (this.refs.ProposedChanges) {
+        //this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+      }
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.refs.ProposedChanges) {
+    //  this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+    }
+  }
+
   componentWillUnmount(){
-    api.removeEventListener('phraseDataLoaded', this.updateState);
     api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('goToNext', this.goToNext);
     api.removeEventListener('goToPrevious', this.goToPrevious);
+    api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('phraseDataLoaded', this.updateState);
   }
 
   goToCheck(params){
@@ -75,7 +93,53 @@ class View extends React.Component{
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
   }
 
+  getCurrentCheck() {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    return currentCheck;
+  }
+
+  updateUserAndTimestamp() {
+    let currentCheck = this.getCurrentCheck();
+    let currentUser = api.getLoggedInUser();
+    let timestamp = new Date();
+    currentCheck.user = currentUser;
+    currentCheck.timestamp = timestamp;
+  }
+
+  updateSelectedWords(selectedWords) {
+    if (this.refs.ProposedChanges) {
+      this.refs.ProposedChanges.update(selectedWords);
+    }
+    var currentCheck = this.getCurrentCheck();
+    currentCheck.selectedWords = selectedWords;
+    //This is needed to make the display persistent, but won't be needed in reports
+    //currentCheck.selectedWordsRaw = selectedWordsRaw;
+    this.updateUserAndTimestamp();
+  }
+
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
+    //Get the proposed changes and add it to the check
+    var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
+    let comment = this.refs.CommentBox.getComment();
+    var currentCheck = this.getCurrentCheck();
+
+    var loggedInUser = api.getLoggedInUser();
+    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+
+    if (currentCheck) {
+      if (proposedChanges && proposedChanges != "") {
+        currentCheck.proposedChanges = proposedChanges;
+        this.refs.ProposedChanges.setNewWord("");
+      }
+      if (comment && comment != "") {
+        currentCheck.comment = comment;
+        this.refs.CommentBox.setComment("");
+      }
+    }
+
       var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
       var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
       var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
@@ -108,15 +172,26 @@ class View extends React.Component{
           }
         }
       }
+      //Save Project
+      var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
+          ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
+      api.saveProject(commitMessage);
+      // Update state to render the next check
       this.updateState();
   }
 
   updateState() {
     var newGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var newCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    if (newGroupIndex === null || newCheckIndex === null) {
+      console.warn("PhraseCheck wasn't able to retrieve it's indices");
+      return;
+    }
     var newCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex]['checks'][newCheckIndex];
+    var currentPhrase = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex].group;
     this.setState({
         currentCheck: newCheck,
+        currentPhrase: currentPhrase, //currentWord
     });
     api.emitEvent('goToVerse', {chapterNumber: newCheck.chapter, verseNumber: newCheck.verse});
   }
@@ -132,6 +207,10 @@ class View extends React.Component{
     }
   }
 
+  setCurrentCheckProperty(propertyName, propertyValue) {
+    this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
+  }
+
   render() {
     var targetVerse = this.getVerse('targetLanguage');
     if(!this.state.currentCheck){
@@ -141,26 +220,32 @@ class View extends React.Component{
         <div>
         <TPane />
         <Row className="show-grid">
-          <Col md={6} className="confirm-area" style={{paddingRight: '2.5px'}}>
+          <Col md={6} className="confirm-area" style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
             <ScriptureDisplay
               scripture={targetVerse}
+              ref={"ScriptureDisplay"}
+              onWordSelected={this.updateSelectedWords.bind(this)}
               currentVerse={this.state.currentCheck.book
                           + " " + this.state.currentCheck.chapter
                           + ":" + this.state.currentCheck.verse}
             />
-            <FlagDisplay />
           </Col>
-          <Col md={6} style={{paddingLeft: '2.5px'}}>
+          <Col md={6} style={{paddingTop: '2.5px', paddingLeft: "2.5px"}}>
             <ConfirmDisplay
               phraseInfo={this.state.currentCheck.phraseInfo}
               phrase={this.state.currentCheck.phrase}
             />
-            <ProposedChanges />
+          </Col>
+          <Col md={6} style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
+            <FlagDisplay />
+          </Col>
+          <Col md={6} style={{paddingTop: '2.5px', paddingLeft: "2.5px"}}>
+            <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
         </Row>
-        <Row>
+        <Row className="show-grid">
         <Col md={12}>
-          <CommentBox />
+          <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
         </Col>
         </Row>
         <br />

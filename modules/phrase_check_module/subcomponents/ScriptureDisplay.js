@@ -1,3 +1,4 @@
+//ScriptureDisplay.js//
 
 const api = window.ModuleApi;
 const React = api.React;
@@ -54,7 +55,8 @@ class ScriptureDisplay extends React.Component{
 
   returnSelection(){
     var returnString = this.state.selectedVals.join(" ... ");
-    this.props.setSelectedText(returnString);
+    this.props.onWordSelected(returnString);
+    console.log("selected word in ScriptureDisplay" + returnString);
   }
 
   clearSelection(){
@@ -86,7 +88,7 @@ class ScriptureDisplay extends React.Component{
     return (
       <div>
         {/*<Glyph glyph="remove" style={{float: 'right'}} onClick={this.clearSelection}/>*/}
-        <Well style={{marginBottom: "2.5px", overflowY: "scroll", minHeight: '215px'}} >
+        <Well style={{marginBottom: "2.5px", overflowY: "scroll", maxHeight: '195px', minHeight: '195px'}} >
         <h3>{this.props.currentVerse}</h3>
           <p onClick={this.getSelectedText}>{spannedArray}</p>
         </Well>

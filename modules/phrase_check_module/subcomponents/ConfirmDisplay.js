@@ -7,8 +7,8 @@ const Well = ReactBootstrap.Well;
 class ConfirmDisplay extends React.Component{
   render(){
     return (
-      <Well style={{marginBottom: "2.5px", overflowY: "scroll", minHeight: '215px'}}>
-        <Well style={{background: "white"}}>{this.props.phrase}</Well>
+      <Well style={{marginBottom: "2.5px", overflowY: "scroll", width: "100%", maxHeight: '195px', minHeight: '195px'}}>
+        <Well style={{background: "white", margin: "2.5px", padding: "2.5px"}}>{this.props.phrase}</Well>
         <label>{this.props.phraseInfo}</label>
       </Well>
     );
