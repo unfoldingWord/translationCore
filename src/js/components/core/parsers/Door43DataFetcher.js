@@ -20,7 +20,7 @@ const suppress = true;
 
 // ONLY USE getBook()
 class Door43DataFetcher {
-	contructor() {
+	constructor() {
 		this.AUTHENTICATION = window.ModuleApi.getAuthToken('git');
 		this.bookList = null;
 	}
