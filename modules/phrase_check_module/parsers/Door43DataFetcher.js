@@ -21,7 +21,7 @@ var suppress = true
 
 // ONLY USE getBook()
 class Door43DataFetcher {
-	contructor() {
+	constructor() {
 		this.bookList = null;
 	}
 
