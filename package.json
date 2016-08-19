@@ -9,7 +9,7 @@
     "compile": "babel src --out-dir out",
     "compile-modules": "babel modules --out-dir modules",
     "build": "npm run compile && build -mwl",
-    "build-win": "npm run compile && build --dir && node build_scripts/build-win.js",
+    "build-win": "npm run compile && build --dir && node scripts/build-win.js",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
     "build-test": "npm run compile && build --dir",
