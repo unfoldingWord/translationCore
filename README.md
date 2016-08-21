@@ -1,5 +1,5 @@
-# Translation Core
-Repository for the desktop application Translation Core
+# translationCore
+Repository for the desktop application translationCore
 
 # Setup
 
@@ -9,6 +9,7 @@ These are the setup and contribution instructions for Windows users
 
 **Git**: Download installer from [https://git-scm.com/](https://git-scm.com/)
 Install using whatever settings you would like, as long as you make sure to choose the option that allows git to be accessible from the Windows Command Prompt.
+
 **Node and NPM**: Download installer from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 
@@ -45,5 +46,3 @@ These are the setup and contribution instructions for Mac OS users
 5. Ensure your code works. Test, Test, Test.
 5. Push your branch to your remote.
 6. Submit a Pull Request with develop.
-7. ???
-8. Profit
