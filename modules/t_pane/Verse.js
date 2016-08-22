@@ -6,8 +6,6 @@
 const api = window.ModuleApi;
 const React = api.React;
 const lookup = require("./LexiconLookup");
-const Popover = require('react-bootstrap/lib/popover');
-const OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
 
 class Verse extends React.Component {
   constructor() {
@@ -41,6 +39,14 @@ class Verse extends React.Component {
 function displayGreek(text = []) {
   let i = 0;
   return text.map((word) => {
+    var PopoverTitle = <span>
+                         {word.word + " | "}
+                         <a href={'http://studybible.info/mac/' + word.speech} target="_blank">
+                           <b>
+                            {word.speech}
+                           </b>
+                         </a>
+                       </span>
     return (<span
               key={i++}
               strong={word.strong}
@@ -49,7 +55,7 @@ function displayGreek(text = []) {
               onClick={function(e){
                 var x = e.target.getBoundingClientRect().left;
                 var y = e.target.getBoundingClientRect().bottom;
-                api.Popover(true, word.word, word.brief, x, y);
+                api.Popover(true, PopoverTitle, word.brief, x, y);
               }}>
                 {word.word + " "}
               </span>
