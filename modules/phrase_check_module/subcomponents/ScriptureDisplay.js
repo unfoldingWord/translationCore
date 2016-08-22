@@ -1,100 +1,274 @@
-//ScriptureDisplay.js//
+///TargetVerseDisplay.js//
 
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
+
+var natural = require('natural');
+var XRegExp = require('xregexp');
+var nonUnicodeLetter = XRegExp('\\PL');
+
+//Wordlength tokenizer
+const tokenizer = new natural.RegexpTokenizer({pattern: nonUnicodeLetter});
+
 const Well = ReactBootstrap.Well;
-const Glyph = ReactBootstrap.Glyph;
 
-class ScriptureDisplay extends React.Component{
+/* Contains a word from the target language, defines a lot of listeners for clicks */
+const TargetWord = React.createClass({
+  // highlighted: false,
+  getInitialState: function() {
+    return {
+      highlighted: false,
+      wordObj: { // this is required to pass into our callbacks
+        'word': this.props.word,
+        'key': this.props.keyId
+      }
+    };
+  },
 
-  constructor(){
-    super();
-    this.state = {
-      selectedPos: [],
-      selectedVals: []
+  userClick: function() {
+  // toggles the internal state and changes the actual style of the element
+    this.toggleHighlight();
+  },
+
+  removeHighlight: function() {
+    if (this.state.highlighted) {
+      this.setState({
+        highlighted: false
+      });
     }
+  },
 
-    this.getSelectedText = this.getSelectedText.bind(this);
-    this.clearSelection = this.clearSelection.bind(this);
-    this.returnSelection = this.returnSelection.bind(this);
-  }
-
-  getSelectedText(){
-    var selection = window.getSelection();
-    var newPos = this.state.selectedPos;
-    var newVals = this.state.selectedVals;
-
-    var startPoint = parseInt(
-      selection
-      .anchorNode
-      .parentElement
-      .attributes["data-pos"]
-      .value
-    );
-
-    var endPoint = parseInt(
-      selection
-      .focusNode
-      .parentElement
-      .attributes["data-pos"]
-      .value
-    )+1;
-
-    for(var i = startPoint; i < endPoint; i++){
-      newPos.push(i);
+  setHighlight: function() {
+    if (!this.state.highlighted) {
+      this.setState({
+        highlighted: true
+      });
     }
+  },
 
-    newVals.push(selection.toString());
+  componentWillReceiveProps: function(nextProps) {
     this.setState({
-      selectedPos: newPos,
-      selectedVals: newVals
+      wordObj: {
+        'word': nextProps.word,
+        'key': this.props.keyId
+      }
     });
-    this.returnSelection();
-  }
+  },
 
-  returnSelection(){
-    var returnString = this.state.selectedVals.join(" ... ");
-    this.props.onWordSelected(returnString);
-    console.log("selected word in ScriptureDisplay" + returnString);
-  }
+  toggleHighlight: function() {
+    if (!this.state.highlighted) {
+      this.props.selectCallback(this.state.wordObj);
+    }
+    else {
+      this.props.removeCallback(this.state.wordObj);
+    }
+    this.setState({highlighted: !this.state.highlighted}); // this sets React to re-render the component
+  },
 
-  clearSelection(){
-    this.setState({
-      selectedPos: [],
-      selectedVals: []
-    });
-  }
+  render: function() {
 
-  render(){
-    var wordArray = this.props.scripture.split(' ');
-    var spannedArray = [];
-    var highlightedStyle = {backgroundColor: 'yellow'};
-    for(var i = 0; i < wordArray.length; i++){
-      if(this.state.selectedPos.includes(i)){
-        spannedArray.push(
-          <span style={{backgroundColor: 'yellow'}} data-pos={i} key={i}>
-            {wordArray[i] + " "}
-          </span>
-        );
-      }else{
-        spannedArray.push(
-          <span key={i} data-pos={i}>
-            {wordArray[i] + " "}
+    return (
+      <span
+        className={this.state.highlighted ? 'text-primary' : 'text-muted'}
+        onClick={this.userClick}
+        style={this.props.style}
+      >
+        {this.props.word}
+      </span>
+      );
+    }
+});
+
+const ScriptureDisplay = React.createClass({
+  selectedWords: [], // holds wordObjects, each have {'word', 'key'} attributes
+
+  cursorPointerStyle: {
+    cursor: "pointer",
+  },
+
+  componentWillMount: function() {
+    this.fetchSelectedWords();
+  },
+
+  /**
+   * @description - This looks to see if selected words are already in the check store, so to be persistent
+   * we have to go and look for those
+   */
+  fetchSelectedWords: function() {
+    var currentCheckIndex = api.getDataFromCheckStore('PhraseChecker', 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore('PhraseChecker', 'currentGroupIndex');
+    if (currentCheckIndex != null && currentGroupIndex != null) {
+      var currentCheck = api.getDataFromCheckStore('PhraseChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
+      if (currentCheck) {
+        if (currentCheck.selectedWordsRaw) {
+          this.selectedWords = currentCheck.selectedWordsRaw;
+        }
+      }
+    }
+  },
+
+  componentDidMount: function() {
+    for (var word of this.selectedWords) {
+      var targetWord = this.refs[word.key];
+      if (targetWord) {
+        targetWord.setHighlight();
+      }
+    }
+  },
+
+  shouldComponentUpdate: function(nextProps, nextState) {
+    //remove everybody's highlighting
+    for (key in this.refs) {
+      this.refs[key].removeHighlight();
+    }
+    this.selectedWords = [];
+
+    //Maybe we've already done this check? If we have update the highlighting on the selected words
+    this.fetchSelectedWords();
+
+    return true;
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
+    for (var word of this.selectedWords) {
+      var targetWord = this.refs[word.key];
+      if (targetWord) {
+        targetWord.setHighlight();
+      }
+    }
+  },
+
+  generateWordArray: function() {
+    var words = tokenizer.tokenize(this.props.verse),
+      wordArray = [],
+      index = 0,
+      tokenKey = 1,
+      wordKey = 0;
+    for (var word of words) {
+      var wordIndex = this.props.verse.indexOf(word, index);
+      if (wordIndex > index) {
+        wordArray.push(
+          <span
+            key={wordKey++}
+            style={this.cursorPointerStyle}
+          >
+            {this.props.verse.substring(index, wordIndex)}
           </span>
         );
       }
+      wordArray.push(
+        <TargetWord
+          word={word}
+          key={wordKey++}
+          keyId={tokenKey}
+          style={this.cursorPointerStyle}
+          selectCallback={this.addSelectedWord}
+          removeCallback={this.removeFromSelectedWords}
+          ref={tokenKey.toString()}
+        />
+      );
+      tokenKey++;
+      index = wordIndex + word.length;
     }
+    return wordArray;
+  },
+
+  render: function() {
+    var words = this.generateWordArray();
     return (
-      <div>
-        {/*<Glyph glyph="remove" style={{float: 'right'}} onClick={this.clearSelection}/>*/}
-        <Well style={{marginBottom: "2.5px", overflowY: "scroll", maxHeight: '195px', minHeight: '195px'}} >
-        <h3>{this.props.currentVerse}</h3>
-          <p onClick={this.getSelectedText}>{spannedArray}</p>
-        </Well>
-      </div>
+      <Well
+        bsSize={'small'}
+        style={{
+          overflowY: "scroll",
+          minHeight: "150px",
+          maxHeight: "150px",
+          marginBottom: "2.5px",
+        }}
+      >
+        <h3 style={{marginTop: "0px"}}>{this.props.currentVerse}</h3>
+        <span>{words}</span>
+      </Well>
     );
+  },
+
+  addSelectedWord: function(wordObj) {
+    // check to see if we already have this word
+    // an inefficient search, but shouldn't have >20 words to search through
+    var idFound = false;
+    for (var i = 0; i < this.selectedWords.length; i++) {
+      if (this.selectedWords[i].key == wordObj.key) {
+        idFound = true;
+      }
+    }
+    if (!idFound) {
+      this.selectedWords.push(wordObj);
+      this.sortSelectedWords();
+    }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
+
+    /* This is used for if you want to enable disabled buttons after the user has
+     * selected at least one word
+     */
+    // if (this.selectedWords.length > 0) {
+    //   this.props.buttonEnableCallback();
+    // }
+  },
+
+  removeFromSelectedWords: function(wordObj) {
+  // get the word's index
+    var index = -1;
+    for (var i = 0; i < this.selectedWords.length; i++) {
+      if (this.selectedWords[i].key == wordObj.key) {
+        index = i;
+      }
+    }
+    if (index != -1) {
+      this.selectedWords.splice(index, 1);
+    }
+    this.props.onWordSelected(this.getWords(), this.getWordsRaw());
+
+    //This is used for if you want to disable the buttons if no words are selected
+    // if (this.selectedWords.length <= 0) {
+    //   this.props.buttonDisableCallback();
+    // }
+  },
+
+/* Sorts the selected words by their 'key' attribute */
+  sortSelectedWords: function() {
+    this.selectedWords.sort(function(first, next) {
+      return first.key - next.key;
+    });
+  },
+
+  /**
+   * @description - This returns the currently selected words, but formats in
+   * an array with adjacent words concatenated into one string
+   */
+  getWords: function() {
+    var lastKey = -100;
+    var returnArray = [];
+    for (var wordObj of this.selectedWords){
+      if (lastKey < wordObj.key - 1) {
+        returnArray.push(wordObj.word);
+        lastKey = wordObj.key
+      }
+      else if (lastKey == wordObj.key - 1) {
+        var lastWord = returnArray.pop();
+        lastWord += ' ' + wordObj.word;
+        returnArray.push(lastWord);
+        lastKey = wordObj.key
+      }
+    }
+    return returnArray;
+  },
+
+  /**
+   * @description - This returns the array object of word objects so that the data can be persistent
+   */
+  getWordsRaw: function() {
+    return this.selectedWords;
   }
-}
+});
 
 module.exports = ScriptureDisplay;

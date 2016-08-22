@@ -17,9 +17,10 @@ const {Row, Col} = RB;
 const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
+const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
-const NAMESPACE = 'PhraseChecker';
+const NAMESPACE = "PhraseChecker";
 
 
 /**
@@ -37,17 +38,17 @@ class View extends React.Component{
     TADisplay = api.getModule('TranslationAcademy');
 
     this.updateState = this.updateState.bind(this);
-    this.goToNext = this.goToNext.bind(this);
-    this.goToPrevious = this.goToPrevious.bind(this);
-    this.goToCheck = this.goToCheck.bind(this);
+    this.goToNextListener = EventListeners.goToNext.bind(this);
+    this.goToPreviousListener = EventListeners.goToPrevious.bind(this);
+    this.goToCheckListener = EventListeners.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
 
   componentWillMount(){
     this.updateState();
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToPrevious', this.goToPrevious);
-    api.registerEventListener('goToCheck', this.goToCheck);
+    api.registerEventListener('goToNext', this.goToNextListener);
+    api.registerEventListener('goToPrevious', this.goToPreviousListener);
+    api.registerEventListener('goToCheck', this.goToCheckListener);
     api.registerEventListener('phraseDataLoaded', this.updateState);
   }
 
@@ -59,38 +60,22 @@ class View extends React.Component{
       api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
       //Tell ProposedChanges what it should be displaying if we already have a proposed change there
       if (this.refs.ProposedChanges) {
-        //this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+        this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
       }
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.refs.ProposedChanges) {
-    //  this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+      this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
     }
   }
 
   componentWillUnmount(){
-    api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('goToPrevious', this.goToPrevious);
-    api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToNext', this.goToNextListener);
+    api.removeEventListener('goToPrevious', this.goToPreviousListener);
+    api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('phraseDataLoaded', this.updateState);
-  }
-
-  goToCheck(params){
-    this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
-  }
-
-  goToNext(params) {
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
-  }
-
-  goToPrevious(params) {
-    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
   }
 
   getCurrentCheck() {
@@ -191,7 +176,7 @@ class View extends React.Component{
     var currentPhrase = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex].group;
     this.setState({
         currentCheck: newCheck,
-        currentPhrase: currentPhrase, //currentWord
+        currentPhrase: currentPhrase,
     });
     api.emitEvent('goToVerse', {chapterNumber: newCheck.chapter, verseNumber: newCheck.verse});
   }
@@ -222,12 +207,13 @@ class View extends React.Component{
         <Row className="show-grid">
           <Col md={6} className="confirm-area" style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
             <ScriptureDisplay
-              scripture={targetVerse}
-              ref={"ScriptureDisplay"}
-              onWordSelected={this.updateSelectedWords.bind(this)}
-              currentVerse={this.state.currentCheck.book
-                          + " " + this.state.currentCheck.chapter
-                          + ":" + this.state.currentCheck.verse}
+            verse={targetVerse}
+            ref={"ScriptureDisplay"}
+            onWordSelected={this.updateSelectedWords.bind(this)}
+            currentVerse={this.state.currentCheck.book
+                        + " " + this.state.currentCheck.chapter
+                        + ":" + this.state.currentCheck.verse}
+            style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
           </Col>
           <Col md={6} style={{paddingTop: '2.5px', paddingLeft: "2.5px"}}>
@@ -236,6 +222,8 @@ class View extends React.Component{
               phrase={this.state.currentCheck.phrase}
             />
           </Col>
+          </Row>
+          <Row className="show-grid">
           <Col md={6} style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
             <FlagDisplay />
           </Col>
