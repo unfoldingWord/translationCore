@@ -34,7 +34,7 @@ module.exports = (function() {
     }
     var projectPath = splitUrl.pop().split('/');
     var projectName = projectPath.pop();
-    const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
+    const savePath = path.join(pathex.homedir(), 'translationCore', projectName);
 
     fs.readdir(savePath, function(err, contents) {
       if (err) {
