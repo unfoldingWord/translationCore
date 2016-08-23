@@ -136,4 +136,15 @@ var template = [
   }
 ];
 
-module.exports = {template: template};
+if (process.platform === 'darwin') {
+  template.unshift({
+    label: 'translationCore',
+    submenu: [
+      {
+        accelerator: 'CmdOrCtrl+Q',
+        role: 'quit'
+      }
+    ]
+  });
+}
+module.exports = {template};
