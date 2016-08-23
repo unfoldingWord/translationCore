@@ -18,7 +18,7 @@ Install using whatever settings you would like, as long as you make sure to choo
 1. Open a Windows Command Prompt wherever you would like to work on translationCore.
 2. Run the command `git clone https://github.com/unfoldingWord-dev/translationCore.git`, or you may clone your own fork.
 3. Change directories to the repository directory and run the command `npm install` to install all required Nodejs modules.
-4. Create a file `.auth` in the root folder of the project.
+4. Create a file `Auth.json` in the root folder of the project.
 5. Compile and run the project by running `npm run start`
 
 # Mac
@@ -34,7 +34,7 @@ These are the setup and contribution instructions for Mac OS users
 1. Open a Terminal wherever you would like to work on translationCore.
 2. Run the command `git clone https://github.com/unfoldingWord-dev/translationCore.git`, or you may clone your own fork.
 3. Change directories to the repository directory and run the command `npm install` to install all required Nodejs modules.
-4. Create a file `.auth` in the root folder of the project.
+4. Create a file `Auth.json` in the root folder of the project.
 5. Compile and run the project by running `npm run start`
 
 # Project Contributions
