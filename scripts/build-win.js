@@ -10,11 +10,12 @@ packager({
   icon: './build/icon.ico',
   name: 'translationCore',
   overwrite: 'true',
+  'app-copyright': 'Copyright (C) 2016 Wycliffe Associates',
   out: './dist/',
   'version-string': {
     CompanyName: 'Wycliffe Associates',
     FileDescription: 'translationCore',
-    OriginalFilename: 'translationCore',
+    OriginalFilename: 'translationCore.exe',
     ProductName: 'translationCore',
     InternalName: 'translationCore'
   }
