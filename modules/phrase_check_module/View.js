@@ -205,7 +205,7 @@ class View extends React.Component{
         <div>
         <TPane />
         <Row className="show-grid">
-          <Col md={6} className="confirm-area" style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
+          <Col md={6} className="confirm-area" style={{paddingRight: "2.5px"}}>
             <ScriptureDisplay
             verse={targetVerse}
             ref={"ScriptureDisplay"}
@@ -215,29 +215,22 @@ class View extends React.Component{
                         + ":" + this.state.currentCheck.verse}
             style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
+            <FlagDisplay />
+            <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
-          <Col md={6} style={{paddingTop: '2.5px', paddingLeft: "2.5px"}}>
+          <Col md={6} style={{paddingLeft: '2.5px'}}>
             <ConfirmDisplay
               phraseInfo={this.state.currentCheck.phraseInfo}
               phrase={this.state.currentCheck.phrase}
             />
+            <TADisplay style={{width:"100%"}}/>
           </Col>
           </Row>
-          <Row className="show-grid">
-          <Col md={6} style={{paddingTop: '2.5px', paddingRight: "2.5px"}}>
-            <FlagDisplay />
-          </Col>
-          <Col md={6} style={{paddingTop: '2.5px', paddingLeft: "2.5px"}}>
-            <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
-          </Col>
-        </Row>
         <Row className="show-grid">
         <Col md={12}>
           <CommentBox val={this.state.currentCheck.comment || ""} ref={"CommentBox"} />
         </Col>
         </Row>
-        <br />
-        <TADisplay />
         </div>
       );
   }

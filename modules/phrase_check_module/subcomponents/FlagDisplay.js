@@ -35,7 +35,7 @@ class FlagDisplay extends React.Component{
   render(){
     var _this = this;
     return (
-      <div>
+      <div style={{paddingBottom: "2.5px"}}>
         <FlagDisplayButton handleButtonClick={function() {_this.setFlagStateFunction('RETAINED');}}
         glyphicon={"ok"} value={"Retain"} color={"green"} />
 
