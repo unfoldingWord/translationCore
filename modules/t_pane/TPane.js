@@ -23,10 +23,12 @@ class TPane extends React.Component {
     var originalLanguage = api.getDataFromCheckStore(NAMESPACE, 'parsedGreek');
     var targetLanguage = api.getDataFromCommon('targetLanguage');
     var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+    var targetLanguageDirection = api.getDataFromCommon('params').direction;
     this.state = {
       "originalLanguage": !originalLanguage ? "" : originalLanguage,
       "targetLanguage": !targetLanguage ? "" : targetLanguage,
-      "gatewayLanguage": !gatewayLanguage ? "" : gatewayLanguage
+      "gatewayLanguage": !gatewayLanguage ? "" : gatewayLanguage,
+      "tlDirection": targetLanguageDirection
     };
 
     this.updateOriginalLanguage = this.updateOriginalLanguage.bind(this);
@@ -92,9 +94,17 @@ class TPane extends React.Component {
       <Well style={{margin: '5px 0 5px 0'}}>
         <h3 style={{width: '100%', marginTop: '-8px'}}>Scriptural Context</h3>
         <Row>
-          <Pane greek={true} content={this.state.originalLanguage} />
-          <Pane content={this.state.gatewayLanguage}/>
-          <Pane last={true} content={this.state.targetLanguage}/>
+          {/* Original Language */}
+          <Pane greek={true}
+                content={this.state.originalLanguage}
+                dir={'ltr'} />
+          {/* Gateway Language */}
+          <Pane content={this.state.gatewayLanguage}
+                dir={'ltr'} />
+          {/* Target Langauge */}
+          <Pane last={true}
+                content={this.state.targetLanguage}
+                dir={this.state.tlDirection} />
         </Row>
       </Well>
     );
@@ -102,5 +112,3 @@ class TPane extends React.Component {
 }
 
 module.exports = TPane;
-
-

@@ -114,6 +114,7 @@ const UploadModal = React.createClass({
     params.bookAbbr = translationStudioManifest.project.id;
     //not actually used right now because we're hard coded for english
     params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
+    params.direction = translationStudioManifest.target_language.direction;
 
     return params;
   },
