@@ -5,7 +5,7 @@
 
 const React = require('react');
 
-const remote = window.electron.remote;
+const remote = require('electron').remote;
 const {dialog} = remote;
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
@@ -87,9 +87,13 @@ const Registration = React.createClass({
         if (reason.hasOwnProperty('message')) {
           dialog.showErrorBox('', reason.message);
         } else if (reason.hasOwnProperty('data')) {
-          let errorMessage = JSON.parse(reason.data);
-          console.log(errorMessage.message);
-          dialog.showErrorBox(ACCOUNT_CREATION_ERROR, errorMessage.message);
+          if (reason.data === "") {
+            console.error("Invalid Token");
+          } else {
+            let errorMessage = JSON.parse(reason.data);
+            console.error(errorMessage.message);
+            dialog.showErrorBox(ACCOUNT_CREATION_ERROR, errorMessage.message);
+          }
         } else {
           dialog.showErrorBox(ACCOUNT_CREATION_ERROR, UNKNOWN_ERROR);
           console.log(reason);

@@ -1,5 +1,5 @@
 var React = require('react');
-var remote = window.electron.remote;
+var remote = require('electron').remote;
 var fs = require(window.__base + 'node_modules/fs-extra');
 var {dialog} = remote;
 var Path = require('path');

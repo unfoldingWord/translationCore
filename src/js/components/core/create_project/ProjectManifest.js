@@ -51,8 +51,12 @@ function populate(data, tsManifest) {
   projectManifest.repo = data.repo;
 
   for (var user of data.user) {
-    if(user)
+    if(user) {
+      user.token = undefined;
+      user.avatar_url = undefined;
+      user.id = undefined;
       projectManifest.checkers.push(user);
+    }
   }
 
   if (data.checkLocations) {

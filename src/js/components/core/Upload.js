@@ -14,7 +14,7 @@ const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
 const Access = require('./AccessProject');
-const ManifestGenerator = require('./ProjectManifest');
+const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const api = window.ModuleApi;
 
@@ -114,6 +114,7 @@ const UploadModal = React.createClass({
     params.bookAbbr = translationStudioManifest.project.id;
     //not actually used right now because we're hard coded for english
     params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
+    params.direction = translationStudioManifest.target_language.direction;
 
     return params;
   },

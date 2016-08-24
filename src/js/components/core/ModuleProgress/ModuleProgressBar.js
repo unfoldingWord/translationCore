@@ -1,5 +1,5 @@
 var React = require('react');
-var remote = window.electron.remote;
+var remote = require('electron').remote;
 var {dialog} = remote;
 var path = require('path');
 var ProgressBar = require('react-bootstrap/lib/ProgressBar');

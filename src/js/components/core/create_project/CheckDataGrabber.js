@@ -5,7 +5,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const Books = require('../BooksOfBible');
 const Path = require('path');
-const ManifestGenerator = require('../ProjectManifest');
+const ManifestGenerator = require('./ProjectManifest');
 const git = require('../GitApi.js');
 
 const REQUIRE_ERROR = "Unable to require file";
