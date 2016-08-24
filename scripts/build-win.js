@@ -12,6 +12,7 @@ packager({
   overwrite: 'true',
   'app-copyright': 'Copyright (C) 2016 Wycliffe Associates',
   out: './dist/',
+  prune: true,
   'version-string': {
     CompanyName: 'Wycliffe Associates',
     FileDescription: 'translationCore',
