@@ -9,7 +9,7 @@
     "compile": "babel out --out-dir out",
     "compile-modules": "babel modules --out-dir modules",
     "build-win": "xcopy src out /Y /E && npm run compile && node scripts/build-win.js",
-    "build-mac": "cp -R src/* out/ && npm run compile && build --mac",
+    "build-mac": "cp -R src/ out/ && npm run compile && build --mac",
     "build-lin": "cp src/* out/ && npm run compile && build --linux",
     "start": "electron ."
   },
