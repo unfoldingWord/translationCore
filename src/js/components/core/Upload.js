@@ -108,7 +108,7 @@ const UploadModal = React.createClass({
    */
   getParams: function(path, translationStudioManifest) {
     var params = {
-      'originalLanguagePath': Path.join(window.__base, 'data', 'tagged')
+      'originalLanguagePath': Path.join(window.__base, 'static', 'tagged')
     }
     params.targetLanguagePath = path;
     params.bookAbbr = translationStudioManifest.project.id;
