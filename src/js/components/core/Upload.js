@@ -133,7 +133,7 @@ const UploadModal = React.createClass({
    * @param {string} link - URL that points to the location of a translationStudio project located on
    * the GOGS server
    */
-  sendFilePath: function(path, link) {
+  sendFilePath: function(path, link, callback) {
     var _this = this;
     this.clearPreviousData();
     if (path) {
@@ -176,7 +176,7 @@ const UploadModal = React.createClass({
                   api.putDataInCommon('tcManifest', tcManifest);
                 }
               });
-              Access.loadFromFilePath(path);
+              Access.loadFromFilePath(path, callback);
             }
 
             if (_this.props.success) {
@@ -234,15 +234,19 @@ const UploadModal = React.createClass({
         </div>
       );
     }
-    return (
-      <div>
-        <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
-          <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
-          <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
-        </Nav>
-          {mainContent}
-      </div>
-    );
+    if (this.props.show !== false) {
+      return (
+        <div>
+          <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
+            <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
+            <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
+          </Nav>
+            {mainContent}
+        </div>
+      );
+    } else {
+      return (<div> </div>)
+    }
   }
 });
 
