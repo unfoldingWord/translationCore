@@ -8,6 +8,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
+const exportUsfm = require('./ExportUSFM');
 
 var template = [
   {
@@ -38,6 +39,12 @@ var template = [
         accelerator: 'CmdOrCtrl+S'
       },
       {
+       label: "Export as USFM",
+       click: function() {
+         exportUsfm.exportAll();
+        }
+     },
+       {
         label: "Update with Door43",
         click: function() {
           sync();
