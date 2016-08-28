@@ -15,13 +15,13 @@ const {Row, Col} = RB;
 
 //Modules that are defined within phrase_check_module
 const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
+const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
 const NAMESPACE = "PhraseChecker";
-
 
 /**
  * @description - This class defines the entire view for the Phrase Check Module
@@ -197,23 +197,32 @@ class View extends React.Component{
   }
 
   render() {
-    var targetVerse = this.getVerse('targetLanguage');
-    if(!this.state.currentCheck){
-      return <div></div>;
+    if (!this.state.currentCheck) {
+      return (<div></div>);
     }
+    else {
+      var gatewayVerse = this.getVerse('gatewayLanguage');
+      var targetVerse = this.getVerse('targetLanguage');
       return (
         <div>
         <TPane />
         <Row className="show-grid">
           <Col md={6} className="confirm-area" style={{paddingRight: "2.5px"}}>
-            <ScriptureDisplay
-            verse={targetVerse}
-            ref={"ScriptureDisplay"}
-            onWordSelected={this.updateSelectedWords.bind(this)}
-            currentVerse={this.state.currentCheck.book
+            <GatewayVerseDisplay
+              check={this.state.currentCheck}
+              verse={gatewayVerse}
+              currentVerse={this.state.currentCheck.book
                         + " " + this.state.currentCheck.chapter
                         + ":" + this.state.currentCheck.verse}
-            style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
+            />
+            <ScriptureDisplay
+              verse={targetVerse}
+              ref={"ScriptureDisplay"}
+              onWordSelected={this.updateSelectedWords.bind(this)}
+              currentVerse={this.state.currentCheck.book
+                        + " " + this.state.currentCheck.chapter
+                        + ":" + this.state.currentCheck.verse}
+              style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
             <FlagDisplay />
             <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
@@ -233,6 +242,7 @@ class View extends React.Component{
         </Row>
         </div>
       );
+    }
   }
 }
 

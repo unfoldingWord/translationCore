@@ -23,7 +23,7 @@ function PhraseReport(chapter, verse) {
   }
   var checks = getChecksByVerse(chapter, verse);
   // If there are no checks for this verse, then return undefined.
-  // This will make Lexical Check not show at all for this verse.
+  // This will make Phrase Check not show at all for this verse.
   if(checks.length == 0) {
     return undefined;
   }

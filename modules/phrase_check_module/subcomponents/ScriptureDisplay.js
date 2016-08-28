@@ -181,12 +181,12 @@ const ScriptureDisplay = React.createClass({
         bsSize={'small'}
         style={{
           overflowY: "scroll",
-          minHeight: "150px",
-          maxHeight: "150px",
+          minHeight: "128px",
+          maxHeight: "128px",
           marginBottom: "2.5px",
         }}
       >
-        <h3 style={{marginTop: "0px"}}>{this.props.currentVerse}</h3>
+        <h4 style={{marginTop: "0px"}}>{this.props.currentVerse}</h4>
         <span>{words}</span>
       </Well>
     );
