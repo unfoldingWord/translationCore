@@ -8,7 +8,7 @@ const Panel = ReactBootstrap.Panel;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'PhraseChecker';
-const TITLE = 'translationWords Check';
+const TITLE = 'translationNotes Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function PhraseReport(chapter, verse) {
@@ -96,14 +96,14 @@ class ReportItem extends React.Component {
   prettySelectedWords() {
     if(!this.props.check.selectedWords)
       return undefined;
-    return this.props.check.selectedWords.join(", ");
+    return this.props.check.selectedWords;
   }
   selectedWordsDiv() {
     var selectedWords = this.prettySelectedWords();
     if(!selectedWords)
       return undefined;
     return (
-      <div>Selected word: {this.prettySelectedWords()}</div>
+      <div>Selected Phrase: {this.prettySelectedWords()}</div>
     );
   }
   checkStatusDiv() {
