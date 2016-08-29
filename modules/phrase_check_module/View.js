@@ -6,9 +6,10 @@ const React = api.React;
 
 //Modules not defined within phrase_check_module
 var TPane = null;
-var TADisplay = null;
 var ProposedChanges = null;
 var CommentBox = null;
+var TADisplay = null;
+
 //Bootstrap consts
 const RB = api.ReactBootstrap;
 const {Row, Col} = RB;
@@ -21,7 +22,8 @@ const FlagDisplay = require('./subcomponents/FlagDisplay');
 const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
-const NAMESPACE = "PhraseChecker";
+const NAMESPACE = "PhraseChecker",
+      UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store";
 
 /**
  * @description - This class defines the entire view for the Phrase Check Module
@@ -42,6 +44,7 @@ class View extends React.Component{
     this.goToPreviousListener = EventListeners.goToPrevious.bind(this);
     this.goToCheckListener = EventListeners.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
+    this.changeCheckTypeListener = EventListeners.changeCheckType.bind(this);
   }
 
   componentWillMount(){
@@ -49,6 +52,7 @@ class View extends React.Component{
     api.registerEventListener('goToNext', this.goToNextListener);
     api.registerEventListener('goToPrevious', this.goToPreviousListener);
     api.registerEventListener('goToCheck', this.goToCheckListener);
+    api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
     api.registerEventListener('phraseDataLoaded', this.updateState);
   }
 
@@ -76,6 +80,7 @@ class View extends React.Component{
     api.removeEventListener('goToPrevious', this.goToPreviousListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
     api.removeEventListener('phraseDataLoaded', this.updateState);
+    api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
   }
 
   getCurrentCheck() {
@@ -94,6 +99,27 @@ class View extends React.Component{
     currentCheck.timestamp = timestamp;
   }
 
+    /**
+     * @description - updates the status of the check that is the current check in the check store
+     * @param {object} newCheckStatus - the new status chosen by the user
+     */
+    updateCheckStatus(newCheckStatus, selectedWords) {
+      var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+      var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+      var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+      var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+      if (currentCheck.checkStatus) {
+        currentCheck.checkStatus = newCheckStatus;
+        api.emitEvent('changedCheckStatus', {
+          groupIndex: currentGroupIndex,
+          checkIndex: currentCheckIndex,
+          checkStatus: newCheckStatus
+        });
+        this.updateUserAndTimestamp();
+      }
+      this.updateState();
+    }
+
   updateSelectedWords(selectedWords, selectedWordsRaw) {
     if (this.refs.ProposedChanges) {
       this.refs.ProposedChanges.update(selectedWords);
@@ -105,6 +131,12 @@ class View extends React.Component{
     this.updateUserAndTimestamp();
   }
 
+
+    /**
+     * @description - This is used to change our current check index and group index within the store
+     * @param {object} newGroupIndex - the group index of the check selected in the navigation menu
+     * @param {object} newCheckIndex - the group index of the check selected in the navigation menu
+     */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
     //Get the proposed changes and add it to the check
     var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
@@ -165,30 +197,42 @@ class View extends React.Component{
       this.updateState();
   }
 
+  /**
+   * @description - This method grabs the information that is currently in the
+   * store and uses it to update our state which in turn updates our view. This method is
+   * typically called after the store is updated so that our view updates to the latest
+   * data found in the store
+   */
   updateState() {
-    var newGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-    var newCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-    if (newGroupIndex === null || newCheckIndex === null) {
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    if (currentGroupIndex === null || currentCheckIndex === null) {
       console.warn("PhraseCheck wasn't able to retrieve it's indices");
       return;
     }
-    var newCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex]['checks'][newCheckIndex];
-    var currentPhrase = api.getDataFromCheckStore(NAMESPACE, 'groups')[newGroupIndex].group;
+    var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
+    var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
     this.setState({
-        currentCheck: newCheck,
-        currentPhrase: currentPhrase,
+        book: api.getDataFromCheckStore(NAMESPACE, 'book'),
+        currentCheck: currentCheck,
+        currentWord: currentWord,
     });
-    api.emitEvent('goToVerse', {chapterNumber: newCheck.chapter, verseNumber: newCheck.verse});
+    if (this.refs.CommentBox) {
+      this.refs.CommentBox.setComment(currentCheck.comment || "");
+      this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
+    }
+    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
   }
 
   getVerse(language){
+    var currentCheck = this.state.currentCheck;
     var currentVerseNumber = this.state.currentCheck.verse;
     var currentChapterNumber = this.state.currentCheck.chapter;
     var desiredLanguage = api.getDataFromCommon(language);
     if (desiredLanguage){
       return desiredLanguage[currentChapterNumber][currentVerseNumber];
     } else {
-      console.error("Unable to find Language: " + language);
+      console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
     }
   }
 
@@ -196,6 +240,9 @@ class View extends React.Component{
     this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
   }
 
+  /**
+   * @description - Defines how the entire page will display, minus the Menu and Navbar
+   */
   render() {
     if (!this.state.currentCheck) {
       return (<div></div>);
@@ -203,6 +250,7 @@ class View extends React.Component{
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
       var targetVerse = this.getVerse('targetLanguage');
+      var checkStatus = this.state.currentCheck.checkStatus;
       return (
         <div>
         <TPane />

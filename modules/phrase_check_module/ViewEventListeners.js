@@ -17,6 +17,12 @@ module.exports = {
 
     goToCheck(params){
       this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
+    },
+
+    changeCheckType: function(params) {
+      if(params.currentCheckNamespace === NAMESPACE) {
+        this.updateState();
+      }
     }
 
 }
