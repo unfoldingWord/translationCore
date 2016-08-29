@@ -94,14 +94,14 @@ class View extends React.Component{
     currentCheck.timestamp = timestamp;
   }
 
-  updateSelectedWords(selectedWords) {
+  updateSelectedWords(selectedWords, selectedWordsRaw) {
     if (this.refs.ProposedChanges) {
       this.refs.ProposedChanges.update(selectedWords);
     }
     var currentCheck = this.getCurrentCheck();
     currentCheck.selectedWords = selectedWords;
     //This is needed to make the display persistent, but won't be needed in reports
-    //currentCheck.selectedWordsRaw = selectedWordsRaw;
+    currentCheck.selectedWordsRaw = selectedWordsRaw;
     this.updateUserAndTimestamp();
   }
 
