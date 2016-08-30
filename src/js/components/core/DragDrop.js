@@ -71,7 +71,7 @@ const DragDrop = React.createClass({
     if (!this.opened) {
       this.opened = true;
       dialog.showOpenDialog({
-        properties: ['openDirectory']
+        properties: this.props.properties
       }, function(filename) {
         if (filename !== undefined) {
           _this.setState({filePath: filename[0]});

@@ -8,8 +8,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
-const exportUsfm = require('./ExportUSFM');
-
+const exportUsfm = require('./Usfm/ExportUSFM');
 var template = [
   {
     label: 'File',
