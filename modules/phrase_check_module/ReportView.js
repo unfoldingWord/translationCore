@@ -121,10 +121,10 @@ class ReportItem extends React.Component {
     );
   }
   commentsDiv() {
-    if(!this.props.check.comments)
+    if(!this.props.check.comment)
       return undefined;
     return (
-      <div>Comments: {this.props.check.comments}</div>
+      <div>Comments: {this.props.check.comment}</div>
     );
   }
   footerDiv() {
