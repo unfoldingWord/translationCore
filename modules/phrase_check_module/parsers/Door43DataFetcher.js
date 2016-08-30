@@ -15,13 +15,13 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
-  const AUTHENTICATION = "access_token=" + require("../Authentication.js");
+  const AUTHENTICATION = window.ModuleApi.getAuthToken('git');
 
 var suppress = true
 
 // ONLY USE getBook()
 class Door43DataFetcher {
-	contructor() {
+	constructor() {
 		this.bookList = null;
 	}
 

@@ -92,8 +92,8 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   /**
-   * @description - This looks to see if selected words are already in the check store, so to be persistent 
-   * we have to go and look for those 
+   * @description - This looks to see if selected words are already in the check store, so to be persistent
+   * we have to go and look for those
    */
   fetchSelectedWords: function() {
     var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
@@ -105,7 +105,7 @@ const TargetLanguageSelectBox = React.createClass({
           this.selectedWords = currentCheck.selectedWordsRaw;
         }
       }
-    }  
+    }
   },
 
   componentDidMount: function() {
@@ -126,7 +126,7 @@ const TargetLanguageSelectBox = React.createClass({
 
     //Maybe we've already done this check? If we have update the highlighting on the selected words
     this.fetchSelectedWords();
-    
+
     return true;
   },
 
@@ -172,22 +172,6 @@ const TargetLanguageSelectBox = React.createClass({
       index = wordIndex + word.length;
     }
     return wordArray;
-  },
-
-  render: function() {
-    var words = this.generateWordArray();
-    return (
-      <Well
-        bsSize={'small'}
-        style={{
-          overflowY: "scroll",
-          minHeight: '128px',
-          marginBottom: '5px'
-        }}
-      >
-        <span>{words}</span>
-      </Well>
-    );
   },
 
   addSelectedWord: function(wordObj) {
@@ -266,6 +250,27 @@ const TargetLanguageSelectBox = React.createClass({
    */
   getWordsRaw: function() {
     return this.selectedWords;
+  },
+
+  render: function() {
+    var words = this.generateWordArray();
+    return (
+      <Well
+        bsSize={'small'}
+        style={{
+          overflowY: "scroll",
+          minHeight: '128px',
+          marginBottom: '5px'
+        }}
+      >
+        <div style={{
+            direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+          }}
+        >
+          {words}
+        </div>
+      </Well>
+    );
   }
 });
 

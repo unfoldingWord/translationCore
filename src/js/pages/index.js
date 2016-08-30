@@ -1,12 +1,11 @@
 (function() {
-  // added by EW, necessary for dynamic JSX compilation
   require("babel-register")({
     extensions: [".js", ".jsx"],
     presets: ["react"]
   });
   const ReactDOM = require('react-dom');
   const React = require('react');
-  const remote = window.electron.remote;
+  const remote = require('electron').remote;
   const {Menu} = remote;
   var moduleApi = require('../ModuleApi');
   window.ModuleApi = moduleApi;

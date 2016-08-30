@@ -2,7 +2,7 @@ const React = require('react');
 
 const Dropzone = require('react-dropzone');
 
-const remote = window.electron.remote;
+const remote = require('electron').remote;
 const {dialog} = remote;
 
 const style = {

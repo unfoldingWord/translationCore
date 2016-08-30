@@ -297,6 +297,27 @@ class ModuleApi {
       this.createAlert(Alert);
     }
   }
+
+  getAuthToken(type) {
+    if (this.authToken == undefined) {
+      var obj = fs.readJsonSync(window.__base + 'Auth.json', { throws: false })
+      if (obj) {
+        this.authToken = obj;
+        return obj[type];
+      }
+      else {
+        var Alert = {
+          title: "Authentication Error",
+          content: "Please check token.",
+          leftButtonText: "Ok"
+        }
+        this.createAlert(Alert);
+      }
+    }
+    else {
+      return this.authToken[type];
+    }
+  }
 }
 
 const api = new ModuleApi();

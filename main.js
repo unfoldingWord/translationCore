@@ -6,22 +6,26 @@ const BrowserWindow = electron.BrowserWindow
 
 const ipc = require('electron').ipcMain;
 const fs = require('fs');
+const path = require('path');
+const exec = require('child_process').exec;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 let reportWindow;
 
+if (handleStartupEvent()) {
+  return;
+}
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
-  mainWindow.maximize();
-
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
-	
+
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+    mainWindow.maximize();
   });
 
   // Emitted when the window is closed.
@@ -93,3 +97,42 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+function handleStartupEvent() {
+    if (process.platform !== 'win32') {
+        return false;
+    }
+
+    var squirrelCommand = process.argv[1];
+    switch (squirrelCommand) {
+        case '--squirrel-install':
+        case '--squirrel-updated':
+          target = path.basename(process.execPath);
+          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
+          var createShortcut = updateDotExe + ' --createShortcut=' + target + ' --shortcut-locations=Desktop,StartMenu' ;
+          console.log (createShortcut);
+          exec(createShortcut);
+          // Always quit when done
+          app.quit();
+          return true;
+
+        case '--squirrel-uninstall':
+          // Undo anything you did in the --squirrel-install and
+          // --squirrel-updated handlers
+          target = path.basename(process.execPath);
+          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
+          var createShortcut = updateDotExe + ' --removeShortcut=' + target ;
+          console.log (createShortcut);
+          exec(createShortcut);
+          // Always quit when done
+          app.quit();
+          return true;
+
+        case '--squirrel-obsolete':
+            // This is called on the outgoing version of your app before
+            // we update to the new version - it's the opposite of
+            // --squirrel-updated
+            app.quit();
+            return true;
+    }
+};

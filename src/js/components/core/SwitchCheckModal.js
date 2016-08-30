@@ -109,6 +109,7 @@ class SwitchCheckModal extends React.Component{
     if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
       CoreActions.startLoading();
       CheckDataGrabber.loadModuleAndDependencies(folderName);
+      localStorage.setItem('lastCheckModule', folderName);
     } else {
       api.Toast.error('No save location selected', '', 3);
       return;

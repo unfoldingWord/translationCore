@@ -15,13 +15,14 @@
  	INVALID_BOOK_ABBREVIATION = "Invalid book abbreviation",
  	REQUEST_FAILURE = "HttpRequest failed";
 
-  const AUTHENTICATION = "access_token=" + require("./Authentication.js");
+  const AUTHENTICATION = window.ModuleApi.getAuthToken('git');
+
 
 const suppress = true;
 
 // ONLY USE getBook()
 class Door43DataFetcher {
-	contructor() {
+	constructor() {
 		this.bookList = null;
 	}
 
@@ -143,7 +144,7 @@ class Door43DataFetcher {
                                     if (numVerses >= totalVerses) {
                                         callback(null, bookObj);
                                     }
-                                }       
+                                }
                             }
 
                             for (let verse of _chapter['verses']) {
@@ -314,7 +315,7 @@ class Door43DataFetcher {
           [,regRes] = usfmRegex.exec(v.file);
         }
         catch (e) {
-          if (!suppress) {            
+          if (!suppress) {
             console.warn("ULB Parse Warning: No ULB Data for chapter " + ch.num + " verse " + v.num);
             console.warn("File may be in incorrect format");
           }

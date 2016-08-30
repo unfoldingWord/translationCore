@@ -14,7 +14,7 @@ const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
 const Access = require('./AccessProject');
-const ManifestGenerator = require('./ProjectManifest');
+const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const api = window.ModuleApi;
 
@@ -114,6 +114,7 @@ const UploadModal = React.createClass({
     params.bookAbbr = translationStudioManifest.project.id;
     //not actually used right now because we're hard coded for english
     params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
+    params.direction = translationStudioManifest.target_language.direction;
 
     return params;
   },
@@ -132,7 +133,7 @@ const UploadModal = React.createClass({
    * @param {string} link - URL that points to the location of a translationStudio project located on
    * the GOGS server
    */
-  sendFilePath: function(path, link) {
+  sendFilePath: function(path, link, callback) {
     var _this = this;
     this.clearPreviousData();
     if (path) {
@@ -175,7 +176,7 @@ const UploadModal = React.createClass({
                   api.putDataInCommon('tcManifest', tcManifest);
                 }
               });
-              Access.loadFromFilePath(path);
+              Access.loadFromFilePath(path, callback);
             }
 
             if (_this.props.success) {
@@ -202,7 +203,7 @@ const UploadModal = React.createClass({
   translationCoreManifestPresent: function(path) {
     //this currently just uses 'require' and if it throws an error it will return false
     try {
-      fs.accessSync(Path.join(path, 'tc-manifest.json'));
+      require(Path.join(path, 'tc-manifest.json'));
       return true;
     }
     catch(e) {
@@ -233,15 +234,19 @@ const UploadModal = React.createClass({
         </div>
       );
     }
-    return (
-      <div>
-        <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
-          <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
-          <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
-        </Nav>
-          {mainContent}
-      </div>
-    );
+    if (this.props.show !== false) {
+      return (
+        <div>
+          <Nav bsStyle="tabs" activeKey={this.state.active} onSelect={this.handleSelect}>
+            <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
+            <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
+          </Nav>
+            {mainContent}
+        </div>
+      );
+    } else {
+      return (<div> </div>)
+    }
   }
 });
 
