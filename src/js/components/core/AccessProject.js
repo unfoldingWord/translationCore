@@ -1,5 +1,5 @@
 var React = require('react');
-var remote = window.electron.remote;
+var remote = require('electron').remote;
 var fs = require(window.__base + 'node_modules/fs-extra');
 var {dialog} = remote;
 var Path = require('path');
@@ -18,12 +18,13 @@ var Access = {
    * @param {string} folderpath - Path that points to the folder where the translationStudio
    * project lives
    */
-  loadFromFilePath: function (folderpath) {
+  loadFromFilePath: function (folderpath, callback) {
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     fs.readJson(manifestLocation, function(err, jsonObject) {
       api.putDataInCommon('tcManifest', jsonObject);
+      callback();
     });
     try {
       fs.readdir(folderpath, function(err, files){

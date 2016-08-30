@@ -3,7 +3,8 @@ var style = {
     content: {
       overflowY: 'scroll',
       width: '100%',
-      height: '250px'
+      height: '250px',
+      direction: 'ltr'
     },
     header: {
       textAlign: 'center'

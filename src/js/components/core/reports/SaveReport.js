@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Check Report</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="./../../../../css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="./../../../../css/bootstrap-theme.min.css">
-
-  </head>
-  <script type="text/javascript">
-    function saveAsPDF() {
+function saveAsPDF() {
       const saveOptions = {
         title: 'Save Report',
         filters: [
@@ -35,10 +22,4 @@
           });
         }
       });
-    }
-  </script>
-  <body>
-    <button class="btn btn-primary hidden-print" onclick="saveAsPDF()" style="position: fixed;z-index: 100;top: 10px; right: 10px;">Save as PDF</button>
-    <div id="content"></div>
-  </body>
-</html>
+}

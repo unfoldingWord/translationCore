@@ -3,7 +3,7 @@
  * @description: The file downloads a git repo and passes back the location it is
  *               downloaded to.
  ******************************************************************************/
-const remote = window.electron.remote;
+const remote = require('electron').remote;
 const {dialog} = remote;
 
 const path = require('path');
@@ -34,7 +34,7 @@ module.exports = (function() {
     }
     var projectPath = splitUrl.pop().split('/');
     var projectName = projectPath.pop();
-    const savePath = path.join(pathex.homedir(), 'Translation Core', projectName);
+    const savePath = path.join(pathex.homedir(), 'translationCore', projectName);
 
     fs.readdir(savePath, function(err, contents) {
       if (err) {

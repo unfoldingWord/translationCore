@@ -14,6 +14,7 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar')
 const Toast = require('../NotificationApi/ToastComponent');
+const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
@@ -23,6 +24,7 @@ const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
+const Upload = require('../components/core/Upload');
 
 var Main = React.createClass({
   getInitialState() {
@@ -41,8 +43,15 @@ var Main = React.createClass({
   componentDidMount: function() {
     var saveLocation = localStorage.getItem('lastProject');
     if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
-        Access.loadFromFilePath(saveLocation);
-    }
+      this.refs.TargetLanguage.sendFilePath(saveLocation, null, function(){
+        var lastCheckModule = localStorage.getItem('lastCheckModule');
+        if (lastCheckModule) {
+          CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+          CoreActions.startLoading();
+        }
+      });
+      }
+
   },
 
   componentDidUpdate: function(prevProps, prevState){
@@ -69,6 +78,7 @@ var Main = React.createClass({
       return(
         <div className='fill-height'>
         <SettingsModal />
+        <Upload ref={"TargetLanguage"} show={false}/>
         <LoginModal />
         <SideNavBar />
         <SwitchCheckModal />
