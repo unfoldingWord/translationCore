@@ -20,7 +20,6 @@ const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const EventListeners = require('./ViewEventListeners.js');
-
 //String constants
 const NAMESPACE = "PhraseChecker",
       UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store";
