@@ -1,20 +1,17 @@
 {
   "name": "translation_core",
   "productName": "translationCore",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel src --out-dir out",
+    "compile": "babel out --out-dir out",
     "compile-modules": "babel modules --out-dir modules",
-    "build": "npm run compile && build -mwl",
-    "build-win": "npm run compile && node scripts/build-win.js",
-    "build-mac": "npm run compile && build --mac",
-    "build-lin": "npm run compile && build --linux",
-    "build-test": "npm run compile && build --dir",
-    "start": "npm run compile && electron .",
-    "watch": "babel src --out-dir out --watch"
+    "build-win": "xcopy src out /Y /E && npm run compile && node scripts/build-win.js",
+    "build-mac": "cp -R src/ out/ && npm run compile && build --mac",
+    "build-lin": "cp src/* out/ && npm run compile && build --linux",
+    "start": "electron ."
   },
   "build": {
     "appId": "wa.translation_core.desktop",
