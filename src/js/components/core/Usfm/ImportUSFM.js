@@ -3,7 +3,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
 const {dialog} = require('electron').remote;
 const usfm = require('usfm-parser');
-
+const pathex = require('path-extra');
 const api = window.ModuleApi;
 
 const Access = require('../AccessProject');
@@ -18,6 +18,8 @@ const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 
+const defaultSave = path.join(pathex.homedir(), 'translationCore');
+
 /**
  * @description This function converts usfm into the target language format.
  * @param {String} savePath - The path of the file containing usfm text.
@@ -27,12 +29,18 @@ const Button = require('react-bootstrap/lib/Button.js');
 function openTargetLanguage(savePath, abbr, direction) {
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
-  var saveLocation = path.dirname(savePath);
+  var parsedPath = path.parse(savePath);
+  var saveLocation = path.join(defaultSave, parsedPath.name);
+  var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
   fs.readFile(savePath, function(err, data) {
     if (err) {
       console.error(err);
     } else {
+      fs.ensureDir(saveLocation, function (err) {
+        if (err) console.log(err); // => null
+        fs.writeFileSync(saveFile, data.toString());
+      });
       var usfmData = data.toString();
       var parsedUSFM = usfm.toJSON(usfmData);
       var targetLanguage = {};
