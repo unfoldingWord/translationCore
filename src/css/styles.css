@@ -28,3 +28,8 @@ body {
 .Tab.Container {
   /*background-color: black;*/
 }
+
+.text-primary-highlighted{
+  color:#337ab7;
+  background-color: yellow;
+}

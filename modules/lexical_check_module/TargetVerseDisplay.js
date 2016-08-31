@@ -70,7 +70,7 @@ const TargetWord = React.createClass({
 
     return (
       <span
-        className={this.state.highlighted ? 'text-primary' : 'text-muted'}
+        className={this.state.highlighted ? 'text-primary-highlighted' : 'text-muted'}
         onClick={this.userClick}
         style={this.props.style}
       >
