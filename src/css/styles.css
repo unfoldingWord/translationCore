@@ -32,4 +32,5 @@ body {
 .text-primary-highlighted{
   color:#337ab7;
   background-color: yellow;
+  font-weight: bold;
 }
