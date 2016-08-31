@@ -22,7 +22,8 @@ const TargetWord = React.createClass({
       wordObj: { // this is required to pass into our callbacks
         'word': this.props.word,
         'key': this.props.keyId
-      }
+      },
+
     };
   },
 
@@ -80,7 +81,7 @@ const TargetWord = React.createClass({
     }
 });
 
-const ScriptureDisplay = React.createClass({
+const TargetVerseDisplay = React.createClass({
   selectedWords: [], // holds wordObjects, each have {'word', 'key'} attributes
 
   cursorPointerStyle: {
@@ -271,4 +272,4 @@ const ScriptureDisplay = React.createClass({
   }
 });
 
-module.exports = ScriptureDisplay;
+module.exports = TargetVerseDisplay;

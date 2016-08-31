@@ -8,15 +8,15 @@ const React = api.React;
 var TPane = null;
 var ProposedChanges = null;
 var CommentBox = null;
-var TADisplay = null;
+var TranslationAcademy = null;
 
 //Bootstrap consts
 const RB = api.ReactBootstrap;
 const {Row, Col} = RB;
 
 //Modules that are defined within phrase_check_module
-const ScriptureDisplay = require('./subcomponents/ScriptureDisplay');
-const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
+const TargetVerseDisplay = require('./subcomponents/TargetVerseDisplay');
+const GatewayVerseDisplay = require('./subcomponents/GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const FlagDisplay = require('./subcomponents/FlagDisplay');
 const EventListeners = require('./ViewEventListeners.js');
@@ -36,7 +36,7 @@ class View extends React.Component{
     TPane = api.getModule('TPane');
     ProposedChanges = api.getModule('ProposedChanges');
     CommentBox = api.getModule('CommentBox');
-    TADisplay = api.getModule('TranslationAcademy');
+    TranslationAcademy = api.getModule('TranslationAcademy');
 
     this.updateState = this.updateState.bind(this);
     this.goToNextListener = EventListeners.goToNext.bind(this);
@@ -63,14 +63,14 @@ class View extends React.Component{
       api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
       //Tell ProposedChanges what it should be displaying if we already have a proposed change there
       if (this.refs.ProposedChanges) {
-        this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+        this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
       }
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.refs.ProposedChanges) {
-      this.refs.ProposedChanges.update(this.refs.ScriptureDisplay.getWords());
+      this.refs.ProposedChanges.update(this.refs.TargetVerseDisplay.getWords());
     }
   }
 
@@ -215,12 +215,23 @@ class View extends React.Component{
         book: api.getDataFromCheckStore(NAMESPACE, 'book'),
         currentCheck: currentCheck,
         currentWord: currentWord,
+        currentFile: this.getFile(currentWord)
     });
     if (this.refs.CommentBox) {
       this.refs.CommentBox.setComment(currentCheck.comment || "");
       this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
     }
     api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+  }
+
+    /**
+     * @description - This retrieves the translationAcademy file from the store so that we
+     * can pass it as a prop to the TranslationAcademy
+     */
+  getFile(currentWord) {
+    var TranslationAcademyObject = api.getDataFromCheckStore('TranslationAcademy', 'sectionList');
+    var file = currentWord  + ".md";
+    return TranslationAcademyObject[file].file;
   }
 
   getVerse(language){
@@ -262,9 +273,9 @@ class View extends React.Component{
                         + " " + this.state.currentCheck.chapter
                         + ":" + this.state.currentCheck.verse}
             />
-            <ScriptureDisplay
+            <TargetVerseDisplay
               verse={targetVerse}
-              ref={"ScriptureDisplay"}
+              ref={"TargetVerseDisplay"}
               onWordSelected={this.updateSelectedWords.bind(this)}
               currentVerse={this.state.currentCheck.book
                         + " " + this.state.currentCheck.chapter
@@ -279,7 +290,7 @@ class View extends React.Component{
               phraseInfo={this.state.currentCheck.phraseInfo}
               phrase={this.state.currentCheck.phrase}
             />
-            <TADisplay style={{width:"100%"}}/>
+            <TranslationAcademy file={this.state.currentFile} style={{width:"100%", height: "150px"}}/>
           </Col>
           </Row>
         <Row className="show-grid">

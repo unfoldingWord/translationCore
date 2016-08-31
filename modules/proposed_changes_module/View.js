@@ -64,6 +64,12 @@ class ProposedChanges extends React.Component {
         }
       }
     }
+    var currentWordPhrase;
+    if(this.state.currentWord == ""){
+      currentWordPhrase = "Word/Phrase selected";
+    }else{
+      currentWordPhrase = this.state.currentWord;
+    }
     return (
       <Well style={{width:"100%", padding: "10px", marginTop: "2.5px", marginBottom: "2.5px", display: "inline-block"}}>
         <center>
@@ -71,7 +77,7 @@ class ProposedChanges extends React.Component {
             Propose Changes
           </span>
         </center>
-        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{this.state.currentWord}
+        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{currentWordPhrase}
           </Well>
         <FormControl
             type="text"
