@@ -40,7 +40,7 @@ class TranslationWordsDisplay extends React.Component {
         var source = this.props.file;
         if (source) {
             return (
-                <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "442px", maxHeight: "442px"}}>
+                <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "438px", maxHeight: "438px"}}>
                     <div>
                         <Markdown source={this.convertToMarkdown(source)} />
                     </div>

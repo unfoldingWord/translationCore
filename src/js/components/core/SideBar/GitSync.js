@@ -29,12 +29,16 @@ function syncToGit() {
               }
               api.createAlert(Confirm, function(result){
                 if(result == 'Yes') {
-                  const projectName = repoPath;
+                  const projectName = repoName;
                   gogs(user.token).createRepo(user, projectName).then(function(repo) {
                     var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
                     var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                     api.updateManifest('repo', remoteLink);
-                    git(path).update(newRemote, 'master', true, function(){});
+                    git(path).update(newRemote, 'master', true, function(err){
+                      if (err) {
+                          git(path).update(newRemote, 'master', false, function(){});
+                      }
+                    });
                   });
                 }
               });
@@ -44,7 +48,7 @@ function syncToGit() {
           });
         } else {
               var Create = {
-                title: 'There is no associated repository with this project.',
+                title: 'There is no associated repository with this translationCore project.',
                 content: "Would you like to create a new Door43 project?",
                 leftButtonText: "No",
                 rightButtonText: "Yes"
@@ -65,7 +69,15 @@ function syncToGit() {
                         remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
                         api.updateManifest('repo', remoteLink);
                         git(path).update(newRemote, 'master', true, function(){
-                          api.Toast.success('Update succesful', '', 7);
+                          if (err) {
+                              git(path).update(newRemote, 'master', false, function(err){
+                                if (!err) {
+                                  api.Toast.success('Update succesful', '', 7);
+                                }
+                              });
+                          } else {
+                            api.Toast.success('Update succesful', '', 7);
+                          }
                         });
                       });
                     } else {
