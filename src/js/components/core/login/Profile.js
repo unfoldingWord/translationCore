@@ -6,6 +6,7 @@ const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Image = require('react-bootstrap/lib/Image.js');
 const style = require('./loginStyle');
+const Projects = require('./Projects.js');
 
 class Profile extends React.Component {
 
@@ -14,6 +15,11 @@ class Profile extends React.Component {
     CoreActions.updateProfileVisibility(false);
     CoreActions.login(null);
   }
+
+  showProjects(){
+
+  }
+
   render(){
     let user = CoreStore.getLoggedInUser();
     let fullName = user.full_name;
@@ -29,7 +35,10 @@ class Profile extends React.Component {
               <span><strong>User Name: </strong></span>
               <span className="label label-success">{userName}</span>
               <span><p>{emailAccount}</p></span>
-              <Button bsStyle="primary" style={{width: "100%",marginTop:"50px", marginBottom:"50px"}}
+              <Button bsStyle="primary" style={{width: "100%",marginTop:"50px"}} onClick={this.showProjects.bind(this)}>
+              Your Door43 Projects
+              </Button>
+              <Button bsStyle="primary" style={{marginBottom:"50px", width: '100%', marginTop: '15px'}}
               onClick={this.handleLogout.bind(this)}>Logout</Button>
           </center>
         </div>
