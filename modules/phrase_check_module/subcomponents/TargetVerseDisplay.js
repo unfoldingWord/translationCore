@@ -211,9 +211,9 @@ const TargetVerseDisplay = React.createClass({
     /* This is used for if you want to enable disabled buttons after the user has
      * selected at least one word
      */
-    // if (this.selectedWords.length > 0) {
-    //   this.props.buttonEnableCallback();
-    // }
+    if (this.selectedWords.length > 0) {
+      this.props.buttonEnableCallback();
+    }
   },
 
   removeFromSelectedWords: function(wordObj) {
@@ -230,9 +230,9 @@ const TargetVerseDisplay = React.createClass({
     this.props.onWordSelected(this.getWords(), this.getWordsRaw());
 
     //This is used for if you want to disable the buttons if no words are selected
-    // if (this.selectedWords.length <= 0) {
-    //   this.props.buttonDisableCallback();
-    // }
+    if (this.selectedWords.length <= 0) {
+      this.props.buttonDisableCallback();
+    }
   },
 
 /* Sorts the selected words by their 'key' attribute */
