@@ -36,15 +36,19 @@ class Projects extends React.Component {
       var projectName = projectArray[p].project;
       var repoName = projectArray[p].repo;
       projectList.push(
-        <div key={p}>
-          {projectName} &nbsp
-          <Button bsStyle='primary' bsSize='sm' onClick={this.openSelected.bind(this, repoName)}>Load Project</Button>
+        <div key={p} style={{width: '100%', marginBottom: '15px'}}>
+          {projectName} &nbsp;
+          <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.openSelected.bind(this, repoName)}>Load Project</Button>
          </div>
       );
     }
 
     return (
-      <div>
+      <div style={{height: '419px', overflowY: 'auto'}}>
+        <div style={{marginBottom: '15px'}}>
+          <span style={{fontSize: '20px'}}>Your Door43 Projects</span>
+          <Button bsStyle='primary' onClick={this.props.back} className={'pull-right'} bsSize='sm'>Back to profile</Button>
+        </div>
         <Upload ref={'Upload'} show={false} />
         {projectList}
       </div>

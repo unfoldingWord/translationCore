@@ -46,8 +46,9 @@ function UserManager(auth) {
            u = u === '*' ? '' : (u || '');
            q = q === '*' ? '_' : (q || '_');
 
+           var limit = 20;
            function searchUsers (visit) {
-               return api.searchUsers(u).then(function (users) {
+               return api.searchUsers(u, limit).then(function (users) {
                    var a = users.map(visit);
 
                    a.push(visit(0).then(function (repos) {
@@ -63,7 +64,7 @@ function UserManager(auth) {
 
            function searchRepos (user) {
                var uid = (typeof user === 'object' ? user.id : user) || 0;
-               return api.searchRepos(q, uid);
+               return api.searchRepos(q, uid, limit);
            }
 
            var p = u ? searchUsers(searchRepos) : searchRepos();
@@ -79,6 +80,7 @@ function UserManager(auth) {
                })
            });
        }
+
   }
 }
 
