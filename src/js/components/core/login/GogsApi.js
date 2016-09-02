@@ -1,8 +1,16 @@
+/**
+ * @description - An api for interacting with gogs.
+ * @author - Ian Hoegen
+ ******************************************************************/
 const Gogs = require('gogs-client');
-const _ = require('lodash')
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 function UserManager(auth) {
   return {
+/**
+  * @description - Login a user and get a user object with token back.
+  * @param {Object} userObj - Must contain fields username and password
+  * @return {Promise} - Returns a promise with a user object.
+  *****************************************************************/
     login: function (userObj) {
       return api.getUser(userObj).then(function (user) {
         return api.listTokens(userObj)
@@ -18,7 +26,11 @@ function UserManager(auth) {
         });
       });
     },
-
+/**
+  * @description - Create an account for a user.
+  * @param {Object} user - Must contain fields username, password, and email.
+  * @return {Promise} - Returns a promise with a user object.
+  *****************************************************************/
     createAccount: function (user) {
       return api.createUser(user, auth, true)
       .then(function(updatedUser) {
@@ -29,7 +41,13 @@ function UserManager(auth) {
         });
       });
     },
-
+/**
+  * @description - Create a repo for a user.
+  * @param {Object} user - Must contain fields username, password, and token.
+  *                        Typically obtained from logging in.
+  * @param {String} reponame - The name of the repo to be created.
+  * @return {Promise} - Returns a promise with a repo object.
+  *****************************************************************/
     createRepo: function (user, reponame) {
       return api.listRepos(user).then(function (repos) {
         return repos.find((el) => el.full_name == user.username + '/' + reponame);
@@ -41,39 +59,61 @@ function UserManager(auth) {
         }, user);
       });
     },
-
-    retrieveRepos: function (u, q) {
-           u = u === '*' ? '' : (u || '');
-           q = q === '*' ? '_' : (q || '_');
+/**
+  * @description - Gets a user's repos.
+  * @param {String} username - The optional user to search for.
+  * @param {String} query - The optional serch term.
+  * @return {Promise} - Returns a promise with an array of repo objects.
+  *****************************************************************/
+    retrieveRepos: function (username, query) {
+           username = username === '*' ? '' : (username || '');
+           query = query === '*' ? '_' : (query || '_');
 
            var limit = 20;
-           function searchUsers (visit) {
-               return api.searchUsers(u, limit).then(function (users) {
-                   var a = users.map(visit);
 
-                   a.push(visit(0).then(function (repos) {
+           function searchUsers (visit) {
+               return api.searchUsers(username, limit).then(function (users) {
+                   var arr = users.map(visit);
+
+                   arr.push(visit(0).then(function (repos) {
                        return repos.filter(function (repo) {
-                           var username = repo.full_name.split('/').shift();
-                           return username.includes(u);
+                           var repoUsername = repo.full_name.split('/').shift();
+                           return repoUsername.includes(username);
                        });
                    }));
 
-                   return Promise.all(a);
+                   return Promise.all(arr);
                });
            }
 
            function searchRepos (user) {
-               var uid = (typeof user === 'object' ? user.id : user) || 0;
-               return api.searchRepos(q, uid, limit);
+               var userId = (typeof user === 'object' ? user.id : user) || 0;
+               return api.searchRepos(query, userId, limit);
            }
 
-           var p = u ? searchUsers(searchRepos) : searchRepos();
+           var projectSearch = username ? searchUsers(searchRepos) : searchRepos();
 
-           return p.then(_.flatten).then(function (repos) {
-               return _.uniq(repos, 'id');
+           return projectSearch.then(function(data){
+             var flat = [];
+             for (var array in data) {
+               for (var repo in data[array]) {
+                 flat.push(data[array][repo])
+               }
+             }
+             return flat;
+           }).then(function (repos) {
+             var repoIds = [];
+             var uniqueRepos = [];
+             for (repo in repos) {
+               if (repos[repo] && !repoIds.includes(repos[repo].id)) {
+                 repoIds.push(repos[repo].id);
+                 uniqueRepos.push(repos[repo]);
+               }
+             }
+             return uniqueRepos;
            })
            .then(function (repos) {
-               return _.map(repos, function (repo) {
+               return repos.map(function (repo) {
                    var user = repo.full_name.split("/")[0];
                    var project = repo.full_name.split("/")[1];
                    return {repo: repo.full_name, user: user, project: project};

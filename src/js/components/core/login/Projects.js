@@ -15,12 +15,11 @@ class Projects extends React.Component {
   updateRepos() {
     var user = api.getLoggedInUser();
     if (user) {
-
-    }
-    var _this = this;
-    return Gogs.retrieveRepos('royalsix').then(function(repos){
+      var _this = this;
+      return Gogs.retrieveRepos(user.userName).then(function(repos){
         _this.setState({repos});
-    });
+      });
+    }
   }
 
   openSelected(projectPath) {
@@ -37,10 +36,17 @@ class Projects extends React.Component {
       var repoName = projectArray[p].repo;
       projectList.push(
         <div key={p} style={{width: '100%', marginBottom: '15px'}}>
-          {projectName} &nbsp;
+          {projectName}
           <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.openSelected.bind(this, repoName)}>Load Project</Button>
          </div>
       );
+    }
+    if (projectList.length === 0) {
+      projectList.push(
+        <div key={'None'} style={{width: '100%', marginBottom: '15px'}}>
+          No Projects Found
+        </div>
+       );
     }
 
     return (
