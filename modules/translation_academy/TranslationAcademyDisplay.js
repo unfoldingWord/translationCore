@@ -23,7 +23,7 @@ class TranslationAcademyDisplay extends React.Component {
   getAndDisplaySection(sectionName) {
     var _this = this;
     TranslationAcademyScraper.getSection(sectionName, function(data) {
-     
+
         var markdown = <Markdown source={data} />;
         _this.setState({
           currentSection: markdown

@@ -53,6 +53,9 @@ function LexicalReport(chapter, verse) {
 function getChecksByVerse(chapter, verse) {
   var res = [];
   var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+  if (groups == null){
+    return [];
+  }
   for(var group of groups) {
     for(var check of group.checks) {
       if(check.chapter == chapter && check.verse == verse) {
@@ -87,7 +90,7 @@ class ReportItem extends React.Component {
 		super();
   }
   headerDiv() {
-    if(!this.props.check.wordFile) 
+    if(!this.props.check.wordFile)
       return undefined;
     return (
       <h4 style={{marginTop: '-5px'}}>{this.props.check.wordFile.replace(extensionRegex, '')}</h4>
@@ -107,24 +110,24 @@ class ReportItem extends React.Component {
     );
   }
   checkStatusDiv() {
-    if(!this.props.check.checkStatus) 
+    if(!this.props.check.checkStatus)
       return undefined;
     return (
       <div>Check status: {this.props.check.checkStatus}</div>
     );
   }
   proposedChangesDiv() {
-    if(!this.props.check.proposedChanges) 
+    if(!this.props.check.proposedChanges)
       return undefined;
     return (
       <div>Proposed Changes: {this.props.check.proposedChanges}</div>
     );
   }
   commentsDiv() {
-    if(!this.props.check.comments) 
+    if(!this.props.check.comment)
       return undefined;
     return (
-      <div>Comments: {this.props.check.comments}</div>
+      <div>Comments: {this.props.check.comment}</div>
     );
   }
   footerDiv() {

@@ -4,6 +4,8 @@
     "description": "This is a tool to check the grammatical structure of phrases.",
     "include": [
         "translation_academy",
-        "t_pane"
+        "t_pane",
+        "comment_box",
+        "proposed_changes_module"
     ]
 }
