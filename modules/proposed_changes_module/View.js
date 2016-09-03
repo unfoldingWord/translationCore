@@ -66,7 +66,7 @@ class ProposedChanges extends React.Component {
     }
     var currentWordPhrase;
     if(this.state.currentWord == ""){
-      currentWordPhrase = "Word/Phrase selected";
+      currentWordPhrase = "Selected Word/Phrase";
     }else{
       currentWordPhrase = this.state.currentWord;
     }
