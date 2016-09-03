@@ -87,6 +87,8 @@ class View extends React.Component{
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    console.log(this.state.currentCheck);
+
     return currentCheck;
   }
 
