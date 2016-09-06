@@ -34,3 +34,8 @@ body {
   background-color: yellow;
   font-weight: bold;
 }
+
+.text-muted:hover {
+  color:#337ab7;
+  background-color: yellow;
+}
