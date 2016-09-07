@@ -24,7 +24,7 @@ var Access = {
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     fs.readJson(manifestLocation, function(err, jsonObject) {
       api.putDataInCommon('tcManifest', jsonObject);
-      callback();
+      if (callback) callback();
     });
     try {
       fs.readdir(folderpath, function(err, files){

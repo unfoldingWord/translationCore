@@ -140,8 +140,12 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   generateWordArray: function() {
-    var words = tokenizer.tokenize(this.props.verse),
-      wordArray = [],
+    if (this.props.verse) {
+      var words = tokenizer.tokenize(this.props.verse);
+    } else {
+      var words = [];
+    }
+    var wordArray = [],
       index = 0,
       tokenKey = 1,
       wordKey = 0;

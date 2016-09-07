@@ -48,7 +48,7 @@ class LoginModal extends React.Component {
         <div style={style.modal}>
           <Modal show={this.state.visibleLoginModal} onHide={this.close.bind(this)}>
             <Modal.Header closeButton>
-              <Modal.Title>Login Page</Modal.Title>
+              <Modal.Title>Profile</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {display}
