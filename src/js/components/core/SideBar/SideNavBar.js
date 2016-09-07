@@ -28,6 +28,7 @@ class SideNavBar extends React.Component{
   }
 
   handleReport(){
+    api.Toast.info('Generating reports...', '', 3);
     require("./../reports/ReportGenerator")(err => {
       if (err) {
         console.log(err);
