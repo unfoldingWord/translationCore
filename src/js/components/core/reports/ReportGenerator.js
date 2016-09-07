@@ -23,6 +23,7 @@ const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
 const reportTemplate = require('./ReportTemplate')
 const path = require('path');
+const BooksOfBible = require('../BooksOfBible.js')
 // listener event from the main process listening for the report window closing
 ipcRenderer.on("report-closed", (event, path) => {
   reportOpened = false;
@@ -57,8 +58,11 @@ class Report extends React.Component {
     let bookName = "-bookName-";
     let authors = "-authors-";
     let manifest = ModuleApi.getDataFromCommon("tcManifest");
-    if (manifest && manifest.ts_project) {
-      bookName = manifest.ts_project.name || "-bookName-";
+    let params = ModuleApi.getDataFromCommon('params');
+    let bookAbbr;
+    if (params) bookAbbr = params.bookAbbr;
+    if (manifest && (manifest.ts_project || bookAbbr)) {
+      bookName = manifest.ts_project.name || BooksOfBible[bookAbbr] || "-bookName-";
     }
     // This isn't working yet I think, so it pretty much always returns "various checkers"
     if (manifest && manifest.checkers) {
