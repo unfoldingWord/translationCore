@@ -92,15 +92,9 @@ const UploadModal = React.createClass({
    * @param {string} folderpath - Path to the folder where the translationStudio is located
    */
   getManifest: function(folderPath, callback) {
-    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), function(err) {
-      if (err) {
-        const alert = {
-            title: 'Error Getting Transaltion Studio Manifest',
-            content: err.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-          console.log(err);
+    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), function() {
+      if (callback) {
+        callback();
       }
     });
   },
@@ -111,15 +105,15 @@ const UploadModal = React.createClass({
    * @param {object} translationStudioManifest - The parsed json object of the translationStudio
    * manifest
    */
-  getParams: function(path, translationStudioManifest) {
+  getParams: function(path, tsManifest) {
     var params = {
       'originalLanguagePath': Path.join(window.__base, 'static', 'tagged')
     }
     params.targetLanguagePath = path;
-    params.bookAbbr = translationStudioManifest.project.id;
+    params.bookAbbr = tsManifest.project.id || tsManifest.ts_project.id;
     //not actually used right now because we're hard coded for english
-    params.gatewayLanguage = translationStudioManifest.source_translations.language_id;
-    params.direction = translationStudioManifest.target_language.direction;
+    params.gatewayLanguage = tsManifest.source_translations.language_id;
+    params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
 
     return params;
   },
@@ -184,10 +178,14 @@ const UploadModal = React.createClass({
             api.createAlert(alert);
           }
           else {
-            api.putDataInCommon('tcManifest', tcManifest);
+            _this.loadTranslationStudioManifest(path, function(err, tsManifest) {
+              api.putDataInCommon('tcManifest', tcManifest);
+              api.putDataInCommon('saveLocation', path);
+              api.putDataInCommon('params', _this.getParams(path, tsManifest));
+              Access.loadFromFilePath(path, callback);
+          });
           }
         });
-        Access.loadFromFilePath(path, callback);
       }
     }
   },
