@@ -290,7 +290,7 @@ class View extends React.Component{
               phraseInfo={this.state.currentCheck.phraseInfo}
               phrase={this.state.currentCheck.phrase}
             />
-            <TranslationAcademy file={this.state.currentFile} style={{width:"100%", height: "150px"}}/>
+            <TranslationAcademy file={this.state.currentFile} style={{width:"100%"}}/>
           </Col>
           </Row>
         <Row className="show-grid">

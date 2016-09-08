@@ -46,7 +46,7 @@ class View extends React.Component {
     var source = this.props.file;
     if (source) {
       return (
-        <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "317px", maxHeight: "317px"}}>
+        <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "303px", maxHeight: "303px"}}>
           <div>
             <Markdown source={this.convertToMarkdown(source)} />
           </div>
