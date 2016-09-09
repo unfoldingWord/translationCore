@@ -192,6 +192,11 @@ class View extends React.Component{
       var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
           ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
       api.saveProject(commitMessage);
+      console.log(currentCheck.comment);
+      //Display toast notification 
+      if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
+        api.Toast.success('Check data was successfully saved', '', 2);
+      }
       // Update state to render the next check
       this.updateState();
   }
@@ -236,8 +241,8 @@ class View extends React.Component{
 
   getVerse(language){
     var currentCheck = this.state.currentCheck;
-    var currentVerseNumber = this.state.currentCheck.verse;
-    var currentChapterNumber = this.state.currentCheck.chapter;
+    var currentVerseNumber = currentCheck.verse;
+    var currentChapterNumber = currentCheck.chapter;
     var desiredLanguage = api.getDataFromCommon(language);
     if (desiredLanguage){
       return desiredLanguage[currentChapterNumber][currentVerseNumber];

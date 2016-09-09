@@ -155,6 +155,7 @@ class View extends React.Component {
       });
       this.updateUserAndTimestamp();
     }
+    api.Toast.info('Current check was marked as:', newCheckStatus, 2)
     this.updateState();
   }
 
@@ -231,6 +232,10 @@ class View extends React.Component {
     var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
         ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
     api.saveProject(commitMessage);
+    //Display toast notification 
+    if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
+      api.Toast.success('Check data was successfully saved', '', 2);
+    }
     // Update state to render the next check
     this.updateState();
   }
