@@ -55,20 +55,7 @@ function openTargetLanguage(savePath, abbr, direction) {
         }
       }
       if (translationCoreManifestPresent(saveLocation)) {
-        getManifest(saveLocation, function(error, tcManifest) {
-          if (error) {
-            console.error(error);
-            const alert = {
-              title: 'Error Getting Transaltion Studio Manifest',
-              content: error.message,
-              leftButtonText: 'Ok'
-            };
-            api.createAlert(alert);
-          } else {
-            api.putDataInCommon('tcManifest', tcManifest);
-            Access.loadFromFilePath(saveLocation);
-          }
-        });
+        loadProject(saveLocation);
       } else {
         var userData = {
           user: [CoreStore.getLoggedInUser()]
@@ -144,6 +131,26 @@ function getManifest(folderPath, callback) {
     callback(err, data);
   });
 }
+/**
+ * @description This function loads an existing USFM project.
+ * @param {String} folderPath - The directory of the project
+ ******************************************************************************/
+ function loadProject(saveLocation) {
+   getManifest(saveLocation, function(error, tcManifest) {
+     if (error) {
+       console.error(error);
+       const alert = {
+         title: 'Error Getting Transaltion Studio Manifest',
+         content: error.message,
+         leftButtonText: 'Ok'
+       };
+       api.createAlert(alert);
+     } else {
+       api.putDataInCommon('tcManifest', tcManifest);
+       Access.loadFromFilePath(saveLocation);
+     }
+   });
+ }
 
 var ImportComponent = React.createClass({
   getInitialState: function() {
@@ -220,4 +227,5 @@ var ImportComponent = React.createClass({
   }
 });
 exports.component = ImportComponent;
+exports.loadProject = loadProject;
 exports.open = openTargetLanguage;
