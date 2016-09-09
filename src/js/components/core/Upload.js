@@ -179,10 +179,14 @@ const UploadModal = React.createClass({
           }
           else {
             _this.loadTranslationStudioManifest(path, function(err, tsManifest) {
-              api.putDataInCommon('tcManifest', tcManifest);
-              api.putDataInCommon('saveLocation', path);
-              api.putDataInCommon('params', _this.getParams(path, tsManifest));
-              Access.loadFromFilePath(path, callback);
+              try {
+                api.putDataInCommon('tcManifest', tcManifest);
+                api.putDataInCommon('saveLocation', path);
+                api.putDataInCommon('params', _this.getParams(path, tsManifest));
+                Access.loadFromFilePath(path, callback);
+              } catch(err) {
+                ImportUsfm.loadProject(path);
+              }
           });
           }
         });
