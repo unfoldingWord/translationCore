@@ -21,15 +21,11 @@ const TargetWord = React.createClass({
       highlighted: false,
       wordObj: { // this is required to pass into our callbacks
         'word': this.props.word,
-        'key': this.props.keyId
+        'key': this.props.keyId,
+        'selectedArea': [0,0],
+        'isSelected': false
       }
     };
-  },
-
-  userClick: function() {
-  // toggles the internal state and changes the actual style of the element
-    this.toggleHighlight();
-
   },
 
   removeHighlight: function() {
@@ -67,23 +63,12 @@ const TargetWord = React.createClass({
     this.setState({highlighted: !this.state.highlighted}); // this sets React to re-render the component
   },
 
-  textSelected: function(){
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    console.log(text);
-  },
-
   render: function() {
 
     return (
       <span
         className={this.state.highlighted ? 'text-primary-highlighted' : 'text-muted'}
-        onClick={this.userClick}
-        onMouseUp={this.textSelected}
+        onClick={this.toggleHighlight}
         style={this.props.style}
       >
         {this.props.word}
@@ -96,7 +81,8 @@ const TargetLanguageSelectBox = React.createClass({
   selectedWords: [], // holds wordObjects, each have {'word', 'key'} attributes
 
   cursorPointerStyle: {
-    cursor: 'pointer'
+    // TODO: Make this changed based on an api.settings property
+    cursor: 'text'
   },
 
   componentWillMount: function() {
@@ -268,6 +254,16 @@ const TargetLanguageSelectBox = React.createClass({
     return this.selectedWords;
   },
 
+  textSelected: function(){
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    console.log(text);
+  },
+
   render: function() {
     var words = this.generateWordArray();
     return (
@@ -280,8 +276,9 @@ const TargetLanguageSelectBox = React.createClass({
         }}
       >
         <div style={{
-            direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
-          }}
+              direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+            }}
+            onMouseUp={this.textSelected}
         >
           {words}
         </div>

@@ -35,7 +35,12 @@ body {
   font-weight: bold;
 }
 
-.text-muted:hover {
-  color:#337ab7;
+/*
+  TODO:
+  This selector is going to give is problems when we have a setting to switch between 
+  drag to select and click to select. It will need to be moved to a JSX style that we
+  can changed based on an api property.
+*/
+.text-muted:active {
   background-color: yellow;
 }
