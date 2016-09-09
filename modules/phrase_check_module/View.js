@@ -192,7 +192,6 @@ class View extends React.Component{
       var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
           ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
       api.saveProject(commitMessage);
-      console.log(currentCheck.comment);
       //Display toast notification 
       if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
         api.Toast.success('Check data was successfully saved', '', 2);
