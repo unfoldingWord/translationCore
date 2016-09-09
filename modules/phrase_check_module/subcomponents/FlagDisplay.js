@@ -29,6 +29,7 @@ class FlagDisplay extends React.Component{
         checkIndex: currentCheckIndex
       });
     }
+    api.Toast.info('Current check was marked as:', newCheckStatus, 2)
   }
 
   render(){
