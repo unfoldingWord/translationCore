@@ -29,6 +29,7 @@ const TargetWord = React.createClass({
   userClick: function() {
   // toggles the internal state and changes the actual style of the element
     this.toggleHighlight();
+
   },
 
   removeHighlight: function() {
@@ -66,12 +67,23 @@ const TargetWord = React.createClass({
     this.setState({highlighted: !this.state.highlighted}); // this sets React to re-render the component
   },
 
+  textSelected: function(){
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    console.log(text);
+  },
+
   render: function() {
 
     return (
       <span
         className={this.state.highlighted ? 'text-primary-highlighted' : 'text-muted'}
         onClick={this.userClick}
+        onMouseUp={this.textSelected}
         style={this.props.style}
       >
         {this.props.word}
