@@ -23,7 +23,7 @@
         color: 'gold',
         display: 'initial'
       },
-      wrong: {
+      flagged: {
         color: 'red',
         display: 'initial'
       },

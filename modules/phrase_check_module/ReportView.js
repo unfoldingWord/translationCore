@@ -106,14 +106,14 @@ class ReportItem extends React.Component {
     if(!selectedWords)
       return undefined;
     return (
-      <div>Selected Phrase: {this.prettySelectedWords()}</div>
+      <div>Selected Word/Phrase: {this.prettySelectedWords()}</div>
     );
   }
   checkStatusDiv() {
     if(!this.props.check.checkStatus)
       return undefined;
     return (
-      <div>Check status: {this.props.check.checkStatus}</div>
+        <div>Check status: {this.props.check.checkStatus}</div>
     );
   }
   proposedChangesDiv() {

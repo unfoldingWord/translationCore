@@ -25,10 +25,6 @@ body {
   color: #1f273b;
 }
 
-.Tab.Container {
-  /*background-color: black;*/
-}
-
 .text-primary-highlighted{
   color:#337ab7;
   background-color: yellow;
@@ -38,4 +34,8 @@ body {
 .text-muted:hover {
   color:#337ab7;
   background-color: yellow;
+}
+
+.label{
+  color: #3ebcfe;
 }

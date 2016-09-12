@@ -30,8 +30,8 @@ const NAMESPACE = "LexicalChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
   UNABLE_TO_FIND_WORD = "Unable to find wordobject",
-  RETAINED = "Correct in Context",
-  WRONG = "Flag for Review";
+  CORRECT = "Correct in Context",
+  FLAGGED = "Flag for Review";
 //Other constants
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
@@ -232,7 +232,7 @@ class View extends React.Component {
     var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
         ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
     api.saveProject(commitMessage);
-    //Display toast notification 
+    //Display toast notification
     if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
       api.Toast.success('Check data was successfully saved', '', 2);
     }
@@ -347,17 +347,17 @@ class View extends React.Component {
                         margin: '0 2.5px 5px 0'}}
               />
               <ButtonGroup style={{width:'100%'}}>
-                <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
+                <Button style={{width:'50%'}} className={checkStatus == 'CORRECT' ? 'active':''} onClick={
                     function() {
-                      _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
+                      _this.updateCheckStatus('CORRECT', _this.refs.TargetVerseDisplay.getWords());
                     }
-                  }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                <Button style={{width:'50%'}} className={checkStatus == 'WRONG' ? 'active':''} onClick={
+                  }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {CORRECT}</span></Button>
+                <Button style={{width:'50%'}} className={checkStatus == 'FLAGGED' ? 'active':''} onClick={
                     function() {
-                      _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
+                      _this.updateCheckStatus('FLAGGED', _this.refs.TargetVerseDisplay.getWords());
                     }
                   }
-                ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
+                ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {FLAGGED}</span></Button>
               </ButtonGroup>
               <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
             </Col>

@@ -17,7 +17,7 @@
       }
     },
     statusIcon: {
-      retained: {
+      correct: {
         color: 'green',
         visibility: 'visible'
       },
@@ -25,7 +25,7 @@
         color: 'gold',
         visibility: 'visible'
       },
-      wrong: {
+      flagged: {
         color: 'red',
         visibility: 'visible'
       },

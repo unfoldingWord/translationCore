@@ -93,6 +93,7 @@ class View extends React.Component{
   updateUserAndTimestamp() {
     let currentCheck = this.getCurrentCheck();
     let currentUser = api.getLoggedInUser();
+    console.log(currentUser);
     let timestamp = new Date();
     currentCheck.user = currentUser;
     currentCheck.timestamp = timestamp;
@@ -188,11 +189,12 @@ class View extends React.Component{
           }
         }
       }
+      console.log(userName);
       //Save Project
       var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
           ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
       api.saveProject(commitMessage);
-      //Display toast notification 
+      //Display toast notification
       if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
         api.Toast.success('Check data was successfully saved', '', 2);
       }
