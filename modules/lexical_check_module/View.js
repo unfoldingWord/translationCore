@@ -155,8 +155,8 @@ class View extends React.Component {
       });
       this.updateUserAndTimestamp();
     }
-    api.Toast.info('Current check was marked as:', newCheckStatus, 2)
     this.updateState();
+    api.Toast.info('Current check was marked as:', newCheckStatus, 2);
   }
 
   updateSelectedWords(selectedWords, selectedWordsRaw) {

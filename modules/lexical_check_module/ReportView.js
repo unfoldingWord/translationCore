@@ -132,7 +132,12 @@ class ReportItem extends React.Component {
   }
   footerDiv() {
     if(this.props.check.user) {
-      var user = this.props.check.user.fullName;
+      var user;
+      if(this.props.check.user.fullName == ''){
+       user = this.props.check.user.userName;
+     }else{
+       user = this.props.check.user.fullName;
+     }
     }
     if(this.props.check.timestamp) {
       // We do 'new Date(...)' because it could be a string or a Date object.

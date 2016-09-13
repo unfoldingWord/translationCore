@@ -93,7 +93,6 @@ class View extends React.Component{
   updateUserAndTimestamp() {
     let currentCheck = this.getCurrentCheck();
     let currentUser = api.getLoggedInUser();
-    console.log(currentUser);
     let timestamp = new Date();
     currentCheck.user = currentUser;
     currentCheck.timestamp = timestamp;
@@ -103,22 +102,23 @@ class View extends React.Component{
      * @description - updates the status of the check that is the current check in the check store
      * @param {object} newCheckStatus - the new status chosen by the user
      */
-    updateCheckStatus(newCheckStatus, selectedWords) {
-      var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
-      var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
-      var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
-      var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
-      if (currentCheck.checkStatus) {
-        currentCheck.checkStatus = newCheckStatus;
-        api.emitEvent('changedCheckStatus', {
-          groupIndex: currentGroupIndex,
-          checkIndex: currentCheckIndex,
-          checkStatus: newCheckStatus
-        });
-        this.updateUserAndTimestamp();
-      }
-      this.updateState();
+  updateCheckStatus(newCheckStatus, selectedWords) {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    if (currentCheck.checkStatus) {
+      currentCheck.checkStatus = newCheckStatus;
+      api.emitEvent('changedCheckStatus', {
+        groupIndex: currentGroupIndex,
+        checkIndex: currentCheckIndex,
+        checkStatus: newCheckStatus
+      });
+      this.updateUserAndTimestamp();
     }
+    this.updateState();
+    api.Toast.info('Current check was marked as:', newCheckStatus, 2);
+  }
 
   updateSelectedWords(selectedWords, selectedWordsRaw) {
     if (this.refs.ProposedChanges) {
@@ -189,7 +189,6 @@ class View extends React.Component{
           }
         }
       }
-      console.log(userName);
       //Save Project
       var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
           ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
@@ -288,7 +287,7 @@ class View extends React.Component{
                         + ":" + this.state.currentCheck.verse}
               style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
-            <FlagDisplay />
+            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} />
             <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
           <Col md={6} style={{paddingLeft: '2.5px'}}>
