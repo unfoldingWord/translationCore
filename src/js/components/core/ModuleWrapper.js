@@ -9,6 +9,7 @@ var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore');
 var NextButton = require('../core/NextButton');
 var PreviousButton = require('../core/PreviousButton');
+var RecentProjects = require('./RecentProjects');
 
 const api = window.ModuleApi;
 
@@ -24,9 +25,18 @@ class ModuleWrapper extends React.Component {
     // TODO: should probably return an empty div if this.state.view doesn't exist
     // but for now it has LexicalCheck as default
     if(!this.state.view) {
+      var projects;
+      if (this.state.showApps) {
+        projects = <p>Click the apps button to start checking</p>;
+      } else if (!api.getDataFromCommon('saveLocation') && !api.getDataFromCommon('tcManifest')) {
+        projects = <RecentProjects.Component onLoad={() => {this.setState({showApps: true})}}/>;
+      } else {
+        this.setState({showApps: true});
+        projects = <p>Click the apps button to start checking</p>;
+      }
       return(
         <div>
-          <p>Click the apps button to start checking</p>
+          {projects}
         </div>
       );
     }
