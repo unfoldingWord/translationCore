@@ -88,7 +88,7 @@ class MenuItem extends React.Component {
         </span>{' '}
         <span style={this.state.active === true ? style.menuItem.current : style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
-            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
+            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse + (this.props.check.verseEnd ? "-" + this.props.check.verseEnd : "")}
           </a>
         </span>
       </span>
