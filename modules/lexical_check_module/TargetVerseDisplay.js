@@ -197,6 +197,10 @@ const TargetLanguageSelectBox = React.createClass({
     // }
   },
 
+  addHighlightedString: function(selection){
+    this.props.onWordSelected([selection],[selection]);
+  },
+
   removeFromSelectedWords: function(wordObj) {
   // get the word's index
     var index = -1;
@@ -259,7 +263,7 @@ const TargetLanguageSelectBox = React.createClass({
     } else if (document.selection && document.selection.type != "Control") {
         text = document.selection.createRange().text;
     }
-    console.log(text);
+    this.addHighlightedString(text);
   },
 
   render: function() {

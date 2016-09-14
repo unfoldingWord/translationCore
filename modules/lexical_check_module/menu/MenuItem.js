@@ -11,8 +11,7 @@ class MenuItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      checkStatus: "UNCHECKED",
-      active: "false"
+      checkStatus: "UNCHECKED"
     };
     this.menuItemClicked = this.menuItemClicked.bind(this);
   }
