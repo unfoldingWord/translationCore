@@ -30,17 +30,22 @@ body {
 }
 
 .text-primary-highlighted{
-  color:#337ab7;
   background-color: yellow;
   font-weight: bold;
 }
+
 
 /*
   TODO:
   This selector is going to give is problems when we have a setting to switch between 
   drag to select and click to select. It will need to be moved to a JSX style that we
   can changed based on an api property.
+
+  BUT we cant use psuedo classes within the JSX styling syntax. If anyone finds a way
+  to do this that would be great but my research shows that is not possible so we may
+  have to go another route.
 */
-.text-muted:active {
-  background-color: yellow;
+
+.TargetVerseSelectionArea::selection{
+  background: yellow;
 }

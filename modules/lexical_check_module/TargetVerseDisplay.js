@@ -22,8 +22,6 @@ const TargetWord = React.createClass({
       wordObj: { // this is required to pass into our callbacks
         'word': this.props.word,
         'key': this.props.keyId,
-        'selectedArea': [0,0],
-        'isSelected': false
       }
     };
   },
@@ -265,7 +263,6 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   render: function() {
-    var words = this.generateWordArray();
     return (
       <Well
         bsSize={'small'}
@@ -279,8 +276,9 @@ const TargetLanguageSelectBox = React.createClass({
               direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
             }}
             onMouseUp={this.textSelected}
+            className="TargetVerseSelectionArea"
         >
-          {words}
+          {this.generateWordArray()}
         </div>
       </Well>
     );
