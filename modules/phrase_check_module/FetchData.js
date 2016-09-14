@@ -62,6 +62,7 @@ var parseObject = function(object){
       newVerse.verse += 1;
       newVerse.flagged = false;
       newVerse.checkStatus = "UNCHECKED";
+      newVerse.retained = "";
       newVerse.comments = "";
       newVerse.group = type;
       newGroup.checks.push(newVerse);

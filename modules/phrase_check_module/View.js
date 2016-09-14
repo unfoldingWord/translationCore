@@ -102,17 +102,20 @@ class View extends React.Component{
      * @description - updates the status of the check that is the current check in the check store
      * @param {object} newCheckStatus - the new status chosen by the user
      */
-  updateCheckStatus(newCheckStatus, selectedWords) {
+  updateCheckStatus(newCheckStatus, retained, selectedWords) {
+    console.log(retained);
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
+      currentCheck.retained = retained;
       api.emitEvent('changedCheckStatus', {
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex,
-        checkStatus: newCheckStatus
+        checkStatus: newCheckStatus,
+        retained: retained,
       });
       this.updateUserAndTimestamp();
     }
@@ -139,12 +142,11 @@ class View extends React.Component{
      */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
     //Get the proposed changes and add it to the check
-    var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
+    let proposedChanges = this.refs.ProposedChanges.getProposedChanges();
     let comment = this.refs.CommentBox.getComment();
-    var currentCheck = this.getCurrentCheck();
-
-    var loggedInUser = api.getLoggedInUser();
-    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    let currentCheck = this.getCurrentCheck();
+    let loggedInUser = api.getLoggedInUser();
+    let userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
 
     if (currentCheck) {
       if (proposedChanges && proposedChanges != "") {
@@ -287,7 +289,7 @@ class View extends React.Component{
                         + ":" + this.state.currentCheck.verse}
               style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
-            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} />
+            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} getCurrentCheck={this.getCurrentCheck.bind(this)} val={this.state.currentCheck.retained || ""} ref={"RetainedStatus"}/>
             <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
           <Col md={6} style={{paddingLeft: '2.5px'}}>
