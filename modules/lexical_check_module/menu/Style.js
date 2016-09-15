@@ -21,10 +21,6 @@
         color: 'green',
         visibility: 'visible'
       },
-      replaced: {
-        color: 'gold',
-        visibility: 'visible'
-      },
       flagged: {
         color: 'red',
         visibility: 'visible'
