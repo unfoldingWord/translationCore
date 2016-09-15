@@ -15,6 +15,10 @@ class TargetVerseDisplay extends React.Component{
         this.state = {
             selection: ""
         }
+
+        this.getSelectedWords = this.getSelectedWords.bind(this);
+        this.textSelected = this.textSelected.bind(this);
+        this.getWords = this.getWords.bind(this);
     }
     componentWillMount(){
         this.getSelectedWords();
@@ -41,8 +45,8 @@ class TargetVerseDisplay extends React.Component{
         //This returns selection twice because one is the "raw" selection and the other is supposed
         //to be word objects but it works as a raw object as well. This needs to be refactored in text
         //he view another time.
-        this.state.selection = text;
-        this.props.onWordSelected([selection], [selection]);
+        this.setState({selection: text});
+        this.props.onWordSelected([text], [text]);
     }
 
     getWords(){
@@ -52,7 +56,17 @@ class TargetVerseDisplay extends React.Component{
     render(){
         return (
             <Well onMouseUp={this.textSelected}>
+            <style dangerouslySetInnerHTML={{
+                __html: [
+                    '.highlighted::selection {',
+                    '  background-color: yellow;',
+                    '}'
+                    ].join('\n')
+                }}>
+            </style>
+            <div className='highlighted'>
                 {this.props.verse}
+            </div>
             </Well>
         )
     }

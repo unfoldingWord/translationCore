@@ -164,11 +164,9 @@ class View extends React.Component {
     }
     var currentCheck = this.getCurrentCheck();
     currentCheck.selectedWords = selectedWords;
-    console.log(selectedWords);
     //This is needed to make the display persistent, but won't be needed in reports
     currentCheck.selectedWordsRaw = selectedWordsRaw;
     console.log(selectedWordsRaw);
-    this.updateUserAndTimestamp();
   }
 
   /**
