@@ -10,6 +10,7 @@ var CoreStore = require('../../stores/CoreStore');
 var NextButton = require('../core/NextButton');
 var PreviousButton = require('../core/PreviousButton');
 var RecentProjects = require('./RecentProjects');
+var SwitchCheckModal = require('./SwitchCheckModal');
 
 const api = window.ModuleApi;
 
@@ -27,14 +28,14 @@ class ModuleWrapper extends React.Component {
     if(!this.state.view) {
       var projects;
       if (this.state.showApps) {
-        projects = <p>Click the apps button to start checking</p>;
+        projects = <SwitchCheckModal.Component />
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
         projects = <RecentProjects.Component onLoad={() => {
           this.setState({showApps: true});
         }}/>;
       } else {
         this.setState({showApps: true});
-        projects = <p>Click the apps button to start checking</p>;
+        projects = <SwitchCheckModal.Component />
       }
       return(
         <div>
