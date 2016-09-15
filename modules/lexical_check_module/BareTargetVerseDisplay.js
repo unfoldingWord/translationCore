@@ -31,9 +31,27 @@ class TargetVerseDisplay extends React.Component{
         }
     }
 
+    textSelected(){
+        var text = "";
+        if(window.getSelection) {
+            text = window.getSelection().toString();
+        } else if(document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+        }
+        //This returns selection twice because one is the "raw" selection and the other is supposed
+        //to be word objects but it works as a raw object as well. This needs to be refactored in text
+        //he view another time.
+        this.state.selection = text;
+        this.props.onWordSelected([selection], [selection]);
+    }
+
+    getWords(){
+        return [this.state.selection];
+    }
+
     render(){
         return (
-            <Well>
+            <Well onMouseUp={this.textSelected}>
                 {this.props.verse}
             </Well>
         )
