@@ -28,8 +28,10 @@ class ModuleWrapper extends React.Component {
       var projects;
       if (this.state.showApps) {
         projects = <p>Click the apps button to start checking</p>;
-      } else if (!api.getDataFromCommon('saveLocation') && !api.getDataFromCommon('tcManifest')) {
-        projects = <RecentProjects.Component onLoad={() => {this.setState({showApps: true})}}/>;
+      } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+        projects = <RecentProjects.Component onLoad={() => {
+          this.setState({showApps: true});
+        }}/>;
       } else {
         this.setState({showApps: true});
         projects = <p>Click the apps button to start checking</p>;

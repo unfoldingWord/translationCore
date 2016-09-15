@@ -13,7 +13,6 @@ const NavItem = require('react-bootstrap/lib/NavItem.js');
 const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
-const Access = require('./AccessProject');
 const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');
@@ -134,6 +133,7 @@ const UploadModal = React.createClass({
    * the GOGS server
    */
   sendFilePath: function(path, link, callback) {
+    var Access = require('./AccessProject');
     var _this = this;
     this.clearPreviousData();
     if (path) {

@@ -3,6 +3,7 @@ const path = require('path');
 const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const CheckStore = require('../../stores/CheckStore');
+const Upload = require('./Upload');
 
 function addToRecent(path) {
   var previousProjects = localStorage.getItem('previousProjects');
@@ -23,10 +24,7 @@ class RecentProjects extends React.Component {
   }
 
   loadProject(filePath) {
-    CheckStore.WIPE_ALL_DATA();
-    api.modules = {};
-    var Access = require('./AccessProject');
-    Access.loadFromFilePath(filePath, this.props.onLoad);
+    this.refs.TargetLanguage.sendFilePath(filePath, null, this.props.onLoad.bind(this));
     api.putDataInCommon('saveLocation', filePath);
   }
 
@@ -54,6 +52,7 @@ class RecentProjects extends React.Component {
   render() {
     return (
       <div>
+      <Upload ref={"TargetLanguage"} show={false}/>
       {this.generateDisplay()}
       </div>
     );

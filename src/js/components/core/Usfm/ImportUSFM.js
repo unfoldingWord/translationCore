@@ -147,6 +147,7 @@ function getManifest(folderPath, callback) {
        api.createAlert(alert);
      } else {
        api.putDataInCommon('tcManifest', tcManifest);
+       var Access = require('../AccessProject');
        Access.loadFromFilePath(saveLocation);
      }
    });
