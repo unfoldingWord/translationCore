@@ -6,6 +6,7 @@ var Path = require('path');
 var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
+var Recent = require('./RecentProjects.js');
 
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 
@@ -31,6 +32,7 @@ var Access = {
       }
     });
     try {
+      Recent.add(folderpath);
       fs.readdir(folderpath, function(err, files){
         try {
         for (var file of files) {
