@@ -20,7 +20,7 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 
 //Modules that are defined within lexical_check_module
 const TranslationWordsDisplay = require('./translation_words/TranslationWordsDisplay');
-const TargetVerseDisplay = require('./TargetVerseDisplay.js');
+const TargetVerseDisplay = require('./BareTargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
