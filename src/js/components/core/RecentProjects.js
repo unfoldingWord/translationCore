@@ -4,6 +4,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const CheckStore = require('../../stores/CheckStore');
 const Upload = require('./Upload');
+const {shell} = require('electron')
 
 function addToRecent(path) {
   var previousProjects = localStorage.getItem('previousProjects');
@@ -41,7 +42,12 @@ class RecentProjects extends React.Component {
             <Button onClick={this.loadProject.bind(this, projectPath)}>Load Project</Button>
           </span>
           <h3>{projectName}</h3>
-          <p> Location: {projectPaths[project]}</p>
+          <p> Location:
+            <a onClick={shell.showItemInFolder.bind(shell, projectPath)}
+               style={{cursor: 'pointer'}}>
+              {' ' + projectPaths[project]}
+            </a>
+          </p>
         </div>
       );
     }
