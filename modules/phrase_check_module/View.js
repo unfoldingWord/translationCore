@@ -102,20 +102,17 @@ class View extends React.Component{
      * @description - updates the status of the check that is the current check in the check store
      * @param {object} newCheckStatus - the new status chosen by the user
      */
-  updateCheckStatus(newCheckStatus, retained, selectedWords) {
-    console.log(retained);
+  updateCheckStatus(newCheckStatus, selectedWords) {
     var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     if (currentCheck.checkStatus) {
       currentCheck.checkStatus = newCheckStatus;
-      currentCheck.retained = retained;
       api.emitEvent('changedCheckStatus', {
         groupIndex: currentGroupIndex,
         checkIndex: currentCheckIndex,
         checkStatus: newCheckStatus,
-        retained: retained,
       });
       this.updateUserAndTimestamp();
     }
@@ -289,7 +286,7 @@ class View extends React.Component{
                         + ":" + this.state.currentCheck.verse}
               style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
-            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} getCurrentCheck={this.getCurrentCheck.bind(this)} val={this.state.currentCheck.retained || ""} ref={"RetainedStatus"}/>
+            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} getCurrentCheck={this.getCurrentCheck.bind(this)} />
             <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
           <Col md={6} style={{paddingLeft: '2.5px'}}>
