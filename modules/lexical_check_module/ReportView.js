@@ -112,9 +112,20 @@ class ReportItem extends React.Component {
   checkStatusDiv() {
     if(!this.props.check.checkStatus)
       return undefined;
-    return (
-      <div>Check status: {this.props.check.checkStatus}</div>
-    );
+    if(!this.props.check.retained){
+      return (
+        <div>
+          <div>Check status: {this.props.check.checkStatus}</div>
+          </div>
+      );
+    }else{
+      return (
+        <div>
+          <div>Check status: {this.props.check.checkStatus}</div>
+          <div>The meaning has been: {this.props.check.retained}</div>
+        </div>
+      );
+    }
   }
   proposedChangesDiv() {
     if(!this.props.check.proposedChanges)

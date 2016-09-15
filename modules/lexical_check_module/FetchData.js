@@ -50,19 +50,19 @@ function getData(params, progressCallback, callback) {
               callback(error);
             }
             else {
-              var actualWordList = BookWordTest(tWFetcher.wordList, bookData, 
+              var actualWordList = BookWordTest(tWFetcher.wordList, bookData,
                 tWFetcher.caseSensitiveAliases);
               var mappedBook = mapVerses(bookData);
-            
+
               // var checkObject = findWordsInBook(bookData, actualWordList);
               var checkObject = findWords(bookData, mappedBook, actualWordList);
               checkObject.LexicalChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
-              
 
-              api.putDataInCheckStore('LexicalChecker', 'book', 
-                api.convertToFullBookName(params.bookAbbr));
+
+              api.putDataInCheckStore('LexicalChecker', 'book',
+              api.convertToFullBookName(params.bookAbbr));
               api.putDataInCheckStore('LexicalChecker', 'groups', checkObject['LexicalChecker']);
               api.putDataInCheckStore('LexicalChecker', 'currentCheckIndex', 0);
               api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
@@ -134,20 +134,20 @@ function getData(params, progressCallback, callback) {
   );
 }
 
-/** 
+/**
  * @description - This creates an object from a string, in this case it'll always be a verse.
  * The object's keys are the indices of each word found in the string. The keys' values are objects
  * that contain the word, and a 'marked' boolean
  * @param {string} verse - a verse that can be tokenized to create the object
  */
-function mapVerseToObject(verse) {  
+function mapVerseToObject(verse) {
   var words = tokenizer.tokenize(verse),
     returnObject = {},
     currentText = verse,
     currentIndex = 0;
   for (var word of words) {
     var index = currentText.indexOf(word);
-    /* currentIndex is used to keep track of where we are in the whole verse, because the slicing 
+    /* currentIndex is used to keep track of where we are in the whole verse, because the slicing
      * returns an invalid index within the context of the entire verse
      */
     currentIndex += index;
@@ -159,8 +159,8 @@ function mapVerseToObject(verse) {
 }
 
 /**
- * @description = This finds a specific word from wordObject within the given verse. 
- * It then will create a new check object when a valid word is found and push it onto 
+ * @description = This finds a specific word from wordObject within the given verse.
+ * It then will create a new check object when a valid word is found and push it onto
  * an array which is returned
  * @param {int} chapterNumber - an integer indicating the current chapter so that it can be
  * added to the check object once a check object is created
@@ -169,7 +169,7 @@ function mapVerseToObject(verse) {
  * of the verse
  * @param {object} mappedVerseObject - This is an object containing index keys to the individual words
  * of the verse. See {@link mapVerseToObject}
- * @param {object} wordObject - This is an object containing various fields about the word we're 
+ * @param {object} wordObject - This is an object containing various fields about the word we're
  * currently searching for, primary key for this methods are the wordObject's regexes
  */
 function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObject) {
@@ -183,6 +183,7 @@ function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObje
           "chapter": chapterNumber,
           "verse": verseObject.num,
           "checkStatus": "UNCHECKED",
+          "retained": "",
           "sortOrder": sortOrder++,
           "word": match[0],
           "index": match.index,
@@ -195,7 +196,7 @@ function findWordInVerse(chapterNumber, verseObject, mappedVerseObject, wordObje
 }
 
 /**
- * @description - This function will tokenize the matched string from the given match and return the length of 
+ * @description - This function will tokenize the matched string from the given match and return the length of
  * the length of first word in the match
  * @param {object} match - the object returned from a string.match(regexp) method call
  */
@@ -211,11 +212,11 @@ function incrementIndexByWord(match) {
 
 /**
  * @description - Does a string.match method for the given regex but only returns the first match
- * who's index is > the given index. Also supports regexes with alternating groups that might have 
+ * who's index is > the given index. Also supports regexes with alternating groups that might have
  * sub matches within the string, which is an edge case but definitely occurs in the Lexical Check
  * @param {string} string - the string to match against
  * @param {XRegExp or RegExp} - the regex that the string will be matched with
- * @param {int} index - an integer indicator to only return a match if the match's index if > this 
+ * @param {int} index - an integer indicator to only return a match if the match's index if > this
  * indicator
  */
 function stringMatch(string, regex, index) {
@@ -266,7 +267,7 @@ function checkIfWordsAreMarked(match, verseObject) {
 }
 
 /**
- * @description - This takes the data from a book of the Bible returned by 
+ * @description - This takes the data from a book of the Bible returned by
  * Door43DataFetcher and returns an array of arrays containing mappedVerseObjects for
  * each verse for each chapter. See {@link mapVerseToObject}
  * @param {object} - the data from downloading a book returned by Door43DataFetcher
@@ -290,9 +291,9 @@ function mapVerses(bookData) {
  * @param {object} bookData - This is the data returned by Door43DataFetcher after downloading
  * an entire book of the Bible
  * @param {array} mapBook - This is the array containing arrays of mappedVerses. See {@link mapVerses}
- * @param {array} wordList - list of objects containing all the necessary data to look for words 
- * in the book data. This list should be a filtered list from the entire translationWords list as 
- * this method has many inner loops 
+ * @param {array} wordList - list of objects containing all the necessary data to look for words
+ * in the book data. This list should be a filtered list from the entire translationWords list as
+ * this method has many inner loops
  */
 function findWords(bookData, mapBook, wordList) {
   var returnObject = {};
@@ -305,7 +306,7 @@ function findWords(bookData, mapBook, wordList) {
     };
     for (var chapter of bookData.chapters) {
       for (var verse of chapter.verses) {
-        for (var item of findWordInVerse(chapter.num, verse, 
+        for (var item of findWordInVerse(chapter.num, verse,
           mapBook[chapter.num][verse.num], word)) {
           wordReturnObject.checks.push(item);
         }

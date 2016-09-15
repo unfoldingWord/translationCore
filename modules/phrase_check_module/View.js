@@ -18,7 +18,7 @@ const {Row, Col} = RB;
 const TargetVerseDisplay = require('./subcomponents/TargetVerseDisplay');
 const GatewayVerseDisplay = require('./subcomponents/GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
-const FlagDisplay = require('./subcomponents/FlagDisplay');
+const CheckStatusButtons = require('./subcomponents/CheckStatusButtons');
 const EventListeners = require('./ViewEventListeners.js');
 //String constants
 const NAMESPACE = "PhraseChecker",
@@ -78,8 +78,8 @@ class View extends React.Component{
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToPrevious', this.goToPreviousListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
-    api.removeEventListener('phraseDataLoaded', this.updateState);
     api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
+    api.removeEventListener('phraseDataLoaded', this.updateState);
   }
 
   getCurrentCheck() {
@@ -249,11 +249,11 @@ class View extends React.Component{
       console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
     }
   }
-
+/*
   setCurrentCheckProperty(propertyName, propertyValue) {
     this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
   }
-
+*/
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
@@ -286,7 +286,9 @@ class View extends React.Component{
                         + ":" + this.state.currentCheck.verse}
               style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
-            <FlagDisplay updateCheckStatus={this.updateCheckStatus.bind(this)} getCurrentCheck={this.getCurrentCheck.bind(this)} />
+            <CheckStatusButtons updateCheckStatus={this.updateCheckStatus.bind(this)}
+                                getCurrentCheck={this.getCurrentCheck.bind(this)}
+            />
             <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
           </Col>
           <Col md={6} style={{paddingLeft: '2.5px'}}>

@@ -4,10 +4,10 @@ const React = api.React;
 const RB = api.ReactBootstrap;
 const {Glyphicon, Button, ButtonGroup} = RB;
 
-const NAMESPACE = 'PhraseChecker';
+const CORRECT = "Correct in Context",
+      FLAGGED = "Flag for Review";
 
-
-class FlagDisplay extends React.Component{
+class CheckStatusButtons extends React.Component{
 
   constructor() {
     super();
@@ -52,13 +52,17 @@ class FlagDisplay extends React.Component{
 
   render(){
     var _this = this;
+    let currentCheck = this.props.getCurrentCheck();
+    let checkStatus = currentCheck.checkStatus;
     return (
       <div>
         <ButtonGroup style={{width:'100%', paddingBottom: "2.5px"}}>
-          <Button style={{width:'50%'}} bsStyle="success" onClick={function() {_this.setFlagStateFunction('CORRECT');}}>
-            <Glyphicon glyph="ok" /> Correct in Context</Button>
-          <Button style={{width:'50%'}} bsStyle="danger" onClick={function() {_this.setFlagStateFunction('FLAGGED');}}>
-            <Glyphicon glyph="flag" /> Flag for Review</Button>
+          <Button style={{width:'50%'}} bsStyle="success" className={checkStatus == 'CORRECT' ? 'active':''} onClick={
+            function() {_this.setFlagStateFunction('CORRECT');}}>
+            <Glyphicon glyph="ok" /> {CORRECT}</Button>
+          <Button style={{width:'50%'}} bsStyle="danger" className={checkStatus == 'FLAGGED' ? 'active':''} onClick={
+            function() {_this.setFlagStateFunction('FLAGGED');}}>
+            <Glyphicon glyph="flag" /> {FLAGGED}</Button>
         </ButtonGroup>
         <h4>The meaning has been:</h4>
         <div className="radio-inline">
@@ -80,4 +84,4 @@ class FlagDisplay extends React.Component{
   }
 }
 
-module.exports = FlagDisplay;
+module.exports = CheckStatusButtons;

@@ -19,7 +19,7 @@ module.exports = {
       this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
     },
 
-    changeCheckType: function(params) {
+    changeCheckType(params) {
       if(params.currentCheckNamespace === NAMESPACE) {
         this.updateState();
       }
