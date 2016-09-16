@@ -58,7 +58,7 @@ var parseObject = function(object){
     for(let verse of object[type].verses) {
       let newVerse = Object.assign({},verse);
       // i spent probably two hours trying to figure out
-      // why my chapter and verse references were one off
+      // why my chapter and verse references were 1 off
       // i found why
       // #stopsamfaulkner2016
       //newVerse.chapter += 1;

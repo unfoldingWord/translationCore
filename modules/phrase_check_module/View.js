@@ -221,7 +221,7 @@ class View extends React.Component{
       this.refs.CommentBox.setComment(currentCheck.comment || "");
       this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
     }
-    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse});
+    api.emitEvent('goToVerse', {chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse, verseEnd: currentCheck.verseEnd});
   }
 
     /**
@@ -237,10 +237,15 @@ class View extends React.Component{
   getVerse(language){
     var currentCheck = this.state.currentCheck;
     var currentVerseNumber = this.state.currentCheck.verse;
+    var verseEnd = this.state.currentCheck.verseEnd || currentVerseNumber;
     var currentChapterNumber = this.state.currentCheck.chapter;
     var desiredLanguage = api.getDataFromCommon(language);
     if (desiredLanguage){
-      return desiredLanguage[currentChapterNumber][currentVerseNumber];
+      let verse = "";
+      for (let v = currentVerseNumber; v <= verseEnd; v++) {
+        verse += (desiredLanguage[currentChapterNumber][v] + " \n ");
+      }
+      return verse;
     } else {
       console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
     }
@@ -271,7 +276,7 @@ class View extends React.Component{
               verse={gatewayVerse}
               currentVerse={this.state.currentCheck.book
                         + " " + this.state.currentCheck.chapter
-                        + ":" + this.state.currentCheck.verse}
+                        + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
             />
             <TargetVerseDisplay
               verse={targetVerse}
@@ -279,7 +284,7 @@ class View extends React.Component{
               onWordSelected={this.updateSelectedWords.bind(this)}
               currentVerse={this.state.currentCheck.book
                         + " " + this.state.currentCheck.chapter
-                        + ":" + this.state.currentCheck.verse}
+                        + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
               style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
             />
             <FlagDisplay />
