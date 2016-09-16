@@ -43,7 +43,7 @@ var style = {
       }
     },
     statusIcon: {
-      retained: {
+      correct: {
         color: 'green',
         display: 'initial'
       },
@@ -51,7 +51,7 @@ var style = {
         color: 'gold',
         display: 'initial'
       },
-      wrong: {
+      flagged: {
         color: 'red',
         display: 'initial'
       },

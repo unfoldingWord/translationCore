@@ -2,7 +2,7 @@
   menuItem: {
     text: {
       cursor: 'pointer'
-    },   
+    },
     current: {
       cursor: 'pointer',
       fontWeight: 'bold'
@@ -17,15 +17,11 @@
       }
     },
     statusIcon: {
-      retained: {
+      correct: {
         color: 'green',
         visibility: 'visible'
       },
-      replaced: {
-        color: 'gold',
-        visibility: 'visible'
-      },
-      wrong: {
+      flagged: {
         color: 'red',
         visibility: 'visible'
       },

@@ -13,7 +13,7 @@
       }
     },
     statusIcon: {
-      retained: {
+      correct: {
         color: 'green',
         display: 'initial'
       },
@@ -21,7 +21,7 @@
         color: 'gold',
         display: 'initial'
       },
-      wrong: {
+      flagged: {
         color: 'red',
         display: 'initial'
       },
