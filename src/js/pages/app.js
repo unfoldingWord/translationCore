@@ -81,7 +81,7 @@ var Main = React.createClass({
         <Upload ref={"TargetLanguage"} show={false}/>
         <LoginModal />
         <SideNavBar />
-        <SwitchCheckModal />
+        <SwitchCheckModal.Modal />
         <Popover />
         <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>

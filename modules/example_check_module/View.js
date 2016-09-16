@@ -106,16 +106,16 @@ class View extends api.CheckModule {
                 { _this.getCurrentGroup().group == 'Language' ? LANGUAGE_QUESTION : NATURALNESS_QUESTION }
               </p>
               <ButtonGroup>
-                <Button className={checkStatus == 'RETAINED' ? 'active':''}
+                <Button className={checkStatus == 'CORRECT' ? 'active':''}
                   onClick={
-                    function() { _this.updateCheckStatus('RETAINED'); }
+                    function() { _this.updateCheckStatus('CORRECT'); }
                   }
                 >
                   <span style={{color: 'green'}}>Yes</span>
                 </Button>
-                <Button className={checkStatus == 'WRONG' ? 'active':''}
+                <Button className={checkStatus == 'FLAGGED' ? 'active':''}
                   onClick={
-                    function() { _this.updateCheckStatus('WRONG'); }
+                    function() { _this.updateCheckStatus('FLAGGED'); }
                   }
                 >
                   <span style={{color: 'red'}}>No</span>
