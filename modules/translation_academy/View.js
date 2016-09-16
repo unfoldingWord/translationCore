@@ -4,6 +4,10 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const Markdown = require('react-remarkable');
+
+var createTextVersion = require("textversionjs");
+
+
 const Well = ReactBootstrap.Well;
 
 class View extends React.Component {
@@ -30,7 +34,10 @@ class View extends React.Component {
 
 
   convertToMarkdown(src) {
-  return src.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
+    var s = src.replace(/title:|question:/g, "####");
+    var t = s.replace(/manual:/g, ">manual:");
+    var res = t.replace(/(<([^>]+)>)/gi, "");
+  return res.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
         switch(equals.length) {
           case 6:
             return "##" + header;
@@ -46,7 +53,7 @@ class View extends React.Component {
     var source = this.props.file;
     if (source) {
       return (
-        <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "303px", maxHeight: "303px"}}>
+        <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "367px", maxHeight: "367px"}}>
           <div>
             <Markdown source={this.convertToMarkdown(source)} />
           </div>
