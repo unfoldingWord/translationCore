@@ -13,10 +13,10 @@ const NavItem = require('react-bootstrap/lib/NavItem.js');
 const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
 const CoreStore = require('../../stores/CoreStore');
-const Access = require('./AccessProject');
 const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');
+const Recent = require('./RecentProjects.js');
 const api = window.ModuleApi;
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
@@ -133,6 +133,7 @@ const UploadModal = React.createClass({
    * the GOGS server
    */
   sendFilePath: function(path, link, callback) {
+    var Access = require('./AccessProject');
     var _this = this;
     this.clearPreviousData();
     if (path) {
@@ -152,6 +153,7 @@ const UploadModal = React.createClass({
               _this.saveManifest(path, {user: [CoreStore.getLoggedInUser()],
                 repo: link || undefined}, translationStudioManifest);
               try {
+                Recent.add(path);
                 api.putDataInCommon('saveLocation', path);
                 api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
               }
@@ -180,6 +182,7 @@ const UploadModal = React.createClass({
           else {
             _this.loadTranslationStudioManifest(path, function(err, tsManifest) {
               try {
+                Recent.add(path);
                 api.putDataInCommon('tcManifest', tcManifest);
                 api.putDataInCommon('saveLocation', path);
                 api.putDataInCommon('params', _this.getParams(path, tsManifest));
