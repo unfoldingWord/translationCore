@@ -340,6 +340,7 @@ class View extends React.Component {
                 onWordSelected={this.updateSelectedWords.bind(this)}
                 style={{minHeight: '120px',
                         margin: '0 2.5px 5px 0'}}
+                currentCheck={this.state.currentCheck}
               />
               <ButtonGroup style={{width:'100%'}}>
                 <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={

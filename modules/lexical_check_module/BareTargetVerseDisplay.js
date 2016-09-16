@@ -13,7 +13,9 @@ class TargetVerseDisplay extends React.Component{
     constructor(){
         super();
         this.state = {
-            selection: ""
+            selection: "",
+            start: 0,
+            end: 0
         }
 
         this.getSelectedWords = this.getSelectedWords.bind(this);
@@ -22,6 +24,7 @@ class TargetVerseDisplay extends React.Component{
     }
     componentWillMount(){
         this.getSelectedWords();
+        console.log(this.props.currentCheck);
     }
 
     getSelectedWords(){
@@ -45,7 +48,13 @@ class TargetVerseDisplay extends React.Component{
         //This returns selection twice because one is the "raw" selection and the other is supposed
         //to be word objects but it works as a raw object as well. This needs to be refactored in text
         //he view another time.
-        this.setState({selection: text});
+        let beginsAt = window.getSelection().getRangeAt(0).anchorOffset;
+        let endsAt = window.getSelection().getRangeAt(0).focusOffset;
+        this.setState({
+            selection: text,
+            start: beginsAt,
+            end: endsAt
+        });
         this.props.onWordSelected([text], [text]);
     }
 
@@ -53,9 +62,28 @@ class TargetVerseDisplay extends React.Component{
         return [this.state.selection];
     }
 
+    getHighlightedWords(){
+        let verse = this.props.verse
+        let before = verse.slice(0,this.state.start);
+        let highlighted = verse.slice(this.state.start, this.state.end);
+        let after = verse.slice(this.state.end,verse.length);
+        return(
+            <div>
+                {before}
+                <span style={{
+                    backgroundColor: 'yellow'
+                }}>
+                    {highlighted}
+                </span>
+                {after}
+            </div>
+        )
+    }
+
     render(){
         return (
             <Well onMouseUp={this.textSelected}>
+            {/*This is the only way to use CSS psuedoclasses inline JSX*/}
             <style dangerouslySetInnerHTML={{
                 __html: [
                     '.highlighted::selection {',
@@ -65,7 +93,7 @@ class TargetVerseDisplay extends React.Component{
                 }}>
             </style>
             <div className='highlighted'>
-                {this.props.verse}
+                {this.getHighlightedWords()}
             </div>
             </Well>
         )
