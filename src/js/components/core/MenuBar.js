@@ -77,7 +77,7 @@ var template = [
              localStorage.setItem('exampleCheck', true);
            }
          },
-         accelerator: 'CmdOrCtrl+C'
+         accelerator: 'CmdOrCtrl+H'
        }
     ]
   },
