@@ -11,7 +11,6 @@ var ProposedChanges = null;
 var CommentBox = null;
 
 //Bootstrap consts
-const Well = ReactBootstrap.Well;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
 const Button = ReactBootstrap.Button;
@@ -331,7 +330,12 @@ class View extends React.Component {
       return (
         <div>
           <TPane />
-          <Row className="show-grid">
+          <Row className="show-grid" style={{marginTop: '25px'}}>
+            <h3 style={{margin: '5px 0 5px 20px', width: '100%', fontWeight: 'bold', fontSize: '28px'}}>
+              <span style={{color: '#44c6ff'}}>
+                  translationWords
+                </span> Check
+            </h3>
             <Col sm={6} md={6} lg={6} style={{paddingRight: '2.5px'}}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}

@@ -6,7 +6,6 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
-const Well = ReactBootstrap.Well;
 
 class GatewayVerseDisplay extends React.Component {
   constructor() {
@@ -33,7 +32,7 @@ class GatewayVerseDisplay extends React.Component {
 
   render() {
     return(
-      <Well bsSize={'small'} style={{minHeight: '128px', marginBottom: '5px'}}>
+      <div bsSize={'small'} style={{minHeight: '128px', marginBottom: '5px', padding: '9px'}}>
         <div
           style={{
             textAlign: "center",
@@ -44,7 +43,7 @@ class GatewayVerseDisplay extends React.Component {
         >
           {this.generateWordArray()}
         </div>
-      </Well>
+      </div>
     )
   }
 }

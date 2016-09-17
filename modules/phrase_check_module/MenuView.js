@@ -41,13 +41,16 @@ class MenuView extends React.Component {
 
   componentWillUnmount() {
     api.removeEventListener('changedCheckStatus', this.updateMenuItem);
-    api.registerEventListener('goToCheck', this.goToCheck);
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToPrevious', this.goToPrevious);
+    api.removeEventListener('goToCheck', this.goToCheck);
+    api.removeEventListener('goToNext', this.goToNext);
+    api.removeEventListener('goToPrevious', this.goToPrevious);
   }
 
   componentDidMount() {
-    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(true);
+    let ref;
+    // single = is on purpose
+    if (ref = this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`])
+      ref.setActive(true);
   }
 
   goToNext() {
@@ -134,9 +137,9 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <center><h3>Checks</h3></center>
         <Well className='fill-height' style={{overflowY: 'scroll'}}>
           <div>
+            <center><h3>Checks</h3></center>
             {menuList}
           </div>
         </Well>

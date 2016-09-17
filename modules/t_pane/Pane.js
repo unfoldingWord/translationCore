@@ -17,6 +17,7 @@ class Pane extends React.Component {
     constructor() {
         super();
         this.contentStyle = style.pane.content;
+        this.headerStyle = style.pane.title;
     }
 
     render() {
@@ -27,6 +28,7 @@ class Pane extends React.Component {
       }
       return (
           <Col md={4} sm={4} xs={4} lg={4} style={this.props.last ? {} : {borderRight: '1px solid #1f273b'}}>
+              <span style={this.headerStyle}>{this.props.heading || ''}</span>
               <div style={this.contentStyle}>
                   <Book input={this.props.content} greek={this.props.greek} />
               </div>
