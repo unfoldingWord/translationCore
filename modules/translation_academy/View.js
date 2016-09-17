@@ -4,10 +4,6 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const Markdown = require('react-remarkable');
-
-var createTextVersion = require("textversionjs");
-
-
 const Well = ReactBootstrap.Well;
 
 class View extends React.Component {
@@ -33,7 +29,7 @@ class View extends React.Component {
   }
 
   convertToMarkdown(src) {
-    //manny: parsing the data we get from tA to display this info more cleanly 
+    //manny: parsing the data we get from tA to display this info more cleanly
     var array = ["title:", "question:", "manual:", "volume:", "slug:", "dependencies:", "status:", "tags:", "recommended:", "original_url:"];
     for(var i=0; i < array.length; i++){
       var arr = array[i];
