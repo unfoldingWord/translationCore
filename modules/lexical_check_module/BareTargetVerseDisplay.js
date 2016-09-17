@@ -48,8 +48,9 @@ class TargetVerseDisplay extends React.Component{
         //This returns selection twice because one is the "raw" selection and the other is supposed
         //to be word objects but it works as a raw object as well. This needs to be refactored in text
         //he view another time.
-        let beginsAt = window.getSelection().getRangeAt(0).anchorOffset;
-        let endsAt = window.getSelection().getRangeAt(0).focusOffset;
+        let beginsAt = window.getSelection().getRangeAt(0).startOffset;
+        let endsAt = window.getSelection().getRangeAt(0).endOffset;
+        console.log("Begins at: " + beginsAt + "Ends at: " + endsAt);
         this.setState({
             selection: text,
             start: beginsAt,
@@ -64,9 +65,12 @@ class TargetVerseDisplay extends React.Component{
 
     getHighlightedWords(){
         let verse = this.props.verse
-        let before = verse.slice(0,this.state.start);
-        let highlighted = verse.slice(this.state.start, this.state.end);
-        let after = verse.slice(this.state.end,verse.length);
+        console.log("Verse: " + verse + "\n" + 
+                    "Start: " + this.state.start + "\n" +
+                    "End: " + this.state.end + "\n");
+        let before = verse.substring(0,this.state.start);
+        let highlighted = verse.substring(this.state.start, this.state.end);
+        let after = verse.slice(this.state.end, verse.length);
         return(
             <div>
                 {before}
