@@ -158,7 +158,7 @@ class View extends React.Component {
     this.updateState();
   }
 
-  updateSelectedWords(selectedWords, selectedWordsRaw) {
+  updateSelectedWords(selectedWords, selectedWordsRaw, selectionRange) {
     if (this.refs.ProposedChanges) {
       this.refs.ProposedChanges.update(selectedWords);
     }
@@ -166,6 +166,7 @@ class View extends React.Component {
     currentCheck.selectedWords = selectedWords;
     //This is needed to make the display persistent, but won't be needed in reports
     currentCheck.selectedWordsRaw = selectedWordsRaw;
+    currentCheck.selectionRange = selectionRange;
     console.log(selectedWordsRaw);
   }
 

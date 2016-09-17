@@ -24,7 +24,6 @@ class TargetVerseDisplay extends React.Component{
     }
     componentWillMount(){
         this.getSelectedWords();
-        console.log(this.props.currentCheck);
     }
 
     getSelectedWords(){
@@ -32,8 +31,11 @@ class TargetVerseDisplay extends React.Component{
         var groupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
         if(checkIndex != null && groupIndex != null){
             var check = api.getDataFromCheckStore('LexicalChecker', 'groups')[groupIndex].checks[checkIndex];
-            if(check && check.selectedWordsRaw){
-                this.selection = currentCheck.selectedWordsRaw;
+            if(check && check.selectionRange){
+                this.setState({
+                    start: check.selectionRange[0],
+                    end: check.selectionRange[1]
+                });
             }
         }
     }
@@ -48,15 +50,14 @@ class TargetVerseDisplay extends React.Component{
         //This returns selection twice because one is the "raw" selection and the other is supposed
         //to be word objects but it works as a raw object as well. This needs to be refactored in text
         //he view another time.
-        let beginsAt = window.getSelection().getRangeAt(0).startOffset;
-        let endsAt = window.getSelection().getRangeAt(0).endOffset;
-        console.log("Begins at: " + beginsAt + "Ends at: " + endsAt);
+        var beginsAt = window.getSelection().getRangeAt(0).startOffset;
+        var endsAt = window.getSelection().getRangeAt(0).endOffset;
         this.setState({
             selection: text,
             start: beginsAt,
             end: endsAt
         });
-        this.props.onWordSelected([text], [text]);
+        this.props.onWordSelected([text], [text], [beginsAt, endsAt]);
     }
 
     getWords(){
@@ -65,12 +66,10 @@ class TargetVerseDisplay extends React.Component{
 
     getHighlightedWords(){
         let verse = this.props.verse
-        console.log("Verse: " + verse + "\n" + 
-                    "Start: " + this.state.start + "\n" +
-                    "End: " + this.state.end + "\n");
-        let before = verse.substring(0,this.state.start);
-        let highlighted = verse.substring(this.state.start, this.state.end);
-        let after = verse.slice(this.state.end, verse.length);
+        let range = api.getDataFromCheckStore('LexicalChecker', 'selection');
+        let before = verse.substring(0, range[0]);
+        let highlighted = verse.substring(range[0], range[1]);
+        let after = verse.slice(range[1], verse.length);
         return(
             <div>
                 {before}
