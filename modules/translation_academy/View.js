@@ -32,10 +32,15 @@ class View extends React.Component {
     }
   }
 
-
   convertToMarkdown(src) {
-    var s = src.replace(/title:|question:/g, "####");
-    var t = s.replace(/manual:/g, ">manual:");
+    //var s = src.replace(/title:|question:/g, "####");
+    var array = ["title:", "question:", "manual:", "volume:", "dependencies:", "status:", "tags:", "original_url:"];
+    //var t = s.replace(/manual:/g, ">manual:");
+    for(var i=0; i< array.length; i++){
+      var str = "#### " + array[i];
+      var a = array[i];
+    var t = src.replace(a, str);
+    }
     var res = t.replace(/(<([^>]+)>)/gi, "");
   return res.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
         switch(equals.length) {
