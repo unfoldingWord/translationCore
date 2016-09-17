@@ -42,16 +42,17 @@ class TargetVerseDisplay extends React.Component{
 
     textSelected(){
         var text = "";
-        if(window.getSelection) {
-            text = window.getSelection().toString();
+        var selection = window.getSelection();
+        if(selection) {
+            text = selection.toString();
         } else if(document.selection && document.selection.type != "Control") {
             text = document.selection.createRange().text;
         }
         //This returns selection twice because one is the "raw" selection and the other is supposed
         //to be word objects but it works as a raw object as well. This needs to be refactored in text
         //he view another time.
-        var beginsAt = window.getSelection().getRangeAt(0).startOffset;
-        var endsAt = window.getSelection().getRangeAt(0).endOffset;
+        var beginsAt = selection.getRangeAt(0).startOffset;
+        var endsAt = selection.getRangeAt(0).endOffset;
         this.setState({
             selection: text,
             start: beginsAt,
@@ -61,26 +62,45 @@ class TargetVerseDisplay extends React.Component{
     }
 
     getWords(){
+        //More refactoring could remove this method but we need it because it is reffed
+        //by our View.js for the translation Words app
         return [this.state.selection];
+    }
+
+    getCurrentCheck() {
+        var groups = api.getDataFromCheckStore('LexicalChecker', 'groups');
+        var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
+        var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
+        var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+        return currentCheck;
     }
 
     getHighlightedWords(){
         let verse = this.props.verse
-        let range = api.getDataFromCheckStore('LexicalChecker', 'selection');
-        let before = verse.substring(0, range[0]);
-        let highlighted = verse.substring(range[0], range[1]);
-        let after = verse.slice(range[1], verse.length);
-        return(
-            <div>
-                {before}
-                <span style={{
-                    backgroundColor: 'yellow'
-                }}>
-                    {highlighted}
-                </span>
-                {after}
-            </div>
-        )
+        let range = this.getCurrentCheck().selectionRange;
+        console.log(range);
+        if(range){
+            let before = verse.substring(0, range[0]);
+            let highlighted = verse.substring(range[0], range[1]);
+            let after = verse.substring(range[1], verse.length);
+            return(
+                <div>
+                    {before}
+                    <span style={{
+                        backgroundColor: 'yellow'
+                    }}>
+                        {highlighted}
+                    </span>
+                    {after}
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    {verse}
+                </div>
+            )
+        }
     }
 
     render(){

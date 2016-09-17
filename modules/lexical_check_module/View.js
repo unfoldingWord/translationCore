@@ -167,7 +167,6 @@ class View extends React.Component {
     //This is needed to make the display persistent, but won't be needed in reports
     currentCheck.selectedWordsRaw = selectedWordsRaw;
     currentCheck.selectionRange = selectionRange;
-    console.log(selectedWordsRaw);
   }
 
   /**
