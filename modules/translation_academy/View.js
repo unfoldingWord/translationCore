@@ -33,15 +33,14 @@ class View extends React.Component {
   }
 
   convertToMarkdown(src) {
-    //var s = src.replace(/title:|question:/g, "####");
-    var array = ["title:", "question:", "manual:", "volume:", "dependencies:", "status:", "tags:", "original_url:"];
-    //var t = s.replace(/manual:/g, ">manual:");
-    for(var i=0; i< array.length; i++){
-      var str = "#### " + array[i];
-      var a = array[i];
-    var t = src.replace(a, str);
+    //manny: parsing the data we get from tA to display this info more cleanly 
+    var array = ["title:", "question:", "manual:", "volume:", "slug:", "dependencies:", "status:", "tags:", "recommended:", "original_url:"];
+    for(var i=0; i < array.length; i++){
+      var arr = array[i];
+      var SRC = src.replace(arr, function(){return "###### " + array[i];});
+      src = SRC;
     }
-    var res = t.replace(/(<([^>]+)>)/gi, "");
+    var res = SRC.replace(/(<([^>]+)>)/gi, "");
   return res.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
         switch(equals.length) {
           case 6:
