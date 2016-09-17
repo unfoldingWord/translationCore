@@ -11,8 +11,6 @@ var nonUnicodeLetter = XRegExp('\\PL');
 //Wordlength tokenizer
 const tokenizer = new natural.RegexpTokenizer({pattern: nonUnicodeLetter});
 
-const Well = ReactBootstrap.Well;
-
 /* Contains a word from the target language, defines a lot of listeners for clicks */
 const TargetWord = React.createClass({
   // highlighted: false,
@@ -259,12 +257,13 @@ const TargetLanguageSelectBox = React.createClass({
   render: function() {
     var words = this.generateWordArray();
     return (
-      <Well
+      <div
         bsSize={'small'}
         style={{
           overflowY: "scroll",
           minHeight: '128px',
-          marginBottom: '5px'
+          marginBottom: '5px',
+          padding: '9px'
         }}
       >
         <div style={{
@@ -273,7 +272,7 @@ const TargetLanguageSelectBox = React.createClass({
         >
           {words}
         </div>
-      </Well>
+      </div>
     );
   }
 });

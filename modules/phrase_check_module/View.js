@@ -273,7 +273,12 @@ class View extends React.Component{
       return (
         <div>
         <TPane />
-        <Row className="show-grid">
+        <Row className="show-grid" style={{marginTop: '25px'}}>
+        <h3 style={{margin: '5px 0 5px 20px', width: '100%', fontWeight: 'bold', fontSize: '28px'}}>
+          <span style={{color: '#44c6ff'}}>
+              translationNotes
+            </span> Check
+        </h3>
           <Col md={6} className="confirm-area" style={{paddingRight: "2.5px"}}>
             <GatewayVerseDisplay
               check={this.state.currentCheck}

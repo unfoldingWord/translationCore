@@ -5,8 +5,6 @@ const ReactBootstrap = api.ReactBootstrap;
 
 const Markdown = require('react-remarkable');
 
-const Well = ReactBootstrap.Well;
-
 // const fileRegex = new RegExp("=*\\s*([^=]+)\\W*(?:Definition|Facts):\\W*([^=]*)", 'g');
 
 class TranslationWordsDisplay extends React.Component {
@@ -40,11 +38,11 @@ class TranslationWordsDisplay extends React.Component {
         var source = this.props.file;
         if (source) {
             return (
-                <Well style={{overflowY: "scroll", minWidth: "100%", minHeight: "438px", maxHeight: "438px"}}>
+                <div style={{overflowY: "scroll", minWidth: "100%", padding: '9px', minHeight: "438px", maxHeight: "438px"}}>
                     <div>
                         <Markdown source={this.convertToMarkdown(source)} />
                     </div>
-                </Well>
+                </div>
             );
         }
         else {
