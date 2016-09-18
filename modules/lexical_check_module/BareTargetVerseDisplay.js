@@ -21,9 +21,22 @@ class TargetVerseDisplay extends React.Component{
         this.getSelectedWords = this.getSelectedWords.bind(this);
         this.textSelected = this.textSelected.bind(this);
         this.getWords = this.getWords.bind(this);
+        this.clearSelection = this.getWords.bind(this);
     }
+
     componentWillMount(){
         this.getSelectedWords();
+    }
+
+    componentDidUpdate(){
+        this.props.onWordSelected(
+            [this.state.selection],
+            [this.state.selection],
+            [
+                this.state.start,
+                this.state.end
+            ]
+        );
     }
 
     getSelectedWords(){
@@ -40,7 +53,21 @@ class TargetVerseDisplay extends React.Component{
         }
     }
 
-    textSelected(){
+    clearSelection(){
+        this.setState({
+            selection: "",
+            start: 0,
+            end: 0
+        });
+    }
+
+    textSelected(selectionRelativity){
+
+        //We reset the state here so that you cant highlight
+        //something that is already highlighted (which caus
+        //es a bug where the highlighted text renders twice)
+        this.clearSelection();
+
         var text = "";
         var selection = window.getSelection();
         if(selection) {
@@ -48,17 +75,22 @@ class TargetVerseDisplay extends React.Component{
         } else if(document.selection && document.selection.type != "Control") {
             text = document.selection.createRange().text;
         }
-        //This returns selection twice because one is the "raw" selection and the other is supposed
-        //to be word objects but it works as a raw object as well. This needs to be refactored in text
-        //he view another time.
+
         var beginsAt = selection.getRangeAt(0).startOffset;
         var endsAt = selection.getRangeAt(0).endOffset;
+
+        if(selectionRelativity == "post"){
+            beginsAt += this.state.end;
+            endsAt += this.state.end;
+        }
+
         this.setState({
             selection: text,
             start: beginsAt,
             end: endsAt
         });
-        this.props.onWordSelected([text], [text], [beginsAt, endsAt]);
+
+        // this.props.onWordSelected([text], [text], [beginsAt, endsAt]);
     }
 
     getWords(){
@@ -77,27 +109,33 @@ class TargetVerseDisplay extends React.Component{
 
     getHighlightedWords(){
         let verse = this.props.verse
-        let range = this.getCurrentCheck().selectionRange;
-        console.log(range);
+        let range = [this.state.start, this.state.end];
         if(range){
             let before = verse.substring(0, range[0]);
             let highlighted = verse.substring(range[0], range[1]);
             let after = verse.substring(range[1], verse.length);
             return(
                 <div>
-                    {before}
-                    <span style={{
-                        backgroundColor: 'yellow'
-                    }}>
+                    <span onMouseUp={() => this.textSelected("pre")}>
+                        {before}
+                    </span>
+                    <span 
+                        style={{backgroundColor: 'yellow'}}
+                        onMouseUp = {() => this.textSelected("in")}
+                        >
                         {highlighted}
                     </span>
-                    {after}
+                    <span onMouseUp={() => this.textSelected("post")}>
+                        {after}
+                    </span>
                 </div>
             )
         }else{
             return(
                 <div>
-                    {verse}
+                    <span onMouseUp={() => this.textSelected()}>
+                         {verse}
+                    </span>
                 </div>
             )
         }
@@ -105,19 +143,19 @@ class TargetVerseDisplay extends React.Component{
 
     render(){
         return (
-            <Well onMouseUp={this.textSelected}>
-            {/*This is the only way to use CSS psuedoclasses inline JSX*/}
-            <style dangerouslySetInnerHTML={{
-                __html: [
-                    '.highlighted::selection {',
-                    '  background-color: yellow;',
-                    '}'
-                    ].join('\n')
-                }}>
-            </style>
-            <div className='highlighted'>
-                {this.getHighlightedWords()}
-            </div>
+            <Well>
+                {/*This is the only way to use CSS psuedoclasses inline JSX*/}
+                <style dangerouslySetInnerHTML={{
+                    __html: [
+                        '.highlighted::selection {',
+                        '  background-color: yellow;',
+                        '}'
+                        ].join('\n')
+                    }}>
+                </style>
+                <div className='highlighted'>
+                    {this.getHighlightedWords()}
+                </div>
             </Well>
         )
     }
