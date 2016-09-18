@@ -28,17 +28,6 @@ class TargetVerseDisplay extends React.Component{
         this.getSelectedWords();
     }
 
-    componentDidUpdate(){
-        this.props.onWordSelected(
-            [this.state.selection],
-            [this.state.selection],
-            [
-                this.state.start,
-                this.state.end
-            ]
-        );
-    }
-
     getSelectedWords(){
         var checkIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
         var groupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
@@ -90,7 +79,7 @@ class TargetVerseDisplay extends React.Component{
             end: endsAt
         });
 
-        // this.props.onWordSelected([text], [text], [beginsAt, endsAt]);
+        this.props.onWordSelected([text],[text],[beginsAt,endsAt]);
     }
 
     getWords(){
@@ -109,7 +98,7 @@ class TargetVerseDisplay extends React.Component{
 
     getHighlightedWords(){
         let verse = this.props.verse
-        let range = [this.state.start, this.state.end];
+        let range = this.getCurrentCheck().selectionRange;
         if(range){
             let before = verse.substring(0, range[0]);
             let highlighted = verse.substring(range[0], range[1]);
