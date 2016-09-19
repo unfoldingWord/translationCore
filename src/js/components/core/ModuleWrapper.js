@@ -24,7 +24,7 @@ class ModuleWrapper extends React.Component {
 
   render() {
     // TODO: should probably return an empty div if this.state.view doesn't exist
-    // but for now it has LexicalCheck as default
+    // but for now it has TranslationWords Check as default
     if(!this.state.view) {
       var projects;
       if (this.state.showApps) {

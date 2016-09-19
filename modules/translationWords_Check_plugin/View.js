@@ -5,7 +5,7 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 
-//Modules not defined within lexical_check_module
+//Modules not defined within translationWords_Check_plugin
 var TPane = null;
 var ProposedChanges = null;
 var CommentBox = null;
@@ -17,7 +17,7 @@ const Button = ReactBootstrap.Button;
 const ButtonGroup = ReactBootstrap.ButtonGroup;
 const Glyphicon = ReactBootstrap.Glyphicon;
 
-//Modules that are defined within lexical_check_module
+//Modules that are defined within translationWords_Check_plugin
 const TranslationWordsDisplay = require('./translation_words/TranslationWordsDisplay');
 const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
@@ -26,7 +26,7 @@ const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
 
 //String constants
-const NAMESPACE = "LexicalChecker",
+const NAMESPACE = "TranslationWordsChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
   UNABLE_TO_FIND_WORD = "Unable to find wordobject";
@@ -35,7 +35,7 @@ const NAMESPACE = "LexicalChecker",
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 /**
- * @description - This class defines the entire view for the Lexical Check Module
+ * @description - This class defines the entire view for the TranslationWords Check Plugin
  */
 class View extends React.Component {
 	constructor() {
@@ -83,7 +83,7 @@ class View extends React.Component {
 
     /**
      * This event listens for an event to change the check type, checks if we're switching to
-     * LexicalCheck, then updates our state if we are
+     * TranslationWordsCheck, then updates our state if we are
      */
     api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
 
@@ -91,7 +91,7 @@ class View extends React.Component {
   }
 
   /**
-   * This method is necessary because on the first mount of the LexicalChecker all of it's listeners
+   * This method is necessary because on the first mount of the TranslationWordsChecker all of it's listeners
    * won't be mounted yet, so necessary to emit its events
    */
   componentDidMount() {
@@ -248,7 +248,7 @@ class View extends React.Component {
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     if (currentGroupIndex === null || currentCheckIndex === null) {
-      console.warn("LexicalCheck wasn't able to retrieve its indices");
+      console.warn("TranslationWords Check wasn't able to retrieve its indices");
       return;
     }
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];

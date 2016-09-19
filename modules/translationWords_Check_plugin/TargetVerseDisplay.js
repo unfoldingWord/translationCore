@@ -1,4 +1,4 @@
-///TargetVerseDisplay.js//
+//TargetVerseDisplay.js//
 
 const api = window.ModuleApi;
 const React = api.React;
@@ -20,8 +20,7 @@ const TargetWord = React.createClass({
       wordObj: { // this is required to pass into our callbacks
         'word': this.props.word,
         'key': this.props.keyId
-      },
-
+      }
     };
   },
 
@@ -79,11 +78,11 @@ const TargetWord = React.createClass({
     }
 });
 
-const TargetVerseDisplay = React.createClass({
+const TargetLanguageSelectBox = React.createClass({
   selectedWords: [], // holds wordObjects, each have {'word', 'key'} attributes
 
   cursorPointerStyle: {
-    cursor: "pointer",
+    cursor: 'pointer'
   },
 
   componentWillMount: function() {
@@ -95,10 +94,10 @@ const TargetVerseDisplay = React.createClass({
    * we have to go and look for those
    */
   fetchSelectedWords: function() {
-    var currentCheckIndex = api.getDataFromCheckStore('PhraseChecker', 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore('PhraseChecker', 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentGroupIndex');
     if (currentCheckIndex != null && currentGroupIndex != null) {
-      var currentCheck = api.getDataFromCheckStore('PhraseChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
+      var currentCheck = api.getDataFromCheckStore('TranslationWordsChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
         if (currentCheck.selectedWordsRaw) {
           this.selectedWords = currentCheck.selectedWordsRaw;
@@ -177,25 +176,6 @@ const TargetVerseDisplay = React.createClass({
     return wordArray;
   },
 
-  render: function() {
-    var words = this.generateWordArray();
-    return (
-      <div
-        bsSize={'small'}
-        style={{
-          overflowY: "auto",
-          minHeight: "128px",
-          maxHeight: "128px",
-          marginBottom: "2.5px",
-          padding: '9px'
-        }}
-      >
-        <h4 style={{marginTop: "0px"}}>{this.props.currentVerse}</h4>
-        <span>{words}</span>
-      </div>
-    );
-  },
-
   addSelectedWord: function(wordObj) {
     // check to see if we already have this word
     // an inefficient search, but shouldn't have >20 words to search through
@@ -210,6 +190,13 @@ const TargetVerseDisplay = React.createClass({
       this.sortSelectedWords();
     }
     this.props.onWordSelected(this.getWords(), this.getWordsRaw());
+
+    /* This is used for if you want to enable disabled buttons after the user has
+     * selected at least one word
+     */
+    // if (this.selectedWords.length > 0) {
+    //   this.props.buttonEnableCallback();
+    // }
   },
 
   removeFromSelectedWords: function(wordObj) {
@@ -224,6 +211,11 @@ const TargetVerseDisplay = React.createClass({
       this.selectedWords.splice(index, 1);
     }
     this.props.onWordSelected(this.getWords(), this.getWordsRaw());
+
+    //This is used for if you want to disable the buttons if no words are selected
+    // if (this.selectedWords.length <= 0) {
+    //   this.props.buttonDisableCallback();
+    // }
   },
 
 /* Sorts the selected words by their 'key' attribute */
@@ -260,7 +252,29 @@ const TargetVerseDisplay = React.createClass({
    */
   getWordsRaw: function() {
     return this.selectedWords;
+  },
+
+  render: function() {
+    var words = this.generateWordArray();
+    return (
+      <div
+        bsSize={'small'}
+        style={{
+          overflowY: "scroll",
+          minHeight: '128px',
+          marginBottom: '5px',
+          padding: '9px'
+        }}
+      >
+        <div style={{
+            direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+          }}
+        >
+          {words}
+        </div>
+      </div>
+    );
   }
 });
 
-module.exports = TargetVerseDisplay;
+module.exports = TargetLanguageSelectBox;

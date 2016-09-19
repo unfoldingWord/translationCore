@@ -7,11 +7,11 @@ const Well = ReactBootstrap.Well;
 const Panel = ReactBootstrap.Panel;
 
 // TODO: Namespace needs to be hard linked with View.js
-const NAMESPACE = 'PhraseChecker';
+const NAMESPACE = 'TranslationNotesChecker';
 const TITLE = 'translationNotes Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
-function PhraseReport(chapter, verse) {
+function TranslationNotesReport(chapter, verse) {
   // main header for the whole report
   if (chapter == 0 && verse == 0) {
     let [done, total] = getCheckNumbers();
@@ -23,7 +23,7 @@ function PhraseReport(chapter, verse) {
   }
   var checks = getChecksByVerse(chapter, verse);
   // If there are no checks for this verse, then return undefined.
-  // This will make Phrase Check not show at all for this verse.
+  // This will make TranslationNotes Check not show at all for this verse.
   if(checks.length == 0) {
     return undefined;
   }
@@ -142,16 +142,18 @@ class ReportItem extends React.Component {
     );
   }
   footerDiv() {
+    let user;
     if(this.props.check.user) {
-      let user;
       user = this.props.check.user.userName;
+    }else{
+      user = 'Anonymous';
     }
     if(this.props.check.timestamp) {
       // We do 'new Date(...)' because it could be a string or a Date object.
       var timestamp = new Date(this.props.check.timestamp).toDateString();
     }
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user || 'Anonymous'} - {timestamp || ''}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user} - {timestamp || ''}</div>
     );
   }
   render() {
@@ -175,11 +177,11 @@ class ReportHeader extends React.Component {
 
   render() {
     return (
-    <Panel header="Phrase Check">
+    <Panel header="TranslationNotes Check">
       {`${this.props.checked} / ${this.props.total} checks completed`}
     </Panel>
     );
   }
 }
 
-module.exports = PhraseReport;
+module.exports = TranslationNotesReport;

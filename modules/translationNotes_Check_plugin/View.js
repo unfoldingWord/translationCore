@@ -4,7 +4,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 
-//Modules not defined within phrase_check_module
+//Modules not defined within translationNotes_Check_plugin
 var TPane = null;
 var ProposedChanges = null;
 var CommentBox = null;
@@ -14,18 +14,18 @@ var TranslationAcademy = null;
 const RB = api.ReactBootstrap;
 const {Row, Col} = RB;
 
-//Modules that are defined within phrase_check_module
+//Modules that are defined within translationNotes_Check_plugin
 const TargetVerseDisplay = require('./subcomponents/TargetVerseDisplay');
 const GatewayVerseDisplay = require('./subcomponents/GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const CheckStatusButtons = require('./subcomponents/CheckStatusButtons');
 const EventListeners = require('./ViewEventListeners.js');
 //String constants
-const NAMESPACE = "PhraseChecker",
+const NAMESPACE = "TranslationNotesChecker",
       UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store";
 
 /**
- * @description - This class defines the entire view for the Phrase Check Module
+ * @description - This class defines the entire view for the TranslationNotes Check Module
  */
 class View extends React.Component{
   constructor(){
@@ -210,7 +210,7 @@ class View extends React.Component{
     var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     if (currentGroupIndex === null || currentCheckIndex === null) {
-      console.warn("PhraseCheck wasn't able to retrieve it's indices");
+      console.warn("TranslationNotes Check wasn't able to retrieve it's indices");
       return;
     }
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];

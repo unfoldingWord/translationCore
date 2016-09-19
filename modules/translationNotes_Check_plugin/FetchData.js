@@ -77,11 +77,11 @@ var parseObject = function(object){
 
 // Saves phrase data into the CheckStore
 function saveData(phraseObject, params, onCompleteFunction) {
-  api.putDataInCheckStore('PhraseChecker', 'book', api.convertToFullBookName(params.bookAbbr));
+  api.putDataInCheckStore('TranslationNotesChecker', 'book', api.convertToFullBookName(params.bookAbbr));
   //TODO: This shouldn't be put in check store because we don't want it to be saved
-  api.putDataInCheckStore('PhraseChecker', 'groups', phraseObject['groups']);
-  api.putDataInCheckStore('PhraseChecker', 'currentCheckIndex', 0);
-  api.putDataInCheckStore('PhraseChecker', 'currentGroupIndex', 0);
+  api.putDataInCheckStore('TranslationNotesChecker', 'groups', phraseObject['groups']);
+  api.putDataInCheckStore('TranslationNotesChecker', 'currentCheckIndex', 0);
+  api.putDataInCheckStore('TranslationNotesChecker', 'currentGroupIndex', 0);
   onCompleteFunction(null);
 }
 

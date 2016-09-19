@@ -7,11 +7,11 @@ const Well = ReactBootstrap.Well;
 const Panel = ReactBootstrap.Panel;
 
 // TODO: Namespace needs to be hard linked with View.js
-const NAMESPACE = 'LexicalChecker';
+const NAMESPACE = 'TranslationWordsChecker';
 const TITLE = 'translationWords Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
-function LexicalReport(chapter, verse) {
+function TranslationWordsReport(chapter, verse) {
   // main header for the whole report
   if (chapter == 0 && verse == 0) {
     let [done, total] = getCheckNumbers();
@@ -23,7 +23,7 @@ function LexicalReport(chapter, verse) {
   }
   var checks = getChecksByVerse(chapter, verse);
   // If there are no checks for this verse, then return undefined.
-  // This will make Lexical Check not show at all for this verse.
+  // This will make TranslationWords Check not show at all for this verse.
   if(checks.length == 0) {
     return undefined;
   }
@@ -175,11 +175,11 @@ class ReportHeader extends React.Component {
 
   render() {
     return (
-    <Panel header="Lexical Check">
+    <Panel header="TranslationWords Check">
       {`${this.props.checked} / ${this.props.total} checks completed`}
     </Panel>
     );
   }
 }
 
-module.exports = LexicalReport;
+module.exports = TranslationWordsReport;

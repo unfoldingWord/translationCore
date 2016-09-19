@@ -1,28 +1,27 @@
 
 const api = window.ModuleApi;
-const NAMESPACE = "PhraseChecker";
+const NAMESPACE = "TranslationWordsChecker";
 
 module.exports = {
-    goToNext(params){
+    goToNext: function(params) {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
         this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
     },
-
-    goToPrevious(params){
+    
+    goToPrevious: function(params) {
         var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
         var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
         this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
     },
 
-    goToCheck(params){
+    goToCheck: function(params) {
       this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
     },
 
-    changeCheckType(params) {
+    changeCheckType: function(params) {
       if(params.currentCheckNamespace === NAMESPACE) {
         this.updateState();
       }
     }
-
 }
