@@ -19,10 +19,10 @@ var template = [
       {
         label: 'Toggle Tutorial',
         click: function() {
-          if (localStorage.getItem('showTutorial') == 'true') {
-            localStorage.setItem('showTutorial', false);
+          if (api.getSettings('showTutorial') === true) {
+            api.setSettings('showTutorial', false);
           } else {
-            localStorage.setItem('showTutorial', true);
+            api.setSettings('showTutorial', true);
           }
         },
         accelerator: 'CmdOrCtrl+T'
@@ -68,7 +68,7 @@ var template = [
              } catch (e) {;
              }
              localStorage.setItem('exampleCheck', false);
-           } 
+           }
            else {
              try {
                fs.rename(Path.join(exampleCheckPath, "manifest.json"), Path.join(exampleCheckPath, "manifest-hidden.json"), function (err) {});
