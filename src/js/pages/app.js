@@ -42,7 +42,7 @@ var Main = React.createClass({
 
   componentDidMount: function() {
     var saveLocation = localStorage.getItem('lastProject');
-    if (api.getSettings('showTutorial') != 'true' && saveLocation) {
+    if (api.getSettings('showTutorial') !== true && saveLocation) {
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, function(){
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
