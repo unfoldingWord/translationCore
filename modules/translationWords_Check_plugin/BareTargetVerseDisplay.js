@@ -29,10 +29,10 @@ class TargetVerseDisplay extends React.Component{
     }
 
     getSelectedWords(){
-        var checkIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
-        var groupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
+        var checkIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentCheckIndex');
+        var groupIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentGroupIndex');
         if(checkIndex != null && groupIndex != null){
-            var check = api.getDataFromCheckStore('LexicalChecker', 'groups')[groupIndex].checks[checkIndex];
+            var check = api.getDataFromCheckStore('TranslationWordsChecker', 'groups')[groupIndex].checks[checkIndex];
             if(check && check.selectionRange){
                 this.setState({
                     start: check.selectionRange[0],
@@ -89,9 +89,9 @@ class TargetVerseDisplay extends React.Component{
     }
 
     getCurrentCheck() {
-        var groups = api.getDataFromCheckStore('LexicalChecker', 'groups');
-        var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
-        var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
+        var groups = api.getDataFromCheckStore('TranslationWordsChecker', 'groups');
+        var currentGroupIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentGroupIndex');
+        var currentCheckIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentCheckIndex');
         var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
         return currentCheck;
     }
@@ -132,7 +132,13 @@ class TargetVerseDisplay extends React.Component{
 
     render(){
         return (
-            <Well>
+            <div style={{
+              padding: '9px',
+              minHeight: '128px',
+              direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl',
+              width: '100%',
+              marginBottom: '5px'
+            }}>
                 {/*This is the only way to use CSS psuedoclasses inline JSX*/}
                 <style dangerouslySetInnerHTML={{
                     __html: [
@@ -145,7 +151,7 @@ class TargetVerseDisplay extends React.Component{
                 <div className='highlighted'>
                     {this.getHighlightedWords()}
                 </div>
-            </Well>
+            </div>
         )
     }
 
