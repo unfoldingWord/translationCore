@@ -1,48 +1,19 @@
 # translationCore
-Repository for the desktop application translationCore
 
-# Setup
+![Logo](https://unfoldingword.org/assets/img/icon-tc.png "translationCore")
 
-# Windows
-These are the setup and contribution instructions for Windows users
-## Dependencies
+Purpose
+---
+translationCore is an open source platform for checking and managing Bible translation projects. tC provides an extensible interface that enables, among other things, systematic and comprehensive checking of Bible translations against multiple sources and the original languages with just-in-time training modules that provide guidelines and instruction for translators.
 
-**Git**: Download installer from [https://git-scm.com/](https://git-scm.com/)
-Install using whatever settings you would like, as long as you make sure to choose the option that allows git to be accessible from the Windows Command Prompt.
+Usage
+---
+Currently translationCore supports Bible Translation Projects started with [translationStudio](https://unfoldingword.org/ts/) and uploaded to [Door43](https://git.door43.org/), and with limited support for USFM projects created using other tools.
 
-**Node and NPM**: Download installer from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+For more information see page for usage: [Usage](https://github.com/unfoldingWord-dev/translationCore/wiki/Usage)
 
+Contributions
+---
+We warmly welcome contributions to both the translationCore repository and building of new checking modules that fit the needs of the Global Church and Church Networks actively translating the Bible.  
 
-## Project Setup
-
-1. Open a Windows Command Prompt wherever you would like to work on translationCore.
-2. Run the command `git clone https://github.com/unfoldingWord-dev/translationCore.git`, or you may clone your own fork.
-3. Change directories to the repository directory and run the command `npm install` to install all required Nodejs modules.
-4. Create a file `Auth.json` in the root folder of the project.
-5. Compile and run the project by running `npm run start`
-
-# Mac
-These are the setup and contribution instructions for Mac OS users
-## Dependencies
-**Git**: Download and install [X-Code](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
-
-**Node and NPM**: Download installer from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-
-
-## Project Setup
-
-1. Open a Terminal wherever you would like to work on translationCore.
-2. Run the command `git clone https://github.com/unfoldingWord-dev/translationCore.git`, or you may clone your own fork.
-3. Change directories to the repository directory and run the command `npm install` to install all required Nodejs modules.
-4. Create a file `Auth.json` in the root folder of the project.
-5. Compile and run the project by running `npm run start`
-
-# Project Contributions
-
-1. Let the team know what feature you are working on.
-2. Contributions should be done on a branch named with your initials and the feature being brought in. Example: `ih-instructions`. This branch should be based off develop.
-3. Commits should be in detail and give a clear idea of what is being done and why. Same goes for pull request. It is important to commit early and often.
-4. Merge locally with develop when changes occur.
-5. Ensure your code works. Test, Test, Test.
-5. Push your branch to your remote.
-6. Submit a Pull Request with develop.
+For more information see page for contributors: [Contributing](https://github.com/unfoldingWord-dev/translationCore/wiki/Contributing)

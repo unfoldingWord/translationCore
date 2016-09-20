@@ -10,7 +10,6 @@ var nonUnicodeLetter = XRegExp('\\PL');
 
 //Wordlength tokenizer
 const tokenizer = new natural.RegexpTokenizer({pattern: nonUnicodeLetter});
-const Well = ReactBootstrap.Well;
 
 const GatewayVerseDisplay = React.createClass({
   generateWordArray: function() {
@@ -41,18 +40,19 @@ const GatewayVerseDisplay = React.createClass({
   render: function() {
     var words = this.generateWordArray();
     return (
-      <Well
+      <div
         bsSize={'small'}
         style={{
-          overflowY: "scroll",
+          overflowY: "auto",
           minHeight: "128px",
           maxHeight: "128px",
           marginBottom: "2.5px",
+          padding: '9px'
         }}
       >
         <h4 style={{marginTop: "0px"}}>{this.props.currentVerse}</h4>
         <span>{words}</span>
-      </Well>
+      </div>
     );
   },
 });

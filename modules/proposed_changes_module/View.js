@@ -71,14 +71,14 @@ class ProposedChanges extends React.Component {
       currentWordPhrase = this.state.currentWord;
     }
     return (
-      <Well style={{width:"100%", padding: "10px", marginTop: "2.5px", marginBottom: "2.5px", display: "inline-block"}}>
+      <div style={{width:"100%", padding: "10px", marginTop: "2.5px", marginBottom: "2.5px", display: "inline-block"}}>
         <center>
           <span style={{fontSize: "24px", color: "#000", fontFamily: "Helvetica", marginBottom: "5px"}}>
             Propose Changes
           </span>
         </center>
-        <Well style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{currentWordPhrase}
-          </Well>
+        <div style={{fontSize: "16px", color: "white", background:"#d9534f", padding: "5px", marginBottom: "10px"}}>{currentWordPhrase}
+          </div>
         <FormControl
             type="text"
             placeholder="Proposed Word/Pharse"
@@ -86,7 +86,7 @@ class ProposedChanges extends React.Component {
             style={{marginBottom: "0px", marginTop: "0px",fontSize: "16px" }}
             onChange={this.handleChange.bind(this)}
         />
-      </Well>
+      </div>
     );
   }
 }

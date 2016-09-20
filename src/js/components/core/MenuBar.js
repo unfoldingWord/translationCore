@@ -9,6 +9,9 @@ const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
 const exportUsfm = require('./Usfm/ExportUSFM');
+const Path = require('path');
+const fs = require(window.__base + 'node_modules/fs-extra');
+
 var template = [
   {
     label: 'File',
@@ -16,10 +19,10 @@ var template = [
       {
         label: 'Toggle Tutorial',
         click: function() {
-          if (localStorage.getItem('showTutorial') == 'true') {
-            localStorage.setItem('showTutorial', false);
+          if (api.getSettings('showTutorial') === true) {
+            api.setSettings('showTutorial', false);
           } else {
-            localStorage.setItem('showTutorial', true);
+            api.setSettings('showTutorial', true);
           }
         },
         accelerator: 'CmdOrCtrl+T'
@@ -54,7 +57,28 @@ var template = [
         click() {
           CoreActions.showCreateProject("Languages");
         }
-      }
+       },
+       {
+         label: 'Toggle Example Check',
+         click: function () {
+           var exampleCheckPath = Path.join(window.__base, "modules", "example_check_module");
+           if (localStorage.getItem('exampleCheck') == 'true') {
+              try {
+               fs.rename(Path.join(exampleCheckPath, "manifest-hidden.json"), Path.join(exampleCheckPath, "manifest.json"), function (err) {});
+             } catch (e) {;
+             }
+             localStorage.setItem('exampleCheck', false);
+           }
+           else {
+             try {
+               fs.rename(Path.join(exampleCheckPath, "manifest.json"), Path.join(exampleCheckPath, "manifest-hidden.json"), function (err) {});
+             } catch (e) {
+             }
+             localStorage.setItem('exampleCheck', true);
+           }
+         },
+         accelerator: 'CmdOrCtrl+H'
+       }
     ]
   },
   {

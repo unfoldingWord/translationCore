@@ -28,7 +28,7 @@ const Upload = require('../components/core/Upload');
 
 var Main = React.createClass({
   getInitialState() {
-    var tutorialState = localStorage.getItem('showTutorial');
+    var tutorialState = api.getSettings('showTutorial');
     if (tutorialState == 'true' || tutorialState === null) {
       return({
         firstTime: true
@@ -42,7 +42,7 @@ var Main = React.createClass({
 
   componentDidMount: function() {
     var saveLocation = localStorage.getItem('lastProject');
-    if (localStorage.getItem('showTutorial') != 'true' && saveLocation) {
+    if (api.getSettings('showTutorial') !== true && saveLocation) {
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, function(){
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
@@ -81,7 +81,7 @@ var Main = React.createClass({
         <Upload ref={"TargetLanguage"} show={false}/>
         <LoginModal />
         <SideNavBar />
-        <SwitchCheckModal />
+        <SwitchCheckModal.Modal />
         <Popover />
         <Toast />
           <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>

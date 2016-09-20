@@ -21,7 +21,6 @@ const DataFetcher = function(params, progress, onComplete){
       if(err){
         onComplete(err);
       }else{
-        chapterData = DoorDataFetcher.getTNFromBook(book, params.bookAbbr);
 
         //check to see if gatewayLanguage has already been loaded
         var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
@@ -43,7 +42,7 @@ const DataFetcher = function(params, progress, onComplete){
           newStructure.title = api.convertToFullBookName(params.bookAbbr);
           api.putDataInCommon('gatewayLanguage', newStructure);
         }
-
+        chapterData = DoorDataFetcher.getTNFromBook(book, params.bookAbbr);
         phraseData = parseObject(chapterData);
         saveData(phraseData, params, onComplete);
       }
@@ -58,10 +57,15 @@ var parseObject = function(object){
     var newGroup = {group: type, checks: []};
     for(let verse of object[type].verses) {
       let newVerse = Object.assign({},verse);
-      newVerse.chapter += 1;
-      newVerse.verse += 1;
+      // i spent probably two hours trying to figure out
+      // why my chapter and verse references were 1 off
+      // i found why
+      // #stopsamfaulkner2016
+      //newVerse.chapter += 1;
+      //newVerse.verse += 1;
       newVerse.flagged = false;
       newVerse.checkStatus = "UNCHECKED";
+      newVerse.retained = "";
       newVerse.comments = "";
       newVerse.group = type;
       newGroup.checks.push(newVerse);

@@ -6,7 +6,7 @@ const React = require('react');
 var api;
 
 class CheckModule extends React.Component {
-  
+
   /**
    * @description - Public method that your check module can use to get the data for the current check.
    * You should only use this method to get data, and you should not modify the return value to save data.
@@ -15,7 +15,7 @@ class CheckModule extends React.Component {
   getCurrentCheck() {
     return this.state.currentCheck;
   }
-  
+
   /**
    * @description - Public method that your check module can use to get the data for the current group.
    * You should only use this method to get data, and you should not modify the return value to save data.
@@ -28,9 +28,9 @@ class CheckModule extends React.Component {
   /**
    * @description - Public method to update the status of the check to be displayed in the navigation menu.
    * @param {string} newCheckStatus - the check status selected by the user, one of three possible values:
-   *  * 'RETAINED': displays a green check in the menu
+   *  * 'CORRECT': displays a green check in the menu
    *  * 'REPLACED': displays a yellow shuffle icon in the menu
-   *  * 'WRONG': displays a red X in the menu
+   *  * 'FLAGGED': displays a red X in the menu
    *  * 'UNCHECKED': displays nothing in the menu
    */
   updateCheckStatus(newCheckStatus) {
@@ -56,7 +56,7 @@ class CheckModule extends React.Component {
     this.updateUserAndTimestamp();
     this.updateState();
   }
-  
+
   /**
    * @description - Abstract method that must be implemented in your check module if you want
    * to save data that comes from tools within your check module, such as ProposedChanges.
@@ -67,7 +67,7 @@ class CheckModule extends React.Component {
   getDataFromTools() {
     return {};
   }
-  
+
   constructor() {
     super();
     api = window.ModuleApi;
@@ -83,14 +83,14 @@ class CheckModule extends React.Component {
     this.goToCheck = this.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
   }
-  
+
   componentWillMount() {
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToPrevious', this.goToPrevious);
     api.registerEventListener('goToCheck', this.goToCheck);
     this.updateState();
   }
-  
+
   componentWillUnmount() {
     api.removeEventListener('goToNext', this.goToNext);
     api.removeEventListener('goToPrevious', this.goToPrevious);
@@ -104,11 +104,11 @@ class CheckModule extends React.Component {
     currentCheck.user = currentUser;
     currentCheck.timestamp = timestamp;
   }
-  
+
   componentDidMount() {
     this.updateState();
   }
-  
+
   /**
    * @description - Called when the user clicks the next button
    */
@@ -117,7 +117,7 @@ class CheckModule extends React.Component {
     var currentCheckIndex = this.getCurrentCheckIndex();
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex + 1);
   }
-  
+
   /**
    * @description - Called when the user clicks the previous button
    */
@@ -126,7 +126,7 @@ class CheckModule extends React.Component {
     var currentCheckIndex = this.getCurrentCheckIndex();
     this.changeCurrentCheckInCheckStore(currentGroupIndex, currentCheckIndex - 1);
   }
-  
+
   /**
    * @description - Called when the user clicks a menu item in the navigation menu
    * @param {params} object - contains groupIndex and checkIndex of the menu item clicked
@@ -134,7 +134,7 @@ class CheckModule extends React.Component {
   goToCheck(params) {
     this.changeCurrentCheckInCheckStore(params.groupIndex, params.checkIndex);
   }
-  
+
   /**
    * @description - Changes the current check index and group index within the store,
    * gets data from tools and saves it to the current check in the check store.
@@ -147,7 +147,7 @@ class CheckModule extends React.Component {
     for (var key in dataFromTools) {
       currentCheck[key] = dataFromTools[key];
     }
-    
+
     var groups = api.getDataFromCheckStore(this.nameSpace, 'groups');
     var currentGroupIndex = this.getCurrentGroupIndex();
     var currentCheckIndex = this.getCurrentCheckIndex();
@@ -183,7 +183,7 @@ class CheckModule extends React.Component {
     this.saveProject();
     this.updateState();
   }
-  
+
   saveProject() {
     var currentGroupIndex = this.getCurrentGroupIndex();
     var currentCheckIndex = this.getCurrentCheckIndex();
@@ -214,7 +214,7 @@ class CheckModule extends React.Component {
       verseNumber: currentCheckFromStore.verse
     });
   }
-  
+
   /**
    * @description - Returns the current check from the check store. This is not a copy.
    * If it is modified, the changes will be reflected in the check store.
@@ -226,7 +226,7 @@ class CheckModule extends React.Component {
     var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
     return currentCheck;
   }
-  
+
   /**
    * @description - Returns the current group from the check store. This is not a copy.
    * If it is modified, the changes will be reflected in the check store.
@@ -237,11 +237,11 @@ class CheckModule extends React.Component {
     var currentGroup = groups[currentGroupIndex];
     return currentGroup;
   }
-  
+
   getCurrentGroupIndex() {
     return api.getDataFromCheckStore(this.nameSpace, 'currentGroupIndex');
   }
-  
+
   getCurrentCheckIndex() {
     return api.getDataFromCheckStore(this.nameSpace, 'currentCheckIndex');
   }

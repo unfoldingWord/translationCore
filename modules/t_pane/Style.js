@@ -7,7 +7,15 @@ var style = {
       direction: 'ltr'
     },
     header: {
-      textAlign: 'center'
+      margin: '5px 0',
+      width: '100%',
+      color: '#44c6ff',
+      fontWeight: 'bold',
+      fontSize: '28px'
+    },
+    title: {
+      fontWeight: '700',
+      fontSize: '17px'
     }
   },
   dropzone: {
@@ -43,7 +51,7 @@ var style = {
       }
     },
     statusIcon: {
-      retained: {
+      correct: {
         color: 'green',
         display: 'initial'
       },
@@ -51,7 +59,7 @@ var style = {
         color: 'gold',
         display: 'initial'
       },
-      wrong: {
+      flagged: {
         color: 'red',
         display: 'initial'
       },

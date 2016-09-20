@@ -112,9 +112,20 @@ class ReportItem extends React.Component {
   checkStatusDiv() {
     if(!this.props.check.checkStatus)
       return undefined;
-    return (
-      <div>Check status: {this.props.check.checkStatus}</div>
-    );
+    if(!this.props.check.retained){
+      return (
+        <div>
+          <div>Check status: {this.props.check.checkStatus}</div>
+          </div>
+      );
+    }else{
+      return (
+        <div>
+          <div>Check status: {this.props.check.checkStatus}</div>
+          <div>The meaning has been: {this.props.check.retained}</div>
+        </div>
+      );
+    }
   }
   proposedChangesDiv() {
     if(!this.props.check.proposedChanges)
@@ -132,7 +143,8 @@ class ReportItem extends React.Component {
   }
   footerDiv() {
     if(this.props.check.user) {
-      var user = this.props.check.user.fullName;
+      let user;
+      user = this.props.check.user.userName;
     }
     if(this.props.check.timestamp) {
       // We do 'new Date(...)' because it could be a string or a Date object.

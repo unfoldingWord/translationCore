@@ -71,7 +71,7 @@ When you call `emitEvent()`, every callback that has been registered with the sa
 Calling `emitEvent()` for an eventType with no listeners is completely safe.
 
 ```javascript
-api.emitEvent('buttonClicked', {'status': 'RETAINED'});
+api.emitEvent('buttonClicked', {'status': 'CORRECT'});
 ```
 
 #### `removeEventListener(eventType, callback)`
@@ -101,7 +101,7 @@ The API has the following functions for working with data in the Checkstore:
 As apparent by the name, this function will place *value* (any data type) into your namespace *field* tagged with the *key*. This data can be retrieved later with `getDataFromCheckStore()`.
 
 ```javascript
-api.putDataInCheckStore('LexicalChecker', 'checkStatus', 'RETAINED');
+api.putDataInCheckStore('LexicalChecker', 'checkStatus', 'CORRECT');
 ```
 
 #### `getDataFromCheckStore(field, key)`
@@ -141,4 +141,18 @@ This function logs *all* of the data held in the CheckStore to the console. Shou
 
 ```javascript
 api.logCheckStore();
+```
+
+#### `setSettings(key, value)`
+This function sets a value to a key in the settings object, which is then saved in `localStorage`.
+
+```javascript
+api.setSettings('language', 'English');
+```
+
+#### `getSettings(key)`
+This function returns a key from the settings object, which is saved in `localStorage`.
+
+```javascript
+api.getSettings('language');
 ```

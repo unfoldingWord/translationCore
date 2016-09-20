@@ -10,7 +10,7 @@ body, html, #content, .fill-height {
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: white;
 }
 
 .main-view h1,
@@ -23,10 +23,6 @@ body {
 .main-view div,
 .main-view p {
   color: #1f273b;
-}
-
-.Tab.Container {
-  /*background-color: black;*/
 }
 
 .text-primary-highlighted{

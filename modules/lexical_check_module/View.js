@@ -11,7 +11,6 @@ var ProposedChanges = null;
 var CommentBox = null;
 
 //Bootstrap consts
-const Well = ReactBootstrap.Well;
 const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
 const Button = ReactBootstrap.Button;
@@ -22,6 +21,7 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 const TranslationWordsDisplay = require('./translation_words/TranslationWordsDisplay');
 const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
+const CheckStatusButtons = require('./subcomponents/CheckStatusButtons');
 const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
 
@@ -29,9 +29,8 @@ const EventListeners = require('./ViewEventListeners.js');
 const NAMESPACE = "LexicalChecker",
   UNABLE_TO_FIND_LANGUAGE = "Unable to find language from the store",
   UNABLE_TO_FIND_ITEM_IN_STORE = "Unable to find key in namespace",
-  UNABLE_TO_FIND_WORD = "Unable to find wordobject",
-  RETAINED = "Correct in Context",
-  WRONG = "Flag for Review";
+  UNABLE_TO_FIND_WORD = "Unable to find wordobject";
+
 //Other constants
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
@@ -156,6 +155,7 @@ class View extends React.Component {
       this.updateUserAndTimestamp();
     }
     this.updateState();
+    api.Toast.info('Current check was marked as:', newCheckStatus, 2);
   }
 
   updateSelectedWords(selectedWords, selectedWordsRaw, selectionRange = [0,0]) {
@@ -176,12 +176,11 @@ class View extends React.Component {
    */
   changeCurrentCheckInCheckStore(newGroupIndex, newCheckIndex) {
     //Get the proposed changes and add it to the check
-    var proposedChanges = this.refs.ProposedChanges.getProposedChanges();
+    let proposedChanges = this.refs.ProposedChanges.getProposedChanges();
     let comment = this.refs.CommentBox.getComment();
-    var currentCheck = this.getCurrentCheck();
-
-    var loggedInUser = api.getLoggedInUser();
-    var userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
+    let currentCheck = this.getCurrentCheck();
+    let loggedInUser = api.getLoggedInUser();
+    let userName = loggedInUser ? loggedInUser.userName : 'GUEST_USER';
 
     if (currentCheck) {
       if (proposedChanges && proposedChanges != "") {
@@ -231,6 +230,10 @@ class View extends React.Component {
     var commitMessage = 'user: ' + userName + ', namespace: ' + NAMESPACE +
         ', group: ' + currentGroupIndex + ', check: ' + currentCheckIndex;
     api.saveProject(commitMessage);
+    //Display toast notification
+    if(currentCheck.checkStatus !== 'UNCHECKED' || currentCheck.comment != undefined || currentCheck.proposedChanges !== undefined){
+      api.Toast.success('Check data was successfully saved', '', 2);
+    }
     // Update state to render the next check
     this.updateState();
   }
@@ -327,7 +330,12 @@ class View extends React.Component {
       return (
         <div>
           <TPane />
-          <Row className="show-grid">
+          <Row className="show-grid" style={{marginTop: '25px'}}>
+            <h3 style={{margin: '5px 0 5px 20px', width: '100%', fontWeight: 'bold', fontSize: '28px'}}>
+              <span style={{color: '#44c6ff'}}>
+                  translationWords
+                </span> Check
+            </h3>
             <Col sm={6} md={6} lg={6} style={{paddingRight: '2.5px'}}>
               <GatewayVerseDisplay
                 wordObject={this.getWordObject(this.state.currentWord)}
@@ -342,19 +350,9 @@ class View extends React.Component {
                         margin: '0 2.5px 5px 0'}}
                 currentCheck={this.state.currentCheck}
               />
-              <ButtonGroup style={{width:'100%'}}>
-                <Button style={{width:'50%'}} className={checkStatus == 'RETAINED' ? 'active':''} onClick={
-                    function() {
-                      _this.updateCheckStatus('RETAINED', _this.refs.TargetVerseDisplay.getWords());
-                    }
-                  }><span style={{color: "green"}}><Glyphicon glyph="ok" /> {RETAINED}</span></Button>
-                <Button style={{width:'50%'}} className={checkStatus == 'WRONG' ? 'active':''} onClick={
-                    function() {
-                      _this.updateCheckStatus('WRONG', _this.refs.TargetVerseDisplay.getWords());
-                    }
-                  }
-                ><span style={{color: "red"}}><Glyphicon glyph="remove" /> {WRONG}</span></Button>
-              </ButtonGroup>
+              <CheckStatusButtons updateCheckStatus={this.updateCheckStatus.bind(this)}
+                                  getCurrentCheck={this.getCurrentCheck.bind(this)}
+              />
               <ProposedChanges val={this.state.currentCheck.proposedChanges || ""} ref={"ProposedChanges"} />
             </Col>
             <Col sm={6} md={6} lg={6} style={{paddingLeft: '2.5px'}}>

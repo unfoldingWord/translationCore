@@ -64,17 +64,13 @@ class MenuItem extends React.Component {
     var checkStatusStyle;
     var glyphIcon;
     switch(checkStatus) {
-      case "RETAINED":
+      case "CORRECT":
         glyphIcon = "ok";
-        checkStatusStyle = style.menuItem.statusIcon.retained;
+        checkStatusStyle = style.menuItem.statusIcon.correct;
         break;
-      case "REPLACED":
-        glyphIcon = "random";
-        checkStatusStyle = style.menuItem.statusIcon.replaced;
-        break;
-      case "WRONG":
-        glyphIcon = "remove";
-        checkStatusStyle = style.menuItem.statusIcon.wrong;
+      case "FLAGGED":
+        glyphIcon = "flag";
+        checkStatusStyle = style.menuItem.statusIcon.flagged;
         break;
       default:
         glyphIcon = '';
@@ -88,7 +84,7 @@ class MenuItem extends React.Component {
         </span>{' '}
         <span style={this.state.active === true ? style.menuItem.current : style.menuItem.text}>
           <a onClick={this.menuItemClicked}>
-            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse}
+            {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse + (this.props.check.verseEnd ? "-" + this.props.check.verseEnd : "")}
           </a>
         </span>
       </span>
