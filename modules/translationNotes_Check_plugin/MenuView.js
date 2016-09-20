@@ -17,7 +17,7 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 class MenuView extends React.Component {
   constructor() {
     super();
-    let checkData = api.getDataFromCheckStore('PhraseChecker');
+    let checkData = api.getDataFromCheckStore('TranslationNotesChecker');
     this.state = {
       checkObject: checkData
     };
@@ -35,7 +35,7 @@ class MenuView extends React.Component {
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToPrevious', this.goToPrevious);
     this.setState({
-      checkObject: api.getDataFromCheckStore('PhraseChecker')
+      checkObject: api.getDataFromCheckStore('TranslationNotesChecker')
     });
   }
 

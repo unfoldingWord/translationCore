@@ -101,14 +101,14 @@ The API has the following functions for working with data in the Checkstore:
 As apparent by the name, this function will place *value* (any data type) into your namespace *field* tagged with the *key*. This data can be retrieved later with `getDataFromCheckStore()`.
 
 ```javascript
-api.putDataInCheckStore('LexicalChecker', 'checkStatus', 'CORRECT');
+api.putDataInCheckStore('TranslationWordsChecker', 'checkStatus', 'CORRECT');
 ```
 
 #### `getDataFromCheckStore(field, key)`
 After you have put data into the store with `putDataInCheckStore()`, you can retrieve it with this function. If you pass in a value for *key*, it will retrieve the value tied to that key. If you do not, it will return all of the data you have stored in your *field* as an object. This function will return **null** if the field or key has no data associated with it.
 
 ```javascript
-var myCheckStatus = api.getDataFromCheckStore('LexicalChecker', 'checkStatus');
+var myCheckStatus = api.getDataFromCheckStore('TranslationWordsChecker', 'checkStatus');
 ```
 
 #### `putDataInCommon(key, value)`

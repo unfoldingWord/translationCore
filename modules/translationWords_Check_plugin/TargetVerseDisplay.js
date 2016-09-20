@@ -90,10 +90,10 @@ const TargetLanguageSelectBox = React.createClass({
    * we have to go and look for those
    */
   fetchSelectedWords: function() {
-    var currentCheckIndex = api.getDataFromCheckStore('LexicalChecker', 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore('LexicalChecker', 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore('TranslationWordsChecker', 'currentGroupIndex');
     if (currentCheckIndex != null && currentGroupIndex != null) {
-      var currentCheck = api.getDataFromCheckStore('LexicalChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
+      var currentCheck = api.getDataFromCheckStore('TranslationWordsChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
         if (currentCheck.selectedWordsRaw) {
           this.selectedWords = currentCheck.selectedWordsRaw;

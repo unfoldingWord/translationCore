@@ -95,10 +95,10 @@ const TargetVerseDisplay = React.createClass({
    * we have to go and look for those
    */
   fetchSelectedWords: function() {
-    var currentCheckIndex = api.getDataFromCheckStore('PhraseChecker', 'currentCheckIndex');
-    var currentGroupIndex = api.getDataFromCheckStore('PhraseChecker', 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore('TranslationNotesChecker', 'currentCheckIndex');
+    var currentGroupIndex = api.getDataFromCheckStore('TranslationNotesChecker', 'currentGroupIndex');
     if (currentCheckIndex != null && currentGroupIndex != null) {
-      var currentCheck = api.getDataFromCheckStore('PhraseChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
+      var currentCheck = api.getDataFromCheckStore('TranslationNotesChecker', 'groups')[currentGroupIndex].checks[currentCheckIndex];
       if (currentCheck) {
         if (currentCheck.selectedWordsRaw) {
           this.selectedWords = currentCheck.selectedWordsRaw;
