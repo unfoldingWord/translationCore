@@ -17,7 +17,7 @@ const extensionRegex = new RegExp('\\.\\w+\\s*$');
 class MenuView extends React.Component {
   constructor() {
     super();
-    let checkData = api.getDataFromCheckStore('LexicalChecker');
+    let checkData = api.getDataFromCheckStore('TranslationWordsChecker');
     this.state = {
       checkObject: checkData
     };
@@ -35,7 +35,7 @@ class MenuView extends React.Component {
     api.registerEventListener('goToNext', this.goToNext);
     api.registerEventListener('goToPrevious', this.goToPrevious);
     this.setState({
-      checkObject: api.getDataFromCheckStore('LexicalChecker')
+      checkObject: api.getDataFromCheckStore('TranslationWordsChecker')
     });
   }
 
@@ -108,7 +108,7 @@ class MenuView extends React.Component {
     if (this.state.checkObject) {
       menuList = this.state.checkObject["groups"].map(function(group, groupIndex) {
         //This will get us the proper header
-        var header = search(api.getDataFromCheckStore('LexicalChecker', 'wordList'),
+        var header = search(api.getDataFromCheckStore('TranslationWordsChecker', 'wordList'),
           function(item) {
             return stringCompare(group.group, item.name);
           });

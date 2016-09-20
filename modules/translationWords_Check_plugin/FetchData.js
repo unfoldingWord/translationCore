@@ -56,17 +56,17 @@ function getData(params, progressCallback, callback) {
 
               // var checkObject = findWordsInBook(bookData, actualWordList);
               var checkObject = findWords(bookData, mappedBook, actualWordList);
-              checkObject.LexicalChecker.sort(function(first, second) {
+              checkObject.TranslationWordsChecker.sort(function(first, second) {
                   return stringCompare(first.group, second.group);
               });
 
 
-              api.putDataInCheckStore('LexicalChecker', 'book',
+              api.putDataInCheckStore('TranslationWordsChecker', 'book',
               api.convertToFullBookName(params.bookAbbr));
-              api.putDataInCheckStore('LexicalChecker', 'groups', checkObject['LexicalChecker']);
-              api.putDataInCheckStore('LexicalChecker', 'currentCheckIndex', 0);
-              api.putDataInCheckStore('LexicalChecker', 'currentGroupIndex', 0);
-              api.putDataInCheckStore('LexicalChecker', 'wordList', wordList);
+              api.putDataInCheckStore('TranslationWordsChecker', 'groups', checkObject['TranslationWordsChecker']);
+              api.putDataInCheckStore('TranslationWordsChecker', 'currentCheckIndex', 0);
+              api.putDataInCheckStore('TranslationWordsChecker', 'currentGroupIndex', 0);
+              api.putDataInCheckStore('TranslationWordsChecker', 'wordList', wordList);
               //TODO: This shouldn't be put in the check store because we don't want this saved to disk
               callback(null);
             }
@@ -213,7 +213,7 @@ function incrementIndexByWord(match) {
 /**
  * @description - Does a string.match method for the given regex but only returns the first match
  * who's index is > the given index. Also supports regexes with alternating groups that might have
- * sub matches within the string, which is an edge case but definitely occurs in the Lexical Check
+ * sub matches within the string, which is an edge case but definitely occurs in TranslationWords Check
  * @param {string} string - the string to match against
  * @param {XRegExp or RegExp} - the regex that the string will be matched with
  * @param {int} index - an integer indicator to only return a match if the match's index if > this
@@ -287,7 +287,7 @@ function mapVerses(bookData) {
 
 /**
  * @description - This does a {@link findWordInVerse} for every word given in wordList and returns
- * the list of checks for the LexicalChecker
+ * the list of checks for the TranslationWordsChecker
  * @param {object} bookData - This is the data returned by Door43DataFetcher after downloading
  * an entire book of the Bible
  * @param {array} mapBook - This is the array containing arrays of mappedVerses. See {@link mapVerses}
@@ -297,7 +297,7 @@ function mapVerses(bookData) {
  */
 function findWords(bookData, mapBook, wordList) {
   var returnObject = {};
-  returnObject['LexicalChecker'] = [];
+  returnObject['TranslationWordsChecker'] = [];
 
   for (var word of wordList) {
     var wordReturnObject = {
@@ -324,7 +324,7 @@ function findWords(bookData, mapBook, wordList) {
       }
       return first.sortOrder - second.sortOrder;
     });
-    returnObject.LexicalChecker.push(wordReturnObject);
+    returnObject.TranslationWordsChecker.push(wordReturnObject);
   }
   return returnObject;
 }

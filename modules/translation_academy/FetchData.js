@@ -4,7 +4,7 @@
  * 		params:
  * 			sections: an object where keys are section filenames, and values are section text
  * 		listeners:
- * 			PhraseChecker FetchData: waits for translation academy to load so it can use
+ * 			TranslationNotesChecker FetchData: waits for translation academy to load so it can use
  * 			the section titles as its group headers
  */
 

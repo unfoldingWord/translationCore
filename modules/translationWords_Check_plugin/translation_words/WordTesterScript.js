@@ -43,16 +43,16 @@ function testWord(word, chapterString) {
 /**
  * @description - Constructs regexes according to each alias from each word. These regexes will
  * be used a few more times throughout the processing of the data to generate the checks associated
- * with the LexicalCheck
+ * with the TranslationWords Check
  * @param {array} wordList - array of word objects that contain several fields, primarily aliases for
  * this method
- * @param {Set} caseSensitiveAliases - set of aliases that have been marked as case sensitive. 
+ * @param {Set} caseSensitiveAliases - set of aliases that have been marked as case sensitive.
  * Regexes that are constructed containing aliases that are in this set don't have the 'i' flag
  */
 function constructRegexes(wordList, caseSensitiveAliases) {
   for (var word of wordList) {
     //Create an array of regexes that preserves the sorted order while still accounting for
-    // case sensitive and case insensitive requirements. This is lengthy in order to only create the 
+    // case sensitive and case insensitive requirements. This is lengthy in order to only create the
     // smallest number of regexes needed
     var regexStrings = [];
     for (var alias of word.aliases) {
@@ -73,7 +73,7 @@ function constructRegexes(wordList, caseSensitiveAliases) {
 
     var regexes = [];
     for (var regexStringArray of regexStrings) {
-      regexes.push(new XRegExp(constructRegexString(regexStringArray), 
+      regexes.push(new XRegExp(constructRegexString(regexStringArray),
         isCaseSensitive(regexStringArray, caseSensitiveAliases) ? '' : 'i'));
     }
     word.regex = regexes;
@@ -94,8 +94,8 @@ function isCaseSensitive(stringArray, caseSensitiveAliases) {
 
 /**
  * @description - Constructs a single string from an array of words using an alternating
- * non capture group. Also places word boundaries on either side of the group to be used with 
- * capturing words and phrases. The returned string is meant to be used in the constructor of a 
+ * non capture group. Also places word boundaries on either side of the group to be used with
+ * capturing words and phrases. The returned string is meant to be used in the constructor of a
  * regular expression
  * @param {array} arrayOfWords - Words that will be placed within the alternating non capture
  * group
@@ -119,7 +119,7 @@ function constructRegexString(arrayOfWords) {
  * @description - This tests all the words in wordList against a single chapter string
  * @param {array} wordList - array of word objects to test with
  * @param {string} chapterString - string of an entire chapter of a book of the Bible at a time.
- * @param {Set} caseSensitiveAliases - a set containing aliases that should be case sensitive. 
+ * @param {Set} caseSensitiveAliases - a set containing aliases that should be case sensitive.
  * since no regexes are generated here this parameter is just passed to {@link testWord}
  */
 function testWords(wordList, chapterString) {
@@ -134,7 +134,7 @@ function testWords(wordList, chapterString) {
 /**
  * @description - Sorts the 'aliases' field of each object in the given wordList
  * @param {array} wordList - array of word objects that contain several fields, specifically
- * the 'aliases' field for this method. That field should be an array of found aliases from 
+ * the 'aliases' field for this method. That field should be an array of found aliases from
  * TranslationWordsFetcher
  */
 function sortAliases(wordList) {

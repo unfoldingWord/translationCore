@@ -1,6 +1,6 @@
 {
     "title": "translationNotes Check",
-    "name": "PhraseChecker",
+    "name": "TranslationNotesChecker",
     "description": "This is a tool to check the grammatical structure of phrases.",
     "include": [
         "translation_academy",
