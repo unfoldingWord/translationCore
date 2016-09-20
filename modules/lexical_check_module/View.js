@@ -19,7 +19,6 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 
 //Modules that are defined within lexical_check_module
 const TranslationWordsDisplay = require('./translation_words/TranslationWordsDisplay');
-const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const CheckStatusButtons = require('./subcomponents/CheckStatusButtons');
 const WordComponent = require('./WordComponent.js');
@@ -33,6 +32,8 @@ const NAMESPACE = "LexicalChecker",
 
 //Other constants
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
+const DragTargetVerseDisplay = require('./BareTargetVerseDisplay.js');
+const ClickTargetVerseDisplay = require('./TargetVerseDisplay');
 
 /**
  * @description - This class defines the entire view for the Lexical Check Module
@@ -315,6 +316,33 @@ class View extends React.Component {
     }
   }
 
+  getTargetVerseDisplay() {
+    var targetVerse = this.getVerse('targetLanguage');
+    if(api.getSettings('textSelect') == 'drag'){
+      return (
+        <DragTargetVerseDisplay
+          verse={targetVerse}
+          ref={"TargetVerseDisplay"}
+          onWordSelected={this.updateSelectedWords.bind(this)}
+          style={{minHeight: '120px',
+                  margin: '0 2.5px 5px 0'}}
+          currentCheck={this.state.currentCheck}
+        />
+      )
+    } else {
+      return (
+        <ClickTargetVerseDisplay
+          verse={targetVerse}
+          ref={"TargetVerseDisplay"}
+          onWordSelected={this.updateSelectedWords.bind(this)}
+          style={{minHeight: '120px',
+                  margin: '0 2.5px 5px 0'}}
+          currentCheck={this.state.currentCheck}
+        />
+      )
+    }
+  }
+
   /**
    * @description - Defines how the entire page will display, minus the Menu and Navbar
    */
@@ -325,7 +353,6 @@ class View extends React.Component {
     }
     else {
       var gatewayVerse = this.getVerse('gatewayLanguage');
-      var targetVerse = this.getVerse('targetLanguage');
       var checkStatus = this.state.currentCheck.checkStatus;
       return (
         <div>
@@ -342,14 +369,7 @@ class View extends React.Component {
                 check={this.state.currentCheck}
                 verse={gatewayVerse}
               />
-              <TargetVerseDisplay
-                verse={targetVerse}
-                ref={"TargetVerseDisplay"}
-                onWordSelected={this.updateSelectedWords.bind(this)}
-                style={{minHeight: '120px',
-                        margin: '0 2.5px 5px 0'}}
-                currentCheck={this.state.currentCheck}
-              />
+              {this.getTargetVerseDisplay()}
               <CheckStatusButtons updateCheckStatus={this.updateCheckStatus.bind(this)}
                                   getCurrentCheck={this.getCurrentCheck.bind(this)}
               />

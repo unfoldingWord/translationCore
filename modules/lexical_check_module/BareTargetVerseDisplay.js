@@ -108,7 +108,7 @@ class TargetVerseDisplay extends React.Component{
                     <span onMouseUp={() => this.textSelected("pre")}>
                         {before}
                     </span>
-                    <span 
+                    <span
                         style={{backgroundColor: 'yellow'}}
                         onMouseUp = {() => this.textSelected("in")}
                         >
@@ -137,7 +137,7 @@ class TargetVerseDisplay extends React.Component{
                 <style dangerouslySetInnerHTML={{
                     __html: [
                         '.highlighted::selection {',
-                        '  background-color: yellow;',
+                        '  background: yellow;',
                         '}'
                         ].join('\n')
                     }}>
