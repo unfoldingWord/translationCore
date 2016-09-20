@@ -20,7 +20,7 @@ const Glyphicon = ReactBootstrap.Glyphicon;
 
 //Modules that are defined within lexical_check_module
 const TranslationWordsDisplay = require('./translation_words/TranslationWordsDisplay');
-const TargetVerseDisplay = require('./BareTargetVerseDisplay.js');
+const TargetVerseDisplay = require('./TargetVerseDisplay.js');
 const GatewayVerseDisplay = require('./GatewayVerseDisplay.js');
 const WordComponent = require('./WordComponent.js');
 const EventListeners = require('./ViewEventListeners.js');
@@ -158,7 +158,7 @@ class View extends React.Component {
     this.updateState();
   }
 
-  updateSelectedWords(selectedWords, selectedWordsRaw, selectionRange) {
+  updateSelectedWords(selectedWords, selectedWordsRaw, selectionRange = [0,0]) {
     if (this.refs.ProposedChanges) {
       this.refs.ProposedChanges.update(selectedWords);
     }

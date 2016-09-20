@@ -80,7 +80,7 @@ const TargetLanguageSelectBox = React.createClass({
 
   cursorPointerStyle: {
     // TODO: Make this changed based on an api.settings property
-    cursor: 'text'
+    cursor: 'pointer'
   },
 
   componentWillMount: function() {
