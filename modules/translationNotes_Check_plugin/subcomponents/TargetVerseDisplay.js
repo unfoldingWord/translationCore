@@ -177,25 +177,6 @@ const TargetVerseDisplay = React.createClass({
     return wordArray;
   },
 
-  render: function() {
-    var words = this.generateWordArray();
-    return (
-      <div
-        bsSize={'small'}
-        style={{
-          overflowY: "auto",
-          minHeight: "128px",
-          maxHeight: "128px",
-          marginBottom: "2.5px",
-          padding: '9px'
-        }}
-      >
-        <h4 style={{marginTop: "0px"}}>{this.props.currentVerse}</h4>
-        <span>{words}</span>
-      </div>
-    );
-  },
-
   addSelectedWord: function(wordObj) {
     // check to see if we already have this word
     // an inefficient search, but shouldn't have >20 words to search through
@@ -260,6 +241,26 @@ const TargetVerseDisplay = React.createClass({
    */
   getWordsRaw: function() {
     return this.selectedWords;
+  },
+
+  render: function() {
+    var words = this.generateWordArray();
+    return (
+      <div
+        bsSize={'small'}
+        style={{
+          overflowY: "auto",
+          minHeight: "128px",
+          maxHeight: "128px",
+          marginBottom: "2.5px",
+          padding: '9px',
+          direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+        }}
+      >
+        <h4 style={{marginTop: "0px"}}>{this.props.currentVerse}</h4>
+        <span>{words}</span>
+      </div>
+    );
   }
 });
 
