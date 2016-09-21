@@ -23,7 +23,7 @@ function getListOfChecks() {
   let checkCategories = [];
   modules.forEach(dir => {
     var includesReportView = fs.readdirSync(dir).includes('ReportView.js');
-    var includesManifest = fs.readdirSync(dir).includes('manifest.json')
+    var includesManifest = fs.readdirSync(dir).includes('manifest.json');
     if (includesReportView && includesManifest) {
       var manifest = require(path.join(dir, 'manifest.json'));
       checkCategories.push(manifest.name);
@@ -173,6 +173,63 @@ function filterByCustom(query, store) {
   if (query.proposed !== undefined) refinedGroups = filterByProposed(query.proposed, refinedGroups);
   return refinedGroups;
 }
+/**
+ * @description This searches for words and pharses
+ * @param {String} location - Where in the check to search in. Currently only
+ *                            supporting search in comments and proposed changes
+ * @param {String} query - The word or phrase to search for
+ * @param {Array} store - The name of the check category.
+ * @return {Array} refinedGroups - The new groups list, refined by query.
+ ******************************************************************************/
+function filterBySearchTerm(location, query, store) {
+  if (query.length === 0) return store;
+  var refinedGroups = [];
+  store.map(group => {
+    var defaultGroup = {checks: [], group: group.group};
+    group.checks.map(checks => {
+      switch (location) {
+        case 'comments':
+          if (checks.comment && ~checks.comment.toLowerCase().indexOf(query.toLowerCase()))
+            defaultGroup.checks.push(checks);
+          break;
+        case 'proposedChanges':
+          if (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(query.toLowerCase()))
+            defaultGroup.checks.push(checks);
+          break;
+        default:
+          console.error('Unsupported Search Location');
+          return refinedGroups;
+      }
+    });
+    if (defaultGroup.checks.length > 0) {
+      refinedGroups.push(defaultGroup);
+    }
+  });
+  return refinedGroups;
+}
+/**
+ * @description This function allows filtration via multiple parameters.
+ * @param {Object} query - Whether the check contains proposed changes.
+ * Sample of query:
+ * {
+ *    group: {Array}
+ *    status: {Array}
+ *    retained: {Array}
+ *    comments: {Boolean}
+ *    proposed: {Boolean}
+ *    search: {String}
+ *    location: {String}
+ * }
+ * @param {Array} store - The check store being passed in.
+ * @return {Array} refinedGroups - The new groups list, refined by query.
+ ******************************************************************************/
+function filterAndSearch(query, store) {
+  var refinedGroups = filterByCustom(query, store);
+  if (query.location && query.search) {
+    refinedGroups = filterBySearchTerm(query.location, query.search, refinedGroups);
+  }
+  return refinedGroups;
+}
 exports.getListOfChecks = getListOfChecks;
 exports.getGroups = getGroups;
 exports.getStatuses = statusList;
@@ -183,5 +240,7 @@ exports.filter = {
   byRetained: filterByRetained,
   byComments: filterByComments,
   byProposed: filterByProposed,
-  byCustom: filterByCustom
+  byCustom: filterByCustom,
+  bySearchTerm: filterBySearchTerm
 };
+exports.filterAndSearch = filterAndSearch;
