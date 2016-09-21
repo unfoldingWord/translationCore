@@ -142,8 +142,8 @@ class ReportItem extends React.Component {
     );
   }
   footerDiv() {
+    let user;
     if(this.props.check.user) {
-      let user;
       user = this.props.check.user.userName;
     }
     if(this.props.check.timestamp) {
