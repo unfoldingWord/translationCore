@@ -3,7 +3,6 @@
  * These functions allow the ability to get a list of all the groups,
  * the name of possible checks, and methods to filter.
 **/
-
 const api = window.ModuleApi;
 const path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
@@ -230,6 +229,25 @@ function filterAndSearch(query, store) {
   }
   return refinedGroups;
 }
+/**
+ * @description This searches for words and pharses in text.
+ * @param {String} query - The word or phrase to search for
+ * @param {Object} text - Scripture, in the same object format as targetLanguage
+ * @return {Array} refinedText - The Scripture that has verses containing query
+ ******************************************************************************/
+function searchText(query, text) {
+  var refinedText = {};
+  for (var chapter in text) {
+    for (var verse in text[chapter]) {
+      var currentVerse = text[chapter][verse];
+      if(~currentVerse.toLowerCase().indexOf(query.toLowerCase())) {
+        refinedText[chapter] = refinedText[chapter] || {};
+        refinedText[chapter][verse] = currentVerse
+      }
+    }
+  }
+  return refinedText;
+}
 exports.getListOfChecks = getListOfChecks;
 exports.getGroups = getGroups;
 exports.getStatuses = statusList;
@@ -244,3 +262,4 @@ exports.filter = {
   bySearchTerm: filterBySearchTerm
 };
 exports.filterAndSearch = filterAndSearch;
+exports.searchText = searchText
