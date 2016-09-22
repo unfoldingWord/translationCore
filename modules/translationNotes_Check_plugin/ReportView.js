@@ -1,14 +1,12 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
-const Row = ReactBootstrap.Row;
-const Col = ReactBootstrap.Col;
-const Well = ReactBootstrap.Well;
-const Panel = ReactBootstrap.Panel;
+const RB = api.ReactBootstrap;
+const {Glyphicon, Row, Col, Well, Panel} = RB;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'TranslationNotesChecker';
-const TITLE = 'translationNotes Check';
+const TITLE = ' TranslationNotes: ';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function TranslationNotesReport(chapter, verse) {
@@ -41,11 +39,11 @@ function TranslationNotesReport(chapter, verse) {
     }
   }
   return (
-    <Well>
-      <h4 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h4>
+      <Well style={{background: "rgb(255, 255, 255)", padding: "5px"}}>
+      <h3 style={{marginTop: '-5px', display: 'inline', color: "#44c6ff"}}>{TITLE}</h3>
       <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
       {checkList}
-    </Well>
+      </Well>
   );
 }
 
@@ -93,7 +91,7 @@ class ReportItem extends React.Component {
     if(!this.props.check.wordFile)
       return undefined;
     return (
-      <h4 style={{marginTop: '-5px'}}>{this.props.check.wordFile.replace(extensionRegex, '')}</h4>
+      <div style={{float: 'left'}}>{this.props.check.wordFile.replace(extensionRegex, '')}</div>
     );
   }
   prettySelectedWords() {
@@ -106,39 +104,59 @@ class ReportItem extends React.Component {
     if(!selectedWords)
       return undefined;
     return (
-      <div>Selected Word/Phrase: {this.prettySelectedWords()}</div>
+      <div>
+        <span style={{fontWeight: "bold"}}>Word/Phrase: </span><br />{this.prettySelectedWords()}
+      </div>
     );
   }
   checkStatusDiv() {
     if(!this.props.check.checkStatus)
       return undefined;
-    if(!this.props.check.retained){
-      return (
-        <div>
-          <div>Check status: {this.props.check.checkStatus}</div>
-          </div>
-      );
-    }else{
-      return (
-        <div>
-          <div>Check status: {this.props.check.checkStatus}</div>
-          <div>The meaning has been: {this.props.check.retained}</div>
-        </div>
-      );
+    let status;
+    let linkStyle;
+    switch (this.props.check.checkStatus) {
+      case "FLAGGED":
+        status = <Glyphicon glyph="flag" />;
+        linkStyle={color: 'red'};
+        break;
+      case "CORRECT":
+        status = <Glyphicon glyph="ok" />;
+        linkStyle={color: 'green'};
+        break;
+      default:
+        //do nothing
     }
+    return (
+      <div className='pull-right' style={linkStyle}> Status: {status}</div>
+    );
   }
+
+  retainedMeaningDiv(){
+    if(!this.props.check.retained)
+      return undefined;
+    return (
+    <div>
+      <span style={{fontWeight: "bold"}}>The meaning has been: </span><br />{this.props.check.retained}
+    </div>
+    );
+  }
+
   proposedChangesDiv() {
     if(!this.props.check.proposedChanges)
       return undefined;
     return (
-      <div>Proposed Changes: {this.props.check.proposedChanges}</div>
+      <div>
+        <span style={{fontWeight: "bold"}}>Proposed Changes: </span><br />{this.props.check.proposedChanges}
+      </div>
     );
   }
   commentsDiv() {
     if(!this.props.check.comment)
       return undefined;
     return (
-      <div>Comments: {this.props.check.comment}</div>
+      <div>
+        <span style={{fontWeight: "bold"}}>Notes: </span><br />{this.props.check.comment}
+      </div>
     );
   }
   footerDiv() {
@@ -158,13 +176,33 @@ class ReportItem extends React.Component {
   }
   render() {
     return (
-      <Well style={{background: 'rgb(255, 255, 255)'}}>
-        {this.headerDiv()}
-        {this.checkStatusDiv()}
-        {this.selectedWordsDiv()}
-        {this.proposedChangesDiv()}
-        {this.commentsDiv()}
-        {this.footerDiv()}
+      <Well>
+        <Row className="show-grid" style={{marginBottom:"15px", marginTop:"-25px", width: "100%"}}>
+      <center>
+        <h4 style={{paddingLeft:"5px"}}>
+          {this.headerDiv()}
+          {this.checkStatusDiv()}
+        </h4>
+        </center>
+        <br />
+        </Row>
+        <Row className="show-grid">
+        <Col xs={4} md={4} lg={4}>
+          {this.selectedWordsDiv()}
+        </Col>
+        <Col xs={4} md={4} lg={4}>
+          {this.proposedChangesDiv()}
+        </Col>
+        <Col xs={4} md={4} lg={4}>
+        {this.retainedMeaningDiv()}
+        </Col>
+        <Col xs={12} md={12} lg={12}>
+        <div style={{width: "100%"}}>
+          {this.commentsDiv()}
+          {this.footerDiv()}
+        </div>
+        </Col>
+        </Row>
       </Well>
     );
   }
@@ -183,5 +221,17 @@ class ReportHeader extends React.Component {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = TranslationNotesReport;

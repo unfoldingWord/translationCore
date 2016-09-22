@@ -21,9 +21,10 @@ const Col = ReactBootstrap.Col;
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
-const reportTemplate = require('./ReportTemplate')
+const reportTemplate = require('./ReportTemplate');
+const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
-const BooksOfBible = require('../BooksOfBible.js')
+const BooksOfBible = require('../BooksOfBible.js');
 // listener event from the main process listening for the report window closing
 ipcRenderer.on("report-closed", (event, path) => {
   reportOpened = false;
@@ -119,15 +120,33 @@ class Report extends React.Component {
         }
         // only display a row for this verse if it has report view data
         if (reports.length > 0) {
-          output.push(<Row key={`${ch}-${v}`}><Col xs={3}><h4>{`${ch}:${v}`}</h4></Col><Col xs={9}>{reports}</Col></Row>);
+          output.push(
+                <Row key={`${ch}-${v}`}><Col xs={2}><h4>{`${ch}:${v}`}</h4></Col><Col xs={10}>{reports}</Col></Row>
+          );
         }
       }
     }
     // TODO: Get name of book and authors
     return (
-      <Grid className="page-header">
+      <Grid style={{paddingRight: "0px", paddingLeft: "0px", marginRight: "0px", marginLeft: "0px"}}>
+        <Col xs={3} style={{marginRight: "0px"}}>
+          <ReportSideBar />
+        </Col>
+        <Col xs={4} style={{marginRight: "0px"}}>
+          <div style={{backgroundColor: "#515151", width: "350px",height: "100vh",
+          marginLeft: "0px",
+          display: "inline-block",
+          position: "fixed",
+          zIndex: "99",
+          left: "300px",
+          fontSize: "12px",
+          overflowY: "auto"}}></div>
+        </Col>
+        <Col xs={5} style={{paddingRight: "0px", paddingLeft: "0px", marginRight: "0px", marginLeft: "0px"}}>
         <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
         {output}
+        </Col>
+
       </Grid>
     );
   }
