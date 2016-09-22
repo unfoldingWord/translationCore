@@ -5,13 +5,14 @@ const Row = ReactBootstrap.Row;
 const Col = ReactBootstrap.Col;
 const Well = ReactBootstrap.Well;
 const Panel = ReactBootstrap.Panel;
+const ReportFilters = api.ReportFilters;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'TranslationNotesChecker';
 const TITLE = 'translationNotes Check';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
-function TranslationNotesReport(chapter, verse) {
+function TranslationNotesReport(chapter, verse, query) {
   // main header for the whole report
   if (chapter == 0 && verse == 0) {
     let [done, total] = getCheckNumbers();
@@ -21,7 +22,7 @@ function TranslationNotesReport(chapter, verse) {
       </span>
     );
   }
-  var checks = getChecksByVerse(chapter, verse);
+  var checks = getChecksByVerse(chapter, verse, query);
   // If there are no checks for this verse, then return undefined.
   // This will make TranslationNotes Check not show at all for this verse.
   if(checks.length == 0) {
@@ -50,11 +51,14 @@ function TranslationNotesReport(chapter, verse) {
 }
 
 // Given a chapter and verse, returns all of the checks for that reference
-function getChecksByVerse(chapter, verse) {
+function getChecksByVerse(chapter, verse, query) {
   var res = [];
   var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
   if (groups == null){
     return [];
+  }
+  if (query) {
+    groups = ReportFilters.byCustom(query, groups);
   }
   for(var group of groups) {
     for(var check of group.checks) {
