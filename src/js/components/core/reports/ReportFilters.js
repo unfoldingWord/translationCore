@@ -159,6 +159,8 @@ function filterByProposed(query, store) {
  *    retained: {Array}
  *    comments: {Boolean}
  *    proposed: {Boolean}
+ *    search: {String}
+ *    location: {String}
  * }
  * @param {Array} store - The check store being passed in.
  * @return {Array} refinedGroups - The new groups list, refined by query.
@@ -170,6 +172,7 @@ function filterByCustom(query, store) {
   if (query.retained) refinedGroups = filterByRetained(query.retained, refinedGroups);
   if (query.comments !== undefined) refinedGroups = filterByComments(query.comments, refinedGroups);
   if (query.proposed !== undefined) refinedGroups = filterByProposed(query.proposed, refinedGroups);
+  if (query.location && query.search) refinedGroups = filterBySearchTerm(query.location, query.search, refinedGroups);
   return refinedGroups;
 }
 /**
@@ -207,29 +210,6 @@ function filterBySearchTerm(location, query, store) {
   return refinedGroups;
 }
 /**
- * @description This function allows filtration via multiple parameters.
- * @param {Object} query - Whether the check contains proposed changes.
- * Sample of query:
- * {
- *    group: {Array}
- *    status: {Array}
- *    retained: {Array}
- *    comments: {Boolean}
- *    proposed: {Boolean}
- *    search: {String}
- *    location: {String}
- * }
- * @param {Array} store - The check store being passed in.
- * @return {Array} refinedGroups - The new groups list, refined by query.
- ******************************************************************************/
-function filterAndSearch(query, store) {
-  var refinedGroups = filterByCustom(query, store);
-  if (query.location && query.search) {
-    refinedGroups = filterBySearchTerm(query.location, query.search, refinedGroups);
-  }
-  return refinedGroups;
-}
-/**
  * @description This searches for words and pharses in text.
  * @param {String} query - The word or phrase to search for
  * @param {Object} text - Scripture, in the same object format as targetLanguage
@@ -261,5 +241,4 @@ exports.filter = {
   byCustom: filterByCustom,
   bySearchTerm: filterBySearchTerm
 };
-exports.filterAndSearch = filterAndSearch;
 exports.searchText = searchText
