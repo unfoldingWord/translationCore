@@ -73,6 +73,12 @@ class TargetVerseDisplay extends React.Component{
             endsAt += this.state.end;
         }
 
+        if(selectionRelativity == "in"){
+          beginsAt = 0;
+          endsAt = 0;
+          selection = "";
+        }
+
         this.setState({
             selection: text,
             start: beginsAt,
