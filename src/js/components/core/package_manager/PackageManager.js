@@ -1,6 +1,5 @@
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const ncp = require('ncp').ncp;
 const git = require('../GitApi.js');
 const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
 const exec = require('child_process').exec;
@@ -18,7 +17,7 @@ function downloadPackage(packageName) {
     var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-      ncp(source, destination, function (err) {
+      fs.copy(source, destination, function (err) {
         compilePackage(destination)
       });
     });
@@ -62,6 +61,26 @@ function getPackageList(callback) {
   request.send();
 }
 
+function checkForUpdates(callback) {
+  getPackageList(function(obj){
+    var needToUpdate = [];
+    var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+    for (var packages in installedPackages) {
+      var currentPackage = installedPackages[packages]
+      var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest.json')).version;
+      var remoteVersion = obj[currentPackage].version;
+      if (remoteVersion > localVersion) needToUpdate.push(currentPackage);
+    }
+    callback(needToUpdate);
+  });
+}
+
+function update(packageName) {
+
+}
+
 exports.download = downloadPackage;
 exports.list = getPackageList;
 exports.compile = compilePackage;
+exports.checkForUpdates = checkForUpdates;
+exports.update = update;
