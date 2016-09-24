@@ -12,6 +12,8 @@ const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
 const gogs = require('../login/GogsApi.js');
 const sync = require('./GitSync.js');
+const path = require('path');
+const fs = require('fs');
 
 class SideNavBar extends React.Component{
   handleOpenProject(){
@@ -29,7 +31,7 @@ class SideNavBar extends React.Component{
 
   handleReport(){
     api.Toast.info('Generating reports...', '', 3);
-    require("./../reports/ReportGenerator")(err => {
+    require("./../reports/ReportGenerator")(api.getDataFromCommon("reportViews"), err => {
       if (err) {
         console.log(err);
       }
