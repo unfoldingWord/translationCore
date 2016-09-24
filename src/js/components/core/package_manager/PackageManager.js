@@ -10,7 +10,12 @@ const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 const CENTRAL_REPO = "http://127.0.0.1:8080/manifest.json"; //TODO Create central repo to store file
 
-function downloadPackage(packageName) {
+/**
+ * @description - This downloads the specified package to the packages folder.
+ * @param {String} packageName - The name of the package to be installed.
+ * @param {function} callback - To be called upon completion
+ ******************************************************************************/
+function downloadPackage(packageName, callback) {
   getPackageList(function(obj){
     var packageLocation = obj[packageName].location;
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
@@ -25,13 +30,17 @@ function downloadPackage(packageName) {
           return;
         }
         fs.copy(source, destination, function (err) {
-          compilePackage(destination)
+          compilePackage(destination, callback)
         });
       });
     });
   });
 }
-
+/**
+ * @description - This compiles the specified package to the folder it resides in.
+ * @param {String} destination - The location of the package, in packages-compiled. 
+ * @param {function} callback - To be called upon completion
+ ******************************************************************************/
 function compilePackage(destination, callback) {
   var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
   exec(command, (error, stdout, stderr) => {
@@ -42,24 +51,23 @@ function compilePackage(destination, callback) {
     callback('Installation Successful')
   });
 }
-
-function getJSONFromData(httpRequest) {
-	try {
-		return JSON.parse(httpRequest.response);
-	} catch(error) {
-		console.error(error);
-		return null;
-	}
-}
-
+/**
+ * @description - This get's the list of packages available to download.
+ * @param {function} callback - To be called upon completion
+ ******************************************************************************/
 function getPackageList(callback) {
   var request = new XMLHttpRequest();
   request.onload = function() {
-    var obj = getJSONFromData(this);
-    if (obj !== null) {
+    var obj;
+    try {
+      obj = JSON.parse(httpRequest.response);
+    } catch(error) {
+      obj = error;
+      console.error(error);
+    } finally {
       callback(obj);
-     }
-   }
+    }
+  }
 
   request.onerror = function() {
     console.error(this);
@@ -68,11 +76,14 @@ function getPackageList(callback) {
   request.open('GET', CENTRAL_REPO);
   request.send();
 }
-
+/**
+ * @description - This checks for updates on installed packags.
+ * @param {function} callback - To be called upon completion
+ ******************************************************************************/
 function checkForUpdates(callback) {
   getPackageList(function(obj){
     var needToUpdate = [];
-    var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+    var installedPackages = getLocalList();
     for (var packages in installedPackages) {
       var currentPackage = installedPackages[packages]
       var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest.json')).version;
@@ -82,9 +93,25 @@ function checkForUpdates(callback) {
     callback(needToUpdate);
   });
 }
-
-function update(packageName) {
-
+/**
+ * @description - This updates a package to the newest version.
+ * @param {String} packageName - The name of the package to be installed.
+ * @param {function} callback - To be called upon completion
+ ******************************************************************************/
+function update(packageName, callback) {
+  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
+  var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+  fs.emptyDirSync(packageLocation);
+  fs.emptyDirSync(compiledLocation);
+  downloadPackage(packageName, callback);
+}
+/**
+ * @description - This returns a list of installed packages.
+ * @return {array} installedPackages - An array of installed packages.
+ ******************************************************************************/
+function getLocalList() {
+  var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+  return installedPackages;
 }
 
 exports.download = downloadPackage;
@@ -92,3 +119,4 @@ exports.list = getPackageList;
 exports.compile = compilePackage;
 exports.checkForUpdates = checkForUpdates;
 exports.update = update;
+exports.getLocalList = getLocalList;
