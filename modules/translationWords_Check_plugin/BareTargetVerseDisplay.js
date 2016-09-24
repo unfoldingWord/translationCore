@@ -115,7 +115,7 @@ class TargetVerseDisplay extends React.Component{
                         {before}
                     </span>
                     <span
-                        style={{backgroundColor: 'yellow'}}
+                        style={{backgroundColor: 'yellow', fontWeight: 'bold'}}
                         onMouseUp = {() => this.textSelected("in")}
                         >
                         {highlighted}
