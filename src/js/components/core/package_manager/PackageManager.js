@@ -1,13 +1,14 @@
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
+const npm = pathex.join(window.__base, 'node_modules', '.bin', 'npm');
 const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
 const exec = require('child_process').exec;
 
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-const CENTRAL_REPO = ""; //TODO Create central repo to store file
+const CENTRAL_REPO = "http://127.0.0.1:8080/manifest.json"; //TODO Create central repo to store file
 
 function downloadPackage(packageName) {
   getPackageList(function(obj){
@@ -17,8 +18,15 @@ function downloadPackage(packageName) {
     var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-      fs.copy(source, destination, function (err) {
-        compilePackage(destination)
+      var command = npm + ' install';
+      exec(command, {cwd: source}, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          return;
+        }
+        fs.copy(source, destination, function (err) {
+          compilePackage(destination)
+        });
       });
     });
   });
