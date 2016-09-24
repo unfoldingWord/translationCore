@@ -169,9 +169,6 @@ class CoreStore extends EventEmitter {
     }
   }
 
-  storeReportView() {
-  }
-
 /**
   * @param {function} callback
   */
