@@ -142,16 +142,18 @@ class ReportItem extends React.Component {
     );
   }
   footerDiv() {
+    let user;
     if(this.props.check.user) {
-      let user;
       user = this.props.check.user.userName;
+    }else{
+      user = 'Anonymous';
     }
     if(this.props.check.timestamp) {
       // We do 'new Date(...)' because it could be a string or a Date object.
       var timestamp = new Date(this.props.check.timestamp).toDateString();
     }
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user || 'Anonymous'} - {timestamp || ''}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user} - {timestamp || ''}</div>
     );
   }
   render() {

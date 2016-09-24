@@ -53,7 +53,6 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
           let linkRes = linkReg.exec(piece.tNote);
           if (linkRes != null) {
             let [,volNum,partOfSpeech] = linkRes;
-            if (bookData[partOfSpeech] === undefined) bookData[partOfSpeech] = {tnLink: linkBuilder(volNum, partOfSpeech), verses: []};
             // find verse
             let quotePieces = piece.origText.split(" ... ");
             let verseStart, verseEnd, startPos, searchVerse;
@@ -90,6 +89,9 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
             };
             if (verseEnd !== undefined && verseEnd != verseStart) {
               newVerse.verseEnd = verseEnd;
+            }
+            if (bookData[partOfSpeech] === undefined) {
+              bookData[partOfSpeech] = {tnLink: linkBuilder(volNum, partOfSpeech), verses: []};
             }
             bookData[partOfSpeech].verses.push(newVerse);
           }
