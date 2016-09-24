@@ -15,7 +15,8 @@ const RB = api.ReactBootstrap;
 const {Row, Col} = RB;
 
 //Modules that are defined within translationNotes_Check_plugin
-const TargetVerseDisplay = require('./subcomponents/TargetVerseDisplay');
+const ClickTargetVerseDisplay = require('./subcomponents/TargetVerseDisplay');
+const DragTargetVerseDisplay = require('./BareTargetVerseDisplay');
 const GatewayVerseDisplay = require('./subcomponents/GatewayVerseDisplay.js');
 const ConfirmDisplay = require('./subcomponents/ConfirmDisplay');
 const CheckStatusButtons = require('./subcomponents/CheckStatusButtons');
@@ -44,6 +45,7 @@ class View extends React.Component{
     this.goToCheckListener = EventListeners.goToCheck.bind(this);
     this.changeCurrentCheckInCheckStore = this.changeCurrentCheckInCheckStore.bind(this);
     this.changeCheckTypeListener = EventListeners.changeCheckType.bind(this);
+    this.getTargetVerseDisplay = this.getTargetVerseDisplay.bind(this);
   }
 
   componentWillMount(){
@@ -120,7 +122,7 @@ class View extends React.Component{
     api.Toast.info('Current check was marked as:', newCheckStatus, 2);
   }
 
-  updateSelectedWords(selectedWords, selectedWordsRaw) {
+  updateSelectedWords(selectedWords, selectedWordsRaw, selectionRange = [0,0]) {
     if (this.refs.ProposedChanges) {
       this.refs.ProposedChanges.update(selectedWords);
     }
@@ -128,6 +130,7 @@ class View extends React.Component{
     currentCheck.selectedWords = selectedWords;
     //This is needed to make the display persistent, but won't be needed in reports
     currentCheck.selectedWordsRaw = selectedWordsRaw;
+    currentCheck.selectionRange = selectionRange;
     this.updateUserAndTimestamp();
   }
 
@@ -254,6 +257,40 @@ class View extends React.Component{
       console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
     }
   }
+
+  getTargetVerseDisplay(){
+    var targetVerse = this.getVerse('targetLanguage');
+    if(api.getSettings('textSelect') == 'drag'){
+      return (
+        <DragTargetVerseDisplay
+          currentVerse={this.state.currentCheck.book
+                    + " " + this.state.currentCheck.chapter
+                    + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
+          verse={targetVerse}
+          ref={"TargetVerseDisplay"}
+          onWordSelected={this.updateSelectedWords.bind(this)}
+          style={{minHeight: '120px',
+                  margin: '0 2.5px 5px 0'}}
+          currentCheck={this.state.currentCheck}
+        />
+      )
+    } else {
+      return (
+        <ClickTargetVerseDisplay
+        currentVerse={this.state.currentCheck.book
+                  + " " + this.state.currentCheck.chapter
+                  + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
+          verse={targetVerse}
+          ref={"TargetVerseDisplay"}
+          onWordSelected={this.updateSelectedWords.bind(this)}
+          style={{minHeight: '120px',
+                  margin: '0 2.5px 5px 0'}}
+          currentCheck={this.state.currentCheck}
+        />
+      )
+    }
+
+  }
 /*
   setCurrentCheckProperty(propertyName, propertyValue) {
     this.groups[this.groupIndex].checks[this.checkIndex][propertyName] = propertyValue;
@@ -287,15 +324,7 @@ class View extends React.Component{
                         + " " + this.state.currentCheck.chapter
                         + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
             />
-            <TargetVerseDisplay
-              verse={targetVerse}
-              ref={"TargetVerseDisplay"}
-              onWordSelected={this.updateSelectedWords.bind(this)}
-              currentVerse={this.state.currentCheck.book
-                        + " " + this.state.currentCheck.chapter
-                        + ":" + this.state.currentCheck.verse + (this.state.currentCheck.verseEnd ? "-" + this.state.currentCheck.verseEnd : "")}
-              style={{minHeight: '150px', margin: '0 2.5px 5px 0'}}
-            />
+            {this.getTargetVerseDisplay()}
             <CheckStatusButtons updateCheckStatus={this.updateCheckStatus.bind(this)}
                                 getCurrentCheck={this.getCurrentCheck.bind(this)}
             />
