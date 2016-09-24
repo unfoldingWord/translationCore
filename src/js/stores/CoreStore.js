@@ -4,6 +4,8 @@ var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('../actions/CoreActionConsts');
 var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
+var path = require('path');
+var fs = require(window.__base + 'node_modules/fs-extra');
 
 /**
 Keep pretty much all business logic and data in
@@ -167,6 +169,9 @@ class CoreStore extends EventEmitter {
     }
   }
 
+  storeReportView() {
+  }
+
 /**
   * @param {function} callback
   */
@@ -254,6 +259,18 @@ class CoreStore extends EventEmitter {
         this.progressKeyObj = null;
         this.loaderModalVisibility = false;
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
+        var reports = [];
+        let modulesFolder = path.join(__base, "modules");
+        fs.readdir(modulesFolder, function(err, modules){
+        for (var module of modules) {
+          try {
+            let aReportView = require(path.join(modulesFolder, module, "ReportView.js"));
+            reports.push(aReportView);
+          } catch (e) {
+          }
+        }
+        CheckStore.putInCommon("reportViews", reports);
+        });
         this.emitChange();
       break;
 

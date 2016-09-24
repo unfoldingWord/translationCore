@@ -31,24 +31,10 @@ class SideNavBar extends React.Component{
 
   handleReport(){
     api.Toast.info('Generating reports...', '', 3);
-      var reports = [];
-      // get folders in the modules directory
-      // TODO: probably should make this asynchronous
-      let modulesFolder = path.join(__base, "modules");
-      // get only the folders and make them absolute paths
-      let modules = fs.readdir(modulesFolder, function(err, modules){
-      for (var module of modules) {
-        try {
-          let aReportView = require(path.join(modulesFolder, module, "ReportView.js"));
-          reports.push(aReportView);
-        } catch (e) {
-        }
-      }
-    require("./../reports/ReportGenerator")(reports, err => {
+    require("./../reports/ReportGenerator")(api.getDataFromCommon("reportViews"), err => {
       if (err) {
         console.log(err);
       }
-    });
     });
   }
 

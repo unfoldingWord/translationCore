@@ -169,6 +169,7 @@ var Access = {
         _this.reportViewPush(path);
       }
       CoreActions.doneLoadingFetchData(reportViews);
+
     }
   },
 
