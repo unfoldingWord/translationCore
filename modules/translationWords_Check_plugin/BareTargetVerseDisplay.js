@@ -143,7 +143,8 @@ class TargetVerseDisplay extends React.Component{
               minHeight: '128px',
               direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl',
               width: '100%',
-              marginBottom: '5px'
+              marginBottom: '5px',
+              WebkitUserSelect: 'text'
             }}>
                 {/*This is the only way to use CSS psuedoclasses inline JSX*/}
                 <style dangerouslySetInnerHTML={{

@@ -11,6 +11,7 @@ body, html, #content, .fill-height {
 
 body {
   background-color: white;
+  -webkit-user-select: none;
 }
 
 .main-view h1,
@@ -33,7 +34,7 @@ body {
 
 /*
   TODO:
-  This selector is going to give is problems when we have a setting to switch between 
+  This selector is going to give is problems when we have a setting to switch between
   drag to select and click to select. It will need to be moved to a JSX style that we
   can changed based on an api property.
 
