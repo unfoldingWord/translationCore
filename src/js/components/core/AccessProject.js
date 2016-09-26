@@ -42,7 +42,7 @@ var Access = {
           }
         }
         api.putDataInCommon('saveLocation', folderpath);
-        localStorage.setItem('showTutorial', false);
+        api.setSettings('showTutorial', false);
         localStorage.setItem('lastProject', folderpath);
       } catch (err) {
         localStorage.removeItem('lastProject');
