@@ -39,10 +39,11 @@ function TranslationNotesReport(chapter, verse) {
     }
   }
   return (
-      <Well style={{background: "rgb(255, 255, 255)", padding: "5px"}}>
-      <h3 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h3>
-      <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
-      {checkList}
+      <Well style={{background:"rgb(68, 198, 255)", padding: "5px", marginTop:"10px", marginLeft: "10px"}}>
+        <h3 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h3>
+        <div className='pull-right'><h5>{numChecked}/{checks.length} Completed</h5></div>
+        <br /><br />
+        {checkList}
       </Well>
   );
 }
@@ -176,7 +177,7 @@ class ReportItem extends React.Component {
   }
   render() {
     return (
-      <Well>
+      <Well style={{fontSize: "16px", background:"white"}}>
         <Row className="show-grid" style={{marginBottom:"15px", marginTop:"-25px", width: "100%"}}>
       <center>
         <h4 style={{paddingLeft:"5px"}}>

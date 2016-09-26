@@ -123,7 +123,7 @@ class Report extends React.Component {
         if (reports.length > 0) {
           output.push(
                 <Row key={`${ch}-${v}`}>
-                {/*commented out the code below since it displays chapte and verse*/}
+                {/*commented out the code below since it displays chapter and verse*/}
                 {/*<Col xs={2}><h4>{`${ch}:${v}`}</h4></Col>*/}
                   <Col xs={10}>{reports}</Col>
                 </Row>
@@ -135,7 +135,7 @@ class Report extends React.Component {
     return (
       <div style={{overflow: "auto", zIndex: "99"}}>
         <ReportSideBar bookName={bookName} authors={authors} reportHeadersOutput={reportHeadersOutput}/>
-        <div style={{backgroundColor: "#515151", width: "300px",height: "100vh",
+        <div style={{backgroundColor: "#515151", width: "300px", height: "100vh",
           marginLeft: "0px",
           display: "inline-block",
           position: "fixed",
@@ -145,7 +145,7 @@ class Report extends React.Component {
           overflowY: "auto"}}>
 
         </div>
-        <div style={{backgroundColor: "white", width: "820px", height: "100vh",
+        <div style={{backgroundColor: "white", width: "830px", height: "100vh",
           marginLeft: "0px",
           display: "inline-block",
           position: "fixed",
