@@ -1,5 +1,5 @@
 /**
- * @author Evan "Vegan and Proud" Wiederspan
+ * @author Evan "Vegan and Proud" Wiederspan, Manny COLON
  * This function will generate and display a report when called. It first opens
  * a local report template HTML file, reads that text into a Node object, then renders
  * the gathered JSX from the Report class into that page and saves it to another file in the root
@@ -56,6 +56,7 @@ class Report extends React.Component {
     // loop through all verses and chapters in the target language
     // and pass them into the ReportView functions
     let output = [];
+    let reportHeadersOutput = [];
     let bookName = "-bookName-";
     let authors = "-authors-";
     let manifest = ModuleApi.getDataFromCommon("tcManifest");
@@ -90,23 +91,23 @@ class Report extends React.Component {
         continue;
       }
       if (viewResult) {
-        reportHeaders.push(<Col className="pull-right" key={`0-0-${view}`} xs={6}><span>{viewResult}</span></Col>);
+        reportHeaders.push(<h5 key={`0-0-${view}`}><span>{viewResult}</span></h5>);
       }
     }
     if (reportHeaders.length > 0) {
-      output.push(<Row key="header">{reportHeaders}</Row>);
+      reportHeadersOutput.push(<Row key="header">{reportHeaders}</Row>);
     }
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)
       if (/^[0-9]+$/.test(ch) == false) {
         continue;
       }
-      // create chapter header
-      output.push(<h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>);
+      // create chapter header with book Name
+      //output.push(<h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>);
       for (let view in reportViews) {
         let viewResult = reportViews[view](ch, 0);
         if (viewResult) {
-          output.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
+          reportHeadersOutput.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
         }
       }
       // now start getting data for each verse in the chapter
@@ -121,33 +122,39 @@ class Report extends React.Component {
         // only display a row for this verse if it has report view data
         if (reports.length > 0) {
           output.push(
-                <Row key={`${ch}-${v}`}><Col xs={2}><h4>{`${ch}:${v}`}</h4></Col><Col xs={10}>{reports}</Col></Row>
+                <Row key={`${ch}-${v}`}>
+                {/*commented out the code below since it displays chapte and verse*/}
+                {/*<Col xs={2}><h4>{`${ch}:${v}`}</h4></Col>*/}
+                  <Col xs={10}>{reports}</Col>
+                </Row>
           );
         }
       }
     }
     // TODO: Get name of book and authors
     return (
-      <Grid style={{paddingRight: "0px", paddingLeft: "0px", marginRight: "0px", marginLeft: "0px"}}>
-        <Col xs={3} style={{marginRight: "0px"}}>
-          <ReportSideBar />
-        </Col>
-        <Col xs={4} style={{marginRight: "0px"}}>
-          <div style={{backgroundColor: "#515151", width: "350px",height: "100vh",
+      <div style={{overflow: "auto", zIndex: "99"}}>
+        <ReportSideBar bookName={bookName} authors={authors} reportHeadersOutput={reportHeadersOutput}/>
+        <div style={{backgroundColor: "#515151", width: "300px",height: "100vh",
           marginLeft: "0px",
           display: "inline-block",
           position: "fixed",
           zIndex: "99",
           left: "300px",
           fontSize: "12px",
-          overflowY: "auto"}}></div>
-        </Col>
-        <Col xs={5} style={{paddingRight: "0px", paddingLeft: "0px", marginRight: "0px", marginLeft: "0px"}}>
-        <h1>{`Report for ${bookName} `}<small>{"By " + authors + ", created on " + new Date().toDateString()}</small></h1>
-        {output}
-        </Col>
+          overflowY: "auto"}}>
 
-      </Grid>
+        </div>
+        <div style={{backgroundColor: "white", width: "820px", height: "100vh",
+          marginLeft: "0px",
+          display: "inline-block",
+          position: "fixed",
+          zIndex: "99",
+          left: "600px",
+          fontSize: "12px", overflowX: "hidden", overflowY: "scroll"}}>
+          {output}
+        </div>
+      </div>
     );
   }
 }

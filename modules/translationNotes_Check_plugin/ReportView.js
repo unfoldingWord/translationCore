@@ -40,7 +40,7 @@ function TranslationNotesReport(chapter, verse) {
   }
   return (
       <Well style={{background: "rgb(255, 255, 255)", padding: "5px"}}>
-      <h3 style={{marginTop: '-5px', display: 'inline', color: "#44c6ff"}}>{TITLE}</h3>
+      <h3 style={{marginTop: '-5px', display: 'inline'}}>{TITLE}</h3>
       <div className='pull-right'>{numChecked}/{checks.length} Completed</div>
       {checkList}
       </Well>
@@ -212,12 +212,13 @@ class ReportHeader extends React.Component {
   constructor() {
     super();
   }
-
   render() {
     return (
-    <Panel header="TranslationNotes Check">
-      {`${this.props.checked} / ${this.props.total} checks completed`}
-    </Panel>
+      <div style={{width:"100%"}}>
+        <h5>
+          Translation Notes: {`${this.props.checked} / ${this.props.total}`}
+        </h5>
+      </div>
     );
   }
 }
