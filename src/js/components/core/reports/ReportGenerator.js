@@ -102,8 +102,11 @@ class Report extends React.Component {
       if (/^[0-9]+$/.test(ch) == false) {
         continue;
       }
-      // create chapter header with book Name
-      //output.push(<h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>);
+      // create chapter header
+      var chHeader = <h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>
+      //output.push(chHeader);
+      var isEmpty = true;
+
       for (let view in reportViews) {
         let viewResult = reportViews[view](ch, 0);
         if (viewResult) {
@@ -117,6 +120,7 @@ class Report extends React.Component {
           let viewResult = reportViews[view](ch, v);
           if (viewResult) {
             reports.push(<span key={`${ch}-${v}-${view}`}>{viewResult}</span>);
+            isEmpty = false;
           }
         }
         // only display a row for this verse if it has report view data
@@ -128,6 +132,12 @@ class Report extends React.Component {
                   <Col xs={10}>{reports}</Col>
                 </Row>
           );
+        }
+      }
+      if (isEmpty) {
+        var index = output.indexOf(chHeader);
+        if (~index) {
+          output.splice(index, 1);
         }
       }
     }

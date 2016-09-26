@@ -3,10 +3,24 @@ const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
-
+const ReportFilters = api.ReportFilters;
+const NAMESPACE = "TranslationNotesChecker";
 
 class ReportSideBar extends React.Component{
 
+  getCurrentCheck() {
+    var groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
+    var currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
+    var currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
+    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+    return currentCheck;
+  }
+
+filterByStatus(){
+  let object = ;
+  currentCheck
+  filter.byCustom(object, store)
+}
 
   render(){
     return(
@@ -26,31 +40,31 @@ class ReportSideBar extends React.Component{
           <ControlLabel>
             <center><h4>Filter:</h4></center>
           </ControlLabel>
-          <FormControl componentClass="select" placeholder="Status" onChange={this.filterByStatus}>
+          <FormControl componentClass="select" placeholder="Status" onChange={this.filterByStatus.bind(this)}>
             <option value={null}>Status</option>
             <option value={null}>Correct</option>
             <option value={null}>Flagged</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" placeholder="Form" onChange={this.filterByForm}>
+          <FormControl componentClass="select" placeholder="Form" onChange={this.filterByForm.bind(this}>
             <option value={null}>Form</option>
             <option value={null}>Retained</option>
             <option value={null}>Replaced</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" placeholder="Notes" onChange={this.filterByNotes}>
+          <FormControl componentClass="select" placeholder="Notes" onChange={this.filterByNotes.bind(this}>
             <option value={null}>Notes</option>
             <option value={null}>With Notes</option>
             <option value={null}>Without Notes</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" placeholder="Proposed Changes" onChange={this.filterByStatus}>
+          <FormControl componentClass="select" placeholder="Proposed Changes" onChange={this.filterByStatus.bind(this}>
             <option value={null}>Proposed Changes</option>
             <option value={null}>With Proposed Changes</option>
             <option value={null}>Without Proposed Changes</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter}>
+          <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter.bind(this}>
             <option value={null}>Chapter</option>
             {/*chapterArray*/}
           </FormControl>
