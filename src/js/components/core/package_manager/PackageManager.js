@@ -16,6 +16,10 @@ const CENTRAL_REPO = "http://127.0.0.1:8080/manifest.json"; //TODO Create centra
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
+  if (isInstalled(packageName)) {
+    update(packageName, callback);
+    return;
+  }
   getPackageList(function(obj){
     var packageLocation = obj[packageName].location;
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
@@ -38,11 +42,16 @@ function downloadPackage(packageName, callback) {
 }
 /**
  * @description - This compiles the specified package to the folder it resides in.
- * @param {String} destination - The location of the package, in packages-compiled. 
+ * @param {String} destination - The location of the package, in packages-compiled.
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function compilePackage(destination, callback) {
   var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
+  var filesInPackage = fs.readdirSync(destination);
+  if (!filesInPackage.includes('.babelrc')) {
+    callback('Installation Successful');
+    return;
+  }
   exec(command, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
@@ -113,6 +122,28 @@ function getLocalList() {
   var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
   return installedPackages;
 }
+/**
+ * @description - This returns a list of installed packages.
+ * @param {String} packageName - The name of the package to look for.
+ * @return {boolean} isExists - Whether the packae exists locally.
+ ******************************************************************************/
+function isInstalled(packageName) {
+  var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+  var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  return installedPackages.includes(packageName) && compiledPackages.includes(packageName);
+}
+/**
+ * @description - This get's the version number of the package.
+ * @param {String} packageName - The name of the package.
+ * @return {String} version - The version of the package.
+ ******************************************************************************/
+function getVersion(packageName) {
+  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
+  var manifest =  require(path.join(packageLocation, 'package.json'));
+  var version = manifest.version;
+  return version;
+}
+
 
 exports.download = downloadPackage;
 exports.list = getPackageList;
@@ -120,3 +151,5 @@ exports.compile = compilePackage;
 exports.checkForUpdates = checkForUpdates;
 exports.update = update;
 exports.getLocalList = getLocalList;
+exports.isInstalled = isInstalled;
+exports.getVersion = getVersion;
