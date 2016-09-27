@@ -8,7 +8,7 @@ const exec = require('child_process').exec;
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-const CENTRAL_REPO = "http://127.0.0.1:8080/manifest.json"; //TODO Create central repo to store file
+const CENTRAL_REPO = "https://raw.githubusercontent.com/ihoegen/translationCore-apps/master/directory.json";
 
 /**
  * @description - This downloads the specified package to the packages folder.
