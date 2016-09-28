@@ -28,7 +28,8 @@ class ModuleApi {
     this.Popover = require('./components/core/PopoverApi');
     this.Toast = require('./NotificationApi/ToastApi');
     this.Git = require('./components/core/GitApi.js');
-    this.ReportFilters = require('./components/core/reports/ReportFilters.js').filter;
+    this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
+    this.ReportFilters = this.ReportFiltersTools.filter;
   }
 
   findDOMNode(component) {
