@@ -52,7 +52,7 @@ class SideNavBar extends React.Component{
   }
 
   handlePackageManager(){
-    const Report = require("./../Package_Manager/PackageManagerView");
+    require("./../Package_Manager/PackageManagerView");
     api.emitEvent('PackManagerVisibility', {'visiblePackManager': 'true'});
   }
 

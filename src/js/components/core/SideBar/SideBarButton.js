@@ -36,7 +36,8 @@ class SideBarButton extends React.Component{
           <li style={linkStyle} onClick={this.props.handleButtonClick}
               onMouseEnter={this.mouseEnter.bind(this)}
               onMouseLeave={this.mouseLeave.bind(this)}>
-            {icon}<br/>
+            {icon}
+            <br/>
             {this.props.value}
           </li>
         </div>
