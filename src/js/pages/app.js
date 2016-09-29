@@ -25,9 +25,11 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
+const parse = require("../../../parseHEOT.js");
 
 var Main = React.createClass({
   getInitialState() {
+    parse("https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/1Chr.xml");
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState == 'true' || tutorialState === null) {
       return({
