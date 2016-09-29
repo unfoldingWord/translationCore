@@ -12,8 +12,9 @@ const remote = require('electron').remote;
  *  if there is a frequent issue we can learn about it sooner.
  */
 
+console.errorold = console.error;
+
 console.error = function(err){
-  console.errorold = console.error;
   console.errorold(err);
   api.Toast.error("Uh Oh!", err, 1000000);
   api.createAlert(
