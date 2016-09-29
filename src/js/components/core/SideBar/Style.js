@@ -24,6 +24,7 @@ var style = {
     paddingTop: "20px",
     paddingBottom: "20px",
     color: "white",
+    cursor: "pointer",
     userSelect: "none",
   },
 
@@ -33,20 +34,20 @@ var style = {
   },
 
   glyphiconHover: {
-    fontSize: "29px",
+    fontSize: "25px",
     color: "#39add2",
   },
 
   hover: {
-    backgroundColor: "#1a2133",
-    color: "#39add2",
-    cursor: "pointer",
     display: "block",
     textAlign: "center",
+    backgroundColor: "#1a2133",
     borderBottom: "2px solid #1f273b",
+    paddingTop: "20px",
+    paddingBottom: "20px",
+    color: "#44c6ff",
+    cursor: "pointer",
     userSelect: "none",
-    paddingTop: "18px",
-    paddingBottom: "18px"
   },
 
   logo:{
@@ -67,6 +68,11 @@ var style = {
   glyphiconOnline:{
     color: "#00B233",
     fontSize: "25px",
+  },
+
+  img:{
+  width: "25px",
+  height: "30px",
   },
 
 };

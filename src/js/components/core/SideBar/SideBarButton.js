@@ -22,21 +22,26 @@ class SideBarButton extends React.Component{
     this.setState({hover: false});
   }
     render(){
-    const linkStyle = this.state.hover ? style.hover : style.li;
-    const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
-    return(
+      const linkStyle = this.state.hover ? style.hover : style.li;
+      const GlyphStyle = this.state.hover ? style.glyphiconHover : style.glyphicon;
+      const iconImage = this.state.hover ? this.props.hoverImage : this.props.imageName;
+      let icon;
+      if(iconImage){
+        icon = <img src={iconImage} style={style.img}/>;
+      }else{
+        icon = <Glyphicon glyph={this.props.glyphicon} style={GlyphStyle}/>
+      }
+      return(
         <div>
           <li style={linkStyle} onClick={this.props.handleButtonClick}
               onMouseEnter={this.mouseEnter.bind(this)}
               onMouseLeave={this.mouseLeave.bind(this)}>
-            <Glyphicon glyph={this.props.glyphicon}
-                      style={GlyphStyle}
-            /><br/>
-              {this.props.value}
+            {icon}<br/>
+            {this.props.value}
           </li>
         </div>
-        );
-      }
+      );
+    }
 
 }
 
