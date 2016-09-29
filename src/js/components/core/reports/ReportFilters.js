@@ -199,6 +199,28 @@ function searchText(query, text) {
   return refinedText;
 }
 /**
+ * @description This function refines the groups list by retain status.
+ * @param {Array} query - An array of integers, containing the retain stastus to show.
+ * @param {Array} store - The check store.
+ * @return {Array} refinedGroups - The new groups list, refined by query.
+ ******************************************************************************/
+function filterByRetained(query, store) {
+  if (query.length === 0) return store;
+  var refinedGroups = [];
+  store.map(group => {
+    var defaultGroup = {checks: [], group: group.group};
+    group.checks.map(checks => {
+      if (query.includes(checks.retained)) {
+        defaultGroup.checks.push(checks);
+      }
+    });
+    if (defaultGroup.checks.length > 0) {
+      refinedGroups.push(defaultGroup);
+    }
+  });
+  return refinedGroups;
+}
+/**
  * @description This function refines the groups list by chapters.
  * @param {Array} query - An array of integers, containing the chapters to show.
  * @param {Array} store - The check store.
