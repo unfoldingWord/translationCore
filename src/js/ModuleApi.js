@@ -319,6 +319,23 @@ class ModuleApi {
       return this.authToken[type];
     }
   }
+
+  getSettings(name) {
+    var settings = localStorage.getItem('settings');
+    if (settings) {
+      var settingsObj = JSON.parse(settings);
+      return settingsObj[name];
+    }
+    return null;
+  }
+
+  setSettings(name, value) {
+    var settings = localStorage.getItem('settings');
+    var settingsObj = settings ? JSON.parse(settings) : {};
+    settingsObj[name] = value;
+    var settingsString = JSON.stringify(settingsObj);
+    localStorage.setItem('settings', settingsString);
+  }
 }
 
 const api = new ModuleApi();

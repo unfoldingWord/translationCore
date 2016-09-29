@@ -142,3 +142,17 @@ This function logs *all* of the data held in the CheckStore to the console. Shou
 ```javascript
 api.logCheckStore();
 ```
+
+#### `setSettings(key, value)`
+This function sets a value to a key in the settings object, which is then saved in `localStorage`.
+
+```javascript
+api.setSettings('language', 'English');
+```
+
+#### `getSettings(key)`
+This function returns a key from the settings object, which is saved in `localStorage`.
+
+```javascript
+api.getSettings('language');
+```

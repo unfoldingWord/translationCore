@@ -157,7 +157,7 @@ class ReportItem extends React.Component {
       var timestamp = new Date(this.props.check.timestamp).toDateString();
     }
     return (
-      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user || 'Anonymous'} - {timestamp || ''}</div>
+      <div style={{fontSize: '75%', color: '#7e7b7b', paddingTop: '10px'}}>{user} - {timestamp || ''}</div>
     );
   }
   render() {

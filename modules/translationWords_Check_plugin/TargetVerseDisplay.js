@@ -19,14 +19,9 @@ const TargetWord = React.createClass({
       highlighted: false,
       wordObj: { // this is required to pass into our callbacks
         'word': this.props.word,
-        'key': this.props.keyId
+        'key': this.props.keyId,
       }
     };
-  },
-
-  userClick: function() {
-  // toggles the internal state and changes the actual style of the element
-    this.toggleHighlight();
   },
 
   removeHighlight: function() {
@@ -69,7 +64,7 @@ const TargetWord = React.createClass({
     return (
       <span
         className={this.state.highlighted ? 'text-primary-highlighted' : 'text-muted'}
-        onClick={this.userClick}
+        onClick={this.toggleHighlight}
         style={this.props.style}
       >
         {this.props.word}
@@ -82,6 +77,7 @@ const TargetLanguageSelectBox = React.createClass({
   selectedWords: [], // holds wordObjects, each have {'word', 'key'} attributes
 
   cursorPointerStyle: {
+    // TODO: Make this changed based on an api.settings property
     cursor: 'pointer'
   },
 
@@ -199,6 +195,10 @@ const TargetLanguageSelectBox = React.createClass({
     // }
   },
 
+  addHighlightedString: function(selection){
+    this.props.onWordSelected([selection],[selection]);
+  },
+
   removeFromSelectedWords: function(wordObj) {
   // get the word's index
     var index = -1;
@@ -255,7 +255,6 @@ const TargetLanguageSelectBox = React.createClass({
   },
 
   render: function() {
-    var words = this.generateWordArray();
     return (
       <div
         bsSize={'small'}
@@ -267,10 +266,12 @@ const TargetLanguageSelectBox = React.createClass({
         }}
       >
         <div style={{
-            direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
-          }}
+              direction: api.getDataFromCommon('params').direction == 'ltr' ? 'ltr' : 'rtl'
+            }}
+            onMouseUp={this.textSelected}
+            className="TargetVerseSelectionArea"
         >
-          {words}
+          {this.generateWordArray()}
         </div>
       </div>
     );
