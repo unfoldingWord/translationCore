@@ -85,28 +85,7 @@ function filterByStatus(query, store) {
   });
   return refinedGroups;
 }
-/**
- * @description This function refines the groups list by retained status
- * @param {Array} query - An array of retained status types to show.
- * @param {Array} store - The check store.
- * @return {Array} refinedGroups - The new groups list, refined by query.
- ******************************************************************************/
-function filterByRetained(query, store) {
-  if (query.length === 0) return store;
-  var refinedGroups = [];
-  store.map(group => {
-    var defaultGroup = {checks: [], group: group.group};
-    group.checks.map(checks => {
-      if (query.includes(checks.retained)) {
-        defaultGroup.checks.push(checks);
-      }
-    });
-    if (defaultGroup.checks.length > 0) {
-      refinedGroups.push(defaultGroup);
-    }
-  });
-  return refinedGroups;
-}
+
 /**
  * @description This function refines the groups list by wheter or not it has comments
  * @param {boolean} query - Whether the check contains comments.
@@ -160,7 +139,8 @@ function filterByProposed(query, store) {
  *    comments: {Boolean}
  *    proposed: {Boolean}
  *    search: {String}
- *    location: {String}
+ *    chapter: {Array of integers}
+ *    verse: {Array of integers}
  * }
  * @param {Array} store - The check store being passed in.
  * @return {Array} refinedGroups - The new groups list, refined by query.
@@ -172,36 +152,26 @@ function filterByCustom(query, store) {
   if (query.retained) refinedGroups = filterByRetained(query.retained, refinedGroups);
   if (query.comments !== undefined) refinedGroups = filterByComments(query.comments, refinedGroups);
   if (query.proposed !== undefined) refinedGroups = filterByProposed(query.proposed, refinedGroups);
-  if (query.location && query.search) refinedGroups = filterBySearchTerm(query.location, query.search, refinedGroups);
+  if (query.chapter) refinedGroups = filterByChapter(query.chapter, refinedGroups);
+  if (query.verse) refinedGroups = filterByVerse(query.verse, refinedGroups);
+  if (query.search) refinedGroups = filterBySearchTerm(query.search, refinedGroups);
   return refinedGroups;
 }
 /**
  * @description This searches for words and pharses
- * @param {String} location - Where in the check to search in. Currently only
- *                            supporting search in comments and proposed changes
  * @param {String} query - The word or phrase to search for
  * @param {Array} store - The name of the check category.
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
-function filterBySearchTerm(location, query, store) {
+function filterBySearchTerm(query, store) {
   if (query.length === 0) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
     group.checks.map(checks => {
-      switch (location) {
-        case 'comments':
-          if (checks.comment && ~checks.comment.toLowerCase().indexOf(query.toLowerCase()))
-            defaultGroup.checks.push(checks);
-          break;
-        case 'proposedChanges':
-          if (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(query.toLowerCase()))
-            defaultGroup.checks.push(checks);
-          break;
-        default:
-          console.error('Unsupported Search Location');
-          return refinedGroups;
-      }
+      var lowerCaseQuery = query.toLowerCase();
+      if ((checks.comment && ~checks.comment.toLowerCase().indexOf(lowerCaseQuery)) || (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(lowerCaseQuery)));
+        defaultGroup.checks.push(checks);
     });
     if (defaultGroup.checks.length > 0) {
       refinedGroups.push(defaultGroup);
@@ -228,10 +198,50 @@ function searchText(query, text) {
   }
   return refinedText;
 }
-exports.getListOfChecks = getListOfChecks;
-exports.getGroups = getGroups;
-exports.getStatuses = statusList;
-exports.getRetained = retainedList;
+/**
+ * @description This function refines the groups list by chapters.
+ * @param {Array} query - An array of integers, containing the chapters to show.
+ * @param {Array} store - The check store.
+ * @return {Array} refinedGroups - The new groups list, refined by query.
+ ******************************************************************************/
+function filterByChapter(query, store) {
+  if (query.length === 0) return store;
+  var refinedGroups = [];
+  store.map(group => {
+    var defaultGroup = {checks: [], group: group.group};
+    group.checks.map(checks => {
+      if (query.includes(checks.chapter)) {
+        defaultGroup.checks.push(checks);
+      }
+    });
+    if (defaultGroup.checks.length > 0) {
+      refinedGroups.push(defaultGroup);
+    }
+  });
+  return refinedGroups;
+}
+/**
+ * @description This function refines the groups list by verse.
+ * @param {Array} query - An array of integers, containing the verses to show.
+ * @param {Array} store - The check store.
+ * @return {Array} refinedGroups - The new groups list, refined by query.
+ ******************************************************************************/
+function filterByVerse(query, store) {
+  if (query.length === 0) return store;
+  var refinedGroups = [];
+  store.map(group => {
+    var defaultGroup = {checks: [], group: group.group};
+    group.checks.map(checks => {
+      if (query.includes(checks.verse)) {
+        defaultGroup.checks.push(checks);
+      }
+    });
+    if (defaultGroup.checks.length > 0) {
+      refinedGroups.push(defaultGroup);
+    }
+  });
+  return refinedGroups;
+}
 exports.filter = {
   byGroup: filterByGroup,
   byStatus: filterByStatus,
@@ -239,6 +249,14 @@ exports.filter = {
   byComments: filterByComments,
   byProposed: filterByProposed,
   byCustom: filterByCustom,
-  bySearchTerm: filterBySearchTerm
+  bySearchTerm: filterBySearchTerm,
+  byChapter: filterByChapter,
+  byVerse: filterByVerse
 };
+exports.get = {
+  listOfChecks: getListOfChecks,
+  groups: getGroups,
+  statusList: statusList,
+  retainedList: retainedList
+}
 exports.searchText = searchText
