@@ -121,7 +121,7 @@ class Report extends React.Component {
       }
     }
     if (reportHeaders.length > 0) {
-      reportHeadersOutput.push(<Row key="header">{reportHeaders}</Row>);
+      reportHeadersOutput.push(<span key="header">{reportHeaders}</span>);
     }
     for (let ch in targetLang) {
       // skip if its not a chapter (key should be a number)

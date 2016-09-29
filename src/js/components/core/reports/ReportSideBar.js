@@ -89,12 +89,6 @@ class ReportSideBar extends React.Component{
         <Glyphicon glyph="remove" title="Close Report Page" style={{color:"red", cursor: "pointer", fontSize: "18px", marginTop: "3px",marginLeft: "5px", position: "fix", marginBottom: "1px"}} onClick={this.handleClose.bind(this)} />
         <div style={{marginLeft:"45px", display: "fixed"}}>
           <h3 style={{marginTop: "1px"}}>Translation Report</h3>
-          {this.props.reportHeadersOutput}
-          {/*temporary static labels below*/}
-          <h5>Translation Words: 0/0</h5>
-          <h5>Completed: 3</h5>
-          <h5>Flagged: 1</h5>
-          <h5>Unfinished: 10</h5>
         </div>
         <FormGroup bsSize="small" style={{marginLeft: "30px", width: "80%", bottom: "0px"}}>
           <ControlLabel>
@@ -129,17 +123,23 @@ class ReportSideBar extends React.Component{
             <option value="Chapter">Chapter</option>
             {/*chapterArray*/}
           </FormControl>
-          <InputGroup style={{marginTop:"40px"}}>
+          <InputGroup style={{marginTop:"30px"}}>
             <FormControl type="text"  value={this.state.searchValue} placeholder="Search" style={{height: "34px", fontSize: "16px"}} onChange={this.handleSearchChange.bind(this)}/>
             <InputGroup.Button>
-              <Button onClick={this.handleSearchClick.bind(this)}><Glyphicon glyph="search" /></Button>
+              <Button onClick={this.handleSearchClick.bind(this)} style={{background: "#44c6ff"}}><Glyphicon glyph="search" style={{color: "black", fontSize: "16px"}}/></Button>
             </InputGroup.Button>
           </InputGroup>
-          <br />
           <center>
-            <h5>{`Report for ${this.props.bookName} `}<br />
+            {this.props.reportHeadersOutput}
+            {/*temporary static labels below*/}
+            <h5>Translation Words: 0 / 0</h5>
+            <h5>Completed: 3</h5>
+            <h5>Flagged: 1</h5>
+            <h5>Unfinished: 10</h5>
+            <br />
+            <h5 style={{color: "#44c6ff"}}>{`Report for ${this.props.bookName} `}<br />
             <small>
-              {"\n By " + this.props.authors + ", created on " + new Date().toDateString()}
+              {"\n By " + this.props.authors + ","} <br /> {"created on " + new Date().toDateString()}
             </small>
             </h5>
           </center>
