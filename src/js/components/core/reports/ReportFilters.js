@@ -139,7 +139,6 @@ function filterByProposed(query, store) {
  *    comments: {Boolean}
  *    proposed: {Boolean}
  *    search: {String}
- *    location: {String}
  *    chapter: {Array of integers}
  *    verse: {Array of integers}
  * }
@@ -155,36 +154,24 @@ function filterByCustom(query, store) {
   if (query.proposed !== undefined) refinedGroups = filterByProposed(query.proposed, refinedGroups);
   if (query.chapter) refinedGroups = filterByChapter(query.chapter, refinedGroups);
   if (query.verse) refinedGroups = filterByVerse(query.verse, refinedGroups);
-  if (query.location && query.search) refinedGroups = filterBySearchTerm(query.location, query.search, refinedGroups);
+  if (query.search) refinedGroups = filterBySearchTerm(query.search, refinedGroups);
   return refinedGroups;
 }
 /**
  * @description This searches for words and pharses
- * @param {String} location - Where in the check to search in. Currently only
- *                            supporting search in comments and proposed changes
  * @param {String} query - The word or phrase to search for
  * @param {Array} store - The name of the check category.
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
-function filterBySearchTerm(location, query, store) {
+function filterBySearchTerm(query, store) {
   if (query.length === 0) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
     group.checks.map(checks => {
-      switch (location) {
-        case 'comments':
-          if (checks.comment && ~checks.comment.toLowerCase().indexOf(query.toLowerCase()))
-            defaultGroup.checks.push(checks);
-          break;
-        case 'proposedChanges':
-          if (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(query.toLowerCase()))
-            defaultGroup.checks.push(checks);
-          break;
-        default:
-          console.error('Unsupported Search Location');
-          return refinedGroups;
-      }
+      var lowerCaseQuery = query.toLowerCase();
+      if ((checks.comment && ~checks.comment.toLowerCase().indexOf(lowerCaseQuery)) || (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(lowerCaseQuery)));
+        defaultGroup.checks.push(checks);
     });
     if (defaultGroup.checks.length > 0) {
       refinedGroups.push(defaultGroup);
