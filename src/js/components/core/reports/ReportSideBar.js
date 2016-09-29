@@ -80,6 +80,7 @@ class ReportSideBar extends React.Component{
 
   handleSearchClick(){
     this.query.search = this.state.searchValue;
+    this.query.location = "comments";
     this.props.getQuery(this.query);
   }
 

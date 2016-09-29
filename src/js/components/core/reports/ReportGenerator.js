@@ -21,7 +21,6 @@ const {Glyphicon, Grid, Row, Col, Button} = RB;
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const {ipcRenderer} = require('electron');
-const reportTemplate = require('./ReportTemplate');
 const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
