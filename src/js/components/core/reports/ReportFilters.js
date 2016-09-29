@@ -170,8 +170,9 @@ function filterBySearchTerm(query, store) {
     var defaultGroup = {checks: [], group: group.group};
     group.checks.map(checks => {
       var lowerCaseQuery = query.toLowerCase();
-      if ((checks.comment && ~checks.comment.toLowerCase().indexOf(lowerCaseQuery)) || (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(lowerCaseQuery)));
+      if ((checks.comment && ~checks.comment.toLowerCase().indexOf(lowerCaseQuery)) || (checks.proposedChanges && ~checks.proposedChanges.toLowerCase().indexOf(lowerCaseQuery))) {
         defaultGroup.checks.push(checks);
+      }
     });
     if (defaultGroup.checks.length > 0) {
       refinedGroups.push(defaultGroup);
