@@ -32,12 +32,22 @@ class PackageManagerView extends React.Component{
     this.setState(param);
   }
 
+  hidePackManager(){
+    this.setState({visiblePackManager: false});
+  }
+
   render(){
-    return(
-      <div style={Style.layout}>
-        Hello
-      </div>
-    );
+    if(!this.state.visiblePackManager){
+      return (<div></div>);
+    }else{
+      return(
+        <div style={Style.layout}>
+          <Glyphicon glyph="remove" title="Close Package Manager" style={Style.removeGlypcIcon}
+              onClick={this.hidePackManager.bind(this)}/>
+            Hello
+        </div>
+      );
+    }
   }
 
 }

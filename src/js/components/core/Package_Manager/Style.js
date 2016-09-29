@@ -18,6 +18,17 @@ var style = {
       padding: "0px",
   },
 
+  removeGlypcIcon:{
+    color:"red",
+    cursor: "pointer",
+    position: "fixed",
+    fontSize: "18px",
+    float: "right",
+    right: "2px",
+    top: "3px",
+    zIndex: "101",
+  }
+
 };
 
 module.exports = style;
