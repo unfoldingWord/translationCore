@@ -58,7 +58,7 @@ function getChecksByVerse(chapter, verse, query) {
     return [];
   }
   if (query) {
-    groups = ReportFilters.byCustom(query, groups);
+    groups = query;
   }
   for(var group of groups) {
     for(var check of group.checks) {
@@ -188,4 +188,7 @@ class ReportHeader extends React.Component {
   }
 }
 
-module.exports = TranslationWordsReport;
+module.exports = {
+  view: TranslationWordsReport,
+  namespace: NAMESPACE
+};

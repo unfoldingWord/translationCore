@@ -24,6 +24,8 @@ const {ipcRenderer} = require('electron');
 const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
+const ReportFilters = api.ReportFilters;
+
 // listener event from the main process listening for the report window closing
 ipcRenderer.on("report-closed", (event, path) => {
   reportOpened = false;
@@ -111,7 +113,7 @@ class Report extends React.Component {
     for (let view in this.props.reportViews) {
       let viewResult;
       try { // in case their report view has errors
-         viewResult = this.props.reportViews[view](0,0);
+         viewResult = this.props.reportViews[view].view(0,0);
       }
       catch (e) {
         continue;
@@ -133,7 +135,7 @@ class Report extends React.Component {
       //output.push(chHeader);
       var isEmpty = true;
       for (let view in this.props.reportViews) {
-        let viewResult = this.props.reportViews[view](ch, 0);
+        let viewResult = this.props.reportViews[view].view(ch, 0);
         if (viewResult) {
           reportHeadersOutput.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
         }
@@ -142,7 +144,13 @@ class Report extends React.Component {
       for (let v in targetLang[ch]) {
         let reports = [];
         for (let view in this.props.reportViews) {
-          let viewResult = this.props.reportViews[view](ch, v, this.state.query);
+          var query = this.state.query;
+          var reportNameSpace = this.props.reportViews[view].namespace;
+          var moduleStore = api.getDataFromCheckStore(reportNameSpace, 'groups');
+          if (query && moduleStore) {
+            moduleStore = ReportFilters.byCustom(query, moduleStore);
+          }
+          let viewResult = this.props.reportViews[view].view(ch, v, moduleStore);
           if (viewResult) {
             reports.push(<span key={`${ch}-${v}-${view}`}>{viewResult}</span>);
             isEmpty = false;
