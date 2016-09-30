@@ -87,7 +87,7 @@ class ReportSideBar extends React.Component{
     return(
       <div style={{backgroundColor: "#333333", width: "25%", height: "100vh", marginLeft: "0px", position: "fixed", zIndex: "99", left: "0px", fontSize: "12px", color: "white", overflowX: "hidden", overflowY: "auto"}}>
         <div style={{marginLeft:"30px", display: "fixed"}}>
-          <h3 style={{marginTop: "10px"}}>Translation Report</h3>
+          <h3 style={{marginTop: "20px"}}>Translation Report</h3>
         </div>
         <FormGroup bsSize="small" style={{marginLeft: "30px", width: "80%", bottom: "0px"}}>
           <ControlLabel>
