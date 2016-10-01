@@ -10,6 +10,8 @@ const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
 const Style = require("./Style");
+const PackageCard = require("./PackageCard");
+const PackManagerSideBar = require("./PackManagerSideBar");
 
 class PackageManagerView extends React.Component{
   constructor() {
@@ -42,9 +44,13 @@ class PackageManagerView extends React.Component{
     }else{
       return(
         <div style={Style.layout}>
+          <PackManagerSideBar hidePackManager={this.hidePackManager.bind(this)}/>
+          <div style={Style.header}></div>
           <Glyphicon glyph="remove" title="Close Package Manager" style={Style.removeGlypcIcon}
               onClick={this.hidePackManager.bind(this)}/>
-            Hello
+            <PackageCard />
+            <PackageCard />
+            <PackageCard />
         </div>
       );
     }
