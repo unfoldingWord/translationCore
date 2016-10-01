@@ -46,4 +46,5 @@ class SideBarButton extends React.Component{
     );
   }
 }
+
 module.exports = SideBarButton;
