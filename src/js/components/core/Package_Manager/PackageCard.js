@@ -10,12 +10,21 @@ const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, Button} = RB;
 const style = require("./Style");
+const PackageManager = require('./PackageManager.js');
 
 class PackageCard extends React.Component{
   constructor() {
     super();
     this.state = {
     };
+  }
+
+  install(name) {
+    PackageManager.download(name, function(err, data){
+      if(!err) {
+      //TODO: Add way to update icon from install to update  
+      }
+    });
   }
 
   render(){
@@ -30,7 +39,7 @@ class PackageCard extends React.Component{
           <span style={style.cardBody}>{this.props.description}</span>
           <div style={{marginTop: "10px"}}>
             <div className="pull-right">
-              <Button bsStyle="primary" style={style.packCardButton} title={title}>
+              <Button bsStyle="primary" style={style.packCardButton} title={title} onClick={this.install.bind(this, this.props.packName)}>
                 <Glyphicon glyph="cloud-download" /> Install
               </Button>
             </div>
