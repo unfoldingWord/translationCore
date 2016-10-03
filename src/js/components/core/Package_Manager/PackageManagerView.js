@@ -48,9 +48,15 @@ class PackageManagerView extends React.Component{
           <div style={Style.header}></div>
           <Glyphicon glyph="remove" title="Close Package Manager" style={Style.removeGlypcIcon}
               onClick={this.hidePackManager.bind(this)}/>
-            <PackageCard />
-            <PackageCard />
-            <PackageCard />
+            <PackageCard packName={"TranslationNotes-tC"} packVersion={"0.1.0"} numOfDownloads={"30"} description={"This is a tool to check the grammatical structure of phrases."} iconPathName={"modules/translationNotes_Check_plugin/icon.png"}/>
+            <PackageCard packName={"TranslationWords-tC"} packVersion={"0.3.0"} numOfDownloads={"68"} description={"The translationWords check works by providing translators with clear, concise definitions and translation suggestions for every important word in the Bible."} iconPathName={"modules/translationWords_Check_plugin/icon.png"}/>
+            <PackageCard packName={"Example Check Module"} packVersion={"0.1.0"} numOfDownloads={"10"} description={"This is an example check app for reference for developers."} iconPathName={"modules/example_check_module/icon.png"}/>
+            <PackageCard packName={"TranslationNotes-tC"} packVersion={"0.1.0"} numOfDownloads={"30"} description={"This is a tool to check the grammatical structure of phrases."} iconPathName={"modules/translationNotes_Check_plugin/icon.png"}/>
+            <PackageCard packName={"TranslationWords-tC"} packVersion={"0.3.0"} numOfDownloads={"68"} description={"The translationWords check works by providing translators with clear, concise definitions and translation suggestions for every important word in the Bible."} iconPathName={"modules/translationWords_Check_plugin/icon.png"}/>
+            <PackageCard packName={"Example Check Module"} packVersion={"0.1.0"} numOfDownloads={"10"} description={"This is an example check app for reference for developers."} iconPathName={"modules/example_check_module/icon.png"}/>
+            <PackageCard packName={"TranslationNotes-tC"} packVersion={"0.1.0"} numOfDownloads={"30"} description={"This is a tool to check the grammatical structure of phrases."} iconPathName={"modules/translationNotes_Check_plugin/icon.png"}/>
+            <PackageCard packName={"TranslationWords-tC"} packVersion={"0.3.0"} numOfDownloads={"68"} description={"The translationWords check works by providing translators with clear, concise definitions and translation suggestions for every important word in the Bible."} iconPathName={"modules/translationWords_Check_plugin/icon.png"}/>
+            <PackageCard packName={"Example Check Module"} packVersion={"0.1.0"} numOfDownloads={"10"} description={"This is an example check app for reference for developers."} iconPathName={"modules/example_check_module/icon.png"}/>
         </div>
       );
     }

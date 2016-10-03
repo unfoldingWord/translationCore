@@ -10,7 +10,7 @@ var style = {
     fontSize: "12px",
     color: "white",
     overflowX: "hidden",
-    overflowY: "auto",
+    overflowY: "scroll",
     paddingRight: "20px",
   },
 
@@ -25,8 +25,8 @@ var style = {
     position: "fixed",
     fontSize: "18px",
     float: "right",
-    right: "5px",
-    top: "5px",
+    right: "17px",
+    top: "6px",
     zIndex: "101",
   },
 
@@ -39,7 +39,6 @@ var style = {
     border: "1px solid rgba(0, 0, 0, 0.5)",
     backgroundColor: "#303337",
     overflow: "hidden",
-    cursor: "pointer",
     boxSizing: "border-box",
     display: "block",
     float: "right",
@@ -108,7 +107,7 @@ var style = {
     marginBottom: "20px",
     fontSize: "14px",
     left: "181px",
-    top: "0px",
+    top: "2px",
     border: "1px solid rgba(0, 0, 0, 0.5)",
   },
 
@@ -136,6 +135,31 @@ var style = {
     marginLeft: "15px",
   },
 
+  cardBody:{
+    color: "#aaaaaa",
+    fontSize: "16px",
+  },
+
+  versionText:{
+    fontSize: "12px",
+    fontWeight: "normal",
+    color: "#aaaaaa",
+  },
+
+  packIcon:{
+    borderRadius: "2px",
+    height: "34px",
+    width: "34px",
+    display: "inline-block",
+    verticalAlign: "middle",
+  },
+
+  packCardButton:{
+    color: "#ffffff",
+    backgroundColor: "#006ab3",
+    backgroundImage: "-webkit-linear-gradient(#007acc, #006ab3)",
+    borderColor: "#006ab3",
+  },
 
 };
 
