@@ -1,6 +1,6 @@
 /******************************************************************************
  *@author: Manny Colon
- *@description: This component its a button design that includes hover options
+ *@description: This component is a button design that includes hover options
  for the  PackManagerSideBar.js
 *******************************************************************************/
 const api = window.ModuleApi;

@@ -11,7 +11,7 @@ var style = {
     color: "white",
     overflowX: "hidden",
     overflowY: "scroll",
-    paddingRight: "20px",
+    paddingRight: "25px",
   },
 
   ul: {
@@ -25,8 +25,8 @@ var style = {
     position: "fixed",
     fontSize: "18px",
     float: "right",
-    right: "17px",
-    top: "6px",
+    right: "22px",
+    top: "10px",
     zIndex: "101",
   },
 
