@@ -86,9 +86,8 @@ class ReportSideBar extends React.Component{
   render(){
     return(
       <div style={{backgroundColor: "#333333", width: "25%", height: "100vh", marginLeft: "0px", position: "fixed", zIndex: "99", left: "0px", fontSize: "12px", color: "white", overflowX: "hidden", overflowY: "auto"}}>
-        <Glyphicon glyph="remove" title="Close Report Page" style={{color:"red", cursor: "pointer", fontSize: "18px", marginTop: "3px",marginLeft: "5px", position: "fix", marginBottom: "1px"}} onClick={this.handleClose.bind(this)} />
-        <div style={{marginLeft:"45px", display: "fixed"}}>
-          <h3 style={{marginTop: "1px"}}>Translation Report</h3>
+        <div style={{marginLeft:"30px", display: "fixed"}}>
+          <h3 style={{marginTop: "20px"}}>Translation Report</h3>
         </div>
         <FormGroup bsSize="small" style={{marginLeft: "30px", width: "80%", bottom: "0px"}}>
           <ControlLabel>
@@ -126,7 +125,7 @@ class ReportSideBar extends React.Component{
           <InputGroup style={{marginTop:"30px"}}>
             <FormControl type="text"  value={this.state.searchValue} placeholder="Search" style={{height: "34px", fontSize: "16px"}} onChange={this.handleSearchChange.bind(this)}/>
             <InputGroup.Button>
-              <Button onClick={this.handleSearchClick.bind(this)} style={{background: "#44c6ff"}}><Glyphicon glyph="search" style={{color: "black", fontSize: "16px"}}/></Button>
+              <Button onClick={this.handleSearchClick.bind(this)} style={{background: "#44c6ff"}}><Glyphicon glyph="search" style={{color: "white", fontSize: "16px"}}/></Button>
             </InputGroup.Button>
           </InputGroup>
           <center>

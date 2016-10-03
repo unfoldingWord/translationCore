@@ -175,7 +175,7 @@ class Report extends React.Component {
         <ReportSideBar getQuery={this.getQuery.bind(this)} bookName={bookName}
                       authors={authors} reportHeadersOutput={reportHeadersOutput}
                       hideReport={this.hideReport.bind(this)}/>
-        <div style={{backgroundColor: "#333333", width: "86.7%", height: "100vh",
+        <div style={{backgroundColor: "#333333", width: "88.5%", height: "100vh",
           marginLeft: "0px",
           display: "inline-block",
           position: "fixed",

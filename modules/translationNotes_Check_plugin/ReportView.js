@@ -40,7 +40,7 @@ function TranslationNotesReport(chapter, verse, query) {
     }
   }
   return (
-      <div style={{background:"rgb(68, 198, 255)", padding: "5px", paddingTop: "10px", margin: "0px", marginBottom: "5px"}}>
+      <div style={{background:"rgb(68, 198, 255)", padding: "5px", paddingTop: "10px", marginBottom: "5px", color: "white"}}>
         <h3 style={{marginLeft: '5px', display: 'inline'}}>{TITLE}</h3>
         <div className='pull-right'><h5>{numChecked}/{checks.length} Completed</h5></div>
         <br /><br />
@@ -181,7 +181,7 @@ class ReportItem extends React.Component {
   }
   render() {
     return (
-      <Well style={{fontSize: "16px", background:"white", marginBottom: "5px"}}>
+      <Well style={{fontSize: "16px", background:"white", marginBottom: "5px", color: "black"}}>
         <Row className="show-grid" style={{marginBottom:"15px", marginTop:"-25px", width: "100%"}}>
       <center>
         <h4 style={{paddingLeft:"5px"}}>
