@@ -55,10 +55,68 @@ class Report extends React.Component {
     this.setState({visibleReport: false})
   }
 
+  getCompletedAndUnfinishedCheks(){
+    let numChecked = 0;
+    let total = 0;
+    let groups = api.getDataFromCheckStore('TranslationWordsChecker', 'groups');
+    if(groups != null){
+      for (let group of groups) {
+        for (let check of group.checks) {
+          if (check.checkStatus != "UNCHECKED") {
+            numChecked++;
+          }
+          total++;
+        }
+      }
+    }
+    groups = api.getDataFromCheckStore('TranslationNotesChecker', 'groups');
+    if(groups != null){
+      for (let group of groups) {
+        for (let check of group.checks) {
+          if (check.checkStatus != "UNCHECKED") {
+            numChecked++;
+          }
+          total++;
+        }
+      }
+    }
+    let unfinished = total - numChecked;
+    return [numChecked, unfinished];
+  }
+
+  getFlaggedChecks(){
+    let flaggedChecks = 0;
+    let groups = api.getDataFromCheckStore('TranslationWordsChecker', 'groups');
+    if(groups != null){
+      for (let group of groups) {
+        for (let check of group.checks) {
+          if (check.checkStatus == "FLAGGED") {
+            flaggedChecks++;
+          }
+        }
+      }
+    }
+    groups = api.getDataFromCheckStore('TranslationNotesChecker', 'groups');
+      if(groups != null){
+        for (let group of groups) {
+          for (let check of group.checks) {
+            if (check.checkStatus == "FLAGGED") {
+              flaggedChecks++;
+            }
+          }
+        }
+      }
+    return flaggedChecks;
+  }
+
   render() {
     if(!this.state.visibleReport){
       return (<div></div>);
     }else{
+    //get the total of completed checks and Unfinished number of checks
+    let [done, unfinished] =  this.getCompletedAndUnfinishedCheks();
+    //get the total of Flagged checks
+    let flaggedChecks = this.getFlaggedChecks();
     // get all of the checks associated with this project
     const listOfChecks = ModuleApi.getDataFromCommon("arrayOfChecks");
     const targetLang = ModuleApi.getDataFromCommon("targetLanguage");
@@ -174,7 +232,8 @@ class Report extends React.Component {
       <div style={{overflow: "auto", zIndex: "99"}}>
         <ReportSideBar getQuery={this.getQuery.bind(this)} bookName={bookName}
                       authors={authors} reportHeadersOutput={reportHeadersOutput}
-                      hideReport={this.hideReport.bind(this)}/>
+                      hideReport={this.hideReport.bind(this)} completed={done}
+                      unfinished={unfinished} flagged={flaggedChecks}/>
         <div style={{backgroundColor: "#333333", width: "88.5%", height: "100vh",
           marginLeft: "0px",
           display: "inline-block",

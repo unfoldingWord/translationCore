@@ -131,10 +131,9 @@ class ReportSideBar extends React.Component{
           <center>
             {this.props.reportHeadersOutput}
             {/*temporary static labels below*/}
-            <h5>Translation Words: 0 / 0</h5>
-            <h5>Completed: 3</h5>
-            <h5>Flagged: 1</h5>
-            <h5>Unfinished: 10</h5>
+            <h5>Completed: {this.props.completed}</h5>
+            <h5>Flagged: {this.props.flagged}</h5>
+            <h5>Unfinished: {this.props.unfinished}</h5>
             <br />
             <h5 style={{color: "#44c6ff"}}>{`Report for ${this.props.bookName} `}<br />
             <small>

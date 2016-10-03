@@ -89,14 +89,14 @@ function getCheckNumbers() {
 
 //React component that represents a single check
 class ReportItem extends React.Component {
-	constructor() {
-		super();
+  constructor() {
+    super();
   }
   headerDiv() {
     if(!this.props.check.wordFile)
       return undefined;
     return (
-      <div style={{float: 'left'}}>{this.props.check.wordFile.replace(extensionRegex, '')}</div>
+      <div style={{float: 'left', marginLeft: "10px"}}>{this.props.check.wordFile.replace(extensionRegex, '')}</div>
     );
   }
   prettySelectedWords() {
