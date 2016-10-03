@@ -265,6 +265,14 @@ function filterByVerse(query, store) {
   });
   return refinedGroups;
 }
+/**
+ * @description Gets the chapters that are included in the target language.
+ * @return {Array} targetLang - An array of strings, that denote chapter numbers.
+ ******************************************************************************/
+function getChapters() {
+  var targetLang = window.ModuleApi.getDataFromCommon("targetLanguage");
+  return Object.getOwnPropertyNames(targetLang);
+}
 exports.filter = {
   byGroup: filterByGroup,
   byStatus: filterByStatus,
@@ -280,6 +288,7 @@ exports.get = {
   listOfChecks: getListOfChecks,
   groups: getGroups,
   statusList: statusList,
-  retainedList: retainedList
+  retainedList: retainedList,
+  chapters: getChapters
 }
 exports.searchText = searchText
