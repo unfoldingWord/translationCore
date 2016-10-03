@@ -71,14 +71,17 @@ class Report extends React.Component {
     const listOfChecks = ModuleApi.getDataFromCommon("arrayOfChecks");
     const targetLang = ModuleApi.getDataFromCommon("targetLanguage");
     if (!listOfChecks) {
-      return (<div>{"No project data for checks found"}</div>);
+      api.Toast.error("Report Open Error", "No project data for checks found", 3);
+      return (<div></div>);
     }
     if (!targetLang) {
-      return (<div>{"No target language found"}</div>);
+      api.Toast.error("Report Open Error", "No target language found", 3);
+      return (<div></div>);
     }
     // array of the functions in the ReportView.js's for the project
     if (this.props.reportViews.length == 0) {
-      return (<div>{"No report views found"}</div>);
+      api.Toast.error("Report Open Error", "No report views found", 3);
+      return (<div></div>);
     }
     // array of JSX to be rendered
     // loop through all verses and chapters in the target language
