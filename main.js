@@ -4,14 +4,12 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const ipc = require('electron').ipcMain;
 const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-let reportWindow;
 
 if (handleStartupEvent()) {
   return;
@@ -36,39 +34,6 @@ function createWindow () {
     mainWindow = null
   })
 }
-// currently sent from ReportGenerator.js
-ipc.on('open-report', (event, path) => {
-  if (reportWindow) {
-    reportWindow.focus();
-    return;
-  }
-  reportWindow = new BrowserWindow({autoHideMenuBar: true, show: true, width: 600, height: 600, title: "Check Report", icon: 'images/TC_Icon.png'});
-  reportWindow.loadURL("file:///" + path);
-    //Doesn't display until ready
-  reportWindow.on('closed', () => {
-    reportWindow = undefined;
-    // send event to the mainWindow if its open still
-    if (mainWindow) {
-      mainWindow.webContents.send("report-closed", path);
-    }
-    // delete the rendered report.html if it exists
-    // I would prefer that this be done in the renderer thread,
-    // but unless this was in the main thread, the main window could
-    // be closed before the report window, and the report file would not
-    // get deleted
-    fs.stat(path, (err, stats) => {
-      if (!err) {
-        fs.unlink(path, err => {
-          if (err) console.log(err);
-        });
-      }
-      else {
-        console.log(err);
-      }
-    });
-
-  });
-});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

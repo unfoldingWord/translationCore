@@ -20,18 +20,10 @@ const RB = api.ReactBootstrap;
 const {Glyphicon, Grid, Row, Col, Button} = RB;
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
-const {ipcRenderer} = require('electron');
 const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
 const ReportFilters = api.ReportFilters;
-
-// listener event from the main process listening for the report window closing
-ipcRenderer.on("report-closed", (event, path) => {
-  reportOpened = false;
-});
-// boolean to keep track of if a report window is currently open
-let reportOpened = false;
 
 class Report extends React.Component {
   constructor() {
