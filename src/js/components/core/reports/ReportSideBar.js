@@ -130,7 +130,6 @@ class ReportSideBar extends React.Component{
           </InputGroup>
           <center>
             {this.props.reportHeadersOutput}
-            {/*temporary static labels below*/}
             <h5>Completed: {this.props.completed}</h5>
             <h5>Flagged: {this.props.flagged}</h5>
             <h5>Unfinished: {this.props.unfinished}</h5>
