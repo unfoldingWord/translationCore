@@ -4,6 +4,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
 const ReportFilters = require("./ReportFilters.js");
+const style = require("./Style");
 
 class ReportSideBar extends React.Component{
   constructor() {
@@ -85,11 +86,11 @@ class ReportSideBar extends React.Component{
 
   render(){
     return(
-      <div style={{backgroundColor: "#333333", width: "25%", height: "100vh", marginLeft: "0px", position: "fixed", zIndex: "99", left: "0px", fontSize: "12px", color: "white", overflowX: "hidden", overflowY: "auto"}}>
+      <div style={style.ReportSideBar.layout}>
         <div style={{marginLeft:"30px", display: "fixed"}}>
           <h3 style={{marginTop: "20px"}}>Translation Report</h3>
         </div>
-        <FormGroup bsSize="small" style={{marginLeft: "30px", width: "80%", bottom: "0px"}}>
+        <FormGroup bsSize="small" style={style.ReportSideBar.FormGroup}>
           <ControlLabel>
             <center><h4>Filter:</h4></center>
           </ControlLabel>

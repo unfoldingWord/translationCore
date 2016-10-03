@@ -24,6 +24,7 @@ const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
 const ReportFilters = api.ReportFilters;
+const style = require("./Style");
 
 class Report extends React.Component {
   constructor() {
@@ -234,16 +235,10 @@ class Report extends React.Component {
                       authors={authors} reportHeadersOutput={reportHeadersOutput}
                       hideReport={this.hideReport.bind(this)} completed={done}
                       unfinished={unfinished} flagged={flaggedChecks}/>
-        <div style={{backgroundColor: "#333333", width: "88.5%", height: "100vh",
-          marginLeft: "0px",
-          display: "inline-block",
-          position: "fixed",
-          zIndex: "99",
-          left: "25%",
-          fontSize: "12px", overflowX: "hidden", overflowY: "scroll"}}>
-          <div style={{width: "100%", height: "20px", backgroundColor: "#333333", position: "fixed", zIndex: "100"}}>
+        <div style={style.reportContainer}>
+          <div style={style.reportHeader}>
             <Glyphicon glyph="remove" title="Close Report Page"
-                        style={{color:"red", cursor: "pointer", position: "fixed", fontSize: "18px", float: "right", right: "2px", top: "3px", zIndex: "101"}}
+                        style={style.hidePageGlyph}
                         onClick={this.hideReport.bind(this)}/>
           </div>
           <div style={{marginBottom: "20px"}}></div>
