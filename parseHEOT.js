@@ -30,6 +30,7 @@ function HEOT(URL) {
                         //Hebrew Strong Number "lemma"
                     }
                     let entireVerse = currentVerse.join(" ");
+                    let aTry = new String(entireVerse);
                     //TO-DO finish making entire object
                     debugger;
                 }

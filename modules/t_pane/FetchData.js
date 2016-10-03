@@ -135,6 +135,7 @@ function readFile(path, callback) {
 }
 
 function readInOriginal(path, bookAbbr, callback) {
+  debugger;
   readFile(path, function(err, data) {
     if (err) {
       console.error(err);
@@ -174,6 +175,7 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
 * @param {string} text - The text being read in from chunks
 ******************************************************************************/
 function joinChunks(text, currentChapter, currentJoined) {
+  debugger;
   currentChapter = parseInt(currentChapter);
   if (currentChapter == 0) {
     currentJoined.title = text;
@@ -206,6 +208,8 @@ function openOriginal(text, bookName) {
     }
   }
 // CoreActions.updateOriginalLanguage(input[bookName]);
+debugger;
+//make new function to put straight into common as array?
   api.putDataInCommon('originalLanguage', input[stripSpaces(bookName)]);
 }
 
@@ -225,6 +229,7 @@ function parseGreek() {
   // looking at it now, this method with the regex may be way less efficient
   // than just splitting the verse by spaces and going word by word
   // this might want to be reworked later for efficiency
+  debugger;
   var greekRegex = /([^\w\s,.\-?!\(\)]+)\s+G(\d{1,6})\s+(?:G\d{1,6})*\s*([A-Z0-9\-]+)/g;
   var lex = require("./Lexicon.json");
   let origText = api.getDataFromCommon("originalLanguage");
@@ -253,6 +258,7 @@ function parseGreek() {
     }
   }
   api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
+  //Put the parsed Hebrew into the checkstore in the Object format specified here
 }
 
 module.exports = fetchData;

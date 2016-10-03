@@ -29,7 +29,7 @@ const parse = require("../../../parseHEOT.js");
 
 var Main = React.createClass({
   getInitialState() {
-    parse("https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/1Chr.xml");
+    //parse("https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/1Chr.xml");
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState == 'true' || tutorialState === null) {
       return({
