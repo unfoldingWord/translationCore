@@ -1,3 +1,7 @@
+/**
+ *@author: Ian Hoegen
+ *@description: This is the central manager of all packages for translationCore.
+ ******************************************************************************/
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
@@ -22,8 +26,8 @@ function downloadPackage(packageName, callback) {
   }
   getPackageList(function(obj){
     var packageLocation = obj[packageName].location;
-    fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
-    fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
+    fs.emptyDirSync(PACKAGE_SAVE_LOCATION);
+    fs.emptyDirSync(PACKAGE_COMPILE_LOCATION);
     var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
@@ -31,6 +35,7 @@ function downloadPackage(packageName, callback) {
       exec(command, {cwd: source}, (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
+          callback(`exec error: ${error}`, null);
           return;
         }
         fs.copy(source, destination, function (err) {
@@ -55,9 +60,10 @@ function compilePackage(destination, callback) {
   exec(command, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
+      callback(`exec error: ${error}`, null);
       return;
     }
-    callback('Installation Successful')
+    callback(null, 'Installation Successful')
   });
 }
 /**
@@ -143,6 +149,23 @@ function getVersion(packageName) {
   var version = manifest.version;
   return version;
 }
+/**
+ * @description - This get's the version number of the package.
+ * @param {String} query - The package to search for.
+ * @param {String} callback - Function to be called on complete.
+ ******************************************************************************/
+function search(query, callback) {
+  getPackageList((data) => {
+    var packageNames = Object.getOwnPropertyNames(data);
+    var results = [];
+    for (var i in packageNames) {
+      if (~packageNames[i].indexOf(query)) {
+        results.push(data[packageNames[i]]);
+      }
+    }
+    callback(results);
+  });
+}
 
 
 exports.download = downloadPackage;
@@ -152,4 +175,5 @@ exports.checkForUpdates = checkForUpdates;
 exports.update = update;
 exports.getLocalList = getLocalList;
 exports.isInstalled = isInstalled;
+exports.search = search;
 exports.getVersion = getVersion;

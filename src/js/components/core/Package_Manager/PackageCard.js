@@ -10,6 +10,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, Button} = RB;
 const style = require("./Style");
+const PackageManager = require('./PackageManager.js');
 
 class PackageCard extends React.Component{
   constructor() {
@@ -18,20 +19,35 @@ class PackageCard extends React.Component{
     };
   }
 
+  install(name) {
+    PackageManager.download(name, function(err, data){
+      if(!err) {
+      //TODO: Add way to update icon from install to update
+      }
+    });
+  }
+
   render(){
     let buttons = [];
     if(this.props.buttonDisplay === "updatePack"){
-      buttons.push(<Button key={this.props.buttonDisplay} bsStyle="success" title={"Update " + this.props.packName}>
+      buttons.push(
+        <Button key={this.props.buttonDisplay} bsStyle="success"
+            title={"Update " + this.props.packName}>
         <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
       </Button>);
     }else if (this.props.buttonDisplay === "downloadPack") {
-      buttons.push(<Button key={this.props.buttonDisplay} bsStyle="primary" style={style.packCardButton} title={"Install " + this.props.packName}>
-        <Glyphicon glyph="cloud-download" /> Install
-      </Button>);
+      buttons.push(
+        <Button key={this.props.buttonDisplay} bsStyle="primary"
+                style={style.packCardButton} title={"Install " + this.props.packName}
+                onClick={this.install.bind(this, this.props.packName)}>
+                <Glyphicon glyph="cloud-download" /> Install
+        </Button>);
     }
     return(
         <div style={style.cardLayout}>
-          <div className="pull-right" style={style.cardBody} title="Number of Downloads"><Glyphicon glyph="cloud-download" style={{color: "#555555"}}/>{" " + this.props.numOfDownloads}</div>
+          <div className="pull-right" style={style.cardBody} title="Number of Downloads">
+            <Glyphicon glyph="cloud-download" style={{color: "#555555"}}/>{" " + this.props.numOfDownloads}
+          </div>
           <h4 style={{marginTop: "0px"}}>
             {this.props.packName}
             <span style={style.versionText}>{" " + this.props.packVersion}</span>
