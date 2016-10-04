@@ -84,7 +84,35 @@ class ReportSideBar extends React.Component{
     this.props.getQuery(this.query);
   }
 
+  filterByChapter(e){
+    let options = e.target.options;
+    let value = [];
+    for (let i = 0, l = options.length; i < l; i++) {
+      if (options[i].selected) {
+        value.push(options[i].value);
+      }
+    }
+    if(value.length == 1 && value[0] == ""){
+      value = null;
+    }
+    this.query.chapter =  value;
+    this.props.getQuery(this.query);
+    console.log(this.query.chapter);
+  }
+
+  getChapters(){
+    let chapterOptionArray = [];
+    let arrayOfChap = api.ReportFiltersTools.get.chapters();
+    for(let c of arrayOfChap){
+      if(c != "title"){
+        chapterOptionArray.push(<option key={c} value={c}>{c}</option>);
+      }
+    }
+    return chapterOptionArray;
+  }
+
   render(){
+    let chapterOptionArray = this.getChapters();
     return(
       <div style={style.ReportSideBar.layout}>
         <div style={{marginLeft:"30px", display: "fixed"}}>
@@ -119,9 +147,9 @@ class ReportSideBar extends React.Component{
             <option value="false">Without Proposed Changes</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter}>
-            <option value="Chapter">Chapter</option>
-            {/*chapterArray*/}
+          <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter.bind(this)}>
+            <option value="">Chapter</option>
+            {chapterOptionArray}
           </FormControl>
           <InputGroup style={{marginTop:"30px"}}>
             <FormControl type="text"  value={this.state.searchValue} placeholder="Search" style={{height: "34px", fontSize: "16px"}} onChange={this.handleSearchChange.bind(this)}/>
@@ -137,7 +165,7 @@ class ReportSideBar extends React.Component{
             <br />
             <h5 style={{color: "#44c6ff"}}>{`Report for ${this.props.bookName} `}<br />
             <small>
-              {"\n By " + this.props.authors + ","} <br /> {"created on " + new Date().toDateString()}
+              {"\n By " + this.props.authors + ","} <br /> {"Created on " + new Date().toDateString()}
             </small>
             </h5>
           </center>
