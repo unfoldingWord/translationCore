@@ -29,7 +29,18 @@ function TranslationWordsReport(chapter, verse, query) {
   }
   var checkList = [];
   var numChecked = 0;
+  var bookChapVer;
+  let bookName = "-bookName-";
+  let authors = "-authors-";
+  let manifest = ModuleApi.getDataFromCommon("tcManifest");
+  let params = ModuleApi.getDataFromCommon('params');
+  let bookAbbr;
+  if (params) bookAbbr = params.bookAbbr;
+  if (manifest && (manifest.ts_project || bookAbbr)) {
+    bookName = manifest.ts_project.name || BooksOfBible[bookAbbr] || "-bookName-";
+  }
   for(let i in checks) {
+    bookChapVer = bookName + " " + checks[i].chapter + ":" + checks[i].verse;
     // Only show this specific check if is marked as checked
     // TODO: Maybe it should still show if there are comments/selectedWords/proposedChanges
     // even if it is UNCHECKED
@@ -43,6 +54,7 @@ function TranslationWordsReport(chapter, verse, query) {
   return (
       <div style={{background:"rgb(68, 198, 255)", padding: "5px", paddingTop: "10px", marginBottom: "5px", color: "white"}}>
         <h3 style={{marginLeft: '5px', display: 'inline'}}>{TITLE}</h3>
+        <span style={{fontSize: "18px", color: "black"}}>{bookChapVer}</span>
         <div className='pull-right'><h5>{numChecked}/{checks.length} Completed</h5></div>
         <br /><br />
         {checkList}
