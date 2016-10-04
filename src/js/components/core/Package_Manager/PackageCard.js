@@ -19,7 +19,16 @@ class PackageCard extends React.Component{
   }
 
   render(){
-    let title = "Install " + this.props.packName;
+    let buttons = [];
+    if(this.props.buttonDisplay === "updatePack"){
+      buttons.push(<Button key={this.props.buttonDisplay} bsStyle="success" title={"Update " + this.props.packName}>
+        <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
+      </Button>);
+    }else if (this.props.buttonDisplay === "downloadPack") {
+      buttons.push(<Button key={this.props.buttonDisplay} bsStyle="primary" style={style.packCardButton} title={"Install " + this.props.packName}>
+        <Glyphicon glyph="cloud-download" /> Install
+      </Button>);
+    }
     return(
         <div style={style.cardLayout}>
           <div className="pull-right" style={style.cardBody} title="Number of Downloads"><Glyphicon glyph="cloud-download" style={{color: "#555555"}}/>{" " + this.props.numOfDownloads}</div>
@@ -30,9 +39,7 @@ class PackageCard extends React.Component{
           <span style={style.cardBody}>{this.props.description}</span>
           <div style={{marginTop: "10px"}}>
             <div className="pull-right">
-              <Button bsStyle="primary" style={style.packCardButton} title={title}>
-                <Glyphicon glyph="cloud-download" /> Install
-              </Button>
+              {buttons}
             </div>
             <img style={style.packIcon} src={this.props.iconPathName} />
           </div>

@@ -19,6 +19,17 @@ class PackManagerSideBar extends React.Component{
     };
   }
 
+  displayInstalledPackages(){
+    api.emitEvent('cardDisplayStatus', {'displayStatus': 'installedPack'});
+  }
+
+  displayDownloadPackages(){
+    api.emitEvent('cardDisplayStatus', {'displayStatus': 'downloadPack'});
+  }
+
+  displayUpdatePackages(){
+    api.emitEvent('cardDisplayStatus', {'displayStatus': 'updatePack'});
+  }
 
   render(){
     return(
@@ -28,9 +39,13 @@ class PackManagerSideBar extends React.Component{
           <span style={style.heading}> TranslationCore</span>
           <br /><br />
         </div>
-        <SideBarButton value={" Packages"} title={"Access your Packages"} imageName={"images/greyPackage.svg"} hoverImage={"images/Package.svg"}/>
-        <SideBarButton glyphicon={"plus"} value={" Install"} title={"Install/Download New Packages"}/>
-        <SideBarButton glyphicon={"cloud-download"} value={" Updates"} title={"Update your Packages"}/>
+        <SideBarButton value={" Packages"} title={"Access your Packages"}
+                        imageName={"images/greyPackage.svg"} hoverImage={"images/Package.svg"}
+                        handleButtonClick={this.displayInstalledPackages.bind(this)}  />
+        <SideBarButton glyphicon={"plus"} value={" Install"} title={"Install/Download New Packages"}
+                      handleButtonClick={this.displayDownloadPackages.bind(this)} />
+        <SideBarButton glyphicon={"cloud-download"} value={" Updates"} title={"Update your Packages"}
+                      handleButtonClick={this.displayUpdatePackages.bind(this)} />
       </div>
     );
   }

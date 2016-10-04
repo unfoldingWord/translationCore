@@ -91,7 +91,7 @@ var style = {
     padding: "10px 13px",
     position: "relative",
     cursor: "pointer",
-    backgroundColor: "#767676",
+    backgroundColor: "#44c6ff",
     color: "white",
     borderRight: "1px solid rgba(0, 0, 0, 0.5)",
     borderLeft: "1px solid rgba(0, 0, 0, 0.5)",
