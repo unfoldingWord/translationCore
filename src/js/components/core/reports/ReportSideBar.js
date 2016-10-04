@@ -89,7 +89,7 @@ class ReportSideBar extends React.Component{
     let value = [];
     for (let i = 0, l = options.length; i < l; i++) {
       if (options[i].selected) {
-        value.push(options[i].value);
+        value.push(parseInt(options[i].value));
       }
     }
     if(value.length == 1 && value[0] == ""){
