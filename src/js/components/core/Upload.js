@@ -18,6 +18,7 @@ const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');
 const Recent = require('./RecentProjects.js');
 const api = window.ModuleApi;
+const books = require('./BooksOfBible.js');
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import Project Locally';
@@ -26,8 +27,8 @@ const IMPORT_USFM = 'Import From USFM File';
 
 
 const UploadModal = React.createClass({
-  getInitialState: function() {
-    return {active: 1, show: 'link', link:""};
+  getInitialState: function () {
+    return { active: 1, show: 'link', link: "" };
   },
 
   /**
@@ -35,14 +36,14 @@ const UploadModal = React.createClass({
    * from disk
    * @param {integer} eventKey - The 'key' that the tabs send their 'onSelect' event listener
    */
-  handleSelect: function(eventKey) {
-    this.setState({active: eventKey});
+  handleSelect: function (eventKey) {
+    this.setState({ active: eventKey });
     if (eventKey === 1) {
-      this.setState({show: 'link'});
-    } else if (eventKey === 2){
-      this.setState({show: 'file'});
+      this.setState({ show: 'link' });
+    } else if (eventKey === 2) {
+      this.setState({ show: 'file' });
     } else if (eventKey === 3) {
-      this.setState({show: 'usfm'});
+      this.setState({ show: 'usfm' });
     }
   },
 
@@ -58,15 +59,15 @@ const UploadModal = React.createClass({
    * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
    * studio project
    */
-  saveManifest: function(saveLocation, data, tsManifest) {
+  saveManifest: function (saveLocation, data, tsManifest) {
     try {
       var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
       var manifest = ManifestGenerator(data, tsManifest);
       api.putDataInCommon('tcManifest', manifest);
 
-      fs.outputJson(manifestLocation, manifest, function(err) {
+      fs.outputJson(manifestLocation, manifest, function (err) {
         if (err) {
-            const alert = {
+          const alert = {
             title: 'Error Saving Manifest',
             content: err.message,
             leftButtonText: 'Ok'
@@ -76,14 +77,14 @@ const UploadModal = React.createClass({
         }
       });
     }
-    catch(err) {
+    catch (err) {
       console.error(err);
       const alert = {
-            title: 'Error Saving Translation Studio Manifest',
-            content: err.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
+        title: 'Error Saving Translation Studio Manifest',
+        content: err.message,
+        leftButtonText: 'Ok'
+      }
+      api.createAlert(alert);
     }
   },
 
@@ -91,8 +92,8 @@ const UploadModal = React.createClass({
    * @description - grabs the translationCore manifest from the folder and returns it
    * @param {string} folderpath - Path to the folder where the translationStudio is located
    */
-  getManifest: function(folderPath, callback) {
-    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), function() {
+  getManifest: function (folderPath, callback) {
+    fs.readJson(Path.join(folderPath, 'tc-manifest.json'), function () {
       if (callback) {
         callback();
       }
@@ -105,9 +106,16 @@ const UploadModal = React.createClass({
    * @param {object} translationStudioManifest - The parsed json object of the translationStudio
    * manifest
    */
-  getParams: function(path, tsManifest) {
+  getParams: function (path, tsManifest) {
+    var ogPath;
+    if (this.isOldTestament(tsManifest.project.id)) {
+        ogPath = Path.join(window.__base, 'static', 'Hebrew');
+    }
+    else {
+      ogPath = Path.join(window.__base, 'static', 'tagged');
+    }
     var params = {
-      'originalLanguagePath': Path.join(window.__base, 'static', 'tagged')
+      'originalLanguagePath': ogPath
     }
     params.targetLanguagePath = path;
     params.bookAbbr = tsManifest.project.id || tsManifest.ts_project.id;
@@ -118,7 +126,16 @@ const UploadModal = React.createClass({
     return params;
   },
 
-  clearPreviousData: function() {
+  isOldTestament: function(projectBook) {
+      for (var book in books){
+        if (books[projectBook] == 'Malachi'){
+          return true;
+        }
+      }
+      return true;
+  },
+
+  clearPreviousData: function () {
     CheckStore.WIPE_ALL_DATA();
     api.modules = {};
   },
@@ -132,32 +149,34 @@ const UploadModal = React.createClass({
    * @param {string} link - URL that points to the location of a translationStudio project located on
    * the GOGS server
    */
-  sendFilePath: function(path, link, callback) {
+  sendFilePath: function (path, link, callback) {
     var Access = require('./AccessProject');
     var _this = this;
     this.clearPreviousData();
     if (path) {
       if (!_this.translationCoreManifestPresent(path)) {
         this.loadTranslationStudioManifest(path,
-          function(err, translationStudioManifest) {
+          function (err, translationStudioManifest) {
             if (err) {
               const alert = {
-              title: 'Error Getting Transaltion Studio Manifest',
-              content: err.message,
-              leftButtonText: 'Ok'
-            }
-            api.createAlert(alert);
+                title: 'Error Getting Transaltion Studio Manifest',
+                content: err.message,
+                leftButtonText: 'Ok'
+              }
+              api.createAlert(alert);
               console.error(err);
             }
             else {
-              _this.saveManifest(path, {user: [CoreStore.getLoggedInUser()],
-                repo: link || undefined}, translationStudioManifest);
+              _this.saveManifest(path, {
+                user: [CoreStore.getLoggedInUser()],
+                repo: link || undefined
+              }, translationStudioManifest);
               try {
                 Recent.add(path);
                 api.putDataInCommon('saveLocation', path);
                 api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
               }
-              catch(error) {
+              catch (error) {
                 console.error(error);
               }
               if (_this.props.success) {
@@ -169,7 +188,7 @@ const UploadModal = React.createClass({
         );
       }
       else {
-        _this.getManifest(path, function(error, tcManifest) {
+        _this.getManifest(path, function (error, tcManifest) {
           if (error) {
             console.error(error);
             const alert = {
@@ -180,17 +199,17 @@ const UploadModal = React.createClass({
             api.createAlert(alert);
           }
           else {
-            _this.loadTranslationStudioManifest(path, function(err, tsManifest) {
+            _this.loadTranslationStudioManifest(path, function (err, tsManifest) {
               try {
                 Recent.add(path);
                 api.putDataInCommon('tcManifest', tcManifest);
                 api.putDataInCommon('saveLocation', path);
                 api.putDataInCommon('params', _this.getParams(path, tsManifest));
                 Access.loadFromFilePath(path, callback);
-              } catch(err) {
+              } catch (err) {
                 ImportUsfm.loadProject(path);
               }
-          });
+            });
           }
         });
       }
@@ -200,7 +219,7 @@ const UploadModal = React.createClass({
   /**
    * @description - Loads in a translationStudio manifest
    */
-  loadTranslationStudioManifest: function(path, callback) {
+  loadTranslationStudioManifest: function (path, callback) {
     var manifestLocation = Path.join(path, 'manifest.json');
     fs.readJson(manifestLocation, callback);
   },
@@ -209,13 +228,13 @@ const UploadModal = React.createClass({
    * @description - This checks to see if a valid translationCore manifest file is present.
    * @param {string} path - absolute path to a translationStudio project folder
    */
-  translationCoreManifestPresent: function(path) {
+  translationCoreManifestPresent: function (path) {
     //this currently just uses 'require' and if it throws an error it will return false
     try {
       require(Path.join(path, 'tc-manifest.json'));
       return true;
     }
-    catch(e) {
+    catch (e) {
       if (e.code != 'MODULE_NOT_FOUND') {
         console.error(e);
       }
@@ -226,17 +245,17 @@ const UploadModal = React.createClass({
   /**
    * @description - Renders the upload modal
    */
-  render: function() {
+  render: function () {
     var mainContent;
     if (this.state.show === 'file') {
       mainContent = <DragDrop
-                     styles={this.props.styles}
-                     sendFilePath={this.sendFilePath}
-                     properties={['openDirectory']}
-                     isWelcome={this.props.isWelcome}
-                     />;
+        styles={this.props.styles}
+        sendFilePath={this.sendFilePath}
+        properties={['openDirectory']}
+        isWelcome={this.props.isWelcome}
+        />;
     }
-    else if (this.state.show === 'link'){
+    else if (this.state.show === 'link') {
       mainContent = (
         <div>
           <br />
@@ -258,7 +277,7 @@ const UploadModal = React.createClass({
             <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
             <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
           </Nav>
-            {mainContent}
+          {mainContent}
         </div>
       );
     } else {
