@@ -87,16 +87,14 @@ class ReportSideBar extends React.Component{
     let options = e.target.options;
     let value = [];
     for (let i = 0, l = options.length; i < l; i++) {
-      if (options[i].selected) {
+      if(options[i].value == "" && options[i].selected){
+        value = null;
+      }else if (options[i].selected) {
         value.push(parseInt(options[i].value));
       }
     }
-    if(value.length == 1 && value[0] == ""){
-      value = null;
-    }
     this.query.chapter =  value;
     this.props.getQuery(this.query);
-    console.log(this.query.chapter);
   }
 
   getChapters(){
@@ -147,7 +145,7 @@ class ReportSideBar extends React.Component{
           </FormControl>
           <br />
           <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter.bind(this)}>
-            <option value="">Chapter</option>
+            <option value="">Chapters</option>
             {chapterOptionArray}
           </FormControl>
           <InputGroup style={{marginTop:"30px"}}>
