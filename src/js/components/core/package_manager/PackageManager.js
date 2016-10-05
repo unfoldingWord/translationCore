@@ -39,6 +39,7 @@ function downloadPackage(packageName, callback) {
           return;
         }
         fs.copy(source, destination, function (err) {
+          installDependencies(packageName);
           compilePackage(destination, callback)
         });
       });
@@ -54,7 +55,9 @@ function compilePackage(destination, callback) {
   var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
   var filesInPackage = fs.readdirSync(destination);
   if (!filesInPackage.includes('.babelrc')) {
-    callback('Installation Successful');
+    if (callback) {
+      callback('Installation Successful');
+    }
     return;
   }
   exec(command, (error, stdout, stderr) => {
@@ -148,7 +151,11 @@ function getVersion(packageName) {
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
-    var manifest = require(otherManifest);
+    try {
+      var manifest = require(otherManifest);
+    } catch(e) {
+      return null;
+    }
   }
   var version = manifest.version;
   return version;
@@ -179,6 +186,27 @@ function uninstall(packageName) {
   var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
   fs.removeSync(packageLocation);
   fs.removeSync(compiledLocation);
+}
+/**
+ * @description Installs a packages dependencies.
+ * @param The package to install dependencies for.
+ ******************************************************************************/
+function installDependencies(packageName) {
+  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest.json');
+  var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest-hidden.json');
+  try {
+    var manifest = require(manifestLocation);
+  } catch(err) {
+    try {
+      var manifest = require(otherManifest);
+    } catch(e) {
+      return;
+    }
+  }
+  var dependencies = manifest.include;
+  for (var i in dependencies) {
+    downloadPackage(dependencies[i]);
+  }
 }
 
 exports.download = downloadPackage;
