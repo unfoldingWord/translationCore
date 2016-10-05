@@ -5,70 +5,21 @@ const HebrewFuncs = {
     VERSE_MAP: "https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/VerseMap.xml",
     XML_SOURCE: "https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/",
     stripPoint: function (word) {
-        return word.replace(/֑/gi, '')
-            .replace(/֓/gi, '')
-            .replace(/֕/gi, '')
-            .replace(/֖/gi, '')
-            .replace(/֘/gi, '')
-            .replace(/֙/gi, '')
-            .replace(/֚/gi, '')
-            .replace(/֛/gi, '')
-            .replace(/֜/gi, '')
-            .replace(/֝/gi, '')
-            .replace(/֞/gi, '')
-            .replace(/֟/gi, '')
-            .replace(/֠/gi, '')
-            .replace(/֡/gi, '')
-            .replace(/֢/gi, '')
-            .replace(/֣/gi, '')
-            .replace(/֤/gi, '')
-            .replace(/֥/gi, '')
-            .replace(/֦/gi, '')
-            .replace(/֧/gi, '')
-            .replace(/֩/gi, '')
-            .replace(/֪/gi, '')
-            .replace(/֫/gi, '')
-            .replace(/֬/gi, '')
-            .replace(/֭/gi, '')
-            .replace(/֮/gi, '')
-            .replace(/֯/gi, '')
-            .replace(/ֱ/gi, '')
-            .replace(/ֲ/gi, '')
-            .replace(/ֳ/gi, '')
-            .replace(/ֵ/gi, '')
-            .replace(/ֶ/gi, '')
-            .replace(/ַ/gi, '')
-            .replace(/ָ/gi, '')
-            .replace(/ֹ/gi, '')
-            .replace(/ֺ/gi, '')
-            .replace(/ֻ/gi, '')
-            .replace(/ּ/gi, '')
-            .replace(/ֽ/gi, '')
-            .replace(/־/gi, '')
-            .replace(/׀/gi, '')
-            .replace(/ׂ/gi, '')
-            .replace(/׃/gi, '')
-            .replace(/ׄ/gi, '')
-            .replace(/ׇ/gi, '')
-            .replace(/ׁ/gi, '')
-            .replace(/ִ/gi, '')
-            .replace(/ְ/, '')
-            //new ones
-            .replace(/ְ/, '')
-            .replace(/ְ/, '')
-            .replace(/ְ/, '')
-            .replace(/֗/, '')
-            .replace(/ְ/, '')
-            .replace(/ְ/, '')
-            .replace(/֔/, '')
-            .replace(/ְ/, '')
-            .replace(/ְ/, '')
-            .replace(/֨/, '')
-            .replace(/֑/, '')
-            .replace(/֗/, '')
-            .replace(/֨/, '')
-            .replace(/֔/, '');
-        //.replace(/\//,'');
+        var wordArr = word.split('/');
+        var newWord = "";
+        if (wordArr[0]) {
+            if (wordArr[1]) newWord = wordArr[0] + " " + wordArr[1];
+            else {
+                newWord = wordArr[0];
+            }
+        }
+        if (wordArr[1]) {
+            if (wordArr[0]) newWord = wordArr[0] + " " + wordArr[1];
+            else {
+                newWord = wordArr[1];
+            }
+        }
+        return newWord;
     },
     xmlToJson: function (xml) {
         // Create the return object
@@ -204,12 +155,11 @@ const HebrewFuncs = {
                 _this.fixOffsetVerses((hebrewReordered) => {
                     for (var book in hebrewReordered) {
                         fs.writeJson("./static/Hebrew/" + book + ".json", JSON.stringify(hebrewReordered[book]), (err) => {
-                        });
+                    });
                     }
                 });
             } else {
                 var book = arr[index];
-                console.log(book);
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', _this.XML_SOURCE + book.bookFile + ".xml", true);
                 xhr.send(null);

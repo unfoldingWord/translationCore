@@ -11,12 +11,27 @@ const path = require('path');
 // };
 
 function HEOT() {
-    //hebrew.parse();
+    hebrew.parse();
     var books = hebrew.books;
-    for (var book in books){
+    for (var book in books) {
         var x = path.join(window.__base, "/static/Hebrew/", books[book].bookName + ".json");
         var obj = JSON.parse(fs.readJsonSync(x));
-        debugger;
+        var entireBook = {};
+        var finishedBook = {};
+        obj.forEach((chapter, cIndex) => {
+            var entireChapter = {};
+            chapter.forEach((verse, vIndex) => {
+                var entireVerse = "";
+                verse.forEach((word, wIndex) => {
+                    entireVerse += word.join(" ") + " ";
+                });
+                entireChapter[`${vIndex + 1}`] = entireVerse;
+            });
+            entireBook[`${cIndex + 1}`] = entireChapter;
+        });
+        finishedBook[books[book].bookName] = entireBook;
+        fs.writeJson("./static/Hebrew/" + books[book].bookName + ".json", finishedBook, (err) => {
+        });
     }
 
 }
