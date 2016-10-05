@@ -54,7 +54,12 @@ class PackageManagerView extends React.Component{
         <div style={Style.layout}>
           <PackManagerSideBar hidePackManager={this.hidePackManager.bind(this)}/>
           <div style={Style.header}>
-            
+            <FormControl
+                type="text"
+                placeholder="Search Packages by Name"
+                onChange={this.handleChange}
+                style={{backgroundColor: "#303337", border: "1px solid rgba(0, 0, 0, 0.5)", width: "66%"}}
+            />
           </div>
           <Glyphicon glyph="remove" title="Close Package Manager" style={Style.removeGlypcIcon}
               onClick={this.hidePackManager.bind(this)}/>
