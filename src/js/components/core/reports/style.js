@@ -12,6 +12,7 @@ var style = {
       color: "white",
       overflowX: "hidden",
       overflowY: "auto",
+      border: "1px solid rgba(0, 0, 0, 0.5)",
     },
     FormGroup:{
       marginLeft: "30px",
@@ -37,8 +38,7 @@ var style = {
   reportHeader:{
     width: "100%",
     height: "20px",
-    backgroundColor:
-    "#333333",
+    backgroundColor:"#333333",
     position: "fixed",
     zIndex: "100",
   },
@@ -54,6 +54,12 @@ var style = {
     zIndex: "101",
   },
 
+  searchBox:{
+    height: "34px",
+    fontSize: "16px",
+    width: "128%",
+    borderRadius: "5px",
+  },
 
 
 };

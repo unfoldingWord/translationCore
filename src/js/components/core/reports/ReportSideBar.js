@@ -10,7 +10,6 @@ class ReportSideBar extends React.Component{
   constructor() {
     super();
     this.state = {
-      searchValue: '',
     };
     this.query = {};
   }
@@ -76,12 +75,12 @@ class ReportSideBar extends React.Component{
   }
 
   handleSearchChange(e){
-     this.setState({searchValue: e.target.value});
-  }
-
-  handleSearchClick(){
-    this.query.search = this.state.searchValue;
-    this.props.getQuery(this.query);
+    let searchValue = e.target.value;
+     if(searchValue == null){
+       searchValue = "";
+     }
+     this.query.search = searchValue;
+     this.props.getQuery(this.query);
   }
 
   filterByChapter(e){
@@ -152,10 +151,9 @@ class ReportSideBar extends React.Component{
             {chapterOptionArray}
           </FormControl>
           <InputGroup style={{marginTop:"30px"}}>
-            <FormControl type="text"  value={this.state.searchValue} placeholder="Search" style={{height: "34px", fontSize: "16px"}} onChange={this.handleSearchChange.bind(this)}/>
-            <InputGroup.Button>
-              <Button onClick={this.handleSearchClick.bind(this)} style={{background: "#44c6ff"}}><Glyphicon glyph="search" style={{color: "white", fontSize: "16px"}}/></Button>
-            </InputGroup.Button>
+            <FormControl type="text" placeholder="Search"
+                        style={style.searchBox}
+                        onChange={this.handleSearchChange.bind(this)}/>
           </InputGroup>
           <center>
             {this.props.reportHeadersOutput}
