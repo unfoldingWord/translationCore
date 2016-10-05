@@ -12,7 +12,7 @@ const exec = require('child_process').exec;
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-const CENTRAL_REPO = "https://raw.githubusercontent.com/ihoegen/translationCore-apps/master/directory.json";
+const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/translationCore-apps/master/directory.json";
 
 /**
  * @description - This downloads the specified package to the packages folder.
@@ -25,9 +25,9 @@ function downloadPackage(packageName, callback) {
     return;
   }
   getPackageList(function(obj){
-    var packageLocation = obj[packageName].location;
-    fs.emptyDirSync(PACKAGE_SAVE_LOCATION);
-    fs.emptyDirSync(PACKAGE_COMPILE_LOCATION);
+    var packageLocation = obj[packageName].repo;
+    fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
+    fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
     var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
@@ -75,7 +75,7 @@ function getPackageList(callback) {
   request.onload = function() {
     var obj;
     try {
-      obj = JSON.parse(httpRequest.response);
+      obj = JSON.parse(this.response);
     } catch(error) {
       obj = error;
       console.error(error);
@@ -83,7 +83,6 @@ function getPackageList(callback) {
       callback(obj);
     }
   }
-
   request.onerror = function() {
     console.error(this);
   }
@@ -116,8 +115,8 @@ function checkForUpdates(callback) {
 function update(packageName, callback) {
   var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
   var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-  fs.emptyDirSync(packageLocation);
-  fs.emptyDirSync(compiledLocation);
+  fs.ensureDirSync(packageLocation);
+  fs.ensureDirSync(compiledLocation);
   downloadPackage(packageName, callback);
 }
 /**
@@ -144,8 +143,13 @@ function isInstalled(packageName) {
  * @return {String} version - The version of the package.
  ******************************************************************************/
 function getVersion(packageName) {
-  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
-  var manifest =  require(path.join(packageLocation, 'package.json'));
+  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest.json');
+  var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest-hidden.json');
+  try {
+    var manifest = require(manifestLocation);
+  } catch(err) {
+    var manifest = require(otherManifest);
+  }
   var version = manifest.version;
   return version;
 }
@@ -166,7 +170,16 @@ function search(query, callback) {
     callback(results);
   });
 }
-
+/**
+ * @description Uninstalls a package.
+ * @param {String} packageName - The name of the package to uninstall.
+ ******************************************************************************/
+function uninstall(packageName) {
+  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
+  var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+  fs.removeSync(packageLocation);
+  fs.removeSync(compiledLocation);
+}
 
 exports.download = downloadPackage;
 exports.list = getPackageList;
@@ -177,3 +190,4 @@ exports.getLocalList = getLocalList;
 exports.isInstalled = isInstalled;
 exports.search = search;
 exports.getVersion = getVersion;
+exports.uninstall = uninstall;

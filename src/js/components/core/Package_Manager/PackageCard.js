@@ -27,6 +27,10 @@ class PackageCard extends React.Component{
     });
   }
 
+  uninstall(name) {
+    PackageManager.uninstall(name);
+  }
+
   render(){
     let buttons = [];
     if(this.props.buttonDisplay === "updatePack"){
@@ -35,12 +39,12 @@ class PackageCard extends React.Component{
             title={"Update " + this.props.packName}>
         <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
       </Button>);
-    }else if (this.props.buttonDisplay === "downloadPack") {
+    }else {
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="primary"
                 style={style.packCardButton} title={"Install " + this.props.packName}
-                onClick={this.install.bind(this, this.props.packName)}>
-                <Glyphicon glyph="cloud-download" /> Install
+                onClick={PackageManager.isInstalled(this.props.packName) ? this.uninstall.bind(this, this.props.packName) : this.install.bind(this, this.props.packName)}>
+                <Glyphicon glyph="cloud-download" /> {PackageManager.isInstalled(this.props.packName) ? 'Uninstall' : 'Install'}
         </Button>);
     }
     return(
