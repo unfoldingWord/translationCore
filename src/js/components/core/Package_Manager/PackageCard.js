@@ -32,15 +32,21 @@ class PackageCard extends React.Component{
     if(this.props.buttonDisplay === "updatePack"){
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="success"
-            title={"Update " + this.props.packName}>
-        <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
-      </Button>);
+                title={"Update " + this.props.packName}>
+                <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
+        </Button>);
     }else if (this.props.buttonDisplay === "downloadPack") {
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="primary"
                 style={style.packCardButton} title={"Install " + this.props.packName}
                 onClick={this.install.bind(this, this.props.packName)}>
                 <Glyphicon glyph="cloud-download" /> Install
+        </Button>);
+    }else if (this.props.buttonDisplay === "installedPack") {
+      buttons.push(
+        <Button key={this.props.buttonDisplay} bsStyle="danger"
+                title={"Uninstall " + this.props.packName}>
+                <Glyphicon glyph="trash" /> Uninstall
         </Button>);
     }
     return(
