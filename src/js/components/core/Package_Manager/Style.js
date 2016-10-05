@@ -41,7 +41,7 @@ var style = {
     overflow: "hidden",
     boxSizing: "border-box",
     display: "block",
-    float: "right",
+    marginLeft: "200px",
   },
 
   cardLayoutHover:{
@@ -101,7 +101,7 @@ var style = {
     backgroundColor: "#333333",
     width:"100%",
     height: "125px",
-    padding: "40px",
+    padding: "40px 180px 40px 18px",
     position: "relative",
     marginRight: "-20px",
     marginBottom: "20px",
