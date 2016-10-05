@@ -69,14 +69,14 @@ class ReportItem extends React.Component {
     );
   }
   checkStatusDiv() {
-    if(!this.props.check.checkStatus) 
+    if(!this.props.check.checkStatus)
       return undefined;
     return (
       <div>Check status: {this.props.check.checkStatus}</div>
     );
   }
   proposedChangesDiv() {
-    if(!this.props.check.proposedChanges) 
+    if(!this.props.check.proposedChanges)
       return undefined;
     return (
       <div>Proposed Changes: {this.props.check.proposedChanges}</div>
@@ -106,4 +106,7 @@ class ReportItem extends React.Component {
   }
 }
 
-module.exports = ExampleCheckerReport;
+module.exports = {
+  view: ExampleCheckerReport,
+  namespace: NAMESPACE
+};
