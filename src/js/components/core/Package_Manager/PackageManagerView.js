@@ -24,7 +24,8 @@ class PackageManagerView extends React.Component{
     this.state = {
       visiblePackManager: true,
       displayStatus: "downloadPack",
-      cards: [<div key={"default"}></div>]
+      cards: [<div key={"default"}></div>],
+      searchText: ''
     };
     this.handlePackManagerVisibility = this.handlePackManagerVisibility.bind(this);
     this.handleDisplayStatus = this.handleDisplayStatus.bind(this);
@@ -40,6 +41,10 @@ class PackageManagerView extends React.Component{
     api.removeEventListener('cardDisplayStatus', this.handleDisplayStatus);
   }
 
+  handleChange(e) {
+    var searchText = e.target.value;
+    this.setState({searchText: searchText});
+  }
   handlePackManagerVisibility(param){
     this.setState(param);
   }
@@ -63,7 +68,7 @@ class PackageManagerView extends React.Component{
           cards = [<div key={'default'}></div>];
           for (var i in data) {
             var currentPackage = data[i];
-            if (currentPackage.main === 'true') {
+            if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(_this.state.searchText.toLowerCase())) {
               cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.version} numOfDownloads={"30"}
               description={currentPackage.description || "No description found."}
               iconPathName={currentPackage.icon}
@@ -84,13 +89,16 @@ class PackageManagerView extends React.Component{
             } catch(err) {
               var manifest = {};
             }
-            cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={"30"}
-            description={manifest.description || "No description found."}
-            iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
-            buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
+            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
+              cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={"30"}
+              description={manifest.description || "No description found."}
+              iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
+              buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
+            }
           }
           this.cards = cards;
       } else if (this.state.displayStatus === 'updatePack') {
+        var _this = this;
         PackageManager.list(function(data) {
           var installed = PackageManager.getLocalList();
           cards = [<div key={'default'}></div>];
@@ -105,7 +113,7 @@ class PackageManagerView extends React.Component{
             var remotePackage = data[currentPackage];
             var remoteVersion = remotePackage.version;
             var localVersion = PackageManager.getVersion(currentPackage);
-            if (remoteVersion > localVersion) {
+            if (remoteVersion > localVersion && ~i.toLowerCase().indexOf(_this.state.searchText.toLowerCase())) {
               cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={"30"}
               description={manifest.description || "No description found."}
               iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
@@ -123,7 +131,7 @@ class PackageManagerView extends React.Component{
             <FormControl
                 type="text"
                 placeholder="Search Packages by Name"
-                onChange={this.handleChange}
+                onChange={this.handleChange.bind(this)}
                 style={{backgroundColor: "#303337", border: "1px solid rgba(0, 0, 0, 0.5)", width: "66%"}}
             />
           </div>
