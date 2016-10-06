@@ -8,6 +8,7 @@ const git = require('../GitApi.js');
 const npm = pathex.join(window.__base, 'node_modules', '.bin', 'npm');
 const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
 const exec = require('child_process').exec;
+const api = window.ModuleApi;
 
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
@@ -38,7 +39,7 @@ function downloadPackage(packageName, callback) {
         }
         fs.copy(source, destination, function (err) {
           installDependencies(packageName);
-          compilePackage(destination, callback)
+          compilePackage(destination, packageName, callback)
         });
       });
     });
@@ -47,9 +48,10 @@ function downloadPackage(packageName, callback) {
 /**
  * @description - This compiles the specified package to the folder it resides in.
  * @param {String} destination - The location of the package, in packages-compiled.
+ * @param {String} packageName - The name of the package
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
-function compilePackage(destination, callback) {
+function compilePackage(destination, packageName, callback) {
   var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
   fs.ensureDirSync(destination);
   var filesInPackage = fs.readdirSync(destination);
@@ -66,8 +68,10 @@ function compilePackage(destination, callback) {
       return;
     }
     if (callback) {
+
       callback(null, 'Installation Successful')
     }
+    api.Toast.success("Installation Successful", packageName + 'Was Successfully Installed', 3);
   });
 }
 /**
@@ -181,6 +185,7 @@ function uninstall(packageName) {
   var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
   fs.removeSync(packageLocation);
   fs.removeSync(compiledLocation);
+  api.Toast.success("Installation Successful", packageName + 'Was Successfully Uninstalled', 3);
 }
 /**
  * @description Installs a packages dependencies.
