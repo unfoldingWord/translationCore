@@ -132,7 +132,7 @@ const UploadModal = React.createClass({
           return true;
         }
       }
-      return true;
+      return false;
   },
 
   clearPreviousData: function () {
