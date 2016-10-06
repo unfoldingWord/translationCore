@@ -20,10 +20,6 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
-  if (isInstalled(packageName)) {
-    update(packageName, callback);
-    return;
-  }
   getPackageList(function(obj){
     var packageLocation = obj[packageName].repo;
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
@@ -32,6 +28,7 @@ function downloadPackage(packageName, callback) {
     fs.emptyDirSync(source);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+      fs.emptyDirSync(destination);
       var command = npm + ' install';
       exec(command, {cwd: source}, (error, stdout, stderr) => {
         if (error) {
@@ -120,10 +117,6 @@ function checkForUpdates(callback) {
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function update(packageName, callback) {
-  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
-  var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-  fs.ensureDirSync(packageLocation);
-  fs.ensureDirSync(compiledLocation);
   downloadPackage(packageName, callback);
 }
 /**

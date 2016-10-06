@@ -31,25 +31,34 @@ class PackageCard extends React.Component{
     PackageManager.uninstall(name);
   }
 
+  update(name) {
+    PackageManager.update(name);
+  }
+
+  uninstall(name) {
+    PackageManager.uninstall(name);
+  }
+
   render(){
     let buttons = [];
     if(this.props.buttonDisplay === "updatePack"){
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="success"
-                title={"Update " + this.props.packName}>
+                title={"Update " + this.props.packName} onClick={this.update.bind(this, this.props.packName)}>
                 <Glyphicon glyph="cloud-download" /> Update{" to " + this.props.newPackVersion}
         </Button>);
     }else if (this.props.buttonDisplay === "downloadPack") {
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="primary"
                 style={style.packCardButton} title={"Install " + this.props.packName}
-                onClick={PackageManager.isInstalled(this.props.packName) ? this.uninstall.bind(this, this.props.packName) : this.install.bind(this, this.props.packName)}>
-                <Glyphicon glyph="cloud-download" /> {PackageManager.isInstalled(this.props.packName) ? 'Uninstall' : 'Install'}
+                onClick={this.install.bind(this, this.props.packName)} disabled={PackageManager.isInstalled(this.props.packName)}>
+                <Glyphicon glyph="cloud-download" /> {PackageManager.isInstalled(this.props.packName) ? 'Installed' : 'Install'}
         </Button>);
     }else if (this.props.buttonDisplay === "installedPack") {
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="danger"
-                title={"Uninstall " + this.props.packName}>
+                title={"Uninstall " + this.props.packName}
+                onClick={this.uninstall.bind(this, this.props.packName)}>
                 <Glyphicon glyph="trash" /> Uninstall
         </Button>);
     }

@@ -104,7 +104,7 @@ class PackageManagerView extends React.Component{
             }
             var remotePackage = data[currentPackage];
             var remoteVersion = remotePackage.version;
-            var localVersion = PackageManager.getVersion(installed[i]);
+            var localVersion = PackageManager.getVersion(currentPackage);
             if (remoteVersion > localVersion) {
               cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={"30"}
               description={manifest.description || "No description found."}
