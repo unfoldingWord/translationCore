@@ -114,7 +114,7 @@ class MenuView extends React.Component {
         var sectionList = getSectionFileNamesToTitles();
         var header = sectionList[group.group + '.md'] || group.group;
         var groupHeader = (
-          <div>{header.replace(extensionRegex, '')}</div>
+          <div style={{color: "#44C6FF"}}>{header.replace(extensionRegex, '')}</div>
         );
         var checkMenuItems = group.checks.map(function(check, checkIndex) {
           return (
@@ -137,12 +137,12 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <Well className='fill-height' style={{overflowY: 'scroll'}}>
+        <div className='fill-height' style={{overflowY: 'scroll', maxHeight: '750px', paddingLeft: "20px"}}>
           <div>
-            <center><h3>Checks</h3></center>
+            <center><h3 style={{color: "#FFFFFF"}}>Checks</h3></center>
             {menuList}
           </div>
-        </Well>
+        </div>
       </div>
     )
     }

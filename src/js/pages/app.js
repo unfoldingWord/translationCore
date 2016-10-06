@@ -84,9 +84,9 @@ var Main = React.createClass({
         <SwitchCheckModal.Modal />
         <Popover />
         <Toast />
-          <Grid fluid className='fill-height' style={{marginLeft: '85px'}}>
+          <Grid fluid className='fill-height' style={{marginLeft: '70px'}}>
             <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2}>
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{padding: "0px", backgroundColor: "#515151"}}>
                 <NavMenu />
                 <ProjectModal />
               </Col>
