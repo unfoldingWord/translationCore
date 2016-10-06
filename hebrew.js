@@ -1,6 +1,8 @@
 /*global javascripture*/
 const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
+//const morphParse = require('./morph.js');
+
 const HebrewFuncs = {
     VERSE_MAP: "https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/VerseMap.xml",
     XML_SOURCE: "https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/",
@@ -8,13 +10,13 @@ const HebrewFuncs = {
         var wordArr = word.split('/');
         var newWord = "";
         if (wordArr[0]) {
-            if (wordArr[1]) newWord = wordArr[0] + " " + wordArr[1];
+            if (wordArr[1]) newWord = wordArr[0] + wordArr[1];
             else {
                 newWord = wordArr[0];
             }
         }
         if (wordArr[1]) {
-            if (wordArr[0]) newWord = wordArr[0] + " " + wordArr[1];
+            if (wordArr[0]) newWord = wordArr[0] + wordArr[1];
             else {
                 newWord = wordArr[1];
             }
@@ -147,16 +149,16 @@ const HebrewFuncs = {
         { bookName: 'Zechariah', bookFile: 'Zech' },
         { bookName: 'Malachi', bookFile: 'Mal' }
     ],
-    rotator: function () {
+    rotator: function (callback) {
         var arr = this.books;
         const _this = this;
         var iterator = function (index) {
             if (index >= arr.length) {
                 _this.fixOffsetVerses((hebrewReordered) => {
                     for (var book in hebrewReordered) {
-                        fs.writeJson("./static/Hebrew/" + book + ".json", JSON.stringify(hebrewReordered[book]), (err) => {
-                    });
+                        fs.writeJsonSync("./static/tagged/" + book + ".json", JSON.stringify(hebrewReordered[book]));
                     }
+                    callback();
                 });
             } else {
                 var book = arr[index];
@@ -231,7 +233,6 @@ const HebrewFuncs = {
                         });
                     }
                 });
-                debugger;
                 callback(_this.hebrewReordered);
             }
         }
@@ -239,7 +240,28 @@ const HebrewFuncs = {
         xhr.send(null);
     },
     parse: function () {
-        HebrewFuncs.rotator.call(HebrewFuncs, HebrewFuncs.books);
+        HebrewFuncs.rotator.call(HebrewFuncs, () => {
+            for (var book in this.books) {
+                var x = path.join(window.__base, "/static/tagged/", this.books[book].bookName + ".json");
+                var obj = JSON.parse(fs.readJsonSync(x));
+                var entireBook = {};
+                var finishedBook = {};
+                obj.forEach((chapter, cIndex) => {
+                    var entireChapter = {};
+                    chapter.forEach((verse, vIndex) => {
+                        var entireVerse = "";
+                        verse.forEach((word, wIndex) => {
+                            entireVerse += word.join(" ") + " ";
+                        });
+                        entireChapter[`${vIndex + 1}`] = entireVerse;
+                    });
+                    entireBook[`${cIndex + 1}`] = entireChapter;
+                });
+                finishedBook[this.books[book].bookName] = entireBook;
+                fs.writeJson("./static/tagged/" + this.books[book].bookName + ".json", finishedBook, (err) => {
+                });
+            }
+        });
     }
 }
-module.exports = HebrewFuncs;
+module.exports = HebrewFuncs.parse();

@@ -257,4 +257,36 @@ function parseGreek() {
   //Put the parsed Hebrew into the checkstore in the Object format specified here
 }
 
+function parseHebrew() {
+  var lex = require("./HebrewLexicon.json");
+  let origText = api.getDataFromCommon("originalLanguage");
+  let parsedText = {};
+  for (let ch in origText) {
+    if (!parseInt(ch)) { // skip the title
+      continue;
+    }
+    debugger;
+    parsedText[ch] = {};
+    let chap = origText[ch];
+    for (let v in chap) {
+      let origVerse = origText[ch][v];
+      let verse = parsedText[ch][v] = [];
+      let result = [];
+      while (result = greekRegex.exec(origVerse)) {
+        let [, word, strong, speech] = result;
+        try {
+          let {brief, long} = lex[strong];
+          verse.push({word, strong, speech, brief, long});
+        } 
+        catch(e) {
+          verse.push({word, strong, speech, brief: "No definition found", long: "No definition found"});
+        }
+
+      }
+    }
+  }
+  api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
+  //Put the parsed Hebrew into the checkstore in the Object format specified here
+}
+
 module.exports = fetchData;
