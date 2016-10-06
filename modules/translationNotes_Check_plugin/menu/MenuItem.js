@@ -83,7 +83,7 @@ class MenuItem extends React.Component {
           <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
         </span>{' '}
         <span style={this.state.active === true ? style.menuItem.current : style.menuItem.text}>
-          <a onClick={this.menuItemClicked}>
+          <a onClick={this.menuItemClicked} style={this.state.active === true ? style.menuItem.current : style.menuItem.text}>
             {this.props.book + " " + this.props.check.chapter + ":" + this.props.check.verse + (this.props.check.verseEnd ? "-" + this.props.check.verseEnd : "")}
           </a>
         </span>

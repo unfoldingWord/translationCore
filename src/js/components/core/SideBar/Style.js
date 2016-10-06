@@ -1,6 +1,6 @@
 var style = {
   container:{
-      backgroundColor: "#1a2133",
+      backgroundColor: "#333333",
       width: "85px",
       height: "100vh",
       marginLeft: "0px",
@@ -20,7 +20,6 @@ var style = {
   li: {
     display: "block",
     textAlign: "center",
-    borderBottom: "2px solid #1f273b",
     paddingTop: "20px",
     paddingBottom: "20px",
     color: "white",
@@ -34,16 +33,15 @@ var style = {
 
   glyphiconHover: {
     fontSize: "29px",
-    color: "#39add2",
+    color: "#44C6FF",
   },
 
   hover: {
-    backgroundColor: "#1a2133",
-    color: "#39add2",
+    backgroundColor: "#444444",
+    color: "#44C6FF",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
-    borderBottom: "2px solid #1f273b",
     userSelect: "none",
     paddingTop: "18px",
     paddingBottom: "18px"
