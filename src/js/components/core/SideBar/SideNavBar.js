@@ -31,11 +31,8 @@ class SideNavBar extends React.Component{
 
   handleReport(){
     api.Toast.info('Generating reports...', '', 3);
-    require("./../reports/ReportGenerator")(api.getDataFromCommon("reportViews"), err => {
-      if (err) {
-        console.log(err);
-      }
-    });
+    const Report = require("./../reports/ReportGenerator");
+    api.emitEvent('ReportVisibility', {'visibleReport': 'true'});
   }
 
   handleChangeCheckCategory(){
