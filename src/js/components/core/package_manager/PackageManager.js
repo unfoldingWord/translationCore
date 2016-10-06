@@ -29,6 +29,7 @@ function downloadPackage(packageName, callback) {
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
     var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
+    fs.emptyDirSync(source);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
       var command = npm + ' install';
@@ -67,7 +68,9 @@ function compilePackage(destination, callback) {
       callback(`exec error: ${error}`, null);
       return;
     }
-    callback(null, 'Installation Successful')
+    if (callback) {
+      callback(null, 'Installation Successful')
+    }
   });
 }
 /**
@@ -104,7 +107,7 @@ function checkForUpdates(callback) {
     var installedPackages = getLocalList();
     for (var packages in installedPackages) {
       var currentPackage = installedPackages[packages]
-      var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest.json')).version;
+      var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json')).version;
       var remoteVersion = obj[currentPackage].version;
       if (remoteVersion > localVersion) needToUpdate.push(currentPackage);
     }
@@ -150,16 +153,11 @@ function isInstalled(packageName) {
  * @return {String} version - The version of the package.
  ******************************************************************************/
 function getVersion(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest.json');
-  var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest-hidden.json');
+  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
-    try {
-      var manifest = require(otherManifest);
-    } catch(e) {
-      return null;
-    }
+    return null;
   }
   var version = manifest.version;
   return version;
@@ -196,19 +194,17 @@ function uninstall(packageName) {
  * @param The package to install dependencies for.
  ******************************************************************************/
 function installDependencies(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest.json');
-  var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'manifest-hidden.json');
+  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
-    try {
-      var manifest = require(otherManifest);
-    } catch(e) {
-      return;
-    }
+    return;
   }
   var dependencies = manifest.include;
   for (var i in dependencies) {
+    var dependencyLocation = pathex.join(PACKAGE_SAVE_LOCATION, dependencies[i]);
+    fs.emptyDirSync(dependencyLocation);
+    fs.removeSync(dependencyLocation);
     downloadPackage(dependencies[i]);
   }
 }

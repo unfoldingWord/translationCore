@@ -20,6 +20,9 @@ const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const AppDescription = require('./AppDescription');
 const api = window.ModuleApi;
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 class SwitchCheck extends React.Component{
   constructor(){
@@ -49,7 +52,7 @@ class SwitchCheck extends React.Component{
    */
   getDefaultModules(callback) {
     var defaultModules = [];
-    var moduleBasePath = Path.join(window.__base, 'modules');
+    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
     fs.readdir(moduleBasePath, function(error, folders) {
       if (error) {
         console.error(error);
@@ -57,10 +60,11 @@ class SwitchCheck extends React.Component{
       else {
         for (var folder of folders) {
           try {
-            var manifestPath = Path.join(moduleBasePath, folder, 'manifest.json');
-            fs.accessSync(manifestPath);
-            defaultModules.push(manifestPath);
-
+            var manifestPath = Path.join(moduleBasePath, folder, 'package.json');
+            var packageJson = require(manifestPath);
+            if (packageJson.display === 'app') {
+              defaultModules.push(manifestPath);
+            }
           }
           catch(e) {
 

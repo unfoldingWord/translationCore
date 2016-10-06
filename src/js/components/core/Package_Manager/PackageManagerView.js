@@ -78,16 +78,11 @@ class PackageManagerView extends React.Component{
           cards = [<div key={'default'}></div>];
           for (var i = 0; i < installed.length; i++) {
             var currentPackage = installed[i];
-            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest.json');
-            var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest-hidden.json');
+            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
             try {
               var manifest = require(manifestLocation);
             } catch(err) {
-              try {
-                var manifest = require(otherManifest);
-              } catch(e) {
-                var manifest = {};
-              }
+              var manifest = {};
             }
             cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={"30"}
             description={manifest.description || "No description found."}
@@ -101,16 +96,11 @@ class PackageManagerView extends React.Component{
           cards = [<div key={'default'}></div>];
           for (var i = 0; i < installed.length; i++) {
             var currentPackage = installed[i];
-            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest.json');
-            var otherManifest = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'manifest-hidden.json');
+            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
             try {
               var manifest = require(manifestLocation);
             } catch(err) {
-              try {
-                var manifest = require(otherManifest);
-              } catch(e) {
-                var manifest = {};
-              }
+              var manifest = {};
             }
             var remotePackage = data[currentPackage];
             var remoteVersion = remotePackage.version;

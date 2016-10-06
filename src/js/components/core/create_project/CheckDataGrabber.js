@@ -7,6 +7,10 @@ const Books = require('../BooksOfBible');
 const Path = require('path');
 const ManifestGenerator = require('./ProjectManifest');
 const git = require('../GitApi.js');
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+
 
 const REQUIRE_ERROR = "Unable to require file";
 
@@ -70,8 +74,8 @@ var CheckDataGrabber = {
    */
   loadModuleAndDependencies: function(moduleFolderName) {
     var _this = this;
-    var moduleBasePath = Path.join(window.__base, 'modules');
-    var modulePath = Path.join(moduleFolderName, 'manifest.json');
+    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+    var modulePath = Path.join(moduleFolderName, 'package.json');
     fs.readJson(modulePath, function(error, dataObject) {
       if (error) {
         console.error(error);
@@ -82,7 +86,7 @@ var CheckDataGrabber = {
         modulePaths.push({name: dataObject.name, location: moduleFolderName});
         //Try to find and save the menu. Most modules don't
         try {
-          api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
+          api.saveMenu(dataObject.name, require(Path.join(moduleBasePath, moduleFolderName, 'MenuView.js')));
         }
         catch (e) {
           if (e.code != "MODULE_NOT_FOUND") {
@@ -120,8 +124,8 @@ var CheckDataGrabber = {
    */
   getModuleNameFromFolderPath: function(folderPath) {
     try {
-      fs.accessSync(Path.join(folderPath, 'manifest.json'));
-      return fs.readJsonSync(Path.join(folderPath, 'manifest.json')).name;
+      fs.accessSync(Path.join(folderPath, 'package.json'));
+      return fs.readJsonSync(Path.join(folderPath, 'package.json')).name;
     }
     catch(e) {
       try {

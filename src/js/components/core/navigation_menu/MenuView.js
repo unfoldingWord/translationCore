@@ -57,7 +57,7 @@ module.exports = function(NAMESPACE) {
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
       menuItem.changeCheckStatus(params.checkStatus);
     }
-    
+
     goToNext() {
       this.unselectOldMenuItem();
       // if we need to move to the next group
@@ -73,7 +73,7 @@ module.exports = function(NAMESPACE) {
       }
       this.selectNewMenuItem();
     }
-    
+
     goToPrevious() {
       this.unselectOldMenuItem();
       // if we need to move to the previous group
@@ -89,18 +89,18 @@ module.exports = function(NAMESPACE) {
       }
       this.selectNewMenuItem();
     }
-    
+
     goToCheck(params) {
       this.unselectOldMenuItem();
       this.currentGroupIndex = params.groupIndex;
       this.currentCheckIndex = params.checkIndex;
       this.selectNewMenuItem();
     }
-    
+
     unselectOldMenuItem() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
     }
-    
+
     selectNewMenuItem() {
       this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
     }
