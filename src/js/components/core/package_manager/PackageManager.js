@@ -53,6 +53,7 @@ function downloadPackage(packageName, callback) {
  ******************************************************************************/
 function compilePackage(destination, callback) {
   var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
+  fs.ensureDirSync(destination);
   var filesInPackage = fs.readdirSync(destination);
   if (!filesInPackage.includes('.babelrc')) {
     if (callback) {
@@ -127,6 +128,7 @@ function update(packageName, callback) {
  * @return {array} installedPackages - An array of installed packages.
  ******************************************************************************/
 function getLocalList() {
+  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
   return installedPackages;
 }
@@ -136,6 +138,8 @@ function getLocalList() {
  * @return {boolean} isExists - Whether the packae exists locally.
  ******************************************************************************/
 function isInstalled(packageName) {
+  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
+  fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
   var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
   return installedPackages.includes(packageName) && compiledPackages.includes(packageName);
