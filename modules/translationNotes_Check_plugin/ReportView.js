@@ -8,7 +8,7 @@ const ReportFilters = api.ReportFilters;
 
 // TODO: Namespace needs to be hard linked with View.js
 const NAMESPACE = 'TranslationNotesChecker';
-const TITLE = ' TranslationNotes: ';
+const TITLE = ' translationNotes: ';
 const extensionRegex = new RegExp('\\.\\w+\\s*$');
 
 function TranslationNotesReport(chapter, verse, query) {
