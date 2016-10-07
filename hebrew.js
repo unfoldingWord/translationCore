@@ -93,6 +93,14 @@ const HebrewFuncs = {
                     });
                     wordArray[1] = lemmaArrayPrefixed.join('/');
                 }
+
+                ////////section to delete if we use both attributes
+                for (var element of lemmaArray){
+                    if(!isNaN(element)){
+                        wordArray[1] = 'H' + element;
+                    }
+                }
+                ////////section to delete if we use both attributes
                 if (morph) {
                     if ('H' === morph.charAt(0)) {
                         morph = morph.substring(1);
