@@ -107,13 +107,7 @@ const UploadModal = React.createClass({
    * manifest
    */
   getParams: function (path, tsManifest) {
-    var ogPath;
-    if (this.isOldTestament(tsManifest.project.id)) {
-        ogPath = Path.join(window.__base, 'static', 'Hebrew');
-    }
-    else {
-      ogPath = Path.join(window.__base, 'static', 'tagged');
-    }
+    var ogPath = Path.join(window.__base, 'static', 'tagged');
     var params = {
       'originalLanguagePath': ogPath
     }
@@ -126,13 +120,13 @@ const UploadModal = React.createClass({
     return params;
   },
 
-  isOldTestament: function(projectBook) {
-      for (var book in books){
-        if (books[projectBook] == 'Malachi'){
-          return true;
-        }
+  isOldTestament: function (projectBook) {
+    for (var book in books) {
+      if (books[projectBook] == 'Malachi') {
+        return true;
       }
-      return false;
+    }
+    return true;
   },
 
   clearPreviousData: function () {
