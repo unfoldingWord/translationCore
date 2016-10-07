@@ -30,6 +30,7 @@ function downloadPackage(packageName, callback) {
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
       fs.emptyDirSync(destination);
+      fs.removeSync(destination);
       var command = npm + ' install';
       exec(command, {cwd: source}, (error, stdout, stderr) => {
         if (error) {
@@ -86,13 +87,13 @@ function getPackageList(callback) {
       obj = JSON.parse(this.response);
     } catch(error) {
       obj = error;
-      console.error(error);
+      console.error('Parse Error');
     } finally {
       callback(obj);
     }
   }
   request.onerror = function() {
-    console.error(this);
+    console.error('Connection Error');
   }
 
   request.open('GET', CENTRAL_REPO);
@@ -128,8 +129,8 @@ function update(packageName, callback) {
  * @return {array} installedPackages - An array of installed packages.
  ******************************************************************************/
 function getLocalList() {
-  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
-  var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+  fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
+  var installedPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
   return installedPackages;
 }
 /**
@@ -140,9 +141,21 @@ function getLocalList() {
 function isInstalled(packageName) {
   fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-  var installedPackages = fs.readdirSync(PACKAGE_SAVE_LOCATION);
+  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  try {
+    var manifest = require(manifestLocation);
+  } catch(err) {
+    return false;
+  }
+  var dependencies = manifest.include;
+  var dependenciesInstalled = true;
   var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
-  return installedPackages.includes(packageName) && compiledPackages.includes(packageName);
+  for (var i in dependencies) {
+    if (!compiledPackages.includes(dependencies[i])) {
+      dependenciesInstalled = false;
+    }
+  }
+  return compiledPackages.includes(packageName) && dependenciesInstalled;
 }
 /**
  * @description - This get's the version number of the package.
@@ -150,7 +163,7 @@ function isInstalled(packageName) {
  * @return {String} version - The version of the package.
  ******************************************************************************/
 function getVersion(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -185,7 +198,7 @@ function uninstall(packageName) {
   var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
   fs.removeSync(packageLocation);
   fs.removeSync(compiledLocation);
-  api.Toast.success("Installation Successful", packageName + 'Was Successfully Uninstalled', 3);
+  api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
 }
 /**
  * @description Installs a packages dependencies.
