@@ -112,7 +112,7 @@ const UploadModal = React.createClass({
       'originalLanguagePath': ogPath
     }
     params.targetLanguagePath = path;
-    params.bookAbbr = tsManifest.project.id || tsManifest.ts_project.id;
+    params.bookAbbr = tsManifest.project_id || tsManifest.ts_project.id ;
     //not actually used right now because we're hard coded for english
     params.gatewayLanguage = tsManifest.source_translations.language_id;
     params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
@@ -174,7 +174,7 @@ const UploadModal = React.createClass({
               try {
                 Recent.add(path);
                 api.putDataInCommon('saveLocation', path);
-                api.putDataInCommon('params', _this.getParams(path, translationStudioManifest));
+                api.putDataInCommon('params', _this.getParams(path, api.getDataFromCommon('tcManifest')));
               }
               catch (error) {
                 console.error(error);

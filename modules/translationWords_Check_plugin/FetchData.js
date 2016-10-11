@@ -60,7 +60,7 @@ function getData(params, progressCallback, callback) {
                   return stringCompare(first.group, second.group);
               });
 
-
+              debugger;
               api.putDataInCheckStore('TranslationWordsChecker', 'book',
               api.convertToFullBookName(params.bookAbbr));
               api.putDataInCheckStore('TranslationWordsChecker', 'groups', checkObject['TranslationWordsChecker']);

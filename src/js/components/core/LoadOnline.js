@@ -62,7 +62,6 @@ module.exports = (function() {
         return;
       }
       try {
-
         fs.readFileSync(path.join(savePath, 'manifest.json'));
         callback(savePath, url);
       } catch (error) {

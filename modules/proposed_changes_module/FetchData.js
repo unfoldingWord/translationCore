@@ -43,14 +43,8 @@ function fetchData(params, progress, callback) {
 function sendToReader(file, callback, progress) {
   try {
     // FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
-    readFile(path.join(file, 'manifest.json'), function(err, data) {
-      if (err) {
-        console.error(err);
-      }
-      else {
-        readInManifest(data, file, callback, progress);
-      }
-    });
+  var data = api.getDataFromCommon('tcManifest');
+  readInManifest(data, file, callback, progress);
   } catch (error) {
     console.error(error);
   }
@@ -60,12 +54,11 @@ function sendToReader(file, callback, progress) {
  * @param {string} manifest - The manifest.json file
  ******************************************************************************/
 function readInManifest(manifest, source, callback, progress) {
-  let parsedManifest = JSON.parse(manifest);
-  var bookTitle = parsedManifest.project.name;
+  var bookTitle = manifest.ts_project.name || manifest.project.name;
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
-  let finishedChunks = parsedManifest.finished_chunks || parsedManifest.finished_frames;
+  let finishedChunks = manifest.finished_chunks || manifest.finished_frames;
   var total = len(finishedChunks);
   let currentJoined = {};
   var done = 0;
@@ -85,13 +78,6 @@ function readInManifest(manifest, source, callback, progress) {
   }
 
 }
-
-function readFile(path, callback) {
-  api.inputText(path, function(err, data) {
-    callback(err, data.toString());
-  });
-}
-
 
 /**
  * @description This function opens the chunks defined in the manifest file.
@@ -114,6 +100,12 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
   } catch (error) {
     console.error(error);
   }
+}
+
+function readFile(path, callback) {
+  api.inputText(path, function(err, data) {
+    callback(err, data.toString());
+  });
 }
 /**
  * @description This function saves the chunks locally as a window object;

@@ -87,14 +87,8 @@ const dispatcher = new Dispatcher();
 function sendToReader(file, callback) {
   try {
     // FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
-    readFile(path.join(file, 'manifest.json'), function (err, data) {
-      if (err) {
-        console.error(err);
-      }
-      else {
-        readInManifest(data, file, callback);
-      }
-    });
+    var data = api.getDataFromCommon('tcManifest');
+    readInManifest(data, file, callback);
   } catch (error) {
     console.error(error);
   }
@@ -104,12 +98,11 @@ function sendToReader(file, callback) {
 * @param {string} manifest - The manifest.json file
 ******************************************************************************/
 function readInManifest(manifest, source, callback) {
-  let parsedManifest = JSON.parse(manifest);
-  var bookTitle = parsedManifest.project.name;
+  var bookTitle = manifest.ts_project.name || manifest.project.name;
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
-  let finishedChunks = parsedManifest.finished_chunks || parsedManifest.finished_frames;
+  let finishedChunks = manifest.finished_chunks || manifest.finished_frames;
   var total = len(finishedChunks);
   let currentJoined = {};
   var done = 0;
@@ -278,24 +271,25 @@ function parseHebrew() {
       let origVerse = origVerseFull.split(" ");
       let verse = parsedText[ch][v] = [];
       var word;
-      var strong;
-      var brief;
+      var strong = "Strong Missing";
+      var brief = "Brief Missing";
       for (var element in origVerse) {
         try {
-        var currentElement = origVerse[element];
-        var nextElement = origVerse[parseInt(element) + 1];
-        if (isNaN(currentElement[currentElement.length - 1]) && !isNaN(nextElement[nextElement.length - 1])) {
-          word = currentElement;
-          strong = nextElement;
-          brief = lex[strong].strongs_def;
-        }
-          verse.push({ word, strong, brief});
+          var currentElement = origVerse[element];
+          var nextElement = origVerse[parseInt(element) + 1];
+          if (isNaN(currentElement[currentElement.length - 1]) && !isNaN(nextElement[nextElement.length - 1])) {
+            word = currentElement;
+            strong = nextElement;
+            brief = lex[strong].strongs_def;
+            verse.push({ word, strong, brief });
+          }
         }
         catch (e) {
-          verse.push({ word, strong:"Strong Missing", brief:"Brief Missing"});
+          if (word) {
+            //verse.push({ word, strong, brief });
+          }
         }
       }
-
     }
   }
   api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
