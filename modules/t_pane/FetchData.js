@@ -135,6 +135,7 @@ function readFile(path, callback) {
 }
 
 function readInOriginal(path, bookAbbr, callback) {
+  var originalLanguage = api.getDataFromCommon("params").originalLanguage;
   readFile(path, function(err, data) {
     if (err) {
       console.error(err);
@@ -142,7 +143,12 @@ function readInOriginal(path, bookAbbr, callback) {
     else {
       var betterData = typeof data == 'object' ? JSON.stringify(data) : data;
       openOriginal(betterData, api.convertToFullBookName(bookAbbr));
-      parseGreek();
+      if (originalLanguage == "hebrew") {
+        parseHebrew();
+      }
+      else {
+          parseGreek();
+      }
       callback();
     }
   });

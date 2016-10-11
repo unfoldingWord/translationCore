@@ -116,17 +116,23 @@ const UploadModal = React.createClass({
     //not actually used right now because we're hard coded for english
     params.gatewayLanguage = tsManifest.source_translations.language_id;
     params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
-
+    if (this.isOldTestament(params.bookAbbr)) {
+        params.originalLanguage = "hebrew";
+    } else {
+      params.originalLanguage = "greek";
+    }
     return params;
   },
 
   isOldTestament: function (projectBook) {
+    var passedBook = false;
     for (var book in books) {
-      if (books[projectBook] == 'Malachi') {
+      if (book == projectBook) passedBook = true;
+      if (books[book] == "Malachi" && passedBook) {
         return true;
       }
     }
-    return true;
+    return false;
   },
 
   clearPreviousData: function () {

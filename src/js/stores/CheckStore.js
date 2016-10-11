@@ -90,6 +90,7 @@ class CheckStore extends EventEmitter {
   */
   saveDataToDisk(field, path, callback=() => {}) {
     if (this.storeData[field]) {
+      debugger;
       var saveLocation = pathModule.join(path, 'checkdata', field + '.tc');
       fs.outputJson(saveLocation, this.storeData[field], callback);
     }
