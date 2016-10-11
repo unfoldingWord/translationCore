@@ -31,10 +31,10 @@ class ModuleWrapper extends React.Component {
         projects = <SwitchCheckModal.Component />
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
         projects = <RecentProjects.Component onLoad={() => {
-          this.setState({showApps: true});
+          this.state.showApps = true;
         }}/>;
       } else {
-        this.setState({showApps: true});
+        this.state.showApps = true;
         projects = <SwitchCheckModal.Component />
       }
       return(
@@ -44,7 +44,7 @@ class ModuleWrapper extends React.Component {
       );
     }
     var CheckModule = this.state.view;
-    
+
     return (
       <div>
         <CheckModule />

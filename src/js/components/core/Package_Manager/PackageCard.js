@@ -19,7 +19,12 @@ class PackageCard extends React.Component{
     };
   }
 
+  componentDidMount() {
+    this.installStatus = PackageManager.isInstalled(this.props.packName) ? 'Installed' : 'Install';
+  }
+
   install(name) {
+    this.installStatus = 'Installing...'
     PackageManager.download(name, function(err, data){
       if(!err) {
       //TODO: Add way to update icon from install to update
@@ -52,7 +57,7 @@ class PackageCard extends React.Component{
         <Button key={this.props.buttonDisplay} bsStyle="primary"
                 style={style.packCardButton} title={"Install " + this.props.packName}
                 onClick={this.install.bind(this, this.props.packName)} disabled={PackageManager.isInstalled(this.props.packName)}>
-                <Glyphicon glyph="cloud-download" /> {PackageManager.isInstalled(this.props.packName) ? 'Installed' : 'Install'}
+                <Glyphicon glyph="cloud-download" /> {this.installStatus}
         </Button>);
     }else if (this.props.buttonDisplay === "installedPack") {
       buttons.push(
