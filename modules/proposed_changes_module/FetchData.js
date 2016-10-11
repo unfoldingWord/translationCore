@@ -65,7 +65,7 @@ function readInManifest(manifest, source, callback, progress) {
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
-  let finishedChunks = parsedManifest.finished_chunks;
+  let finishedChunks = parsedManifest.finished_chunks || parsedManifest.finished_frames;
   var total = len(finishedChunks);
   let currentJoined = {};
   var done = 0;

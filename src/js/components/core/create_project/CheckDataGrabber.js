@@ -186,6 +186,9 @@ var CheckDataGrabber = {
    */
   Progress: function(name, data) {
     CoreActions.sendProgressForKey({progress: data, key: name});
+    if (data == 100) {
+      console.log(name + " finished loading.");
+    }
   },
 
   /**
