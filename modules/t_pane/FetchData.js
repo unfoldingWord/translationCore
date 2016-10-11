@@ -7,9 +7,9 @@ const path = require('path');
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-// Get original language
-// check if original language is already in common
-// get it if it isn't using parsers and params
+  // Get original language
+  // check if original language is already in common
+  // get it if it isn't using parsers and params
 
   var targetLanguage = api.getDataFromCommon('targetLanguage');
 
@@ -18,7 +18,7 @@ function fetchData(params, progress, callback) {
       console.error('TPane requires a filepath');
     }
     else {
-      dispatcher.schedule(function(subCallback) {sendToReader(params.targetLanguagePath, subCallback);});
+      dispatcher.schedule(function (subCallback) { sendToReader(params.targetLanguagePath, subCallback); });
     }
   }
 
@@ -28,14 +28,14 @@ function fetchData(params, progress, callback) {
       console.error("Can't find original language");
     }
     else {
-      dispatcher.schedule(function(subCallback) {
+      dispatcher.schedule(function (subCallback) {
         readInOriginal(path.join(params.originalLanguagePath, bookAbbreviationToBookPath(params.bookAbbr)),
-params.bookAbbr, subCallback);
+          params.bookAbbr, subCallback);
       });
     }
   }
   dispatcher.run(callback, progress);
-// I'm not supposed to get the gateway language!
+  // I'm not supposed to get the gateway language!
 }
 
 function bookAbbreviationToBookPath(bookAbbr) {
@@ -65,14 +65,14 @@ class Dispatcher {
     }
     for (var job of this.jobs) {
       job(
-function() {
-  doneJobs++;
-  progress((doneJobs / _this.jobs.length) * 100);
-  if (doneJobs >= _this.jobs.length) {
-    callback();
-  }
-}
-);
+        function () {
+          doneJobs++;
+          progress((doneJobs / _this.jobs.length) * 100);
+          if (doneJobs >= _this.jobs.length) {
+            callback();
+          }
+        }
+      );
     }
   }
 }
@@ -86,8 +86,8 @@ const dispatcher = new Dispatcher();
 ******************************************************************************/
 function sendToReader(file, callback) {
   try {
-// FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
-    readFile(path.join(file, 'manifest.json'), function(err, data) {
+    // FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
+    readFile(path.join(file, 'manifest.json'), function (err, data) {
       if (err) {
         console.error(err);
       }
@@ -109,7 +109,7 @@ function readInManifest(manifest, source, callback) {
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
-  let finishedChunks = parsedManifest.finished_chunks;
+  let finishedChunks = parsedManifest.finished_chunks || parsedManifest.finished_frames;
   var total = len(finishedChunks);
   let currentJoined = {};
   var done = 0;
@@ -117,26 +117,26 @@ function readInManifest(manifest, source, callback) {
     if (finishedChunks.hasOwnProperty(chapterVerse)) {
       let splitted = finishedChunks[chapterVerse].split('-');
       openUsfmFromChunks(splitted, currentJoined, total, source,
-function() {
-  done++;
-  if (done >= total) {
-    api.putDataInCommon('targetLanguage', currentJoined);
-    callback();
-  }
-});
+        function () {
+          done++;
+          if (done >= total) {
+            api.putDataInCommon('targetLanguage', currentJoined);
+            callback();
+          }
+        });
     }
   }
 }
 
 function readFile(path, callback) {
-  api.inputText(path, function(err, data) {
+  api.inputText(path, function (err, data) {
     callback(err, data.toString());
   });
 }
 
 function readInOriginal(path, bookAbbr, callback) {
   var originalLanguage = api.getDataFromCommon("params").originalLanguage;
-  readFile(path, function(err, data) {
+  readFile(path, function (err, data) {
     if (err) {
       console.error(err);
     }
@@ -147,7 +147,7 @@ function readInOriginal(path, bookAbbr, callback) {
         parseHebrew();
       }
       else {
-          parseGreek();
+        parseGreek();
       }
       callback();
     }
@@ -163,7 +163,7 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
   try {
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
-    readFile(chunkLocation, function(err, data) {
+    readFile(chunkLocation, function (err, data) {
       if (err) {
         console.error('Error in openUSFM: ' + err);
       } else {
@@ -211,8 +211,8 @@ function openOriginal(text, bookName) {
       newData[parseInt(chapter)][parseInt(verse)] = input[bookName][chapter][verse];
     }
   }
-// CoreActions.updateOriginalLanguage(input[bookName]);
-//make new function to put straight into common as array?
+  // CoreActions.updateOriginalLanguage(input[bookName]);
+  //make new function to put straight into common as array?
   api.putDataInCommon('originalLanguage', input[stripSpaces(bookName)]);
 }
 
@@ -250,10 +250,10 @@ function parseGreek() {
         let [, word, strong, speech] = result;
         try {
           let {brief, long} = lex[strong];
-          verse.push({word, strong, speech, brief, long});
-        } 
-        catch(e) {
-          verse.push({word, strong, speech, brief: "No definition found", long: "No definition found"});
+          verse.push({ word, strong, speech, brief, long });
+        }
+        catch (e) {
+          verse.push({ word, strong, speech, brief: "No definition found", long: "No definition found" });
         }
 
       }
@@ -271,24 +271,31 @@ function parseHebrew() {
     if (!parseInt(ch)) { // skip the title
       continue;
     }
-    debugger;
     parsedText[ch] = {};
     let chap = origText[ch];
     for (let v in chap) {
-      let origVerse = origText[ch][v];
+      let origVerseFull = origText[ch][v];
+      let origVerse = origVerseFull.split(" ");
       let verse = parsedText[ch][v] = [];
-      let result = [];
-      while (result = greekRegex.exec(origVerse)) {
-        let [, word, strong, speech] = result;
+      var word;
+      var strong;
+      var brief;
+      for (var element in origVerse) {
         try {
-          let {brief, long} = lex[strong];
-          verse.push({word, strong, speech, brief, long});
-        } 
-        catch(e) {
-          verse.push({word, strong, speech, brief: "No definition found", long: "No definition found"});
+        var currentElement = origVerse[element];
+        var nextElement = origVerse[parseInt(element) + 1];
+        if (isNaN(currentElement[currentElement.length - 1]) && !isNaN(nextElement[nextElement.length - 1])) {
+          word = currentElement;
+          strong = nextElement;
+          brief = lex[strong].strongs_def;
         }
-
+          verse.push({ word, strong, brief});
+        }
+        catch (e) {
+          verse.push({ word, strong:"Strong Missing", brief:"Brief Missing"});
+        }
       }
+
     }
   }
   api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
