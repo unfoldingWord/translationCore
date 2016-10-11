@@ -10,7 +10,6 @@ var MorphParse = function()
 
     (function(code)
     {
-        debugger;
 		language = code.charAt(0);
 		code = code.substr(1);
         var parts = code.split('/');
