@@ -31,7 +31,7 @@ function downloadPackage(packageName, callback) {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
       fs.emptyDirSync(destination);
       fs.removeSync(destination);
-      var command = npm + ' install';
+      var command = '"' + npm + '"' + ' install';
       exec(command, {cwd: source}, (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
@@ -53,7 +53,7 @@ function downloadPackage(packageName, callback) {
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function compilePackage(destination, packageName, callback) {
-  var command = babelCli + ' ' + destination + ' --ignore node_modules,.git --out-dir ' + destination;
+  var command = '"' + babelCli + '"' + ' ' + '"'+ destination +'"' + ' --ignore node_modules,.git --out-dir ' + '"'+ destination+'"';
   fs.ensureDirSync(destination);
   var filesInPackage = fs.readdirSync(destination);
   if (!filesInPackage.includes('.babelrc')) {
