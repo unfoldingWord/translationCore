@@ -69,7 +69,6 @@ const UploadModal = React.createClass({
         manifest = ManifestGenerator(data, tsManifest);
       }
       api.putDataInCommon('tcManifest', manifest);
-
       fs.outputJson(manifestLocation, manifest, function (err) {
         if (err) {
           const alert = {
@@ -144,17 +143,31 @@ const UploadModal = React.createClass({
     }
     params.targetLanguagePath = path;
     try {
-    params.bookAbbr = tsManifest.project_id || tsManifest.project.id || tsManifest.ts_project.id;
-    } catch(e) {
-      console.log("MANIFEST FORMAT NOT STANDARD");
-    }
+      if (tsManifest.ts_project) {
+        params.bookAbbr = tsManifest.ts_project.id;
+      }
+      else if (tsManifest.project) {
+        params.bookAbbr = tsManifest.project.id;
+      }
+      else {
+         params.bookAbbr = tsManifest.project_id;
+      }
+   
     //not actually used right now because we're hard coded for english
-    params.gatewayLanguage = isArray(tsManifest.source_translations) ? tsManifest.source_translations[0].language_id : tsManifest.source_translations.language_id;
+    if (isArray(tsManifest.source_translations)){
+      params.gatewayLanguage = tsManifest.source_translations[0].language_id;
+    } else {
+      params.gatewayLanguage = tsManifest.source_translations.language_id;
+    }
     params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
     if (this.isOldTestament(params.bookAbbr)) {
       params.originalLanguage = "hebrew";
     } else {
       params.originalLanguage = "greek";
+    }
+     } catch (e) {
+       debugger;
+      console.log("MANIFEST FORMAT NOT STANDARD");
     }
     return params;
   },
@@ -223,33 +236,26 @@ const UploadModal = React.createClass({
         );
       }
       else {
-        _this.getManifest(path, function (error, tcManifest) {
-          if (error) {
-            console.error(error);
-            const alert = {
-              title: 'Error Getting Transaltion Studio Manifest',
-              content: error.message,
-              leftButtonText: 'Ok'
+        try {
+          var tcManifest = fs.readJsonSync(Path.join(path, 'manifest.json'));
+        } catch (e) {
+          console.log(e);
+        }
+          _this.loadTranslationStudioManifest(path, function (err, tsManifest) {
+            try {
+              Recent.add(path);
+              api.putDataInCommon('tcManifest', tcManifest || tsManifest);
+              api.putDataInCommon('saveLocation', path);
+              api.putDataInCommon('params', _this.getParams(path, tsManifest));
+              Access.loadFromFilePath(path, callback);
+            } catch (err) {
+              ImportUsfm.loadProject(path);
             }
-            api.createAlert(alert);
-          }
-          else {
-            _this.loadTranslationStudioManifest(path, function (err, tsManifest) {
-              try {
-                Recent.add(path);
-                api.putDataInCommon('tcManifest', tcManifest || tsManifest);
-                api.putDataInCommon('saveLocation', path);
-                api.putDataInCommon('params', _this.getParams(path, tsManifest));
-                Access.loadFromFilePath(path, callback);
-              } catch (err) {
-                ImportUsfm.loadProject(path);
-              }
-            });
-          }
-        });
+          });
       }
     }
   },
+
 
   /**
    * @description - Loads in a translationStudio manifest
@@ -294,7 +300,7 @@ const UploadModal = React.createClass({
       mainContent = (
         <div>
           <br />
-          <OnlineInput ref={"Online"} sendFilePath={this.sendFilePath} />
+          <OnlineInput ref={"Online"} pressedEnter = {this.props.pressedEnter} sendFilePath={this.sendFilePath} />
         </div>
       );
     } else if (this.state.show === 'usfm') {

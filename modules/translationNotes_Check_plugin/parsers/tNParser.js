@@ -58,6 +58,8 @@ var TNParser = function(book, bookAbbr, progCallback = () => {}) {
             let verseStart, verseEnd, startPos, searchVerse;
             try {
               searchVerse = parseInt(verseStartReg.exec(book[chap].verses[verse].file)[1]);
+              let searchChapTry = lang[chapNum][searchVerse];
+
             }
             catch (e){
               return;

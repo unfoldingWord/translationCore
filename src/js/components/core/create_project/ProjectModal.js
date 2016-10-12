@@ -78,11 +78,17 @@ const ProjectModal = React.createClass({
     this.close();
   },
 
+  _handleKeyPress: function(e) {
+    if (e.key === 'Enter') {
+      this.onClick(e);
+    }
+  },
+
   render: function () {
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Upload ref={"TargetLanguage"} />
+        <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
+          <Upload ref={"TargetLanguage"} pressedEnter={this.onClick}/>
           <Modal.Footer>
             <ButtonToolbar>
               <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>
