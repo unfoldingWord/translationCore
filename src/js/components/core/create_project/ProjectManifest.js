@@ -76,9 +76,7 @@ function populate(data, tsManifest) {
     if (projectManifest.ts_project.name.length < 1) {
       projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
     }
-    for (var translator of tsManifest.translators) {
-      projectManifest.translators.push(translator);
-    }
+    projectManifest.translators = tsManifest.translators;
   }
 
   return projectManifest;
