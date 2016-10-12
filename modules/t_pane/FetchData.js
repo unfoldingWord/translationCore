@@ -1,7 +1,7 @@
 // FetchData.js//
 
 const api = window.ModuleApi;
-
+const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
 
 var parser = require('./usfm-parse.js');
@@ -126,17 +126,11 @@ function readInManifest(manifest, source, callback) {
   }
 }
 
-function readFile(path, callback) {
-  api.inputText(path, function (err, data) {
-    callback(err, data.toString());
-  });
-}
-
 function readInOriginal(path, bookAbbr, callback) {
   var originalLanguage = api.getDataFromCommon("params").originalLanguage;
-  readFile(path, function (err, data) {
-    if (err) {
-      console.error(err);
+  try {
+  var data = fs.readFileSync(path).toString();
+    if (!data) {
     }
     else {
       var betterData = typeof data == 'object' ? JSON.stringify(data) : data;
@@ -149,7 +143,10 @@ function readInOriginal(path, bookAbbr, callback) {
       }
       callback();
     }
-  });
+    } catch(error) {
+      debugger;
+      console.log(error);
+  }
 }
 
 /**
@@ -161,16 +158,13 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
   try {
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
-    readFile(chunkLocation, function (err, data) {
-      if (err) {
-        console.error('Error in openUSFM: ' + err);
+    var data = fs.readFileSync(chunkLocation).toString();
+      if (!data) {
       } else {
         joinChunks(data, currentChapter, currentJoined);
         callback();
       }
-    });
   } catch (error) {
-    console.error(error);
   }
 }
 /**

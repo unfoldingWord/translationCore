@@ -1,7 +1,7 @@
 //FetchData.js//
 
 const api = window.ModuleApi;
-
+const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
 
 var parser = require('./usfm-parse.js');
@@ -94,24 +94,18 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
     currentChapter = parseInt(currentChapter);
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
-    readFile(chunkLocation, function(err, data) {
-      if (err) {
-        console.error('Error in openUSFM: ' + err);
-      } else {
+  var data = fs.readFileSync(chunkLocation).toString();
+    if (!data) {
+    }
+    else {
         joinChunks(data, currentChapter, currentJoined);
-        callback();
       }
-    });
   } catch (error) {
-    console.error(error);
-  }
+  } 
+  callback();
+
 }
 
-function readFile(path, callback) {
-  api.inputText(path, function(err, data) {
-    callback(err, data.toString());
-  });
-}
 /**
  * @description This function saves the chunks locally as a window object;
  * @param {string} text - The text being read in from chunks

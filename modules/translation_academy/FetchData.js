@@ -20,7 +20,6 @@ function fetchData(params, progress, callback) {
 }
 
 function fetchAllSections(sectionList, progress, callback) {
-	debugger;
 	// Start an asynchronous promise for each TA section
 	var promises = [];
 	for(var sectionName in TranslationAcademyScraper.sectionList) {
@@ -42,7 +41,6 @@ function fetchAllSections(sectionList, progress, callback) {
 		callback('Translation Academy failed to fetch section text.');
 	});
 	} catch (e) {
-		debugger;
 		console.log(e);
 	}
 }

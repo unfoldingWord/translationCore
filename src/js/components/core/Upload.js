@@ -166,7 +166,6 @@ const UploadModal = React.createClass({
       params.originalLanguage = "greek";
     }
      } catch (e) {
-       debugger;
       console.log("MANIFEST FORMAT NOT STANDARD");
     }
     return params;
@@ -203,6 +202,7 @@ const UploadModal = React.createClass({
     this.clearPreviousData();
     if (path) {
       if (!_this.translationCoreManifestPresent(path)) {
+        //This executes if there is no tCManifest in filesystem
         this.loadTranslationStudioManifest(path,
           function (err, translationStudioManifest) {
             if (err) {
@@ -236,22 +236,22 @@ const UploadModal = React.createClass({
         );
       }
       else {
+        //this executes if there is a tCManifest present
         try {
-          var tcManifest = fs.readJsonSync(Path.join(path, 'manifest.json'));
+          var tcManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
         } catch (e) {
           console.log(e);
         }
-          _this.loadTranslationStudioManifest(path, function (err, tsManifest) {
             try {
               Recent.add(path);
-              api.putDataInCommon('tcManifest', tcManifest || tsManifest);
+              api.putDataInCommon('tcManifest', tcManifest);
               api.putDataInCommon('saveLocation', path);
-              api.putDataInCommon('params', _this.getParams(path, tsManifest));
+              api.putDataInCommon('params', _this.getParams(path, tcManifest));
               Access.loadFromFilePath(path, callback);
             } catch (err) {
+              //this executes if something fails, not sure how efficient this is
               ImportUsfm.loadProject(path);
             }
-          });
       }
     }
   },
