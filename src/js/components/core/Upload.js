@@ -60,9 +60,14 @@ const UploadModal = React.createClass({
    * studio project
    */
   saveManifest: function (saveLocation, data, tsManifest) {
+    var manifest;
     try {
       var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
-      var manifest = ManifestGenerator(data, tsManifest);
+      if (tsManifest.package_version == '3') {
+        manifest = this.fixManifestVerThree(tsManifest);
+      } else {
+        manifest = ManifestGenerator(data, tsManifest);
+      }
       api.putDataInCommon('tcManifest', manifest);
 
       fs.outputJson(manifestLocation, manifest, function (err) {
@@ -88,6 +93,27 @@ const UploadModal = React.createClass({
     }
   },
 
+  fixManifestVerThree: function (oldManifest) {
+    var newManifest = {};
+    for (var oldElements in oldManifest) {
+      newManifest[oldElements] = oldManifest[oldElements];
+    }
+    newManifest.finished_chunks = oldManifest.finished_frames;
+    newManifest.ts_project = {};
+    newManifest.ts_project.id = oldManifest.project_id;
+    newManifest.ts_project.name = api.convertToFullBookName(oldManifest.project_id);
+    for (var el in oldManifest.source_translations) {
+      newManifest.source_translations = oldManifest.source_translations[el];
+      var parameters = el.split("-");
+      debugger;
+      newManifest.source_translations.language_id = parameters[1];
+      newManifest.source_translations.resource_id = parameters[2];
+      break;
+    }
+    return newManifest;
+
+  },
+
   /**
    * @description - grabs the translationCore manifest from the folder and returns it
    * @param {string} folderpath - Path to the folder where the translationStudio is located
@@ -107,17 +133,21 @@ const UploadModal = React.createClass({
    * manifest
    */
   getParams: function (path, tsManifest) {
+    if (tsManifest.package_version == '3') {
+      tsManifest = this.fixManifestVerThree(tsManifest);
+    }
     var ogPath = Path.join(window.__base, 'static', 'tagged');
     var params = {
       'originalLanguagePath': ogPath
     }
     params.targetLanguagePath = path;
-    params.bookAbbr = tsManifest.project_id || tsManifest.ts_project.id ;
+    params.bookAbbr = tsManifest.project_id || tsManifest.ts_project.id;
     //not actually used right now because we're hard coded for english
+    debugger;
     params.gatewayLanguage = tsManifest.source_translations.language_id;
     params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
     if (this.isOldTestament(params.bookAbbr)) {
-        params.originalLanguage = "hebrew";
+      params.originalLanguage = "hebrew";
     } else {
       params.originalLanguage = "greek";
     }
@@ -259,13 +289,13 @@ const UploadModal = React.createClass({
       mainContent = (
         <div>
           <br />
-          <OnlineInput ref={"Online"} sendFilePath={this.sendFilePath}/>
+          <OnlineInput ref={"Online"} sendFilePath={this.sendFilePath} />
         </div>
       );
     } else if (this.state.show === 'usfm') {
       mainContent = (
         <div>
-          <ImportUsfm.component isWelcome={this.props.isWelcome}/>
+          <ImportUsfm.component isWelcome={this.props.isWelcome} />
         </div>
       )
     }
