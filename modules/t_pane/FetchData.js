@@ -98,7 +98,12 @@ function sendToReader(file, callback) {
 * @param {string} manifest - The manifest.json file
 ******************************************************************************/
 function readInManifest(manifest, source, callback) {
-  var bookTitle = manifest.ts_project.name || manifest.project.name;
+    var bookTitle;
+  if (manifest.ts_project) {
+    bookTitle = manifest.ts_project.name;
+  }  else  {
+    bookTitle = manifest.project.name;
+  }
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';

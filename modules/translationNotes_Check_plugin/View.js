@@ -80,7 +80,7 @@ class View extends React.Component {
     api.removeEventListener('goToNext', this.goToNextListener);
     api.removeEventListener('goToPrevious', this.goToPreviousListener);
     api.removeEventListener('goToCheck', this.goToCheckListener);
-    api.registerEventListener('changeCheckType', this.changeCheckTypeListener);
+    api.removeEventListener('changeCheckType', this.changeCheckTypeListener);
     api.removeEventListener('phraseDataLoaded', this.updateState);
   }
 
@@ -218,17 +218,19 @@ class View extends React.Component {
     }
     var currentCheck = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex]['checks'][currentCheckIndex];
     var currentWord = api.getDataFromCheckStore(NAMESPACE, 'groups')[currentGroupIndex].group;
+        var emitEvent = function() {
+      api.emitEvent('goToVerse', { chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse, verseEnd: currentCheck.verseEnd });
+    }
     this.setState({
       book: api.getDataFromCheckStore(NAMESPACE, 'book'),
       currentCheck: currentCheck,
       currentWord: currentWord,
       currentFile: this.getFile(currentWord)
-    });
+    }, emitEvent());
     if (this.refs.CommentBox) {
       this.refs.CommentBox.setComment(currentCheck.comment || "");
       this.refs.ProposedChanges.setNewWord(currentCheck.proposedChanges || "");
     }
-    api.emitEvent('goToVerse', { chapterNumber: currentCheck.chapter, verseNumber: currentCheck.verse, verseEnd: currentCheck.verseEnd });
   }
 
   /**

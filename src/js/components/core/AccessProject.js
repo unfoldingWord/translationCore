@@ -25,7 +25,9 @@ var Access = {
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     fs.readJson(manifestLocation, function(err, jsonObject) {
       if (jsonObject) {
-        api.putDataInCommon('tcManifest', jsonObject);
+        if (!api.getDataFromCommon('tcManifest')) {
+          api.putDataInCommon('tcManifest', jsonObject);
+        }
       }
       if (callback) {
         callback();
@@ -45,6 +47,7 @@ var Access = {
         api.setSettings('showTutorial', false);
         localStorage.setItem('lastProject', folderpath);
       } catch (err) {
+        debugger;
         localStorage.removeItem('lastProject');
         api.putDataInCommon('saveLocation', null);
       }

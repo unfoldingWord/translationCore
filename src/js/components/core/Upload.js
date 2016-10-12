@@ -105,7 +105,6 @@ const UploadModal = React.createClass({
     for (var el in oldManifest.source_translations) {
       newManifest.source_translations = oldManifest.source_translations[el];
       var parameters = el.split("-");
-      debugger;
       newManifest.source_translations.language_id = parameters[1];
       newManifest.source_translations.resource_id = parameters[2];
       break;
@@ -133,6 +132,9 @@ const UploadModal = React.createClass({
    * manifest
    */
   getParams: function (path, tsManifest) {
+    isArray = function (a) {
+      return (!!a) && (a.constructor === Array);
+    };
     if (tsManifest.package_version == '3') {
       tsManifest = this.fixManifestVerThree(tsManifest);
     }
@@ -141,10 +143,13 @@ const UploadModal = React.createClass({
       'originalLanguagePath': ogPath
     }
     params.targetLanguagePath = path;
-    params.bookAbbr = tsManifest.project_id || tsManifest.ts_project.id;
+    try {
+    params.bookAbbr = tsManifest.project_id || tsManifest.project.id || tsManifest.ts_project.id;
+    } catch(e) {
+      console.log("MANIFEST FORMAT NOT STANDARD");
+    }
     //not actually used right now because we're hard coded for english
-    debugger;
-    params.gatewayLanguage = tsManifest.source_translations.language_id;
+    params.gatewayLanguage = isArray(tsManifest.source_translations) ? tsManifest.source_translations[0].language_id : tsManifest.source_translations.language_id;
     params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
     if (this.isOldTestament(params.bookAbbr)) {
       params.originalLanguage = "hebrew";
@@ -232,11 +237,12 @@ const UploadModal = React.createClass({
             _this.loadTranslationStudioManifest(path, function (err, tsManifest) {
               try {
                 Recent.add(path);
-                api.putDataInCommon('tcManifest', tcManifest);
+                api.putDataInCommon('tcManifest', tcManifest || tsManifest);
                 api.putDataInCommon('saveLocation', path);
                 api.putDataInCommon('params', _this.getParams(path, tsManifest));
                 Access.loadFromFilePath(path, callback);
               } catch (err) {
+                debugger;
                 ImportUsfm.loadProject(path);
               }
             });

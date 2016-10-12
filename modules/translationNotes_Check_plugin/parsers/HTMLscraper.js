@@ -58,7 +58,6 @@ class HTMLScraper {
     */
 
     getBook(bookAbr) {
-		debugger;
 	if (!this.bookAbbreviations ||
 	    !this.bookAbbreviations[bookAbr]) {
 	    return;
