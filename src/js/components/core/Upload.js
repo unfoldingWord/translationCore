@@ -242,7 +242,6 @@ const UploadModal = React.createClass({
                 api.putDataInCommon('params', _this.getParams(path, tsManifest));
                 Access.loadFromFilePath(path, callback);
               } catch (err) {
-                debugger;
                 ImportUsfm.loadProject(path);
               }
             });

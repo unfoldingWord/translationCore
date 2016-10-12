@@ -47,7 +47,6 @@ var Access = {
         api.setSettings('showTutorial', false);
         localStorage.setItem('lastProject', folderpath);
       } catch (err) {
-        debugger;
         localStorage.removeItem('lastProject');
         api.putDataInCommon('saveLocation', null);
       }
