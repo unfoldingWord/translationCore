@@ -1,11 +1,13 @@
  var style = {
   menuItem: {
     text: {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      color: "#FFFFFF",
     },
     current: {
       cursor: 'pointer',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      color: "#fdd910",
     },
     flag: {
       enabled: {

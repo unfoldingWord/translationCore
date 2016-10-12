@@ -30,8 +30,7 @@ class SideBarButton extends React.Component{
               onMouseEnter={this.mouseEnter.bind(this)}
               onMouseLeave={this.mouseLeave.bind(this)}>
             <Glyphicon glyph={this.props.glyphicon}
-                      style={GlyphStyle}
-            /><br/>
+                      style={GlyphStyle}/><br/>
               {this.props.value}
           </li>
         </div>

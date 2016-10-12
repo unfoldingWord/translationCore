@@ -49,7 +49,7 @@ class MenuView extends React.Component {
   componentDidMount() {
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(true);
   }
-    
+
   goToNext() {
     this.unselectOldMenuItem();
     // if we need to move to the next group
@@ -65,7 +65,7 @@ class MenuView extends React.Component {
     }
     this.selectNewMenuItem();
   }
-  
+
   goToPrevious() {
     this.unselectOldMenuItem();
     // if we need to move to the previous group
@@ -81,18 +81,18 @@ class MenuView extends React.Component {
     }
     this.selectNewMenuItem();
   }
-  
+
   goToCheck(params) {
     this.unselectOldMenuItem();
     this.currentGroupIndex = params.groupIndex;
     this.currentCheckIndex = params.checkIndex;
     this.selectNewMenuItem();
   }
-  
+
   unselectOldMenuItem() {
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(false);
   }
-  
+
   selectNewMenuItem() {
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setActive(true);
   }
@@ -119,7 +119,7 @@ class MenuView extends React.Component {
           header = group.group;
         }
         var groupHeader = (
-          <div>{header.replace(extensionRegex, '')}</div>
+          <div style={{color: "#44C6FF"}}>{header.replace(extensionRegex, '')}</div>
         );
         var checkMenuItems = group.checks.map(function(check, checkIndex) {
           return (
@@ -142,12 +142,12 @@ class MenuView extends React.Component {
       });
       return (
       <div className='fill-height'>
-        <Well className='fill-height' style={{overflowY: 'scroll', maxHeight: '750px', marginTop: "5px"}}>
+        <div className='fill-height' style={{overflowY: 'scroll', maxHeight: '750px', paddingLeft: "20px"}}>
           <div>
-            <center><h3>Checks</h3></center>
+            <center><h3 style={{color: "#FFFFFF"}}>Checks</h3></center>
             {menuList}
           </div>
-        </Well>
+        </div>
       </div>
     )
     }
