@@ -3,13 +3,14 @@
 const api = window.ModuleApi;
 const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
+var missingChunks = 0;
 
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-//Get target Language
-//check if original language is already in common
-//get it if it isn't using parsers and params
+  //Get target Language
+  //check if original language is already in common
+  //get it if it isn't using parsers and params
 
   var targetLanguage = api.getDataFromCommon('targetLanguage');
 
@@ -18,12 +19,12 @@ function fetchData(params, progress, callback) {
       console.error('ProposedChanges requires a filepath');
     }
     else {
-      sendToReader(params.targetLanguagePath, 
-        function() {
+      sendToReader(params.targetLanguagePath,
+        function () {
           progress(100);
           api.putDataInCheckStore("ProposedChanges", "newWord", '');
           callback();
-        }, 
+        },
         progress
       );
     }
@@ -33,6 +34,7 @@ function fetchData(params, progress, callback) {
     api.putDataInCheckStore("ProposedChanges", "newWord", '');
     callback();
   }
+
 }
 
 /**
@@ -43,8 +45,8 @@ function fetchData(params, progress, callback) {
 function sendToReader(file, callback, progress) {
   try {
     // FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
-  var data = api.getDataFromCommon('tcManifest');
-  readInManifest(data, file, callback, progress);
+    var data = api.getDataFromCommon('tcManifest');
+    readInManifest(data, file, callback, progress);
   } catch (error) {
     console.error(error);
   }
@@ -57,7 +59,7 @@ function readInManifest(manifest, source, callback, progress) {
   var bookTitle;
   if (manifest.ts_project) {
     bookTitle = manifest.ts_project.name;
-  }  else  {
+  } else {
     bookTitle = manifest.project.name;
   }
   let bookTitleSplit = bookTitle.split(' ');
@@ -71,10 +73,10 @@ function readInManifest(manifest, source, callback, progress) {
     if (finishedChunks.hasOwnProperty(chapterVerse)) {
       let splitted = finishedChunks[chapterVerse].split('-');
       openUsfmFromChunks(splitted, currentJoined, total, source,
-        function() {
+        function () {
           done++;
           progress((done / total) * 100);
-          if (done >= total) {
+          if (done >= (total - missingChunks)) {
             api.putDataInCommon('targetLanguage', currentJoined);
             callback();
           }
@@ -94,15 +96,14 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
     currentChapter = parseInt(currentChapter);
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
-  var data = fs.readFileSync(chunkLocation).toString();
+    var data = fs.readFileSync(chunkLocation);
     if (!data) {
     }
-    else {
-        joinChunks(data, currentChapter, currentJoined);
-      }
+    joinChunks(data.toString(), currentChapter, currentJoined);
+    callback();
   } catch (error) {
-  } 
-  callback();
+        missingChunks++;
+  }
 
 }
 
@@ -128,11 +129,11 @@ function joinChunks(text, currentChapter, currentJoined) {
 }
 
 function len(obj) {
-	var length = 0;
-	for (let item in obj) {
-		length++;
-	}
-	return length;
+  var length = 0;
+  for (let item in obj) {
+    length++;
+  }
+  return length;
 }
 
 module.exports = fetchData;

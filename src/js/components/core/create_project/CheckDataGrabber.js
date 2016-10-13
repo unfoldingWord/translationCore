@@ -234,7 +234,6 @@ var CheckDataGrabber = {
    */
   getDataFromCheck: function(name, path, params) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
-
     //call the FetchData function
     var _this = this;
     DataFetcher(
