@@ -154,7 +154,7 @@ class ReportItem extends React.Component {
       return undefined;
     return (
     <div>
-      <span style={{fontWeight: "bold"}}>The meaning has been: </span><br />{this.props.check.retained}
+      <span style={{fontWeight: "bold"}}>The figure has been: </span><br />{this.props.check.retained}
     </div>
     );
   }

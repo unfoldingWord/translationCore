@@ -64,7 +64,7 @@ class CheckStatusButtons extends React.Component{
             function() {_this.setFlagStateFunction('FLAGGED');}}>
             <Glyphicon glyph="flag" /> {FLAGGED}</Button>
         </ButtonGroup>
-        <h4>The meaning has been:</h4>
+        <h4>The figure has been:</h4>
         <div className="radio-inline">
           <label>
           <input type="radio" value="Retained"
