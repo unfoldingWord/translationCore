@@ -176,7 +176,7 @@ class SwitchCheckModal extends React.Component {
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Change Check category</Modal.Title>
+            <Modal.Title>Change Tool Check category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <SwitchCheck />
