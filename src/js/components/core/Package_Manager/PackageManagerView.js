@@ -25,7 +25,8 @@ class PackageManagerView extends React.Component{
       visiblePackManager: true,
       displayStatus: "downloadPack",
       cards: [<div key={"default"}></div>],
-      searchText: ''
+      searchText: '',
+      data: null
     };
     this.handlePackManagerVisibility = this.handlePackManagerVisibility.bind(this);
     this.handleDisplayStatus = this.handleDisplayStatus.bind(this);
@@ -39,6 +40,13 @@ class PackageManagerView extends React.Component{
   componentWillUnmount() {
     api.removeEventListener('PackManagerVisibility', this.handlePackManagerVisibility);
     api.removeEventListener('cardDisplayStatus', this.handleDisplayStatus);
+  }
+
+  componentDidMount() {
+    var _this = this;
+    PackageManager.list(function(data) {
+      _this.setState({data: data});
+    });
   }
 
   handleChange(e) {
@@ -58,29 +66,28 @@ class PackageManagerView extends React.Component{
   }
 
   render(){
-    if(!this.state.visiblePackManager){
+    if(!this.state.visiblePackManager || !this.state.data){
       return (<div></div>);
     }else{
       var cards = <div></div>
-      var _this = this;
       if (this.state.displayStatus === 'downloadPack') {
-        PackageManager.list(function(data) {
+        var data = this.state.data;
           cards = [<div key={'default'}></div>];
           for (var i in data) {
             var currentPackage = data[i];
-            if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(_this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.version} numOfDownloads={"30"}
+            if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
+              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.version} numOfDownloads={""}
               description={currentPackage.description || "No description found."}
               iconPathName={currentPackage.icon}
               buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
             }
           }
-          _this.setState({cards: cards});
-          _this.cards = _this.state.cards;
-        });
+          this.state.cards = cards;
+          this.cards = this.state.cards;
       } else if(this.state.displayStatus === 'installedPack') {
           var installed = PackageManager.getLocalList();
           cards = [<div key={'default'}></div>];
+          var data = this.state.data;
           for (var i = 0; i < installed.length; i++) {
             var currentPackage = installed[i];
             var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
@@ -89,8 +96,8 @@ class PackageManagerView extends React.Component{
             } catch(err) {
               var manifest = {};
             }
-            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={"30"}
+            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]].main === 'true') {
+              cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
               description={manifest.description || "No description found."}
               iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
               buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
@@ -98,31 +105,29 @@ class PackageManagerView extends React.Component{
           }
           this.cards = cards;
       } else if (this.state.displayStatus === 'updatePack') {
-        var _this = this;
-        PackageManager.list(function(data) {
-          var installed = PackageManager.getLocalList();
-          cards = [<div key={'default'}></div>];
-          for (var i = 0; i < installed.length; i++) {
-            var currentPackage = installed[i];
-            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
-            try {
-              var manifest = require(manifestLocation);
-            } catch(err) {
-              var manifest = {};
-            }
-            var remotePackage = data[currentPackage];
-            var remoteVersion = remotePackage.version;
-            var localVersion = PackageManager.getVersion(currentPackage);
-            if (remoteVersion > localVersion && ~i.toLowerCase().indexOf(_this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={"30"}
-              description={manifest.description || "No description found."}
-              iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
-              buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
+        var data = this.state.data;
+        var installed = PackageManager.getLocalList();
+        cards = [<div key={'default'}></div>];
+        for (var i = 0; i < installed.length; i++) {
+          var currentPackage = installed[i];
+          var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
+          try {
+            var manifest = require(manifestLocation);
+          } catch(err) {
+            var manifest = {};
+          }
+          var remotePackage = data[currentPackage];
+          var remoteVersion = remotePackage.version;
+          var localVersion = PackageManager.getVersion(currentPackage);
+          if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
+            cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
+            description={manifest.description || "No description found."}
+            iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
+            buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
             }
           }
-          _this.setState({cards: cards});
-          _this.cards = _this.state.cards;
-        });
+          this.state.cards = cards;
+          this.cards = this.state.cards;
       }
       return(
         <div style={Style.layout}>

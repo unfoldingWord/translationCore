@@ -196,6 +196,8 @@ function search(query, callback) {
 function uninstall(packageName) {
   var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
   var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+  fs.emptyDirSync(packageLocation);
+  fs.emptyDirSync(compiledLocation);
   fs.removeSync(packageLocation);
   fs.removeSync(compiledLocation);
   api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
