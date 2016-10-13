@@ -76,6 +76,7 @@ const ProjectModal = React.createClass({
     }
     api.emitEvent('changeCheckType', { currentCheckNamespace: null });
     this.close();
+    api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
   },
 
   render: function () {
