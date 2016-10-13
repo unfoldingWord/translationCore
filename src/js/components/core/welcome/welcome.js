@@ -5,6 +5,7 @@ const {Glyphicon, Button, Popover} = RB;
 
 const Login = require('../login/Login');
 const Upload = require('../Upload');
+const loadOnline = require('../LoadOnline');
 const SideNavBar = require('../SideBar/SideNavBar');
 
 const NUM_OF_SLIDES = 3;
@@ -91,6 +92,15 @@ class Welcome extends React.Component{
     });
   }
 
+  onClick(e){
+    if (this.refs.TargetLanguage.state.active == 1) {
+      var link = this.refs.TargetLanguage.getLink();
+      loadOnline(link, this.refs.TargetLanguage.sendFilePath);
+    }
+    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+    this.setState({tutorialIndex: this.state.tutorialIndex+1});
+  }
+
   getPage(e){
     switch(e){
       case 1:
@@ -122,6 +132,7 @@ class Welcome extends React.Component{
             <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#fff', margin: 'auto', maxHeight: '200px'}}>
             <Upload
+              ref={"TargetLanguage"}
               success={
                 () => {
                   this.setState({
@@ -136,6 +147,7 @@ class Welcome extends React.Component{
                 padding: '20px'
               }}
               isWelcome={true} />
+              <Button type="button" onClick={this.onClick.bind(this)} style={{ position: 'fixed', right: 15, bottom: 10 }}>Load</Button>
             </div>
           </div>
         )
