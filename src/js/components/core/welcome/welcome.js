@@ -304,7 +304,10 @@ class Welcome extends React.Component{
             }
             style={Styles.navButtons}
           >
-            <Glyphicon glyph='chevron-left' />
+            <Glyphicon glyph='chevron-left'
+                       style={{
+                         display: this.state.index == 1 ? "none" : "inline"
+                       }}/>
           </Button>
 
           {this.getPage(this.state.index)}
