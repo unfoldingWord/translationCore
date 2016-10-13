@@ -259,7 +259,7 @@ class View extends React.Component {
       }
     }
     catch (e) {
-
+      //no log is required here
     }
   }
 

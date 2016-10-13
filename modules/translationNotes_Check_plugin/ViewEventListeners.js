@@ -21,6 +21,7 @@ module.exports = {
 
     changeCheckType(params) {
       if(params.currentCheckNamespace === NAMESPACE) {
+        console.log("Updating Check View For " + NAMESPACE);
         this.updateState();
       }
     }

@@ -313,7 +313,7 @@ class View extends React.Component {
       return actualLanguage[currentChapterNumber][currentVerseNumber];
     }
     } catch(e){
-
+      console.log(e);
     }
   }
 

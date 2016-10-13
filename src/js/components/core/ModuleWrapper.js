@@ -72,7 +72,7 @@ class ModuleWrapper extends React.Component {
       var newView = newCheckCategory;
       this.setState({
         view: newView
-      });
+      }, console.log("Updated Module Wrapper"));
     }
     else {
       this.setState({

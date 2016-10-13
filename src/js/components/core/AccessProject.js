@@ -22,34 +22,43 @@ var Access = {
   loadFromFilePath: function (folderpath, callback) {
     var _this = this;
     var fileObj = {};
-    var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
-    fs.readJson(manifestLocation, function(err, jsonObject) {
-      if (jsonObject) {
-        if (!api.getDataFromCommon('tcManifest')) {
-          api.putDataInCommon('tcManifest', jsonObject);
+    var manifestTry = api.getDataFromCommon('tcManifest');
+    if (!manifestTry) {
+      var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
+      fs.readJson(manifestLocation, function (err, jsonObject) {
+        if (jsonObject) {
+            api.putDataInCommon('tcManifest', jsonObject);
         }
-      }
+        if (callback) {
+          //this callback will not be executed if you are creating a project for the first time
+          callback();
+        }
+      });
+    }
+    else {
+      
       if (callback) {
+        //this callback will not be executed if you are creating a project for the first time
         callback();
       }
-    });
+    }
     try {
       Recent.add(folderpath);
-      fs.readdir(folderpath, function(err, files){
+      fs.readdir(folderpath, function (err, files) {
         try {
-        for (var file of files) {
-          if (file.toLowerCase() == 'checkdata') {
-            var filepath = Path.join(folderpath, file);
-            _this.loadCheckData(filepath);
+          for (var file of files) {
+            if (file.toLowerCase() == 'checkdata') {
+              var filepath = Path.join(folderpath, file);
+              _this.loadCheckData(filepath);
+            }
           }
+          api.putDataInCommon('saveLocation', folderpath);
+          api.setSettings('showTutorial', false);
+          localStorage.setItem('lastProject', folderpath);
+        } catch (err) {
+          localStorage.removeItem('lastProject');
+          api.putDataInCommon('saveLocation', null);
         }
-        api.putDataInCommon('saveLocation', folderpath);
-        api.setSettings('showTutorial', false);
-        localStorage.setItem('lastProject', folderpath);
-      } catch (err) {
-        localStorage.removeItem('lastProject');
-        api.putDataInCommon('saveLocation', null);
-      }
       });
     } catch (e) {
       console.error(e);

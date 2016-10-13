@@ -134,9 +134,6 @@ const UploadModal = React.createClass({
     isArray = function (a) {
       return (!!a) && (a.constructor === Array);
     };
-    if (tsManifest.package_version == '3') {
-      tsManifest = this.fixManifestVerThree(tsManifest);
-    }
     var ogPath = Path.join(window.__base, 'static', 'tagged');
     var params = {
       'originalLanguagePath': ogPath

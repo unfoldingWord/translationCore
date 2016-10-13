@@ -69,6 +69,7 @@ var CheckDataGrabber = {
    * that module is located in
    */
   loadModuleAndDependencies: function(moduleFolderName) {
+    console.log("Initiating Loading of All Modules");
     var _this = this;
     var moduleBasePath = Path.join(window.__base, 'modules');
     var modulePath = Path.join(moduleFolderName, 'manifest.json');
@@ -77,6 +78,7 @@ var CheckDataGrabber = {
         console.error(error);
       }
       else {
+        console.log("Found Module " + dataObject.name);
         var params = api.getDataFromCommon('params');
         var modulePaths = [];
         modulePaths.push({name: dataObject.name, location: moduleFolderName});
@@ -108,6 +110,7 @@ var CheckDataGrabber = {
             console.error(e);
           }
         }
+        console.log("Running Load Configurations For Each Module");
         _this.fetchModules(modulePaths, params);
       }
     });
@@ -168,8 +171,8 @@ var CheckDataGrabber = {
           }
           api.createAlert(Alert);
         }
-        CoreActions.doneLoadingFetchData();
       }
+      CoreActions.doneLoadingFetchData();
     }
     else {
       console.error(err);
@@ -186,8 +189,8 @@ var CheckDataGrabber = {
    */
   Progress: function(name, data) {
     CoreActions.sendProgressForKey({progress: data, key: name});
-    if (data == 100) {
-      console.log(name + " finished loading.");
+    if (data >= 100) {
+      console.log("Got all data for " + name);
     }
   },
 
@@ -233,6 +236,7 @@ var CheckDataGrabber = {
    * params for the FetchData's to load their data
    */
   getDataFromCheck: function(name, path, params) {
+    console.log("Initializing Datafetcher For " + name);
     var DataFetcher = require(Path.join(path, 'FetchData'));
     //call the FetchData function
     var _this = this;

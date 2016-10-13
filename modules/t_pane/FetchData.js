@@ -3,11 +3,12 @@
 const api = window.ModuleApi;
 const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
-var missingChunks = 0;
+var missingChunks;
 
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
+  missingChunks = 0;
   // Get original language
   // check if original language is already in common
   // get it if it isn't using parsers and params
@@ -165,7 +166,7 @@ function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) 
     joinChunks(data.toString(), currentChapter, currentJoined);
     callback();
   } catch (error) {
-        missingChunks++;
+      missingChunks++;
   }
 }
 /**

@@ -251,6 +251,7 @@ class CoreStore extends EventEmitter {
       break;
 
       case consts.DONE_LOADING:
+        console.log("Initialize finish of Load.")
         this.doneLoading = true;
         this.modProgressView = true;
         this.progressKeyObj = null;
