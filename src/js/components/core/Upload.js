@@ -20,9 +20,9 @@ const Recent = require('./RecentProjects.js');
 const api = window.ModuleApi;
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
-const IMPORT_LOCAL = 'Import Project Locally';
+const IMPORT_LOCAL = 'Import From Local Project';
 const IMPORT_ONLINE = 'Import From Online';
-const IMPORT_USFM = 'Import From USFM File';
+const IMPORT_USFM = 'Import From Local USFM File';
 
 
 const UploadModal = React.createClass({
