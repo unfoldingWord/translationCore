@@ -2,6 +2,8 @@ const React = require('react');
 
 const RB = require('react-bootstrap');
 const {Glyphicon, Button, Popover} = RB;
+const CoreActions = require('../../../actions/CoreActions.js');
+const ProjectModal = require('../create_project/ProjectModal');
 
 const Login = require('../login/Login');
 const Upload = require('../Upload');
@@ -92,15 +94,10 @@ class Welcome extends React.Component{
     });
   }
 
-  onClick(e){
-    if (this.refs.TargetLanguage.state.active == 1) {
-      var link = this.refs.TargetLanguage.getLink();
-      loadOnline(link, this.refs.TargetLanguage.sendFilePath);
-    }
-    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-    this.setState({tutorialIndex: this.state.tutorialIndex+1});
+  openProjectModal(){
+    console.log("hey");
+    CoreActions.showCreateProject("Languages");
   }
-
   getPage(e){
     switch(e){
       case 1:
@@ -131,23 +128,8 @@ class Welcome extends React.Component{
             <h1>Load your first project</h1>
             <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
             <div style={{width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#fff', margin: 'auto', maxHeight: '200px'}}>
-            <Upload
-              ref={"TargetLanguage"}
-              success={
-                () => {
-                  this.setState({
-                    index:this.state.index+1,
-                    tutorial: true
-                  });
-                }
-              }
-              styles={{
-                color: '#1f273b',
-                fontSize: '22px',
-                padding: '20px'
-              }}
-              isWelcome={true} />
-              <Button type="button" onClick={this.onClick.bind(this)} style={{ position: 'fixed', right: 15, bottom: 10 }}>Load</Button>
+              <Button onClick={()=>{CoreActions.showCreateProject("Languages")}}> Load</Button>
+              <ProjectModal />
             </div>
           </div>
         )
