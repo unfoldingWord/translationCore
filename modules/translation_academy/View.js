@@ -29,13 +29,17 @@ class View extends React.Component {
   }
 
   convertToMarkdown(src) {
-    //manny: parsing the data we get from tA to display this info more cleanly
-    var array = ["title:", "question:", "manual:", "volume:", "slug:", "dependencies:", "status:", "tags:", "recommended:", "original_url:"];
+    var lines = src.split('\n');
+    lines.splice(3,13);
+    src = lines.join('\n');
+    var array = ["title:", "question:"];
     for(var i=0; i < array.length; i++){
       var arr = array[i];
-      var SRC = src.replace(arr, function(){return "###### " + array[i];});
+      var SRC = src.replace(arr, function(){return "##### " + array[i];});
       src = SRC;
     }
+
+
     var res = SRC.replace(/(<([^>]+)>)/gi, "");
   return res.replace(/(=+)([^=]+)\1/g, function(match, equals, header) {
         switch(equals.length) {

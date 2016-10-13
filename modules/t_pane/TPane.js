@@ -97,12 +97,12 @@ class TPane extends React.Component {
         <Row>
           {/* Original Language */}
           <Pane greek={true}
-                heading={"Original Language"}
+                heading={"Original Language (UGNT)"}
                 content={this.state.originalLanguage}
                 dir={'ltr'} />
           {/* Gateway Language */}
           <Pane content={this.state.gatewayLanguage}
-                heading={"Gateway Language (UGLB)"}
+                heading={"Gateway Language (ULB)"}
                 dir={'ltr'} />
           {/* Target Langauge */}
           <Pane last={true}
