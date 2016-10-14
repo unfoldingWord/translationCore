@@ -1,15 +1,16 @@
 // FetchData.js//
 
 const api = window.ModuleApi;
-
+const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path');
+var missingChunks = 0;
 
 var parser = require('./usfm-parse.js');
 
 function fetchData(params, progress, callback) {
-// Get original language
-// check if original language is already in common
-// get it if it isn't using parsers and params
+  // Get original language
+  // check if original language is already in common
+  // get it if it isn't using parsers and params
 
   var targetLanguage = api.getDataFromCommon('targetLanguage');
 
@@ -18,7 +19,7 @@ function fetchData(params, progress, callback) {
       console.error('TPane requires a filepath');
     }
     else {
-      dispatcher.schedule(function(subCallback) {sendToReader(params.targetLanguagePath, subCallback);});
+      dispatcher.schedule(function (subCallback) { sendToReader(params.targetLanguagePath, subCallback); });
     }
   }
 
@@ -28,14 +29,14 @@ function fetchData(params, progress, callback) {
       console.error("Can't find original language");
     }
     else {
-      dispatcher.schedule(function(subCallback) {
+      dispatcher.schedule(function (subCallback) {
         readInOriginal(path.join(params.originalLanguagePath, bookAbbreviationToBookPath(params.bookAbbr)),
-params.bookAbbr, subCallback);
+          params.bookAbbr, subCallback);
       });
     }
   }
   dispatcher.run(callback, progress);
-// I'm not supposed to get the gateway language!
+  // I'm not supposed to get the gateway language!
 }
 
 function bookAbbreviationToBookPath(bookAbbr) {
@@ -65,14 +66,15 @@ class Dispatcher {
     }
     for (var job of this.jobs) {
       job(
-function() {
-  doneJobs++;
-  progress((doneJobs / _this.jobs.length) * 100);
-  if (doneJobs >= _this.jobs.length) {
-    callback();
-  }
-}
-);
+        function () {
+          missingChunks = 0;
+          doneJobs++;
+          progress((doneJobs / _this.jobs.length) * 100);
+          if (doneJobs >= _this.jobs.length) {
+            callback();
+          }
+        }
+      );
     }
   }
 }
@@ -86,15 +88,9 @@ const dispatcher = new Dispatcher();
 ******************************************************************************/
 function sendToReader(file, callback) {
   try {
-// FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
-    readFile(path.join(file, 'manifest.json'), function(err, data) {
-      if (err) {
-        console.error(err);
-      }
-      else {
-        readInManifest(data, file, callback);
-      }
-    });
+    // FileModule.readFile(path.join(file, 'manifest.json'), readInManifest);
+    var data = api.getDataFromCommon('tcManifest');
+    readInManifest(data, file, callback);
   } catch (error) {
     console.error(error);
   }
@@ -104,12 +100,16 @@ function sendToReader(file, callback) {
 * @param {string} manifest - The manifest.json file
 ******************************************************************************/
 function readInManifest(manifest, source, callback) {
-  let parsedManifest = JSON.parse(manifest);
-  var bookTitle = parsedManifest.project.name;
+    var bookTitle;
+  if (manifest.ts_project) {
+    bookTitle = manifest.ts_project.name;
+  }  else  {
+    bookTitle = manifest.project.name;
+  }
   let bookTitleSplit = bookTitle.split(' ');
   var bookName = bookTitleSplit.join('');
   let bookFileName = bookName + '.json';
-  let finishedChunks = parsedManifest.finished_chunks;
+  let finishedChunks = manifest.finished_chunks || manifest.finished_frames;
   var total = len(finishedChunks);
   let currentJoined = {};
   var done = 0;
@@ -117,35 +117,38 @@ function readInManifest(manifest, source, callback) {
     if (finishedChunks.hasOwnProperty(chapterVerse)) {
       let splitted = finishedChunks[chapterVerse].split('-');
       openUsfmFromChunks(splitted, currentJoined, total, source,
-function() {
-  done++;
-  if (done >= total) {
-    api.putDataInCommon('targetLanguage', currentJoined);
-    callback();
-  }
-});
+        function () {
+          done++;
+          if (done >= (total - missingChunks)) {
+            missingChunks = 0;
+            api.putDataInCommon('targetLanguage', currentJoined);
+            callback();
+          }
+        });
     }
   }
 }
 
-function readFile(path, callback) {
-  api.inputText(path, function(err, data) {
-    callback(err, data.toString());
-  });
-}
-
 function readInOriginal(path, bookAbbr, callback) {
-  readFile(path, function(err, data) {
-    if (err) {
-      console.error(err);
+  var originalLanguage = api.getDataFromCommon("params").originalLanguage;
+  try {
+  var data = fs.readFileSync(path).toString();
+    if (!data) {
     }
     else {
       var betterData = typeof data == 'object' ? JSON.stringify(data) : data;
       openOriginal(betterData, api.convertToFullBookName(bookAbbr));
-      parseGreek();
+      if (originalLanguage == "hebrew") {
+        parseHebrew();
+      }
+      else {
+        parseGreek();
+      }
       callback();
     }
-  });
+    } catch(error) {
+      console.log(error);
+  }
 }
 
 /**
@@ -155,18 +158,16 @@ function readInOriginal(path, bookAbbr, callback) {
 function openUsfmFromChunks(chunk, currentJoined, totalChunk, source, callback) {
   let currentChapter = chunk[0];
   try {
+    currentChapter = parseInt(currentChapter);
     var fileName = chunk[1] + '.txt';
     var chunkLocation = path.join(source, chunk[0], fileName);
-    readFile(chunkLocation, function(err, data) {
-      if (err) {
-        console.error('Error in openUSFM: ' + err);
-      } else {
-        joinChunks(data, currentChapter, currentJoined);
-        callback();
-      }
-    });
+    var data = fs.readFileSync(chunkLocation);
+    if (!data) {
+    }
+    joinChunks(data.toString(), currentChapter, currentJoined);
+    callback();
   } catch (error) {
-    console.error(error);
+        missingChunks++;
   }
 }
 /**
@@ -205,7 +206,8 @@ function openOriginal(text, bookName) {
       newData[parseInt(chapter)][parseInt(verse)] = input[bookName][chapter][verse];
     }
   }
-// CoreActions.updateOriginalLanguage(input[bookName]);
+  // CoreActions.updateOriginalLanguage(input[bookName]);
+  //make new function to put straight into common as array?
   api.putDataInCommon('originalLanguage', input[stripSpaces(bookName)]);
 }
 
@@ -243,16 +245,57 @@ function parseGreek() {
         let [, word, strong, speech] = result;
         try {
           let {brief, long} = lex[strong];
-          verse.push({word, strong, speech, brief, long});
-        } 
-        catch(e) {
-          verse.push({word, strong, speech, brief: "No definition found", long: "No definition found"});
+          verse.push({ word, strong, speech, brief, long });
+        }
+        catch (e) {
+          verse.push({ word, strong, speech, brief: "No definition found", long: "No definition found" });
         }
 
       }
     }
   }
   api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
+  //Put the parsed Hebrew into the checkstore in the Object format specified here
+}
+
+function parseHebrew() {
+  var lex = require("./HebrewLexicon.json");
+  let origText = api.getDataFromCommon("originalLanguage");
+  let parsedText = {};
+  for (let ch in origText) {
+    if (!parseInt(ch)) { // skip the title
+      continue;
+    }
+    parsedText[ch] = {};
+    let chap = origText[ch];
+    for (let v in chap) {
+      let origVerseFull = origText[ch][v];
+      let origVerse = origVerseFull.split(" ");
+      let verse = parsedText[ch][v] = [];
+      var word;
+      var strong = "Strong Missing";
+      var brief = "Brief Missing";
+      for (var element in origVerse) {
+        try {
+          var currentElement = origVerse[element];
+          var nextElement = origVerse[parseInt(element) + 1];
+          if (isNaN(currentElement[currentElement.length - 1]) && !isNaN(nextElement[nextElement.length - 1])) {
+            word = currentElement;
+            strong = nextElement;
+            brief = lex[strong].strongs_def;
+            verse.push({ word, strong, brief });
+          }
+        }
+        catch (e) {
+          if (word) {
+            //verse.push({ word, strong, brief });
+          }
+        }
+      }
+    }
+  }
+  api.putDataInCheckStore("TPane", 'parsedGreek', parsedText);
+  //Put the parsed Hebrew into the checkstore in the Object format specified here
 }
 
 module.exports = fetchData;
