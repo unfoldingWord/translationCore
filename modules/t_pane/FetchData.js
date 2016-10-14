@@ -67,6 +67,7 @@ class Dispatcher {
     for (var job of this.jobs) {
       job(
         function () {
+          missingChunks = 0;
           doneJobs++;
           progress((doneJobs / _this.jobs.length) * 100);
           if (doneJobs >= _this.jobs.length) {
@@ -119,6 +120,7 @@ function readInManifest(manifest, source, callback) {
         function () {
           done++;
           if (done >= (total - missingChunks)) {
+            missingChunks = 0;
             api.putDataInCommon('targetLanguage', currentJoined);
             callback();
           }

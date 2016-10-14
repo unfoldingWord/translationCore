@@ -59,7 +59,7 @@ const UploadModal = React.createClass({
    * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
    * studio project
    */
-  saveManifest: function (saveLocation, data, tsManifest) {
+  saveManifest: function (saveLocation, data, tsManifest, callback) {
     var manifest;
     try {
       var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
@@ -79,6 +79,7 @@ const UploadModal = React.createClass({
           api.createAlert(alert);
           console.error(err);
         }
+        callback();
       });
     }
     catch (err) {
@@ -150,22 +151,22 @@ const UploadModal = React.createClass({
         params.bookAbbr = tsManifest.project.id;
       }
       else {
-         params.bookAbbr = tsManifest.project_id;
+        params.bookAbbr = tsManifest.project_id;
       }
-   
-    //not actually used right now because we're hard coded for english
-    if (isArray(tsManifest.source_translations)){
-      params.gatewayLanguage = tsManifest.source_translations[0].language_id;
-    } else {
-      params.gatewayLanguage = tsManifest.source_translations.language_id;
-    }
-    params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
-    if (this.isOldTestament(params.bookAbbr)) {
-      params.originalLanguage = "hebrew";
-    } else {
-      params.originalLanguage = "greek";
-    }
-     } catch (e) {
+
+      //not actually used right now because we're hard coded for english
+      if (isArray(tsManifest.source_translations)) {
+        params.gatewayLanguage = tsManifest.source_translations[0].language_id;
+      } else {
+        params.gatewayLanguage = tsManifest.source_translations.language_id;
+      }
+      params.direction = tsManifest.target_language.direction || tsManifest.target_language.direction;
+      if (this.isOldTestament(params.bookAbbr)) {
+        params.originalLanguage = "hebrew";
+      } else {
+        params.originalLanguage = "greek";
+      }
+    } catch (e) {
       console.log("MANIFEST FORMAT NOT STANDARD");
     }
     return params;
@@ -197,7 +198,6 @@ const UploadModal = React.createClass({
    * the GOGS server
    */
   sendFilePath: function (path, link, callback) {
-    var Access = require('./AccessProject');
     var _this = this;
     this.clearPreviousData();
     if (path) {
@@ -218,41 +218,49 @@ const UploadModal = React.createClass({
               _this.saveManifest(path, {
                 user: [CoreStore.getLoggedInUser()],
                 repo: link || undefined
-              }, translationStudioManifest);
-              try {
-                Recent.add(path);
-                api.putDataInCommon('saveLocation', path);
-                api.putDataInCommon('params', _this.getParams(path, api.getDataFromCommon('tcManifest')));
-              }
-              catch (error) {
-                console.error(error);
-              }
-              if (_this.props.success) {
-                _this.props.success();
-              }
-              Access.loadFromFilePath(path, callback);
+              }, translationStudioManifest, function () {
+                try {
+                  Recent.add(path);
+                  api.putDataInCommon('saveLocation', path);
+                  api.putDataInCommon('params', _this.getParams(path, api.getDataFromCommon('tcManifest')));
+                }
+                catch (error) {
+                  console.error(error);
+                }
+                if (_this.props.success) {
+                  _this.props.success();
+                }
+                // CheckDataGrabber.loadModuleAndDependencies();
+                // CoreActions.startLoading();
+                _this.loadProjectThatHasManifest(path, callback);
+              });
             }
-          }
-        );
+          });
       }
       else {
         //this executes if there is a tCManifest present
-        try {
-          var tcManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
-        } catch (e) {
-          console.log(e);
-        }
-            try {
-              Recent.add(path);
-              api.putDataInCommon('tcManifest', tcManifest);
-              api.putDataInCommon('saveLocation', path);
-              api.putDataInCommon('params', _this.getParams(path, tcManifest));
-              Access.loadFromFilePath(path, callback);
-            } catch (err) {
-              //this executes if something fails, not sure how efficient this is
-              ImportUsfm.loadProject(path);
-            }
+        _this.loadProjectThatHasManifest(path, callback);
       }
+    }
+  },
+
+
+  loadProjectThatHasManifest: function (path, callback) {
+    var Access = require('./AccessProject');
+    try {
+      var tcManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
+    } catch (e) {
+      console.log(e);
+    }
+    try {
+      Recent.add(path);
+      api.putDataInCommon('tcManifest', tcManifest);
+      api.putDataInCommon('saveLocation', path);
+      api.putDataInCommon('params', this.getParams(path, tcManifest));
+      Access.loadFromFilePath(path, callback);
+    } catch (err) {
+      //this executes if something fails, not sure how efficient this is
+      ImportUsfm.loadProject(path);
     }
   },
 
@@ -272,13 +280,13 @@ const UploadModal = React.createClass({
   translationCoreManifestPresent: function (path) {
     //this currently just uses 'require' and if it throws an error it will return false
     try {
-      require(Path.join(path, 'tc-manifest.json'));
-      return true;
+      var hasManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
+      if (hasManifest) {
+        return true;
+      }
     }
     catch (e) {
-      if (e.code != 'MODULE_NOT_FOUND') {
-        console.error(e);
-      }
+      return false;
     }
     return false;
   },
@@ -300,7 +308,7 @@ const UploadModal = React.createClass({
       mainContent = (
         <div>
           <br />
-          <OnlineInput ref={"Online"} pressedEnter = {this.props.pressedEnter} sendFilePath={this.sendFilePath} />
+          <OnlineInput ref={"Online"} pressedEnter={this.props.pressedEnter} sendFilePath={this.sendFilePath} />
         </div>
       );
     } else if (this.state.show === 'usfm') {

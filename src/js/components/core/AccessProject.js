@@ -23,7 +23,7 @@ var Access = {
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
-    fs.readJson(manifestLocation, function(err, jsonObject) {
+    fs.readJson(manifestLocation, function (err, jsonObject) {
       if (jsonObject) {
         if (!api.getDataFromCommon('tcManifest')) {
           api.putDataInCommon('tcManifest', jsonObject);
@@ -32,34 +32,34 @@ var Access = {
       if (callback) {
         callback();
       }
-    });
-    try {
-      Recent.add(folderpath);
-      fs.readdir(folderpath, function(err, files){
-        try {
-        for (var file of files) {
-          if (file.toLowerCase() == 'checkdata') {
-            var filepath = Path.join(folderpath, file);
-            _this.loadCheckData(filepath);
+      try {
+        Recent.add(folderpath);
+        fs.readdir(folderpath, function (err, files) {
+          try {
+            for (var file of files) {
+              if (file.toLowerCase() == 'checkdata') {
+                var filepath = Path.join(folderpath, file);
+                _this.loadCheckData(filepath);
+              }
+            }
+            api.putDataInCommon('saveLocation', folderpath);
+            api.setSettings('showTutorial', false);
+            localStorage.setItem('lastProject', folderpath);
+          } catch (err) {
+            localStorage.removeItem('lastProject');
+            api.putDataInCommon('saveLocation', null);
           }
+        });
+      } catch (e) {
+        console.error(e);
+        const alert = {
+          title: 'Open TC Project Error',
+          content: e.message,
+          leftButtonText: 'Ok'
         }
-        api.putDataInCommon('saveLocation', folderpath);
-        api.setSettings('showTutorial', false);
-        localStorage.setItem('lastProject', folderpath);
-      } catch (err) {
-        localStorage.removeItem('lastProject');
-        api.putDataInCommon('saveLocation', null);
+        api.createAlert(alert);
       }
-      });
-    } catch (e) {
-      console.error(e);
-      const alert = {
-        title: 'Open TC Project Error',
-        content: e.message,
-        leftButtonText: 'Ok'
-      }
-      api.createAlert(alert);
-    }
+    });
   },
 
   /**
