@@ -111,7 +111,7 @@ class TPane extends React.Component {
                 dir={'ltr'} />
           {/* Gateway Language */}
           <Pane content={this.state.gatewayLanguage}
-                heading={"Gateway Language: " + gatewayLanguageName + " (" + gatewayLanguageVersion+")"}
+                heading={"Gateway Language: " + gatewayLanguageName + " (" + gatewayLanguageVersion + ")"}
                 dir={'ltr'} />
           {/* Target Langauge */}
           <Pane last={true}
