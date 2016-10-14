@@ -31,63 +31,68 @@ var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState == 'true' || tutorialState === null) {
-      return({
+      return ({
         firstTime: true
       })
     } else {
-      return({
+      return ({
         firstTime: false
       })
     }
   },
 
-  componentDidMount: function() {
+  componentDidMount: function () {
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
-      this.refs.TargetLanguage.sendFilePath(saveLocation, null, function(){
+      this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
-          CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
-          CoreActions.startLoading();
+          if (!this.dataAlreadyLoaded(saveLocation)) {
+            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+          }
         }
       });
-      }
+    }
 
   },
 
-  componentDidUpdate: function(prevProps, prevState){
+  componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
       CoreActions.updateCheckModal(true);
       this.showCheck = false;
     }
   },
 
-  finishWelcome: function(){
+  finishWelcome: function () {
     this.setState({
       firstTime: false
     });
     this.showCheck = true;
   },
 
-  render: function(){
+  dataAlreadyLoaded: function (folderpath) {
+    return false;
+  },
+
+  render: function () {
     var _this = this;
-    if(this.state.firstTime){
-      return(
-        <Welcome initialize={this.finishWelcome}/>
+    if (this.state.firstTime) {
+      return (
+        <Welcome initialize={this.finishWelcome} />
       )
-    }else{
-      return(
+    } else {
+      return (
         <div className='fill-height'>
-        <SettingsModal />
-        <Upload ref={"TargetLanguage"} show={false}/>
-        <LoginModal />
-        <SideNavBar />
-        <SwitchCheckModal.Modal />
-        <Popover />
-        <Toast />
-          <Grid fluid className='fill-height' style={{marginLeft: '70px'}}>
+          <SettingsModal />
+          <Upload ref={"TargetLanguage"} show={false} />
+          <LoginModal />
+          <SideNavBar />
+          <SwitchCheckModal.Modal />
+          <Popover />
+          <Toast />
+          <Grid fluid className='fill-height' style={{ marginLeft: '70px' }}>
             <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{padding: "0px", backgroundColor: "#515151"}}>
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#515151" }}>
                 <NavMenu />
                 <ProjectModal />
               </Col>
@@ -106,5 +111,5 @@ var Main = React.createClass({
 });
 
 module.exports = (
-    <Main />
+  <Main />
 );

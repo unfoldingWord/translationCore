@@ -69,6 +69,7 @@ var CheckDataGrabber = {
    * that module is located in
    */
   loadModuleAndDependencies: function(moduleFolderName) {
+    CoreActions.startLoading();
     var _this = this;
     var moduleBasePath = Path.join(window.__base, 'modules');
     var modulePath = Path.join(moduleFolderName, 'manifest.json');

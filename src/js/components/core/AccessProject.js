@@ -42,7 +42,7 @@ var Access = {
                 _this.loadCheckData(filepath);
               }
             }
-            api.putDataInCommon('saveLocation', folderpath);
+            //api.putDataInCommon('saveLocation', folderpath);
             api.setSettings('showTutorial', false);
             localStorage.setItem('lastProject', folderpath);
           } catch (err) {
