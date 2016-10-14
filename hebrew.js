@@ -95,8 +95,8 @@ const HebrewFuncs = {
                 }
 
                 ////////section to delete if we use both attributes
-                for (var element of lemmaArray){
-                    if(!isNaN(element)){
+                for (var element of lemmaArray) {
+                    if (!isNaN(element)) {
                         wordArray[1] = 'H' + element;
                     }
                 }
@@ -188,20 +188,20 @@ const HebrewFuncs = {
         };
         iterator(0);
     },
-	/*for( bookName in books ) {
-		var bookFile = books[ bookName ];
-		console.log( bookName );
-		$.get( '../morphhb/wlc/' + bookFile, function( data ) {
-			var json = this.xmlToJson( data ).osis.osisText.div.chapter;
-			hebrew[ bookName ] = this.jsonToArray( json );
-		} );
-	}
-	$.each( books, function( bookName, bookFile ) {
-		$.get( '../morphhb/wlc/' + bookFile, function( data ) {
-			var json = this.xmlToJson( data ).osis.osisText.div.chapter;
-			hebrew[ bookName ] = this.jsonToArray( json );
-		} );
-	} );*/
+    /*for( bookName in books ) {
+    var bookFile = books[ bookName ];
+    console.log( bookName );
+    $.get( '../morphhb/wlc/' + bookFile, function( data ) {
+    var json = this.xmlToJson( data ).osis.osisText.div.chapter;
+    hebrew[ bookName ] = this.jsonToArray( json );
+    } );
+    }
+    $.each( books, function( bookName, bookFile ) {
+    $.get( '../morphhb/wlc/' + bookFile, function( data ) {
+    var json = this.xmlToJson( data ).osis.osisText.div.chapter;
+    hebrew[ bookName ] = this.jsonToArray( json );
+    } );
+    } );*/
     // fix offset verses
     fixOffsetVerses: function (callback) {
         const _this = this;
