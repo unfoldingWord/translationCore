@@ -30,7 +30,8 @@ function fetchAllSections(sectionList, progress, callback) {
 		promises.push(promise);
 	}
 	// When all sections are fetched, put them in CheckStore and call the callback
-	Promise.all(promises).then(value => {
+	try {
+			Promise.all(promises).then(value => {
 		var sectionList = TranslationAcademyScraper.sectionList;
 		// TODO: eventually should save sections to json file
 		api.putDataInCheckStore('TranslationAcademy', 'sectionList', sectionList);
@@ -39,6 +40,9 @@ function fetchAllSections(sectionList, progress, callback) {
 	}, reason => {
 		callback('Translation Academy failed to fetch section text.');
 	});
+	} catch (e) {
+		console.log(e);
+	}
 }
 
 module.exports = fetchData;

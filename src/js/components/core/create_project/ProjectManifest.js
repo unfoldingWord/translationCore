@@ -49,9 +49,12 @@ function populate(data, tsManifest) {
   var projectManifest = template;
   projectManifest.time_created = TimeStamp;
   projectManifest.repo = data.repo;
+  for (var oldElements in tsManifest) {
+    projectManifest[oldElements] = tsManifest[oldElements];
+  }
 
   for (var user of data.user) {
-    if(user) {
+    if (user) {
       user.token = undefined;
       user.avatar_url = undefined;
       user.id = undefined;
@@ -70,10 +73,12 @@ function populate(data, tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
     projectManifest.ts_project = tsManifest.project;
-    for (var translator of tsManifest.translators) {
-      projectManifest.translators.push(translator);
+    if (projectManifest.ts_project.name.length < 1) {
+      projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
     }
+    projectManifest.translators = tsManifest.translators;
   }
+
   return projectManifest;
 }
 
