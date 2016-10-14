@@ -23,6 +23,7 @@ var template = {
     id: '',
     name: ''
   },
+  source_translations:[],
   translators: [],
   checkers: [],
   time_created: '',
@@ -69,6 +70,9 @@ function populate(data, tsManifest) {
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
+    for (var source of tsManifest.source_translations) {
+      projectManifest.source_translations.push(source);
+    }
     projectManifest.ts_project = tsManifest.project;
     for (var translator of tsManifest.translators) {
       projectManifest.translators.push(translator);
