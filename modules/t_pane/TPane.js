@@ -91,14 +91,16 @@ class TPane extends React.Component {
   }
 
   render() {
-    let targetLanguageName;
-    let gatewayLanguageName;
-    let gatewayLanguageVersion;
+    let targetLanguageName = "";
+    let gatewayLanguageName = "";
+    let gatewayLanguageVersion = "";
     let manifest = ModuleApi.getDataFromCommon("tcManifest");
-    if (manifest && manifest.ts_project) {
+    if (manifest && manifest.target_language){
       targetLanguageName = manifest.target_language.name;
+    }
+    if (manifest && manifest.source_translations[0]) {
       gatewayLanguageName = manifest.source_translations[0].language_id.toUpperCase();
-      gatewayLanguageVersion = manifest.source_translations[0].resource_id.toUpperCase();
+      gatewayLanguageVersion = " (" + manifest.source_translations[0].resource_id.toUpperCase() + ")";
     }
     return (
       <div style={{marginTop: '15px'}}>
@@ -111,7 +113,7 @@ class TPane extends React.Component {
                 dir={'ltr'} />
           {/* Gateway Language */}
           <Pane content={this.state.gatewayLanguage}
-                heading={"Gateway Language: " + gatewayLanguageName + " (" + gatewayLanguageVersion + ")"}
+                heading={"Gateway Language: " + gatewayLanguageName + " " + gatewayLanguageVersion}
                 dir={'ltr'} />
           {/* Target Langauge */}
           <Pane last={true}

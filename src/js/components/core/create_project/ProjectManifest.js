@@ -73,8 +73,8 @@ function populate(data, tsManifest) {
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
-    for (var source of tsManifest.source_translations) {
-      projectManifest.source_translations.push(source);
+    if(tsManifest.source_translations){
+      projectManifest.source_translations = tsManifest.source_translations;
     }
     projectManifest.ts_project = tsManifest.project;
     if (projectManifest.ts_project.name.length < 1) {
