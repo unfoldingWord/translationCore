@@ -98,7 +98,7 @@ class TPane extends React.Component {
     if (manifest && manifest.target_language){
       targetLanguageName = manifest.target_language.name;
     }
-    if (manifest && manifest.source_translations[0]) {
+    if (manifest && manifest.source_translations) {
       gatewayLanguageName = manifest.source_translations[0].language_id.toUpperCase();
       gatewayLanguageVersion = " (" + manifest.source_translations[0].resource_id.toUpperCase() + ")";
     }
