@@ -48,6 +48,11 @@ class SideNavBar extends React.Component{
     CoreActions.updateSettings(true);
   }
 
+  handlePackageManager(){
+    require("./../Package_Manager/PackageManagerView");
+    api.emitEvent('PackManagerVisibility', {'visiblePackManager': 'true'});
+  }
+
   sayHello() {
     const user = CoreStore.getLoggedInUser();
     if (user) {
@@ -56,7 +61,6 @@ class SideNavBar extends React.Component{
       var msg = new SpeechSynthesisUtterance('Hello I am Translation Core');
     }
     window.speechSynthesis.speak(msg);
-
   }
 
     render(){
@@ -70,6 +74,7 @@ class SideNavBar extends React.Component{
             <SideBarButton handleButtonClick={this.handleReport.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
             <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"wrench"} value={"Tools"} />
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
+            <SideBarButton handleButtonClick={this.handlePackageManager.bind(this)} imageName={"images/package.svg"} hoverImage={"images/bluePackage.svg"} value={"Package Manager"} />
             {/*<OnlineStatus />*/}
           </ul>
         </div>

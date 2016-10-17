@@ -44,6 +44,7 @@ class ModuleWrapper extends React.Component {
       );
     }
     var CheckModule = this.state.view;
+
     return (
       <div>
         <CheckModule />
