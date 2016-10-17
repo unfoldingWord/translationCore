@@ -10,7 +10,7 @@ const Upload = require('../Upload');
 const loadOnline = require('../LoadOnline');
 const SideNavBar = require('../SideBar/SideNavBar');
 
-const NUM_OF_SLIDES = 3;
+const NUM_OF_SLIDES = 2;
 
 const Styles = {
   navButtons: {
@@ -80,7 +80,8 @@ class Welcome extends React.Component{
     this.state = {
       index: 1,
       tutorial: false,
-      tutorialIndex: 1
+      ImportProjectIntroPage: false,
+      tutorialIndex: 1,
     }
 
     this.getPage = this.getPage.bind(this);
@@ -94,10 +95,6 @@ class Welcome extends React.Component{
     });
   }
 
-  openProjectModal(){
-    console.log("hey");
-    CoreActions.showCreateProject("Languages");
-  }
   getPage(e){
     switch(e){
       case 1:
@@ -121,22 +118,20 @@ class Welcome extends React.Component{
           </div>
         )
         break;
-      case 3:
-        return(
-          <div style={Styles.welcomePage}>
-          <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
-            <h1>Load your first project</h1>
-            <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
-            <div style={{width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#fff', margin: 'auto', maxHeight: '200px'}}>
-              <Button onClick={()=>{CoreActions.showCreateProject("Languages")}}> Load</Button>
-              <ProjectModal />
-            </div>
-          </div>
-        )
-        break;
-      case 4:
-      break;
     }
+  }
+
+  getImportProjectIntro(){
+    return(
+      <div style={Styles.welcomeFrame}>
+        <div style={Styles.welcomePage}>
+        <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
+          <h1>Load your first project</h1>
+          <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
+            <Button onClick={this.props.initialize}>Import Project</Button>
+        </div>
+      </div>
+    );
   }
 
   getTutorialOverlay(e){
@@ -255,7 +250,7 @@ class Welcome extends React.Component{
             </div>
             <Button
               style={Styles.nextTutorialButton}
-              onClick={() => {this.props.initialize()}}
+              onClick={this.skipToProjectPage.bind(this)}
               bsStyle="link">
               {'Done'} <Glyphicon glyph="chevron-right" />
             </Button>
@@ -265,18 +260,26 @@ class Welcome extends React.Component{
   }
 }
 
+  skipToProjectPage(){
+    this.setState({ImportProjectIntroPage: true});
+  }
+
   render(){
     var _this = this;
-    if(this.state.tutorial){
+    if(this.state.ImportProjectIntroPage){
+      return(
+        this.getImportProjectIntro()
+      );
+    }else if(this.state.tutorial){
       return(
         <div style={Styles.tutorialPage}>
           <SideNavBar />
           {this.getTutorialOverlay(this.state.tutorialIndex)}
           <Button
             style={Styles.skipTutorialButton}
-            onClick={this.props.initialize}
+            onClick={this.skipToProjectPage.bind(this)}
             bsStyle="link">
-            {'Skip Tutorial'} <Glyphicon glyph="chevron-right" />
+            {'Skip'} <Glyphicon glyph="chevron-right" />
           </Button>
         </div>
       )
