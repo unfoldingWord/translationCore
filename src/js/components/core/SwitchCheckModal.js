@@ -109,8 +109,8 @@ class SwitchCheck extends React.Component{
   moduleClick(folderName) {
     CoreActions.updateCheckModal(false);
     if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-      CoreActions.startLoading();
       CheckDataGrabber.loadModuleAndDependencies(folderName);
+      CoreActions.startLoading();
       localStorage.setItem('lastCheckModule', folderName);
     } else {
       api.Toast.error('No save location selected', '', 3);
@@ -175,14 +175,14 @@ class SwitchCheckModal extends React.Component {
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton style={{backgroundColor: "#333333", color: "#FFFFFF"}}>
             <Modal.Title>Change Tool Check category</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{backgroundColor: "#333333"}}>
             <SwitchCheck />
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
+          <Modal.Footer style={{backgroundColor: "#333333"}}>
+            <Button bsStyle="danger" onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>

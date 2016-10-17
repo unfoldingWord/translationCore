@@ -157,6 +157,7 @@ var CheckDataGrabber = {
         if (path) {
           git(path).init(function() {
             git(path).save('Initial TC Commit', path, function() {
+              CoreActions.doneLoadingFetchData();
             });
           });
         }
@@ -168,7 +169,6 @@ var CheckDataGrabber = {
           }
           api.createAlert(Alert);
         }
-        CoreActions.doneLoadingFetchData();
       }
     }
     else {
@@ -186,6 +186,9 @@ var CheckDataGrabber = {
    */
   Progress: function(name, data) {
     CoreActions.sendProgressForKey({progress: data, key: name});
+    if (data == 100) {
+      console.log(name + " finished loading.");
+    }
   },
 
   /**
@@ -231,7 +234,6 @@ var CheckDataGrabber = {
    */
   getDataFromCheck: function(name, path, params) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
-
     //call the FetchData function
     var _this = this;
     DataFetcher(

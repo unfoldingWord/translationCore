@@ -91,23 +91,34 @@ class TPane extends React.Component {
   }
 
   render() {
+    let targetLanguageName = "";
+    let gatewayLanguageName = "";
+    let gatewayLanguageVersion = "";
+    let manifest = ModuleApi.getDataFromCommon("tcManifest");
+    if (manifest && manifest.target_language){
+      targetLanguageName = manifest.target_language.name;
+    }
+    if (manifest && manifest.source_translations) {
+      gatewayLanguageName = manifest.source_translations[0].language_id.toUpperCase();
+      gatewayLanguageVersion = " (" + manifest.source_translations[0].resource_id.toUpperCase() + ")";
+    }
     return (
       <div style={{marginTop: '15px'}}>
         <h3 style={style.pane.header}>Scriptural Context</h3>
         <Row>
           {/* Original Language */}
           <Pane greek={true}
-                heading={"Original Language (UGNT)"}
+                heading={"Original Language: " + "Greek " + "(UGNT)"}
                 content={this.state.originalLanguage}
                 dir={'ltr'} />
           {/* Gateway Language */}
           <Pane content={this.state.gatewayLanguage}
-                heading={"Gateway Language (ULB)"}
+                heading={"Gateway Language: " + gatewayLanguageName + " " + gatewayLanguageVersion}
                 dir={'ltr'} />
           {/* Target Langauge */}
           <Pane last={true}
                 content={this.state.targetLanguage}
-                heading={"Target Language"}
+                heading={"Target Language: " + targetLanguageName}
                 dir={this.state.tlDirection} />
         </Row>
       </div>

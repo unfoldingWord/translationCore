@@ -308,11 +308,12 @@ class View extends React.Component {
     var currentVerseNumber = currentCheck.verse;
     var currentChapterNumber = currentCheck.chapter;
     var actualLanguage = api.getDataFromCommon(language);
+    try {
     if (actualLanguage) {
       return actualLanguage[currentChapterNumber][currentVerseNumber];
     }
-    else {
-      console.error(UNABLE_TO_FIND_LANGUAGE + ": " + language);
+    } catch(e){
+
     }
   }
 
