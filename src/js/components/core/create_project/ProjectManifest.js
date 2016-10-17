@@ -23,6 +23,7 @@ var template = {
     id: '',
     name: ''
   },
+  source_translations:[],
   translators: [],
   checkers: [],
   time_created: '',
@@ -72,6 +73,9 @@ function populate(data, tsManifest) {
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
+    if(tsManifest.source_translations){
+      projectManifest.source_translations = tsManifest.source_translations;
+    }
     projectManifest.ts_project = tsManifest.project;
     if (projectManifest.ts_project.name.length < 1) {
       projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
