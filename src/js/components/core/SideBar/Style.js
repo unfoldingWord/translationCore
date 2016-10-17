@@ -23,6 +23,7 @@ var style = {
     paddingTop: "20px",
     paddingBottom: "20px",
     color: "white",
+    cursor: "pointer",
     userSelect: "none",
   },
 
@@ -45,6 +46,7 @@ var style = {
     userSelect: "none",
     paddingTop: "18px",
     paddingBottom: "18px"
+
   },
 
   logo:{
@@ -65,6 +67,11 @@ var style = {
   glyphiconOnline:{
     color: "#00B233",
     fontSize: "25px",
+  },
+
+  img:{
+  width: "25px",
+  height: "30px",
   },
 
 };

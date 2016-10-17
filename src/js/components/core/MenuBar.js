@@ -64,14 +64,14 @@ var template = [
            var exampleCheckPath = Path.join(window.__base, "modules", "example_check_module");
            if (localStorage.getItem('exampleCheck') == 'true') {
               try {
-               fs.rename(Path.join(exampleCheckPath, "manifest-hidden.json"), Path.join(exampleCheckPath, "manifest.json"), function (err) {});
+                //TODO: Do this a different way
              } catch (e) {;
              }
              localStorage.setItem('exampleCheck', false);
            }
            else {
              try {
-               fs.rename(Path.join(exampleCheckPath, "manifest.json"), Path.join(exampleCheckPath, "manifest-hidden.json"), function (err) {});
+               //TODO: Do this a different way
              } catch (e) {
              }
              localStorage.setItem('exampleCheck', true);
