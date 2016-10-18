@@ -59,6 +59,7 @@ const UploadModal = React.createClass({
    * project lives, which should include a manifest file
    * @param {string} link - URL that points to the location of a translationStudio project located on
    * the GOGS server
+   * This is the main function to initiate a load of a project
    */
   sendFilePath: function (path, link, callback) {
     var _this = this;
@@ -66,11 +67,14 @@ const UploadModal = React.createClass({
     if (path) {
       _this.translationCoreManifestPresent(path, (err, tcManifest) => {
         if (tcManifest) {
+          //tc-manifest is present initiate load
           _this.loadProjectThatHasManifest(path, callback, tcManifest);
         } else if (!tcManifest) {
+          //no tc-manifest checking for ts-manifest
           _this.loadTranslationStudioManifest(path,
             (err, translationStudioManifest) => {
               if (!err) {
+                //ts-manifest is present, creating tc-manifest and initiate load
                 _this.saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
                   _this.loadProjectThatHasManifest(path, callback, tcManifest);
                 });
@@ -96,6 +100,7 @@ const UploadModal = React.createClass({
    */
   saveManifest: function (saveLocation, link, tsManifest, callback) {
     var data = {
+      //hardcoded for data specific to tc-manifest
       user: [CoreStore.getLoggedInUser()],
       repo: link || undefined
     }
@@ -103,6 +108,7 @@ const UploadModal = React.createClass({
     try {
       var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
       if (tsManifest.package_version == '3') {
+        //some older versions of ts-manifest have to be tweaked to work
         manifest = this.fixManifestVerThree(tsManifest);
       } else {
         manifest = ManifestGenerator(data, tsManifest);
@@ -111,6 +117,7 @@ const UploadModal = React.createClass({
         if (err) {
           this.manifestError('Error Saving tC Manifest');
         }
+        //overwrites old manifest if present, or else creates new one
         callback(null, manifest);
       });
     }
@@ -119,6 +126,10 @@ const UploadModal = React.createClass({
     }
   },
 
+/**
+ * @desription - This uses the tc-standard format for projects to make package_version 3 compatible
+ * @param oldManifest - The name of an employee.
+ */
   fixManifestVerThree: function (oldManifest) {
     var newManifest = {};
     for (var oldElements in oldManifest) {
@@ -142,10 +153,9 @@ const UploadModal = React.createClass({
   /**
    * @desription - This generates the default params from the path and saves it in the CheckStore
    * @param {string} path - The path to the folder containing the translationStudio project
-   * @param {object} translationStudioManifest - The parsed json object of the translationStudio
    * manifest
    */
-  getParams: function (path, callback) {
+  getParams: function (path) {
     var tcManifest = api.getDataFromCommon('tcManifest');
     isArray = function (a) {
       return (!!a) && (a.constructor === Array);
@@ -168,8 +178,6 @@ const UploadModal = React.createClass({
       else {
         params.bookAbbr = tcManifest.project_id;
       }
-
-      //not actually used right now because we're hard coded for english
       if (isArray(tcManifest.source_translations)) {
         params.gatewayLanguage = tcManifest.source_translations[0].language_id;
       } else {
@@ -187,6 +195,11 @@ const UploadModal = React.createClass({
     return params;
   },
 
+  /**
+   * @desription - This returns true if the book is an OldTestament one
+   * @param {string} projectBook - the book in abr form
+   * manifest
+   */
   isOldTestament: function (projectBook) {
     var passedBook = false;
     for (var book in books) {
@@ -203,7 +216,10 @@ const UploadModal = React.createClass({
     api.modules = {};
   },
 
-
+  /**
+   * @desription - This returns true if the book is an OldTestament one
+   * @param {string} projectBook - the book in abr form
+   */
   manifestError: function (content) {
     const alert = {
       title: 'Error Setting Up Project',
@@ -213,7 +229,13 @@ const UploadModal = React.createClass({
     api.createAlert(alert);
   },
 
-
+  /**
+   * @desription - This does the rest of requirements for a project to be loaded after
+   * it has the information needed from a tc-manifest
+   * @param {string} path - path to the current project directory
+   * @param {function} callback - function that happens after all data is in CheckStore i.e. CheckDatagrabber.loadModuleAnd...
+   * @param {function} tcManifest - the tc-manifest to put in common
+   */
   loadProjectThatHasManifest: function (path, callback, tcManifest) {
     var Access = require('./AccessProject');
     api.putDataInCommon('tcManifest', tcManifest);

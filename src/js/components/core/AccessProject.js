@@ -17,6 +17,7 @@ var Access = {
    * project should contain a tcManifest folder and a checkData folder
    * @param {string} folderpath - Path that points to the folder where the translationStudio
    * project lives
+   * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
     var _this = this;
@@ -68,6 +69,12 @@ var Access = {
     });
   },
 
+    /**
+   * @description - This gets the arrayOfChecks from the common.tc
+   * @param {string} pathToCommon - path that points to common.tc
+   * @param {function} callback - Callback that is called whenever all of the check data within
+   * the checkData folder is loaded
+   */
   getArrayOfChecks(pathToCommon, callback) {
     const _this = this;
     fs.readJson(pathToCommon, (err, common) => {
@@ -78,6 +85,14 @@ var Access = {
     });
   },
 
+    /**
+   * @description - This gets the arrayOfChecks from the common.tc
+   * @param {string} arrayOfChecks - path that points to common.tc
+   * @param {function} name - The name of the current module in arrayOfChecks
+   * @param {function} dataObj - The data object from the current obj
+   * @param {function} callback - Callback that is called whenever all of the check data within
+   * the checkData folder is loaded
+   */
   saveModuleData(arrayOfChecks, name, dataObj, callback) {
     for (var el in arrayOfChecks) {
       var currentObjName = arrayOfChecks[el]['name'];
