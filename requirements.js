@@ -19,8 +19,9 @@ console.error = function(err){
   api.Toast.error("Uh Oh!", err, 1000000);
   api.createAlert(
     {
-      title: "An Error has occured",
-      content: err,
+      title: "A Fatal Error Has Occured",
+      content: "Click below for more information or restart the app",
+      moreInfo: err,
       leftButtonText: "Reload"
     },
     ()=>{

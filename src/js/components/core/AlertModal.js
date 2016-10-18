@@ -22,7 +22,6 @@ const AlertModal = React.createClass({
       content: "",
       leftButtonText: "",
       rightButtonText: "",
-      displayMoreInfo: false,
       visibility:false
     };
   },
@@ -40,16 +39,15 @@ const AlertModal = React.createClass({
     catch(e){
     }
 
-    if(alertMessage['moreInfo']){
+    if(alertMessage['moreInfo'] != null){
       this.setState({
         moreInfo: alertMessage['moreInfo']
       });
     }else{
       this.setState({
-        moreInfo: ""
+        moreInfo: "No extra information is available at this time"
       });
     }
-
 
       try {
         this.setState({
@@ -98,7 +96,7 @@ const AlertModal = React.createClass({
       display:'tableCell',
       verticalAlign:'middle',
       width:'450px',
-      height:'200px'
+      height:'250px'
     }
 
     alertDiv = {
@@ -115,8 +113,6 @@ const AlertModal = React.createClass({
                   <div style={alertDiv}>
                     <h3>{this.state.title}</h3>
                     <p style={alertContent}>{this.state.content}</p>
-                  </div>
-                  <div  style={{paddingTop:'50px'}}>
                     <Button bsStyle="danger" style={this.getStyleFromState(this.state.leftButtonText)} onClick={this.handleAlertDismiss}>
                       {this.state.leftButtonText}
                     </Button>
