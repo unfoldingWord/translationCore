@@ -165,7 +165,7 @@ var ImportComponent = React.createClass({
   showDialog: function() {
     var options = {
       filters: [
-        {name: 'USFM', extensions: ['usfm', 'txt']}
+        {name: 'USFM', extensions: ['usfm', 'sfm', 'txt']}
       ]
     };
     var _this = this;
