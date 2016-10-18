@@ -8,13 +8,17 @@ const path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const statusList = ['FLAGGED', 'CORRECT', 'UNCHECKED'];
 const retainedList = ['Replaced', 'Retained', ''];
+const pathex = require('path-extra');
+
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 /**
  * @description Gives the namespaces of all check modules.
  * @return {Array} checkCategories - An array of namespaces.
  ******************************************************************************/
 function getListOfChecks() {
-  let modulesFolder = path.join(__base, "modules");
+  let modulesFolder = PACKAGE_COMPILE_LOCATION;
   // get only the folders and make them absolute paths
   let modules = fs.readdirSync(modulesFolder);
   modules = modules.map(dir => path.join(modulesFolder, dir));
