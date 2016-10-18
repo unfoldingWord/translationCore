@@ -39,15 +39,6 @@ const AlertModal = React.createClass({
     catch(e){
     }
 
-    if(alertMessage['moreInfo'] != null){
-      this.setState({
-        moreInfo: alertMessage['moreInfo']
-      });
-    }else{
-      this.setState({
-        moreInfo: "No extra information is available at this time"
-      });
-    }
 
       try {
         this.setState({
@@ -55,6 +46,7 @@ const AlertModal = React.createClass({
           content: alertMessage['content'],
           leftButtonText: alertMessage['leftButtonText'],
           rightButtonText: alertMessage['rightButtonText'],
+          moreInfo: alertMessage['moreInfo'],
           visibility: true
         });
       } catch (e) {
