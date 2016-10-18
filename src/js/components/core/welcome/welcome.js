@@ -226,7 +226,7 @@ class Welcome extends React.Component{
             positionTop={379}
             title="Loading a Check">
             <div style={Styles.tutorialPopover}>
-              <p>This is where you load in an app so that you can perform a check on your draft.</p>
+              <p>This is where you load in a tool so that you can perform a check on your draft.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -247,6 +247,26 @@ class Welcome extends React.Component{
             title="Settings">
             <div style={Styles.tutorialPopover}>
               <p>Here you can access various settings relating to how translationCore looks and functions</p>
+            </div>
+            <Button
+              style={Styles.nextTutorialButton}
+              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
+              bsStyle="link">
+              {'Next'} <Glyphicon glyph="chevron-right" />
+            </Button>
+          </Popover>
+        )
+      break;
+      case 7:
+        return(
+          <Popover
+            id="packageManager"
+            placement="right"
+            positionLeft={88}
+            positionTop={551}
+            title="Package Manager">
+            <div style={Styles.tutorialPopover}>
+              <p>Here you can download diffrent tools to perform different types of checks</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
