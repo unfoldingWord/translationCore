@@ -57,7 +57,7 @@ var Main = React.createClass({
 
   componentDidUpdate: function(prevProps, prevState){
     if (this.showCheck == true) {
-      CoreActions.updateCheckModal(true);
+      CoreActions.showCreateProject("Languages");
       this.showCheck = false;
     }
   },
