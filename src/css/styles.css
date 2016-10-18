@@ -11,7 +11,6 @@ body, html, #content, .fill-height {
 
 body {
   background-color: white;
-  -webkit-user-select: none;
 }
 
 .main-view h1,
