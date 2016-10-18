@@ -51,6 +51,41 @@ const UploadModal = React.createClass({
     return this.refs.Online.state.value;
   },
 
+    /**
+   * @description - Sets the target language filepath and/or link, while also generatering a TC
+   * manifest file and saving the params and saveLocation under the 'common' namespace in the
+   * CheckStore
+   * @param {string} path - The folder path that points to the directory that the translationStudio
+   * project lives, which should include a manifest file
+   * @param {string} link - URL that points to the location of a translationStudio project located on
+   * the GOGS server
+   */
+  sendFilePath: function (path, link, callback) {
+    var _this = this;
+    this.clearPreviousData();
+    if (path) {
+      _this.translationCoreManifestPresent(path, (err, tcManifest) => {
+        if (tcManifest) {
+          _this.loadProjectThatHasManifest(path, callback, tcManifest);
+        } else if (!tcManifest) {
+          _this.loadTranslationStudioManifest(path,
+            (err, translationStudioManifest) => {
+              if (!err) {
+                _this.saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
+                  _this.loadProjectThatHasManifest(path, callback, tcManifest);
+                });
+              }
+              else if (err) {
+                _this.manifestError(err);
+              }
+            });
+        } else if (err) {
+          _this.manifestError(err);
+        }
+      });
+    }
+  },
+
   /**
    * @description - Generates and saves a translationCore manifest file
    * @param {string} saveLocation - Filepath of where the translationCore manifest file will
@@ -59,7 +94,7 @@ const UploadModal = React.createClass({
    * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
    * studio project
    */
-  saveManifest: function (saveLocation, tsManifest, callback) {
+  saveManifest: function (saveLocation, link, tsManifest, callback) {
     var data = {
       user: [CoreStore.getLoggedInUser()],
       repo: link || undefined
@@ -111,7 +146,6 @@ const UploadModal = React.createClass({
    * manifest
    */
   getParams: function (path, callback) {
-    debugger;
     var tcManifest = api.getDataFromCommon('tcManifest');
     isArray = function (a) {
       return (!!a) && (a.constructor === Array);
@@ -169,40 +203,6 @@ const UploadModal = React.createClass({
     api.modules = {};
   },
 
-  /**
-   * @description - Sets the target language filepath and/or link, while also generatering a TC
-   * manifest file and saving the params and saveLocation under the 'common' namespace in the
-   * CheckStore
-   * @param {string} path - The folder path that points to the directory that the translationStudio
-   * project lives, which should include a manifest file
-   * @param {string} link - URL that points to the location of a translationStudio project located on
-   * the GOGS server
-   */
-  sendFilePath: function (path, link, callback) {
-    var _this = this;
-    this.clearPreviousData();
-    if (path) {
-      _this.translationCoreManifestPresent(path, (err, tcManifest) => {
-        if (tcManifest) {
-          _this.loadProjectThatHasManifest(path, callback, tcManifest);
-        } else if (!tcManifest) {
-          _this.loadTranslationStudioManifest(path,
-            (err, translationStudioManifest) => {
-              if (!err) {
-                _this.saveManifest(path, translationStudioManifest, (err, tcManifest) => {
-                  _this.loadProjectThatHasManifest(path, callback, tcManifest);
-                });
-              }
-              else if (err) {
-                _this.manifestError(err);
-              }
-            });
-        } else if (err) {
-          _this.manifestError(err);
-        }
-      });
-    }
-  },
 
   manifestError: function (content) {
     const alert = {

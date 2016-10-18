@@ -337,6 +337,19 @@ class ModuleApi {
     var settingsString = JSON.stringify(settingsObj);
     localStorage.setItem('settings', settingsString);
   }
+
+  readyToLoadProject(){
+    if (CheckStore.common != null) {
+      debugger;
+      return CheckStore.common.params && CheckStore.common.saveLocation && CheckStore.common.tcManifest;
+    }
+  }
+      //common.arrayOfChecks.length == api.modules.length
+    //gatewayLanguage != null 
+    //originalLanguage != null
+    //manifest
+    //saveLocation
+    //api.menus
 }
 
 const api = new ModuleApi();
