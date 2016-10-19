@@ -22,7 +22,7 @@ console.error = function(err){
   api.createAlert(
     {
       title: "A Fatal Error Has Occured",
-      content: "Click below for more information or restart the app",
+      content: "Click below for more information about this error or to restart the app",
       moreInfo: bigError,
       leftButtonText: "Reload"
     },
