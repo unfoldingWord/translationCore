@@ -9,7 +9,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 class Projects extends React.Component {
   constructor() {
     super();
-    this.state = {repos: null};
+    this.state = {repos: []};
   }
 
   updateRepos() {
@@ -28,6 +28,20 @@ class Projects extends React.Component {
   }
 
   render() {
+    var user = api.getLoggedInUser();
+    if (!user) {
+      return (
+      <div>
+        <center>
+        <br />
+        <h4>
+        Please login first
+        </h4>
+        <br />
+        </center>
+      </div>
+    )
+    }
     this.updateRepos();
     var projectArray = this.state.repos;
     var projectList = []
