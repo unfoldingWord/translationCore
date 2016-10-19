@@ -136,7 +136,6 @@ function getManifest(folderPath, callback) {
  * @param {String} folderPath - The directory of the project
  ******************************************************************************/
  function loadProject(saveLocation) {
-   debugger;
    getManifest(saveLocation, function(error, tsManifest) {
      if (error) {
        console.error(error);
