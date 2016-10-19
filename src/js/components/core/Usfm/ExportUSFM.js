@@ -46,6 +46,7 @@ function exportAllBooks() {
   dialog.showOpenDialog({properties: ['openDirectory']}, function(savePath) {
     var params = api.getDataFromCommon('params');
     if (params) {
+      debugger;
       var fileName = require('../BooksOfBible.js')[params.bookAbbr];
       var book = require('../../../../../static/ulgb/' + fileName + '.json');
       exportUsfm(book, true, savePath, 'Greek');

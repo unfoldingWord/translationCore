@@ -136,7 +136,8 @@ function getManifest(folderPath, callback) {
  * @param {String} folderPath - The directory of the project
  ******************************************************************************/
  function loadProject(saveLocation) {
-   getManifest(saveLocation, function(error, tcManifest) {
+   debugger;
+   getManifest(saveLocation, function(error, tsManifest) {
      if (error) {
        console.error(error);
        const alert = {
@@ -146,7 +147,6 @@ function getManifest(folderPath, callback) {
        };
        api.createAlert(alert);
      } else {
-       api.putDataInCommon('tcManifest', tcManifest);
        var Access = require('../AccessProject');
        Access.loadFromFilePath(saveLocation);
      }

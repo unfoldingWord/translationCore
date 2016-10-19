@@ -111,6 +111,7 @@ class SwitchCheck extends React.Component{
   }
 
   moduleClick(folderName) {
+    debugger;
     CoreActions.updateCheckModal(false);
     if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
       CheckDataGrabber.loadModuleAndDependencies(folderName);

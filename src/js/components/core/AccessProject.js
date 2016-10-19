@@ -52,6 +52,7 @@ var Access = {
    */
   loadCheckData: function (checkDataFolderPath, callback) {
     var _this = this;
+    var index = 0;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
       if (!error) {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
@@ -59,13 +60,14 @@ var Access = {
             if (file == 'common.tc') continue;
             if (!file.includes(".tc")) continue;
             var data = fs.readJsonSync(Path.join(checkDataFolderPath, file));
-            var name = Path.basename(file).replace(extensionRegex, '');
-            _this.saveModuleData(arrayOfChecks, name, data, ()=>{
-            });
+            var nameArray = arrayOfChecks[index].location.split("/");
+            var name = nameArray[nameArray.length - 1];
+            CheckStore.storeData[name] = data;
+            index++;
           }
+          callback();
         });
       }
-      callback();
     });
   },
 
@@ -83,24 +85,6 @@ var Access = {
       }
       callback(common.arrayOfChecks);
     });
-  },
-
-    /**
-   * @description - This gets the arrayOfChecks from the common.tc
-   * @param {string} arrayOfChecks - path that points to common.tc
-   * @param {function} name - The name of the current module in arrayOfChecks
-   * @param {function} dataObj - The data object from the current obj
-   * @param {function} callback - Callback that is called whenever all of the check data within
-   * the checkData folder is loaded
-   */
-  saveModuleData(arrayOfChecks, name, dataObj, callback) {
-    for (var el in arrayOfChecks) {
-      var currentObjName = arrayOfChecks[el]['name'];
-      if(currentObjName == name) {
-        CheckStore.storeData[currentObjName] = dataObj;
-      }
-    }
-    callback();
   },
 
   loadingProjectError: function (content) {
