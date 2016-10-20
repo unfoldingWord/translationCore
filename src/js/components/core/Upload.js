@@ -80,7 +80,7 @@ const UploadModal = React.createClass({
                 });
               }
               else if (err) {
-                _this.loadUSFMProject(path, (err, ) => {
+                _this.loadUSFMProject(path, (err, project) => {
                   if (!err) {
                       ImportUsfm.loadProject(path);
                   }
