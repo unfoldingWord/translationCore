@@ -30,6 +30,8 @@ class ModuleApi {
     this.Git = require('./components/core/GitApi.js');
     this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
     this.ReportFilters = this.ReportFiltersTools.filter;
+    this.gitStack = [];
+    this.gitDone = true;
   }
 
   findDOMNode(component) {
@@ -84,7 +86,7 @@ class ModuleApi {
     CheckStore.emitEvent(event, params);
   }
 
-  getDataFromCheckStore(field, key=null) {
+  getDataFromCheckStore(field, key = null) {
     var obj = CheckStore.getModuleDataObject(field);
     if (obj != null && typeof obj == "object") {
       if (key) {
@@ -118,7 +120,7 @@ class ModuleApi {
     fs.readJson(path, callback);
   }
 
-  outputJson(path, data, callback=(error)=>{if (error) console.error(error);}) {
+  outputJson(path, data, callback = (error) => { if (error) console.error(error); }) {
     fs.outputJson(path, data, callback);
   }
 
@@ -134,16 +136,16 @@ class ModuleApi {
     return BooksOfBible[bookAbbr];
   }
 
-/**
-  * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
-  * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
-  * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the
-  * abbreviation will just be returned
-*/
+  /**
+    * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
+    * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
+    * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the
+    * abbreviation will just be returned
+  */
   convertToBookAbbreviation(fullBookName) {
     for (var key in BooksOfBible) {
       if (BooksOfBible[key].toLowerCase() == fullBookName.toLowerCase() ||
-      fullBookName.toLowerCase() == key) {
+        fullBookName.toLowerCase() == key) {
         return key;
       }
     }
@@ -153,25 +155,25 @@ class ModuleApi {
     console.log(CheckStore.storeData);
   }
 
-  createAlert(obj, callback = () => {}) {
+  createAlert(obj, callback = () => { }) {
     Alert.startListener(callback);
     CoreActions.sendAlert({
-      alertObj:obj,
+      alertObj: obj,
       alertCallback: callback
     });
   }
 
-/**
-  * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
-  * and calls the callback function with the gateway language book as an argument.
-  *
-  * The book that is saved to the check store has the chapters and verses formatted
-  * as key-value pairs. This format is used by the TPane, which sorts the keys in its render
-  * method. This is bad and should be refactored to format the chapters and verses as arrays.
-  *
-  * The book that is passed as an argument to the callback has the chapters and verses
-  * formatted as arrays.
-*/
+  /**
+    * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
+    * and calls the callback function with the gateway language book as an argument.
+    *
+    * The book that is saved to the check store has the chapters and verses formatted
+    * as key-value pairs. This format is used by the TPane, which sorts the keys in its render
+    * method. This is bad and should be refactored to format the chapters and verses as arrays.
+    *
+    * The book that is passed as an argument to the callback has the chapters and verses
+    * formatted as arrays.
+  */
   getGatewayLanguageAndSaveInCheckStore(params, progressCallback, callback) {
     var Door43Fetcher = new Door43DataFetcher();
     Door43Fetcher.getBook(params.bookAbbr, function (done, total) {
@@ -247,14 +249,14 @@ class ModuleApi {
     this.putDataInCheckStore(nameSpace, 'book', this.convertToFullBookName(params.bookAbbr));
   }
 
-  getLoggedInUser(){
+  getLoggedInUser() {
     let user = CoreStore.getLoggedInUser();
-    if(!user){
+    if (!user) {
       return undefined;
     }
     let fullName = user.full_name;
     let userName = user.username;
-    return {fullName, userName};
+    return { fullName, userName };
   }
 
   clearAlertCallback() {
@@ -263,15 +265,15 @@ class ModuleApi {
   /**
   * @description - Displays alert and returns user response
   */
-  createAlert(obj, callback = () => {}) {
+  createAlert(obj, callback = () => { }) {
     Alert.startListener(callback);
     CoreActions.sendAlert({
-      alertObj:obj,
+      alertObj: obj,
       alertCallback: callback
     });
   }
 
-  updateManifest(field, data, callback = () => {}) {
+  updateManifest(field, data, callback = () => { }) {
     var manifest = this.getDataFromCommon('tcManifest');
     var saveLocation = this.getDataFromCommon('saveLocation');
     if (manifest && saveLocation) {
@@ -287,10 +289,19 @@ class ModuleApi {
     var _this = this;
     var git = require('./components/core/GitApi.js');
     var path = this.getDataFromCommon('saveLocation');
-    if (path) {
-      git(path).save(message, path, function() {
+    if (path && this.gitDone) {
+      _this.gitDone = false;
+      git(path).save(message, path, function () {
+        _this.gitDone = true;
+        if (_this.gitStack.length > 0) {
+          _this.saveProject(_this.gitStack.shift());
+        }
       });
-    } else {
+    }
+    else {
+      this.gitStack.push(message);
+    }
+    if (!path) {
       var Alert = {
         title: "Warning",
         content: "Save location is not defined",
