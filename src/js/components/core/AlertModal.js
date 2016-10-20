@@ -5,6 +5,7 @@
 const React = require('react');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
+const Panel = require('react-bootstrap/lib/Panel.js');
 const Alert = require('react-bootstrap/lib/Alert.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const CoreActions = require('../../actions/CoreActions.js');
@@ -45,6 +46,7 @@ const AlertModal = React.createClass({
           content: alertMessage['content'],
           leftButtonText: alertMessage['leftButtonText'],
           rightButtonText: alertMessage['rightButtonText'],
+          moreInfo: alertMessage['moreInfo'],
           visibility: true
         });
       } catch (e) {
@@ -86,7 +88,7 @@ const AlertModal = React.createClass({
       display:'tableCell',
       verticalAlign:'middle',
       width:'450px',
-      height:'200px'
+      height:'250px'
     }
 
     alertDiv = {
@@ -95,23 +97,31 @@ const AlertModal = React.createClass({
     }
 
     return (
-      <div >
-      <Modal show={this.state.visibility}>
-      <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
-      <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
-      <center>
-      <div style={alertDiv}>
-      <h3>{this.state.title}</h3>
-      <p style={alertContent}>{this.state.content}</p>
-      </div>
-      <div  style={{paddingTop:'50px'}}>
-      <Button bsStyle="danger" style={this.getStyleFromState(this.state.leftButtonText)} onClick={this.handleAlertDismiss}>{this.state.leftButtonText}</Button>
-      <Button style={this.getStyleFromState(this.state.rightButtonText)} onClick={this.handleAlertOK}>{this.state.rightButtonText}</Button>
-      </div>
-      </center>
-      </Alert>
-      </Modal.Footer>
-      </Modal>
+      <div>
+        <Modal show={this.state.visibility}>
+          <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
+              <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss} style={alertStyle}>
+                <center>
+                  <div style={alertDiv}>
+                    <h3>{this.state.title}</h3>
+                    <p style={alertContent}>{this.state.content}</p>
+                    <Button bsStyle="danger" style={this.getStyleFromState(this.state.leftButtonText)} onClick={this.handleAlertDismiss}>
+                      {this.state.leftButtonText}
+                    </Button>
+                    <Button style={this.getStyleFromState(this.state.rightButtonText)} onClick={this.handleAlertOK}>
+                      {this.state.rightButtonText}
+                    </Button>
+                    <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
+                      More Info
+                    </Button>
+                    <Panel collapsible expanded={this.state.open}>
+                      {this.state.moreInfo};
+                    </Panel>
+                  </div>
+              </center>
+            </Alert>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
