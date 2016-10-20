@@ -7,10 +7,12 @@ var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
 var Recent = require('./RecentProjects.js');
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
-
-var reportViews = [];
+var checkList = [];
 
 var Access = {
   /**
@@ -18,48 +20,32 @@ var Access = {
    * project should contain a tcManifest folder and a checkData folder
    * @param {string} folderpath - Path that points to the folder where the translationStudio
    * project lives
+   * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
-    fs.readJson(manifestLocation, function (err, jsonObject) {
-      if (jsonObject) {
-        if (!api.getDataFromCommon('tcManifest')) {
-          api.putDataInCommon('tcManifest', jsonObject);
-        }
-      }
-      if (callback) {
-        callback();
-      }
-      try {
-        Recent.add(folderpath);
-        fs.readdir(folderpath, function (err, files) {
-          try {
-            for (var file of files) {
-              if (file.toLowerCase() == 'checkdata') {
-                var filepath = Path.join(folderpath, file);
-                _this.loadCheckData(filepath);
-              }
-            }
-            api.putDataInCommon('saveLocation', folderpath);
-            api.setSettings('showTutorial', false);
-            localStorage.setItem('lastProject', folderpath);
-          } catch (err) {
-            localStorage.removeItem('lastProject');
-            api.putDataInCommon('saveLocation', null);
+    try {
+      Recent.add(folderpath);
+      fs.readdir(folderpath, function (err, files) {
+        for (var file of files) {
+          if (file.toLowerCase() == 'checkdata') {
+            var filepath = Path.join(folderpath, file);
+            _this.loadCheckData(filepath, callback);
           }
-        });
-      } catch (e) {
-        console.error(e);
-        const alert = {
-          title: 'Open TC Project Error',
-          content: e.message,
-          leftButtonText: 'Ok'
         }
-        api.createAlert(alert);
-      }
-    });
+        api.putDataInCommon('saveLocation', folderpath);
+        api.setSettings('showTutorial', false);
+        localStorage.setItem('lastProject', folderpath);
+        CoreActions.doneLoadingFetchData();
+      });
+    } catch (e) {
+      localStorage.removeItem('lastProject');
+      api.putDataInCommon('saveLocation', null);
+      _this.loadingProjectError(e.message);
+      console.error(e);
+    }
   },
 
   /**
@@ -71,143 +57,58 @@ var Access = {
   loadCheckData: function (checkDataFolderPath, callback) {
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
-      if (error) {
-        const alert = {
-          title: 'Error Opening Project',
-          content: error.message,
-          leftButtonText: 'Ok'
-        }
-        api.createAlert(alert);
-      }
-      else {
-        var listOfChecks = null;
-        for (var file of checkDataFiles) {
-          //calls other functions that puts data in stores
-          listOfChecks = _this.putDataInFileProject(Path.join(checkDataFolderPath, file), callback);
-        }
-        if (listOfChecks) {
-          _this.saveModuleInAPI(listOfChecks);
-        }
+      if (!error) {
+        _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
+          _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
+            callback();
+          });
+        });
       }
     });
   },
 
-  putDataInFileProject: function (file, callback = () => { }) {
-    var _this = this;
-    var listOfChecks = null;
-    if (this.containsTC(file)) {
-      //file = /home/user/.../common.tc
-      //fileWithoutTC = common
-      var fileWithoutTC = Path.basename(file).replace(extensionRegex, '');
-      fs.readJson(file, (err, json) => {
-        if (err) {
-          console.error(err);
-          const alert = {
-            title: 'Error Opening Project',
-            content: err.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-        }
-        else {
-          if (fileWithoutTC == "common") {
-            //puts common in api common
-            listOfChecks = _this.makeCommon(json);
-          }
-          else {
-            //saving module data (checks) in CheckStore
-            _this.makeModuleCheckData(json, fileWithoutTC);
-          }
-          callback();
-        }
-      });
-    }
-    return listOfChecks;
-  },
 
-  containsTC: function (data) {
-    var tc = data.includes(".tc");
-    return tc;
-  },
-
-  makeCommon: function (data) {
-    for (var key in data) {
-      if (!CheckStore.hasData('common', key)) {
-        api.putDataInCommon(key, data[key]);
-      }
-    }
-    return data.arrayOfChecks;
-  },
-
-  makeModuleCheckData: function (moduleData, moduleName) {
-    CheckStore.storeData[moduleName] = moduleData;
-  },
-
-  isModule: function (filepath) {
-    //checks for /ReportView && FetchData in folder structure
+  putModulesInCheckstore: function (arrayOfChecks, path, callback) {
     try {
-      var stats = fs.lstatSync(filepath);
-      if (!stats.isDirectory()) {
-        return false;
+      var files = fs.readdirSync(path);
+      var index = 0;
+      for (var el in files) {
+        if (files[el] == 'common.tc' || !files[el].includes(".tc")) continue;
+        var data = fs.readJsonSync(Path.join(path, files[el]));
+        var name = Path.basename(files[el]).replace(extensionRegex, '');
+        CheckStore.storeData[name] = data;
+        index++;
       }
-      try {
-        fs.accessSync(Path.join(filepath, 'ReportView.js'));
-        fs.accessSync(Path.join(filepath, 'FetchData.js'));
-        return true;
-      } catch (e) {
-      }
-    }
-    catch (e) {
+    } catch (e) {
       console.error(e);
-      return false;
     }
   },
 
-  saveModuleInAPI: function (listOfChecks) {
-    //gets paths from loaded path
-    if (listOfChecks != undefined) {
-      for (var element of listOfChecks) {
-        var path = element.location;
-        _this.reportViewPush(path);
-      }
-      CoreActions.doneLoadingFetchData(reportViews);
 
-    }
+  /**
+ * @description - This gets the arrayOfChecks from the common.tc
+ * @param {string} pathToCommon - path that points to common.tc
+ * @param {function} callback - Callback that is called whenever all of the check data within
+ * the checkData folder is loaded
+ */
+  getArrayOfChecks(pathToCommon, callback) {
+    const _this = this;
+    fs.readJson(pathToCommon, (err, common) => {
+      for (var element in common) {
+        if (element == 'saveLocation') continue;
+        CheckStore.storeData.common[element] = common[element];
+      }
+      callback(common.arrayOfChecks);
+    });
   },
 
-  //stores moduel view objects into an array for the api
-  reportViewPush: function (path) {
-    let viewObj = require(path + '/View');
-    api.saveModule(viewObj.name, viewObj.view);
-
-    try {
-      api.saveMenu(viewObj.name, require(path + '/MenuView.js'));
+  loadingProjectError: function (content) {
+    const alert = {
+      title: 'Open TC Project Error',
+      content: content,
+      leftButtonText: 'Ok'
     }
-    catch (e) {
-      if (e.code != "MODULE_NOT_FOUND") {
-        console.error(e);
-      }
-    }
-
-    try {
-      var loader = require(path + '/Loader.js');
-      loader(api.getDataFromCheckStore(viewObj.name));
-    }
-    catch (e) {
-      if (e.code != "MODULE_NOT_FOUND") {
-        const alert = {
-          title: 'Error Opening Project',
-          content: e.message,
-          leftButtonText: 'Ok'
-        }
-        api.createAlert(alert);
-      }
-    }
-
-    //stores module in api
-    if (_this.isModule(path)) {
-      reportViews.push(viewObj);
-    }
+    api.createAlert(alert);
   }
 };
 

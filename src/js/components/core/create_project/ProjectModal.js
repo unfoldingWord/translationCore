@@ -1,4 +1,5 @@
 const React = require('react');
+const CoreActions = require('../../../actions/CoreActions.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
@@ -77,6 +78,12 @@ const ProjectModal = React.createClass({
     api.emitEvent('changeCheckType', { currentCheckNamespace: null });
     this.close();
     api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+    if (this.refs.TargetLanguage.state.active == 1){
+      let loadedLink = this.refs.TargetLanguage.getLink();
+      if(loadedLink != ""){
+        CoreActions.updateCheckModal(true);
+      }
+    }
   },
 
   _handleKeyPress: function(e) {
