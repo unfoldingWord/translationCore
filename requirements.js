@@ -14,13 +14,16 @@ const remote = require('electron').remote;
 
 console.errorold = console.error;
 
+var bigError;
+
 console.error = function(err){
   console.errorold(err);
-  api.Toast.error("Uh Oh!", err, 1000000);
+  bigError += "(" + err + ")";
   api.createAlert(
     {
-      title: "An Error has occured",
-      content: err,
+      title: "A Fatal Error Has Occured",
+      content: "Click below for more information about this error or to restart the app",
+      moreInfo: bigError,
       leftButtonText: "Reload"
     },
     ()=>{

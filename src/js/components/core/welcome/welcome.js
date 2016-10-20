@@ -2,12 +2,15 @@ const React = require('react');
 
 const RB = require('react-bootstrap');
 const {Glyphicon, Button, Popover} = RB;
+const CoreActions = require('../../../actions/CoreActions.js');
+const ProjectModal = require('../create_project/ProjectModal');
 
 const Login = require('../login/Login');
 const Upload = require('../Upload');
+const loadOnline = require('../LoadOnline');
 const SideNavBar = require('../SideBar/SideNavBar');
 
-const NUM_OF_SLIDES = 3;
+const NUM_OF_SLIDES = 2;
 
 const Styles = {
   navButtons: {
@@ -77,7 +80,8 @@ class Welcome extends React.Component{
     this.state = {
       index: 1,
       tutorial: false,
-      tutorialIndex: 1
+      ImportProjectIntroPage: false,
+      tutorialIndex: 1,
     }
 
     this.getPage = this.getPage.bind(this);
@@ -107,42 +111,30 @@ class Welcome extends React.Component{
           <div style={Styles.welcomePage}>
             <Glyphicon style={Styles.bigGlyph} glyph="user" />
             <h1>Connect a Door43 account</h1>
-            <p style={Styles.tutorialInfo}>Connecting your Door43 account lets you save your checks online, you can create an account if you dont already have one.</p>
+            <p style={Styles.tutorialInfo}>
+              Connecting your Door43 account to translationCore allows you to upload and save your projects's changes to your account.
+              If you don't already have a Door43 account, you can create an account by clicking the register link below.
+            </p>
             <div style={Styles.loginBox}>
               <Login success={()=>{this.setState({index:this.state.index+1})}}/>
             </div>
           </div>
         )
         break;
-      case 3:
-        return(
-          <div style={Styles.welcomePage}>
-          <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
-            <h1>Load your first project</h1>
-            <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your hard drive.</p>
-            <div style={{width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#fff', margin: 'auto', maxHeight: '200px'}}>
-            <Upload
-              success={
-                () => {
-                  this.setState({
-                    index:this.state.index+1,
-                    tutorial: true
-                  });
-                }
-              }
-              styles={{
-                color: '#1f273b',
-                fontSize: '22px',
-                padding: '20px'
-              }}
-              isWelcome={true} />
-            </div>
-          </div>
-        )
-        break;
-      case 4:
-      break;
     }
+  }
+
+  getImportProjectIntro(){
+    return(
+      <div style={Styles.welcomeFrame}>
+        <div style={Styles.welcomePage}>
+        <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
+          <h1>Load your first project</h1>
+          <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your local storage.</p>
+            <Button onClick={this.props.initialize}>Load Project</Button>
+        </div>
+      </div>
+    );
   }
 
   getTutorialOverlay(e){
@@ -154,10 +146,10 @@ class Welcome extends React.Component{
             id="accountSettings"
             placement="right"
             positionLeft={88}
-            positionTop={35}
-            title="Changing Accounts">
+            positionTop={15}
+            title="Door43 Login">
             <div style={Styles.tutorialPopover}>
-              <p>Clicking here will allow you to log out or see more information about your account</p>
+              <p>Clicking this button allows you to log in or log out to your Door43 account. Additionally giving you access to more information about your account.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -174,10 +166,10 @@ class Welcome extends React.Component{
             id="openProject"
             placement="right"
             positionLeft={88}
-            positionTop={113}
-            title="Opening an Existing Project">
+            positionTop={105}
+            title="Load in a Project">
             <div style={Styles.tutorialPopover}>
-              <p>You can also open an existing translationCore project and continue yours or someone elses work.</p>
+              <p>Clicking this button allows you to import your own or someone else's translationStudio project as well as open an existing translationCore project.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -197,7 +189,7 @@ class Welcome extends React.Component{
             positionTop={202}
             title="Sync Your Work To Door43">
             <div style={Styles.tutorialPopover}>
-              <p>Clicking here while connected to the internet will save a copy of what you are working on to Door43</p>
+              <p>Clicking this button allows you to save or update a copy of your project to your Door43 account.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -214,10 +206,10 @@ class Welcome extends React.Component{
             id="generateReport"
             placement="right"
             positionLeft={88}
-            positionTop={293}
+            positionTop={285}
             title="Generating a Report">
             <div style={Styles.tutorialPopover}>
-              <p>This will generate a report for all of the checks performed by you or anyone else working on the project you have open.</p>
+              <p>Clicking this button allows you to generate a report for all of the checks performed in the currently opened project.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -235,9 +227,9 @@ class Welcome extends React.Component{
             placement="right"
             positionLeft={88}
             positionTop={379}
-            title="Loading a Check">
+            title="Selecting a Tool to perform a Check">
             <div style={Styles.tutorialPopover}>
-              <p>This is where you load in an app so that you can perform a check on your draft.</p>
+              <p>Clicking this button allows you to start using a tool to perform a check on your project draft.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -254,14 +246,34 @@ class Welcome extends React.Component{
             id="appSettings"
             placement="right"
             positionLeft={88}
-            positionTop={465}
+            positionTop={440}
             title="Settings">
             <div style={Styles.tutorialPopover}>
-              <p>Here you can access various settings relating to how translationCore looks and functions</p>
+              <p>Clicking this button allows you to access various settings options to make translationCore look and perform according to your needs.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
-              onClick={() => {this.props.initialize()}}
+              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
+              bsStyle="link">
+              {'Next'} <Glyphicon glyph="chevron-right" />
+            </Button>
+          </Popover>
+        )
+      break;
+      case 7:
+        return(
+          <Popover
+            id="toolBox"
+            placement="right"
+            positionLeft={88}
+            positionTop={551}
+            title="Tool Box">
+            <div style={Styles.tutorialPopover}>
+              <p>Clicking this button allows you to download, update or remove tools to perform different types of checks.</p>
+            </div>
+            <Button
+              style={Styles.nextTutorialButton}
+              onClick={this.skipToProjectPage.bind(this)}
               bsStyle="link">
               {'Done'} <Glyphicon glyph="chevron-right" />
             </Button>
@@ -271,18 +283,26 @@ class Welcome extends React.Component{
   }
 }
 
+  skipToProjectPage(){
+    this.setState({ImportProjectIntroPage: true});
+  }
+
   render(){
     var _this = this;
-    if(this.state.tutorial){
+    if(this.state.ImportProjectIntroPage){
+      return(
+        this.getImportProjectIntro()
+      );
+    }else if(this.state.tutorial){
       return(
         <div style={Styles.tutorialPage}>
           <SideNavBar />
           {this.getTutorialOverlay(this.state.tutorialIndex)}
           <Button
             style={Styles.skipTutorialButton}
-            onClick={this.props.initialize}
+            onClick={this.skipToProjectPage.bind(this)}
             bsStyle="link">
-            {'Skip Tutorial'} <Glyphicon glyph="chevron-right" />
+            {'Skip'} <Glyphicon glyph="chevron-right" />
           </Button>
         </div>
       )
