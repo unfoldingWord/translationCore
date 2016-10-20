@@ -143,7 +143,7 @@ class SwitchCheck extends React.Component{
     exports.buttons = buttons;
     return (
       <div>
-        {buttons}
+          {buttons}
       </div>
     );
   }
