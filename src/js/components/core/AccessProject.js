@@ -7,6 +7,9 @@ var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
 var Recent = require('./RecentProjects.js');
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 var checkList = [];
@@ -57,7 +60,7 @@ var Access = {
       if (!error) {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
           _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
-            callback()
+            callback();
           });
         });
       }
@@ -66,14 +69,13 @@ var Access = {
 
 
   putModulesInCheckstore: function (arrayOfChecks, path, callback) {
-    debugger;
     try {
       var files = fs.readdirSync(path);
       var index = 0;
       for (var el in files) {
+        if (files[el] == 'common.tc' || !files[el].includes(".tc")) continue;
         var data = fs.readJsonSync(Path.join(path, files[el]));
-        var nameArray = arrayOfChecks[index].location.split("/");
-        var name = nameArray[nameArray.length - 1];
+        var name = Path.basename(files[el]).replace(extensionRegex, '');
         CheckStore.storeData[name] = data;
         index++;
       }
