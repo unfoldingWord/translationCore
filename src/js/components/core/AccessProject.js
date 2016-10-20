@@ -95,6 +95,7 @@ var Access = {
     const _this = this;
     fs.readJson(pathToCommon, (err, common) => {
       for (var element in common) {
+        if (element == 'saveLocation') continue;
         CheckStore.storeData.common[element] = common[element];
       }
       callback(common.arrayOfChecks);

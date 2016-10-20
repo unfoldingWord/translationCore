@@ -6,11 +6,13 @@
  * @return {Object} An internal api
  **/
 function GitApi(directory) {
+  debugger;
   var remote = require('electron').remote;
   var {dialog} = remote;
   var git = require('simple-git')(directory);
   const CheckStore = require('../../stores/CheckStore.js');
   const CoreStore = require('../../stores/CoreStore.js');
+
 
   return {
     /**
