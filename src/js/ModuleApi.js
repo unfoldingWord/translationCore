@@ -30,6 +30,8 @@ class ModuleApi {
     this.Git = require('./components/core/GitApi.js');
     this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
     this.ReportFilters = this.ReportFiltersTools.filter;
+    this.gitStack = [];
+    this.gitDone = true;
   }
 
   findDOMNode(component) {
@@ -287,16 +289,17 @@ class ModuleApi {
     var _this = this;
     var git = require('./components/core/GitApi.js');
     var path = this.getDataFromCommon('saveLocation');
-    if (path) {
+    if (path && this.gitDone) {
+      _this.gitDone = false;
       git(path).save(message, path, function() {
+        _this.gitDone = true;
+        if (_this.gitStack.length > 0){
+          _this.saveProject(_this.gitStack.shift());
+        }
       });
-    } else {
-      var Alert = {
-        title: "Warning",
-        content: "Save location is not defined",
-        leftButtonText: "Ok"
-      }
-      this.createAlert(Alert);
+    }
+    else {
+      this.gitStack.push(message);
     }
   }
 
