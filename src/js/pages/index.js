@@ -8,6 +8,7 @@
   const remote = require('electron').remote;
   const {Menu} = remote;
   var moduleApi = require('../ModuleApi');
+  window.BooksOfBible = require('../components/core/BooksOfBible.js');
   window.ModuleApi = moduleApi;
   const MenuBar = require('../components/core/MenuBar');
 
