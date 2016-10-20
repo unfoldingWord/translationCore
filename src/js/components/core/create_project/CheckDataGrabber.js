@@ -29,6 +29,9 @@ var CheckDataGrabber = {
       var params = api.getDataFromCommon('params');
       this.doneModules = 0;
       this.saveModules(checkArray, (checksThatNeedToBeFetched) => {
+        if (checksThatNeedToBeFetched.length < 1) {
+          CoreActions.doneLoadingFetchData();
+        }
         for (let moduleObj of checksThatNeedToBeFetched) {
           this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
         }
