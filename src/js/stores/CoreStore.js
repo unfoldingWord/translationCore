@@ -6,6 +6,9 @@ var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 var path = require('path');
 var fs = require(window.__base + 'node_modules/fs-extra');
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 /**
 Keep pretty much all business logic and data in
@@ -257,7 +260,7 @@ class CoreStore extends EventEmitter {
         this.loaderModalVisibility = false;
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
         var reports = [];
-        let modulesFolder = path.join(__base, "modules");
+        let modulesFolder = PACKAGE_COMPILE_LOCATION;
         fs.readdir(modulesFolder, function(err, modules){
         for (var module of modules) {
           try {

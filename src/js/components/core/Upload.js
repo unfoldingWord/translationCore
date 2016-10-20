@@ -61,21 +61,21 @@ const UploadModal = React.createClass({
     return this.refs.Online.state.value;
   },
 
-    /**
-   * @description - Sets the target language filepath and/or link, while also generatering a TC
-   * manifest file and saving the params and saveLocation under the 'common' namespace in the
-   * CheckStore
-   * @param {string} path - The folder path that points to the directory that the translationStudio
-   * project lives, which should include a manifest file
-   * @param {string} link - URL that points to the location of a translationStudio project located on
-   * the GOGS server
-   * This is the main function to initiate a load of a project
-   */
+  /**
+ * @description - Sets the target language filepath and/or link, while also generatering a TC
+ * manifest file and saving the params and saveLocation under the 'common' namespace in the
+ * CheckStore
+ * @param {string} path - The folder path that points to the directory that the translationStudio
+ * project lives, which should include a manifest file
+ * @param {string} link - URL that points to the location of a translationStudio project located on
+ * the GOGS server
+ * This is the main function to initiate a load of a project
+ */
   sendFilePath: function (path, link, callback) {
     var _this = this;
     this.clearPreviousData();
     if (path) {
-      _this.translationCoreManifestPresent(path, (err, tcManifest) => {
+      _this.loadTranslationCoreManifest(path, (err, tcManifest) => {
         if (tcManifest) {
           //tc-manifest is present initiate load
           _this.loadProjectThatHasManifest(path, callback, tcManifest);
@@ -83,20 +83,41 @@ const UploadModal = React.createClass({
           //no tc-manifest checking for ts-manifest
           _this.loadTranslationStudioManifest(path,
             (err, translationStudioManifest) => {
-              if (!err) {
+              if (translationStudioManifest) {
                 //ts-manifest is present, creating tc-manifest and initiate load
                 _this.saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
                   _this.loadProjectThatHasManifest(path, callback, tcManifest);
                 });
               }
               else if (err) {
-                _this.manifestError(err);
+                _this.loadUSFMProject(path, (err, project) => {
+                  if (!err) {
+                      ImportUsfm.loadProject(path);
+                  }
+                  else {
+                    localStorage.removeItem('lastProject');
+                    api.putDataInCommon('saveLocation', null);
+                    _this.manifestError(err);
+                  }
+                });
               }
             });
         } else if (err) {
           _this.manifestError(err);
         }
       });
+    }
+  },
+
+  loadUSFMProject: function (path, callback) {
+    try {
+      var hasManifest = fs.readJsonSync(Path.join(path, 'meta.json'));
+      if (hasManifest) {
+        callback(null, hasManifest);
+      }
+    }
+    catch (e) {
+      callback(e, null);
     }
   },
 
@@ -136,10 +157,10 @@ const UploadModal = React.createClass({
     }
   },
 
-/**
- * @desription - This uses the tc-standard format for projects to make package_version 3 compatible
- * @param oldManifest - The name of an employee.
- */
+  /**
+   * @desription - This uses the tc-standard format for projects to make package_version 3 compatible
+   * @param oldManifest - The name of an employee.
+   */
   fixManifestVerThree: function (oldManifest) {
     var newManifest = {};
     for (var oldElements in oldManifest) {
@@ -257,7 +278,6 @@ const UploadModal = React.createClass({
     } catch (err) {
       //this executes if something fails, not sure how efficient this is
       this.manifestError(err);
-      ImportUsfm.loadProject(path);
     }
   },
 
@@ -266,15 +286,22 @@ const UploadModal = React.createClass({
    * @description - Loads in a translationStudio manifest
    */
   loadTranslationStudioManifest: function (path, callback) {
-    var manifestLocation = Path.join(path, 'manifest.json');
-    fs.readJson(manifestLocation, callback);
+    try {
+      var hasManifest = fs.readJsonSync(Path.join(path, 'manifest.json'));
+      if (hasManifest) {
+        callback(null, hasManifest);
+      }
+    }
+    catch (e) {
+      callback(e, null);
+    }
   },
 
   /**
    * @description - This checks to see if a valid translationCore manifest file is present.
    * @param {string} path - absolute path to a translationStudio project folder
    */
-  translationCoreManifestPresent: function (path, callback) {
+  loadTranslationCoreManifest: function (path, callback) {
     try {
       var hasManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
       if (hasManifest) {

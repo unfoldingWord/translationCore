@@ -47,9 +47,7 @@ var Main = React.createClass({
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
-          if (!this.dataAlreadyLoaded(saveLocation)) {
             CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
-          }
         }
       });
     }
@@ -68,10 +66,6 @@ var Main = React.createClass({
       firstTime: false
     });
     this.showCheck = true;
-  },
-
-  dataAlreadyLoaded: function (folderpath) {
-    return false;
   },
 
   render: function () {

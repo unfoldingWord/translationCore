@@ -12,6 +12,7 @@ function GitApi(directory) {
   const CheckStore = require('../../stores/CheckStore.js');
   const CoreStore = require('../../stores/CoreStore.js');
 
+
   return {
     /**
      * @description Initializes a git repository.

@@ -9,12 +9,8 @@ const ManifestGenerator = require('./ProjectManifest');
 const git = require('../GitApi.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 
-
-const REQUIRE_ERROR = "Unable to require file";
-
-var indexOfModule = 0;
 var CheckDataGrabber = {
   doneModules: 0,
   totalModules: 0,
@@ -28,41 +24,40 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function(modulePaths, params) {
-    var checkArray = [];
-    let checksThatNeedToBeFetched = [];
-    this.doneModules = 0;
-    for (let moduleObj of modulePaths) {
-      checkArray.push(moduleObj);
-      this.saveModule(moduleObj.location);
-      if (moduleObj.location && !CheckStore.hasData(moduleObj.name)) {
-        checksThatNeedToBeFetched.push(moduleObj);
-      }
-    }
-    if (checksThatNeedToBeFetched.length > 0) {
-      CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
-      this.totalModules = checksThatNeedToBeFetched.length;
-      for (let moduleObj of checksThatNeedToBeFetched) {
-        try {
-          this.getDataFromCheck(moduleObj.name, moduleObj.location, params);
+  fetchModules: function (checkArray) {
+    try {
+      var params = api.getDataFromCommon('params');
+      this.doneModules = 0;
+      this.saveModules(checkArray, (checksThatNeedToBeFetched) => {
+        if (checksThatNeedToBeFetched.length < 1) {
+          CoreActions.doneLoadingFetchData();
         }
-        catch(error) {
-          const alert = {
-            title: 'Unable to load and run FetchData from module',
-            content: error.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-          console.error(error);
+        for (let moduleObj of checksThatNeedToBeFetched) {
+          this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
         }
-      }
+        api.putDataInCommon('arrayOfChecks', checkArray);
+      });
     }
-    else {
-      CoreActions.doneLoadingFetchData();
+    catch (error) {
+      this.dataLoadError(error);
     }
-    api.putDataInCommon('arrayOfChecks', checkArray);
+
   },
 
+
+  saveModules: function (checkArray, callback) {
+      let checksThatNeedToBeFetched = [];
+      for (let module of checkArray) {
+        let viewObj = require(Path.join(module.location, 'View'));
+        api.saveModule(module.name, viewObj.view);
+        if (module.location && !CheckStore.hasData(module.name)) {
+          checksThatNeedToBeFetched.push(module);
+        }
+        CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+        this.totalModules = checksThatNeedToBeFetched.length;
+      }
+      callback(checksThatNeedToBeFetched);
+  },
 
 
   /**
@@ -72,79 +67,52 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function(moduleFolderName) {
+  loadModuleAndDependencies: function (moduleFolderName) {
     CoreActions.startLoading();
     var _this = this;
-    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
     var modulePath = Path.join(moduleFolderName, 'package.json');
-    fs.readJson(modulePath, function(error, dataObject) {
-      if (error) {
-        console.error(error);
-      }
-      else {
-        var params = api.getDataFromCommon('params');
-        var modulePaths = [];
-        modulePaths.push({name: dataObject.name, location: moduleFolderName});
-        //Try to find and save the menu. Most modules don't
-        try {
-          api.saveMenu(dataObject.name, require(Path.join(moduleBasePath, moduleFolderName, 'MenuView.js')));
-        }
-        catch (e) {
-          if (e.code != "MODULE_NOT_FOUND") {
-            console.error(e);
-          }
-        }
-
-
+    fs.readJson(modulePath, (error, dataObject) => {
+      if (!error) {
         CoreStore.setCurrentCheckCategory(dataObject.name);
-        for (let childFolderName of dataObject.include) {
-          //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-          try {
-            modulePaths.push({name: _this.getModuleNameFromFolderPath(Path.join(moduleBasePath, childFolderName)),
-              location: Path.join(moduleBasePath, childFolderName)});
+        _this.saveModuleMenu(dataObject, moduleFolderName);
+        _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
+          if (!err) {
+            _this.fetchModules(checkArray);
           }
-          catch (e) {
-            const alert = {
-            title: 'Error Loading Module',
-            content: 'Check Module Format',
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-            console.error(e);
-          }
-        }
-        _this.fetchModules(modulePaths, params);
+        });
       }
     });
   },
 
-  /**
-   * @description - This returns the name of the module as defined by the View.js in the path
-   * @param {string} path - This is the folderpath that points to the location of the modules
-   * main folder. This must be an absolute path
-   */
-  getModuleNameFromFolderPath: function(folderPath) {
-    try {
-      fs.accessSync(Path.join(folderPath, 'package.json'));
-      return fs.readJsonSync(Path.join(folderPath, 'package.json')).name;
-    }
-    catch(e) {
+
+  createCheckArray: function (dataObject, moduleFolderName, callback) {
+    var modulePaths = [];
+    modulePaths.push({ name: dataObject.name, location: moduleFolderName });
+    for (let childFolderName of dataObject.include) {
+      //If a developer hasn't defined their module in the corret way, this'll probably throw an error
       try {
-        fs.accessSync(Path.join(folderPath, 'View.js'));
-        return require(Path.join(folderPath, 'View.js')).name;
-      }
-      catch(error) {
-        const alert = {
-            title: 'Error Loading Module',
-            content: error.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-        console.error(e);
-        console.error(error);
+        modulePaths.push({
+          name: childFolderName,
+          location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
+        });
+      } catch (e) {
+        this.dataLoadError(e);
+        callback(e, null);
       }
     }
-    return null;
+    callback(null, modulePaths);
+
+  },
+
+  saveModuleMenu: function (dataObject, moduleFolderName) {
+    try {
+      api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
+    }
+    catch (e) {
+      if (e.code != "MODULE_NOT_FOUND") {
+        console.error(e);
+      }
+    }
   },
 
   /**
@@ -153,15 +121,15 @@ var CheckDataGrabber = {
    * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure
    * if still needed
    */
-  onComplete: function(err, data) {
+  onComplete: function (err, data) {
     this.doneModules++;
     if (!err) {
       if (this.doneModules >= this.totalModules) {
         //update stuff
         var path = api.getDataFromCommon('saveLocation');
         if (path) {
-          git(path).init(function() {
-            git(path).save('Initial TC Commit', path, function() {
+          git(path).init(function () {
+            git(path).save('Initial TC Commit', path, function () {
               CoreActions.doneLoadingFetchData();
             });
           });
@@ -189,8 +157,8 @@ var CheckDataGrabber = {
    * @param {integer} data - the quantifiable number of how far done a FetchData has fetched their
    * appropriate data. Should be from 0-100, but no error checking to make it sure
    */
-  Progress: function(name, data) {
-    CoreActions.sendProgressForKey({progress: data, key: name});
+  Progress: function (name, data) {
+    CoreActions.sendProgressForKey({ progress: data, key: name });
     if (data == 100) {
       console.log(name + " finished loading.");
     }
@@ -202,7 +170,7 @@ var CheckDataGrabber = {
    * supplment the main module in that layout and are enclosed in the main module
    * @param {string} folderpath - absolute file path to the enclosing module's folder
    */
-  isMainModule:function(filepath) {
+  isMainModule: function (filepath) {
     try {
       var stats = fs.lstatSync(filepath);
       if (!stats.isDirectory()) {
@@ -220,35 +188,33 @@ var CheckDataGrabber = {
     }
   },
 
-  saveModule: function(path) {
-    let viewObj = require(Path.join(path, 'View'));
-
-    //save the view associated with the module so that modules may be able to reference them later
-    api.saveModule(viewObj.name, viewObj.view);
-    //Save their report view if they have it
-    if (this.isMainModule(path)) {
-      this.reportViews.push(viewObj);
-    }
-  },
-
   /**
    * @description - This loads a single FetchData
    * @param {string} path - This is a relative path to the enclosing module's folder
    * @param {object} params - Object that gets passed to FetchData's, contains necessary
    * params for the FetchData's to load their data
    */
-  getDataFromCheck: function(name, path, params) {
+  getDataFromOnline: function (name, path, params) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
     //call the FetchData function
     var _this = this;
     DataFetcher(
       params,
-      function(data) {
+      function (data) {
         _this.Progress(name, data);
       },
       this.onComplete.bind(this)
     );
+  },
+
+  dataLoadError: function (content) {
+    const alert = {
+      title: 'Error Loading TC',
+      content: content,
+      leftButtonText: 'Ok'
+    }
+    api.createAlert(alert);
   }
 };
 
-  module.exports = CheckDataGrabber;
+module.exports = CheckDataGrabber;
