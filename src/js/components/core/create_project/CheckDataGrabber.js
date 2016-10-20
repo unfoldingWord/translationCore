@@ -221,7 +221,6 @@ var CheckDataGrabber = {
   },
 
   saveModule: function(path) {
-    debugger;
     let viewObj = require(Path.join(path, 'View'));
 
     //save the view associated with the module so that modules may be able to reference them later
