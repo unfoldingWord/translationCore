@@ -48,6 +48,7 @@ class Projects extends React.Component {
     for (var p in projectArray) {
       var projectName = projectArray[p].project;
       var repoName = projectArray[p].repo;
+      var showBack = this.props.back ? 'inline' : 'none';
       projectList.push(
         <div key={p} style={{width: '100%', marginBottom: '15px'}}>
           {projectName}
@@ -67,7 +68,7 @@ class Projects extends React.Component {
       <div style={{height: '419px', overflowY: 'auto'}}>
         <div style={{marginBottom: '15px'}}>
           <span style={{fontSize: '20px'}}>Your Door43 Projects</span>
-          <Button bsStyle='primary' onClick={this.props.back} className={'pull-right'} bsSize='sm'>Back to profile</Button>
+          <Button bsStyle='primary' style={{display: showBack}} onClick={this.props.back} className={'pull-right'} bsSize='sm'>Back to profile</Button>
         </div>
         <Upload ref={'Upload'} show={false} />
         {projectList}

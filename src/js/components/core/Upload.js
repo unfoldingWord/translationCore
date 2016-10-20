@@ -334,7 +334,7 @@ const UploadModal = React.createClass({
       case 'd43':
         mainContent = (
           <div>
-          <ProjectViewer back={function(){}}/>
+          <ProjectViewer/>
           </div>
         )
         break;
