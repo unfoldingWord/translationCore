@@ -49,7 +49,7 @@ function openTargetLanguage(savePath, direction) {
       }
       var targetLanguage = {};
       targetLanguage.title = parsedUSFM.book;
-      targetLanguage.header = parsedUSFM.headers;
+      // targetLanguage.header = parsedUSFM.headers;
       var chapters = parsedUSFM.chapters;
       for (var ch in chapters) {
         targetLanguage[chapters[ch].number] = {};
