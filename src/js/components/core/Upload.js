@@ -16,7 +16,6 @@ const CoreStore = require('../../stores/CoreStore');
 const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');
-const Recent = require('./RecentProjects.js');
 const api = window.ModuleApi;
 const books = require('./BooksOfBible.js');
 
@@ -338,9 +337,10 @@ const UploadModal = React.createClass({
         </div>
       )
     } else if (this.state.show == 'recent') {
+      const Recent = require('./RecentProjects.js');
       mainContent = (
         <div>
-          <Recent />
+          <Recent.Component />
         </div>
       )
     }
