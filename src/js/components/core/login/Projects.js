@@ -5,11 +5,16 @@ const api = window.ModuleApi;
 const loadOnline = require('../LoadOnline.js');
 const Upload = require('../Upload.js');
 const Button = require('react-bootstrap/lib/Button.js');
+const CoreActions = require('../../../actions/CoreActions.js');
 
 class Projects extends React.Component {
   constructor() {
     super();
     this.state = {repos: []};
+  }
+
+  componentWillMount() {
+    this.updateRepos();
   }
 
   updateRepos() {
@@ -24,7 +29,11 @@ class Projects extends React.Component {
 
   openSelected(projectPath) {
     var link = 'https://git.door43.org/' + projectPath + '.git';
-    loadOnline(link, this.refs.Upload.sendFilePath);
+    var _this = this;
+    loadOnline(link, function(savePath, url) {
+      _this.refs.Upload.sendFilePath(savePath, url)
+      CoreActions.showCreateProject("");
+    });
   }
 
   render() {
@@ -42,7 +51,6 @@ class Projects extends React.Component {
       </div>
     )
     }
-    this.updateRepos();
     var projectArray = this.state.repos;
     var projectList = []
     for (var p in projectArray) {
