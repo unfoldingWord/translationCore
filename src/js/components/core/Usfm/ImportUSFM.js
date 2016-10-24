@@ -23,10 +23,9 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
 /**
  * @description This function converts usfm into the target language format.
  * @param {String} savePath - The path of the file containing usfm text.
- * @param {String} abbr - The abbeviation of the book.
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
-function openTargetLanguage(savePath, abbr, direction) {
+function openTargetLanguage(savePath, direction) {
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
   var parsedPath = path.parse(savePath);
@@ -38,13 +37,19 @@ function openTargetLanguage(savePath, abbr, direction) {
       console.error(err);
     } else {
       fs.ensureDir(saveLocation, function (err) {
-        if (err) console.log(err); // => null
+        if (err) console.error(err); // => null
         fs.writeFileSync(saveFile, data.toString());
       });
       var usfmData = data.toString();
-      var parsedUSFM = usfm.toJSON(usfmData);
+      try {
+        var parsedUSFM = usfm.toJSON(usfmData);
+      } catch (err) {
+        console.error(err);
+        return;
+      }
       var targetLanguage = {};
       targetLanguage.title = parsedUSFM.book;
+      // targetLanguage.header = parsedUSFM.headers;
       var chapters = parsedUSFM.chapters;
       for (var ch in chapters) {
         targetLanguage[chapters[ch].number] = {};
@@ -64,9 +69,17 @@ function openTargetLanguage(savePath, abbr, direction) {
         var params = {
           originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
           targetLanguagePath: saveLocation,
-          bookAbbr: abbr,
           direction: direction
         };
+        if (parsedUSFM.headers) {
+          var parsedHeaders = parsedUSFM.headers;
+          if (parsedHeaders['mt1']) {
+            targetLanguage.title = parsedHeaders['mt1'];
+          } else if (parsedHeaders['id']){
+            targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+          }
+          params.bookAbbr = parsedHeaders['id'].toLowerCase();
+        }
         api.putDataInCommon('params', params);
         api.putDataInCommon('targetLanguage', targetLanguage);
       }
@@ -156,7 +169,6 @@ var ImportComponent = React.createClass({
   getInitialState: function() {
     return {
       direction: null,
-      book: null,
       filePath: 'No file selected'
     };
   },
@@ -164,32 +176,27 @@ var ImportComponent = React.createClass({
   showDialog: function() {
     var options = {
       filters: [
-        {name: 'USFM', extensions: ['usfm', 'txt']}
+        {name: 'USFM', extensions: ['usfm', 'sfm', 'txt']}
       ]
     };
     var _this = this;
-    var bookAbbr = this.state.book;
     var direction = this.state.direction;
-    if (direction && bookAbbr) {
+    if (direction && !this.open) {
+      this.open = true;
       dialog.showOpenDialog(options, function(savePath) {
         CheckStore.WIPE_ALL_DATA();
         api.modules = {};
         _this.setState({
           filePath: savePath[0]
         });
-        openTargetLanguage(savePath[0], bookAbbr, direction);
+        _this.open = false;
+        openTargetLanguage(savePath[0], direction);
       });
     } else {
       _this.setState({
-        filePath: 'Choose a book and text direction first'
+        filePath: 'Choose a text direction first'
       });
     }
-  },
-
-  handleBookChange: function(e) {
-    this.setState({
-      book: e.target.value
-    });
   },
 
   handleTextChange: function(e) {
@@ -199,18 +206,10 @@ var ImportComponent = React.createClass({
   },
 
   render: function() {
-    var selectArray = [<option key={'init'} value={null}> Select book</option>];
-    for (var o in books) {
-      selectArray.push(<option key={o} value={o}> {books[o]}</option>);
-    }
     return (
       <div>
       {this.props.isWelcome ? <div> </div> : <br />}
       <FormGroup>
-        <FormControl componentClass="select" placeholder="Select Book" onChange={this.handleBookChange}>
-          {selectArray}
-        </FormControl>
-        {this.props.isWelcome ? <div> </div> : <br />}
         <FormControl componentClass="select" onChange={this.handleTextChange}>
           <option value={'ltr'}>Select text direction</option>
           <option value={'ltr'}>Left to right</option>
