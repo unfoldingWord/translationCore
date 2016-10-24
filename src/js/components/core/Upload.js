@@ -24,6 +24,7 @@ const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import From Local Project';
 const IMPORT_ONLINE = 'Import From Online';
 const IMPORT_USFM = 'Import From Local USFM File';
+const IMPORT_D43 = 'Import From Door43';
 
 
 const UploadModal = React.createClass({
@@ -38,12 +39,21 @@ const UploadModal = React.createClass({
    */
   handleSelect: function (eventKey) {
     this.setState({ active: eventKey });
-    if (eventKey === 1) {
-      this.setState({ show: 'link' });
-    } else if (eventKey === 2) {
-      this.setState({ show: 'file' });
-    } else if (eventKey === 3) {
-      this.setState({ show: 'usfm' });
+    switch (eventKey) {
+      case 1:
+        this.setState({ show: 'link' });
+        break;
+      case 2:
+        this.setState({ show: 'file' });
+        break;
+      case 3:
+        this.setState({ show: 'usfm' });
+        break;
+      case 4:
+        this.setState({ show: 'd43' });
+        break;
+      default:
+        break;
     }
   },
 
@@ -308,27 +318,42 @@ const UploadModal = React.createClass({
    */
   render: function () {
     var mainContent;
-    if (this.state.show === 'file') {
-      mainContent = <DragDrop
-        styles={this.props.styles}
-        sendFilePath={this.sendFilePath}
-        properties={['openDirectory']}
-        isWelcome={this.props.isWelcome}
-        />;
-    }
-    else if (this.state.show === 'link') {
+    var ProjectViewer = require('./login/Projects.js');
+    switch (this.state.show) {
+      case 'file':
+        mainContent = <DragDrop
+          styles={this.props.styles}
+          sendFilePath={this.sendFilePath}
+          properties={['openDirectory']}
+          isWelcome={this.props.isWelcome}
+          />;
+        break;
+      case 'link':
       mainContent = (
         <div>
           <br />
           <OnlineInput ref={"Online"} pressedEnter={this.props.pressedEnter} sendFilePath={this.sendFilePath} />
         </div>
       );
-    } else if (this.state.show === 'usfm') {
+        break;
+      case 'usfm':
       mainContent = (
         <div>
           <ImportUsfm.component isWelcome={this.props.isWelcome} />
         </div>
-      )
+      );
+        break;
+      case 'd43':
+        mainContent = (
+          <div>
+          <ProjectViewer/>
+          </div>
+        )
+        break;
+      default:
+        mainContent = (<div> </div>)
+        break;
+
     }
     if (this.props.show !== false) {
       return (
@@ -337,6 +362,8 @@ const UploadModal = React.createClass({
             <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
             <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
             <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
+            <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
+
           </Nav>
           {mainContent}
         </div>
