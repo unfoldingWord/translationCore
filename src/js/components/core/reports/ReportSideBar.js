@@ -145,7 +145,7 @@ class ReportSideBar extends React.Component{
         });
       });
     }
-
+    
   render(){
     let chapterOptionArray = this.getChapters();
     return(
