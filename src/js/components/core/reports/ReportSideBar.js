@@ -1,5 +1,6 @@
 const api = window.ModuleApi;
 const React = api.React;
+const fs = require('fs');
 const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
@@ -108,6 +109,43 @@ class ReportSideBar extends React.Component{
     return chapterOptionArray;
   }
 
+    generatePDF(){
+      const path = require('path');
+      let displayCard = document.getElementById("cardsContent");
+      var cln = displayCard.cloneNode(true);
+      fs.readFile("./src/js/components/core/reports/report-template.html", 'utf-8', (err, data) => {
+        if (err) {
+          // These errors should not happen
+          console.log(err, "Report template seems to be missing");
+          callback(err);
+          return;
+        }
+        // create a new html fragment in memory based on report-template.html
+        let reportHTML = document.createElement("html");
+        reportHTML.innerHTML = data;
+        reportHTML.getElementsByTagName('div')[0].appendChild(cln);
+        let reportPath = path.join(__dirname, 'report.html');
+        fs.writeFile(reportPath, reportHTML.innerHTML, 'utf-8', (err) => {
+          if (err) {
+            const alert = {
+              title: 'Error writing rendered report to disk',
+              content: err.message,
+              leftButtonText: 'Ok'
+            }
+            api.createAlert(alert);
+            callback(err);
+            return;
+          }
+          const BrowserWindow = require('electron').remote.BrowserWindow;
+          const modalPath = path.join('file://', __dirname, './report.html');
+          let win = new BrowserWindow({ width: 800, height: 600 });
+          win.on('close', function () { win = null });
+          win.loadURL(modalPath);
+          win.show();
+        });
+      });
+    }
+    
   render(){
     let chapterOptionArray = this.getChapters();
     return(
@@ -164,6 +202,7 @@ class ReportSideBar extends React.Component{
               {"\n By " + this.props.authors + ","} <br /> {"Created on " + new Date().toDateString()}
             </small>
             </h5>
+            <Button bsStyle="primary" onClick={this.generatePDF.bind(this)}>Generate PDF version</Button>
           </center>
         </FormGroup>
       </div>

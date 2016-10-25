@@ -1,5 +1,4 @@
 /**
- * @author Evan "Vegan and Proud" Wiederspan, Manny COLON
  * This function will generate and display a report when called. It first opens
  * a local report template HTML file, reads that text into a Node object, then renders
  * the gathered JSX from the Report class into that page and saves it to another file in the root
@@ -186,7 +185,6 @@ class Report extends React.Component {
       }
       // create chapter header
       var chHeader = <h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>
-      //output.push(chHeader);
       var isEmpty = true;
       for (let view in this.props.reportViews) {
         let viewResult = this.props.reportViews[view].view(ch, 0);
@@ -214,8 +212,6 @@ class Report extends React.Component {
         if (reports.length > 0) {
           output.push(
                 <Row key={`${ch}-${v}`}>
-                {/*commented out the code below since it displays chapter and verse*/}
-                {/*<Col xs={2}><h4>{`${ch}:${v}`}</h4></Col>*/}
                   <Col xs={10} style={{paddingRight: "0px"}}>{reports}</Col>
                 </Row>
           );
@@ -242,7 +238,9 @@ class Report extends React.Component {
                         onClick={this.hideReport.bind(this)}/>
           </div>
           <div style={{marginBottom: "20px"}}></div>
-          {output}
+          <div id="cardsContent">
+            {output}
+          </div>
         </div>
       </div>
     );}
