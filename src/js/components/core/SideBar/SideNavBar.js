@@ -67,14 +67,13 @@ class SideNavBar extends React.Component{
       return(
         <div style={style.container}>
           <ul style={style.ul}>
-            <img src="images/TC_Icon_logo.png" onClick={this.sayHello.bind(this)} style={style.logo}/>
             <LoginButton />
             <SideBarButton handleButtonClick={this.handleOpenProject.bind(this)} glyphicon={"folder-open"} value={"Load"} />
             <SideBarButton handleButtonClick={this.handleSyncProject.bind(this)} glyphicon={"cloud-upload"} value={"Sync"} />
             <SideBarButton handleButtonClick={this.handleReport.bind(this)} glyphicon={"list-alt"} value={"Reports"} />
             <SideBarButton handleButtonClick={this.handleChangeCheckCategory.bind(this)} glyphicon={"wrench"} value={"Tools"} />
             <SideBarButton handleButtonClick={this.handleSettings.bind(this)} glyphicon={"cog"} value={"Settings"} />
-            <SideBarButton handleButtonClick={this.handlePackageManager.bind(this)} imageName={"images/package.svg"} hoverImage={"images/bluePackage.svg"} value={"Package Manager"} />
+            <SideBarButton handleButtonClick={this.handlePackageManager.bind(this)} imageName={"images/package.svg"} hoverImage={"images/bluePackage.svg"} value={"Toolbox"} />
             {/*<OnlineStatus />*/}
           </ul>
         </div>
