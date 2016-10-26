@@ -28,7 +28,10 @@ const GreekParser = {
                 if (book[name][current_chapter] == undefined) book[name][current_chapter] = {};
                 if (book[name][current_chapter][current_verse] == undefined) book[name][current_chapter][current_verse] = "";
                 var word = data[verseRef]['UGNT text'];
-                var strong = !isNaN(data[verseRef]["Strong's"]) ? "G" + data[verseRef]["Strong's"] : "G" + data[verseRef]["Strong's"].split("&")[0];
+                var strong = !isNaN(data[verseRef]["Strong's"]) ? "" + data[verseRef]["Strong's"] : "" + data[verseRef]["Strong's"].split("&")[0];
+                if (strong[0] == '0' ) {
+                    strong = 'H' + strong.slice(1, strong.length);
+                }
                 var morph = data[verseRef]['Morphology'];
                 var verse = word + " " + strong + " " + morph;
                 book[name][current_chapter][current_verse] += verse + " ";
