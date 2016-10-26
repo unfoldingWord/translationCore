@@ -1,7 +1,20 @@
 var style = {
+  sideBarcontainer:{
+      backgroundColor: "#333333",
+      width: "120px",
+      height: "100vh",
+      marginLeft: "0px",
+      position: "fixed",
+      zIndex: "98",
+      left: "0px",
+      fontSize: "12px",
+      overflowY: "initial",
+      boxSizing: "border-box",
+  },
+
   container:{
       backgroundColor: "#333333",
-      width: "85px",
+      width: "120px",
       height: "100vh",
       marginLeft: "0px",
       display: "inline-block",
@@ -10,6 +23,7 @@ var style = {
       left: "0px",
       fontSize: "12px",
       overflowY: "auto",
+
   },
 
   ul: {
@@ -20,8 +34,8 @@ var style = {
   li: {
     display: "block",
     textAlign: "center",
-    paddingTop: "20px",
-    paddingBottom: "20px",
+    paddingTop: "15px",
+    paddingBottom: "15px",
     color: "white",
     cursor: "pointer",
     userSelect: "none",
@@ -44,14 +58,14 @@ var style = {
     display: "block",
     textAlign: "center",
     userSelect: "none",
-    paddingTop: "18px",
-    paddingBottom: "18px"
+    paddingTop: "13px",
+    paddingBottom: "13px"
 
   },
 
   logo:{
-    height: "60px",
-    width: "55px",
+    height: "85px",
+    width: "80px",
     display: "block",
     padding: "5px",
     marginLeft: "auto",
