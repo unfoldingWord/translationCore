@@ -25,7 +25,6 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
-//const parse = require("../../../hebrew.js");
 
 var Main = React.createClass({
   getInitialState() {

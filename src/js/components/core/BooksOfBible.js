@@ -66,7 +66,7 @@ jas: 'James',
 '2pe': '2 Peter',
 '1jn': '1 John',
 '2jn': '2 John',
-'3jn': 'John',
+'3jn': '3 John',
 jud: 'Jude',
 rev: 'Revelation'
 }
