@@ -3,6 +3,8 @@ const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
+
+const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
@@ -82,10 +84,11 @@ var Main = React.createClass({
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />
+          <StatusBar />
           <SwitchCheckModal.Modal />
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '100px' }}>
+          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px"}}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474" }}>
                <NavMenu />

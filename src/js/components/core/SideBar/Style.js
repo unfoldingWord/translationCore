@@ -27,8 +27,8 @@ var style = {
   },
 
   ul: {
-      margin: "0px",
-      padding: "0px",
+    margin: "0px",
+    padding: "0px",
   },
 
   li: {
@@ -73,19 +73,34 @@ var style = {
     marginTop: "5px",
   },
 
-  glyphiconOffline:{
+  textOffline:{
+    float: "right",
     color: "#FF0000",
-    fontSize: "25px",
+    padding: "5px",
+    marginRight: "15px",
   },
 
-  glyphiconOnline:{
+  textOnline:{
+    position: "fixed",
+    right: "0px",
     color: "#00B233",
-    fontSize: "25px",
+    padding: "5px",
+    marginRight: "15px",
   },
 
   img:{
-  width: "25px",
-  height: "30px",
+    width: "25px",
+    height: "30px",
+  },
+
+  StatusBar:{
+    position: "fixed",
+    top: "0px",
+    backgroundColor: "#333333",
+    height: "30px",
+    width: "100%",
+    fontSize: "16px",
+    zIndex: "97",
   },
 
 };
