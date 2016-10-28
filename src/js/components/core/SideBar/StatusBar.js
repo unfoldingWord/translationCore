@@ -90,7 +90,7 @@ class StatusBar extends React.Component{
 
   render(){
     return(
-      <div style={style.StatusBar} onClick={this.getCurrentCheck.bind(this)}>
+      <div style={style.StatusBar}>
           <OnlineStatus />
           <div style={{color: "#fff", float: "right", padding: "3px", marginRight: "50px"}}>
             {this.state.path}
