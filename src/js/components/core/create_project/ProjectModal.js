@@ -76,6 +76,7 @@ const ProjectModal = React.createClass({
       this.submitLink();
     }
     api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+    api.emitEvent('newToolSelected', {'newToolSelected': true});
     this.close();
     api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
     if (this.refs.TargetLanguage.state.active == 1){

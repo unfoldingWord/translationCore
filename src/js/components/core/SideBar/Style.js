@@ -76,16 +76,17 @@ var style = {
   textOffline:{
     float: "right",
     color: "#FF0000",
-    padding: "5px",
+    padding: "3px",
     marginRight: "15px",
+    display: "inline",
   },
 
   textOnline:{
-    position: "fixed",
-    right: "0px",
-    color: "#00B233",
-    padding: "5px",
+    float: "right",
+    color: "#4eba6f",
+    padding: "3px",
     marginRight: "15px",
+    display: "inline",
   },
 
   img:{
@@ -102,6 +103,7 @@ var style = {
     fontSize: "16px",
     zIndex: "97",
     boxSizing: "border-box",
+    display: "inline",
   },
 
 };
