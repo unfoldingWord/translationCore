@@ -3,7 +3,6 @@ const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
-
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
