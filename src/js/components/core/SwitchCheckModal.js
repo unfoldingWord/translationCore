@@ -13,6 +13,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 //bootstrap imports
 const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
+const Panel = require('react-bootstrap/lib/Panel.js');
 
 //locally defined imports
 const CoreStore = require('../../stores/CoreStore.js');
@@ -154,8 +155,12 @@ class SwitchCheckModal extends React.Component {
     super();
     this.state ={
       showModal: false,
+      showDevOptions: false,
+      localAppFilePath: ""
     }
     this.updateCheckModal = this.updateCheckModal.bind(this);
+    this.handleFilePathChange = this.handleFilePathChange.bind(this);
+    this.developerApp = this.developerApp.bind(this);
   }
 
   updateCheckModal() {
@@ -174,7 +179,20 @@ class SwitchCheckModal extends React.Component {
     CoreStore.removeChangeListener(this.updateCheckModal);
   }
 
+  handleFilePathChange(event){
+    this.setState({
+      localAppFilePath: event.target.value
+    });
+  }
+
+  developerApp(filepath){
+    var folderName = pathex.join(window.__base, filepath);
+    CheckDataGrabber.loadModuleAndDependencies(folderName);
+    localStorage.setItem('lastCheckModule', folderName);
+  }
+
   render() {
+    var filepath;
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
@@ -185,6 +203,27 @@ class SwitchCheckModal extends React.Component {
             <SwitchCheck />
           </Modal.Body>
           <Modal.Footer style={{backgroundColor: "#333333"}}>
+            <Button onClick={
+              () => {
+                this.setState({showDevOptions: !this.state.showDevOptions});
+              }
+            }>
+              Developer Mode
+            </Button>
+            <Panel collapsible expanded={this.state.showDevOptions}>
+              <input type="text"
+                placeholder="Path your modules root in relation to window.__base"
+                value={this.state.localAppFilePath}
+                onChange={this.handleFilePathChange}
+                style={{width: "100%"}} />
+              <Button onClick={
+                () => {
+                  this.developerApp(this.state.localAppFilePath);
+                }
+              }>
+                Load Tool
+              </Button>
+            </Panel>
             <Button bsStyle="danger" onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
