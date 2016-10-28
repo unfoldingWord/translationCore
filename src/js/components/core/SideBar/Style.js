@@ -101,6 +101,7 @@ var style = {
     width: "100%",
     fontSize: "16px",
     zIndex: "97",
+    boxSizing: "border-box",
   },
 
 };
