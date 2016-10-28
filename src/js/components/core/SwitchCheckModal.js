@@ -203,27 +203,29 @@ class SwitchCheckModal extends React.Component {
             <SwitchCheck />
           </Modal.Body>
           <Modal.Footer style={{backgroundColor: "#333333"}}>
-            <Button onClick={
-              () => {
-                this.setState({showDevOptions: !this.state.showDevOptions});
-              }
-            }>
-              Developer Mode
-            </Button>
-            <Panel collapsible expanded={this.state.showDevOptions}>
-              <input type="text"
-                placeholder="Path your modules root in relation to window.__base"
-                value={this.state.localAppFilePath}
-                onChange={this.handleFilePathChange}
-                style={{width: "100%"}} />
+            {api.getSettings("developerMode") ? <div>
               <Button onClick={
                 () => {
-                  this.developerApp(this.state.localAppFilePath);
+                  this.setState({showDevOptions: !this.state.showDevOptions});
                 }
               }>
-                Load Tool
+                Developer Mode
               </Button>
-            </Panel>
+              <Panel collapsible expanded={this.state.showDevOptions}>
+                <input type="text"
+                  placeholder="Path your modules root in relation to window.__base"
+                  value={this.state.localAppFilePath}
+                  onChange={this.handleFilePathChange}
+                  style={{width: "100%"}} />
+                <Button onClick={
+                  () => {
+                    this.developerApp(this.state.localAppFilePath);
+                  }
+                }>
+                  Load Tool
+                </Button>
+              </Panel>
+            </div>: null}
             <Button bsStyle="danger" onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
