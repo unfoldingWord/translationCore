@@ -193,6 +193,7 @@ class SwitchCheckModal extends React.Component {
 
   render() {
     var filepath;
+    console.log(api.getSettings('developerMode'));
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
@@ -203,15 +204,16 @@ class SwitchCheckModal extends React.Component {
             <SwitchCheck />
           </Modal.Body>
           <Modal.Footer style={{backgroundColor: "#333333"}}>
-            {api.getSettings("developerMode") ? <div>
+            {api.getSettings('developerMode') ? <div>
               <Button onClick={
                 () => {
                   this.setState({showDevOptions: !this.state.showDevOptions});
                 }
               }>
-                Developer Mode
+                Developer Options
               </Button>
               <Panel collapsible expanded={this.state.showDevOptions}>
+                <h3>Load a tool locally</h3>
                 <input type="text"
                   placeholder="Path your modules root in relation to window.__base"
                   value={this.state.localAppFilePath}
@@ -225,7 +227,7 @@ class SwitchCheckModal extends React.Component {
                   Load Tool
                 </Button>
               </Panel>
-            </div>: null}
+            </div>: <div></div>}
             <Button bsStyle="danger" onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
