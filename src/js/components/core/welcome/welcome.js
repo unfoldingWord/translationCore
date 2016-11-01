@@ -116,7 +116,14 @@ class Welcome extends React.Component{
               If you don't already have a Door43 account, you can create an account by clicking the register link below.
             </p>
             <div style={Styles.loginBox}>
-              <Login success={()=>{this.setState({index:this.state.index+1})}}/>
+              <Login success={() => {
+                  if(this.state.index == NUM_OF_SLIDES){
+                    this.setState({tutorial: true})
+                  }else {
+                    this.setState({index: this.state.index+1})
+                  }
+                }
+              }/>
             </div>
           </div>
         )
