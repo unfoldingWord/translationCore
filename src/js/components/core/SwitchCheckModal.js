@@ -189,11 +189,11 @@ class SwitchCheckModal extends React.Component {
     var folderName = pathex.join(window.__base, filepath);
     CheckDataGrabber.loadModuleAndDependencies(folderName);
     localStorage.setItem('lastCheckModule', folderName);
+    this.close();
   }
 
   render() {
     var filepath;
-    console.log(api.getSettings('developerMode'));
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
