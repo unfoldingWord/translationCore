@@ -187,8 +187,15 @@ class SwitchCheckModal extends React.Component {
 
   developerApp(filepath){
     var folderName = pathex.join(window.__base, filepath);
-    CheckDataGrabber.loadModuleAndDependencies(folderName);
-    localStorage.setItem('lastCheckModule', folderName);
+    fs.access(folderName, fs.F_OK, (err) => {
+      if(!err){
+        console.log("Were in");
+        CheckDataGrabber.loadModuleAndDependencies(folderName);
+        localStorage.setItem('lastCheckModule', folderName);
+      } else {
+        console.error(err);
+      }
+    });
     this.close();
   }
 
