@@ -39,7 +39,7 @@ class RecentProjects extends React.Component {
     for (var project in projectPaths) {
       var projectPath = projectPaths[project];
       var projectName = path.basename(projectPath);
-      if (projectName === '.git') continue;
+      if (projectName === '.git' || projectName === '.DS_Store') continue;
       projects.push(
         <div key={i++}>
           <span className={'pull-right'}>
