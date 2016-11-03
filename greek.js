@@ -51,6 +51,7 @@ const GreekParser = {
         var folder = fs.readdirSync(path.join(window.__base, 'UGNT'));
         for (var excel in folder) {
             if (folder[excel][0] == '.') continue;
+            //if it is not a DSstore
             var name = path.basename(folder[excel]).replace(extensionRegex, '');
             this.parseEachBook(folder[excel], name);
         }
