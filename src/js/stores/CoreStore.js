@@ -162,6 +162,10 @@ class CoreStore extends EventEmitter {
     this.currentCheckNamespace = value;
   }
 
+  getCurrentCheckNamespace() {
+    return this.currentCheckNamespace;
+  }
+
   getPopoverVisibility() {
     return {
       visibility: this.popoverVisibility,
