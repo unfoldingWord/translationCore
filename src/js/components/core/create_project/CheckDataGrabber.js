@@ -213,7 +213,7 @@ var CheckDataGrabber = {
       content: content,
       leftButtonText: 'Ok'
     }
-    api.createAlert(alert);
+    console.log(content);
   }
 };
 

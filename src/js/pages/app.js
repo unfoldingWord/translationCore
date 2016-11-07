@@ -2,7 +2,8 @@ const React = require('react');
 const bootstrap = require('react-bootstrap');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
-const SideNavBar = require('../components/core/SideBar/SideNavBar');
+const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
+const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
@@ -25,7 +26,6 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
-//const parse = require("../../../hebrew.js");
 
 var Main = React.createClass({
   getInitialState() {
@@ -80,15 +80,16 @@ var Main = React.createClass({
           <SettingsModal />
           <Upload ref={"TargetLanguage"} show={false} />
           <LoginModal />
-          <SideNavBar />
+          <ProjectModal />
+          <SideBarContainer />
+          <StatusBar />
           <SwitchCheckModal.Modal />
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '70px' }}>
+          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px"}}>
             <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#515151" }}>
-                <NavMenu />
-                <ProjectModal />
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474" }}>
+               <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
