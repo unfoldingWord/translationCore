@@ -44,8 +44,9 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
-    if (localStorage.getItem('crashed') == true) {
-      localStorage.clear();
+    if (localStorage.getItem('crashed') == 'true') {
+      localStorage.removeItem('lastProject');
+      api.setSettings('showTutorial', false);
     }
     if (localStorage.getItem('user')) {
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), "Secret Passphrase");
