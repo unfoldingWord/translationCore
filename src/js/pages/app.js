@@ -42,6 +42,10 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    if (localStorage.getItem('crashed'))
+    {
+      localStorage.clear();
+    } 
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
