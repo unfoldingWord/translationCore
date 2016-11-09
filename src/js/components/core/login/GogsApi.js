@@ -23,7 +23,8 @@ function UserManager(auth) {
           return token ? token : api.createToken(tokenStub, userObj);
         })
         .then(function (token) {
-          var encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(userObj), "Secret Passphrase");
+          var phrase = window.ModuleApi.getAuthToken('phrase');
+          var encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(userObj), phrase);
           localStorage.setItem('user', encryptedToken);
           user.token = token.sha1;
           return user;

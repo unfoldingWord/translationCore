@@ -32,7 +32,6 @@ const Upload = require('../components/core/Upload');
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
-    debugger;
     if (tutorialState == 'true' || tutorialState === null) {
       return ({
         firstTime: true
@@ -50,13 +49,13 @@ var Main = React.createClass({
       api.setSettings('showTutorial', false);
     }
     if (localStorage.getItem('user')) {
-      var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), "Secret Passphrase");
+      var phrase = api.getAuthToken('phrase');
+      var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
       var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
       var _this = this;
       var Token = api.getAuthToken('gogs');
       var newuser = gogs(Token).login(userdata).then(function (userdata) {
         CoreActions.login(userdata);
-        CoreActions.updateLoginModal(false);
         CoreActions.updateOnlineStatus(true);
         CoreActions.updateProfileVisibility(true);
       }).catch(function (reason) {
