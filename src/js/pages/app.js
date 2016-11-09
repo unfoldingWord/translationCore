@@ -49,7 +49,7 @@ var Main = React.createClass({
       api.setSettings('showTutorial', false);
     }
     if (localStorage.getItem('user')) {
-      var phrase = api.getAuthToken('phrase');
+      var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
       var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
       var _this = this;
@@ -60,16 +60,16 @@ var Main = React.createClass({
         CoreActions.updateProfileVisibility(true);
       }).catch(function (reason) {
         //console.log(reason);
-        if (reason.status === 401) {
-          dialog.showErrorBox('Login Failed', 'Incorrect username or password');
-        } else if (reason.hasOwnProperty('message')) {
-          dialog.showErrorBox('Login Failed', reason.message);
-        } else if (reason.hasOwnProperty('data')) {
-          let errorMessage = reason.data;
-          dialog.showErrorBox('Login Failed', errorMessage);
-        } else {
-          dialog.showErrorBox('Login Failed', 'Unknown Error');
-        }
+        // if (reason.status === 401) {
+        //   dialog.showErrorBox('Login Failed', 'Incorrect username or password');
+        // } else if (reason.hasOwnProperty('message')) {
+        //   dialog.showErrorBox('Login Failed', reason.message);
+        // } else if (reason.hasOwnProperty('data')) {
+        //   let errorMessage = reason.data;
+        //   dialog.showErrorBox('Login Failed', errorMessage);
+        // } else {
+        //   dialog.showErrorBox('Login Failed', 'Unknown Error');
+        // }
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
