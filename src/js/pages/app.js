@@ -42,7 +42,7 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
-    if (localStorage.getItem('crashed'))
+    if (localStorage.getItem('crashed') == true)
     {
       localStorage.clear();
     } 
