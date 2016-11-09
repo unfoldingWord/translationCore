@@ -50,7 +50,9 @@ module.exports = function(NAMESPACE) {
     }
 
     componentDidMount() {
-      this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
+      if(this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`]){
+        this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
+      }
     }
 
     updateMenuItem(params) {
@@ -142,7 +144,12 @@ module.exports = function(NAMESPACE) {
           </Well>
         </div>
       )
-      }
+    } else {
+      return (
+        <div>
+        </div>
+      )
+    }
     }
   }
 
