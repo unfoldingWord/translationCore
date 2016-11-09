@@ -30,6 +30,7 @@ const Upload = require('../components/core/Upload');
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
+    debugger;
     if (tutorialState == 'true' || tutorialState === null) {
       return ({
         firstTime: true
@@ -42,9 +43,10 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
-    if (localStorage.getItem('crashed') == true)
+    if (localStorage.getItem('crashed') == 'true')
     {
-      localStorage.clear();
+      localStorage.removeItem('lastProject');
+      api.setSettings('showTutorial', false);
     } 
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
