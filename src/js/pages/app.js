@@ -1,5 +1,7 @@
 const React = require('react');
 const bootstrap = require('react-bootstrap');
+var CryptoJS = require("crypto-js");
+const gogs = require('../components/core/login/GogsApi.js');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
@@ -42,16 +44,39 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
-    if (localStorage.getItem('crashed'))
-    {
+    if (localStorage.getItem('crashed') == true) {
       localStorage.clear();
-    } 
+    }
+    if (localStorage.getItem('user')) {
+      var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), "Secret Passphrase");
+      var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+      var _this = this;
+      var Token = api.getAuthToken('gogs');
+      var newuser = gogs(Token).login(userdata).then(function (userdata) {
+        CoreActions.login(userdata);
+        CoreActions.updateLoginModal(false);
+        CoreActions.updateOnlineStatus(true);
+        CoreActions.updateProfileVisibility(true);
+      }).catch(function (reason) {
+        //console.log(reason);
+        if (reason.status === 401) {
+          dialog.showErrorBox('Login Failed', 'Incorrect username or password');
+        } else if (reason.hasOwnProperty('message')) {
+          dialog.showErrorBox('Login Failed', reason.message);
+        } else if (reason.hasOwnProperty('data')) {
+          let errorMessage = reason.data;
+          dialog.showErrorBox('Login Failed', errorMessage);
+        } else {
+          dialog.showErrorBox('Login Failed', 'Unknown Error');
+        }
+      });
+    }
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
-            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+          CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
         }
       });
     }
@@ -90,10 +115,10 @@ var Main = React.createClass({
           <SwitchCheckModal.Modal />
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px"}}>
+          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474" }}>
-               <NavMenu />
+                <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
