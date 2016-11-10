@@ -1,4 +1,3 @@
-var electronInstaller = require('electron-winstaller');
 var packager = require('electron-packager');
 
 packager({
@@ -6,7 +5,7 @@ packager({
   dir: './',
   platform: 'win32',
   asar: true,
-  'build-version': '0.1.1',
+  'build-version': '0.1.5',
   icon: './build/icon.ico',
   name: 'translationCore',
   overwrite: 'true',
@@ -26,20 +25,7 @@ packager({
   } else {
     console.log('Packaging succesful');
     for (var path in appPaths) {
-      buildInstaller(appPaths[path]);
+      console.log("Package location: " + appPaths[path]);
     }
   }
 });
-
-function buildInstaller(packageLocation) {
-  console.log('Starting installer build...');
-  resultPromise = electronInstaller.createWindowsInstaller({
-    appDirectory: packageLocation,
-    exe: 'translationCore.exe',
-    outputDirectory: packageLocation + '/installer',
-    loadingGif: './images/TC_ANIMATED_Logo.gif',
-    setupIcon: './build/icon.ico',
-    setupExe: 'translationCoreSetup.exe'
-  });
-  resultPromise.then(() => console.log("Installer build succesful"), (e) => console.log(`Installer build failed: ${e.message}`));
-}
