@@ -30,7 +30,6 @@ const Upload = require('../components/core/Upload');
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
-    debugger;
     if (tutorialState == 'true' || tutorialState === null) {
       return ({
         firstTime: true
