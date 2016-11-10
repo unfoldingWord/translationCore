@@ -210,7 +210,6 @@ const UploadModal = React.createClass({
         params.bookAbbr = tcManifest.project_id;
       }
       if (isArray(tcManifest.source_translations)) {
-        debugger;
         params.gatewayLanguage = tcManifest.source_translations[0].language_id;
       } else {
         params.gatewayLanguage = tcManifest.source_translations.language_id;
