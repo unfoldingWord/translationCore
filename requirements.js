@@ -27,6 +27,7 @@ console.error = function(err){
       leftButtonText: "Reload"
     },
     ()=>{
+      localStorage.setItem('crashed', true);
       remote.getCurrentWindow().reload();
     });
 }
