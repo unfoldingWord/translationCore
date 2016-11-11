@@ -28,7 +28,9 @@ class RecentProjects extends React.Component {
   }
 
   loadProject(filePath) {
-    this.refs.TargetLanguage.sendFilePath(filePath, null, this.props.onLoad.bind(this));
+    console.log(this.refs.TargetLanguage);
+    console.log(this.props);
+    this.refs.TargetLanguage.sendFilePath(filePath, null, ()=>{});
     api.putDataInCommon('saveLocation', filePath);
   }
 
