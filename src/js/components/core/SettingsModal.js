@@ -59,7 +59,7 @@ const SettingsModal = React.createClass({
     var tutorialSelected = (tutorialView === false) ? 'hide' : 'show';
     var selectMethod = api.getSettings('textSelect');
     var developerMode = api.getSettings('developerMode');
-    var developerSelected = (developerMode === false) ? 'disable' : 'enable';
+    var developerSelected = (developerMode === true) ? 'enable' : 'disable';
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>

@@ -70,7 +70,7 @@ function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     mirror: function(url, path, callback) {
-      git.clone(url, path, function(err) {
+      git.clone(url, path, ['--recursive'], function(err) {
         if (err) {
           dialog.showErrorBox('Clone Error', err);
           if (callback) {

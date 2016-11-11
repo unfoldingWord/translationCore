@@ -232,8 +232,6 @@ pip-log.txt
 #Translations
 *.mo
 
-# Check tools
-modules/
 
 #Mr Developer
 .mr.developer.cfg
