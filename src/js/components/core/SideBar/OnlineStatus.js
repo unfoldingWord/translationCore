@@ -2,7 +2,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
-const {Button, ButtonGroup, Glyphicon} = RB;
+const {Glyphicon} = RB;
 const style = require("./Style");
 
 class OnlineStatus extends React.Component{
@@ -33,12 +33,11 @@ class OnlineStatus extends React.Component{
   }
 
   render(){
-    const statusColor = this.state.online ? style.glyphiconOnline : style.glyphiconOffline;
-
+    const textStatusColor = this.state.online ? style.textOnline : style.textOffline;
+    const status = this.state.online ? "Online " : "Offline ";
     return(
-      <div>
-        <li style={style.li}>
-          <Glyphicon glyph="signal" style={statusColor}/></li>
+      <div style={textStatusColor}>
+          Status: {status}
       </div>
       );
   }

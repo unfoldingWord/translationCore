@@ -31,7 +31,7 @@ class NavigationMenu extends React.Component {
 
   render() {
     if (!this.state.checkMenu) {
-      return <Well style={{minHeight:"100%"}}>{' '}</Well>;
+      return <Well style={{minHeight:"100%", background: "#c6c4c4", borderRadius: "0px", border: "none"}}>{' '}</Well>;
     }
     return (
       <this.state.checkMenu />
