@@ -46,10 +46,20 @@ const SettingsModal = React.createClass({
       api.setSettings('textSelect', 'click');
     }
   },
+  enableDeveloperMode: function(e){
+    var chosen = e.target.value;
+    if(chosen == 'enable'){
+      api.setSettings('developerMode', true);
+    } else if(chosen == 'disable'){
+      api.setSettings('developerMode', false);
+    }
+  },
   render: function() {
     var tutorialView = api.getSettings('showTutorial');
     var tutorialSelected = (tutorialView === false) ? 'hide' : 'show';
     var selectMethod = api.getSettings('textSelect');
+    var developerMode = api.getSettings('developerMode');
+    var developerSelected = (developerMode === true) ? 'enable' : 'disable';
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>
@@ -69,6 +79,13 @@ const SettingsModal = React.createClass({
               <FormControl componentClass="select" placeholder="select" defaultValue={selectMethod} onChange={this.changeTextSelect}>
                 <option value="drag">Drag to select</option>
                 <option value="click">Click to select</option>
+              </FormControl>
+            </FormGroup>
+            <FormGroup controlId="developerMode">
+              <ControlLabel>Enable Developer Mode</ControlLabel>
+              <FormControl componentClass="select" placeholder="select" defaultValue={developerSelected} onChange={this.enableDeveloperMode}>
+                <option value="disable">Disabled</option>
+                <option value="enable">Enabled</option>
               </FormControl>
             </FormGroup>
           </Modal.Body>
