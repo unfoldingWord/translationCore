@@ -48,7 +48,6 @@ class StatusBar extends React.Component{
     if(currentTool){
       this.setState({currentCheckNamespace: currentTool});
       this.getCurrentCheck();
-      console.log(this.state.currentCheckNamespace);
     }
     if(this.state.currentCheckNamespace !== ""){
       content = <div>
@@ -65,23 +64,19 @@ class StatusBar extends React.Component{
     if(this.state.currentCheckNamespace !== ""){
       groups = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'groups');
     }
-    console.log(groups);
-  if(groups){
-    console.log("it is doing it..");
-    var currentGroupIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentGroupIndex');
-    console.log(currentGroupIndex);
-    var currentCheckIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentCheckIndex');
-    console.log(currentCheckIndex);
-    var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
-    if(this.state.currentCheckNamespace === "TranslationWordsChecker"){
-      this.setState({currentWordOrPhrase: currentCheck.word});
-    }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
-      this.setState({currentWordOrPhrase: currentCheck.group});
-    }else {
-      console.error("currentCheckNamespace is undefined in CoreStore");
+    if(groups){
+      var currentGroupIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentGroupIndex');
+      var currentCheckIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentCheckIndex');
+      var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
+      if(this.state.currentCheckNamespace === "TranslationWordsChecker"){
+        this.setState({currentWordOrPhrase: currentCheck.word});
+      }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
+        this.setState({currentWordOrPhrase: currentCheck.group});
+      }else {
+        console.warn("current Word Or Phrase is undefined in CoreStore for currentCheckNamespace");
+        this.setState({currentWordOrPhrase: ''});
+      }
     }
-    console.log(currentCheck);
-  }
   }
 
   getSwitchCheckToolEvent(){
