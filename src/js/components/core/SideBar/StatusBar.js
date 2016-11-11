@@ -72,10 +72,8 @@ class StatusBar extends React.Component{
         this.setState({currentWordOrPhrase: currentCheck.word});
       }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
         this.setState({currentWordOrPhrase: currentCheck.group});
-      }else if (this.state.currentCheckNamespace === "TranslationQuestionsChecker") {
-        this.setState({currentWordOrPhrase: ''});
       }else {
-        console.warn("currentCheckNamespace is undefined in CoreStore");
+        console.warn("current Word Or Phrase is undefined in CoreStore for currentCheckNamespace");
         this.setState({currentWordOrPhrase: ''});
       }
     }
