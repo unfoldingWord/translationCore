@@ -46,7 +46,7 @@ const AlertModal = React.createClass({
           content: alertMessage['content'],
           leftButtonText: alertMessage['leftButtonText'],
           rightButtonText: alertMessage['rightButtonText'],
-          moreInfo: alertMessage['moreInfo'],
+          moreInfo: alertMessage['moreInfo'].toString(),
           visibility: true
         });
       } catch (e) {
@@ -115,7 +115,7 @@ const AlertModal = React.createClass({
                       More Info
                     </Button>
                     <Panel collapsible expanded={this.state.open}>
-                      {this.state.moreInfo};
+                      {this.state.moreInfo}
                     </Panel>
                   </div>
               </center>
