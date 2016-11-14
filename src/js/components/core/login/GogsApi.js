@@ -4,6 +4,8 @@
  ******************************************************************/
 const Gogs = require('gogs-client');
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
+var CryptoJS = require("crypto-js");
+
 function UserManager(auth) {
   return {
 /**
@@ -21,6 +23,9 @@ function UserManager(auth) {
           return token ? token : api.createToken(tokenStub, userObj);
         })
         .then(function (token) {
+          var phrase = window.ModuleApi.getAuthToken('phrase') != undefined ? window.ModuleApi.getAuthToken('phrase') : "tc-core";
+          var encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(userObj), phrase);
+          localStorage.setItem('user', encryptedToken);
           user.token = token.sha1;
           return user;
         });

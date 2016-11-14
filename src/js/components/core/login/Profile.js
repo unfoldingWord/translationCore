@@ -18,6 +18,7 @@ class Profile extends React.Component {
     CoreActions.updateOnlineStatus(false);
     CoreActions.updateProfileVisibility(false);
     CoreActions.login(null);
+    localStorage.removeItem('user');
   }
 
   showProjects(){
