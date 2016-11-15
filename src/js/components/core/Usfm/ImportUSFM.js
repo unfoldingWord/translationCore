@@ -25,14 +25,14 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} savePath - The path of the file containing usfm text.
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
-function openTargetLanguage(savePath, direction) {
+function openTargetLanguage(savePath, direction, link) {
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
-  fs.readFile(savePath, function(err, data) {
+  fs.readFile(savePath, function (err, data) {
     if (err) {
       console.error(err);
     } else {
@@ -65,7 +65,7 @@ function openTargetLanguage(savePath, direction) {
         var userData = {
           user: [CoreStore.getLoggedInUser()]
         };
-        saveManifest(saveLocation, userData);
+        saveManifest(saveLocation, userData, link);
         var params = {
           originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
           targetLanguagePath: saveLocation,
@@ -75,10 +75,16 @@ function openTargetLanguage(savePath, direction) {
           var parsedHeaders = parsedUSFM.headers;
           if (parsedHeaders['mt1']) {
             targetLanguage.title = parsedHeaders['mt1'];
-          } else if (parsedHeaders['id']){
+          } else if (parsedHeaders['id']) {
             targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
           }
-          params.bookAbbr = parsedHeaders['id'].toLowerCase();
+          params.bookAbbr = parsedHeaders['id'].split(" ")[0].toLowerCase();
+        }
+        debugger;
+        if (isOldTestament(params.bookAbbr)) {
+          params.originalLanguage = "hebrew";
+        } else {
+          params.originalLanguage = "greek";
         }
         api.putDataInCommon('params', params);
         api.putDataInCommon('targetLanguage', targetLanguage);
@@ -86,17 +92,34 @@ function openTargetLanguage(savePath, direction) {
     }
   });
 }
+
+  /**
+   * @desription - This returns true if the book is an OldTestament one
+   * @param {string} projectBook - the book in abr form
+   * manifest
+   */
+  function isOldTestament(projectBook){
+    var passedBook = false;
+    for (var book in books) {
+      if (book == projectBook) passedBook = true;
+      if (books[book] == "Malachi" && passedBook) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 /**
  * @description This function saves a translationCore manifest.
  * @param {String} saveLocation - The directory to save the manifest.
  * @param {Object} data - An object accepted by ManifestGenerator
  ******************************************************************************/
-function saveManifest(saveLocation, data) {
+function saveManifest(saveLocation, data, link) {
   try {
     var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-    var manifest = ManifestGenerator(data);
+    var manifest = ManifestGenerator(data, undefined);
     api.putDataInCommon('tcManifest', manifest);
-    fs.outputJson(manifestLocation, manifest, function(err) {
+    fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
         const alert = {
           title: 'Error Saving Manifest',
@@ -140,7 +163,7 @@ function translationCoreManifestPresent(location) {
  * @param {function} callback - Passes back any errors or data.
  ******************************************************************************/
 function getManifest(folderPath, callback) {
-  fs.readJson(path.join(folderPath, 'tc-manifest.json'), function(err, data) {
+  fs.readJson(path.join(folderPath, 'tc-manifest.json'), function (err, data) {
     callback(err, data);
   });
 }
@@ -148,49 +171,49 @@ function getManifest(folderPath, callback) {
  * @description This function loads an existing USFM project.
  * @param {String} folderPath - The directory of the project
  ******************************************************************************/
- function loadProject(saveLocation) {
-   getManifest(saveLocation, function(error, tsManifest) {
-     if (error) {
-       console.error(error);
-       const alert = {
-         title: 'Error Getting Transaltion Studio Manifest',
-         content: error.message,
-         leftButtonText: 'Ok'
-       };
-       api.createAlert(alert);
-     } else {
-       var Access = require('../AccessProject');
-       Access.loadFromFilePath(saveLocation);
-     }
-   });
- }
+function loadProject(saveLocation) {
+  getManifest(saveLocation, function (error, tsManifest) {
+    if (error) {
+      console.error(error);
+      const alert = {
+        title: 'Error Getting Transaltion Studio Manifest',
+        content: error.message,
+        leftButtonText: 'Ok'
+      };
+      api.createAlert(alert);
+    } else {
+      var Access = require('../AccessProject');
+      Access.loadFromFilePath(saveLocation);
+    }
+  });
+}
 
 var ImportComponent = React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       direction: null,
       filePath: 'No file selected'
     };
   },
 
-  showDialog: function() {
+  showDialog: function () {
     var options = {
       filters: [
-        {name: 'USFM', extensions: ['usfm', 'sfm', 'txt']}
+        { name: 'USFM', extensions: ['usfm', 'sfm', 'txt'] }
       ]
     };
     var _this = this;
     var direction = this.state.direction;
     if (direction && !this.open) {
       this.open = true;
-      dialog.showOpenDialog(options, function(savePath) {
+      dialog.showOpenDialog(options, function (savePath) {
         CheckStore.WIPE_ALL_DATA();
         api.modules = {};
         _this.setState({
           filePath: savePath[0]
         });
         _this.open = false;
-        openTargetLanguage(savePath[0], direction);
+        openTargetLanguage(savePath[0], direction, undefined);
       });
     } else {
       _this.setState({
@@ -199,28 +222,28 @@ var ImportComponent = React.createClass({
     }
   },
 
-  handleTextChange: function(e) {
+  handleTextChange: function (e) {
     this.setState({
       direction: e.target.value
     });
   },
 
-  render: function() {
+  render: function () {
     return (
       <div>
-      {this.props.isWelcome ? <div> </div> : <br />}
-      <FormGroup>
-        <FormControl componentClass="select" onChange={this.handleTextChange}>
-          <option value={'ltr'}>Select text direction</option>
-          <option value={'ltr'}>Left to right</option>
-          <option value={'rtl'}>Right to left</option>
-        </FormControl>
         {this.props.isWelcome ? <div> </div> : <br />}
-        <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
-        <span style={{color: '#333'}}> &nbsp; {this.state.filePath}</span>
-      </FormGroup>
-      {this.props.isWelcome ? <div> </div> : <br />}
-      <br />
+        <FormGroup>
+          <FormControl componentClass="select" onChange={this.handleTextChange}>
+            <option value={'ltr'}>Select text direction</option>
+            <option value={'ltr'}>Left to right</option>
+            <option value={'rtl'}>Right to left</option>
+          </FormControl>
+          {this.props.isWelcome ? <div> </div> : <br />}
+          <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
+          <span style={{ color: '#333' }}> &nbsp; {this.state.filePath}</span>
+        </FormGroup>
+        {this.props.isWelcome ? <div> </div> : <br />}
+        <br />
       </div>
     );
   }

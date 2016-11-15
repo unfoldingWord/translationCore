@@ -1,0 +1,67 @@
+{
+  "questionsList": [
+    {
+      "group": "Overview",
+      "questionsTypeBinary": true,
+      "questions":{
+        "meaningBased":"This translation is a meaning-based translation that attempts to communicate the meaning of the original text in ways that are natural, clear, and accurate in the target language.",
+        "firstLangSpeakers":"Those involved in checking the translation are first-language speakers of the target language.",
+        "StatementOfFaith":"The translation of this chapter is in agreement with the Statement of Faith.",
+        "translationGuidelines":"The translation of this chapter has been done in accordance with the Translation Guidelines."
+      }
+    },
+    {
+      "group": "Naturalness",
+      "questionsTypeBinary": false,
+      "questions":{
+        "formOfLanguage":"Those who speak this language and have heard this chapter agree that it is translated using the correct form of the language.",
+        "cultureCorrect":"Those who speak this language agree that the key words used in this chapter are acceptable and correct for this culture.",
+        "easyUnderstood":"The illustrations or stories in this chapter are easy for people who speak this language to understand.",
+        "naturalText":"Those who speak this language agree that the sentence structure and order of the text in this chapter is natural and flows correctly.",
+        "communityReviewed":"The review of the translation of this chapter for naturalness included community members who have not been directly involved in creating the translation of this chapter.",
+        "belNonBelReviewed":"The review of the translation of this chapter for naturalness included both believers and non-believers, or at least believers who are relatively unfamiliar with the Bible so that they do not know what the text is supposed to say before they hear it.",
+        "multAgeGroups":"The review of the translation of this chapter for naturalness included speakers of the language from many different age groups.",
+        "menAndWomen":"The review of the translation of this chapter for naturalness included both men and women."
+      }
+    },
+    {
+      "group": "Clarity",
+      "questionsTypeBinary": false,
+      "questions":{
+        "easyUnderstood":"This chapter is translated using language that native speakers of the language agree is easy to understand.",
+        "correctNamingsVerbs":"Speakers of this language agree that the translations of names, places, and verb tenses are all correct in this chapter.",
+        "figuresofSpeech":"Figures of speech in this chapter make sense for people in this culture.",
+        "meaningKept":"Speakers of this language agree that the way this chapter is structured does not distract from the meaning.",
+        "communityReviewed":"The review of the translation of this chapter for clarity included community members who have not been directly involved in creating the translation of this chapter.",
+        "belNonBelReviewed":"The review of the translation of this chapter for clarity included both believers and non-believers, or at least believers who are relatively unfamiliar with the Bible so that they do not know what the text is supposed to say before they hear it.",
+        "multAgeGroups":"The review of the translation of this chapter for clarity included speakers of the language from many different age groups.",
+        "menAndWomen":"The review of the translation of this chapter for clarity included both men and women."
+      }
+    },
+    {
+      "group": "Accuracy",
+      "questionsTypeBinary": false,
+      "questions":{
+        "importantWordsUsed":"A complete list of all important words in the source text for this chapter has been used to help ensure all terms are present in the translation.",
+        "wordCorrect":"All important words are translated correctly in this chapter.",
+        "wordConsistent":"All important words are translated consistently in this chapter, as well as in other places where the important words appear.",
+        "exegeticalUsed":"Exegetical resources have been used for the entire chapter to identify and resolve potential translation challenges.",
+        "correctNamingsVerbs":"Historical details in the source text (like names, places, and events) have been preserved in the translation.",
+        "figuresofSpeech":"The meaning of each figure of speech in the translated chapter has been compared and aligned to the intent of the original.",
+        "communityReviewed":"The translation has been tested with native speakers who were not involved in creating the translation and they agree that the translation accurately communicates the intended meaning of the source text.",
+        "srcTextCompared":"The translation of this chapter has been compared against at least two source texts.",
+        "origTextCompared":"The translation of this chapter has been compared against the original texts (Hebrew, Greek, Aramaic) to check for correct lexical definitions and intent of the original texts."
+      }
+    },
+    {
+      "group":"Church Approval",
+      "questionsTypeBinary": true,
+      "questions":{
+        "nativeAndGatewayReviewer":"Church leaders who have checked this translation are native speakers of the target language, and include someone who understands well one of the languages in which the source text is available.",
+        "naturalAndClear":"People from at least two different church networks have reviewed the translation of this chapter and agree that it is natural and clear.* (Note: this addresses the first part of the community check for Level 2.)*",
+        "accurate":"Church leaders from at least two different church networks have reviewed the translation of this chapter and agree that it is accurate. (This addresses the final aspect of Level 2, the Church check).",
+        "faithful":"The leadership or their delegates of at least two different church networks have reviewed the translation of this chapter and endorse it as a faithful translation of this chapter of the Bible in this language. (This addresses Level 3.)"
+      }
+    }
+  ]
+}

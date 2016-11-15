@@ -1,0 +1,25 @@
+{
+  "name": "checkingRubricTool",
+  "version": "1.0.0",
+  "description": "This is a tool to check the quality assurance of a bible translation project.",
+  "title": "checkingRubric Tool",
+  "include": [
+    "TPane",
+    "CommentBox"
+  ],
+  "main": "View.js",
+  "display": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "fs-extra": "^1.0.0",
+    "react": "^15.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/translationCoreApps/checkingRubric_tool.git"
+  },
+  "license": "UNLICENSED"
+}
