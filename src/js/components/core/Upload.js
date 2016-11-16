@@ -90,34 +90,15 @@ const UploadModal = React.createClass({
                 });
               }
               else if (err) {
-                _this.loadUSFMProject(path, (err, project) => {
-                  if (!err) {
-                      ImportUsfm.loadProject(path);
-                  }
-                  else {
                     localStorage.removeItem('lastProject');
                     api.putDataInCommon('saveLocation', null);
                     _this.manifestError(err);
                   }
-                });
-              }
             });
         } else if (err) {
           _this.manifestError(err);
         }
       });
-    }
-  },
-
-  loadUSFMProject: function (path, callback) {
-    try {
-      var hasManifest = fs.readJsonSync(Path.join(path, 'meta.json'));
-      if (hasManifest) {
-        callback(null, hasManifest);
-      }
-    }
-    catch (e) {
-      callback(e, null);
     }
   },
 

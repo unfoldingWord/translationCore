@@ -25,89 +25,96 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} savePath - The path of the file containing usfm text.
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
-function openTargetLanguage(savePath, direction, link) {
+function openUSFMProject(savePath, direction, link) {
+  clearPreviousData();
+  createTCProject(savePath, (parsedUSFM, saveLocation) => {
+    saveTargetLangeInAPI(parsedUSFM);
+    saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
+    loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
+      if (tcManifest) {
+        loadProjectThatHasManifest(tcManifest, saveLocation);
+      } else if (!tcManifest) {
+        var userData = {
+          user: [CoreStore.getLoggedInUser()]
+        };
+        var defaultManifest = {
+          targetLanguage:{
+            direction: direction,
+            id: "",
+            name: name
+          },
+        }
+        saveManifest(saveLocation, defaultManifest, userData, link, (tcManifest) => {
+          loadProjectThatHasManifest(tcManifest, saveLocation);
+        });
+      }
+    });
+  });
+}
+
+function saveParamsInAPI(bookAbbr, saveLocation, direction) {
+  var params = {
+    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    targetLanguagePath: saveLocation,
+    direction: direction,
+    bookAbbr: bookAbbr
+  };
+  if (isOldTestament(params.bookAbbr)) {
+    params.originalLanguage = "hebrew";
+  } else {
+    params.originalLanguage = "greek";
+  }
+  api.putDataInCommon('params', params);
+}
+
+function saveTargetLangeInAPI(parsedUSFM) {
+  var targetLanguage = {};
+  targetLanguage.title = parsedUSFM.book;
+  // targetLanguage.header = parsedUSFM.headers;
+  var chapters = parsedUSFM.chapters;
+  for (var ch in chapters) {
+    targetLanguage[chapters[ch].number] = {};
+    var verses = chapters[ch].verses;
+    for (var v in verses) {
+      var verseText = verses[v].text.trim();
+      targetLanguage[chapters[ch].number][verses[v].number] = verseText;
+    }
+  }
+  if (parsedUSFM.headers) {
+    var parsedHeaders = parsedUSFM.headers;
+    if (parsedHeaders['mt1']) {
+      targetLanguage.title = parsedHeaders['mt1'];
+    } else if (parsedHeaders['id']) {
+      targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+    }
+  }
+  api.putDataInCommon('targetLanguage', targetLanguage);
+}
+
+function loadProjectThatHasManifest(tcManifest, saveLocation) {
+  //tc-manifest is present initiate load
   const Access = require('../AccessProject');
-  CheckStore.WIPE_ALL_DATA();
-  api.modules = {};
+  api.putDataInCommon('tcManifest', tcManifest);
+  Access.loadFromFilePath(saveLocation);
+}
+
+function createTCProject(savePath, callback) {
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
   Recent.add(saveLocation);
-  fs.readFile(savePath, function (err, data) {
-    if (err) {
-      console.error(err);
-    } else {
-      fs.ensureDir(saveLocation, function (err) {
-        if (err) console.error(err); // => null
-        fs.writeFileSync(saveFile, data.toString());
-      });
-      var usfmData = data.toString();
-      try {
-        var parsedUSFM = usfm.toJSON(usfmData);
-      } catch (err) {
-        console.error(err);
-        return;
-      }
-      var targetLanguage = {};
-      targetLanguage.title = parsedUSFM.book;
-      // targetLanguage.header = parsedUSFM.headers;
-      var chapters = parsedUSFM.chapters;
-      for (var ch in chapters) {
-        targetLanguage[chapters[ch].number] = {};
-        var verses = chapters[ch].verses;
-        for (var v in verses) {
-          var verseText = verses[v].text.trim();
-          targetLanguage[chapters[ch].number][verses[v].number] = verseText;
-        }
-      }
-      var bookAbr = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
-      loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
-        if (tcManifest) {
-          debugger;
-          //tc-manifest is present initiate load
-          api.putDataInCommon('tcManifest', tcManifest);
-          var params = getParams(saveLocation, direction, bookAbr);
-          api.putDataInCommon('params', params);
-          api.putDataInCommon('targetLanguage', targetLanguage);
-          Access.loadFromFilePath(saveLocation);
-        } else if (!tcManifest) {
-          var userData = {
-            user: [CoreStore.getLoggedInUser()]
-          };
-          saveManifest(saveLocation, userData, link);
-          var params = getParams(saveLocation, direction, bookAbr);
-          if (parsedUSFM.headers) {
-            var parsedHeaders = parsedUSFM.headers;
-            if (parsedHeaders['mt1']) {
-              targetLanguage.title = parsedHeaders['mt1'];
-            } else if (parsedHeaders['id']) {
-              targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
-            }
-          }
-          api.putDataInCommon('params', params);
-          api.putDataInCommon('targetLanguage', targetLanguage);
-          Access.loadFromFilePath(saveLocation, undefined);
-        }
-      });
-    }
-  });
-}
-
-function getParams(saveLocation, direction, bookAbr) {
-  var params = {
-    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
-    targetLanguagePath: saveLocation,
-    direction: direction,
-    bookAbr: bookAbr
-  };
-  if (isOldTestament(params.bookAbr)) {
-    params.originalLanguage = "hebrew";
-  } else {
-    params.originalLanguage = "greek";
+  try {
+    var data = fs.readFileSync(savePath);
+    fs.ensureDirSync(saveLocation);
+    fs.writeFileSync(saveFile, data.toString());
+    var usfmData = data.toString();
+    var parsedUSFM = usfm.toJSON(usfmData);
+    parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+  } catch (e) {
+    console.error(e);
   }
-  return params;
-
+  callback(parsedUSFM, saveLocation);
 }
 
 /**
@@ -131,39 +138,31 @@ function isOldTestament(projectBook) {
  * @param {String} saveLocation - The directory to save the manifest.
  * @param {Object} data - An object accepted by ManifestGenerator
  ******************************************************************************/
-function saveManifest(saveLocation, data, link) {
+function saveManifest(saveLocation, defaultManifest, data, link, callback) {
   try {
     var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
     var manifest = ManifestGenerator(data, undefined);
+    //TODO
     api.putDataInCommon('tcManifest', manifest);
     fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
-        const alert = {
-          title: 'Error Saving Manifest',
-          content: err.message,
-          leftButtonText: 'Ok'
-        };
-        api.createAlert(alert);
-        console.error(err);
+        //this.manifestError('Error Saving tC Manifest');
       }
+      //overwrites old manifest if present, or else creates new one
+      callback(null, manifest);
     });
-  } catch (err) {
-    console.error(err);
-    const alert = {
-      title: 'Error Saving translationCore Manifest',
-      content: err.message,
-      leftButtonText: 'Ok'
-    };
-    api.createAlert(alert);
+  }
+  catch (err) {
+    callback(err, null);
   }
 }
 /**
  * @description - This checks to see if a valid translationCore manifest file is present.
  * @param {string} path - absolute path to a translationStudio project folder
  */
-function loadTranslationCoreManifest(path, callback) {
+function loadTranslationCoreManifest(savePath, callback) {
   try {
-    var hasManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
+    var hasManifest = fs.readJsonSync(path.join(savePath, 'tc-manifest.json'));
     if (hasManifest) {
       callback(null, hasManifest);
     }
@@ -181,6 +180,11 @@ function getManifest(folderPath, callback) {
   fs.readJson(path.join(folderPath, 'tc-manifest.json'), function (err, data) {
     callback(err, data);
   });
+}
+
+function clearPreviousData() {
+  CheckStore.WIPE_ALL_DATA();
+  api.modules = {};
 }
 
 var ImportComponent = React.createClass({
@@ -208,7 +212,7 @@ var ImportComponent = React.createClass({
           filePath: savePath[0]
         });
         _this.open = false;
-        openTargetLanguage(savePath[0], direction, undefined);
+        openUSFMProject(savePath[0], direction, undefined);
       });
     } else {
       _this.setState({
@@ -244,4 +248,4 @@ var ImportComponent = React.createClass({
   }
 });
 exports.component = ImportComponent;
-exports.open = openTargetLanguage;
+exports.open = openUSFMProject;

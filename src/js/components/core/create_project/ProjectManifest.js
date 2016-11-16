@@ -69,7 +69,7 @@ function populate(data, tsManifest) {
       projectManifest.check_modules.push(currentItem.name);
     }
   }
-
+  try {
   if (tsManifest) {
     projectManifest.target_language = tsManifest.target_language;
     projectManifest.type = tsManifest.type;
@@ -81,6 +81,9 @@ function populate(data, tsManifest) {
       projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
     }
     projectManifest.translators = tsManifest.translators;
+  }
+  } catch(e) {
+    console.log("error in project manifest");
   }
 
   return projectManifest;
