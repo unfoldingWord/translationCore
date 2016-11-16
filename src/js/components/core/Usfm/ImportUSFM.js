@@ -6,9 +6,9 @@ const usfm = require('usfm-parser');
 const pathex = require('path-extra');
 const api = window.ModuleApi;
 
-const Access = require('../AccessProject');
 const ManifestGenerator = require('../create_project/ProjectManifest.js');
 const books = require('../BooksOfBible.js');
+const Recent = require('../RecentProjects.js');
 
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
@@ -26,12 +26,14 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
 function openTargetLanguage(savePath, direction, link) {
+  const Access = require('../AccessProject');
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
+  Recent.add(saveLocation);
   fs.readFile(savePath, function (err, data) {
     if (err) {
       console.error(err);
@@ -59,55 +61,70 @@ function openTargetLanguage(savePath, direction, link) {
           targetLanguage[chapters[ch].number][verses[v].number] = verseText;
         }
       }
-      if (translationCoreManifestPresent(saveLocation)) {
-        loadProject(saveLocation);
-      } else {
-        var userData = {
-          user: [CoreStore.getLoggedInUser()]
-        };
-        saveManifest(saveLocation, userData, link);
-        var params = {
-          originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
-          targetLanguagePath: saveLocation,
-          direction: direction
-        };
-        if (parsedUSFM.headers) {
-          var parsedHeaders = parsedUSFM.headers;
-          if (parsedHeaders['mt1']) {
-            targetLanguage.title = parsedHeaders['mt1'];
-          } else if (parsedHeaders['id']) {
-            targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+      var bookAbr = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+      loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
+        if (tcManifest) {
+          debugger;
+          //tc-manifest is present initiate load
+          api.putDataInCommon('tcManifest', tcManifest);
+          var params = getParams(saveLocation, direction, bookAbr);
+          api.putDataInCommon('params', params);
+          api.putDataInCommon('targetLanguage', targetLanguage);
+          Access.loadFromFilePath(saveLocation);
+        } else if (!tcManifest) {
+          var userData = {
+            user: [CoreStore.getLoggedInUser()]
+          };
+          saveManifest(saveLocation, userData, link);
+          var params = getParams(saveLocation, direction, bookAbr);
+          if (parsedUSFM.headers) {
+            var parsedHeaders = parsedUSFM.headers;
+            if (parsedHeaders['mt1']) {
+              targetLanguage.title = parsedHeaders['mt1'];
+            } else if (parsedHeaders['id']) {
+              targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+            }
           }
-          params.bookAbbr = parsedHeaders['id'].split(" ")[0].toLowerCase();
+          api.putDataInCommon('params', params);
+          api.putDataInCommon('targetLanguage', targetLanguage);
+          Access.loadFromFilePath(saveLocation, undefined);
         }
-        debugger;
-        if (isOldTestament(params.bookAbbr)) {
-          params.originalLanguage = "hebrew";
-        } else {
-          params.originalLanguage = "greek";
-        }
-        api.putDataInCommon('params', params);
-        api.putDataInCommon('targetLanguage', targetLanguage);
-      }
+      });
     }
   });
 }
 
-  /**
-   * @desription - This returns true if the book is an OldTestament one
-   * @param {string} projectBook - the book in abr form
-   * manifest
-   */
-  function isOldTestament(projectBook){
-    var passedBook = false;
-    for (var book in books) {
-      if (book == projectBook) passedBook = true;
-      if (books[book] == "Malachi" && passedBook) {
-        return true;
-      }
-    }
-    return false;
+function getParams(saveLocation, direction, bookAbr) {
+  var params = {
+    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    targetLanguagePath: saveLocation,
+    direction: direction,
+    bookAbr: bookAbr
+  };
+  if (isOldTestament(params.bookAbr)) {
+    params.originalLanguage = "hebrew";
+  } else {
+    params.originalLanguage = "greek";
   }
+  return params;
+
+}
+
+/**
+ * @desription - This returns true if the book is an OldTestament one
+ * @param {string} projectBook - the book in abr form
+ * manifest
+ */
+function isOldTestament(projectBook) {
+  var passedBook = false;
+  for (var book in books) {
+    if (book == projectBook) passedBook = true;
+    if (books[book] == "Malachi" && passedBook) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * @description This function saves a translationCore manifest.
@@ -141,21 +158,19 @@ function saveManifest(saveLocation, data, link) {
   }
 }
 /**
- * @description This function searches for a translationCore manifest
- * @param {String} location - The directory to search for the manifest
- * @return {boolean} - Whether or not the translationCore manifest exists.
- ******************************************************************************/
-function translationCoreManifestPresent(location) {
-  // this currently just uses 'require' and if it throws an error it will return false
+ * @description - This checks to see if a valid translationCore manifest file is present.
+ * @param {string} path - absolute path to a translationStudio project folder
+ */
+function loadTranslationCoreManifest(path, callback) {
   try {
-    require(path.join(location, 'tc-manifest.json'));
-    return true;
-  } catch (e) {
-    if (e.code !== 'MODULE_NOT_FOUND') {
-      console.error(e);
+    var hasManifest = fs.readJsonSync(Path.join(path, 'tc-manifest.json'));
+    if (hasManifest) {
+      callback(null, hasManifest);
     }
   }
-  return false;
+  catch (e) {
+    callback(e, null);
+  }
 }
 /**
  * @description This function gets the translationCore manifest.
@@ -165,26 +180,6 @@ function translationCoreManifestPresent(location) {
 function getManifest(folderPath, callback) {
   fs.readJson(path.join(folderPath, 'tc-manifest.json'), function (err, data) {
     callback(err, data);
-  });
-}
-/**
- * @description This function loads an existing USFM project.
- * @param {String} folderPath - The directory of the project
- ******************************************************************************/
-function loadProject(saveLocation) {
-  getManifest(saveLocation, function (error, tsManifest) {
-    if (error) {
-      console.error(error);
-      const alert = {
-        title: 'Error Getting Transaltion Studio Manifest',
-        content: error.message,
-        leftButtonText: 'Ok'
-      };
-      api.createAlert(alert);
-    } else {
-      var Access = require('../AccessProject');
-      Access.loadFromFilePath(saveLocation);
-    }
   });
 }
 
@@ -249,5 +244,4 @@ var ImportComponent = React.createClass({
   }
 });
 exports.component = ImportComponent;
-exports.loadProject = loadProject;
 exports.open = openTargetLanguage;
