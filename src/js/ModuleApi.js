@@ -32,6 +32,7 @@ class ModuleApi {
     this.ReportFilters = this.ReportFiltersTools.filter;
     this.gitStack = [];
     this.gitDone = true;
+    this.currentGroupName = null;
   }
 
   findDOMNode(component) {
@@ -348,6 +349,25 @@ class ModuleApi {
     var settingsString = JSON.stringify(settingsObj);
     localStorage.setItem('settings', settingsString);
   }
+
+  setCurrentGroupName(groupName){
+    this.currentGroupName = groupName;
+  }
+
+  getCurrentGroupName(){
+    return this.currentGroupName;
+  }
+
+  getSubMenuItems(){
+    let subMenuItems = [];
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
+    if(currentGroupIndex >= 0){
+      subMenuItems = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
+    }
+    return subMenuItems.checks;
+  }
+
 }
 
 const api = new ModuleApi();

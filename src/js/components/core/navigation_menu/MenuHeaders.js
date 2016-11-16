@@ -3,24 +3,20 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
-const Glyphicon = ReactBootstrap.Glyphicon;
-const style = require('./Style');
 
 class MenuHeaders extends React.Component {
   constructor(){
     super();
     this.state ={
-
     }
   }
 
   handleSelection(groupName){
-    console.log(groupName);
+    api.setCurrentGroupName(groupName);
   }
 
   render() {
     var groupsName = [];
-    console.log(this.props.currentTool);
     if(this.props.currentTool){
       var groupsObjects = api.getDataFromCheckStore(this.props.currentTool, 'groups');
       for(var i in groupsObjects){
@@ -32,9 +28,7 @@ class MenuHeaders extends React.Component {
           </tr>
         );
       }
-
     }
-    console.log(groupsName);
     return (
       <table style={{color: "#FFF"}}>
         <tbody>

@@ -3,38 +3,44 @@ const Well = require('react-bootstrap/lib/Well.js');
 
 // const MenuItem = require('./MenuItem');
 const api = window.ModuleApi;
+const SubMenu = require('./SubMenu.js');
+
 
 class NavigationMenu extends React.Component {
   constructor() {
     super();
     this.state = {
+      subMenuItemsArray: null,
       checkMenu: null
     };
-    this.updateCheckObject = this.updateCheckObject.bind(this);
-    // this.updateMenuItem = this.updateMenuItem.bind(this);
-  }
+    this.getSubMenuItemsFromCheckStore = this.getSubMenuItemsFromCheckStore.bind(this);
+}
 
   componentWillMount() {
-    api.registerEventListener('changeCheckType', this.updateCheckObject);
+    api.registerEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
+    api.registerEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
+    api.registerEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
+    api.registerEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.updateCheckObject);
+    api.removeEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
+    api.removeEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
+    api.removeEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
+    api.removeEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
   }
 
-  updateCheckObject(params) {
-    var checkData = (params === undefined ? undefined : api.getMenu(params.currentCheckNamespace));
-    this.setState({
-      checkMenu: checkData
-    });
+  getSubMenuItemsFromCheckStore(){
+    let subMenuItemsArray = api.getSubMenuItems();
+    console.log(subMenuItemsArray);
+    this.setState({subMenuItemsArray: subMenuItemsArray});
   }
 
   render() {
-    if (!this.state.checkMenu) {
-      return <Well style={{minHeight:"100%", background: "#c6c4c4", borderRadius: "0px", border: "none"}}>{' '}</Well>;
-    }
     return (
-      <this.state.checkMenu />
+      <div>
+        <SubMenu subMenuItemsArray={this.state.subMenuItemsArray}/>
+      </div>
     );
   }
 }
