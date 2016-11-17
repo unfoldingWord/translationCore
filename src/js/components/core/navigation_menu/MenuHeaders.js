@@ -3,6 +3,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
+const style = require('./Style');
 
 class MenuHeaders extends React.Component {
   constructor(){

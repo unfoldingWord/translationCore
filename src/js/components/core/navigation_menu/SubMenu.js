@@ -28,7 +28,7 @@ class SubMenu extends React.Component {
         <tr key={i}
             onClick={this.handleItemSelection.bind(this, i)}
             style={style.subMenuChecks}
-            title="Click to this check">
+            title="Click to select this check">
           {bookName + " " + subMenuItemsArray[i].chapter + ":" +
             subMenuItemsArray[i].verse}
         </tr>
