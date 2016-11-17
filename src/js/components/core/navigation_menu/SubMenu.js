@@ -3,19 +3,15 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
+const CoreStore = require('../../../stores/CoreStore.js');
+const style = require('./Style');
 
 
 class SubMenu extends React.Component {
   constructor(){
     super();
     this.state = {
-      currentGroupName: null,
     }
-  }
-
-  getCurrentGroupName(){
-    var currentGroupName = api.getCurrentGroupName();
-    this.setState({currentGroupName: currentGroupName});
   }
 
   handleItemSelection(index){
@@ -25,12 +21,15 @@ class SubMenu extends React.Component {
   generateSubMenuButtons(){
     let subMenuItemsArray = this.props.subMenuItemsArray;
     let subMenuItems = [];
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
     for(var i in subMenuItemsArray){
       subMenuItems.push(
         <tr key={i}
             onClick={this.handleItemSelection.bind(this, i)}
-            style={{display: "block", padding: "10px 10px 10px 15px", cursor: "pointer", borderBottom: "1px solid #333333", color: "#FFF", width: "100vw"}}>
-          {subMenuItemsArray[i].chapter + ":" + subMenuItemsArray[i].verse}
+            style={style.subMenuChecks}>
+          {bookName + " " + subMenuItemsArray[i].chapter + ":" +
+            subMenuItemsArray[i].verse}
         </tr>
       );
     }
