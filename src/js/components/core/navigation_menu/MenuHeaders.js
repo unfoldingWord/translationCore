@@ -23,7 +23,8 @@ class MenuHeaders extends React.Component {
         groupsName.push(
           <tr key={i}
               onClick={this.handleSelection.bind(this, groupsObjects[i].group)}
-              style={{display: "block", padding: "10px", cursor: "pointer", borderBottom: "1px solid #747474"}}>
+              style={style.MenuHeaders}
+              title="Click to select this reference">
             {groupsObjects[i].group}
           </tr>
         );

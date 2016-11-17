@@ -33,6 +33,13 @@
     }
   },
 
+  MenuHeaders: {
+    display: "block",
+    padding: "10px",
+    cursor: "pointer",
+    borderBottom: "1px solid #747474"
+  },
+
   subMenuChecks: {
     display: "block",
     padding: "10px 10px 10px 15px",
