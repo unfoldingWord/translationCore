@@ -39,7 +39,6 @@ class SideBarContainer extends React.Component{
     this.setState({currentToolNamespace: currentToolNamespace})
   }
 
-
   changeView(){
     this.setState({SideNavBar: !this.state.SideNavBar});
     this.setState({direction: !this.state.direction});

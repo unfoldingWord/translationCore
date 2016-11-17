@@ -34,7 +34,6 @@ class NavigationMenu extends React.Component {
 
   getSubMenuItemsFromCheckStore(){
     let subMenuItemsArray = api.getSubMenuItems();
-    console.log(subMenuItemsArray);
     this.setState({subMenuItemsArray: subMenuItemsArray});
   }
 

@@ -368,22 +368,10 @@ class ModuleApi {
     }
     this.currentGroupName = foundGroup.group;
   }
-/*
-  getSubMenuItems(){
-    let subMenuItems = [];
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
-    let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
-    if(currentGroupIndex >= 0){
-      subMenuItems = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
-    }
-    this.getCurrentGroupItems();
-    return subMenuItems.checks;
-  }
-*/
+
   getSubMenuItems(){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    console.log(groups);
     let foundGroup = [];
     if(this.currentGroupName){
       if(groups){
@@ -396,11 +384,8 @@ class ModuleApi {
   changeCurrentIndexes(checkIndex){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    console.log(groups);
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup)
-    console.log(groupIndex);
-    console.log(checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     //TODO: FIND THE APPROPIATE EVENT
