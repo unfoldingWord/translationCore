@@ -404,32 +404,15 @@ class ModuleApi {
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     //TODO: FIND THE APPROPIATE EVENT
-    api.emitEvent('goToCheck');
-
-    /*
-
-    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
-    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', 0);
-
-
-    console.log(foundGroup);
-    let checks =  foundGroup.checks;
-    console.log(checks);
-
-    let newIndex;
-    for(var i in checks){
-      if(checks[i] === index){
-        newIndex = checks.indexOf();
+    api.emitEvent('goToCheck',
+      {
+        'groupIndex': groupIndex,
+        'checkIndex': checkIndex
       }
-    }
-    let foundCheck = checks.find(arrayElement => arrayElement === chapter);
-    console.log(foundCheck);
-    console.log(checks.indexOf(foundCheck));
-
-
-    */
-
+    );
   }
+
+
 
 }
 
