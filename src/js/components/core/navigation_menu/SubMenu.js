@@ -25,8 +25,7 @@ class SubMenu extends React.Component {
       subMenuItems.push(
         <tr key={i}
             style={{display: "block", padding: "10px 10px 10px 15px", cursor: "pointer", borderBottom: "1px solid #333333", color: "#FFF", width: "100vw"}}>
-          {subMenuItemsArray[i].chapter + ":" +
-          subMenuItemsArray[i].verse}
+          {subMenuItemsArray[i].chapter + ":" + subMenuItemsArray[i].verse}
         </tr>
       );
     }

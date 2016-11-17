@@ -21,6 +21,8 @@ class NavigationMenu extends React.Component {
     api.registerEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
     api.registerEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
     api.registerEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
+    api.registerEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
+
   }
 
   componentWillUnmount() {
@@ -28,6 +30,7 @@ class NavigationMenu extends React.Component {
     api.removeEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
     api.removeEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
     api.removeEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
+    api.removeEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
   }
 
   getSubMenuItemsFromCheckStore(){

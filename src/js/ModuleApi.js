@@ -351,13 +351,15 @@ class ModuleApi {
   }
 
   setCurrentGroupName(groupName){
+    console.log(groupName);
     this.currentGroupName = groupName;
+    api.emitEvent('changeGroupName');
   }
 
   getCurrentGroupName(){
     return this.currentGroupName;
   }
-
+/*
   getSubMenuItems(){
     let subMenuItems = [];
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
@@ -365,7 +367,28 @@ class ModuleApi {
     if(currentGroupIndex >= 0){
       subMenuItems = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
     }
+    this.getCurrentGroupItems();
     return subMenuItems.checks;
+  }
+*/
+  getSubMenuItems(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = [];
+    console.log(groups);
+    console.log(this.currentGroupName);
+    if(this.currentGroupName){
+      if(groups){
+        foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+        console.log(foundGroup.checks);
+      }
+    }else{
+      let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
+      if(currentGroupIndex >= 0){
+        foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
+      }
+    }
+    return foundGroup.checks;
   }
 
 }
