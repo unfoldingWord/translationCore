@@ -18,12 +18,17 @@ class SubMenu extends React.Component {
     this.setState({currentGroupName: currentGroupName});
   }
 
+  handleItemSelection(index){
+    api.changeCurrentIndexes(index);
+  }
+
   generateSubMenuButtons(){
     let subMenuItemsArray = this.props.subMenuItemsArray;
     let subMenuItems = [];
     for(var i in subMenuItemsArray){
       subMenuItems.push(
         <tr key={i}
+            onClick={this.handleItemSelection.bind(this, i)}
             style={{display: "block", padding: "10px 10px 10px 15px", cursor: "pointer", borderBottom: "1px solid #333333", color: "#FFF", width: "100vw"}}>
           {subMenuItemsArray[i].chapter + ":" + subMenuItemsArray[i].verse}
         </tr>

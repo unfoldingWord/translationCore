@@ -35,6 +35,7 @@ class SideBarContainer extends React.Component{
 
   getCurrentToolNamespace(){
     let currentToolNamespace = CoreStore.getCurrentCheckNamespace();
+    api.initialCurrentGroupName();
     this.setState({currentToolNamespace: currentToolNamespace})
   }
 

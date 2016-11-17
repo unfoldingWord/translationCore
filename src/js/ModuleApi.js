@@ -32,7 +32,7 @@ class ModuleApi {
     this.ReportFilters = this.ReportFiltersTools.filter;
     this.gitStack = [];
     this.gitDone = true;
-    this.currentGroupName = null;
+    this.currentGroupName = this.initialCurrentGroupName();
   }
 
   findDOMNode(component) {
@@ -351,13 +351,22 @@ class ModuleApi {
   }
 
   setCurrentGroupName(groupName){
-    console.log(groupName);
     this.currentGroupName = groupName;
     api.emitEvent('changeGroupName');
   }
 
   getCurrentGroupName(){
     return this.currentGroupName;
+  }
+
+  initialCurrentGroupName(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
+    let foundGroup = [];
+    if(currentNamespace && currentGroupIndex >= 0){
+      foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
+    }
+    this.currentGroupName = foundGroup.group;
   }
 /*
   getSubMenuItems(){
@@ -374,21 +383,52 @@ class ModuleApi {
   getSubMenuItems(){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    let foundGroup = [];
     console.log(groups);
-    console.log(this.currentGroupName);
+    let foundGroup = [];
     if(this.currentGroupName){
       if(groups){
         foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
-        console.log(foundGroup.checks);
-      }
-    }else{
-      let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
-      if(currentGroupIndex >= 0){
-        foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
       }
     }
     return foundGroup.checks;
+  }
+
+  changeCurrentIndexes(checkIndex){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    console.log(groups);
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup)
+    console.log(groupIndex);
+    console.log(checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
+    //TODO: FIND THE APPROPIATE EVENT
+    api.emitEvent('goToCheck');
+
+    /*
+
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', 0);
+
+
+    console.log(foundGroup);
+    let checks =  foundGroup.checks;
+    console.log(checks);
+
+    let newIndex;
+    for(var i in checks){
+      if(checks[i] === index){
+        newIndex = checks.indexOf();
+      }
+    }
+    let foundCheck = checks.find(arrayElement => arrayElement === chapter);
+    console.log(foundCheck);
+    console.log(checks.indexOf(foundCheck));
+
+
+    */
+
   }
 
 }

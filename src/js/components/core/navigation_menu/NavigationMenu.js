@@ -22,7 +22,6 @@ class NavigationMenu extends React.Component {
     api.registerEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
     api.registerEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
     api.registerEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
-
   }
 
   componentWillUnmount() {
