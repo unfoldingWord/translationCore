@@ -29,6 +29,7 @@ function openUSFMProject(savePath, direction, link) {
   clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
+    debugger;
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
       if (tcManifest) {
@@ -38,7 +39,16 @@ function openUSFMProject(savePath, direction, link) {
           user: [CoreStore.getLoggedInUser()]
         };
         var defaultManifest = {
-          target_language:{
+          "source_translations": [
+            {
+              "language_id": "en",
+              "resource_id": "ulb",
+              "checking_level": "",
+              "date_modified": new Date(),
+              "version": ""
+            }
+          ],
+          target_language: {
             direction: direction,
             id: "",
             name: targetLanguage.title
