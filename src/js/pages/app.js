@@ -75,10 +75,10 @@ var Main = React.createClass({
     }
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
-      CoreActions.startLoading();
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
+          CoreActions.startLoading();
           CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
         }
       });
