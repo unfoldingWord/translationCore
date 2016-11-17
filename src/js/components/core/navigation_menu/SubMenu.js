@@ -5,6 +5,7 @@ const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const CoreStore = require('../../../stores/CoreStore.js');
 const style = require('./Style');
+const SubMenuItem = require('./SubMenuItem');
 
 
 class SubMenu extends React.Component {
@@ -25,13 +26,12 @@ class SubMenu extends React.Component {
     let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
     for(var i in subMenuItemsArray){
       subMenuItems.push(
-        <tr key={i}
-            onClick={this.handleItemSelection.bind(this, i)}
+        <SubMenuItem key={i}
+            handleItemSelection={this.handleItemSelection.bind(this, i)}
             style={style.subMenuChecks}
-            title="Click to select this check">
-          {bookName + " " + subMenuItemsArray[i].chapter + ":" +
-            subMenuItemsArray[i].verse}
-        </tr>
+            title="Click to select this check"
+            bookName={bookName} chapter={subMenuItemsArray[i].chapter}
+            verse={subMenuItemsArray[i].verse}/>
       );
     }
     return subMenuItems;
