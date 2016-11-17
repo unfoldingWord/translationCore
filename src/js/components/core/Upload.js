@@ -26,6 +26,10 @@ const IMPORT_ONLINE = 'Import From Online';
 const IMPORT_USFM = 'Import From Local USFM File';
 const IMPORT_D43 = 'Import From Door43';
 
+const pathex = require('path-extra');
+const defaultSave = Path.join(pathex.homedir(), 'translationCore');
+const usfm = require('usfm-parser');
+
 
 const UploadModal = React.createClass({
   getInitialState: function () {
@@ -253,14 +257,63 @@ const UploadModal = React.createClass({
     api.putDataInCommon('tcManifest', tcManifest);
     api.putDataInCommon('saveLocation', path);
     api.putDataInCommon('params', this.getParams(path));
-    try {
-      Access.loadFromFilePath(path, callback);
-    } catch (err) {
-      //this executes if something fails, not sure how efficient this is
-      this.manifestError(err);
-    }
+    this.checkIfUSFMProject(path, function (targetLanguage) {
+      api.putDataInCommon('targetLanguage', targetLanguage);
+      try {
+        Access.loadFromFilePath(path, callback);
+      } catch (err) {
+        //this executes if something fails, not sure how efficient this is
+        this.manifestError(err);
+      }
+    });
   },
 
+  checkIfUSFMProject: function (savePath, callback) {
+    var projectFolder = fs.readdirSync(savePath);
+    for (var file in projectFolder) {
+      var parsedPath = Path.parse(projectFolder[file]);
+      if (parsedPath.ext == ".SFM") {
+        var saveLocation = Path.join(defaultSave, parsedPath.name);
+        var saveFile = Path.join(saveLocation, parsedPath.base);
+        api.putDataInCommon('saveLocation', saveLocation);
+        try {
+          var data = fs.readFileSync(saveFile);
+          var usfmData = data.toString();
+          var parsedUSFM = usfm.toJSON(usfmData);
+          parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+        } catch (e) {
+          console.error(e);
+        }
+        callback(this.saveTargetLangeInAPI(parsedUSFM));
+      }
+    }
+    return false;
+  },
+
+  saveTargetLangeInAPI: function(parsedUSFM) {
+  var targetLanguage = {};
+  targetLanguage.title = parsedUSFM.book;
+  // targetLanguage.header = parsedUSFM.headers;
+  var chapters = parsedUSFM.chapters;
+  for (var ch in chapters) {
+    targetLanguage[chapters[ch].number] = {};
+    var verses = chapters[ch].verses;
+    for (var v in verses) {
+      var verseText = verses[v].text.trim();
+      targetLanguage[chapters[ch].number][verses[v].number] = verseText;
+    }
+  }
+  if (parsedUSFM.headers) {
+    var parsedHeaders = parsedUSFM.headers;
+    if (parsedHeaders['mt1']) {
+      targetLanguage.title = parsedHeaders['mt1'];
+    } else if (parsedHeaders['id']) {
+      targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+    }
+  }
+  api.putDataInCommon('targetLanguage', targetLanguage);
+  return targetLanguage;
+},
   /**
    * @description - Loads in a translationStudio manifest
    */

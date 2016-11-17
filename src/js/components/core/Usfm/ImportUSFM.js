@@ -29,7 +29,6 @@ function openUSFMProject(savePath, direction, link) {
   clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
-    debugger;
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
       if (tcManifest) {
@@ -53,6 +52,7 @@ function openUSFMProject(savePath, direction, link) {
             id: "",
             name: targetLanguage.title
           },
+          project_id:parsedUSFM.book
         }
         saveManifest(saveLocation, defaultManifest, userData, link, (err, tcManifest) => {
           if (tcManifest) {
@@ -220,8 +220,6 @@ var ImportComponent = React.createClass({
     if (direction && !this.open) {
       this.open = true;
       dialog.showOpenDialog(options, function (savePath) {
-        CheckStore.WIPE_ALL_DATA();
-        api.modules = {};
         _this.setState({
           filePath: savePath[0]
         });

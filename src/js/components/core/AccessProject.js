@@ -32,13 +32,9 @@ var Access = {
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
             var filepath = Path.join(folderpath, file);
-            _this.loadCheckData(filepath, callback);
+            _this.loadCheckData(filepath, folderpath, callback);
           }
         }
-        api.putDataInCommon('saveLocation', folderpath);
-        api.setSettings('showTutorial', false);
-        localStorage.setItem('lastProject', folderpath);
-        CoreActions.doneLoadingFetchData();
       });
     } catch (e) {
       localStorage.removeItem('lastProject');
@@ -54,12 +50,16 @@ var Access = {
    * @param {function} callback - Callback that is called whenever all of the check data within
    * the checkData folder is loaded
    */
-  loadCheckData: function (checkDataFolderPath, callback) {
+  loadCheckData: function (checkDataFolderPath, folderpath, callback) {
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
       if (!error) {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
           _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
+            api.putDataInCommon('saveLocation', folderpath);
+            api.setSettings('showTutorial', false);
+            localStorage.setItem('lastProject', folderpath);
+            //CoreActions.doneLoadingFetchData();
             callback();
           });
         });
@@ -79,6 +79,7 @@ var Access = {
         CheckStore.storeData[name] = data;
         index++;
       }
+      callback();
     } catch (e) {
       console.error(e);
     }
