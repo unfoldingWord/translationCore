@@ -14,6 +14,7 @@ const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
+const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
@@ -204,7 +205,7 @@ function clearPreviousData() {
 var ImportComponent = React.createClass({
   getInitialState: function () {
     return {
-      direction: null,
+      direction: "ltr",
       filePath: 'No file selected'
     };
   },
@@ -235,7 +236,7 @@ var ImportComponent = React.createClass({
 
   handleTextChange: function (e) {
     this.setState({
-      direction: e.target.value
+      direction: e
     });
   },
 
@@ -243,12 +244,12 @@ var ImportComponent = React.createClass({
     return (
       <div>
         {this.props.isWelcome ? <div> </div> : <br />}
+         Select Text Direction:
         <FormGroup>
-          <FormControl componentClass="select" onChange={this.handleTextChange}>
-            <option value={'ltr'}>Select text direction</option>
-            <option value={'ltr'}>Left to right</option>
-            <option value={'rtl'}>Right to left</option>
-          </FormControl>
+        <ButtonGroup style={{paddingBottom:10, paddingTop:10}}>
+        <Button bsSize={'small'} eventKey={"ltr"} onClick={this.handleTextChange.bind(this, "ltr")}>Left To Right</Button>
+        <Button bsSize={'small'} eventKey={"rtl"} onClick={this.handleTextChange.bind(this, "rtl")}>Right To Left</Button>
+        </ButtonGroup>
           {this.props.isWelcome ? <div> </div> : <br />}
           <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
           <span style={{ color: '#333' }}> &nbsp; {this.state.filePath}</span>
