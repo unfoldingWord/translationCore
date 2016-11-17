@@ -90,10 +90,10 @@ const UploadModal = React.createClass({
                 });
               }
               else if (err) {
-                    localStorage.removeItem('lastProject');
-                    api.putDataInCommon('saveLocation', null);
-                    _this.manifestError(err);
-                  }
+                localStorage.removeItem('lastProject');
+                api.putDataInCommon('saveLocation', null);
+                _this.manifestError(err);
+              }
             });
         } else if (err) {
           _this.manifestError(err);
@@ -251,7 +251,6 @@ const UploadModal = React.createClass({
   loadProjectThatHasManifest: function (path, callback, tcManifest) {
     var Access = require('./AccessProject');
     api.putDataInCommon('tcManifest', tcManifest);
-    Recent.add(path);
     api.putDataInCommon('saveLocation', path);
     api.putDataInCommon('params', this.getParams(path));
     try {
@@ -261,7 +260,6 @@ const UploadModal = React.createClass({
       this.manifestError(err);
     }
   },
-
 
   /**
    * @description - Loads in a translationStudio manifest
@@ -310,24 +308,24 @@ const UploadModal = React.createClass({
           />;
         break;
       case 'link':
-      mainContent = (
-        <div>
-          <br />
-          <OnlineInput ref={"Online"} pressedEnter={this.props.pressedEnter} sendFilePath={this.sendFilePath} />
-        </div>
-      );
+        mainContent = (
+          <div>
+            <br />
+            <OnlineInput ref={"Online"} pressedEnter={this.props.pressedEnter} sendFilePath={this.sendFilePath} />
+          </div>
+        );
         break;
       case 'usfm':
-      mainContent = (
-        <div>
-          <ImportUsfm.component isWelcome={this.props.isWelcome} />
-        </div>
-      );
+        mainContent = (
+          <div>
+            <ImportUsfm.component isWelcome={this.props.isWelcome} />
+          </div>
+        );
         break;
       case 'd43':
         mainContent = (
           <div>
-          <ProjectViewer/>
+            <ProjectViewer />
           </div>
         )
         break;

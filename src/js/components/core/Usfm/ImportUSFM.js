@@ -28,7 +28,7 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
 function openUSFMProject(savePath, direction, link) {
   clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
-    saveTargetLangeInAPI(parsedUSFM);
+    var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
       if (tcManifest) {
@@ -38,14 +38,19 @@ function openUSFMProject(savePath, direction, link) {
           user: [CoreStore.getLoggedInUser()]
         };
         var defaultManifest = {
-          targetLanguage:{
+          target_language:{
             direction: direction,
             id: "",
-            name: name
+            name: targetLanguage.title
           },
         }
-        saveManifest(saveLocation, defaultManifest, userData, link, (tcManifest) => {
-          loadProjectThatHasManifest(tcManifest, saveLocation);
+        saveManifest(saveLocation, defaultManifest, userData, link, (err, tcManifest) => {
+          if (tcManifest) {
+            loadProjectThatHasManifest(tcManifest, saveLocation);
+          }
+          else {
+            console.error(err);
+          }
         });
       }
     });
@@ -89,6 +94,7 @@ function saveTargetLangeInAPI(parsedUSFM) {
     }
   }
   api.putDataInCommon('targetLanguage', targetLanguage);
+  return targetLanguage;
 }
 
 function loadProjectThatHasManifest(tcManifest, saveLocation) {
@@ -103,7 +109,6 @@ function createTCProject(savePath, callback) {
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
-  Recent.add(saveLocation);
   try {
     var data = fs.readFileSync(savePath);
     fs.ensureDirSync(saveLocation);
@@ -141,8 +146,7 @@ function isOldTestament(projectBook) {
 function saveManifest(saveLocation, defaultManifest, data, link, callback) {
   try {
     var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-    var manifest = ManifestGenerator(data, undefined);
-    //TODO
+    var manifest = ManifestGenerator(data, defaultManifest);
     api.putDataInCommon('tcManifest', manifest);
     fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
