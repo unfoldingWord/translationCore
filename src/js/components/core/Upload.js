@@ -270,6 +270,7 @@ const UploadModal = React.createClass({
 
   checkIfUSFMProject: function (savePath, callback) {
     var projectFolder = fs.readdirSync(savePath);
+    var targetLanguage;
     for (var file in projectFolder) {
       var parsedPath = Path.parse(projectFolder[file]);
       if (parsedPath.ext == ".SFM") {
@@ -284,10 +285,10 @@ const UploadModal = React.createClass({
         } catch (e) {
           console.error(e);
         }
-        callback(this.saveTargetLangeInAPI(parsedUSFM));
+        targetLanguage = this.saveTargetLangeInAPI(parsedUSFM);
       }
     }
-    return false;
+    callback(targetLanguage);
   },
 
   saveTargetLangeInAPI: function(parsedUSFM) {

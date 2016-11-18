@@ -10,6 +10,7 @@ var Recent = require('./RecentProjects.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 var checkList = [];
@@ -59,8 +60,9 @@ var Access = {
             api.putDataInCommon('saveLocation', folderpath);
             api.setSettings('showTutorial', false);
             localStorage.setItem('lastProject', folderpath);
-            //CoreActions.doneLoadingFetchData();
-            callback();
+            if (callback) {
+              callback();
+            }
           });
         });
       }
