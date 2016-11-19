@@ -53,7 +53,7 @@ function openUSFMProject(savePath, direction, link) {
             id: "",
             name: targetLanguage.title
           },
-          project_id:parsedUSFM.book
+          project_id: parsedUSFM.book
         }
         saveManifest(saveLocation, defaultManifest, userData, link, (err, tcManifest) => {
           if (tcManifest) {
@@ -221,22 +221,33 @@ var ImportComponent = React.createClass({
     if (direction && !this.open) {
       this.open = true;
       dialog.showOpenDialog(options, function (savePath) {
-        _this.setState({
-          filePath: savePath[0]
-        });
-        _this.open = false;
-        openUSFMProject(savePath[0], direction, undefined);
+        if (savePath) {
+          _this.setState({
+            filePath: savePath[0]
+          });
+          _this.open = false;
+          openUSFMProject(savePath[0], direction, undefined);
+        } else {
+          _this.open = false;
+        }
       });
     } else {
       _this.setState({
-        filePath: 'Choose a text direction first'
+        filePath: 'No file selected'
       });
     }
   },
 
-  handleTextChange: function (e) {
+  handleTextChange: function (key, e) {
+    if (key == "rtl") {
+      e.target.parentNode.children[0].className = "btn btn-sm btn-default";
+      e.target.parentNode.children[1].className = "btn btn-sm btn-active";
+    } else {
+      e.target.parentNode.children[0].className = "btn btn-sm btn-active";
+      e.target.parentNode.children[1].className = "btn btn-sm btn-default";
+    }
     this.setState({
-      direction: e
+      direction: key
     });
   },
 
@@ -244,12 +255,12 @@ var ImportComponent = React.createClass({
     return (
       <div>
         {this.props.isWelcome ? <div> </div> : <br />}
-         Select Text Direction:
+        Select Text Direction:
         <FormGroup>
-        <ButtonGroup style={{paddingBottom:10, paddingTop:10}}>
-        <Button bsSize={'small'} eventKey={"ltr"} onClick={this.handleTextChange.bind(this, "ltr")}>Left To Right</Button>
-        <Button bsSize={'small'} eventKey={"rtl"} onClick={this.handleTextChange.bind(this, "rtl")}>Right To Left</Button>
-        </ButtonGroup>
+          <ButtonGroup style={{ paddingBottom: 10, paddingTop: 10 }}>
+            <Button bsSize={'small'} eventKey={"ltr"} onClick={this.handleTextChange.bind(this, "ltr")}>Left To Right</Button>
+            <Button bsSize={'small'} eventKey={"rtl"} onClick={this.handleTextChange.bind(this, "rtl")}>Right To Left</Button>
+          </ButtonGroup>
           {this.props.isWelcome ? <div> </div> : <br />}
           <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
           <span style={{ color: '#333' }}> &nbsp; {this.state.filePath}</span>
