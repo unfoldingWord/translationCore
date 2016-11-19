@@ -45,6 +45,7 @@ var Main = React.createClass({
 
   componentDidMount: function () {
     if (localStorage.getItem('crashed') == 'true') {
+      localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
       api.setSettings('showTutorial', false);
     }
@@ -77,6 +78,7 @@ var Main = React.createClass({
       this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
+          CoreActions.startLoading();
           CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
         }
       });
