@@ -346,6 +346,10 @@ const UploadModal = React.createClass({
     }
   },
 
+  enterSaveLocation: function(){
+    return !(this.refs.USFM.state.filePath == 'No file selected');
+  },
+
   /**
    * @description - Renders the upload modal
    */
@@ -372,7 +376,7 @@ const UploadModal = React.createClass({
       case 'usfm':
         mainContent = (
           <div>
-            <ImportUsfm.component isWelcome={this.props.isWelcome} />
+            <ImportUsfm.component isWelcome={this.props.isWelcome} ref={'USFM'}/>
           </div>
         );
         break;

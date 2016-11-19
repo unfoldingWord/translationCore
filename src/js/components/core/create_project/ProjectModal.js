@@ -75,6 +75,11 @@ const ProjectModal = React.createClass({
     if (this.refs.TargetLanguage.state.active == 1) {
       this.submitLink();
     }
+    if (this.refs.TargetLanguage.state.active == 3) {
+      if (!this.refs.TargetLanguage.enterSaveLocation()) {
+        return;
+      }
+    }
     api.emitEvent('changeCheckType', { currentCheckNamespace: null });
     api.emitEvent('newToolSelected', {'newToolSelected': true});
     this.close();
