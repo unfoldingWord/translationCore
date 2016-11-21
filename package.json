@@ -1,5 +1,5 @@
 {
-  "name": "translation_core",
+  "name": "translationCore",
   "productName": "translationCore",
   "version": "0.1.6",
   "description": "A bridge between TS and TM",
@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel src --out-dir src",
-    "build-win": "npm run compile && node scripts/build-win.js",
+    "build-win": ".\\\\scripts\\build-win.cmd",
     "build-winstaller": "node scripts/build-win-installer.js",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
