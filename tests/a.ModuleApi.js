@@ -40,6 +40,38 @@ function setUpMenus() {
   ModuleApi.saveMenu('testMenu', sampleMenu);
 }
 
+describe('ModuleApi.constructor', function() {
+  it('constructor should set instance variables correctly.', function() {
+    assert.isObject(ModuleApi.React);
+    assert.isFunction(ModuleApi.React.createElement);
+
+    assert.isObject(ModuleApi.ReactBootstrap);
+    assert.isFunction(ModuleApi.ReactBootstrap.Col);
+
+    assert.isFunction(ModuleApi.CheckModule);
+    assert.isObject(new ModuleApi.CheckModule());
+    assert.isFunction(new ModuleApi.CheckModule().goToNext);
+
+    assert.isObject(ModuleApi.modules);
+
+    assert.isFunction(ModuleApi.Popover);
+
+    assert.isObject(ModuleApi.Toast);
+    assert.isFunction(ModuleApi.Toast.info);
+
+    assert.isFunction(ModuleApi.Git);
+    assert.isObject(ModuleApi.Git());
+    assert.isFunction(ModuleApi.Git().commit);
+
+    assert.isObject(ModuleApi.ReportFiltersTools);
+    assert.isObject(ModuleApi.ReportFilters);
+    assert.isFunction(ModuleApi.ReportFilters.byGroup);
+
+    assert.isArray(ModuleApi.gitStack);
+    assert.equal(ModuleApi.gitDone, true);
+  });
+});
+
 describe('ModuleApi.convertToFullBookName', function() {
   it('convertToFullBookName should return the full book name based on abbreviation.', function() {
     var mrk = 'mrk';
@@ -48,7 +80,7 @@ describe('ModuleApi.convertToFullBookName', function() {
     var unexpectedValue = 'abc';
     assert.equal(ModuleApi.convertToFullBookName(mrk), mrkExpected);
     assert.equal(ModuleApi.convertToFullBookName(mrkUpper), mrkExpected);
-    assert.equal(ModuleApi.convertToFullBookName(unexpectedValue), undefined);
+    assert.isUndefined(ModuleApi.convertToFullBookName(unexpectedValue));
   });
 });
 
@@ -60,7 +92,7 @@ describe('ModuleApi.convertToBookAbbreviation', function() {
     var unexpectedValue = 'abcd';
     assert.equal(ModuleApi.convertToBookAbbreviation(mark), markExpected);
     assert.equal(ModuleApi.convertToBookAbbreviation(markUpper), markExpected);
-    assert.equal(ModuleApi.convertToBookAbbreviation(unexpectedValue), undefined);
+    assert.isUndefined(ModuleApi.convertToBookAbbreviation(unexpectedValue));
   });
 });
 
@@ -70,7 +102,7 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
     var expectedObject = 'Test object';
     var expectedNumber = 42;
     var unexpectedValue = 'abc';
-    assert.equal(ModuleApi.getDataFromCommon('testString'), undefined);
+    assert.isNull(ModuleApi.getDataFromCommon('testString'));
     addDataToCommon();
     assert.equal(ModuleApi.getDataFromCommon('testString'), expectedString);
     assert.isString(ModuleApi.getDataFromCommon('testString'));
@@ -78,7 +110,7 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
     assert.isObject(ModuleApi.getDataFromCommon('testObject'));
     assert.equal(ModuleApi.getDataFromCommon('testNumber'), expectedNumber);
     assert.isNumber(ModuleApi.getDataFromCommon('testNumber'));
-    assert.equal(ModuleApi.getDataFromCommon(unexpectedValue), undefined);
+    assert.isUndefined(ModuleApi.getDataFromCommon(unexpectedValue));
 
   });
 });
@@ -88,14 +120,14 @@ describe('ModuleApi.getAuthToken', function() {
     var unexpectedValue = 'abc';
     assert.isString(ModuleApi.getAuthToken('git'));
     assert.isString(ModuleApi.getAuthToken('gogs'));
-    assert.equal(ModuleApi.getAuthToken(unexpectedValue), undefined);
+    assert.isUndefined(ModuleApi.getAuthToken(unexpectedValue));
   });
 });
 
 describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
   it('getMenu should return an function, after a menu is saved.', function() {
     var unexpectedValue = 'abc';
-    assert.equal(ModuleApi.getMenu(), null);
+    assert.isNull(ModuleApi.getMenu());
     setUpMenus();
     assert.isObject(ModuleApi.getMenu('testMenu'));
     assert.isArray(ModuleApi.getMenu('testMenu').menu);
@@ -111,7 +143,7 @@ describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
       bookAbbr: '3jn'
     };
     function progressCallback() {};
-    assert.equal(ModuleApi.getDataFromCommon('gatewayLanguage'), undefined);
+    assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguage'));
     ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function(data) {
       assert.isObject(data);
       assert.isArray(data.chapters);
