@@ -155,14 +155,6 @@ class ModuleApi {
     console.log(CheckStore.storeData);
   }
 
-  createAlert(obj, callback = () => { }) {
-    Alert.startListener(callback);
-    CoreActions.sendAlert({
-      alertObj: obj,
-      alertCallback: callback
-    });
-  }
-
   /**
     * Asynchronously fetches the gateway language book from Door43, puts it in the check store,
     * and calls the callback function with the gateway language book as an argument.
@@ -338,7 +330,7 @@ class ModuleApi {
       var settingsObj = JSON.parse(settings);
       return settingsObj[name];
     }
-    return null;
+    return {};
   }
 
   setSettings(name, value) {
