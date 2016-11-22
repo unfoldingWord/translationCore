@@ -30,7 +30,7 @@ class SubMenu extends React.Component {
     api.removeEventListener('goToCheck', this.goToCheck);
     api.removeEventListener('changeGroupName', this.clearPreviousStatus);
   }
-
+  //TODO: rework the code below to claer the previous status of the top submenu item 
   clearPreviousStatus(){
     var menuItem = this.refs[this.currentGroupIndex.toString() + ' ' + this.currentCheckIndex.toString()];
     menuItem.updateCheckStatus();

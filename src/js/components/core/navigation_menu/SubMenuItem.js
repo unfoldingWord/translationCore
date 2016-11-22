@@ -22,8 +22,7 @@ class SubMenuItem extends React.Component {
   }
 
   updateCheckStatus(){
-    console.log("heyyy");
-    this.setState({checkStatus: "UNCHECKED"});
+    this.setState({checkStatus: this.props.check.checkStatus});
   }
 
   getItemStatus() {
