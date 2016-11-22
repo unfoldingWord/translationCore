@@ -352,6 +352,12 @@ class ModuleApi {
 
   setCurrentGroupName(groupName){
     this.currentGroupName = groupName;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     api.emitEvent('changeGroupName');
   }
 
@@ -381,12 +387,23 @@ class ModuleApi {
     return foundGroup.checks;
   }
 
+  getCurrentGroupIndex(){
+    let groupIndex = null;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    if(groups){
+      let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+      groupIndex = groups.indexOf(foundGroup);
+    }
+    return groupIndex;
+  }
+
   changeCurrentIndexes(checkIndex){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
-    let groupIndex = groups.indexOf(foundGroup)
-    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
+    let groupIndex = groups.indexOf(foundGroup);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', parseInt(checkIndex));
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     //TODO: FIND THE APPROPIATE EVENT
     api.emitEvent('goToCheck',

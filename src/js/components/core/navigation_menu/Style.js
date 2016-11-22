@@ -15,16 +15,12 @@
       }
     },
     statusIcon: {
-      retained: {
-        color: 'green',
-        display: 'initial'
-      },
-      replaced: {
-        color: 'gold',
+      correct: {
+        color: '#4EBA67',
         display: 'initial'
       },
       flagged: {
-        color: 'red',
+        color: '#FDD910',
         display: 'initial'
       },
       unchecked: {
@@ -47,7 +43,17 @@
     borderBottom: "1px solid #333333",
     color: "#FFF",
     width: "100vw"
-  }
+  },
+
+  subMenuActiveCheck:  {
+    display: "block",
+    padding: "10px 10px 10px 15px",
+    cursor: "pointer",
+    borderBottom: "1px solid #333333",
+    color: "#FFF",
+    width: "100vw",
+    backgroundColor: "#4bc7ed",
+  },
 
 };
 

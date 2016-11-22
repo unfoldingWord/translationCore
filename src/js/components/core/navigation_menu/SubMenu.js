@@ -4,7 +4,6 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const CoreStore = require('../../../stores/CoreStore.js');
-const style = require('./Style');
 const SubMenuItem = require('./SubMenuItem');
 
 
@@ -13,10 +12,53 @@ class SubMenu extends React.Component {
     super();
     this.state = {
     }
+    this.currentCheckIndex = null;
+    this.currentGroupIndex = null;
+    this.updateSubMenuItem = this.updateSubMenuItem.bind(this);
+    this.goToCheck = this.goToCheck.bind(this);
+    this.clearPreviousStatus = this.clearPreviousStatus.bind(this);
   }
 
-  handleItemSelection(index){
-    api.changeCurrentIndexes(index);
+  componentWillMount(){
+    api.registerEventListener('changedCheckStatus', this.updateSubMenuItem);
+    api.registerEventListener('goToCheck', this.goToCheck);
+    api.registerEventListener('changeGroupName', this.clearPreviousStatus);
+  }
+
+  componentWillUnmount() {
+    api.removeEventListener('changedCheckStatus', this.updateSubMenuItem);
+    api.removeEventListener('goToCheck', this.goToCheck);
+    api.removeEventListener('changeGroupName', this.clearPreviousStatus);
+  }
+
+  clearPreviousStatus(){
+    var menuItem = this.refs[this.currentGroupIndex.toString() + ' ' + this.currentCheckIndex.toString()];
+    menuItem.updateCheckStatus();
+  }
+
+  updateSubMenuItem(params){
+    var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
+    menuItem.getItemStatus(params.checkStatus);
+  }
+
+  goToCheck(params) {
+    this.unselectOldMenuItem();
+    this.currentGroupIndex = params.groupIndex;
+    this.currentCheckIndex = params.checkIndex;
+    this.selectNewMenuItem();
+  }
+
+
+  unselectOldMenuItem() {
+    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
+  }
+
+  selectNewMenuItem() {
+    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
+  }
+
+  handleItemSelection(checkIndex){
+    api.changeCurrentIndexes(checkIndex);
   }
 
   generateSubMenuButtons(){
@@ -24,20 +66,26 @@ class SubMenu extends React.Component {
     let subMenuItems = [];
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
+    let groupIndex = api.getCurrentGroupIndex();
     for(var i in subMenuItemsArray){
       subMenuItems.push(
         <SubMenuItem key={i}
             handleItemSelection={this.handleItemSelection.bind(this, i)}
-            style={style.subMenuChecks}
             title="Click to select this check"
-            bookName={bookName} chapter={subMenuItemsArray[i].chapter}
-            verse={subMenuItemsArray[i].verse}/>
+            bookName={bookName}
+            check={subMenuItemsArray[i]}
+            groupIndex={groupIndex}
+            checkIndex={i}
+            currentNamespace={currentNamespace}
+            ref={groupIndex.toString() + ' ' + i.toString()}/>
       );
     }
     return subMenuItems;
   }
 
   render() {
+    this.currentCheckIndex = this.props.currentCheckIndex;
+    this.currentGroupIndex = this.props.currentGroupIndex;
     return (
       <table>
         <tbody>

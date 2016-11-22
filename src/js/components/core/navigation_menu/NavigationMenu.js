@@ -1,8 +1,10 @@
-const React = require('react');
-const Well = require('react-bootstrap/lib/Well.js');
 
 // const MenuItem = require('./MenuItem');
 const api = window.ModuleApi;
+const React = api.React;
+const RB = api.ReactBootstrap;
+const {Well} = RB;
+const CoreStore = require('../../../stores/CoreStore.js');
 const SubMenu = require('./SubMenu.js');
 
 
@@ -11,7 +13,9 @@ class NavigationMenu extends React.Component {
     super();
     this.state = {
       subMenuItemsArray: null,
-      checkMenu: null
+      checkMenu: null,
+      currentCheckIndex: null,
+      currentGroupIndex: null,
     };
     this.getSubMenuItemsFromCheckStore = this.getSubMenuItemsFromCheckStore.bind(this);
 }
@@ -34,13 +38,22 @@ class NavigationMenu extends React.Component {
 
   getSubMenuItemsFromCheckStore(){
     let subMenuItemsArray = api.getSubMenuItems();
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentCheckIndex = api.getDataFromCheckStore(currentNamespace, 'currentCheckIndex');
+    let currentGroupIndex = api.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
     this.setState({subMenuItemsArray: subMenuItemsArray});
+    this.setState({currentCheckIndex: currentCheckIndex});
+    this.setState({currentGroupIndex: currentGroupIndex});
+    console.log(currentCheckIndex);
+    console.log(currentGroupIndex);
   }
 
   render() {
     return (
       <div>
-        <SubMenu subMenuItemsArray={this.state.subMenuItemsArray}/>
+        <SubMenu subMenuItemsArray={this.state.subMenuItemsArray}
+                 currentCheckIndex={this.state.currentCheckIndex}
+                 currentGroupIndex={this.state.currentGroupIndex}/>
       </div>
     );
   }
