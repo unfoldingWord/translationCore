@@ -133,7 +133,7 @@ class ModuleApi {
   }
 
   convertToFullBookName(bookAbbr) {
-    return BooksOfBible[bookAbbr];
+    return BooksOfBible[bookAbbr.toLowerCase()];
   }
 
   /**
