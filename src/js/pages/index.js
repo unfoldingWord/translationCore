@@ -5,7 +5,6 @@
   });
   const path = require('path');
   window.__base = path.join(__dirname, '../../../');
-  console.log(window.__base);
   const ReactDOM = require('react-dom');
   const React = require('react');
   const remote = require('electron').remote;
