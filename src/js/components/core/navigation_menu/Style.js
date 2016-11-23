@@ -15,23 +15,54 @@
       }
     },
     statusIcon: {
-      retained: {
-        color: 'green',
-        display: 'initial'
-      },
-      replaced: {
-        color: 'gold',
+      correct: {
+        color: '#4EBA67',
         display: 'initial'
       },
       flagged: {
-        color: 'red',
+        color: '#FDD910',
         display: 'initial'
       },
       unchecked: {
         display: 'none'
       }
     }
-  }
+  },
+
+  menuHeader: {
+    display: "block",
+    padding: "10px",
+    cursor: "pointer",
+    borderBottom: "1px solid #747474"
+  },
+
+  activeMenuHeader: {
+    display: "block",
+    padding: "10px",
+    cursor: "pointer",
+    borderBottom: "1px solid #747474",
+    backgroundColor: "#4bc7ed",
+  },
+
+  subMenuItem: {
+    display: "block",
+    padding: "10px 10px 10px 15px",
+    cursor: "pointer",
+    borderBottom: "1px solid #333333",
+    color: "#FFF",
+    width: "100vw"
+  },
+
+  activeSubMenuItem:  {
+    display: "block",
+    padding: "10px 10px 10px 15px",
+    cursor: "pointer",
+    borderBottom: "1px solid #333333",
+    color: "#FFF",
+    width: "100vw",
+    backgroundColor: "#4bc7ed",
+  },
+
 };
 
 module.exports = style;
