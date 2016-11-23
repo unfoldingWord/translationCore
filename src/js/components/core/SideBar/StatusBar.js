@@ -39,7 +39,6 @@ class StatusBar extends React.Component{
   currentCheckNamespace(){
     let bookName = "";
     let content = "";
-
     let manifest = ModuleApi.getDataFromCommon("tcManifest");
     if (manifest && manifest.ts_project){
       bookName = manifest.ts_project.name;
@@ -71,7 +70,7 @@ class StatusBar extends React.Component{
       if(this.state.currentCheckNamespace === "TranslationWordsChecker"){
         this.setState({currentWordOrPhrase: currentCheck.word});
       }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
-        this.setState({currentWordOrPhrase: currentCheck.group});
+        this.setState({currentWordOrPhrase: ""});
       }else {
         console.warn("current Word Or Phrase is undefined in CoreStore for currentCheckNamespace");
         this.setState({currentWordOrPhrase: ''});
