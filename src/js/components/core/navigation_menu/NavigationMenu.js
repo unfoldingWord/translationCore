@@ -44,8 +44,6 @@ class NavigationMenu extends React.Component {
     this.setState({subMenuItemsArray: subMenuItemsArray});
     this.setState({currentCheckIndex: currentCheckIndex});
     this.setState({currentGroupIndex: currentGroupIndex});
-    console.log(currentCheckIndex);
-    console.log(currentGroupIndex);
   }
 
   render() {

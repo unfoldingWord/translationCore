@@ -16,24 +16,16 @@ class SubMenu extends React.Component {
     this.currentGroupIndex = null;
     this.updateSubMenuItem = this.updateSubMenuItem.bind(this);
     this.goToCheck = this.goToCheck.bind(this);
-    this.clearPreviousStatus = this.clearPreviousStatus.bind(this);
   }
 
   componentWillMount(){
     api.registerEventListener('changedCheckStatus', this.updateSubMenuItem);
     api.registerEventListener('goToCheck', this.goToCheck);
-    api.registerEventListener('changeGroupName', this.clearPreviousStatus);
   }
 
   componentWillUnmount() {
     api.removeEventListener('changedCheckStatus', this.updateSubMenuItem);
     api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('changeGroupName', this.clearPreviousStatus);
-  }
-  //TODO: rework the code below to claer the previous status of the top submenu item 
-  clearPreviousStatus(){
-    var menuItem = this.refs[this.currentGroupIndex.toString() + ' ' + this.currentCheckIndex.toString()];
-    menuItem.updateCheckStatus();
   }
 
   updateSubMenuItem(params){
@@ -47,7 +39,6 @@ class SubMenu extends React.Component {
     this.currentCheckIndex = params.checkIndex;
     this.selectNewMenuItem();
   }
-
 
   unselectOldMenuItem() {
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
@@ -71,7 +62,6 @@ class SubMenu extends React.Component {
       subMenuItems.push(
         <SubMenuItem key={i}
             handleItemSelection={this.handleItemSelection.bind(this, i)}
-            title="Click to select this check"
             bookName={bookName}
             check={subMenuItemsArray[i]}
             groupIndex={groupIndex}

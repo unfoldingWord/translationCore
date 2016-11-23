@@ -21,8 +21,11 @@ class SubMenuItem extends React.Component {
     this.setState({checkStatus: this.props.check.checkStatus});
   }
 
-  updateCheckStatus(){
-    this.setState({checkStatus: this.props.check.checkStatus});
+  componentWillReceiveProps(nextProps){
+    this.setState({checkStatus: nextProps.check.checkStatus});
+    if(this.state.isCurrentItem){
+      this.setIsCurrentCheck(false);
+    }
   }
 
   getItemStatus() {
@@ -32,7 +35,7 @@ class SubMenuItem extends React.Component {
     this.setState({checkStatus: checkStatus});
   }
 
-  ItemClicked() {
+  itemClicked() {
     this.props.handleItemSelection();
     this.setIsCurrentCheck(true);
   }
@@ -59,9 +62,9 @@ class SubMenuItem extends React.Component {
         glyphIcon = '';
         checkStatusStyle = style.menuItem.statusIcon.unchecked;
     }
-    var itemStyle = this.state.isCurrentItem ? style.subMenuActiveCheck : style.subMenuChecks;
+    var itemStyle = this.state.isCurrentItem ? style.activeSubMenuItem : style.subMenuItem;
     return (
-      <tr onClick={this.ItemClicked.bind(this)}
+      <tr onClick={this.itemClicked.bind(this)}
           style={itemStyle}
           title="Click to select this check">
         <td>

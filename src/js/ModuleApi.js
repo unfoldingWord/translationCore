@@ -358,7 +358,10 @@ class ModuleApi {
     let groupIndex = groups.indexOf(foundGroup);
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
-    api.emitEvent('changeGroupName');
+    api.emitEvent('changeGroupName',
+    {
+      "groupName": groupName
+    });
   }
 
   getCurrentGroupName(){
@@ -405,7 +408,6 @@ class ModuleApi {
     let groupIndex = groups.indexOf(foundGroup);
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', parseInt(checkIndex));
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
-    //TODO: FIND THE APPROPIATE EVENT
     api.emitEvent('goToCheck',
       {
         'groupIndex': groupIndex,

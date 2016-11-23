@@ -29,14 +29,22 @@
     }
   },
 
-  MenuHeaders: {
+  menuHeader: {
     display: "block",
     padding: "10px",
     cursor: "pointer",
     borderBottom: "1px solid #747474"
   },
 
-  subMenuChecks: {
+  activeMenuHeader: {
+    display: "block",
+    padding: "10px",
+    cursor: "pointer",
+    borderBottom: "1px solid #747474",
+    backgroundColor: "#4bc7ed",
+  },
+
+  subMenuItem: {
     display: "block",
     padding: "10px 10px 10px 15px",
     cursor: "pointer",
@@ -45,7 +53,7 @@
     width: "100vw"
   },
 
-  subMenuActiveCheck:  {
+  activeSubMenuItem:  {
     display: "block",
     padding: "10px 10px 10px 15px",
     cursor: "pointer",
