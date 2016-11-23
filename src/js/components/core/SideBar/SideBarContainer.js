@@ -1,6 +1,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const CoreStore = require('../../../stores/CoreStore.js');
+const CoreActions = require('../../../actions/CoreActions.js');
 const SideNavBar = require('./SideNavBar');
 const Chevron = require('./Chevron');
 const style = require("./Style");
@@ -12,7 +13,6 @@ class SideBarContainer extends React.Component{
     super();
     this.state ={
       SideNavBar: false,
-      menuHeaders: true,
       currentToolNamespace: null,
     }
     this.getCurrentToolNamespace = this.getCurrentToolNamespace.bind(this);
@@ -36,25 +36,43 @@ class SideBarContainer extends React.Component{
     this.setState({SideNavBar: !this.state.SideNavBar});
   }
 
+  handleOpenProject(){
+    CoreActions.showCreateProject("Languages");
+  }
+
+  handleSelectTool(){
+    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+      CoreActions.updateCheckModal(true);
+    } else {
+      api.Toast.info('Open a project first, then try again', '', 3);
+      CoreActions.showCreateProject("Languages");
+    }
+  }
+
+
   render(){
     let sideBarContent;
     if(this.state.SideNavBar){
-      sideBarContent = <div><SideNavBar /><br />
-                            <div style={{bottom: "0px", position: "absolute"}}>
-                            <Chevron color="magenta"/><br />
-                            <Chevron color="blue"/>
-                            </div>
-                       </div>;
-    }else if (this.state.menuHeaders) {
       sideBarContent = <div>
-                          <Chevron color="magenta"/><br />
-                          <Chevron color="blue"/>
+                          <SideNavBar /><br />
+                          <div style={{bottom: "0px", position: "absolute"}}>
+                            <Chevron color="magenta" glyphicon={"folder-open"}
+                                     textValue={"Load"}
+                                     handleClick={this.handleOpenProject.bind(this)}/>
+                            <Chevron color="blue" glyphicon={"wrench"}
+                                     textValue={"Tools"}
+                                     handleClick={this.handleSelectTool.bind(this)}/>
+                          </div>
+                       </div>;
+    }else{
+      sideBarContent = <div>
+                          <Chevron color="magenta" glyphicon={"folder-open"}
+                                   textValue={"Load"}
+                                   handleClick={this.handleOpenProject.bind(this)}/>
+                          <Chevron color="blue" glyphicon={"wrench"}
+                                   textValue={"Tools"}
+                                   handleClick={this.handleSelectTool.bind(this)}/>
                           <MenuHeaders currentTool={this.state.currentToolNamespace}/>
-                       </div>;
-    }else {
-      sideBarContent = <div>
-                          <Chevron color="magenta"/><br />
-                          <Chevron color="blue"/>
                        </div>;
     }
     return(

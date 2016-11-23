@@ -1,5 +1,7 @@
 const api = window.ModuleApi;
 const React = api.React;
+const RB = api.ReactBootstrap;
+const {Glyphicon} = RB;
 const Style = require('style-it/dist/style-it-standalone.js');
 
 class Chevron extends React.Component{
@@ -11,10 +13,11 @@ class Chevron extends React.Component{
         position: relative;
         text-align: center;
         width: 120px;
-        color: #c3105a;
+        color: #FFF;
         z-index: 100;
-        margin-bottom: 10px;
         display: block;
+        box-sizing: border-box;
+        cursor: pointer;
       }
       .chevron:before {
         content: '';
@@ -44,9 +47,9 @@ class Chevron extends React.Component{
       .chevron .chevron-inner{
         position: relative;
         z-index: 2;
-        padding: 30px 20px 20px;
+        padding: 20px 10px 5px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-        font-size: 18px;
+        font-size: 12px;
       }
     `;
     let blue = `
@@ -55,10 +58,12 @@ class Chevron extends React.Component{
         position: relative;
         text-align: center;
         width: 120px;
-        color: #4BC7ED;
+        color: #FFF;
         z-index: 100;
         margin-bottom: 50px;
         display: block;
+        box-sizing: border-box;
+        cursor: pointer;
       }
       .chevron:before {
         content: '';
@@ -90,9 +95,9 @@ class Chevron extends React.Component{
       .chevron .chevron-inner{
         position: relative;
         z-index: 2;
-        padding: 30px 20px 20px;
+        padding: 20px 10px 5px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-        font-size: 18px;
+        font-size: 12px;
       }
     `;
     if (this.props.color === "magenta") {
@@ -102,12 +107,23 @@ class Chevron extends React.Component{
     }else {
       console.error("The Chevron Module requires a color prop");
     }
+    let text = <span>{""}</span>;
+    let glyphiconType = "";
+    if(this.props.textValue){
+      text = <span>{this.props.textValue}</span>;
+    }
+    if(this.props.glyphicon){
+      glyphiconType = this.props.glyphicon;
+    }
     return (
       <Style>
         {chevronShape}
-        <div className="chevron">
+        <div className="chevron" onClick={this.props.handleClick}>
           <div className="chevron-inner">
             <div className="chevron-content">
+              <Glyphicon glyph={glyphiconType}
+                         style={{color: "#FFF", fontSize: "25px"}}/><br />
+              {text}
             </div>
           </div>
         </div>
