@@ -224,7 +224,7 @@ describe('ModuleApi Settings Functions', function () {
   it('setSettings should set the specified setting', function (done) {
     ModuleApi.setSettings(sampleSetting, sampleValue);
     var value = localStorage.getItem('settings');
-    assert.equal(value['AI MODE'], sampleValue);
+    assert.equal(value, sampleValue);
     done();
   });
   it('getSettings should get the specified setting', function (done) {
