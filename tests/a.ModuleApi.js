@@ -4,7 +4,6 @@
   * 2. CheckStore testing. Includes put and get.
   * 4. CheckStore logging. Can't test the actual logging, but the contents of CheckStore.storeData should cover this.
   * 5. Alert creation and clearing. No clue how to test.
-  * 6. Initialize CheckStore.
   * 7. Get logged in user. No clue how to log in an user.
   * 9. Save project.
   * 10. Settings API.
