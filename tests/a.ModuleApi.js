@@ -1,15 +1,8 @@
 /**
   * TODO:
-  * 1. Event listener testing. Includes register, remove, and emit.
-  * 2. CheckStore testing. Includes put and get.
-  * 3. IO testing. Input and Ouput JSON, along with text. No clue how to test.
-  * 4. CheckStore logging. No clue how to test.
-  * 5. Alert creation and clearing. No clue how to test.
-  * 6. Initialize CheckStore.
-  * 7. Get logged in user. No clue how to log in an user.
-  * 8. Update manifest.
-  * 9. Save project.
-  * 10. Settings API.
+  * 1. CheckStore logging. No clue how to test.
+  * 2. Initialize CheckStore.
+  * 3. Update manifest.
   * After this stuff, CoreStore and CoreActions can be tested, also with electron-mocha
   *
   * Also TODO, stuff inside constructor:
