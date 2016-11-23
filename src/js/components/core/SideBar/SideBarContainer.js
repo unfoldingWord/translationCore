@@ -14,6 +14,7 @@ class SideBarContainer extends React.Component{
     this.state ={
       SideNavBar: false,
       currentToolNamespace: null,
+      imgPath: null,
     }
     this.getCurrentToolNamespace = this.getCurrentToolNamespace.bind(this);
   }
@@ -29,7 +30,8 @@ class SideBarContainer extends React.Component{
   getCurrentToolNamespace(){
     let currentToolNamespace = CoreStore.getCurrentCheckNamespace();
     api.initialCurrentGroupName();
-    this.setState({currentToolNamespace: currentToolNamespace})
+    this.setState({currentToolNamespace: currentToolNamespace});
+    getToolIcon();
   }
 
   changeView(){
@@ -49,6 +51,10 @@ class SideBarContainer extends React.Component{
     }
   }
 
+  getToolIcon(){
+
+  }
+
 
   render(){
     let sideBarContent;
@@ -61,6 +67,7 @@ class SideBarContainer extends React.Component{
                                      handleClick={this.handleOpenProject.bind(this)}/>
                             <Chevron color="blue" glyphicon={"wrench"}
                                      textValue={"Tools"}
+                                     imagePath={this.state.imgPath}
                                      handleClick={this.handleSelectTool.bind(this)}/>
                           </div>
                        </div>;

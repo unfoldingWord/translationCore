@@ -100,6 +100,7 @@ class Chevron extends React.Component{
         font-size: 12px;
       }
     `;
+    let content;
     if (this.props.color === "magenta") {
       chevronShape = magenta;
     }else if (this.props.color === "blue") {
@@ -107,13 +108,15 @@ class Chevron extends React.Component{
     }else {
       console.error("The Chevron Module requires a color prop");
     }
-    let text = <span>{""}</span>;
-    let glyphiconType = "";
-    if(this.props.textValue){
-      text = <span>{this.props.textValue}</span>;
-    }
-    if(this.props.glyphicon){
-      glyphiconType = this.props.glyphicon;
+    let glyphiconType = this.props.glyphicon ? this.props.glyphicon : "";
+    let text = this.props.textValue ? <span>{this.props.textValue}</span> : <span>{""}</span>;
+    if(this.props.imagePath){
+      content = <img src={this.props.imagePath} style={{width: "45px"}} />
+    }else{
+      content = <div><Glyphicon glyph={glyphiconType}
+                                style={{color: "#FFF", fontSize: "25px"}}/><br />
+                                {text}
+                </div>
     }
     return (
       <Style>
@@ -121,9 +124,7 @@ class Chevron extends React.Component{
         <div className="chevron" onClick={this.props.handleClick}>
           <div className="chevron-inner">
             <div className="chevron-content">
-              <Glyphicon glyph={glyphiconType}
-                         style={{color: "#FFF", fontSize: "25px"}}/><br />
-              {text}
+              {content}
             </div>
           </div>
         </div>
