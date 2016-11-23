@@ -223,7 +223,7 @@ describe('ModuleApi Settings Functions', function () {
   const sampleValue = 'ACTIVATED';
   it('setSettings should set the specified setting', function (done) {
     ModuleApi.setSettings(sampleSetting, sampleValue);
-    var value = JSON.parse(localStorage.getItem('settings')).sampleSetting;
+    var value = localStorage.getItem('settings');
     assert.equal(value, sampleValue);
     done();
   });
