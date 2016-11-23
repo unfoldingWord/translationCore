@@ -303,6 +303,11 @@ describe('ModuleApi.saveProject', function () {
   it('should be able to return error is not a git repository', function (done) {
     ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
     ModuleApi.saveProject('I Love Tc', function(err){
+      if (err) {
+        assert.equal(true, true);
+      } else {
+        assert.equal(true, false);
+      }
       assert.isNotNull(err);
       done();
     });
