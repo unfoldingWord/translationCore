@@ -174,6 +174,7 @@ describe('ModuleApi Event Listeners', function() {
 
 describe('ModuleApi.getLoggedInUser', function() {
     it('should return an object of the current user', function(done) {
+        this.timeout(10000);
         var GOGS = require('../src/js/components/core/login/GogsApi.js');
         var token = ModuleApi.getAuthToken('gogs');
         var CoreActions = require('../src/js/actions/CoreActions.js');
@@ -185,7 +186,7 @@ describe('ModuleApi.getLoggedInUser', function() {
             username: 'royalsix',
             password: '4thenations'
         }
-        GOGS(token).login(user).then(function (userdata) {
+        var newuser = GOGS(token).login(user).then(function (userdata) {
             //CoreActions.login(userdata);
             assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
             done();
