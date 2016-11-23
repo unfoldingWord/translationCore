@@ -152,7 +152,7 @@ class ModuleApi {
   }
 
   logCheckStore() {
-    console.log(CheckStore.storeData);
+    return CheckStore.storeData;
   }
 
   /**

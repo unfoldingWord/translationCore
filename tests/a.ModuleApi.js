@@ -176,6 +176,15 @@ describe('ModuleApi.initializeCheckStore', function() {
   });
 });
 
+describe('ModuleApi.logCheckStore', function() {
+  it('logCheckStore should return the entire CheckStore.', function() {
+    var loggedCheckStore = ModuleApi.logCheckStore();
+    assert.isObject(loggedCheckStore);
+    assert.isObject(loggedCheckStore.common);
+    assert.isObject(loggedCheckStore.tests)
+  });
+});
+
 describe('ModuleApi.updateManifest', function() {
   it('updateManifest should update the manifest', function() {
     ModuleApi.updateManifest('type', 'test', function(data) {
