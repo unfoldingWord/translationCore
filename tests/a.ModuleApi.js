@@ -328,7 +328,6 @@ describe('ModuleApi Settings Functions', function () {
 describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
   it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
     this.timeout(50000);
-    done()
     var params = {
       bookAbbr: '3jn'
     };
