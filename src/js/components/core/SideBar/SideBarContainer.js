@@ -12,7 +12,6 @@ class SideBarContainer extends React.Component{
     super();
     this.state ={
       SideNavBar: false,
-      direction: false,
       menuHeaders: true,
       currentToolNamespace: null,
     }
@@ -20,16 +19,10 @@ class SideBarContainer extends React.Component{
   }
 
   componentWillMount() {
-    api.registerEventListener('goToNext', this.getCurrentToolNamespace);
-    api.registerEventListener('goToPrevious', this.getCurrentToolNamespace);
-    api.registerEventListener('goToCheck', this.getCurrentToolNamespace);
     api.registerEventListener('changeCheckType', this.getCurrentToolNamespace);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('goToNext', this.getCurrentToolNamespace);
-    api.removeEventListener('goToPrevious', this.getCurrentToolNamespace);
-    api.removeEventListener('goToCheck', this.getCurrentToolNamespace);
     api.removeEventListener('changeCheckType', this.getCurrentToolNamespace);
   }
 
@@ -41,19 +34,28 @@ class SideBarContainer extends React.Component{
 
   changeView(){
     this.setState({SideNavBar: !this.state.SideNavBar});
-    this.setState({direction: !this.state.direction});
   }
 
   render(){
     let sideBarContent;
     if(this.state.SideNavBar){
-      sideBarContent = <div><SideNavBar /><Chevron color="magenta"/><br />
-                            <Chevron color="blue"/></div>;
+      sideBarContent = <div><SideNavBar /><br />
+                            <div style={{bottom: "0px", position: "absolute"}}>
+                            <Chevron color="magenta"/><br />
+                            <Chevron color="blue"/>
+                            </div>
+                       </div>;
     }else if (this.state.menuHeaders) {
-      sideBarContent = <div><Chevron color="magenta"/><br /><Chevron color="blue"/>
-                       <MenuHeaders currentTool={this.state.currentToolNamespace}/></div>;
+      sideBarContent = <div>
+                          <Chevron color="magenta"/><br />
+                          <Chevron color="blue"/>
+                          <MenuHeaders currentTool={this.state.currentToolNamespace}/>
+                       </div>;
     }else {
-      sideBarContent = <div><Chevron color="magenta"/><br /><Chevron color="blue"/></div>;
+      sideBarContent = <div>
+                          <Chevron color="magenta"/><br />
+                          <Chevron color="blue"/>
+                       </div>;
     }
     return(
       <div style={style.sideBarcontainer}>

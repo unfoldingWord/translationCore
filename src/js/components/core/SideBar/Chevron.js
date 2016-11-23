@@ -14,6 +14,7 @@ class Chevron extends React.Component{
         color: #c3105a;
         z-index: 100;
         margin-bottom: 10px;
+        display: block;
       }
       .chevron:before {
         content: '';
@@ -57,6 +58,7 @@ class Chevron extends React.Component{
         color: #4BC7ED;
         z-index: 100;
         margin-bottom: 50px;
+        display: block;
       }
       .chevron:before {
         content: '';
