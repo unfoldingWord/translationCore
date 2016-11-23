@@ -296,7 +296,7 @@ class ModuleApi {
           _this.saveProject(_this.gitStack.shift());
         }
         else {
-          if (callback) callback();
+          if (callback && !err) callback();
         }
       });
     }

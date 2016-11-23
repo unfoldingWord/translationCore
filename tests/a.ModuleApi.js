@@ -245,23 +245,6 @@ describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
   });
 });
 
-describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
-  it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
-    this.timeout(50000);
-    var params = {
-      bookAbbr: '3jn'
-    };
-    function progressCallback() { };
-    assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguage'));
-    ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function (data) {
-      assert.isObject(data);
-      assert.isArray(data.chapters);
-      assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguage'));
-      done();
-    });
-  });
-});
-
 describe('ModuleApi Event Listeners', function () {
   var sampleCallback = function (sampleParam) {
     assert.equal(sampleParam, 'Success');
@@ -318,7 +301,7 @@ describe('ModuleApi Checkstore Functions', function () {
 
 describe('ModuleApi.saveProject', function () {
   it('should be able to return error is not a git repository', function (done) {
-    ModuleApi.putDataInCommon('saveLocation', './')
+    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
     ModuleApi.saveProject('I Love Tc', function(err){
       assert.isNotNull(err);
       done();
@@ -339,5 +322,22 @@ describe('ModuleApi Settings Functions', function () {
     var value = ModuleApi.getSettings(sampleSetting);
     assert.equal(value, sampleValue);
     done();
+  });
+});
+
+describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
+  it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
+    this.timeout(50000);
+    var params = {
+      bookAbbr: '3jn'
+    };
+    function progressCallback() { };
+    assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguage'));
+    ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function (data) {
+      assert.isObject(data);
+      assert.isArray(data.chapters);
+      assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguage'));
+      done();
+    });
   });
 });
