@@ -178,12 +178,13 @@ describe('ModuleApi.getLoggedInUser', function() {
         const GOGS = require('../src/js/components/core/login/GogsApi.js');
         var token = ModuleApi.getAuthToken('gogs');
         const CoreActions = require('../src/js/actions/CoreActions.js');
+        assert.isOk(token);
         var user = {
             username: 'royalsix',
             password: '4thenations'
         }
         GOGS(token).login(user).then((userdata) => {
-            CoreActions.login(userdata);
+            //CoreActions.login(userdata);
             assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
             done();
         });
