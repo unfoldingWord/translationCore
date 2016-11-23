@@ -120,7 +120,7 @@ var Main = React.createClass({
           <Toast />
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474" }}>
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden"}}>
                 <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>

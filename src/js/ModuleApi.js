@@ -32,6 +32,7 @@ class ModuleApi {
     this.ReportFilters = this.ReportFiltersTools.filter;
     this.gitStack = [];
     this.gitDone = true;
+    this.currentGroupName = this.initialCurrentGroupName();
   }
 
   findDOMNode(component) {
@@ -348,6 +349,73 @@ class ModuleApi {
     var settingsString = JSON.stringify(settingsObj);
     localStorage.setItem('settings', settingsString);
   }
+
+  setCurrentGroupName(groupName){
+    this.currentGroupName = groupName;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
+    api.emitEvent('changeGroupName',
+    {
+      "groupName": groupName
+    });
+  }
+
+  getCurrentGroupName(){
+    return this.currentGroupName;
+  }
+
+  initialCurrentGroupName(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
+    let foundGroup = [];
+    if(currentNamespace && currentGroupIndex >= 0){
+      foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
+    }
+    this.currentGroupName = foundGroup.group;
+  }
+
+  getSubMenuItems(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = [];
+    if(this.currentGroupName){
+      if(groups){
+        foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+      }
+    }
+    return foundGroup.checks;
+  }
+
+  getCurrentGroupIndex(){
+    let groupIndex = null;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    if(groups){
+      let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+      groupIndex = groups.indexOf(foundGroup);
+    }
+    return groupIndex;
+  }
+
+  changeCurrentIndexes(checkIndex){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', parseInt(checkIndex));
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
+    api.emitEvent('goToCheck',
+      {
+        'groupIndex': groupIndex,
+        'checkIndex': checkIndex
+      }
+    );
+  }
+
 }
 
 const api = new ModuleApi();
