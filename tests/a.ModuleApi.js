@@ -185,7 +185,7 @@ describe('ModuleApi.getLoggedInUser', function() {
             username: 'royalsix',
             password: '4thenations'
         }
-        GOGS(token).login(user).then((userdata) => {
+        GOGS(token).login(user).then(function (userdata) {
             //CoreActions.login(userdata);
             assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
             done();
