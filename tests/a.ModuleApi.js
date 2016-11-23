@@ -1,6 +1,6 @@
 /**
-  * TODO:
-  * CoreStore and CoreActions can be tested, also with electron-mocha
+  * @description Testing for the ModuleApi.
+  * @author: Ian Hoegen and Jay Scott
   *****************************************************************************/
 const chai = require('chai');
 const assert = chai.assert;
@@ -328,6 +328,7 @@ describe('ModuleApi Settings Functions', function () {
 describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
   it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
     this.timeout(50000);
+    done()
     var params = {
       bookAbbr: '3jn'
     };
