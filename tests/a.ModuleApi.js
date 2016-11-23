@@ -1,13 +1,6 @@
 /**
   * TODO:
-  * 1. Event listener testing. Includes register, remove, and emit.
-  * 2. CheckStore testing. Includes put and get.
-  * 4. CheckStore logging. Can't test the actual logging, but the contents of CheckStore.storeData should cover this.
-  * 5. Alert creation and clearing. No clue how to test.
-  * 7. Get logged in user. No clue how to log in an user.
-  * 9. Save project.
-  * 10. Settings API.
-  * After this stuff, CoreStore and CoreActions can be tested, also with electron-mocha
+  * CoreStore and CoreActions can be tested, also with electron-mocha
   *****************************************************************************/
 const chai = require('chai');
 const assert = chai.assert;
@@ -16,12 +9,12 @@ const ModuleApi = require('../src/js/ModuleApi.js');
 
 function addDataToCommon() {
   ModuleApi.putDataInCommon('testString', 'This is a test string');
-  ModuleApi.putDataInCommon('testObject', {id: 'Test object'});
+  ModuleApi.putDataInCommon('testObject', { id: 'Test object' });
   ModuleApi.putDataInCommon('testNumber', 42);
 }
 
 function setUpMenus() {
-  var sampleMenu = {menu: ["1", "2"]};
+  var sampleMenu = { menu: ["1", "2"] };
   ModuleApi.saveMenu('testMenu', sampleMenu);
 }
 
@@ -258,13 +251,93 @@ describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
     var params = {
       bookAbbr: '3jn'
     };
-    function progressCallback() {};
+    function progressCallback() { };
     assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguage'));
-    ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function(data) {
+    ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function (data) {
       assert.isObject(data);
       assert.isArray(data.chapters);
       assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguage'));
       done();
     });
+  });
+});
+
+describe('ModuleApi Event Listeners', function () {
+  var sampleCallback = function (sampleParam) {
+    assert.equal(sampleParam, 'Success');
+  }
+  var SUCCESS = 'Success';
+  var FAIL = 'Fail';
+  it('registerEventListener create a listener with a callback', function (done) {
+    ModuleApi.registerEventListener('sampleEvent', sampleCallback);
+    ModuleApi.emitEvent('sampleEvent', SUCCESS);
+    done()
+  });
+  it('removeEventListener release the listner from the callback', function (done) {
+    ModuleApi.removeEventListener('sampleEvent', sampleCallback);
+    ModuleApi.emitEvent('sampleEvent', FAIL);
+    done();
+  });
+});
+
+describe('ModuleApi.getLoggedInUser', function () {
+  it('should return an object of the current user', function (done) {
+    const CoreActions = require('../src/js/actions/CoreActions.js');
+    CoreActions.login({ full_name: "Jay Scott", username: "royalsix" });
+    assert.deepEqual(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
+    done();
+  });
+});
+
+describe('ModuleApi.createAlert', function () {
+  it('should display an alert on screen and handle callback', function (done) {
+    ModuleApi.createAlert({}, (response) => {
+      assert.equal(response, 'Success');
+      done();
+    });
+    const CoreActions = require('../src/js/actions/CoreActions.js');
+    CoreActions.sendAlertResponse('Success');
+  });
+});
+
+describe('ModuleApi Checkstore Functions', function () {
+  var CheckStore = require('../src/js/stores/CheckStore.js');
+  const sampleWord = 'ORANGE';
+  it('putDataInCheckStore should put data in the checkstore', function (done) {
+    ModuleApi.putDataInCheckStore('translationRhymes', 'rhymeWord', sampleWord);
+    var word = CheckStore.getModuleDataObject('translationRhymes').rhymeWord;
+    assert.equal(word, sampleWord);
+    done();
+  });
+  it('getDataFromCheckStore should get data from the checkstore -_-', function (done) {
+    var word = ModuleApi.getDataFromCheckStore('translationRhymes', 'rhymeWord');
+    assert.equal(word, sampleWord);
+    done();
+  });
+});
+
+describe('ModuleApi.saveProject', function () {
+  it('should be able to return error is not a git repository', function (done) {
+    ModuleApi.putDataInCommon('saveLocation', './')
+    ModuleApi.saveProject('I Love Tc', function(err){
+      assert.isNotNull(err);
+      done();
+    });
+  });
+});
+
+describe('ModuleApi Settings Functions', function () {
+  const sampleSetting = 'AI MODE';
+  const sampleValue = 'ACTIVATED';
+  it('setSettings should set the specified setting', function (done) {
+    ModuleApi.setSettings(sampleSetting, sampleValue);
+    var value = localStorage.getItem('settings');
+    assert.equal(JSON.parse(value)[sampleSetting], sampleValue);
+    done();
+  });
+  it('getSettings should get the specified setting', function (done) {
+    var value = ModuleApi.getSettings(sampleSetting);
+    assert.equal(value, sampleValue);
+    done();
   });
 });

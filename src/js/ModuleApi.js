@@ -282,16 +282,21 @@ class ModuleApi {
     }
   }
 
-  saveProject(message) {
+  saveProject(message, callback) {
     var _this = this;
+    _this.gitCallback = callback;
     var git = require('./components/core/GitApi.js');
     var path = this.getDataFromCommon('saveLocation');
     if (path && this.gitDone) {
       _this.gitDone = false;
-      git(path).save(message, path, function () {
+      git(path).save(message, path, function (err) {
+        if (err && callback) callback(err);
         _this.gitDone = true;
         if (_this.gitStack.length > 0) {
           _this.saveProject(_this.gitStack.shift());
+        }
+        else {
+          if (callback) callback();
         }
       });
     }
