@@ -178,7 +178,8 @@ describe('ModuleApi.getLoggedInUser', function() {
         const GOGS = require('../src/js/components/core/login/GogsApi.js');
         var token = ModuleApi.getAuthToken('gogs');
         const CoreActions = require('../src/js/actions/CoreActions.js');
-        assert.isOk(token);
+        assert.isNotNull(token);
+        assert.isNotNull(CoreActions);
         var user = {
             username: 'royalsix',
             password: '4thenations'
