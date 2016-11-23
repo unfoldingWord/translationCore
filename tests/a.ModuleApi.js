@@ -181,6 +181,7 @@ describe('ModuleApi.getLoggedInUser', function() {
         assert.isNotNull(token);
         assert.isNotNull(CoreActions);
         assert.isNotNull(GOGS);
+        assert.isNotNull(GOGS.login);
         var user = {
             username: 'royalsix',
             password: '4thenations'
