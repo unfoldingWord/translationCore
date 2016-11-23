@@ -174,10 +174,9 @@ describe('ModuleApi Event Listeners', function() {
 
 describe('ModuleApi.getLoggedInUser', function() {
     it('should return an object of the current user', function(done) {
-        this.timeout(10000);
-        const GOGS = require('../../src/js/components/core/login/GogsApi.js');
+        var GOGS = require('../src/js/components/core/login/GogsApi.js');
         var token = ModuleApi.getAuthToken('gogs');
-        const CoreActions = require('../src/js/actions/CoreActions.js');
+        var CoreActions = require('../src/js/actions/CoreActions.js');
         assert.isNotNull(token);
         assert.isNotNull(CoreActions);
         assert.isNotNull(GOGS);
