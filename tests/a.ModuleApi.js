@@ -186,7 +186,7 @@ describe('ModuleApi.getLoggedInUser', function() {
             CoreActions.login(userdata);
             assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
             done();
-        })
+        });
     });
 });
 
