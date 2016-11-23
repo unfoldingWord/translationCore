@@ -47,13 +47,13 @@ class SideBarContainer extends React.Component{
   render(){
     let sideBarContent;
     if(this.state.SideNavBar){
-      sideBarContent = <div><Chevron direction={this.state.direction}/>
-                       <br /><SideNavBar /></div>;
+      sideBarContent = <div><SideNavBar /><Chevron color="magenta"/><br />
+                            <Chevron color="blue"/></div>;
     }else if (this.state.menuHeaders) {
-      sideBarContent = <div><Chevron direction={this.state.direction}/>
-                       <br /><MenuHeaders currentTool={this.state.currentToolNamespace}/></div>;
+      sideBarContent = <div><Chevron color="magenta"/><br /><Chevron color="blue"/>
+                       <MenuHeaders currentTool={this.state.currentToolNamespace}/></div>;
     }else {
-      sideBarContent = <Chevron direction={this.state.direction}/>;
+      sideBarContent = <div><Chevron color="magenta"/><br /><Chevron color="blue"/></div>;
     }
     return(
       <div style={style.sideBarcontainer}>
