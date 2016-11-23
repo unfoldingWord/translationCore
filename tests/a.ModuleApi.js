@@ -209,11 +209,27 @@ describe('ModuleApi Checkstore Functions', function () {
 });
 
 describe('ModuleApi.saveProject', function () {
-  it('should be able to handle multiple git requests', function (done) {
+  it('should be able to return error is not a git repository', function (done) {
     ModuleApi.putDataInCommon('saveLocation', './')
     ModuleApi.saveProject('I Love Tc', function(err){
       assert.isNotNull(err);
       done();
     });
+  });
+});
+
+describe('ModuleApi Settings Functions', function () {
+  const sampleSetting = 'AI MODE';
+  const sampleValue = 'ACTIVATED';
+  it('setSettings should set the specified setting', function (done) {
+    ModuleApi.setSettings(sampleSetting, sampleValue);
+    var value = localStorage.getItem('settings').sampleSetting;
+    assert.equal(value, sampleValue);
+    done();
+  });
+  it('setSettings should set the specified setting', function (done) {
+    var value = ModuleApi.getSettings(sampleSetting);
+    assert.equal(value, sampleValue);
+    done();
   });
 });
