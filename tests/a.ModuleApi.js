@@ -2,27 +2,13 @@
   * TODO:
   * 1. Event listener testing. Includes register, remove, and emit.
   * 2. CheckStore testing. Includes put and get.
-  * 3. IO testing. Input and Ouput JSON, along with text. No clue how to test.
-  * 4. CheckStore logging. No clue how to test.
+  * 4. CheckStore logging. Can't test the actual logging, but the contents of CheckStore.storeData should cover this.
   * 5. Alert creation and clearing. No clue how to test.
   * 6. Initialize CheckStore.
   * 7. Get logged in user. No clue how to log in an user.
-  * 8. Update manifest.
   * 9. Save project.
   * 10. Settings API.
   * After this stuff, CoreStore and CoreActions can be tested, also with electron-mocha
-  *
-  * Also TODO, stuff inside constructor:
-  * 1. React
-  * 2. ReactBootstrap
-  * 3. CheckModule
-  * 4. Modules
-  * 5. GitApi
-  * 6. PopoverApi
-  * 7. NotificationApi
-  * 8. ReportFilters and tools
-  * 9. Inital git status.
-  * For stuff inside the constructor, maybe there should just be a test to check the types.
   *****************************************************************************/
 const chai = require('chai');
 const assert = chai.assert;
@@ -41,7 +27,7 @@ function setUpMenus() {
 }
 
 describe('ModuleApi.constructor', function() {
-  it('constructor should set instance variables correctly.', function() {
+  it('constructor should set instance variables correctly', function() {
     assert.isObject(ModuleApi.React);
     assert.isFunction(ModuleApi.React.createElement);
 
@@ -73,7 +59,7 @@ describe('ModuleApi.constructor', function() {
 });
 
 describe('ModuleApi.convertToFullBookName', function() {
-  it('convertToFullBookName should return the full book name based on abbreviation.', function() {
+  it('convertToFullBookName should return the full book name based on abbreviation', function() {
     var mrk = 'mrk';
     var mrkUpper = 'MRK';
     var mrkExpected = 'Mark';
@@ -85,7 +71,7 @@ describe('ModuleApi.convertToFullBookName', function() {
 });
 
 describe('ModuleApi.convertToBookAbbreviation', function() {
-  it('convertToBookAbbreviation should return the book abbreviation based on full name.', function() {
+  it('convertToBookAbbreviation should return the book abbreviation based on full name', function() {
     var mark = 'Mark';
     var markUpper = 'MARK';
     var markExpected = 'mrk';
@@ -97,13 +83,20 @@ describe('ModuleApi.convertToBookAbbreviation', function() {
 });
 
 describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function() {
+  it('putDataInCommon should add data to common', function() {
+    try {
+      addDataToCommon();
+      assert.equal(true, true);
+    } catch (err){
+      assert.equal(true, false);
+    }
+  });
+
   it('getDataFromCommon should return data that was from putDataInCommon', function() {
     var expectedString = 'This is a test string';
     var expectedObject = 'Test object';
     var expectedNumber = 42;
     var unexpectedValue = 'abc';
-    assert.isNull(ModuleApi.getDataFromCommon('testString'));
-    addDataToCommon();
     assert.equal(ModuleApi.getDataFromCommon('testString'), expectedString);
     assert.isString(ModuleApi.getDataFromCommon('testString'));
     assert.equal(ModuleApi.getDataFromCommon('testObject').id, expectedObject);
@@ -111,12 +104,119 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
     assert.equal(ModuleApi.getDataFromCommon('testNumber'), expectedNumber);
     assert.isNumber(ModuleApi.getDataFromCommon('testNumber'));
     assert.isUndefined(ModuleApi.getDataFromCommon(unexpectedValue));
+  });
+});
 
+describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
+  var sampleObject = {
+    name: 'translationCore',
+    purpose: 'testObject',
+    id: 'IOtests'
+  };
+  it('outputJson should be able to write a json object to a file', function(done){
+    ModuleApi.outputJson('./tests/testIO/test.json', sampleObject, function(err) {
+      if (err) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(true, true);
+      }
+      done();
+    });
+  });
+  it('inputJson should be able to read a json object from a file', function(done){
+    ModuleApi.inputJson('./tests/testIO/test.json', function(err, data) {
+      if (err || !data) {
+        assert.equal(true, false);
+      } else {
+        assert.isObject(data);
+        assert.equal(data.name, sampleObject.name);
+        assert.isString(data.name);
+      }
+      done();
+    });
+  });
+});
+
+describe('ModuleApi.inputText and ModuleApi.outputText', function() {
+  var sampleText = "Hello world, I am translationCore";
+  it('outputText should be able to write a json object to a file', function(done){
+    ModuleApi.outputText('./tests/testIO/test.txt', sampleText, function(err) {
+      if (err) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(true, true);
+      }
+      done();
+    });
+  });
+  it('inputText should be able to read from a file', function(done){
+    ModuleApi.inputText('./tests/testIO/test.txt', function(err, data) {
+      if (err || !data) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(data, sampleText);
+        assert.isString(data.toString());
+      }
+      done();
+    });
+  });
+});
+
+describe('ModuleApi.initializeCheckStore', function() {
+  it('initializeCheckStore should initaze a CheckStore with default values', function() {
+    var params = {
+      bookAbbr: 'mrk'
+    };
+    var nameSpace = 'tests';
+    var groups = [{group: 'test group'}];
+    ModuleApi.initializeCheckStore(nameSpace, params, groups);
+    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'currentCheckIndex'), 0);
+    assert.isUndefined(ModuleApi.getDataFromCheckStore(nameSpace, 'invalidData'));
+    assert.isArray(ModuleApi.getDataFromCheckStore(nameSpace, 'groups'));
+    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'book'), 'Mark');
+  });
+});
+
+describe('ModuleApi.updateManifest', function() {
+  it('updateManifest should update the manifest', function() {
+    ModuleApi.updateManifest('type', 'test', function(data) {
+      assert.equal(data, 'No manifest found');
+    });
+    ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
+    ModuleApi.updateManifest('type', 'test', function(data) {
+      assert.equal(data, 'No save location specified');
+      assert.equal(ModuleApi.getDataFromCommon('tcManifest').type, 'test');
+      assert.equal(ModuleApi.getDataFromCommon('tcManifest').name, 'tcManifest');
+    });
+  });
+  it('updateManifest should update the manifest and write it to a file', function(done) {
+    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
+    ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
+    ModuleApi.updateManifest('type', 'test', function(err) {
+      if (err) {
+        assert.equal(true, false);
+      }
+      assert.equal(ModuleApi.getDataFromCommon('tcManifest').type, 'test');
+      assert.equal(ModuleApi.getDataFromCommon('tcManifest').name, 'tcManifest');
+      done();
+    });
+  });
+  it('inputJson should be able to read a json manifest from a file', function(done){
+    ModuleApi.inputJson('./tests/testIO/tc-manifest.json', function(err, data) {
+      if (err || !data) {
+        assert.equal(true, false);
+      } else {
+        assert.isObject(data);
+        assert.equal(data.type, 'test');
+        assert.equal(data.name, 'tcManifest');
+      }
+      done();
+    });
   });
 });
 
 describe('ModuleApi.getAuthToken', function() {
-  it('getAuthToken should return an auth token, of type string.', function() {
+  it('getAuthToken should return an auth token, of type string', function() {
     var unexpectedValue = 'abc';
     assert.isString(ModuleApi.getAuthToken('git'));
     assert.isString(ModuleApi.getAuthToken('gogs'));
@@ -125,10 +225,18 @@ describe('ModuleApi.getAuthToken', function() {
 });
 
 describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
-  it('getMenu should return an function, after a menu is saved.', function() {
+  it('saveMenu should setup a menu without any issue', function() {
+    try {
+      setUpMenus();
+      assert.equal(true, true);
+    } catch (err){
+      assert.equal(true, false);
+    }
+  });
+
+  it('getMenu should return an function, after a menu is saved', function() {
     var unexpectedValue = 'abc';
     assert.isNull(ModuleApi.getMenu());
-    setUpMenus();
     assert.isObject(ModuleApi.getMenu('testMenu'));
     assert.isArray(ModuleApi.getMenu('testMenu').menu);
     assert.isString(ModuleApi.getMenu('testMenu').menu[0]);
@@ -137,7 +245,7 @@ describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
 });
 
 describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
-  it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore.', function(done) {
+  it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
     this.timeout(50000);
     var params = {
       bookAbbr: '3jn'

@@ -271,9 +271,14 @@ class ModuleApi {
     if (manifest && saveLocation) {
       manifest[field] = data;
       saveLocation += '/tc-manifest.json';
+      this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(saveLocation, manifest, callback);
+    } else if (!manifest){
+      callback("No manifest found");
     } else {
-      callback("No manifest found")
+      manifest[field] = data;
+      this.putDataInCommon('tcManifest', manifest);
+      callback("No save location specified");
     }
   }
 
