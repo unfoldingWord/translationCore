@@ -191,6 +191,7 @@ describe('ModuleApi.getLoggedInUser', function() {
             assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
             done();
         }).catch(function(reason) {
+          assert.isNull(reason);
           done();
             //console.log(reason);
         });
