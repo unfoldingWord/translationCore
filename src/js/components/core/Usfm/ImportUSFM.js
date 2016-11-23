@@ -6,14 +6,15 @@ const usfm = require('usfm-parser');
 const pathex = require('path-extra');
 const api = window.ModuleApi;
 
-const Access = require('../AccessProject');
 const ManifestGenerator = require('../create_project/ProjectManifest.js');
 const books = require('../BooksOfBible.js');
+const Recent = require('../RecentProjects.js');
 
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
+const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
@@ -25,114 +26,165 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} savePath - The path of the file containing usfm text.
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
-function openTargetLanguage(savePath, direction) {
-  CheckStore.WIPE_ALL_DATA();
-  api.modules = {};
+function openUSFMProject(savePath, direction, link) {
+  clearPreviousData();
+  createTCProject(savePath, (parsedUSFM, saveLocation) => {
+    var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
+    saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
+    loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
+      if (tcManifest) {
+        loadProjectThatHasManifest(tcManifest, saveLocation);
+      } else if (!tcManifest) {
+        var userData = {
+          user: [CoreStore.getLoggedInUser()]
+        };
+        var defaultManifest = {
+          "source_translations": [
+            {
+              "language_id": "en",
+              "resource_id": "ulb",
+              "checking_level": "",
+              "date_modified": new Date(),
+              "version": ""
+            }
+          ],
+          target_language: {
+            direction: direction,
+            id: "",
+            name: targetLanguage.title
+          },
+          project_id: parsedUSFM.book
+        }
+        saveManifest(saveLocation, defaultManifest, userData, link, (err, tcManifest) => {
+          if (tcManifest) {
+            loadProjectThatHasManifest(tcManifest, saveLocation);
+          }
+          else {
+            console.error(err);
+          }
+        });
+      }
+    });
+  });
+}
+
+function saveParamsInAPI(bookAbbr, saveLocation, direction) {
+  var params = {
+    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    targetLanguagePath: saveLocation,
+    direction: direction,
+    bookAbbr: bookAbbr
+  };
+  if (isOldTestament(params.bookAbbr)) {
+    params.originalLanguage = "hebrew";
+  } else {
+    params.originalLanguage = "greek";
+  }
+  api.putDataInCommon('params', params);
+}
+
+function saveTargetLangeInAPI(parsedUSFM) {
+  var targetLanguage = {};
+  targetLanguage.title = parsedUSFM.book;
+  // targetLanguage.header = parsedUSFM.headers;
+  var chapters = parsedUSFM.chapters;
+  for (var ch in chapters) {
+    targetLanguage[chapters[ch].number] = {};
+    var verses = chapters[ch].verses;
+    for (var v in verses) {
+      var verseText = verses[v].text.trim();
+      targetLanguage[chapters[ch].number][verses[v].number] = verseText;
+    }
+  }
+  if (parsedUSFM.headers) {
+    var parsedHeaders = parsedUSFM.headers;
+    if (parsedHeaders['mt1']) {
+      targetLanguage.title = parsedHeaders['mt1'];
+    } else if (parsedHeaders['id']) {
+      targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+    }
+  }
+  api.putDataInCommon('targetLanguage', targetLanguage);
+  return targetLanguage;
+}
+
+function loadProjectThatHasManifest(tcManifest, saveLocation) {
+  //tc-manifest is present initiate load
+  const Access = require('../AccessProject');
+  api.putDataInCommon('tcManifest', tcManifest);
+  Access.loadFromFilePath(saveLocation);
+}
+
+function createTCProject(savePath, callback) {
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
   api.putDataInCommon('saveLocation', saveLocation);
-  fs.readFile(savePath, function(err, data) {
-    if (err) {
-      console.error(err);
-    } else {
-      fs.ensureDir(saveLocation, function (err) {
-        if (err) console.error(err); // => null
-        fs.writeFileSync(saveFile, data.toString());
-      });
-      var usfmData = data.toString();
-      try {
-        var parsedUSFM = usfm.toJSON(usfmData);
-      } catch (err) {
-        console.error(err);
-        return;
-      }
-      var targetLanguage = {};
-      targetLanguage.title = parsedUSFM.book;
-      // targetLanguage.header = parsedUSFM.headers;
-      var chapters = parsedUSFM.chapters;
-      for (var ch in chapters) {
-        targetLanguage[chapters[ch].number] = {};
-        var verses = chapters[ch].verses;
-        for (var v in verses) {
-          var verseText = verses[v].text.trim();
-          targetLanguage[chapters[ch].number][verses[v].number] = verseText;
-        }
-      }
-      if (translationCoreManifestPresent(saveLocation)) {
-        loadProject(saveLocation);
-      } else {
-        var userData = {
-          user: [CoreStore.getLoggedInUser()]
-        };
-        saveManifest(saveLocation, userData);
-        var params = {
-          originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
-          targetLanguagePath: saveLocation,
-          direction: direction
-        };
-        if (parsedUSFM.headers) {
-          var parsedHeaders = parsedUSFM.headers;
-          if (parsedHeaders['mt1']) {
-            targetLanguage.title = parsedHeaders['mt1'];
-          } else if (parsedHeaders['id']){
-            targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
-          }
-          params.bookAbbr = parsedHeaders['id'].toLowerCase();
-        }
-        api.putDataInCommon('params', params);
-        api.putDataInCommon('targetLanguage', targetLanguage);
-      }
-    }
-  });
+  try {
+    var data = fs.readFileSync(savePath);
+    fs.ensureDirSync(saveLocation);
+    fs.writeFileSync(saveFile, data.toString());
+    var usfmData = data.toString();
+    var parsedUSFM = usfm.toJSON(usfmData);
+    parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+  } catch (e) {
+    console.error(e);
+  }
+  callback(parsedUSFM, saveLocation);
 }
+
+/**
+ * @desription - This returns true if the book is an OldTestament one
+ * @param {string} projectBook - the book in abr form
+ * manifest
+ */
+function isOldTestament(projectBook) {
+  var passedBook = false;
+  for (var book in books) {
+    if (book == projectBook) passedBook = true;
+    if (books[book] == "Malachi" && passedBook) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /**
  * @description This function saves a translationCore manifest.
  * @param {String} saveLocation - The directory to save the manifest.
  * @param {Object} data - An object accepted by ManifestGenerator
  ******************************************************************************/
-function saveManifest(saveLocation, data) {
+function saveManifest(saveLocation, defaultManifest, data, link, callback) {
   try {
     var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-    var manifest = ManifestGenerator(data);
+    var manifest = ManifestGenerator(data, defaultManifest);
     api.putDataInCommon('tcManifest', manifest);
-    fs.outputJson(manifestLocation, manifest, function(err) {
+    fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
-        const alert = {
-          title: 'Error Saving Manifest',
-          content: err.message,
-          leftButtonText: 'Ok'
-        };
-        api.createAlert(alert);
-        console.error(err);
+        //this.manifestError('Error Saving tC Manifest');
       }
+      //overwrites old manifest if present, or else creates new one
+      callback(null, manifest);
     });
-  } catch (err) {
-    console.error(err);
-    const alert = {
-      title: 'Error Saving translationCore Manifest',
-      content: err.message,
-      leftButtonText: 'Ok'
-    };
-    api.createAlert(alert);
+  }
+  catch (err) {
+    callback(err, null);
   }
 }
 /**
- * @description This function searches for a translationCore manifest
- * @param {String} location - The directory to search for the manifest
- * @return {boolean} - Whether or not the translationCore manifest exists.
- ******************************************************************************/
-function translationCoreManifestPresent(location) {
-  // this currently just uses 'require' and if it throws an error it will return false
+ * @description - This checks to see if a valid translationCore manifest file is present.
+ * @param {string} path - absolute path to a translationStudio project folder
+ */
+function loadTranslationCoreManifest(savePath, callback) {
   try {
-    require(path.join(location, 'tc-manifest.json'));
-    return true;
-  } catch (e) {
-    if (e.code !== 'MODULE_NOT_FOUND') {
-      console.error(e);
+    var hasManifest = fs.readJsonSync(path.join(savePath, 'tc-manifest.json'));
+    if (hasManifest) {
+      callback(null, hasManifest);
     }
   }
-  return false;
+  catch (e) {
+    callback(e, null);
+  }
 }
 /**
  * @description This function gets the translationCore manifest.
@@ -140,91 +192,84 @@ function translationCoreManifestPresent(location) {
  * @param {function} callback - Passes back any errors or data.
  ******************************************************************************/
 function getManifest(folderPath, callback) {
-  fs.readJson(path.join(folderPath, 'tc-manifest.json'), function(err, data) {
+  fs.readJson(path.join(folderPath, 'tc-manifest.json'), function (err, data) {
     callback(err, data);
   });
 }
-/**
- * @description This function loads an existing USFM project.
- * @param {String} folderPath - The directory of the project
- ******************************************************************************/
- function loadProject(saveLocation) {
-   getManifest(saveLocation, function(error, tsManifest) {
-     if (error) {
-       console.error(error);
-       const alert = {
-         title: 'Error Getting Transaltion Studio Manifest',
-         content: error.message,
-         leftButtonText: 'Ok'
-       };
-       api.createAlert(alert);
-     } else {
-       var Access = require('../AccessProject');
-       Access.loadFromFilePath(saveLocation);
-     }
-   });
- }
+
+function clearPreviousData() {
+  CheckStore.WIPE_ALL_DATA();
+  api.modules = {};
+}
 
 var ImportComponent = React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return {
-      direction: null,
+      direction: "ltr",
       filePath: 'No file selected'
     };
   },
 
-  showDialog: function() {
+  showDialog: function () {
     var options = {
       filters: [
-        {name: 'USFM', extensions: ['usfm', 'sfm', 'txt']}
+        { name: 'USFM', extensions: ['usfm', 'sfm', 'txt'] }
       ]
     };
     var _this = this;
     var direction = this.state.direction;
     if (direction && !this.open) {
       this.open = true;
-      dialog.showOpenDialog(options, function(savePath) {
-        CheckStore.WIPE_ALL_DATA();
-        api.modules = {};
-        _this.setState({
-          filePath: savePath[0]
-        });
-        _this.open = false;
-        openTargetLanguage(savePath[0], direction);
+      dialog.showOpenDialog(options, function (savePath) {
+        if (savePath) {
+          _this.setState({
+            filePath: savePath[0]
+          });
+          _this.open = false;
+          openUSFMProject(savePath[0], direction, undefined);
+        } else {
+          _this.open = false;
+        }
       });
     } else {
       _this.setState({
-        filePath: 'Choose a text direction first'
+        filePath: 'No file selected'
       });
     }
   },
 
-  handleTextChange: function(e) {
+  handleTextChange: function (key, e) {
+    if (key == "rtl") {
+      e.target.parentNode.children[0].className = "btn btn-sm btn-default";
+      e.target.parentNode.children[1].className = "btn btn-sm btn-active";
+    } else {
+      e.target.parentNode.children[0].className = "btn btn-sm btn-active";
+      e.target.parentNode.children[1].className = "btn btn-sm btn-default";
+    }
     this.setState({
-      direction: e.target.value
+      direction: key
     });
   },
 
-  render: function() {
+  render: function () {
     return (
       <div>
-      {this.props.isWelcome ? <div> </div> : <br />}
-      <FormGroup>
-        <FormControl componentClass="select" onChange={this.handleTextChange}>
-          <option value={'ltr'}>Select text direction</option>
-          <option value={'ltr'}>Left to right</option>
-          <option value={'rtl'}>Right to left</option>
-        </FormControl>
         {this.props.isWelcome ? <div> </div> : <br />}
-        <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
-        <span style={{color: '#333'}}> &nbsp; {this.state.filePath}</span>
-      </FormGroup>
-      {this.props.isWelcome ? <div> </div> : <br />}
-      <br />
+        Select Text Direction:
+        <FormGroup>
+          <ButtonGroup style={{ paddingBottom: 10, paddingTop: 10 }}>
+            <Button bsSize={'small'} eventKey={"ltr"} onClick={this.handleTextChange.bind(this, "ltr")}>Left To Right</Button>
+            <Button bsSize={'small'} eventKey={"rtl"} onClick={this.handleTextChange.bind(this, "rtl")}>Right To Left</Button>
+          </ButtonGroup>
+          {this.props.isWelcome ? <div> </div> : <br />}
+          <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
+          <span style={{ color: '#333' }}> &nbsp; {this.state.filePath}</span>
+        </FormGroup>
+        {this.props.isWelcome ? <div> </div> : <br />}
+        <br />
       </div>
     );
   }
 });
 exports.component = ImportComponent;
-exports.loadProject = loadProject;
-exports.open = openTargetLanguage;
+exports.open = openUSFMProject;

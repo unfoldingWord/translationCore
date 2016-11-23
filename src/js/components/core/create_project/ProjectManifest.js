@@ -23,7 +23,7 @@ var template = {
     id: '',
     name: ''
   },
-  source_translations:[],
+  source_translations: [],
   translators: [],
   checkers: [],
   time_created: '',
@@ -69,18 +69,23 @@ function populate(data, tsManifest) {
       projectManifest.check_modules.push(currentItem.name);
     }
   }
-
-  if (tsManifest) {
-    projectManifest.target_language = tsManifest.target_language;
-    projectManifest.type = tsManifest.type;
-    if(tsManifest.source_translations){
-      projectManifest.source_translations = tsManifest.source_translations;
+  try {
+    if (tsManifest) {
+      projectManifest.target_language = tsManifest.target_language;
+      projectManifest.type = tsManifest.type;
+      if (tsManifest.source_translations) {
+        projectManifest.source_translations = tsManifest.source_translations;
+      }
+      projectManifest.ts_project = tsManifest.project;
+      if (projectManifest.ts_project) {
+        if (projectManifest.ts_project.name.length < 1) {
+          projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
+        }
+      }
+      projectManifest.translators = tsManifest.translators;
     }
-    projectManifest.ts_project = tsManifest.project;
-    if (projectManifest.ts_project.name.length < 1) {
-      projectManifest.ts_project.name = api.convertToFullBookName(projectManifest.ts_project.id);
-    }
-    projectManifest.translators = tsManifest.translators;
+  } catch (e) {
+    console.error(e);
   }
 
   return projectManifest;

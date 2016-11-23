@@ -32,9 +32,11 @@ class ModuleWrapper extends React.Component {
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
         projects = <RecentProjects.Component onLoad={() => {
           this.state.showApps = true;
+          //This is an ant-pattern should never change the state in the render method
         }}/>;
       } else {
         this.state.showApps = true;
+        //This is an ant-pattern should never change the state in the render method
         projects = <SwitchCheckModal.Component />
       }
       return(
