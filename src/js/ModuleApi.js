@@ -415,7 +415,8 @@ class ModuleApi {
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);
-    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', parseInt(checkIndex));
+    checkIndex = parseInt(checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     api.emitEvent('goToCheck',
       {
