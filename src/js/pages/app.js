@@ -50,23 +50,15 @@ var Main = React.createClass({
       api.setSettings('showTutorial', false);
     }
 
-    //this.timeout(10000);
     const GOGS = require('../components/core/login/GogsApi.js');
     var token = api.getAuthToken('gogs');
     const CoreActions = require('../actions/CoreActions.js');
-    // assert.isNotNull(token);
-    // assert.isNotNull(CoreActions);
-    // assert.isNotNull(GOGS);
-    // assert.isNotNull(GOGS.login);
     var user = {
       username: 'royalsix',
       password: '4thenations'
     }
-    debugger;
     GOGS(token).login(user).then(function (userdata) {
       CoreActions.login(userdata);
-      //assert.equal(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
-      //done();
       console.log(api.getLoggedInUser());
       console.log({ fullName: "Jay Scott", userName: "royalsix" });
     });
@@ -81,17 +73,17 @@ var Main = React.createClass({
         CoreActions.updateOnlineStatus(true);
         CoreActions.updateProfileVisibility(true);
       }).catch(function (reason) {
-        //console.log(reason);
-        // if (reason.status === 401) {
-        //   dialog.showErrorBox('Login Failed', 'Incorrect username or password');
-        // } else if (reason.hasOwnProperty('message')) {
-        //   dialog.showErrorBox('Login Failed', reason.message);
-        // } else if (reason.hasOwnProperty('data')) {
-        //   let errorMessage = reason.data;
-        //   dialog.showErrorBox('Login Failed', errorMessage);
-        // } else {
-        //   dialog.showErrorBox('Login Failed', 'Unknown Error');
-        // }
+        console.log(reason);
+        if (reason.status === 401) {
+          dialog.showErrorBox('Login Failed', 'Incorrect username or password');
+        } else if (reason.hasOwnProperty('message')) {
+          dialog.showErrorBox('Login Failed', reason.message);
+        } else if (reason.hasOwnProperty('data')) {
+          let errorMessage = reason.data;
+          dialog.showErrorBox('Login Failed', errorMessage);
+        } else {
+          dialog.showErrorBox('Login Failed', 'Unknown Error');
+        }
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
