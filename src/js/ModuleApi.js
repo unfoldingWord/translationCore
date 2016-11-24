@@ -291,14 +291,11 @@ class ModuleApi {
     if (path && this.gitDone) {
       _this.gitDone = false;
       git(path).save(message, path, function (err) {
-        if (err && callback) callback(err);
         _this.gitDone = true;
         if (_this.gitStack.length > 0) {
           _this.saveProject(_this.gitStack.shift());
         }
-        else {
-          if (callback && !err) callback();
-        }
+        if (callback) callback(err);
       });
     }
     else {

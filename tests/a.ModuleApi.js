@@ -299,21 +299,6 @@ describe('ModuleApi Checkstore Functions', function () {
   });
 });
 
-describe('ModuleApi.saveProject', function () {
-  it('should be able to return error is not a git repository', function (done) {
-    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
-    ModuleApi.saveProject('I Love Tc', function(err){
-      if (err) {
-        assert.equal(true, true);
-      } else {
-        assert.equal(true, false);
-      }
-      assert.isNotNull(err);
-      done();
-    });
-  });
-});
-
 describe('ModuleApi Settings Functions', function () {
   const sampleSetting = 'AI MODE';
   const sampleValue = 'ACTIVATED';
@@ -342,6 +327,16 @@ describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
       assert.isObject(data);
       assert.isArray(data.chapters);
       assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguage'));
+      done();
+    });
+  });
+});
+
+describe('ModuleApi.saveProject', function () {
+  it('should be able to return error is not a git repository', function (done) {
+    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
+    ModuleApi.saveProject('I Love Tc', function(err){
+      assert.isNotNull(err);
       done();
     });
   });
