@@ -33,6 +33,7 @@ class ModuleApi {
     this.gitStack = [];
     this.gitDone = true;
     this.currentGroupName = this.initialCurrentGroupName();
+    this.currentToolMetaData = null;
   }
 
   findDOMNode(component) {
@@ -349,6 +350,14 @@ class ModuleApi {
     localStorage.setItem('settings', settingsString);
   }
 
+  putToolMetaDatasInStore(metadatas){
+    this.currentToolMetaData = metadatas;
+  }
+
+  getToolMetaDataFromStore(){
+    return this.currentToolMetaData;
+  }
+
   setCurrentGroupName(groupName){
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
@@ -405,7 +414,8 @@ class ModuleApi {
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);
-    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', parseInt(checkIndex));
+    checkIndex = parseInt(checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     api.emitEvent('goToCheck',
       {

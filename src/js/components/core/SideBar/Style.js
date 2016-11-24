@@ -24,7 +24,6 @@ var style = {
       left: "0px",
       fontSize: "12px",
       overflowY: "auto",
-
   },
 
   ul: {
