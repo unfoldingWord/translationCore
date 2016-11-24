@@ -29,8 +29,10 @@ class SubMenu extends React.Component {
   }
 
   updateSubMenuItem(params){
-    var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
-    menuItem.getItemStatus(params.checkStatus);
+    if(params){
+      var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
+      menuItem.getItemStatus(params.checkStatus);
+    }
   }
 
   goToCheck(params) {
@@ -58,9 +60,10 @@ class SubMenu extends React.Component {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
     let groupIndex = api.getCurrentGroupIndex();
-    for(var i in subMenuItemsArray){
-      subMenuItems.push(
-        <SubMenuItem key={i}
+    if(groupIndex !== null){
+      for(var i in subMenuItemsArray){
+        subMenuItems.push(
+          <SubMenuItem key={i}
             handleItemSelection={this.handleItemSelection.bind(this, i)}
             bookName={bookName}
             check={subMenuItemsArray[i]}
@@ -68,7 +71,8 @@ class SubMenu extends React.Component {
             checkIndex={i}
             currentNamespace={currentNamespace}
             ref={groupIndex.toString() + ' ' + i.toString()}/>
-      );
+        );
+      }
     }
     return subMenuItems;
   }

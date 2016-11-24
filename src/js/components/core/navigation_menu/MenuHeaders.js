@@ -13,14 +13,17 @@ class MenuHeaders extends React.Component {
     }
     this.groupName = null;
     this.updateCurrentMenuHeader = this.updateCurrentMenuHeader.bind(this);
+    this.switchedToolNewMenuHeaders = this.switchedToolNewMenuHeaders.bind(this);
   }
 
   componentWillMount(){
     api.registerEventListener('changeGroupName', this.updateCurrentMenuHeader);
+    api.registerEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
   }
 
   componentWillUnmount(){
     api.removeEventListener('changeGroupName', this.updateCurrentMenuHeader);
+    api.removeEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
   }
 
   handleSelection(groupName){
@@ -31,6 +34,10 @@ class MenuHeaders extends React.Component {
     this.unselectOldMenuItem();
     this.groupName = params.groupName;
     this.selectNewMenuItem();
+  }
+
+  switchedToolNewMenuHeaders(){
+    this.groupName = api.getCurrentGroupName();
   }
 
   unselectOldMenuItem() {
