@@ -19,13 +19,11 @@ class MenuHeaders extends React.Component {
   componentWillMount(){
     api.registerEventListener('changeGroupName', this.updateCurrentMenuHeader);
     api.registerEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
-
   }
 
   componentWillUnmount(){
     api.removeEventListener('changeGroupName', this.updateCurrentMenuHeader);
     api.removeEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
-
   }
 
   handleSelection(groupName){

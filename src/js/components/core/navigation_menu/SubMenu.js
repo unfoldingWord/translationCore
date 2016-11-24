@@ -60,7 +60,6 @@ class SubMenu extends React.Component {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
     let groupIndex = api.getCurrentGroupIndex();
-    console.log(groupIndex);
     if(groupIndex !== null){
       for(var i in subMenuItemsArray){
         subMenuItems.push(
