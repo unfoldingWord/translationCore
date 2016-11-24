@@ -135,7 +135,7 @@ class ModuleApi {
   }
 
   convertToFullBookName(bookAbbr) {
-    return BooksOfBible[bookAbbr];
+    return BooksOfBible[bookAbbr.toLowerCase()];
   }
 
   /**
@@ -154,15 +154,7 @@ class ModuleApi {
   }
 
   logCheckStore() {
-    console.log(CheckStore.storeData);
-  }
-
-  createAlert(obj, callback = () => { }) {
-    Alert.startListener(callback);
-    CoreActions.sendAlert({
-      alertObj: obj,
-      alertCallback: callback
-    });
+    return CheckStore.storeData;
   }
 
   /**
@@ -281,23 +273,30 @@ class ModuleApi {
     if (manifest && saveLocation) {
       manifest[field] = data;
       saveLocation += '/tc-manifest.json';
+      this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(saveLocation, manifest, callback);
+    } else if (!manifest){
+      callback("No manifest found");
     } else {
-      callback("No manifest found")
+      manifest[field] = data;
+      this.putDataInCommon('tcManifest', manifest);
+      callback("No save location specified");
     }
   }
 
-  saveProject(message) {
+  saveProject(message, callback) {
     var _this = this;
+    _this.gitCallback = callback;
     var git = require('./components/core/GitApi.js');
     var path = this.getDataFromCommon('saveLocation');
     if (path && this.gitDone) {
       _this.gitDone = false;
-      git(path).save(message, path, function () {
+      git(path).save(message, path, function (err) {
         _this.gitDone = true;
         if (_this.gitStack.length > 0) {
           _this.saveProject(_this.gitStack.shift());
         }
+        if (callback) callback(err);
       });
     }
     else {
@@ -340,7 +339,7 @@ class ModuleApi {
       var settingsObj = JSON.parse(settings);
       return settingsObj[name];
     }
-    return null;
+    return {};
   }
 
   setSettings(name, value) {
@@ -362,6 +361,7 @@ class ModuleApi {
   setCurrentGroupName(groupName){
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return;
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);
@@ -389,6 +389,7 @@ class ModuleApi {
 
   getSubMenuItems(){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = [];
     if(this.currentGroupName){
@@ -412,6 +413,7 @@ class ModuleApi {
 
   changeCurrentIndexes(checkIndex){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);

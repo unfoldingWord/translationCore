@@ -19,6 +19,7 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {userName: "", password: "", register: false};
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(event) {
     var _this = this;
