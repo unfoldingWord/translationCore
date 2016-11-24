@@ -40,6 +40,7 @@ class SwitchCheck extends React.Component{
       _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         _this.sortMetadatas(metadatas);
         _this.setState({moduleMetadatas: metadatas});
+        api.putToolMetaDatasInStore(metadatas);
       });
     });
   }
