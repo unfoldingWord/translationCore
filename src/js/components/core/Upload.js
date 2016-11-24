@@ -16,14 +16,15 @@ const CoreStore = require('../../stores/CoreStore');
 const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');
-const Recent = require('./RecentProjects.js');
 const api = window.ModuleApi;
 const books = require('./BooksOfBible.js');
+const Recent = require('./RecentProjects.js');
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import From Local Project';
 const IMPORT_ONLINE = 'Import From Online';
 const IMPORT_USFM = 'Import From Local USFM File';
+const IMPORT_RECENT = 'Import a Recently Used Project';
 const IMPORT_D43 = 'Import From Door43';
 
 const pathex = require('path-extra');
@@ -43,7 +44,7 @@ const UploadModal = React.createClass({
    */
   handleSelect: function (eventKey) {
     this.setState({ active: eventKey });
-    switch (eventKey) {
+    switch(eventKey){
       case 1:
         this.setState({ show: 'link' });
         break;
@@ -54,6 +55,9 @@ const UploadModal = React.createClass({
         this.setState({ show: 'usfm' });
         break;
       case 4:
+        this.setState({ show: 'recent' });
+        break;
+      case 5:
         this.setState({ show: 'd43' });
         break;
       default:
@@ -387,6 +391,13 @@ const UploadModal = React.createClass({
           </div>
         )
         break;
+      case 'recent':
+        mainContent = (
+          <div>
+            <Recent.Component />
+          </div>
+        )
+        break;
       default:
         mainContent = (<div> </div>)
         break;
@@ -399,8 +410,8 @@ const UploadModal = React.createClass({
             <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
             <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
             <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
-            <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
-
+            <NavItem eventKey={4}>{IMPORT_RECENT}</NavItem>
+            <NavItem eventKey={5}>{IMPORT_D43}</NavItem>
           </Nav>
           {mainContent}
         </div>

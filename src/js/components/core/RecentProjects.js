@@ -4,7 +4,10 @@ const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const CheckStore = require('../../stores/CheckStore');
 const Upload = require('./Upload');
-const {shell} = require('electron')
+const {shell} = require('electron');
+const fs = require(window.__base + 'node_modules/fs-extra');
+const pathex = require('path-extra');
+const savePath = path.join(pathex.homedir(), 'translationCore');
 
 function addToRecent(path) {
   var previousProjects = localStorage.getItem('previousProjects');
@@ -19,13 +22,15 @@ function addToRecent(path) {
 
 class RecentProjects extends React.Component {
   getProjects() {
-    var projects = JSON.parse(localStorage.getItem('previousProjects'));
-    if (projects) return projects.reverse();
+    var projects = fs.readdirSync(savePath);
+    if (projects) return projects;
     return [];
   }
 
   loadProject(filePath) {
-    this.refs.TargetLanguage.sendFilePath(filePath, null, this.props.onLoad.bind(this));
+    console.log(this.refs.TargetLanguage);
+    console.log(this.props);
+    this.refs.TargetLanguage.sendFilePath(filePath, null, ()=>{});
     api.putDataInCommon('saveLocation', filePath);
   }
 
@@ -36,6 +41,7 @@ class RecentProjects extends React.Component {
     for (var project in projectPaths) {
       var projectPath = projectPaths[project];
       var projectName = path.basename(projectPath);
+      if (projectName === '.git' || projectName === '.DS_Store') continue;
       projects.push(
         <div key={i++}>
           <span className={'pull-right'}>
