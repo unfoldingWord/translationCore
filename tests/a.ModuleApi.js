@@ -315,6 +315,69 @@ describe('ModuleApi Settings Functions', function () {
   });
 });
 
+describe('ModuleApi.putToolMetaDatasInStore and ModuleApi.getToolMetaDataFromStore', function() {
+  it('ModuleApi.putToolMetaDatasInStore should add metadata to the store', function() {
+    try {
+      ModuleApi.putToolMetaDatasInStore('Test metadata');
+      assert.equal(true, true);
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+  it('ModuleApi.getToolMetaDataFromStore should retrieve metadata from the store', function() {
+    try {
+      var metadata = ModuleApi.getToolMetaDataFromStore();
+      assert.equal(metadata, 'Test metadata');
+      assert.isString(metadata);
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+});
+
+describe('ModuleApi.setCurrentGroupName and ModuleApi.getCurrentGroupName', function() {
+  it('ModuleApi.setCurrentGroupName should change the name of the current group', function() {
+    try {
+      ModuleApi.setCurrentGroupName('Test Group Name');
+      assert.equal(true, true);
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+  it('ModuleApi.getCurrentGroupName should retrieve the name of the current group from the store', function() {
+    try {
+      var metadata = ModuleApi.getCurrentGroupName();
+      assert.equal(metadata, 'Test Group Name');
+      assert.isString(metadata);
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+});
+
+describe('ModuleApi.getSubMenuItems', function() {
+  it('ModuleApi.getSubMenuItems should retrieve the submenu items', function(){
+    var submenu = ModuleApi.getSubMenuItems();
+    assert.isString(submenu);
+    assert.equal('No namespace', submenu);
+  });
+});
+
+describe('ModuleApi.getCurrentGroupIndex', function() {
+  it('ModuleApi.getCurrentGroupIndex should retrieve the current group index', function(){
+    var index = ModuleApi.getCurrentGroupIndex();
+    assert.isNull(index);
+  });
+});
+
+describe('ModuleApi.changeCurrentIndexes', function() {
+  it('ModuleApi.changeCurrentIndexes should change the current group index', function(){
+    var index = ModuleApi.changeCurrentIndexes(42);
+    assert.isString(index);
+    assert.equal('No namespace', index);
+  });
+});
+
 describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
   it('getGatewayLanguageAndSaveInCheckStore should put a gateway language in the checkstore', function(done) {
     this.timeout(50000);

@@ -361,6 +361,7 @@ class ModuleApi {
   setCurrentGroupName(groupName){
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return;
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);
@@ -388,6 +389,7 @@ class ModuleApi {
 
   getSubMenuItems(){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = [];
     if(this.currentGroupName){
@@ -411,6 +413,7 @@ class ModuleApi {
 
   changeCurrentIndexes(checkIndex){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
     let groupIndex = groups.indexOf(foundGroup);
