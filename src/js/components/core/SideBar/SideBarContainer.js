@@ -38,17 +38,14 @@ class SideBarContainer extends React.Component{
     let iconPathName = null;
     let currentToolMetadata = null;
     let toolsMetadata = api.getToolMetaDataFromStore();
-    console.log(toolsMetadata);
     if(toolsMetadata){
       currentToolMetadata = toolsMetadata.find(
         (tool) => tool.name === currentToolNamespace
       );
     }
     if(currentToolMetadata){
-      console.log(currentToolMetadata);
       let iconPathName = currentToolMetadata.imagePath;
       this.setState({imgPath: iconPathName});
-      console.log(iconPathName);
     }
   }
 
