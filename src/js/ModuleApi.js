@@ -33,6 +33,7 @@ class ModuleApi {
     this.gitStack = [];
     this.gitDone = true;
     this.currentGroupName = this.initialCurrentGroupName();
+    this.currentToolMetaData = null;
   }
 
   findDOMNode(component) {
@@ -348,6 +349,14 @@ class ModuleApi {
     settingsObj[name] = value;
     var settingsString = JSON.stringify(settingsObj);
     localStorage.setItem('settings', settingsString);
+  }
+
+  putToolMetaDatasInStore(metadatas){
+    this.currentToolMetaData = metadatas;
+  }
+
+  getToolMetaDataFromStore(){
+    return this.currentToolMetaData;
   }
 
   setCurrentGroupName(groupName){

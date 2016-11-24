@@ -31,7 +31,25 @@ class SideBarContainer extends React.Component{
     let currentToolNamespace = CoreStore.getCurrentCheckNamespace();
     api.initialCurrentGroupName();
     this.setState({currentToolNamespace: currentToolNamespace});
-    getToolIcon();
+    this.getToolIcon(currentToolNamespace);
+  }
+
+  getToolIcon(currentToolNamespace){
+    let iconPathName = null;
+    let currentToolMetadata = null;
+    let toolsMetadata = api.getToolMetaDataFromStore();
+    console.log(toolsMetadata);
+    if(toolsMetadata){
+      currentToolMetadata = toolsMetadata.find(
+        (tool) => tool.name === currentToolNamespace
+      );
+    }
+    if(currentToolMetadata){
+      console.log(currentToolMetadata);
+      let iconPathName = currentToolMetadata.imagePath;
+      this.setState({imgPath: iconPathName});
+      console.log(iconPathName);
+    }
   }
 
   changeView(){
@@ -50,11 +68,6 @@ class SideBarContainer extends React.Component{
       CoreActions.showCreateProject("Languages");
     }
   }
-
-  getToolIcon(){
-
-  }
-
 
   render(){
     let sideBarContent;
@@ -78,6 +91,7 @@ class SideBarContainer extends React.Component{
                                    handleClick={this.handleOpenProject.bind(this)}/>
                           <Chevron color="blue" glyphicon={"wrench"}
                                    textValue={"Tools"}
+                                   imagePath={this.state.imgPath}
                                    handleClick={this.handleSelectTool.bind(this)}/>
                           <MenuHeaders currentTool={this.state.currentToolNamespace}/>
                        </div>;
