@@ -18,6 +18,7 @@ const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
+var Upload = require('../Upload.js');
 
 const defaultSave = path.join(pathex.homedir(), 'translationCore');
 
@@ -27,17 +28,15 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
 function openUSFMProject(savePath, direction, link) {
-  clearPreviousData();
+  Upload = require('../Upload.js');
+  Upload.clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
-    loadTranslationCoreManifest(saveLocation, (err, tcManifest) => {
+    Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
-        loadProjectThatHasManifest(tcManifest, saveLocation);
+        Upload.loadProjectThatHasManifest(tcManifest, saveLocation);
       } else if (!tcManifest) {
-        var userData = {
-          user: [CoreStore.getLoggedInUser()]
-        };
         var defaultManifest = {
           "source_translations": [
             {
@@ -55,9 +54,9 @@ function openUSFMProject(savePath, direction, link) {
           },
           project_id: parsedUSFM.book
         }
-        saveManifest(saveLocation, defaultManifest, userData, link, (err, tcManifest) => {
+        Upload.saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
-            loadProjectThatHasManifest(tcManifest, saveLocation);
+            Upload.loadProjectThatHasManifest(saveLocation, function(){}, tcManifest);
           }
           else {
             console.error(err);
@@ -66,21 +65,6 @@ function openUSFMProject(savePath, direction, link) {
       }
     });
   });
-}
-
-function saveParamsInAPI(bookAbbr, saveLocation, direction) {
-  var params = {
-    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
-    targetLanguagePath: saveLocation,
-    direction: direction,
-    bookAbbr: bookAbbr
-  };
-  if (isOldTestament(params.bookAbbr)) {
-    params.originalLanguage = "hebrew";
-  } else {
-    params.originalLanguage = "greek";
-  }
-  api.putDataInCommon('params', params);
 }
 
 function saveTargetLangeInAPI(parsedUSFM) {
@@ -108,13 +92,6 @@ function saveTargetLangeInAPI(parsedUSFM) {
   return targetLanguage;
 }
 
-function loadProjectThatHasManifest(tcManifest, saveLocation) {
-  //tc-manifest is present initiate load
-  const Access = require('../AccessProject');
-  api.putDataInCommon('tcManifest', tcManifest);
-  Access.loadFromFilePath(saveLocation);
-}
-
 function createTCProject(savePath, callback) {
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
@@ -131,75 +108,6 @@ function createTCProject(savePath, callback) {
     console.error(e);
   }
   callback(parsedUSFM, saveLocation);
-}
-
-/**
- * @desription - This returns true if the book is an OldTestament one
- * @param {string} projectBook - the book in abr form
- * manifest
- */
-function isOldTestament(projectBook) {
-  var passedBook = false;
-  for (var book in books) {
-    if (book == projectBook) passedBook = true;
-    if (books[book] == "Malachi" && passedBook) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
- * @description This function saves a translationCore manifest.
- * @param {String} saveLocation - The directory to save the manifest.
- * @param {Object} data - An object accepted by ManifestGenerator
- ******************************************************************************/
-function saveManifest(saveLocation, defaultManifest, data, link, callback) {
-  try {
-    var manifestLocation = path.join(saveLocation, 'tc-manifest.json');
-    var manifest = ManifestGenerator(data, defaultManifest);
-    api.putDataInCommon('tcManifest', manifest);
-    fs.outputJson(manifestLocation, manifest, function (err) {
-      if (err) {
-        //this.manifestError('Error Saving tC Manifest');
-      }
-      //overwrites old manifest if present, or else creates new one
-      callback(null, manifest);
-    });
-  }
-  catch (err) {
-    callback(err, null);
-  }
-}
-/**
- * @description - This checks to see if a valid translationCore manifest file is present.
- * @param {string} path - absolute path to a translationStudio project folder
- */
-function loadTranslationCoreManifest(savePath, callback) {
-  try {
-    var hasManifest = fs.readJsonSync(path.join(savePath, 'tc-manifest.json'));
-    if (hasManifest) {
-      callback(null, hasManifest);
-    }
-  }
-  catch (e) {
-    callback(e, null);
-  }
-}
-/**
- * @description This function gets the translationCore manifest.
- * @param {String} folderPath - The directory of the project
- * @param {function} callback - Passes back any errors or data.
- ******************************************************************************/
-function getManifest(folderPath, callback) {
-  fs.readJson(path.join(folderPath, 'tc-manifest.json'), function (err, data) {
-    callback(err, data);
-  });
-}
-
-function clearPreviousData() {
-  CheckStore.WIPE_ALL_DATA();
-  api.modules = {};
 }
 
 var ImportComponent = React.createClass({
