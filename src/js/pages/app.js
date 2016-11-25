@@ -88,7 +88,7 @@ var Main = React.createClass({
     }
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
-      this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
+      Upload.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
           CoreActions.startLoading();
@@ -123,7 +123,6 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <SettingsModal />
-          <Upload ref={"TargetLanguage"} show={false} />
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />
