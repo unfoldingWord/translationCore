@@ -59,7 +59,14 @@ const ProjectModal = React.createClass({
 
   submitLink: function () {
     var link = this.refs.TargetLanguage.getLink();
-    loadOnline(link, this.refs.TargetLanguage.sendFilePath);
+    var _this = this;
+    loadOnline(link, function(err, savePath, url) {
+      if (!err) {
+        this.refs.TargetLanguage.sendFilePath(savePath, url);
+      } else {
+        console.error(err);
+      }
+    });
   },
 
   close: function () {
