@@ -67,7 +67,8 @@ class MenuHeaders extends React.Component {
         numUnchecked++;
       }
     }
-    return numChecked/(numChecked+numUnchecked);
+    var total = numChecked+numUnchecked;
+    return total > 0 ? numChecked/total : 0;
   }
 
   render() {
@@ -125,7 +126,9 @@ class MenuHeadersItems extends React.Component {
             progress={this.props.progress}
             options={{
               strokeWidth: 15,
-              color: "#4ABBE6"
+              color: "#4ABBE6",
+              trailColor: "#FFF",
+              trailWidth: 15
             }}
             initialAnimate={false}
             containerStyle={{
