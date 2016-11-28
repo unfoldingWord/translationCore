@@ -16,6 +16,7 @@ class MenuHeaders extends React.Component {
     this.groupName = null;
     this.updateCurrentMenuHeader = this.updateCurrentMenuHeader.bind(this);
     this.switchedToolNewMenuHeaders = this.switchedToolNewMenuHeaders.bind(this);
+    this.getGroupProgress = this.getGroupProgress.bind(this);
   }
 
   componentWillMount(){
@@ -56,6 +57,19 @@ class MenuHeaders extends React.Component {
     }
   }
 
+  getGroupProgress(groupObj){
+    var numChecked = 0;
+    var numUnchecked = 0;
+    for(let check in groupObj.checks){
+      if(check.checkStatus != "UNCHECKED"){
+        numChecked++;
+      }else{
+        numUnchecked++;
+      }
+    }
+    return numChecked/(numChecked+numUnchecked);
+  }
+
   render() {
     var groupsName = [];
     if(this.props.currentTool){
@@ -65,6 +79,7 @@ class MenuHeaders extends React.Component {
           <MenuHeadersItems key={i}
               handleSelection={this.handleSelection.bind(this, groupsObjects[i].group)}
               value={groupsObjects[i].group}
+              progress={this.getGroupProgress(i)}
               ref={groupsObjects[i].group.toString()}/>
         );
       }
@@ -106,7 +121,8 @@ class MenuHeadersItems extends React.Component {
           style={itemStyle}
           title="Click to select this reference">
         <th>
-          <Circle progress={0.65}
+          <Circle
+            progress={this.props.progress}
             options={{
               strokeWidth: 15,
               color: "#4ABBE6"
