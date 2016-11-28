@@ -394,13 +394,3 @@ describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
     });
   });
 });
-
-describe('ModuleApi.saveProject', function () {
-  it('should be able to return error is not a git repository', function (done) {
-    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
-    ModuleApi.saveProject('I Love Tc', function(err){
-      assert.isNotNull(err);
-      done();
-    });
-  });
-});
