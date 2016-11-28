@@ -30,7 +30,7 @@ module.exports = (function() {
             leftButtonText: 'Ok'
           }
           api.createAlert(alert);
-      callback('Invalid Project', null, null)
+      callback('Invalid Project, URL needs to end with .git', null, null)
       return;
     }
     var projectPath = splitUrl.pop().split('/');
