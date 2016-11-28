@@ -5,7 +5,7 @@
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
-    "test": "./node_modules/.bin/electron-mocha renderer ./tests",
+    "test": "./node_modules/.bin/electron-mocha --renderer ./tests",
     "compile": "babel src --out-dir src",
     "build-win": "npm run compile && node scripts/builds/build-win.js",
     "build-winstaller": "node scripts/builds/build-win-installer.js",
