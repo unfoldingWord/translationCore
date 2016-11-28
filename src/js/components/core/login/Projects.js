@@ -34,7 +34,7 @@ class Projects extends React.Component {
       if (err) {
         console.error(err);
       } else {
-        _this.refs.Upload.sendFilePath(savePath, url)
+        Upload.sendFilePath(savePath, url)
         CoreActions.showCreateProject("");
       }
     });
@@ -82,7 +82,6 @@ class Projects extends React.Component {
           <span style={{fontSize: '20px'}}>Your Door43 Projects</span>
           <Button bsStyle='primary' style={{display: showBack}} onClick={this.props.back} className={'pull-right'} bsSize='sm'>Back to profile</Button>
         </div>
-        <Upload ref={'Upload'} show={false} />
         {projectList}
       </div>
     );

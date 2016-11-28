@@ -381,7 +381,7 @@ class ModuleApi {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
     let foundGroup = [];
-    if(currentNamespace && currentGroupIndex >= 0){
+    if(currentNamespace && currentGroupIndex && currentGroupIndex >= 0){
       foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
     }
     this.currentGroupName = foundGroup.group;

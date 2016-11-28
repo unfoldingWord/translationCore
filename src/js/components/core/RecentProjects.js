@@ -25,7 +25,7 @@ class RecentProjects extends React.Component {
   }
 
   loadProject(filePath) {
-    this.refs.TargetLanguage.sendFilePath(filePath, null, this.props.onLoad.bind(this));
+    Upload.sendFilePath(filePath, null, this.props.onLoad.bind(this));
     api.putDataInCommon('saveLocation', filePath);
   }
 
@@ -58,7 +58,6 @@ class RecentProjects extends React.Component {
   render() {
     return (
       <div>
-      <Upload ref={"TargetLanguage"} show={false}/>
       {this.generateDisplay()}
       </div>
     );

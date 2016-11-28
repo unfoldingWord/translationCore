@@ -109,7 +109,7 @@ const ProjectModal = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload ref={"TargetLanguage"} pressedEnter={this.onClick}/>
+          <Upload.Component ref={"TargetLanguage"} pressedEnter={this.onClick}/>
           <Modal.Footer>
             <ButtonToolbar>
               <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>
