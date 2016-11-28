@@ -83,6 +83,7 @@ function populate(data, tsManifest) {
         }
       }
       projectManifest.translators = tsManifest.translators;
+      projectManifest.project_id = tsManifest.project_id;
     }
   } catch (e) {
     console.error(e);
