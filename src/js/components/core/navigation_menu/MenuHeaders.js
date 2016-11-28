@@ -100,12 +100,28 @@ class MenuHeadersItems extends React.Component {
 
   render() {
     var itemStyle = this.state.isCurrentItem ? style.activeMenuHeader : style.menuHeader;
+
     return (
       <tr onClick={this.groupNameClicked.bind(this)}
           style={itemStyle}
           title="Click to select this reference">
-          <th><Circle progress={0.65}/></th>
-        <td>{this.props.value}</td>
+        <th>
+          <Circle progress={0.65}
+            options={{
+              strokeWidth: 15,
+              color: "#4ABBE6"
+            }}
+            initialAnimate={false}
+            containerStyle={{
+              width: '20px',
+              height: '20px',
+              marginRight: '5px'
+            }}
+          />
+        </th>
+        <td>
+          {this.props.value}
+        </td>
       </tr>
     );
   }
