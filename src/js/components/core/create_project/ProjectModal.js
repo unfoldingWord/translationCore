@@ -62,7 +62,7 @@ const ProjectModal = React.createClass({
     var _this = this;
     loadOnline(link, function(err, savePath, url) {
       if (!err) {
-        this.refs.TargetLanguage.sendFilePath(savePath, url);
+        Upload.sendFilePath(savePath, url);
       } else {
         console.error(err);
       }
