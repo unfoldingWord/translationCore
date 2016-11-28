@@ -60,15 +60,18 @@ class MenuHeaders extends React.Component {
   getGroupProgress(groupObj){
     var numChecked = 0;
     var numUnchecked = 0;
+    var flag = false;
     for(let check in groupObj.checks){
+      if(flag == false){console.log(check); flag = true;}
       if(check.checkStatus != "UNCHECKED"){
+        console.log(check.checkStatus);
         numChecked++;
       }else{
         numUnchecked++;
       }
     }
     var total = numChecked+numUnchecked;
-    return total > 0 ? numChecked/total : 0;
+    return numChecked/total;
   }
 
   render() {
@@ -116,6 +119,7 @@ class MenuHeadersItems extends React.Component {
 
   render() {
     var itemStyle = this.state.isCurrentItem ? style.activeMenuHeader : style.menuHeader;
+    if(this.props.progress > 0) console.log(this.props.progress);
 
     return (
       <tr onClick={this.groupNameClicked.bind(this)}
