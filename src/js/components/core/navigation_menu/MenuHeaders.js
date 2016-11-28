@@ -17,16 +17,19 @@ class MenuHeaders extends React.Component {
     this.updateCurrentMenuHeader = this.updateCurrentMenuHeader.bind(this);
     this.switchedToolNewMenuHeaders = this.switchedToolNewMenuHeaders.bind(this);
     this.getGroupProgress = this.getGroupProgress.bind(this);
+    this.forceUpdate = this.forceUpdate.bind(this);
   }
 
   componentWillMount(){
     api.registerEventListener('changeGroupName', this.updateCurrentMenuHeader);
     api.registerEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
+    api.registerEventListener('changedCheckStatus', ()=>{this.forceUpdate()});
   }
 
   componentWillUnmount(){
     api.removeEventListener('changeGroupName', this.updateCurrentMenuHeader);
     api.removeEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
+    api.removeEventListener('changedCheckType', ()=>{this.forceUpdate()});
   }
 
   handleSelection(groupName){
