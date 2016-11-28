@@ -1,3 +1,5 @@
 language: node_js
 node_js:
 - 4.3.0
+before_install:
+    - npm install -g electron-mocha
