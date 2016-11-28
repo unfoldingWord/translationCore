@@ -4,6 +4,8 @@ const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
 const style = require('./Style');
+const ProgressBar = require('react-progressbar.js');
+const Circle = ProgressBar.Circle;
 
 class MenuHeaders extends React.Component {
   constructor(){
@@ -102,7 +104,8 @@ class MenuHeadersItems extends React.Component {
       <tr onClick={this.groupNameClicked.bind(this)}
           style={itemStyle}
           title="Click to select this reference">
-        {this.props.value}
+          <th><Circle progress={0.65}/></th>
+        <td>{this.props.value}</td>
       </tr>
     );
   }
