@@ -1,3 +1,5 @@
+![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg) ![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)
+
 # translationCore
 
 ![Logo](https://unfoldingword.org/assets/img/icon-tc.png "translationCore")

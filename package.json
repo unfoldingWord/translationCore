@@ -7,8 +7,8 @@
   "scripts": {
     "test": "electron-mocha renderer ./tests",
     "compile": "babel src --out-dir src",
-    "build-win": "npm run compile && node scripts/build-win.js",
-    "build-winstaller": "node scripts/build-win-installer.js",
+    "build-win": "npm run compile && node scripts/builds/build-win.js",
+    "build-winstaller": "node scripts/builds/build-win-installer.js",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
     "start": "electron ."
