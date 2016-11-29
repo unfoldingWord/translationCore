@@ -66,6 +66,20 @@ function openUSFMProject(savePath, direction, link) {
     });
   });
 }
+function saveParamsInAPI(bookAbbr, saveLocation, direction) {
+  var params = {
+    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    targetLanguagePath: saveLocation,
+    direction: direction,
+    bookAbbr: bookAbbr
+  };
+  if (Upload.isOldTestament(params.bookAbbr)) {
+    params.originalLanguage = "hebrew";
+  } else {
+    params.originalLanguage = "greek";
+  }
+  api.putDataInCommon('params', params);
+}
 
 function saveTargetLangeInAPI(parsedUSFM) {
   var targetLanguage = {};
