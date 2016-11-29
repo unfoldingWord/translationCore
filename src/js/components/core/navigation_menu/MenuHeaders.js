@@ -62,7 +62,6 @@ class MenuHeaders extends React.Component {
   generateProgressForAllMenuHeaders(){
     let groups = api.getDataFromCheckStore(this.props.currentTool, 'groups');
     for(var group in groups){
-      console.log(groups[group]);
       let groupName = groups[group].group;
       let progress = this.getGroupProgress(groups[group]);
       this.refs[`${groupName}`].setCurrentProgress(progress);
@@ -82,7 +81,6 @@ class MenuHeaders extends React.Component {
   getGroupProgress(groupObj){
     var numChecked = 0;
     var numUnchecked = 0;
-    console.log(groupObj);
     for(var i = 0; i < groupObj.checks.length; i++){
       if(groupObj.checks[i].checkStatus != "UNCHECKED"){
         numChecked++;
@@ -136,7 +134,6 @@ class MenuHeadersItems extends React.Component {
     this.setState({isCurrentItem: status});
   }
   setCurrentProgress(progress){
-    console.log(progress);
     this.setState({currentGroupprogress: progress});
   }
 
