@@ -4,8 +4,8 @@ node_js:
 before_script:
 - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
 before_deploy:
-  - npm i -g babel-cli
-  - npm i -g asar
+- npm i -g babel-cli
+- npm i -g asar
 - cp ./scripts/builds/index.js ./src/js/pages/index.js
 - babel src --out-dir src
 - node scripts/builds/build-win.js
