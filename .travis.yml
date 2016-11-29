@@ -5,6 +5,7 @@ before_script:
 - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
 before_deploy:
 - sudo apt-get install -y wine
+- sudo apt-get install mono-runtime
 - sudo apt-get -qq update
 - npm i -g babel-cli
 - npm i -g asar
