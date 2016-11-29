@@ -10,7 +10,11 @@ const exec = require('child_process').exec;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-
+if (process.platform == 'win32') {
+  updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
+  var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
+  exec(createShortcut);
+}
 if (handleStartupEvent()) {
   return;
 }
@@ -64,15 +68,13 @@ function handleStartupEvent() {
     if (process.platform !== 'win32') {
         return false;
     }
-
     var squirrelCommand = process.argv[1];
     switch (squirrelCommand) {
         case '--squirrel-install':
         case '--squirrel-updated':
           target = path.basename(process.execPath);
           updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-          var createShortcut = updateDotExe + ' --createShortcut=' + target + ' --shortcut-locations=Desktop,StartMenu' ;
-          console.log (createShortcut);
+          var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
           exec(createShortcut);
           // Always quit when done
           app.quit();
@@ -84,7 +86,6 @@ function handleStartupEvent() {
           target = path.basename(process.execPath);
           updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
           var createShortcut = updateDotExe + ' --removeShortcut=' + target ;
-          console.log (createShortcut);
           exec(createShortcut);
           // Always quit when done
           app.quit();
