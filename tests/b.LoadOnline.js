@@ -12,7 +12,7 @@ describe('loadOnline.openManifest', function() {
     });
   });
   it('loadOnline.openManifest should return the home directory and url', function(done){
-    this.timeout = 50000;
+    this.timeout(500000;
     var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
     var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg.git';
     loadOnline(expectedURL, function(err, savePath, url) {
