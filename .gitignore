@@ -59,7 +59,7 @@ local.properties
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
+temp/
 [Bb]in/
 [Oo]bj/
 xampp/
@@ -215,7 +215,6 @@ tests/testIO/*
 *.egg-info
 dist/
 out/
-build/
 eggs/
 parts/
 var/
