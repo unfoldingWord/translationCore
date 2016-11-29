@@ -216,15 +216,6 @@ describe('ModuleApi.updateManifest', function() {
   });
 });
 
-describe('ModuleApi.getAuthToken', function() {
-  it('getAuthToken should return an auth token, of type string', function() {
-    var unexpectedValue = 'abc';
-    assert.isString(ModuleApi.getAuthToken('git'));
-    assert.isString(ModuleApi.getAuthToken('gogs'));
-    assert.isUndefined(ModuleApi.getAuthToken(unexpectedValue));
-  });
-});
-
 describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
   it('saveMenu should setup a menu without any issue', function() {
     try {
