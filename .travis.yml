@@ -1,15 +1,16 @@
 language: node_js
-sudo: required
 node_js:
 - 4.3.0
 before_script:
 - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
 before_deploy:
-- sudo dpkg --add-architecture i386
-- sudo apt-get update
 - sudo apt-get install -y wine
+- sudo apt-get -qq update
 - npm i -g babel-cli
 - npm i -g asar
+- cd node_modules/electron-packager
+- npm i rcedit@0.5.0
+- cd ../..
 - cp ./scripts/builds/index.js ./src/js/pages/index.js
 - babel src --out-dir src
 - node scripts/builds/build-win.js
