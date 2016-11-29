@@ -25,6 +25,38 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
+/**
+ * @description - This returns a list of module's which have manifest files within their
+ * main folder. All of these modules are located in the window.__base + 'modules/' folder
+ * within the repository
+ * @param {function} callback - callback that will be called with an array of folder paths to
+ * modules that contain 'manifest.json' files
+ */
+function getDefaultModules(callback) {
+  var defaultModules = [];
+  var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+  fs.readdir(moduleBasePath, function(error, folders) {
+    if (error) {
+      console.error(error);
+    }
+    else {
+      for (var folder of folders) {
+        try {
+          var manifestPath = Path.join(moduleBasePath, folder, 'package.json');
+          var packageJson = require(manifestPath);
+          if (packageJson.display === 'app') {
+            defaultModules.push(manifestPath);
+          }
+        }
+        catch(e) {
+
+        }
+      }
+    }
+    callback(defaultModules);
+  });
+}
+
 class SwitchCheck extends React.Component{
   constructor(){
     super();
@@ -36,45 +68,15 @@ class SwitchCheck extends React.Component{
 
   componentWillMount() {
     var _this = this;
-    this.getDefaultModules((moduleFolderPathList) => {
+    getDefaultModules((moduleFolderPathList) => {
       _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         _this.sortMetadatas(metadatas);
         _this.setState({moduleMetadatas: metadatas});
+        api.putToolMetaDatasInStore(metadatas);
       });
     });
   }
 
-  /**
-   * @description - This returns a list of module's which have manifest files within their
-   * main folder. All of these modules are located in the window.__base + 'modules/' folder
-   * within the repository
-   * @param {function} callback - callback that will be called with an array of folder paths to
-   * modules that contain 'manifest.json' files
-   */
-  getDefaultModules(callback) {
-    var defaultModules = [];
-    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
-    fs.readdir(moduleBasePath, function(error, folders) {
-      if (error) {
-        console.error(error);
-      }
-      else {
-        for (var folder of folders) {
-          try {
-            var manifestPath = Path.join(moduleBasePath, folder, 'package.json');
-            var packageJson = require(manifestPath);
-            if (packageJson.display === 'app') {
-              defaultModules.push(manifestPath);
-            }
-          }
-          catch(e) {
-
-          }
-        }
-      }
-      callback(defaultModules);
-    });
-  }
 
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
@@ -244,4 +246,5 @@ class SwitchCheckModal extends React.Component {
 }
 
 exports.Component = SwitchCheck;
-exports.Modal = SwitchCheckModal
+exports.Modal = SwitchCheckModal;
+exports.getDefaultModules = getDefaultModules;

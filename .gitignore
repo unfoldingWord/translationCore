@@ -203,6 +203,7 @@ $RECYCLE.BIN/
 Auth.json
 .config
 Authentication.js
+tests/testIO/*
 #############
 ## Python
 #############

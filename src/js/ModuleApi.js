@@ -32,6 +32,8 @@ class ModuleApi {
     this.ReportFilters = this.ReportFiltersTools.filter;
     this.gitStack = [];
     this.gitDone = true;
+    this.currentGroupName = this.initialCurrentGroupName();
+    this.currentToolMetaData = null;
   }
 
   findDOMNode(component) {
@@ -133,7 +135,7 @@ class ModuleApi {
   }
 
   convertToFullBookName(bookAbbr) {
-    return BooksOfBible[bookAbbr];
+    return BooksOfBible[bookAbbr.toLowerCase()];
   }
 
   /**
@@ -152,15 +154,7 @@ class ModuleApi {
   }
 
   logCheckStore() {
-    console.log(CheckStore.storeData);
-  }
-
-  createAlert(obj, callback = () => { }) {
-    Alert.startListener(callback);
-    CoreActions.sendAlert({
-      alertObj: obj,
-      alertCallback: callback
-    });
+    return CheckStore.storeData;
   }
 
   /**
@@ -279,23 +273,30 @@ class ModuleApi {
     if (manifest && saveLocation) {
       manifest[field] = data;
       saveLocation += '/tc-manifest.json';
+      this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(saveLocation, manifest, callback);
+    } else if (!manifest){
+      callback("No manifest found");
     } else {
-      callback("No manifest found")
+      manifest[field] = data;
+      this.putDataInCommon('tcManifest', manifest);
+      callback("No save location specified");
     }
   }
 
-  saveProject(message) {
+  saveProject(message, callback) {
     var _this = this;
+    _this.gitCallback = callback;
     var git = require('./components/core/GitApi.js');
     var path = this.getDataFromCommon('saveLocation');
     if (path && this.gitDone) {
       _this.gitDone = false;
-      git(path).save(message, path, function () {
+      git(path).save(message, path, function (err) {
         _this.gitDone = true;
         if (_this.gitStack.length > 0) {
           _this.saveProject(_this.gitStack.shift());
         }
+        if (callback) callback(err);
       });
     }
     else {
@@ -338,7 +339,7 @@ class ModuleApi {
       var settingsObj = JSON.parse(settings);
       return settingsObj[name];
     }
-    return null;
+    return {};
   }
 
   setSettings(name, value) {
@@ -348,6 +349,85 @@ class ModuleApi {
     var settingsString = JSON.stringify(settingsObj);
     localStorage.setItem('settings', settingsString);
   }
+
+  putToolMetaDatasInStore(metadatas){
+    this.currentToolMetaData = metadatas;
+  }
+
+  getToolMetaDataFromStore(){
+    return this.currentToolMetaData;
+  }
+
+  setCurrentGroupName(groupName){
+    this.currentGroupName = groupName;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return;
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
+    api.emitEvent('changeGroupName',
+    {
+      "groupName": groupName
+    });
+  }
+
+  getCurrentGroupName(){
+    return this.currentGroupName;
+  }
+
+  initialCurrentGroupName(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
+    let foundGroup = [];
+    if(currentNamespace && currentGroupIndex && currentGroupIndex >= 0){
+      foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
+    }
+    this.currentGroupName = foundGroup.group;
+  }
+
+  getSubMenuItems(){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = [];
+    if(this.currentGroupName){
+      if(groups){
+        foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+      }
+    }
+    return foundGroup.checks;
+  }
+
+  getCurrentGroupIndex(){
+    let groupIndex = null;
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    if(groups){
+      let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+      groupIndex = groups.indexOf(foundGroup);
+    }
+    return groupIndex;
+  }
+
+  changeCurrentIndexes(checkIndex){
+    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    if (!currentNamespace) return 'No namespace';
+    let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
+    let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
+    let groupIndex = groups.indexOf(foundGroup);
+    checkIndex = parseInt(checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
+    this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
+    api.emitEvent('goToCheck',
+      {
+        'groupIndex': groupIndex,
+        'checkIndex': checkIndex
+      }
+    );
+  }
+
 }
 
 const api = new ModuleApi();

@@ -8,7 +8,8 @@ var style = {
       zIndex: "98",
       left: "0px",
       fontSize: "12px",
-      overflowY: "initial",
+      overflowY: "auto",
+      overflowX: "hidden",
       boxSizing: "border-box",
   },
 
@@ -23,7 +24,6 @@ var style = {
       left: "0px",
       fontSize: "12px",
       overflowY: "auto",
-
   },
 
   ul: {

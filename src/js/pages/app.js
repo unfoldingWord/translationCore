@@ -49,6 +49,19 @@ var Main = React.createClass({
       localStorage.removeItem('lastProject');
       api.setSettings('showTutorial', false);
     }
+
+    const GOGS = require('../components/core/login/GogsApi.js');
+    var token = api.getAuthToken('gogs');
+    const CoreActions = require('../actions/CoreActions.js');
+    var user = {
+      username: 'royalsix',
+      password: '4thenations'
+    }
+    GOGS(token).login(user).then(function (userdata) {
+      CoreActions.login(userdata);
+      console.log(api.getLoggedInUser());
+      console.log({ fullName: "Jay Scott", userName: "royalsix" });
+    });
     if (localStorage.getItem('user')) {
       var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
@@ -60,22 +73,22 @@ var Main = React.createClass({
         CoreActions.updateOnlineStatus(true);
         CoreActions.updateProfileVisibility(true);
       }).catch(function (reason) {
-        //console.log(reason);
-        // if (reason.status === 401) {
-        //   dialog.showErrorBox('Login Failed', 'Incorrect username or password');
-        // } else if (reason.hasOwnProperty('message')) {
-        //   dialog.showErrorBox('Login Failed', reason.message);
-        // } else if (reason.hasOwnProperty('data')) {
-        //   let errorMessage = reason.data;
-        //   dialog.showErrorBox('Login Failed', errorMessage);
-        // } else {
-        //   dialog.showErrorBox('Login Failed', 'Unknown Error');
-        // }
+        console.log(reason);
+        if (reason.status === 401) {
+          dialog.showErrorBox('Login Failed', 'Incorrect username or password');
+        } else if (reason.hasOwnProperty('message')) {
+          dialog.showErrorBox('Login Failed', reason.message);
+        } else if (reason.hasOwnProperty('data')) {
+          let errorMessage = reason.data;
+          dialog.showErrorBox('Login Failed', errorMessage);
+        } else {
+          dialog.showErrorBox('Login Failed', 'Unknown Error');
+        }
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('showTutorial') !== true && saveLocation) {
-      this.refs.TargetLanguage.sendFilePath(saveLocation, null, () => {
+      Upload.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
           CoreActions.startLoading();
@@ -110,7 +123,6 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <SettingsModal />
-          <Upload ref={"TargetLanguage"} show={false} />
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />
@@ -120,7 +132,7 @@ var Main = React.createClass({
           <Toast />
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474" }}>
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden"}}>
                 <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>

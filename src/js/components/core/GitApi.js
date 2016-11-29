@@ -126,14 +126,14 @@ function GitApi(directory) {
       CheckStore.saveAllToDisk(path, function() {
         _this.add(function(err, data) {
           if (err) {
-            dialog.showErrorBox('Error', err);
+            callback(err);
           }
           _this.commit(message, function(err) {
             if (err) {
-              dialog.showErrorBox('Error', err);
+              callback(err);
             }
             if (callback) {
-              callback();
+              callback(null);
             }
           });
         });

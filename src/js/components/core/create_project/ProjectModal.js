@@ -59,7 +59,14 @@ const ProjectModal = React.createClass({
 
   submitLink: function () {
     var link = this.refs.TargetLanguage.getLink();
-    loadOnline(link, this.refs.TargetLanguage.sendFilePath);
+    var _this = this;
+    loadOnline(link, function(err, savePath, url) {
+      if (!err) {
+        Upload.sendFilePath(savePath, url);
+      } else {
+        console.error(err);
+      }
+    });
   },
 
   close: function () {
@@ -74,6 +81,11 @@ const ProjectModal = React.createClass({
   onClick: function (e) {
     if (this.refs.TargetLanguage.state.active == 1) {
       this.submitLink();
+    }
+    if (this.refs.TargetLanguage.state.active == 3) {
+      if (!this.refs.TargetLanguage.enterSaveLocation()) {
+        return;
+      }
     }
     api.emitEvent('changeCheckType', { currentCheckNamespace: null });
     api.emitEvent('newToolSelected', {'newToolSelected': true});
@@ -97,7 +109,7 @@ const ProjectModal = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload ref={"TargetLanguage"} pressedEnter={this.onClick}/>
+          <Upload.Component ref={"TargetLanguage"} pressedEnter={this.onClick}/>
           <Modal.Footer>
             <ButtonToolbar>
               <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>
