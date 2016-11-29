@@ -10,23 +10,26 @@ const Circle = ProgressBar.Circle;
 class MenuHeaders extends React.Component {
   constructor(){
     super();
+    this.state = {
+      groupName: null,
+    }
     this.groupName = null;
     this.updateCurrentMenuHeader = this.updateCurrentMenuHeader.bind(this);
-    this.newToolSelected = this.newToolSelected.bind(this);
+    this.switchedToolNewMenuHeaders = this.switchedToolNewMenuHeaders.bind(this);
     this.getGroupProgress = this.getGroupProgress.bind(this);
-    this.updateSubMenuItemProgress = this.updateSubMenuItemProgress.bind(this);
+    this.forceUpdate = this.forceUpdate.bind(this);
   }
 
   componentWillMount(){
     api.registerEventListener('changeGroupName', this.updateCurrentMenuHeader);
-    api.registerEventListener('changeCheckType', this.newToolSelected);
-    api.registerEventListener('changedCheckStatus', this.updateSubMenuItemProgress);
+    api.registerEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
+    api.registerEventListener('changedCheckStatus', ()=>{this.forceUpdate()});
   }
 
   componentWillUnmount(){
     api.removeEventListener('changeGroupName', this.updateCurrentMenuHeader);
-    api.removeEventListener('changeCheckType', this.newToolSelected);
-    api.removeEventListener('changedCheckStatus', this.updateSubMenuItemProgress);
+    api.removeEventListener('changeCheckType', this.switchedToolNewMenuHeaders);
+    api.removeEventListener('changedCheckType', ()=>{this.forceUpdate()});
   }
 
   handleSelection(groupName){
@@ -39,10 +42,8 @@ class MenuHeaders extends React.Component {
     this.selectNewMenuItem();
   }
 
-  newToolSelected(){
-    //switched Tool therefore generate New MenuHeader
+  switchedToolNewMenuHeaders(){
     this.groupName = api.getCurrentGroupName();
-    this.generateProgressForAllMenuHeaders();
   }
 
   unselectOldMenuItem() {
@@ -56,29 +57,6 @@ class MenuHeaders extends React.Component {
     if(this.groupName){
       var groupName = this.groupName;
       this.refs[`${groupName}`].setIsCurrentCheck(true);
-    }
-  }
-
-  generateProgressForAllMenuHeaders(){
-    let groups = api.getDataFromCheckStore(this.props.currentTool, 'groups');
-    for(var group in groups){
-      let groupName = groups[group].group;
-      let progress = this.getGroupProgress(groups[group]);
-      if(groupName){
-        this.refs[`${groupName}`].setCurrentProgress(progress);
-      }else{
-        console.log("groupName is undefined");
-      }
-    }
-  }
-
-  updateSubMenuItemProgress(params){
-    let groups = api.getDataFromCheckStore(this.props.currentTool, 'groups');
-    let foundGroup = groups.find(arrayElement => arrayElement.group === this.groupName);
-    let currentProgress = this.getGroupProgress(foundGroup);
-    if(this.groupName){
-      var groupName = this.groupName;
-      this.refs[`${groupName}`].setCurrentProgress(currentProgress);
     }
   }
 
@@ -105,6 +83,7 @@ class MenuHeaders extends React.Component {
           <MenuHeadersItems key={i}
               handleSelection={this.handleSelection.bind(this, groupsObjects[i].group)}
               value={groupsObjects[i].group}
+              progress={this.getGroupProgress(groupsObjects[i])}
               ref={groupsObjects[i].group.toString()}/>
         );
       }
@@ -125,7 +104,6 @@ class MenuHeadersItems extends React.Component {
     super();
     this.state = {
       isCurrentItem: false,
-      currentGroupprogress: null,
     }
   }
 
@@ -136,9 +114,6 @@ class MenuHeadersItems extends React.Component {
 
   setIsCurrentCheck(status){
     this.setState({isCurrentItem: status});
-  }
-  setCurrentProgress(progress){
-    this.setState({currentGroupprogress: progress});
   }
 
 
@@ -151,7 +126,7 @@ class MenuHeadersItems extends React.Component {
           title="Click to select this reference">
         <th>
           <Circle
-            progress={this.state.currentGroupprogress}
+            progress={this.props.progress}
             options={{
               strokeWidth: 15,
               color: "#4ABBE6",
