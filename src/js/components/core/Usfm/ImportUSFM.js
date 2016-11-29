@@ -32,7 +32,6 @@ function openUSFMProject(savePath, direction, link) {
   Upload.clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
-    console.log(targetLanguage);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
