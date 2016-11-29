@@ -64,7 +64,11 @@ class MenuHeaders extends React.Component {
     for(var group in groups){
       let groupName = groups[group].group;
       let progress = this.getGroupProgress(groups[group]);
-      this.refs[`${groupName}`].setCurrentProgress(progress);
+      if(groupName){
+        this.refs[`${groupName}`].setCurrentProgress(progress);
+      }else{
+        console.log("groupName is undefined");
+      }
     }
   }
 
