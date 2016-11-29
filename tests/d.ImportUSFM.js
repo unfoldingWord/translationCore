@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const ImportUSFM = require('../src/js/components/core/usfm/ImportUSFM.js');
+const ImportUSFM = require('../src/js/components/core/Usfm/ImportUSFM.js');
 var parsedBook;
 var testAbbr = 'mrk', testSave = './tests/testIO', testDir = 'ltr';
 var testFile = './tests/static/3john.usfm';
