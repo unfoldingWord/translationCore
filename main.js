@@ -13,7 +13,6 @@ let mainWindow
 if (process.platform == 'win32') {
   updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
   var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-  console.log (createShortcut);
   exec(createShortcut);
 }
 if (handleStartupEvent()) {
@@ -66,7 +65,6 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 function handleStartupEvent() {
-  console.log(path.resolve(path.dirname(process.execPath)));
     if (process.platform !== 'win32') {
         return false;
     }
@@ -77,7 +75,6 @@ function handleStartupEvent() {
           target = path.basename(process.execPath);
           updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
           var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-          console.log (createShortcut);
           exec(createShortcut);
           // Always quit when done
           app.quit();
@@ -89,7 +86,6 @@ function handleStartupEvent() {
           target = path.basename(process.execPath);
           updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
           var createShortcut = updateDotExe + ' --removeShortcut=' + target ;
-          console.log (createShortcut);
           exec(createShortcut);
           // Always quit when done
           app.quit();
