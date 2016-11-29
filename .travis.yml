@@ -27,4 +27,4 @@ deploy:
   file: "./dist/translationCore-win32-ia32/installer/translationCoreSetup.exe"
   on:
     repo: unfoldingWord-dev/translationCore
-    tags: true
+    branch: ih-travis-builds
