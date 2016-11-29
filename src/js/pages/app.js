@@ -49,19 +49,7 @@ var Main = React.createClass({
       localStorage.removeItem('lastProject');
       api.setSettings('showTutorial', false);
     }
-
-    const GOGS = require('../components/core/login/GogsApi.js');
-    var token = api.getAuthToken('gogs');
-    const CoreActions = require('../actions/CoreActions.js');
-    var user = {
-      username: 'royalsix',
-      password: '4thenations'
-    }
-    GOGS(token).login(user).then(function (userdata) {
-      CoreActions.login(userdata);
-      console.log(api.getLoggedInUser());
-      console.log({ fullName: "Jay Scott", userName: "royalsix" });
-    });
+    
     if (localStorage.getItem('user')) {
       var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
