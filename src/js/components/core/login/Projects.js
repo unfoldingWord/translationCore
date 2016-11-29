@@ -30,9 +30,13 @@ class Projects extends React.Component {
   openSelected(projectPath) {
     var link = 'https://git.door43.org/' + projectPath + '.git';
     var _this = this;
-    loadOnline(link, function(savePath, url) {
-      Upload.sendFilePath(savePath, url)
-      CoreActions.showCreateProject("");
+    loadOnline(link, function(err, savePath, url) {
+      if (err) {
+        console.error(err);
+      } else {
+        Upload.sendFilePath(savePath, url)
+        CoreActions.showCreateProject("");
+      }
     });
   }
 

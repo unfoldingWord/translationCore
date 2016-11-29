@@ -1,4 +1,4 @@
-![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg) ![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)
+[![Travis branch](https://img.shields.io/travis/unfoldingWord-dev/translationCore/develop.svg)]() ![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg) ![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)
 
 # translationCore
 
