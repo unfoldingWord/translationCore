@@ -37,6 +37,7 @@ describe('Upload.clearPreviousData', function () {
 
 describe('Upload.loadProjectThatHasManifest(USFM project)', function () {
     it('should load a USFM project', function (done) {
+        this.timeout = 50000;
         Upload.sendFilePath(testUSFMProjectPath, null, function () {
             expect(api.getDataFromCommon('tcManifest')).to.exist;
             expect(api.getDataFromCommon('saveLocation')).to.exist;
@@ -48,6 +49,7 @@ describe('Upload.loadProjectThatHasManifest(USFM project)', function () {
 
 describe('Upload.loadProjectThatHasManifest(non-USFM project)', function () {
     it('should load a regular project', function (done) {
+        this.timeout = 50000;
         Upload.sendFilePath(testProjectPath, null, function () {
             expect(api.getDataFromCommon('tcManifest')).to.exist;
             expect(api.getDataFromCommon('saveLocation')).to.exist;
