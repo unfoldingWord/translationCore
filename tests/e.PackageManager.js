@@ -6,8 +6,8 @@ describe('PackageManager.list', function() {
     this.timeout(50000);
     PackageManager.list(function(obj) {
       assert.isObject(obj);
-      assert.isObject(obj[0]);
-      assert.isString(obj[0].name);
+      assert.isObject(obj['translationWords']);
+      assert.isString(obj['translationWords'].name);
       done();
     });
   });
@@ -18,9 +18,8 @@ describe('PackageManager.search', function() {
     this.timeout(50000);
     PackageManager.search('translation', function(results) {
       assert.isArray(results);
-      assert.isTrue(~results[0].indexOf('translation'));
-      assert.isObject(results[0]);
-      assert.isString(results[0].name);
+      assert.isObject(results['translationWords']);
+      assert.isString(results['translationWords'].name);
       done();
     });
   });
