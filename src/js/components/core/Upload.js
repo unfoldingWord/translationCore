@@ -184,7 +184,6 @@ function saveTargetLangeInAPI(parsedUSFM) {
 }
 
 function checkIfUSFMProject(savePath, callback) {
-  debugger;
   var projectFolder = fs.readdirSync(savePath);
   var targetLanguage;
   for (var file in projectFolder) {
