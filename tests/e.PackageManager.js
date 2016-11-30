@@ -18,8 +18,7 @@ describe('PackageManager.search', function() {
     this.timeout(50000);
     PackageManager.search('translation', function(results) {
       assert.isArray(results);
-      assert.isObject(results['translationWords']);
-      assert.isString(results['translationWords'].name);
+      assert.isTrue(results.length > 0);
       done();
     });
   });
