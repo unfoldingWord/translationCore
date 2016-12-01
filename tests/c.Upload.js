@@ -22,16 +22,16 @@ const path = require('path-extra');
 const api = window.ModuleApi;
 var fs = require('fs');
 
-const testProjectPath = './static/id_3jn_text_ulb';
-const testUSFMProjectPath = './static/60JASOSJNT';
+const testProjectPath = './tests/static/id_3jn_text_ulb';
+const testUSFMProjectPath = './tests/static/3john';
 
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {
-        this.timeout(500000);
+        this.timeout(50000);
         Upload.sendFilePath(testUSFMProjectPath, null, function() {
-            expect(api.getDataFromCommon('tcManifest')).to.exist;
-            expect(api.getDataFromCommon('saveLocation')).to.exist;
-            expect(api.getDataFromCommon('params')).to.exist;
+            assert.isObject(api.getDataFromCommon('tcManifest'));
+            assert.isString(api.getDataFromCommon('saveLocation'));
+            assert.isObject(api.getDataFromCommon('params'));
             done();
         });
     });
@@ -39,11 +39,11 @@ describe('Upload.sendFilePath(USFM project)', function () {
 
 describe('Upload.sendFilePath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
-        this.timeout(500000);
+        this.timeout(50000);
         Upload.sendFilePath(testProjectPath, null, function() {
-            expect(api.getDataFromCommon('tcManifest')).to.exist;
-            expect(api.getDataFromCommon('saveLocation')).to.exist;
-            expect(api.getDataFromCommon('params')).to.exist;
+            assert.isObject(api.getDataFromCommon('tcManifest'));
+            assert.isString(api.getDataFromCommon('saveLocation'));
+            assert.isObject(api.getDataFromCommon('params'));
             done();
         });
     });
