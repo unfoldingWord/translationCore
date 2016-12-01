@@ -32,7 +32,7 @@ const Upload = require('../components/core/Upload');
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
-    if (tutorialState == 'true' || tutorialState === null) {
+    if (tutorialState === true || tutorialState === null) {
       return ({
         firstTime: true
       })
@@ -49,7 +49,7 @@ var Main = React.createClass({
       localStorage.removeItem('lastProject');
       api.setSettings('showTutorial', false);
     }
-    
+
     if (localStorage.getItem('user')) {
       var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
