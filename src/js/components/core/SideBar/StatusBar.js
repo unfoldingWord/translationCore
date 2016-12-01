@@ -66,8 +66,8 @@ class StatusBar extends React.Component{
     if(groups){
       var currentGroupIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentGroupIndex');
       var currentCheckIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentCheckIndex');
-      var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
       if(this.state.currentCheckNamespace === "TranslationWordsChecker"){
+        var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
         this.setState({currentWordOrPhrase: currentCheck.word});
       }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
         this.setState({currentWordOrPhrase: ""});
