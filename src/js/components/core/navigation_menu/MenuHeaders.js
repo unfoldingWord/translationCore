@@ -31,6 +31,11 @@ class MenuHeaders extends React.Component {
 
   handleSelection(groupName){
     api.setCurrentGroupName(groupName);
+    var newGroupName = this.refs[`${groupName}`];
+    var element = api.findDOMNode(newGroupName);
+    if (element) {
+      element.scrollIntoView();
+    }
   }
 
   updateCurrentMenuHeader(params) {
@@ -42,6 +47,9 @@ class MenuHeaders extends React.Component {
   newToolSelected(){
     //switched Tool therefore generate New MenuHeader
     this.groupName = api.getCurrentGroupName();
+    if(this.groupName){
+      this.handleSelection(this.groupName);
+    }
     this.generateProgressForAllMenuHeaders();
   }
 

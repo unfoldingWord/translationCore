@@ -11,15 +11,16 @@ describe('loadOnline.openManifest', function() {
       done();
     });
   });
-  // it('loadOnline.openManifest should return the home directory and url', function(done){
-  //   this.timeout = 50000;
-  //   var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
-  //   var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg.git';
-  //   loadOnline(expectedURL, function(err, savePath, url) {
-  //     assert.equal(savePath, expectedSavePath);
-  //     assert.equal(url, expectedURL);
-  //     done();
-  //   });
-  // });
 
-})
+  it('loadOnline.openManifest should return the home directory and url', function(done){
+    this.timeout(50000);
+    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
+    var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg.git';
+    loadOnline(expectedURL, function(err, savePath, url) {
+      assert.equal(savePath, expectedSavePath);
+      assert.equal(url, expectedURL);
+      done();
+    });
+  });
+});
+

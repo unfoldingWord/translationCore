@@ -68,7 +68,7 @@ class SideBarContainer extends React.Component{
 
   render(){
     let sideBarContent;
-    if(this.state.SideNavBar){
+    if(this.state.SideNavBar || this.props.initShow){
       sideBarContent = <div>
                           <SideNavBar /><br />
                           <div style={{bottom: "0px", position: "absolute"}}>

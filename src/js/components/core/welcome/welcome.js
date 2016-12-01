@@ -6,6 +6,9 @@ const CoreActions = require('../../../actions/CoreActions.js');
 const ProjectModal = require('../create_project/ProjectModal');
 
 const Login = require('../login/Login');
+const StatusBar = require('../SideBar/StatusBar');
+const SideBarContainer = require('../SideBar/SideBarContainer');
+
 const Upload = require('../Upload');
 const loadOnline = require('../LoadOnline');
 const SideNavBar = require('../SideBar/SideNavBar');
@@ -152,8 +155,8 @@ class Welcome extends React.Component{
           <Popover
             id="accountSettings"
             placement="right"
-            positionLeft={88}
-            positionTop={15}
+            positionLeft={115}
+            positionTop={28}
             title="Door43 Login">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to log in or log out to your Door43 account. Additionally giving you access to more information about your account.</p>
@@ -170,30 +173,10 @@ class Welcome extends React.Component{
       case 2:
         return(
           <Popover
-            id="openProject"
-            placement="right"
-            positionLeft={88}
-            positionTop={105}
-            title="Load in a Project">
-            <div style={Styles.tutorialPopover}>
-              <p>Clicking this button allows you to import your own or someone else's translationStudio project as well as open an existing translationCore project.</p>
-            </div>
-            <Button
-              style={Styles.nextTutorialButton}
-              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
-          </Popover>
-        )
-      break;
-      case 3:
-        return(
-          <Popover
             id="syncProject"
             placement="right"
-            positionLeft={88}
-            positionTop={202}
+            positionLeft={115}
+            positionTop={125}
             title="Sync Your Work To Door43">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to save or update a copy of your project to your Door43 account.</p>
@@ -207,13 +190,13 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 4:
+      case 3:
         return(
           <Popover
             id="generateReport"
             placement="right"
-            positionLeft={88}
-            positionTop={285}
+            positionLeft={115}
+            positionTop={192}
             title="Generating a Report">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to generate a report for all of the checks performed in the currently opened project.</p>
@@ -222,38 +205,18 @@ class Welcome extends React.Component{
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
               bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
+            {'Next'} <Glyphicon glyph="chevron-right" />
             </Button>
           </Popover>
         )
       break;
-      case 5:
-        return(
-          <Popover
-            id="loadApp"
-            placement="right"
-            positionLeft={88}
-            positionTop={379}
-            title="Selecting a Tool to perform a Check">
-            <div style={Styles.tutorialPopover}>
-              <p>Clicking this button allows you to start using a tool to perform a check on your project draft.</p>
-            </div>
-            <Button
-              style={Styles.nextTutorialButton}
-              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
-              {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
-          </Popover>
-        )
-      break;
-      case 6:
+      case 4:
         return(
           <Popover
             id="appSettings"
             placement="right"
-            positionLeft={88}
-            positionTop={440}
+            positionLeft={115}
+            positionTop={255}
             title="Settings">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to access various settings options to make translationCore look and perform according to your needs.</p>
@@ -267,16 +230,56 @@ class Welcome extends React.Component{
           </Popover>
         )
       break;
-      case 7:
+      case 5:
         return(
           <Popover
             id="toolBox"
             placement="right"
-            positionLeft={88}
-            positionTop={551}
-            title="Tool Box">
+            positionLeft={115}
+            positionTop={349}
+            title="Toolbox">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to download, update or remove tools to perform different types of checks.</p>
+            </div>
+            <Button
+              style={Styles.nextTutorialButton}
+              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
+              bsStyle="link">
+              {'Next'} <Glyphicon glyph="chevron-right" />
+            </Button>
+          </Popover>
+        )
+      break;
+      case 6:
+        return(
+          <Popover
+            id="openProject"
+            placement="right"
+            positionLeft={115}
+            positionTop={window.innerHeight-250}
+            title="Load in a Project">
+            <div style={Styles.tutorialPopover}>
+              <p>{"Clicking this button allows you to import your own or someone else's translationStudio project as well as open an existing translationCore project."}</p>
+            </div>
+            <Button
+              style={Styles.nextTutorialButton}
+              onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
+              bsStyle="link">
+              {'Next'} <Glyphicon glyph="chevron-right" />
+            </Button>
+          </Popover>
+        )
+      break;
+      case 7:
+        return(
+          <Popover
+            id="loadApp"
+            placement="right"
+            positionLeft={115}
+            positionTop={window.innerHeight-150}
+            title="Selecting a Tool to perform a Check">
+            <div style={Styles.tutorialPopover}>
+              <p>Clicking this button allows you to start using a tool to perform a check on your project draft.</p>
             </div>
             <Button
               style={Styles.nextTutorialButton}
@@ -303,7 +306,8 @@ class Welcome extends React.Component{
     }else if(this.state.tutorial){
       return(
         <div style={Styles.tutorialPage}>
-          <SideNavBar />
+         <StatusBar />
+         <SideBarContainer initShow={true}/>
           {this.getTutorialOverlay(this.state.tutorialIndex)}
           <Button
             style={Styles.skipTutorialButton}

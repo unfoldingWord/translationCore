@@ -22,6 +22,10 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
   getPackageList(function(obj){
+    if (!obj[packageName]) {
+      callback('Package does not exist', null);
+      return;
+    }
     var packageLocation = obj[packageName].repo;
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);

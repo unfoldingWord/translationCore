@@ -103,7 +103,9 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
   api.putDataInCommon('saveLocation', path);
   api.putDataInCommon('params', getParams(path));
   checkIfUSFMProject(path, function (targetLanguage) {
-    api.putDataInCommon('targetLanguage', targetLanguage);
+    if (targetLanguage) {
+      api.putDataInCommon('targetLanguage', targetLanguage);
+    }
     try {
       Access.loadFromFilePath(path, callback);
     } catch (err) {
