@@ -191,9 +191,15 @@ function checkIfUSFMProject(savePath, callback) {
     if (parsedPath.ext == ".SFM") {
       var saveLocation = Path.join(defaultSave, parsedPath.name);
       var saveFile = Path.join(saveLocation, parsedPath.base);
-      api.putDataInCommon('saveLocation', saveLocation);
       try {
         var data = fs.readFileSync(saveFile);
+        if (!data) {
+          var saveLocation = Path.join(savePath,  parsedPath.base);
+          var saveFile = saveLocation;
+          data = fs.readFileSync(saveFile);
+          //saving it in the same directory the project was loaded from
+        }
+        api.putDataInCommon('saveLocation', saveLocation);
         var usfmData = data.toString();
         var parsedUSFM = usfm.toJSON(usfmData);
         parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
