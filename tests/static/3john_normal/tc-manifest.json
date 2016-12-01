@@ -1,0 +1,60 @@
+{
+  "generator": {
+    "name": "ts-desktop",
+    "build": ""
+  },
+  "target_language": {
+    "id": "id",
+    "name": "Bahasa Indonesia",
+    "direction": "ltr"
+  },
+  "ts_project": {
+    "id": "3jn",
+    "name": "3 John"
+  },
+  "type": {
+    "id": "text",
+    "name": "Text"
+  },
+  "source_translations": [
+    {
+      "language_id": "en",
+      "resource_id": "ulb",
+      "checking_level": 3,
+      "date_modified": 20160223,
+      "version": "4"
+    }
+  ],
+  "translators": [
+    "GeoSun",
+    "erwin.l",
+    "ketut.1"
+  ],
+  "checkers": [
+    {
+      "full_name": "Jay Scott",
+      "username": "royalsix"
+    }
+  ],
+  "time_created": "12/1/2016 11:18 AM",
+  "check_modules": [],
+  "package_version": 6,
+  "format": "usfm",
+  "project": {
+    "id": "3jn",
+    "name": "3 John"
+  },
+  "resource": {
+    "id": "ulb",
+    "name": "Unlocked Literal Bible"
+  },
+  "parent_draft": {},
+  "finished_chunks": [
+    "00-title",
+    "01-01",
+    "01-05",
+    "01-09",
+    "01-11",
+    "01-13"
+  ]
+}

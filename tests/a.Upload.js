@@ -22,7 +22,7 @@ const path = require('path-extra');
 const api = window.ModuleApi;
 var fs = require('fs');
 
-const testProjectPath = './tests/static/id_3jn_text_ulb';
+const testProjectPath = './tests/static/3john_normal';
 const testUSFMProjectPath = './tests/static/3john';
 
 describe('Upload.sendFilePath(USFM project)', function () {
