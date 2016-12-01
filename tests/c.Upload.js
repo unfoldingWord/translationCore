@@ -20,22 +20,38 @@ const Upload = require('../src/js/components/core/Upload.js');
 const CheckStore = require('../src/js/stores/CheckStore.js')
 const path = require('path-extra');
 const api = window.ModuleApi;
+var fs = require('fs');
 
-const testProjectPath = window.__base + 'tests/testIO/id_3jn_text_ulb';
-const testUSFMProjectPath = window.__base + 'tests/testIO/60JASOSJNT';
+const testProjectPath = './tmp/id_3jn_text_ulb';
+const testUSFMProjectPath = './tmp/60JASOSJNT';
 
-describe('Upload.clearPreviousData', function () {
-    it('should clean the entire old project locally.', function (done) {
-        Upload.clearPreviousData();
-        expect(CheckStore.storeData.common).to.deep.equal({});
-        expect(CheckStore._events).to.deep.equal({});
-        expect(CheckStore._maxListeners).to.equal(undefined);
-        expect(CheckStore._eventsCount).to.equal(0);
-        done();
+var dir = './tmp';
+fs.ensureDirSync(dir);
+
+// describe('Upload.clearPreviousData', function () {
+//     it('should clean the entire old project locally.', function (done) {
+//         Upload.clearPreviousData();
+//         expect(CheckStore.storeData.common).to.deep.equal({});
+//         expect(CheckStore._events).to.deep.equal({});
+//         expect(CheckStore._maxListeners).to.equal(undefined);
+//         expect(CheckStore._eventsCount).to.equal(0);
+//         done();
+//     });
+// });
+
+describe('Upload.sendFilePath(USFM project)', function () {
+    it('should load a project from online', function (done) {
+        this.timeout(5000);
+        Upload.sendFilePath(testUSFMProjectPath, null, ()=> {
+            expect(api.getDataFromCommon('tcManifest')).to.exist;
+            expect(api.getDataFromCommon('saveLocation')).to.exist;
+            expect(api.getDataFromCommon('params')).to.exist;
+            done();
+        });
     });
 });
 
-describe('Upload.loadProjectThatHasManifest(USFM project)', function () {
+describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {
         this.timeout(5000);
         Upload.sendFilePath(testUSFMProjectPath, null, ()=> {
@@ -47,7 +63,7 @@ describe('Upload.loadProjectThatHasManifest(USFM project)', function () {
     });
 });
 
-describe('Upload.loadProjectThatHasManifest(non-USFM project)', function () {
+describe('Upload.sendFilePath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
         this.timeout(5000);
         Upload.sendFilePath(testProjectPath, null, ()=> {
