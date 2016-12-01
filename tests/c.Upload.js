@@ -25,6 +25,7 @@ var fs = require('fs');
 const testProjectPath = './tests/static/3john_normal';
 const testUSFMProjectPath = './tests/static/3john';
 
+/**
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {
         this.timeout(50000);
@@ -36,7 +37,7 @@ describe('Upload.sendFilePath(USFM project)', function () {
         });
     });
 });
-
+**/
 describe('Upload.sendFilePath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
         this.timeout(50000);
