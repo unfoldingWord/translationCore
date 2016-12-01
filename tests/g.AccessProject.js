@@ -6,8 +6,8 @@ const CheckStore = require('../src/js/stores/CheckStore.js')
 const path = require('path-extra');
 const api = window.ModuleApi;
 
-const testProjectPath = window.__base + 'tests/testIO/id_3jn_text_ulb';
-const testUSFMProjectPath = window.__base + 'tests/testIO/60JASOSJNT';
+const testProjectPath = './tests/static/id_3jn_text_ulb';
+const testUSFMProjectPath = './tests/static/60JASOSJNT';
 
 describe('Access.loadFromFilePath', function () {
     it('should load a project with relevant files from folderpath', function (done) {

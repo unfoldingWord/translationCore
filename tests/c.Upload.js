@@ -22,22 +22,8 @@ const path = require('path-extra');
 const api = window.ModuleApi;
 var fs = require('fs');
 
-const testProjectPath = './tmp/id_3jn_text_ulb';
-const testUSFMProjectPath = './tmp/60JASOSJNT';
-
-var dir = './tmp';
-fs.ensureDirSync(dir);
-
-// describe('Upload.clearPreviousData', function () {
-//     it('should clean the entire old project locally.', function (done) {
-//         Upload.clearPreviousData();
-//         expect(CheckStore.storeData.common).to.deep.equal({});
-//         expect(CheckStore._events).to.deep.equal({});
-//         expect(CheckStore._maxListeners).to.equal(undefined);
-//         expect(CheckStore._eventsCount).to.equal(0);
-//         done();
-//     });
-// });
+const testProjectPath = './tests/static/id_3jn_text_ulb';
+const testUSFMProjectPath = './tests/static/60JASOSJNT';
 
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a project from online', function (done) {
