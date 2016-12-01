@@ -27,8 +27,8 @@ const testUSFMProjectPath = './static/60JASOSJNT';
 
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {
-        this.timeout(50000);
-        Upload.sendFilePath(testUSFMProjectPath, null, ()=> {
+        this.timeout(500000);
+        Upload.sendFilePath(testUSFMProjectPath, null, function() {
             expect(api.getDataFromCommon('tcManifest')).to.exist;
             expect(api.getDataFromCommon('saveLocation')).to.exist;
             expect(api.getDataFromCommon('params')).to.exist;
@@ -39,8 +39,8 @@ describe('Upload.sendFilePath(USFM project)', function () {
 
 describe('Upload.sendFilePath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
-        this.timeout(50000);
-        Upload.sendFilePath(testProjectPath, null, ()=> {
+        this.timeout(500000);
+        Upload.sendFilePath(testProjectPath, null, function() {
             expect(api.getDataFromCommon('tcManifest')).to.exist;
             expect(api.getDataFromCommon('saveLocation')).to.exist;
             expect(api.getDataFromCommon('params')).to.exist;
