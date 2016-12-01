@@ -96,6 +96,11 @@ class SubMenu extends React.Component {
 
   handleItemSelection(checkIndex){
     api.changeCurrentIndexes(checkIndex);
+    var newItem = this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`];
+    var element = api.findDOMNode(newItem);
+    if (element) {
+      element.scrollIntoView();
+    }
   }
 
   generateSubMenuButtons(){

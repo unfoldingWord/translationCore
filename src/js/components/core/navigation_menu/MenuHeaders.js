@@ -31,6 +31,11 @@ class MenuHeaders extends React.Component {
 
   handleSelection(groupName){
     api.setCurrentGroupName(groupName);
+    var newGroupName = this.refs[`${groupName}`];
+    var element = api.findDOMNode(newGroupName);
+    if (element) {
+      element.scrollIntoView();
+    }
   }
 
   updateCurrentMenuHeader(params) {
