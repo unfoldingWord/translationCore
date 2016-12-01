@@ -90,7 +90,6 @@ class ModuleApi {
 
   getDataFromCheckStore(field, key = null) {
     var obj = CheckStore.getModuleDataObject(field);
-    console.log(obj);
     if (obj && typeof obj == "object") {
       if (key) {
         return obj[key];
