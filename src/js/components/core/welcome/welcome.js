@@ -256,7 +256,7 @@ class Welcome extends React.Component{
             id="openProject"
             placement="right"
             positionLeft={115}
-            positionTop={531}
+            positionTop={window.innerHeight-250}
             title="Load in a Project">
             <div style={Styles.tutorialPopover}>
               <p>{"Clicking this button allows you to import your own or someone else's translationStudio project as well as open an existing translationCore project."}</p>
@@ -276,7 +276,7 @@ class Welcome extends React.Component{
             id="loadApp"
             placement="right"
             positionLeft={115}
-            positionTop={621}
+            positionTop={window.innerHeight-150}
             title="Selecting a Tool to perform a Check">
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to start using a tool to perform a check on your project draft.</p>
