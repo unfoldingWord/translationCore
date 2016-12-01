@@ -6,7 +6,7 @@ const CheckStore = require('../src/js/stores/CheckStore.js')
 const path = require('path-extra');
 const api = window.ModuleApi;
 
-const testTool = window.__base + 'tests/static/ExampleChecker';
+const testTool = './static/ExampleChecker';
 
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
