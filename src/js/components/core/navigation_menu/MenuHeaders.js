@@ -42,6 +42,7 @@ class MenuHeaders extends React.Component {
   newToolSelected(){
     //switched Tool therefore generate New MenuHeader
     this.groupName = api.getCurrentGroupName();
+    this.handleSelection(this.groupName);
     this.generateProgressForAllMenuHeaders();
   }
 
