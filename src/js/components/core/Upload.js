@@ -71,6 +71,8 @@ function sendPath(path, link, callback) {
         manifestError(err);
       }
     });
+  } else {
+    callback('No path', null)
   }
 }
 /**
@@ -190,12 +192,23 @@ function checkIfUSFMProject(savePath, callback) {
   var targetLanguage;
   for (var file in projectFolder) {
     var parsedPath = Path.parse(projectFolder[file]);
-    if (parsedPath.ext == ".SFM") {
+    if (parsedPath.ext.toUpperCase() == ".SFM" || parsedPath.ext.toUpperCase() == '.USFM') {
+      var actualFile = Path.join(savePath, parsedPath.base);
       var saveLocation = Path.join(defaultSave, parsedPath.name);
       var saveFile = Path.join(saveLocation, parsedPath.base);
-      api.putDataInCommon('saveLocation', saveLocation);
       try {
-        var data = fs.readFileSync(saveFile);
+        try {
+          var data = fs.readFileSync(saveFile);
+        } catch(err) {
+          var data = fs.readFileSync(actualFile);
+        }
+        if (!data) {
+          var saveLocation = Path.join(savePath,  parsedPath.base);
+          var saveFile = saveLocation;
+          data = fs.readFileSync(saveFile);
+          //saving it in the same directory the project was loaded from
+        }
+        api.putDataInCommon('saveLocation', saveLocation);
         var usfmData = data.toString();
         var parsedUSFM = usfm.toJSON(usfmData);
         parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();

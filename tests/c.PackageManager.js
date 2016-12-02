@@ -36,7 +36,7 @@ describe('PackageManager.download', function() {
   });
   it('PackageManager.download should download an existing package', function(done) {
     this.timeout(500000);
-    PackageManager.download('translationWords', function(err, results) {
+    PackageManager.download('ExampleChecker', function(err, results) {
       assert.isNull(err);
       assert.isNotNull(results);
       assert.equal('Installation Successful', results);
@@ -51,7 +51,7 @@ describe('PackageManager.getLocalList', function() {
     assert.isArray(localInstall);
     assert.isTrue(localInstall.length > 0);
     assert.isString(localInstall[0]);
-    assert.isTrue(localInstall.includes('translationWords'));
+    assert.isTrue(localInstall.includes('ExampleChecker'));
     assert.isFalse(localInstall.includes('translationRhymes'));
   });
 });
