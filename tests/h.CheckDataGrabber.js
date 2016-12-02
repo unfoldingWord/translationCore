@@ -6,7 +6,7 @@ const CheckStore = require('../src/js/stores/CheckStore.js')
 const path = require('path-extra');
 const api = window.ModuleApi;
 
-const PARENT = pathex.datadir('translationCore')
+const PARENT = path.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages');
 
 const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
