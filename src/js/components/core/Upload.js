@@ -218,7 +218,6 @@ function checkIfUSFMProject(savePath, callback) {
       targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     }
   }
-  console.log("target language is " + targetLanguage);
   callback(targetLanguage);
 }
 
