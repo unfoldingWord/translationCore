@@ -193,10 +193,15 @@ function checkIfUSFMProject(savePath, callback) {
   for (var file in projectFolder) {
     var parsedPath = Path.parse(projectFolder[file]);
     if (parsedPath.ext.toUpperCase() == ".SFM" || parsedPath.ext.toUpperCase() == '.USFM') {
+      var actualFile = Path.join(savePath, parsedPath.base);
       var saveLocation = Path.join(defaultSave, parsedPath.name);
       var saveFile = Path.join(saveLocation, parsedPath.base);
       try {
-        var data = fs.readFileSync(saveFile);
+        try {
+          var data = fs.readFileSync(saveFile);
+        } catch(err) {
+          var data = fs.readFileSync(actualFile);
+        }
         if (!data) {
           var saveLocation = Path.join(savePath,  parsedPath.base);
           var saveFile = saveLocation;

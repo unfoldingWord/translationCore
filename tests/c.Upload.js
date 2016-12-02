@@ -23,7 +23,7 @@ const api = window.ModuleApi;
 var fs = require('fs');
 
 const testProjectPath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
-const testUSFMProjectPath = './tests/static/3john';
+const testUSFMProjectPath = path.join(window.__base, '/tests/static/3john');
 
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {

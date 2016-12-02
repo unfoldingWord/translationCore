@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const ImportUSFM = require('../src/js/components/core/Usfm/ImportUSFM.js');
 var parsedBook;
 var testAbbr = 'mrk', testSave = './tests/testIO', testDir = 'ltr';
-var testFile = './tests/static/3john.usfm';
+var testFile = './tests/static/3john/3john.usfm';
 
 
 describe('ImportUSFM.saveParamsInAPI', function() {
