@@ -6,7 +6,10 @@ const CheckStore = require('../src/js/stores/CheckStore.js')
 const path = require('path-extra');
 const api = window.ModuleApi;
 
-const testTool = './static/ExampleChecker';
+const PARENT = pathex.datadir('translationCore')
+const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages');
+
+const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
 
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
