@@ -35,7 +35,8 @@ function openUSFMProject(savePath, direction, link) {
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
-        Upload.loadProjectThatHasManifest(tcManifest, saveLocation);
+        Upload.loadProjectThatHasManifest(saveLocation, function(){}, tcManifest);
+        ModuleApi.putDataInCommon('targetLanguage', targetLanguage);
       } else if (!tcManifest) {
         var defaultManifest = {
           "source_translations": [
@@ -65,6 +66,22 @@ function openUSFMProject(savePath, direction, link) {
       }
     });
   });
+}
+function saveParamsInAPI(bookAbbr, saveLocation, direction) {
+  Upload = require('../Upload.js');
+  if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
+  var params = {
+    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    targetLanguagePath: saveLocation,
+    direction: direction,
+    bookAbbr: bookAbbr
+  };
+  if (Upload.isOldTestament(params.bookAbbr)) {
+    params.originalLanguage = "hebrew";
+  } else {
+    params.originalLanguage = "greek";
+  }
+  api.putDataInCommon('params', params);
 }
 
 function saveTargetLangeInAPI(parsedUSFM) {
@@ -181,3 +198,6 @@ var ImportComponent = React.createClass({
 });
 exports.component = ImportComponent;
 exports.open = openUSFMProject;
+exports.saveParamsInAPI = saveParamsInAPI;
+exports.saveTargetLangeInAPI = saveTargetLangeInAPI;
+exports.createTCProject = createTCProject;

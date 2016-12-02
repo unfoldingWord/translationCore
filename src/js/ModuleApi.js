@@ -90,7 +90,7 @@ class ModuleApi {
 
   getDataFromCheckStore(field, key = null) {
     var obj = CheckStore.getModuleDataObject(field);
-    if (obj != null && typeof obj == "object") {
+    if (obj && typeof obj == "object") {
       if (key) {
         return obj[key];
       }
@@ -367,7 +367,7 @@ class ModuleApi {
     let groupIndex = groups.indexOf(foundGroup);
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
-    api.emitEvent('changeGroupName',
+    this.emitEvent('changeGroupName',
     {
       "groupName": groupName
     });
@@ -420,7 +420,7 @@ class ModuleApi {
     checkIndex = parseInt(checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', checkIndex);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
-    api.emitEvent('goToCheck',
+    this.emitEvent('goToCheck',
       {
         'groupIndex': groupIndex,
         'checkIndex': checkIndex
