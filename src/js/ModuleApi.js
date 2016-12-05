@@ -135,7 +135,8 @@ class ModuleApi {
   }
 
   convertToFullBookName(bookAbbr) {
-    return BooksOfBible[bookAbbr.toLowerCase()];
+    if (!bookAbbr) return;
+    return BooksOfBible[bookAbbr.toString().toLowerCase()];
   }
 
   /**
@@ -145,9 +146,10 @@ class ModuleApi {
     * abbreviation will just be returned
   */
   convertToBookAbbreviation(fullBookName) {
+    if (!fullBookName) return;
     for (var key in BooksOfBible) {
-      if (BooksOfBible[key].toLowerCase() == fullBookName.toLowerCase() ||
-        fullBookName.toLowerCase() == key) {
+      if (BooksOfBible[key].toString().toLowerCase() == fullBookName.toString().toLowerCase() ||
+        fullBookName.toString().toLowerCase() == key) {
         return key;
       }
     }

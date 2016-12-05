@@ -6,6 +6,10 @@ const chai = require('chai');
 const assert = chai.assert;
 require('../src/js/pages/index');
 const ModuleApi = require('../src/js/ModuleApi.js');
+const CoreActions = require('../src/js/actions/CoreActions.js');
+var testObj = {test: 'abcd'};
+var testNumber = 42;
+var unexpectedValue = 'abc';
 
 function addDataToCommon() {
   ModuleApi.putDataInCommon('testString', 'This is a test string');
@@ -55,10 +59,16 @@ describe('ModuleApi.convertToFullBookName', function() {
     var mrk = 'mrk';
     var mrkUpper = 'MRK';
     var mrkExpected = 'Mark';
-    var unexpectedValue = 'abc';
     assert.equal(ModuleApi.convertToFullBookName(mrk), mrkExpected);
     assert.equal(ModuleApi.convertToFullBookName(mrkUpper), mrkExpected);
+  });
+  it('convertToFullBookName should return undefiled for an invalid abbreviation', function() {
     assert.isUndefined(ModuleApi.convertToFullBookName(unexpectedValue));
+  });
+  it('convertToFullBookName should still work with non-string values', function() {
+    assert.isUndefined(ModuleApi.convertToFullBookName(testObj));
+    assert.isUndefined(ModuleApi.convertToFullBookName(testNumber));
+    assert.isUndefined(ModuleApi.convertToFullBookName(null));
   });
 });
 
@@ -67,10 +77,16 @@ describe('ModuleApi.convertToBookAbbreviation', function() {
     var mark = 'Mark';
     var markUpper = 'MARK';
     var markExpected = 'mrk';
-    var unexpectedValue = 'abcd';
     assert.equal(ModuleApi.convertToBookAbbreviation(mark), markExpected);
     assert.equal(ModuleApi.convertToBookAbbreviation(markUpper), markExpected);
+  });
+  it('convertToBookAbbreviation should return undefined for an invalid book.', function() {
     assert.isUndefined(ModuleApi.convertToBookAbbreviation(unexpectedValue));
+  });
+  it('convertToBookAbbreviation should still work with non-string values', function() {
+    assert.isUndefined(ModuleApi.convertToBookAbbreviation(testObj));
+    assert.isUndefined(ModuleApi.convertToBookAbbreviation(testNumber));
+    assert.isUndefined(ModuleApi.convertToBookAbbreviation(null));
   });
 });
 
@@ -80,82 +96,40 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
       addDataToCommon();
       assert.equal(true, true);
     } catch (err){
-      assert.equal(true, false);
+      assert.equal(err, false);
     }
   });
-
   it('getDataFromCommon should return data that was from putDataInCommon', function() {
     var expectedString = 'This is a test string';
     var expectedObject = 'Test object';
     var expectedNumber = 42;
-    var unexpectedValue = 'abc';
     assert.equal(ModuleApi.getDataFromCommon('testString'), expectedString);
     assert.isString(ModuleApi.getDataFromCommon('testString'));
     assert.equal(ModuleApi.getDataFromCommon('testObject').id, expectedObject);
     assert.isObject(ModuleApi.getDataFromCommon('testObject'));
     assert.equal(ModuleApi.getDataFromCommon('testNumber'), expectedNumber);
     assert.isNumber(ModuleApi.getDataFromCommon('testNumber'));
+  });
+  it('getDataFromCommon should return undefined for data that is not in common', function() {
     assert.isUndefined(ModuleApi.getDataFromCommon(unexpectedValue));
   });
-});
-
-describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
-  var sampleObject = {
-    name: 'translationCore',
-    purpose: 'testObject',
-    id: 'IOtests'
-  };
-  it('outputJson should be able to write a json object to a file', function(done){
-    ModuleApi.outputJson('./tests/testIO/test.json', sampleObject, function(err) {
-      if (err) {
-        assert.equal(true, false);
-      } else {
-        assert.equal(true, true);
-      }
-      done();
-    });
-  });
-  it('inputJson should be able to read a json object from a file', function(done){
-    ModuleApi.inputJson('./tests/testIO/test.json', function(err, data) {
-      if (err || !data) {
-        assert.equal(true, false);
-      } else {
-        assert.isObject(data);
-        assert.equal(data.name, sampleObject.name);
-        assert.isString(data.name);
-      }
-      done();
-    });
-  });
-});
-
-describe('ModuleApi.inputText and ModuleApi.outputText', function() {
-  var sampleText = "Hello world, I am translationCore";
-  it('outputText should be able to write a json object to a file', function(done){
-    ModuleApi.outputText('./tests/testIO/test.txt', sampleText, function(err) {
-      if (err) {
-        assert.equal(true, false);
-      } else {
-        assert.equal(true, true);
-      }
-      done();
-    });
-  });
-  it('inputText should be able to read from a file', function(done){
-    ModuleApi.inputText('./tests/testIO/test.txt', function(err, data) {
-      if (err || !data) {
-        assert.equal(true, false);
-      } else {
-        assert.equal(data, sampleText);
-        assert.isString(data.toString());
-      }
-      done();
-    });
+  it('getDataFromCommon should not fail when queried with non-string keys', function() {
+    assert.isUndefined(ModuleApi.getDataFromCommon(testObj));
+    assert.isUndefined(ModuleApi.getDataFromCommon(testNumber));
+    assert.isObject(ModuleApi.getDataFromCommon(null));
   });
 });
 
 describe('ModuleApi.initializeCheckStore', function() {
-  it('initializeCheckStore should initaze a CheckStore with default values', function() {
+  it('initializeCheckStore should fail if parameters are undefined', function() {
+    try {
+      ModuleApi.initializeCheckStore();
+      assert.isTrue(false);
+    } catch(err) {
+      assert.isTrue(true);
+    }
+  });
+  it('initializeCheckStore should initialize a CheckStore with default values', function() {
     var params = {
       bookAbbr: 'mrk'
     };
@@ -179,10 +153,12 @@ describe('ModuleApi.logCheckStore', function() {
 });
 
 describe('ModuleApi.updateManifest', function() {
-  it('updateManifest should update the manifest', function() {
+  it('updateManifest should tell us if no manifest is found', function() {
     ModuleApi.updateManifest('type', 'test', function(data) {
       assert.equal(data, 'No manifest found');
     });
+  });
+  it('updateManifest should update the manifest if one is initialized', function() {
     ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
     ModuleApi.updateManifest('type', 'test', function(data) {
       assert.equal(data, 'No save location specified');
@@ -190,7 +166,13 @@ describe('ModuleApi.updateManifest', function() {
       assert.equal(ModuleApi.getDataFromCommon('tcManifest').name, 'tcManifest');
     });
   });
-  it('updateManifest should update the manifest and write it to a file', function(done) {
+  it('updateManifest should not fail with undefined values', function() {
+    ModuleApi.updateManifest(undefined, null, function(data) {
+      assert.equal(data, 'No save location specified');
+      assert.isNull(ModuleApi.getDataFromCommon('tcManifest').undefined);
+    });
+  });
+  it('updateManifest should update the manifest and write it to a file with a saveLocation present', function(done) {
     ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
     ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
     ModuleApi.updateManifest('type', 'test', function(err) {
@@ -201,6 +183,46 @@ describe('ModuleApi.updateManifest', function() {
       assert.equal(ModuleApi.getDataFromCommon('tcManifest').name, 'tcManifest');
       done();
     });
+  });
+});
+
+describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
+  var sampleObject = {
+    name: 'translationCore',
+    purpose: 'testObject',
+    id: 'IOtests'
+  };
+  it('outputJson should be able to write a json object to a file', function(done){
+    ModuleApi.outputJson('./tests/testIO/test.json', sampleObject, function(err) {
+      if (err) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(true, true);
+      }
+      done();
+    });
+  });
+  it('outputJson should fail with a non string file path', function(done) {
+    try {
+      ModuleApi.outputJson(null, sampleObject, function(err) {
+        assert.equal(true, false);
+        done();
+      });
+    } catch(err) {
+      assert.equal(true, true);
+      done();
+    }
+  });
+  it('outputJson should fail with a non object', function(done) {
+    try {
+      ModuleApi.outputJson(null, testString, function(err) {
+        assert.equal(true, false);
+        done();
+      });
+    } catch(err) {
+      assert.equal(true, true);
+      done();
+    }
   });
   it('inputJson should be able to read a json manifest from a file', function(done){
     ModuleApi.inputJson('./tests/testIO/tc-manifest.json', function(err, data) {
@@ -214,7 +236,78 @@ describe('ModuleApi.updateManifest', function() {
       done();
     });
   });
+  it('inputJson should be able to read a json object from a file', function(done){
+    ModuleApi.inputJson('./tests/testIO/test.json', function(err, data) {
+      if (err || !data) {
+        assert.equal(true, false);
+      } else {
+        assert.isObject(data);
+        assert.equal(data.name, sampleObject.name);
+        assert.isString(data.name);
+      }
+      done();
+    });
+  });
+  it('inputJson should fail with a non string file path', function(done) {
+    try {
+      ModuleApi.outputJson(null, function(err) {
+        assert.equal(true, false);
+        done();
+      });
+    } catch(err) {
+      assert.equal(true, true);
+      done();
+    }
+  });
 });
+
+describe('ModuleApi.inputText and ModuleApi.outputText', function() {
+  var sampleText = "Hello world, I am translationCore";
+  it('outputText should be able to write a json object to a file', function(done){
+    ModuleApi.outputText('./tests/testIO/test.txt', sampleText, function(err) {
+      if (err) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(true, true);
+      }
+      done();
+    });
+  });
+  it('outputText should fail with a non string file path', function(done) {
+    try {
+      ModuleApi.outputText(null, sampleText, function(err) {
+        assert.equal(true, false);
+        done();
+      });
+    } catch(err) {
+      assert.equal(true, true);
+      done();
+    }
+  });
+  it('inputText should be able to read from a file', function(done){
+    ModuleApi.inputText('./tests/testIO/test.txt', function(err, data) {
+      if (err || !data) {
+        assert.equal(true, false);
+      } else {
+        assert.equal(data, sampleText);
+        assert.isString(data.toString());
+      }
+      done();
+    });
+  });
+  it('inputText should fail with a non string file path', function(done) {
+    try {
+      ModuleApi.inputText(null, function(err) {
+        assert.equal(true, false);
+        done();
+      });
+    } catch(err) {
+      assert.equal(true, true);
+      done();
+    }
+  });
+});
+
 //
 // describe('ModuleApi.getAuthToken', function() {
 //   it('getAuthToken should return an auth token, of type string', function() {
@@ -226,23 +319,37 @@ describe('ModuleApi.updateManifest', function() {
 // });
 
 describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
+  it('saveMenu should not fail with undefined values.', function() {
+    try {
+      ModuleApi.saveMenu(undefined, undefined);
+      assert.equal(true, true);
+    } catch (err){
+      console.log(err);
+      assert.equal(true, false);
+    }
+  });
   it('saveMenu should setup a menu without any issue', function() {
     try {
       setUpMenus();
       assert.equal(true, true);
     } catch (err){
+      console.log(err);
       assert.equal(true, false);
     }
   });
 
   it('getMenu should return an function, after a menu is saved', function() {
     var unexpectedValue = 'abc';
-    assert.isNull(ModuleApi.getMenu());
     assert.isObject(ModuleApi.getMenu('testMenu'));
-    assert.isArray(ModuleApi.getMenu('testMenu').menu);
     assert.isString(ModuleApi.getMenu('testMenu').menu[0]);
-    assert.isFunction(ModuleApi.getMenu(unexpectedValue));
+    assert.isArray(ModuleApi.getMenu('testMenu').menu);
   });
+  it('getMenu should return null if no menu is specified', function() {
+    assert.isNull(ModuleApi.getMenu());
+  });
+  it('getMenu should return a funciton if the menu does not exist', function() {
+    assert.isFunction(ModuleApi.getMenu(unexpectedValue));
+  })
 });
 
 describe('ModuleApi Event Listeners', function () {
@@ -256,6 +363,16 @@ describe('ModuleApi Event Listeners', function () {
     ModuleApi.emitEvent('sampleEvent', SUCCESS);
     done()
   });
+  it('registerEventListener should fail if there is no callback', function(done) {
+    try {
+      ModuleApi.registerEventListener('anotherEvent');
+      ModuleApi.emitEvent('anotherEvent', SUCCESS);
+      assert.isTrue(false);
+    } catch(err) {
+      assert.isTrue(true);
+    }
+    done();
+  });
   it('removeEventListener release the listner from the callback', function (done) {
     ModuleApi.removeEventListener('sampleEvent', sampleCallback);
     ModuleApi.emitEvent('sampleEvent', FAIL);
@@ -264,8 +381,10 @@ describe('ModuleApi Event Listeners', function () {
 });
 
 describe('ModuleApi.getLoggedInUser', function () {
-  it('should return an object of the current user', function (done) {
-    const CoreActions = require('../src/js/actions/CoreActions.js');
+  it('getLoggedInUser should return undefined if no user is logged in', function() {
+    assert.isUndefined(ModuleApi.getLoggedInUser());
+  });
+  it('getLoggedInUser should return an object of the current user', function (done) {
     CoreActions.login({ full_name: "Jay Scott", username: "royalsix" });
     assert.deepEqual(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
     done();
@@ -273,12 +392,20 @@ describe('ModuleApi.getLoggedInUser', function () {
 });
 
 describe('ModuleApi.createAlert', function () {
-  it('should display an alert on screen and handle callback', function (done) {
+  it('createAlert should not crash if no parameters are specified', function() {
+    try {
+      ModuleApi.createAlert();
+      CoreActions.sendAlertResponse('fail');
+      assert.isTrue(true);
+    } catch (err) {
+      assert.equal(false, err);
+    }
+  });
+  it('createAlert should display an alert on screen and handle callback', function (done) {
     ModuleApi.createAlert({}, (response) => {
       assert.equal(response, 'Success');
       done();
     });
-    const CoreActions = require('../src/js/actions/CoreActions.js');
     CoreActions.sendAlertResponse('Success');
   });
 });
@@ -286,11 +413,25 @@ describe('ModuleApi.createAlert', function () {
 describe('ModuleApi Checkstore Functions', function () {
   var CheckStore = require('../src/js/stores/CheckStore.js');
   const sampleWord = 'ORANGE';
+  it('putDataInCheckStore should not fail putting undefined data in the checkstore', function() {
+    try {
+      ModuleApi.putDataInCheckStore();
+      assert.isTrue(true);
+    } catch (err) {
+      assert.equal(false, err);
+    }
+  });
   it('putDataInCheckStore should put data in the checkstore', function (done) {
     ModuleApi.putDataInCheckStore('translationRhymes', 'rhymeWord', sampleWord);
     var word = CheckStore.getModuleDataObject('translationRhymes').rhymeWord;
     assert.equal(word, sampleWord);
     done();
+  });
+  it('getDataFromCheckStore should return null for invalid data', function() {
+    assert.isNull(ModuleApi.getDataFromCheckStore('abcd'));
+  });
+  it('getDataFromCheckStore should return the entire checkstore if there is no parameters', function() {
+    assert.isObject(ModuleApi.getDataFromCheckStore());
   });
   it('getDataFromCheckStore should get data from the checkstore -_-', function (done) {
     var word = ModuleApi.getDataFromCheckStore('translationRhymes', 'rhymeWord');
@@ -308,6 +449,18 @@ describe('ModuleApi Settings Functions', function () {
     assert.equal(JSON.parse(value)[sampleSetting], sampleValue);
     done();
   });
+  it('setSettings should not fail if undefined data is passed', function() {
+    try {
+      ModuleApi.setSettings()
+      assert.isTrue(true);
+    } catch (err) {
+      assert.equal(false, err);
+    }
+  });
+  it('getSettings should return undefined for a setting that does not exist', function() {
+    assert.isUndefined(ModuleApi.getSettings());
+    assert.isUndefined(ModuleApi.getSettings(unexpectedValue));
+  });
   it('getSettings should get the specified setting', function (done) {
     var value = ModuleApi.getSettings(sampleSetting);
     assert.equal(value, sampleValue);
@@ -316,7 +469,18 @@ describe('ModuleApi Settings Functions', function () {
 });
 
 describe('ModuleApi.putToolMetaDatasInStore and ModuleApi.getToolMetaDataFromStore', function() {
-  it('ModuleApi.putToolMetaDatasInStore should add metadata to the store', function() {
+  it('putToolMetaDatasInStore should fail with undefined tool metadata', function() {
+    try {
+      ModuleApi.putToolMetaDatasInStore();
+      assert.isTrue(false);
+    } catch(err) {
+      assert.equal(true, true);
+    }
+  });
+  it('getToolMetaDataFromStore should return undefined if no data is saved', function() {
+    assert.isUndefined(ModuleApi.getToolMetaDataFromStore());
+  });
+  it('putToolMetaDatasInStore should add metadata to the store', function() {
     try {
       ModuleApi.putToolMetaDatasInStore('Test metadata');
       assert.equal(true, true);
@@ -324,7 +488,7 @@ describe('ModuleApi.putToolMetaDatasInStore and ModuleApi.getToolMetaDataFromSto
       assert.equal(false, err);
     }
   });
-  it('ModuleApi.getToolMetaDataFromStore should retrieve metadata from the store', function() {
+  it('getToolMetaDataFromStore should retrieve metadata from the store', function() {
     try {
       var metadata = ModuleApi.getToolMetaDataFromStore();
       assert.equal(metadata, 'Test metadata');
@@ -336,7 +500,23 @@ describe('ModuleApi.putToolMetaDatasInStore and ModuleApi.getToolMetaDataFromSto
 });
 
 describe('ModuleApi.setCurrentGroupName and ModuleApi.getCurrentGroupName', function() {
-  it('ModuleApi.setCurrentGroupName should change the name of the current group', function() {
+  it('setCurrentGroupName should not fail when values are undefined', function() {
+    try {
+      ModuleApi.setCurrentGroupName();
+      assert.equal(true, true);
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+  it('getCurrentGroupName should return undefined if no currentGroupName is set', function() {
+    try {
+      var metadata = ModuleApi.getCurrentGroupName();
+      assert.isUndefined(metadata)
+    } catch(err) {
+      assert.equal(false, err);
+    }
+  });
+  it('setCurrentGroupName should change the name of the current group', function() {
     try {
       ModuleApi.setCurrentGroupName('Test Group Name');
       assert.equal(true, true);
@@ -344,7 +524,7 @@ describe('ModuleApi.setCurrentGroupName and ModuleApi.getCurrentGroupName', func
       assert.equal(false, err);
     }
   });
-  it('ModuleApi.getCurrentGroupName should retrieve the name of the current group from the store', function() {
+  it('getCurrentGroupName should retrieve the name of the current group from the store', function() {
     try {
       var metadata = ModuleApi.getCurrentGroupName();
       assert.equal(metadata, 'Test Group Name');
