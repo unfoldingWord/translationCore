@@ -96,7 +96,7 @@ class PackageManagerView extends React.Component{
             } catch(err) {
               var manifest = {};
             }
-            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]].main === 'true') {
+            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]] && data[installed[i]].main === 'true') {
               cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
               description={manifest.description || "No description found."}
               iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
@@ -117,7 +117,12 @@ class PackageManagerView extends React.Component{
             var manifest = {};
           }
           var remotePackage = data[currentPackage];
-          var remoteVersion = remotePackage.version;
+          if (remotePackage) {
+            var remoteVersion = remotePackage.version;
+          } else {
+            remoteVersion = '1.0.0';
+            console.warn('Could not find remote version of package ' + currentPackage);
+          }
           var localVersion = PackageManager.getVersion(currentPackage);
           if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
             cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
