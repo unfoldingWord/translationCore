@@ -2,17 +2,16 @@
  *@author: Ian Hoegen
  *@description: This is the central manager of all packages for translationCore.
  ******************************************************************************/
-const pathex = require('path-extra');
+const path = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
-const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
-const exec = require('child_process').exec;
 const api = window.ModuleApi;
+const babel = require('babel-core');
 var installQueue = [];
 
-const PARENT = pathex.datadir('translationCore')
-const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PARENT = path.datadir('translationCore')
+const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages');
+const PACKAGE_COMPILE_LOCATION = path.join(PARENT, 'packages-compiled')
 const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/translationCore-apps/master/directory.json";
 
 /**
@@ -29,10 +28,10 @@ function downloadPackage(packageName, callback) {
     var packageLocation = obj[packageName].repo;
     fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-    var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
+    var source = path.join(PACKAGE_SAVE_LOCATION, packageName);
     fs.emptyDirSync(source);
     git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
-      var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+      var destination = path.join(PACKAGE_COMPILE_LOCATION, packageName);
       fs.emptyDirSync(destination);
       fs.removeSync(destination);
       fs.copy(source, destination, function (err) {
@@ -62,20 +61,30 @@ function downloadPackage(packageName, callback) {
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function compilePackage(destination, packageName, callback) {
-  var command = '"' + babelCli + '"' + ' ' + '"'+ destination +'"' + ' --ignore node_modules,.git --out-dir ' + '"'+ destination+'"';
   fs.ensureDirSync(destination);
   var filesInPackage = fs.readdirSync(destination);
   if (!filesInPackage.includes('.babelrc')) {
     if (callback) {
-      callback('Installation Successful');
+      callback(null, 'Installation Successful');
     }
     return;
   }
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`exec error: ${error}`);
-      callback(`exec error: ${error}`, null);
+  var babelrc = fs.readJsonSync(path.join(destination, '.babelrc'));
+  recursiveDirRead(destination, function(err, data) {
+    if (err) {
+      console.error(err);
+      callback(err, null);
       return;
+    }
+    var completedTransformCounter = 0;
+    var codeTree = {};
+    for (var i = 0; i < data.length; i++) {
+      var result = babel.transformFileSync(data[i], babelrc);
+      codeTree[data[i]] = result.code;
+      completedTransformCounter++;
+    }
+    for (var j in codeTree) {
+      fs.outputFileSync(j, codeTree[j]);
     }
     if (callback) {
       callback(null, 'Installation Successful')
@@ -117,7 +126,7 @@ function checkForUpdates(callback) {
     var installedPackages = getLocalList();
     for (var packages in installedPackages) {
       var currentPackage = installedPackages[packages]
-      var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json')).version;
+      var localVersion = require(path.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json')).version;
       var remoteVersion = obj[currentPackage].version;
       if (remoteVersion > localVersion) needToUpdate.push(currentPackage);
     }
@@ -149,7 +158,7 @@ function getLocalList() {
 function isInstalled(packageName) {
   fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -171,7 +180,7 @@ function isInstalled(packageName) {
  * @return {String} version - The version of the package.
  ******************************************************************************/
 function getVersion(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -202,8 +211,8 @@ function search(query, callback) {
  * @param {String} packageName - The name of the package to uninstall.
  ******************************************************************************/
 function uninstall(packageName) {
-  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
-  var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
+  var packageLocation = path.join(PACKAGE_SAVE_LOCATION, packageName);
+  var compiledLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName);
   fs.emptyDirSync(packageLocation);
   fs.emptyDirSync(compiledLocation);
   fs.removeSync(packageLocation);
@@ -215,7 +224,7 @@ function uninstall(packageName) {
  * @param The package to install dependencies for.
  ******************************************************************************/
 function installDependencies(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -230,15 +239,43 @@ function installDependencies(packageName) {
 }
 
 function npmInstall(location, args, callback) {
+  var oldConsolelog = console.log;
+  console.log = function() {}
+  console.log('log is kill');
   var npm = require('npm');
   npm.load({}, function() {
     var installer = require('npm/lib/install.js');
     installer(location, args || [], function(err, data) {
       callback(err, data)
+      console.log = oldConsolelog;
     });
   });
 }
 
+function recursiveDirRead(dir, callback) {
+  var results = [];
+  fs.readdir(dir, function(err, list) {
+    if (err) return callback(err);
+    var pending = list.length;
+    if (!pending) return callback(null, results);
+    list.forEach(function(file) {
+      file = path.resolve(dir, file);
+      fs.stat(file, function(err, stat) {
+        if (stat && stat.isDirectory() && !~file.indexOf('node_modules') && !~file.indexOf('.git')) {
+          recursiveDirRead(file, function(err, res) {
+            results = results.concat(res);
+            if (!--pending) callback(null, results);
+          });
+        } else {
+          if (path.extname(file) === '.js') {
+            results.push(file);
+          }
+          if (!--pending) callback(null, results);
+        }
+      });
+    });
+  });
+}
 exports.download = downloadPackage;
 exports.list = getPackageList;
 exports.compile = compilePackage;
