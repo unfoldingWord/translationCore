@@ -33,6 +33,7 @@ class PackageCard extends React.Component{
       if(!err) {
         _this.setState({installStatus: 'Installed'});
       }
+      console.log(name + ' ' + data);
     });
   }
 

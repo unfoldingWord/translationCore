@@ -35,6 +35,8 @@ const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 function getDefaultModules(callback) {
   var defaultModules = [];
   var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
+  fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   fs.readdir(moduleBasePath, function(error, folders) {
     if (error) {
       console.error(error);

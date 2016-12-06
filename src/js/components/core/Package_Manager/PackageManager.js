@@ -5,10 +5,10 @@
 const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
-const npm = pathex.join(window.__base, 'node_modules', '.bin', 'npm');
 const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
 const exec = require('child_process').exec;
 const api = window.ModuleApi;
+var installQueue = [];
 
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
@@ -21,6 +21,7 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
+  console.log(installQueue);
   getPackageList(function(obj){
     if (!obj[packageName]) {
       callback('Package does not exist', null);
@@ -35,16 +36,22 @@ function downloadPackage(packageName, callback) {
       var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
       fs.emptyDirSync(destination);
       fs.removeSync(destination);
-      var command = '"' + npm + '"' + ' install';
-      exec(command, {cwd: source}, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`exec error: ${error}`);
-          callback(`exec error: ${error}`, null);
-          return;
-        }
-        fs.copy(source, destination, function (err) {
+      fs.copy(source, destination, function (err) {
+        npmInstall(destination, [], (error, data) => {
+          if (error) {
+            uninstall(packageName);
+            console.error(error);
+            callback(error, null);
+            return;
+          }
           installDependencies(packageName);
-          compilePackage(destination, packageName, callback)
+          console.log(installQueue);
+          if (installQueue.length > 0) {
+            compilePackage(destination, packageName)
+            downloadPackage(installQueue.shift(), callback);
+          } else {
+            compilePackage(destination, packageName, callback)
+          }
         });
       });
     });
@@ -73,7 +80,6 @@ function compilePackage(destination, packageName, callback) {
       return;
     }
     if (callback) {
-
       callback(null, 'Installation Successful')
     }
     api.Toast.success("Installation Successful", packageName + 'Was Successfully Installed', 3);
@@ -219,11 +225,21 @@ function installDependencies(packageName) {
   }
   var dependencies = manifest.include;
   for (var i in dependencies) {
-    var dependencyLocation = pathex.join(PACKAGE_SAVE_LOCATION, dependencies[i]);
-    fs.emptyDirSync(dependencyLocation);
-    fs.removeSync(dependencyLocation);
-    downloadPackage(dependencies[i]);
+    if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
+      console.log(dependencies[i]);
+      installQueue.push(dependencies[i]);
+    }
   }
+}
+
+function npmInstall(location, args, callback) {
+  var npm = require('npm');
+  npm.load({}, function() {
+    var installer = require('npm/lib/install.js');
+    installer(location, args || [], function(err, data) {
+      callback(err, data)
+    });
+  });
 }
 
 exports.download = downloadPackage;
