@@ -21,7 +21,6 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
-  console.log(installQueue);
   getPackageList(function(obj){
     if (!obj[packageName]) {
       callback('Package does not exist', null);
@@ -45,7 +44,6 @@ function downloadPackage(packageName, callback) {
             return;
           }
           installDependencies(packageName);
-          console.log(installQueue);
           if (installQueue.length > 0) {
             compilePackage(destination, packageName)
             downloadPackage(installQueue.shift(), callback);
@@ -226,7 +224,6 @@ function installDependencies(packageName) {
   var dependencies = manifest.include;
   for (var i in dependencies) {
     if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
-      console.log(dependencies[i]);
       installQueue.push(dependencies[i]);
     }
   }
