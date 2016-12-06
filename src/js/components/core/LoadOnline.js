@@ -22,6 +22,12 @@ module.exports = (function() {
   * @param {function} callback - The function to be run on complete
   ******************************************************************************/
   function openManifest(url, callback) {
+    if (!url) {
+      if (callback) {
+        callback('No link specified', null, null)
+      }
+      return;
+    }
     var splitUrl = url.split('.');
     if (splitUrl.pop() !== 'git') {
       const alert = {

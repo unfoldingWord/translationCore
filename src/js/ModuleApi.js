@@ -239,6 +239,9 @@ class ModuleApi {
   }
 
   initializeCheckStore(nameSpace, params, groups) {
+    if (!nameSpace || !params || !groups) {
+      return 'Missing one or more parameters'
+    }
     this.putDataInCheckStore(nameSpace, 'groups', groups);
     this.putDataInCheckStore(nameSpace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(nameSpace, 'currentGroupIndex', 0);

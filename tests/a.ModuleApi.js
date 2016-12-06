@@ -121,13 +121,8 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
 });
 
 describe('ModuleApi.initializeCheckStore', function() {
-  it('initializeCheckStore should fail if parameters are undefined', function() {
-    try {
-      ModuleApi.initializeCheckStore();
-      assert.isTrue(false);
-    } catch(err) {
-      assert.isTrue(true);
-    }
+  it('initializeCheckStore should return an error if parameters are undefined', function() {
+    assert.equal(ModuleApi.initializeCheckStore(), 'Missing one or more parameters');
   });
   it('initializeCheckStore should initialize a CheckStore with default values', function() {
     var params = {
