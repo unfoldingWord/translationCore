@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
   "devDependencies": {
-    "babel-core": "^6.13.2",
+    "babel-cli": "^6.11.4",
     "babel-preset-react": "^6.11.0",
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
@@ -49,7 +49,7 @@
     "eslint-config-google": "^0.6.0"
   },
   "dependencies": {
-    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
     "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.8",
     "event-emitter": "^0.3.4",
