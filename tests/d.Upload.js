@@ -28,11 +28,19 @@ const testUSFMProjectPath = path.join(window.__base, '/tests/static/3john');
 describe('Upload.sendFilePath(USFM project)', function () {
     it('should load a USFM project', function (done) {
         this.timeout(50000);
-        Upload.sendFilePath(testUSFMProjectPath, null, function() {
+        Upload.sendFilePath(testUSFMProjectPath, null, function () {
             assert.isObject(api.getDataFromCommon('tcManifest'));
             assert.isString(api.getDataFromCommon('saveLocation'));
             assert.isObject(api.getDataFromCommon('params'));
-            done();
+            api.inputJson(testUSFMProjectPath + '/tc-manifest.json', function (err, data) {
+                if (err || !data) {
+                    assert.equal(true, false);
+                } else {
+                    assert.isObject(data);
+                    assert(data.target_language);
+                }
+                done();
+            });
         });
     });
 });
@@ -40,11 +48,19 @@ describe('Upload.sendFilePath(USFM project)', function () {
 describe('Upload.sendFilePath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
         this.timeout(50000);
-        Upload.sendFilePath(testProjectPath, null, function() {
+        Upload.sendFilePath(testProjectPath, null, function () {
             assert.isObject(api.getDataFromCommon('tcManifest'));
             assert.isString(api.getDataFromCommon('saveLocation'));
             assert.isObject(api.getDataFromCommon('params'));
-            done();
+            api.inputJson(testProjectPath + '/tc-manifest.json', function (err, data) {
+                if (err || !data) {
+                    assert.equal(true, false);
+                } else {
+                    assert.isObject(data);
+                    assert(data.target_language);
+                }
+                done();
+            });
         });
     });
 });
