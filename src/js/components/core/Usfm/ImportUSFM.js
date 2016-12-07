@@ -28,6 +28,8 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
 function openUSFMProject(savePath, direction, link) {
+  if (!savePath || !direction)
+    return 'No file or text direction specified'
   Upload = require('../Upload.js');
   Upload.clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
@@ -85,6 +87,9 @@ function saveParamsInAPI(bookAbbr, saveLocation, direction) {
 }
 
 function saveTargetLangeInAPI(parsedUSFM) {
+  if(!parsedUSFM) {
+    return undefined;
+  }
   var targetLanguage = {};
   targetLanguage.title = parsedUSFM.book;
   // targetLanguage.header = parsedUSFM.headers;
@@ -110,6 +115,9 @@ function saveTargetLangeInAPI(parsedUSFM) {
 }
 
 function createTCProject(savePath, callback) {
+  if (!savePath || !callback) {
+    return 'No save path or callback specified'
+  }
   var parsedPath = path.parse(savePath);
   var saveLocation = path.join(defaultSave, parsedPath.name);
   var saveFile = path.join(saveLocation, parsedPath.base);
