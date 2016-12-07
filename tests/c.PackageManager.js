@@ -96,4 +96,3 @@ describe('PackageManager.isInstalled', function() {
     assert.isFalse(PackageManager.isInstalled('translationRhymes'));
   });
 })
->>>>>>> develop
