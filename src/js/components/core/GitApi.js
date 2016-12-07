@@ -72,7 +72,12 @@ function GitApi(directory) {
     mirror: function(url, path, callback) {
       git.clone(url, path, ['--recursive'], function(err) {
         if (err) {
-          dialog.showErrorBox('Clone Error', err);
+          const alert = {
+                title: 'Clone',
+                content: err,
+                leftButtonText: 'Ok'
+              }
+              ModuleApi.createAlert(alert);
           if (callback) {
             callback(err);
             return;

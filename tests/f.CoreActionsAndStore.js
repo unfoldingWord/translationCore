@@ -8,6 +8,14 @@ function onlineStatus() {
 }
 
 describe('CoreStore and CoreActions', function() {
+  it('CoreStore should throw an error if no callback is specified', function() {
+    try {
+      CoreStore.addChangeListener();
+      assert.isTrue(false);
+    } catch(err) {
+      assert.isTrue(true)
+    }
+  });
   it('CoreStore should be able to add an event listener', function() {
     CoreStore.addChangeListener(onlineStatus);
     CoreActions.updateOnlineStatus(true);
