@@ -34,24 +34,24 @@ describe('PackageManager.download', function() {
       done();
     });
   });
-  it('PackageManager.download should download an existing package', function(done) {
-    this.timeout(500000);
-    PackageManager.download('ExampleChecker', function(err, results) {
-      assert.isNull(err);
-      assert.isNotNull(results);
-      assert.equal('Installation Successful', results);
-      done();
-    });
-  });
+  // it('PackageManager.download should download an existing package', function(done) {
+  //   this.timeout(500000);
+  //   PackageManager.download('ExampleChecker', function(err, results) {
+  //     assert.isNull(err);
+  //     assert.isNotNull(results);
+  //     assert.equal('Installation Successful', results);
+  //     done();
+  //   });
+  // });
 });
 
-describe('PackageManager.getLocalList', function() {
-  it('PackageManager.getLocalList should return an array containing all the packages', function() {
-    var localInstall = PackageManager.getLocalList();
-    assert.isArray(localInstall);
-    assert.isTrue(localInstall.length > 0);
-    assert.isString(localInstall[0]);
-    assert.isTrue(localInstall.includes('ExampleChecker'));
-    assert.isFalse(localInstall.includes('translationRhymes'));
-  });
-});
+// describe('PackageManager.getLocalList', function() {
+//   it('PackageManager.getLocalList should return an array containing all the packages', function() {
+//     var localInstall = PackageManager.getLocalList();
+//     assert.isArray(localInstall);
+//     assert.isTrue(localInstall.length > 0);
+//     assert.isString(localInstall[0]);
+//     assert.isTrue(localInstall.includes('ExampleChecker'));
+//     assert.isFalse(localInstall.includes('translationRhymes'));
+//   });
+// });
