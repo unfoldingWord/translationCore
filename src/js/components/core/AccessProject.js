@@ -24,12 +24,26 @@ var Access = {
    * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
+    if(!folderpath) {
+      if (callback) {
+        callback('Must specify location')
+        return;
+      } else {
+        return 'Must specify location';
+      }
+    }
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
       Recent.add(folderpath);
       fs.readdir(folderpath, function (err, files) {
+        if (err) {
+          if (callback) {
+            callback(err);
+          }
+          return;
+        }
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
             var filepath = Path.join(folderpath, file);
@@ -41,7 +55,9 @@ var Access = {
       localStorage.removeItem('lastProject');
       api.putDataInCommon('saveLocation', null);
       _this.loadingProjectError(e.message);
-      callback(e);
+      if (callback) {
+        callback(e);
+      }
     }
   },
 
@@ -52,6 +68,14 @@ var Access = {
    * the checkData folder is loaded
    */
   loadCheckData: function (checkDataFolderPath, folderpath, callback) {
+    if (!checkDataFolderPath || !folderpath) {
+      if (callback) {
+        callback('No checkdata or save path specified');
+        return;
+      } else {
+        return 'No checkdata or save path specified';
+      }
+    }
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
       if (!error) {
@@ -65,6 +89,10 @@ var Access = {
             }
           });
         });
+      } else {
+        if (callback) {
+          callback(error)
+        }
       }
     });
   },
@@ -81,7 +109,9 @@ var Access = {
         CheckStore.storeData[name] = data;
         index++;
       }
-      callback();
+      if (callback) {
+        callback();
+      }
     } catch (e) {
       console.error(e);
     }
@@ -101,7 +131,9 @@ var Access = {
         if (element == 'saveLocation') continue;
         CheckStore.storeData.common[element] = common[element];
       }
-      callback(common.arrayOfChecks);
+      if (callback) {
+        callback(common.arrayOfChecks);
+      }
     });
   },
 
