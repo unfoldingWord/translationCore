@@ -41,7 +41,7 @@ var Access = {
       localStorage.removeItem('lastProject');
       api.putDataInCommon('saveLocation', null);
       _this.loadingProjectError(e.message);
-      console.error(e);
+      callback(e);
     }
   },
 
