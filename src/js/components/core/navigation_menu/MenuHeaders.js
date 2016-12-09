@@ -44,9 +44,18 @@ class MenuHeaders extends React.Component {
     this.selectNewMenuItem();
   }
 
-  newToolSelected(){
+  newToolSelected(params){
     //switched Tool therefore generate New MenuHeader
     this.groupName = api.getCurrentGroupName();
+    /*first load of fresh project thus no groupName
+    * in checkstore then get groupName at groupindex 0
+    */
+    if(params.currentCheckNamespace && !this.groupName){
+      let currentGroupIndex = api.getDataFromCheckStore(
+              params.currentCheckNamespace, 'currentGroupIndex');
+      this.groupName = api.getDataFromCheckStore(
+              params.currentCheckNamespace, 'groups')[currentGroupIndex].group;
+    }
     if(this.groupName){
       this.handleSelection(this.groupName);
     }
