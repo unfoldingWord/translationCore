@@ -20,6 +20,9 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function downloadPackage(packageName, callback) {
+  if (!callback) {
+    return 'No callback specified';
+  }
   getPackageList(function(obj){
     if (!obj[packageName]) {
       callback('Package does not exist', null);
@@ -97,6 +100,9 @@ function compilePackage(destination, packageName, callback) {
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function getPackageList(callback) {
+  if (!callback) {
+    return "No callback specified"
+  }
   var request = new XMLHttpRequest();
   request.onload = function() {
     var obj;
@@ -156,6 +162,9 @@ function getLocalList() {
  * @return {boolean} isExists - Whether the packae exists locally.
  ******************************************************************************/
 function isInstalled(packageName) {
+  if(!packageName) {
+    return false;
+  }
   fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   var manifestLocation = path.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
@@ -195,6 +204,9 @@ function getVersion(packageName) {
  * @param {String} callback - Function to be called on complete.
  ******************************************************************************/
 function search(query, callback) {
+  if (!callback) {
+    return 'No callback specified';
+  }
   getPackageList((data) => {
     var packageNames = Object.getOwnPropertyNames(data);
     var results = [];

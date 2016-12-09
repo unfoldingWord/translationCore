@@ -50,40 +50,42 @@ class SubMenu extends React.Component {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
-    let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
-    this.unselectOldMenuItem();
-    //if we need to move to the next group
-    if (this.currentCheckIndex >= foundGroup.checks.length - 1) {
+    if(groups){
+      let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
+      this.unselectOldMenuItem();
+      //if we need to move to the next group
+      if (this.currentCheckIndex >= foundGroup.checks.length - 1) {
       // if we're not on the last group
-      if (this.currentGroupIndex < foundGroup.length - 1) {
-        this.currentGroupIndex++;
-        this.currentCheckIndex = 0;
-      }
-    }
-    else { // if we still have more in the group*/
+        if (this.currentGroupIndex < foundGroup.length - 1) {
+          this.currentGroupIndex++;
+          this.currentCheckIndex = 0;
+        }
+      }else { // if we still have more in the group*/
       this.currentCheckIndex++;
+      }
+      this.selectNewMenuItem();
     }
-    this.selectNewMenuItem();
   }
 
   goToPrevious() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
-    let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
-    this.unselectOldMenuItem();
-    //if we need to move to the previous group
-    if (this.currentCheckIndex <= 0) {
-      //if we're not on the first group
-      if (this.currentGroupIndex > 0) {
-        this.currentGroupIndex--;
-        this.currentCheckIndex = foundGroup.checks.length - 1;
+    if(groups){
+      let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
+      this.unselectOldMenuItem();
+      //if we need to move to the previous group
+      if (this.currentCheckIndex <= 0) {
+        //if we're not on the first group
+        if (this.currentGroupIndex > 0) {
+          this.currentGroupIndex--;
+          this.currentCheckIndex = foundGroup.checks.length - 1;
+        }
+      }else {  //if we still have more in the group*/
+        this.currentCheckIndex--;
       }
+      this.selectNewMenuItem();
     }
-    else {  //if we still have more in the group*/
-      this.currentCheckIndex--;
-    }
-    this.selectNewMenuItem();
   }
 
   unselectOldMenuItem() {

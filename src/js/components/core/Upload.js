@@ -64,11 +64,11 @@ function sendPath(path, link, callback) {
             else if (err) {
               localStorage.removeItem('lastProject');
               api.putDataInCommon('saveLocation', null);
-              manifestError(err);
+              manifestError(err, callback);
             }
           });
       } else if (err) {
-        manifestError(err);
+        manifestError(err, callback);
       }
     });
   } else {
@@ -103,7 +103,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
   var Access = require('./AccessProject');
   api.putDataInCommon('tcManifest', tcManifest);
   api.putDataInCommon('saveLocation', path);
-  api.putDataInCommon('params', getParams(path));
+  api.putDataInCommon('params', getParams(path, callback));
   checkIfUSFMProject(path, function (targetLanguage) {
     if (targetLanguage) {
       api.putDataInCommon('targetLanguage', targetLanguage);
@@ -112,7 +112,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
       Access.loadFromFilePath(path, callback);
     } catch (err) {
       //executes if something fails, not sure how efficient
-      manifestError(err);
+      manifestError(err, callback);
     }
   });
 }
@@ -122,11 +122,12 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * @param {string} path - The path to the folder containing the translationStudio project
  * manifest
  */
-function getParams(path) {
+function getParams(path, callback) {
   var tcManifest = api.getDataFromCommon('tcManifest');
   isArray = function (a) {
     return (!!a) && (a.constructor === Array);
   };
+  if (!tcManifest) return;
   if (tcManifest.package_version == '3') {
     tcManifest = fixManifestVerThree(tcManifest);
   }
@@ -150,14 +151,14 @@ function getParams(path) {
     } else {
       params.gatewayLanguage = tcManifest.source_translations.language_id;
     }
-    params.direction = tcManifest.target_language.direction || tcManifest.target_language.direction;
+    params.direction = tcManifest.target_language ? tcManifest.target_language.direction : null;
     if (isOldTestament(params.bookAbbr)) {
       params.originalLanguage = "hebrew";
     } else {
       params.originalLanguage = "greek";
     }
   } catch (e) {
-    manifestError(e);
+    manifestError(e, callback);
   }
   return params;
 }
@@ -282,13 +283,14 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content) {
+function manifestError(content, callback) {
   const alert = {
     title: 'Error Setting Up Project',
     content: content,
     leftButtonText: 'Ok'
   }
   api.createAlert(alert);
+  callback(null);
 }
 
 /**

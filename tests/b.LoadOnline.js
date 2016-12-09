@@ -3,6 +3,23 @@ const loadOnline = require('../src/js/components/core/LoadOnline.js');
 const path = require('path-extra');
 
 describe('loadOnline.openManifest', function() {
+  it('loadOnline.openManifest should return an error if no link is specified', function(done) {
+    loadOnline(null, function(err, savePath, url) {
+      assert.isString(err);
+      assert.isNull(savePath);
+      assert.isNull(url);
+      assert.equal(err, 'No link specified');
+      done();
+    });
+  });
+  it('loadOnline.openManifest should fail on an invalid link.', function(done){
+    loadOnline('https://git.door43.org/ianhoegen123/id_-cfksl.git', function(err, savePath, url) {
+      assert.isNull(savePath);
+      assert.isNull(url);
+      assert.isString(err);
+      done();
+    });
+  });
   it('loadOnline.openManifest should deny a non .git link.', function(done){
     loadOnline('https://git.door43.org/royalsix/id_-co_text_reg', function(err, savePath, url) {
       assert.isNull(savePath);
@@ -23,4 +40,3 @@ describe('loadOnline.openManifest', function() {
     });
   });
 });
-

@@ -22,6 +22,12 @@ module.exports = (function() {
   * @param {function} callback - The function to be run on complete
   ******************************************************************************/
   function openManifest(url, callback) {
+    if (!url) {
+      if (callback) {
+        callback('No link specified', null, null)
+      }
+      return;
+    }
     var splitUrl = url.split('.');
     if (splitUrl.pop() !== 'git') {
       const alert = {
@@ -30,7 +36,8 @@ module.exports = (function() {
             leftButtonText: 'Ok'
           }
           api.createAlert(alert);
-      callback('Invalid Project, URL needs to end with .git', null, null)
+      if (callback)
+        callback('Invalid Project, URL needs to end with .git', null, null)
       return;
     }
     var projectPath = splitUrl.pop().split('/');
@@ -43,7 +50,8 @@ module.exports = (function() {
           runGitCommand(savePath, url, callback);
         });
       } else {
-        callback(null, savePath, url);
+        if (callback)
+          callback(null, savePath, url);
         // Access.loadFromFilePath(savePath);
         // CoreActions.showCreateProject("");
 
@@ -60,12 +68,14 @@ module.exports = (function() {
   function runGitCommand(savePath, url, callback) {
     git(savePath).mirror(url, savePath, function(err) {
       if (err) {
-        callback(err, null, null);
+        if (callback)
+          callback(err, null, null);
         return;
       }
       try {
         fs.readFileSync(path.join(savePath, 'manifest.json'));
-        callback(null, savePath, url);
+        if (callback)
+          callback(null, savePath, url);
       } catch (error) {
           const alert = {
             title: 'Error Getting Transaltion Studio Manifest',
@@ -74,7 +84,8 @@ module.exports = (function() {
           }
           api.createAlert(alert);
           console.error(error);
-        callback(error, null, null);
+        if (callback)
+          callback(error, null, null);
         return;
       }
     });

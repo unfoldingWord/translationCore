@@ -14,51 +14,13 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 /**
- * @description Gives the namespaces of all check modules.
- * @return {Array} checkCategories - An array of namespaces.
- ******************************************************************************/
-function getListOfChecks() {
-  let modulesFolder = PACKAGE_COMPILE_LOCATION;
-  // get only the folders and make them absolute paths
-  let modules = fs.readdirSync(modulesFolder);
-  modules = modules.map(dir => path.join(modulesFolder, dir));
-  modules = modules.filter(dir => fs.statSync(dir).isDirectory());
-  let checkCategories = [];
-  modules.forEach(dir => {
-    var includesReportView = fs.readdirSync(dir).includes('ReportView.js');
-    var includesManifest = fs.readdirSync(dir).includes('manifest.json');
-    if (includesReportView && includesManifest) {
-      var manifest = require(path.join(dir, 'manifest.json'));
-      checkCategories.push(manifest.name);
-    }
-  });
-  return checkCategories;
-}
-/**
- * @description Gives the store of all check modules.
- * @return {Array} groups - An array of group names.
- ******************************************************************************/
-function getGroups() {
-  var checkCategories = getListOfChecks();
-  var groups = [];
-  checkCategories.map(category => {
-    var catObj = {name: category, groups: []};
-    var catGroups = api.getDataFromCheckStore(category, 'groups');
-    catGroups.map(group => {
-      catObj.groups.push(group.group);
-    });
-    groups.push(catObj);
-  });
-  return groups;
-}
-/**
  * @description This function refines the groups list by group name.
  * @param {Array} query - An array of group names to show.
  * @param {Array} store - The check store.
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByGroup(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     if (query.includes(group.group)) {
@@ -74,7 +36,7 @@ function filterByGroup(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByStatus(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -97,6 +59,7 @@ function filterByStatus(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByComments(query, store) {
+  if (!store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -118,6 +81,7 @@ function filterByComments(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByProposed(query, store) {
+  if (!store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -150,6 +114,7 @@ function filterByProposed(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByCustom(query, store) {
+  if (!store || !query) {return store;}
   var refinedGroups = store;
   if (query.group) refinedGroups = filterByGroup(query.group, refinedGroups);
   if (query.status) refinedGroups = filterByStatus(query.status, refinedGroups);
@@ -168,7 +133,7 @@ function filterByCustom(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterBySearchTerm(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -191,6 +156,8 @@ function filterBySearchTerm(query, store) {
  * @return {Array} refinedText - The Scripture that has verses containing query
  ******************************************************************************/
 function searchText(query, text) {
+  if (!query || query.length === 0) {return text};
+  if (!text) text = window.ModuleApi.getDataFromCommon("targetLanguage");
   var refinedText = {};
   for (var chapter in text) {
     for (var verse in text[chapter]) {
@@ -210,7 +177,7 @@ function searchText(query, text) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByRetained(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -232,7 +199,7 @@ function filterByRetained(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByChapter(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -254,7 +221,7 @@ function filterByChapter(query, store) {
  * @return {Array} refinedGroups - The new groups list, refined by query.
  ******************************************************************************/
 function filterByVerse(query, store) {
-  if (query.length === 0) return store;
+  if (!query || query.length === 0 || !store) return store;
   var refinedGroups = [];
   store.map(group => {
     var defaultGroup = {checks: [], group: group.group};
@@ -277,6 +244,15 @@ function getChapters() {
   var targetLang = window.ModuleApi.getDataFromCommon("targetLanguage");
   return Object.getOwnPropertyNames(targetLang);
 }
+
+function getStatusList() {
+  return statusList;
+}
+
+function getRetainedList() {
+  return retainedList;
+}
+
 exports.filter = {
   byGroup: filterByGroup,
   byStatus: filterByStatus,
@@ -289,10 +265,8 @@ exports.filter = {
   byVerse: filterByVerse
 };
 exports.get = {
-  listOfChecks: getListOfChecks,
-  groups: getGroups,
-  statusList: statusList,
-  retainedList: retainedList,
+  statusList: getStatusList,
+  retainedList: getRetainedList,
   chapters: getChapters
 }
 exports.searchText = searchText
