@@ -53,8 +53,12 @@ class MenuHeaders extends React.Component {
     if(params.currentCheckNamespace && !this.groupName){
       let currentGroupIndex = api.getDataFromCheckStore(
               params.currentCheckNamespace, 'currentGroupIndex');
-      this.groupName = api.getDataFromCheckStore(
+      try{
+        this.groupName = api.getDataFromCheckStore(
               params.currentCheckNamespace, 'groups')[currentGroupIndex].group;
+      }catch(err){
+        console.warn("currentGroupIndex is undefined " + err);;
+      }
     }
     if(this.groupName){
       this.handleSelection(this.groupName);
