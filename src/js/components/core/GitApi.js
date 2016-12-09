@@ -84,7 +84,7 @@ function GitApi(directory) {
           }
         }
         if (callback) {
-          callback();
+          callback(err);
         }
       });
     },

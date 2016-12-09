@@ -67,7 +67,7 @@
     "react-dropzone": "^3.5.1",
     "react-progressbar.js": "^0.2.0",
     "react-remarkable": "^1.1.1",
-    "simple-git": "^1.43.0",
+    "simple-git": "1.43.0",
     "style-it": "^1.2.11",
     "usfm-parser": "^0.1.4",
     "xregexp": "^3.1.1"

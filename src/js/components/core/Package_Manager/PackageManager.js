@@ -10,7 +10,6 @@ const babel = require('babel-core');
 var installQueue = [];
 
 const PARENT = path.datadir('translationCore')
-const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = path.join(PARENT, 'packages-compiled')
 const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/translationCore-apps/master/directory.json";
 
@@ -29,30 +28,24 @@ function downloadPackage(packageName, callback) {
       return;
     }
     var packageLocation = obj[packageName].repo;
-    fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-    var source = path.join(PACKAGE_SAVE_LOCATION, packageName);
-    fs.emptyDirSync(source);
-    git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
-      var destination = path.join(PACKAGE_COMPILE_LOCATION, packageName);
-      fs.emptyDirSync(destination);
-      fs.removeSync(destination);
-      fs.copy(source, destination, function (err) {
-        npmInstall(destination, [], (error, data) => {
-          if (error) {
-            uninstall(packageName);
-            console.error(error);
-            callback(error, null);
-            return;
-          }
-          installDependencies(packageName);
-          if (installQueue.length > 0) {
-            compilePackage(destination, packageName)
-            downloadPackage(installQueue.shift(), callback);
-          } else {
-            compilePackage(destination, packageName, callback)
-          }
-        });
+    var destination = path.join(PACKAGE_COMPILE_LOCATION, packageName);
+    fs.emptyDirSync(destination);
+    git(PACKAGE_COMPILE_LOCATION).mirror(packageLocation, destination, function(err) {
+      npmInstall(destination, [], (error, data) => {
+        if (error) {
+          uninstall(packageName);
+          console.error(error);
+          callback(error, null);
+          return;
+        }
+        installDependencies(packageName);
+        if (installQueue.length > 0) {
+          compilePackage(destination, packageName)
+          downloadPackage(installQueue.shift(), callback);
+        } else {
+          compilePackage(destination, packageName, callback)
+        }
       });
     });
   });
@@ -132,7 +125,7 @@ function checkForUpdates(callback) {
     var installedPackages = getLocalList();
     for (var packages in installedPackages) {
       var currentPackage = installedPackages[packages]
-      var localVersion = require(path.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json')).version;
+      var localVersion = require(path.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json')).version;
       var remoteVersion = obj[currentPackage].version;
       if (remoteVersion > localVersion) needToUpdate.push(currentPackage);
     }
@@ -165,9 +158,8 @@ function isInstalled(packageName) {
   if(!packageName) {
     return false;
   }
-  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-  var manifestLocation = path.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -223,11 +215,8 @@ function search(query, callback) {
  * @param {String} packageName - The name of the package to uninstall.
  ******************************************************************************/
 function uninstall(packageName) {
-  var packageLocation = path.join(PACKAGE_SAVE_LOCATION, packageName);
   var compiledLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName);
-  fs.emptyDirSync(packageLocation);
   fs.emptyDirSync(compiledLocation);
-  fs.removeSync(packageLocation);
   fs.removeSync(compiledLocation);
   api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
 }
@@ -236,7 +225,7 @@ function uninstall(packageName) {
  * @param The package to install dependencies for.
  ******************************************************************************/
 function installDependencies(packageName) {
-  var manifestLocation = path.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
