@@ -1,4 +1,4 @@
-{
+﻿{
   "book": "James",
   "groups": [
     {
@@ -7,7 +7,7 @@
         {
           "chapter": 2,
           "verse": 21,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "Abraham",
@@ -17,8 +17,9 @@
         {
           "chapter": 2,
           "verse": 23,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "FLAGGED",
+          "retained": "Replaced",
+          "proposedChanges": "Test String",
           "sortOrder": 0,
           "word": "Abraham",
           "index": 40,
@@ -58,6 +59,7 @@
           "chapter": 4,
           "verse": 4,
           "checkStatus": "UNCHECKED",
+          "comment": "#StopSamFaulkner2016",
           "retained": "",
           "sortOrder": 0,
           "word": "enemy",
@@ -73,6 +75,7 @@
           "chapter": 1,
           "verse": 27,
           "checkStatus": "UNCHECKED",
+          "comment": "#StopSamFaulkner2016",
           "retained": "",
           "sortOrder": 0,
           "word": "affliction",
@@ -112,7 +115,7 @@
         {
           "chapter": 1,
           "verse": 20,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
           "retained": "",
           "sortOrder": 0,
           "word": "anger",
@@ -127,7 +130,7 @@
         {
           "chapter": 5,
           "verse": 14,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "anoint",
@@ -157,7 +160,7 @@
         {
           "chapter": 2,
           "verse": 19,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "believe",
@@ -217,7 +220,8 @@
         {
           "chapter": 1,
           "verse": 12,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
+          "proposedChanges": "Bless",
           "retained": "",
           "sortOrder": 0,
           "word": "Blessed",
@@ -237,7 +241,7 @@
         {
           "chapter": 3,
           "verse": 10,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "blessing",
@@ -247,7 +251,7 @@
         {
           "chapter": 5,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
           "retained": "",
           "sortOrder": 0,
           "word": "blessed",
@@ -287,7 +291,7 @@
         {
           "chapter": 2,
           "verse": 16,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "body",
@@ -337,7 +341,8 @@
         {
           "chapter": 3,
           "verse": 6,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
+          "comment": "#Sponge",
           "retained": "",
           "sortOrder": 1,
           "word": "body",
@@ -407,7 +412,7 @@
         {
           "chapter": 5,
           "verse": 14,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "call",
@@ -437,7 +442,7 @@
         {
           "chapter": 1,
           "verse": 27,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "Clean",
@@ -462,7 +467,7 @@
         {
           "chapter": 2,
           "verse": 15,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "clothed",
@@ -477,7 +482,7 @@
         {
           "chapter": 2,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "commit",
@@ -497,7 +502,7 @@
         {
           "chapter": 2,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 2,
           "word": "commit",
@@ -522,7 +527,7 @@
         {
           "chapter": 5,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
           "retained": "",
           "sortOrder": 0,
           "word": "compassionate",
@@ -537,7 +542,7 @@
         {
           "chapter": 5,
           "verse": 16,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "confess",
@@ -552,7 +557,7 @@
         {
           "chapter": 5,
           "verse": 3,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "consume",
@@ -567,7 +572,7 @@
         {
           "chapter": 2,
           "verse": 6,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "court",
@@ -582,7 +587,7 @@
         {
           "chapter": 3,
           "verse": 7,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "creature",
@@ -662,7 +667,7 @@
         {
           "chapter": 2,
           "verse": 20,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "dead",
@@ -722,7 +727,7 @@
         {
           "chapter": 3,
           "verse": 15,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
           "retained": "",
           "sortOrder": 0,
           "word": "earthly",
@@ -1173,7 +1178,7 @@
           "chapter": 1,
           "verse": 20,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "God",
           "index": 56,
@@ -1397,7 +1402,7 @@
         {
           "chapter": 3,
           "verse": 6,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "FLAGGED",
           "retained": "",
           "sortOrder": 2,
           "word": "fire",
@@ -1438,7 +1443,7 @@
           "chapter": 5,
           "verse": 3,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "flesh",
           "index": 109,
@@ -1508,7 +1513,7 @@
           "chapter": 1,
           "verse": 25,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "freedom",
           "index": 59,
@@ -1543,7 +1548,7 @@
           "chapter": 3,
           "verse": 18,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "fruit",
           "index": 8,
@@ -1583,7 +1588,7 @@
           "chapter": 1,
           "verse": 17,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "gift",
           "index": 11,
@@ -1622,8 +1627,8 @@
         {
           "chapter": 1,
           "verse": 17,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "FLAGGED",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "Father",
           "index": 77,
@@ -1667,7 +1672,7 @@
         {
           "chapter": 2,
           "verse": 2,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "gold",
@@ -1693,7 +1698,7 @@
           "chapter": 1,
           "verse": 17,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "good",
           "index": 6,
@@ -1722,7 +1727,7 @@
         {
           "chapter": 2,
           "verse": 16,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "good",
@@ -1796,6 +1801,7 @@
           "retained": "",
           "sortOrder": 0,
           "word": "guilty",
+          "proposedChanges": "Not innocent",
           "index": 90,
           "gatewayLanguage": "For whoever obeys the whole law, except that he stumbles in just a single way, has become guilty of breaking the whole law.\n"
         }
@@ -1822,8 +1828,8 @@
         {
           "chapter": 5,
           "verse": 15,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "heal",
           "index": 25,
@@ -1933,7 +1939,7 @@
           "chapter": 4,
           "verse": 10,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "Humble",
           "index": 0,
@@ -2063,7 +2069,7 @@
           "chapter": 2,
           "verse": 13,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "judgment",
           "index": 4,
@@ -2092,8 +2098,9 @@
         {
           "chapter": 4,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
+          "proposedChanges": "Judy",
           "sortOrder": 0,
           "word": "judge",
           "index": 156,
@@ -2102,7 +2109,7 @@
         {
           "chapter": 4,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 1,
           "word": "judge",
@@ -2171,6 +2178,7 @@
           "retained": "",
           "sortOrder": 0,
           "word": "just",
+          "proposedChanges": "Innocent",
           "index": 60,
           "gatewayLanguage": "For whoever obeys the whole law, except that he stumbles in just a single way, has become guilty of breaking the whole law.\n"
         },
@@ -2243,7 +2251,7 @@
           "chapter": 1,
           "verse": 19,
           "checkStatus": "UNCHECKED",
-          "retained": "",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "know",
           "index": 4,
@@ -2362,8 +2370,8 @@
         {
           "chapter": 2,
           "verse": 10,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "law",
           "index": 28,
@@ -2392,8 +2400,8 @@
         {
           "chapter": 4,
           "verse": 11,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Replaced",
           "sortOrder": 0,
           "word": "law",
           "index": 125,
@@ -2423,6 +2431,7 @@
           "chapter": 4,
           "verse": 11,
           "checkStatus": "UNCHECKED",
+          "comment": "Sponge Bob",
           "retained": "",
           "sortOrder": 3,
           "word": "law",
@@ -2467,8 +2476,8 @@
         {
           "chapter": 4,
           "verse": 5,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Retained",
           "sortOrder": 0,
           "word": "live",
           "index": 69,
@@ -3178,6 +3187,7 @@
           "chapter": 2,
           "verse": 25,
           "checkStatus": "UNCHECKED",
+          "comment": "Hello world",
           "retained": "",
           "sortOrder": 0,
           "word": "prostitute",
@@ -3552,8 +3562,8 @@
         {
           "chapter": 2,
           "verse": 9,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Retained",
           "sortOrder": 0,
           "word": "sin",
           "index": 52,
@@ -3572,7 +3582,7 @@
         {
           "chapter": 5,
           "verse": 20,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "sinner",
@@ -3602,7 +3612,7 @@
         {
           "chapter": 5,
           "verse": 5,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "slaughter",
@@ -3642,8 +3652,8 @@
         {
           "chapter": 4,
           "verse": 5,
-          "checkStatus": "UNCHECKED",
-          "retained": "",
+          "checkStatus": "CORRECT",
+          "retained": "Retained",
           "sortOrder": 0,
           "word": "Spirit",
           "index": 49,
@@ -3667,7 +3677,7 @@
         {
           "chapter": 3,
           "verse": 2,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 1,
           "word": "stumble",
@@ -3682,7 +3692,7 @@
         {
           "chapter": 4,
           "verse": 7,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "submit",
@@ -3697,7 +3707,7 @@
         {
           "chapter": 5,
           "verse": 10,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "suffering",
@@ -3737,7 +3747,7 @@
         {
           "chapter": 1,
           "verse": 12,
-          "checkStatus": "UNCHECKED",
+          "checkStatus": "CORRECT",
           "retained": "",
           "sortOrder": 0,
           "word": "test",
