@@ -18,7 +18,7 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {String} packageName - The name of the package to be installed.
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
-function downloadPackage(packageName, callback) {
+function downloadPackage(packageName, version, callback) {
   if (!callback) {
     return 'No callback specified';
   }
@@ -31,21 +31,29 @@ function downloadPackage(packageName, callback) {
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
     var destination = path.join(PACKAGE_COMPILE_LOCATION, packageName);
     fs.emptyDirSync(destination);
+    fs.removeSync(destination);
     git(PACKAGE_COMPILE_LOCATION).mirror(packageLocation, destination, function(err) {
-      npmInstall(destination, [], (error, data) => {
-        if (error) {
-          uninstall(packageName);
-          console.error(error);
-          callback(error, null);
-          return;
-        }
-        installDependencies(packageName);
-        if (installQueue.length > 0) {
-          compilePackage(destination, packageName)
-          downloadPackage(installQueue.shift(), callback);
-        } else {
-          compilePackage(destination, packageName, callback)
-        }
+      git(destination).checkout(version, function(err, data) {
+        npmInstall(destination, [], (error, data) => {
+          if (error) {
+            uninstall(packageName);
+            console.error(error);
+            callback(error, null);
+            return;
+          }
+          installDependencies(packageName);
+          if (installQueue.length > 0) {
+            compilePackage(destination, packageName);
+            var currentPack = installQueue.shift();
+            if (Array.isArray(currentPack)) {
+              downloadPackage(currentPack[0], currentPack[1], callback);
+            } else {
+              downloadPackage(currentPack, null, callback);
+            }
+          } else {
+            compilePackage(destination, packageName, callback)
+          }
+        });
       });
     });
   });
@@ -137,8 +145,8 @@ function checkForUpdates(callback) {
  * @param {String} packageName - The name of the package to be installed.
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
-function update(packageName, callback) {
-  downloadPackage(packageName, callback);
+function update(packageName, version, callback) {
+  downloadPackage(packageName, version, callback);
 }
 /**
  * @description - This returns a list of installed packages.
@@ -229,12 +237,21 @@ function installDependencies(packageName) {
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
+    console.error(err);
     return;
   }
   var dependencies = manifest.include;
-  for (var i in dependencies) {
-    if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
-      installQueue.push(dependencies[i]);
+  if (Array.isArray(dependencies)) {
+    for (var i in dependencies) {
+      if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
+        installQueue.push(dependencies[i]);
+      }
+    }
+  } else {
+    for (var i in dependencies) {
+      if (!installQueue.includes(i) && !isInstalled(i)) {
+        installQueue.push([i, dependencies[i]]);
+      }
     }
   }
 }

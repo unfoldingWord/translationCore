@@ -143,6 +143,13 @@ function GitApi(directory) {
           });
         });
       });
+    },
+    checkout: function(branch, callback) {
+      if (!branch) {
+        callback("No branch");
+        return;
+      }
+      git.checkout(branch, callback);
     }
   };
 }

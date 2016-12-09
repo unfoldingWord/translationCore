@@ -75,7 +75,7 @@ class PackageManagerView extends React.Component{
           for (var i in data) {
             var currentPackage = data[i];
             if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.version} numOfDownloads={""}
+              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.versions || [currentPackage.latestVersion]} numOfDownloads={""}
               description={currentPackage.description || "No description found."}
               iconPathName={currentPackage.icon}
               buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
@@ -117,7 +117,7 @@ class PackageManagerView extends React.Component{
           }
           var remotePackage = data[currentPackage];
           if (remotePackage) {
-            var remoteVersion = remotePackage.version;
+            var remoteVersion = remotePackage.latestVersion;
           } else {
             remoteVersion = '1.0.0';
             console.warn('Could not find remote version of package ' + currentPackage);
