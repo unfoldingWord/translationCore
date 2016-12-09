@@ -45,7 +45,7 @@ describe('PackageManager.search', function() {
 describe('PackageManager.download', function() {
   it('download should fail for non existant package', function(done) {
     this.timeout(50000);
-    PackageManager.download('translationRhymes', function(err, results) {
+    PackageManager.download('translationRhymes', '1.0.0', function(err, results) {
       assert.isNull(results);
       assert.isNotNull(err);
       assert.equal(err, 'Package does not exist');
@@ -54,7 +54,7 @@ describe('PackageManager.download', function() {
   });
   it('download should fail for an undefined package', function(done) {
     this.timeout(50000);
-    PackageManager.download(null, function(err, results) {
+    PackageManager.download(null, null, function(err, results) {
       assert.isNull(results);
       assert.isNotNull(err);
       assert.equal(err, 'Package does not exist');
@@ -68,7 +68,7 @@ describe('PackageManager.download', function() {
   });
   it('download should download an existing package', function(done) {
     this.timeout(500000);
-    PackageManager.download('ExampleChecker', function(err, results) {
+    PackageManager.download('ExampleChecker', '1.0.0', function(err, results) {
       assert.isNull(err);
       assert.isNotNull(results);
       assert.equal('Installation Successful', results);
