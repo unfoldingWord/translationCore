@@ -105,7 +105,9 @@ class SubMenu extends React.Component {
     }
   }
 
-  generateSubMenuButtons(){
+  render() {
+    this.currentCheckIndex = this.props.currentCheckIndex;
+    this.currentGroupIndex = this.props.currentGroupIndex;
     let subMenuItemsArray = this.props.subMenuItemsArray;
     let subMenuItems = [];
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
@@ -125,16 +127,10 @@ class SubMenu extends React.Component {
         );
       }
     }
-    return subMenuItems;
-  }
-
-  render() {
-    this.currentCheckIndex = this.props.currentCheckIndex;
-    this.currentGroupIndex = this.props.currentGroupIndex;
     return (
       <table>
         <tbody>
-          {this.generateSubMenuButtons()}
+          {subMenuItems}
         </tbody>
       </table>
     );
