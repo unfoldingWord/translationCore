@@ -24,7 +24,7 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray) {
+  fetchModules: function (checkArray, callback) {
     try {
       var params = api.getDataFromCommon('params');
       this.doneModules = 0;
@@ -36,10 +36,12 @@ var CheckDataGrabber = {
           this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
         }
         api.putDataInCommon('arrayOfChecks', checkArray);
+        callback(null, true);
       });
     }
     catch (error) {
       this.dataLoadError(error);
+      callback(error, false);
     }
 
   },
@@ -67,7 +69,7 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName) {
+  loadModuleAndDependencies: function (moduleFolderName, callback) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
@@ -77,9 +79,15 @@ var CheckDataGrabber = {
         _this.saveModuleMenu(dataObject, moduleFolderName);
         _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
           if (!err) {
-            _this.fetchModules(checkArray);
+            _this.fetchModules(checkArray, callback);
+          }
+          else {
+            callback(true, false);
           }
         });
+      }
+      else {
+        callback(true, false);
       }
     });
   },

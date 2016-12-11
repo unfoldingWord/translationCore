@@ -77,16 +77,16 @@ describe('PackageManager.download', function() {
   });
 });
 
-describe('PackageManager.getLocalList', function() {
-  it('getLocalList should return an array containing all the packages', function() {
-    var localInstall = PackageManager.getLocalList();
-    assert.isArray(localInstall);
-    assert.isTrue(localInstall.length > 0);
-    assert.isString(localInstall[0]);
-    assert.isTrue(localInstall.includes('ExampleChecker'));
-    assert.isFalse(localInstall.includes('translationRhymes'));
-  });
-});
+// describe('PackageManager.getLocalList', function() {
+//   it('getLocalList should return an array containing all the packages', function() {
+//     var localInstall = PackageManager.getLocalList();
+//     assert.isArray(localInstall);
+//     assert.isTrue(localInstall.length > 0);
+//     assert.isString(localInstall[0]);
+//     assert.isTrue(localInstall.includes('ExampleChecker'));
+//     assert.isFalse(localInstall.includes('translationRhymes'));
+//   });
+// });
 
 describe('PackageManager.isInstalled', function() {
   it('isInstalled should return false for an undefined package.', function() {
