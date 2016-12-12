@@ -5,7 +5,6 @@
  ******************************************************************************/
 const api = window.ModuleApi;
 const React = api.React;
-const ReactDOM = require("react-dom");
 const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
@@ -66,9 +65,12 @@ class PackageManagerView extends React.Component{
   }
 
   render(){
-    if(!this.state.visiblePackManager || !this.state.data){
+    if(!this.state.visiblePackManager){
       return (<div></div>);
     }else{
+      if (!this.state.data) {
+        this.componentDidMount();
+      }
       var cards = <div></div>
       if (this.state.displayStatus === 'downloadPack') {
         var data = this.state.data;
@@ -149,4 +151,4 @@ class PackageManagerView extends React.Component{
   }
 
 }
-module.exports = ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'));
+module.exports = PackageManagerView;

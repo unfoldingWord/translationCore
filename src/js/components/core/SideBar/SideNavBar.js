@@ -7,6 +7,7 @@ const LoginButton = require("./LoginButton");
 const SideBarButton = require("./SideBarButton");
 const OnlineStatus = require('./OnlineStatus');
 const RB = api.ReactBootstrap;
+const ReactDOM = require("react-dom");
 const {Glyphicon} = RB;
 const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
@@ -49,7 +50,8 @@ class SideNavBar extends React.Component{
   }
 
   handlePackageManager(){
-    require("./../Package_Manager/PackageManagerView");
+    var PackageManagerView = require("./../Package_Manager/PackageManagerView");
+    ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'))
     api.emitEvent('PackManagerVisibility', {'visiblePackManager': 'true'});
   }
 

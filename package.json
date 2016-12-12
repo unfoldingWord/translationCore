@@ -45,8 +45,10 @@
     "electron-mocha": "^3.2.1",
     "electron-packager": "7.7.0",
     "electron-winstaller": "2.4.1",
+    "enzyme": "^2.6.0",
     "eslint": "^2.13.1",
-    "eslint-config-google": "^0.6.0"
+    "eslint-config-google": "^0.6.0",
+    "react-addons-test-utils": "^15.1.0"
   },
   "dependencies": {
     "babel-cli": "^6.11.4",
