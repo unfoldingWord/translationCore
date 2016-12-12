@@ -176,6 +176,9 @@ function isInstalled(packageName) {
   var dependencies = manifest.include;
   var dependenciesInstalled = true;
   var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  if (!Array.isArray(dependencies)) {
+    dependencies = Object.keys(dependencies);
+  }
   for (var i in dependencies) {
     if (!compiledPackages.includes(dependencies[i])) {
       dependenciesInstalled = false;
