@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const React = require('React');
+const React = require('react');
 const {mount, shallow} = require('enzyme');
 const PackageManager = require('../src/js/components/core/Package_Manager/PackageManager.js');
 const PackageManagerView = require('../src/js/components/core/Package_Manager/PackageManagerView.js');
