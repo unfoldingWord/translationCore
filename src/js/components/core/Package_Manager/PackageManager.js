@@ -45,7 +45,7 @@ function downloadPackage(packageName, version, callback) {
           if (installQueue.length > 0) {
             compilePackage(destination, packageName);
             var currentPack = installQueue.shift();
-            if (Array.isArray(currentPack)) {
+            if (currentPack && Array.isArray(currentPack)) {
               downloadPackage(currentPack[0], currentPack[1], callback);
             } else {
               downloadPackage(currentPack, null, callback);
@@ -181,7 +181,7 @@ function isInstalled(packageName) {
   var dependencies = manifest.include;
   var dependenciesInstalled = true;
   var compiledPackages = getLocalList();
-  if (!Array.isArray(dependencies)) {
+  if (!Array.isArray(dependencies) && dependencies) {
     dependencies = Object.keys(dependencies);
   }
   for (var i in dependencies) {
@@ -249,7 +249,7 @@ function installDependencies(packageName) {
     return;
   }
   var dependencies = manifest.include;
-  if (Array.isArray(dependencies)) {
+  if (dependencies && Array.isArray(dependencies)) {
     for (var i in dependencies) {
       if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
         installQueue.push(dependencies[i]);
