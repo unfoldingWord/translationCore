@@ -155,9 +155,9 @@ function update(packageName, version, callback) {
 function getLocalList() {
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   var installedPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
-  var index = array.indexOf('.DS_Store');
+  var index = installedPackages.indexOf('.DS_Store');
   if (index > -1) {
-    array.splice(index, 1);
+    installedPackages.splice(index, 1);
   }
   return installedPackages;
 
