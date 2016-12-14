@@ -4,42 +4,16 @@ const {mount, shallow} = require('enzyme');
 const PackageManager = require('../src/js/components/core/Package_Manager/PackageManager.js');
 const PackageManagerView = require('../src/js/components/core/Package_Manager/PackageManagerView.js');
 const PackageCard = require('../src/js/components/core/Package_Manager/PackageCard.js');
-
-describe('<PackageCard />', function() {
-  const wrapper = shallow(<PackageCard />);
-  const populatedWrapper = shallow(<PackageCard packName={'translationRhymes'} packVersion={'1.0.0'} numOfDownloads={""} description={"No description found."} buttonDisplay={'downloadPack'}/>);
-  it('renders four <div /> component if no data is given', function() {
-    assert.equal(wrapper.find('div').length, 4);
-  });
-  it('renders two elements with the class .pull-right if no data is given', function() {
-    assert.equal(wrapper.find('.pull-right').length, 2);
-  });
-  it('renders three <div /> components normally', function() {
-    assert.equal(wrapper.find('div').length, 4);
-  });
-  it('renders two elements with the class .pull-right normally', function() {
-    assert.equal(wrapper.find('.pull-right').length, 2);
-  });
-});
-
-describe('<PackageManagerView />', function() {
-  const wrapper = shallow(<PackageManagerView />);
-  it('renders five <PackageCard /> components', function(done) {
-    this.timeout(50000)
-    setTimeout(function () {
-      assert.equal(wrapper.find('PackageCard').length, 5)
-      done();
-    }, 2000);
-  });
-  it ('renders one <PackManagerSideBar> component', function() {
-    assert.equal(wrapper.find('PackManagerSideBar').length, 1);
-  })
-});
-
+var totalPackages = 0;
 describe('PackageManager.list', function() {
   it('getPackageList should retrieve a list of available packages', function(done) {
     this.timeout(50000);
     PackageManager.list(function(obj) {
+      for (var i in obj) {
+        if (obj[i].main === "true") {
+          totalPackages++;
+        }
+      }
       assert.isObject(obj);
       assert.isObject(obj['translationWords']);
       assert.isString(obj['translationWords'].name);
@@ -130,4 +104,35 @@ describe('PackageManager.isInstalled', function() {
   it('isInstalled should return false for a package that is not installed.', function() {
     assert.isFalse(PackageManager.isInstalled('translationRhymes'));
   });
+});
+
+describe('<PackageCard />', function() {
+  const wrapper = shallow(<PackageCard />);
+  const populatedWrapper = shallow(<PackageCard packName={'translationRhymes'} packVersion={'1.0.0'} numOfDownloads={""} description={"No description found."} buttonDisplay={'downloadPack'}/>);
+  it('renders four <div /> component if no data is given', function() {
+    assert.equal(wrapper.find('div').length, 4);
+  });
+  it('renders two elements with the class .pull-right if no data is given', function() {
+    assert.equal(wrapper.find('.pull-right').length, 2);
+  });
+  it('renders four <div /> components normally', function() {
+    assert.equal(populatedWrapper.find('div').length, 4);
+  });
+  it('renders two elements with the class .pull-right normally', function() {
+    assert.equal(populatedWrapper.find('.pull-right').length, 2);
+  });
+});
+
+describe('<PackageManagerView />', function() {
+  const wrapper = shallow(<PackageManagerView />);
+  it('renders five <PackageCard /> components', function(done) {
+    this.timeout(50000)
+    setTimeout(function () {
+      assert.equal(wrapper.find('PackageCard').length, totalPackages)
+      done();
+    }, 2000);
+  });
+  it ('renders one <PackManagerSideBar> component', function() {
+    assert.equal(wrapper.find('PackManagerSideBar').length, 1);
+  })
 });
