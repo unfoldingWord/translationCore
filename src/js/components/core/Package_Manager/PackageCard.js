@@ -32,14 +32,11 @@ class PackageCard extends React.Component{
     var _this = this;
     PackageManager.download(name, version, function(err, data){
       if(!err) {
-        _this.setState({installStatus: 'Installed'});
+        if(_this.isMounted()) {
+          _this.setState({installStatus: 'Installed'});
+        }
       }
     });
-  }
-
-  uninstall(name) {
-    this.setState({installStatus: 'Install'});
-    PackageManager.uninstall(name);
   }
 
   handleVersion(e) {
@@ -52,7 +49,9 @@ class PackageCard extends React.Component{
     this.setState({updateStatus: 'Updating'})
     PackageManager.update(name, version, function(err){
       if (!err) {
-        _this.setState({updateStatus: 'Updated'})
+        if(_this.isMounted()) {
+          _this.setState({updateStatus: 'Updated'})
+        }
       }
     });
   }
