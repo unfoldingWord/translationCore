@@ -303,15 +303,16 @@ describe('ModuleApi.inputText and ModuleApi.outputText', function() {
   });
 });
 
-//
-// describe('ModuleApi.getAuthToken', function() {
-//   it('getAuthToken should return an auth token, of type string', function() {
-//     var unexpectedValue = 'abc';
-//     assert.isString(ModuleApi.getAuthToken('git'));
-//     assert.isString(ModuleApi.getAuthToken('gogs'));
-//     assert.isUndefined(ModuleApi.getAuthToken(unexpectedValue));
-//   });
-// });
+describe('ModuleApi.getAuthToken', function() {
+  it('getAuthToken should return undefined for a non existent token', function() {
+    var unexpectedValue = 'abc';
+    assert.isUndefined(ModuleApi.getAuthToken(unexpectedValue));
+  });
+  it('getAuthToken should return an auth token, of type string', function() {
+    assert.isString(ModuleApi.getAuthToken('git'));
+    assert.isString(ModuleApi.getAuthToken('gogs'));
+  });
+});
 
 describe('ModuleApi.saveMenu and ModuleApi.getMenu', function() {
   it('saveMenu should not fail with undefined values.', function() {
