@@ -433,6 +433,11 @@ class ModuleApi {
     );
   }
 
+  //this method returns the Current Check Namespace 
+  getCurrentCheckNamespace(){
+    return CoreStore.getCurrentCheckNamespace();
+  }
+
 }
 
 const api = new ModuleApi();
