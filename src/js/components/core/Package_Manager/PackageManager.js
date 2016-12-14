@@ -155,7 +155,12 @@ function update(packageName, version, callback) {
 function getLocalList() {
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   var installedPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  var index = array.indexOf('.DS_Store');
+  if (index > -1) {
+    array.splice(index, 1);
+  }
   return installedPackages;
+
 }
 /**
  * @description - This returns a list of installed packages.
@@ -175,7 +180,7 @@ function isInstalled(packageName) {
   }
   var dependencies = manifest.include;
   var dependenciesInstalled = true;
-  var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  var compiledPackages = getLocalList();
   if (!Array.isArray(dependencies)) {
     dependencies = Object.keys(dependencies);
   }
@@ -282,7 +287,7 @@ function recursiveDirRead(dir, callback) {
     list.forEach(function(file) {
       file = path.resolve(dir, file);
       fs.stat(file, function(err, stat) {
-        if (stat && stat.isDirectory() && !~file.indexOf('node_modules') && !~file.indexOf('.git')) {
+        if (stat && stat.isDirectory() && !~file.indexOf('node_modules') && !~file.indexOf('.DS_Store') && !~file.indexOf('.git')) {
           recursiveDirRead(file, function(err, res) {
             results = results.concat(res);
             if (!--pending) callback(null, results);
