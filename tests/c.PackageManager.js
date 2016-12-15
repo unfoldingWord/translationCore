@@ -75,7 +75,7 @@ describe('PackageManager.download', function() {
     assert.isString(pmd);
     assert.equal(pmd, 'No callback specified');
   });
-  it('download should download an existing package', function() {
+  it('download should download an existing package', function(done) {
     this.timeout(500000);
     PackageManager.download('ExampleChecker', '1.0.0', function(err, results) {
       assert.isNull(err);
@@ -89,6 +89,7 @@ describe('PackageManager.download', function() {
 describe('PackageManager.getLocalList', function() {
   it('getLocalList should return an array containing all the packages', function() {
     var localInstall = PackageManager.getLocalList();
+    console.log(localInstall);
     assert.isArray(localInstall);
     assert.isTrue(localInstall.length > 0);
     assert.isString(localInstall[0]);
