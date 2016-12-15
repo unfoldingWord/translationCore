@@ -164,7 +164,7 @@ class ModuleApi {
     * and calls the callback function with the gateway language book as an argument.
     *
     * The book that is saved to the check store has the chapters and verses formatted
-    * as key-value pairs. This format is used by the TPane, which sorts the keys in its render
+    * as key-value pairs. This format is used by the ScripturePane, which sorts the keys in its render
     * method. This is bad and should be refactored to format the chapters and verses as arrays.
     *
     * The book that is passed as an argument to the callback has the chapters and verses
@@ -433,7 +433,7 @@ class ModuleApi {
     );
   }
 
-  //this method returns the Current Check Namespace 
+  //this method returns the Current Check Namespace
   getCurrentCheckNamespace(){
     return CoreStore.getCurrentCheckNamespace();
   }
