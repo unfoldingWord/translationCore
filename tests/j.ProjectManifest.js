@@ -50,7 +50,6 @@ describe('ProjectManifest.populate', function() {
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);
-    assert.equal(generatedManifest.checkers[1].full_name, 'Ian Hoegen');
     assert.isUndefined(generatedManifest.checkers[0].token);
     assert.isUndefined(generatedManifest.invalidData);
   });
@@ -63,7 +62,6 @@ describe('ProjectManifest.populate', function() {
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);
-    assert.equal(generatedManifest.checkers[0].full_name, 'Jay Scott');
     assert.equal(generatedManifest.translators[0], 'royalsix');
     assert.equal(generatedManifest.ts_project.name, 'Mark');
     assert.isString(generatedManifest.otherData);

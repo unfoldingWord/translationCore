@@ -1,6 +1,10 @@
 const assert = require('chai').assert;
 const loadOnline = require('../src/js/components/core/LoadOnline.js');
 const path = require('path-extra');
+const fs = require('fs-extra');
+
+const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
+
 
 describe('loadOnline.openManifest', function() {
   it('loadOnline.openManifest should return an error if no link is specified', function(done) {
@@ -13,6 +17,7 @@ describe('loadOnline.openManifest', function() {
     });
   });
   it('loadOnline.openManifest should fail on an invalid link.', function(done){
+    fs.removeSync(badSave);
     loadOnline('https://git.door43.org/ianhoegen123/id_-cfksl.git', function(err, savePath, url) {
       assert.isNull(savePath);
       assert.isNull(url);
