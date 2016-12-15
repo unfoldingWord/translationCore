@@ -232,9 +232,14 @@ function search(query, callback) {
  ******************************************************************************/
 function uninstall(packageName) {
   var compiledLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName);
-  fs.emptyDirSync(compiledLocation);
-  fs.removeSync(compiledLocation);
-  api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
+  try {
+    fs.emptyDirSync(compiledLocation);
+    fs.removeSync(compiledLocation);
+    api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
+  } catch (err) {
+    console.warn(err);
+    api.Toast.error("Error", "There was an error in removing the tool", 3)
+  }
 }
 /**
  * @description Installs a packages dependencies.
