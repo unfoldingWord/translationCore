@@ -2,17 +2,15 @@
  *@author: Ian Hoegen
  *@description: This is the central manager of all packages for translationCore.
  ******************************************************************************/
-const pathex = require('path-extra');
+const path = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
-const npm = pathex.join(window.__base, 'node_modules', '.bin', 'npm');
-const babelCli = pathex.join(window.__base, 'node_modules', '.bin', 'babel');
-const exec = require('child_process').exec;
 const api = window.ModuleApi;
+const babel = require('babel-core');
+var installQueue = [];
 
-const PARENT = pathex.datadir('translationCore')
-const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PARENT = path.datadir('translationCore')
+const PACKAGE_COMPILE_LOCATION = path.join(PARENT, 'packages-compiled')
 const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/translationCore-apps/master/directory.json";
 
 /**
@@ -20,7 +18,7 @@ const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/tran
  * @param {String} packageName - The name of the package to be installed.
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
-function downloadPackage(packageName, callback) {
+function downloadPackage(packageName, version, callback) {
   if (!callback) {
     return 'No callback specified';
   }
@@ -30,24 +28,31 @@ function downloadPackage(packageName, callback) {
       return;
     }
     var packageLocation = obj[packageName].repo;
-    fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-    var source = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
-    fs.emptyDirSync(source);
-    git(PACKAGE_SAVE_LOCATION).mirror(packageLocation, source, function() {
-      var destination = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-      fs.emptyDirSync(destination);
-      fs.removeSync(destination);
-      var command = '"' + npm + '"' + ' install';
-      exec(command, {cwd: source}, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`exec error: ${error}`);
-          callback(`exec error: ${error}`, null);
-          return;
-        }
-        fs.copy(source, destination, function (err) {
+    var destination = path.join(PACKAGE_COMPILE_LOCATION, packageName);
+    fs.emptyDirSync(destination);
+    fs.removeSync(destination);
+    git(PACKAGE_COMPILE_LOCATION).mirror(packageLocation, destination, function(err) {
+      git(destination).checkout(version, function(err, data) {
+        npmInstall(destination, [], (error, data) => {
+          if (error) {
+            uninstall(packageName);
+            console.error(error);
+            callback(error, null);
+            return;
+          }
           installDependencies(packageName);
-          compilePackage(destination, packageName, callback)
+          if (installQueue.length > 0) {
+            compilePackage(destination, packageName);
+            var currentPack = installQueue.shift();
+            if (currentPack && Array.isArray(currentPack)) {
+              downloadPackage(currentPack[0], currentPack[1], callback);
+            } else {
+              downloadPackage(currentPack, null, callback);
+            }
+          } else {
+            compilePackage(destination, packageName, callback)
+          }
         });
       });
     });
@@ -60,23 +65,32 @@ function downloadPackage(packageName, callback) {
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
 function compilePackage(destination, packageName, callback) {
-  var command = '"' + babelCli + '"' + ' ' + '"'+ destination +'"' + ' --ignore node_modules,.git --out-dir ' + '"'+ destination+'"';
   fs.ensureDirSync(destination);
   var filesInPackage = fs.readdirSync(destination);
   if (!filesInPackage.includes('.babelrc')) {
     if (callback) {
-      callback('Installation Successful');
+      callback(null, 'Installation Successful');
     }
     return;
   }
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`exec error: ${error}`);
-      callback(`exec error: ${error}`, null);
+  var babelrc = fs.readJsonSync(path.join(destination, '.babelrc'));
+  recursiveDirRead(destination, function(err, data) {
+    if (err) {
+      console.error(err);
+      callback(err, null);
       return;
     }
+    var completedTransformCounter = 0;
+    var codeTree = {};
+    for (var i = 0; i < data.length; i++) {
+      var result = babel.transformFileSync(data[i], babelrc);
+      codeTree[data[i]] = result.code;
+      completedTransformCounter++;
+    }
+    for (var j in codeTree) {
+      fs.outputFileSync(j, codeTree[j]);
+    }
     if (callback) {
-
       callback(null, 'Installation Successful')
     }
     api.Toast.success("Installation Successful", packageName + 'Was Successfully Installed', 3);
@@ -119,7 +133,7 @@ function checkForUpdates(callback) {
     var installedPackages = getLocalList();
     for (var packages in installedPackages) {
       var currentPackage = installedPackages[packages]
-      var localVersion = require(pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json')).version;
+      var localVersion = require(path.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json')).version;
       var remoteVersion = obj[currentPackage].version;
       if (remoteVersion > localVersion) needToUpdate.push(currentPackage);
     }
@@ -131,8 +145,8 @@ function checkForUpdates(callback) {
  * @param {String} packageName - The name of the package to be installed.
  * @param {function} callback - To be called upon completion
  ******************************************************************************/
-function update(packageName, callback) {
-  downloadPackage(packageName, callback);
+function update(packageName, version, callback) {
+  downloadPackage(packageName, version, callback);
 }
 /**
  * @description - This returns a list of installed packages.
@@ -141,7 +155,12 @@ function update(packageName, callback) {
 function getLocalList() {
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
   var installedPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  var index = installedPackages.indexOf('.DS_Store');
+  if (index > -1) {
+    installedPackages.splice(index, 1);
+  }
   return installedPackages;
+
 }
 /**
  * @description - This returns a list of installed packages.
@@ -152,9 +171,8 @@ function isInstalled(packageName) {
   if(!packageName) {
     return false;
   }
-  fs.ensureDirSync(PACKAGE_SAVE_LOCATION);
   fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -162,7 +180,10 @@ function isInstalled(packageName) {
   }
   var dependencies = manifest.include;
   var dependenciesInstalled = true;
-  var compiledPackages = fs.readdirSync(PACKAGE_COMPILE_LOCATION);
+  var compiledPackages = getLocalList();
+  if (!Array.isArray(dependencies) && dependencies) {
+    dependencies = Object.keys(dependencies);
+  }
   for (var i in dependencies) {
     if (!compiledPackages.includes(dependencies[i])) {
       dependenciesInstalled = false;
@@ -176,7 +197,7 @@ function isInstalled(packageName) {
  * @return {String} version - The version of the package.
  ******************************************************************************/
 function getVersion(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
@@ -210,34 +231,82 @@ function search(query, callback) {
  * @param {String} packageName - The name of the package to uninstall.
  ******************************************************************************/
 function uninstall(packageName) {
-  var packageLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName);
-  var compiledLocation = pathex.join(PACKAGE_COMPILE_LOCATION, packageName);
-  fs.emptyDirSync(packageLocation);
-  fs.emptyDirSync(compiledLocation);
-  fs.removeSync(packageLocation);
-  fs.removeSync(compiledLocation);
-  api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
+  var compiledLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName);
+  try {
+    fs.emptyDirSync(compiledLocation);
+    fs.removeSync(compiledLocation);
+    api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
+  } catch (err) {
+    console.warn(err);
+    api.Toast.error("Error", "There was an error in removing the tool", 3)
+  }
 }
 /**
  * @description Installs a packages dependencies.
  * @param The package to install dependencies for.
  ******************************************************************************/
 function installDependencies(packageName) {
-  var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, packageName, 'package.json');
+  var manifestLocation = path.join(PACKAGE_COMPILE_LOCATION, packageName, 'package.json');
   try {
     var manifest = require(manifestLocation);
   } catch(err) {
+    console.error(err);
     return;
   }
   var dependencies = manifest.include;
-  for (var i in dependencies) {
-    var dependencyLocation = pathex.join(PACKAGE_SAVE_LOCATION, dependencies[i]);
-    fs.emptyDirSync(dependencyLocation);
-    fs.removeSync(dependencyLocation);
-    downloadPackage(dependencies[i]);
+  if (dependencies && Array.isArray(dependencies)) {
+    for (var i in dependencies) {
+      if (!installQueue.includes(dependencies[i]) && !isInstalled(dependencies[i])) {
+        installQueue.push(dependencies[i]);
+      }
+    }
+  } else {
+    for (var i in dependencies) {
+      if (!installQueue.includes(i) && !isInstalled(i)) {
+        installQueue.push([i, dependencies[i]]);
+      }
+    }
   }
 }
 
+function npmInstall(location, args, callback) {
+  var oldConsolelog = console.log;
+  console.log = function() {}
+  console.log('log is kill');
+  var npm = require('npm');
+  npm.load({}, function() {
+    var installer = require('npm/lib/install.js');
+    installer(location, args || [], function(err, data) {
+      callback(err, data)
+      console.log = oldConsolelog;
+    });
+  });
+}
+
+function recursiveDirRead(dir, callback) {
+  var results = [];
+  fs.readdir(dir, function(err, list) {
+    if (err) return callback(err);
+    var pending = list.length;
+    if (!pending) return callback(null, results);
+    list.forEach(function(file) {
+      file = path.resolve(dir, file);
+      fs.stat(file, function(err, stat) {
+        if (stat && stat.isDirectory() && !~file.indexOf('node_modules') && !~file.indexOf('.DS_Store') && !~file.indexOf('.git')) {
+          recursiveDirRead(file, function(err, res) {
+            results = results.concat(res);
+            if (!--pending) callback(null, results);
+          });
+        } else {
+          if (path.extname(file) === '.js') {
+            results.push(file);
+          }
+          if (!--pending) callback(null, results);
+        }
+      });
+    });
+  });
+}
 exports.download = downloadPackage;
 exports.list = getPackageList;
 exports.compile = compilePackage;

@@ -15,7 +15,6 @@ const PackManagerSideBar = require("./PackManagerSideBar");
 const PackageManager = require('./PackageManager.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
-const PACKAGE_SAVE_LOCATION = pathex.join(PARENT, 'packages');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 class PackageManagerView extends React.Component{
@@ -76,7 +75,7 @@ class PackageManagerView extends React.Component{
           for (var i in data) {
             var currentPackage = data[i];
             if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.version} numOfDownloads={""}
+              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.versions || [currentPackage.latestVersion]} numOfDownloads={""}
               description={currentPackage.description || "No description found."}
               iconPathName={currentPackage.icon}
               buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
@@ -90,16 +89,16 @@ class PackageManagerView extends React.Component{
           var data = this.state.data;
           for (var i = 0; i < installed.length; i++) {
             var currentPackage = installed[i];
-            var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
+            var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json');
             try {
               var manifest = require(manifestLocation);
             } catch(err) {
               var manifest = {};
             }
-            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]].main === 'true') {
+            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]] && data[installed[i]].main === 'true') {
               cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
               description={manifest.description || "No description found."}
-              iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
+              iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
               buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
             }
           }
@@ -110,19 +109,24 @@ class PackageManagerView extends React.Component{
         cards = [<div key={'default'}></div>];
         for (var i = 0; i < installed.length; i++) {
           var currentPackage = installed[i];
-          var manifestLocation = pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'package.json');
+          var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json');
           try {
             var manifest = require(manifestLocation);
           } catch(err) {
             var manifest = {};
           }
           var remotePackage = data[currentPackage];
-          var remoteVersion = remotePackage.version;
+          if (remotePackage) {
+            var remoteVersion = remotePackage.latestVersion;
+          } else {
+            remoteVersion = '1.0.0';
+            console.warn('Could not find remote version of package ' + currentPackage);
+          }
           var localVersion = PackageManager.getVersion(currentPackage);
           if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
             cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
             description={manifest.description || "No description found."}
-            iconPathName={pathex.join(PACKAGE_SAVE_LOCATION, currentPackage, 'icon.png')}
+            iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
             buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
             }
           }
