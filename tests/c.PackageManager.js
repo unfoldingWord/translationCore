@@ -109,30 +109,30 @@ describe('PackageManager.isInstalled', function() {
 describe('<PackageCard />', function() {
   const wrapper = shallow(<PackageCard />);
   const populatedWrapper = shallow(<PackageCard packName={'translationRhymes'} packVersion={'1.0.0'} numOfDownloads={""} description={"No description found."} buttonDisplay={'downloadPack'}/>);
-  it('renders four <div /> component if no data is given', function() {
+  it('should render four <div /> component if no data is given', function() {
     assert.equal(wrapper.find('div').length, 4);
   });
-  it('renders two elements with the class .pull-right if no data is given', function() {
+  it('should render two elements with the class .pull-right if no data is given', function() {
     assert.equal(wrapper.find('.pull-right').length, 2);
   });
-  it('renders four <div /> components normally', function() {
+  it('should render four <div /> components normally', function() {
     assert.equal(populatedWrapper.find('div').length, 4);
   });
-  it('renders two elements with the class .pull-right normally', function() {
+  it('should render two elements with the class .pull-right normally', function() {
     assert.equal(populatedWrapper.find('.pull-right').length, 2);
   });
 });
 
 describe('<PackageManagerView />', function() {
   const wrapper = shallow(<PackageManagerView />);
-  it('renders five <PackageCard /> components', function(done) {
+  it('should render five <PackageCard /> components', function(done) {
     this.timeout(50000)
     setTimeout(function () {
       assert.equal(wrapper.find('PackageCard').length, totalPackages)
       done();
     }, 2000);
   });
-  it ('renders one <PackManagerSideBar> component', function() {
+  it ('should render one <PackManagerSideBar /> component', function() {
     assert.equal(wrapper.find('PackManagerSideBar').length, 1);
   })
 });
