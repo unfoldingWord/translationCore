@@ -12,6 +12,7 @@ const {Glyphicon, Button, FormGroup, FormControl} = RB;
 const style = require("./Style");
 const PackageManager = require('./PackageManager.js');
 
+var mounted = false;
 class PackageCard extends React.Component{
   constructor() {
     super();
@@ -23,8 +24,13 @@ class PackageCard extends React.Component{
   }
 
   componentDidMount() {
+    mounted = true;
     this.setState({installVersion: this.props.packVersion[this.props.packVersion.length - 1]});
     this.setState({installStatus: PackageManager.isInstalled(this.props.packName) ? 'Installed' : 'Install'});
+  }
+
+  componentWillUnmount() {
+    mounted = false;
   }
 
   install(name, version) {
@@ -32,7 +38,7 @@ class PackageCard extends React.Component{
     var _this = this;
     PackageManager.download(name, version, function(err, data){
       if(!err) {
-        if(_this.isMounted()) {
+        if(mounted) {
           _this.setState({installStatus: 'Installed'});
         }
       }
@@ -49,7 +55,7 @@ class PackageCard extends React.Component{
     this.setState({updateStatus: 'Updating'})
     PackageManager.update(name, version, function(err){
       if (!err) {
-        if(_this.isMounted()) {
+        if(mounted) {
           _this.setState({updateStatus: 'Updated'})
         }
       }
