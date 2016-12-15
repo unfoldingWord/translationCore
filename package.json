@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
   "devDependencies": {
-    "babel-core": "^6.13.2",
+    "babel-cli": "^6.11.4",
     "babel-preset-react": "^6.11.0",
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
@@ -51,7 +51,7 @@
     "react-addons-test-utils": "15.1.0"
   },
   "dependencies": {
-    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
     "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.8",
     "event-emitter": "^0.3.4",
@@ -61,7 +61,7 @@
     "http": "0.0.0",
     "marked": "^0.3.5",
     "natural": "^0.4.0",
-    "npm": "^3.10.8",
+    "npm": "2.14.12",
     "path-extra": "3.0.0",
     "react": "15.1.0",
     "react-bootstrap": "^0.29.5",
@@ -69,7 +69,7 @@
     "react-dropzone": "^3.5.1",
     "react-progressbar.js": "^0.2.0",
     "react-remarkable": "^1.1.1",
-    "simple-git": "^1.43.0",
+    "simple-git": "1.43.0",
     "style-it": "^1.2.11",
     "usfm-parser": "^0.1.4",
     "xregexp": "^3.1.1"

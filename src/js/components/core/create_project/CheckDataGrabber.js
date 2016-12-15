@@ -88,16 +88,28 @@ var CheckDataGrabber = {
   createCheckArray: function (dataObject, moduleFolderName, callback) {
     var modulePaths = [];
     modulePaths.push({ name: dataObject.name, location: moduleFolderName });
-    for (let childFolderName of dataObject.include) {
+    for (let childFolderName in dataObject.include) {
       //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-      try {
-        modulePaths.push({
-          name: childFolderName,
-          location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
-        });
-      } catch (e) {
-        this.dataLoadError(e);
-        callback(e, null);
+      if (Array.isArray(dataObject.include)) {
+        try {
+          modulePaths.push({
+            name: dataObject.include[childFolderName],
+            location: Path.join(PACKAGE_COMPILE_LOCATION, dataObject.include[childFolderName])
+          });
+        } catch (e) {
+          this.dataLoadError(e);
+          callback(e, null);
+        }
+      } else {
+        try {
+          modulePaths.push({
+            name: childFolderName,
+            location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
+          });
+        } catch (e) {
+          this.dataLoadError(e);
+          callback(e, null);
+        }
       }
     }
     callback(null, modulePaths);
