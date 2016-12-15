@@ -5,7 +5,7 @@ before_script:
 - sudo apt-get install build-essential libssl-dev
 - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 - nvm install 4.3.0
-- npm install
+- travis_retry npm install
 - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
 script:
 - npm test

@@ -199,6 +199,7 @@ $RECYCLE.BIN/
 ## Auth tokens and node modules
 #############
 /node_modules/
+npm-debug.log.*
 .auth
 Auth.json
 .config
