@@ -89,7 +89,6 @@ describe('PackageManager.download', function() {
 describe('PackageManager.getLocalList', function() {
   it('getLocalList should return an array containing all the packages', function() {
     var localInstall = PackageManager.getLocalList();
-    console.log(localInstall);
     assert.isArray(localInstall);
     assert.isTrue(localInstall.length > 0);
     assert.isString(localInstall[0]);
@@ -119,8 +118,8 @@ describe('<PackageCard />', function() {
   it('should render four <div /> components normally', function() {
     assert.equal(populatedWrapper.find('div').length, 4);
   });
-  it('should render two elements with the class .pull-right normally', function() {
-    assert.equal(populatedWrapper.find('.pull-right').length, 2);
+  it('should render three elements with the class .pull-right normally', function() {
+    assert.equal(populatedWrapper.find('.pull-right').length, 3);
   });
 });
 
