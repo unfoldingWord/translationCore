@@ -13,6 +13,7 @@ describe('loadOnline.openManifest', function() {
     });
   });
   it('loadOnline.openManifest should fail on an invalid link.', function(done){
+    this.timeout(500000);
     loadOnline('https://git.door43.org/ianhoegen123/id_-cfksl.git', function(err, savePath, url) {
       assert.isNull(savePath);
       assert.isNull(url);
