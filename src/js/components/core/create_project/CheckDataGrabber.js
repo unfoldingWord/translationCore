@@ -90,7 +90,13 @@ var CheckDataGrabber = {
           if (!err) {
             _this.fetchModules(checkArray, callback);
           }
+          else {
+            callback(err, false);
+          }
         });
+      }
+      else {
+        callback(error, false);
       }
     });
   },
@@ -99,7 +105,7 @@ var CheckDataGrabber = {
   createCheckArray: function (dataObject, moduleFolderName, callback) {
     var modulePaths = [];
     try {
-      if (!dataObject.name || !dataObject.location || !dataObject.version || !dataObject.title || !dataObject.main) {
+      if (!dataObject.name || !dataObject.version || !dataObject.title || !dataObject.main) {
         callback("Bad package.json for tool", null);
       } else {
         modulePaths.push({ name: dataObject.name, location: moduleFolderName });

@@ -123,7 +123,6 @@ describe('CheckDataGrabber.fetchModules', function () {
 
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
-        this.timeout(500000);
         CheckDataGrabber.loadModuleAndDependencies(testTool, (err, success) => {
             assert.isNull(err);
             assert.isTrue(success);
@@ -137,7 +136,6 @@ describe('CheckDataGrabber.loadModuleAndDependencies', function () {
 
 describe('CheckDataGrabber.createCheckArray', function () {
     it('should not create a check array from a bad data object', function (done) {
-        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObjectBadPackageJSON, testTool, (err, checkArray) => {
             assert.isNotNull(err);
             assert.isNull(checkArray);
@@ -145,7 +143,6 @@ describe('CheckDataGrabber.createCheckArray', function () {
         });
     });
     it('should create a check array from a sample data object', function (done) {
-        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObject, testTool, (err, checkArray) => {
             assert.isNull(err);
             assert.isArray(checkArray);
