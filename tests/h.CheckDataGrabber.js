@@ -14,38 +14,38 @@ const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
 const testCheckArray = [
     {
         "name": "ExampleChecker",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
     },
     {
         "name": "TPane",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TPane"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
     },
     {
         "name": "ExampleTool",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleTool"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
     },
     {
         "name": "CommentBox",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/CommentBox"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "CommentBox")
     }
 ];
 
 const testCheckArrayBadPath = [
     {
         "name": "ExampleChecker",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
     },
     {
         "name": "TPane",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/OBAMASBIRTHCERTIFICATE"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
     },
     {
         "name": "ExampleTool",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TRUMPSTAXREPORT"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
     },
     {
         "name": "CommentBox",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/HILARYSEMAILARCHIVE"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "HiliarysEmails")
     }
 ];
 
@@ -146,7 +146,7 @@ describe('CheckDataGrabber.createCheckArray', function () {
         CheckDataGrabber.createCheckArray(testDataObject, testTool, (err, checkArray) => {
             assert.isNull(err);
             assert.isArray(checkArray);
-            expect(checkArray).to.deep.equal(testCheckArray);
+            assert.deepEqual(checkArray, testCheckArray);
             done();
         });
     });
