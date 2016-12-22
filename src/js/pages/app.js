@@ -8,7 +8,8 @@ const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
-const SettingsModal = require('../components/core/SettingsModal.js');
+const SettingsModalParent = require('../components/core/SettingsModalParent.js');
+const LocalStorage = require('../components/core/LocalStorage.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -37,21 +38,33 @@ var Main = React.createClass({
     if (tutorialState === true || tutorialState === null) {
       return ({
         firstTime: true,
-        settingsView: false
+        settingsView: false,
+        settings: {}
       })
     } else {
       return ({
         firstTime: false,
-        settingsView: false
+        settingsView: false,
+        settings: {}
       })
     }
   },
-
-  componentDidMount: function () {
+  componentWillMount: function() {
     var _this = this;
+    Actions.subscribe('SETTINGS_UPDATE', function() {
+      _this.setState({settings: Actions.getData('SETTINGS_UPDATE')});
+    });
     Actions.subscribe('UPDATE_SETTINGS', function() {
       _this.setState({settingsView: Actions.getData('UPDATE_SETTINGS')});
-    })
+    });
+  },
+
+  componentWillUnmount: function() {
+    Actions.unsubscribe('UPDATE_SETTINGS');
+    Actions.unsubscribe('SETTINGS_UPDATE');
+  },
+  
+  componentDidMount: function () {
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -118,7 +131,8 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal show={this.state.settingsView}/>
+          <LocalStorage dispatch={Actions}/>
+          <SettingsModalParent show={this.state.settingsView} dispatch={Actions} settings={this.state.settings}/>
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />

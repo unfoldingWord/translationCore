@@ -1,12 +1,25 @@
-var EventEmitter = require('events').EventEmitter;
+/**
+ * @author Ian Hoegen
+ * @description: This serves as the new store and events api.
+ * @usage:
+ * Actions.sendAction('YOUR_EVENT', data) // Emits an event of type YOUR_EVENT, adds data to store
+ * Actions.getData('YOUR_EVENT') // Retrieves data from the event emitted
+ ***********************************************************************************/
+
+const EventEmitter = require('events').EventEmitter;
+const Reducers = require('../reducers');
 
 class Actions extends EventEmitter {
   constructor() {
     super();
-    this.reducer = [];
+    this.store = [];
   }
   sendAction(eventName, actionObj) {
-    this.reducer[eventName] = actionObj;
+    if(Reducers[eventName]) {
+      this.store[eventName] = Reducers[eventName](this.store[eventName], actionObj);
+    } else {
+      this.store[eventName] = actionObj;
+    }
     this.emitChange(eventName);
   }
 
@@ -23,8 +36,9 @@ class Actions extends EventEmitter {
   }
 
   getData (actionType) {
-    return this.reducer[actionType];
+    return this.store[actionType];
   }
 }
 
-module.exports = new Actions();
+var actions = new Actions();
+module.exports = actions;
