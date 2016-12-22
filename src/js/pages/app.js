@@ -28,22 +28,30 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
+const Actions = require('../actions');
+
 
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState === true || tutorialState === null) {
       return ({
-        firstTime: true
+        firstTime: true,
+        settingsView: false
       })
     } else {
       return ({
-        firstTime: false
+        firstTime: false,
+        settingsView: false
       })
     }
   },
 
   componentDidMount: function () {
+    var _this = this;
+    Actions.subscribe('UPDATE_SETTINGS', function() {
+      _this.setState({settingsView: Actions.getData('UPDATE_SETTINGS')});
+    })
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -110,7 +118,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal />
+          <SettingsModal show={this.state.settingsView}/>
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />

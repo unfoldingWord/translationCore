@@ -11,24 +11,11 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 
-const CoreStore = require('../../stores/CoreStore.js');
-const CoreActions = require('../../actions/CoreActions.js');
+const Actions = require('../../actions');
 
 const SettingsModal = React.createClass({
-  getInitialState: function() {
-    return {showModal: false};
-  },
-  componentWillMount: function() {
-    CoreStore.addChangeListener(this.updateModal);
-  },
-  componentWillUnmount: function() {
-    CoreStore.removeChangeListener(this.updateModal);
-  },
-  updateModal: function() {
-    this.setState({showModal: CoreStore.getSettingsView()});
-  },
   close: function() {
-    CoreActions.updateSettings(false);
+    Actions.sendAction('UPDATE_SETTINGS', false);
   },
   changeTutorial: function(e) {
     var chosen = e.target.value;
@@ -62,7 +49,7 @@ const SettingsModal = React.createClass({
     var developerSelected = (developerMode === true) ? 'enable' : 'disable';
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.props.show} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>Settings</Modal.Title>
           </Modal.Header>
