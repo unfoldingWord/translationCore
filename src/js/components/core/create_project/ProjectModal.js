@@ -6,7 +6,7 @@ const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
-const Upload = require('../Upload');
+const Upload = require('../../../containers/UploadContainer');
 const loadOnline = require('../LoadOnline');
 
 const ProjectModal = React.createClass({
@@ -58,11 +58,11 @@ const ProjectModal = React.createClass({
   },
 
   submitLink: function () {
-    var link = this.refs.TargetLanguage.getLink();
+    var link = this.link;
     var _this = this;
     loadOnline(link, function(err, savePath, url) {
       if (!err) {
-        Upload.sendFilePath(savePath, url);
+        Upload.Methods.sendFilePath(savePath, url);
       } else {
         console.error(err);
       }
@@ -78,12 +78,26 @@ const ProjectModal = React.createClass({
   /**
  * @description - This keeps the currentCheckNamespace intact
  */
+ changeActive(number) {
+   this.setState({
+     active: number
+   })
+ },
+
+ usfmSaveLocation(location) {
+  this.usfmSave = location;
+ },
+
+ getLink(link) {
+   this.link = link
+ },
+
   onClick: function (e) {
-    if (this.refs.TargetLanguage.state.active == 1) {
+    if (this.state.active == 1) {
       this.submitLink();
     }
-    if (this.refs.TargetLanguage.state.active == 3) {
-      if (!this.refs.TargetLanguage.enterSaveLocation()) {
+    if (this.state.active == 3) {
+      if (!this.usfmSave) {
         return;
       }
     }
@@ -91,8 +105,8 @@ const ProjectModal = React.createClass({
     api.emitEvent('newToolSelected', {'newToolSelected': true});
     this.close();
     api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-    if (this.refs.TargetLanguage.state.active == 1){
-      let loadedLink = this.refs.TargetLanguage.getLink();
+    if (this.state.active == 1){
+      let loadedLink = this.link;
       if(loadedLink != ""){
         CoreActions.updateCheckModal(true);
       }
@@ -109,7 +123,7 @@ const ProjectModal = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload.Component ref={"TargetLanguage"} pressedEnter={this.onClick}/>
+          <Upload.Component changeActive={this.changeActive} getUSFM={this.usfmSaveLocation} pressedEnter={this.onClick} getLink={this.getLink}/>
           <Modal.Footer>
             <ButtonToolbar>
               <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>

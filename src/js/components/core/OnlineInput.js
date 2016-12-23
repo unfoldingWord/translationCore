@@ -12,6 +12,7 @@ const loadOnline = require('./LoadOnline');
 
 const OnlineInput = React.createClass({
   getInitialState: function() {
+    this.props.getLink("");
     return {
       value: ""
     };
@@ -22,6 +23,7 @@ const OnlineInput = React.createClass({
   },
 
   submitViaEnter: function(e) {
+    this.props.getLink(this.state.value);
     var EnterKey = 13;
     if (e.keyCode === EnterKey) {
       this.props.pressedEnter();

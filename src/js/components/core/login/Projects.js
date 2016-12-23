@@ -3,7 +3,7 @@ const React = require('react');
 const Gogs = require('./GogsApi.js')();
 const api = window.ModuleApi;
 const loadOnline = require('../LoadOnline.js');
-const Upload = require('../Upload.js');
+const Upload = require('../UploadMethods.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const CoreActions = require('../../../actions/CoreActions.js');
 

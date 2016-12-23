@@ -18,7 +18,7 @@ const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
-var Upload = require('../Upload.js');
+var Upload = require('../UploadMethods.js');
 
 const defaultSave = path.join(pathex.homedir(), 'translationCore');
 
@@ -30,7 +30,7 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
 function openUSFMProject(savePath, direction, link) {
   if (!savePath || !direction)
     return 'No file or text direction specified'
-  Upload = require('../Upload.js');
+  Upload = require('../UploadMethods.js');
   Upload.clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
@@ -70,7 +70,7 @@ function openUSFMProject(savePath, direction, link) {
   });
 }
 function saveParamsInAPI(bookAbbr, saveLocation, direction) {
-  Upload = require('../Upload.js');
+  Upload = require('../UploadMethods.js');
   if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
   var params = {
     originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
@@ -137,6 +137,7 @@ function createTCProject(savePath, callback) {
 
 var ImportComponent = React.createClass({
   getInitialState: function () {
+    this.props.checkIfValid('No file selected');
     return {
       direction: "ltr",
       filePath: 'No file selected'
@@ -155,6 +156,7 @@ var ImportComponent = React.createClass({
       this.open = true;
       dialog.showOpenDialog(options, function (savePath) {
         if (savePath) {
+          _this.props.checkIfValid(savePath[0]);
           _this.setState({
             filePath: savePath[0]
           });
@@ -168,6 +170,7 @@ var ImportComponent = React.createClass({
       _this.setState({
         filePath: 'No file selected'
       });
+      _this.props.checkIfValid(this.state.filePath);
     }
   },
 

@@ -27,7 +27,7 @@ const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
-const Upload = require('../components/core/Upload');
+const Upload = require('../components/core/UploadMethods.js');
 
 var Main = React.createClass({
   getInitialState() {
