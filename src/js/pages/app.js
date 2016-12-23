@@ -8,7 +8,8 @@ const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
-const SettingsModal = require('../components/core/SettingsModal.js');
+const SettingsModalContainer = require('../containers/SettingsModalContainer.js');
+const LocalStorage = require('../components/core/LocalStorage.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -28,19 +29,39 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreActions = require('../actions/CoreActions.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
+const Actions = require('../actions');
+
 
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState === true || tutorialState === null) {
       return ({
-        firstTime: true
+        firstTime: true,
+        settingsView: false,
+        settings: {}
       })
     } else {
       return ({
-        firstTime: false
+        firstTime: false,
+        settingsView: false,
+        settings: {}
       })
     }
+  },
+  componentWillMount: function() {
+    var _this = this;
+    Actions.subscribe('SETTINGS_UPDATE', function() {
+      _this.setState({settings: Actions.getData('SETTINGS_UPDATE')});
+    });
+    Actions.subscribe('UPDATE_SETTINGS', function() {
+      _this.setState({settingsView: Actions.getData('UPDATE_SETTINGS')});
+    });
+  },
+
+  componentWillUnmount: function() {
+    Actions.unsubscribe('UPDATE_SETTINGS');
+    Actions.unsubscribe('SETTINGS_UPDATE');
   },
 
   componentDidMount: function () {
@@ -110,7 +131,8 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal />
+          <LocalStorage dispatch={Actions}/>
+          <SettingsModalContainer show={this.state.settingsView} dispatch={Actions} settings={this.state.settings}/>
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />

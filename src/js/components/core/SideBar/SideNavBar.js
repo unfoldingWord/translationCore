@@ -1,6 +1,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const CoreActions = require('../../../actions/CoreActions.js');
+const Actions = require('../../../actions/');
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore.js');
 const LoginButton = require("./LoginButton");
@@ -46,7 +47,7 @@ class SideNavBar extends React.Component{
   }
 
   handleSettings(){
-    CoreActions.updateSettings(true);
+    Actions.sendAction('UPDATE_SETTINGS', true);
   }
 
   handlePackageManager(){
