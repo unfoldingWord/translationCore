@@ -8,7 +8,7 @@ const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
-const SettingsModalParent = require('../components/core/SettingsModalParent.js');
+const SettingsModalContainer = require('../containers/SettingsModalContainer.js');
 const LocalStorage = require('../components/core/LocalStorage.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -63,7 +63,7 @@ var Main = React.createClass({
     Actions.unsubscribe('UPDATE_SETTINGS');
     Actions.unsubscribe('SETTINGS_UPDATE');
   },
-  
+
   componentDidMount: function () {
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
@@ -132,7 +132,7 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <LocalStorage dispatch={Actions}/>
-          <SettingsModalParent show={this.state.settingsView} dispatch={Actions} settings={this.state.settings}/>
+          <SettingsModalContainer show={this.state.settingsView} dispatch={Actions} settings={this.state.settings}/>
           <LoginModal />
           <ProjectModal />
           <SideBarContainer />

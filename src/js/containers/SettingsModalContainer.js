@@ -4,9 +4,9 @@
  *                needed data to it
  ******************************************************************************/
 const React = require('react');
-const SettingsModal = require('./SettingsModal');
+const SettingsModal = require('../components/core/SettingsModal');
 
-class SettingsModalParent extends React.Component {
+class SettingsModalContainer extends React.Component {
 	render() {
     var dispatch = this.props.dispatch;
     this.dispatch = dispatch;
@@ -27,4 +27,4 @@ class SettingsModalParent extends React.Component {
 	}
 }
 
-module.exports = SettingsModalParent;
+module.exports = SettingsModalContainer;
