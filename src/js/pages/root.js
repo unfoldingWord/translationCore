@@ -6,7 +6,6 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 const React = require('react');
-debugger;
 const Application = require("./app");
 module.exports = (<Provider store={store}>
     <Application />

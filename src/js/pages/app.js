@@ -32,6 +32,8 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
 
+const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+
 var Main = React.createClass({
   getInitialState() {
     var tutorialState = api.getSettings('showTutorial');
@@ -47,7 +49,6 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
-    debugger;
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -93,7 +94,8 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      CoreActions.showCreateProject("Languages");
+      
+      store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
@@ -116,8 +118,8 @@ var Main = React.createClass({
         <div className='fill-height'>
             <SettingsModal />
             <LoginModal />
-            <ProjectModal />
-            <SideBarContainer />
+            <ProjectModal {...this.props.loginModalReducer}/>
+            <SideBarContainer {...this.props}/>
             <StatusBar />
             <SwitchCheckModal.Modal />
             <Popover />
@@ -142,10 +144,9 @@ var Main = React.createClass({
 });
 
 function mapStateToProps(state) {
-  debugger;
-  return {
-    hello:'hi'
-  };
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  //Object.assign({}, state, state.coreStoreReducer)
+  return state;
 }
 
 module.exports = connect(mapStateToProps)(Main);

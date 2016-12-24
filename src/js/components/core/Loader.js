@@ -28,7 +28,7 @@ const Loader = React.createClass({
   },
 
   update: function() {
-    debugger;
+    ;
     this.setState({
       progress: CoreStore.getProgress(),
       showModal: !CoreStore.doneLoading

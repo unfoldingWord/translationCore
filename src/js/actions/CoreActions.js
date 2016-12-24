@@ -1,3 +1,4 @@
+var Dispatcher = require('../dispatchers/Dispatcher');
 var consts = require('./CoreActionConsts');
 /**
 How to use the actions:
@@ -7,165 +8,155 @@ be dispatched to all of the stores that have registered
 listener
 (See ExampleComponent.js)
 */
+module.exports = {
+  login: function(user) {
+    Dispatcher.handleAction({
+      type: consts.ACCOUNT_LOGIN,
+      user: user
+    });
+  },
 
-module.exports.login = function login(user) {
-  return {
-    type: consts.ACCOUNT_LOGIN,
-    user: user
-  };
-},
-
-  module.exports.updateOpenView = function updateOpenView(boolean) {
-    return {
+  updateOpenView: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.OPEN_VIEW,
-      openView: boolean
-    };
+      view: boolean
+    });
   },
 
-  module.exports.updateModProg = function updateModProg(boolean) {
-    return {
+  updateModProg: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.MOD_PROGRESS_VIEW,
-      modProgressView: boolean
-    };
+      view: boolean
+    });
   },
 
-  module.exports.updateModal = function (boolean) {
-    return {
+  updateModal: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
-      uploadModalVisibility: boolean
-
-    };
+      modalOption: boolean
+    });
   },
 
-  module.exports.updateLoginModal = function (boolean) {
-    return {
+  updateLoginModal: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
-      loginModalVisibility: boolean
-
-    };
+      loginModalOption: boolean
+    });
   },
 
-  module.exports.updateSettings = function (boolean) {
-    return {
+  updateSettings: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.SETTINGS_VIEW,
       settingsView: boolean
-
-    };
+    });
   },
 
-  module.exports.showOpenModal = function (boolean) {
-    return {
+  showOpenModal: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.OPEN_CREATED_PROJECT,
-      openProjectModalVisibility: boolean
-    };
+      visible: boolean
+    });
   },
 
-  module.exports.updateOnlineStatus = function (boolean) {
-    return {
+  updateOnlineStatus: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.CHANGE_ONLINE_STATUS,
       onlineStatus: boolean
-
-    };
+    });
   },
 
-  module.exports.showCreateProject = function (boolean) {
-    return {
-      type: consts.CREATE_PROJECT,
-      createProjectModal: boolean
+  // showCreateProject: function(boolean) {
+  //     Dispatcher.handleAction({
+  //       type: consts.CREATE_PROJECT,
+  //       createProjectModal: boolean
+  //     });
+  // },
 
-    };
+  changeCreateProjectText: function(string) {
+    Dispatcher.handleAction({
+      type:  consts.CHANGE_CREATE_PROJECT_TEXT,
+      modalValue: string
+    })
   },
 
-  module.exports.changeCreateProjectText = function (text) {
-    return {
-      type: consts.CHANGE_CREATE_PROJECT_TEXT,
-      createProjectText: text
-    }
-  },
-
-  module.exports.getFetchData = function (fetchDataArray) {
-    return {
+  getFetchData: function(FetchDataArray) {
+    Dispatcher.handleAction({
       type: consts.SEND_FETCH_DATA,
-      fetchDataArray: fetchDataArray
-
-    };
+      array: FetchDataArray
+    });
   },
 
-  module.exports.sendProgressForKey = function (progressKeyObj) {
-    return {
+  sendProgressForKey: function(progressKeyObj) {
+    Dispatcher.handleAction({
       type: consts.SEND_PROGRESS_FOR_KEY,
-      progressKeyObj: progressKeyObj
-
-    };
+      progressRecieved: progressKeyObj
+    });
   },
 
-  module.exports.doneLoadingFetchData = function () {
-    return {
+  doneLoadingFetchData: function() {
+    Dispatcher.handleAction({
       type: consts.DONE_LOADING
-    };
+    });
   },
 
-  module.exports.newProject = function () {
-    return {
+  newProject: function(){
+    Dispatcher.handleAction({
       type: consts.NEW_PROJECT,
-      reportViews: []
-    };
+      reportViews:[]
+    });
   },
 
-  module.exports.updateProfileVisibility = function (boolean) {
-    return {
+  updateProfileVisibility: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.CHANGE_PROFILE_VISIBILITY,
       profileOption: boolean
-
-    };
+    });
   },
 
-  module.exports.updateCheckModal = function (boolean) {
-    return {
+  updateCheckModal: function(boolean) {
+    Dispatcher.handleAction({
       type: consts.CHANGE_CHECK_MODAL_VISIBILITY,
       checkModalOption: boolean
-
-    };
+    });
   },
 
-  module.exports.sendAlert = function (alertObj) {
-    return {
+  sendAlert: function(alertObj) {
+    Dispatcher.handleAction({
       type: consts.ALERT_MODAL,
       alert: alertObj
-    };
+    });
   },
 
-  module.exports.sendNotificationToast = function (visible, toastParamsObj) {
-    return {
-      type: consts.SHOW_TOAST_PARAMS,
-      toastOption: visible,
-      toastParams: toastParamsObj
+    sendNotificationToast: function(visible, toastParamsObj) {
+      Dispatcher.handleAction({
+        type: consts.SHOW_TOAST_PARAMS,
+        toastOption: visible,
+        toastParams: toastParamsObj
+      });
+    },
 
-    };
-  },
-
-  module.exports.sendAlertResponse = function (alertResponseObj) {
-    return {
+  sendAlertResponse: function(alertResponseObj) {
+    Dispatcher.handleAction({
       type: consts.ALERT_MODAL_RESPONSE,
       alertResponse: alertResponseObj
-
-    };
+    });
   },
 
-  module.exports.startLoading = function () {
-    return {
+  startLoading: function() {
+    Dispatcher.handleAction({
       type: consts.START_LOADING
-    };
+    });
   },
 
-  module.exports.updatePopover = function (visibility, title, body, left, top) {
-    return {
+  updatePopover: function(visibility, title, body, left, top) {
+    Dispatcher.handleAction({
       type: consts.UPDATE_POPOVER,
-      popoverVisibility,
-      popoverTitle,
-      popoverBody,
-      popoverLeft,
-      popoverTop
-    }
+      visibility,
+      title,
+      body,
+      left,
+      top
+    })
+  }
 
-  };
+};

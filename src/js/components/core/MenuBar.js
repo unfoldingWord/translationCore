@@ -12,6 +12,14 @@ const exportUsfm = require('./Usfm/ExportUSFM');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
+const { createStore, applyMiddleware, combineReducers, bindActionCreators } = require('redux');
+const { Provider, connect  } = require('react-redux');
+const thunk = require('redux-thunk').default
+const reducers = require('../../Reducers');
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithMiddleware(reducer);
+
 var template = [
   {
     label: 'File',
@@ -55,7 +63,9 @@ var template = [
       {
         label: 'Load',
         click() {
-          CoreActions.showCreateProject("Languages");
+          
+          store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
+          //CoreActions.showCreateProject("Languages");
         }
        },
        {

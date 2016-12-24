@@ -17,7 +17,6 @@ var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 //     this.progress = currentProgress;
 //   }
 const initialState = {
-        redux: "is amazing"
       };
 module.exports = function coreStore(state, action) {
     state = state || initialState
@@ -50,10 +49,6 @@ module.exports = function coreStore(state, action) {
             return Object.assign({}, state, {openProjectModalVisibility: action.openProjectModalVisibility });
             break;
 
-        case consts.CREATE_PROJECT:
-            return Object.assign({}, state, {createProjectModal: action.createProjectModal });
-            break;
-
         case consts.CHANGE_CREATE_PROJECT_TEXT:
             return Object.assign({}, state, {createProjectText: action.createProjectText });
             break;
@@ -63,7 +58,7 @@ module.exports = function coreStore(state, action) {
             break;
 
         case consts.START_LOADING:
-            debugger;
+            ;
             var doneLoading = false;
             var progressObject = [];
             return Object.assign({}, state, doneLoading, progressObject );
@@ -79,12 +74,12 @@ module.exports = function coreStore(state, action) {
             break;
 
         case consts.DONE_LOADING:
-            debugger;
+            ;
             var doneLoading = true;
             var modProgressView = true;
             var progressKeyObj = null;
             var loaderModalVisibility = false;
-            debugger;
+            ;
             return function () {
                 dispatch(changeCheckType({ currentCheckNamespace: this.currentCheckNamespace }));
                 var reports = [];
@@ -104,7 +99,7 @@ module.exports = function coreStore(state, action) {
             break;
 
         case consts.NEW_PROJECT:
-            debugger;
+            ;
             var doneLoading = false;
             var checkCategoryOptions = null;
             return Object.assign({}, state, doneLoading, checkCategoryOptions, {reportViews: action.reportViews});

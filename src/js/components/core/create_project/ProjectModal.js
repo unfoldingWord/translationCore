@@ -8,55 +8,10 @@ const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
 const Upload = require('../Upload');
 const loadOnline = require('../LoadOnline');
+const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
+const { connect  } = require('react-redux');
 
 const ProjectModal = React.createClass({
-
-  getInitialState: function () {
-    return {
-      showModal: false,
-      modalTitle: "Create Project",
-      doneText: "Load",
-      loadedChecks: [],
-      currentChecks: [],
-      modalValue: "Languages",
-      backButton: 'hidden'
-    };
-  },
-
-  componentWillMount: function () {
-    CoreStore.addChangeListener(this.showCreateProject);      // action to show create project modal
-  },
-
-  componentWillUnmount: function () {
-    CoreStore.removeChangeListener(this.showCreateProject);
-  },
-
-  /**
- * @description - This is called to change the status of the project modal
- * @param {string} input - string to set modal state, this string is specific
- * to the form to be display
- */
-  showCreateProject: function (input) {
-    var modal = CoreStore.getShowProjectModal();
-    if (input) {
-      modal = input;
-      CoreStore.projectModalVisibility = input;
-    }
-    if (modal === 'Languages') {
-
-      this.setState({
-        showModal: true,
-        modalValue: modal,
-        modalTitle: '',
-        doneText: 'Load'
-      });
-    } else if (modal === "") {
-      this.setState({
-        showModal: false
-      });
-    }
-  },
-
   submitLink: function () {
     var link = this.refs.TargetLanguage.getLink();
     var _this = this;
@@ -69,12 +24,6 @@ const ProjectModal = React.createClass({
     });
   },
 
-  close: function () {
-    CoreStore.projectModalVisibility = "";
-    this.setState({
-      showModal: false,
-    });
-  },
   /**
  * @description - This keeps the currentCheckNamespace intact
  */
@@ -106,14 +55,15 @@ const ProjectModal = React.createClass({
   },
 
   render: function () {
+    
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
+        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={this._handleKeyPress}>
           <Upload.Component ref={"TargetLanguage"} pressedEnter={this.onClick}/>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>
-              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.state.doneText}</Button>
+              <Button bsSize="xsmall" style={{ visibility: this.props.backButton }}>{'Back'}</Button>
+              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
@@ -122,4 +72,18 @@ const ProjectModal = React.createClass({
   }
 });
 
-module.exports = ProjectModal;
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  
+  return Object.assign({}, state, state.loginModalReducer);
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    close:() => {
+      dispatch(CoreActionsRedux.showCreateProject(false));
+    }
+  }
+}
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(ProjectModal);
