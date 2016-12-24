@@ -5,7 +5,7 @@ var path = require('path');
 var ProgressBar = require('react-bootstrap/lib/ProgressBar');
 var Collapse = require('react-bootstrap/lib/Collapse');
 var api = window.ModuleApi;
-var CoreStore = require('../../../stores/CoreStore.js');
+var CoreStore = require('../../../reducers/coreStoreReducer');
 var CheckStore = require('../../../stores/CheckStore.js');
 
 var Progress = React.createClass({

@@ -4,7 +4,7 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
-const CoreStore = require('../../stores/CoreStore.js');
+const CoreStore = require('../../reducers/coreStoreReducer');
 const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');

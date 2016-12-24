@@ -6,7 +6,7 @@ event from the CheckStore and automatically swap out the check module for the ne
 */
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
-var CoreStore = require('../../stores/CoreStore');
+var CoreStore = require('../../reducers/coreStoreReducer');
 var NextButton = require('../core/NextButton');
 var PreviousButton = require('../core/PreviousButton');
 var RecentProjects = require('./RecentProjects');

@@ -1,7 +1,7 @@
 const git = require('../GitApi.js');
 const api = window.ModuleApi;
 const CoreActions = require('../../../actions/CoreActions.js');
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const pathFinder = require('path');
 const gogs = require('../login/GogsApi.js');
 

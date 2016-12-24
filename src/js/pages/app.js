@@ -1,4 +1,16 @@
 const React = require('react');
+const { createStore, applyMiddleware, combineReducers, bindActionCreators } = require('redux');
+const { Provider, connect  } = require('react-redux');
+const thunk = require('redux-thunk');
+const reducers = require('../Reducers');
+const CoreActions = require('../actions/CoreActions.js');
+const CheckStore = require('../stores/CheckStore.js');
+debugger;
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithMiddleware(reducer);
+
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
@@ -23,9 +35,8 @@ const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
-const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-const CoreActions = require('../actions/CoreActions.js');
+
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
 
@@ -44,6 +55,7 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    debugger;
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -110,27 +122,29 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal />
-          <LoginModal />
-          <ProjectModal />
-          <SideBarContainer />
-          <StatusBar />
-          <SwitchCheckModal.Modal />
-          <Popover />
-          <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
-            <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden"}}>
-                <NavMenu />
-              </Col>
-              <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader />
-                <AlertModal />
-                <ModuleWrapper />
-                <ModuleProgress />
-              </Col>
-            </Row>
-          </Grid>
+          <Provider store={store}>
+            <SettingsModal />
+            <LoginModal />
+            <ProjectModal />
+            <SideBarContainer />
+            <StatusBar />
+            <SwitchCheckModal.Modal />
+            <Popover />
+            <Toast />
+            <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
+              <Row className='fill-height main-view'>
+                <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
+                  <NavMenu />
+                </Col>
+                <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
+                  <Loader />
+                  <AlertModal />
+                  <ModuleWrapper />
+                  <ModuleProgress />
+                </Col>
+              </Row>
+            </Grid>
+          </Provider>
         </div>
       )
     }

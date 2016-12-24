@@ -1,5 +1,5 @@
 const React = require('react');
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const CoreActions = require('../../../actions/CoreActions.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const Row = require('react-bootstrap/lib/Row.js');

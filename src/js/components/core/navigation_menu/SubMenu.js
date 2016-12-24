@@ -3,7 +3,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const SubMenuItem = require('./SubMenuItem');
 
 

@@ -10,7 +10,7 @@ const ManifestGenerator = require('../create_project/ProjectManifest.js');
 const books = require('../BooksOfBible.js');
 const Recent = require('../RecentProjects.js');
 
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const CheckStore = require('../../../stores/CheckStore');
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');

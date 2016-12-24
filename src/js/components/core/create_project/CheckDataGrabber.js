@@ -1,4 +1,4 @@
-const CoreStore = require('../../.././stores/CoreStore');
+const CoreStore = require('../../.././reducers/coreStoreReducer');
 const CoreActions = require('../../.././actions/CoreActions');
 const CheckStore = require('../../.././stores/CheckStore');
 const fs = require(window.__base + 'node_modules/fs-extra');

@@ -4,7 +4,7 @@ const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
 const {Well} = RB;
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const SubMenu = require('./SubMenu.js');
 
 

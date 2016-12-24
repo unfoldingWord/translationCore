@@ -1,5 +1,5 @@
 const React = require('react');
-const CoreStore = require('../../stores/CoreStore.js');
+const CoreStore = require('../../reducers/coreStoreReducer');
 const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 var progressStack = [];
@@ -28,6 +28,7 @@ const Loader = React.createClass({
   },
 
   update: function() {
+    debugger;
     this.setState({
       progress: CoreStore.getProgress(),
       showModal: !CoreStore.doneLoading

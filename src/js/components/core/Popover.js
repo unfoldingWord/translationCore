@@ -1,6 +1,6 @@
 const React = require('react');
 const CoreActions = require('../../actions/CoreActions.js');
-const CoreStore = require('../../stores/CoreStore.js');
+const CoreStore = require('../../reducers/coreStoreReducer');
 const Popover = require('react-bootstrap/lib/Popover');
 
 class PopoverComponent extends React.Component{

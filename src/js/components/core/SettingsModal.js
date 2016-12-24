@@ -11,7 +11,7 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 
-const CoreStore = require('../../stores/CoreStore.js');
+const CoreStore = require('../../reducers/coreStoreReducer');
 const CoreActions = require('../../actions/CoreActions.js');
 
 const SettingsModal = React.createClass({

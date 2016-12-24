@@ -10,7 +10,7 @@ function GitApi(directory) {
   var {dialog} = remote;
   var git = require('simple-git')(directory);
   const CheckStore = require('../../stores/CheckStore.js');
-  const CoreStore = require('../../stores/CoreStore.js');
+  const CoreStore = require('../../reducers/coreStoreReducer');
 
 
   return {

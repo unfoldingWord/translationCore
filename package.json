@@ -68,6 +68,7 @@
     "react-dom": "15.1.0",
     "react-dropzone": "^3.5.1",
     "react-progressbar.js": "^0.2.0",
+    "react-redux": "^5.0.1",
     "react-remarkable": "^1.1.1",
     "simple-git": "1.43.0",
     "style-it": "^1.2.11",

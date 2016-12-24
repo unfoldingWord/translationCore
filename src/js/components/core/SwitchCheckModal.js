@@ -16,7 +16,7 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const Panel = require('react-bootstrap/lib/Panel.js');
 
 //locally defined imports
-const CoreStore = require('../../stores/CoreStore.js');
+const CoreStore = require('../../reducers/coreStoreReducer');
 const CoreActions = require('../../actions/CoreActions.js');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const AppDescription = require('./AppDescription');

@@ -1,6 +1,6 @@
 const api = window.ModuleApi;
 const React = api.React;
-const CoreStore = require('../../../stores/CoreStore.js');
+const CoreStore = require('../../../reducers/coreStoreReducer');
 const CoreActions = require('../../../actions/CoreActions.js');
 const SideNavBar = require('./SideNavBar');
 const Chevron = require('./Chevron');
