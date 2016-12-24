@@ -1,6 +1,6 @@
 const React = require('react');
 const CoreActions = require('../actions/CoreActions.js');
-const CoreStore = require('../reducers/coreStoreReducer');
+const CoreStore = require('../stores/CoreStore.js');
 const style = require('./style');
 
 

@@ -1,5 +1,5 @@
 const React = require('react');
-const CoreStore = require('../../reducers/coreStoreReducer');
+const CoreStore = require('../../stores/CoreStore.js');
 const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 var progressStack = [];

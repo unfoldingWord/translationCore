@@ -12,7 +12,7 @@ const NavItem = require('react-bootstrap/lib/NavItem.js');
 
 const OnlineInput = require('./OnlineInput');
 const DragDrop = require('./DragDrop');
-const CoreStore = require('../../reducers/coreStoreReducer');
+const CoreStore = require('../../stores/CoreStore.js');
 const ManifestGenerator = require('./create_project/ProjectManifest.js');
 const CheckStore = require('../../stores/CheckStore');
 const ImportUsfm = require('./Usfm/ImportUSFM');

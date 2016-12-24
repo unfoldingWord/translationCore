@@ -10,7 +10,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 //user imports
 const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
-const CoreStore = require('./reducers/coreStoreReducer');
+const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
 const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');

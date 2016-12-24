@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
 const CoreActions = require('../src/js/actions/CoreActions.js');
-const CoreStore = require('../src/js/reducers/coreStoreReducer');
+const CoreStore = require('../src/js/stores/CoreStore.js');
 
 function onlineStatus() {
   var onlineStatus = CoreStore.getOnlineStatus();

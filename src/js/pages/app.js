@@ -1,15 +1,7 @@
 const React = require('react');
-const { createStore, applyMiddleware, combineReducers, bindActionCreators } = require('redux');
-const { Provider, connect  } = require('react-redux');
-const thunk = require('redux-thunk');
-const reducers = require('../Reducers');
 const CoreActions = require('../actions/CoreActions.js');
 const CheckStore = require('../stores/CheckStore.js');
-debugger;
-
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const reducer = combineReducers(reducers);
-const store = createStoreWithMiddleware(reducer);
+const { connect  } = require('react-redux');
 
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
@@ -122,7 +114,6 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <Provider store={store}>
             <SettingsModal />
             <LoginModal />
             <ProjectModal />
@@ -144,13 +135,17 @@ var Main = React.createClass({
                 </Col>
               </Row>
             </Grid>
-          </Provider>
         </div>
       )
     }
   }
 });
 
-module.exports = (
-  <Main />
-);
+function mapStateToProps(state) {
+  debugger;
+  return {
+    hello:'hi'
+  };
+}
+
+module.exports = connect(mapStateToProps)(Main);

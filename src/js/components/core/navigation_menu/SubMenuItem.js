@@ -4,7 +4,7 @@ const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
-const CoreStore = require('../../../reducers/coreStoreReducer');
+const CoreStore = require('../../../stores/CoreStore.js');
 const style = require('./Style');
 
 

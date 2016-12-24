@@ -4,7 +4,7 @@
  * @description: This is the file associated with the alert response
  * to handle transferring of data through a callback
  ******************************************************************************/
-const CoreStore = require('../.././reducers/coreStoreReducer');
+const CoreStore = require('../.././stores/CoreStore.js');
 const CoreActions = require('../.././actions/CoreActions');
 const CheckStore = require('../.././stores/CheckStore');
 const api = window.ModuleApi;
