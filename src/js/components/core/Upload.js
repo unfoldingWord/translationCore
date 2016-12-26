@@ -31,6 +31,7 @@ class UploadModal extends React.Component {
     switch (this.props.show) {
       case 'file':
         mainContent = <DragDrop
+          filePath={this.props.filePath}
           styles={this.props.styles}
           sendFilePath={this.props.sendPath}
           properties={['openDirectory']}
@@ -41,14 +42,14 @@ class UploadModal extends React.Component {
         mainContent = (
           <div>
             <br />
-            <OnlineInput ref={"Online"} pressedEnter={this.props.pressedEnter} getLink={this.props.getLink} sendFilePath={this.props.sendPath} />
+            <OnlineInput pressedEnter={this.props.pressedEnter} getLink={this.props.getLink} sendFilePath={this.props.sendPath} />
           </div>
         );
         break;
       case 'usfm':
         mainContent = (
           <div>
-            <ImportUsfm.component checkIfValid={this.props.checkUSFM} isWelcome={this.props.isWelcome} ref={'USFM'}/>
+            <ImportUsfm.component checkIfValid={this.props.checkUSFM} isWelcome={this.props.isWelcome}/>
           </div>
         );
         break;
@@ -66,7 +67,7 @@ class UploadModal extends React.Component {
     if (this.props.show !== false) {
       return (
         <div>
-          <Nav bsStyle="tabs" activeKey={this.props.active} onSelect={this.props.changeActive}>
+          <Nav bsStyle="tabs" activeKey={parseInt(this.props.active)} onSelect={this.props.changeActive}>
             <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
             <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
             <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>

@@ -19,7 +19,8 @@ const ProjectModal = React.createClass({
       loadedChecks: [],
       currentChecks: [],
       modalValue: "Languages",
-      show: 'link'
+      show: 'link',
+      active: '1'
     };
   },
 
@@ -130,10 +131,14 @@ const ProjectModal = React.createClass({
   },
 
   render: function () {
+    var _this = this;
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload checkUSFM={this.checkUSFM} getLink={this.getLink} changeActive={this.changeActive} pressedEnter={this.pressedEnter} show={this.state.show} active={this.state.active} sendPath={UploadMethods.sendFilePath}/>
+          <Upload checkUSFM={this.checkUSFM} filePath={this.state.filePath} getLink={this.getLink} changeActive={this.changeActive} pressedEnter={this.pressedEnter} show={this.state.show} active={this.state.active} sendPath={function(path) {
+            _this.setState({filePath: path});
+            UploadMethods.sendFilePath(path);
+          }}/>
           <Modal.Footer>
             <ButtonToolbar>
               <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>

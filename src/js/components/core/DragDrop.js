@@ -11,12 +11,6 @@ const style = {
       border: '2px solid #727272',
       backgroundColor: '#f5f5f5'
     },
-    text: {
-      height: '200px',
-      paddingTop: '75px',
-      verticalAlign: 'middle',
-      width: '100%'
-    },
     main: {
       width: '100%',
       color: '#212121',
@@ -27,62 +21,55 @@ const style = {
     },
     inner: {
       fontSize: '15px'
+    },
+    welcome: {
+      width: '100%',
+      color: '#212121',
+      height: '200px',
+      borderRadius: '5px',
+      fontSize: '25px'
     }
   }
 };
 
-const DragDrop = React.createClass({
-  getInitialState: function() {
-    return {
-      filePath: ''
-    };
-  },
-  componentWillMount: function(){
+var _this;
+
+class DragDrop extends React.Component{
+  constructor() {
+    super();
+    _this = this;
+  }
+
+  componentWillMount() {
     if(this.props.isWelcome){
-      this.mainStyle = {
-        width: '100%',
-        color: '#212121',
-        height: '200px',
-        borderRadius: '5px',
-        fontSize: '25px'
-      }
+      this.mainStyle = style.dropzone.welcome;
     } else {
-      this.mainStyle = {
-        width: '100%',
-        color: '#212121',
-        height: '200px',
-        border: '2px dashed #727272',
-        borderRadius: '5px',
-        fontSize: '25px'
-      }
+      this.mainStyle = style.dropzone.main;
     }
-  },
-  onDrop: function(files) {
-    var _this = this;
+  }
+
+  onDrop(files) {
     if (files !== undefined) {
       // FileImport(files[0].path);
-      _this.setState({filePath: files[0].path});
       _this.props.sendFilePath(files[0].path);
     }
-  },
+  }
 
-  onClick: function() {
-    var _this = this;
-    if (!this.opened) {
-      this.opened = true;
+  onClick() {
+    if (!_this.opened) {
+      _this.opened = true;
       dialog.showOpenDialog({
-        properties: this.props.properties
+        properties: _this.props.properties
       }, function(filename) {
         if (filename !== undefined) {
-          _this.setState({filePath: filename[0]});
-          _this.props.sendFilePath(filename[0], null);
+          _this.props.sendFilePath(filename[0]);
         }
         _this.opened = false;
       });
     }
-  },
+  }
 
-  render: function() {
+  render() {
     return (
     <div onClick = {this.onClick} >
         <Dropzone onDrop = {this.onDrop}
@@ -91,14 +78,13 @@ const DragDrop = React.createClass({
             <div style={this.props.styles}>
               <center>
                 Drag files here to upload, or click to select a file
-                <span style={style.dropzone.inner}> {this.state.filePath} </span>
+                <span style={style.dropzone.inner}> {this.props.filePath} </span>
               </center>
             </div>
       </Dropzone>
     </div>
   );
   }
-
-});
+}
 
 module.exports = DragDrop;
