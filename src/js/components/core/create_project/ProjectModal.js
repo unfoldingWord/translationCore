@@ -6,8 +6,9 @@ const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const api = window.ModuleApi;
 const booksOfBible = require('../BooksOfBible');
-const Upload = require('../../../containers/UploadContainer');
 const loadOnline = require('../LoadOnline');
+const Upload = require('../Upload.js');
+const UploadMethods = require('../UploadMethods.js');
 
 const ProjectModal = React.createClass({
 
@@ -15,11 +16,10 @@ const ProjectModal = React.createClass({
     return {
       showModal: false,
       modalTitle: "Create Project",
-      doneText: "Load",
       loadedChecks: [],
       currentChecks: [],
       modalValue: "Languages",
-      backButton: 'hidden'
+      show: 'link'
     };
   },
 
@@ -43,12 +43,10 @@ const ProjectModal = React.createClass({
       CoreStore.projectModalVisibility = input;
     }
     if (modal === 'Languages') {
-
       this.setState({
         showModal: true,
         modalValue: modal,
         modalTitle: '',
-        doneText: 'Load'
       });
     } else if (modal === "") {
       this.setState({
@@ -75,17 +73,29 @@ const ProjectModal = React.createClass({
       showModal: false,
     });
   },
-  /**
- * @description - This keeps the currentCheckNamespace intact
- */
- changeActive(number) {
-   this.setState({
-     active: number
-   })
+
+ checkUSFM(location) {
+  this.usfmSave = !(location == 'No file selected');
  },
 
- usfmSaveLocation(location) {
-  this.usfmSave = location;
+ changeActive(key) {
+   this.setState({ active: key });
+   switch (key) {
+     case 1:
+       this.setState({ show: 'link' });
+       break;
+     case 2:
+       this.setState({ show: 'file' });
+       break;
+     case 3:
+       this.setState({ show: 'usfm' });
+       break;
+     case 4:
+       this.setState({ show: 'd43' });
+       break;
+     default:
+       break;
+   }
  },
 
  getLink(link) {
@@ -123,11 +133,10 @@ const ProjectModal = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload.Component changeActive={this.changeActive} getUSFM={this.usfmSaveLocation} pressedEnter={this.onClick} getLink={this.getLink}/>
+          <Upload checkUSFM={this.checkUSFM} getLink={this.getLink} changeActive={this.changeActive} pressedEnter={this.pressedEnter} show={this.state.show} active={this.state.active} sendPath={UploadMethods.sendFilePath}/>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button bsSize="xsmall" style={{ visibility: this.state.backButton }}>{'Back'}</Button>
-              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.state.doneText}</Button>
+              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
