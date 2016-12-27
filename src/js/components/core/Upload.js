@@ -3,16 +3,10 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 const React = require('react');
-const Path = require('path');
 
 const Button = require('react-bootstrap/lib/Button.js');
 const Nav = require('react-bootstrap/lib/Nav.js');
 const NavItem = require('react-bootstrap/lib/NavItem.js');
-
-const OnlineInput = require('./OnlineInput');
-const DragDrop = require('./DragDrop');
-const ImportUsfm = require('./Usfm/ImportUSFM');
-const Recent = require('./RecentProjects.js');
 
 const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import From Local Project';
@@ -26,44 +20,6 @@ class UploadModal extends React.Component {
   }
 
   render() {
-    var mainContent;
-    var ProjectViewer = require('./login/Projects.js');
-    switch (this.props.show) {
-      case 'file':
-        mainContent = <DragDrop
-          filePath={this.props.filePath}
-          styles={this.props.styles}
-          sendFilePath={this.props.sendPath}
-          properties={['openDirectory']}
-          isWelcome={this.props.isWelcome}
-          />;
-        break;
-      case 'link':
-        mainContent = (
-          <div>
-            <br />
-            <OnlineInput pressedEnter={this.props.pressedEnter} getLink={this.props.getLink} sendFilePath={this.props.sendPath} />
-          </div>
-        );
-        break;
-      case 'usfm':
-        mainContent = (
-          <div>
-            <ImportUsfm.component checkIfValid={this.props.checkUSFM} isWelcome={this.props.isWelcome}/>
-          </div>
-        );
-        break;
-      case 'd43':
-        mainContent = (
-          <div>
-            <ProjectViewer />
-          </div>
-        )
-        break;
-      default:
-        mainContent = (<div> </div>)
-        break;
-    }
     if (this.props.show !== false) {
       return (
         <div>
@@ -73,7 +29,7 @@ class UploadModal extends React.Component {
             <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
             <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
           </Nav>
-          {mainContent}
+          {this.props.children}
         </div>
       );
     } else {

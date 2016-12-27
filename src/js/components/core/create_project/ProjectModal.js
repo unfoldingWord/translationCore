@@ -10,6 +10,10 @@ const loadOnline = require('../LoadOnline');
 const Upload = require('../Upload.js');
 const UploadMethods = require('../UploadMethods.js');
 
+const OnlineInput = require('../OnlineInput');
+const DragDrop = require('../DragDrop');
+const ImportUsfm = require('../Usfm/ImportUSFM');
+
 const ProjectModal = React.createClass({
 
   getInitialState: function () {
@@ -79,6 +83,11 @@ const ProjectModal = React.createClass({
   this.usfmSave = !(location == 'No file selected');
  },
 
+ sendPath(path, link, callback) {
+   this.setState({filePath: path});
+   UploadMethods.sendFilePath(path, link, callback);
+ },
+
  changeActive(key) {
    this.setState({ active: key });
    switch (key) {
@@ -97,6 +106,45 @@ const ProjectModal = React.createClass({
      default:
        break;
    }
+ },
+
+ getMainContent(key) {
+   switch (key) {
+     case 'file':
+       mainContent = <DragDrop
+         filePath={this.state.filePath}
+         sendFilePath={this.sendPath}
+         properties={['openDirectory']}
+         />;
+       break;
+     case 'link':
+       mainContent = (
+         <div>
+           <br />
+           <OnlineInput getLink={this.getLink} submit={this.submitLink}/>
+         </div>
+       );
+       break;
+     case 'usfm':
+       mainContent = (
+         <div>
+           <ImportUsfm.component checkIfValid={this.checkUSFM}/>
+         </div>
+       );
+       break;
+     case 'd43':
+     var ProjectViewer = require('../login/Projects.js');
+       mainContent = (
+         <div>
+           <ProjectViewer />
+         </div>
+       )
+       break;
+     default:
+       mainContent = (<div> </div>)
+       break;
+   }
+   return mainContent;
  },
 
  getLink(link) {
@@ -135,10 +183,9 @@ const ProjectModal = React.createClass({
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload checkUSFM={this.checkUSFM} filePath={this.state.filePath} getLink={this.getLink} changeActive={this.changeActive} pressedEnter={this.pressedEnter} show={this.state.show} active={this.state.active} sendPath={function(path) {
-            _this.setState({filePath: path});
-            UploadMethods.sendFilePath(path);
-          }}/>
+          <Upload changeActive={this.changeActive} show={this.state.show} active={this.state.active}>
+            {this.getMainContent(this.state.show)}
+          </Upload>
           <Modal.Footer>
             <ButtonToolbar>
               <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>
