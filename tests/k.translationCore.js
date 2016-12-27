@@ -3,10 +3,14 @@ const assert = chai.assert;
 const React = require('react');
 const {mount, shallow} = require('enzyme');
 
-const App = require('../src/js/pages/app');
+const App = require('../src/js/pages/root');
+
 const wrapper = shallow(App);
-var newWrapper;
-describe('<App />', function() {
+
+describe('<App />', function() {}, function() {
+  it('should render one <Application />', function() {
+    assert.equal(wrapper.find('Provider').length, 1);
+  });
   it('should render one <div />', function() {
     assert.equal(wrapper.find('div').length, 1);
   });
