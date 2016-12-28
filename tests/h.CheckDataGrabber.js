@@ -8,44 +8,45 @@ const path = require('path-extra');
 const api = window.ModuleApi;
 const fs = require(window.__base + 'node_modules/fs-extra');
 
+
 const PARENT = path.datadir('translationCore');
 const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages-compiled');
 const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
 const testCheckArray = [
     {
         "name": "ExampleChecker",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
     },
     {
         "name": "TPane",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TPane"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
     },
     {
         "name": "ExampleTool",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleTool"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
     },
     {
         "name": "CommentBox",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/CommentBox"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "CommentBox")
     }
 ];
 
 const testCheckArrayBadPath = [
     {
         "name": "ExampleChecker",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
     },
     {
         "name": "TPane",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/OBAMASBIRTHCERTIFICATE"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
     },
     {
         "name": "ExampleTool",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TRUMPSTAXREPORT"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
     },
     {
         "name": "CommentBox",
-        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/HILARYSEMAILARCHIVE"
+        "location": path.join(PACKAGE_SAVE_LOCATION , "HiliarysEmails")
     }
 ];
 
@@ -92,6 +93,7 @@ const testDataObjectBadPackageJSON = {
         "babel-preset-react": "^6.16.0"
     }
 };
+
 
 describe('CheckDataGrabber.saveModules', function () {
     it('should fetch the data given a valid check array', function (done) {
