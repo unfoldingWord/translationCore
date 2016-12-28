@@ -6,16 +6,6 @@ var pathex = require('path-extra');
 var PARENT = pathex.datadir('translationCore')
 var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
-//   calculateProgress(progressKey) {
-//     this.progressObject[progressKey.key] = progressKey.progress;
-//     var currentProgress = 0;
-//     for (var key in this.progressObject){
-//       currentProgress += this.progressObject[key];
-//     }
-//     var number = this.getNumberOfFetchDatas();
-//     currentProgress = currentProgress / number;
-//     this.progress = currentProgress;
-//   }
 const initialState = {
       };
 module.exports = function coreStore(state, action) {

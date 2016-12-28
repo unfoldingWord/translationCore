@@ -7,6 +7,4 @@ const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 const React = require('react');
 const Application = require("./app");
-module.exports = (<Provider store={store}>
-    <Application />
-</Provider>)
+module.exports = <Provider store={store}> <Application /> </Provider>

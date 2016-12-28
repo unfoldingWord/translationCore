@@ -12,8 +12,7 @@ initialState = {
 }
 module.exports = function projectModal(state = initialState, action) {
     switch (action.type) {
-        case consts.CREATE_PROJECT:
-            
+        case consts.CREATE_PROJECT:     
             const visible = action.createProjectModal ? true : false;
             return Object.assign({}, state, {createProjectModal: action.createProjectModal, showModal: visible});
             break;
