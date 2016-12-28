@@ -5,15 +5,15 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const Image = require('react-bootstrap/lib/Image.js');
+
 const style = require('./loginStyle');
-const Projects = require('./Projects.js');
+const Projects = require('../../../containers/Projects.js');
 
 class Profile extends React.Component {
   constructor(){
-    super()
+    super();
     this.state = {projectVisibility: false}
   }
-
   handleLogout(){
     CoreActions.updateOnlineStatus(false);
     CoreActions.updateProfileVisibility(false);
@@ -37,7 +37,7 @@ class Profile extends React.Component {
     let emailAccount = user.email;
     if (this.state.projectVisibility) {
       return(
-        <Projects back={this.hideProjects.bind(this)}/>
+        <Projects back={this.hideProjects.bind(this)} projects={this.state.projects}/>
       );
     } else {
       return(

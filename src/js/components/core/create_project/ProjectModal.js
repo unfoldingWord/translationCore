@@ -24,7 +24,8 @@ const ProjectModal = React.createClass({
       currentChecks: [],
       modalValue: "Languages",
       show: 'link',
-      active: '1'
+      active: '1',
+      usfmPath: 'No file selected'
     };
   },
 
@@ -80,6 +81,7 @@ const ProjectModal = React.createClass({
   },
 
  checkUSFM(location) {
+  this.setState({usfmPath: location});
   this.usfmSave = !(location == 'No file selected');
  },
 
@@ -128,12 +130,12 @@ const ProjectModal = React.createClass({
      case 'usfm':
        mainContent = (
          <div>
-           <ImportUsfm.component checkIfValid={this.checkUSFM}/>
+           <ImportUsfm.component open={ImportUsfm.open} filePath={this.state.usfmPath} checkIfValid={this.checkUSFM}/>
          </div>
        );
        break;
      case 'd43':
-     var ProjectViewer = require('../login/Projects.js');
+     var ProjectViewer = require('../../../containers/Projects.js');
        mainContent = (
          <div>
            <ProjectViewer />

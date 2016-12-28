@@ -135,46 +135,41 @@ function createTCProject(savePath, callback) {
   callback(parsedUSFM, saveLocation);
 }
 
-var ImportComponent = React.createClass({
-  getInitialState: function () {
-    this.props.checkIfValid('No file selected');
-    return {
-      direction: "ltr",
-      filePath: 'No file selected'
-    };
-  },
+class ImportComponent extends React.Component {
+  constructor() {
+    super();
+    this.direction = 'ltr';
+  }
 
-  showDialog: function () {
+  componentDidMount() {
+    this.props.checkIfValid('No file selected');
+  }
+
+  showDialog() {
     var options = {
       filters: [
         { name: 'USFM', extensions: ['usfm', 'sfm', 'txt'] }
       ]
     };
     var _this = this;
-    var direction = this.state.direction;
+    var direction = this.direction;
     if (direction && !this.open) {
       this.open = true;
       dialog.showOpenDialog(options, function (savePath) {
         if (savePath) {
           _this.props.checkIfValid(savePath[0]);
-          _this.setState({
-            filePath: savePath[0]
-          });
           _this.open = false;
-          openUSFMProject(savePath[0], direction, undefined);
+          _this.props.open(savePath[0], direction, undefined);
         } else {
           _this.open = false;
         }
       });
     } else {
-      _this.setState({
-        filePath: 'No file selected'
-      });
-      _this.props.checkIfValid(this.state.filePath);
+      this.props.checkIfValid('No file selected');
     }
-  },
+  }
 
-  handleTextChange: function (key, e) {
+  handleTextChange(key, e) {
     if (key == "rtl") {
       e.target.parentNode.children[0].className = "btn btn-sm btn-default";
       e.target.parentNode.children[1].className = "btn btn-sm btn-active";
@@ -182,31 +177,28 @@ var ImportComponent = React.createClass({
       e.target.parentNode.children[0].className = "btn btn-sm btn-active";
       e.target.parentNode.children[1].className = "btn btn-sm btn-default";
     }
-    this.setState({
-      direction: key
-    });
-  },
+    this.direction = key
+  }
 
-  render: function () {
+  render() {
     return (
       <div>
-        {this.props.isWelcome ? <div> </div> : <br />}
+        <br />
         Select Text Direction:
         <FormGroup>
           <ButtonGroup style={{ paddingBottom: 10, paddingTop: 10 }}>
             <Button bsSize={'small'} eventKey={"ltr"} onClick={this.handleTextChange.bind(this, "ltr")}>Left To Right</Button>
             <Button bsSize={'small'} eventKey={"rtl"} onClick={this.handleTextChange.bind(this, "rtl")}>Right To Left</Button>
           </ButtonGroup>
-          {this.props.isWelcome ? <div> </div> : <br />}
-          <Button bsSize={'small'} onClick={this.showDialog}>Choose USFM File</Button>
-          <span style={{ color: '#333' }}> &nbsp; {this.state.filePath}</span>
+          <br />
+          <Button bsSize={'small'} onClick={this.showDialog.bind(this)}>Choose USFM File</Button>
+          <span style={{ color: '#333' }}> &nbsp; {this.props.filePath}</span>
         </FormGroup>
-        {this.props.isWelcome ? <div> </div> : <br />}
         <br />
       </div>
     );
   }
-});
+}
 exports.component = ImportComponent;
 exports.open = openUSFMProject;
 exports.saveParamsInAPI = saveParamsInAPI;

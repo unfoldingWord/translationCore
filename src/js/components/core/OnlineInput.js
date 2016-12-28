@@ -8,24 +8,21 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 
-var _this;
-
 class OnlineInput extends React.Component {
   constructor() {
     super();
-    _this = this;
-    _this.searchValue = "";
+    this.searchValue = "";
   }
   handleChange(e) {
-    _this.searchValue = e.target.value
-    _this.props.getLink(e.target.value);
+    this.searchValue = e.target.value
+    this.props.getLink(e.target.value);
   }
 
   submitViaEnter(e) {
-    _this.props.getLink(_this.searchValue);
+    this.props.getLink(this.searchValue);
     var EnterKey = 13;
     if (e.keyCode === EnterKey) {
-      _this.props.submit();
+      this.props.submit();
     } else {
       return;
     }
@@ -42,8 +39,8 @@ class OnlineInput extends React.Component {
         <FormGroup controlId="onlineInput" style={main}>
           <FormControl type="text"
           placeholder="Enter URL"
-          onChange={_this.handleChange}
-          onKeyDown={_this.submitViaEnter} />
+          onChange={this.handleChange.bind(this)}
+          onKeyDown={this.submitViaEnter.bind(this)} />
           <FormControl.Feedback />
         </FormGroup>
     );

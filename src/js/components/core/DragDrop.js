@@ -32,12 +32,9 @@ const style = {
   }
 };
 
-var _this;
-
 class DragDrop extends React.Component{
   constructor() {
     super();
-    _this = this;
   }
 
   componentWillMount() {
@@ -51,15 +48,16 @@ class DragDrop extends React.Component{
   onDrop(files) {
     if (files !== undefined) {
       // FileImport(files[0].path);
-      _this.props.sendFilePath(files[0].path);
+      this.props.sendFilePath(files[0].path);
     }
   }
 
   onClick() {
-    if (!_this.opened) {
-      _this.opened = true;
+    if (!this.opened) {
+      this.opened = true;
+      var _this = this;
       dialog.showOpenDialog({
-        properties: _this.props.properties
+        properties: this.props.properties
       }, function(filename) {
         if (filename !== undefined) {
           _this.props.sendFilePath(filename[0]);
@@ -71,8 +69,8 @@ class DragDrop extends React.Component{
 
   render() {
     return (
-    <div onClick = {this.onClick} >
-        <Dropzone onDrop = {this.onDrop}
+    <div onClick = {this.onClick.bind(this)} >
+        <Dropzone onDrop = {this.onDrop.bind(this)}
         disableClick={true} multiple={false} style={this.mainStyle}
         activeStyle={style.dropzone.active}>
             <div style={this.props.styles}>
