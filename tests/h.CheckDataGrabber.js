@@ -14,38 +14,38 @@ const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
 const testCheckArray = [
     {
         "name": "ExampleChecker",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
     },
     {
         "name": "TPane",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TPane"
     },
     {
         "name": "ExampleTool",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleTool"
     },
     {
         "name": "CommentBox",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "CommentBox")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/CommentBox"
     }
 ];
 
 const testCheckArrayBadPath = [
     {
         "name": "ExampleChecker",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleChecker")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/ExampleChecker"
     },
     {
         "name": "TPane",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "TPane")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/OBAMASBIRTHCERTIFICATE"
     },
     {
         "name": "ExampleTool",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "ExampleTool")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/TRUMPSTAXREPORT"
     },
     {
         "name": "CommentBox",
-        "location": path.join(PACKAGE_SAVE_LOCATION , "HiliarysEmails")
+        "location": "/Users/jay/Library/Application Support/translationCore/packages-compiled/HILARYSEMAILARCHIVE"
     }
 ];
 
@@ -103,6 +103,16 @@ describe('CheckDataGrabber.saveModules', function () {
     });
 });
 
+describe('CheckDataGrabber.saveModules', function () {
+    it('should fail on a null parameter', function (done) {
+        CheckDataGrabber.saveModules(null, function (err, checksThatNeedToBeFetched) {
+            assert.isNotNull(err);
+            assert.isNull(checksThatNeedToBeFetched);
+            done();
+        });
+    });
+});
+
 describe('CheckDataGrabber.fetchModules', function () {
     it('should fail on a bad path of a checking tool sub modules', function (done) {
         CheckDataGrabber.fetchModules(testCheckArrayBadPath, function (err, success) {
@@ -124,6 +134,10 @@ describe('CheckDataGrabber.fetchModules', function () {
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
         CheckDataGrabber.loadModuleAndDependencies(testTool, (err, success) => {
+            console.log(err)
+            console.log(success)
+            console.log(api.getDataFromCommon('params'))
+            console.log(api.modules['ExampleChecker'])
             assert.isNull(err);
             assert.isTrue(success);
             assert.isObject(api.getDataFromCommon('params'));
@@ -136,6 +150,7 @@ describe('CheckDataGrabber.loadModuleAndDependencies', function () {
 
 describe('CheckDataGrabber.createCheckArray', function () {
     it('should not create a check array from a bad data object', function (done) {
+        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObjectBadPackageJSON, testTool, (err, checkArray) => {
             assert.isNotNull(err);
             assert.isNull(checkArray);
@@ -143,10 +158,11 @@ describe('CheckDataGrabber.createCheckArray', function () {
         });
     });
     it('should create a check array from a sample data object', function (done) {
+        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObject, testTool, (err, checkArray) => {
             assert.isNull(err);
             assert.isArray(checkArray);
-            assert.deepEqual(checkArray, testCheckArray);
+            expect(checkArray).to.deep.equal(testCheckArray);
             done();
         });
     });

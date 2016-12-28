@@ -78,7 +78,7 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName, callback) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
