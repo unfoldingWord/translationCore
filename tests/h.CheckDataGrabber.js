@@ -8,7 +8,6 @@ const path = require('path-extra');
 const api = window.ModuleApi;
 const fs = require(window.__base + 'node_modules/fs-extra');
 
-
 const PARENT = path.datadir('translationCore');
 const PACKAGE_SAVE_LOCATION = path.join(PARENT, 'packages-compiled');
 const testTool = path.join(PACKAGE_SAVE_LOCATION, 'ExampleChecker');
@@ -94,22 +93,11 @@ const testDataObjectBadPackageJSON = {
     }
 };
 
-
 describe('CheckDataGrabber.saveModules', function () {
     it('should fetch the data given a valid check array', function (done) {
         CheckDataGrabber.saveModules(testCheckArray, function (err, checksThatNeedToBeFetched) {
             assert.isNull(err);
             assert.isArray(checksThatNeedToBeFetched);
-            done();
-        });
-    });
-});
-
-describe('CheckDataGrabber.saveModules', function () {
-    it('should fail on a null parameter', function (done) {
-        CheckDataGrabber.saveModules(null, function (err, checksThatNeedToBeFetched) {
-            assert.isNotNull(err);
-            assert.isNull(checksThatNeedToBeFetched);
             done();
         });
     });
@@ -148,7 +136,6 @@ describe('CheckDataGrabber.loadModuleAndDependencies', function () {
 
 describe('CheckDataGrabber.createCheckArray', function () {
     it('should not create a check array from a bad data object', function (done) {
-        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObjectBadPackageJSON, testTool, (err, checkArray) => {
             assert.isNotNull(err);
             assert.isNull(checkArray);
@@ -156,11 +143,10 @@ describe('CheckDataGrabber.createCheckArray', function () {
         });
     });
     it('should create a check array from a sample data object', function (done) {
-        this.timeout(500000);
         CheckDataGrabber.createCheckArray(testDataObject, testTool, (err, checkArray) => {
             assert.isNull(err);
             assert.isArray(checkArray);
-            expect(checkArray).to.deep.equal(testCheckArray);
+            assert.deepEqual(checkArray, testCheckArray);
             done();
         });
     });
