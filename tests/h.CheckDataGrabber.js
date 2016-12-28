@@ -136,10 +136,6 @@ describe('CheckDataGrabber.fetchModules', function () {
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
         CheckDataGrabber.loadModuleAndDependencies(testTool, (err, success) => {
-            console.log(err)
-            console.log(success)
-            console.log(api.getDataFromCommon('params'))
-            console.log(api.modules['ExampleChecker'])
             assert.isNull(err);
             assert.isTrue(success);
             assert.isObject(api.getDataFromCommon('params'));
