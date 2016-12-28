@@ -39,8 +39,8 @@ var CheckDataGrabber = {
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
         } else {
-          this.dataLoadError(error);
-          callback(error, false);
+          this.dataLoadError(err);
+          callback(err, false);
         }
       });
     }
