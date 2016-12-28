@@ -6,6 +6,8 @@
 const api = window.ModuleApi;
 const React = api.React;
 const ReactBootstrap = api.ReactBootstrap;
+const SideBarButton = require("./SideBarButton");
+
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
 const Style = require("./Style");
@@ -32,13 +34,12 @@ class PackageManagerView extends React.Component{
 
   componentWillMount(){
     api.registerEventListener('PackManagerVisibility', this.handlePackManagerVisibility);
-    api.registerEventListener('cardDisplayStatus', this.handleDisplayStatus);
   }
 
   componentWillUnmount() {
     api.removeEventListener('PackManagerVisibility', this.handlePackManagerVisibility);
-    api.removeEventListener('cardDisplayStatus', this.handleDisplayStatus);
   }
+
 
   componentDidMount() {
     var _this = this;
@@ -56,11 +57,28 @@ class PackageManagerView extends React.Component{
   }
 
   handleDisplayStatus(displayStatusState){
-    this.setState(displayStatusState);
+    this.setState({displayStatus: displayStatusState});
   }
 
   hidePackManager(){
     this.setState({visiblePackManager: false});
+  }
+
+  updateHover(key, value) {
+    let tempObj = {};
+    tempObj[key] = value;
+    this.setState(tempObj);
+  }
+
+  cardStates(key, value) {
+    let tempObj = {};
+    if (!tempObj[key]) {
+      tempObj[key] = {};
+    }
+    for (var i in value) {
+      tempObj[key][i] = value[i];
+    }
+    this.setState(tempObj);
   }
 
   render(){
@@ -79,7 +97,8 @@ class PackageManagerView extends React.Component{
             if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
               cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.versions || [currentPackage.latestVersion]} numOfDownloads={""}
               description={currentPackage.description || "No description found."}
-              iconPathName={currentPackage.icon}
+              iconPathName={currentPackage.icon} PackageManager={PackageManager}
+              manageState={this.cardStates.bind(this, i)} states={this.state[i]}
               buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
             }
           }
@@ -98,8 +117,10 @@ class PackageManagerView extends React.Component{
               var manifest = {};
             }
             if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]] && data[installed[i]].main === 'true') {
-              cards.push(<PackageCard key={i} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
+              cards.push(<PackageCard key={currentPackage} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
               description={manifest.description || "No description found."}
+              PackageManager={PackageManager}
+              manageState={this.cardStates.bind(this, i)} states={this.state[currentPackage]}
               iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
               buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
             }
@@ -128,6 +149,8 @@ class PackageManagerView extends React.Component{
           if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
             cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
             description={manifest.description || "No description found."}
+            PackageManager={PackageManager}
+            manageState={this.cardStates.bind(this, installed[i])} states={this.state[installed[i]]}
             iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
             buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
             }
@@ -137,7 +160,18 @@ class PackageManagerView extends React.Component{
       }
       return(
         <div style={Style.layout}>
-          <PackManagerSideBar hidePackManager={this.hidePackManager.bind(this)}/>
+          <PackManagerSideBar style={Style} hidePackManager={this.hidePackManager.bind(this)}>
+            <SideBarButton value={" Packages"} title={"Access your Packages"}
+                            imageName={"images/greyPackage.svg"} hoverImage={"images/Package.svg"}
+                            updateHover={this.updateHover.bind(this, 'installedHover')} hover={this.state.installedHover}
+                            handleButtonClick={this.handleDisplayStatus.bind(this, 'installedPack')}  />
+            <SideBarButton glyphicon={"plus"} value={" Install"} title={"Install/Download New Packages"}
+                          updateHover={this.updateHover.bind(this, 'installHover')} hover={this.state.installHover}
+                          handleButtonClick={this.handleDisplayStatus.bind(this, 'downloadPack')} />
+            <SideBarButton glyphicon={"cloud-download"} value={" Updates"} title={"Update your Packages"}
+                          updateHover={this.updateHover.bind(this, 'updatesHover')} hover={this.state.updatesHover}
+                          handleButtonClick={this.handleDisplayStatus.bind(this, 'updatePack')} />
+          </PackManagerSideBar>
           <div style={Style.header}>
             <FormControl
                 type="text"
