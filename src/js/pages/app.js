@@ -31,7 +31,6 @@ const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-const CoreActions = require('../actions/CoreActions.js');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
