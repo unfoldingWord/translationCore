@@ -5,44 +5,38 @@ const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const api = window.ModuleApi;
-const booksOfBible = require('../BooksOfBible');
 const loadOnline = require('../LoadOnline');
 const Upload = require('../Upload.js');
 const UploadMethods = require('../UploadMethods.js');
-
 const OnlineInput = require('../OnlineInput');
 const DragDrop = require('../DragDrop');
 const ImportUsfm = require('../Usfm/ImportUSFM');
 
-const ProjectModal = React.createClass({
-
-  getInitialState: function () {
-    return {
+class ProjectModal extends React.Component {
+  constructor() {
+    super();
+    this.state = {
       showModal: false,
-      modalTitle: "Create Project",
-      loadedChecks: [],
-      currentChecks: [],
-      modalValue: "Languages",
       show: 'link',
       active: '1',
       usfmPath: 'No file selected'
-    };
-  },
+    }
+  }
 
-  componentWillMount: function () {
-    CoreStore.addChangeListener(this.showCreateProject);      // action to show create project modal
-  },
+  componentWillMount() {
+    CoreStore.addChangeListener(this.showCreateProject.bind(this));      // action to show create project modal
+  }
 
-  componentWillUnmount: function () {
-    CoreStore.removeChangeListener(this.showCreateProject);
-  },
+  componentWillUnmount() {
+    CoreStore.removeChangeListener(this.showCreateProject.bind(this));
+  }
 
   /**
  * @description - This is called to change the status of the project modal
  * @param {string} input - string to set modal state, this string is specific
  * to the form to be display
  */
-  showCreateProject: function (input) {
+  showCreateProject(input) {
     var modal = CoreStore.getShowProjectModal();
     if (input) {
       modal = input;
@@ -51,19 +45,16 @@ const ProjectModal = React.createClass({
     if (modal === 'Languages') {
       this.setState({
         showModal: true,
-        modalValue: modal,
-        modalTitle: '',
       });
     } else if (modal === "") {
       this.setState({
         showModal: false
       });
     }
-  },
+  }
 
-  submitLink: function () {
+  submitLink() {
     var link = this.link;
-    var _this = this;
     loadOnline(link, function(err, savePath, url) {
       if (!err) {
         Upload.Methods.sendFilePath(savePath, url);
@@ -71,24 +62,24 @@ const ProjectModal = React.createClass({
         console.error(err);
       }
     });
-  },
+  }
 
-  close: function () {
+  close() {
     CoreStore.projectModalVisibility = "";
     this.setState({
       showModal: false,
     });
-  },
+  }
 
  checkUSFM(location) {
   this.setState({usfmPath: location});
   this.usfmSave = !(location == 'No file selected');
- },
+ }
 
  sendPath(path, link, callback) {
    this.setState({filePath: path});
    UploadMethods.sendFilePath(path, link, callback);
- },
+ }
 
  changeActive(key) {
    this.setState({ active: key });
@@ -108,14 +99,19 @@ const ProjectModal = React.createClass({
      default:
        break;
    }
- },
+ }
+
+ handleOnlineChange(e) {
+   this.link = e.target.value;
+ }
 
  getMainContent(key) {
+   var mainContent;
    switch (key) {
      case 'file':
        mainContent = <DragDrop
          filePath={this.state.filePath}
-         sendFilePath={this.sendPath}
+         sendFilePath={this.sendPath.bind(this)}
          properties={['openDirectory']}
          />;
        break;
@@ -123,14 +119,14 @@ const ProjectModal = React.createClass({
        mainContent = (
          <div>
            <br />
-           <OnlineInput getLink={this.getLink} submit={this.submitLink}/>
+           <OnlineInput onChange={this.handleOnlineChange.bind(this)}/>
          </div>
        );
        break;
      case 'usfm':
        mainContent = (
          <div>
-           <ImportUsfm.component open={ImportUsfm.open} filePath={this.state.usfmPath} checkIfValid={this.checkUSFM}/>
+           <ImportUsfm.component open={ImportUsfm.open} filePath={this.state.usfmPath} checkIfValid={this.checkUSFM.bind(this)}/>
          </div>
        );
        break;
@@ -147,13 +143,9 @@ const ProjectModal = React.createClass({
        break;
    }
    return mainContent;
- },
+ }
 
- getLink(link) {
-   this.link = link
- },
-
-  onClick: function (e) {
+  onClick(e) {
     if (this.state.active == 1) {
       this.submitLink();
     }
@@ -172,31 +164,30 @@ const ProjectModal = React.createClass({
         CoreActions.updateCheckModal(true);
       }
     }
-  },
+  }
 
-  _handleKeyPress: function(e) {
+  _handleKeyPress(e) {
     if (e.key === 'Enter') {
       this.onClick(e);
     }
-  },
+  }
 
-  render: function () {
-    var _this = this;
+  render() {
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.close} onKeyPress={this._handleKeyPress}>
-          <Upload changeActive={this.changeActive} show={this.state.show} active={this.state.active}>
+        <Modal show={this.state.showModal} onHide={this.close.bind(this)} onKeyPress={this._handleKeyPress.bind(this)}>
+          <Upload changeActive={this.changeActive.bind(this)} show={this.state.show} active={this.state.active}>
             {this.getMainContent(this.state.show)}
           </Upload>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>
+              <Button type="button" onClick={this.onClick.bind(this)} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
       </div>
     )
   }
-});
+}
 
 module.exports = ProjectModal;
