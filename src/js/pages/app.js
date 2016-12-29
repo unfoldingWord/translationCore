@@ -6,6 +6,9 @@ const { connect  } = require('react-redux');
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
+const remote = require('electron').remote;
+const {dialog} = remote;
+var merge = require('lodash.merge');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
@@ -28,7 +31,8 @@ const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-
+const CoreActions = require('../actions/CoreActions.js');
+const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
 
@@ -36,13 +40,123 @@ const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 
 var Main = React.createClass({
   getInitialState() {
+    const user = CoreStore.getLoggedInUser();
+    this.state =
+      Object.assign({}, this.state, {
+        loginProps: {
+          userdata: {
+            username: "",
+            password: ""
+          },
+          register: false,
+          handleSubmit: (userDataSumbit) => {
+            var Token = api.getAuthToken('gogs');
+            var newuser = gogs(Token).login(userDataSumbit).then(function (userdata) {
+              CoreActions.login(userdata);
+              CoreActions.updateLoginModal(false);
+              CoreActions.updateOnlineStatus(true);
+              CoreActions.updateProfileVisibility(true);
+            }).catch(function (reason) {
+              console.log(reason);
+              if (reason.status === 401) {
+                dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
+              } else if (reason.message) {
+                dialog.showErrorBox('Login Failed', reason.message);
+              } else if (reason.data) {
+                dialog.showErrorBox('Login Failed', reason.data);
+              } else {
+                dialog.showErrorBox('Login Failed', 'Unknown Error');
+              }
+            });
+          },
+          handleUserName: (e) => {
+            this.setState(merge({}, this.state, {
+              loginProps: {
+                userdata: {
+                  username: e.target.value
+                }
+              }
+            }))
+          },
+          handlePassword: (e) => {
+            this.setState(merge({}, this.state, {
+              loginProps: {
+                userdata: {
+                  password: e.target.value
+                }
+              }
+            }))
+          },
+          showRegistration: () => {
+            this.setState(merge({}, this.state, {
+              loginProps: {
+                register: true
+              }
+            }))
+          },
+        },
+        profileProps: {
+          projectVisibility: false,
+          handleLogout: () => {
+            CoreActions.updateOnlineStatus(false);
+            CoreActions.updateProfileVisibility(false);
+            CoreActions.login(null);
+            localStorage.removeItem('user');
+          },
+          showProjects: () => {
+            this.setState(merge({}, this.state, {
+              profileProps: {
+                projectVisibility: true
+              }
+            }));
+          },
+          hideProjects: () => {
+            this.setState(merge({}, this.state, {
+              profileProps: {
+                projectVisibility: false
+              }
+            }));
+          },
+          fullName: user ? user.full_name : null,
+          userName: user ? user.username : null,
+          profilePicture: user ? user.avatar_url : null,
+          emailAccount: user ? user.email : null,
+        },
+        loginModalProps: {
+          visibleLoginModal: false,
+          profile: false,
+          updateLoginModal: () => {
+            const loginVisible = CoreStore.getLoginModal() || false;
+            const profileVisible = CoreStore.getProfileVisibility() || false;
+            this.setState(merge({}, this.state, {
+              loginModalProps: {
+                visibleLoginModal: loginVisible,
+                profile:profileVisible
+              }
+            }))
+          },
+          updateProfileVisibility: () => {
+            const profileVisible = CoreStore.getProfileVisibility() || false;
+            const loginVisible = CoreStore.getLoginModal() || false;
+            this.setState(merge({}, this.state, {
+              loginModalProps: {
+                profile: profileVisible,
+                visibleLoginModal: loginVisible
+              }
+            }))
+          },
+          close: () => {
+            CoreActions.updateLoginModal(false);
+          }
+        }
+      })
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState === true || tutorialState === null) {
-      return ({
+      return merge({}, this.state, {
         firstTime: true
       })
     } else {
-      return ({
+      return merge({}, this.state, {
         firstTime: false
       })
     }
@@ -116,27 +230,27 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-            <SettingsModal />
-            <LoginModal />
-            <ProjectModal {...this.props.loginModalReducer}/>
-            <SideBarContainer {...this.props}/>
-            <StatusBar />
-            <SwitchCheckModal.Modal />
-            <Popover />
-            <Toast />
-            <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
-              <Row className='fill-height main-view'>
-                <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                  <NavMenu />
-                </Col>
-                <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                  <Loader />
-                  <AlertModal />
-                  <ModuleWrapper />
-                  <ModuleProgress />
-                </Col>
-              </Row>
-            </Grid>
+          <SettingsModal />
+          <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} {...this.state.loginModalProps} />
+          <ProjectModal {...this.props.loginModalReducer}/>
+          <SideBarContainer {...this.props}/>
+          <StatusBar />
+          <SwitchCheckModal.Modal />
+          <Popover />
+          <Toast />
+          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
+            <Row className='fill-height main-view'>
+              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
+                <NavMenu />
+              </Col>
+              <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
+                <Loader />
+                <AlertModal />
+                <ModuleWrapper />
+                <ModuleProgress />
+              </Col>
+            </Row>
+          </Grid>
         </div>
       )
     }
