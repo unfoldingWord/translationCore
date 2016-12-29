@@ -11,49 +11,28 @@ const Projects = require('./Projects.js');
 class Profile extends React.Component {
   constructor(){
     super()
-    this.state = {projectVisibility: false}
-  }
-
-  handleLogout(){
-    CoreActions.updateOnlineStatus(false);
-    CoreActions.updateProfileVisibility(false);
-    CoreActions.login(null);
-    localStorage.removeItem('user');
-  }
-
-  showProjects(){
-    this.setState({projectVisibility: true});
-  }
-
-  hideProjects(){
-    this.setState({projectVisibility: false});
   }
 
   render(){
-    let user = CoreStore.getLoggedInUser();
-    let fullName = user.full_name;
-    let userName = user.username;
-    let profilePicture = user.avatar_url;
-    let emailAccount = user.email;
-    if (this.state.projectVisibility) {
+    if (this.props.projectVisibility) {
       return(
-        <Projects back={this.hideProjects.bind(this)}/>
+        <Projects back={this.props.hideProjects}/>
       );
     } else {
       return(
         <div>
         <center>
         <Image style={{height: '100px', width:'100px', marginTop:"50px"}}
-        src={profilePicture} circle />
-        <span><h3>{fullName}</h3></span>
+        src={this.props.profilePicture} circle />
+        <span><h3>{this.props.fullName}</h3></span>
         <span><strong>User Name: </strong></span>
-        <span className="label label-success">{userName}</span>
-        <span><p>{emailAccount}</p></span>
-        <Button bsStyle="primary" style={{width: "100%",marginTop:"50px"}} onClick={this.showProjects.bind(this)}>
+        <span className="label label-success">{this.props.userName}</span>
+        <span><p>{this.props.emailAccount}</p></span>
+        <Button bsStyle="primary" style={{width: "100%",marginTop:"50px"}} onClick={this.props.showProjects}>
         Your Door43 Projects
         </Button>
         <Button bsStyle="primary" style={{marginBottom:"50px", width: '100%', marginTop: '15px'}}
-        onClick={this.handleLogout.bind(this)}>Logout</Button>
+        onClick={this.props.handleLogout}>Logout</Button>
         </center>
         </div>
       );
