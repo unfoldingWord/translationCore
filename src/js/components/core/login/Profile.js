@@ -7,7 +7,7 @@ const Col = require('react-bootstrap/lib/Col.js');
 const Image = require('react-bootstrap/lib/Image.js');
 
 const style = require('./loginStyle');
-const Projects = require('../../../containers/Projects.js');
+const Projects = require('./Projects.js');
 
 class Profile extends React.Component {
   constructor(){
@@ -17,7 +17,7 @@ class Profile extends React.Component {
   render(){
     if (this.props.projectVisibility) {
       return(
-        <Projects back={this.props.hideProjects}/>
+        <Projects back={this.props.hideProjects} {...this.props.profileProjectsProps}/>
       );
     } else {
       return(

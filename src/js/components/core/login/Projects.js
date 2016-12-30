@@ -11,6 +11,10 @@ class Projects extends React.Component {
     super();
   }
 
+  componentWillMount() {
+    this.props.updateRepos();
+  }
+
   render() {
     return (
       <div style={{height: '419px', overflowY: 'auto'}}>
@@ -18,7 +22,7 @@ class Projects extends React.Component {
           <span style={{fontSize: '20px'}}>Your Door43 Projects</span>
           <Button bsStyle='primary' style={{display: this.props.showBack}} onClick={this.props.back} className={'pull-right'} bsSize='sm'>Back to profile</Button>
         </div>
-        {this.props.children}
+        {this.props.makeList(this.props.repos)}
       </div>
     );
   }

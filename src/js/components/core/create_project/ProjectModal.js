@@ -2,11 +2,12 @@ const React = require('react');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
-const loadOnline = require('../LoadOnline');
 const Upload = require('../Upload.js');
 const UploadMethods = require('../UploadMethods.js');
 const OnlineInput = require('../OnlineInput');
+const CoreStore = require('../../../stores/CoreStore.js');
 const DragDrop = require('../DragDrop');
+const ProjectViewer = require('../login/Projects.js');
 const ImportUsfm = require('../Usfm/ImportUSFM');
 
 class ProjectModal extends React.Component {
@@ -14,12 +15,51 @@ class ProjectModal extends React.Component {
     super();
   }
 
+  componentWillMount() {
+    CoreStore.addChangeListener(this.props.showCreateProject);      // action to show create project modal
+  }
+
+  componentWillUnmount() {
+    CoreStore.removeChangeListener(this.props.showCreateProject);
+  }
+
   render() {
+    var mainContent;
+    switch (this.props.show) {
+      case 'file':
+        mainContent = <DragDrop {...this.props.dragDropProps}/>;
+        break;
+      case 'link':
+        mainContent = (
+          <div>
+            <br />
+            <OnlineInput onChange={this.props.handleOnlineChange}/>
+          </div>
+        );
+        break;
+      case 'usfm':
+        mainContent = (
+          <div>
+            <ImportUsfm.component {...this.props.importUsfmProps}/>
+          </div>
+        );
+        break;
+      case 'd43':
+        mainContent = (
+          <div>
+            <ProjectViewer {...this.props.profileProjectsProps} />
+          </div>
+        )
+        break;
+      default:
+        mainContent = (<div> </div>)
+        break;
+    }
     return (
       <div>
         <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={this.props._handleKeyPress}>
-          <Upload changeActive={this.props.changeActive} show={this.props.show} active={this.props.active}>
-            {this.props.getMainContent.bind(this.props.show)}
+          <Upload {...this.props.uploadProps}>
+            {mainContent}
           </Upload>
           <Modal.Footer>
             <ButtonToolbar>

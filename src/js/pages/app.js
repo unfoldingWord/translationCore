@@ -10,17 +10,21 @@ const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js'
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
+const Gogs = require('../components/core/login/GogsApi')();
+const ImportUsfm = require('../components/core/usfm/ImportUsfm.js');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
+const Button = require('react-bootstrap/lib/Button.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar')
 const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
+const loadOnline = require('../components/core/LoadOnline');
 
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
@@ -144,27 +148,45 @@ var Main = React.createClass({
             CoreActions.updateLoginModal(false);
           }
         },
+        importUsfmProps: {
+          openUSFM: ImportUsfm.open,
+          filePath: 'No file selected',
+          checkIfValid: (location) => {
+            this.setState(merge({}, this.state, {
+              importUsfmProps: {
+                filePath: location,
+                usfmSave: !(location == 'No file selected')
+              }
+            }));
+          },
+        },
+        dragDropProps: {
+          filePath: '',
+          properties: ['openDirectory'],
+          sendFilePath: (path, link, callback) => {
+            this.setState(merge({}, this.state, {
+              dragDropProps: {
+                filePath: path,
+              }
+            }));
+            Upload.sendFilePath(path, link, callback);
+          },
+        },
         projectModalProps: {
-          showCreateProject(input) {
+          showModal: false,
+          show: 'link',
+          showCreateProject: (input) => {
             var modal = CoreStore.getShowProjectModal();
-            console.log(modal);
             if (input) {
               modal = input;
               CoreStore.projectModalVisibility = input;
             }
             if (modal === 'Languages') {
-              console.log('calling');
-              console.log(merge({}, this.state, {
-                projectModalProps: {
-                  showModal: true,
-                }
-              }));
               this.setState(merge({}, this.state, {
                 projectModalProps: {
                   showModal: true,
                 }
               }));
-              console.log(this.state.projectModalProps);
             } else if (modal === "") {
               this.setState(merge({}, this.state, {
                 projectModalProps: {
@@ -174,7 +196,7 @@ var Main = React.createClass({
             }
           },
 
-          submitLink() {
+          submitLink: () => {
             var link = this.state.projectModalProps.link;
             loadOnline(link, function(err, savePath, url) {
               if (!err) {
@@ -185,7 +207,7 @@ var Main = React.createClass({
             });
           },
 
-          close() {
+          close: () => {
             CoreStore.projectModalVisibility = "";
             this.setState(merge({}, this.state, {
               projectModalProps: {
@@ -194,65 +216,7 @@ var Main = React.createClass({
             }));
           },
 
-         checkUSFM(location) {
-           this.setState(merge({}, this.state, {
-             projectModalProps: {
-               usfmPath: location,
-               usfmSave: !(location == 'No file selected')
-             }
-           }));
-         },
-
-         sendPath(path, link, callback) {
-           this.setState(merge({}, this.state, {
-             projectModalProps: {
-               filePath: path,
-             }
-           }));
-           this.setState({filePath: path});
-           UploadMethods.sendFilePath(path, link, callback);
-         },
-
-         changeActive(key) {
-           this.setState(merge({}, this.state, {
-             projectModalProps: {
-               active: key
-             }
-           }));
-           switch (key) {
-             case 1:
-               this.setState(merge({}, this.state, {
-                 projectModalProps: {
-                   show: 'link',
-                 }
-               }));
-               break;
-             case 2:
-               this.setState(merge({}, this.state, {
-                 projectModalProps: {
-                   show: 'file',
-                 }
-               }));
-               break;
-             case 3:
-               this.setState(merge({}, this.state, {
-                 projectModalProps: {
-                   show: 'usfm',
-                 }
-               }));
-             case 4:
-               this.setState(merge({}, this.state, {
-                 projectModalProps: {
-                   show: 'd43',
-                 }
-               }));
-               break;
-             default:
-               break;
-           }
-         },
-
-         handleOnlineChange(e) {
+         handleOnlineChange: (e) => {
            this.setState(merge({}, this.state, {
              projectModalProps: {
                link: e.target.value,
@@ -260,52 +224,12 @@ var Main = React.createClass({
            }));
          },
 
-         getMainContent(key) {
-           var mainContent;
-           switch (key) {
-             case 'file':
-               mainContent = <DragDrop
-                 filePath={this.state.filePath}
-                 sendFilePath={this.sendPath.bind(this)}
-                 properties={['openDirectory']}
-                 />;
-               break;
-             case 'link':
-               mainContent = (
-                 <div>
-                   <br />
-                   <OnlineInput onChange={this.handleOnlineChange.bind(this)}/>
-                 </div>
-               );
-               break;
-             case 'usfm':
-               mainContent = (
-                 <div>
-                   <ImportUsfm.component open={ImportUsfm.open} filePath={this.state.usfmPath} checkIfValid={this.checkUSFM.bind(this)}/>
-                 </div>
-               );
-               break;
-             case 'd43':
-             var ProjectViewer = require('../../../containers/Projects.js');
-               mainContent = (
-                 <div>
-                   <ProjectViewer />
-                 </div>
-               )
-               break;
-             default:
-               mainContent = (<div> </div>)
-               break;
-           }
-           return mainContent;
-         },
-
-          onClick(e) {
-            if (this.state.projectModalProps.active == 1) {
+          onClick: (e) => {
+            if (this.state.uploadProps.active == 1) {
               this.state.projectModalProps.submitLink();
             }
-            if (this.state.projectModalProps.active == 3) {
-              if (!this.state.projectModalProps.usfmSave) {
+            if (this.state.uploadProps.active == 3) {
+              if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
             }
@@ -313,7 +237,7 @@ var Main = React.createClass({
             api.emitEvent('newToolSelected', {'newToolSelected': true});
             this.state.projectModalProps.close();
             api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-            if (this.state.projectModalProps.active == 1){
+            if (this.state.uploadProps.active == 1){
               let loadedLink = this.link;
               if(loadedLink != ""){
                 CoreActions.updateCheckModal(true);
@@ -321,10 +245,121 @@ var Main = React.createClass({
             }
           },
 
-          _handleKeyPress(e) {
+          _handleKeyPress: (e) => {
             if (e.key === 'Enter') {
               this.state.projectModalProps.onClick(e);
             }
+          }
+        },
+        uploadProps: {
+           active: 1,
+           changeActive: (key) => {
+             switch (key) {
+               case 1:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'link',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 2:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'file',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 3:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'usfm',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 4:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'd43',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               default:
+                 break;
+             }
+           }
+        },
+        profileProjectsProps: {
+          repos: [],
+          updateRepos: () => {
+            var user = api.getLoggedInUser();
+            if (user) {
+              var _this = this;
+              return Gogs.retrieveRepos(user.userName).then((repos) => {
+                this.setState(merge({}, this.state, {
+                  profileProjectsProps: {
+                    repos: repos,
+                  }
+                }));
+              });
+            }
+          },
+          openSelected: (projectPath) => {
+            var link = 'https://git.door43.org/' + projectPath + '.git';
+            var _this = this;
+            loadOnline(link, function(err, savePath, url) {
+              if (err) {
+                console.error(err);
+              } else {
+                Upload.sendFilePath(savePath, url)
+                CoreActions.showCreateProject("");
+              }
+            });
+          },
+          makeList: (repos) => {
+            var user = api.getLoggedInUser();
+            if (!user) {
+              return (
+              <div>
+                <center>
+                <br />
+                <h4> Please login first </h4>
+                <br />
+                </center>
+              </div>
+            )
+            }
+            var projectArray = repos;
+            var projectList = []
+            for (var p in projectArray) {
+              var projectName = projectArray[p].project;
+              var repoName = projectArray[p].repo;
+              projectList.push(
+                <div key={p} style={{width: '100%', marginBottom: '15px'}}>
+                  {projectName}
+                  <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.state.profileProjectsProps.openSelected.bind(this, repoName)}>Load Project</Button>
+                 </div>
+              );
+            }
+            if (projectList.length === 0) {
+              projectList.push(
+                <div key={'None'} style={{width: '100%', marginBottom: '15px'}}>
+                  No Projects Found
+                </div>
+               );
+            }
+            return projectList;
           }
         }
       });
@@ -339,15 +374,8 @@ var Main = React.createClass({
       })
     }
   },
-  componentWillMount() {
-    CoreStore.addChangeListener(this.state.projectModalProps.showCreateProject.bind(this));      // action to show create project modal
-  },
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.state.projectModalProps.showCreateProject.bind(this));
-  },
 
   componentDidMount: function () {
-
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -415,8 +443,8 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <SettingsModal />
-          <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.state.projectModalProps}/>
+          <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
+          <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
           <SideBarContainer />
           <StatusBar />
           <SwitchCheckModal.Modal />

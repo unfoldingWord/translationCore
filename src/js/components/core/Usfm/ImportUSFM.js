@@ -159,7 +159,7 @@ class ImportComponent extends React.Component {
         if (savePath) {
           _this.props.checkIfValid(savePath[0]);
           _this.open = false;
-          _this.props.open(savePath[0], direction, undefined);
+          _this.props.openUSFM(savePath[0], direction, undefined);
         } else {
           _this.open = false;
         }
