@@ -39,8 +39,8 @@ var CheckDataGrabber = {
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
         } else {
-          this.dataLoadError(error);
-          callback(error, false);
+          this.dataLoadError(err);
+          callback(err, false);
         }
       });
     }
@@ -78,7 +78,7 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName, callback) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
@@ -90,7 +90,13 @@ var CheckDataGrabber = {
           if (!err) {
             _this.fetchModules(checkArray, callback);
           }
+          else {
+            callback(err, false);
+          }
         });
+      }
+      else {
+        callback(error, false);
       }
     });
   },
@@ -99,7 +105,7 @@ var CheckDataGrabber = {
   createCheckArray: function (dataObject, moduleFolderName, callback) {
     var modulePaths = [];
     try {
-      if (!dataObject.name || !dataObject.location || !dataObject.version || !dataObject.title || !dataObject.main) {
+      if (!dataObject.name || !dataObject.version || !dataObject.title || !dataObject.main) {
         callback("Bad package.json for tool", null);
       } else {
         modulePaths.push({ name: dataObject.name, location: moduleFolderName });
