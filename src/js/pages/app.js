@@ -143,8 +143,191 @@ var Main = React.createClass({
           close: () => {
             CoreActions.updateLoginModal(false);
           }
+        },
+        projectModalProps: {
+          showCreateProject(input) {
+            var modal = CoreStore.getShowProjectModal();
+            console.log(modal);
+            if (input) {
+              modal = input;
+              CoreStore.projectModalVisibility = input;
+            }
+            if (modal === 'Languages') {
+              console.log('calling');
+              console.log(merge({}, this.state, {
+                projectModalProps: {
+                  showModal: true,
+                }
+              }));
+              this.setState(merge({}, this.state, {
+                projectModalProps: {
+                  showModal: true,
+                }
+              }));
+              console.log(this.state.projectModalProps);
+            } else if (modal === "") {
+              this.setState(merge({}, this.state, {
+                projectModalProps: {
+                  showModal: false,
+                }
+              }))
+            }
+          },
+
+          submitLink() {
+            var link = this.state.projectModalProps.link;
+            loadOnline(link, function(err, savePath, url) {
+              if (!err) {
+                Upload.Methods.sendFilePath(savePath, url);
+              } else {
+                console.error(err);
+              }
+            });
+          },
+
+          close() {
+            CoreStore.projectModalVisibility = "";
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                showModal: false,
+              }
+            }));
+          },
+
+         checkUSFM(location) {
+           this.setState(merge({}, this.state, {
+             projectModalProps: {
+               usfmPath: location,
+               usfmSave: !(location == 'No file selected')
+             }
+           }));
+         },
+
+         sendPath(path, link, callback) {
+           this.setState(merge({}, this.state, {
+             projectModalProps: {
+               filePath: path,
+             }
+           }));
+           this.setState({filePath: path});
+           UploadMethods.sendFilePath(path, link, callback);
+         },
+
+         changeActive(key) {
+           this.setState(merge({}, this.state, {
+             projectModalProps: {
+               active: key
+             }
+           }));
+           switch (key) {
+             case 1:
+               this.setState(merge({}, this.state, {
+                 projectModalProps: {
+                   show: 'link',
+                 }
+               }));
+               break;
+             case 2:
+               this.setState(merge({}, this.state, {
+                 projectModalProps: {
+                   show: 'file',
+                 }
+               }));
+               break;
+             case 3:
+               this.setState(merge({}, this.state, {
+                 projectModalProps: {
+                   show: 'usfm',
+                 }
+               }));
+             case 4:
+               this.setState(merge({}, this.state, {
+                 projectModalProps: {
+                   show: 'd43',
+                 }
+               }));
+               break;
+             default:
+               break;
+           }
+         },
+
+         handleOnlineChange(e) {
+           this.setState(merge({}, this.state, {
+             projectModalProps: {
+               link: e.target.value,
+             }
+           }));
+         },
+
+         getMainContent(key) {
+           var mainContent;
+           switch (key) {
+             case 'file':
+               mainContent = <DragDrop
+                 filePath={this.state.filePath}
+                 sendFilePath={this.sendPath.bind(this)}
+                 properties={['openDirectory']}
+                 />;
+               break;
+             case 'link':
+               mainContent = (
+                 <div>
+                   <br />
+                   <OnlineInput onChange={this.handleOnlineChange.bind(this)}/>
+                 </div>
+               );
+               break;
+             case 'usfm':
+               mainContent = (
+                 <div>
+                   <ImportUsfm.component open={ImportUsfm.open} filePath={this.state.usfmPath} checkIfValid={this.checkUSFM.bind(this)}/>
+                 </div>
+               );
+               break;
+             case 'd43':
+             var ProjectViewer = require('../../../containers/Projects.js');
+               mainContent = (
+                 <div>
+                   <ProjectViewer />
+                 </div>
+               )
+               break;
+             default:
+               mainContent = (<div> </div>)
+               break;
+           }
+           return mainContent;
+         },
+
+          onClick(e) {
+            if (this.state.projectModalProps.active == 1) {
+              this.state.projectModalProps.submitLink();
+            }
+            if (this.state.projectModalProps.active == 3) {
+              if (!this.state.projectModalProps.usfmSave) {
+                return;
+              }
+            }
+            api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+            api.emitEvent('newToolSelected', {'newToolSelected': true});
+            this.state.projectModalProps.close();
+            api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+            if (this.state.projectModalProps.active == 1){
+              let loadedLink = this.link;
+              if(loadedLink != ""){
+                CoreActions.updateCheckModal(true);
+              }
+            }
+          },
+
+          _handleKeyPress(e) {
+            if (e.key === 'Enter') {
+              this.state.projectModalProps.onClick(e);
+            }
+          }
         }
-      })
+      });
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState === true || tutorialState === null) {
       return merge({}, this.state, {
@@ -156,8 +339,15 @@ var Main = React.createClass({
       })
     }
   },
+  componentWillMount() {
+    CoreStore.addChangeListener(this.state.projectModalProps.showCreateProject.bind(this));      // action to show create project modal
+  },
+  componentWillUnmount() {
+    CoreStore.removeChangeListener(this.state.projectModalProps.showCreateProject.bind(this));
+  },
 
   componentDidMount: function () {
+
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -226,7 +416,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <SettingsModal />
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} {...this.state.loginModalProps} />
-          <ProjectModal />
+          <ProjectModal {...this.state.projectModalProps}/>
           <SideBarContainer />
           <StatusBar />
           <SwitchCheckModal.Modal />
