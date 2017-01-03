@@ -88,38 +88,27 @@ class SubMenu extends React.Component {
     }
   }
 
-  unselectOldMenuItem() {
-    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
-  }
-
   selectNewMenuItem() {
+    debugger;
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
-  }
-
-  handleItemSelection(checkIndex){
-    api.changeCurrentIndexes(checkIndex);
-    var newItem = this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`];
-    var element = api.findDOMNode(newItem);
-    if (element) {
-      element.scrollIntoView();
-    }
   }
 
   render() {
     this.currentCheckIndex = this.props.currentCheckIndex;
     this.currentGroupIndex = this.props.currentGroupIndex;
-    let subMenuItemsArray = this.props.subMenuItemsArray;
     let subMenuItems = [];
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
     let groupIndex = api.getCurrentGroupIndex();
     if(groupIndex !== null){
-      for(var i in subMenuItemsArray){
+      for(var i in this.props.subMenuItemsArray){
+        const item = this.props.subMenuItemsArray[i];
+        item.checkStatus = item.checkStatus || "UNCHECKED";
+        item.isCurrentItem = item.isCurrentItem || false;
         subMenuItems.push(
-          <SubMenuItem key={i}
-            handleItemSelection={this.handleItemSelection.bind(this, i)}
+          <SubMenuItem key={i} {...item} id={i} {...this.props.subMenuItemsProps}
+            checkClicked={this.props.handleItemSelection}
             bookName={bookName}
-            check={subMenuItemsArray[i]}
             groupIndex={groupIndex}
             checkIndex={i}
             currentNamespace={currentNamespace}

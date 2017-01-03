@@ -41,10 +41,18 @@ const Upload = require('../components/core/UploadMethods.js');
 var Main = React.createClass({
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
+    api.registerEventListener('goToCheck', this.changeCheck);
   },
 
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
+    api.removeEventListener('goToCheck', this.changeCheck);
+  },
+  changeCheck(tool) {
+    this.setState(merge({}, this.state, {
+      currentGroupIndex: tool.groupIndex,
+      currentCheckIndex: tool.checkIndex
+    }))
   },
 
   setCurrentToolNamespace(namespace) {
@@ -59,10 +67,23 @@ var Main = React.createClass({
       i++
     }
   },
+  getSubMenuItems(name) {
+    if (!this.state.currentToolNamespace) return 'No namespace';
+    let groups = api.getDataFromCheckStore(this.state.currentToolNamespace, 'groups');
+    let foundGroup = [];
+    if (name) {
+      if (groups) {
+        foundGroup = groups.find(arrayElement => arrayElement.group === name);
+      }
+    }
+    return foundGroup.checks;
+  },
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
+        currentGroupIndex: 0,
+        currentCheckIndex: 0,
         currentToolNamespace: null,
         loginProps: {
           userdata: {
@@ -269,8 +290,9 @@ var Main = React.createClass({
             /*first load of fresh project thus no groupName
             * in checkstore then get groupName at groupindex 0
             */
+            var currentGroupIndex;
             if (params.currentCheckNamespace && !groupName) {
-              let currentGroupIndex = api.getDataFromCheckStore(
+              currentGroupIndex = api.getDataFromCheckStore(
                 params.currentCheckNamespace, 'currentGroupIndex');
               try {
                 groupName = api.getDataFromCheckStore(
@@ -282,6 +304,12 @@ var Main = React.createClass({
             if (groupName) {
               this.state.menuHeadersItemsProps.handleSelection(null, groupName);
             }
+            this.setState(merge({}, this.state, {
+              currentGroupIndex: currentGroupIndex,
+              menuHeadersProps: {
+                groupName: groupName
+              }
+            }))
             //this.state.menuHeadersProps.generateProgressForAllMenuHeaders();
           },
           unselectOldMenuItem: () => {
@@ -322,6 +350,13 @@ var Main = React.createClass({
         menuHeadersItemsProps: {
           handleSelection: (id, name) => {
             const groupName = name || this.state.menuHeadersProps.groupObjects[id].group;
+            const subMenuItemsArray = this.getSubMenuItems(groupName);
+            this.setState(merge({}, this.state, {
+              subMenuProps: {
+                subMenuItems: subMenuItemsArray
+              }
+            }),()=>console.log(this.state))
+            //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
             api.setCurrentGroupName(groupName);
             var newGroupName = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
             //this ref may be here forever...sigh
@@ -330,7 +365,6 @@ var Main = React.createClass({
               element.scrollIntoView();
             }
           },
-
           groupNameClicked: (id) => {
             this.state.menuHeadersItemsProps.handleSelection(id);
             this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
@@ -356,6 +390,52 @@ var Main = React.createClass({
             }));
           },
         },
+        subMenuProps: {
+          subMenuItems: [],
+          handleItemSelection: (checkIndex) => {
+            api.changeCurrentIndexes(checkIndex);
+            debugger;
+            var newItem = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${checkIndex}`];
+            var element = api.findDOMNode(newItem);
+            if (element) {
+              element.scrollIntoView();
+            }
+          },
+          unselectOldMenuItem: () => {
+            debugger;
+            const newObj = this.state.subMenuProps.subMenuItems.slice(0);
+            newObj[this.state.currentCheckIndex].isCurrentItem = false;
+            this.setState(merge({}, this.state, {
+              subMenuProps: {
+                subMenuItems: newObj
+              }
+            }
+            ));
+          },
+        },
+        subMenuItemsProps: {
+          getItemStatus: () => {
+            debugger;
+            var groups = api.getDataFromCheckStore(this.props.currentNamespace, 'groups');
+            var currentCheck = groups[this.props.groupIndex]['checks'][this.props.checkIndex];
+            var checkStatus = currentCheck.checkStatus;
+            this.setState({ checkStatus: checkStatus });
+          },
+          itemClicked: () => {
+            debugger;
+            this.props.handleItemSelection();
+            this.setIsCurrentCheck(true);
+          },
+          setIsCurrentCheck: (status) => {
+            debugger;
+            this.setState({ isCurrentItem: status });
+          },
+          setIsCurrentCheck: (status) => {
+            debugger;
+            this.setState({ isCurrentItem: status });
+          },
+        },
+
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
@@ -406,7 +486,7 @@ var Main = React.createClass({
 
           submitLink: () => {
             var link = this.state.projectModalProps.link;
-            loadOnline(link, function(err, savePath, url) {
+            loadOnline(link, function (err, savePath, url) {
               if (!err) {
                 Upload.Methods.sendFilePath(savePath, url);
               } else {
@@ -424,13 +504,13 @@ var Main = React.createClass({
             }));
           },
 
-         handleOnlineChange: (e) => {
-           this.setState(merge({}, this.state, {
-             projectModalProps: {
-               link: e.target.value,
-             }
-           }));
-         },
+          handleOnlineChange: (e) => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                link: e.target.value,
+              }
+            }));
+          },
 
           onClick: (e) => {
             if (this.state.uploadProps.active == 1) {
@@ -442,12 +522,12 @@ var Main = React.createClass({
               }
             }
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-            api.emitEvent('newToolSelected', {'newToolSelected': true});
+            api.emitEvent('newToolSelected', { 'newToolSelected': true });
             this.state.projectModalProps.close();
             api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-            if (this.state.uploadProps.active == 1){
+            if (this.state.uploadProps.active == 1) {
               let loadedLink = this.link;
-              if(loadedLink != ""){
+              if (loadedLink != "") {
                 CoreActions.updateCheckModal(true);
               }
             }
@@ -460,53 +540,53 @@ var Main = React.createClass({
           }
         },
         uploadProps: {
-           active: 1,
-           changeActive: (key) => {
-             switch (key) {
-               case 1:
-                 this.setState(merge({}, this.state, {
-                   projectModalProps: {
-                     show: 'link',
-                   },
-                   uploadProps: {
-                     active: key
-                   }
-                 }));
-                 break;
-               case 2:
-                 this.setState(merge({}, this.state, {
-                   projectModalProps: {
-                     show: 'file',
-                   },
-                   uploadProps: {
-                     active: key
-                   }
-                 }));
-                 break;
-               case 3:
-                 this.setState(merge({}, this.state, {
-                   projectModalProps: {
-                     show: 'usfm',
-                   },
-                   uploadProps: {
-                     active: key
-                   }
-                 }));
-                 break;
-               case 4:
-                 this.setState(merge({}, this.state, {
-                   projectModalProps: {
-                     show: 'd43',
-                   },
-                   uploadProps: {
-                     active: key
-                   }
-                 }));
-                 break;
-               default:
-                 break;
-             }
-           }
+          active: 1,
+          changeActive: (key) => {
+            switch (key) {
+              case 1:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'link',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 2:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'file',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 3:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'usfm',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 4:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'd43',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              default:
+                break;
+            }
+          }
         },
         profileProjectsProps: {
           repos: [],
@@ -526,7 +606,7 @@ var Main = React.createClass({
           openSelected: (projectPath) => {
             var link = 'https://git.door43.org/' + projectPath + '.git';
             var _this = this;
-            loadOnline(link, function(err, savePath, url) {
+            loadOnline(link, function (err, savePath, url) {
               if (err) {
                 console.error(err);
               } else {
@@ -539,14 +619,14 @@ var Main = React.createClass({
             var user = api.getLoggedInUser();
             if (!user) {
               return (
-              <div>
-                <center>
-                <br />
-                <h4> Please login first </h4>
-                <br />
-                </center>
-              </div>
-            )
+                <div>
+                  <center>
+                    <br />
+                    <h4> Please login first </h4>
+                    <br />
+                  </center>
+                </div>
+              )
             }
             var projectArray = repos;
             var projectList = []
@@ -554,18 +634,18 @@ var Main = React.createClass({
               var projectName = projectArray[p].project;
               var repoName = projectArray[p].repo;
               projectList.push(
-                <div key={p} style={{width: '100%', marginBottom: '15px'}}>
+                <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
                   {projectName}
                   <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.state.profileProjectsProps.openSelected.bind(this, repoName)}>Load Project</Button>
-                 </div>
+                </div>
               );
             }
             if (projectList.length === 0) {
               projectList.push(
-                <div key={'None'} style={{width: '100%', marginBottom: '15px'}}>
+                <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
                   No Projects Found
                 </div>
-               );
+              );
             }
             return projectList;
           }
@@ -642,6 +722,7 @@ var Main = React.createClass({
   },
 
   render: function () {
+    //console.log(this.state);
     var _this = this;
     if (this.state.firstTime) {
       return (
@@ -652,7 +733,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <SettingsModal />
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
+          <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
           <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} menuHeadersItemsProps={this.state.menuHeadersItemsProps} menunHeaderProps={this.state.menuHeadersProps} sideNavBarProps={this.state.sideNavBarProps} {...this.state.sideBarContainerProps} />
           <StatusBar />
           <SwitchCheckModal.Modal />
@@ -661,7 +742,7 @@ var Main = React.createClass({
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                <NavMenu />
+                <NavMenu ref='navmenu' subMenuItemsProps={this.state.subMenuItemsProps} subMenuProps={this.state.subMenuProps} />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />

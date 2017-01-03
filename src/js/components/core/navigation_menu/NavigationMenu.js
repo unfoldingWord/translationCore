@@ -37,11 +37,9 @@ class NavigationMenu extends React.Component {
   }
 
   getSubMenuItemsFromCheckStore(){
-    let subMenuItemsArray = api.getSubMenuItems();
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let currentCheckIndex = api.getDataFromCheckStore(currentNamespace, 'currentCheckIndex');
     let currentGroupIndex = api.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
-    this.setState({subMenuItemsArray: subMenuItemsArray});
     this.setState({currentCheckIndex: currentCheckIndex});
     this.setState({currentGroupIndex: currentGroupIndex});
   }
@@ -49,7 +47,8 @@ class NavigationMenu extends React.Component {
   render() {
     return (
       <div>
-        <SubMenu subMenuItemsArray={this.state.subMenuItemsArray}
+        <SubMenu ref='submenu' subMenuItemsProps={this.props.subMenuItemsProps} {...this.props.subMenuProps} 
+                 subMenuItemsArray={this.props.subMenuProps.subMenuItems}
                  currentCheckIndex={this.state.currentCheckIndex}
                  currentGroupIndex={this.state.currentGroupIndex}/>
       </div>
