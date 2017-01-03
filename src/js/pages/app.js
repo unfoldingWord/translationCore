@@ -320,6 +320,7 @@ var Main = React.createClass({
             const groupName = name || this.state.menuHeadersProps.groupObjects[id].group;
             api.setCurrentGroupName(groupName);
             var newGroupName = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
+            //this ref may be here forever...sigh
             var element = api.findDOMNode(newGroupName);
             if (element) {
               element.scrollIntoView();
