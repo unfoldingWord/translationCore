@@ -24,29 +24,37 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray) {
+  fetchModules: function (checkArray, callback) {
     try {
       var params = api.getDataFromCommon('params');
       this.doneModules = 0;
-      this.saveModules(checkArray, (checksThatNeedToBeFetched) => {
-        if (checksThatNeedToBeFetched.length < 1) {
-          CoreActions.doneLoadingFetchData();
+      this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
+        if (!err) {
+          if (checksThatNeedToBeFetched.length < 1) {
+            CoreActions.doneLoadingFetchData();
+          }
+          for (let moduleObj of checksThatNeedToBeFetched) {
+            this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
+          }
+          api.putDataInCommon('arrayOfChecks', checkArray);
+          callback(null, true);
+        } else {
+          this.dataLoadError(err);
+          callback(err, false);
         }
-        for (let moduleObj of checksThatNeedToBeFetched) {
-          this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
-        }
-        api.putDataInCommon('arrayOfChecks', checkArray);
       });
     }
     catch (error) {
       this.dataLoadError(error);
+      callback(error, false);
     }
 
   },
 
 
   saveModules: function (checkArray, callback) {
-      let checksThatNeedToBeFetched = [];
+    let checksThatNeedToBeFetched = [];
+    try {
       for (let module of checkArray) {
         let viewObj = require(Path.join(module.location, 'Container'));
         api.saveModule(module.name, viewObj.container);
@@ -56,7 +64,10 @@ var CheckDataGrabber = {
         CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
         this.totalModules = checksThatNeedToBeFetched.length;
       }
-      callback(checksThatNeedToBeFetched);
+      callback(null, checksThatNeedToBeFetched);
+    } catch (e) {
+      callback(e, null);
+    }
   },
 
 
@@ -67,7 +78,7 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
@@ -77,9 +88,15 @@ var CheckDataGrabber = {
         _this.saveModuleMenu(dataObject, moduleFolderName);
         _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
           if (!err) {
-            _this.fetchModules(checkArray);
+            _this.fetchModules(checkArray, callback);
+          }
+          else {
+            callback(err, false);
           }
         });
+      }
+      else {
+        callback(error, false);
       }
     });
   },
@@ -87,33 +104,31 @@ var CheckDataGrabber = {
 
   createCheckArray: function (dataObject, moduleFolderName, callback) {
     var modulePaths = [];
-    modulePaths.push({ name: dataObject.name, location: moduleFolderName });
-    for (let childFolderName in dataObject.include) {
-      //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-      if (Array.isArray(dataObject.include)) {
-        try {
-          modulePaths.push({
-            name: dataObject.include[childFolderName],
-            location: Path.join(PACKAGE_COMPILE_LOCATION, dataObject.include[childFolderName])
-          });
-        } catch (e) {
-          this.dataLoadError(e);
-          callback(e, null);
-        }
+    try {
+      if (!dataObject.name || !dataObject.version || !dataObject.title || !dataObject.main) {
+        callback("Bad package.json for tool", null);
       } else {
-        try {
-          modulePaths.push({
-            name: childFolderName,
-            location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
-          });
-        } catch (e) {
-          this.dataLoadError(e);
-          callback(e, null);
+        modulePaths.push({ name: dataObject.name, location: moduleFolderName });
+        for (let childFolderName in dataObject.include) {
+          //If a developer hasn't defined their module in the corret way, this'll probably throw an error
+          if (Array.isArray(dataObject.include)) {
+            modulePaths.push({
+              name: dataObject.include[childFolderName],
+              location: Path.join(PACKAGE_COMPILE_LOCATION, dataObject.include[childFolderName])
+            });
+          } else {
+            modulePaths.push({
+              name: childFolderName,
+              location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
+            });
+          }
         }
+        callback(null, modulePaths);
       }
+    } catch (e) {
+      this.dataLoadError(e);
+      callback(e, null);
     }
-    callback(null, modulePaths);
-
   },
 
   saveModuleMenu: function (dataObject, moduleFolderName) {

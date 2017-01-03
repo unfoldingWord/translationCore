@@ -3,7 +3,7 @@ const path = require('path');
 const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const CheckStore = require('../../stores/CheckStore');
-const Upload = require('./Upload');
+const Upload = require('./UploadMethods');
 const {shell} = require('electron')
 
 function addToRecent(path) {
