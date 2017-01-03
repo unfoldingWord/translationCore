@@ -48,8 +48,8 @@ var CheckDataGrabber = {
   saveModules: function (checkArray, callback) {
       let checksThatNeedToBeFetched = [];
       for (let module of checkArray) {
-        let viewObj = require(Path.join(module.location, 'View'));
-        api.saveModule(module.name, viewObj.view);
+        let viewObj = require(Path.join(module.location, 'Container'));
+        api.saveModule(module.name, viewObj.container);
         if (module.location && !CheckStore.hasData(module.name)) {
           checksThatNeedToBeFetched.push(module);
         }
