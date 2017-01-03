@@ -1,86 +1,90 @@
 const React = require('react');
-const CoreActions = require('../../../actions/CoreActions.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const Button = require('react-bootstrap/lib/Button.js');
 const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
+const Upload = require('../Upload.js');
+const UploadMethods = require('../UploadMethods.js');
+const OnlineInput = require('../OnlineInput');
 const CoreStore = require('../../../stores/CoreStore.js');
 const api = window.ModuleApi;
-const booksOfBible = require('../BooksOfBible');
-const Upload = require('../Upload');
 const loadOnline = require('../LoadOnline');
 const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 const { connect  } = require('react-redux');
+const DragDrop = require('../DragDrop');
+const ProjectViewer = require('../login/Projects.js');
+const ImportUsfm = require('../Usfm/ImportUSFM');
 
-const ProjectModal = React.createClass({
-  submitLink: function () {
-    var link = this.refs.TargetLanguage.getLink();
-    var _this = this;
-    loadOnline(link, function(err, savePath, url) {
-      if (!err) {
-        Upload.sendFilePath(savePath, url);
-      } else {
-        console.error(err);
-      }
-    });
-  },
+class ProjectModal extends React.Component {
+  constructor() {
+    super();
+  }
 
-  /**
- * @description - This keeps the currentCheckNamespace intact
- */
-  onClick: function (e) {
-    if (this.refs.TargetLanguage.state.active == 1) {
-      this.submitLink();
-    }
-    if (this.refs.TargetLanguage.state.active == 3) {
-      if (!this.refs.TargetLanguage.enterSaveLocation()) {
-        return;
-      }
-    }
-    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-    api.emitEvent('newToolSelected', {'newToolSelected': true});
-    this.close();
-    api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-    if (this.refs.TargetLanguage.state.active == 1){
-      let loadedLink = this.refs.TargetLanguage.getLink();
-      if(loadedLink != ""){
-        CoreActions.updateCheckModal(true);
-      }
-    }
-  },
+  componentWillMount() {
+    CoreStore.addChangeListener(this.props.showCreateProject);      // action to show create project modal
+  }
 
-  _handleKeyPress: function(e) {
-    if (e.key === 'Enter') {
-      this.onClick(e);
-    }
-  },
+  componentWillUnmount() {
+    CoreStore.removeChangeListener(this.props.showCreateProject);
+  }
 
-  render: function () {
-    
+  render() {
+    var mainContent;
+    switch (this.props.show) {
+      case 'file':
+        mainContent = <DragDrop {...this.props.dragDropProps} />;
+        break;
+      case 'link':
+        mainContent = (
+          <div>
+            <br />
+            <OnlineInput onChange={this.props.handleOnlineChange} />
+          </div>
+        );
+        break;
+      case 'usfm':
+        mainContent = (
+          <div>
+            <ImportUsfm.component {...this.props.importUsfmProps} />
+          </div>
+        );
+        break;
+      case 'd43':
+        mainContent = (
+          <div>
+            <ProjectViewer {...this.props.profileProjectsProps} />
+          </div>
+        )
+        break;
+      default:
+        mainContent = (<div> </div>)
+        break;
+    }
     return (
       <div>
-        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={this._handleKeyPress}>
-          <Upload.Component ref={"TargetLanguage"} pressedEnter={this.onClick}/>
+        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={this.props._handleKeyPress}>
+          <Upload {...this.props.uploadProps}>
+            {mainContent}
+          </Upload>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button bsSize="xsmall" style={{ visibility: this.props.backButton }}>{'Back'}</Button>
-              <Button type="button" onClick={this.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
+              <Button type="button" onClick={this.props.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
       </div>
     )
   }
-});
+}
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
-  
+
   return Object.assign({}, state, state.loginModalReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    close:() => {
+    close: () => {
       dispatch(CoreActionsRedux.showCreateProject(false));
     }
   }
