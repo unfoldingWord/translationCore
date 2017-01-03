@@ -46,6 +46,10 @@ class PackageManagerView extends React.Component{
 
 
   componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
     var _this = this;
     PackageManager.list(function(data) {
       _this.setState({data: data});
@@ -65,6 +69,7 @@ class PackageManagerView extends React.Component{
   }
 
   hidePackManager(){
+    console.log('hello');
     this.setState({visiblePackManager: false});
   }
 
@@ -120,98 +125,97 @@ class PackageManagerView extends React.Component{
    }
 
   generateCards() {
-    if(!this.state.visiblePackManager){
-      return (<div></div>);
-    }else{
-      if (!this.state.data) {
-        this.componentDidMount();
-      }
-      var cards = <div></div>
-      if (this.state.displayStatus === 'downloadPack') {
-        var data = this.state.data;
-          cards = [<div key={'default'}></div>];
-          for (var i in data) {
-            var currentPackage = data[i];
-            var uniqueState = this.state[i] || {};
-            if (!uniqueState.installStatus) {
-              uniqueState.installStatus = PackageManager.isInstalled(i) ? 'Installed' : 'Install'
-            }
-            if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
-              cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.versions || [currentPackage.latestVersion]} numOfDownloads={""}
-              description={currentPackage.description || "No description found."}
-              install={this.install.bind(this, i, uniqueState.selectedVersion || currentPackage.latestVersion)}
-              handleVersion={this.handleVersion.bind(this, i)}
-              iconPathName={currentPackage.icon}
-              installStatus={uniqueState.installStatus}
-              buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
-            }
+    if (!this.state.data) {
+      this.fetchData();
+    }
+    var cards = <div></div>
+    if (this.state.displayStatus === 'downloadPack') {
+      var data = this.state.data;
+        cards = [<div key={'default'}></div>];
+        for (var i in data) {
+          var currentPackage = data[i];
+          var uniqueState = this.state[i] || {};
+          if (!uniqueState.installStatus) {
+            uniqueState.installStatus = PackageManager.isInstalled(i) ? 'Installed' : 'Install'
           }
-          return cards;
-      } else if(this.state.displayStatus === 'installedPack') {
-          var installed = PackageManager.getLocalList();
-          cards = [<div key={'default'}></div>];
-          var data = this.state.data;
-          for (var i = 0; i < installed.length; i++) {
-            var currentPackage = installed[i];
-            var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json');
-            try {
-              var manifest = require(manifestLocation);
-            } catch(err) {
-              var manifest = {};
-            }
-            var uniqueState = this.state[currentPackage] || {};
-            if (!uniqueState.removeStatus) {
-              uniqueState.removeStatus = 'Uninstall';
-            }
-            if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]] && data[installed[i]].main === 'true') {
-              cards.push(<PackageCard key={currentPackage} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
-              description={manifest.description || "No description found."}
-              uninstall={this.uninstall.bind(this, currentPackage)}
-              removeStatus={uniqueState.removeStatus}
-              iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
-              buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
-            }
+          if (currentPackage.main === 'true' && ~i.toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
+            cards.push(<PackageCard key={i} packName={i} packVersion={currentPackage.versions || [currentPackage.latestVersion]} numOfDownloads={""}
+            description={currentPackage.description || "No description found."}
+            install={this.install.bind(this, i, uniqueState.selectedVersion || currentPackage.latestVersion)}
+            handleVersion={this.handleVersion.bind(this, i)}
+            iconPathName={currentPackage.icon}
+            installStatus={uniqueState.installStatus}
+            buttonDisplay={'downloadPack'} newPackVersion={"0.3.0"}/>);
           }
-          return cards;
-      } else if (this.state.displayStatus === 'updatePack') {
-        var data = this.state.data;
+        }
+        return cards;
+    } else if(this.state.displayStatus === 'installedPack') {
         var installed = PackageManager.getLocalList();
         cards = [<div key={'default'}></div>];
+        var data = this.state.data;
         for (var i = 0; i < installed.length; i++) {
           var currentPackage = installed[i];
-          var uniqueState = this.state[currentPackage] || {};
-          if (!uniqueState.updateStatus) {
-            uniqueState.updateStatus = 'Update';
-          }
           var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json');
           try {
             var manifest = require(manifestLocation);
           } catch(err) {
             var manifest = {};
           }
-          var remotePackage = data[currentPackage];
-          if (remotePackage) {
-            var remoteVersion = remotePackage.latestVersion;
-          } else {
-            remoteVersion = '1.0.0';
-            console.warn('Could not find remote version of package ' + currentPackage);
+          var uniqueState = this.state[currentPackage] || {};
+          if (!uniqueState.removeStatus) {
+            uniqueState.removeStatus = 'Uninstall';
           }
-          var localVersion = PackageManager.getVersion(currentPackage);
-          if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
-            cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
+          if (~currentPackage.toLowerCase().indexOf(this.state.searchText.toLowerCase()) && data[installed[i]] && data[installed[i]].main === 'true') {
+            cards.push(<PackageCard key={currentPackage} packName={currentPackage} packVersion={manifest.version || ''} numOfDownloads={""}
             description={manifest.description || "No description found."}
-            updateStatus={uniqueState.updateStatus}
-            update={this.update.bind(this, installed[i], remoteVersion)}
+            uninstall={this.uninstall.bind(this, currentPackage)}
+            removeStatus={uniqueState.removeStatus}
             iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
-            buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
-            }
+            buttonDisplay={'installedPack'} newPackVersion={"0.3.0"}/>);
           }
-          return cards;
+        }
+        return cards;
+    } else if (this.state.displayStatus === 'updatePack') {
+      var data = this.state.data;
+      var installed = PackageManager.getLocalList();
+      cards = [<div key={'default'}></div>];
+      for (var i = 0; i < installed.length; i++) {
+        var currentPackage = installed[i];
+        var uniqueState = this.state[currentPackage] || {};
+        if (!uniqueState.updateStatus) {
+          uniqueState.updateStatus = 'Update';
+        }
+        var manifestLocation = pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'package.json');
+        try {
+          var manifest = require(manifestLocation);
+        } catch(err) {
+          var manifest = {};
+        }
+        var remotePackage = data[currentPackage];
+        if (remotePackage) {
+          var remoteVersion = remotePackage.latestVersion;
+        } else {
+          remoteVersion = '1.0.0';
+          console.warn('Could not find remote version of package ' + currentPackage);
+        }
+        var localVersion = PackageManager.getVersion(currentPackage);
+        if (remoteVersion > localVersion && ~installed[i].toLowerCase().indexOf(this.state.searchText.toLowerCase())) {
+          cards.push(<PackageCard key={i} packName={installed[i]} packVersion={localVersion || ''} numOfDownloads={""}
+          description={manifest.description || "No description found."}
+          updateStatus={uniqueState.updateStatus}
+          update={this.update.bind(this, installed[i], remoteVersion)}
+          iconPathName={pathex.join(PACKAGE_COMPILE_LOCATION, currentPackage, 'icon.png')}
+          buttonDisplay={'updatePack'} newPackVersion={remoteVersion}/>);
+        }
       }
+      return cards;
     }
   }
 
   render(){
+    if(!this.state.visiblePackManager){
+      return (<div></div>);
+    }
     var cards = this.generateCards();
       return(
         <div style={Style.layout}>
