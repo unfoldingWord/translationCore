@@ -2,6 +2,7 @@ const React = require('react');
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
+const sync = require('../components/core/SideBar/GitSync.js');
 const remote = require('electron').remote;
 const {dialog} = remote;
 var merge = require('lodash.merge');
@@ -34,10 +35,31 @@ const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/Upload');
 
 var Main = React.createClass({
+  componentWillMount() {
+    api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
+  },
+
+  componentWillUnmount() {
+    api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
+  },
+
+  setCurrentToolNamespace(namespace) {
+    this.setState(merge({}, this.state, {
+      currentToolNamespace: namespace.currentCheckNamespace
+    }))
+  },
+  getMenuItemidFromGroupName(groupName) {
+    var i = 0;
+    for (var el in this.state.menuHeadersProps.groupObjects) {
+      if (this.state.menuHeadersProps.groupObjects[el].group == groupName) return i;
+      i++
+    }
+  },
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
+        currentToolNamespace: null,
         loginProps: {
           userdata: {
             username: "",
@@ -126,7 +148,7 @@ var Main = React.createClass({
             this.setState(merge({}, this.state, {
               loginModalProps: {
                 visibleLoginModal: loginVisible,
-                profile:profileVisible
+                profile: profileVisible
               }
             }))
           },
@@ -143,8 +165,194 @@ var Main = React.createClass({
           close: () => {
             CoreActions.updateLoginModal(false);
           }
+        },
+        sideBarContainerProps: {
+          SideNavBar: false,
+          imgPath: null,
+          getCurrentToolNamespace: () => {
+            api.initialCurrentGroupName();
+            this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
+          },
+          getToolIcon: (currentToolNamespace) => {
+            let iconPathName = null;
+            let currentToolMetadata = null;
+            let toolsMetadata = api.getToolMetaDataFromStore();
+            if (toolsMetadata) {
+              currentToolMetadata = toolsMetadata.find(
+                (tool) => tool.name === currentToolNamespace
+              );
+            }
+            if (currentToolMetadata) {
+              let iconPathName = currentToolMetadata.imagePath;
+              this.setState(merge({}, this.state, {
+                sideBarContainerProps: {
+                  imgPath: iconPathName
+                }
+              }));
+            }
+          },
+          changeView: () => {
+            this.setState(merger({}, this.state, {
+              sideBarContainerProps: {
+                SideNavBar: !this.state.SideNavBar
+              }
+            }))
+          },
+          handleOpenProject: () => {
+            CoreActions.showCreateProject("Languages");
+          },
+          handleSelectTool: () => {
+            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+              CoreActions.updateCheckModal(true);
+            } else {
+              api.Toast.info('Open a project first, then try again', '', 3);
+              CoreActions.showCreateProject("Languages");
+            }
+          }
+        },
+        sideNavBarProps: {
+          handleOpenProject: () => {
+            CoreActions.showCreateProject("Languages");
+          },
+          handleSyncProject: () => {
+            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+              sync();
+            } else {
+              api.Toast.info('Open a project first, then try again', '', 3);
+              CoreActions.showCreateProject("Languages");
+            }
+          },
+          handleReport: () => {
+            api.Toast.info('Generating reports...', '', 3);
+            const Report = require("./../reports/ReportGenerator");
+            api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
+          },
+          handleChangeCheckCategory: () => {
+            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+              CoreActions.updateCheckModal(true);
+            } else {
+              api.Toast.info('Open a project first, then try again', '', 3);
+              CoreActions.showCreateProject("Languages");
+            }
+          },
+          handleSettings: () => {
+            CoreActions.updateSettings(true);
+          },
+          handlePackageManager: () => {
+            var PackageManagerView = require("./../Package_Manager/PackageManagerView");
+            ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'))
+            api.emitEvent('PackManagerVisibility', { 'visiblePackManager': 'true' });
+          }
+        },
+        menuHeadersProps: {
+          groupName: null,
+          groupObjects: [],
+          updateCurrentMenuHeader: (params) => {
+            this.state.menuHeadersProps.unselectOldMenuItem();
+            this.state.menuHeadersProps.groupName = params.groupName;
+            this.state.menuHeadersProps.selectNewMenuItem();
+          },
+          newToolSelected: (params) => {
+            //switched Tool therefore generate New MenuHeader
+            var groupObjects = api.getDataFromCheckStore(params.currentCheckNamespace, 'groups');
+            var groupName = api.getCurrentGroupName();
+            this.setState(merge({}, this.state, {
+              menuHeadersProps: {
+                groupName: groupName,
+                groupObjects: groupObjects
+              }
+            }))
+            /*first load of fresh project thus no groupName
+            * in checkstore then get groupName at groupindex 0
+            */
+            if (params.currentCheckNamespace && !groupName) {
+              let currentGroupIndex = api.getDataFromCheckStore(
+                params.currentCheckNamespace, 'currentGroupIndex');
+              try {
+                groupName = api.getDataFromCheckStore(
+                  params.currentCheckNamespace, 'groups')[currentGroupIndex].group;
+              } catch (err) {
+                console.warn("currentGroupIndex is undefined " + err);;
+              }
+            }
+            if (groupName) {
+              this.state.menuHeadersItemsProps.handleSelection(null, groupName);
+            }
+            //this.state.menuHeadersProps.generateProgressForAllMenuHeaders();
+          },
+          unselectOldMenuItem: () => {
+            if (this.state.menuHeadersProps.groupName) {
+              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
+              this.state.menuHeadersItemsProps.setIsCurrentCheck(false, id);
+            }
+          },
+          selectNewMenuItem: () => {
+            if (this.state.menuHeadersProps.groupName) {
+              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
+              this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
+            }
+          },
+          updateSubMenuItemProgress: (params) => {
+            let groups = api.getDataFromCheckStore(this.state.currentToolNamespace, 'groups');
+            let foundGroup = groups.find(arrayElement => arrayElement.group === this.state.menuHeadersProps.groupName);
+            let currentProgress = this.state.menuHeadersProps.getGroupProgress(foundGroup);
+            if (this.state.menuHeadersProps.groupName) {
+              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
+              this.state.menuHeadersItemsProps.setCurrentProgress(currentProgress, id);
+            }
+          },
+          getGroupProgress: (groupObj) => {
+            var numChecked = 0;
+            var numUnchecked = 0;
+            for (var i = 0; i < groupObj.checks.length; i++) {
+              if (groupObj.checks[i].checkStatus != "UNCHECKED") {
+                numChecked++;
+              } else {
+                numUnchecked++;
+              }
+            }
+            var total = numChecked + numUnchecked;
+            return numChecked / total;
+          },
+        },
+        menuHeadersItemsProps: {
+          handleSelection: (id, name) => {
+            const groupName = name || this.state.menuHeadersProps.groupObjects[id].group;
+            api.setCurrentGroupName(groupName);
+            var newGroupName = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
+            var element = api.findDOMNode(newGroupName);
+            if (element) {
+              element.scrollIntoView();
+            }
+          },
+
+          groupNameClicked: (id) => {
+            this.state.menuHeadersItemsProps.handleSelection(id);
+            this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
+          },
+
+          setIsCurrentCheck: (status, id) => {
+            const newObj = this.state.menuHeadersProps.groupObjects.slice(0);
+            newObj[id].isCurrentItem = status;
+            this.setState(merge({}, this.state, {
+              menuHeadersProps: {
+                groupObjects: newObj
+              }
+            }
+            ));
+          },
+          setCurrentProgress: (progress, id) => {
+            const newObj = this.state.menuHeadersProps.groupObjects.slice(0);
+            newObj[id].currentGroupprogress = progress;
+            this.setState(merge({}, this.state, {
+              menuHeadersProps: {
+                groupObjects: newObj
+              }
+            }));
+          }
+
         }
-      })
+      });
     var tutorialState = api.getSettings('showTutorial');
     if (tutorialState === true || tutorialState === null) {
       return merge({}, this.state, {
@@ -227,7 +435,7 @@ var Main = React.createClass({
           <SettingsModal />
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} {...this.state.loginModalProps} />
           <ProjectModal />
-          <SideBarContainer />
+          <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} menuHeadersItemsProps={this.state.menuHeadersItemsProps} menunHeaderProps={this.state.menuHeadersProps} sideNavBarProps={this.state.sideNavBarProps} {...this.state.sideBarContainerProps} />
           <StatusBar />
           <SwitchCheckModal.Modal />
           <Popover />
