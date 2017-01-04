@@ -11,12 +11,12 @@ class MenuHeaders extends React.Component {
   render() {
     var groupsName = [];
     if (this.props.currentToolNamespace) {
-      for (var i in this.props.groupObjects) {
-        const menuItem = this.props.groupObjects[i];
+      for (var i in this.props.currentGroupObjects) {
+        const menuItem = this.props.currentGroupObjects[i];
         menuItem.isCurrentItem = menuItem.isCurrentItem || false;
         menuItem.currentGroupprogress = menuItem.currentGroupprogress || 0;
         groupsName.push(
-          <MenuHeadersItems {...this.props.menuHeadersItemsProps} {...menuItem} id={i} key={i} ref={menuItem.group.toString()} />
+          <MenuHeadersItems onClick={this.props.menuClick} {...this.props} {...menuItem} id={i} key={i} ref={menuItem.group.toString()} />
         );
       }
     }
@@ -35,7 +35,7 @@ class MenuHeadersItems extends React.Component {
   render() {
     var itemStyle = this.props.isCurrentItem ? style.activeMenuHeader : style.menuHeader;
     return (
-      <tr onClick={() => this.props.groupNameClicked(this.props.id)}
+      <tr onClick={() => this.props.onClick(this.props.id)}
         style={itemStyle}
         title="Click to select this reference">
         <th>

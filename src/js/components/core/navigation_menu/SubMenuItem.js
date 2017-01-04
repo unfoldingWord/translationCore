@@ -9,34 +9,6 @@ const style = require('./Style');
 
 
 class SubMenuItem extends React.Component {
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     checkStatus: "UNCHECKED",
-  //     isCurrentItem: false,
-  //   }
-  // }
-
-  // componentWillMount() {
-  //   this.setState({checkStatus: this.props.check.checkStatus});
-  // }
-
-  // componentWillReceiveProps(nextProps){
-  //   this.setState({checkStatus: nextProps.check.checkStatus});
-  //   if(this.state.isCurrentItem){
-  //     this.setIsCurrentCheck(false);
-  //   }
-  // }
-
-  // itemClicked() {
-  //   this.props.handleItemSelection();
-  //   this.setIsCurrentCheck(true);
-  // }
-
-  // setIsCurrentCheck(status){
-  //   this.setState({isCurrentItem: status});
-  // }
-
   render() {
     var checkStatus = this.props.checkStatus;
     // Set the style of the menu item, depending on the check status
@@ -62,7 +34,7 @@ class SubMenuItem extends React.Component {
           title="Click to select this check">
         <td>
           <Glyphicon glyph={glyphIcon} style={checkStatusStyle} />
-          {" " + this.props.bookName + " " + this.props.chapter + ":" + this.props.verse}
+          {" " + this.props.currentBookName + " " + this.props.chapter + ":" + this.props.verse}
         </td>
       </tr>
     );

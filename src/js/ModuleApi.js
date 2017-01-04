@@ -364,6 +364,7 @@ class ModuleApi {
   }
 
   setCurrentGroupName(groupName){
+    debugger;
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return;

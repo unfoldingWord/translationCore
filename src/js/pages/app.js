@@ -41,35 +41,84 @@ const Upload = require('../components/core/UploadMethods.js');
 var Main = React.createClass({
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
+    //changing tool
     api.registerEventListener('goToCheck', this.changeCheck);
+    //changing check, (group index, check index) ...one or the other or both
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
+    //changing just the group index
+    api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+    //changing the status of the current check
   },
 
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
+    api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+  },
+  changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
+    const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
+    newSubGroupObjects[this.state.currentCheckIndex].checkStatus = checkStatus;
+    const newGroupObjects = this.state.currentGroupObjects.slice(0);
+    newGroupObjects[this.state.currentGroupIndex].checks = newSubGroupObjects;
+    newGroupObjects[this.state.currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[this.state.currentGroupIndex]);
+    this.setState({
+      currentSubGroupObjects: newSubGroupObjects,
+      currentGroupObjects: newGroupObjects
+    });
+  },
+  getGroupProgress: (groupObj) => {
+    var numChecked = 0;
+    for (var i = 0; i < groupObj.checks.length; i++) {
+      if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
+    }
+    return numChecked / groupObj.checks.length;
   },
   changeSubMenuItems({groupName}) {
-    
-    const subMenuItemsArray = this.getSubMenuItems(groupName);
-    this.setState(merge({}, this.state, {
-      subMenuProps: {
-        subMenuItems: subMenuItemsArray
-      }
-    }))
+    const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
+    this.setState({
+      currentSubGroupObjects: newSubGroupObjects,
+      currentGroupName: groupName,
+      currentCheckIndex: 0
+    });
   },
   changeCheck(tool) {
+    debugger;
     this.setState(merge({}, this.state, {
       currentGroupIndex: tool.groupIndex,
       currentCheckIndex: tool.checkIndex
     }))
   },
 
-  setCurrentToolNamespace(namespace) {
+  setCurrentToolNamespace({currentCheckNamespace}) {
+    //switched Tool therefore generate New MenuHeader
+    var groupName = this.state.currentGroupName;
+    var currentGroupIndex;
+    /*first load of fresh project thus no groupName
+    * in checkstore then get groupName at groupindex 0
+    */
+    if (currentCheckNamespace && !groupName) {
+      currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
+      groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
+    } else {
+      console.log("Error getting groups");
+    }
+    var groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
+    groupObjects[currentGroupIndex].isCurrentItem = true;
+    for (var el in groupObjects) {
+      groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
+    }
+    var subGroupObjects = this.getSubMenuItems(currentCheckNamespace, groupName);
+    subGroupObjects[0].isCurrentItem = true;
+    let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     this.setState(merge({}, this.state, {
-      currentToolNamespace: namespace.currentCheckNamespace
-    }))
+      currentGroupIndex: currentGroupIndex,
+      currentToolNamespace: currentCheckNamespace,
+      currentGroupName: groupName,
+      currentGroupObjects: groupObjects,
+      currentSubGroupObjects: subGroupObjects,
+      currentBookName: bookName,
+    }));
   },
   getMenuItemidFromGroupName(groupName) {
     var i = 0;
@@ -78,13 +127,14 @@ var Main = React.createClass({
       i++
     }
   },
-  getSubMenuItems(name) {
-    if (!this.state.currentToolNamespace) return 'No namespace';
-    let groups = api.getDataFromCheckStore(this.state.currentToolNamespace, 'groups');
+  getSubMenuItems(name, groupName) {
+    var namespace = this.state.currentToolNamespace || name;
+    if (!namespace) return 'No namespace';
+    let groups = api.getDataFromCheckStore(namespace, 'groups');
     let foundGroup = [];
-    if (name) {
+    if (groupName) {
       if (groups) {
-        foundGroup = groups.find(arrayElement => arrayElement.group === name);
+        foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
       }
     }
     return foundGroup.checks;
@@ -96,6 +146,7 @@ var Main = React.createClass({
         currentGroupIndex: 0,
         currentCheckIndex: 0,
         currentToolNamespace: null,
+        currentGroupName: null,
         loginProps: {
           userdata: {
             username: "",
@@ -206,7 +257,8 @@ var Main = React.createClass({
           SideNavBar: false,
           imgPath: null,
           getCurrentToolNamespace: () => {
-            api.initialCurrentGroupName();
+            debugger;
+            //api.initialCurrentGroupName();
             this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
           },
           getToolIcon: (currentToolNamespace) => {
@@ -281,169 +333,59 @@ var Main = React.createClass({
           }
         },
         menuHeadersProps: {
-          groupName: null,
-          groupObjects: [],
-          updateCurrentMenuHeader: (params) => {
-            this.state.menuHeadersProps.unselectOldMenuItem();
-            this.state.menuHeadersProps.groupName = params.groupName;
-            this.state.menuHeadersProps.selectNewMenuItem();
-          },
-          newToolSelected: (params) => {
-            //switched Tool therefore generate New MenuHeader
-            var groupObjects = api.getDataFromCheckStore(params.currentCheckNamespace, 'groups');
-            var groupName = api.getCurrentGroupName();
-            this.setState(merge({}, this.state, {
-              menuHeadersProps: {
-                groupName: groupName,
-                groupObjects: groupObjects
-              }
-            }))
-            /*first load of fresh project thus no groupName
-            * in checkstore then get groupName at groupindex 0
-            */
-            var currentGroupIndex;
-            if (params.currentCheckNamespace && !groupName) {
-              currentGroupIndex = api.getDataFromCheckStore(
-                params.currentCheckNamespace, 'currentGroupIndex');
-              try {
-                groupName = api.getDataFromCheckStore(
-                  params.currentCheckNamespace, 'groups')[currentGroupIndex].group;
-              } catch (err) {
-                console.warn("currentGroupIndex is undefined " + err);;
-              }
-            }
-            if (groupName) {
-              this.state.menuHeadersItemsProps.handleSelection(null, groupName);
-            }
-            this.setState(merge({}, this.state, {
-              currentGroupIndex: currentGroupIndex,
-              menuHeadersProps: {
-                groupName: groupName
-              }
-            }))
-            //this.state.menuHeadersProps.generateProgressForAllMenuHeaders();
-          },
-          unselectOldMenuItem: () => {
-            if (this.state.menuHeadersProps.groupName) {
-              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
-              this.state.menuHeadersItemsProps.setIsCurrentCheck(false, id);
-            }
-          },
-          selectNewMenuItem: () => {
-            if (this.state.menuHeadersProps.groupName) {
-              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
-              this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
-            }
-          },
-          updateSubMenuItemProgress: (params) => {
-            let groups = api.getDataFromCheckStore(this.state.currentToolNamespace, 'groups');
-            let foundGroup = groups.find(arrayElement => arrayElement.group === this.state.menuHeadersProps.groupName);
-            let currentProgress = this.state.menuHeadersProps.getGroupProgress(foundGroup);
-            if (this.state.menuHeadersProps.groupName) {
-              const id = this.getMenuItemidFromGroupName(this.state.menuHeadersProps.groupName);
-              this.state.menuHeadersItemsProps.setCurrentProgress(currentProgress, id);
-            }
-          },
-          getGroupProgress: (groupObj) => {
-            var numChecked = 0;
-            var numUnchecked = 0;
-            for (var i = 0; i < groupObj.checks.length; i++) {
-              if (groupObj.checks[i].checkStatus != "UNCHECKED") {
-                numChecked++;
-              } else {
-                numUnchecked++;
-              }
-            }
-            var total = numChecked + numUnchecked;
-            return numChecked / total;
-          },
-        },
-        menuHeadersItemsProps: {
-          handleSelection: (id, name) => {
-            
-            const groupName = name || this.state.menuHeadersProps.groupObjects[id].group;
+          scrollToMenuElement: (id, name) => {
+            const groupName = name || this.state.currentGroupObjects[id].group;
             //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
-            api.setCurrentGroupName(groupName);
-            var newGroupName = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
+            var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
             //this ref may be here forever...sigh
-            var element = api.findDOMNode(newGroupName);
+            var element = api.findDOMNode(newGroupElement);
             if (element) {
               element.scrollIntoView();
             }
           },
-          groupNameClicked: (id) => {
-            
-            this.state.menuHeadersItemsProps.handleSelection(id);
-            this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
+          menuClick: (id) => {
+            this.state.menuHeadersProps.scrollToMenuElement(id);
+            this.state.menuHeadersProps.setIsCurrentCheck(true, id);
           },
-
           setIsCurrentCheck: (status, id) => {
-            const newObj = this.state.menuHeadersProps.groupObjects.slice(0);
+            const newObj = this.state.currentGroupObjects.slice(0);
+            newObj[this.state.currentGroupIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
-            this.setState(merge({}, this.state, {
-              menuHeadersProps: {
-                groupObjects: newObj
-              }
-            }
-            ));
-          },
-          setCurrentProgress: (progress, id) => {
-            const newObj = this.state.menuHeadersProps.groupObjects.slice(0);
-            newObj[id].currentGroupprogress = progress;
-            this.setState(merge({}, this.state, {
-              menuHeadersProps: {
-                groupObjects: newObj
-              }
-            }));
+            var groupName = newObj[id].group;
+            var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
+            currentSubGroupObjects[0].isCurrentItem = true;
+            this.setState({
+              currentGroupObjects: newObj,
+              currentGroupIndex: parseInt(id),
+              currentCheckIndex: 0,
+              currentGroupName: groupName,
+              currentSubGroupObjects: currentSubGroupObjects
+            });
           },
         },
         subMenuProps: {
-          subMenuItems: [],
-          handleItemSelection: (checkIndex) => {
-            
-            api.changeCurrentIndexes(checkIndex);
-            
-            var newItem = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${checkIndex}`];
-            var element = api.findDOMNode(newItem);
+          scrollToMenuElement: (id) => {
+            var newGroupElement = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${id}`];
+            //this ref may be here forever...sigh
+            var element = api.findDOMNode(newGroupElement);
             if (element) {
               element.scrollIntoView();
             }
           },
-          unselectOldMenuItem: () => {
-            
-            const newObj = this.state.subMenuProps.subMenuItems.slice(0);
+          checkClicked: (id) => {
+            this.state.subMenuProps.scrollToMenuElement(id);
+            this.state.subMenuProps.setIsCurrentCheck(true, id);
+          },
+          setIsCurrentCheck: (status, id) => {
+            const newObj = this.state.currentSubGroupObjects.slice(0);
             newObj[this.state.currentCheckIndex].isCurrentItem = false;
-            this.setState(merge({}, this.state, {
-              subMenuProps: {
-                subMenuItems: newObj
-              }
-            }
-            ));
+            newObj[id].isCurrentItem = status;
+            this.setState({
+              currentCheckIndex: parseInt(id),
+              currentSubGroupObjects: newObj
+            });
           },
         },
-        subMenuItemsProps: {
-          getItemStatus: () => {
-            
-            var groups = api.getDataFromCheckStore(this.props.currentNamespace, 'groups');
-            var currentCheck = groups[this.props.groupIndex]['checks'][this.props.checkIndex];
-            var checkStatus = currentCheck.checkStatus;
-            this.setState({ checkStatus: checkStatus });
-          },
-          itemClicked: () => {
-            
-            this.props.handleItemSelection();
-            this.setIsCurrentCheck(true);
-          },
-          setIsCurrentCheck: (status) => {
-            
-            this.setState({ isCurrentItem: status });
-          },
-          setIsCurrentCheck: (status) => {
-            
-            this.setState({ isCurrentItem: status });
-          },
-        },
-
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
@@ -730,7 +672,6 @@ var Main = React.createClass({
   },
 
   render: function () {
-    console.log(this.state);
     var _this = this;
     if (this.state.firstTime) {
       return (
@@ -742,15 +683,15 @@ var Main = React.createClass({
           <SettingsModal />
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
-          <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} menuHeadersItemsProps={this.state.menuHeadersItemsProps} menunHeaderProps={this.state.menuHeadersProps} sideNavBarProps={this.state.sideNavBarProps} {...this.state.sideBarContainerProps} />
+          <SideBarContainer ref='sidebar' {...this.state} menuClick={this.state.menuHeadersProps.menuClick} />
           <StatusBar />
           <SwitchCheckModal.Modal />
-          <Popover />
-          <Toast />
+          <Popover />``
+        <Toast />
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                <NavMenu ref='navmenu' subMenuItemsProps={this.state.subMenuItemsProps} subMenuProps={this.state.subMenuProps} />
+                <NavMenu ref='navmenu' {...this.state} />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />

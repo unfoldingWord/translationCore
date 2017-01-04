@@ -31,7 +31,9 @@ class SideBarContainer extends React.Component{
                                    textValue={"Tools"}
                                    imagePath={this.props.imgPath}
                                    handleClick={this.props.handleSelectTool}/>
-                          <MenuHeaders ref='menuheaders' menuHeadersItemsProps={this.props.menuHeadersItemsProps} {...this.props.menunHeaderProps} currentToolNamespace={this.props.currentToolNamespace} {...this.props.menuHeadersProps}/>
+                          <MenuHeaders ref='menuheaders' currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
+                                       currentCheckIndex={this.props.currentCheckIndex}
+                                       currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick}/>
                        </div>;
     }
     return(

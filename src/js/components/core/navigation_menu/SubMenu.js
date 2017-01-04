@@ -8,16 +8,6 @@ const SubMenuItem = require('./SubMenuItem');
 
 
 class SubMenu extends React.Component {
-  constructor(){
-    super();
-    this.currentCheckIndex = null;
-    this.currentGroupIndex = null;
-    this.updateSubMenuItem = this.updateSubMenuItem.bind(this);
-    this.goToCheck = this.goToCheck.bind(this);
-    this.goToNext = this.goToNext.bind(this);
-    this.goToPrevious = this.goToPrevious.bind(this);
-  }
-
   updateSubMenuItem(params){
     if(params){
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
@@ -75,30 +65,19 @@ class SubMenu extends React.Component {
   }
 
   selectNewMenuItem() {
-    
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
   }
 
   render() {
-    this.currentCheckIndex = this.props.currentCheckIndex;
-    this.currentGroupIndex = this.props.currentGroupIndex;
     let subMenuItems = [];
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
-    let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
-    let groupIndex = api.getCurrentGroupIndex();
-    if(groupIndex !== null){
-      for(var i in this.props.subMenuItemsArray){
-        const item = this.props.subMenuItemsArray[i];
+    if(this.props.currentGroupIndex !== null){
+      for(var i in this.props.currentSubGroupObjects){
+        const item = this.props.currentSubGroupObjects[i];
         item.checkStatus = item.checkStatus || "UNCHECKED";
         item.isCurrentItem = item.isCurrentItem || false;
         subMenuItems.push(
-          <SubMenuItem key={i} {...item} id={i} {...this.props.subMenuItemsProps}
-            checkClicked={this.props.handleItemSelection}
-            bookName={bookName}
-            groupIndex={groupIndex}
-            checkIndex={i}
-            currentNamespace={currentNamespace}
-            ref={groupIndex.toString() + ' ' + i.toString()}/>
+          <SubMenuItem key={i} {...item} id={i} checkClicked={this.props.checkClicked} groupIndex={this.props.currentGroupIndex}
+            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props}/>
         );
       }
     }

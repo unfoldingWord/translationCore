@@ -32,10 +32,10 @@ class NavigationMenu extends React.Component {
   render() {
     return (
       <div>
-        <SubMenu ref='submenu' subMenuItemsProps={this.props.subMenuItemsProps} {...this.props.subMenuProps} 
-                 subMenuItemsArray={this.props.subMenuProps.subMenuItems}
-                 currentCheckIndex={this.state.currentCheckIndex}
-                 currentGroupIndex={this.state.currentGroupIndex}/>
+        <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}
+                 currentSubGroupObjects={this.props.currentSubGroupObjects}
+                 currentCheckIndex={this.props.currentCheckIndex}
+                 currentGroupIndex={this.props.currentGroupIndex}/>
       </div>
     );
   }
