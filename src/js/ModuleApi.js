@@ -342,7 +342,7 @@ class ModuleApi {
     var settings = localStorage.getItem('settings');
     if (settings) {
       var settingsObj = JSON.parse(settings);
-      return settingsObj[name];
+      return settingsObj[name] || settingsObj;
     }
     return {};
   }

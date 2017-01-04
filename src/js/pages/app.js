@@ -127,22 +127,28 @@ var Main = React.createClass({
           updateLoginModal: () => {
             const loginVisible = CoreStore.getLoginModal() || false;
             const profileVisible = CoreStore.getProfileVisibility() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                visibleLoginModal: loginVisible,
-                profile:profileVisible
-              }
-            }))
+            var loginModalProps = this.state.loginModalProps
+            if (!loginModalProps.profile === profileVisible || !loginModalProps.visibleLoginModal === loginVisible) {
+              this.setState(merge({}, this.state, {
+                loginModalProps: {
+                  visibleLoginModal: loginVisible,
+                  profile:profileVisible
+                }
+              }));
+            }
           },
           updateProfileVisibility: () => {
             const profileVisible = CoreStore.getProfileVisibility() || false;
             const loginVisible = CoreStore.getLoginModal() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                profile: profileVisible,
-                visibleLoginModal: loginVisible
-              }
-            }))
+            var loginModalProps = this.state.loginModalProps
+            if (!loginModalProps.profile === profileVisible || !loginModalProps.visibleLoginModal === loginVisible) {
+              this.setState(merge({}, this.state, {
+                loginModalProps: {
+                  profile: profileVisible,
+                  visibleLoginModal: loginVisible
+                }
+              }));
+            }
           },
           close: () => {
             CoreActions.updateLoginModal(false);
@@ -361,10 +367,28 @@ var Main = React.createClass({
             }
             return projectList;
           }
+        },
+        settingsModalProps: {
+          show: false,
+          onClose: () => {
+            CoreActions.updateSettings(false);
+          },
+          updateModal: () => {
+            this.setState(merge({}, this.state, {
+              settingsModalProps: {
+                show: CoreStore.getSettingsView(),
+              }
+            }));
+
+          },
+          onSettingsChange: (field) => {
+            api.setSettings(field.target.name, field.target.value);
+          },
+          currentSettings: api.getSettings()
         }
       });
-    var tutorialState = api.getSettings('showTutorial');
-    if (tutorialState === true || tutorialState === null) {
+    var tutorialState = api.getSettings('tutorialView');
+    if (tutorialState === 'show' || tutorialState === null) {
       return merge({}, this.state, {
         firstTime: true
       })
@@ -379,7 +403,7 @@ var Main = React.createClass({
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
-      api.setSettings('showTutorial', false);
+      api.setSettings('tutorialView', 'hide');
     }
 
     if (localStorage.getItem('user')) {
@@ -407,7 +431,7 @@ var Main = React.createClass({
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
-    if (api.getSettings('showTutorial') !== true && saveLocation) {
+    if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
       Upload.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
@@ -442,7 +466,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal />
+          <SettingsModal {...this.state.settingsModalProps}/>
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
           <SideBarContainer />
