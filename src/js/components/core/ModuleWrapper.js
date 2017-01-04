@@ -10,7 +10,7 @@ var CoreStore = require('../../stores/CoreStore');
 var NextButton = require('../core/NextButton');
 var PreviousButton = require('../core/PreviousButton');
 var RecentProjects = require('./RecentProjects');
-var SwitchCheckModal = require('./SwitchCheckModal');
+var SwitchCheck = require('./SwitchCheck');
 
 const api = window.ModuleApi;
 
@@ -28,7 +28,7 @@ class ModuleWrapper extends React.Component {
     if(!this.state.view) {
       var projects;
       if (this.state.showApps) {
-        projects = <SwitchCheckModal.Component />
+        projects = <SwitchCheck.Component />
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
         projects = <RecentProjects.Component onLoad={() => {
           this.state.showApps = true;
@@ -37,7 +37,7 @@ class ModuleWrapper extends React.Component {
       } else {
         this.state.showApps = true;
         //This is an ant-pattern should never change the state in the render method
-        projects = <SwitchCheckModal.Component />
+        projects = <SwitchCheck.Component />
       }
       return(
         <div>

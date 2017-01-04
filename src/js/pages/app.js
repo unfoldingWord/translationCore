@@ -4,7 +4,10 @@ var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const remote = require('electron').remote;
 const {dialog} = remote;
-var merge = require('lodash.merge');
+const path = require('path');
+const fs = require(window.__base + 'node_modules/fs-extra');
+
+const merge = require('lodash.merge');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
@@ -13,6 +16,7 @@ const LoginModal = require('../components/core/login/LoginModal');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
+const SwitchCheck = require('../components/core/SwitchCheck');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -188,17 +192,21 @@ var Main = React.createClass({
               CoreStore.projectModalVisibility = input;
             }
             if (modal === 'Languages') {
-              this.setState(merge({}, this.state, {
-                projectModalProps: {
-                  showModal: true,
-                }
-              }));
+              if (!this.state.projectModalProps.showModal) {
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    showModal: true,
+                  }
+                }));
+              }
             } else if (modal === "") {
-              this.setState(merge({}, this.state, {
-                projectModalProps: {
-                  showModal: false,
-                }
-              }))
+              if (this.state.projectModalProps.showModal) {
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    showModal: false,
+                  }
+                }))
+              }
             }
           },
 
@@ -374,17 +382,63 @@ var Main = React.createClass({
             CoreActions.updateSettings(false);
           },
           updateModal: () => {
-            this.setState(merge({}, this.state, {
-              settingsModalProps: {
-                show: CoreStore.getSettingsView(),
-              }
-            }));
-
+            if (!this.state.settingsModalProps.show === CoreStore.getSettingsView()) {
+              this.setState(merge({}, this.state, {
+                settingsModalProps: {
+                  show: CoreStore.getSettingsView(),
+                }
+              }));
+            }
           },
           onSettingsChange: (field) => {
             api.setSettings(field.target.name, field.target.value);
           },
           currentSettings: api.getSettings()
+        },
+        switchCheckModalProps: {
+            showModal: false,
+            updateCheckModal: () => {
+              if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
+                this.setState(merge({}, this.state, {
+                  switchCheckModalProps: {
+                    showModal: CoreStore.getCheckModal(),
+                  }
+                }));
+              }
+            },
+            close: () => {
+              CoreActions.updateCheckModal(false);
+            },
+            localAppFilePath: '',
+            handleFilePathChange: (event) => {
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  localAppFilePath: event.target.value,
+                }
+              }));
+            },
+            developerApp: (filepath) => {
+              var folderName = path.join(window.__base, filepath);
+              fs.access(folderName, fs.F_OK, (err) => {
+                if(!err){
+                  console.log("Were in");
+                  CheckDataGrabber.loadModuleAndDependencies(folderName);
+                  localStorage.setItem('lastCheckModule', folderName);
+                } else {
+                  console.error(err);
+                }
+              });
+              CoreActions.updateCheckModal(false);
+            },
+            developerMode: api.getSettings('developerMode') === 'enable',
+            showDevOptions: false,
+            updateDevOptions: () => {
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
+                }
+              }));
+            }
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -471,7 +525,9 @@ var Main = React.createClass({
           <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
           <SideBarContainer />
           <StatusBar />
-          <SwitchCheckModal.Modal />
+          <SwitchCheckModal {...this.state.switchCheckModalProps}>
+            <SwitchCheck.Component />
+          </SwitchCheckModal>
           <Popover />
           <Toast />
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
