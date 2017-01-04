@@ -89,7 +89,7 @@ class SubMenu extends React.Component {
   }
 
   selectNewMenuItem() {
-    debugger;
+    
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
   }
 

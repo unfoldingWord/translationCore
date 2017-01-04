@@ -42,11 +42,22 @@ var Main = React.createClass({
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.registerEventListener('goToCheck', this.changeCheck);
+    api.registerEventListener('changeGroupName', this.changeSubMenuItems);
   },
 
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('goToCheck', this.changeCheck);
+    api.removeEventListener('changeGroupName', this.changeSubMenuItems);
+  },
+  changeSubMenuItems({groupName}) {
+    
+    const subMenuItemsArray = this.getSubMenuItems(groupName);
+    this.setState(merge({}, this.state, {
+      subMenuProps: {
+        subMenuItems: subMenuItemsArray
+      }
+    }))
   },
   changeCheck(tool) {
     this.setState(merge({}, this.state, {
@@ -349,13 +360,8 @@ var Main = React.createClass({
         },
         menuHeadersItemsProps: {
           handleSelection: (id, name) => {
+            
             const groupName = name || this.state.menuHeadersProps.groupObjects[id].group;
-            const subMenuItemsArray = this.getSubMenuItems(groupName);
-            this.setState(merge({}, this.state, {
-              subMenuProps: {
-                subMenuItems: subMenuItemsArray
-              }
-            }),()=>console.log(this.state))
             //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
             api.setCurrentGroupName(groupName);
             var newGroupName = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
@@ -366,6 +372,7 @@ var Main = React.createClass({
             }
           },
           groupNameClicked: (id) => {
+            
             this.state.menuHeadersItemsProps.handleSelection(id);
             this.state.menuHeadersItemsProps.setIsCurrentCheck(true, id);
           },
@@ -393,8 +400,9 @@ var Main = React.createClass({
         subMenuProps: {
           subMenuItems: [],
           handleItemSelection: (checkIndex) => {
+            
             api.changeCurrentIndexes(checkIndex);
-            debugger;
+            
             var newItem = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${checkIndex}`];
             var element = api.findDOMNode(newItem);
             if (element) {
@@ -402,7 +410,7 @@ var Main = React.createClass({
             }
           },
           unselectOldMenuItem: () => {
-            debugger;
+            
             const newObj = this.state.subMenuProps.subMenuItems.slice(0);
             newObj[this.state.currentCheckIndex].isCurrentItem = false;
             this.setState(merge({}, this.state, {
@@ -415,23 +423,23 @@ var Main = React.createClass({
         },
         subMenuItemsProps: {
           getItemStatus: () => {
-            debugger;
+            
             var groups = api.getDataFromCheckStore(this.props.currentNamespace, 'groups');
             var currentCheck = groups[this.props.groupIndex]['checks'][this.props.checkIndex];
             var checkStatus = currentCheck.checkStatus;
             this.setState({ checkStatus: checkStatus });
           },
           itemClicked: () => {
-            debugger;
+            
             this.props.handleItemSelection();
             this.setIsCurrentCheck(true);
           },
           setIsCurrentCheck: (status) => {
-            debugger;
+            
             this.setState({ isCurrentItem: status });
           },
           setIsCurrentCheck: (status) => {
-            debugger;
+            
             this.setState({ isCurrentItem: status });
           },
         },
@@ -722,7 +730,7 @@ var Main = React.createClass({
   },
 
   render: function () {
-    //console.log(this.state);
+    console.log(this.state);
     var _this = this;
     if (this.state.firstTime) {
       return (

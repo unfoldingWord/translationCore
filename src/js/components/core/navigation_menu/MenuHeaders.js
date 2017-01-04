@@ -8,18 +8,6 @@ const ProgressBar = require('react-progressbar.js');
 const Circle = ProgressBar.Circle;
 
 class MenuHeaders extends React.Component {
-  componentWillMount() {
-    api.registerEventListener('changeGroupName', this.props.updateCurrentMenuHeader);
-    api.registerEventListener('changeCheckType', this.props.newToolSelected);
-    api.registerEventListener('changedCheckStatus', this.props.updateSubMenuItemProgress);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('changeGroupName', this.props.updateCurrentMenuHeader);
-    api.removeEventListener('changeCheckType', this.props.newToolSelected);
-    api.removeEventListener('changedCheckStatus', this.props.updateSubMenuItemProgress);
-  }
-
   render() {
     var groupsName = [];
     if (this.props.currentToolNamespace) {
