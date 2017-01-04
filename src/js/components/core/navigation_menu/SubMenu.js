@@ -8,30 +8,6 @@ const SubMenuItem = require('./SubMenuItem');
 
 
 class SubMenu extends React.Component {
-  constructor(){
-    super();
-    this.currentCheckIndex = null;
-    this.currentGroupIndex = null;
-    this.updateSubMenuItem = this.updateSubMenuItem.bind(this);
-    this.goToCheck = this.goToCheck.bind(this);
-    this.goToNext = this.goToNext.bind(this);
-    this.goToPrevious = this.goToPrevious.bind(this);
-  }
-
-  componentWillMount(){
-    api.registerEventListener('changedCheckStatus', this.updateSubMenuItem);
-    api.registerEventListener('goToCheck', this.goToCheck);
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToPrevious', this.goToPrevious);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('changedCheckStatus', this.updateSubMenuItem);
-    api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('goToNext', this.goToNext);
-    api.removeEventListener('goToPrevious', this.goToPrevious);
-  }
-
   updateSubMenuItem(params){
     if(params){
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
@@ -88,42 +64,20 @@ class SubMenu extends React.Component {
     }
   }
 
-  unselectOldMenuItem() {
-    this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(false);
-  }
-
   selectNewMenuItem() {
     this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`].setIsCurrentCheck(true);
   }
 
-  handleItemSelection(checkIndex){
-    api.changeCurrentIndexes(checkIndex);
-    var newItem = this.refs[`${this.currentGroupIndex} ${this.currentCheckIndex}`];
-    var element = api.findDOMNode(newItem);
-    if (element) {
-      element.scrollIntoView();
-    }
-  }
-
   render() {
-    this.currentCheckIndex = this.props.currentCheckIndex;
-    this.currentGroupIndex = this.props.currentGroupIndex;
-    let subMenuItemsArray = this.props.subMenuItemsArray;
     let subMenuItems = [];
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
-    let bookName = api.getDataFromCheckStore(currentNamespace, 'book');
-    let groupIndex = api.getCurrentGroupIndex();
-    if(groupIndex !== null){
-      for(var i in subMenuItemsArray){
+    if(this.props.currentGroupIndex !== null){
+      for(var i in this.props.currentSubGroupObjects){
+        const item = this.props.currentSubGroupObjects[i];
+        item.checkStatus = item.checkStatus || "UNCHECKED";
+        item.isCurrentItem = item.isCurrentItem || false;
         subMenuItems.push(
-          <SubMenuItem key={i}
-            handleItemSelection={this.handleItemSelection.bind(this, i)}
-            bookName={bookName}
-            check={subMenuItemsArray[i]}
-            groupIndex={groupIndex}
-            checkIndex={i}
-            currentNamespace={currentNamespace}
-            ref={groupIndex.toString() + ' ' + i.toString()}/>
+          <SubMenuItem key={i} {...item} id={i} checkClicked={this.props.checkClicked} groupIndex={this.props.currentGroupIndex}
+            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props}/>
         );
       }
     }
