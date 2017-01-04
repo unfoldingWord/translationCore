@@ -20,21 +20,6 @@ class NavigationMenu extends React.Component {
     this.getSubMenuItemsFromCheckStore = this.getSubMenuItemsFromCheckStore.bind(this);
 }
 
-  componentWillMount() {
-    api.registerEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
-  }
 
   getSubMenuItemsFromCheckStore(){
     let currentNamespace = CoreStore.getCurrentCheckNamespace();

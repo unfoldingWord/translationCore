@@ -18,20 +18,6 @@ class SubMenu extends React.Component {
     this.goToPrevious = this.goToPrevious.bind(this);
   }
 
-  componentWillMount(){
-    api.registerEventListener('changedCheckStatus', this.updateSubMenuItem);
-    api.registerEventListener('goToCheck', this.goToCheck);
-    api.registerEventListener('goToNext', this.goToNext);
-    api.registerEventListener('goToPrevious', this.goToPrevious);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('changedCheckStatus', this.updateSubMenuItem);
-    api.removeEventListener('goToCheck', this.goToCheck);
-    api.removeEventListener('goToNext', this.goToNext);
-    api.removeEventListener('goToPrevious', this.goToPrevious);
-  }
-
   updateSubMenuItem(params){
     if(params){
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
