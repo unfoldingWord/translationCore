@@ -96,7 +96,7 @@ class PackageManagerView extends React.Component{
     PackageManager.download(name, version, function(err, data){
       if(!err) {
         if(mounted) {
-          this.cardStates(name, {installStatus: 'Installed'})
+          _this.cardStates(name, {installStatus: 'Installed'})
         }
       }
     });
