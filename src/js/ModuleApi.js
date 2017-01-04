@@ -50,20 +50,6 @@ class ModuleApi {
     this.menus[namespace] = menu;
   }
 
-  getMenu(namespace) {
-    if (!namespace) {
-      return null;
-    }
-    if (!this.menus) {
-      this.menus = {};
-    }
-    if (!this.menus[namespace]) {
-      var menuCreatorFunction = require('./components/core/navigation_menu/MenuView.js');
-      var menu = menuCreatorFunction(namespace);
-      this.menus[namespace] = menu;
-    }
-    return this.menus[namespace];
-  }
 
   saveModule(identifier, module) {
     this.modules[identifier] = module;
