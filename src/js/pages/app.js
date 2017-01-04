@@ -48,6 +48,8 @@ var Main = React.createClass({
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     //changing the status of the current check
+    api.registerEventListener('goToNext', this.goToNextCheck);
+    
   },
 
   componentWillUnmount() {
@@ -55,6 +57,20 @@ var Main = React.createClass({
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+  },
+  goToNextCheck(){
+    debugger;
+    var lastCheck = this.state.currentCheckIndex + 1 > this.state.currentCheckIndex.length;
+    var lastGroup = this.state.currentGroupIndex + 1 > this.state.currentGroupIndex.length;
+    this.setState({
+      currentGroupIndex: lastCheck ? this.state.currentGroupIndex + 1 : this.state.currentGroupIndex,
+      currentCheckIndex: lastGroup ? 0 : this.state.currentCheckIndex,
+    });
+  },
+  updateCheckStore() {
+    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentCheckIndex', this.state.currentCheckIndex);
+    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentGroupIndex', this.state.currentGroupIndex);
+    api.putDataInCheckStore(this.state.currentToolNamespace, 'groups', this.state.currentGroupObjects);
   },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
@@ -93,7 +109,7 @@ var Main = React.createClass({
   setCurrentToolNamespace({currentCheckNamespace}) {
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
-    var currentGroupIndex;
+    var currentGroupIndex = 0;
     /*first load of fresh project thus no groupName
     * in checkstore then get groupName at groupindex 0
     */
@@ -109,10 +125,14 @@ var Main = React.createClass({
       groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
     }
     var subGroupObjects = this.getSubMenuItems(currentCheckNamespace, groupName);
-    subGroupObjects[0].isCurrentItem = true;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
+    const _this = this;
+    currentCheckIndex = groupObjects[currentGroupIndex].checks.find((element, index)=>{
+      if(element.isCurrentItem) _this.checkIndex = index;
+    });
     this.setState(merge({}, this.state, {
       currentGroupIndex: currentGroupIndex,
+      currentCheckIndex:_this.checkIndex || 0,
       currentToolNamespace: currentCheckNamespace,
       currentGroupName: groupName,
       currentGroupObjects: groupObjects,
@@ -354,6 +374,11 @@ var Main = React.createClass({
             var groupName = newObj[id].group;
             var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
             currentSubGroupObjects[0].isCurrentItem = true;
+            var currentCheck = newObj[id].checks[0];
+            api.emitEvent('goToVerse', {
+              chapterNumber: currentCheck.chapter,
+              verseNumber: currentCheck.verse
+            });
             this.setState({
               currentGroupObjects: newObj,
               currentGroupIndex: parseInt(id),
@@ -380,6 +405,11 @@ var Main = React.createClass({
             const newObj = this.state.currentSubGroupObjects.slice(0);
             newObj[this.state.currentCheckIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
+            var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[id];
+            api.emitEvent('goToVerse', {
+              chapterNumber: currentCheck.chapter,
+              verseNumber: currentCheck.verse
+            });
             this.setState({
               currentCheckIndex: parseInt(id),
               currentSubGroupObjects: newObj
@@ -673,6 +703,7 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
+    this.updateCheckStore();
     if (this.state.firstTime) {
       return (
         <Welcome initialize={this.finishWelcome} />
