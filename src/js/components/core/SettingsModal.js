@@ -11,14 +11,14 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 
-const SettingsModal = React.createClass({
-  componentWillMount: function() {
+class SettingsModal extends React.Component {
+  componentWillMount() {
     CoreStore.addChangeListener(this.props.updateModal);
-  },
-  componentWillUnmount: function() {
+  }
+  componentWillUnmount() {
     CoreStore.removeChangeListener(this.props.updateModal);
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div>
         <Modal show={this.props.show} onHide={this.props.onClose}>
@@ -55,6 +55,6 @@ const SettingsModal = React.createClass({
       </div>
     );
   }
-});
+};
 
 module.exports = SettingsModal;
