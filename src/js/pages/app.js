@@ -49,7 +49,7 @@ var Main = React.createClass({
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     //changing the status of the current check
     api.registerEventListener('goToNext', this.goToNextCheck);
-    
+
   },
 
   componentWillUnmount() {
@@ -58,14 +58,12 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
-  goToNextCheck(){
-    debugger;
+  goToNextCheck() {
     var lastCheck = this.state.currentCheckIndex + 1 > this.state.currentCheckIndex.length;
-    var lastGroup = this.state.currentGroupIndex + 1 > this.state.currentGroupIndex.length;
-    this.setState({
-      currentGroupIndex: lastCheck ? this.state.currentGroupIndex + 1 : this.state.currentGroupIndex,
-      currentCheckIndex: lastGroup ? 0 : this.state.currentCheckIndex,
-    });
+    if (lastCheck) {
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1);
+    }
+    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
   },
   updateCheckStore() {
     api.putDataInCheckStore(this.state.currentToolNamespace, 'currentCheckIndex', this.state.currentCheckIndex);
@@ -99,7 +97,6 @@ var Main = React.createClass({
     });
   },
   changeCheck(tool) {
-    debugger;
     this.setState(merge({}, this.state, {
       currentGroupIndex: tool.groupIndex,
       currentCheckIndex: tool.checkIndex
@@ -120,19 +117,18 @@ var Main = React.createClass({
       console.log("Error getting groups");
     }
     var groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
-    groupObjects[currentGroupIndex].isCurrentItem = true;
     for (var el in groupObjects) {
       groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
     }
     var subGroupObjects = this.getSubMenuItems(currentCheckNamespace, groupName);
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     const _this = this;
-    currentCheckIndex = groupObjects[currentGroupIndex].checks.find((element, index)=>{
-      if(element.isCurrentItem) _this.checkIndex = index;
+    currentCheckIndex = groupObjects[currentGroupIndex].checks.find((element, index) => {
+      if (element.isCurrentItem) _this.checkIndex = index;
     });
     this.setState(merge({}, this.state, {
       currentGroupIndex: currentGroupIndex,
-      currentCheckIndex:_this.checkIndex || 0,
+      currentCheckIndex: _this.checkIndex || 0,
       currentToolNamespace: currentCheckNamespace,
       currentGroupName: groupName,
       currentGroupObjects: groupObjects,
@@ -163,8 +159,6 @@ var Main = React.createClass({
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
-        currentGroupIndex: 0,
-        currentCheckIndex: 0,
         currentToolNamespace: null,
         currentGroupName: null,
         loginProps: {
@@ -247,27 +241,23 @@ var Main = React.createClass({
           emailAccount: user ? user.email : null,
         },
         loginModalProps: {
-          visibleLoginModal: false,
-          profile: false,
           updateLoginModal: () => {
+            
             const loginVisible = CoreStore.getLoginModal() || false;
             const profileVisible = CoreStore.getProfileVisibility() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                visibleLoginModal: loginVisible,
-                profile: profileVisible
-              }
-            }))
+            this.setState({
+              visibleLoginModal: loginVisible,
+              profileVisible: profileVisible
+            })
           },
           updateProfileVisibility: () => {
+            
             const profileVisible = CoreStore.getProfileVisibility() || false;
             const loginVisible = CoreStore.getLoginModal() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                profile: profileVisible,
-                visibleLoginModal: loginVisible
-              }
-            }))
+            this.setState({
+              profileVisible: profileVisible,
+              visibleLoginModal: loginVisible
+            })
           },
           close: () => {
             CoreActions.updateLoginModal(false);
@@ -277,7 +267,7 @@ var Main = React.createClass({
           SideNavBar: false,
           imgPath: null,
           getCurrentToolNamespace: () => {
-            debugger;
+
             //api.initialCurrentGroupName();
             this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
           },
@@ -365,27 +355,30 @@ var Main = React.createClass({
           },
           menuClick: (id) => {
             this.state.menuHeadersProps.scrollToMenuElement(id);
-            this.state.menuHeadersProps.setIsCurrentCheck(true, id);
+            this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
+
+              var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[0];
+              api.emitEvent('goToVerse', {
+                chapterNumber: currentCheck.chapter,
+                verseNumber: currentCheck.verse
+              });
+            });
           },
           setIsCurrentCheck: (status, id) => {
+            //The stroe should dictate whether the current chekc is "current"(highlighted) not the other way around
             const newObj = this.state.currentGroupObjects.slice(0);
             newObj[this.state.currentGroupIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
             var groupName = newObj[id].group;
             var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
             currentSubGroupObjects[0].isCurrentItem = true;
-            var currentCheck = newObj[id].checks[0];
-            api.emitEvent('goToVerse', {
-              chapterNumber: currentCheck.chapter,
-              verseNumber: currentCheck.verse
-            });
             this.setState({
               currentGroupObjects: newObj,
               currentGroupIndex: parseInt(id),
               currentCheckIndex: 0,
               currentGroupName: groupName,
               currentSubGroupObjects: currentSubGroupObjects
-            });
+            }, callback);
           },
         },
         subMenuProps: {
@@ -399,27 +392,32 @@ var Main = React.createClass({
           },
           checkClicked: (id) => {
             this.state.subMenuProps.scrollToMenuElement(id);
-            this.state.subMenuProps.setIsCurrentCheck(true, id);
+            this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
+
+              var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
+              api.emitEvent('goToVerse', {
+                chapterNumber: currentCheck.chapter,
+                verseNumber: currentCheck.verse
+              });
+            });
           },
-          setIsCurrentCheck: (status, id) => {
+          setIsCurrentCheck: (status, id, callback) => {
+            //This needs to change, the store should dictate whether
+            //the current check is "current"(highlighted) not the other way around
             const newObj = this.state.currentSubGroupObjects.slice(0);
             newObj[this.state.currentCheckIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
-            var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[id];
-            api.emitEvent('goToVerse', {
-              chapterNumber: currentCheck.chapter,
-              verseNumber: currentCheck.verse
-            });
             this.setState({
               currentCheckIndex: parseInt(id),
               currentSubGroupObjects: newObj
-            });
+            }, callback);
           },
         },
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
           checkIfValid: (location) => {
+
             this.setState(merge({}, this.state, {
               importUsfmProps: {
                 filePath: location,
@@ -437,7 +435,7 @@ var Main = React.createClass({
                 filePath: path,
               }
             }));
-            Upload.sendFilePath(path, link, callback);
+            Upload.sendFilePath(path, link, callback);``
           },
         },
         projectModalProps: {
@@ -703,6 +701,7 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
+    console.log(this.state);
     this.updateCheckStore();
     if (this.state.firstTime) {
       return (
@@ -712,9 +711,9 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <SettingsModal />
-          <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
+          <LoginModal visibleLoginModal={this.state.visibleLoginModal} profile={this.state.profileVisible} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
-          <SideBarContainer ref='sidebar' {...this.state} menuClick={this.state.menuHeadersProps.menuClick} />
+          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} />
           <StatusBar />
           <SwitchCheckModal.Modal />
           <Popover />``
