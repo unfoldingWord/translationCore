@@ -5,79 +5,26 @@
  ******************************************************************************/
 const api = window.ModuleApi;
 const React = api.React;
-const ReactDOM = require("react-dom");
-const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, Button, FormGroup, FormControl} = RB;
 const style = require("./Style");
-const PackageManager = require('./PackageManager.js');
 
 var mounted = false;
 class PackageCard extends React.Component{
   constructor() {
     super();
-    this.state = {
-      installStatus: 'Install',
-      removeStatus: 'Uninstall',
-      updateStatus: 'Update',
-    };
   }
 
-  componentDidMount() {
-    mounted = true;
-    this.setState({installVersion: this.props.packVersion[this.props.packVersion.length - 1]});
-    this.setState({installStatus: PackageManager.isInstalled(this.props.packName) ? 'Installed' : 'Install'});
-  }
-
-  componentWillUnmount() {
-    mounted = false;
-  }
-
-  install(name, version) {
-    this.setState({installStatus: 'Installing...'});
-    var _this = this;
-    PackageManager.download(name, version, function(err, data){
-      if(!err) {
-        if(mounted) {
-          _this.setState({installStatus: 'Installed'});
-        }
-      }
-    });
-  }
-
-  handleVersion(e) {
-     this.setState({installVersion: e.target.value});
-   }
-
-  update(name, version) {
-    console.log(version);
-    var _this = this;
-    this.setState({updateStatus: 'Updating'})
-    PackageManager.update(name, version, function(err){
-      if (!err) {
-        if(mounted) {
-          _this.setState({updateStatus: 'Updated'})
-        }
-      }
-    });
-  }
-
-  uninstall(name) {
-    this.setState({removeStatus: 'Uninstalling...'});
-    PackageManager.uninstall(name);
-    this.setState({removeStatus: 'Uninstalled'});
-  }
-
-  render(){
+  render() {
     let buttons = [];
     var optionArray = [];
     var versionDisplay = <span style={style.versionText}>{" " + this.props.packVersion}</span>
     if(this.props.buttonDisplay === "updatePack"){
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="success"
-                disabled={this.state.updateStatus !== 'Update'}
-                title={"Update " + this.props.packName} onClick={this.update.bind(this, this.props.packName, this.state.newPackVersion)}>
-                <Glyphicon glyph="cloud-download" /> {this.state.updateStatus+" to " + this.props.newPackVersion}
+                disabled={this.props.updateStatus !== 'Update'}
+                title={this.props.updateStatus + " " + this.props.packName} onClick={this.props.update}>
+                <Glyphicon glyph="cloud-download" /> {this.props.updateStatus+" to " + this.props.newPackVersion}
         </Button>);
     }else if (this.props.buttonDisplay === "downloadPack") {
       for (var versions in this.props.packVersion) {
@@ -85,22 +32,22 @@ class PackageCard extends React.Component{
         optionArray.unshift(<option key={versions} value={versionNumber}>{versionNumber}</option>)
       }
       versionDisplay = (<FormGroup className="pull-right" controlId="formControlsSelect" style={{width: "100px", marginRight: "10px"}}>
-                          <FormControl onChange={this.handleVersion.bind(this)} componentClass="select" placeholder="select"  disabled={this.state.installStatus !== 'Install'}>
+                          <FormControl onChange={this.props.handleVersion} componentClass="select" placeholder="select"  disabled={this.props.installStatus !== 'Install'}>
                             {optionArray}
                           </FormControl>
                         </FormGroup>);
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="primary"
                 style={style.packCardButton} title={"Install " + this.props.packName}
-                onClick={this.install.bind(this, this.props.packName, this.state.installVersion)} disabled={this.state.installStatus !== 'Install'}>
-                <Glyphicon glyph="cloud-download" /> {this.state.installStatus}
+                onClick={this.props.install} disabled={this.props.installStatus !== 'Install'}>
+                <Glyphicon glyph="cloud-download" /> {this.props.installStatus}
         </Button>);
     }else if (this.props.buttonDisplay === "installedPack") {
       buttons.push(
         <Button key={this.props.buttonDisplay} bsStyle="danger"
-                title={"Uninstall " + this.props.packName} disabled={this.state.removeStatus !== 'Uninstall'}
-                onClick={this.uninstall.bind(this, this.props.packName)}>
-                <Glyphicon glyph="trash" /> {this.state.removeStatus}
+                title={this.props.removeStatus + " " + this.props.packName} disabled={this.props.removeStatus !== 'Uninstall'}
+                onClick={this.props.uninstall}>
+                <Glyphicon glyph="trash" /> {this.props.removeStatus}
         </Button>);
     }
     return(
