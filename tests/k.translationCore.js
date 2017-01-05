@@ -20,7 +20,7 @@ describe('example shallowWithStore', () => {
       expect(component.props().state).to.equal(expectedState);
     });
   });
-  
+
   describe('dispatch', () => {
     it('works', () => {
       const action = {
@@ -32,7 +32,7 @@ describe('example shallowWithStore', () => {
         },
       });
       const store = createMockStore();
- 
+
       const ConnectedComponent = connect(undefined, mapDispatchToProps)(App);
       const component = shallowWithStore(<ConnectedComponent />, store);
       component.props().dispatchProp();
@@ -54,7 +54,7 @@ describe('example shallowWithStore', () => {
 //     assert.equal(wrapper.find('ModuleWrapper').length, 1);
 //   });
 //   it('should render <Welcome /> if first time is set to true', function() {
-//     ModuleApi.setSettings('showTutorial', true);
+//     ModuleApi.setSettings('tutorialView', 'show');
 //     newWrapper = shallow(App);
 //     assert.equal(newWrapper.find('Welcome').length, 1)
 //   });
