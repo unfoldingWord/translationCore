@@ -439,6 +439,72 @@ var Main = React.createClass({
                 }
               }));
             }
+        },
+        alertModalProps: {
+            open: false,
+            handleOpen: () => {
+              this.setState(merge({}, this.state, {
+                alertModalProps: {
+                  open: !this.state.alertModalProps.open,
+                }
+              }));
+            },
+            alertMessage: () => {
+              var data = CoreStore.getAlertMessage();
+              if (data && !this.state.alertModalProps.visibility) {
+                try {
+                  var alertMessage = data['alertObj'];
+                  this.setState(merge({}, this.state, {
+                    alertModalProps: {
+                      title: alertMessage['title'],
+                      content: alertMessage['content'],
+                      leftButtonText: alertMessage['leftButtonText'],
+                      rightButtonText: alertMessage['rightButtonText'],
+                      moreInfo: alertMessage['moreInfo'].toString(),
+                      visibility: true
+                    }
+                  }));
+                } catch (e) {
+                }
+              }
+            },
+
+            handleAlertDismiss: () => {
+              var response = this.state.alertModalProps.leftButtonText;
+              this.setState(merge({}, this.state, {
+                alertModalProps: {
+                  visibility: false,
+                  alertMessage: {}
+                }
+              }), CoreActions.sendAlertResponse(response));
+            },
+
+            handleAlertOK: () => {
+              var response = this.state.alertModalProps.rightButtonText;
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  visibility: false,
+                  alertMessage: {}
+                }
+              }), CoreActions.sendAlertResponse(response));
+            },
+
+            getStyleFromState: (value) => {
+              if (value){
+                return {
+                  height:'30px',
+                  width:'60px',
+                  textAlign:'center',
+                  verticalAlign:'middle',
+                  padding:0,
+                  left:'50%'
+                }
+              } else {
+                return {
+                  display: 'none'
+                }
+              }
+            }
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -537,7 +603,7 @@ var Main = React.createClass({
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader />
-                <AlertModal />
+                <AlertModal {...this.state.alertModalProps}/>
                 <ModuleWrapper />
                 <ModuleProgress />
               </Col>
