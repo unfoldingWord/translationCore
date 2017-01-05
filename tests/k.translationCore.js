@@ -17,7 +17,7 @@ describe('<App />', function() {
     assert.equal(wrapper.find('ModuleWrapper').length, 1);
   });
   it('should render <Welcome /> if first time is set to true', function() {
-    ModuleApi.setSettings('showTutorial', true);
+    ModuleApi.setSettings('tutorialView', 'show');
     newWrapper = shallow(App);
     assert.equal(newWrapper.find('Welcome').length, 1)
   });
