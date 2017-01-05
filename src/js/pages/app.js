@@ -392,6 +392,14 @@ var Main = React.createClass({
           },
           onSettingsChange: (field) => {
             api.setSettings(field.target.name, field.target.value);
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                developerMode: api.getSettings('developerMode') === 'enable'
+              },
+              settingsModalProps: {
+                currentSettings: api.getSettings()
+              }
+            }));
           },
           currentSettings: api.getSettings()
         },

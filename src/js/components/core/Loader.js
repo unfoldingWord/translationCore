@@ -13,7 +13,6 @@ class Loader extends React.Component {
   }
 
   render() {
-    console.log(this.props.progress);
     return (
       <div>
         <Modal show={this.props.showModal}>
