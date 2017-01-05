@@ -1,4 +1,4 @@
-const CoreStore = require('../../.././stores/CoreStore');
+const CoreStore = require('../../.././stores/CoreStore.js');
 const CoreActions = require('../../.././actions/CoreActions');
 const CheckStore = require('../../.././stores/CheckStore');
 const fs = require(window.__base + 'node_modules/fs-extra');
@@ -24,7 +24,7 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray, callback) {
+  fetchModules: function (checkArray, callback = () =>{}) {
     try {
       var params = api.getDataFromCommon('params');
       this.doneModules = 0;

@@ -6,7 +6,7 @@ const SideNavBar = require('./SideNavBar');
 const Chevron = require('./Chevron');
 const style = require("./Style");
 const MenuHeaders = require('../navigation_menu/MenuHeaders');
-
+const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 
 class SideBarContainer extends React.Component{
   constructor(){
@@ -54,7 +54,10 @@ class SideBarContainer extends React.Component{
   }
 
   handleOpenProject(){
-    CoreActions.showCreateProject("Languages");
+    
+    const { dispatch } = this.props
+    dispatch(CoreActionsRedux.showCreateProject("Languages"));
+    //CoreActions.showCreateProject("Languages");
   }
 
   handleSelectTool(){
@@ -62,7 +65,10 @@ class SideBarContainer extends React.Component{
       CoreActions.updateCheckModal(true);
     } else {
       api.Toast.info('Open a project first, then try again', '', 3);
-      CoreActions.showCreateProject("Languages");
+      
+      const { dispatch } = this.props
+      dispatch(CoreActionsRedux.showCreateProject("Languages"));
+      //CoreActions.showCreateProject("Languages");
     }
   }
 
@@ -70,7 +76,7 @@ class SideBarContainer extends React.Component{
     let sideBarContent;
     if(this.state.SideNavBar || this.props.initShow){
       sideBarContent = <div>
-                          <SideNavBar /><br />
+                          <SideNavBar {...this.props}/><br />
                           <div style={{bottom: "0px", position: "absolute"}}>
                             <Chevron color="magenta" glyphicon={"folder-open"}
                                      textValue={"Load"}

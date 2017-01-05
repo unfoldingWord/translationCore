@@ -12,6 +12,7 @@ const exportUsfm = require('./Usfm/ExportUSFM');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
+
 var template = [
   {
     label: 'File',
@@ -55,7 +56,9 @@ var template = [
       {
         label: 'Load',
         click() {
-          CoreActions.showCreateProject("Languages");
+          
+          //store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
+          //CoreActions.showCreateProject("Languages");
         }
        },
        {

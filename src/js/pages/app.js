@@ -1,4 +1,8 @@
 const React = require('react');
+const CoreActions = require('../actions/CoreActions.js');
+const CheckStore = require('../stores/CheckStore.js');
+const { connect  } = require('react-redux');
+
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
@@ -34,12 +38,12 @@ const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
-const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-const CoreActions = require('../actions/CoreActions.js');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
+
+const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 
 var Main = React.createClass({
   getInitialState() {
@@ -587,7 +591,8 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      CoreActions.showCreateProject("Languages");
+      
+      store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
@@ -610,8 +615,8 @@ var Main = React.createClass({
         <div className='fill-height'>
           <SettingsModal {...this.state.settingsModalProps}/>
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
-          <SideBarContainer />
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
+          <SideBarContainer {...this.props}/>
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
             <SwitchCheck.Component />
@@ -637,6 +642,10 @@ var Main = React.createClass({
   }
 });
 
-module.exports = (
-  <Main />
-);
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  //Object.assign({}, state, state.coreStoreReducer)
+  return state;
+}
+
+module.exports = connect(mapStateToProps)(Main);
