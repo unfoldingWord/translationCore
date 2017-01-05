@@ -505,6 +505,20 @@ var Main = React.createClass({
                 }
               }
             }
+        },
+        loaderModalProps: {
+          progress: 0,
+          showModal: false,
+          update: () => {
+            if (CoreStore.doneLoading === this.state.loaderModalProps.showModal) {
+              this.setState(merge({}, this.state, {
+                loaderModalProps: {
+                  progress: CoreStore.getProgress(),
+                  showModal: !CoreStore.doneLoading
+                }
+              }));
+            }
+          },
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -602,7 +616,7 @@ var Main = React.createClass({
                 <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader />
+                <Loader {...this.state.loaderModalProps}/>
                 <AlertModal {...this.state.alertModalProps}/>
                 <ModuleWrapper />
                 <ModuleProgress />
