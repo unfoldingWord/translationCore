@@ -342,6 +342,9 @@ class ModuleApi {
     var settings = localStorage.getItem('settings');
     if (settings) {
       var settingsObj = JSON.parse(settings);
+      if (!name) {
+        return settingsObj;
+      }
       return settingsObj[name];
     }
     return {};

@@ -454,7 +454,6 @@ describe('ModuleApi Settings Functions', function () {
     }
   });
   it('getSettings should return undefined for a setting that does not exist', function() {
-    assert.isUndefined(ModuleApi.getSettings());
     assert.isUndefined(ModuleApi.getSettings(unexpectedValue));
   });
   it('getSettings should get the specified setting', function (done) {
@@ -462,6 +461,9 @@ describe('ModuleApi Settings Functions', function () {
     assert.equal(value, sampleValue);
     done();
   });
+  it('getSettings should return an object if no setting is specified', function() {
+    assert.isObject(ModuleApi.getSettings())
+  })
 });
 
 describe('ModuleApi.putToolMetaDatasInStore and ModuleApi.getToolMetaDataFromStore', function() {
