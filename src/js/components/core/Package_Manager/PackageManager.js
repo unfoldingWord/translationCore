@@ -10,7 +10,8 @@ const babel = require('babel-core');
 var installQueue = [];
 
 const PARENT = path.datadir('translationCore')
-const PACKAGE_COMPILE_LOCATION = path.join(PARENT, 'packages-compiled')
+const PACKAGE_COMPILE_LOCATION = path.join(PARENT, 'packages-compiled');
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CENTRAL_REPO = "https://raw.githubusercontent.com/translationCoreApps/translationCore-apps/master/directory.json";
 
 /**

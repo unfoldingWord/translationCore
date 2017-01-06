@@ -9,6 +9,7 @@ var fs = require(window.__base + 'node_modules/fs-extra');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 /**
 Keep pretty much all business logic and data in
@@ -264,7 +265,7 @@ class CoreStore extends EventEmitter {
         this.loaderModalVisibility = false;
         CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
         var reports = [];
-        let modulesFolder = PACKAGE_COMPILE_LOCATION;
+        let modulesFolder = PACKAGE_SUBMODULE_LOCATION;
         fs.readdir(modulesFolder, function(err, modules){
         for (var module of modules) {
           try {

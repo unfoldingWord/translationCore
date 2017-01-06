@@ -10,6 +10,7 @@ const git = require('../GitApi.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 var CheckDataGrabber = {
   doneModules: 0,
@@ -121,12 +122,12 @@ var CheckDataGrabber = {
           if (Array.isArray(dataObject.include)) {
             modulePaths.push({
               name: dataObject.include[childFolderName],
-              location: Path.join(PACKAGE_COMPILE_LOCATION, dataObject.include[childFolderName])
+              location: Path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
             });
           } else {
             modulePaths.push({
               name: childFolderName,
-              location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
+              location: Path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
             });
           }
         }

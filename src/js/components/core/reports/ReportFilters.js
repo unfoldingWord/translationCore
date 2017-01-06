@@ -12,6 +12,7 @@ const pathex = require('path-extra');
 
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 /**
  * @description This function refines the groups list by group name.

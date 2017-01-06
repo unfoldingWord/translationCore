@@ -5,6 +5,7 @@ var fs = require(window.__base + 'node_modules/fs-extra');
 var pathex = require('path-extra');
 var PARENT = pathex.datadir('translationCore')
 var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 const initialState = {
       };
