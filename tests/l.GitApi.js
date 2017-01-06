@@ -9,7 +9,6 @@ const GitSync = require('../src/js/components/core/SideBar/GitSync.js');
 const fs = require('fs-extra');
 /**
  * Sync
- * checkout
  */
 
  describe('GitApi.status', function() {
@@ -128,7 +127,7 @@ const fs = require('fs-extra');
  });
 
  describe('GitApi.checkout', function() {
-   it ('checkout should checkout an untracked file to staging', function(done) {
+   it ('checkout should checkout to master', function(done) {
      GitApi('../hello').checkout('master', function(err, data) {
        assert.isNull(err);
        GitApi('../hello').status(function(err, data) {
