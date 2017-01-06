@@ -8,7 +8,6 @@ listener
 (See ExampleComponent.js)
 */
   module.exports.showCreateProject = function (type) {
-    debugger;
     return {
       type: consts.CREATE_PROJECT,
       createProjectModal: type

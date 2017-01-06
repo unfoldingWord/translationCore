@@ -307,27 +307,31 @@ var Main = React.createClass({
             }))
           },
           handleOpenProject: () => {
-            CoreActionsRedux.showCreateProject("Languages");
+            var dispatch = this.props.dispatch;
+            dispatch(CoreActionsRedux.showCreateProject("Languages"));
           },
           handleSelectTool: () => {
+            var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CoreActions.updateCheckModal(true);
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              CoreActionsRedux.showCreateProject("Languages");
+              dispatch(CoreActionsRedux.showCreateProject("Languages"));
             }
           }
         },
         sideNavBarProps: {
           handleOpenProject: () => {
-            CoreActionsRedux.showCreateProject("Languages");
+            var dispatch = this.props.dispatch;
+            dispatch(CoreActionsRedux.showCreateProject("Languages"));
           },
           handleSyncProject: () => {
+            var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               sync();
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              CoreActionsRedux.showCreateProject("Languages");
+              dispatch(CoreActionsRedux.showCreateProject("Languages"));
             }
           },
           handleReport: () => {
@@ -336,11 +340,12 @@ var Main = React.createClass({
             api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
           },
           handleChangeCheckCategory: () => {
+            var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CoreActions.updateCheckModal(true);
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              CoreActionsRedux.showCreateProject("Languages");
+              dispatch(CoreActionsRedux.showCreateProject("Languages"));
             }
           },
           handleSettings: () => {
@@ -602,6 +607,7 @@ var Main = React.createClass({
             }
           },
           openSelected: (projectPath) => {
+            var dispatch = this.props.dispatch;
             var link = 'https://git.door43.org/' + projectPath + '.git';
             var _this = this;
             loadOnline(link, function (err, savePath, url) {
@@ -609,7 +615,7 @@ var Main = React.createClass({
                 console.error(err);
               } else {
                 Upload.sendFilePath(savePath, url)
-                CoreActionsRedux.showCreateProject("");
+                dispatch(CoreActionsRedux.showCreateProject(false));
               }
             });
           },
@@ -859,8 +865,8 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      
-      store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
+      var dispatch = this.props.dispatch;
+      dispatch(CoreActionsRedux.showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
