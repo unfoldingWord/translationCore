@@ -6,6 +6,10 @@ const Upload = require('../Upload.js');
 const UploadMethods = require('../UploadMethods.js');
 const OnlineInput = require('../OnlineInput');
 const CoreStore = require('../../../stores/CoreStore.js');
+const api = window.ModuleApi;
+const loadOnline = require('../LoadOnline');
+const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
+const { connect  } = require('react-redux');
 const DragDrop = require('../DragDrop');
 const ProjectViewer = require('../login/Projects.js');
 const ImportUsfm = require('../Usfm/ImportUSFM');
@@ -27,20 +31,20 @@ class ProjectModal extends React.Component {
     var mainContent;
     switch (this.props.show) {
       case 'file':
-        mainContent = <DragDrop {...this.props.dragDropProps}/>;
+        mainContent = <DragDrop {...this.props.dragDropProps} />;
         break;
       case 'link':
         mainContent = (
           <div>
             <br />
-            <OnlineInput onChange={this.props.handleOnlineChange}/>
+            <OnlineInput onChange={this.props.handleOnlineChange} />
           </div>
         );
         break;
       case 'usfm':
         mainContent = (
           <div>
-            <ImportUsfm.component {...this.props.importUsfmProps}/>
+            <ImportUsfm.component {...this.props.importUsfmProps} />
           </div>
         );
         break;
@@ -63,7 +67,7 @@ class ProjectModal extends React.Component {
           </Upload>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button type="button" onClick={this.props.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{'Load'}</Button>
+              <Button type="button" onClick={this.props.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
@@ -72,4 +76,18 @@ class ProjectModal extends React.Component {
   }
 }
 
-module.exports = ProjectModal;
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+
+  return Object.assign({}, state, state.loginModalReducer);
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    close: () => {
+      dispatch(CoreActionsRedux.showCreateProject(false));
+    }
+  }
+}
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(ProjectModal);

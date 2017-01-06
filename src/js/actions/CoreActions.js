@@ -65,12 +65,12 @@ module.exports = {
     });
   },
 
-  showCreateProject: function(boolean) {
-      Dispatcher.handleAction({
-        type: consts.CREATE_PROJECT,
-        createProjectModal: boolean
-      });
-  },
+  // showCreateProject: function(boolean) {
+  //     Dispatcher.handleAction({
+  //       type: consts.CREATE_PROJECT,
+  //       createProjectModal: boolean
+  //     });
+  // },
 
   changeCreateProjectText: function(string) {
     Dispatcher.handleAction({

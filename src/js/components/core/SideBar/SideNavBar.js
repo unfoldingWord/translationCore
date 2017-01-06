@@ -15,10 +15,14 @@ const gogs = require('../login/GogsApi.js');
 const sync = require('./GitSync.js');
 const path = require('path');
 const fs = require('fs');
+const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 
 class SideNavBar extends React.Component{
-  handleOpenProject(){
-    CoreActions.showCreateProject("Languages");
+  handleOpenProject(){      
+    
+    const { dispatch } = this.props
+    dispatch(CoreActionsRedux.showCreateProject("Languages"));
+    //CoreActions.showCreateProject("Languages");
   }
 
   handleSyncProject(){
@@ -26,7 +30,10 @@ class SideNavBar extends React.Component{
       sync();
     } else {
       api.Toast.info('Open a project first, then try again', '', 3);
-      CoreActions.showCreateProject("Languages");
+      
+      const { dispatch } = this.props
+      dispatch(CoreActionsRedux.showCreateProject("Languages"));
+      //CoreActions.showCreateProject("Languages");
     }
   }
 
@@ -41,7 +48,10 @@ class SideNavBar extends React.Component{
       CoreActions.updateCheckModal(true);
     } else {
       api.Toast.info('Open a project first, then try again', '', 3);
-      CoreActions.showCreateProject("Languages");
+      
+      const { dispatch } = this.props
+      dispatch(CoreActionsRedux.showCreateProject("Languages"));
+      //CoreActions.showCreateProject("Languages");
     }
   }
 
