@@ -123,7 +123,7 @@ describe('CheckDataGrabber.fetchModules', function () {
 
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
     it('should load a tool', function (done) {
-        CheckDataGrabber.loadModuleAndDependencies(testTool, (err, success) => {
+        CheckDataGrabber.loadModuleAndDependencies('translationWords', (err, success) => {
             assert.isNull(err);
             assert.isTrue(success);
             assert.isObject(api.getDataFromCommon('params'));
