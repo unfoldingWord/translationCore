@@ -12,26 +12,18 @@ class StatusBar extends React.Component{
     this.state ={
       path: "",
       currentCheckNamespace: "",
-      currentWordOrPhrase: "",
       newToolSelected: false,
     }
-    this.getCurrentCheck = this.getCurrentCheck.bind(this);
     this.currentCheckNamespace = this.currentCheckNamespace.bind(this);
     this.getSwitchCheckToolEvent = this.getSwitchCheckToolEvent.bind(this);
   }
 
   componentWillMount() {
-    api.registerEventListener('goToNext', this.getCurrentCheck);
-    api.registerEventListener('goToPrevious', this.getCurrentCheck);
-    api.registerEventListener('goToCheck', this.getCurrentCheck);
     api.registerEventListener('changeCheckType', this.currentCheckNamespace);
     api.registerEventListener('newToolSelected', this.getSwitchCheckToolEvent);
   }
 
   componentWillUnmount() {
-    api.removeEventListener('goToNext', this.getCurrentCheck);
-    api.removeEventListener('goToPrevious', this.getCurrentCheck);
-    api.removeEventListener('goToCheck', this.getCurrentCheck);
     api.removeEventListener('changeCheckType', this.currentCheckNamespace);
     api.removeEventListener('newToolSelected', this.getSwitchCheckToolEvent);
   }
@@ -46,35 +38,13 @@ class StatusBar extends React.Component{
     let currentTool = CoreStore.getCurrentCheckNamespace();
     if(currentTool){
       this.setState({currentCheckNamespace: currentTool});
-      this.getCurrentCheck();
     }
     if(this.state.currentCheckNamespace !== ""){
       content = <div>
                   {bookName + " "}<Glyphicon glyph={"menu-right"}/>
-                  {" " + currentTool + " "}<Glyphicon glyph={"menu-right"}/>
-                  {" " + this.state.currentWordOrPhrase + " "}
+                  {" " + currentTool + " "}
                 </div>;
       this.setState({path: content});
-    }
-  }
-
-  getCurrentCheck(){
-    var groups = null;
-    if(this.state.currentCheckNamespace !== ""){
-      groups = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'groups');
-    }
-    if(groups){
-      var currentGroupIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentGroupIndex');
-      var currentCheckIndex = api.getDataFromCheckStore(this.state.currentCheckNamespace, 'currentCheckIndex');
-      if(this.state.currentCheckNamespace === "TranslationWordsChecker"){
-        var currentCheck = groups[currentGroupIndex]['checks'][currentCheckIndex];
-        this.setState({currentWordOrPhrase: currentCheck.word});
-      }else if (this.state.currentCheckNamespace === "TranslationNotesChecker") {
-        this.setState({currentWordOrPhrase: ""});
-      }else {
-        console.warn("current Word Or Phrase is undefined in CoreStore for currentCheckNamespace");
-        this.setState({currentWordOrPhrase: ''});
-      }
     }
   }
 
