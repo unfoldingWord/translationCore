@@ -4,14 +4,14 @@ const SideNavBar = require('./SideNavBar');
 const Chevron = require('./Chevron');
 const style = require("./Style");
 const MenuHeaders = require('../navigation_menu/MenuHeaders');
-
+const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 
 class SideBarContainer extends React.Component{
   render() {
     let sideBarContent;
     if(this.props.SideNavBar || this.props.initShow){
       sideBarContent = <div>
-                          <SideNavBar /><br />
+                          <SideNavBar {...this.props}/><br />
                           <div style={{bottom: "0px", position: "absolute"}}>
                             <Chevron color="magenta" glyphicon={"folder-open"}
                                      textValue={"Load"}
