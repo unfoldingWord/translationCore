@@ -69,7 +69,6 @@ class PackageManagerView extends React.Component{
   }
 
   hidePackManager(){
-    console.log('hello');
     this.setState({visiblePackManager: false});
   }
 

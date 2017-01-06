@@ -1,10 +1,17 @@
 const React = require('react');
+const CoreActions = require('../actions/CoreActions.js');
+const CheckStore = require('../stores/CheckStore.js');
+const { connect  } = require('react-redux');
+
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const remote = require('electron').remote;
 const {dialog} = remote;
-var merge = require('lodash.merge');
+const path = require('path');
+const fs = require(window.__base + 'node_modules/fs-extra');
+
+const merge = require('lodash.merge');
 
 const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
@@ -13,6 +20,7 @@ const LoginModal = require('../components/core/login/LoginModal');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
+const SwitchCheck = require('../components/core/SwitchCheck');
 const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
@@ -30,12 +38,12 @@ const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
-const CheckStore = require('../stores/CheckStore.js');
 const ModuleWrapper = require('../components/core/ModuleWrapper');
-const CoreActions = require('../actions/CoreActions.js');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
+
+const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 
 var Main = React.createClass({
   getInitialState() {
@@ -127,22 +135,28 @@ var Main = React.createClass({
           updateLoginModal: () => {
             const loginVisible = CoreStore.getLoginModal() || false;
             const profileVisible = CoreStore.getProfileVisibility() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                visibleLoginModal: loginVisible,
-                profile:profileVisible
-              }
-            }))
+            var loginModalProps = this.state.loginModalProps
+            if (!loginModalProps.profile === profileVisible || !loginModalProps.visibleLoginModal === loginVisible) {
+              this.setState(merge({}, this.state, {
+                loginModalProps: {
+                  visibleLoginModal: loginVisible,
+                  profile:profileVisible
+                }
+              }));
+            }
           },
           updateProfileVisibility: () => {
             const profileVisible = CoreStore.getProfileVisibility() || false;
             const loginVisible = CoreStore.getLoginModal() || false;
-            this.setState(merge({}, this.state, {
-              loginModalProps: {
-                profile: profileVisible,
-                visibleLoginModal: loginVisible
-              }
-            }))
+            var loginModalProps = this.state.loginModalProps
+            if (!loginModalProps.profile === profileVisible || !loginModalProps.visibleLoginModal === loginVisible) {
+              this.setState(merge({}, this.state, {
+                loginModalProps: {
+                  profile: profileVisible,
+                  visibleLoginModal: loginVisible
+                }
+              }));
+            }
           },
           close: () => {
             CoreActions.updateLoginModal(false);
@@ -182,17 +196,21 @@ var Main = React.createClass({
               CoreStore.projectModalVisibility = input;
             }
             if (modal === 'Languages') {
-              this.setState(merge({}, this.state, {
-                projectModalProps: {
-                  showModal: true,
-                }
-              }));
+              if (!this.state.projectModalProps.showModal) {
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    showModal: true,
+                  }
+                }));
+              }
             } else if (modal === "") {
-              this.setState(merge({}, this.state, {
-                projectModalProps: {
-                  showModal: false,
-                }
-              }))
+              if (this.state.projectModalProps.showModal) {
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    showModal: false,
+                  }
+                }))
+              }
             }
           },
 
@@ -361,10 +379,162 @@ var Main = React.createClass({
             }
             return projectList;
           }
+        },
+        settingsModalProps: {
+          show: false,
+          onClose: () => {
+            CoreActions.updateSettings(false);
+          },
+          updateModal: () => {
+            if (!this.state.settingsModalProps.show === CoreStore.getSettingsView()) {
+              this.setState(merge({}, this.state, {
+                settingsModalProps: {
+                  show: CoreStore.getSettingsView(),
+                }
+              }));
+            }
+          },
+          onSettingsChange: (field) => {
+            api.setSettings(field.target.name, field.target.value);
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                developerMode: api.getSettings('developerMode') === 'enable'
+              },
+              settingsModalProps: {
+                currentSettings: api.getSettings()
+              }
+            }));
+          },
+          currentSettings: api.getSettings()
+        },
+        switchCheckModalProps: {
+            showModal: false,
+            updateCheckModal: () => {
+              if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
+                this.setState(merge({}, this.state, {
+                  switchCheckModalProps: {
+                    showModal: CoreStore.getCheckModal(),
+                  }
+                }));
+              }
+            },
+            close: () => {
+              CoreActions.updateCheckModal(false);
+            },
+            localAppFilePath: '',
+            handleFilePathChange: (event) => {
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  localAppFilePath: event.target.value,
+                }
+              }));
+            },
+            developerApp: (filepath) => {
+              var folderName = path.join(window.__base, filepath);
+              fs.access(folderName, fs.F_OK, (err) => {
+                if(!err){
+                  console.log("Were in");
+                  CheckDataGrabber.loadModuleAndDependencies(folderName);
+                  localStorage.setItem('lastCheckModule', folderName);
+                } else {
+                  console.error(err);
+                }
+              });
+              CoreActions.updateCheckModal(false);
+            },
+            developerMode: api.getSettings('developerMode') === 'enable',
+            showDevOptions: false,
+            updateDevOptions: () => {
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
+                }
+              }));
+            }
+        },
+        alertModalProps: {
+            open: false,
+            handleOpen: () => {
+              this.setState(merge({}, this.state, {
+                alertModalProps: {
+                  open: !this.state.alertModalProps.open,
+                }
+              }));
+            },
+            alertMessage: () => {
+              var data = CoreStore.getAlertMessage();
+              if (data && !this.state.alertModalProps.visibility) {
+                try {
+                  var alertMessage = data['alertObj'];
+                  this.setState(merge({}, this.state, {
+                    alertModalProps: {
+                      title: alertMessage['title'],
+                      content: alertMessage['content'],
+                      leftButtonText: alertMessage['leftButtonText'],
+                      rightButtonText: alertMessage['rightButtonText'],
+                      moreInfo: alertMessage['moreInfo'].toString(),
+                      visibility: true
+                    }
+                  }));
+                } catch (e) {
+                }
+              }
+            },
+
+            handleAlertDismiss: () => {
+              var response = this.state.alertModalProps.leftButtonText;
+              this.setState(merge({}, this.state, {
+                alertModalProps: {
+                  visibility: false,
+                  alertMessage: {}
+                }
+              }), CoreActions.sendAlertResponse(response));
+            },
+
+            handleAlertOK: () => {
+              var response = this.state.alertModalProps.rightButtonText;
+              this.setState(merge({}, this.state, {
+                switchCheckModalProps: {
+                  visibility: false,
+                  alertMessage: {}
+                }
+              }), CoreActions.sendAlertResponse(response));
+            },
+
+            getStyleFromState: (value) => {
+              if (value){
+                return {
+                  height:'30px',
+                  width:'60px',
+                  textAlign:'center',
+                  verticalAlign:'middle',
+                  padding:0,
+                  left:'50%'
+                }
+              } else {
+                return {
+                  display: 'none'
+                }
+              }
+            }
+        },
+        loaderModalProps: {
+          progress: 0,
+          showModal: false,
+          update: () => {
+            if (CoreStore.doneLoading === this.state.loaderModalProps.showModal) {
+              this.setState(merge({}, this.state, {
+                loaderModalProps: {
+                  progress: CoreStore.getProgress(),
+                  showModal: !CoreStore.doneLoading
+                }
+              }));
+            }
+          },
         }
       });
-    var tutorialState = api.getSettings('showTutorial');
-    if (tutorialState === true || tutorialState === null) {
+    var tutorialState = api.getSettings('tutorialView');
+    if (tutorialState === 'show' || tutorialState === null) {
       return merge({}, this.state, {
         firstTime: true
       })
@@ -379,7 +549,7 @@ var Main = React.createClass({
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
-      api.setSettings('showTutorial', false);
+      api.setSettings('tutorialView', 'hide');
     }
 
     if (localStorage.getItem('user')) {
@@ -407,7 +577,7 @@ var Main = React.createClass({
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
-    if (api.getSettings('showTutorial') !== true && saveLocation) {
+    if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
       Upload.sendFilePath(saveLocation, null, () => {
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
@@ -421,7 +591,8 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      CoreActions.showCreateProject("Languages");
+      
+      store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
@@ -442,12 +613,14 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal />
+          <SettingsModal {...this.state.settingsModalProps}/>
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
-          <SideBarContainer />
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
+          <SideBarContainer {...this.props}/>
           <StatusBar />
-          <SwitchCheckModal.Modal />
+          <SwitchCheckModal {...this.state.switchCheckModalProps}>
+            <SwitchCheck.Component />
+          </SwitchCheckModal>
           <Popover />
           <Toast />
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
@@ -456,8 +629,8 @@ var Main = React.createClass({
                 <NavMenu />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader />
-                <AlertModal />
+                <Loader {...this.state.loaderModalProps}/>
+                <AlertModal {...this.state.alertModalProps}/>
                 <ModuleWrapper />
                 <ModuleProgress />
               </Col>
@@ -469,6 +642,10 @@ var Main = React.createClass({
   }
 });
 
-module.exports = (
-  <Main />
-);
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  //Object.assign({}, state, state.coreStoreReducer)
+  return state;
+}
+
+module.exports = connect(mapStateToProps)(Main);

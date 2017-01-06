@@ -1,4 +1,5 @@
-(function() {
+  /** @jsx React.DOM */
+(function () {
   require("babel-register")({
     extensions: [".js", ".jsx"],
     presets: ["react"]
@@ -15,10 +16,10 @@
   const MenuBar = require('../components/core/MenuBar');
 
   var App = {
-    init: function() {
+    init: function () {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-      var Application = require("./app");
+      var Application = require("./root");
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };

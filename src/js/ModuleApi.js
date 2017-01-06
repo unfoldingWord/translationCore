@@ -12,7 +12,6 @@ const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
-const Dispatcher = require('./dispatchers/Dispatcher.js');
 const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');
 const CheckModule = require('./components/core/CheckModule');
@@ -342,6 +341,9 @@ class ModuleApi {
     var settings = localStorage.getItem('settings');
     if (settings) {
       var settingsObj = JSON.parse(settings);
+      if (!name) {
+        return settingsObj;
+      }
       return settingsObj[name];
     }
     return {};

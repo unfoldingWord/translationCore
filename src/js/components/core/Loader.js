@@ -2,48 +2,26 @@ const React = require('react');
 const CoreStore = require('../../stores/CoreStore.js');
 const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
-var progressStack = [];
 
-const CheckStore = require('../../stores/CheckStore.js');
+class Loader extends React.Component {
+  componentWillMount() {
+    CoreStore.addChangeListener(this.props.update);
+  }
 
-const Loader = React.createClass({
-  progressObject: {},
+  componentWillUnmount() {
+    CoreStore.removeChangeListener(this.props.update);
+  }
 
-  getInitialState: function() {
-
-    return {
-      progress:0,
-      showModal:false
-    };
-
-    this.update = this.update.bind(this);
-  },
-
-  componentWillMount: function() {
-    CoreStore.addChangeListener(this.update);
-  },
-
-  componentWillUnmount: function() {
-    CoreStore.removeChangeListener(this.update);
-  },
-
-  update: function() {
-    this.setState({
-      progress: CoreStore.getProgress(),
-      showModal: !CoreStore.doneLoading
-    });
-  },
-
-  render: function() {
+  render() {
     return (
       <div>
-        <Modal show={this.state.showModal}>
-          <ProgressBar striped active now={this.state.progress} style={{top:'50vh', left: '50vw'}}/>
+        <Modal show={this.props.showModal}>
+          <ProgressBar striped active now={this.props.progress} style={{top:'50vh', left: '50vw'}}/>
           <center><img src="images/TC_ANIMATED_Logo.gif"/></center>
         </Modal>
       </div>
     );
   }
-});
+}
 
 module.exports = Loader;
