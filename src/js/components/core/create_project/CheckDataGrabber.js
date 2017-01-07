@@ -40,13 +40,12 @@ var CheckDataGrabber = {
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
         } else {
-          this.dataLoadError(err);
+          console.error(err)
           callback(err, false);
         }
       });
     }
     catch (error) {
-      this.dataLoadError(error);
       callback(error, false);
     }
 
@@ -134,7 +133,7 @@ var CheckDataGrabber = {
         callback(null, modulePaths);
       }
     } catch (e) {
-      this.dataLoadError(e);
+      console.error(e)
       callback(e, null);
     }
   },
@@ -240,15 +239,6 @@ var CheckDataGrabber = {
       },
       this.onComplete.bind(this)
     );
-  },
-
-  dataLoadError: function (content) {
-    const alert = {
-      title: 'Error Loading TC',
-      content: content,
-      leftButtonText: 'Ok'
-    }
-    console.log(content);
   }
 };
 

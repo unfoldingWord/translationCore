@@ -104,6 +104,10 @@ class CoreStore extends EventEmitter {
   }
 
   calculateProgress(progressKey) {
+    // console.log(progressKey);
+    if (!this.progressObject) {
+      this.progressObject = [];
+    }
     this.progressObject[progressKey.key] = progressKey.progress;
     var currentProgress = 0;
     for (var key in this.progressObject){
