@@ -94,17 +94,17 @@ const testDataObjectBadPackageJSON = {
         "babel-preset-react": "^6.16.0"
     }
 };
-
-describe('CheckDataGrabber.saveModules', function () {
-    it('should fetch the data given a valid check array', function (done) {
-      this.timeout(50000);
-        CheckDataGrabber.saveModules(testCheckArray, function (err, checksThatNeedToBeFetched) {
-            assert.isNull(err);
-            assert.isArray(checksThatNeedToBeFetched);
-            done();
-        });
-    });
-});
+//
+// describe('CheckDataGrabber.saveModules', function () {
+//     it('should fetch the data given a valid check array', function (done) {
+//       this.timeout(50000);
+//         CheckDataGrabber.saveModules(testCheckArray, function (err, checksThatNeedToBeFetched) {
+//             assert.isNull(err);
+//             assert.isArray(checksThatNeedToBeFetched);
+//             done();
+//         });
+//     });
+// });
 
 describe('CheckDataGrabber.fetchModules', function () {
     it('should fail on a bad path of a checking tool sub modules', function (done) {
@@ -116,27 +116,27 @@ describe('CheckDataGrabber.fetchModules', function () {
             done();
         });
     });
-    it('should fetch the data given a valid check array', function (done) {
-      this.timeout(50000)
-        CheckDataGrabber.fetchModules(testCheckArray, function (err, success) {
-            assert.isNull(err);
-            assert.isTrue(success);
-            done();
-        });
-    });
+    // it('should fetch the data given a valid check array', function (done) {
+    //   this.timeout(50000)
+    //     CheckDataGrabber.fetchModules(testCheckArray, function (err, success) {
+    //         assert.isNull(err);
+    //         assert.isTrue(success);
+    //         done();
+    //     });
+    // });
 });
 
 describe('CheckDataGrabber.loadModuleAndDependencies', function () {
-    it('should load a tool', function (done) {
-        CheckDataGrabber.loadModuleAndDependencies(translationWords, (err, success) => {
-            assert.isNull(err);
-            assert.isTrue(success);
-            assert.isObject(api.getDataFromCommon('params'));
-            expect(api.getDataFromCommon('arrayOfChecks')).to.exist;
-            expect(api.modules['translationWords']).to.exist;
-            done();
-        });
-    });
+    // it('should load a tool', function (done) {
+    //     CheckDataGrabber.loadModuleAndDependencies(translationWords, (err, success) => {
+    //         assert.isNull(err);
+    //         assert.isTrue(success);
+    //         assert.isObject(api.getDataFromCommon('params'));
+    //         expect(api.getDataFromCommon('arrayOfChecks')).to.exist;
+    //         expect(api.modules['translationWords']).to.exist;
+    //         done();
+    //     });
+    // });
 });
 
 describe('CheckDataGrabber.createCheckArray', function () {
