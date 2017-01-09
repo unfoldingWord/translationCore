@@ -591,7 +591,6 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      
       store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
       this.showCheck = false;
     }
@@ -632,7 +631,6 @@ var Main = React.createClass({
                 <Loader {...this.state.loaderModalProps}/>
                 <AlertModal {...this.state.alertModalProps}/>
                 <ModuleWrapper />
-                <ModuleProgress />
               </Col>
             </Row>
           </Grid>

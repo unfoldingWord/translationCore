@@ -73,6 +73,7 @@
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
     "react-remarkable": "^1.1.1",
+    "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "simple-git": "1.43.0",
     "style-it": "^1.2.11",
