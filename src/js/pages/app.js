@@ -310,9 +310,9 @@ var Main = React.createClass({
             }
           },
           changeView: () => {
-            this.setState(merger({}, this.state, {
+            this.setState(merge({}, this.state, {
               sideBarContainerProps: {
-                SideNavBar: !this.state.SideNavBar
+                SideNavBar: !this.state.sideBarContainerProps.SideNavBar
               }
             }))
           },
@@ -396,7 +396,6 @@ var Main = React.createClass({
             var groupName = newObj[id].group;
             // var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
             var currentSubGroupObjects = newObj[this.state.currentGroupIndex].checks;
-            debugger;
             const _this = this;
             _this.checkIndex = null;
             currentSubGroupObjects.find((element, index) => {
@@ -437,7 +436,6 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
-            debugger;
             //This needs to change, the store should dictate whether
             //the current check is "current"(highlighted) not the other way around
             const newSubGroup = this.state.currentSubGroupObjects.slice(0);
@@ -536,7 +534,6 @@ var Main = React.createClass({
           },
 
           onClick: (e) => {
-            debugger;
             if (this.state.uploadProps.active == 1) {
               this.state.projectModalProps.submitLink();
             }
