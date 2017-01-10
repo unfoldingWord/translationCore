@@ -45,6 +45,8 @@ const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 
+const showCreateProject = CoreActionsRedux.showCreateProject;
+
 var Main = React.createClass({
   componentWillMount() {
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
@@ -56,7 +58,8 @@ var Main = React.createClass({
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     //changing the status of the current check
     api.registerEventListener('goToNext', this.goToNextCheck);
-
+    //going to next check in entire list of checks, will go to next group also
+    api.registerEventListener('goToPrevious', this.goToPreviousCheck);
   },
 
   componentWillUnmount() {
@@ -64,7 +67,17 @@ var Main = React.createClass({
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+    api.registerEventListener('goToPrevious', this.goToPreviousCheck);
   },
+
+  goToPreviousCheck() {
+    var lastCheck = this.state.currentCheckIndex - 1 <= 0;
+    if (lastCheck) {
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1);
+    }
+    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex - 1);
+  },
+
   goToNextCheck() {
     var lastCheck = this.state.currentCheckIndex + 1 >= this.state.currentSubGroupObjects.length;
     if (lastCheck) {
@@ -114,14 +127,14 @@ var Main = React.createClass({
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
     var currentGroupIndex = 0;
+    var currentCheckIndex = 0;
     /*first load of fresh project thus no groupName
     * in checkstore then get groupName at groupindex 0
     */
     if (currentCheckNamespace && !groupName) {
       currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
+      currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
       groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
-    } else {
-      console.log("Error getting groups");
     }
     var groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
     for (var el in groupObjects) {
@@ -129,16 +142,12 @@ var Main = React.createClass({
     }
     var subGroupObjects = this.getSubMenuItems(currentCheckNamespace, groupName);
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
-    const _this = this;
-    groupObjects[currentGroupIndex].checks.find((element, index) => {
-      if (element.isCurrentItem) _this.checkIndex = index;
-    });
-    const currentCheckIndex = _this.checkIndex || 0;
-    groupObjects[currentGroupIndex].isCurrentItem = true;
-    subGroupObjects[currentCheckIndex].isCurrentItem = true;
+
+    if (groupObjects) groupObjects[currentGroupIndex].isCurrentItem = true;
+    if (subGroupObjects) subGroupObjects[currentCheckIndex].isCurrentItem = true;
     this.setState(merge({}, this.state, {
-      currentGroupIndex: currentGroupIndex,
-      currentCheckIndex: currentCheckIndex,
+      currentGroupIndex: currentGroupIndex || 0,
+      currentCheckIndex: currentCheckIndex || 0,
       currentToolNamespace: currentCheckNamespace,
       currentGroupName: groupName,
       currentGroupObjects: groupObjects,
@@ -163,7 +172,8 @@ var Main = React.createClass({
         foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
       }
     }
-    return foundGroup.checks;
+    if (foundGroup) return foundGroup.checks;
+    else return;
   },
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
@@ -308,7 +318,7 @@ var Main = React.createClass({
           },
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
-            dispatch(CoreActionsRedux.showCreateProject("Languages"));
+            dispatch(showCreateProject("Languages"));
           },
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
@@ -316,14 +326,14 @@ var Main = React.createClass({
               CoreActions.updateCheckModal(true);
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(CoreActionsRedux.showCreateProject("Languages"));
+              dispatch(showCreateProject("Languages"));
             }
           }
         },
         sideNavBarProps: {
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
-            dispatch(CoreActionsRedux.showCreateProject("Languages"));
+            dispatch(showCreateProject("Languages"));
           },
           handleSyncProject: () => {
             var dispatch = this.props.dispatch;
@@ -331,7 +341,7 @@ var Main = React.createClass({
               sync();
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(CoreActionsRedux.showCreateProject("Languages"));
+              dispatch(showCreateProject("Languages"));
             }
           },
           handleReport: () => {
@@ -345,7 +355,7 @@ var Main = React.createClass({
               CoreActions.updateCheckModal(true);
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(CoreActionsRedux.showCreateProject("Languages"));
+              dispatch(showCreateProject("Languages"));
             }
           },
           handleSettings: () => {
@@ -384,7 +394,9 @@ var Main = React.createClass({
             newObj[this.state.currentGroupIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
             var groupName = newObj[id].group;
-            var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
+            // var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
+            var currentSubGroupObjects = newObj[this.state.currentGroupIndex].checks;
+            debugger;
             const _this = this;
             _this.checkIndex = null;
             currentSubGroupObjects.find((element, index) => {
@@ -393,6 +405,8 @@ var Main = React.createClass({
             const newCheckIndex = _this.checkIndex || 0;
             if (!newCheckIndex) currentSubGroupObjects[0].isCurrentItem = true;
             else currentSubGroupObjects[newCheckIndex].isCurrentItem = true;
+            //THIS IS VERY INEFFICIENT THIS VALUE DOES NOT NEED TO BE
+            //SAVED LOCALLY
             this.setState({
               currentGroupObjects: newObj,
               currentGroupIndex: parseInt(id),
@@ -423,14 +437,20 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
+            debugger;
             //This needs to change, the store should dictate whether
             //the current check is "current"(highlighted) not the other way around
-            const newObj = this.state.currentSubGroupObjects.slice(0);
-            newObj[this.state.currentCheckIndex].isCurrentItem = false;
-            newObj[id].isCurrentItem = status;
+            const newSubGroup = this.state.currentSubGroupObjects.slice(0);
+            const newGroup = this.state.currentGroupObjects.slice(0);
+            newSubGroup[this.state.currentCheckIndex].isCurrentItem = false;
+            newSubGroup[id].isCurrentItem = status;
+            //THIS IS VERY INEFFICIENT THIS VALUE DOES NOT NEED TO BE
+            //SAVED LOCALLY IN THIS FASHION
+            newGroup[this.state.currentGroupIndex].checks = newSubGroup;
             this.setState({
               currentCheckIndex: parseInt(id),
-              currentSubGroupObjects: newObj
+              currentSubGroupObjects: newSubGroup,
+              currentGroupObjects:newGroup
             }, callback);
           },
         },
@@ -516,6 +536,7 @@ var Main = React.createClass({
           },
 
           onClick: (e) => {
+            debugger;
             if (this.state.uploadProps.active == 1) {
               this.state.projectModalProps.submitLink();
             }
@@ -615,7 +636,7 @@ var Main = React.createClass({
                 console.error(err);
               } else {
                 Upload.sendFilePath(savePath, url)
-                dispatch(CoreActionsRedux.showCreateProject(false));
+                dispatch(showCreateProject(false));
               }
             });
           },
@@ -682,115 +703,115 @@ var Main = React.createClass({
           currentSettings: api.getSettings()
         },
         switchCheckModalProps: {
-            showModal: false,
-            updateCheckModal: () => {
-              if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
-                this.setState(merge({}, this.state, {
-                  switchCheckModalProps: {
-                    showModal: CoreStore.getCheckModal(),
-                  }
-                }));
-              }
-            },
-            close: () => {
-              CoreActions.updateCheckModal(false);
-            },
-            localAppFilePath: '',
-            handleFilePathChange: (event) => {
+          showModal: false,
+          updateCheckModal: () => {
+            if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
               this.setState(merge({}, this.state, {
                 switchCheckModalProps: {
-                  localAppFilePath: event.target.value,
-                }
-              }));
-            },
-            developerApp: (filepath) => {
-              var folderName = path.join(window.__base, filepath);
-              fs.access(folderName, fs.F_OK, (err) => {
-                if(!err){
-                  console.log("Were in");
-                  CheckDataGrabber.loadModuleAndDependencies(folderName);
-                  localStorage.setItem('lastCheckModule', folderName);
-                } else {
-                  console.error(err);
-                }
-              });
-              CoreActions.updateCheckModal(false);
-            },
-            developerMode: api.getSettings('developerMode') === 'enable',
-            showDevOptions: false,
-            updateDevOptions: () => {
-              this.setState(merge({}, this.state, {
-                switchCheckModalProps: {
-                  showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
+                  showModal: CoreStore.getCheckModal(),
                 }
               }));
             }
+          },
+          close: () => {
+            CoreActions.updateCheckModal(false);
+          },
+          localAppFilePath: '',
+          handleFilePathChange: (event) => {
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                localAppFilePath: event.target.value,
+              }
+            }));
+          },
+          developerApp: (filepath) => {
+            var folderName = path.join(window.__base, filepath);
+            fs.access(folderName, fs.F_OK, (err) => {
+              if (!err) {
+                console.log("Were in");
+                CheckDataGrabber.loadModuleAndDependencies(folderName);
+                localStorage.setItem('lastCheckModule', folderName);
+              } else {
+                console.error(err);
+              }
+            });
+            CoreActions.updateCheckModal(false);
+          },
+          developerMode: api.getSettings('developerMode') === 'enable',
+          showDevOptions: false,
+          updateDevOptions: () => {
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
+              }
+            }));
+          }
         },
         alertModalProps: {
-            open: false,
-            handleOpen: () => {
-              this.setState(merge({}, this.state, {
-                alertModalProps: {
-                  open: !this.state.alertModalProps.open,
-                }
-              }));
-            },
-            alertMessage: () => {
-              var data = CoreStore.getAlertMessage();
-              if (data && !this.state.alertModalProps.visibility) {
-                try {
-                  var alertMessage = data['alertObj'];
-                  this.setState(merge({}, this.state, {
-                    alertModalProps: {
-                      title: alertMessage['title'],
-                      content: alertMessage['content'],
-                      leftButtonText: alertMessage['leftButtonText'],
-                      rightButtonText: alertMessage['rightButtonText'],
-                      moreInfo: alertMessage['moreInfo'].toString(),
-                      visibility: true
-                    }
-                  }));
-                } catch (e) {
-                }
+          open: false,
+          handleOpen: () => {
+            this.setState(merge({}, this.state, {
+              alertModalProps: {
+                open: !this.state.alertModalProps.open,
               }
-            },
-
-            handleAlertDismiss: () => {
-              var response = this.state.alertModalProps.leftButtonText;
-              this.setState(merge({}, this.state, {
-                alertModalProps: {
-                  visibility: false,
-                  alertMessage: {}
-                }
-              }), CoreActions.sendAlertResponse(response));
-            },
-
-            handleAlertOK: () => {
-              var response = this.state.alertModalProps.rightButtonText;
-              this.setState(merge({}, this.state, {
-                switchCheckModalProps: {
-                  visibility: false,
-                  alertMessage: {}
-                }
-              }), CoreActions.sendAlertResponse(response));
-            },
-
-            getStyleFromState: (value) => {
-              if (value){
-                return {
-                  height:'30px',
-                  width:'60px',
-                  textAlign:'center',
-                  verticalAlign:'middle',
-                  padding:0,
-                  left:'50%'
-                }
-              } else {
-                return {
-                  display: 'none'
-                }
+            }));
+          },
+          alertMessage: () => {
+            var data = CoreStore.getAlertMessage();
+            if (data && !this.state.alertModalProps.visibility) {
+              try {
+                var alertMessage = data['alertObj'];
+                this.setState(merge({}, this.state, {
+                  alertModalProps: {
+                    title: alertMessage['title'],
+                    content: alertMessage['content'],
+                    leftButtonText: alertMessage['leftButtonText'],
+                    rightButtonText: alertMessage['rightButtonText'],
+                    moreInfo: alertMessage['moreInfo'].toString(),
+                    visibility: true
+                  }
+                }));
+              } catch (e) {
               }
             }
+          },
+
+          handleAlertDismiss: () => {
+            var response = this.state.alertModalProps.leftButtonText;
+            this.setState(merge({}, this.state, {
+              alertModalProps: {
+                visibility: false,
+                alertMessage: {}
+              }
+            }), CoreActions.sendAlertResponse(response));
+          },
+
+          handleAlertOK: () => {
+            var response = this.state.alertModalProps.rightButtonText;
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                visibility: false,
+                alertMessage: {}
+              }
+            }), CoreActions.sendAlertResponse(response));
+          },
+
+          getStyleFromState: (value) => {
+            if (value) {
+              return {
+                height: '30px',
+                width: '60px',
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                padding: 0,
+                left: '50%'
+              }
+            } else {
+              return {
+                display: 'none'
+              }
+            }
+          }
         },
         loaderModalProps: {
           progress: 0,
@@ -866,7 +887,7 @@ var Main = React.createClass({
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
       var dispatch = this.props.dispatch;
-      dispatch(CoreActionsRedux.showCreateProject("Languages"));
+      dispatch(showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
@@ -888,9 +909,9 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal {...this.state.settingsModalProps}/>
+          <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
           <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
@@ -904,8 +925,8 @@ var Main = React.createClass({
                 <NavMenu ref='navmenu' {...this.state} />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader {...this.state.loaderModalProps}/>
-                <AlertModal {...this.state.alertModalProps}/>
+                <Loader {...this.state.loaderModalProps} />
+                <AlertModal {...this.state.alertModalProps} />
                 <ModuleWrapper />
                 <ModuleProgress />
               </Col>

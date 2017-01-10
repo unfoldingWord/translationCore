@@ -78,8 +78,7 @@ class ProjectModal extends React.Component {
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
-
-  return Object.assign({}, state, state.loginModalReducer);
+  return Object.assign({}, state, state.projectModalReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
