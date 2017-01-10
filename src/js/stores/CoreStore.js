@@ -284,11 +284,6 @@ class CoreStore extends EventEmitter {
         this.emitChange();
         break;
 
-      case consts.CHANGE_PROFILE_VISIBILITY:
-        this.profileVisibility = action.profileOption;
-        this.emitChange();
-        break;
-
       case consts.CHANGE_CHECK_MODAL_VISIBILITY:
         this.checkModalVisibility = action.checkModalOption;
         this.emitChange();

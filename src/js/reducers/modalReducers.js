@@ -13,7 +13,8 @@ initialState = {
     },
     login_profile: {
         loginModalVisibility: false,
-        profileModalVisibility: false
+        profileModalVisibility: false,
+        showModal:false
     }
 }
 module.exports = (state = initialState, action) => {
@@ -26,7 +27,20 @@ module.exports = (state = initialState, action) => {
             return merge({}, state, {
                 login_profile: {
                     loginModalVisibility: action.val,
-                    profileModalVisibility: !action.val
+                }
+            });
+            break;
+        case consts.CHANGE_PROFILE_MODAL_VISIBILITY:
+            return merge({}, state, {
+                login_profile: {
+                    profileModalVisibility: action.val
+                }
+            });
+            break;
+        case consts.SHOW_PROFILE_LOGIN_MODAL:
+            return merge({}, state, {
+                login_profile: {
+                    showModal: action.val
                 }
             });
             break;

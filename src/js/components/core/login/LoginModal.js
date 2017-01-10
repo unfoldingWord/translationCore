@@ -9,16 +9,15 @@ const Profile= require('./Profile');
 
 class LoginModal extends React.Component {
     render(){
-      console.log(this.props)
       let display;
       if(this.props.loginModalVisibility){
         display = <Login {...this.props.loginProps}/>
       }else{
-        display = <Profile {...this.props.profileProps}/>
+        display = <Profile {...this.props.profileProps} {...this.props.profileProjectsProps}/>
       }
       return(
         <div style={style.modal}>
-          <Modal show={false} onHide={this.props.close}>
+          <Modal show={this.props.showModal} onHide={this.props.close}>
             <Modal.Header closeButton>
               <Modal.Title>Profile</Modal.Title>
             </Modal.Header>

@@ -48,6 +48,8 @@ const Upload = require('../components/core/UploadMethods.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
+const updateProfileModal = CoreActionsRedux.updateProfileModal;
+const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 
 var Main = React.createClass({
   componentWillMount() {
@@ -195,7 +197,7 @@ var Main = React.createClass({
               CoreActions.login(userdata);
               this.props.dispatch(updateLoginModal(false));
               CoreActions.updateOnlineStatus(true);
-              CoreActions.updateProfileVisibility(true);
+              this.props.dispatch(updateProfileModal(true));
             }).catch(function (reason) {
               console.log(reason);
               if (reason.status === 401) {
@@ -239,7 +241,7 @@ var Main = React.createClass({
           projectVisibility: false,
           handleLogout: () => {
             CoreActions.updateOnlineStatus(false);
-            CoreActions.updateProfileVisibility(false);
+            this.props.dispatch(updateProfileModal(true));
             CoreActions.login(null);
             localStorage.removeItem('user');
           },
@@ -263,11 +265,8 @@ var Main = React.createClass({
           emailAccount: user ? user.email : null,
         },
         loginModalProps: {
-          loginProfileModal: (val) => {
-            debugger;
-          },
           close: () => {
-            this.props.dispatch(updateLoginModal(false));
+            this.props.dispatch(showLoginProfileModal(false));
           }
         },
         sideBarContainerProps: {
@@ -435,7 +434,7 @@ var Main = React.createClass({
             this.setState({
               currentCheckIndex: parseInt(id),
               currentSubGroupObjects: newSubGroup,
-              currentGroupObjects:newGroup
+              currentGroupObjects: newGroup
             }, callback);
           },
         },
@@ -837,10 +836,10 @@ var Main = React.createClass({
       var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
       var _this = this;
       var Token = api.getAuthToken('gogs');
-      var newuser = gogs(Token).login(userdata).then(function (userdata) {
+      gogs(Token).login(userdata).then((userdata) => {
         CoreActions.login(userdata);
         CoreActions.updateOnlineStatus(true);
-        CoreActions.updateProfileVisibility(true);
+        this.props.dispatch(updateProfileModal(true));
       }).catch(function (reason) {
         console.log(reason);
         if (reason.status === 401) {
@@ -896,7 +895,7 @@ var Main = React.createClass({
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
-          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}/>
+          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
             <SwitchCheck.Component />

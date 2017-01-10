@@ -8,6 +8,7 @@ const {Glyphicon} = RB;
 const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
 const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
+const showLoginProfileModal = require('../../../actions/CoreActionsRedux.js').showLoginProfileModal;
 const { connect  } = require('react-redux');
 
 class LoginButton extends React.Component{
@@ -29,7 +30,7 @@ class LoginButton extends React.Component{
   }
 
   handleClick(){
-    this.props.dispatch(updateLoginModal(true));
+    this.props.dispatch(showLoginProfileModal(true));
   }
 
   updateOnlineStatus(){

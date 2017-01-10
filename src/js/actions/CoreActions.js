@@ -106,13 +106,6 @@ module.exports = {
     });
   },
 
-  updateProfileVisibility: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_PROFILE_VISIBILITY,
-      profileOption: boolean
-    });
-  },
-
   updateCheckModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.CHANGE_CHECK_MODAL_VISIBILITY,

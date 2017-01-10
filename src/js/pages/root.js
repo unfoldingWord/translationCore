@@ -1,4 +1,4 @@
-const { createStore, applyMiddleware, combineReducers, bindActionCreators } = require('redux');
+const { createStore, applyMiddleware, combineReducers } = require('redux');
 const { Provider, connect  } = require('react-redux');
 const thunk = require('redux-thunk').default
 const reducers = require('../Reducers');

@@ -12,10 +12,11 @@ class Projects extends React.Component {
   }
 
   componentWillMount() {
-    this.props.updateRepos();
+    //this.props.updateRepos();
   }
 
   render() {
+    console.log(this.props);
     return (
       <div style={{height: '419px', overflowY: 'auto'}}>
         <div style={{marginBottom: '15px'}}>
