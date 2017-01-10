@@ -7,9 +7,16 @@ be dispatched to all of the stores that have registered
 listener
 (See ExampleComponent.js)
 */
-  module.exports.showCreateProject = function (type) {
-    return {
-      type: consts.CREATE_PROJECT,
-      createProjectModal: type
-    };
-  }
+module.exports.showCreateProject = function (type) {
+  return {
+    type: consts.CREATE_PROJECT,
+    createProjectModal: type
+  };
+}
+
+module.exports.updateLoginModal = function (val) {
+  return {
+    type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
+    val: val
+  };
+}

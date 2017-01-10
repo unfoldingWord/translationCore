@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const CheckStore = require('../stores/CheckStore.js');
@@ -46,6 +47,7 @@ const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
+const updateLoginModal = CoreActionsRedux.updateLoginModal;
 
 var Main = React.createClass({
   componentWillMount() {
@@ -191,7 +193,7 @@ var Main = React.createClass({
             var Token = api.getAuthToken('gogs');
             var newuser = gogs(Token).login(userDataSumbit).then(function (userdata) {
               CoreActions.login(userdata);
-              CoreActions.updateLoginModal(false);
+              this.props.dispatch(updateLoginModal(false));
               CoreActions.updateOnlineStatus(true);
               CoreActions.updateProfileVisibility(true);
             }).catch(function (reason) {
@@ -261,26 +263,11 @@ var Main = React.createClass({
           emailAccount: user ? user.email : null,
         },
         loginModalProps: {
-          updateLoginModal: () => {
-
-            const loginVisible = CoreStore.getLoginModal() || false;
-            const profileVisible = CoreStore.getProfileVisibility() || false;
-            this.setState({
-              visibleLoginModal: loginVisible,
-              profileVisible: profileVisible
-            })
-          },
-          updateProfileVisibility: () => {
-
-            const profileVisible = CoreStore.getProfileVisibility() || false;
-            const loginVisible = CoreStore.getLoginModal() || false;
-            this.setState({
-              profileVisible: profileVisible,
-              visibleLoginModal: loginVisible
-            })
+          loginProfileModal: (val) => {
+            debugger;
           },
           close: () => {
-            CoreActions.updateLoginModal(false);
+            this.props.dispatch(updateLoginModal(false));
           }
         },
         sideBarContainerProps: {
@@ -362,7 +349,7 @@ var Main = React.createClass({
             CoreActions.updateSettings(true);
           },
           handlePackageManager: () => {
-            var PackageManagerView = require("./../Package_Manager/PackageManagerView");
+            var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
             ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'))
             api.emitEvent('PackManagerVisibility', { 'visiblePackManager': 'true' });
           }
@@ -907,9 +894,9 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <SettingsModal {...this.state.settingsModalProps} />
-          <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
+          <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
-          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} />
+          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}/>
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
             <SwitchCheck.Component />

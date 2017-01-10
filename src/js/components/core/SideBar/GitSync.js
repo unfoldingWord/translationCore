@@ -4,6 +4,9 @@ const CoreActions = require('../../../actions/CoreActions.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const pathFinder = require('path');
 const gogs = require('../login/GogsApi.js');
+const { connect  } = require('react-redux');
+
+const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 
 function syncToGit() {
   const user = CoreStore.getLoggedInUser();
@@ -90,8 +93,13 @@ function syncToGit() {
     });
   } else {
     api.Toast.info('Login then try again', '', 7);
-    CoreActions.updateLoginModal(true);
+    this.props.dispatch(updateLoginModal(true));
   }
 }
 
-module.exports = syncToGit;
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  return Object.assign({}, state, state.modalReducers.login_profile);
+}
+
+module.exports = connect(mapStateToProps)(syncToGit);

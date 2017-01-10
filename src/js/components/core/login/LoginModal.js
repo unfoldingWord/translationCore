@@ -8,31 +8,17 @@ const Login = require('./Login.js');
 const Profile= require('./Profile');
 
 class LoginModal extends React.Component {
-    constructor(){
-      super();
-    }
-
-    componentWillMount() {
-      CoreStore.addChangeListener(this.props.updateLoginModal);
-      CoreStore.addChangeListener(this.props.updateProfileVisibility);
-    }
-
-    componentWillUnmount() {
-      CoreStore.removeChangeListener(this.props.updateLoginModal);
-      CoreStore.removeChangeListener(this.props.updateProfileVisibility);
-
-    }
-
     render(){
+      console.log(this.props)
       let display;
-      if(this.props.profile === false){
+      if(this.props.loginModalVisibility){
         display = <Login {...this.props.loginProps}/>
       }else{
         display = <Profile {...this.props.profileProps}/>
       }
       return(
         <div style={style.modal}>
-          <Modal show={this.props.visibleLoginModal} onHide={this.props.close}>
+          <Modal show={false} onHide={this.props.close}>
             <Modal.Header closeButton>
               <Modal.Title>Profile</Modal.Title>
             </Modal.Header>
