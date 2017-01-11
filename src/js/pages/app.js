@@ -46,6 +46,32 @@ const Upload = require('../components/core/UploadMethods.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 
 var Main = React.createClass({
+    componentWillMount() {
+    api.registerEventListener('changeCheckType', this.updateCheckType);
+  },
+
+  componentWillUnmount() {
+    api.removeEventListener('changeCheckType', this.updateCheckType);
+  },
+    updateCheckType(params) {
+      debugger;
+    if (params.currentCheckNamespace) {
+      // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
+      var newCheckCategory = api.getModule(params.currentCheckNamespace);
+      this.setState(merge({}, this.state, {
+        moduleWrapperProps:{
+          view: newCheckCategory
+        }
+      }));
+    }
+    else {
+      this.setState(merge({}, this.state, {
+        moduleWrapperProps:{
+          view: null
+        }
+      }));
+    }
+  },
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
@@ -531,6 +557,17 @@ var Main = React.createClass({
               }));
             }
           },
+        },
+        moduleWrapperProps:{
+          view:null,
+          apps:false,
+          showApps: () => {
+            this.setState(merge({}, this.state, {
+              moduleWrapperProps:{
+                apps:true
+              }
+            }));
+          }
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -630,7 +667,7 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps}/>
                 <AlertModal {...this.state.alertModalProps}/>
-                <ModuleWrapper />
+                <ModuleWrapper {...this.state.moduleWrapperProps}/>
               </Col>
             </Row>
           </Grid>
