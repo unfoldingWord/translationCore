@@ -20,28 +20,11 @@ class NavigationMenu extends React.Component {
     this.getSubMenuItemsFromCheckStore = this.getSubMenuItemsFromCheckStore.bind(this);
 }
 
-  componentWillMount() {
-    api.registerEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
-    api.registerEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('goToNext', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('goToPrevious', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('goToCheck', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('changeCheckType', this.getSubMenuItemsFromCheckStore);
-    api.removeEventListener('changeGroupName', this.getSubMenuItemsFromCheckStore);
-  }
 
   getSubMenuItemsFromCheckStore(){
-    let subMenuItemsArray = api.getSubMenuItems();
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let currentCheckIndex = api.getDataFromCheckStore(currentNamespace, 'currentCheckIndex');
     let currentGroupIndex = api.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
-    this.setState({subMenuItemsArray: subMenuItemsArray});
     this.setState({currentCheckIndex: currentCheckIndex});
     this.setState({currentGroupIndex: currentGroupIndex});
   }
@@ -49,9 +32,10 @@ class NavigationMenu extends React.Component {
   render() {
     return (
       <div>
-        <SubMenu subMenuItemsArray={this.state.subMenuItemsArray}
-                 currentCheckIndex={this.state.currentCheckIndex}
-                 currentGroupIndex={this.state.currentGroupIndex}/>
+        <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}
+                 currentSubGroupObjects={this.props.currentSubGroupObjects}
+                 currentCheckIndex={this.props.currentCheckIndex}
+                 currentGroupIndex={this.props.currentGroupIndex}/>
       </div>
     );
   }

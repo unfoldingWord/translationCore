@@ -103,6 +103,7 @@ var CheckDataGrabber = {
         });
       }
       else {
+        debugger;
         callback(error, false);
       }
     });

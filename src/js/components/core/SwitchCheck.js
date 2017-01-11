@@ -48,7 +48,7 @@ function getDefaultModules(callback) {
 class SwitchCheck extends React.Component{
   constructor(){
     super();
-    this.state ={
+    this.state = {
       showModal: false,
       moduleMetadatas: []
     }
@@ -59,7 +59,9 @@ class SwitchCheck extends React.Component{
     getDefaultModules((moduleFolderPathList) => {
       _this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         _this.sortMetadatas(metadatas);
-        _this.setState({moduleMetadatas: metadatas});
+        _this.setState({
+          moduleMetadatas: metadatas
+        });
         api.putToolMetaDatasInStore(metadatas);
       });
     });
@@ -113,25 +115,22 @@ class SwitchCheck extends React.Component{
   }
 
   render() {
-    var buttons;
-    if(!this.state.moduleMetadatas || this.state.moduleMetadatas.length == 0) {
-      buttons = <div>No tC default modules found.</div>;
+    var buttons = [];
+    if(this.state.moduleMetadatas.length == 0) {
+      return <div>No tC default modules found.</div>;
     }
     else {
-      var key = 0;
-      buttons = this.state.moduleMetadatas.map((metadata) => {
-        return (
-          <AppDescription key={key++}
+      for (var i in this.state.moduleMetadatas) {
+        const metadata = this.state.moduleMetadatas[i];
+        buttons.push(<AppDescription key={i}
                           imagePath={metadata.imagePath}
                           title={metadata.title}
                           description={metadata.description}
                           useApp={this.moduleClick.bind(this)}
                           folderName={metadata.folderName}
-          />
-        );
-      });
+          />)
+      }
     }
-    exports.buttons = buttons;
     return (
       <div>
           {buttons}
@@ -139,5 +138,4 @@ class SwitchCheck extends React.Component{
     );
   }
 }
-exports.Component = SwitchCheck;
-exports.getDefaultModules = getDefaultModules;
+module.exports = SwitchCheck;

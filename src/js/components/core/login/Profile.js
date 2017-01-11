@@ -17,7 +17,7 @@ class Profile extends React.Component {
   render(){
     if (this.props.projectVisibility) {
       return(
-        <Projects back={this.props.hideProjects} {...this.props.profileProjectsProps}/>
+        <Projects back={this.props.hideProjects} {...this.props}/>
       );
     } else {
       return(

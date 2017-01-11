@@ -17,14 +17,14 @@ class ModuleWrapper extends React.Component {
     if(!this.props.view) {
       var projects;
       if (this.props.apps) {
-        projects = <SwitchCheck.Component />
+        projects = <SwitchCheck />
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
-        projects = <RecentProjects.Component onLoad={() => {
+        projects = <RecentProjects onLoad={() => {
           this.props.showApps(true);
         }}/>;
       } else {
         this.props.showApps(true);
-        projects = <SwitchCheck.Component />
+        projects = <SwitchCheck />
       }
       console.log(projects)
       return(
@@ -37,7 +37,7 @@ class ModuleWrapper extends React.Component {
     console.log(CheckModule);
     return (
       <div>
-        <CheckModule />
+        {this.props.checkModule}
       </div>
     );
   }
