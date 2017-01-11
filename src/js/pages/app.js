@@ -466,31 +466,6 @@ var Main = React.createClass({
         projectModalProps: {
           showModal: false,
           show: 'link',
-          showCreateProject: (input) => {
-            var modal = CoreStore.getShowProjectModal();
-            if (input) {
-              modal = input;
-              CoreStore.projectModalVisibility = input;
-            }
-            if (modal === 'Languages') {
-              if (!this.state.projectModalProps.showModal) {
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    showModal: true,
-                  }
-                }));
-              }
-            } else if (modal === "") {
-              if (this.state.projectModalProps.showModal) {
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    showModal: false,
-                  }
-                }))
-              }
-            }
-          },
-
           submitLink: () => {
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {

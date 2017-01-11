@@ -14,14 +14,19 @@ initialState = {
     login_profile: {
         loginModalVisibility: false,
         profileModalVisibility: false,
-        showModal:false
+        showModal: false
     }
 }
 module.exports = (state = initialState, action) => {
     switch (action.type) {
         case consts.CREATE_PROJECT:
             const visible = action.createProjectModal ? true : false;
-            return merge({}, state, { createProjectModal: action.createProjectModal, showModal: visible });
+            return merge({}, state, {
+                project: {
+                    createProjectModal: action.createProjectModal,
+                    showModal: visible
+                }
+            });
             break;
         case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
             return merge({}, state, {
