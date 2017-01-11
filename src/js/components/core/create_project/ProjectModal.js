@@ -13,6 +13,7 @@ const { connect  } = require('react-redux');
 const DragDrop = require('../DragDrop');
 const ProjectViewer = require('../login/Projects.js');
 const ImportUsfm = require('../Usfm/ImportUSFM');
+const RecentProjects = require('../RecentProjects.js').Component;
 
 class ProjectModal extends React.Component {
   constructor() {
@@ -52,6 +53,13 @@ class ProjectModal extends React.Component {
         mainContent = (
           <div>
             <ProjectViewer {...this.props.profileProjectsProps} />
+          </div>
+        )
+        break;
+      case 'recent':
+        mainContent = (
+          <div style={{padding: '15px'}}>
+            <RecentProjects {...this.props.recentProjectsProps} />
           </div>
         )
         break;
