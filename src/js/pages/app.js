@@ -36,6 +36,7 @@ const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgress
 const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const loadOnline = require('../components/core/LoadOnline');
+const RecentProjects = require('../components/core/RecentProjects');
 
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
@@ -64,6 +65,7 @@ var Main = React.createClass({
     api.registerEventListener('goToNext', this.goToNextCheck);
     //going to next check in entire list of checks, will go to next group also
     api.registerEventListener('goToPrevious', this.goToPreviousCheck);
+    this.updateCheckType(this.state.currentToolNamespace);
   },
 
   componentWillUnmount() {
@@ -128,6 +130,9 @@ var Main = React.createClass({
   },
 
   setCurrentToolNamespace({currentCheckNamespace}) {
+    debugger;
+    if (!currentCheckNamespace) return;
+    const newTool = this.updateCheckType(currentCheckNamespace);
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
     var currentGroupIndex = 0;
@@ -157,8 +162,29 @@ var Main = React.createClass({
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
+      currentToolView: newTool
     }), () => this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex));
+
   },
+  updateCheckType(currentCheckNamespace) {
+    var projects;
+    if (currentCheckNamespace) {
+      var newCheckCategory = api.getModule(currentCheckNamespace);
+      return newCheckCategory;
+    } else {
+      if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+        projects = <RecentProjects />;
+      } else {
+        projects = <SwitchCheck />;
+      }
+      return (
+        <div>
+          {projects}
+        </div>
+      );
+    }
+  },
+
   getMenuItemidFromGroupName(groupName) {
     var i = 0;
     for (var el in this.state.menuHeadersProps.groupObjects) {
@@ -183,6 +209,7 @@ var Main = React.createClass({
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
+        currentToolView: null,
         currentToolNamespace: null,
         currentGroupName: null,
         loginProps: {
@@ -355,13 +382,17 @@ var Main = React.createClass({
         },
         menuHeadersProps: {
           scrollToMenuElement: (id, name) => {
-            const groupName = name || this.state.currentGroupObjects[id].group;
-            //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
-            var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
-            //this ref may be here forever...sigh
-            var element = api.findDOMNode(newGroupElement);
-            if (element) {
-              element.scrollIntoView();
+            try {
+              const groupName = name || this.state.currentGroupObjects[id].group;
+              //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
+              var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
+              //this ref may be here forever...sigh
+              var element = api.findDOMNode(newGroupElement);
+              if (element) {
+                element.scrollIntoView();
+              }
+            } catch (e) {
+              console.log(e);
             }
           },
           menuClick: (id) => {
@@ -403,12 +434,17 @@ var Main = React.createClass({
         },
         subMenuProps: {
           scrollToMenuElement: (id) => {
-            var newGroupElement = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${id}`];
-            //this ref may be here forever...sigh
-            var element = api.findDOMNode(newGroupElement);
-            if (element) {
-              element.scrollIntoView();
+            try {
+              var newGroupElement = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${id}`];
+              //this ref may be here forever...sigh
+              var element = api.findDOMNode(newGroupElement);
+              if (element) {
+                element.scrollIntoView();
+              }
+            } catch (e) {
+              console.log(e);
             }
+
           },
           checkClicked: (id) => {
             this.state.subMenuProps.scrollToMenuElement(id);
@@ -478,7 +514,7 @@ var Main = React.createClass({
           },
 
           close: () => {
-            CoreStore.projectModalVisibility = "";
+            this.props.dispatch(showCreateProject(false));
             this.setState(merge({}, this.state, {
               projectModalProps: {
                 showModal: false,
@@ -784,7 +820,7 @@ var Main = React.createClass({
               }));
             }
           },
-        }
+        },
       });
     var tutorialState = api.getSettings('tutorialView');
     if (tutorialState === 'show' || tutorialState === null) {
@@ -865,6 +901,12 @@ var Main = React.createClass({
         <Welcome initialize={this.finishWelcome} />
       )
     } else {
+      //console.log(this.state)
+      var Tool;
+      if (this.state.currentToolView) {
+        Tool = this.state.currentToolView;
+      }
+      //console.log(Tool);
       return (
         <div className='fill-height'>
           <SettingsModal {...this.state.settingsModalProps} />
@@ -873,7 +915,7 @@ var Main = React.createClass({
           <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
-            <SwitchCheck.Component />
+            <SwitchCheck />
           </SwitchCheckModal>
           <Popover />
           <Toast />
@@ -885,7 +927,6 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />
                 <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper />
               </Col>
             </Row>
           </Grid>

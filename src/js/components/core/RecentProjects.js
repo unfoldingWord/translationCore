@@ -17,7 +17,13 @@ function addToRecent(path) {
   localStorage.setItem('previousProjects', JSON.stringify(previousProjects));
 }
 
-class RecentProjects extends React.Component {
+module.exports = class RecentProjects extends React.Component {
+    constructor(){
+    super();
+    this.state = {
+      working:"true"
+    }
+  }
   getProjects() {
     var projects = JSON.parse(localStorage.getItem('previousProjects'));
     if (projects) return projects.reverse();
@@ -63,5 +69,3 @@ class RecentProjects extends React.Component {
     );
   }
 }
-exports.add = addToRecent;
-exports.Component = RecentProjects;

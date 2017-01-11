@@ -7,16 +7,11 @@ const Button = require('react-bootstrap/lib/Button.js');
 const CoreActions = require('../../../actions/CoreActions.js');
 
 class Projects extends React.Component {
-  constructor() {
-    super();
-  }
-
   componentWillMount() {
-    //this.props.updateRepos();
+    this.props.updateRepos();
   }
 
   render() {
-    console.log(this.props);
     return (
       <div style={{height: '419px', overflowY: 'auto'}}>
         <div style={{marginBottom: '15px'}}>
