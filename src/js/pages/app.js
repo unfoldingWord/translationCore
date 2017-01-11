@@ -166,7 +166,6 @@ var Main = React.createClass({
   },
 
   updateCheckType(currentCheckNamespace) {
-    debugger;
     if (currentCheckNamespace) {
       // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
       var newCheckCategory = api.getModule(currentCheckNamespace);
