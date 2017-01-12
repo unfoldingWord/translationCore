@@ -895,7 +895,7 @@ var Main = React.createClass({
         },
         switchCheckProps: {
           moduleMetadatas: [],
-          moduleClick(folderName) {
+          moduleClick: (folderName) => {
             debugger;
             this.props.dispatch(showTools(false));
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
