@@ -8,6 +8,12 @@ var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore.js');
 var RecentProjects = require('./RecentProjects');
+var SwitchCheck = require('./SwitchCheck');
+var Upload = require('./UploadMethods');
+const path = require('path-extra');
+const fs = require(window.__base + 'node_modules/fs-extra');
+const defaultSave = path.join(path.homedir(), 'translationCore');
+const {shell} = require('electron');
 
 const api = window.ModuleApi;
 

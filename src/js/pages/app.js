@@ -14,7 +14,9 @@ const gogs = require('../components/core/login/GogsApi.js');
 const sync = require('../components/core/SideBar/GitSync.js');
 const remote = require('electron').remote;
 const {dialog} = remote;
-const path = require('path');
+const path = require('path-extra');
+const defaultSave = path.join(path.homedir(), 'translationCore');
+const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
@@ -134,8 +136,8 @@ var Main = React.createClass({
   },
 
   setCurrentToolNamespace({currentCheckNamespace}) {
-    if (!currentCheckNamespace) return;
     this.updateCheckType(currentCheckNamespace);
+    if (!currentCheckNamespace) return;
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
     var currentGroupIndex = 0;
@@ -186,6 +188,8 @@ var Main = React.createClass({
             }
           }
           catch (e) {
+            debugger;
+            console.log(e)
           }
         }
       }
@@ -193,6 +197,7 @@ var Main = React.createClass({
     });
   },
   getView() {
+    debugger;
     if (!this.state.moduleWrapperProps.view) {
       var tools;
       if (this.state.moduleWrapperProps.apps) {
@@ -202,12 +207,11 @@ var Main = React.createClass({
           this.props.dispatch(showApps(true));
         } } />;
       } else {
-        //this.props.dispatch(showApps(true));
-        tools = <SwitchCheck {...this.state.switchCheckProps} />
+        this.props.dispatch(showApps(true));
       }
       return (
         <div>
-          {tools}
+        <SwitchCheck {...this.state.switchCheckProps} />
         </div>
       );
     } else {
@@ -256,13 +260,12 @@ var Main = React.createClass({
       this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         this.sortMetadatas(metadatas);
         var newCheckCategory;
-        if (currentCheckNamespace) {
           // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
           newCheckCategory = api.getModule(currentCheckNamespace);
           if (!newCheckCategory) {
+              debugger;
              newCheckCategory = this.getView();
           }
-        }
         this.setState(merge({}, this.state, {
           moduleWrapperProps: {
             moduleMetadatas: metadatas,
@@ -426,7 +429,7 @@ var Main = React.createClass({
             debugger;
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              CoreActions.updateCheckModal(true);
+              this.props.dispatch(showApps(false));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -455,7 +458,7 @@ var Main = React.createClass({
           handleChangeCheckCategory: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              CoreActions.updateCheckModal(true);
+      this.props.dispatch(showApps(false));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -633,12 +636,7 @@ var Main = React.createClass({
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             this.state.projectModalProps.close();
             api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-            if (this.state.uploadProps.active == 1) {
-              let loadedLink = this.link;
-              if (loadedLink != "") {
-                CoreActions.updateCheckModal(true);
-              }
-            }
+            this.props.dispatch(showApps(true));
           },
 
           _handleKeyPress: (e) => {
@@ -648,53 +646,63 @@ var Main = React.createClass({
           }
         },
         uploadProps: {
-          active: 1,
-          changeActive: (key) => {
-            switch (key) {
-              case 1:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'link',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 2:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'file',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 3:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'usfm',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 4:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'd43',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              default:
-                break;
-            }
-          }
+           active: 1,
+           changeActive: (key) => {
+             switch (key) {
+               case 1:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'link',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 2:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'file',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 3:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'usfm',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+               case 4:
+                 this.setState(merge({}, this.state, {
+                   projectModalProps: {
+                     show: 'd43',
+                   },
+                   uploadProps: {
+                     active: key
+                   }
+                 }));
+                 break;
+                 case 5:
+                   this.setState(merge({}, this.state, {
+                     projectModalProps: {
+                       show: 'recent',
+                     },
+                     uploadProps: {
+                       active: key
+                     }
+                   }));
+                   break;
+               default:
+                 break;
+             }
+           }
         },
         profileProjectsProps: {
           repos: [],
@@ -789,6 +797,7 @@ var Main = React.createClass({
         switchCheckModalProps: {
           showModal: false,
           updateCheckModal: () => {
+            debugger;
             if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
               this.setState(merge({}, this.state, {
                 switchCheckModalProps: {
@@ -798,7 +807,7 @@ var Main = React.createClass({
             }
           },
           close: () => {
-            CoreActions.updateCheckModal(false);
+            this.props.dispatch(showApps(false));
           },
           localAppFilePath: '',
           handleFilePathChange: (event) => {
@@ -818,7 +827,7 @@ var Main = React.createClass({
                 console.error(err);
               }
             });
-            CoreActions.updateCheckModal(false);
+            this.props.dispatch(showApps(false));
           },
           developerMode: api.getSettings('developerMode') === 'enable',
           showDevOptions: false,
@@ -918,7 +927,8 @@ var Main = React.createClass({
           showModal: false,
           moduleMetadatas: [],
           moduleClick(folderName) {
-            CoreActions.updateCheckModal(false);
+            debugger;
+            this.props.dispatch(showApps(false));
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
@@ -927,6 +937,15 @@ var Main = React.createClass({
               return;
             }
           },
+        },
+        recentProjectsProps: {
+          onLoad: (filePath) => {
+            Upload.sendFilePath(filePath);
+            api.putDataInCommon('saveLocation', filePath);
+            this.state.projectModalProps.onClick();
+          },
+          projects: fs.readdirSync(defaultSave),
+          showFolder: shell.showItemInFolder
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -1008,17 +1027,11 @@ var Main = React.createClass({
         <Welcome initialize={this.finishWelcome} />
       )
     } else {
-      //console.log(this.state)
-      var Tool;
-      if (this.state.currentToolView) {
-        Tool = this.state.currentToolView;
-      }
-      //console.log(Tool);
       return (
         <div className='fill-height'>
-          <SettingsModal {...this.state.settingsModalProps} />
+          <SettingsModal {...this.state.settingsModalProps}/>
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} />
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps}/>
           <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>

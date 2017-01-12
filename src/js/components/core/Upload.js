@@ -13,6 +13,8 @@ const IMPORT_LOCAL = 'Import From Local Project';
 const IMPORT_ONLINE = 'Import From Online';
 const IMPORT_USFM = 'Import From Local USFM File';
 const IMPORT_D43 = 'Import From Door43';
+const IMPORT_RECENT = 'Import a Recent Project';
+
 
 class UploadModal extends React.Component {
   constructor() {
@@ -27,6 +29,7 @@ class UploadModal extends React.Component {
           <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
           <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
           <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
+          <NavItem eventKey={5}>{IMPORT_RECENT}</NavItem>
         </Nav>
         {this.props.children}
       </div>

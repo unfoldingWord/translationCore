@@ -198,7 +198,7 @@ function checkIfUSFMProject(savePath, callback) {
         api.putDataInCommon('saveLocation', saveLocation);
         var usfmData = data.toString();
         var parsedUSFM = usfm.toJSON(usfmData);
-        parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+        if (parsedUSFM.headers['id']) parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
       } catch (e) {
         console.error(e);
       }
