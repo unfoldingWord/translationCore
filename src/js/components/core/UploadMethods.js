@@ -109,7 +109,6 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * manifest
  */
 function getParams(path, callback) {
-  debugger;
   var tcManifest = api.getDataFromCommon('tcManifest');
   isArray = function (a) {
     return (!!a) && (a.constructor === Array);

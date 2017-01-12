@@ -57,7 +57,7 @@ const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
 const updateProfileModal = CoreActionsRedux.updateProfileModal;
 const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
-const showTools = CoreActionsRedux.showTools;
+const showMainView = CoreActionsRedux.showMainView;
 
 var Main = React.createClass({
   componentWillMount() {
@@ -169,7 +169,7 @@ var Main = React.createClass({
       currentBookName: bookName,
     }), () => {
       this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
-      this.updateTools();
+      this.updateTools(this.state.currentToolNamespace);
     });
 
   },
@@ -229,21 +229,32 @@ var Main = React.createClass({
       });
     }
   },
-  updateTools() {
-    this.getDefaultModules((moduleFolderPathList) => {
-      this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
-        this.sortMetadatas(metadatas);
-        api.putToolMetaDatasInStore(metadatas);
-        this.setState(merge({}, this.state, {
-          switchCheckProps: {
-            moduleMetadatas: metadatas
-          },
-          moduleWrapperProps:{
-            show:'tools'
-          }
-        }))
+  updateTools(namespace) {
+    if (!namespace) {
+      this.getDefaultModules((moduleFolderPathList) => {
+        this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
+          this.sortMetadatas(metadatas);
+          api.putToolMetaDatasInStore(metadatas);
+          this.setState(merge({}, this.state, {
+            switchCheckProps: {
+              moduleMetadatas: metadatas
+            },
+            moduleWrapperProps: {
+              type: 'tools'
+            }
+          }))
+        })
       })
-    })
+    } else {
+      var newCheckCategory = api.getModule(namespace);
+      this.setState(merge({}, this.state, {
+        mainViewVisible:true,
+        moduleWrapperProps: {
+          type: 'main',
+          mainTool:newCheckCategory
+        }
+      }))
+    }
   },
 
   getMenuItemidFromGroupName(groupName) {
@@ -270,7 +281,7 @@ var Main = React.createClass({
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
-        currentToolView: null,
+        mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
         loginProps: {
@@ -397,7 +408,7 @@ var Main = React.createClass({
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              dispatch(showTools(true));
+              dispatch(showMainView(true));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -426,7 +437,7 @@ var Main = React.createClass({
           handleChangeCheckCategory: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              this.props.dispatch(showTools(false));
+              this.props.dispatch(showMainView(false));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -600,7 +611,7 @@ var Main = React.createClass({
                 return;
               }
             }
-            this.props.dispatch(showTools(true));
+            this.props.dispatch(showMainView(true));
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             this.state.projectModalProps.close();
@@ -775,7 +786,7 @@ var Main = React.createClass({
             }
           },
           close: () => {
-            this.props.dispatch(showTools(false));
+            this.props.dispatch(showMainView(false));
           },
           localAppFilePath: '',
           handleFilePathChange: (event) => {
@@ -795,7 +806,7 @@ var Main = React.createClass({
                 console.error(err);
               }
             });
-            this.props.dispatch(showTools(false));
+            this.props.dispatch(showMainView(false));
           },
           developerMode: api.getSettings('developerMode') === 'enable',
           showDevOptions: false,
@@ -889,13 +900,13 @@ var Main = React.createClass({
         },
         moduleWrapperProps: {
           mainTool: null,
-          show:''
+          type: ''
         },
         switchCheckProps: {
           moduleMetadatas: [],
           moduleClick: (folderName) => {
             debugger;
-            this.props.dispatch(showTools(false));
+            this.props.dispatch(showMainView(false));
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
@@ -1014,7 +1025,7 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />
                 <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper showAllTools={this.props.coreStoreReducer.showAllTools} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps}/>
+                <ModuleWrapper mainViewVisible={this.state.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
               </Col>
             </Row>
           </Grid>

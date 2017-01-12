@@ -8,14 +8,14 @@ var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 const merge = require('lodash.merge');
 
 const initialState = {
-    showAllTools:false
+    mainViewVisible:false
 };
 module.exports = function coreStore(state, action) {
     state = state || initialState
     switch (action.type) {
         case consts.SHOW_APPS:
             return merge({}, state, {
-                showAllTools:action.val
+                mainViewVisible:action.val
             });
             break;
         default:

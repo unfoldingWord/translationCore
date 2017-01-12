@@ -20,17 +20,15 @@ const api = window.ModuleApi;
 class ModuleWrapper extends React.Component {
   render() {
     var mainContent;
-    if (this.props.showAllTools) {
-      console.log(this.props)
-      switch (this.props.show) {
+    if (this.props.mainViewVisible) {
+      switch (this.props.type) {
         case 'tools':
           mainContent = <SwitchCheck {...this.props.switchCheckProps} />;
           break;
         case 'recent':
-          mainContent = <RecentProjects onLoad={() => { this.props.showTools(true) } } />;
+          mainContent = <RecentProjects onLoad={() => { this.props.showMainView(true) } } />;
           break;
         case 'main':
-          debugger;
           var Tool = this.props.mainTool;
           mainContent = <Tool />;
           break;
