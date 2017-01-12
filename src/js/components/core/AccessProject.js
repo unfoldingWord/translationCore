@@ -6,7 +6,6 @@ var Path = require('path');
 var CheckStore = require('../../stores/CheckStore');
 var CoreActions = require('../../actions/CoreActions');
 var api = window.ModuleApi;
-var Recent = require('./RecentProjects.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
@@ -36,7 +35,6 @@ var Access = {
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
-      Recent.add(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
           if (callback) {
