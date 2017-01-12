@@ -35,7 +35,7 @@ module.exports.showLoginProfileModal = function (val) {
   };
 }
 
-module.exports.showApps = function(val) {
+module.exports.showTools = function(val) {
   return {
     type: consts.SHOW_APPS,
     val:val

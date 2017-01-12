@@ -25,7 +25,7 @@ class SwitchCheck extends React.Component{
                           imagePath={metadata.imagePath}
                           title={metadata.title}
                           description={metadata.description}
-                          useApp={this.moduleClick.bind(this)}
+                          useApp={this.props.moduleClick.bind(this)}
                           folderName={metadata.folderName}
           />)
       }

@@ -49,13 +49,6 @@ module.exports = (state = initialState, action) => {
                 }
             });
             break;
-        case consts.SHOW_APPS:
-            return merge({}, state, {
-                moduleWrapperProps: {
-                    apps:action.val
-                }
-            });
-            break;
         default:
             return state;
     }
