@@ -70,14 +70,13 @@ function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     mirror: function(url, path, callback) {
+      if (!url || !path) {
+        callback('Missing URL or save path');
+        return;
+      }
       git.clone(url, path, ['--recursive'], function(err) {
         if (err) {
-          const alert = {
-                title: 'Clone',
-                content: err,
-                leftButtonText: 'Ok'
-              }
-              ModuleApi.createAlert(alert);
+          console.error(err);
           if (callback) {
             callback(err);
             return;
