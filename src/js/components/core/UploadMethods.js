@@ -109,6 +109,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * manifest
  */
 function getParams(path, callback) {
+  debugger;
   var tcManifest = api.getDataFromCommon('tcManifest');
   isArray = function (a) {
     return (!!a) && (a.constructor === Array);
@@ -269,7 +270,7 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content, callback) {
+function manifestError(content, callback = () => {}) {
   const alert = {
     title: 'Error Setting Up Project',
     content: content,

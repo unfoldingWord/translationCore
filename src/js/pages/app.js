@@ -191,8 +191,6 @@ var Main = React.createClass({
             }
           }
           catch (e) {
-            debugger;
-            console.log(e)
           }
         }
       }
