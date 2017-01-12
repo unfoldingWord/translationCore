@@ -34,3 +34,10 @@ module.exports.showLoginProfileModal = function (val) {
     val: val
   };
 }
+
+module.exports.showApps = function(val) {
+  return {
+    type: consts.SHOW_APPS,
+    val:val
+  }
+}

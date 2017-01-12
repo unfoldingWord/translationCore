@@ -55,6 +55,7 @@ const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
 const updateProfileModal = CoreActionsRedux.updateProfileModal;
 const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
+const showApps = CoreActionsRedux.showApps;
 
 var Main = React.createClass({
   componentWillMount() {
@@ -191,6 +192,33 @@ var Main = React.createClass({
       callback(defaultModules);
     });
   },
+  getView() {
+    if (!this.state.moduleWrapperProps.view) {
+      var tools;
+      if (this.state.moduleWrapperProps.apps) {
+        tools = <SwitchCheck {...this.state.switchCheckProps} />;
+      } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+        tools = <RecentProjects onLoad={() => {
+          this.props.dispatch(showApps(true));
+        } } />;
+      } else {
+        //this.props.dispatch(showApps(true));
+        tools = <SwitchCheck {...this.state.switchCheckProps} />
+      }
+      return (
+        <div>
+          {tools}
+        </div>
+      );
+    } else {
+      var CheckModule = this.state.moduleWrapperProps.view;
+      return (
+        <div>
+          <CheckModule />
+        </div>
+      );
+    }
+  },
   sortMetadatas(metadatas) {
     metadatas.sort((a, b) => {
       return a.title < b.title ? -1 : 1;
@@ -227,24 +255,20 @@ var Main = React.createClass({
     this.getDefaultModules((moduleFolderPathList) => {
       this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
         this.sortMetadatas(metadatas);
+        var newCheckCategory;
         if (currentCheckNamespace) {
           // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
-          var newCheckCategory = api.getModule(currentCheckNamespace);
-          this.setState(merge({}, this.state, {
-            moduleWrapperProps: {
-              moduleMetadatas: metadatas,
-              view: newCheckCategory
-            }
-          }));
+          newCheckCategory = api.getModule(currentCheckNamespace);
+          if (!newCheckCategory) {
+             newCheckCategory = this.getView();
+          }
         }
-        else {
-          this.setState(merge({}, this.state, {
-            moduleWrapperProps: {
-              moduleMetadatas: metadatas,
-              view: null
-            }
-          }));
-        }
+        this.setState(merge({}, this.state, {
+          moduleWrapperProps: {
+            moduleMetadatas: metadatas,
+          view: newCheckCategory
+          }
+        }));
         api.putToolMetaDatasInStore(metadatas);
       })
     })
@@ -399,6 +423,7 @@ var Main = React.createClass({
             dispatch(showCreateProject("Languages"));
           },
           handleSelectTool: () => {
+            debugger;
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CoreActions.updateCheckModal(true);
@@ -787,7 +812,6 @@ var Main = React.createClass({
             var folderName = path.join(window.__base, filepath);
             fs.access(folderName, fs.F_OK, (err) => {
               if (!err) {
-                console.log("Were in");
                 CheckDataGrabber.loadModuleAndDependencies(folderName);
                 localStorage.setItem('lastCheckModule', folderName);
               } else {
@@ -889,42 +913,6 @@ var Main = React.createClass({
         moduleWrapperProps: {
           view: null,
           apps: false,
-          getView: () => {
-            if (!this.state.moduleWrapperProps.view) {
-              var projects;
-              if (this.state.moduleWrapperProps.apps) {
-                projects = <SwitchCheck {...this.state.switchCheckProps} />;
-              } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
-                projects = <RecentProjects onLoad={() => {
-                  // this.setState(merge({}, this.state, {
-                  //   moduleWrapperProps: {
-                  //     apps: true
-                  //   }
-                  // }));
-                } } />;
-              } else {
-                // this.setState(merge({}, this.state, {
-                //   moduleWrapperProps: {
-                //     apps: true
-                //   }
-                // }));
-                projects = <SwitchCheck {...this.state.switchCheckProps} />
-              }
-              return (
-                <div>
-                  {projects}
-                </div>
-              );
-            } else {
-              var CheckModule = this.state.moduleWrapperProps.view;
-              console.log(CheckModule)
-              return (
-                <div>
-                 <CheckModule />
-                 </div>
-              );
-            }
-          },
         },
         switchCheckProps: {
           showModal: false,

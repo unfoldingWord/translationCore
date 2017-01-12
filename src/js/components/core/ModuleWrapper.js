@@ -13,9 +13,10 @@ const api = window.ModuleApi;
 
 class ModuleWrapper extends React.Component {
   render() {
+    var Tool = this.props.view;
     return (
       <div>
-        {this.props.getView()}
+      { this.props.view ? <Tool /> : null}
       </div>
     );
   }
