@@ -4,6 +4,9 @@ const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
+const pathex = require('path-extra');
+const PARENT = pathex.datadir('translationCore');
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
@@ -37,6 +40,7 @@ const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const loadOnline = require('../components/core/LoadOnline');
 const RecentProjects = require('../components/core/RecentProjects');
+const AppDescription = require('../components/core/AppDescription');
 
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
@@ -160,29 +164,91 @@ var Main = React.createClass({
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
-      currentToolView: newTool
     }), () => this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex));
 
   },
+  getDefaultModules(callback) {
+    var defaultModules = [];
+    fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
+    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+    fs.readdir(moduleBasePath, function (error, folders) {
+      if (error) {
+        console.error(error);
+      }
+      else {
+        for (var folder of folders) {
+          try {
+            var manifestPath = path.join(moduleBasePath, folder, 'package.json');
+            var packageJson = require(manifestPath);
+            if (packageJson.display === 'app') {
+              defaultModules.push(manifestPath);
+            }
+          }
+          catch (e) {
+          }
+        }
+      }
+      callback(defaultModules);
+    });
+  },
+  sortMetadatas(metadatas) {
+    metadatas.sort((a, b) => {
+      return a.title < b.title ? -1 : 1;
+    });
+  },
+  fillDefaultModules(moduleFilePathList, callback) {
+    var tempMetadatas = [];
 
+    //This makes sure we're done with all the files first before we call the callback
+    var totalFiles = moduleFilePathList.length,
+      doneFiles = 0;
+    function onComplete() {
+      doneFiles++;
+      if (doneFiles == totalFiles) {
+        callback(tempMetadatas);
+      }
+    }
+
+    for (let filePath of moduleFilePathList) {
+      fs.readJson(filePath, (error, metadata) => {
+        if (error) {
+          console.error(error);
+        }
+        else {
+          metadata.folderName = path.dirname(filePath);
+          metadata.imagePath = path.resolve(filePath, '../icon.png');
+          tempMetadatas.push(metadata);
+        }
+        onComplete();
+      });
+    }
+  },
   updateCheckType(currentCheckNamespace) {
-    if (currentCheckNamespace) {
-      // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
-      var newCheckCategory = api.getModule(currentCheckNamespace);
-      this.setState(merge({}, this.state, {
-        moduleWrapperProps:{
-          view: newCheckCategory
+    this.getDefaultModules((moduleFolderPathList) => {
+      this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
+        this.sortMetadatas(metadatas);
+        if (currentCheckNamespace) {
+          // var newCheckCategory = CoreStore.findCheckCategoryOptionByNamespace(params.currentCheckNamespace);
+          var newCheckCategory = api.getModule(currentCheckNamespace);
+          this.setState(merge({}, this.state, {
+            moduleWrapperProps: {
+              moduleMetadatas: metadatas,
+              view: newCheckCategory
+            }
+          }));
         }
-      }));
-    }
-    else {
-      this.setState(merge({}, this.state, {
-        moduleWrapperProps:{
-          view: null
+        else {
+          this.setState(merge({}, this.state, {
+            moduleWrapperProps: {
+              moduleMetadatas: metadatas,
+              view: null
+            }
+          }));
         }
-      }));
-    }
-    },
+        api.putToolMetaDatasInStore(metadatas);
+      })
+    })
+  },
 
   getMenuItemidFromGroupName(groupName) {
     var i = 0;
@@ -820,16 +886,59 @@ var Main = React.createClass({
             }
           },
         },
-        moduleWrapperProps:{
-          view:null,
-          apps:false,
-          showApps: () => {
-            this.setState(merge({}, this.state, {
-              moduleWrapperProps:{
-                apps:true
+        moduleWrapperProps: {
+          view: null,
+          apps: false,
+          getView: () => {
+            if (!this.state.moduleWrapperProps.view) {
+              var projects;
+              if (this.state.moduleWrapperProps.apps) {
+                projects = <SwitchCheck {...this.state.switchCheckProps} />;
+              } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+                projects = <RecentProjects onLoad={() => {
+                  // this.setState(merge({}, this.state, {
+                  //   moduleWrapperProps: {
+                  //     apps: true
+                  //   }
+                  // }));
+                } } />;
+              } else {
+                // this.setState(merge({}, this.state, {
+                //   moduleWrapperProps: {
+                //     apps: true
+                //   }
+                // }));
+                projects = <SwitchCheck {...this.state.switchCheckProps} />
               }
-            }));
-          }
+              return (
+                <div>
+                  {projects}
+                </div>
+              );
+            } else {
+              var CheckModule = this.state.moduleWrapperProps.view;
+              console.log(CheckModule)
+              return (
+                <div>
+                 <CheckModule />
+                 </div>
+              );
+            }
+          },
+        },
+        switchCheckProps: {
+          showModal: false,
+          moduleMetadatas: [],
+          moduleClick(folderName) {
+            CoreActions.updateCheckModal(false);
+            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
+              CheckDataGrabber.loadModuleAndDependencies(folderName);
+              localStorage.setItem('lastCheckModule', folderName);
+            } else {
+              api.Toast.error('No save location selected', '', 3);
+              return;
+            }
+          },
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -925,7 +1034,7 @@ var Main = React.createClass({
           <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>
-            <SwitchCheck />
+            <SwitchCheck {...this.state.switchCheckProps} />
           </SwitchCheckModal>
           <Popover />
           <Toast />
@@ -937,7 +1046,7 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />
                 <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper {...this.state.moduleWrapperProps}/>
+                <ModuleWrapper {...this.state.moduleWrapperProps} />
               </Col>
             </Row>
           </Grid>

@@ -8,36 +8,14 @@ var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore.js');
 var RecentProjects = require('./RecentProjects');
-var SwitchCheck = require('./SwitchCheck');
 
 const api = window.ModuleApi;
 
 class ModuleWrapper extends React.Component {
   render() {
-    if(!this.props.view) {
-      var projects;
-      if (this.props.apps) {
-        projects = <SwitchCheck />
-      } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
-        projects = <RecentProjects onLoad={() => {
-          this.props.showApps(true);
-        }}/>;
-      } else {
-        this.props.showApps(true);
-        projects = <SwitchCheck />
-      }
-      console.log(projects)
-      return(
-        <div>
-          {projects}
-        </div>
-      );
-    }
-    var CheckModule = this.props.view;
-    console.log(CheckModule);
     return (
       <div>
-        {this.props.checkModule}
+        {this.props.getView()}
       </div>
     );
   }

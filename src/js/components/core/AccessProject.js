@@ -24,7 +24,7 @@ var Access = {
    * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
-    if(!folderpath) {
+    if (!folderpath) {
       if (callback) {
         callback('Must specify location')
         return;
@@ -36,7 +36,7 @@ var Access = {
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
-      Recent.add(folderpath);
+      _this.addToRecent(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
           if (callback) {
@@ -97,6 +97,16 @@ var Access = {
     });
   },
 
+  addToRecent(path) {
+    var previousProjects = localStorage.getItem('previousProjects');
+    previousProjects = previousProjects ? JSON.parse(previousProjects) : [];
+    if (previousProjects.includes(path)) {
+      var indexOfProject = previousProjects.indexOf(path);
+      previousProjects.splice(indexOfProject, 1);
+    }
+    previousProjects.push(path);
+    localStorage.setItem('previousProjects', JSON.stringify(previousProjects));
+  },
 
   putModulesInCheckstore: function (arrayOfChecks, path, callback) {
     try {

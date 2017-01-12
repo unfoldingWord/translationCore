@@ -6,17 +6,6 @@ const CheckStore = require('../../stores/CheckStore');
 const Upload = require('./UploadMethods');
 const {shell} = require('electron')
 
-function addToRecent(path) {
-  var previousProjects = localStorage.getItem('previousProjects');
-  previousProjects = previousProjects ? JSON.parse(previousProjects) : [];
-  if (previousProjects.includes(path)) {
-    var indexOfProject = previousProjects.indexOf(path);
-      previousProjects.splice(indexOfProject, 1);
-  }
-  previousProjects.push(path);
-  localStorage.setItem('previousProjects', JSON.stringify(previousProjects));
-}
-
 module.exports = class RecentProjects extends React.Component {
     constructor(){
     super();
