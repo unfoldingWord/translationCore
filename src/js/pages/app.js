@@ -292,7 +292,8 @@ var Main = React.createClass({
           register: false,
           handleSubmit: (userDataSumbit) => {
             var Token = api.getAuthToken('gogs');
-            var newuser = gogs(Token).login(userDataSumbit).then(function (userdata) {
+            var newuser = gogs(Token).login(userDataSumbit).then((userdata)=> {
+              debugger;
               CoreActions.login(userdata);
               this.props.dispatch(updateLoginModal(false));
               CoreActions.updateOnlineStatus(true);
@@ -340,7 +341,7 @@ var Main = React.createClass({
           projectVisibility: false,
           handleLogout: () => {
             CoreActions.updateOnlineStatus(false);
-            this.props.dispatch(updateProfileModal(true));
+            this.props.dispatch(updateProfileModal(false));
             CoreActions.login(null);
             localStorage.removeItem('user');
           },
