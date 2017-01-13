@@ -15,6 +15,9 @@ initialState = {
         loginModalVisibility: false,
         profileModalVisibility: false,
         showModal: false
+    },
+    switch_check: {
+        showModal: false
     }
 }
 module.exports = (state = initialState, action) => {
@@ -45,6 +48,13 @@ module.exports = (state = initialState, action) => {
         case consts.SHOW_PROFILE_LOGIN_MODAL:
             return merge({}, state, {
                 login_profile: {
+                    showModal: action.val
+                }
+            });
+            break;
+        case consts.SHOW_SWITCH_CHECK_MODAL:
+            return merge({}, state, {
+                switch_check: {
                     showModal: action.val
                 }
             });

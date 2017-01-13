@@ -58,6 +58,7 @@ const updateLoginModal = CoreActionsRedux.updateLoginModal;
 const updateProfileModal = CoreActionsRedux.updateProfileModal;
 const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
+const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 
 var Main = React.createClass({
   componentWillMount() {
@@ -248,10 +249,10 @@ var Main = React.createClass({
     } else {
       var newCheckCategory = api.getModule(namespace);
       this.setState(merge({}, this.state, {
-        mainViewVisible:true,
+        mainViewVisible: true,
         moduleWrapperProps: {
           type: 'main',
-          mainTool:newCheckCategory
+          mainTool: newCheckCategory
         }
       }))
     }
@@ -292,8 +293,7 @@ var Main = React.createClass({
           register: false,
           handleSubmit: (userDataSumbit) => {
             var Token = api.getAuthToken('gogs');
-            var newuser = gogs(Token).login(userDataSumbit).then((userdata)=> {
-              debugger;
+            var newuser = gogs(Token).login(userDataSumbit).then((userdata) => {
               CoreActions.login(userdata);
               this.props.dispatch(updateLoginModal(false));
               CoreActions.updateOnlineStatus(true);
@@ -409,7 +409,7 @@ var Main = React.createClass({
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              dispatch(showMainView(true));
+              dispatch(showSwitchCheckModal(true));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -776,18 +776,8 @@ var Main = React.createClass({
         },
         switchCheckModalProps: {
           showModal: false,
-          updateCheckModal: () => {
-            debugger;
-            if (!this.state.switchCheckModalProps.showModal === CoreStore.getCheckModal()) {
-              this.setState(merge({}, this.state, {
-                switchCheckModalProps: {
-                  showModal: CoreStore.getCheckModal(),
-                }
-              }));
-            }
-          },
           close: () => {
-            this.props.dispatch(showMainView(false));
+            this.props.dispatch(showSwitchCheckModal(false));
           },
           localAppFilePath: '',
           handleFilePathChange: (event) => {
@@ -906,8 +896,8 @@ var Main = React.createClass({
         switchCheckProps: {
           moduleMetadatas: [],
           moduleClick: (folderName) => {
-            debugger;
             this.props.dispatch(showMainView(false));
+            this.props.dispatch(showSwitchCheckModal(false));
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
@@ -1013,7 +1003,7 @@ var Main = React.createClass({
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
           <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
-          <SwitchCheckModal {...this.state.switchCheckModalProps}>
+          <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
             <SwitchCheck {...this.state.switchCheckProps} />
           </SwitchCheckModal>
           <Popover />
