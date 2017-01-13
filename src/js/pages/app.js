@@ -155,12 +155,10 @@ var Main = React.createClass({
     for (var el in groupObjects) {
       groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
     }
+    if (!groupObjects || !groupObjects[currentGroupIndex]) currentGroupIndex = 0;
+    if (!subGroupObjects || !subGroupObjects[currentCheckIndex]) currentCheckIndex = 0;
     var subGroupObjects = groupObjects[currentGroupIndex]['checks'];
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
-    if (groupObjects && groupObjects[currentGroupIndex]) groupObjects[currentGroupIndex].isCurrentItem = true;
-    else currentGroupIndex = 0
-    if (subGroupObjects && subGroupObjects[currentCheckIndex]) subGroupObjects[currentCheckIndex].isCurrentItem = true;
-    else currentCheckIndex = 0
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
     this.setState(merge({}, this.state, {
@@ -483,30 +481,9 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
-            //The stroe should dictate whether the current chekc is "current"(highlighted) not the other way around
-            debugger;
-            const newObj = this.state.currentGroupObjects.slice(0);
-            newObj[this.state.currentGroupIndex].isCurrentItem = false;
-            newObj[id].isCurrentItem = status;
-            var groupName = newObj[id].group;
-            var currentSubGroupObjects = newObj[this.state.currentGroupIndex].checks;
-            const _this = this;
-            _this.checkIndex = null;
-            currentSubGroupObjects.find((element, index) => {
-              if (element.isCurrentItem) _this.checkIndex = index;
-            });
-            const newCheckIndex = _this.checkIndex || 0;
-            debugger;
-            if (!newCheckIndex) currentSubGroupObjects[0].isCurrentItem = true;
-            else currentSubGroupObjects[newCheckIndex].isCurrentItem = true;
-            //THIS IS VERY INEFFICIENT THIS VALUE DOES NOT NEED TO BE
-            //SAVED LOCALLY
             this.setState({
-              currentGroupObjects: newObj,
               currentGroupIndex: parseInt(id),
-              currentCheckIndex: newCheckIndex,
-              currentGroupName: groupName,
-              currentSubGroupObjects: currentSubGroupObjects
+              currentCheckIndex: 0,
             }, callback);
           },
         },
@@ -527,7 +504,6 @@ var Main = React.createClass({
           checkClicked: (id) => {
             this.state.subMenuProps.scrollToMenuElement(id);
             this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
-
               var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
               api.emitEvent('goToCheck', {
                 chapterNumber: currentCheck.chapter,
@@ -536,20 +512,8 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
-            //This needs to change, the store should dictate whether
-            //the current check is "current"(highlighted) not the other way around
-            debugger;
-            const newSubGroup = this.state.currentSubGroupObjects.slice(0);
-            const newGroup = this.state.currentGroupObjects.slice(0);
-            newSubGroup[this.state.currentCheckIndex].isCurrentItem = false;
-            newSubGroup[id].isCurrentItem = status;
-            //THIS IS VERY INEFFICIENT THIS VALUE DOES NOT NEED TO BE
-            //SAVED LOCALLY IN THIS FASHION
-            newGroup[this.state.currentGroupIndex].checks = newSubGroup;
             this.setState({
               currentCheckIndex: parseInt(id),
-              currentSubGroupObjects: newSubGroup,
-              currentGroupObjects: newGroup
             }, callback);
           },
         },
@@ -1008,7 +972,7 @@ var Main = React.createClass({
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SideBarContainer ref='sidebar' {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
+          <SideBarContainer ref='sidebar' isCurrentHeader={this.state.currentGroupIndex} {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
             <SwitchCheck {...this.state.switchCheckProps} />
@@ -1018,7 +982,7 @@ var Main = React.createClass({
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                <NavMenu ref='navmenu' {...this.state} />
+                <NavMenu ref='navmenu' {...this.state} isCurrentSubMenu={this.state.currentCheckIndex}/>
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />

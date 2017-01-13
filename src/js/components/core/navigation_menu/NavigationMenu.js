@@ -33,7 +33,7 @@ class NavigationMenu extends React.Component {
     return (
       <div>
         <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}
-                 currentSubGroupObjects={this.props.currentSubGroupObjects}
+                 isCurrentSubMenu={this.props.isCurrentSubMenu} currentSubGroupObjects={this.props.currentSubGroupObjects}
                  currentCheckIndex={this.props.currentCheckIndex}
                  currentGroupIndex={this.props.currentGroupIndex}/>
       </div>

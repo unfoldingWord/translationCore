@@ -11,7 +11,7 @@ class MenuHeaders extends React.Component {
     if (this.props.currentToolNamespace) {
       for (var i in this.props.currentGroupObjects) {
         const menuItem = this.props.currentGroupObjects[i];
-        menuItem.isCurrentItem = menuItem.isCurrentItem || false;
+        menuItem.isCurrentItem = this.props.isCurrentHeader == i;
         menuItem.currentGroupprogress = menuItem.currentGroupprogress || 0;
         groupsName.push(
           <MenuHeadersItems onClick={this.props.menuClick} {...this.props} {...menuItem} id={i} key={i} ref={menuItem.group.toString()} />
