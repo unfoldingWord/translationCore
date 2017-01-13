@@ -170,7 +170,9 @@ var Main = React.createClass({
       currentBookName: bookName,
     }), () => {
       this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
-      this.updateTools(this.state.currentToolNamespace);
+      this.updateTools(this.state.currentToolNamespace, ()=>{
+        this.props.dispatch(showMainView(true));
+      });
     });
 
   },
@@ -230,7 +232,7 @@ var Main = React.createClass({
       });
     }
   },
-  updateTools(namespace) {
+  updateTools(namespace, callback) {
     if (!namespace) {
       this.getDefaultModules((moduleFolderPathList) => {
         this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
@@ -243,18 +245,17 @@ var Main = React.createClass({
             moduleWrapperProps: {
               type: 'tools'
             }
-          }))
+          }), callback)
         })
       })
     } else {
       var newCheckCategory = api.getModule(namespace);
       this.setState(merge({}, this.state, {
-        mainViewVisible: true,
         moduleWrapperProps: {
           type: 'main',
           mainTool: newCheckCategory
         }
-      }))
+      }), callback)
     }
   },
 
@@ -408,8 +409,11 @@ var Main = React.createClass({
           },
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
+            debugger;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              dispatch(showSwitchCheckModal(true));
+              this.updateTools(null, ()=>{
+                dispatch(showSwitchCheckModal(true));
+              })
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -611,12 +615,12 @@ var Main = React.createClass({
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
-            }
-            this.props.dispatch(showMainView(true));
+            }            
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             this.state.projectModalProps.close();
             api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+            this.props.dispatch(showMainView(true));
           },
 
           _handleKeyPress: (e) => {
@@ -990,6 +994,7 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
+    console.log(this.state)
     this.updateCheckStore();
     if (this.state.firstTime) {
       return (
@@ -1016,7 +1021,7 @@ var Main = React.createClass({
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />
                 <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper mainViewVisible={this.state.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+                <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
               </Col>
             </Row>
           </Grid>
