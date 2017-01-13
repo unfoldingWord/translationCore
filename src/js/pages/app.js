@@ -8,7 +8,9 @@ var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const remote = require('electron').remote;
 const {dialog} = remote;
-const path = require('path');
+const path = require('path-extra');
+const defaultSave = path.join(path.homedir(), 'translationCore');
+const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
@@ -313,6 +315,16 @@ var Main = React.createClass({
                    }
                  }));
                  break;
+                 case 5:
+                   this.setState(merge({}, this.state, {
+                     projectModalProps: {
+                       show: 'recent',
+                     },
+                     uploadProps: {
+                       active: key
+                     }
+                   }));
+                   break;
                default:
                  break;
              }
@@ -531,6 +543,15 @@ var Main = React.createClass({
               }));
             }
           },
+        },
+        recentProjectsProps: {
+          onLoad: (filePath) => {
+            Upload.sendFilePath(filePath);
+            api.putDataInCommon('saveLocation', filePath);
+            this.state.projectModalProps.onClick();
+          },
+          projects: fs.readdirSync(defaultSave),
+          showFolder: shell.showItemInFolder
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -614,7 +635,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <SettingsModal {...this.state.settingsModalProps}/>
           <LoginModal loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps}/>
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps}/>
           <SideBarContainer {...this.props}/>
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps}>

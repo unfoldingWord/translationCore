@@ -9,6 +9,11 @@ var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore.js');
 var RecentProjects = require('./RecentProjects');
 var SwitchCheck = require('./SwitchCheck');
+var Upload = require('./UploadMethods');
+const path = require('path-extra');
+const fs = require(window.__base + 'node_modules/fs-extra');
+const defaultSave = path.join(path.homedir(), 'translationCore');
+const {shell} = require('electron');
 
 const api = window.ModuleApi;
 
@@ -28,10 +33,12 @@ class ModuleWrapper extends React.Component {
       if (this.state.showApps) {
         projects = <SwitchCheck.Component />
       } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
-        projects = <RecentProjects.Component onLoad={() => {
-          this.state.showApps = true;
+        projects = <RecentProjects.Component onLoad={(filePath) => {
+          Upload.sendFilePath(filePath);
+          api.putDataInCommon('saveLocation', filePath);
+          this.setState({showApps: true});
           //This is an ant-pattern should never change the state in the render method
-        }}/>;
+        }} projects = {fs.readdirSync(defaultSave)} showFolder= {shell.showItemInFolder}/>;
       } else {
         this.state.showApps = true;
         //This is an ant-pattern should never change the state in the render method

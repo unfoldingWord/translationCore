@@ -8,7 +8,6 @@ const api = window.ModuleApi;
 
 const ManifestGenerator = require('../create_project/ProjectManifest.js');
 const books = require('../BooksOfBible.js');
-const Recent = require('../RecentProjects.js');
 
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
