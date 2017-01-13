@@ -31,6 +31,7 @@ function clearPreviousData() {
 * This is the main function to initiate a load of a project
 */
 function sendPath(path, link, callback) {
+  debugger;
   clearPreviousData();
   if (path) {
     loadFile(path, 'tc-manifest.json', (err, tcManifest) => {

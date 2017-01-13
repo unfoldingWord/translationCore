@@ -409,7 +409,6 @@ var Main = React.createClass({
           },
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
-            debugger;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               this.updateTools(null, ()=>{
                 dispatch(showSwitchCheckModal(true));
@@ -583,7 +582,7 @@ var Main = React.createClass({
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {
               if (!err) {
-                Upload.Methods.sendFilePath(savePath, url);
+                Upload.sendFilePath(savePath, url);
               } else {
                 console.error(err);
               }
