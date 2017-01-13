@@ -481,8 +481,11 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
+             const newObj = this.state.currentGroupObjects.slice(0);
+             const currentSubGroupObjects = newObj[id].checks;
             this.setState({
               currentGroupIndex: parseInt(id),
+              currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
             }, callback);
           },
