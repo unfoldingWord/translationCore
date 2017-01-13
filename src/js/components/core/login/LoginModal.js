@@ -9,7 +9,6 @@ const Profile= require('./Profile');
 
 class LoginModal extends React.Component {
     render(){
-      console.log(this.props)
       let display;
       if(this.props.profileModalVisibility){
         display = <Profile {...this.props.profileProps} {...this.props.profileProjectsProps}/>
