@@ -10,3 +10,9 @@
 [submodule "tC_apps/ProposedChanges"]
 	path = tC_apps/ProposedChanges
 	url = https://github.com/translationCoreApps/proposed_changes_module.git
+[submodule "tC_apps/TranslationHelps"]
+	path = tC_apps/TranslationHelps
+	url = https://github.com/translationCoreApps/translationHelps.git
+[submodule "tC_apps/translationNotes"]
+	path = tC_apps/translationNotes
+	url = https://github.com/translationCoreApps/translationNotes_Check_plugin.git
