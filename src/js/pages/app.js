@@ -242,9 +242,6 @@ var Main = React.createClass({
           this.setState(merge({}, this.state, {
             switchCheckProps: {
               moduleMetadatas: metadatas
-            },
-            moduleWrapperProps: {
-              type: 'tools'
             }
           }), callback)
         })
@@ -412,6 +409,7 @@ var Main = React.createClass({
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               this.updateTools(null);
+              this.props.dispatch(showSwitchCheckModal(true));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -963,7 +961,6 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
-    console.log(this.state)
     this.updateCheckStore();
     if (this.state.firstTime) {
       return (
