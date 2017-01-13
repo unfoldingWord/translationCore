@@ -155,11 +155,14 @@ var Main = React.createClass({
     for (var el in groupObjects) {
       groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
     }
-    var subGroupObjects = this.getSubMenuItems(currentCheckNamespace, groupName);
+    var subGroupObjects = groupObjects[currentGroupIndex]['checks'];
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
-
-    if (groupObjects) groupObjects[currentGroupIndex].isCurrentItem = true;
-    if (subGroupObjects) subGroupObjects[currentCheckIndex].isCurrentItem = true;
+    if (groupObjects && groupObjects[currentGroupIndex]) groupObjects[currentGroupIndex].isCurrentItem = true;
+    else currentGroupIndex = 0
+    if (subGroupObjects && subGroupObjects[currentCheckIndex]) subGroupObjects[currentCheckIndex].isCurrentItem = true;
+    else currentCheckIndex = 0
+    //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
+    //attached to every menu/submenuitem
     this.setState(merge({}, this.state, {
       currentGroupIndex: currentGroupIndex || 0,
       currentCheckIndex: currentCheckIndex || 0,
@@ -481,6 +484,7 @@ var Main = React.createClass({
           },
           setIsCurrentCheck: (status, id, callback) => {
             //The stroe should dictate whether the current chekc is "current"(highlighted) not the other way around
+            debugger;
             const newObj = this.state.currentGroupObjects.slice(0);
             newObj[this.state.currentGroupIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
@@ -492,6 +496,7 @@ var Main = React.createClass({
               if (element.isCurrentItem) _this.checkIndex = index;
             });
             const newCheckIndex = _this.checkIndex || 0;
+            debugger;
             if (!newCheckIndex) currentSubGroupObjects[0].isCurrentItem = true;
             else currentSubGroupObjects[newCheckIndex].isCurrentItem = true;
             //THIS IS VERY INEFFICIENT THIS VALUE DOES NOT NEED TO BE
@@ -533,6 +538,7 @@ var Main = React.createClass({
           setIsCurrentCheck: (status, id, callback) => {
             //This needs to change, the store should dictate whether
             //the current check is "current"(highlighted) not the other way around
+            debugger;
             const newSubGroup = this.state.currentSubGroupObjects.slice(0);
             const newGroup = this.state.currentGroupObjects.slice(0);
             newSubGroup[this.state.currentCheckIndex].isCurrentItem = false;
