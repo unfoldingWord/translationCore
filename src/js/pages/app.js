@@ -138,7 +138,6 @@ var Main = React.createClass({
   },
 
   setCurrentToolNamespace({currentCheckNamespace}) {
-    debugger;
     if (!currentCheckNamespace) return;
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
