@@ -473,7 +473,7 @@ var Main = React.createClass({
             this.state.menuHeadersProps.scrollToMenuElement(id);
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
               var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[0];
-              api.emitEvent('goToVerse', {
+              api.emitEvent('goToCheck', {
                 chapterNumber: currentCheck.chapter,
                 verseNumber: currentCheck.verse
               });
@@ -524,7 +524,7 @@ var Main = React.createClass({
             this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
 
               var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
-              api.emitEvent('goToVerse', {
+              api.emitEvent('goToCheck', {
                 chapterNumber: currentCheck.chapter,
                 verseNumber: currentCheck.verse
               });
