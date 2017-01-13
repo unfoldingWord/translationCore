@@ -138,6 +138,7 @@ var Main = React.createClass({
   },
 
   setCurrentToolNamespace({currentCheckNamespace}) {
+    debugger;
     if (!currentCheckNamespace) return;
     //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
@@ -410,9 +411,7 @@ var Main = React.createClass({
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              this.updateTools(null, ()=>{
-                dispatch(showSwitchCheckModal(true));
-              })
+              this.updateTools(null);
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
@@ -487,7 +486,6 @@ var Main = React.createClass({
             newObj[this.state.currentGroupIndex].isCurrentItem = false;
             newObj[id].isCurrentItem = status;
             var groupName = newObj[id].group;
-            // var currentSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
             var currentSubGroupObjects = newObj[this.state.currentGroupIndex].checks;
             const _this = this;
             _this.checkIndex = null;
