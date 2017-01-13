@@ -10,6 +10,7 @@ const git = require('../GitApi.js');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 var CheckDataGrabber = {
   doneModules: 0,
@@ -39,13 +40,12 @@ var CheckDataGrabber = {
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
         } else {
-          this.dataLoadError(err);
+          console.error(err)
           callback(err, false);
         }
       });
     }
     catch (error) {
-      this.dataLoadError(error);
       callback(error, false);
     }
 
@@ -121,19 +121,19 @@ var CheckDataGrabber = {
           if (Array.isArray(dataObject.include)) {
             modulePaths.push({
               name: dataObject.include[childFolderName],
-              location: Path.join(PACKAGE_COMPILE_LOCATION, dataObject.include[childFolderName])
+              location: Path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
             });
           } else {
             modulePaths.push({
               name: childFolderName,
-              location: Path.join(PACKAGE_COMPILE_LOCATION, childFolderName)
+              location: Path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
             });
           }
         }
         callback(null, modulePaths);
       }
     } catch (e) {
-      this.dataLoadError(e);
+      console.error(e)
       callback(e, null);
     }
   },
@@ -239,15 +239,6 @@ var CheckDataGrabber = {
       },
       this.onComplete.bind(this)
     );
-  },
-
-  dataLoadError: function (content) {
-    const alert = {
-      title: 'Error Loading TC',
-      content: content,
-      leftButtonText: 'Ok'
-    }
-    console.log(content);
   }
 };
 

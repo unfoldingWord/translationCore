@@ -3,6 +3,7 @@ const Path = require('path');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 const api = window.ModuleApi;
 const fs = require(window.__base + 'node_modules/fs-extra');
@@ -21,8 +22,8 @@ const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
  */
 function getDefaultModules(callback) {
   var defaultModules = [];
-  fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-  var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+  fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
+  var moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
   fs.readdir(moduleBasePath, function(error, folders) {
     if (error) {
       console.error(error);
