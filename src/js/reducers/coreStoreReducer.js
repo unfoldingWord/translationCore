@@ -6,6 +6,7 @@ var pathex = require('path-extra');
 var PARENT = pathex.datadir('translationCore')
 var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 const merge = require('lodash.merge');
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 const initialState = {
     mainViewVisible:false

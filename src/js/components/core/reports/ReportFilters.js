@@ -4,14 +4,8 @@
  * the name of possible checks, and methods to filter.
 **/
 const api = window.ModuleApi;
-const path = require('path');
-const fs = require(window.__base + 'node_modules/fs-extra');
 const statusList = ['FLAGGED', 'CORRECT', 'UNCHECKED'];
 const retainedList = ['Replaced', 'Retained', ''];
-const pathex = require('path-extra');
-
-const PARENT = pathex.datadir('translationCore')
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
 
 /**
  * @description This function refines the groups list by group name.
