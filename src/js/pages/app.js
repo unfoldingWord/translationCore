@@ -85,7 +85,7 @@ var Main = React.createClass({
   },
 
   goToPreviousCheck() {
-    var lastCheck = this.state.currentCheckIndex - 1 <= 0;
+    var lastCheck = this.state.currentCheckIndex - 1 < 0;
     if (lastCheck) {
       this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1);
     }
@@ -171,12 +171,13 @@ var Main = React.createClass({
       currentBookName: bookName,
     }), () => {
       this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
-      this.updateTools(this.state.currentToolNamespace, ()=>{
+      this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
       });
     });
 
   },
+
   getDefaultModules(callback) {
     var defaultModules = [];
     fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
@@ -208,7 +209,6 @@ var Main = React.createClass({
   },
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
-
     //This makes sure we're done with all the files first before we call the callback
     var totalFiles = moduleFilePathList.length,
       doneFiles = 0;
@@ -218,7 +218,6 @@ var Main = React.createClass({
         callback(tempMetadatas);
       }
     }
-
     for (let filePath of moduleFilePathList) {
       fs.readJson(filePath, (error, metadata) => {
         if (error) {
@@ -241,8 +240,8 @@ var Main = React.createClass({
           api.putToolMetaDatasInStore(metadatas);
           this.setState(merge({}, this.state, {
             switchCheckProps: {
-              moduleMetadatas: metadatas
-            }
+              moduleMetadatas: metadatas,
+            },
           }), callback)
         })
       })
@@ -469,9 +468,11 @@ var Main = React.createClass({
             }
           },
           menuClick: (id) => {
+            id = id >= 0 ? id : 0;
+            id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
             this.state.menuHeadersProps.scrollToMenuElement(id);
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
-              var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[0];
+              var currentCheck = this.state.currentGroupObjects[this.state.currentCheckIndex].checks[0];
               api.emitEvent('goToCheck', {
                 chapterNumber: currentCheck.chapter,
                 verseNumber: currentCheck.verse
@@ -479,8 +480,8 @@ var Main = React.createClass({
             });
           },
           setIsCurrentCheck: (status, id, callback) => {
-             const newObj = this.state.currentGroupObjects.slice(0);
-             const currentSubGroupObjects = newObj[id].checks;
+            const newObj = this.state.currentGroupObjects.slice(0);
+            const currentSubGroupObjects = newObj[id].checks;
             this.setState({
               currentGroupIndex: parseInt(id),
               currentSubGroupObjects: currentSubGroupObjects,
@@ -522,7 +523,6 @@ var Main = React.createClass({
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
           checkIfValid: (location) => {
-
             this.setState(merge({}, this.state, {
               importUsfmProps: {
                 filePath: location,
@@ -582,12 +582,13 @@ var Main = React.createClass({
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
-            }            
+            }
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             this.state.projectModalProps.close();
             api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
             this.props.dispatch(showMainView(true));
+            this.props.dispatch(showSwitchCheckModal(true));
           },
 
           _handleKeyPress: (e) => {
@@ -596,6 +597,7 @@ var Main = React.createClass({
             }
           }
         },
+
         uploadProps: {
           active: 1,
           changeActive: (key) => {
@@ -762,6 +764,7 @@ var Main = React.createClass({
             var folderName = path.join(window.__base, filepath);
             fs.access(folderName, fs.F_OK, (err) => {
               if (!err) {
+
                 CheckDataGrabber.loadModuleAndDependencies(folderName);
                 localStorage.setItem('lastCheckModule', folderName);
               } else {
@@ -961,6 +964,7 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
+    console.log(this.state);
     this.updateCheckStore();
     if (this.state.firstTime) {
       return (
@@ -982,7 +986,7 @@ var Main = React.createClass({
           <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                <NavMenu ref='navmenu' {...this.state} isCurrentSubMenu={this.state.currentCheckIndex}/>
+                <NavMenu ref='navmenu' {...this.state} isCurrentSubMenu={this.state.currentCheckIndex} />
               </Col>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />
