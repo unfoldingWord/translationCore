@@ -964,7 +964,6 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
-    console.log(this.state);
     this.updateCheckStore();
     if (this.state.firstTime) {
       return (
