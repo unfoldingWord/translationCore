@@ -547,7 +547,6 @@ var Main = React.createClass({
           showModal: false,
           show: 'link',
           submitLink: (callback) => {
-            debugger;
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {
               if (!err) {

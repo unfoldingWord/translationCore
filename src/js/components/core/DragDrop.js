@@ -54,7 +54,6 @@ class DragDrop extends React.Component{
 
   onClick() {
     if (!this.opened) {
-      debugger;
       this.opened = true;
       var _this = this;
       dialog.showOpenDialog({
