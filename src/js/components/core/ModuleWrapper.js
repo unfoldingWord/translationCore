@@ -19,7 +19,6 @@ const api = window.ModuleApi;
 
 class ModuleWrapper extends React.Component {
   render() {
-    console.log(this.props)
     var mainContent;
     if (this.props.mainViewVisible) {
       switch (this.props.type) {
