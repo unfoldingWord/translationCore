@@ -19,6 +19,7 @@ const api = window.ModuleApi;
 
 class ModuleWrapper extends React.Component {
   render() {
+    console.log(this.props)
     var mainContent;
     if (this.props.mainViewVisible) {
       switch (this.props.type) {
@@ -26,7 +27,7 @@ class ModuleWrapper extends React.Component {
           mainContent = <SwitchCheck {...this.props.switchCheckProps} />;
           break;
         case 'recent':
-          mainContent = <RecentProjects onLoad={() => { this.props.showMainView(true) } } />;
+          mainContent = <RecentProjects.Component {...this.props.recentProjectsProps} />;
           break;
         case 'main':
           var Tool = this.props.mainTool;

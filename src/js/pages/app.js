@@ -242,6 +242,13 @@ var Main = React.createClass({
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
+            moduleWrapperProps: {
+              type: 'recent',
+              mainViewVisible: true
+            },
+            uploadProps: {
+              active: 0
+            }
           }), callback)
         })
       })
@@ -696,11 +703,12 @@ var Main = React.createClass({
             var dispatch = this.props.dispatch;
             var link = 'https://git.door43.org/' + projectPath + '.git';
             var _this = this;
+            debugger;
             loadOnline(link, function (err, savePath, url) {
               if (err) {
                 console.error(err);
               } else {
-                Upload.sendFilePath(savePath, url, ()=>{
+                Upload.sendFilePath(savePath, url, () => {
                   dispatch(showCreateProject(false));
                 })
               }
@@ -904,8 +912,7 @@ var Main = React.createClass({
         },
         recentProjectsProps: {
           onLoad: (filePath) => {
-            Upload.sendFilePath(filePath, null, (err) => {
-              debugger;
+            Upload.sendFilePath(filePath, undefined, (err) => {
               if (!err) this.state.projectModalProps.onClick();
               api.putDataInCommon('saveLocation', filePath);
             });
@@ -960,7 +967,6 @@ var Main = React.createClass({
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
       Upload.sendFilePath(saveLocation, null, (err) => {
-        debugger;
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
           CoreActions.startLoading();
