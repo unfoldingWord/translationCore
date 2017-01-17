@@ -8,6 +8,7 @@ const { connect  } = require('react-redux');
 
 const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 
+
 function syncToGit() {
   var alertError = console.error;
   console.error = console.errorold;
@@ -94,7 +95,7 @@ function syncToGit() {
     });
   } else {
     api.Toast.info('Login then try again', '', 7);
-    this.props.dispatch(updateLoginModal(true));
+    updateLoginModal(true);
   }
 }
 

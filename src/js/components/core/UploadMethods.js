@@ -50,11 +50,13 @@ function sendPath(path, link, callback) {
             else if (err) {
               localStorage.removeItem('lastProject');
               api.putDataInCommon('saveLocation', null);
-              manifestError(err, callback);
+              manifestError(err);
+              if (callback) callback(err);
             }
           });
       } else if (err) {
-        manifestError(err, callback);
+        manifestError(err);
+        if (callback) callback(err);
       }
     });
   } else {
@@ -89,8 +91,9 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
   var Access = require('./AccessProject');
   api.putDataInCommon('tcManifest', tcManifest);
   api.putDataInCommon('saveLocation', path);
-  api.putDataInCommon('params', getParams(path, (err) => {
-    if (!err) {
+  const params = getParams(path)
+  if (params) {
+    api.putDataInCommon('params', params);
     checkIfUSFMProject(path, function (targetLanguage) {
       if (targetLanguage) {
         api.putDataInCommon('targetLanguage', targetLanguage);
@@ -99,11 +102,11 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
         Access.loadFromFilePath(path, callback);
       } catch (err) {
         //executes if something fails, not sure how efficient
-        manifestError(err, callback);
+        manifestError(err);
+        if (callback) callback(err);
       }
     });
-    }
-  }));
+  }
 }
 
 /**
@@ -111,7 +114,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * @param {string} path - The path to the folder containing the translationStudio project
  * manifest
  */
-function getParams(path, callback) {
+function getParams(path) {
   var tcManifest = api.getDataFromCommon('tcManifest');
   isArray = function (a) {
     return (!!a) && (a.constructor === Array);
@@ -121,7 +124,7 @@ function getParams(path, callback) {
     tcManifest = fixManifestVerThree(tcManifest);
   }
   if (tcManifest.finished_chunks && tcManifest.finished_chunks.length == 0) {
-    manifestError("Project has no finished content in manifest", callback);
+    manifestError("Project has no finished content in manifest");
     return;
   }
   var ogPath = Path.join(window.__base, 'static', 'tagged');
@@ -151,7 +154,7 @@ function getParams(path, callback) {
       params.originalLanguage = "greek";
     }
   } catch (e) {
-    manifestError(e, callback);
+    manifestError(e);
   }
   return params;
 }
@@ -241,6 +244,7 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
     fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
         manifestError('Error Saving tC Manifest');
+        if (callback) callback(err, null);
       }
       //overwrites old manifest if present, or else creates new one
       callback(null, manifest);
@@ -276,14 +280,14 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content, callback = () => { }) {
+function manifestError(content) {
   api.createAlert(
     {
       title: 'Error Setting Up Project',
       content: content,
       moreInfo: "",
       leftButtonText: "Ok"
-    }, callback);
+    });
   clearPreviousData();
 }
 
