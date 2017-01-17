@@ -603,7 +603,6 @@ var Main = React.createClass({
                 return;
               }
             } else {
-              debugger;
               api.emitEvent('changeCheckType', { currentCheckNamespace: null });
               api.emitEvent('newToolSelected', { 'newToolSelected': true });
               this.state.projectModalProps.close();
@@ -906,7 +905,6 @@ var Main = React.createClass({
         recentProjectsProps: {
           onLoad: (filePath) => {
             Upload.sendFilePath(filePath, null, (err)=>{
-              debugger;
               if (!err) this.state.projectModalProps.onClick();
             });
             //api.putDataInCommon('saveLocation', filePath);
