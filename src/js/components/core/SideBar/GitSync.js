@@ -98,9 +98,4 @@ function syncToGit() {
   }
 }
 
-function mapStateToProps(state) {
-  //This will come in handy when we separate corestore and checkstore in two different reducers
-  return Object.assign({}, state, state.modalReducers.login_profile);
-}
-
-module.exports = connect(mapStateToProps)(syncToGit);
+module.exports = syncToGit

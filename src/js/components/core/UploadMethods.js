@@ -89,18 +89,21 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
   var Access = require('./AccessProject');
   api.putDataInCommon('tcManifest', tcManifest);
   api.putDataInCommon('saveLocation', path);
-  api.putDataInCommon('params', getParams(path, callback));
-  checkIfUSFMProject(path, function (targetLanguage) {
-    if (targetLanguage) {
-      api.putDataInCommon('targetLanguage', targetLanguage);
+  api.putDataInCommon('params', getParams(path, (err) => {
+    if (!err) {
+    checkIfUSFMProject(path, function (targetLanguage) {
+      if (targetLanguage) {
+        api.putDataInCommon('targetLanguage', targetLanguage);
+      }
+      try {
+        Access.loadFromFilePath(path, callback);
+      } catch (err) {
+        //executes if something fails, not sure how efficient
+        manifestError(err, callback);
+      }
+    });
     }
-    try {
-      Access.loadFromFilePath(path, callback);
-    } catch (err) {
-      //executes if something fails, not sure how efficient
-      manifestError(err, callback);
-    }
-  });
+  }));
 }
 
 /**
@@ -119,6 +122,7 @@ function getParams(path, callback) {
   }
   if (tcManifest.finished_chunks && tcManifest.finished_chunks.length == 0) {
     manifestError("Project has no finished content in manifest", callback);
+    return;
   }
   var ogPath = Path.join(window.__base, 'static', 'tagged');
   var params = {
@@ -189,11 +193,11 @@ function checkIfUSFMProject(savePath, callback) {
       try {
         try {
           var data = fs.readFileSync(saveFile);
-        } catch(err) {
+        } catch (err) {
           var data = fs.readFileSync(actualFile);
         }
         if (!data) {
-          var saveLocation = Path.join(savePath,  parsedPath.base);
+          var saveLocation = Path.join(savePath, parsedPath.base);
           var saveFile = saveLocation;
           data = fs.readFileSync(saveFile);
           //saving it in the same directory the project was loaded from
@@ -272,18 +276,15 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content, callback = () => {}) {
-    api.createAlert(
+function manifestError(content, callback = () => { }) {
+  api.createAlert(
     {
       title: 'Error Setting Up Project',
       content: content,
       moreInfo: "",
       leftButtonText: "Ok"
-    },
-    ()=>{
-    });
+    }, callback);
   clearPreviousData();
-  callback("");
 }
 
 /**
