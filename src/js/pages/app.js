@@ -905,8 +905,8 @@ var Main = React.createClass({
           onLoad: (filePath) => {
             Upload.sendFilePath(filePath, null, (err)=>{
               if (!err) this.state.projectModalProps.onClick();
+              api.putDataInCommon('saveLocation', filePath); 
             });
-            //api.putDataInCommon('saveLocation', filePath);
           },
           projects: fs.readdirSync(defaultSave),
           showFolder: shell.showItemInFolder
