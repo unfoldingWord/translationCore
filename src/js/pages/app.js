@@ -6,8 +6,7 @@ const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore');
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const bootstrap = require('react-bootstrap');
 var CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
@@ -180,8 +179,8 @@ var Main = React.createClass({
 
   getDefaultModules(callback) {
     var defaultModules = [];
-    fs.ensureDirSync(PACKAGE_COMPILE_LOCATION);
-    var moduleBasePath = PACKAGE_COMPILE_LOCATION;
+    fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
+    var moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
     fs.readdir(moduleBasePath, function (error, folders) {
       if (error) {
         console.error(error);
@@ -703,7 +702,6 @@ var Main = React.createClass({
             var dispatch = this.props.dispatch;
             var link = 'https://git.door43.org/' + projectPath + '.git';
             var _this = this;
-            debugger;
             loadOnline(link, function (err, savePath, url) {
               if (err) {
                 console.error(err);
