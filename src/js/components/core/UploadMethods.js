@@ -117,6 +117,9 @@ function getParams(path, callback) {
   if (tcManifest.package_version == '3') {
     tcManifest = fixManifestVerThree(tcManifest);
   }
+  if (tcManifest.finished_chunks && tcManifest.finished_chunks.length == 0) {
+    manifestError("Project has no finished content in manifest", callback);
+  }
   var ogPath = Path.join(window.__base, 'static', 'tagged');
   var params = {
     'originalLanguagePath': ogPath
@@ -270,13 +273,17 @@ function fixManifestVerThree(oldManifest) {
  * @param {string} projectBook - the book in abr form
  */
 function manifestError(content, callback = () => {}) {
-  const alert = {
-    title: 'Error Setting Up Project',
-    content: content,
-    leftButtonText: 'Ok'
-  }
-  api.createAlert(alert);
-  callback(null);
+    api.createAlert(
+    {
+      title: 'Error Setting Up Project',
+      content: content,
+      moreInfo: "",
+      leftButtonText: "Ok"
+    },
+    ()=>{
+    });
+  clearPreviousData();
+  callback("");
 }
 
 /**

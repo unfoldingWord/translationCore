@@ -26,12 +26,7 @@ var Access = {
    */
   loadFromFilePath: function (folderpath, callback) {
     if (!folderpath) {
-      if (callback) {
-        callback('Must specify location')
-        return;
-      } else {
-        return 'Must specify location';
-      }
+      this.loadingProjectError('Must specify location', callback);
     }
     var _this = this;
     var fileObj = {};
@@ -40,25 +35,22 @@ var Access = {
       _this.addToRecent(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
-          if (callback) {
-            callback(err);
-          }
-          return;
+          this.loadingProjectError(err.message, callback);
         }
+        checkDataPresent = false;
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
+            checkDataPresent = true;
             var filepath = Path.join(folderpath, file);
             _this.loadCheckData(filepath, folderpath, callback);
           }
         }
+        if (callback && !checkDataPresent) callback()
       });
     } catch (e) {
       localStorage.removeItem('lastProject');
       api.putDataInCommon('saveLocation', null);
-      _this.loadingProjectError(e.message);
-      if (callback) {
-        callback(e);
-      }
+      this.loadingProjectError(e.message, callback);
     }
   },
 
@@ -70,12 +62,7 @@ var Access = {
    */
   loadCheckData: function (checkDataFolderPath, folderpath, callback) {
     if (!checkDataFolderPath || !folderpath) {
-      if (callback) {
-        callback('No checkdata or save path specified');
-        return;
-      } else {
-        return 'No checkdata or save path specified';
-      }
+      this.loadingProjectError('No checkdata or save path specified', callback);
     }
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
@@ -91,9 +78,7 @@ var Access = {
           });
         });
       } else {
-        if (callback) {
-          callback(error)
-        }
+        this.loadingProjectError(error.message, callback);
       }
     });
   },
@@ -148,13 +133,23 @@ var Access = {
     });
   },
 
-  loadingProjectError: function (content) {
-    const alert = {
-      title: 'Open TC Project Error',
-      content: content,
-      leftButtonText: 'Ok'
-    }
-    api.createAlert(alert);
+  loadingProjectError: function (content, callback = () => { }) {
+    api.createAlert(
+      {
+        title: 'Error Setting Up Project',
+        content: content,
+        moreInfo: "",
+        leftButtonText: "Ok"
+      },
+      () => {
+      });
+    this.clearPreviousData();
+    callback("");
+  },
+
+  clearPreviousData: function () {
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
   }
 };
 

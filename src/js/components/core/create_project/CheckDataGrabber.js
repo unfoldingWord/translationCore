@@ -65,7 +65,11 @@ var CheckDataGrabber = {
         } finally {
           api.saveModule(module.name, viewObj.view || viewObj.container);
         }
+        //debugger;
+        //|| module.name == "TranslationNotesChecker"
+        //TODO: highlight broken
         if (module.location && !CheckStore.hasData(module.name)) {
+          //wordList vs sectionList is not getting detected here
           checksThatNeedToBeFetched.push(module);
         }
         CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);

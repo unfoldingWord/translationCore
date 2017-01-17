@@ -540,17 +540,18 @@ var Main = React.createClass({
                 filePath: path,
               }
             }));
-            Upload.sendFilePath(path, link, callback); ``
+            Upload.sendFilePath(path, link, callback);
           },
         },
         projectModalProps: {
           showModal: false,
           show: 'link',
-          submitLink: () => {
+          submitLink: (callback) => {
+            debugger;
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {
               if (!err) {
-                Upload.sendFilePath(savePath, url);
+                Upload.sendFilePath(savePath, url, callback);
               } else {
                 console.error(err);
               }
@@ -576,19 +577,40 @@ var Main = React.createClass({
 
           onClick: (e) => {
             if (this.state.uploadProps.active == 1) {
-              this.state.projectModalProps.submitLink();
+              this.state.projectModalProps.submitLink((err) => {
+                if (!err) {
+                  api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+                  api.emitEvent('newToolSelected', { 'newToolSelected': true });
+                  this.state.projectModalProps.close();
+                  api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+                  this.props.dispatch(showMainView(true));
+                  this.props.dispatch(showSwitchCheckModal(true));
+                } else if (err != "") {
+                  api.createAlert(
+                    {
+                      title: 'Error Setting Up Project',
+                      content: err,
+                      moreInfo: "",
+                      leftButtonText: "Ok"
+                    },
+                    () => {
+                    });
+                }
+              });
             }
             if (this.state.uploadProps.active == 3) {
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
+            } else {
+              debugger;
+              api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+              api.emitEvent('newToolSelected', { 'newToolSelected': true });
+              this.state.projectModalProps.close();
+              api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+              this.props.dispatch(showMainView(true));
+              this.props.dispatch(showSwitchCheckModal(true));
             }
-            api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-            api.emitEvent('newToolSelected', { 'newToolSelected': true });
-            this.state.projectModalProps.close();
-            api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-            this.props.dispatch(showMainView(true));
-            this.props.dispatch(showSwitchCheckModal(true));
           },
 
           _handleKeyPress: (e) => {
@@ -883,9 +905,11 @@ var Main = React.createClass({
         },
         recentProjectsProps: {
           onLoad: (filePath) => {
-            Upload.sendFilePath(filePath);
-            api.putDataInCommon('saveLocation', filePath);
-            this.state.projectModalProps.onClick();
+            Upload.sendFilePath(filePath, null, (err)=>{
+              debugger;
+              if (!err) this.state.projectModalProps.onClick();
+            });
+            //api.putDataInCommon('saveLocation', filePath);
           },
           projects: fs.readdirSync(defaultSave),
           showFolder: shell.showItemInFolder
