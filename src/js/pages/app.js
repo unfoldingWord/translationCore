@@ -700,8 +700,9 @@ var Main = React.createClass({
               if (err) {
                 console.error(err);
               } else {
-                Upload.sendFilePath(savePath, url)
-                dispatch(showCreateProject(false));
+                Upload.sendFilePath(savePath, url, ()=>{
+                  dispatch(showCreateProject(false));
+                })
               }
             });
           },
@@ -903,9 +904,10 @@ var Main = React.createClass({
         },
         recentProjectsProps: {
           onLoad: (filePath) => {
-            Upload.sendFilePath(filePath, null, (err)=>{
+            Upload.sendFilePath(filePath, null, (err) => {
+              debugger;
               if (!err) this.state.projectModalProps.onClick();
-              api.putDataInCommon('saveLocation', filePath); 
+              api.putDataInCommon('saveLocation', filePath);
             });
           },
           projects: fs.readdirSync(defaultSave),
@@ -957,7 +959,8 @@ var Main = React.createClass({
     }
     var saveLocation = localStorage.getItem('lastProject');
     if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
-      Upload.sendFilePath(saveLocation, null, () => {
+      Upload.sendFilePath(saveLocation, null, (err) => {
+        debugger;
         var lastCheckModule = localStorage.getItem('lastCheckModule');
         if (lastCheckModule) {
           CoreActions.startLoading();

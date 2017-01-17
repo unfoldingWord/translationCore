@@ -26,7 +26,13 @@ var Access = {
    */
   loadFromFilePath: function (folderpath, callback) {
     if (!folderpath) {
-      this.loadingProjectError('Must specify location', callback);
+      this.loadingProjectError('Must specify location');
+      if (callback) {
+        callback('Must specify location')
+        return;
+      } else {
+        return 'Must specify location';
+      }
     }
     var _this = this;
     var fileObj = {};
@@ -35,7 +41,11 @@ var Access = {
       _this.addToRecent(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
-          this.loadingProjectError(err.message, callback);
+          this.loadingProjectError(err.message);
+          if (callback) {
+            callback(err);
+          }
+          return;
         }
         checkDataPresent = false;
         for (var file of files) {
@@ -50,7 +60,10 @@ var Access = {
     } catch (e) {
       localStorage.removeItem('lastProject');
       api.putDataInCommon('saveLocation', null);
-      this.loadingProjectError(e.message, callback);
+      this.loadingProjectError(e.message);
+      if (callback) {
+        callback(e);
+      }
     }
   },
 
@@ -62,7 +75,9 @@ var Access = {
    */
   loadCheckData: function (checkDataFolderPath, folderpath, callback) {
     if (!checkDataFolderPath || !folderpath) {
-      this.loadingProjectError('No checkdata or save path specified', callback);
+      this.loadingProjectError('No checkdata or save path specified');
+      if (callback) callback('No checkdata or save path specified');
+      else return 'No checkdata or save path specified';
     }
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
@@ -78,7 +93,8 @@ var Access = {
           });
         });
       } else {
-        this.loadingProjectError(error.message, callback);
+        this.loadingProjectError(error.message);
+        if (callback) callback(error)
       }
     });
   },
@@ -113,7 +129,24 @@ var Access = {
     }
   },
 
+  loadingProjectError: function (content, callback = () => { }) {
+    api.createAlert(
+      {
+        title: 'Error Setting Up Project',
+        content: content,
+        moreInfo: "",
+        leftButtonText: "Ok"
+      },
+      () => {
+      });
+    this.clearPreviousData();
+    callback("");
+  },
 
+  clearPreviousData: function () {
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
+  },
   /**
  * @description - This gets the arrayOfChecks from the common.tc
  * @param {string} pathToCommon - path that points to common.tc
@@ -132,25 +165,6 @@ var Access = {
       }
     });
   },
-
-  loadingProjectError: function (content, callback = () => { }) {
-    api.createAlert(
-      {
-        title: 'Error Setting Up Project',
-        content: content,
-        moreInfo: "",
-        leftButtonText: "Ok"
-      },
-      () => {
-      });
-    this.clearPreviousData();
-    callback("");
-  },
-
-  clearPreviousData: function () {
-    CheckStore.WIPE_ALL_DATA();
-    api.modules = {};
-  }
 };
 
 module.exports = Access;
