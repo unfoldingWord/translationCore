@@ -580,8 +580,8 @@ var Main = React.createClass({
             }));
           },
 
-          onClick: (e) => {
-            if (this.state.uploadProps.active == 1) {
+          onClick: (type) => {
+            if (type == 'link') {
               this.state.projectModalProps.submitLink((err) => {
                 if (!err) {
                   api.emitEvent('changeCheckType', { currentCheckNamespace: null });
@@ -603,7 +603,7 @@ var Main = React.createClass({
                 }
               });
             }
-            if (this.state.uploadProps.active == 3) {
+            if (type == 'usfm') {
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }

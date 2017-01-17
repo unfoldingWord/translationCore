@@ -63,7 +63,7 @@ class ProjectModal extends React.Component {
           </Upload>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button type="button" onClick={this.props.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
+              <Button type="button" onClick={()=>this.props.onClick(this.props.show)} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
