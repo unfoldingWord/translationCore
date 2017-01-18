@@ -50,12 +50,12 @@ function sendPath(path, link, callback) {
             else if (err) {
               localStorage.removeItem('lastProject');
               api.putDataInCommon('saveLocation', null);
-              manifestError(err);
+              manifestError(err.message);
               if (callback) callback(err);
             }
           });
       } else if (err) {
-        manifestError(err);
+        manifestError(err.message);
         if (callback) callback(err);
       }
     });
@@ -102,7 +102,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
         Access.loadFromFilePath(path, callback);
       } catch (err) {
         //executes if something fails, not sure how efficient
-        manifestError(err);
+        manifestError(err.message);
         if (callback) callback(err);
       }
     });
@@ -154,7 +154,7 @@ function getParams(path) {
       params.originalLanguage = "greek";
     }
   } catch (e) {
-    manifestError(e);
+    manifestError(e.message);
   }
   return params;
 }
