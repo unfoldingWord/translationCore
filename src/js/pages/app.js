@@ -561,7 +561,6 @@ var Main = React.createClass({
           showModal: false,
           show: 'link',
           submitLink: (callback) => {
-            debugger;
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {
               if (!err) {
@@ -591,7 +590,6 @@ var Main = React.createClass({
 
           onClick: (type) => {
             if (type == 'link') {
-              debugger;
               this.state.projectModalProps.submitLink((err) => {
                 if (!err) {
                   api.emitEvent('changeCheckType', { currentCheckNamespace: null });
