@@ -7,10 +7,6 @@ const Button = require('react-bootstrap/lib/Button.js');
 const CoreActions = require('../../../actions/CoreActions.js');
 
 class Projects extends React.Component {
-  constructor() {
-    super();
-  }
-
   componentWillMount() {
     this.props.updateRepos();
   }

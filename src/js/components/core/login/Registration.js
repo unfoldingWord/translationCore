@@ -7,6 +7,9 @@ const React = require('react');
 
 const remote = require('electron').remote;
 const {dialog} = remote;
+const { connect  } = require('react-redux');
+
+const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
@@ -73,14 +76,14 @@ const Registration = React.createClass({
     var emailValid = this.validateEmail();
     var passwordMatch = this.checkPass();
     var unLen = user.username.length;
+
     if (emailValid === 'success' && passwordMatch === 'success' && unLen > 0) {
       GogsApi(Token)
       .createAccount(user)
       .then(function(data) {
         CoreActions.login(data);
-        CoreActions.updateLoginModal(false);
+        this.props.dispatch(updateLoginModal(false));
         CoreActions.updateOnlineStatus(true);
-        CoreActions.updateProfileVisibility(true);
       })
       .catch(function(reason) {
         console.log(reason);
@@ -146,4 +149,9 @@ const Registration = React.createClass({
   }
 });
 
-module.exports = Registration;
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  return Object.assign({}, state, state.modalReducers.login_profile);
+}
+
+module.exports = connect(mapStateToProps)(Registration);

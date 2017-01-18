@@ -4,6 +4,10 @@ const CoreActions = require('../../../actions/CoreActions.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const pathFinder = require('path');
 const gogs = require('../login/GogsApi.js');
+const { connect  } = require('react-redux');
+
+const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
+
 
 function syncToGit() {
   var alertError = console.error;
@@ -91,9 +95,8 @@ function syncToGit() {
     });
   } else {
     api.Toast.info('Login then try again', '', 7);
-    CoreActions.updateLoginModal(true);
-    console.error = alertError;
+    updateLoginModal(true);
   }
 }
 
-module.exports = syncToGit;
+module.exports = syncToGit

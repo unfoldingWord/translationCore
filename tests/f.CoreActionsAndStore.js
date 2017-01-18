@@ -20,9 +20,6 @@ describe('CoreStore and CoreActions', function() {
     CoreStore.addChangeListener(onlineStatus);
     CoreActions.updateOnlineStatus(true);
   });
-  it('CoreStore should still update when a nonrelated event occurs', function() {
-    CoreActions.updateCheckModal(true);
-  });
   it('CoreStore should be able to remove an event listener', function() {
     CoreStore.removeChangeListener(onlineStatus);
     CoreActions.updateOnlineStatus(false);

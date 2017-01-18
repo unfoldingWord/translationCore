@@ -17,16 +17,6 @@ const Panel = require('react-bootstrap/lib/Panel.js');
 const CoreStore = require('../../stores/CoreStore.js');
 
 class SwitchCheckModal extends React.Component {
-  constructor(){
-    super();
-  }
-  componentWillMount() {
-    CoreStore.addChangeListener(this.props.updateCheckModal);
-  }
-
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.props.updateCheckModal);
-  }
   render() {
     var filepath;
     return (

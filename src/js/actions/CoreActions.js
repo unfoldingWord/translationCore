@@ -30,19 +30,19 @@ module.exports = {
     });
   },
 
-  updateModal: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
-      modalOption: boolean
-    });
-  },
+  // updateModal: function(boolean) {
+  //   Dispatcher.handleAction({
+  //     type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
+  //     modalOption: boolean
+  //   });
+  // },
 
-  updateLoginModal: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
-      loginModalOption: boolean
-    });
-  },
+  // updateLoginModal: function(boolean) {
+  //   Dispatcher.handleAction({
+  //     type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
+  //     loginModalOption: boolean
+  //   });
+  // },
 
   updateSettings: function(boolean) {
     Dispatcher.handleAction({
@@ -103,20 +103,6 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,
       reportViews:[]
-    });
-  },
-
-  updateProfileVisibility: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_PROFILE_VISIBILITY,
-      profileOption: boolean
-    });
-  },
-
-  updateCheckModal: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.CHANGE_CHECK_MODAL_VISIBILITY,
-      checkModalOption: boolean
     });
   },
 

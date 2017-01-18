@@ -25,7 +25,8 @@ var Access = {
    * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
-    if(!folderpath) {
+    if (!folderpath) {
+      this.loadingProjectError('Must specify location');
       if (callback) {
         callback('Must specify location')
         return;
@@ -37,24 +38,29 @@ var Access = {
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
+      _this.addToRecent(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
+          this.loadingProjectError(err.message);
           if (callback) {
             callback(err);
           }
           return;
         }
+        checkDataPresent = false;
         for (var file of files) {
           if (file.toLowerCase() == 'checkdata') {
+            checkDataPresent = true;
             var filepath = Path.join(folderpath, file);
             _this.loadCheckData(filepath, folderpath, callback);
           }
         }
+        if (callback && !checkDataPresent) callback()
       });
     } catch (e) {
       localStorage.removeItem('lastProject');
       api.putDataInCommon('saveLocation', null);
-      _this.loadingProjectError(e.message);
+      this.loadingProjectError(e.message);
       if (callback) {
         callback(e);
       }
@@ -69,12 +75,9 @@ var Access = {
    */
   loadCheckData: function (checkDataFolderPath, folderpath, callback) {
     if (!checkDataFolderPath || !folderpath) {
-      if (callback) {
-        callback('No checkdata or save path specified');
-        return;
-      } else {
-        return 'No checkdata or save path specified';
-      }
+      this.loadingProjectError('No checkdata or save path specified');
+      if (callback) callback('No checkdata or save path specified');
+      else return 'No checkdata or save path specified';
     }
     var _this = this;
     fs.readdir(checkDataFolderPath, (error, checkDataFiles) => {
@@ -90,13 +93,22 @@ var Access = {
           });
         });
       } else {
-        if (callback) {
-          callback(error)
-        }
+        this.loadingProjectError(error.message);
+        if (callback) callback(error)
       }
     });
   },
 
+  addToRecent(path) {
+    var previousProjects = localStorage.getItem('previousProjects');
+    previousProjects = previousProjects ? JSON.parse(previousProjects) : [];
+    if (previousProjects.includes(path)) {
+      var indexOfProject = previousProjects.indexOf(path);
+      previousProjects.splice(indexOfProject, 1);
+    }
+    previousProjects.push(path);
+    localStorage.setItem('previousProjects', JSON.stringify(previousProjects));
+  },
 
   putModulesInCheckstore: function (arrayOfChecks, path, callback) {
     try {
@@ -117,7 +129,24 @@ var Access = {
     }
   },
 
+  loadingProjectError: function (content, callback = () => { }) {
+    api.createAlert(
+      {
+        title: 'Error Setting Up Project',
+        content: content,
+        moreInfo: "",
+        leftButtonText: "Ok"
+      },
+      () => {
+      });
+    this.clearPreviousData();
+    callback("");
+  },
 
+  clearPreviousData: function () {
+    CheckStore.WIPE_ALL_DATA();
+    api.modules = {};
+  },
   /**
  * @description - This gets the arrayOfChecks from the common.tc
  * @param {string} pathToCommon - path that points to common.tc
@@ -136,15 +165,6 @@ var Access = {
       }
     });
   },
-
-  loadingProjectError: function (content) {
-    const alert = {
-      title: 'Open TC Project Error',
-      content: content,
-      leftButtonText: 'Ok'
-    }
-    api.createAlert(alert);
-  }
 };
 
 module.exports = Access;

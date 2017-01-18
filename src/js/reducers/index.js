@@ -1,3 +1,3 @@
 module.exports.coreStoreReducer = require('./coreStoreReducer');
-module.exports.loginModalReducer = require('./loginModalReducer');
+module.exports.modalReducers = require('./modalReducers');
 //module.exports.checkStoreReducer = require('./checkStoreReducer');
