@@ -57,7 +57,7 @@ class ProjectModal extends React.Component {
     }
     return (
       <div>
-        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={this.props._handleKeyPress}>
+        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={(e)=>this.props._handleKeyPress(e, this.props.show)}>
           <Upload {...this.props.uploadProps}>
             {mainContent}
           </Upload>

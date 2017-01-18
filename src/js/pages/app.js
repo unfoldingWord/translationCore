@@ -561,6 +561,7 @@ var Main = React.createClass({
           showModal: false,
           show: 'link',
           submitLink: (callback) => {
+            debugger;
             var link = this.state.projectModalProps.link;
             loadOnline(link, function (err, savePath, url) {
               if (!err) {
@@ -590,6 +591,7 @@ var Main = React.createClass({
 
           onClick: (type) => {
             if (type == 'link') {
+              debugger;
               this.state.projectModalProps.submitLink((err) => {
                 if (!err) {
                   api.emitEvent('changeCheckType', { currentCheckNamespace: null });
@@ -611,7 +613,7 @@ var Main = React.createClass({
                 }
               });
             }
-            if (type == 'usfm') {
+            else if (type == 'usfm') {
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
@@ -624,10 +626,10 @@ var Main = React.createClass({
               this.props.dispatch(showSwitchCheckModal(true));
             }
           },
-
-          _handleKeyPress: (e) => {
+//https://git.door43.org/klappy/ilo_luk_text_ulb.git
+          _handleKeyPress: (e, type) => {
             if (e.key === 'Enter') {
-              this.state.projectModalProps.onClick(e);
+              this.state.projectModalProps.onClick(type);
             }
           }
         },
