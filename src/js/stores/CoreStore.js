@@ -195,11 +195,6 @@ class CoreStore extends EventEmitter {
 
   handleActions(action) {
     switch (action.type) {
-      case consts.CHANGE_UPLOAD_MODAL_VISIBILITY:
-        this.modalVisibility = action.modalOption;
-        this.emitChange();
-        break;
-
       case consts.CHANGE_LOGIN_MODAL_VISIBILITY:
         this.loginModalVisibility = action.loginModalOption;
         this.emitChange();
@@ -291,11 +286,6 @@ class CoreStore extends EventEmitter {
 
       case consts.ACCOUNT_LOGIN:
         this.userLoggedIn = action.user;
-        this.emitChange();
-        break;
-
-      case consts.CHANGE_PROFILE_VISIBILITY:
-        this.profileVisibility = action.profileOption;
         this.emitChange();
         break;
 

@@ -7,6 +7,9 @@ const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const Image = require('react-bootstrap/lib/Image.js');
 const style = require("./Style");
+const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
+const showLoginProfileModal = require('../../../actions/CoreActionsRedux.js').showLoginProfileModal;
+const { connect  } = require('react-redux');
 
 class LoginButton extends React.Component{
   constructor(){
@@ -27,7 +30,7 @@ class LoginButton extends React.Component{
   }
 
   handleClick(){
-    CoreActions.updateLoginModal(true);
+    this.props.dispatch(showLoginProfileModal(true));
   }
 
   updateOnlineStatus(){
@@ -64,4 +67,9 @@ class LoginButton extends React.Component{
 
 }
 
-module.exports = LoginButton;
+function mapStateToProps(state) {
+  //This will come in handy when we separate corestore and checkstore in two different reducers
+  return Object.assign({}, state, state.modalReducers.login_profile);
+}
+
+module.exports = connect(mapStateToProps)(LoginButton);

@@ -3,9 +3,7 @@ const path = require('path-extra');
 const Button = require('react-bootstrap/lib/Button.js');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 
-
 class RecentProjects extends React.Component {
-
   generateDisplay() {
     var projectPaths = this.props.projects;
     var projects = [];
@@ -16,7 +14,7 @@ class RecentProjects extends React.Component {
       projects.push(
         <div key={project}>
           <span className={'pull-right'}>
-            <Button onClick={this.props.onLoad.bind(this, projectPath)}>Load Project</Button>
+            <Button onClick={()=>this.props.onLoad(projectPath)}>Load Project</Button>
           </span>
           <h3>{projectName}</h3>
           <p> Location:

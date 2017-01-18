@@ -108,7 +108,6 @@ var CheckDataGrabber = {
     });
   },
 
-
   createCheckArray: function (dataObject, moduleFolderName, callback) {
     var modulePaths = [];
     try {

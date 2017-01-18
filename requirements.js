@@ -19,10 +19,6 @@ var bigError;
 console.error = function(err){
   console.errorold(err);
   bigError += "(" + err + ")";
-  if (Math.round(Math.random()*5) === 2) {
-    var msg = new SpeechSynthesisUtterance('I\'m sorry human, I\'m afraid I can\'t do that');
-    window.speechSynthesis.speak(msg);
-  }
   api.createAlert(
     {
       title: "A Fatal Error Has Occured",

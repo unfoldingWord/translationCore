@@ -10,14 +10,10 @@ const style = require('./loginStyle');
 const Projects = require('./Projects.js');
 
 class Profile extends React.Component {
-  constructor(){
-    super()
-  }
-
   render(){
     if (this.props.projectVisibility) {
       return(
-        <Projects back={this.props.hideProjects} {...this.props.profileProjectsProps}/>
+        <Projects back={this.props.hideProjects} {...this.props}/>
       );
     } else {
       return(

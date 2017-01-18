@@ -16,18 +16,6 @@ const ImportUsfm = require('../Usfm/ImportUSFM');
 const RecentProjects = require('../RecentProjects.js').Component;
 
 class ProjectModal extends React.Component {
-  constructor() {
-    super();
-  }
-
-  componentWillMount() {
-    CoreStore.addChangeListener(this.props.showCreateProject);      // action to show create project modal
-  }
-
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.props.showCreateProject);
-  }
-
   render() {
     var mainContent;
     switch (this.props.show) {
@@ -75,7 +63,7 @@ class ProjectModal extends React.Component {
           </Upload>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button type="button" onClick={this.props.onClick} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
+              <Button type="button" onClick={()=>this.props.onClick(this.props.show)} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>
@@ -86,8 +74,7 @@ class ProjectModal extends React.Component {
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
-
-  return Object.assign({}, state, state.loginModalReducer);
+  return Object.assign({}, state, state.modalReducers.project);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

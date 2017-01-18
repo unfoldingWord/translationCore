@@ -50,11 +50,13 @@ function sendPath(path, link, callback) {
             else if (err) {
               localStorage.removeItem('lastProject');
               api.putDataInCommon('saveLocation', null);
-              manifestError(err, callback);
+              manifestError(err.message);
+              if (callback) callback(err);
             }
           });
       } else if (err) {
-        manifestError(err, callback);
+        manifestError(err.message);
+        if (callback) callback(err);
       }
     });
   } else {
@@ -89,18 +91,22 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
   var Access = require('./AccessProject');
   api.putDataInCommon('tcManifest', tcManifest);
   api.putDataInCommon('saveLocation', path);
-  api.putDataInCommon('params', getParams(path, callback));
-  checkIfUSFMProject(path, function (targetLanguage) {
-    if (targetLanguage) {
-      api.putDataInCommon('targetLanguage', targetLanguage);
-    }
-    try {
-      Access.loadFromFilePath(path, callback);
-    } catch (err) {
-      //executes if something fails, not sure how efficient
-      manifestError(err, callback);
-    }
-  });
+  const params = getParams(path)
+  if (params) {
+    api.putDataInCommon('params', params);
+    checkIfUSFMProject(path, function (targetLanguage) {
+      if (targetLanguage) {
+        api.putDataInCommon('targetLanguage', targetLanguage);
+      }
+      try {
+        Access.loadFromFilePath(path, callback);
+      } catch (err) {
+        //executes if something fails, not sure how efficient
+        manifestError(err.message);
+        if (callback) callback(err);
+      }
+    });
+  }
 }
 
 /**
@@ -108,7 +114,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * @param {string} path - The path to the folder containing the translationStudio project
  * manifest
  */
-function getParams(path, callback) {
+function getParams(path) {
   var tcManifest = api.getDataFromCommon('tcManifest');
   isArray = function (a) {
     return (!!a) && (a.constructor === Array);
@@ -116,6 +122,10 @@ function getParams(path, callback) {
   if (!tcManifest) return;
   if (tcManifest.package_version == '3') {
     tcManifest = fixManifestVerThree(tcManifest);
+  }
+  if (tcManifest.finished_chunks && tcManifest.finished_chunks.length == 0) {
+    manifestError("Project has no finished content in manifest");
+    return;
   }
   var ogPath = Path.join(window.__base, 'static', 'tagged');
   var params = {
@@ -144,7 +154,7 @@ function getParams(path, callback) {
       params.originalLanguage = "greek";
     }
   } catch (e) {
-    manifestError(e, callback);
+    manifestError(e.message);
   }
   return params;
 }
@@ -186,11 +196,11 @@ function checkIfUSFMProject(savePath, callback) {
       try {
         try {
           var data = fs.readFileSync(saveFile);
-        } catch(err) {
+        } catch (err) {
           var data = fs.readFileSync(actualFile);
         }
         if (!data) {
-          var saveLocation = Path.join(savePath,  parsedPath.base);
+          var saveLocation = Path.join(savePath, parsedPath.base);
           var saveFile = saveLocation;
           data = fs.readFileSync(saveFile);
           //saving it in the same directory the project was loaded from
@@ -198,7 +208,7 @@ function checkIfUSFMProject(savePath, callback) {
         api.putDataInCommon('saveLocation', saveLocation);
         var usfmData = data.toString();
         var parsedUSFM = usfm.toJSON(usfmData);
-        parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
+        if (parsedUSFM.headers['id']) parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
       } catch (e) {
         console.error(e);
       }
@@ -234,6 +244,7 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
     fs.outputJson(manifestLocation, manifest, function (err) {
       if (err) {
         manifestError('Error Saving tC Manifest');
+        if (callback) callback(err, null);
       }
       //overwrites old manifest if present, or else creates new one
       callback(null, manifest);
@@ -269,14 +280,15 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content, callback) {
-  const alert = {
-    title: 'Error Setting Up Project',
-    content: content,
-    leftButtonText: 'Ok'
-  }
-  api.createAlert(alert);
-  callback(null);
+function manifestError(content) {
+  api.createAlert(
+    {
+      title: 'Error Setting Up Project',
+      content: content,
+      moreInfo: "",
+      leftButtonText: "Ok"
+    });
+  clearPreviousData();
 }
 
 /**
