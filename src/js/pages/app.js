@@ -148,7 +148,9 @@ var Main = React.createClass({
     if (currentCheckNamespace && !groupName) {
       currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
       currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
-      groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
+      if(currentGroupIndex && currentCheckIndex){
+        groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
+      }
     }
     var groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
     for (var el in groupObjects) {
@@ -156,7 +158,12 @@ var Main = React.createClass({
     }
     if (!groupObjects || !groupObjects[currentGroupIndex]) currentGroupIndex = 0;
     if (!subGroupObjects || !subGroupObjects[currentCheckIndex]) currentCheckIndex = 0;
-    var subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+    var subGroupObjects = null;
+    try {
+      subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+    } catch (e) {
+      console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
+    }
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
@@ -471,6 +478,7 @@ var Main = React.createClass({
               }
             } catch (e) {
               console.log(e);
+              console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
             }
           },
           menuClick: (id) => {
