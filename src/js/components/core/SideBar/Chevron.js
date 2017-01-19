@@ -60,7 +60,7 @@ class Chevron extends React.Component{
         width: 120px;
         color: #FFF;
         z-index: 100;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         display: block;
         box-sizing: border-box;
         cursor: pointer;
@@ -70,7 +70,7 @@ class Chevron extends React.Component{
         position: absolute;
         top: 0;
         left: 0;
-        height: 80px;
+        height: 60px;
         width: 50%;
         transform: skew(0deg, 18deg);
         background-color: #4BC7ED;
@@ -83,7 +83,7 @@ class Chevron extends React.Component{
         position: absolute;
         top: 0;
         right: 0;
-        height: 80px;
+        height: 60px;
         width: 50%;
         transform: skew(0deg, -18deg);
         background-color: #4BC7ED;
@@ -114,7 +114,7 @@ class Chevron extends React.Component{
       content = <img src={this.props.imagePath} style={{width: "45px"}} />
     }else{
       content = <div><Glyphicon glyph={glyphiconType}
-                                style={{color: "#FFF", fontSize: "25px"}}/><br />
+                                style={{color: "#FFF", fontSize: "25px"}}/>
                                 {text}
                 </div>
     }

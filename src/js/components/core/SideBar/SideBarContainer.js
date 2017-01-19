@@ -17,16 +17,14 @@ class SideBarContainer extends React.Component{
                           <SideNavBar {...this.props}/><br />
                           <div style={{bottom: "0px", position: "absolute"}}>
                             <Chevron color="magenta" glyphicon={"folder-open"}
-                                     textValue={"Load"}
                                      handleClick={this.props.handleOpenProject}/>
                             <Chevron color="blue" glyphicon={"wrench"}
-                                     textValue={"Tools"}
                                      imagePath={this.props.imgPath}
                                      handleClick={this.props.handleSelectTool}/>
                           </div>
                        </div>;
     }else{
-      var chevrons = document.getElementById('fixedChevrons') || {clientHeight: 282};
+      var chevrons = document.getElementById('fixedChevrons') || {clientHeight: 228};
       if (chevrons) {
         var sideBarContainerStyle = {
               backgroundColor: "#333333",
@@ -48,10 +46,8 @@ class SideBarContainer extends React.Component{
                                   <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
                                        style={style.logo}/>
                                   <Chevron color="magenta" glyphicon={"folder-open"}
-                                           textValue={"Load"}
                                            handleClick={this.props.handleOpenProject}/>
                                   <Chevron color="blue" glyphicon={"wrench"}
-                                           textValue={"Tools"}
                                            imagePath={this.props.imgPath}
                                            handleClick={this.props.handleSelectTool}/>
                                </div>
