@@ -455,7 +455,7 @@ var Main = React.createClass({
           },
           handleReport: () => {
             api.Toast.info('Generating reports...', '', 3);
-            const Report = require("./../reports/ReportGenerator");
+            const Report = require("../components/core/reports/ReportGenerator");
             api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
           },
           handleChangeCheckCategory: () => {
