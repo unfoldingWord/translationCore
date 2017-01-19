@@ -58,6 +58,8 @@ const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
 const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 
+const MENU_WIDTH = "200px";
+
 var Main = React.createClass({
   componentWillMount() {
     this.updateTools();
@@ -1002,7 +1004,7 @@ var Main = React.createClass({
           </SwitchCheckModal>
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px" }}>
+          <Grid fluid className='fill-height' style={{ marginLeft: MENU_WIDTH, paddingTop: "30px" }}>
             <Row className='fill-height main-view'>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />

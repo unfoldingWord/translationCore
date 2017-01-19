@@ -5,6 +5,7 @@ const Chevron = require('./Chevron');
 const style = require("./Style");
 const MenuHeaders = require('../navigation_menu/MenuHeaders');
 const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
+const MENU_WIDTH = "200px";
 
 class SideBarContainer extends React.Component{
   render() {
@@ -31,7 +32,7 @@ class SideBarContainer extends React.Component{
       if (chevrons) {
         var sideBarContainerStyle = {
               backgroundColor: "#333333",
-              width: "120px",
+              width: MENU_WIDTH,
               height: (window.innerHeight - chevrons.clientHeight + 2) + "px",
               bottom: "0px",
               marginLeft: "0px",

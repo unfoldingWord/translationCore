@@ -1,7 +1,8 @@
+const MENU_WIDTH = "200px";
 var style = {
   sideBarcontainer:{
       backgroundColor: "#333333",
-      width: "120px",
+      width: MENU_WIDTH,
       height: "100vh",
       marginLeft: "0px",
       position: "fixed",
@@ -15,7 +16,7 @@ var style = {
 
   container:{
       backgroundColor: "#333333",
-      width: "120px",
+      width: MENU_WIDTH,
       height: "100vh",
       marginLeft: "0px",
       display: "inline-block",

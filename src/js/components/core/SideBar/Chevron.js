@@ -3,6 +3,7 @@ const React = api.React;
 const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const Style = require('style-it/dist/style-it-standalone.js');
+const MENU_WIDTH = "200px";
 
 class Chevron extends React.Component{
   render() {
@@ -12,7 +13,7 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
         display: block;
@@ -57,7 +58,7 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
         margin-bottom: 30px;
