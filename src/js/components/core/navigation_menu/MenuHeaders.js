@@ -19,10 +19,8 @@ class MenuHeaders extends React.Component {
       }
     }
     return (
-      <table style={{ color: "#FFF" }}>
-        <tbody>
+      <table style={{ color: "#FFF"}}>
           {groupsName}
-        </tbody>
       </table>
     );
   }
