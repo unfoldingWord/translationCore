@@ -76,6 +76,7 @@ var Main = React.createClass({
   },
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
@@ -382,6 +383,15 @@ var Main = React.createClass({
         },
         sideBarContainerProps: {
           SideNavBar: false,
+          screenHeight: window.innerHeight,
+          updateDimensions: () => {
+            this.setState(merge({}, this.state, {
+              sideBarContainerProps: {
+                screenHeight: window.innerHeight
+              }
+            }));
+            console.log('hello');
+          },
           imgPath: null,
           getCurrentToolNamespace: () => {
 
@@ -939,6 +949,7 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');

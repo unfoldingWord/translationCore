@@ -24,23 +24,20 @@ class SideBarContainer extends React.Component{
                           </div>
                        </div>;
     }else{
-      var chevrons = document.getElementById('fixedChevrons') || {clientHeight: 228};
-      if (chevrons) {
-        var sideBarContainerStyle = {
-              backgroundColor: "#333333",
-              width: "120px",
-              height: (window.innerHeight - chevrons.clientHeight + 2) + "px",
-              bottom: "0px",
-              marginLeft: "0px",
-              position: "fixed",
-              zIndex: "98",
-              left: "0px",
-              fontSize: "12px",
-              overflowY: "auto",
-              overflowX: "hidden",
-              boxSizing: "border-box",
-          };
-      }
+      var sideBarContainerStyle = {
+            backgroundColor: "#333333",
+            width: "120px",
+            height: (this.props.screenHeight -  226) + "px",
+            bottom: "0px",
+            marginLeft: "0px",
+            position: "fixed",
+            zIndex: "98",
+            left: "0px",
+            fontSize: "12px",
+            overflowY: "auto",
+            overflowX: "hidden",
+            boxSizing: "border-box",
+        };
       sideBarContent = <div>
                           <div id='fixedChevrons' style={style.fixedChevrons}>
                                   <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
