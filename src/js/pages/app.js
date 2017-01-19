@@ -484,7 +484,6 @@ var Main = React.createClass({
           menuClick: (id) => {
             id = id >= 0 ? id : 0;
             id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
-            this.state.menuHeadersProps.scrollToMenuElement(id);
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
               var currentCheck = this.state.currentGroupObjects[this.state.currentCheckIndex].checks[0];
               api.emitEvent('goToCheck', {
@@ -504,21 +503,7 @@ var Main = React.createClass({
           },
         },
         subMenuProps: {
-          scrollToMenuElement: (id) => {
-            try {
-              var newGroupElement = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${id}`];
-              //this ref may be here forever...sigh
-              var element = api.findDOMNode(newGroupElement);
-              if (element) {
-                element.scrollIntoView();
-              }
-            } catch (e) {
-              console.log(e);
-            }
-
-          },
           checkClicked: (id) => {
-            this.state.subMenuProps.scrollToMenuElement(id);
             this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
               var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
               api.emitEvent('goToCheck', {
@@ -1010,7 +995,7 @@ var Main = React.createClass({
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SideBarContainer ref='sidebar' subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} 
+          <SideBarContainer ref='sidebar' subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
           currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
           currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}/>
           <StatusBar />
