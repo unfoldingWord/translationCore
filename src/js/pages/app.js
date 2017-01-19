@@ -385,12 +385,13 @@ var Main = React.createClass({
           SideNavBar: false,
           screenHeight: window.innerHeight,
           updateDimensions: () => {
-            this.setState(merge({}, this.state, {
-              sideBarContainerProps: {
-                screenHeight: window.innerHeight
-              }
-            }));
-            console.log('hello');
+            if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
+              this.setState(merge({}, this.state, {
+                sideBarContainerProps: {
+                  screenHeight: window.innerHeight
+                }
+              }));
+            }
           },
           imgPath: null,
           getCurrentToolNamespace: () => {
