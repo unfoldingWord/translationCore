@@ -73,7 +73,7 @@ class Chevron extends React.Component{
         height: 60px;
         width: 50%;
         transform: skew(0deg, 18deg);
-        background-color: #4BC7ED;
+        background-color: #0277BD;
         border-top: 2px solid white;
         border-bottom: 2px solid white;
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
@@ -86,7 +86,7 @@ class Chevron extends React.Component{
         height: 60px;
         width: 50%;
         transform: skew(0deg, -18deg);
-        background-color: #4BC7ED;
+        background-color: #0277BD;
         border-top: 2px solid white;
         border-bottom: 2px solid white;
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
