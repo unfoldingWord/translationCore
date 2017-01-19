@@ -30,7 +30,28 @@ body {
   font-weight: bold;
 }
 
+@font-face {
+    font-family: Noto Sans;
+    src: url(../fonts/NotoSans-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Noto Sans;
+    font-weight: bold;
+    src: url(../fonts/NotoSans-Italic.ttf);
+}
+@font-face {
+    font-family: Noto Sans;
+    font-style: italic;
+    src: url(../fonts/NotoSans-Bold.ttf);
+}
 
+@font-face {
+    font-family: Noto Sans;
+    font-style: italic;
+    font-weight: bold;
+    src: url(../fonts/NotoSans-BoldItalic.ttf);
+}
 /*
   TODO:
   This selector is going to give is problems when we have a setting to switch between
@@ -41,7 +62,9 @@ body {
   to do this that would be great but my research shows that is not possible so we may
   have to go another route.
 */
-
+* {
+  font-family: Noto Sans;
+}
 .TargetVerseSelectionArea::selection{
   background: yellow;
 }
