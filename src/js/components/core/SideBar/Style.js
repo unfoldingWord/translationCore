@@ -59,7 +59,7 @@ var style = {
 
   hover: {
     backgroundColor: "#444444",
-    color: "#44C6FF",
+    color: "#0277BD",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
