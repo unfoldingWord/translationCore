@@ -10,7 +10,10 @@ class SideBarContainer extends React.Component{
   render() {
     let sideBarContent;
     if(this.props.SideNavBar || this.props.initShow){
-      sideBarContent = <div>
+      var sideBarContainerStyle = null;
+      sideBarContent = <div style={style.sideBarcontainer}>
+                          <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+                            style={style.logo}/>
                           <SideNavBar {...this.props}/><br />
                           <div style={{bottom: "0px", position: "absolute"}}>
                             <Chevron color="magenta" glyphicon={"folder-open"}
@@ -23,23 +26,44 @@ class SideBarContainer extends React.Component{
                           </div>
                        </div>;
     }else{
+      var chevrons = document.getElementById('fixedChevrons') || {clientHeight: 282};
+      if (chevrons) {
+        var sideBarContainerStyle = {
+              backgroundColor: "#333333",
+              width: "120px",
+              height: (window.innerHeight - chevrons.clientHeight + 2) + "px",
+              bottom: "0px",
+              marginLeft: "0px",
+              position: "fixed",
+              zIndex: "98",
+              left: "0px",
+              fontSize: "12px",
+              overflowY: "auto",
+              overflowX: "hidden",
+              boxSizing: "border-box",
+          };
+      }
       sideBarContent = <div>
-                          <Chevron color="magenta" glyphicon={"folder-open"}
-                                   textValue={"Load"}
-                                   handleClick={this.props.handleOpenProject}/>
-                          <Chevron color="blue" glyphicon={"wrench"}
-                                   textValue={"Tools"}
-                                   imagePath={this.props.imgPath}
-                                   handleClick={this.props.handleSelectTool}/>
-                          <MenuHeaders ref='menuheaders' currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
-                                       isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
-                                       currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick}/>
-                       </div>;
+                          <div id='fixedChevrons' style={style.fixedChevrons}>
+                                  <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+                                       style={style.logo}/>
+                                  <Chevron color="magenta" glyphicon={"folder-open"}
+                                           textValue={"Load"}
+                                           handleClick={this.props.handleOpenProject}/>
+                                  <Chevron color="blue" glyphicon={"wrench"}
+                                           textValue={"Tools"}
+                                           imagePath={this.props.imgPath}
+                                           handleClick={this.props.handleSelectTool}/>
+                               </div>
+                                <div style={sideBarContainerStyle}>
+                                <MenuHeaders ref='menuheaders' currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
+                                           isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
+                                           currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick}/>
+                          </div>
+                        </div>;
     }
     return(
-      <div style={style.sideBarcontainer}>
-        <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
-             style={style.logo}/>
+      <div>
         {sideBarContent}
       </div>
     );

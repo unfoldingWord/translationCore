@@ -26,6 +26,12 @@ var style = {
       overflowY: "auto",
   },
 
+  fixedChevrons: {
+    zIndex: 1000,
+    position: 'fixed',
+    backgroundColor: '#333333'
+  },
+
   ul: {
     margin: "0px",
     padding: "0px",
