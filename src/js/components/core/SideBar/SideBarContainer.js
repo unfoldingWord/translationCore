@@ -14,7 +14,10 @@ class SideBarContainer extends React.Component{
       sideBarContent = <div style={style.sideBarcontainer}>
                           <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
                             style={style.logo}/>
-                          <SideNavBar {...this.props}/><br />
+                          <SideNavBar handleSyncProject={this.props.handleSyncProject}
+                            handleReport={this.props.handleReport} handleSettings={this.props.handleSettings}
+                            handlePackageManager={this.props.handlePackageManager}
+                          /><br />
                           <div style={{bottom: "0px", position: "absolute"}}>
                             <Chevron color="magenta" glyphicon={"folder-open"}
                                      handleClick={this.props.handleOpenProject}/>
