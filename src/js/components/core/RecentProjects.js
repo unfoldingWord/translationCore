@@ -14,7 +14,7 @@ class RecentProjects extends React.Component {
       projects.push(
         <div key={project}>
           <span className={'pull-right'}>
-            <Button onClick={()=>this.props.onLoad(projectPath)}>Load Project</Button>
+            <Button onClick={this.props.onLoad.bind(this, projectPath)}>Load Project</Button>
           </span>
           <h3>{projectName}</h3>
           <p> Location:
