@@ -420,7 +420,7 @@ var Main = React.createClass({
           handleSelectTool: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              this.updateTools(null);
+              //this.updateTools(null);
               this.props.dispatch(showSwitchCheckModal(true));
             } else {
               api.Toast.info('Open a project first, then try again', '', 3);
@@ -611,7 +611,7 @@ var Main = React.createClass({
                 }
               });
             }
-            if (type == 'usfm') {
+            else if (type == 'usfm') {
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
@@ -624,10 +624,9 @@ var Main = React.createClass({
               this.props.dispatch(showSwitchCheckModal(true));
             }
           },
-
-          _handleKeyPress: (e) => {
+          _handleKeyPress: (e, type) => {
             if (e.key === 'Enter') {
-              this.state.projectModalProps.onClick(e);
+              this.state.projectModalProps.onClick(type);
             }
           }
         },
