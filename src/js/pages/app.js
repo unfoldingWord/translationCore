@@ -87,7 +87,7 @@ var Main = React.createClass({
   goToPreviousCheck() {
     var lastCheck = this.state.currentCheckIndex - 1 < 0;
     if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1);
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1, true);
     }
     else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex - 1);
   },
@@ -95,7 +95,7 @@ var Main = React.createClass({
   goToNextCheck() {
     var lastCheck = this.state.currentCheckIndex + 1 >= this.state.currentSubGroupObjects.length;
     if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1);
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1, true);
     }
     else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
   },
@@ -303,6 +303,7 @@ var Main = React.createClass({
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
+        subMenuOpen:true,
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
@@ -499,7 +500,12 @@ var Main = React.createClass({
               console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
             }
           },
-          menuClick: (id) => {
+          menuClick: (id, menuOpen) => {
+            if (id  != this.state.currentGroupIndex) {
+              menuOpen = true;
+            } else {
+              menuOpen = menuOpen || !this.state.subMenuOpen;
+            }
             id = id >= 0 ? id : 0;
             id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
@@ -508,15 +514,16 @@ var Main = React.createClass({
                 chapterNumber: currentCheck.chapter,
                 verseNumber: currentCheck.verse
               });
-            });
+            }, menuOpen);
           },
-          setIsCurrentCheck: (status, id, callback) => {
+          setIsCurrentCheck: (status, id, callback, menuOpen) => {
             const newObj = this.state.currentGroupObjects.slice(0);
             const currentSubGroupObjects = newObj[id].checks;
             this.setState({
               currentGroupIndex: parseInt(id),
               currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
+              subMenuOpen:menuOpen
             }, callback);
           },
         },
@@ -1027,7 +1034,8 @@ var Main = React.createClass({
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} 
+                isOpen={this.state.subMenuOpen}/>
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />

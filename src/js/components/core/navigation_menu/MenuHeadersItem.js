@@ -36,11 +36,11 @@ class MenuHeadersItems extends React.Component {
             {this.props.checks[0].groupName}
           </td>
           <td>
-            {this.props.isCurrentItem ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
+            {this.props.isCurrentItem && this.props.open ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
               <Glyphicon glyph="chevron-down" style={{ position: "absolute", right: "5px", top: "auto" }} />}
           </td>
         </tr>
-        {this.props.isCurrentItem ?
+        {this.props.isCurrentItem && this.props.open ? 
           <tr>
             <td>
               <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}

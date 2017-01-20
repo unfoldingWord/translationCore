@@ -13,6 +13,7 @@ class MenuHeaders extends React.Component {
         const menuItem = this.props.currentGroupObjects[i];
         menuItem.isCurrentItem = this.props.isCurrentHeader == i;
         menuItem.currentGroupprogress = menuItem.currentGroupprogress || 0;
+        menuItem.open = this.props.isOpen;
         groupsName.push(
           <MenuHeadersItems onClick={this.props.menuClick} subMenuProps={this.props.subMenuProps}
              {...menuItem} id={i} key={i} ref={menuItem.group.toString()}
