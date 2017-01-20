@@ -38,7 +38,9 @@ class SideBarContainer extends React.Component {
           fontSize: "12px",
           overflowX: "hidden",
           height: "100%",
-          padding: 0
+          padding: 0,
+          position:"fixed",
+          width:"300px"
         };
       }
       sideBarContent =
@@ -53,7 +55,7 @@ class SideBarContainer extends React.Component {
                 imagePath={this.props.imgPath}
                 handleClick={this.props.handleSelectTool} />
             </Col>
-            <Col md={3} style={{ position: "fixed", padding: 0, backgroundColor: "#333333", height: "100%", overflowY: "scroll" }}>
+            <Col style={{width:"300px", position: "fixed", padding: 0, backgroundColor: "#333333", height: "100%", overflowY: "scroll" }}>
               <MenuHeaders ref='menuheaders' subMenuProps={this.props.subMenuProps} currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
                 isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
                 currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}

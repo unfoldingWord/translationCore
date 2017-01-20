@@ -76,6 +76,7 @@ var Main = React.createClass({
   },
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
@@ -197,8 +198,17 @@ var Main = React.createClass({
           try {
             var manifestPath = path.join(moduleBasePath, folder, 'package.json');
             var packageJson = require(manifestPath);
+            var installedPackages = fs.readdirSync(moduleBasePath);
             if (packageJson.display === 'app') {
-              defaultModules.push(manifestPath);
+              var dependencies = true;
+              for (var app in packageJson.include) {
+                if (!installedPackages.includes(app)) {
+                  dependencies = false;
+                }
+              }
+              if (dependencies) {
+                defaultModules.push(manifestPath);
+              }
             }
           }
           catch (e) {
@@ -382,6 +392,16 @@ var Main = React.createClass({
         },
         sideBarContainerProps: {
           SideNavBar: false,
+          screenHeight: window.innerHeight,
+          updateDimensions: () => {
+            if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
+              this.setState(merge({}, this.state, {
+                sideBarContainerProps: {
+                  screenHeight: window.innerHeight
+                }
+              }));
+            }
+          },
           imgPath: null,
           getCurrentToolNamespace: () => {
             this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
@@ -442,7 +462,7 @@ var Main = React.createClass({
           },
           handleReport: () => {
             api.Toast.info('Generating reports...', '', 3);
-            const Report = require("./../reports/ReportGenerator");
+            const Report = require("../components/core/reports/ReportGenerator");
             api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
           },
           handleChangeCheckCategory: () => {
@@ -922,6 +942,7 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -1002,7 +1023,7 @@ var Main = React.createClass({
             <Row>
               <StatusBar />
             </Row>
-            <Col className="col-fluid" md={3} style={{ padding: 0, }}>
+            <Col className="col-fluid" md={3} style={{ padding: 0, width:"300px"}}>
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
@@ -1019,6 +1040,7 @@ var Main = React.createClass({
     }
   }
 });
+//fixed to chevron, explicity declare width in main col, set width in both chevron and drop down
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers

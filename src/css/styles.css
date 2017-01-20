@@ -68,3 +68,29 @@ body {
 .TargetVerseSelectionArea::selection{
   background: yellow;
 }
+
+/*
+The following .nav, .nav-tabs classes hanlde the styling for the tabs in the
+tools. they basically override bootstrap styling for this components
+*/
+.nav-tabs>li>a {
+  color: white;
+  background-color: #747474;
+  margin-right: 2px;
+  border: 1px solid transparent;
+  border-radius: 10px 10px 0 0;
+  min-width: 75px;
+  padding: 5px 5px 0px 25px;
+  height: 35px;
+}
+.nav>li>a:hover {
+  background-color: rgb(51, 51, 51);
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  color: #FFFFFF;
+  cursor: default;
+  background-color: rgb(51, 51, 51);
+  border: none;
+  height: 35px;
+  outline: none;
+}
