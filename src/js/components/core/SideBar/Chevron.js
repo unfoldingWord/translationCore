@@ -12,7 +12,7 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
         display: block;
@@ -57,7 +57,7 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
         margin-bottom: 30px;
@@ -119,11 +119,11 @@ class Chevron extends React.Component{
                 </div>
     }
     return (
-      <Style>
+      <Style style={{width:"100%"}}>
         {chevronShape}
-        <div className="chevron" onClick={this.props.handleClick}>
-          <div className="chevron-inner">
-            <div className="chevron-content">
+        <div style={{width:"100%"}} className="chevron" onClick={this.props.handleClick}>
+          <div style={{width:"100%"}} className="chevron-inner">
+            <div style={{paddingTop:20}} className="chevron-content">
               {content}
             </div>
           </div>

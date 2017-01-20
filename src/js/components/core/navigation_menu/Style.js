@@ -50,7 +50,6 @@
     cursor: "pointer",
     borderBottom: "1px solid #333333",
     color: "#FFF",
-    width: "100vw"
   },
 
   activeSubMenuItem:  {
@@ -59,7 +58,6 @@
     cursor: "pointer",
     borderBottom: "1px solid #333333",
     color: "#FFF",
-    width: "100vw",
     backgroundColor: "#0277BD",
   },
 
