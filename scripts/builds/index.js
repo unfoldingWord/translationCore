@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 (function () {
   const path = require('path');
   window.__base = path.join(__dirname, '../../../');
