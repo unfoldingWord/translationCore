@@ -77,6 +77,7 @@ var Main = React.createClass({
   },
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
@@ -198,8 +199,17 @@ var Main = React.createClass({
           try {
             var manifestPath = path.join(moduleBasePath, folder, 'package.json');
             var packageJson = require(manifestPath);
+            var installedPackages = fs.readdirSync(moduleBasePath);
             if (packageJson.display === 'app') {
-              defaultModules.push(manifestPath);
+              var dependencies = true;
+              for (var app in packageJson.include) {
+                if (!installedPackages.includes(app)) {
+                  dependencies = false;
+                }
+              }
+              if (dependencies) {
+                defaultModules.push(manifestPath);
+              }
             }
           }
           catch (e) {
@@ -383,6 +393,16 @@ var Main = React.createClass({
         },
         sideBarContainerProps: {
           SideNavBar: false,
+          screenHeight: window.innerHeight,
+          updateDimensions: () => {
+            if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
+              this.setState(merge({}, this.state, {
+                sideBarContainerProps: {
+                  screenHeight: window.innerHeight
+                }
+              }));
+            }
+          },
           imgPath: null,
           getCurrentToolNamespace: () => {
             this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
@@ -443,7 +463,7 @@ var Main = React.createClass({
           },
           handleReport: () => {
             api.Toast.info('Generating reports...', '', 3);
-            const Report = require("./../reports/ReportGenerator");
+            const Report = require("../components/core/reports/ReportGenerator");
             api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
           },
           handleChangeCheckCategory: () => {
@@ -923,6 +943,7 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
@@ -1004,7 +1025,7 @@ var Main = React.createClass({
           </SwitchCheckModal>
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: MENU_WIDTH, paddingTop: "30px" }}>
+          <Grid fluid className='fill-height' style={{ marginLeft: MENU_WIDTH, paddingTop: "30px", paddingRight: "0px" }}>
             <Row className='fill-height main-view'>
               <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
                 <Loader {...this.state.loaderModalProps} />

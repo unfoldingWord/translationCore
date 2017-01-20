@@ -13,7 +13,7 @@ class SideBarContainer extends React.Component{
     if(this.props.SideNavBar || this.props.initShow){
       var sideBarContainerStyle = null;
       sideBarContent = <div style={style.sideBarcontainer}>
-                          <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+                          <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
                             style={style.logo}/>
                           <SideNavBar handleSyncProject={this.props.handleSyncProject}
                             handleReport={this.props.handleReport} handleSettings={this.props.handleSettings}
@@ -28,12 +28,10 @@ class SideBarContainer extends React.Component{
                           </div>
                        </div>;
     }else{
-      var chevrons = document.getElementById('fixedChevrons') || {clientHeight: 228};
-      if (chevrons) {
         var sideBarContainerStyle = {
               backgroundColor: "#333333",
               width: MENU_WIDTH,
-              height: (window.innerHeight - chevrons.clientHeight + 2) + "px",
+              height: (this.props.screenHeight -  226) + "px",
               bottom: "0px",
               marginLeft: "0px",
               position: "fixed",
@@ -47,7 +45,7 @@ class SideBarContainer extends React.Component{
       }
       sideBarContent = <div>
                           <div id='fixedChevrons' style={style.fixedChevrons}>
-                                  <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+                                  <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
                                        style={style.logo}/>
                                   <Chevron color="magenta" glyphicon={"folder-open"}
                                            handleClick={this.props.handleOpenProject}/>

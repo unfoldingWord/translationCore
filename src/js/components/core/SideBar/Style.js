@@ -60,7 +60,7 @@ var style = {
 
   hover: {
     backgroundColor: "#444444",
-    color: "#44C6FF",
+    color: "#0277BD",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
@@ -71,13 +71,12 @@ var style = {
   },
 
   logo:{
-    height: "85px",
-    width: "80px",
+    height: "90px",
+    width: "90px",
     display: "block",
-    padding: "5px",
+    padding: "10px",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "5px",
   },
 
   textOffline:{
