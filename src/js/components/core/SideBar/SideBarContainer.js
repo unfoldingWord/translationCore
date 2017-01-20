@@ -40,7 +40,7 @@ class SideBarContainer extends React.Component{
         };
       sideBarContent = <div>
                           <div id='fixedChevrons' style={style.fixedChevrons}>
-                                  <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+                                  <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
                                        style={style.logo}/>
                                   <Chevron color="magenta" glyphicon={"folder-open"}
                                            handleClick={this.props.handleOpenProject}/>
