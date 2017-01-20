@@ -57,13 +57,15 @@ class ProjectModal extends React.Component {
     }
     return (
       <div>
-        <Modal show={this.props.showModal} onHide={this.props.close} onKeyPress={(e)=>this.props._handleKeyPress(e, this.props.show)}>
+        <Modal bsSize="lg" show={this.props.showModal} onHide={this.props.close}
+               onKeyPress={(e)=>this.props._handleKeyPress(e, this.props.show)}
+               style={{padding: "20px", backgroundColor: "#333333"}}>
           <Upload {...this.props.uploadProps}>
             {mainContent}
           </Upload>
-          <Modal.Footer>
+          <Modal.Footer style={{padding: "25px", backgroundColor: "#333333"}}>
             <ButtonToolbar>
-              <Button type="button" onClick={()=>this.props.onClick(this.props.show)} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
+              <Button bsStyle="danger" type="button" onClick={()=>this.props.onClick(this.props.show)} style={{ position: 'fixed', right: 15, bottom: 10 }}>{this.props.doneText}</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </Modal>

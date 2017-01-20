@@ -191,7 +191,7 @@ class ImportComponent extends React.Component {
           </ButtonGroup>
           <br />
           <Button bsSize={'small'} onClick={this.showDialog.bind(this)}>Choose USFM File</Button>
-          <span style={{ color: '#333' }}> &nbsp; {this.props.filePath}</span>
+          <span style={{ color: '#FFFFFF' }}> &nbsp; {this.props.filePath}</span>
         </FormGroup>
         <br />
       </div>
