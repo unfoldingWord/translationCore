@@ -8,8 +8,8 @@ const SubMenuItem = require('./SubMenuItem');
 
 
 class SubMenu extends React.Component {
-  updateSubMenuItem(params){
-    if(params){
+  updateSubMenuItem(params) {
+    if (params) {
       var menuItem = this.refs[params.groupIndex.toString() + ' ' + params.checkIndex.toString()];
       menuItem.getItemStatus(params.checkStatus);
     }
@@ -22,22 +22,22 @@ class SubMenu extends React.Component {
     this.selectNewMenuItem();
   }
 
-  goToNext(){
+  goToNext() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
-    if(groups){
+    if (groups) {
       let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
       this.unselectOldMenuItem();
       //if we need to move to the next group
       if (this.currentCheckIndex >= foundGroup.checks.length - 1) {
-      // if we're not on the last group
+        // if we're not on the last group
         if (this.currentGroupIndex < foundGroup.length - 1) {
           this.currentGroupIndex++;
           this.currentCheckIndex = 0;
         }
-      }else { // if we still have more in the group*/
-      this.currentCheckIndex++;
+      } else { // if we still have more in the group*/
+        this.currentCheckIndex++;
       }
       this.selectNewMenuItem();
     }
@@ -47,7 +47,7 @@ class SubMenu extends React.Component {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
-    if(groups){
+    if (groups) {
       let foundGroup = groups.find(arrayElement => arrayElement.group === groupName);
       this.unselectOldMenuItem();
       //if we need to move to the previous group
@@ -57,7 +57,7 @@ class SubMenu extends React.Component {
           this.currentGroupIndex--;
           this.currentCheckIndex = foundGroup.checks.length - 1;
         }
-      }else {  //if we still have more in the group*/
+      } else {  //if we still have more in the group*/
         this.currentCheckIndex--;
       }
       this.selectNewMenuItem();
@@ -70,19 +70,19 @@ class SubMenu extends React.Component {
 
   render() {
     let subMenuItems = [];
-    if(this.props.currentGroupIndex !== null){
-      for(var i in this.props.currentSubGroupObjects){
+    if (this.props.currentGroupIndex !== null) {
+      for (var i in this.props.currentSubGroupObjects) {
         const item = this.props.currentSubGroupObjects[i];
         item.checkStatus = item.checkStatus || "UNCHECKED";
         item.isCurrentItem = this.props.isCurrentSubMenu == i;
         subMenuItems.push(
           <SubMenuItem key={i} {...item} id={i} checkClicked={this.props.checkClicked} groupIndex={this.props.currentGroupIndex}
-            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props}/>
+            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props} />
         );
       }
     }
     return (
-      <table>
+      <table style={{ width: "100%" }}>
         <tbody>
           {subMenuItems}
         </tbody>

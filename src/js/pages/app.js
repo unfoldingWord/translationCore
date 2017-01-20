@@ -20,7 +20,6 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
 
-const NavMenu = require('./../components/core/navigation_menu/NavigationMenu.js');
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const LoginModal = require('../components/core/login/LoginModal');
@@ -58,6 +57,7 @@ const updateProfileModal = CoreActionsRedux.updateProfileModal;
 const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
 const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
+
 
 var Main = React.createClass({
   componentWillMount() {
@@ -149,7 +149,7 @@ var Main = React.createClass({
     if (currentCheckNamespace && !groupName) {
       currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
       currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
-      if(currentGroupIndex && currentCheckIndex){
+      if (currentGroupIndex && currentCheckIndex) {
         groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
       }
     }
@@ -404,8 +404,6 @@ var Main = React.createClass({
           },
           imgPath: null,
           getCurrentToolNamespace: () => {
-
-            //api.initialCurrentGroupName();
             this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
           },
           getToolIcon: (currentToolNamespace) => {
@@ -504,7 +502,6 @@ var Main = React.createClass({
           menuClick: (id) => {
             id = id >= 0 ? id : 0;
             id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
-            this.state.menuHeadersProps.scrollToMenuElement(id);
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
               var currentCheck = this.state.currentGroupObjects[this.state.currentCheckIndex].checks[0];
               api.emitEvent('goToCheck', {
@@ -524,21 +521,7 @@ var Main = React.createClass({
           },
         },
         subMenuProps: {
-          scrollToMenuElement: (id) => {
-            try {
-              var newGroupElement = this.refs.navmenu.refs.submenu.refs[`${this.state.currentGroupIndex} ${id}`];
-              //this ref may be here forever...sigh
-              var element = api.findDOMNode(newGroupElement);
-              if (element) {
-                element.scrollIntoView();
-              }
-            } catch (e) {
-              console.log(e);
-            }
-
-          },
           checkClicked: (id) => {
-            this.state.subMenuProps.scrollToMenuElement(id);
             this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
               var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
               api.emitEvent('goToCheck', {
@@ -1031,30 +1014,33 @@ var Main = React.createClass({
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SideBarContainer ref='sidebar' isCurrentHeader={this.state.currentGroupIndex} {...this.state} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps} />
-          <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
             <SwitchCheck {...this.state.switchCheckProps} />
           </SwitchCheckModal>
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: '100px', paddingTop: "30px", paddingRight: "0px" }}>
-            <Row className='fill-height main-view'>
-              <Col className='fill-height' xs={5} sm={4} md={3} lg={2} style={{ padding: "0px", backgroundColor: "#747474", overflowY: "auto", overflowX: "hidden" }}>
-                <NavMenu ref='navmenu' {...this.state} isCurrentSubMenu={this.state.currentCheckIndex} />
-              </Col>
-              <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader {...this.state.loaderModalProps} />
-                <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
-              </Col>
+          <Grid fluid style={{ padding: 0, }}>
+            <Row>
+              <StatusBar />
             </Row>
+            <Col className="col-fluid" md={3} style={{ padding: 0, width:"300px"}}>
+              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
+                subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
+                currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
+            </Col>
+            <Col style={RootStyles.ScrollableSection} md={9}>
+              <Loader {...this.state.loaderModalProps} />
+              <AlertModal {...this.state.alertModalProps} />
+              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+            </Col>
           </Grid>
         </div>
       )
     }
   }
 });
+//fixed to chevron, explicity declare width in main col, set width in both chevron and drop down
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
