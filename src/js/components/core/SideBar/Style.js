@@ -2,14 +2,11 @@
 var style = {
   sideBarcontainer: {
     backgroundColor: "#333333",
-    height:"100%",
     zIndex: "98",
     fontSize: "12px",
-    overflowY: "auto",
     overflowX: "hidden",
-    width: "100%",
-    padding:0,
-    position:"fixed",
+    height: "100%",
+    padding: 0
   },
 
   container: {
@@ -19,12 +16,12 @@ var style = {
     zIndex: "99",
     fontSize: "12px",
     overflowY: "auto",
+    width:"100%"
   },
 
   fixedChevrons: {
     zIndex: 1000,
     backgroundColor: '#333333',
-    position:'fixed'
   },
 
   ul: {

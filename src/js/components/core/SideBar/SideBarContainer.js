@@ -21,7 +21,7 @@ class SideBarContainer extends React.Component {
           handleReport={this.props.handleReport} handleSettings={this.props.handleSettings}
           handlePackageManager={this.props.handlePackageManager}
           /><br />
-        <div style={{ bottom: "0px", position: "absolute" }}>
+        <div style={{ bottom: "0px", position: "absolute", width:"100%" }}>
           <Chevron color="magenta" glyphicon={"folder-open"}
             handleClick={this.props.handleOpenProject} />
           <Chevron color="blue" glyphicon={"wrench"}
@@ -38,19 +38,28 @@ class SideBarContainer extends React.Component {
           fontSize: "12px",
           overflowX: "hidden",
           height: "100%",
-          padding:0
+          padding: 0
         };
       }
       sideBarContent =
         (
-            <Grid style={sideBarContainerStyle}>
-              <Col md={3} style={{position:"fixed", padding:0, backgroundColor: "#333333", height: "100%", overflowY: "scroll"}}>
-                <MenuHeaders ref='menuheaders' subMenuProps={this.props.subMenuProps} currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
-                  isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
-                  currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}
-                  currentSubGroupObjects={this.props.currentSubGroupObjects} isCurrentSubMenu={this.props.currentCheckIndex} />
-              </Col>
-            </Grid>);
+          <Grid fluid style={sideBarContainerStyle}>
+            <Col id='fixedChevrons' style={style.fixedChevrons}>
+              <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
+                style={style.logo} />
+              <Chevron color="magenta" glyphicon={"folder-open"}
+                handleClick={this.props.handleOpenProject} style={{width:"100%"}}/>
+              <Chevron color="blue" glyphicon={"wrench"} style={{width:"100%"}}
+                imagePath={this.props.imgPath}
+                handleClick={this.props.handleSelectTool} />
+            </Col>
+            <Col md={3} style={{ position: "fixed", padding: 0, backgroundColor: "#333333", height: "100%", overflowY: "scroll" }}>
+              <MenuHeaders ref='menuheaders' subMenuProps={this.props.subMenuProps} currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
+                isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
+                currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}
+                currentSubGroupObjects={this.props.currentSubGroupObjects} isCurrentSubMenu={this.props.currentCheckIndex} />
+            </Col>
+          </Grid>);
     }
     return (
       <div>
