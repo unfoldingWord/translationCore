@@ -92,15 +92,11 @@ var style = {
   },
 
   StatusBar: {
-    position: "fixed",
-    top: "0px",
     backgroundColor: "#333333",
     height: "30px",
     width: "100%",
     fontSize: "16px",
     zIndex: "97",
-    boxSizing: "border-box",
-    display: "inline",
   },
 
 };
