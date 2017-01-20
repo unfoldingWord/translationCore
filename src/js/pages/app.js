@@ -198,8 +198,17 @@ var Main = React.createClass({
           try {
             var manifestPath = path.join(moduleBasePath, folder, 'package.json');
             var packageJson = require(manifestPath);
+            var installedPackages = fs.readdirSync(moduleBasePath);
             if (packageJson.display === 'app') {
-              defaultModules.push(manifestPath);
+              var dependencies = true;
+              for (var app in packageJson.include) {
+                if (!installedPackages.includes(app)) {
+                  dependencies = false;
+                }
+              }
+              if (dependencies) {
+                defaultModules.push(manifestPath);
+              }
             }
           }
           catch (e) {
