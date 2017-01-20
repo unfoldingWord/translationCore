@@ -15,7 +15,7 @@ class SideBarContainer extends React.Component {
     if (this.props.SideNavBar || this.props.initShow) {
       var sideBarContainerStyle = null;
       sideBarContent = <div style={style.sideBarcontainer}>
-        <img src="images/TC_Icon_logo.png" onClick={this.props.changeView}
+        <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
           style={style.logo} />
         <SideNavBar handleSyncProject={this.props.handleSyncProject}
           handleReport={this.props.handleReport} handleSettings={this.props.handleSettings}
