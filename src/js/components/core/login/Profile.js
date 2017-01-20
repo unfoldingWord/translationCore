@@ -11,7 +11,6 @@ const Projects = require('./Projects.js');
 
 class Profile extends React.Component {
   render(){
-    debugger;
     if (this.props.projectVisibility) {
       return(
         <Projects back={this.props.hideProjects} {...this.props}/>
