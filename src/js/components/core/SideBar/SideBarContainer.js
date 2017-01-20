@@ -42,7 +42,6 @@ class SideBarContainer extends React.Component{
               overflowX: "hidden",
               boxSizing: "border-box",
           };
-      }
       sideBarContent = <div>
                           <div id='fixedChevrons' style={style.fixedChevrons}>
                                   <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
