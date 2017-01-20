@@ -33,7 +33,7 @@ class MenuHeadersItems extends React.Component {
               />
           </th>
           <td>
-            {this.props.group}
+            {this.props.checks[0].groupName}
           </td>
           <td>
             {this.props.isCurrentItem ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
