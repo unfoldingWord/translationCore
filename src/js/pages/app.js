@@ -58,7 +58,6 @@ const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
 const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 
-const MENU_WIDTH = "200px";
 
 var Main = React.createClass({
   componentWillMount() {
@@ -149,7 +148,7 @@ var Main = React.createClass({
     if (currentCheckNamespace && !groupName) {
       currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
       currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
-      if(currentGroupIndex && currentCheckIndex){
+      if (currentGroupIndex && currentCheckIndex) {
         groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
       }
     }
@@ -994,24 +993,24 @@ var Main = React.createClass({
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
-          subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
-          currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-          currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}/>
           <StatusBar />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
             <SwitchCheck {...this.state.switchCheckProps} />
           </SwitchCheckModal>
           <Popover />
           <Toast />
-          <Grid fluid className='fill-height' style={{ marginLeft: MENU_WIDTH, paddingTop: "30px" }}>
-            <Row className='fill-height main-view'>
-              <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={10}>
-                <Loader {...this.state.loaderModalProps} />
-                <AlertModal {...this.state.alertModalProps} />
-                <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
-              </Col>
-            </Row>
+          <Grid fluid className='fill-height' style={{ paddingTop: "30px", paddingLeft:0, paddingRight:0}}>
+            <Col md={3} style={{paddingLeft:0, paddingRight:0}}>
+              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
+                subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
+                currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
+            </Col>
+            <Col className='fill-height' style={RootStyles.ScrollableSection} md={9}>
+              <Loader {...this.state.loaderModalProps} />
+              <AlertModal {...this.state.alertModalProps} />
+              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+            </Col>
           </Grid>
         </div>
       )

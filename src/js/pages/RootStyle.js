@@ -5,9 +5,8 @@ var RootStyles = {
   ScrollableSection: {
     height: '100%',
     position: 'relative',
-    top: '0px',
-    bottom: 0,
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    bottom:0,
   },
   AfterCheck: {
     minWidth:'100vh',

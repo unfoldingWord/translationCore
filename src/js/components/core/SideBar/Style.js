@@ -1,36 +1,27 @@
-const MENU_WIDTH = "200px";
+
 var style = {
-  sideBarcontainer:{
-      backgroundColor: "#333333",
-      width: MENU_WIDTH,
-      height: "100vh",
-      marginLeft: "0px",
-      position: "fixed",
-      zIndex: "98",
-      left: "0px",
-      fontSize: "12px",
-      overflowY: "auto",
-      overflowX: "hidden",
-      boxSizing: "border-box",
+  sideBarcontainer: {
+    backgroundColor: "#333333",
+    height:"100%",
+    zIndex: "98",
+    fontSize: "12px",
+    overflowY: "auto",
+    overflowX: "hidden",
   },
 
-  container:{
-      backgroundColor: "#333333",
-      width: MENU_WIDTH,
-      height: "100vh",
-      marginLeft: "0px",
-      display: "inline-block",
-      position: "fixed",
-      zIndex: "99",
-      left: "0px",
-      fontSize: "12px",
-      overflowY: "auto",
+  container: {
+    backgroundColor: "#333333",
+    height: "100vh",
+    display: "inline-block",
+    zIndex: "99",
+    fontSize: "12px",
+    overflowY: "auto",
   },
 
   fixedChevrons: {
     zIndex: 1000,
-    position: 'fixed',
-    backgroundColor: '#333333'
+    backgroundColor: '#333333',
+    position:'fixed'
   },
 
   ul: {
@@ -70,17 +61,16 @@ var style = {
 
   },
 
-  logo:{
+  logo: {
     height: "85px",
     width: "80px",
     display: "block",
     padding: "5px",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "5px",
   },
 
-  textOffline:{
+  textOffline: {
     float: "right",
     color: "#FF0000",
     padding: "3px",
@@ -88,7 +78,7 @@ var style = {
     display: "inline",
   },
 
-  textOnline:{
+  textOnline: {
     float: "right",
     color: "#4eba6f",
     padding: "3px",
@@ -96,12 +86,12 @@ var style = {
     display: "inline",
   },
 
-  img:{
+  img: {
     width: "25px",
     height: "30px",
   },
 
-  StatusBar:{
+  StatusBar: {
     position: "fixed",
     top: "0px",
     backgroundColor: "#333333",
