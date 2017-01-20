@@ -46,7 +46,7 @@ class MenuHeadersItems extends React.Component {
                 <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}
                   isCurrentSubMenu={this.props.isCurrentSubMenu} currentSubGroupObjects={this.props.currentSubGroupObjects}
                   currentCheckIndex={this.props.currentCheckIndex}
-                  currentGroupIndex={this.props.currentGroupIndex} /> 
+                  currentGroupIndex={this.props.currentGroupIndex} />
             </td>
             </tr>
             : null}
