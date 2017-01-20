@@ -7,7 +7,7 @@ var RootStyles = {
     position: 'relative',
     overflowY: 'scroll',
     bottom:0,
-    paddingLeft:"0px",
+    paddingLeft:"10px",
     paddingRight: "0px"
   },
   AfterCheck: {
