@@ -11,6 +11,8 @@
     "build-winstaller": "node scripts/builds/build-win-installer.js",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
+    "install-apps": "git submodule update --init --recursive",
+    "pull-apps": "git submodule foreach --recursive git pull",
     "start": "electron ."
   },
   "build": {

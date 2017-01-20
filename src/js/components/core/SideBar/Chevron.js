@@ -12,7 +12,7 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
         display: block;
@@ -57,10 +57,10 @@ class Chevron extends React.Component{
         top: 0px;
         position: relative;
         text-align: center;
-        width: 120px;
+        width: 200px;
         color: #FFF;
         z-index: 100;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         display: block;
         box-sizing: border-box;
         cursor: pointer;
@@ -70,10 +70,10 @@ class Chevron extends React.Component{
         position: absolute;
         top: 0;
         left: 0;
-        height: 80px;
+        height: 60px;
         width: 50%;
         transform: skew(0deg, 18deg);
-        background-color: #4BC7ED;
+        background-color: #0277BD;
         border-top: 2px solid white;
         border-bottom: 2px solid white;
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
@@ -83,10 +83,10 @@ class Chevron extends React.Component{
         position: absolute;
         top: 0;
         right: 0;
-        height: 80px;
+        height: 60px;
         width: 50%;
         transform: skew(0deg, -18deg);
-        background-color: #4BC7ED;
+        background-color: #0277BD;
         border-top: 2px solid white;
         border-bottom: 2px solid white;
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
@@ -114,16 +114,16 @@ class Chevron extends React.Component{
       content = <img src={this.props.imagePath} style={{width: "45px"}} />
     }else{
       content = <div><Glyphicon glyph={glyphiconType}
-                                style={{color: "#FFF", fontSize: "25px"}}/><br />
+                                style={{color: "#FFF", fontSize: "25px"}}/>
                                 {text}
                 </div>
     }
     return (
-      <Style>
+      <Style style={{width:"100%"}}>
         {chevronShape}
-        <div className="chevron" onClick={this.props.handleClick}>
-          <div className="chevron-inner">
-            <div className="chevron-content">
+        <div style={{width:"100%"}} className="chevron" onClick={this.props.handleClick}>
+          <div style={{width:"100%"}} className="chevron-inner">
+            <div style={{paddingTop:20}} className="chevron-content">
               {content}
             </div>
           </div>

@@ -1,29 +1,29 @@
+
 var style = {
-  sideBarcontainer:{
-      backgroundColor: "#333333",
-      width: "120px",
-      height: "100vh",
-      marginLeft: "0px",
-      position: "fixed",
-      zIndex: "98",
-      left: "0px",
-      fontSize: "12px",
-      overflowY: "auto",
-      overflowX: "hidden",
-      boxSizing: "border-box",
+  sideBarcontainer: {
+    backgroundColor: "#333333",
+    zIndex: "98",
+    fontSize: "12px",
+    overflowX: "hidden",
+    height: "100%",
+    padding: 0,
+    position:"fixed",
+    width:"300px"
   },
 
-  container:{
-      backgroundColor: "#333333",
-      width: "120px",
-      height: "100vh",
-      marginLeft: "0px",
-      display: "inline-block",
-      position: "fixed",
-      zIndex: "99",
-      left: "0px",
-      fontSize: "12px",
-      overflowY: "auto",
+  container: {
+    backgroundColor: "#333333",
+    height: "100vh",
+    display: "inline-block",
+    zIndex: "99",
+    fontSize: "12px",
+    overflowY: "auto",
+    width:"100%"
+  },
+
+  fixedChevrons: {
+    zIndex: 1000,
+    backgroundColor: '#333333',
   },
 
   ul: {
@@ -53,7 +53,7 @@ var style = {
 
   hover: {
     backgroundColor: "#444444",
-    color: "#44C6FF",
+    color: "#0277BD",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
@@ -64,16 +64,15 @@ var style = {
   },
 
   logo:{
-    height: "85px",
-    width: "80px",
+    height: "90px",
+    width: "90px",
     display: "block",
-    padding: "5px",
+    padding: "10px",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "5px",
   },
 
-  textOffline:{
+  textOffline: {
     float: "right",
     color: "#FF0000",
     padding: "3px",
@@ -81,7 +80,7 @@ var style = {
     display: "inline",
   },
 
-  textOnline:{
+  textOnline: {
     float: "right",
     color: "#4eba6f",
     padding: "3px",
@@ -89,21 +88,17 @@ var style = {
     display: "inline",
   },
 
-  img:{
+  img: {
     width: "25px",
     height: "30px",
   },
 
-  StatusBar:{
-    position: "fixed",
-    top: "0px",
+  StatusBar: {
     backgroundColor: "#333333",
     height: "30px",
     width: "100%",
     fontSize: "16px",
     zIndex: "97",
-    boxSizing: "border-box",
-    display: "inline",
   },
 
 };
