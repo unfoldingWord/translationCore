@@ -77,11 +77,12 @@ tools. they basically override bootstrap styling for this components
   color: white;
   background-color: #747474;
   margin-right: 2px;
-  border: 1px solid transparent;
+  border: 1px solid #FFFFFF;
   border-radius: 10px 10px 0 0;
   min-width: 75px;
   padding: 5px 5px 0px 25px;
   height: 35px;
+  margin-top: 4px
 }
 .nav>li>a:hover {
   background-color: rgb(51, 51, 51);
@@ -90,7 +91,9 @@ tools. they basically override bootstrap styling for this components
   color: #FFFFFF;
   cursor: default;
   background-color: rgb(51, 51, 51);
-  border: none;
+  border: 1px solid #FFFFFF;
+  border-bottom-color: rgb(51, 51, 51);
   height: 35px;
   outline: none;
+  margin-top: 4px
 }

@@ -13,11 +13,12 @@ const style = {
     },
     main: {
       width: '100%',
-      color: '#212121',
+      color: '#FFFFFF',
       height: '200px',
-      border: '2px dashed #727272',
+      border: '2px dashed #FFFFFF',
       borderRadius: '5px',
-      fontSize: '25px'
+      fontSize: '22px',
+      padding: "5px",
     },
     inner: {
       fontSize: '15px'
