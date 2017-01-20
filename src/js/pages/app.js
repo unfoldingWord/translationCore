@@ -998,11 +998,17 @@ var Main = React.createClass({
           </SwitchCheckModal>
           <Popover />
           <Toast />
-          <Grid fluid style={{ paddingLeft: 0, paddingRight: 0}}>
+          <Grid fluid style={{ padding: 0, }}>
             <Row>
               <StatusBar />
             </Row>
-            <Col className='fill-height' style={RootStyles.ScrollableSection} md={9}>
+            <Col className="col-fluid" md={3} style={{ padding: 0, }}>
+              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
+                subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
+                currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
+            </Col>
+            <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
@@ -1013,13 +1019,6 @@ var Main = React.createClass({
     }
   }
 });
-
-            // <Col md={3} style={{ paddingLeft: 0, paddingRight: 0, }}>
-            //   <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
-            //     subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
-            //     currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-            //     currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
-            // </Col>
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers

@@ -39,13 +39,17 @@ class MenuHeadersItems extends React.Component {
             {this.props.isCurrentItem ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
               <Glyphicon glyph="chevron-down" style={{ position: "absolute", right: "5px", top: "auto" }} />}
           </td>
-          </tr>
-          {this.props.isCurrentItem ?
-            <tr>
-              <td >
+        </tr>
+        {this.props.isCurrentItem ?
+          <tr>
+            <td>
+              <SubMenu ref='submenu' checkClicked={this.props.subMenuProps.checkClicked} currentBookName={this.props.currentBookName}
+                isCurrentSubMenu={this.props.isCurrentSubMenu} currentSubGroupObjects={this.props.currentSubGroupObjects}
+                currentCheckIndex={this.props.currentCheckIndex}
+                currentGroupIndex={this.props.currentGroupIndex} />
             </td>
-            </tr>
-            : null}
+          </tr>
+          : null}
       </tbody>
     );
   }

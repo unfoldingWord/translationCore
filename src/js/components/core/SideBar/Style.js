@@ -7,6 +7,9 @@ var style = {
     fontSize: "12px",
     overflowY: "auto",
     overflowX: "hidden",
+    width: "100%",
+    padding:0,
+    position:"fixed",
   },
 
   container: {

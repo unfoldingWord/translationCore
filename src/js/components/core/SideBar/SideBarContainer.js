@@ -37,21 +37,20 @@ class SideBarContainer extends React.Component {
           zIndex: "98",
           fontSize: "12px",
           overflowX: "hidden",
-          height:"100%"
+          height: "100%",
+          padding:0
         };
       }
       sideBarContent =
         (
-          <div style={sideBarContainerStyle}>
-            <Grid fluid>
-              <Row style={{overflowY:"auto"}} md={6}>
+            <Grid style={sideBarContainerStyle}>
+              <Col md={3} style={{position:"fixed", padding:0, backgroundColor: "#333333", }}>
                 <MenuHeaders ref='menuheaders' subMenuProps={this.props.subMenuProps} currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
                   isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
                   currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}
                   currentSubGroupObjects={this.props.currentSubGroupObjects} isCurrentSubMenu={this.props.currentCheckIndex} />
-              </Row>
-            </Grid>
-          </div>);
+              </Col>
+            </Grid>);
     }
     return (
       <div>
