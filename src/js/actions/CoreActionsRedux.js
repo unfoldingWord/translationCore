@@ -48,3 +48,10 @@ module.exports.showSwitchCheckModal = function(val){
     val:val
   }
 }
+
+module.exports.showModalContainer = function(val) {
+  return {
+    type: consts.SHOW_MODAL_CONTAINER,
+    val:val
+  }
+}
