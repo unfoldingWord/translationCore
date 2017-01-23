@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
 const pathex = require('path-extra');
@@ -50,6 +51,7 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
+const ModalContainer = require('../containers/ModalContainer.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
@@ -431,6 +433,7 @@ var Main = React.createClass({
                 SideNavBar: !this.state.sideBarContainerProps.SideNavBar
               }
             }))
+            this.props.dispatch(modalActions.showModalContainer(true));
           },
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
@@ -1018,6 +1021,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
+          <ModalContainer />
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
