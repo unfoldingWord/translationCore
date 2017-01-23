@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
 const pathex = require('path-extra');
@@ -427,12 +428,12 @@ var Main = React.createClass({
             }
           },
           changeView: () => {
-            // this.setState(merge({}, this.state, {
-            //   sideBarContainerProps: {
-            //     SideNavBar: !this.state.sideBarContainerProps.SideNavBar
-            //   }
-            // }))
-            this.props.dispatch(CoreActionsRedux.showModalContainer(true));
+            this.setState(merge({}, this.state, {
+              sideBarContainerProps: {
+                SideNavBar: !this.state.sideBarContainerProps.SideNavBar
+              }
+            }))
+            this.props.dispatch(modalActions.showModalContainer(true));
           },
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
