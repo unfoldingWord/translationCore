@@ -168,7 +168,7 @@ var Main = React.createClass({
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
-    this.setState(merge({}, this.state, {
+    this.setState({
       currentGroupIndex: currentGroupIndex || 0,
       currentCheckIndex: currentCheckIndex || 0,
       currentToolNamespace: currentCheckNamespace,
@@ -176,7 +176,8 @@ var Main = React.createClass({
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
-    }), () => {
+    }, () => {
+      console.log(this.state)
       this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
       this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
