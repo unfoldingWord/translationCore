@@ -1,7 +1,7 @@
 const React = require('react');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const api = window.ModuleApi;
-const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const modalActions = require('../actions/modalActions.js');
 const { connect  } = require('react-redux');
 const Application = require('./ApplicationModalContainer');
 const Load = require('./LoadModalContainer');
@@ -43,7 +43,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         hide: () => {
-            dispatch(CoreActionsRedux.showModalContainer(false));
+            dispatch(modalActions.showModalContainer(false));
         }
     }
 }

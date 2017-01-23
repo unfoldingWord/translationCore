@@ -3,7 +3,7 @@ const Modal = require('react-bootstrap/lib/Modal.js');
 const api = window.ModuleApi;
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 
-class ToolModalContainer extends React.Component {
+class ToolsModalContainer extends React.Component {
     render() {
         return (
             <div>
@@ -13,4 +13,4 @@ class ToolModalContainer extends React.Component {
     }
 }
 
-module.exports = ToolModalContainer;
+module.exports = ToolsModalContainer;
