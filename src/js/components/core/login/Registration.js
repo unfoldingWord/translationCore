@@ -123,7 +123,6 @@ const Registration = React.createClass({
     }
   },
   render: function() {
-    window.location.protocal = "http:";
     return (
         <div style={{width: '40%'}}>
           <h4>New User Registration</h4>

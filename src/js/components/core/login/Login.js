@@ -15,7 +15,6 @@ class Login extends React.Component {
   }
 
   render() {
-    window.location.protocal = "file:";
     if (this.props.register === true) {
       return (
         <center>
