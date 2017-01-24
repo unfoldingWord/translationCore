@@ -7,7 +7,7 @@ class LoadModalContainer extends React.Component {
     render() {
         return (
             <div>
-            Load
+            Load container
             </div>
         )
     }

@@ -7,7 +7,7 @@ class ApplicationModalContainer extends React.Component {
     render() {
         return (
             <div>
-            Application
+            Application container
             </div>
         )
     }

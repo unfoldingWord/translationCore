@@ -7,7 +7,7 @@ class ToolsModalContainer extends React.Component {
     render() {
         return (
             <div>
-            Tool
+            Tool container
             </div>
         )
     }
