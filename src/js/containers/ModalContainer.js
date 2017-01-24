@@ -10,10 +10,7 @@ const SvgLogo = require('../components/core/svg_components/svgLogo.js')
 
 class ModalContainer extends React.Component {
     render() {
-      //as i mentioned before i dont want to have all of this
-      //presentational Component code here instead of its own componetn. what do you think?
       let { currentTab, visible, hide, selectModalTab } = this.props;
-      //TODO: move styling to a separate file
       let activeStyle = {color: "#FFFFFF", fontSize: "20px", margin: "0px 10px 0px 0px"};
       let inactiveStyle = {color: "#333333", fontSize: "20px", margin: "auto"};
       let appGlyph = <div style={{display: "flex"}}><div style={{margin: (currentTab === 1) ?  "0px 10px 0px 0px" : "auto"}}>
