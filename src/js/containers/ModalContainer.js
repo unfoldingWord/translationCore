@@ -6,14 +6,12 @@ const { connect  } = require('react-redux');
 const Application = require('./ApplicationModalContainer');
 const Load = require('./LoadModalContainer');
 const Tools = require('./ToolsModalContainer');
-const SvgLogo = require('../components/core/svg_components/svgLogo.js')
+const SvgLogo = require('../components/core/svg_components/svgLogo.js');
+const packageJson = require('../../../package.json');
 
 class ModalContainer extends React.Component {
     render() {
-      //as i mentioned before i dont want to have all of this
-      //presentational Component code here instead of its own componetn. what do you think?
       let { currentTab, visible, hide, selectModalTab } = this.props;
-      //TODO: move styling to a separate file
       let activeStyle = {color: "#FFFFFF", fontSize: "20px", margin: "0px 10px 0px 0px"};
       let inactiveStyle = {color: "#333333", fontSize: "20px", margin: "auto"};
       let appGlyph = <div style={{display: "flex"}}><div style={{margin: (currentTab === 1) ?  "0px 10px 0px 0px" : "auto"}}>
@@ -36,20 +34,23 @@ class ModalContainer extends React.Component {
             <Tabs activeKey={currentTab}
                   onSelect={(e) => selectModalTab(e)}
                   id="tabs"
-                  style={{borderBottom: "none", backgroundColor: "#494949", color: '#FFFFFF', width: "100%"}}>
-              <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333"}}>
+                  style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
+              <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Application {...this.props.application}/>
               </Tab>
-              <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333"}}>
+              <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Load {...this.props.load}/>
               </Tab>
-              <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333"}}>
+              <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Tools {...this.props.tools}/>
               </Tab>
             </Tabs>
           </Modal.Body>
           <Modal.Footer style={{backgroundColor: "#333333", borderTop: "none"}}>
-            <Button bsStyle="danger" onClick={() => hide()}>Close</Button>
+            <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
+            <span style={{color: "#FFFFFF", float: "right", position: "relative", left: "-40%", textAlign: "left", padding: "6px"}}>
+              {"Version " + packageJson.version}
+            </span>
           </Modal.Footer>
         </Modal>
       )
