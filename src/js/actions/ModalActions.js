@@ -5,3 +5,10 @@ module.exports.showModalContainer = function(val) {
     val:val
   }
 }
+
+module.exports.selectModalTab = function(tabKey) {
+  return {
+    type: consts.SELECT_MODAL_TAB,
+    val: tabKey
+  }
+}
