@@ -48,6 +48,8 @@ var style = {
     bottom:'2vh'
   },
   modal:{
+    backgroundColor: '#333',
+    color: 'white',
     zIndex: '9999'
   },
 

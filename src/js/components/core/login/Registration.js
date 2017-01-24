@@ -10,7 +10,6 @@ const {dialog} = remote;
 const { connect  } = require('react-redux');
 
 const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
-
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
@@ -124,12 +123,14 @@ const Registration = React.createClass({
     }
   },
   render: function() {
+    window.location.protocal = "http:";
     return (
-        <div>
+        <div style={{width: '40%'}}>
+          <h4>New User Registration</h4>
           <FormGroup controlId="username">
-            <FormControl type="text" placeholder={ENTER.username} onChange={this.handleUser}/>
+            <FormControl title="This is publically visible" type="text" placeholder={ENTER.username} onChange={this.handleUser}/>
           </FormGroup>
-          <FormGroup controlId="email" validationState={this.validateEmail()}>
+          <FormGroup controlId="email" title="This is publically visible and may be seen in your revision history of files you edit" validationState={this.validateEmail()}>
             <FormControl type="text" placeholder={ENTER.email} onChange={this.handleEmail}/>
             <FormControl.Feedback />
           </FormGroup>
@@ -141,8 +142,16 @@ const Registration = React.createClass({
             <FormControl type="password" placeholder={ENTER.confirm} onChange={this.handleConfirm}/>
             <FormControl.Feedback />
           </FormGroup>
-          <Button onClick={this.createUser} bsStyle="primary">
+          <Button
+          style={{width: '100%', fontWeight: 'bold'}}
+          onClick={this.createUser} bsStyle="primary">
             Create Account
+          </Button>
+          <h5 style={{marginTop: '25px',marginBottom: '-5px', fontWeight: 'bold'}}>Already have an account?</h5>
+          <Button
+          style={{fontWeight: 'bold'}}
+          onClick={this.props.back} bsStyle="link">
+            Sign In
           </Button>
         </div>
     );

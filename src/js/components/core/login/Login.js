@@ -7,6 +7,7 @@ const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const style = require('./loginStyle');
+const Registration = require('./Registration.js');
 
 class Login extends React.Component {
   constructor() {
@@ -14,39 +15,43 @@ class Login extends React.Component {
   }
 
   render() {
+    window.location.protocal = "file:";
     if (this.props.register === true) {
       return (
-        <Registration />
+        <center>
+        <Registration back={this.props.showRegistration}/>
+        </center>
       );
     }else{
       return (
         <div>
           <Row className="show-grid">
             <Col md={12} sm={12} xs={12}>
-
+            <center>
+                <h4>Welcome Back!</h4>
                 <FormGroup controlId="login-form">
-                    <ControlLabel>Door43 Account</ControlLabel><br/><br/>
                     <FormControl type="text" placeholder="Username"
-                                 style={{width: '100%', marginBottom: '10px'}}
+                                 style={{width: '40%', margin: '15px'}}
                                  onChange={this.props.handleUserName}/>
                     <FormControl type="password"
                                  placeholder="Password"
-                                 style={{width: '100%'}}
+                                 style={{width: '40%'}}
                                  onChange={this.props.handlePassword}/>
                 </FormGroup>
                 <Button bsStyle="primary"
                         type="submit"
                         onClick={() => {this.props.handleSubmit(this.props.userdata)}}
-                        style={{width: '100%', margin: 'auto'}}>
+                        style={{width: '40%', fontWeight: 'bold', marginBottom: '50px'}}>
                         Sign In
                 </Button>
-
-                <span>{"Don't have an account?"}</span>
+                <h4>{"Don't have an account?"}</h4>
                 <Button onClick={this.props.showRegistration}
-                        bsStyle="link"
-                        style={{color: 'blue', display: 'inline'}}>
-                        Register
+                        bsStyle="primary"
+                        type="submit"
+                        style={{width: '40%', fontWeight: 'bold'}}>
+                        Create an Account
                 </Button><br/><br/>
+                </center>
             </Col>
            </Row>
         </div>
