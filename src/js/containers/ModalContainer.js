@@ -36,14 +36,14 @@ class ModalContainer extends React.Component {
             <Tabs activeKey={currentTab}
                   onSelect={(e) => selectModalTab(e)}
                   id="tabs"
-                  style={{borderBottom: "none", backgroundColor: "#494949", color: '#FFFFFF', width: "100%"}}>
-              <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333"}}>
+                  style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
+              <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Application {...this.props.application}/>
               </Tab>
-              <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333"}}>
+              <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Load {...this.props.load}/>
               </Tab>
-              <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333"}}>
+              <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
                   <Tools {...this.props.tools}/>
               </Tab>
             </Tabs>
