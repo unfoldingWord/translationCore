@@ -1,38 +1,58 @@
 const React = require('react');
-const Modal = require('react-bootstrap/lib/Modal.js');
+const { Modal, Button, Tabs, Tab, Glyphicon } = require('react-bootstrap/lib');
 const api = window.ModuleApi;
 const modalActions = require('../actions/ModalActions.js');
 const { connect  } = require('react-redux');
 const Application = require('./ApplicationModalContainer');
 const Load = require('./LoadModalContainer');
 const Tools = require('./ToolsModalContainer');
+const SvgLogo = require('../components/core/svg_components/svgLogo.js')
 
 class ModalContainer extends React.Component {
     render() {
-        var currentTab;
-        switch (this.props.currentTab) {
-            case "application":
-                currentTab = <Application {...this.props.application}/>;
-                break;
-            case "load":
-                currentTab = <Load {...this.props.load}/>;
-                break;
-            case "tools":
-                currentTab = <Tools {...this.props.tools}/>;
-                break;
-            default:
-                currentTab = <Application {...this.props.application}/>;
-                break;
-        }
-        return (
-            <div>
-                <Modal bsSize="lg" show={this.props.visible} onHide={this.props.hide}>
-                    <div style={{ backgroundColor: "#333333", color: 'white' }}>
-                        {currentTab}
-                    </div>
-                </Modal>
-            </div>
-        )
+      //as i mentioned before i dont want to have all of this
+      //presentational Component code here instead of its own componetn. what do you think?
+      let { currentTab, visible, hide, selectModalTab } = this.props;
+      //TODO: move styling to a separate file
+      let activeStyle = {color: "#FFFFFF", fontSize: "20px", margin: "0px 10px 0px 0px"};
+      let inactiveStyle = {color: "#333333", fontSize: "20px", margin: "auto"};
+      let appGlyph = <div style={{display: "flex"}}><div style={{margin: (currentTab === 1) ?  "0px 10px 0px 0px" : "auto"}}>
+                        <SvgLogo height="24px" color={(currentTab === 1) ? "#FFFFFF" : "#333333" }/></div>
+                          {(currentTab === 1) ? ' Application' : " "}
+                     </div>;
+      let projectsGlyph = <div style={{display: "flex"}}>
+                            <Glyphicon glyph="folder-open"
+                                       style={(currentTab === 2) ? activeStyle : inactiveStyle} />
+                            {(currentTab === 2) ? " Projects" : " "}
+                          </div>;
+      let toolsGlyph = <div style={{display: "flex"}}>
+                          <Glyphicon glyph="wrench"
+                                     style={(currentTab === 3) ? activeStyle : inactiveStyle} />
+                            {(currentTab === 3) ? " Tools" : " "}
+                       </div>;
+      return (
+        <Modal bsSize="lg" show={visible} onHide={hide}>
+          <Modal.Body style={{height: "75vh", padding: "0px", backgroundColor: "#333333" }}>
+            <Tabs activeKey={currentTab}
+                  onSelect={(e) => selectModalTab(e)}
+                  id="tabs"
+                  style={{borderBottom: "none", backgroundColor: "#494949", color: '#FFFFFF', width: "100%"}}>
+              <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333"}}>
+                  <Application {...this.props.application}/>
+              </Tab>
+              <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333"}}>
+                  <Load {...this.props.load}/>
+              </Tab>
+              <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333"}}>
+                  <Tools {...this.props.tools}/>
+              </Tab>
+            </Tabs>
+          </Modal.Body>
+          <Modal.Footer style={{backgroundColor: "#333333", borderTop: "none"}}>
+            <Button bsStyle="danger" onClick={() => hide()}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      )
     }
 }
 
@@ -44,6 +64,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         hide: () => {
             dispatch(modalActions.showModalContainer(false));
+        },
+        selectModalTab: (e) => {
+            dispatch(modalActions.selectModalTab(e));
         }
     }
 }
