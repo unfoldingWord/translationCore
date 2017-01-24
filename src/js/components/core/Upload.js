@@ -30,8 +30,7 @@ class UploadModal extends React.Component {
           <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
           <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
           <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
-          <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
-          <NavItem eventKey={5}>{IMPORT_RECENT}</NavItem>
+          <NavItem eventKey={4}>{IMPORT_RECENT}</NavItem>
         </Nav>
         <div style={{color: "#FFFFFF", padding: "20px", backgroundColor: "#333333"}}>
           {this.props.children}

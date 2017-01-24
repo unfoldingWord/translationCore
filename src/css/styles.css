@@ -37,12 +37,12 @@ body {
 }
 @font-face {
     font-family: Noto Sans;
-    font-weight: bold;
+    font-style: italic;
     src: url(../fonts/NotoSans-Italic.ttf);
 }
 @font-face {
     font-family: Noto Sans;
-    font-style: italic;
+    font-weight: bold;
     src: url(../fonts/NotoSans-Bold.ttf);
 }
 
