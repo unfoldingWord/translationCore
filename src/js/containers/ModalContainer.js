@@ -6,7 +6,8 @@ const { connect  } = require('react-redux');
 const Application = require('./ApplicationModalContainer');
 const Load = require('./LoadModalContainer');
 const Tools = require('./ToolsModalContainer');
-const SvgLogo = require('../components/core/svg_components/svgLogo.js')
+const SvgLogo = require('../components/core/svg_components/svgLogo.js');
+const packageJson = require('../../../package.json');
 
 class ModalContainer extends React.Component {
     render() {
@@ -46,7 +47,10 @@ class ModalContainer extends React.Component {
             </Tabs>
           </Modal.Body>
           <Modal.Footer style={{backgroundColor: "#333333", borderTop: "none"}}>
-            <Button bsStyle="danger" onClick={() => hide()}>Close</Button>
+            <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
+            <span style={{color: "#FFFFFF", float: "right", position: "relative", left: "-40%", textAlign: "left", padding: "6px"}}>
+              {"Version " + packageJson.version}
+            </span>
           </Modal.Footer>
         </Modal>
       )
