@@ -265,7 +265,7 @@ var Main = React.createClass({
               mainViewVisible: true
             },
             uploadProps: {
-              active: 0
+              active: 1
             }
           }), callback)
         })
@@ -572,6 +572,13 @@ var Main = React.createClass({
         },
         projectModalProps: {
           showModal: false,
+          showD43: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'd43',
+              }
+            }));
+          },
           show: 'link',
           submitLink: (callback) => {
             var link = this.state.projectModalProps.link;
@@ -579,7 +586,7 @@ var Main = React.createClass({
               if (!err) {
                 Upload.sendFilePath(savePath, url, callback);
               } else {
-                console.error(err);
+                alert(err);
               }
             });
           },
@@ -681,16 +688,6 @@ var Main = React.createClass({
               case 4:
                 this.setState(merge({}, this.state, {
                   projectModalProps: {
-                    show: 'd43',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 5:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
                     show: 'recent',
                   },
                   uploadProps: {
@@ -704,6 +701,13 @@ var Main = React.createClass({
           }
         },
         profileProjectsProps: {
+          back: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'link',
+              }
+            }));
+          },
           repos: [],
           updateRepos: () => {
             var user = api.getLoggedInUser();
@@ -724,7 +728,7 @@ var Main = React.createClass({
             var _this = this;
             loadOnline(link, function (err, savePath, url) {
               if (err) {
-                console.error(err);
+                alert(loadOnline);
               } else {
                 Upload.sendFilePath(savePath, url, () => {
                   dispatch(showCreateProject(false));
@@ -1038,7 +1042,7 @@ var Main = React.createClass({
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} 
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
                 isOpen={this.state.subMenuOpen}/>
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
