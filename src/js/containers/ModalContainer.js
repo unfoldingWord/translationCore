@@ -54,7 +54,6 @@ class ModalContainer extends React.Component {
           </Modal.Footer>
         </Modal>
       )
->>>>>>> develop
     }
 }
 

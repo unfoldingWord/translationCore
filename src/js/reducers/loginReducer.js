@@ -3,7 +3,7 @@ const gogs = require('../components/core/login/GogsApi.js');
 const {dialog} = remote;
 const merge = require('lodash.merge');
 
-initialState = {
+const initialState = {
   userdata: {
     username: "",
     full_name: "",
