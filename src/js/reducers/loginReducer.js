@@ -5,9 +5,9 @@ const merge = require('lodash.merge');
 
 initialState = {
   userdata: {
-    username: "royalsix",
+    username: "",
     full_name: "",
-    password: "4thenations",
+    password: "",
     email: "",
     avatar_url: "",
   },
