@@ -36,7 +36,7 @@ class ApplicationModalContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-    return Object.assign({}, state, state.loginReducer, state.settingsReducer);
+    return Object.assign({}, state.loginReducer, state.settingsReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
