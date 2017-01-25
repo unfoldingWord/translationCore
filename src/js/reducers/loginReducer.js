@@ -47,10 +47,12 @@ module.exports = (state = initialState, action) => {
       return merge({}, state, {
         userdata: {
           username: "",
+          id:"",
           full_name: "",
           password: "",
           email: "",
           avatar_url: "",
+          token: "",
         },
         loggedInUser: false
       });
