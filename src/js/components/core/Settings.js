@@ -11,7 +11,7 @@ const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 
-class SettingsModal extends React.Component {
+class Settings extends React.Component {
   render() {
     return (
       <div style={{paddingTop: '65px', width: '40%', marginLeft: 'auto', marginRight: 'auto'}}>
@@ -47,4 +47,4 @@ class SettingsModal extends React.Component {
   }
 };
 
-module.exports = SettingsModal;
+module.exports = Settings;

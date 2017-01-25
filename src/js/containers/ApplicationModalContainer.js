@@ -7,7 +7,7 @@ const SettingsActions = require('../actions/SettingsActions.js');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const Login = require('../components/core/login/Login.js');
 const Profile= require('../components/core/login/Profile');
-const SettingsModal = require('../components/core/SettingsModal.js');
+const Settings = require('../components/core/Settings.js');
 
 class ApplicationModalContainer extends React.Component {
     render() {
@@ -27,7 +27,7 @@ class ApplicationModalContainer extends React.Component {
               {accountDisplay}
             </Tab>
             <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-                <SettingsModal {...this.props}/>
+                <Settings {...this.props}/>
             </Tab>
           </Tabs>
         </div>
