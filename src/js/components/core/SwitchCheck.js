@@ -28,7 +28,7 @@ class SwitchCheck extends React.Component{
                           description={metadata.description}
                           useApp={this.props.moduleClick}
                           folderName={metadata.folderName}
-          />)
+                     />)
       }
     }
     return (
