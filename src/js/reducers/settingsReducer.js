@@ -10,7 +10,7 @@ module.exports = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
       return merge({}, state, {
-        currentSettings: merge(state.currentSettings, action.val)
+        currentSettings: action.val
       });
       break;
     default:
