@@ -2,9 +2,12 @@ const React = require('react');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const api = window.ModuleApi;
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const { connect  } = require('react-redux');
+const SettingsActions = require('../actions/SettingsActions.js');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const Login = require('../components/core/login/Login.js');
 const Profile= require('../components/core/login/Profile');
+const SettingsModal = require('../components/core/SettingsModal.js');
 
 
 class ApplicationModalContainer extends React.Component {
@@ -26,7 +29,11 @@ class ApplicationModalContainer extends React.Component {
                   {accountDisplay}
                 </Tab>
                 <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-
+                  <center>
+                    <br />
+                    <br />
+                    <SettingsModal style={{width: '40%'}} {...this.props}/>
+                  </center>
                 </Tab>
               </Tabs>
             </div>
@@ -34,4 +41,16 @@ class ApplicationModalContainer extends React.Component {
     }
 }
 
-module.exports = ApplicationModalContainer;
+function mapStateToProps(state) {
+    return Object.assign({}, state, state.settingsReducer);
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onSettingsChange: (field)=> {
+      dispatch(SettingsActions.onSettingsChange(field.target));
+    }
+  }
+};
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(ApplicationModalContainer);

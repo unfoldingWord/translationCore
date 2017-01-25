@@ -12,46 +12,30 @@ const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 
 class SettingsModal extends React.Component {
-  componentWillMount() {
-    CoreStore.addChangeListener(this.props.updateModal);
-  }
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.props.updateModal);
-  }
   render() {
     return (
-      <div>
-        <Modal show={this.props.show} onHide={this.props.onClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Settings</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <FormGroup controlId="tutorialView">
-              <ControlLabel>Tutorial</ControlLabel>
-              <FormControl componentClass="select" placeholder="select" name="tutorialView" defaultValue={this.props.currentSettings.tutorialView} onChange={this.props.onSettingsChange}>
-                <option value="show">Show</option>
-                <option value="hide">Hide</option>
-              </FormControl>
-            </FormGroup>
-            <FormGroup controlId="textSelect">
-              <ControlLabel>Text Select Method</ControlLabel>
-              <FormControl componentClass="select" placeholder="select" name="textSelect" defaultValue={this.props.currentSettings.textSelect} onChange={this.props.onSettingsChange}>
-                <option value="drag">Drag to select</option>
-                <option value="click">Click to select</option>
-              </FormControl>
-            </FormGroup>
-            <FormGroup controlId="developerMode">
-              <ControlLabel>Enable Developer Mode</ControlLabel>
-              <FormControl componentClass="select" placeholder="select" name="developerMode" defaultValue={this.props.currentSettings.developerMode} onChange={this.props.onSettingsChange}>
-                <option value="disable">Disabled</option>
-                <option value="enable">Enabled</option>
-              </FormControl>
-            </FormGroup>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.props.onClose}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+      <div style={this.props.style}>
+        <FormGroup controlId="tutorialView">
+          <ControlLabel>Tutorial</ControlLabel>
+          <FormControl componentClass="select" placeholder="select" name="tutorialView" defaultValue={this.props.currentSettings.tutorialView} onChange={this.props.onSettingsChange}>
+            <option value="show">Show</option>
+            <option value="hide">Hide</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup controlId="textSelect">
+          <ControlLabel>Text Select Method</ControlLabel>
+          <FormControl componentClass="select" placeholder="select" name="textSelect" defaultValue={this.props.currentSettings.textSelect} onChange={this.props.onSettingsChange}>
+            <option value="drag">Drag to select</option>
+            <option value="click">Click to select</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup controlId="developerMode">
+          <ControlLabel>Enable Developer Mode</ControlLabel>
+          <FormControl componentClass="select" placeholder="select" name="developerMode" defaultValue={this.props.currentSettings.developerMode} onChange={this.props.onSettingsChange}>
+            <option value="disable">Disabled</option>
+            <option value="enable">Enabled</option>
+          </FormControl>
+        </FormGroup>
       </div>
     );
   }
