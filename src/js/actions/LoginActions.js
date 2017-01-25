@@ -1,7 +1,8 @@
-var consts = require('./CoreActionConsts');
-const gogs = require('../components/core/login/GogsApi.js');
 const api = window.ModuleApi;
-const {dialog} = remote;
+const consts = require('./CoreActionConsts');
+const gogs = require('../components/core/login/GogsApi.js');
+const remote = require('electron').remote;
+const { dialog } = remote;
 
 module.exports.setUserName = function (val) {
   return {
@@ -28,7 +29,7 @@ module.exports.loginUser = function (newUserdata) {
   return ((dispatch) => {
     var Token = api.getAuthToken('gogs');
     gogs(Token).login(newUserdata).then((newUserdata) => {
-      return dispatch({
+      dispatch({
         type: consts.RECEIVE_LOGIN,
         val:newUserdata
       });
