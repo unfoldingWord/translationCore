@@ -58,7 +58,7 @@ class ModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state, state.newModalReducer);
+    return Object.assign({}, state.newModalReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

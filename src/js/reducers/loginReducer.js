@@ -3,7 +3,7 @@ const gogs = require('../components/core/login/GogsApi.js');
 const {dialog} = remote;
 const merge = require('lodash.merge');
 
-initialState = {
+const initialState = {
   userdata: {
     username: "",
     full_name: "",
@@ -47,10 +47,12 @@ module.exports = (state = initialState, action) => {
       return merge({}, state, {
         userdata: {
           username: "",
+          id:"",
           full_name: "",
           password: "",
           email: "",
           avatar_url: "",
+          token: "",
         },
         loggedInUser: false
       });
