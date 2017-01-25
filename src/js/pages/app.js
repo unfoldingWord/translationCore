@@ -169,7 +169,7 @@ var Main = React.createClass({
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
-    this.setState(merge({}, this.state, {
+    this.setState({
       currentGroupIndex: currentGroupIndex || 0,
       currentCheckIndex: currentCheckIndex || 0,
       currentToolNamespace: currentCheckNamespace,
@@ -177,8 +177,7 @@ var Main = React.createClass({
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
-    }), () => {
-      this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
+    }, () => {
       this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
       });
@@ -300,11 +299,21 @@ var Main = React.createClass({
     if (foundGroup) return foundGroup.checks;
     else return;
   },
+
+  startLoadingNewProject() {
+    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+    api.emitEvent('newToolSelected', { 'newToolSelected': true });
+    this.state.projectModalProps.close();
+    api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+    this.props.dispatch(showMainView(true));
+    this.props.dispatch(showSwitchCheckModal(true));
+  },
+
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
-        subMenuOpen:true,
+        subMenuOpen: true,
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
@@ -486,23 +495,8 @@ var Main = React.createClass({
           }
         },
         menuHeadersProps: {
-          scrollToMenuElement: (id, name) => {
-            try {
-              const groupName = name || this.state.currentGroupObjects[id].group;
-              //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
-              var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
-              //this ref may be here forever...sigh
-              var element = api.findDOMNode(newGroupElement);
-              if (element) {
-                element.scrollIntoView();
-              }
-            } catch (e) {
-              console.log(e);
-              console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
-            }
-          },
           menuClick: (id, menuOpen) => {
-            if (id  != this.state.currentGroupIndex) {
+            if (id != this.state.currentGroupIndex) {
               menuOpen = true;
             } else {
               menuOpen = menuOpen || !this.state.subMenuOpen;
@@ -524,7 +518,7 @@ var Main = React.createClass({
               currentGroupIndex: parseInt(id),
               currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
-              subMenuOpen:menuOpen
+              subMenuOpen: menuOpen
             }, callback);
           },
         },
@@ -610,12 +604,7 @@ var Main = React.createClass({
             if (type == 'link') {
               this.state.projectModalProps.submitLink((err) => {
                 if (!err) {
-                  api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-                  api.emitEvent('newToolSelected', { 'newToolSelected': true });
-                  this.state.projectModalProps.close();
-                  api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-                  this.props.dispatch(showMainView(true));
-                  this.props.dispatch(showSwitchCheckModal(true));
+                  this.startLoadingNewProject()
                 } else if (err != "") {
                   api.createAlert(
                     {
@@ -633,13 +622,9 @@ var Main = React.createClass({
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
+              this.startLoadingNewProject();
             } else {
-              api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-              api.emitEvent('newToolSelected', { 'newToolSelected': true });
-              this.state.projectModalProps.close();
-              api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-              this.props.dispatch(showMainView(true));
-              this.props.dispatch(showSwitchCheckModal(true));
+              this.startLoadingNewProject()
             }
           },
           _handleKeyPress: (e, type) => {
@@ -1008,7 +993,7 @@ var Main = React.createClass({
             <Row>
               <StatusBar />
             </Row>
-            <Col className="col-fluid" md={3} style={{ padding: 0, width:"300px"}}>
+            <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}

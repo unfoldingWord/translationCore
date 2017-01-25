@@ -30,7 +30,7 @@ class ModalContainer extends React.Component {
                        </div>;
       return (
         <Modal bsSize="lg" show={visible} onHide={hide}>
-          <Modal.Body style={{height: "75vh", padding: "0px", backgroundColor: "#333333" }}>
+          <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "#333333" }}>
             <Tabs activeKey={currentTab}
                   onSelect={(e) => selectModalTab(e)}
                   id="tabs"
@@ -46,11 +46,11 @@ class ModalContainer extends React.Component {
               </Tab>
             </Tabs>
           </Modal.Body>
-          <Modal.Footer style={{backgroundColor: "#333333", borderTop: "none"}}>
+          <Modal.Footer style={{padding: "10px", backgroundColor: "#333333", borderTop: "none"}}>
             <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-            <span style={{color: "#FFFFFF", float: "right", position: "relative", left: "-40%", textAlign: "left", padding: "6px"}}>
+            <center style={{color: "#FFFFFF", padding: "6px"}}>
               {"Version " + packageJson.version}
-            </span>
+            </center>
           </Modal.Footer>
         </Modal>
       )
@@ -58,7 +58,7 @@ class ModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state, state.newModalReducer);
+    return Object.assign({}, state.newModalReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

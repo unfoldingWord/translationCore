@@ -1,16 +1,10 @@
 var consts = require('../actions/CoreActionConsts');
 const merge = require('lodash.merge');
 
-initialState = {
+const initialState = {
     visible: false,
     currentTab: 1,
-    currentSection: "",
-    application: {
-    },
-    load: {
-    },
-    tools: {
-    }
+    currentSection: ""
 }
 module.exports = (state = initialState, action) => {
     switch (action.type) {

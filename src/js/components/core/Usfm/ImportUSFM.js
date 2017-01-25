@@ -54,7 +54,11 @@ function openUSFMProject(savePath, direction, link) {
             id: "",
             name: targetLanguage.title
           },
-          project_id: parsedUSFM.book
+          project_id: parsedUSFM.book,
+          ts_project:{
+            id:parsedUSFM.book,
+            name:parsedUSFM.bookName
+          }
         }
         Upload.saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
@@ -91,7 +95,7 @@ function saveTargetLangeInAPI(parsedUSFM) {
   }
   var targetLanguage = {};
   targetLanguage.title = parsedUSFM.book;
-  // targetLanguage.header = parsedUSFM.headers;
+  parsedUSFM.bookName = books[parsedUSFM.book]
   var chapters = parsedUSFM.chapters;
   for (var ch in chapters) {
     targetLanguage[chapters[ch].number] = {};
