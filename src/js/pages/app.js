@@ -179,7 +179,6 @@ var Main = React.createClass({
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
     }, () => {
-      this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
       this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
       });
@@ -498,21 +497,6 @@ var Main = React.createClass({
           }
         },
         menuHeadersProps: {
-          scrollToMenuElement: (id, name) => {
-            try {
-              const groupName = name || this.state.currentGroupObjects[id].group;
-              //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
-              var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
-              //this ref may be here forever...sigh
-              var element = api.findDOMNode(newGroupElement);
-              if (element) {
-                element.scrollIntoView();
-              }
-            } catch (e) {
-              console.log(e);
-              console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
-            }
-          },
           menuClick: (id, menuOpen) => {
             if (id != this.state.currentGroupIndex) {
               menuOpen = true;
