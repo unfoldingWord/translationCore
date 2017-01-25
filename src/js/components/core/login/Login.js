@@ -15,10 +15,11 @@ class Login extends React.Component {
   }
 
   render() {
-    if (this.props.register === true) {
+    let { displayLogin } = this.props;
+    if (!displayLogin) {
       return (
         <center>
-        <Registration back={this.props.showRegistration}/>
+        <Registration back={() => this.props.onSwitchToLoginPage(!displayLogin)}/>
         </center>
       );
     }else{
@@ -31,11 +32,11 @@ class Login extends React.Component {
                 <FormGroup controlId="login-form">
                     <FormControl type="text" placeholder="Username"
                                  style={{width: '40%', margin: '15px'}}
-                                 onChange={this.props.handleUserName}/>
+                                 onChange={this.props.onHandleUserName}/>
                     <FormControl type="password"
                                  placeholder="Password"
                                  style={{width: '40%'}}
-                                 onChange={this.props.handlePassword}/>
+                                 onChange={this.props.onHandlePassword}/>
                 </FormGroup>
                 <Button bsStyle="primary"
                         type="submit"
@@ -44,7 +45,7 @@ class Login extends React.Component {
                         Sign In
                 </Button>
                 <h4>{"Don't have an account?"}</h4>
-                <Button onClick={this.props.showRegistration}
+                <Button onClick={() => this.props.onSwitchToLoginPage(!displayLogin)}
                         bsStyle="primary"
                         type="submit"
                         style={{width: '40%', fontWeight: 'bold'}}>
