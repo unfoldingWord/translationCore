@@ -44,13 +44,6 @@ module.exports = {
   //   });
   // },
 
-  updateSettings: function(boolean) {
-    Dispatcher.handleAction({
-      type: consts.SETTINGS_VIEW,
-      settingsView: boolean
-    });
-  },
-
   showOpenModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.OPEN_CREATED_PROJECT,

@@ -28,7 +28,6 @@ const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SwitchCheck = require('../components/core/SwitchCheck');
-const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -487,7 +486,6 @@ var Main = React.createClass({
             }
           },
           handleSettings: () => {
-            CoreActions.updateSettings(true);
           },
           handlePackageManager: () => {
             var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
@@ -755,33 +753,6 @@ var Main = React.createClass({
             return projectList;
           }
         },
-        settingsModalProps: {
-          show: false,
-          onClose: () => {
-            CoreActions.updateSettings(false);
-          },
-          updateModal: () => {
-            if (!this.state.settingsModalProps.show === CoreStore.getSettingsView()) {
-              this.setState(merge({}, this.state, {
-                settingsModalProps: {
-                  show: CoreStore.getSettingsView(),
-                }
-              }));
-            }
-          },
-          onSettingsChange: (field) => {
-            api.setSettings(field.target.name, field.target.value);
-            this.setState(merge({}, this.state, {
-              switchCheckModalProps: {
-                developerMode: api.getSettings('developerMode') === 'enable'
-              },
-              settingsModalProps: {
-                currentSettings: api.getSettings()
-              }
-            }));
-          },
-          currentSettings: api.getSettings()
-        },
         switchCheckModalProps: {
           showModal: false,
           close: () => {
@@ -1010,7 +981,6 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <ModalContainer />
-          <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
