@@ -23,11 +23,8 @@ class SwitchCheck extends React.Component{
       for (var i in this.props.moduleMetadatas) {
         const metadata = this.props.moduleMetadatas[i];
         buttons.push(<AppDescription key={i}
-                          imagePath={metadata.imagePath}
-                          title={metadata.title}
-                          description={metadata.description}
-                          useApp={this.props.moduleClick}
-                          folderName={metadata.folderName}
+                                     metadata={metadata}
+                                     useApp={this.props.moduleClick}
                      />)
       }
     }
