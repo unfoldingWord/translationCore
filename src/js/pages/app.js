@@ -356,7 +356,7 @@ var Main = React.createClass({
           showRegistration: () => {
             this.setState(merge({}, this.state, {
               loginProps: {
-                register: true
+                register: !this.state.loginProps.register
               }
             }))
           },
