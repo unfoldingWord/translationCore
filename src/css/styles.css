@@ -37,12 +37,12 @@ body {
 }
 @font-face {
     font-family: Noto Sans;
-    font-weight: bold;
+    font-style: italic;
     src: url(../fonts/NotoSans-Italic.ttf);
 }
 @font-face {
     font-family: Noto Sans;
-    font-style: italic;
+    font-weight: bold;
     src: url(../fonts/NotoSans-Bold.ttf);
 }
 
@@ -73,27 +73,61 @@ body {
 The following .nav, .nav-tabs classes hanlde the styling for the tabs in the
 tools. they basically override bootstrap styling for this components
 */
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav>li>a:hover {
+  background-color: #C6C4C4;
+  border: none;
+  outline: none;
+}
+
 .nav-tabs>li>a {
   color: white;
   background-color: #747474;
   margin-right: 2px;
-  border: 1px solid #FFFFFF;
   border-radius: 10px 10px 0 0;
   min-width: 75px;
-  padding: 5px 5px 0px 25px;
+  padding: 10px 15px 28px 15px;
   height: 35px;
-  margin-top: 4px
+  margin-top: 4px;
+  border: none;
 }
-.nav>li>a:hover {
-  background-color: rgb(51, 51, 51);
-}
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
   color: #FFFFFF;
   cursor: default;
   background-color: rgb(51, 51, 51);
-  border: 1px solid #FFFFFF;
   border-bottom-color: rgb(51, 51, 51);
   height: 35px;
   outline: none;
-  margin-top: 4px
+  margin-top: 4px;
+  border: none;
+}
+
+.nav-pills>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 60px;
+  color: #ffffff;
+  outline: none;
+  border-radius: 0px;
+}
+
+.nav-pills>li>a:hover {
+  background-color: #C6C4C4;
+  border: none;
+  border-radius: 0px;
+}
+
+.nav-pills>li.active>a {
+  font-weight: 600;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #333333;
+  background-color: #C6C4C4;
+  border-radius: 0px;
 }

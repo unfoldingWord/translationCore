@@ -18,13 +18,13 @@ class LoginModal extends React.Component {
       return(
         <div style={style.modal}>
           <Modal show={this.props.showModal} onHide={this.props.close}>
-            <Modal.Header closeButton>
+            <Modal.Header closeButton style={style.modal}>
               <Modal.Title>Profile</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body style={style.modal}>
               {display}
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer style={style.modal}>
               <Button type={"button"} onClick={this.props.close}>Close</Button>
             </Modal.Footer>
           </Modal>

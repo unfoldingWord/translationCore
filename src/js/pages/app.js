@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
 const pathex = require('path-extra');
@@ -50,6 +51,7 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
+const ModalContainer = require('../containers/ModalContainer.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
@@ -263,7 +265,7 @@ var Main = React.createClass({
               mainViewVisible: true
             },
             uploadProps: {
-              active: 0
+              active: 1
             }
           }), callback)
         })
@@ -364,7 +366,7 @@ var Main = React.createClass({
           showRegistration: () => {
             this.setState(merge({}, this.state, {
               loginProps: {
-                register: true
+                register: !this.state.loginProps.register
               }
             }))
           },
@@ -441,6 +443,7 @@ var Main = React.createClass({
                 SideNavBar: !this.state.sideBarContainerProps.SideNavBar
               }
             }))
+            this.props.dispatch(modalActions.showModalContainer(true));
           },
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
@@ -579,6 +582,13 @@ var Main = React.createClass({
         },
         projectModalProps: {
           showModal: false,
+          showD43: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'd43',
+              }
+            }));
+          },
           show: 'link',
           submitLink: (callback) => {
             var link = this.state.projectModalProps.link;
@@ -586,7 +596,7 @@ var Main = React.createClass({
               if (!err) {
                 Upload.sendFilePath(savePath, url, callback);
               } else {
-                console.error(err);
+                alert(err);
               }
             });
           },
@@ -679,16 +689,6 @@ var Main = React.createClass({
               case 4:
                 this.setState(merge({}, this.state, {
                   projectModalProps: {
-                    show: 'd43',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 5:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
                     show: 'recent',
                   },
                   uploadProps: {
@@ -702,6 +702,13 @@ var Main = React.createClass({
           }
         },
         profileProjectsProps: {
+          back: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'link',
+              }
+            }));
+          },
           repos: [],
           updateRepos: () => {
             var user = api.getLoggedInUser();
@@ -722,7 +729,7 @@ var Main = React.createClass({
             var _this = this;
             loadOnline(link, function (err, savePath, url) {
               if (err) {
-                console.error(err);
+                alert(loadOnline);
               } else {
                 Upload.sendFilePath(savePath, url, () => {
                   dispatch(showCreateProject(false));
@@ -1019,6 +1026,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
+          <ModalContainer />
           <SettingsModal {...this.state.settingsModalProps} />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
@@ -1036,7 +1044,7 @@ var Main = React.createClass({
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
                 currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
-                isOpen={this.state.subMenuOpen} />
+                isOpen={this.state.subMenuOpen}/>
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
