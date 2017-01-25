@@ -241,6 +241,7 @@ var Main = React.createClass({
         else {
           metadata.folderName = path.dirname(filePath);
           metadata.imagePath = path.resolve(filePath, '../icon.png');
+          metadata.bannerImagePath = path.resolve(filePath, '../badge.png');
           tempMetadatas.push(metadata);
         }
         onComplete();
