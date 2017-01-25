@@ -40,7 +40,7 @@ class Profile extends React.Component {
           `}
         </style>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
-        <Col sm={12} md={4} lg={4} style={{backgroundColor: "#434343", padingTop: "20px", padding: "0px", height: "450px"}}>
+        <Col sm={12} md={4} lg={4} style={{backgroundColor: "#434343", padingTop: "20px", padding: "0px", height: "520px"}}>
           <div style={{padding: "20px 10px 10px 10px"}}>
             <h3>Account Information</h3><br />
             <Image style={{height: '85px', width:'85px', margin:"auto", display: "flex"}}
@@ -56,7 +56,7 @@ class Profile extends React.Component {
                 Sign Out
           </Button>
         </Col>
-        <Col sm={12} md={6} lg={8} style={{padding: "20px 25px 0px 25px"}}>
+        <Col sm={12} md={6} lg={8} style={{padding: "20px 25px 0px 25px", height: "520px"}}>
           <h3>Feedback and Comments</h3><br />
           <Panel header={panelTitle} style={{padding: "0px", borderColor: "#333333"}}>
             <ListGroup fill>

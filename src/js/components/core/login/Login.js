@@ -11,9 +11,11 @@ class Login extends React.Component {
     let { displayLogin } = this.props;
     if (!displayLogin) {
       return (
-        <center>
-        <Registration back={() => this.props.onSwitchToLoginPage(!displayLogin)}/>
-        </center>
+        <Col md={12} sm={12} xs={12} style={{marginTop: "50px"}}>
+          <center>
+            <Registration back={() => this.props.onSwitchToLoginPage(!displayLogin)}/>
+          </center>
+        </Col>
       );
     }else{
       return (
