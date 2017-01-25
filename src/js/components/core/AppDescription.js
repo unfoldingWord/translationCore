@@ -47,7 +47,7 @@ var tT ={
 
 class AppDescription extends React.Component{
   render(){
-    let { title, version, description, imagePath, folderName, name} = this.props.metadata;
+    let { title, version, description, badgeImagePath, imagePath, folderName, name} = this.props.metadata;
     let Styles;
     switch (name) {
       case "TranslationWordsChecker":
@@ -87,7 +87,7 @@ class AppDescription extends React.Component{
         </Col>
         <Col md={4} sm={4} xs={4} style={{margin: "0px", padding: "0px"}}>
 
-          <img style={{width: '100%'}} src={imagePath} />
+          <img style={{width: '100%'}} src={badgeImagePath} />
 
         </Col>
       </Row>
