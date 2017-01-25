@@ -177,7 +177,6 @@ var Main = React.createClass({
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
     }, () => {
-      console.log(this.state)
       this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
       this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
