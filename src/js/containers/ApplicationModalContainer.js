@@ -1,6 +1,5 @@
 const React = require('react');
 const api = window.ModuleApi;
-const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const { connect  } = require('react-redux');
 const LoginActions = require('../actions/LoginActions.js');
 const SettingsActions = require('../actions/SettingsActions.js');
