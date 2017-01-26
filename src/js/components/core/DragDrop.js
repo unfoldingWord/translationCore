@@ -59,11 +59,7 @@ class DragDrop extends React.Component{
   render() {
     console.log(this.props)
     return (
-<<<<<<< HEAD
     <div style={style.div} onClick = {()=>this.props.dragDropOnClick(this.props.dialogOpen, this.props.properties)} >
-=======
-    <div style={style.div} onClick = {this.onClick.bind(this)} >
->>>>>>> 7e0174e1d3aac0b73e4358c7d0fa7420c930a589
         <Dropzone onDrop = {this.onDrop.bind(this)}
         disableClick={true} multiple={false} style={this.mainStyle}
         activeStyle={style.dropzone.active}>
