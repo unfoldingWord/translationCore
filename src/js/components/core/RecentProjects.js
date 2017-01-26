@@ -25,7 +25,19 @@ class RecentProjects extends React.Component {
       }
       var stats = fs.statSync(projectPath);
       var mtime = new Date(stats.mtime);
-      var difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear()
+      var difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
+      var buttonSpan = (
+        <span>
+          <Button style={{backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white'}} onClick={this.props.onLoad.bind(this, projectPath)}>
+            <Glyphicon glyph={'folder-open'} />
+            <span style={{marginLeft: '10px', marginRight: '20px'}}>Open</span>
+          </Button>
+          <Button style={{fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white'}} onClick={this.props.syncProject.bind(this, projectPath)}>
+            <Glyphicon glyph={'refresh'} />
+            <span style={{marginLeft: '5px'}}> Sync </span>
+          </Button>
+        </span>
+      );
       projects.push(
         {
           '': <Glyphicon glyph={'folder-open'} /> ,
@@ -33,8 +45,7 @@ class RecentProjects extends React.Component {
           'Book': manifest.project.name || 'Unknown',
           'Language': manifest.target_language.name || 'Unknown',
           'Date Updated': difference,
-          ' ': <Button style={{backgroundColor: '#C3105A', borderWidth: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white'}} onClick={this.props.onLoad.bind(this, projectPath)}><Glyphicon glyph={'folder-open'} /> <span style={{marginLeft: '5px'}}>Open</span></Button>,
-          '   ': <Button style={{fontWeight: 'bold'}} onClick={this.props.syncProject.bind(this, projectPath)}><Glyphicon glyph={'refresh'} /> Sync</Button>
+          ' ': buttonSpan
         }
       );
     }
