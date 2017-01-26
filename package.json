@@ -13,7 +13,9 @@
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
     "install-apps": "git submodule update --init --recursive",
-    "pull-apps": "git submodule foreach --recursive git pull",
+    "pull-apps": "npm run apps-master && npm run git-pull",
+    "git-pull": "git submodule foreach --recursive git pull",
+    "apps-master": "git submodule foreach --recursive git checkout master",
     "start": "electron ."
   },
   "build": {

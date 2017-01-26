@@ -2,9 +2,11 @@ const React = require('react');
 const api = window.ModuleApi;
 const { connect  } = require('react-redux');
 const LoginActions = require('../actions/LoginActions.js');
+const SettingsActions = require('../actions/SettingsActions.js');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const Login = require('../components/core/login/Login.js');
 const Profile= require('../components/core/login/Profile');
+const Settings = require('../components/core/Settings.js');
 
 class ApplicationModalContainer extends React.Component {
     render() {
@@ -24,7 +26,7 @@ class ApplicationModalContainer extends React.Component {
               {accountDisplay}
             </Tab>
             <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-
+                <Settings {...this.props}/>
             </Tab>
           </Tabs>
         </div>
@@ -34,7 +36,7 @@ class ApplicationModalContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-    return Object.assign({}, state, state.loginReducer);
+    return Object.assign({}, state.loginReducer, state.settingsReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -53,6 +55,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         onHandleLogout: () => {
           dispatch(LoginActions.logoutUser());
+        },
+        onSettingsChange: (field)=> {
+          dispatch(SettingsActions.onSettingsChange(field.target));
         }
     }
 }
