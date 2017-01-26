@@ -10,10 +10,12 @@ const Projects = require('../components/core/login/Projects');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const dragDropActions = require('../actions/DragDropActions.js');
 const recentProjectActions = require('../actions/RecentProjectsActions.js');
+const ReportsActions = require('../actions/ReportsActions.js')
 const path = require('path-extra');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
+const Report = require("../components/core/reports/ReportGenerator");
 
 class LoadModalContainer extends React.Component {
   generateButton(projectPath) {
@@ -98,7 +100,7 @@ class LoadModalContainer extends React.Component {
             {onlineView}
           </Tab>
           <Tab eventKey={4} title="Reports" style={{backgroundColor: "#333333"}}>
-            
+            <Report {...this.props} />
           </Tab>
         </Tabs>
       </div>
@@ -107,7 +109,7 @@ class LoadModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.dragDropReducer, state.recentProjectsReducer);
+  return Object.assign({}, state.dragDropReducer, state.recentProjectsReducer, state.reportsReducer);
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
@@ -123,7 +125,10 @@ function mapDispatchToProps(dispatch, ownProps) {
     },
     loadProject: () => {
       dispatch(recentProjectActions.startLoadingNewProject());
-    }
+    },
+    loadReports: () => {
+      dispatch(ReportsActions.loadReports());
+    },
   }
 }
 
