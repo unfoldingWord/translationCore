@@ -131,3 +131,28 @@ tools. they basically override bootstrap styling for this components
   background-color: #C6C4C4;
   border-radius: 0px;
 }
+
+#table tr:nth-child(even) {
+    background-color: #747474;
+}
+#table td:nth-child(n+3):nth-child(-n+5) {
+  font-style: italic;
+}
+#table td:nth-child(2) {
+    font-weight: bold;
+}
+#table td:nth-child(6) {
+  background-color: #333;
+  padding-left: 0;
+  padding-right: 0;
+}
+#table>tbody>tr>td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#table th {
+  font-weight: normal;
+}
+#table *{
+  border-color: transparent
+}
