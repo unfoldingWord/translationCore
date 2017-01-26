@@ -6,18 +6,24 @@ const remote = require('electron').remote;
 const {dialog} = remote;
 
 const style = {
+  div: {
+    paddingTop: '15%',
+    width: '60%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
   dropzone: {
     active: {
-      border: '2px solid #727272',
-      backgroundColor: '#f5f5f5'
+      border: '2px solid #0277BD',
+      backgroundColor: '#747474'
     },
     main: {
       width: '100%',
       color: '#FFFFFF',
       height: '200px',
-      border: '2px dashed #FFFFFF',
-      borderRadius: '5px',
-      fontSize: '22px',
+      border: '2px dashed #0277BD',
+      borderRadius: '10px',
+      fontStyle: 'italic',
       padding: "5px",
     },
     inner: {
@@ -70,13 +76,14 @@ class DragDrop extends React.Component{
 
   render() {
     return (
-    <div onClick = {this.onClick.bind(this)} >
+    <div style={style.div} onClick = {this.onClick.bind(this)} >
         <Dropzone onDrop = {this.onDrop.bind(this)}
         disableClick={true} multiple={false} style={this.mainStyle}
         activeStyle={style.dropzone.active}>
             <div style={this.props.styles}>
               <center>
-                Drag files here to upload, or click to select a file
+                <h4 style={{marginTop: '60px'}}>Drag files here to upload, or click to select a file</h4>
+                <h4>(local projects, USFM projects, etc)</h4>
                 <span style={style.dropzone.inner}> {this.props.filePath} </span>
               </center>
             </div>

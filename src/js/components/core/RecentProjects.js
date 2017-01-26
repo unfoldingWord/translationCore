@@ -26,7 +26,7 @@ class RecentProjects extends React.Component {
         </div>
       );
     }
-    if (projects.length === 0) return (<p>Click the load button to start checking</p>);
+    if (projects.length === 0) return (<h3>You have no recent projects</h3>);
     return projects;
   }
 
