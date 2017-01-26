@@ -1,6 +1,10 @@
+const consts = require('./CoreActionConsts');
+const api = window.ModuleApi;
 
-{//this is a temporary fix
-  api.Toast.info('Generating reports...', '', 3);
-  const Report = require("../components/core/reports/ReportGenerator");
-  api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
-}
+module.exports.loadReports = function () {
+  //api.Toast.info('Generating reports...', '', 4);
+  return {
+    type: consts.LOAD_REPORTS,
+    val: true
+  }
+};
