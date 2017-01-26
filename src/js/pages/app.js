@@ -552,7 +552,7 @@ var Main = React.createClass({
         },
         dragDropProps: {
           filePath: '',
-          properties: ['openDirectory'],
+          properties: ['openDirectory', 'openFile'],
           sendFilePath: (path, link, callback) => {
             this.setState(merge({}, this.state, {
               dragDropProps: {
@@ -944,13 +944,28 @@ var Main = React.createClass({
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
-    if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
-      Upload.sendFilePath(saveLocation, null, (err) => {
-        var lastCheckModule = localStorage.getItem('lastCheckModule');
-        if (lastCheckModule) {
-          CoreActions.startLoading();
-          CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
-        }
+    try {
+      if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
+        var lastProjectFiles = fs.readdirSync(saveLocation);
+        Upload.sendFilePath(saveLocation, null, (err) => {
+          var lastCheckModule = localStorage.getItem('lastCheckModule');
+          if (lastCheckModule) {
+            CoreActions.startLoading();
+            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+          }
+        });
+      }
+    } catch (e) {
+      var splitArr = e.path.split("/");
+          api.createAlert(
+      {
+        title: 'Error Opening Last Project',
+        content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
+        moreInfo: e,
+        leftButtonText: "Ok"
+      },
+      () => {
+        localStorage.removeItem('lastProject');
       });
     }
 
@@ -998,7 +1013,7 @@ var Main = React.createClass({
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
                 currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
-                isOpen={this.state.subMenuOpen}/>
+                isOpen={this.state.subMenuOpen} />
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />

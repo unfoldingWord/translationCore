@@ -55,7 +55,10 @@ var Access = {
             _this.loadCheckData(filepath, folderpath, callback);
           }
         }
-        if (callback && !checkDataPresent) callback()
+        if (callback && !checkDataPresent) {
+          localStorage.setItem('lastProject', folderpath);
+          callback()
+        } 
       });
     } catch (e) {
       localStorage.removeItem('lastProject');
