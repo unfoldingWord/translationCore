@@ -1,0 +1,33 @@
+const api = window.ModuleApi;
+const consts = require('./CoreActionConsts');
+const remote = require('electron').remote;
+const {dialog} = remote;
+const Upload = require('../components/core/UploadMethods.js');
+
+module.exports.sendFilePath = function (path, link, callback) {
+    return ((dispatch) => {
+        debugger;
+        dispatch({
+            type: consts.DRAG_DROP_SENDPATH,
+            filePath: path,
+        });
+        Upload.sendFilePath(path, link, callback);
+    })
+}
+
+module.exports.onClick = function (dialogOpen, properties) {
+    return ((dispatch) => {
+        const _this = this;
+        if (!dialogOpen) {
+            dispatch({ type: consts.DRAG_DROP_OPENDIALOG, dialogOpen: true })
+            dialog.showOpenDialog({
+                properties: properties
+            }, (filename) => {
+                if (filename !== undefined) {
+                    dispatch(_this.sendFilePath(filename[0]));
+                }
+                dispatch({ type: consts.DRAG_DROP_OPENDIALOG, dialogOpen: false })
+            });
+        }
+    })
+}

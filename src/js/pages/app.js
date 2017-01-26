@@ -549,18 +549,6 @@ var Main = React.createClass({
             }));
           },
         },
-        dragDropProps: {
-          filePath: '',
-          properties: ['openDirectory', 'openFile'],
-          sendFilePath: (path, link, callback) => {
-            this.setState(merge({}, this.state, {
-              dragDropProps: {
-                filePath: path,
-              }
-            }));
-            Upload.sendFilePath(path, link, callback);
-          },
-        },
         projectModalProps: {
           showModal: false,
           showD43: () => {
@@ -997,7 +985,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <ModalContainer />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
+          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
             <SwitchCheck {...this.state.switchCheckProps} />
           </SwitchCheckModal>
