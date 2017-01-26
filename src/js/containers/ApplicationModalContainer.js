@@ -23,7 +23,7 @@ class ApplicationModalContainer extends React.Component {
                 bsStyle="pills"
                 style={{borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%"}}>
             <Tab eventKey={1} title="Account" style={{backgroundColor: "#333333"}}>
-              {accountDisplay}
+                {accountDisplay}
             </Tab>
             <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
                 <Settings {...this.props}/>
