@@ -56,7 +56,7 @@ var template = [
       {
         label: 'Load',
         click() {
-          
+
           //store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
           //CoreActions.showCreateProject("Languages");
         }
@@ -81,6 +81,11 @@ var template = [
            }
          },
          accelerator: 'CmdOrCtrl+H'
+       },
+       {
+         label: 'Close',
+         accelerator: 'CmdOrCtrl+W',
+         role: 'close'
        }
     ]
   },
@@ -147,11 +152,6 @@ var template = [
         label: 'Minimize',
         accelerator: 'CmdOrCtrl+M',
         role: 'minimize'
-      },
-      {
-        label: 'Close',
-        accelerator: 'CmdOrCtrl+W',
-        role: 'close'
       }
     ]
   },
@@ -162,7 +162,7 @@ var template = [
       {
         label: 'Learn More',
         click: function() {
-          require('electron').shell.openExternal('https://github.com/WycliffeAssociates/8woc/');
+          require('electron').shell.openExternal('https://github.com/unfoldingWord-dev/translationCore');
         }
       }
     ]
