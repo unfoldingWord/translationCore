@@ -925,7 +925,9 @@ var Main = React.createClass({
             });
           },
           projects: fs.readdirSync(defaultSave),
-          showFolder: shell.showItemInFolder
+          syncProject: (projectPath) => {
+            sync(projectPath)
+          }
         }
       });
     var tutorialState = api.getSettings('tutorialView');
