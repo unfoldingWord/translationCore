@@ -18,6 +18,9 @@ class SwitchCheck extends React.Component{
     var buttons = [];
     if(this.props.moduleMetadatas.length == 0) {
       return <div>No tC default modules found.</div>;
+    } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+      return <h3 style={{color: 'white', textAlign: 'center', fontWeight: 'bold', margin: '55px 0'}}>Please <a> load a project </a> before choosing a tool</h3>;
+
     }
     else {
       for (var i in this.props.moduleMetadatas) {
