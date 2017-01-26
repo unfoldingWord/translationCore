@@ -11,20 +11,15 @@ const modalActions = require('./ModalActions.js');
 
 module.exports.loadTool = function (folderName) {
   return ((dispatch) => {
-    if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-      /*this CheckDataGrabber function call will have to change in
-      order for us to fully implement redux*/
-      dispatch(modalActions.showModalContainer(false));
-      CheckDataGrabber.loadModuleAndDependencies(folderName);
-      localStorage.setItem('lastCheckModule', folderName);
-      dispatch({
-        type: consts.LOAD_TOOL,
-        val: true
-      });
-    } else {
-      api.Toast.error('No save location selected', '', 3);
-      return;
-    }
+    /*this CheckDataGrabber function call will have to change in
+    order for us to fully implement redux*/
+    dispatch(modalActions.showModalContainer(false));
+    CheckDataGrabber.loadModuleAndDependencies(folderName);
+    localStorage.setItem('lastCheckModule', folderName);
+    dispatch({
+      type: consts.LOAD_TOOL,
+      val: true
+    });
   })
 }
 

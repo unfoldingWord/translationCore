@@ -1,6 +1,7 @@
 const React = require('react');
 const { connect  } = require('react-redux');
 const ToolsActions = require('../actions/ToolsActions.js');
+const modalActions = require('../actions/ModalActions.js');
 const { Modal, Tabs, Tab } = require('react-bootstrap/lib');
 const SwitchCheck = require('../components/core/SwitchCheck.js');
 
@@ -9,7 +10,6 @@ class ToolsModalContainer extends React.Component {
       this.props.getToolsMetadatas();
     }
     render() {
-      console.log(this.props);
         return (
           <div>
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
@@ -42,6 +42,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onHandleUserName: (e) => {
             dispatch(ToolsActions.setUserName(e.target.value));
         },
+        showLoad: () => {
+            dispatch(modalActions.selectModalTab(2))
+        }
     }
 }
 
