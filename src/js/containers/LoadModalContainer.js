@@ -117,6 +117,9 @@ function mapDispatchToProps(dispatch, ownProps) {
     },
     syncProject: (projectPath) => {
       dispatch(recentProjectActions.syncProject(projectPath));
+    },
+    loadProject: () => {
+      dispatch(recentProjectActions.startLoadingNewProject());
     }
   }
 }

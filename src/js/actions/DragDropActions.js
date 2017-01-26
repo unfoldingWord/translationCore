@@ -3,6 +3,7 @@ const consts = require('./CoreActionConsts');
 const remote = require('electron').remote;
 const {dialog} = remote;
 const Upload = require('../components/core/UploadMethods.js');
+const toolsActions = require('./toolsActions.js');
 
 module.exports.sendFilePath = function (path, link, callback) {
     return ((dispatch) => {
@@ -24,6 +25,7 @@ module.exports.onClick = function (dialogOpen, properties) {
             }, (filename) => {
                 if (filename !== undefined) {
                     dispatch(_this.sendFilePath(filename[0]));
+                    dispatch({type: consts.VALID_OPENED_PROJECT});
                 }
                 dispatch({ type: consts.DRAG_DROP_OPENDIALOG, dialogOpen: false })
             });

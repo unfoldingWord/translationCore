@@ -1,6 +1,7 @@
 const React = require('react');
-
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const Dropzone = require('react-dropzone');
+const Button = require('react-bootstrap/lib/Button.js');
 
 const style = {
   div: {
@@ -36,13 +37,13 @@ const style = {
   }
 };
 
-class DragDrop extends React.Component{
+class DragDrop extends React.Component {
   constructor() {
     super();
   }
 
   componentWillMount() {
-    if(this.props.isWelcome){
+    if (this.props.isWelcome) {
       this.mainStyle = style.dropzone.welcome;
     } else {
       this.mainStyle = style.dropzone.main;
@@ -58,20 +59,26 @@ class DragDrop extends React.Component{
 
   render() {
     return (
-    <div style={style.div} onClick = {()=>this.props.dragDropOnClick(this.props.dialogOpen, this.props.properties)} >
-        <Dropzone onDrop = {this.onDrop.bind(this)}
-        disableClick={true} multiple={false} style={this.mainStyle}
-        activeStyle={style.dropzone.active}>
+      <div>
+        <div style={style.div} onClick={() => this.props.dragDropOnClick(this.props.dialogOpen, this.props.properties)} >
+          <Dropzone onDrop={this.onDrop.bind(this)}
+            disableClick={true} multiple={false} style={this.mainStyle}
+            activeStyle={style.dropzone.active}>
             <div style={this.props.styles}>
               <center>
-                <h4 style={{marginTop: '60px'}}>Drag files here to upload, or click to select a file</h4>
+                <h4 style={{ marginTop: '60px' }}>Drag files here to upload, or click to select a file</h4>
                 <h4>(local projects, USFM projects, etc)</h4>
                 <span style={style.dropzone.inner}> {this.props.filePath} </span>
               </center>
             </div>
-      </Dropzone>
-    </div>
-  );
+          </Dropzone>
+        </div>
+        {this.props.validFile ? <Button bsStyle="primary" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
+          <Glyphicon glyph="folder-open" />
+          <span style={{ marginLeft: '15px', fontWeight: 'bold' }}>Load</span>
+        </Button> : null}
+      </div>
+    );
   }
 }
 

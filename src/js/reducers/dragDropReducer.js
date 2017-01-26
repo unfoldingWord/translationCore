@@ -5,7 +5,8 @@ const merge = require('lodash.merge');
 const initialState = {
     filePath: '',
     properties: ['openDirectory', 'openFile'],
-    dialogOpen: false
+    dialogOpen: false,
+    validFile: false
 };
 
 module.exports = (state = initialState, action) => {
@@ -18,6 +19,16 @@ module.exports = (state = initialState, action) => {
         case consts.DRAG_DROP_OPENDIALOG:
             return merge({}, state, {
                 dialogOpen: action.dialogOpen
+            })
+            break;
+        case consts.VALID_OPENED_PROJECT:
+            return merge({}, state, {
+                validFile: true
+            })
+            break;
+        case consts.LOAD_TOOL:
+            return merge({}, state, {
+                validFile: false
             })
             break;
         default:
