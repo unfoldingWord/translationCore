@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
+const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
 const { connect  } = require('react-redux');
 const pathex = require('path-extra');
@@ -27,7 +28,6 @@ const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SwitchCheck = require('../components/core/SwitchCheck');
-const SettingsModal = require('../components/core/SettingsModal.js');
 const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
@@ -40,8 +40,6 @@ const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const loadOnline = require('../components/core/LoadOnline');
 const RecentProjects = require('../components/core/RecentProjects');
-const AppDescription = require('../components/core/AppDescription');
-
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
@@ -50,6 +48,7 @@ const ModuleWrapper = require('../components/core/ModuleWrapper');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
+const ModalContainer = require('../containers/ModalContainer.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
@@ -87,7 +86,7 @@ var Main = React.createClass({
   goToPreviousCheck() {
     var lastCheck = this.state.currentCheckIndex - 1 < 0;
     if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1);
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1, true);
     }
     else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex - 1);
   },
@@ -95,7 +94,7 @@ var Main = React.createClass({
   goToNextCheck() {
     var lastCheck = this.state.currentCheckIndex + 1 >= this.state.currentSubGroupObjects.length;
     if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1);
+      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1, true);
     }
     else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
   },
@@ -168,7 +167,7 @@ var Main = React.createClass({
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
-    this.setState(merge({}, this.state, {
+    this.setState({
       currentGroupIndex: currentGroupIndex || 0,
       currentCheckIndex: currentCheckIndex || 0,
       currentToolNamespace: currentCheckNamespace,
@@ -176,8 +175,7 @@ var Main = React.createClass({
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
       currentBookName: bookName,
-    }), () => {
-      this.state.menuHeadersProps.scrollToMenuElement(this.state.currentGroupIndex)
+    }, () => {
       this.updateTools(this.state.currentToolNamespace, () => {
         this.props.dispatch(showMainView(true));
       });
@@ -242,6 +240,7 @@ var Main = React.createClass({
         else {
           metadata.folderName = path.dirname(filePath);
           metadata.imagePath = path.resolve(filePath, '../icon.png');
+          metadata.badgeImagePath = path.resolve(filePath, '../badge.png');
           tempMetadatas.push(metadata);
         }
         onComplete();
@@ -263,7 +262,7 @@ var Main = React.createClass({
               mainViewVisible: true
             },
             uploadProps: {
-              active: 0
+              active: 1
             }
           }), callback)
         })
@@ -299,10 +298,21 @@ var Main = React.createClass({
     if (foundGroup) return foundGroup.checks;
     else return;
   },
+
+  startLoadingNewProject() {
+    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+    api.emitEvent('newToolSelected', { 'newToolSelected': true });
+    this.state.projectModalProps.close();
+    api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+    this.props.dispatch(showMainView(true));
+    this.props.dispatch(showSwitchCheckModal(true));
+  },
+
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
       Object.assign({}, this.state, {
+        subMenuOpen: true,
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
@@ -353,7 +363,7 @@ var Main = React.createClass({
           showRegistration: () => {
             this.setState(merge({}, this.state, {
               loginProps: {
-                register: true
+                register: !this.state.loginProps.register
               }
             }))
           },
@@ -430,20 +440,14 @@ var Main = React.createClass({
                 SideNavBar: !this.state.sideBarContainerProps.SideNavBar
               }
             }))
+            this.props.dispatch(modalActions.showModalContainer(true));
           },
           handleOpenProject: () => {
             var dispatch = this.props.dispatch;
             dispatch(showCreateProject("Languages"));
           },
           handleSelectTool: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              //this.updateTools(null);
-              this.props.dispatch(showSwitchCheckModal(true));
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
+            this.props.dispatch(showSwitchCheckModal(true));
           }
         },
         sideNavBarProps: {
@@ -475,7 +479,6 @@ var Main = React.createClass({
             }
           },
           handleSettings: () => {
-            CoreActions.updateSettings(true);
           },
           handlePackageManager: () => {
             var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
@@ -484,22 +487,12 @@ var Main = React.createClass({
           }
         },
         menuHeadersProps: {
-          scrollToMenuElement: (id, name) => {
-            try {
-              const groupName = name || this.state.currentGroupObjects[id].group;
-              //ALSO GETTING NEW SUBMENU ITEMS ON A CHANGE OF MENU ITEMS
-              var newGroupElement = this.refs.sidebar.refs.menuheaders.refs[`${groupName}`];
-              //this ref may be here forever...sigh
-              var element = api.findDOMNode(newGroupElement);
-              if (element) {
-                element.scrollIntoView();
-              }
-            } catch (e) {
-              console.log(e);
-              console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
+          menuClick: (id, menuOpen) => {
+            if (id != this.state.currentGroupIndex) {
+              menuOpen = true;
+            } else {
+              menuOpen = menuOpen || !this.state.subMenuOpen;
             }
-          },
-          menuClick: (id) => {
             id = id >= 0 ? id : 0;
             id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
             this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
@@ -508,15 +501,16 @@ var Main = React.createClass({
                 chapterNumber: currentCheck.chapter,
                 verseNumber: currentCheck.verse
               });
-            });
+            }, menuOpen);
           },
-          setIsCurrentCheck: (status, id, callback) => {
+          setIsCurrentCheck: (status, id, callback, menuOpen) => {
             const newObj = this.state.currentGroupObjects.slice(0);
             const currentSubGroupObjects = newObj[id].checks;
             this.setState({
               currentGroupIndex: parseInt(id),
               currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
+              subMenuOpen: menuOpen
             }, callback);
           },
         },
@@ -550,7 +544,7 @@ var Main = React.createClass({
         },
         dragDropProps: {
           filePath: '',
-          properties: ['openDirectory'],
+          properties: ['openDirectory', 'openFile'],
           sendFilePath: (path, link, callback) => {
             this.setState(merge({}, this.state, {
               dragDropProps: {
@@ -562,6 +556,13 @@ var Main = React.createClass({
         },
         projectModalProps: {
           showModal: false,
+          showD43: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'd43',
+              }
+            }));
+          },
           show: 'link',
           submitLink: (callback) => {
             var link = this.state.projectModalProps.link;
@@ -569,7 +570,7 @@ var Main = React.createClass({
               if (!err) {
                 Upload.sendFilePath(savePath, url, callback);
               } else {
-                console.error(err);
+                alert(err);
               }
             });
           },
@@ -595,12 +596,7 @@ var Main = React.createClass({
             if (type == 'link') {
               this.state.projectModalProps.submitLink((err) => {
                 if (!err) {
-                  api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-                  api.emitEvent('newToolSelected', { 'newToolSelected': true });
-                  this.state.projectModalProps.close();
-                  api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-                  this.props.dispatch(showMainView(true));
-                  this.props.dispatch(showSwitchCheckModal(true));
+                  this.startLoadingNewProject()
                 } else if (err != "") {
                   api.createAlert(
                     {
@@ -618,13 +614,9 @@ var Main = React.createClass({
               if (!this.state.importUsfmProps.usfmSave) {
                 return;
               }
+              this.startLoadingNewProject();
             } else {
-              api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-              api.emitEvent('newToolSelected', { 'newToolSelected': true });
-              this.state.projectModalProps.close();
-              api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-              this.props.dispatch(showMainView(true));
-              this.props.dispatch(showSwitchCheckModal(true));
+              this.startLoadingNewProject()
             }
           },
           _handleKeyPress: (e, type) => {
@@ -671,16 +663,6 @@ var Main = React.createClass({
               case 4:
                 this.setState(merge({}, this.state, {
                   projectModalProps: {
-                    show: 'd43',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 5:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
                     show: 'recent',
                   },
                   uploadProps: {
@@ -694,6 +676,13 @@ var Main = React.createClass({
           }
         },
         profileProjectsProps: {
+          back: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'link',
+              }
+            }));
+          },
           repos: [],
           updateRepos: () => {
             var user = api.getLoggedInUser();
@@ -714,7 +703,7 @@ var Main = React.createClass({
             var _this = this;
             loadOnline(link, function (err, savePath, url) {
               if (err) {
-                console.error(err);
+                alert(loadOnline);
               } else {
                 Upload.sendFilePath(savePath, url, () => {
                   dispatch(showCreateProject(false));
@@ -756,33 +745,6 @@ var Main = React.createClass({
             }
             return projectList;
           }
-        },
-        settingsModalProps: {
-          show: false,
-          onClose: () => {
-            CoreActions.updateSettings(false);
-          },
-          updateModal: () => {
-            if (!this.state.settingsModalProps.show === CoreStore.getSettingsView()) {
-              this.setState(merge({}, this.state, {
-                settingsModalProps: {
-                  show: CoreStore.getSettingsView(),
-                }
-              }));
-            }
-          },
-          onSettingsChange: (field) => {
-            api.setSettings(field.target.name, field.target.value);
-            this.setState(merge({}, this.state, {
-              switchCheckModalProps: {
-                developerMode: api.getSettings('developerMode') === 'enable'
-              },
-              settingsModalProps: {
-                currentSettings: api.getSettings()
-              }
-            }));
-          },
-          currentSettings: api.getSettings()
         },
         switchCheckModalProps: {
           showModal: false,
@@ -926,7 +888,9 @@ var Main = React.createClass({
             });
           },
           projects: fs.readdirSync(defaultSave),
-          showFolder: shell.showItemInFolder
+          syncProject: (projectPath) => {
+            sync(projectPath)
+          }
         }
       });
     var tutorialState = api.getSettings('tutorialView');
@@ -974,13 +938,28 @@ var Main = React.createClass({
       });
     }
     var saveLocation = localStorage.getItem('lastProject');
-    if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
-      Upload.sendFilePath(saveLocation, null, (err) => {
-        var lastCheckModule = localStorage.getItem('lastCheckModule');
-        if (lastCheckModule) {
-          CoreActions.startLoading();
-          CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
-        }
+    try {
+      if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
+        var lastProjectFiles = fs.readdirSync(saveLocation);
+        Upload.sendFilePath(saveLocation, null, (err) => {
+          var lastCheckModule = localStorage.getItem('lastCheckModule');
+          if (lastCheckModule) {
+            CoreActions.startLoading();
+            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+          }
+        });
+      }
+    } catch (e) {
+      var splitArr = e.path.split("/");
+          api.createAlert(
+      {
+        title: 'Error Opening Last Project',
+        content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
+        moreInfo: e,
+        leftButtonText: "Ok"
+      },
+      () => {
+        localStorage.removeItem('lastProject');
       });
     }
 
@@ -1011,7 +990,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <SettingsModal {...this.state.settingsModalProps} />
+          <ModalContainer />
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
@@ -1023,11 +1002,12 @@ var Main = React.createClass({
             <Row>
               <StatusBar />
             </Row>
-            <Col className="col-fluid" md={3} style={{ padding: 0, width:"300px"}}>
+            <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
                 subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
                 currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects} />
+                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
+                isOpen={this.state.subMenuOpen} />
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />

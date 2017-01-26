@@ -26,7 +26,7 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
  * @param {String} savePath - The path of the file containing usfm text.
  * @param {String} direction - The direction of the text.
  ******************************************************************************/
-function openUSFMProject(savePath, direction, link) {
+function openUSFMProject(savePath, direction, link, callback = () => { }) {
   if (!savePath || !direction)
     return 'No file or text direction specified'
   Upload = require('../UploadMethods.js');
@@ -36,7 +36,7 @@ function openUSFMProject(savePath, direction, link) {
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
     Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
-        Upload.loadProjectThatHasManifest(saveLocation, function(){}, tcManifest);
+        Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
         ModuleApi.putDataInCommon('targetLanguage', targetLanguage);
       } else if (!tcManifest) {
         var defaultManifest = {
@@ -54,11 +54,15 @@ function openUSFMProject(savePath, direction, link) {
             id: "",
             name: targetLanguage.title
           },
-          project_id: parsedUSFM.book
+          project_id: parsedUSFM.book,
+          ts_project: {
+            id: parsedUSFM.book,
+            name: parsedUSFM.bookName
+          }
         }
         Upload.saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
-            Upload.loadProjectThatHasManifest(saveLocation, function(){}, tcManifest);
+            Upload.loadProjectThatHasManifest(saveLocation, function () { }, tcManifest);
           }
           else {
             console.error(err);
@@ -86,12 +90,12 @@ function saveParamsInAPI(bookAbbr, saveLocation, direction) {
 }
 
 function saveTargetLangeInAPI(parsedUSFM) {
-  if(!parsedUSFM) {
+  if (!parsedUSFM) {
     return undefined;
   }
   var targetLanguage = {};
   targetLanguage.title = parsedUSFM.book;
-  // targetLanguage.header = parsedUSFM.headers;
+  parsedUSFM.bookName = books[parsedUSFM.book]
   var chapters = parsedUSFM.chapters;
   for (var ch in chapters) {
     targetLanguage[chapters[ch].number] = {};
@@ -191,7 +195,7 @@ class ImportComponent extends React.Component {
           </ButtonGroup>
           <br />
           <Button bsSize={'small'} onClick={this.showDialog.bind(this)}>Choose USFM File</Button>
-          <span style={{ color: '#333' }}> &nbsp; {this.props.filePath}</span>
+          <span style={{ color: '#FFFFFF' }}> &nbsp; {this.props.filePath}</span>
         </FormGroup>
         <br />
       </div>

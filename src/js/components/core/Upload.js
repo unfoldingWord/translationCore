@@ -24,14 +24,17 @@ class UploadModal extends React.Component {
   render() {
     return (
       <div>
-        <Nav bsStyle="tabs" activeKey={parseInt(this.props.active)} onSelect={this.props.changeActive}>
+        <Nav bsStyle="tabs" activeKey={parseInt(this.props.active)}
+             onSelect={this.props.changeActive}
+             style={{padding: "2px 2px 0px 2px", backgroundColor: "#333333"}}>
           <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
           <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
           <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
-          <NavItem eventKey={4}>{IMPORT_D43}</NavItem>
-          <NavItem eventKey={5}>{IMPORT_RECENT}</NavItem>
+          <NavItem eventKey={4}>{IMPORT_RECENT}</NavItem>
         </Nav>
-        {this.props.children}
+        <div style={{color: "#FFFFFF", padding: "20px", backgroundColor: "#333333"}}>
+          {this.props.children}
+        </div>
       </div>
     );
   }

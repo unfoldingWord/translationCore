@@ -1,18 +1,21 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
     "test": "electron-mocha --renderer ./tests",
     "compile": "babel src --out-dir src",
+    "compile-submodules": "babel tC_apps --out-dir tC_apps",
     "build-win": ".\\\\scripts\\builds\\build-win.cmd",
     "build-winstaller": "node scripts/builds/build-win-installer.js",
     "build-mac": "npm run compile && build --mac",
     "build-lin": "npm run compile && build --linux",
     "install-apps": "git submodule update --init --recursive",
-    "pull-apps": "git submodule foreach --recursive git pull",
+    "pull-apps": "npm run apps-master && npm run git-pull",
+    "git-pull": "git submodule foreach --recursive git pull",
+    "apps-master": "git submodule foreach --recursive git checkout master",
     "start": "electron ."
   },
   "build": {
@@ -75,6 +78,7 @@
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
     "react-remarkable": "^1.1.1",
+    "reactable": "^0.14.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "simple-git": "1.43.0",

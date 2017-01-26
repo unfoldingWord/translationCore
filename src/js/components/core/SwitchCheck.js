@@ -1,38 +1,35 @@
 const React = require('react');
-const Path = require('path');
-const pathex = require('path-extra');
-const PARENT = pathex.datadir('translationCore');
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-
-const api = window.ModuleApi;
-const fs = require(window.__base + 'node_modules/fs-extra');
 const AppDescription = require('./AppDescription');
-
-const CoreStore = require('../../stores/CoreStore.js');
-const CoreActions = require('../../actions/CoreActions.js');
-const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 
 class SwitchCheck extends React.Component{
   render() {
-    var buttons = [];
-    if(this.props.moduleMetadatas.length == 0) {
-      return <div>No tC default modules found.</div>;
+    /*temp if condition: the following lines from line 7 to line 16
+    is temp fix for now until we fully implement redux or change how
+    the the recent projects componet calls switchCheck.js since the
+    props name change for my new implementation */
+    let toolsMetadatas;
+    if(this.props.moduleMetadatas){
+      toolsMetadatas = this.props.moduleMetadatas;
+    }else{
+      toolsMetadatas = this.props.toolsMetadatas;
     }
-    else {
-      for (var i in this.props.moduleMetadatas) {
-        const metadata = this.props.moduleMetadatas[i];
+    //let { toolsMetadatas } = this.props;
+    let buttons = [];
+    if(toolsMetadatas.length == 0 ) {
+      return <div style={{color: "#FFFFFF"}}>No tC default tools found.</div>;
+    } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
+      return <h3 style={{marginTop: "0px", color: 'white', textAlign: 'center', fontWeight: 'bold', padding: '55px 0'}}>Please <span onClick={this.props.showLoad} style={{cursor: 'pointer', color: '#337ab7'}}> load a project </span> before choosing a tool</h3>;
+    } else {
+      for (let i in toolsMetadatas) {
+        const metadata = toolsMetadatas[i];
         buttons.push(<AppDescription key={i}
-                          imagePath={metadata.imagePath}
-                          title={metadata.title}
-                          description={metadata.description}
-                          useApp={this.props.moduleClick}
-                          folderName={metadata.folderName}
-          />)
+                                     metadata={metadata}
+                                     {...this.props}
+                     />)
       }
     }
     return (
-      <div>
+      <div style={{padding: "10px"}}>
           {buttons}
       </div>
     );

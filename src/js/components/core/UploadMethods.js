@@ -15,6 +15,7 @@ const books = require('./BooksOfBible.js');
 const pathex = require('path-extra');
 const defaultSave = Path.join(pathex.homedir(), 'translationCore');
 const usfm = require('usfm-parser');
+const ImportUsfm = require('./Usfm/ImportUSFM.js');
 
 function clearPreviousData() {
   CheckStore.WIPE_ALL_DATA();
@@ -32,36 +33,42 @@ function clearPreviousData() {
 */
 function sendPath(path, link, callback) {
   clearPreviousData();
-  if (path) {
-    loadFile(path, 'tc-manifest.json', (err, tcManifest) => {
-      if (tcManifest) {
-        //tc-manifest is present initiate load
-        loadProjectThatHasManifest(path, callback, tcManifest);
-      } else if (!tcManifest) {
-        //no tc-manifest checking for ts-manifest
-        loadFile(path, 'manifest.json',
-          (err, translationStudioManifest) => {
-            if (translationStudioManifest) {
-              //ts-manifest is present, creating tc-manifest and initiate load
-              saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
-                loadProjectThatHasManifest(path, callback, tcManifest);
-              });
-            }
-            else if (err) {
-              localStorage.removeItem('lastProject');
-              api.putDataInCommon('saveLocation', null);
-              manifestError(err.message);
-              if (callback) callback(err);
-            }
-          });
-      } else if (err) {
-        manifestError(err.message);
-        if (callback) callback(err);
-      }
-    });
-  } else {
-    callback('No path', null)
-  }
+  checkIfUSFMFile(path, (isUSFM) => {
+    if (isUSFM) {
+      ImportUsfm.open(path, 'ltr', link, callback);
+      return;
+    }
+    if (path) {
+      loadFile(path, 'tc-manifest.json', (err, tcManifest) => {
+        if (tcManifest) {
+          //tc-manifest is present initiate load
+          loadProjectThatHasManifest(path, callback, tcManifest);
+        } else if (!tcManifest) {
+          //no tc-manifest checking for ts-manifest
+          loadFile(path, 'manifest.json',
+            (err, translationStudioManifest) => {
+              if (translationStudioManifest) {
+                //ts-manifest is present, creating tc-manifest and initiate load
+                saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
+                  loadProjectThatHasManifest(path, callback, tcManifest);
+                });
+              }
+              else if (err) {
+                localStorage.removeItem('lastProject');
+                api.putDataInCommon('saveLocation', null);
+                manifestError(err.message);
+                if (callback) callback(err);
+              }
+            });
+        } else if (err) {
+          manifestError(err.message);
+          if (callback) callback(err);
+        }
+      });
+    } else {
+      callback('No path', null)
+    }
+  });
 }
 /**
   * @description - Checks to see if the file is present, and loads it.
@@ -182,6 +189,15 @@ function saveTargetLangeInAPI(parsedUSFM) {
   }
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
+}
+function checkIfUSFMFile(savePath, callback) {
+  try {
+    var usfmFile = fs.readFileSync(savePath);
+    callback(savePath.split(".")[1] == "usfm");
+  } catch (e) {
+    callback(false);
+  }
+
 }
 
 function checkIfUSFMProject(savePath, callback) {
