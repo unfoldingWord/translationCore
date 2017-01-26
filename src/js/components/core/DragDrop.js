@@ -1,23 +1,27 @@
 const React = require('react');
-
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const Dropzone = require('react-dropzone');
-
-const remote = require('electron').remote;
-const {dialog} = remote;
+const Button = require('react-bootstrap/lib/Button.js');
 
 const style = {
+  div: {
+    paddingTop: '15%',
+    width: '60%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
   dropzone: {
     active: {
-      border: '2px solid #727272',
-      backgroundColor: '#f5f5f5'
+      border: '2px solid #0277BD',
+      backgroundColor: '#747474'
     },
     main: {
       width: '100%',
       color: '#FFFFFF',
       height: '200px',
-      border: '2px dashed #FFFFFF',
-      borderRadius: '5px',
-      fontSize: '22px',
+      border: '2px dashed #0277BD',
+      borderRadius: '10px',
+      fontStyle: 'italic',
       padding: "5px",
     },
     inner: {
@@ -33,13 +37,13 @@ const style = {
   }
 };
 
-class DragDrop extends React.Component{
+class DragDrop extends React.Component {
   constructor() {
     super();
   }
 
   componentWillMount() {
-    if(this.props.isWelcome){
+    if (this.props.isWelcome) {
       this.mainStyle = style.dropzone.welcome;
     } else {
       this.mainStyle = style.dropzone.main;
@@ -53,36 +57,28 @@ class DragDrop extends React.Component{
     }
   }
 
-  onClick() {
-    if (!this.opened) {
-      this.opened = true;
-      var _this = this;
-      dialog.showOpenDialog({
-        properties: this.props.properties
-      }, function(filename) {
-        if (filename !== undefined) {
-          _this.props.sendFilePath(filename[0]);
-        }
-        _this.opened = false;
-      });
-    }
-  }
-
   render() {
     return (
-    <div onClick = {this.onClick.bind(this)} >
-        <Dropzone onDrop = {this.onDrop.bind(this)}
-        disableClick={true} multiple={false} style={this.mainStyle}
-        activeStyle={style.dropzone.active}>
+      <div>
+        <div style={style.div} onClick={() => this.props.dragDropOnClick(this.props.dialogOpen, this.props.properties)} >
+          <Dropzone onDrop={this.onDrop.bind(this)}
+            disableClick={true} multiple={false} style={this.mainStyle}
+            activeStyle={style.dropzone.active}>
             <div style={this.props.styles}>
               <center>
-                Drag files here to upload, or click to select a file
+                <h4 style={{ marginTop: '60px' }}>Drag files here to upload, or click to select a file</h4>
+                <h4>(local projects, USFM projects, etc)</h4>
                 <span style={style.dropzone.inner}> {this.props.filePath} </span>
               </center>
             </div>
-      </Dropzone>
-    </div>
-  );
+          </Dropzone>
+        </div>
+        {this.props.validFile ? <Button bsStyle="primary" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
+          <Glyphicon glyph="folder-open" />
+          <span style={{ marginLeft: '15px', fontWeight: 'bold' }}>Load</span>
+        </Button> : null}
+      </div>
+    );
   }
 }
 
