@@ -13,7 +13,6 @@ function syncToGit(inputPath) {
   var alertError = console.error;
   console.error = console.errorold;
   const user = CoreStore.getLoggedInUser();
-  console.log(user);
   const path = inputPath || api.getDataFromCommon('saveLocation');
   if (user) {
     git(path).save('Updating with Door43', path, function() {
