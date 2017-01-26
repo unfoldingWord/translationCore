@@ -9,11 +9,11 @@ const { connect  } = require('react-redux');
 const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 
 
-function syncToGit() {
+function syncToGit(inputPath) {
   var alertError = console.error;
   console.error = console.errorold;
   const user = CoreStore.getLoggedInUser();
-  const path = api.getDataFromCommon('saveLocation');
+  const path = inputPath || api.getDataFromCommon('saveLocation');
   if (user) {
     git(path).save('Updating with Door43', path, function() {
       var manifest = api.getDataFromCommon('tcManifest');
@@ -59,7 +59,7 @@ function syncToGit() {
         if(result) {
           const projectName = path.split(pathFinder.sep);
           var nameOfProject = projectName.pop();
-          nameOfProject = nameOfProject.replace(/[^A-Za-z-_]/g, '-')
+          nameOfProject = nameOfProject.replace(/[^A-Za-z-_\d]/g, '_')
           var repoPath = user.username + '/' + nameOfProject;
           var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
           var remoteLink = 'https://git.door43.org/' + repoPath + '.git';

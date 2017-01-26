@@ -6,7 +6,6 @@ const Upload = require('../components/core/UploadMethods.js');
 
 module.exports.sendFilePath = function (path, link, callback) {
     return ((dispatch) => {
-        debugger;
         dispatch({
             type: consts.DRAG_DROP_SENDPATH,
             filePath: path,

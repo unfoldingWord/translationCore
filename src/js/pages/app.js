@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
+const recentProjectActions = require('../actions/RecentProjectsActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
@@ -49,6 +50,7 @@ const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
+const ToolsActions = require('../actions/ToolsActions.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
 const updateLoginModal = CoreActionsRedux.updateLoginModal;
@@ -61,6 +63,7 @@ const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 var Main = React.createClass({
   componentWillMount() {
     this.updateTools();
+    this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
     //changing tool
     api.registerEventListener('goToCheck', this.changeCheck);
@@ -447,14 +450,7 @@ var Main = React.createClass({
             dispatch(showCreateProject("Languages"));
           },
           handleSelectTool: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              //this.updateTools(null);
-              this.props.dispatch(showSwitchCheckModal(true));
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
+            this.props.dispatch(showSwitchCheckModal(true));
           }
         },
         sideNavBarProps: {
@@ -875,16 +871,6 @@ var Main = React.createClass({
             }
           },
         },
-        recentProjectsProps: {
-          onLoad: (filePath) => {
-            Upload.sendFilePath(filePath, undefined, (err) => {
-              if (!err) this.state.projectModalProps.onClick();
-              api.putDataInCommon('saveLocation', filePath);
-            });
-          },
-          projects: fs.readdirSync(defaultSave),
-          showFolder: shell.showItemInFolder
-        }
       });
     var tutorialState = api.getSettings('tutorialView');
     if (tutorialState === 'show' || tutorialState === null) {
@@ -987,7 +973,7 @@ var Main = React.createClass({
           <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
           <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
           <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
-            <SwitchCheck {...this.state.switchCheckProps} />
+            <SwitchCheck {...this.state.switchCheckProps} {...this.props} />
           </SwitchCheckModal>
           <Popover />
           <Toast />
@@ -1013,7 +999,23 @@ var Main = React.createClass({
     }
   }
 });
-//fixed to chevron, explicity declare width in main col, set width in both chevron and drop down
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return merge({}, {dispatch:dispatch}, {
+        getToolsMetadatas: () => {
+            dispatch(ToolsActions.getToolsMetadatas());
+        },
+        handleLoadTool: (toolFolderPath) => {
+            dispatch(ToolsActions.loadTool(toolFolderPath));
+        },
+        onHandleUserName: (e) => {
+            dispatch(ToolsActions.setUserName(e.target.value));
+        },
+        showLoad: () => {
+            dispatch(modalActions.selectModalTab(2))
+        },
+    });
+}
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
@@ -1021,4 +1023,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-module.exports = connect(mapStateToProps)(Main);
+module.exports = connect(mapStateToProps, mapDispatchToProps)(Main);

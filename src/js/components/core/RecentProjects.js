@@ -1,39 +1,16 @@
 const React = require('react');
+const Table = require('reactable').Table;
 const path = require('path-extra');
 const Button = require('react-bootstrap/lib/Button.js');
+const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const defaultSave = path.join(path.homedir(), 'translationCore');
+const fs = require('fs');
 
 class RecentProjects extends React.Component {
-  generateDisplay() {
-    var projectPaths = this.props.projects;
-    var projects = [];
-    for (var project in projectPaths) {
-      var projectPath = path.join(defaultSave, projectPaths[project]);
-      var projectName = projectPaths[project];
-      if (projectName === '.DS_Store' || projectName === '.git') continue;
-      projects.push(
-        <div key={project}>
-          <span className={'pull-right'}>
-            <Button onClick={this.props.onLoad.bind(this, projectPath)}>Load Project</Button>
-          </span>
-          <h3>{projectName}</h3>
-          <p> Location:
-            <a onClick={this.props.showFolder.bind(this, projectPath)}
-               style={{cursor: 'pointer'}}>
-              {' ' + projectPath}
-            </a>
-          </p>
-        </div>
-      );
-    }
-    if (projects.length === 0) return (<h3>You have no recent projects</h3>);
-    return projects;
-  }
-
   render() {
     return (
-      <div>
-      {this.generateDisplay()}
+      <div style={{ height: '400px', overflowY: 'scroll' }}>
+        <Table sortable={true} noDataText="No Recent Projects Found" className="table" id="table" data={this.props.data} />
       </div>
     );
   }

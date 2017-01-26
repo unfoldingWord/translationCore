@@ -1,6 +1,4 @@
-var consts = require('../actions/CoreActionConsts');
-const gogs = require('../components/core/login/GogsApi.js');
-const {dialog} = remote;
+const consts = require('../actions/CoreActionConsts');
 const merge = require('lodash.merge');
 
 const initialState = {
