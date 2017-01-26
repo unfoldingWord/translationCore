@@ -40,8 +40,6 @@ const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const loadOnline = require('../components/core/LoadOnline');
 const RecentProjects = require('../components/core/RecentProjects');
-const AppDescription = require('../components/core/AppDescription');
-
 const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
@@ -242,6 +240,7 @@ var Main = React.createClass({
         else {
           metadata.folderName = path.dirname(filePath);
           metadata.imagePath = path.resolve(filePath, '../icon.png');
+          metadata.badgeImagePath = path.resolve(filePath, '../badge.png');
           tempMetadatas.push(metadata);
         }
         onComplete();
