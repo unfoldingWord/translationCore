@@ -1,9 +1,9 @@
 const api = window.ModuleApi;
 const React = api.React;
 const fs = require('fs');
-const ReactBootstrap = api.ReactBootstrap;
-const RB = api.ReactBootstrap;
-const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
+const { Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button, utils } = require('react-bootstrap/lib');
+const bootstrapUtils = utils.bootstrapUtils;
+bootstrapUtils.addStyle(Button, 'blue');
 const ReportFilters = require("./ReportFilters.js");
 const style = require("./Style");
 
@@ -145,66 +145,108 @@ class ReportSideBar extends React.Component{
         });
       });
     }
-    
+
   render(){
     let chapterOptionArray = this.getChapters();
     return(
       <div style={style.ReportSideBar.layout}>
-        <div style={{marginLeft:"30px", display: "fixed"}}>
-          <h3 style={{marginTop: "20px"}}>Translation Report</h3>
-        </div>
+        <style type="text/css">
+          {`
+            .btn-blue {
+              background-color: #0277BD;
+              color: white;
+              height: 60px;
+              border-radius: 0px;
+              font-weight: bold;
+              width: 100%;
+              position: absolute;
+              bottom: 0px;
+            }
+            .btn-blue:hover {
+              background-color: #C6C4C4;
+            }
+          `}
+        </style>
         <FormGroup bsSize="small" style={style.ReportSideBar.FormGroup}>
-          <ControlLabel>
-            <center><h4>Filter:</h4></center>
-          </ControlLabel>
-          <FormControl componentClass="select" multiple placeholder="Status" onChange={this.filterByStatus.bind(this)}>
+          <InputGroup>
+            <FormControl type="text" placeholder="Search"
+                        style={style.searchBox}
+                        onChange={this.handleSearchChange.bind(this)}/>
+          </InputGroup><br />
+          <table>
+            <tBody>
+          <tr>
+            <td style={{padding: "5px"}}>
+          <ControlLabel style={{fontSize: "16px"}}>Status:</ControlLabel>
+        </td>
+        <td style={{padding: "5px"}}>
+          <FormControl componentClass="select" style={style.ReportSideBar.FormControl}
+                       onChange={this.filterByStatus.bind(this)}>
             <option value="">All</option>
             <option value="CORRECT">Correct</option>
             <option value="FLAGGED">Flagged</option>
             <option value="UNCHECKED">Unchecked</option>
           </FormControl>
-          <br />
-          <FormControl componentClass="select" placeholder="Form" onChange={this.filterByForm.bind(this)}>
+        </td>
+      </tr>
+      <tr>
+        <td style={{padding: "5px"}}>
+          <ControlLabel style={{fontSize: "16px"}}>Notes:</ControlLabel>
+        </td>
+        <td style={{padding: "5px"}}>
+          <FormControl componentClass="select" style={style.ReportSideBar.FormControl}
+                       onChange={this.filterByNotes.bind(this)}>
+            <option value="">All</option>
+            <option value="true">With Notes</option>
+            <option value="false">Without Notes</option>
+          </FormControl>
+        </td>
+      </tr>
+      <tr>
+        <td style={{padding: "5px"}}>
+          <ControlLabel style={{fontSize: "16px"}}>Chapter:</ControlLabel>
+        </td>
+        <td style={{padding: "5px"}}>
+          <FormControl componentClass="select" style={style.ReportSideBar.FormControl}
+                       onChange={this.filterByChapter.bind(this)}>
+            <option value="">All</option>
+            {chapterOptionArray}
+          </FormControl>
+        </td>
+      </tr>
+    </tBody>
+  </table><br /><br />
+
+          {/*this needs to be re-implemented to include new additions to proposedChanges
+            the 2 forms need to be put together into one
+            <ControlLabel>Changes:</ControlLabel>
+          <FormControl componentClass="select" style=
+                       onChange=>
             <option value="">All</option>
             <option value="Retained">Retained</option>
             <option value="Replaced">Replaced</option>
           </FormControl>
           <br />
-          <FormControl componentClass="select" multiple placeholder="Notes" onChange={this.filterByNotes.bind(this)}>
-            <option value="">All</option>
-            <option value="true">With Notes</option>
-            <option value="false">Without Notes</option>
-          </FormControl>
-          <br />
-          <FormControl componentClass="select" placeholder="Proposed Changes" onChange={this.filterByProposed.bind(this)}>
+          <FormControl componentClass="select" style=
+                      onChange=>
             <option value="">All</option>
             <option value="true">With Proposed Changes</option>
             <option value="false">Without Proposed Changes</option>
           </FormControl>
-          <br />
-          <FormControl componentClass="select" placeholder="Chapter" onChange={this.filterByChapter.bind(this)}>
-            <option value="">Chapters</option>
-            {chapterOptionArray}
-          </FormControl>
-          <InputGroup style={{marginTop:"30px"}}>
-            <FormControl type="text" placeholder="Search"
-                        style={style.searchBox}
-                        onChange={this.handleSearchChange.bind(this)}/>
-          </InputGroup>
-          <center>
-            {this.props.reportHeadersOutput}
-            <h5>Completed: {this.props.completed}</h5>
+          <br />*/}
+            <h5 style={{color: "#44c6ff"}}>{`Report for the book of ${this.props.bookName} `}<br />
+              <small>
+                {"\n By " + this.props.authors}<br />
+                {"Created on " + new Date().toDateString()}
+              </small>
+            </h5><br />
+            <h5>Completed: {this.props.completed + " / " + this.props.unfinished} </h5>
             <h5>Flagged: {this.props.flagged}</h5>
-            <h5>Unfinished: {this.props.unfinished}</h5>
-            <br />
-            <h5 style={{color: "#44c6ff"}}>{`Report for ${this.props.bookName} `}<br />
-            <small>
-              {"\n By " + this.props.authors + ","} <br /> {"Created on " + new Date().toDateString()}
-            </small>
-            </h5>
-            <Button bsStyle="primary" onClick={this.generatePDF.bind(this)}>Generate PDF version</Button>
-          </center>
+            {this.props.reportHeadersOutput}
         </FormGroup>
+        <Button bsStyle="blue" style={{}} onClick={this.generatePDF.bind(this)}>
+          <Glyphicon glyph="file" style={{fontSize: "20px"}} />  Print PDF
+        </Button>
       </div>
     );
   }
