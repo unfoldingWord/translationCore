@@ -52,9 +52,6 @@ module.exports = (function() {
       } else {
         if (callback)
           callback(null, savePath, url);
-        // Access.loadFromFilePath(savePath);
-        // CoreActions.showCreateProject("");
-
       }
     });
   }
