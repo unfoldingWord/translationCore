@@ -394,7 +394,6 @@ var Main = React.createClass({
           }
         },
         sideBarContainerProps: {
-          //SideNavBar: false,
           screenHeight: window.innerHeight,
           updateDimensions: () => {
             if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {

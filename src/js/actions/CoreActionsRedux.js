@@ -13,28 +13,7 @@ module.exports.showCreateProject = function (type) {
     createProjectModal: type
   };
 }
-/*
-module.exports.updateLoginModal = function (val) {
-  return {
-    type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
-    val: val
-  };
-}
 
-module.exports.updateProfileModal = function (val) {
-  return {
-    type: consts.CHANGE_PROFILE_MODAL_VISIBILITY,
-    val: val
-  };
-}
-
-module.exports.showLoginProfileModal = function (val) {
-  return {
-    type: consts.SHOW_PROFILE_LOGIN_MODAL,
-    val: val
-  };
-}
-*/
 module.exports.showMainView = function(val) {
   return {
     type: consts.SHOW_APPS,
