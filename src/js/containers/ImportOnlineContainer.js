@@ -1,6 +1,10 @@
 const React = require('react');
 const { connect  } = require('react-redux');
 const importOnlineActions = require('../actions/ImportOnlineActions.js');
+const Button = require('react-bootstrap/lib/Button.js');
+const Projects = require('../components/core/login/Projects');
+const OnlineInput = require('../components/core/OnlineInput');
+
 
 class ImportOnlineContainer extends React.Component {
     componentWillMount() {
@@ -24,7 +28,7 @@ class ImportOnlineContainer extends React.Component {
                 </center>
                 </div>)
                  : 
-            <Projects {...this.props.profileProjectsProps} updateRepos={() => { } } makeList={() => { } } />}
+            <Projects updateRepos={() => { } } makeList={() => { } } />}
             </div>
         )
     }

@@ -5,7 +5,7 @@ const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const RecentProjects = require('../components/core/RecentProjects');
 const DragDrop = require('../components/core/DragDrop');
-const OnlineInput = require('../components/core/OnlineInput');
+const ImportOnlineContainer = require('./ImportOnlineContainer');
 const Projects = require('../components/core/login/Projects');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const dragDropActions = require('../actions/DragDropActions.js');
@@ -77,7 +77,7 @@ class LoadModalContainer extends React.Component {
             <DragDrop {...this.props} />
           </Tab>
           <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
-            {onlineView}
+          <ImportOnlineContainer />
           </Tab>
         </Tabs>
       </div>
