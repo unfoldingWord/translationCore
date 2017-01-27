@@ -104,7 +104,7 @@ class LoadModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.dragDropReducer, state.recentProjectsReducer);
+  return Object.assign({}, state.dragDropReducer, state.recentProjectsReducer, state.importOnlineReducer);
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
