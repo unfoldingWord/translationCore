@@ -30,29 +30,11 @@ class Report extends React.Component {
     super();
     this.state ={
       query: null,
-      visibleReport: true,
     };
-      this.handleReportVisibility = this.handleReportVisibility.bind(this);
-  }
-
-  componentWillMount(){
-    //api.registerEventListener('ReportVisibility', this.handleReportVisibility);
-  }
-
-  componentWillUnmount() {
-    //api.removeEventListener('ReportVisibility', this.handleReportVisibility);
-  }
-
-  handleReportVisibility(param){
-    this.setState(param);
   }
 
   getQuery(query){
-    //this.setState({query: query});
-  }
-
-  hideReport(){
-    //this.setState({visibleReport: false})
+    this.setState({query: query});
   }
 
   getCompletedAndUnfinishedCheks(){
@@ -110,14 +92,14 @@ class Report extends React.Component {
   }
 
   render() {
+    let { reportVisibility, toolLoaded } = this.props;
     let reportViews = api.getDataFromCommon("reportViews");
-    //this.props.reportVisibility
-    if(!this.props.reportVisibility){
-      if(this.props.toolLoaded){
+    if(!reportVisibility){
+      if(toolLoaded){
         return (
           <div>
           {/*this will change once we implement the projects list for reports*/}
-            <Button onClick={() => this.props.onLoadReports()}>Load</Button>
+            <Button bsStyle="primary" onClick={() => this.props.onLoadReports()}>Generate Report</Button>
           </div>
         );
       }else{
@@ -245,7 +227,7 @@ class Report extends React.Component {
         <Col sm={4} md={4} lg={4} style={{padding: "0px", margin: "0px"}}>
         <ReportSideBar getQuery={this.getQuery.bind(this)} bookName={bookName}
                       authors={authors} reportHeadersOutput={reportHeadersOutput}
-                      hideReport={this.hideReport.bind(this)} completed={done}
+                      completed={done}
                       unfinished={unfinished} flagged={flaggedChecks}/>
         </Col>
         <Col sm={8} md={8} lg={8} style={style.reportContainer}>
