@@ -49,7 +49,6 @@ const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 
-const showCreateProject = CoreActionsRedux.showCreateProject;
 const showMainView = CoreActionsRedux.showMainView;
 
 
@@ -628,6 +627,8 @@ var Main = React.createClass({
             }));
           }
         },
+=======
+>>>>>>> 50f708566a0ef0e9becaffc44005494f7cfb5a4f
         alertModalProps: {
           open: false,
           handleOpen: () => {
@@ -804,8 +805,6 @@ var Main = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      var dispatch = this.props.dispatch;
-      dispatch(showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
