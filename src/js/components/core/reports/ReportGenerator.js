@@ -23,7 +23,7 @@ const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
 const ReportFilters = api.ReportFilters;
-const style = require("./Style");
+const style = require("./style");
 
 class Report extends React.Component {
   constructor() {

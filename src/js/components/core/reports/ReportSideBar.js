@@ -5,7 +5,7 @@ const { Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button, uti
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
 const ReportFilters = require("./ReportFilters.js");
-const style = require("./Style");
+const style = require("./style");
 
 class ReportSideBar extends React.Component{
   constructor() {
