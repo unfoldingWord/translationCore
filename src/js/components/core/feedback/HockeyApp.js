@@ -25,7 +25,6 @@ function postBug(bug, username, callback) {
   request(options, callback);
 }
 
-postBug('slkds', 'ihoegen');
 module.exports = {
   postBug: postBug,
   postMessage: postMessage

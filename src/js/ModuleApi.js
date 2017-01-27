@@ -33,6 +33,7 @@ class ModuleApi {
     this.gitDone = true;
     this.currentGroupName = this.initialCurrentGroupName();
     this.currentToolMetaData = null;
+    this.HockeyApp = HockeyApp;
   }
 
   findDOMNode(component) {
