@@ -70,6 +70,7 @@ var style = {
     padding: "10px",
     marginLeft: "auto",
     marginRight: "auto",
+    cursor: "pointer",
   },
 
   textOffline: {

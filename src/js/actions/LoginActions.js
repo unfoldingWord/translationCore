@@ -1,5 +1,6 @@
 const api = window.ModuleApi;
 const consts = require('./CoreActionConsts');
+const CoreActions = require('./CoreActions.js');
 const gogs = require('../components/core/login/GogsApi.js');
 const remote = require('electron').remote;
 const { dialog } = remote;
@@ -29,9 +30,10 @@ module.exports.loginUser = function (newUserdata) {
   return ((dispatch) => {
     var Token = api.getAuthToken('gogs');
     gogs(Token).login(newUserdata).then((newUserdata) => {
+      CoreActions.login(newUserdata);
       dispatch({
         type: consts.RECEIVE_LOGIN,
-        val:newUserdata
+        val: newUserdata
       });
     }).catch(function (reason) {
       console.log(reason);

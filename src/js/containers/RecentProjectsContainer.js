@@ -13,11 +13,11 @@ class RecentProjectsContainer extends React.Component {
     generateButton(projectPath) {
         return (
             <span>
-                <Button style={{ backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
+                <Button style={{ width: "50%", backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
                     <Glyphicon glyph={'folder-open'} />
                     <span style={{ marginLeft: '10px', marginRight: '20px' }}>Open</span>
                 </Button>
-                <Button style={{ fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath)}>
+                <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath)}>
                     <Glyphicon glyph={'refresh'} />
                     <span style={{ marginLeft: '5px' }}> Sync </span>
                 </Button>
