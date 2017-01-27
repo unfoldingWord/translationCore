@@ -15,7 +15,7 @@ const CoreActions = require('./actions/CoreActions.js');
 const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');
 const CheckModule = require('./components/core/CheckModule');
-
+const HockeyApp = require('./components/core/feedback/HockeyApp.js');
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
 
 class ModuleApi {
