@@ -312,87 +312,6 @@ var Main = React.createClass({
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
-        loginProps: {
-          userdata: {
-            username: "",
-            password: ""
-          },
-          register: false,
-          handleSubmit: (userDataSumbit) => {
-            var Token = api.getAuthToken('gogs');
-            var newuser = gogs(Token).login(userDataSumbit).then((userdata) => {
-              CoreActions.login(userdata);
-              CoreActions.updateOnlineStatus(true);
-            }).catch(function (reason) {
-              console.log(reason);
-              if (reason.status === 401) {
-                dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
-              } else if (reason.message) {
-                dialog.showErrorBox('Login Failed', reason.message);
-              } else if (reason.data) {
-                dialog.showErrorBox('Login Failed', reason.data);
-              } else {
-                dialog.showErrorBox('Login Failed', 'Unknown Error');
-              }
-            });
-          },
-          handleUserName: (e) => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                userdata: {
-                  username: e.target.value
-                }
-              }
-            }))
-          },
-          handlePassword: (e) => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                userdata: {
-                  password: e.target.value
-                }
-              }
-            }))
-          },
-          showRegistration: () => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                register: !this.state.loginProps.register
-              }
-            }))
-          },
-        },
-        profileProps: {
-          projectVisibility: false,
-          handleLogout: () => {
-            CoreActions.updateOnlineStatus(false);
-            CoreActions.login(null);
-            localStorage.removeItem('user');
-          },
-          showProjects: () => {
-            this.setState(merge({}, this.state, {
-              profileProps: {
-                projectVisibility: true
-              }
-            }));
-          },
-          hideProjects: () => {
-            this.setState(merge({}, this.state, {
-              profileProps: {
-                projectVisibility: false
-              }
-            }));
-          },
-          fullName: user ? user.full_name : null,
-          userName: user ? user.username : null,
-          profilePicture: user ? user.avatar_url : null,
-          emailAccount: user ? user.email : null,
-        },
-        loginModalProps: {
-          close: () => {
-            this.props.dispatch(showLoginProfileModal(false));
-          }
-        },
         sideBarContainerProps: {
           screenHeight: window.innerHeight,
           updateDimensions: () => {
@@ -426,30 +345,14 @@ var Main = React.createClass({
               }));
             }
           },
+          handleOpenProject: () => {
+            this.props.openModalAndSpecificTab(true, 2);
+          },
           changeView: () => {
             this.props.openModalAndSpecificTab(true, 1);
           },
           handleSelectTool: () => {
             this.props.showToolsInModal(true);
-          }
-        },
-        sideNavBarProps: {
-          handleOpenProject: () => {
-            this.props.showProjectsInModal(true);
-          },
-          handleChangeCheckCategory: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              this.props.dispatch(showMainView(false));
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
-          },
-          handlePackageManager: () => {
-            var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
-            ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'))
-            api.emitEvent('PackManagerVisibility', { 'visiblePackManager': 'true' });
           }
         },
         menuHeadersProps: {
@@ -496,6 +399,7 @@ var Main = React.createClass({
             }, callback);
           },
         },
+<<<<<<< HEAD
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
