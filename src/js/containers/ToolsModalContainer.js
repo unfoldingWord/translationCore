@@ -10,7 +10,6 @@ class ToolsModalContainer extends React.Component {
         this.props.getToolsMetadatas();
     }
     render() {
-        console.log(this.props)
         return (
           <div>
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
