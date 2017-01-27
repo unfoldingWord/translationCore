@@ -5,7 +5,9 @@ const initialState = {
     showOnlineButton: true,
     showBack: false,
     importLink: null,
-    repos: null
+    repos: null,
+    onlineProjects: null,
+    loggedIn: false
 };
 
 module.exports = (state = initialState, action) => {
@@ -23,6 +25,11 @@ module.exports = (state = initialState, action) => {
         case consts.RECIEVE_REPOS:
             return merge({}, state, {
                 repos: action.repos
+            })
+            break;
+        case consts.RECEIVE_LOGIN:
+            return merge({}, state, {
+                loggedIn: action.val ? true : false
             })
             break;
         default:

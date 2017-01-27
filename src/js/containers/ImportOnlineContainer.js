@@ -8,14 +8,53 @@ const OnlineInput = require('../components/core/OnlineInput');
 
 class ImportOnlineContainer extends React.Component {
     componentWillMount() {
+        this.props.updateRepos();
+    }
+
+    importOnlineButtion(projectName, p, repoName) {
+        return (
+            <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
+                {projectName}
+                <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={() => this.props.openOnlineProject(repoName)}>Load Project</Button>
+            </div>
+        );
+    }
+    makeList(repos) {
+        if (!this.props.loggedIn) {
+            return (
+                <div>
+                    <center>
+                        <br />
+                        <h4> Please login first </h4>
+                        <br />
+                    </center>
+                </div>
+            )
+        }
+        var projectArray = repos;
+        var projectList = []
+        for (var p in projectArray) {
+            var projectName = projectArray[p].project;
+            var repoName = projectArray[p].repo;
+            projectList.push(this.importOnlineButtion(projectName, p, repoName));
+        }
+        if (projectList.length === 0) {
+            projectList.push(
+                <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
+                    No Projects Found
+                </div>
+            );
+        }
+        return projectList;
     }
     render() {
+        const onlineProjects = this.makeList(this.props.repos);
         return (
             <div>
                 {this.props.showOnlineButton ?
                     (<div style={{ padding: '10% 0' }}>
                         <center>
-                            <Button onClick={() => this.props.changeImportOnlineView(false)} style={{ width: '60%', fontWeight: 'bold', fontSize: '20px' }} bsStyle='primary' bsSize='large'>
+                            <Button onClick={() => this.props.changeShowOnlineView(false)} style={{ width: '60%', fontWeight: 'bold', fontSize: '20px' }} bsStyle='primary' bsSize='large'>
                                 <img src="images/D43.svg" width="90" style={{ marginRight: '25px', padding: '10px' }} />
                                 Browse Door43 Projects
             </Button>
@@ -24,11 +63,11 @@ class ImportOnlineContainer extends React.Component {
                                     or
               </span>
                             </div>
-                            <OnlineInput onChange={this.props.handleOnlineChange} load={() => { this.props.onClick(this.props.show) } } />
+                            <OnlineInput onChange={this.props.handleOnlineChange} load={() => this.props.loadProjectFromLink(this.props.importLink)} />
                         </center>
                     </div>)
                     :
-                    <Projects updateRepos={() => { } } makeList={() => { } } />}
+                    <Projects onlineProjects={onlineProjects} back={() => this.props.changeShowOnlineView(true)} />}
             </div>
         )
     }
@@ -44,12 +83,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch(importOnlineActions.changeShowOnlineView(val))
         },
         handleOnlineChange: (e) => {
-            this.setState(merge({}, this.state, {
-                projectModalProps: {
-                    link: e.target.value,
-                }
-            }));
+            dispatch(importOnlineActions.getLink(e));
         },
+        updateRepos: () => {
+            dispatch(importOnlineActions.updateRepos());
+        },
+        loadProjectFromLink: (link) => {
+            dispatch(importOnlineActions.loadProjectFromLink(link));
+        },
+        openOnlineProject: (projectPath) => {
+            dispatch(importOnlineActions.openOnlineProject(projectPath));
+        }
     }
 }
 

@@ -2,24 +2,31 @@ const api = window.ModuleApi;
 const consts = require('./CoreActionConsts');
 const loadOnline = require('../components/core/LoadOnline');
 const Gogs = require('../components/core/login/GogsApi')();
+const modalActions = require('./ModalActions');
+const recentProjectsActions = require('./RecentProjectsActions');
+const Upload = require('../components/core/UploadMethods.js');
 
 module.exports.changeShowOnlineView = function (val) {
-    return {
-        type: consts.CHANGED_IMPORT_VIEW,
-        view: val
-    }
+    return ((dispatch, getState) => {
+        var user = getState().loginReducer.userdata
+            dispatch({
+                type: consts.CHANGED_IMPORT_VIEW,
+                view: val,
+                user:user
+            });
+            dispatch(this.updateRepos());
+    });
 }
 
 module.exports.updateRepos = function () {
-    debugger;
     return ((dispatch, getState) => {
-        var user = getState().loginReducer.userdata
+        var user = getState().loginReducer.userdata;
         if (user) {
             var _this = this;
-            return Gogs.retrieveRepos(user.userName).then((repos) => {
+            Gogs.retrieveRepos(user.username).then((repos) => {
                 dispatch({
-                    type:consts.RECIEVE_REPOS,
-                    repos:repos
+                    type: consts.RECIEVE_REPOS,
+                    repos: repos
                 })
             });
         }
@@ -35,8 +42,9 @@ module.exports.openOnlineProject = function (projectPath) {
                 alert(err);
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
-                Upload.sendFilePath(savePath, url, callback);
-                dispatch({ type: "LOADED_ONLINE" })
+                Upload.sendFilePath(savePath, url, (err)=>{
+                    if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
+                });
             }
         });
     })
@@ -91,37 +99,4 @@ module.exports.loadProjectFromLink = function (link) {
         //       }
         //     });
         //   },
-        //   makeList: (repos) => {
-        //     var user = api.getLoggedInUser();
-        //     if (!user) {
-        //       return (
-        //         <div>
-        //           <center>
-        //             <br />
-        //             <h4> Please login first </h4>
-        //             <br />
-        //           </center>
-        //         </div>
-        //       )
-        //     }
-        //     var projectArray = repos;
-        //     var projectList = []
-        //     for (var p in projectArray) {
-        //       var projectName = projectArray[p].project;
-        //       var repoName = projectArray[p].repo;
-        //       projectList.push(
-        //         <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
-        //           {projectName}
-        //           <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.state.profileProjectsProps.openSelected.bind(this, repoName)}>Load Project</Button>
-        //         </div>
-        //       );
-        //     }
-        //     if (projectList.length === 0) {
-        //       projectList.push(
-        //         <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
-        //           No Projects Found
-        //         </div>
-        //       );
-        //     }
-        //     return projectList;
-        //   }
+        //   
