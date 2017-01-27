@@ -18,6 +18,8 @@ var bigError;
 
 console.error = function(err){
   console.errorold(err);
+  var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
+  api.HockeyApp.postBug(err, loggedInUser.userName);
   bigError += "(" + err + ")";
   api.createAlert(
     {

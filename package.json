@@ -81,6 +81,7 @@
     "reactable": "^0.14.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
+    "request": "^2.79.0",
     "simple-git": "1.43.0",
     "style-it": "^1.2.11",
     "usfm-parser": "^0.1.4",
