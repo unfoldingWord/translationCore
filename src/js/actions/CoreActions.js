@@ -30,20 +30,6 @@ module.exports = {
     });
   },
 
-  // updateModal: function(boolean) {
-  //   Dispatcher.handleAction({
-  //     type: consts.CHANGE_UPLOAD_MODAL_VISIBILITY,
-  //     modalOption: boolean
-  //   });
-  // },
-
-  // updateLoginModal: function(boolean) {
-  //   Dispatcher.handleAction({
-  //     type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
-  //     loginModalOption: boolean
-  //   });
-  // },
-
   showOpenModal: function(boolean) {
     Dispatcher.handleAction({
       type: consts.OPEN_CREATED_PROJECT,

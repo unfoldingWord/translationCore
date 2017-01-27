@@ -312,7 +312,6 @@ var Main = React.createClass({
         currentToolNamespace: null,
         currentGroupName: null,
         sideBarContainerProps: {
-          //SideNavBar: false,
           screenHeight: window.innerHeight,
           updateDimensions: () => {
             if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
@@ -398,6 +397,236 @@ var Main = React.createClass({
               currentCheckIndex: parseInt(id),
             }, callback);
           },
+        },
+<<<<<<< HEAD
+        importUsfmProps: {
+          openUSFM: ImportUsfm.open,
+          filePath: 'No file selected',
+          checkIfValid: (location) => {
+            this.setState(merge({}, this.state, {
+              importUsfmProps: {
+                filePath: location,
+                usfmSave: !(location == 'No file selected')
+              }
+            }));
+          },
+        },
+        projectModalProps: {
+          showModal: false,
+          showD43: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'd43',
+              }
+            }));
+          },
+          show: 'link',
+          submitLink: (callback) => {
+            var link = this.state.projectModalProps.link;
+            loadOnline(link, function (err, savePath, url) {
+              if (!err) {
+                Upload.sendFilePath(savePath, url, callback);
+              } else {
+                alert(err);
+              }
+            });
+          },
+
+          close: () => {
+            this.props.dispatch(showCreateProject(false));
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                showModal: false,
+              }
+            }));
+          },
+
+          onClick: (type) => {
+            if (type == 'link') {
+              this.state.projectModalProps.submitLink((err) => {
+                if (!err) {
+                  this.startLoadingNewProject()
+                } else if (err != "") {
+                  api.createAlert(
+                    {
+                      title: 'Error Setting Up Project',
+                      content: err,
+                      moreInfo: "",
+                      leftButtonText: "Ok"
+                    },
+                    () => {
+                    });
+                }
+              });
+            }
+            else if (type == 'usfm') {
+              if (!this.state.importUsfmProps.usfmSave) {
+                return;
+              }
+              this.startLoadingNewProject();
+            } else {
+              this.startLoadingNewProject()
+            }
+          },
+          _handleKeyPress: (e, type) => {
+            if (e.key === 'Enter') {
+              this.state.projectModalProps.onClick(type);
+            }
+          }
+        },
+
+        uploadProps: {
+          active: 1,
+          changeActive: (key) => {
+            switch (key) {
+              case 1:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'link',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 2:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'file',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 3:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'usfm',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              case 4:
+                this.setState(merge({}, this.state, {
+                  projectModalProps: {
+                    show: 'recent',
+                  },
+                  uploadProps: {
+                    active: key
+                  }
+                }));
+                break;
+              default:
+                break;
+            }
+          }
+        },
+        profileProjectsProps: {
+          back: () => {
+            this.setState(merge({}, this.state, {
+              projectModalProps: {
+                show: 'link',
+              }
+            }));
+          },
+          repos: [],
+          updateRepos: () => {
+            var user = api.getLoggedInUser();
+            if (user) {
+              var _this = this;
+              return Gogs.retrieveRepos(user.userName).then((repos) => {
+                this.setState(merge({}, this.state, {
+                  profileProjectsProps: {
+                    repos: repos,
+                  }
+                }));
+              });
+            }
+          },
+          openSelected: (projectPath) => {
+            var dispatch = this.props.dispatch;
+            var link = 'https://git.door43.org/' + projectPath + '.git';
+            var _this = this;
+            loadOnline(link, function (err, savePath, url) {
+              if (err) {
+                alert(loadOnline);
+              } else {
+                Upload.sendFilePath(savePath, url, () => {
+                  dispatch(showCreateProject(false));
+                })
+              }
+            });
+          },
+          makeList: (repos) => {
+            var user = api.getLoggedInUser();
+            if (!user) {
+              return (
+                <div>
+                  <center>
+                    <br />
+                    <h4> Please login first </h4>
+                    <br />
+                  </center>
+                </div>
+              )
+            }
+            var projectArray = repos;
+            var projectList = []
+            for (var p in projectArray) {
+              var projectName = projectArray[p].project;
+              var repoName = projectArray[p].repo;
+              projectList.push(
+                <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
+                  {projectName}
+                  <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.state.profileProjectsProps.openSelected.bind(this, repoName)}>Load Project</Button>
+                </div>
+              );
+            }
+            if (projectList.length === 0) {
+              projectList.push(
+                <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
+                  No Projects Found
+                </div>
+              );
+            }
+            return projectList;
+          }
+        },
+        switchCheckModalProps: {
+          showModal: false,
+          localAppFilePath: '',
+          handleFilePathChange: (event) => {
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                localAppFilePath: event.target.value,
+              }
+            }));
+          },
+          developerApp: (filepath) => {
+            var folderName = path.join(window.__base, filepath);
+            fs.access(folderName, fs.F_OK, (err) => {
+              if (!err) {
+
+                CheckDataGrabber.loadModuleAndDependencies(folderName);
+                localStorage.setItem('lastCheckModule', folderName);
+              } else {
+                console.error(err);
+              }
+            });
+            this.props.dispatch(showMainView(false));
+          },
+          developerMode: api.getSettings('developerMode') === 'enable',
+          showDevOptions: false,
+          updateDevOptions: () => {
+            this.setState(merge({}, this.state, {
+              switchCheckModalProps: {
+                showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
+              }
+            }));
+          }
         },
         alertModalProps: {
           open: false,
@@ -527,6 +756,10 @@ var Main = React.createClass({
       gogs(Token).login(userdata).then((userdata) => {
         CoreActions.login(userdata);
         CoreActions.updateOnlineStatus(true);
+        this.props.dispatch({
+          type: "RECEIVE_LOGIN",
+          val: userdata
+        });
       }).catch(function (reason) {
         console.log(reason);
         if (reason.status === 401) {

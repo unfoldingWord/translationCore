@@ -16,7 +16,6 @@ module.exports.onLoad = function (filePath) {
             if (!err) {
                 api.putDataInCommon('saveLocation', filePath);
                 dispatch(_this.startLoadingNewProject());
-                dispatch(toolsActions.getToolsMetadatas());
             }
         });
     })
@@ -44,6 +43,7 @@ module.exports.startLoadingNewProject = function () {
         api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
         dispatch({ type: consts.SHOW_APPS, val: true });
         dispatch(modalActions.showModalContainer(true));
+        dispatch(toolsActions.getToolsMetadatas());
         dispatch(modalActions.selectModalTab(3))
     })
 }
