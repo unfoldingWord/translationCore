@@ -27,12 +27,16 @@ function postMessage(message, username, callback) {
 /**
  * This method handles system generated bug reports.
  *
- * @param {string} bug - A bug object to be pushed to management. 
+ * @param {string} bug - A bug object to be pushed to management.
  * @param {string} username - The username of the poster.
  * @param {function} callback - To be initiated after posting.
  ******************************************************************************/
 function postBug(bug, username, callback) {
-  var dataString = "subject='Bug Report'&text=" + JSON.stringify(bug, null, 4) + "&name=" + username;
+  var bugString = JSON.stringify(bug, null, 4);
+  if (bugString === "{}" || !bugString) {
+    return;
+  }
+  var dataString = "subject=Bug Report&text=" + bugString + "&name=" + username;
   var options = {
       url: url,
       method: 'POST',
