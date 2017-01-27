@@ -193,7 +193,8 @@ function saveTargetLangeInAPI(parsedUSFM) {
 function checkIfUSFMFile(savePath, callback) {
   try {
     var usfmFile = fs.readFileSync(savePath);
-    callback(savePath.split(".")[1] == "usfm");
+    const ext = savePath.split(".")[1];
+    callback(ext  == "usfm"|| ext == "sfm");
   } catch (e) {
     callback(false);
   }

@@ -574,14 +574,6 @@ var Main = React.createClass({
             }));
           },
 
-          handleOnlineChange: (e) => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                link: e.target.value,
-              }
-            }));
-          },
-
           onClick: (type) => {
             if (type == 'link') {
               this.state.projectModalProps.submitLink((err) => {
@@ -898,6 +890,10 @@ var Main = React.createClass({
         CoreActions.login(userdata);
         CoreActions.updateOnlineStatus(true);
         this.props.dispatch(updateProfileModal(true));
+        this.props.dispatch({
+          type: "RECEIVE_LOGIN",
+          val: userdata
+        });
       }).catch(function (reason) {
         console.log(reason);
         if (reason.status === 401) {
