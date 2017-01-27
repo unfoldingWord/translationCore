@@ -575,14 +575,6 @@ var Main = React.createClass({
             }));
           },
 
-          handleOnlineChange: (e) => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                link: e.target.value,
-              }
-            }));
-          },
-
           onClick: (type) => {
             if (type == 'link') {
               this.state.projectModalProps.submitLink((err) => {

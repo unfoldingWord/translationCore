@@ -3,10 +3,10 @@ const consts = require('./CoreActionConsts');
 const loadOnline = require('../components/core/LoadOnline');
 const Gogs = require('../components/core/login/GogsApi')();
 
-module.exports.changedImportOnlineView = function (view) {
+module.exports.changeShowOnlineView = function (val) {
     return {
         type: consts.CHANGED_IMPORT_VIEW,
-        view: view == "online" ? true : false
+        view: val
     }
 }
 
