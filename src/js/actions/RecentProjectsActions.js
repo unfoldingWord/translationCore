@@ -11,8 +11,10 @@ module.exports.onLoad = function (filePath) {
     return ((dispatch) => {
         const _this = this;
         Upload.sendFilePath(filePath, undefined, (err) => {
-            if (!err) dispatch(_this.startLoadingNewProject());
-            api.putDataInCommon('saveLocation', filePath);
+            if (!err) {
+                api.putDataInCommon('saveLocation', filePath);
+                dispatch(_this.startLoadingNewProject());
+            }
         });
     })
 }
@@ -37,7 +39,7 @@ module.exports.startLoadingNewProject = function () {
         api.emitEvent('changeCheckType', { currentCheckNamespace: null });
         api.emitEvent('newToolSelected', { 'newToolSelected': true });
         api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-        dispatch({type: consts.SHOW_APPS, val: true});
+        dispatch({ type: consts.SHOW_APPS, val: true });
         dispatch(modalActions.showModalContainer(true));
         dispatch(modalActions.selectModalTab(3))
     })
