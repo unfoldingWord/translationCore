@@ -60,7 +60,6 @@ class Profile extends React.Component {
           <h3>Feedback and Comments</h3><br />
           <Panel header={panelTitle} style={{padding: "0px", borderColor: "#333333"}}>
             <ListGroup fill>
-              {/* Here we'll have that text box to handle feedback*/}
             <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
               <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "#000000", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
             </FormGroup>
