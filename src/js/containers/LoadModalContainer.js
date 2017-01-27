@@ -5,33 +5,16 @@ const Button = require('react-bootstrap/lib/Button.js');
 const api = window.ModuleApi;
 const RecentProjectsContainer = require('./RecentProjectsContainer');
 const DragDrop = require('../components/core/DragDrop');
-const OnlineInput = require('../components/core/OnlineInput');
+const ImportOnlineContainer = require('./ImportOnlineContainer');
 const Projects = require('../components/core/login/Projects');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const dragDropActions = require('../actions/DragDropActions.js');
 const ReportsActions = require('../actions/ReportsActions.js')
+const recentProjectsActions = require('../actions/RecentProjectsActions.js')
 const Report = require("../components/core/reports/ReportGenerator");
 
 class LoadModalContainer extends React.Component {
   render() {
-    var projects = <Projects {...this.props.profileProjectsProps} updateRepos={() => { } } makeList={() => { } } />
-    var loadOnline = (
-      <div style={{ padding: '10% 0' }}>
-        <center>
-          <Button onClick={this.props.showD43} style={{ width: '60%', fontWeight: 'bold', fontSize: '20px' }} bsStyle='primary' bsSize='large'>
-            <img src="images/D43.svg" width="90" style={{ marginRight: '25px', padding: '10px' }} />
-            Browse Door43 Projects
-            </Button>
-          <div style={{ width: '60%', height: '20px', borderBottom: '2px solid white', textAlign: 'center', margin: '20px 0' }}>
-            <span style={{ fontSize: '20px', backgroundColor: '#333', fontWeight: 'bold', padding: '0 40px' }}>
-              or
-              </span>
-          </div>
-          <OnlineInput onChange={this.props.handleOnlineChange} load={() => { this.props.onClick(this.props.show) } } />
-        </center>
-      </div>
-    );
-    var onlineView = (this.props.showOnline) ? loadOnline : projects;
     return (
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
@@ -44,9 +27,9 @@ class LoadModalContainer extends React.Component {
             <DragDrop {...this.props} />
           </Tab>
           <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
-            {onlineView}
+            <ImportOnlineContainer />
           </Tab>
-          <Tab eventKey={4} title="Reports" style={{backgroundColor: "#333333"}}>
+          <Tab eventKey={4} title="Reports" style={{ backgroundColor: "#333333" }}>
             <Report {...this.props} />
           </Tab>
         </Tabs>
@@ -57,10 +40,11 @@ class LoadModalContainer extends React.Component {
 
 function mapStateToProps(state) {
   return Object.assign({}, state.dragDropReducer,
-                           state.recentProjectsReducer,
-                           state.reportsReducer,
-                           state.toolsReducer
-                      );
+    state.recentProjectsReducer,
+    state.reportsReducer,
+    state.toolsReducer,
+    state.importOnlineReducer
+  );
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
@@ -71,6 +55,9 @@ function mapDispatchToProps(dispatch, ownProps) {
     onLoadReports: () => {
       dispatch(ReportsActions.loadReports());
     },
+    loadProject: () => {
+      dispatch(recentProjectsActions.startLoadingNewProject());
+    }
   }
 }
 

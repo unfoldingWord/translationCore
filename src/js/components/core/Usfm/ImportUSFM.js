@@ -62,7 +62,7 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
         }
         Upload.saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
-            Upload.loadProjectThatHasManifest(saveLocation, function () { }, tcManifest);
+            Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
           }
           else {
             console.error(err);

@@ -2,15 +2,9 @@ const consts = require('../actions/CoreActionConsts');
 const merge = require('lodash.merge');
 
 const initialState = {
-  userdata: {
-    username: "",
-    full_name: "",
-    password: "",
-    email: "",
-    avatar_url: "",
-  },
   loggedInUser: false,
   displayLogin: true,
+  userdata:null
 };
 
 module.exports = (state = initialState, action) => {
