@@ -36,13 +36,13 @@ class ModalContainer extends React.Component {
                   id="tabs"
                   style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
               <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Application {...this.props.application}/>
+                  <Application />
               </Tab>
               <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Load {...this.props.load}/>
+                  <Load />
               </Tab>
               <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Tools {...this.props.tools}/>
+                  <Tools />
               </Tab>
             </Tabs>
           </Modal.Body>

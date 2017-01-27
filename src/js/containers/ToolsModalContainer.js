@@ -7,7 +7,7 @@ const SwitchCheck = require('../components/core/SwitchCheck.js');
 
 class ToolsModalContainer extends React.Component {
     componentWillMount(){
-      this.props.getToolsMetadatas();
+        this.props.getToolsMetadatas();
     }
     render() {
         return (
