@@ -399,7 +399,6 @@ var Main = React.createClass({
             }, callback);
           },
         },
-<<<<<<< HEAD
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
           filePath: 'No file selected',
