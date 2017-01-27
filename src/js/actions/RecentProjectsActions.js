@@ -38,6 +38,7 @@ module.exports.startLoadingNewProject = function () {
         api.emitEvent('newToolSelected', { 'newToolSelected': true });
         api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
         dispatch({type: consts.SHOW_APPS, val: true});
+        dispatch(modalActions.showModalContainer(true));
         dispatch(modalActions.selectModalTab(3))
     })
 }

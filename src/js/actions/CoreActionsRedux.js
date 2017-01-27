@@ -41,10 +41,3 @@ module.exports.showMainView = function(val) {
     val:val
   }
 }
-
-module.exports.showSwitchCheckModal = function(val){
-  return {
-    type: consts.SHOW_SWITCH_CHECK_MODAL,
-    val:val
-  }
-}
