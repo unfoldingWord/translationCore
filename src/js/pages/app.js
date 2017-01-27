@@ -428,11 +428,7 @@ var Main = React.createClass({
             }
           },
           changeView: () => {
-            this.props.dispatch(modalActions.showModalContainer(true));
-          },
-          handleOpenProject: () => {
-            var dispatch = this.props.dispatch;
-            dispatch(showCreateProject("Languages"));
+            this.props.openModalAndSpecificTab(true, 1);
           },
           handleSelectTool: () => {
             this.props.showToolsInModal(true);
@@ -440,8 +436,7 @@ var Main = React.createClass({
         },
         sideNavBarProps: {
           handleOpenProject: () => {
-            var dispatch = this.props.dispatch;
-            dispatch(showCreateProject("Languages"));
+            this.props.showProjectsInModal(true);
           },
           handleChangeCheckCategory: () => {
             var dispatch = this.props.dispatch;
@@ -979,8 +974,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(modalActions.showModalContainer(false));
       }
     },
+    showProjectsInModal: (visible) => {
+      if (visible) {
+        dispatch(modalActions.showModalContainer(true));
+        dispatch(modalActions.selectModalTab(2))
+      } else {
+        dispatch(modalActions.showModalContainer(false));
+      }
+    },
     loadTool: (folderName) => {
       dispatch(ToolsActions.loadTool(folderName));
+    },
+    openModalAndSpecificTab: (visible, tabkey) => {
+      dispatch(modalActions.showModalContainer(true));
+      dispatch(modalActions.selectModalTab(tabkey));
     },
   });
 }
