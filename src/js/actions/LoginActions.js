@@ -53,3 +53,16 @@ module.exports.logoutUser = function (val) {
     type: consts.LOGOUT_USER,
   }
 }
+
+module.exports.feedbackChange = function (e) {
+  return {
+    type: consts.FEEDBACK_CHANGE,
+    val: e
+  }
+}
+
+module.exports.submitFeedback = function () {
+  return {
+    type: consts.SUBMIT_FEEDBACK,
+  }
+}

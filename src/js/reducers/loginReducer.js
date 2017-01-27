@@ -55,6 +55,17 @@ module.exports = (state = initialState, action) => {
         loggedInUser: false
       });
       break;
+    case consts.FEEDBACK_CHANGE:
+      return merge({}, state, {
+        feedback: action.val
+      });
+      break;
+    case consts.SUBMIT_FEEDBACK:
+      ModuleApi.HockeyApp.postMessage(state.feedback, state.userdata.username);
+      return merge({}, state, {
+        feedback: 'Feedback Submitted!'
+      });
+      break;
     default:
       return state;
   }
