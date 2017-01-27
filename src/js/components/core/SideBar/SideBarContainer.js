@@ -27,8 +27,10 @@ class SideBarContainer extends React.Component {
       sideBarContent = (
           <Grid fluid style={sideBarContainerStyle}>
             <Col id='fixedChevrons' style={style.fixedChevrons}>
-              <img src="images/TC_Icon_White.png" onClick={this.props.changeView}
-                style={style.logo} />
+              <img src="images/TC_Icon_White.png"
+                   onClick={this.props.changeView}
+                   style={style.logo}
+                   title="Click to open app preferences"/>
               <Chevron color="magenta" glyphicon={"folder-open"}
                 handleClick={this.props.handleOpenProject} style={{width:"100%"}}/>
               <Chevron color="blue" glyphicon={"wrench"} style={{width:"100%"}}

@@ -13,7 +13,7 @@ module.exports.showCreateProject = function (type) {
     createProjectModal: type
   };
 }
-
+/*
 module.exports.updateLoginModal = function (val) {
   return {
     type: consts.CHANGE_LOGIN_MODAL_VISIBILITY,
@@ -34,7 +34,7 @@ module.exports.showLoginProfileModal = function (val) {
     val: val
   };
 }
-
+*/
 module.exports.showMainView = function(val) {
   return {
     type: consts.SHOW_APPS,

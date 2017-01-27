@@ -24,12 +24,9 @@ const merge = require('lodash.merge');
 
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
-const LoginModal = require('../components/core/login/LoginModal');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
-const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SwitchCheck = require('../components/core/SwitchCheck');
-const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
@@ -53,9 +50,6 @@ const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 
 const showCreateProject = CoreActionsRedux.showCreateProject;
-const updateLoginModal = CoreActionsRedux.updateLoginModal;
-const updateProfileModal = CoreActionsRedux.updateProfileModal;
-const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
 
 
@@ -328,9 +322,7 @@ var Main = React.createClass({
             var Token = api.getAuthToken('gogs');
             var newuser = gogs(Token).login(userDataSumbit).then((userdata) => {
               CoreActions.login(userdata);
-              this.props.dispatch(updateLoginModal(false));
               CoreActions.updateOnlineStatus(true);
-              this.props.dispatch(updateProfileModal(true));
             }).catch(function (reason) {
               console.log(reason);
               if (reason.status === 401) {
@@ -374,7 +366,6 @@ var Main = React.createClass({
           projectVisibility: false,
           handleLogout: () => {
             CoreActions.updateOnlineStatus(false);
-            this.props.dispatch(updateProfileModal(false));
             CoreActions.login(null);
             localStorage.removeItem('user');
           },
@@ -403,7 +394,7 @@ var Main = React.createClass({
           }
         },
         sideBarContainerProps: {
-          SideNavBar: false,
+          //SideNavBar: false,
           screenHeight: window.innerHeight,
           updateDimensions: () => {
             if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
@@ -452,20 +443,6 @@ var Main = React.createClass({
             var dispatch = this.props.dispatch;
             dispatch(showCreateProject("Languages"));
           },
-          handleSyncProject: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              sync();
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
-          },
-          handleReport: () => {
-            api.Toast.info('Generating reports...', '', 3);
-            const Report = require("../components/core/reports/ReportGenerator");
-            api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
-          },
           handleChangeCheckCategory: () => {
             var dispatch = this.props.dispatch;
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
@@ -474,8 +451,6 @@ var Main = React.createClass({
               api.Toast.info('Open a project first, then try again', '', 3);
               dispatch(showCreateProject("Languages"));
             }
-          },
-          handleSettings: () => {
           },
           handlePackageManager: () => {
             var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
@@ -892,7 +867,6 @@ var Main = React.createClass({
       gogs(Token).login(userdata).then((userdata) => {
         CoreActions.login(userdata);
         CoreActions.updateOnlineStatus(true);
-        this.props.dispatch(updateProfileModal(true));
       }).catch(function (reason) {
         console.log(reason);
         if (reason.status === 401) {
@@ -961,11 +935,6 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <ModalContainer />
-          <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
-            <SwitchCheck {...this.state.switchCheckProps} {...this.props} />
-          </SwitchCheckModal>
           <Popover />
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
