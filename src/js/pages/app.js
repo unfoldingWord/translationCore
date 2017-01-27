@@ -437,11 +437,6 @@ var Main = React.createClass({
             }
           },
           changeView: () => {
-            this.setState(merge({}, this.state, {
-              sideBarContainerProps: {
-                SideNavBar: !this.state.sideBarContainerProps.SideNavBar
-              }
-            }))
             this.props.dispatch(modalActions.showModalContainer(true));
           },
           handleOpenProject: () => {
