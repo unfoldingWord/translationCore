@@ -19,7 +19,6 @@ class ToolsModalContainer extends React.Component {
                 <SwitchCheck {...this.props}/>
               </Tab>
               <Tab eventKey={2} title="Online Tools" style={{backgroundColor: "#333333"}}>
-
               </Tab>
             </Tabs>
           </div>

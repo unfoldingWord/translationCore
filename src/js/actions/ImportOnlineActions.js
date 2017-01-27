@@ -61,42 +61,12 @@ module.exports.loadProjectFromLink = function (link) {
     return ((dispatch) => {
         loadOnline(link, function (err, savePath, url) {
             if (!err) {
-                Upload.sendFilePath(savePath, url, callback);
-                dispatch({ type: "LOADED_ONLINE" })
+                Upload.sendFilePath(savePath, url, (err)=>{
+                    if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
+                });
             } else {
                 alert(err);
-                dispatch({ type: "LOADED_ONLINE_FAILED" })
             }
         });
     })
-}
-
-        //  repos: [],
-        //   updateRepos: () => {
-        //     var user = api.getLoggedInUser();
-        //     if (user) {
-        //       var _this = this;
-        //       return Gogs.retrieveRepos(user.userName).then((repos) => {
-        //         this.setState(merge({}, this.state, {
-        //           profileProjectsProps: {
-        //             repos: repos,
-        //           }
-        //         }));
-        //       });
-        //     }
-        //   },
-        //   openSelected: (projectPath) => {
-        //     var dispatch = this.props.dispatch;
-        //     var link = 'https://git.door43.org/' + projectPath + '.git';
-        //     var _this = this;
-        //     loadOnline(link, function (err, savePath, url) {
-        //       if (err) {
-        //         console.error(err);
-        //       } else {
-        //         Upload.sendFilePath(savePath, url, () => {
-        //           dispatch(showCreateProject(false));
-        //         })
-        //       }
-        //     });
-        //   },
-        //   
+}  
