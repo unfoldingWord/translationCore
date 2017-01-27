@@ -21,7 +21,7 @@ module.exports.loadTool = function (folderName) {
           type: consts.LOAD_TOOL,
           val: true
         });
-        dispatch({ type: consts.SHOW_SWITCH_CHECK_MODAL, val: false });
+        dispatch({ type: consts.SHOW_MODAL_CONTAINER, visible: false });
       }
     });
   })

@@ -57,7 +57,6 @@ const updateLoginModal = CoreActionsRedux.updateLoginModal;
 const updateProfileModal = CoreActionsRedux.updateProfileModal;
 const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
-const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 
 
 var Main = React.createClass({
@@ -308,7 +307,7 @@ var Main = React.createClass({
     this.state.projectModalProps.close();
     api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
     this.props.dispatch(showMainView(true));
-    this.props.dispatch(showSwitchCheckModal(true));
+    this.props.showToolsInModal(true);
   },
 
   getInitialState() {
@@ -450,7 +449,7 @@ var Main = React.createClass({
             dispatch(showCreateProject("Languages"));
           },
           handleSelectTool: () => {
-            this.props.dispatch(showSwitchCheckModal(true));
+            this.props.showToolsInModal(true);
           }
         },
         sideNavBarProps: {
@@ -739,9 +738,6 @@ var Main = React.createClass({
         },
         switchCheckModalProps: {
           showModal: false,
-          close: () => {
-            this.props.dispatch(showSwitchCheckModal(false));
-          },
           localAppFilePath: '',
           handleFilePathChange: (event) => {
             this.setState(merge({}, this.state, {
@@ -861,7 +857,7 @@ var Main = React.createClass({
           moduleMetadatas: [],
           moduleClick: (folderName) => {
             this.props.dispatch(showMainView(false));
-            this.props.dispatch(showSwitchCheckModal(false));
+            this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
@@ -930,16 +926,16 @@ var Main = React.createClass({
       }
     } catch (e) {
       var splitArr = e.path.split("/");
-          api.createAlert(
-      {
-        title: 'Error Opening Last Project',
-        content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
-        moreInfo: e,
-        leftButtonText: "Ok"
-      },
-      () => {
-        localStorage.removeItem('lastProject');
-      });
+      api.createAlert(
+        {
+          title: 'Error Opening Last Project',
+          content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
+          moreInfo: e,
+          leftButtonText: "Ok"
+        },
+        () => {
+          localStorage.removeItem('lastProject');
+        });
     }
 
   },
@@ -991,7 +987,7 @@ var Main = React.createClass({
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
             </Col>
           </Grid>
         </div>
@@ -1001,20 +997,25 @@ var Main = React.createClass({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return merge({}, {dispatch:dispatch}, {
-        getToolsMetadatas: () => {
-            dispatch(ToolsActions.getToolsMetadatas());
-        },
-        handleLoadTool: (toolFolderPath) => {
-            dispatch(ToolsActions.loadTool(toolFolderPath));
-        },
-        onHandleUserName: (e) => {
-            dispatch(ToolsActions.setUserName(e.target.value));
-        },
-        showLoad: () => {
-            dispatch(modalActions.selectModalTab(2))
-        },
-    });
+  return merge({}, { dispatch: dispatch }, {
+    getToolsMetadatas: () => {
+      dispatch(ToolsActions.getToolsMetadatas());
+    },
+    handleLoadTool: (toolFolderPath) => {
+      dispatch(ToolsActions.loadTool(toolFolderPath));
+    },
+    showLoad: () => {
+      dispatch(modalActions.selectModalTab(2))
+    },
+    showToolsInModal: (visible) => {
+      if (visible) {
+        dispatch(modalActions.showModalContainer(true));
+        dispatch(modalActions.selectModalTab(3))
+      } else {
+        dispatch(modalActions.showModalContainer(false));
+      }
+    }
+  });
 }
 
 function mapStateToProps(state) {
