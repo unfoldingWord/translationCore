@@ -6,6 +6,8 @@ const path = require('path-extra');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const Upload = require('../components/core/UploadMethods.js');
 const modalActions = require('./ModalActions');
+const toolsActions = require('./toolsActions');
+
 
 module.exports.onLoad = function (filePath) {
     return ((dispatch) => {
@@ -14,6 +16,7 @@ module.exports.onLoad = function (filePath) {
             if (!err) {
                 api.putDataInCommon('saveLocation', filePath);
                 dispatch(_this.startLoadingNewProject());
+                dispatch(toolsActions.getToolsMetadatas());
             }
         });
     })

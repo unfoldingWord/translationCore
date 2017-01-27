@@ -3,6 +3,7 @@ const AppDescription = require('./AppDescription');
 
 class SwitchCheck extends React.Component{
   render() {
+    console.log(this.props)
     /*temp if condition: the following lines from line 7 to line 16
     is temp fix for now until we fully implement redux or change how
     the the recent projects componet calls switchCheck.js since the

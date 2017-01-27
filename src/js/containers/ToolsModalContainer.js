@@ -6,8 +6,11 @@ const { Modal, Tabs, Tab } = require('react-bootstrap/lib');
 const SwitchCheck = require('../components/core/SwitchCheck.js');
 
 class ToolsModalContainer extends React.Component {
-    render() {
+    componentWillMount(){
         this.props.getToolsMetadatas();
+    }
+    render() {
+        console.log(this.props)
         return (
           <div>
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
