@@ -627,8 +627,6 @@ var Main = React.createClass({
             }));
           }
         },
-=======
->>>>>>> 50f708566a0ef0e9becaffc44005494f7cfb5a4f
         alertModalProps: {
           open: false,
           handleOpen: () => {
