@@ -6,7 +6,7 @@ const path = require('path-extra');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const Upload = require('../components/core/UploadMethods.js');
 const modalActions = require('./ModalActions');
-const toolsActions = require('./toolsActions');
+const toolsActions = require('./ToolsActions');
 
 
 module.exports.onLoad = function (filePath) {
