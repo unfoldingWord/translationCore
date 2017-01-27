@@ -4,6 +4,7 @@ const merge = require('lodash.merge');
 const initialState = {
   loggedInUser: false,
   displayLogin: true,
+  userdata:null
 };
 
 module.exports = (state = initialState, action) => {
