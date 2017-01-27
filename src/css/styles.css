@@ -130,6 +130,8 @@ tools. they basically override bootstrap styling for this components
   color: #333333;
   background-color: #C6C4C4;
   border-radius: 0px;
+  box-sizing: border-box;
+  padding: 10px 58px;
 }
 
 #table tr:nth-child(even) {

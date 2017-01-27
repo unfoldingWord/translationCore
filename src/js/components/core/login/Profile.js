@@ -1,7 +1,7 @@
 const React = require('react');
 const CoreStore = require('../../../stores/CoreStore.js');
 const CoreActions = require('../../../actions/CoreActions.js');
-const { Button, Row, Col, Image, Panel, ListGroup, utils } = require('react-bootstrap/lib');
+const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
 bootstrapUtils.addStyle(Button, 'small-blue');
@@ -60,9 +60,10 @@ class Profile extends React.Component {
           <h3>Feedback and Comments</h3><br />
           <Panel header={panelTitle} style={{padding: "0px", borderColor: "#333333"}}>
             <ListGroup fill>
-              {/* Here we'll have that text box to handle feedback*/}
-            <p style={{height: "100px", color: "#000000", padding: "20px"}}>Leave us your feedback!</p>
-            <Button bsStyle="small-blue">
+            <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
+              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "#000000", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
+            </FormGroup>
+            <Button onClick={this.props.submitFeedback} bsStyle="small-blue">
               Submit
             </Button>
             </ListGroup>

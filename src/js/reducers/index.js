@@ -7,4 +7,5 @@ module.exports.dragDropReducer = require('./dragDropReducer');
 module.exports.toolsReducer = require('./toolsReducer');
 module.exports.recentProjectsReducer = require('./recentProjectsReducer');
 module.exports.importOnlineReducer = require('./importOnlineReducer');
+module.exports.reportsReducer = require('./reportsReducer');
 //module.exports.checkStoreReducer = require('./checkStoreReducer');

@@ -916,7 +916,7 @@ var Main = React.createClass({
           var lastCheckModule = localStorage.getItem('lastCheckModule');
           if (lastCheckModule) {
             CoreActions.startLoading();
-            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+            this.props.loadTool(lastCheckModule);
           }
         });
       }
@@ -1010,7 +1010,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       } else {
         dispatch(modalActions.showModalContainer(false));
       }
-    }
+    },
+    loadTool: (folderName) => {
+      dispatch(ToolsActions.loadTool(folderName));
+    },
   });
 }
 

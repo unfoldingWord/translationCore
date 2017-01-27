@@ -9,6 +9,8 @@ const ImportOnlineContainer = require('./ImportOnlineContainer');
 const Projects = require('../components/core/login/Projects');
 const { Tabs, Tab } = require('react-bootstrap/lib');
 const dragDropActions = require('../actions/DragDropActions.js');
+const ReportsActions = require('../actions/ReportsActions.js')
+const Report = require("../components/core/reports/ReportGenerator");
 
 class LoadModalContainer extends React.Component {
   render() {
@@ -26,6 +28,9 @@ class LoadModalContainer extends React.Component {
           <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
           <ImportOnlineContainer />
           </Tab>
+          <Tab eventKey={4} title="Reports" style={{backgroundColor: "#333333"}}>
+            <Report {...this.props} />
+          </Tab>
         </Tabs>
       </div>
     )
@@ -33,13 +38,21 @@ class LoadModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.dragDropReducer, state.recentProjectsReducer, state.importOnlineReducer);
+  return Object.assign({}, state.dragDropReducer,
+                           state.recentProjectsReducer,
+                           state.reportsReducer,
+                           state.toolsReducer,
+                           state.importOnlineReducer
+                      );
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     dragDropOnClick: (open, properties) => {
       dispatch(dragDropActions.onClick(open, properties));
+    },
+    onLoadReports: () => {
+      dispatch(ReportsActions.loadReports());
     },
   }
 }

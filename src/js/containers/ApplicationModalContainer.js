@@ -58,6 +58,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         onSettingsChange: (field)=> {
           dispatch(SettingsActions.onSettingsChange(field.target));
+        },
+        feedbackChange: (e) => {
+          dispatch(LoginActions.feedbackChange(e.target.value));
+        },
+        submitFeedback: () => {
+          dispatch(LoginActions.submitFeedback());
         }
     }
 }

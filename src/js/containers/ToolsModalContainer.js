@@ -38,9 +38,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         handleLoadTool: (toolFolderPath) => {
             dispatch(ToolsActions.loadTool(toolFolderPath));
         },
-        onHandleUserName: (e) => {
-            dispatch(ToolsActions.setUserName(e.target.value));
-        },
         showLoad: () => {
             dispatch(modalActions.selectModalTab(2))
         }
