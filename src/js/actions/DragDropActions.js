@@ -3,7 +3,7 @@ const consts = require('./CoreActionConsts');
 const remote = require('electron').remote;
 const {dialog} = remote;
 const Upload = require('../components/core/UploadMethods.js');
-const toolsActions = require('./toolsActions.js');
+const toolsActions = require('./ToolsActions.js');
 
 module.exports.sendFilePath = function (path, link, callback) {
     return ((dispatch) => {
