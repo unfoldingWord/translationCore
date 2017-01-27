@@ -57,8 +57,6 @@ var template = [
         label: 'Load',
         click() {
 
-          //store.dispatch(CoreActionsRedux.showCreateProject("Languages"));
-          //CoreActions.showCreateProject("Languages");
         }
        },
        {

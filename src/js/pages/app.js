@@ -432,7 +432,6 @@ var Main = React.createClass({
           },
 
           close: () => {
-            this.props.dispatch(showCreateProject(false));
             this.setState(merge({}, this.state, {
               projectModalProps: {
                 showModal: false,
@@ -554,7 +553,6 @@ var Main = React.createClass({
                 alert(loadOnline);
               } else {
                 Upload.sendFilePath(savePath, url, () => {
-                  dispatch(showCreateProject(false));
                 })
               }
             });
