@@ -991,7 +991,7 @@ var Main = React.createClass({
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
             </Col>
           </Grid>
         </div>
@@ -1007,9 +1007,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         handleLoadTool: (toolFolderPath) => {
             dispatch(ToolsActions.loadTool(toolFolderPath));
-        },
-        onHandleUserName: (e) => {
-            dispatch(ToolsActions.setUserName(e.target.value));
         },
         showLoad: () => {
             dispatch(modalActions.selectModalTab(2))

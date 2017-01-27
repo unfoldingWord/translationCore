@@ -8,6 +8,7 @@ const fs = require('fs');
 
 class RecentProjects extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <div style={{ height: '400px', overflowY: 'scroll' }}>
         <Table sortable={true} noDataText="No Recent Projects Found" className="table" id="table" data={this.props.data} />
