@@ -5,7 +5,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
 const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
 const ReportFilters = require("./ReportFilters.js");
-const style = require("./Style");
+const style = require("./style");
 
 class ReportSideBar extends React.Component{
   constructor() {
@@ -145,7 +145,7 @@ class ReportSideBar extends React.Component{
         });
       });
     }
-    
+
   render(){
     let chapterOptionArray = this.getChapters();
     return(
