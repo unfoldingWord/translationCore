@@ -34,6 +34,7 @@ var Access = {
         return 'Must specify location';
       }
     }
+    let checkDataPresent;
     var _this = this;
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
@@ -58,7 +59,7 @@ var Access = {
         if (callback && !checkDataPresent) {
           localStorage.setItem('lastProject', folderpath);
           callback()
-        } 
+        }
       });
     } catch (e) {
       localStorage.removeItem('lastProject');
