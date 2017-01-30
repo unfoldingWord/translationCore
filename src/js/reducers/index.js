@@ -8,4 +8,6 @@ module.exports.toolsReducer = require('./toolsReducer');
 module.exports.recentProjectsReducer = require('./recentProjectsReducer');
 module.exports.importOnlineReducer = require('./importOnlineReducer');
 module.exports.reportsReducer = require('./reportsReducer');
+module.exports.subModulesReducer = require('./subModulesReducer');
+module.exports.checkStoreReducer = require('./checkStoreReducer');
 //module.exports.checkStoreReducer = require('./checkStoreReducer');
