@@ -123,9 +123,9 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  */
 function getParams(path) {
   var tcManifest = api.getDataFromCommon('tcManifest');
-  isArray = function (a) {
+  const isArray = (a) => {
     return (!!a) && (a.constructor === Array);
-  };
+  }
   if (!tcManifest) return;
   if (tcManifest.package_version == '3') {
     tcManifest = fixManifestVerThree(tcManifest);

@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 const Registration = require('./Registration.js');
 const { Button, Row, Col, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;

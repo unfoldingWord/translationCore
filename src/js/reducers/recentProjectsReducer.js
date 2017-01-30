@@ -2,7 +2,7 @@ const consts = require('../actions/CoreActionConsts');
 const api = window.ModuleApi;
 const merge = require('lodash.merge');
 
-var initialState = {
+const initialState = {
     recentProjects: null,
 };
 
