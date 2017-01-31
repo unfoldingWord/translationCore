@@ -10,7 +10,7 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const bootstrap = require('react-bootstrap');
-var CryptoJS = require("crypto-js");
+const CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const sync = require('../components/core/SideBar/GitSync.js');
 const remote = require('electron').remote;
@@ -42,12 +42,13 @@ const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
-const ModuleWrapper = require('../components/core/ModuleWrapper');
+const ModuleWrapperContainer = require('../containers/ModuleWrapperContainer');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
+const CheckStoreActions = require('../actions/CheckStoreActions.js');
 
 const showMainView = CoreActionsRedux.showMainView;
 
@@ -75,6 +76,7 @@ var Main = React.createClass({
     api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+    api.removeEventListener('goToNext', this.goToNextCheck);
     api.removeEventListener('goToPrevious', this.goToPreviousCheck);
   },
 
@@ -175,7 +177,17 @@ var Main = React.createClass({
         this.props.dispatch(showMainView(true));
       });
     });
-
+    /*
+    Temporary code below to initializes the new checkStoreReducer
+    */
+    groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
+    currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
+    currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
+    let currentCheck = groupObjects[currentGroupIndex]['checks'][currentCheckIndex];
+    this.props.dispatch(CheckStoreActions.setBookName(bookName));
+    this.props.dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
+    this.props.dispatch(CheckStoreActions.goToCheck(currentGroupIndex || 0, currentCheckIndex || 0));
+    this.props.dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
   },
 
   getDefaultModules(callback) {
@@ -380,6 +392,7 @@ var Main = React.createClass({
               currentCheckIndex: 0,
               subMenuOpen: menuOpen
             }, callback);
+            this.props.dispatch(CheckStoreActions.goToCheck(parseInt(id), 0));
           },
         },
         subMenuProps: {
@@ -396,6 +409,7 @@ var Main = React.createClass({
             this.setState({
               currentCheckIndex: parseInt(id),
             }, callback);
+            this.props.dispatch(CheckStoreActions.goToCheck(this.state.currentGroupIndex, parseInt(id)));
           },
         },
         importUsfmProps: {
@@ -839,7 +853,7 @@ var Main = React.createClass({
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
+              <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
             </Col>
           </Grid>
         </div>
