@@ -54,6 +54,8 @@ const showMainView = CoreActionsRedux.showMainView;
 
 var Main = React.createClass({
   componentWillMount() {
+    const tCDir = path.join(pathex.homedir(), 'translationCore');
+    fs.ensureDirSync(tCDir);
     this.updateTools();
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
