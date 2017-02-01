@@ -13,19 +13,22 @@ class ToolsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.checkStoreReducer);
+    return Object.assign({}, state.checkStoreReducer, state.loginReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+      updateCurrentCheck: (NAMESPACE, newCurrentCheck) => {
+        dispatch(CheckStoreActions.updateCurrentCheck(NAMESPACE, newCurrentCheck));
+      },
       handleGoToCheck: (newGroupIndex, newCheckIndex) => {
-          dispatch(CheckStoreActions.goToCheck(newGroupIndex, newCheckIndex));
+        dispatch(CheckStoreActions.goToCheck(newGroupIndex, newCheckIndex));
       },
-      handleGoToNext: () => {
-          dispatch(CheckStoreActions.goToNext());
+      handleGoToNext: (NAMESPACE) => {
+        dispatch(CheckStoreActions.goToNext(NAMESPACE));
       },
-      handleGoToPrevious: () => {
-          dispatch(CheckStoreActions.goToPrevious());
+      handleGoToPrevious: (NAMESPACE) => {
+        dispatch(CheckStoreActions.goToPrevious(NAMESPACE));
       },
     }
 }
