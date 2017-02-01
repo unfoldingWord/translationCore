@@ -18,8 +18,6 @@ var bigError;
 
 console.error = function(err){
   console.errorold(err);
-  var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
-  api.HockeyApp.postBug(err, loggedInUser.userName);
   bigError += "(" + err + ")";
   api.createAlert(
     {
@@ -29,6 +27,8 @@ console.error = function(err){
       leftButtonText: "Reload"
     },
     ()=>{
+      var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
+      api.HockeyApp.postBug(err, loggedInUser.userName);
       localStorage.setItem('crashed', true);
       remote.getCurrentWindow().reload();
     });
