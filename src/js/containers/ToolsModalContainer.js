@@ -27,7 +27,7 @@ class ToolsModalContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.toolsReducer);
+    return Object.assign({}, state.toolsReducer, state.settingsReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
