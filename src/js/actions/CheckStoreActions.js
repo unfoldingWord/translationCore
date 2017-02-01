@@ -16,12 +16,12 @@ module.exports.setGroupsObjects = function (groupsObjects) {
   }
 }
 
-module.exports.updateCurrentCheck = function (NAMESPACE, currentCheck) {
+module.exports.updateCurrentCheck = function (NAMESPACE, newCurrentCheck) {
   return ((dispatch) => {
     let currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     let currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     let newGroupsObjects = api.getDataFromCheckStore(NAMESPACE, 'groups');
-    newGroupsObjects[currentGroupIndex]['checks'][currentCheckIndex] = currentCheck;
+    newGroupsObjects[currentGroupIndex]['checks'][currentCheckIndex] = newCurrentCheck;
     api.putDataInCheckStore(NAMESPACE, 'groups', newGroupsObjects);
     dispatch({
       type: "SET_GROUPS_OBJECTS",
@@ -29,14 +29,13 @@ module.exports.updateCurrentCheck = function (NAMESPACE, currentCheck) {
     });
     dispatch({
       type: "UPDATE_CURRENT_CHECK",
-      val: currentCheck,
+      val: newCurrentCheck,
     });
   })
 }
 
 module.exports.goToCheck = function (NAMESPACE, newGroupIndex, newCheckIndex) {
   return ((dispatch) => {
-    //dispatch({CheckStore.emitEvent('goToCheck');
     let groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
     dispatch({
