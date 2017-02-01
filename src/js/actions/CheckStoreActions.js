@@ -52,7 +52,6 @@ module.exports.goToCheck = function (NAMESPACE, newGroupIndex, newCheckIndex) {
 }
 
 module.exports.goToNext = function (NAMESPACE) {
-  //dispatch({CheckStore.emitEvent('goToNext');
   return ((dispatch) => {
     let newGroupIndex = 0;
     let newCheckIndex = 0;
@@ -84,7 +83,6 @@ module.exports.goToNext = function (NAMESPACE) {
 }
 
 module.exports.goToPrevious = function (NAMESPACE) {
-  //dispatch({CheckStore.emitEvent('goToPrevious');
   return ((dispatch) => {
     let newGroupIndex;
     let newCheckIndex;
