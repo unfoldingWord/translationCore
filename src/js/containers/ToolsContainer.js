@@ -13,7 +13,7 @@ class ToolsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.checkStoreReducer, state.loginReducer);
+    return Object.assign({}, state.checkStoreReducer, state.loginReducer, state.settingsReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
