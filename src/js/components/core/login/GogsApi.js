@@ -109,7 +109,7 @@ function UserManager(auth) {
            }).then(function (repos) {
              var repoIds = [];
              var uniqueRepos = [];
-             for (repo in repos) {
+             for (let repo in repos) {
                if (repos[repo] && !repoIds.includes(repos[repo].id)) {
                  repoIds.push(repos[repo].id);
                  uniqueRepos.push(repos[repo]);
