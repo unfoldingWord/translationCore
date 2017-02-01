@@ -3,17 +3,7 @@ const AppDescription = require('./AppDescription');
 
 class SwitchCheck extends React.Component{
   render() {
-    /*temp if condition: the following lines from line 7 to line 16
-    is temp fix for now until we fully implement redux or change how
-    the the recent projects componet calls switchCheck.js since the
-    props name change for my new implementation */
-    let toolsMetadatas;
-    if(this.props.moduleMetadatas){
-      toolsMetadatas = this.props.moduleMetadatas;
-    }else{
-      toolsMetadatas = this.props.toolsMetadatas;
-    }
-    //let { toolsMetadatas } = this.props;
+    let { toolsMetadatas } = this.props;
     let buttons = [];
     if(toolsMetadatas.length == 0 ) {
       return <div style={{color: "#FFFFFF"}}>No tC default tools found.</div>;

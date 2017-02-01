@@ -6,8 +6,6 @@ const pathFinder = require('path');
 const gogs = require('../login/GogsApi.js');
 const { connect  } = require('react-redux');
 
-const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
-
 
 function syncToGit(inputPath) {
   var alertError = console.error;
@@ -95,7 +93,6 @@ function syncToGit(inputPath) {
     });
   } else {
     api.Toast.info('Login then try again', '', 7);
-    updateLoginModal(true);
   }
 }
 

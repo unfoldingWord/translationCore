@@ -3,15 +3,11 @@ const React = require('react');
 const RB = require('react-bootstrap');
 const {Glyphicon, Button, Popover} = RB;
 const CoreActions = require('../../../actions/CoreActions.js');
-const ProjectModal = require('../create_project/ProjectModal');
-
 const Login = require('../login/Login');
 const StatusBar = require('../SideBar/StatusBar');
 const SideBarContainer = require('../SideBar/SideBarContainer');
-
 const Upload = require('../Upload');
 const loadOnline = require('../LoadOnline');
-const SideNavBar = require('../SideBar/SideNavBar');
 
 const NUM_OF_SLIDES = 2;
 

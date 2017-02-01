@@ -23,36 +23,18 @@ const ReportSideBar = require('./ReportSideBar.js')
 const path = require('path');
 const BooksOfBible = require('../BooksOfBible.js');
 const ReportFilters = api.ReportFilters;
-const style = require("./Style");
+const style = require("./style");
 
 class Report extends React.Component {
   constructor() {
     super();
     this.state ={
       query: null,
-      visibleReport: true,
     };
-      this.handleReportVisibility = this.handleReportVisibility.bind(this);
-  }
-
-  componentWillMount(){
-    api.registerEventListener('ReportVisibility', this.handleReportVisibility);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('ReportVisibility', this.handleReportVisibility);
-  }
-
-  handleReportVisibility(param){
-    this.setState(param);
   }
 
   getQuery(query){
     this.setState({query: query});
-  }
-
-  hideReport(){
-    this.setState({visibleReport: false})
   }
 
   getCompletedAndUnfinishedCheks(){
@@ -110,8 +92,23 @@ class Report extends React.Component {
   }
 
   render() {
-    if(!this.state.visibleReport){
-      return (<div></div>);
+    let { reportVisibility, toolLoaded } = this.props;
+    let reportViews = api.getDataFromCommon("reportViews");
+    if(!reportVisibility){
+      if(toolLoaded){
+        return (
+          <div>
+          {/*this will change once we implement the projects list for reports*/}
+            <Button bsStyle="primary" onClick={() => this.props.onLoadReports()}>Generate Report</Button>
+          </div>
+        );
+      }else{
+        return (
+          <h1 style={{color: "#ffffff", marginTop: "0px"}}>
+            Please Open a project and Load a Tool
+          </h1>
+        );
+      }
     }else{
     //get the total of completed checks and Unfinished number of checks
     let [done, unfinished] =  this.getCompletedAndUnfinishedCheks();
@@ -129,7 +126,7 @@ class Report extends React.Component {
       return (<div></div>);
     }
     // array of the functions in the ReportView.js's for the project
-    if (this.props.reportViews.length == 0) {
+    if (reportViews.length == 0) {
       api.Toast.error("Report Open Error", "No report views found", 3);
       return (<div></div>);
     }
@@ -161,12 +158,12 @@ class Report extends React.Component {
         authors = "various checkers";
       }
     }
-    // render report header data from this.props.reportViews
+    // render report header data from reportViews
     let reportHeaders = [];
-    for (let view in this.props.reportViews) {
+    for (let view in reportViews) {
       let viewResult;
       try { // in case their report view has errors
-         viewResult = this.props.reportViews[view].view(0,0);
+         viewResult = reportViews[view].view(0,0);
       }
       catch (e) {
         continue;
@@ -186,8 +183,8 @@ class Report extends React.Component {
       // create chapter header
       var chHeader = <h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>
       var isEmpty = true;
-      for (let view in this.props.reportViews) {
-        let viewResult = this.props.reportViews[view].view(ch, 0);
+      for (let view in reportViews) {
+        let viewResult = reportViews[view].view(ch, 0);
         if (viewResult) {
           reportHeadersOutput.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
         }
@@ -195,14 +192,14 @@ class Report extends React.Component {
       // now start getting data for each verse in the chapter
       for (let v in targetLang[ch]) {
         let reports = [];
-        for (let view in this.props.reportViews) {
+        for (let view in reportViews) {
           var query = this.state.query;
-          var reportNameSpace = this.props.reportViews[view].namespace;
+          var reportNameSpace = reportViews[view].namespace;
           var moduleStore = api.getDataFromCheckStore(reportNameSpace, 'groups');
           if (query && moduleStore) {
             moduleStore = ReportFilters.byCustom(query, moduleStore);
           }
-          let viewResult = this.props.reportViews[view].view(ch, v, moduleStore);
+          let viewResult = reportViews[view].view(ch, v, moduleStore);
           if (viewResult) {
             reports.push(<span key={`${ch}-${v}-${view}`}>{viewResult}</span>);
             isEmpty = false;
@@ -211,9 +208,9 @@ class Report extends React.Component {
         // only display a row for this verse if it has report view data
         if (reports.length > 0) {
           output.push(
-                <Row key={`${ch}-${v}`}>
-                  <Col xs={10} style={{paddingRight: "0px"}}>{reports}</Col>
-                </Row>
+                <div key={`${ch}-${v}`}>
+                  <Col style={{paddingRight: "0px"}}>{reports}</Col>
+                </div>
           );
         }
       }
@@ -226,26 +223,21 @@ class Report extends React.Component {
     }
     // TODO: Get name of book and authors
     return (
-      <div style={{overflow: "auto", zIndex: "99"}}>
+      <Row style={{padding: "0px", margin: "0px", display: "flex", height: "520px"}}>
+        <Col sm={4} md={4} lg={4} style={{padding: "0px", margin: "0px"}}>
         <ReportSideBar getQuery={this.getQuery.bind(this)} bookName={bookName}
                       authors={authors} reportHeadersOutput={reportHeadersOutput}
-                      hideReport={this.hideReport.bind(this)} completed={done}
+                      completed={done}
                       unfinished={unfinished} flagged={flaggedChecks}/>
-        <div style={style.reportContainer}>
-          <div style={style.reportHeader}>
-            <Glyphicon glyph="remove" title="Close Report Page"
-                        style={style.hidePageGlyph}
-                        onClick={this.hideReport.bind(this)}/>
-          </div>
-          <div style={{marginBottom: "20px"}}></div>
+        </Col>
+        <Col sm={8} md={8} lg={8} style={style.reportContainer}>
           <div id="cardsContent">
             {output}
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     );}
   }
 }
 
-
-module.exports = ReactDOM.render(<Report reportViews={api.getDataFromCommon("reportViews")} />, document.getElementById('reports'));
+module.exports = Report;

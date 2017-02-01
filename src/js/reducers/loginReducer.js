@@ -2,15 +2,9 @@ const consts = require('../actions/CoreActionConsts');
 const merge = require('lodash.merge');
 
 const initialState = {
-  userdata: {
-    username: "",
-    full_name: "",
-    password: "",
-    email: "",
-    avatar_url: "",
-  },
   loggedInUser: false,
   displayLogin: true,
+  userdata:null
 };
 
 module.exports = (state = initialState, action) => {
@@ -53,6 +47,17 @@ module.exports = (state = initialState, action) => {
           token: "",
         },
         loggedInUser: false
+      });
+      break;
+    case consts.FEEDBACK_CHANGE:
+      return merge({}, state, {
+        feedback: action.val
+      });
+      break;
+    case consts.SUBMIT_FEEDBACK:
+      ModuleApi.HockeyApp.postMessage(state.feedback, state.userdata.username);
+      return merge({}, state, {
+        feedback: 'Feedback Submitted!'
       });
       break;
     default:

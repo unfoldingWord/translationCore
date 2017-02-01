@@ -2,7 +2,7 @@
 (function () {
   require("babel-register")({
     extensions: [".js", ".jsx"],
-    presets: ["react"]
+    presets: ["es2015", "react"]
   });
   const path = require('path');
   window.__base = path.join(__dirname, '../../../');

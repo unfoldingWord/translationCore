@@ -1,7 +1,7 @@
-var consts = require('../actions/CoreActionConsts');
+const consts = require('../actions/CoreActionConsts');
 const merge = require('lodash.merge');
 
-initialState = {
+const initialState = {
     project: {
         showModal: false,
         modalTitle: "Create Project",

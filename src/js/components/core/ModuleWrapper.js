@@ -7,7 +7,7 @@ event from the CheckStore and automatically swap out the check module for the ne
 var React = require('react');
 var Button = require('react-bootstrap/lib/Button.js');
 var CoreStore = require('../../stores/CoreStore.js');
-var RecentProjects = require('./RecentProjects');
+var RecentProjectsContainer = require('../../containers/RecentProjectsContainer');
 var SwitchCheck = require('./SwitchCheck');
 var Upload = require('./UploadMethods');
 const path = require('path-extra');
@@ -26,7 +26,7 @@ class ModuleWrapper extends React.Component {
           mainContent = <SwitchCheck {...this.props.switchCheckProps} />;
           break;
         case 'recent':
-          mainContent = <RecentProjects.Component {...this.props.recentProjectsProps} />;
+          mainContent = <RecentProjectsContainer />;
           break;
         case 'main':
           var Tool = this.props.mainTool;

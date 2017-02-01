@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const CoreActions = require('../actions/CoreActions.js');
+const recentProjectActions = require('../actions/RecentProjectsActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
@@ -23,12 +24,9 @@ const merge = require('lodash.merge');
 
 const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
-const LoginModal = require('../components/core/login/LoginModal');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
-const SwitchCheckModal = require('../components/core/SwitchCheckModal');
 const SwitchCheck = require('../components/core/SwitchCheck');
-const ProjectModal = require('../components/core/create_project/ProjectModal');
 const Loader = require('../components/core/Loader');
 const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
@@ -49,18 +47,17 @@ const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
+const ToolsActions = require('../actions/ToolsActions.js');
 
-const showCreateProject = CoreActionsRedux.showCreateProject;
-const updateLoginModal = CoreActionsRedux.updateLoginModal;
-const updateProfileModal = CoreActionsRedux.updateProfileModal;
-const showLoginProfileModal = CoreActionsRedux.showLoginProfileModal;
 const showMainView = CoreActionsRedux.showMainView;
-const showSwitchCheckModal = CoreActionsRedux.showSwitchCheckModal;
 
 
 var Main = React.createClass({
   componentWillMount() {
+    const tCDir = path.join(pathex.homedir(), 'translationCore');
+    fs.ensureDirSync(tCDir);
     this.updateTools();
+    this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
     //changing tool
     api.registerEventListener('goToCheck', this.changeCheck);
@@ -305,7 +302,7 @@ var Main = React.createClass({
     this.state.projectModalProps.close();
     api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
     this.props.dispatch(showMainView(true));
-    this.props.dispatch(showSwitchCheckModal(true));
+    this.props.showToolsInModal(true);
   },
 
   getInitialState() {
@@ -316,92 +313,7 @@ var Main = React.createClass({
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
-        loginProps: {
-          userdata: {
-            username: "",
-            password: ""
-          },
-          register: false,
-          handleSubmit: (userDataSumbit) => {
-            var Token = api.getAuthToken('gogs');
-            var newuser = gogs(Token).login(userDataSumbit).then((userdata) => {
-              CoreActions.login(userdata);
-              this.props.dispatch(updateLoginModal(false));
-              CoreActions.updateOnlineStatus(true);
-              this.props.dispatch(updateProfileModal(true));
-            }).catch(function (reason) {
-              console.log(reason);
-              if (reason.status === 401) {
-                dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
-              } else if (reason.message) {
-                dialog.showErrorBox('Login Failed', reason.message);
-              } else if (reason.data) {
-                dialog.showErrorBox('Login Failed', reason.data);
-              } else {
-                dialog.showErrorBox('Login Failed', 'Unknown Error');
-              }
-            });
-          },
-          handleUserName: (e) => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                userdata: {
-                  username: e.target.value
-                }
-              }
-            }))
-          },
-          handlePassword: (e) => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                userdata: {
-                  password: e.target.value
-                }
-              }
-            }))
-          },
-          showRegistration: () => {
-            this.setState(merge({}, this.state, {
-              loginProps: {
-                register: !this.state.loginProps.register
-              }
-            }))
-          },
-        },
-        profileProps: {
-          projectVisibility: false,
-          handleLogout: () => {
-            CoreActions.updateOnlineStatus(false);
-            this.props.dispatch(updateProfileModal(false));
-            CoreActions.login(null);
-            localStorage.removeItem('user');
-          },
-          showProjects: () => {
-            this.setState(merge({}, this.state, {
-              profileProps: {
-                projectVisibility: true
-              }
-            }));
-          },
-          hideProjects: () => {
-            this.setState(merge({}, this.state, {
-              profileProps: {
-                projectVisibility: false
-              }
-            }));
-          },
-          fullName: user ? user.full_name : null,
-          userName: user ? user.username : null,
-          profilePicture: user ? user.avatar_url : null,
-          emailAccount: user ? user.email : null,
-        },
-        loginModalProps: {
-          close: () => {
-            this.props.dispatch(showLoginProfileModal(false));
-          }
-        },
         sideBarContainerProps: {
-          SideNavBar: false,
           screenHeight: window.innerHeight,
           updateDimensions: () => {
             if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
@@ -434,56 +346,14 @@ var Main = React.createClass({
               }));
             }
           },
-          changeView: () => {
-            this.setState(merge({}, this.state, {
-              sideBarContainerProps: {
-                SideNavBar: !this.state.sideBarContainerProps.SideNavBar
-              }
-            }))
-            this.props.dispatch(modalActions.showModalContainer(true));
-          },
           handleOpenProject: () => {
-            var dispatch = this.props.dispatch;
-            dispatch(showCreateProject("Languages"));
+            this.props.openModalAndSpecificTab(true, 2);
+          },
+          changeView: () => {
+            this.props.openModalAndSpecificTab(true, 1);
           },
           handleSelectTool: () => {
-            this.props.dispatch(showSwitchCheckModal(true));
-          }
-        },
-        sideNavBarProps: {
-          handleOpenProject: () => {
-            var dispatch = this.props.dispatch;
-            dispatch(showCreateProject("Languages"));
-          },
-          handleSyncProject: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              sync();
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
-          },
-          handleReport: () => {
-            api.Toast.info('Generating reports...', '', 3);
-            const Report = require("../components/core/reports/ReportGenerator");
-            api.emitEvent('ReportVisibility', { 'visibleReport': 'true' });
-          },
-          handleChangeCheckCategory: () => {
-            var dispatch = this.props.dispatch;
-            if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              this.props.dispatch(showMainView(false));
-            } else {
-              api.Toast.info('Open a project first, then try again', '', 3);
-              dispatch(showCreateProject("Languages"));
-            }
-          },
-          handleSettings: () => {
-          },
-          handlePackageManager: () => {
-            var PackageManagerView = require("../components/core/Package_Manager/PackageManagerView");
-            ReactDOM.render(<PackageManagerView />, document.getElementById('package_manager'))
-            api.emitEvent('PackManagerVisibility', { 'visiblePackManager': 'true' });
+            this.props.showToolsInModal(true);
           }
         },
         menuHeadersProps: {
@@ -542,18 +412,6 @@ var Main = React.createClass({
             }));
           },
         },
-        dragDropProps: {
-          filePath: '',
-          properties: ['openDirectory', 'openFile'],
-          sendFilePath: (path, link, callback) => {
-            this.setState(merge({}, this.state, {
-              dragDropProps: {
-                filePath: path,
-              }
-            }));
-            Upload.sendFilePath(path, link, callback);
-          },
-        },
         projectModalProps: {
           showModal: false,
           showD43: () => {
@@ -576,18 +434,9 @@ var Main = React.createClass({
           },
 
           close: () => {
-            this.props.dispatch(showCreateProject(false));
             this.setState(merge({}, this.state, {
               projectModalProps: {
                 showModal: false,
-              }
-            }));
-          },
-
-          handleOnlineChange: (e) => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                link: e.target.value,
               }
             }));
           },
@@ -706,7 +555,6 @@ var Main = React.createClass({
                 alert(loadOnline);
               } else {
                 Upload.sendFilePath(savePath, url, () => {
-                  dispatch(showCreateProject(false));
                 })
               }
             });
@@ -748,9 +596,6 @@ var Main = React.createClass({
         },
         switchCheckModalProps: {
           showModal: false,
-          close: () => {
-            this.props.dispatch(showSwitchCheckModal(false));
-          },
           localAppFilePath: '',
           handleFilePathChange: (event) => {
             this.setState(merge({}, this.state, {
@@ -870,7 +715,7 @@ var Main = React.createClass({
           moduleMetadatas: [],
           moduleClick: (folderName) => {
             this.props.dispatch(showMainView(false));
-            this.props.dispatch(showSwitchCheckModal(false));
+            this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
@@ -880,18 +725,6 @@ var Main = React.createClass({
             }
           },
         },
-        recentProjectsProps: {
-          onLoad: (filePath) => {
-            Upload.sendFilePath(filePath, undefined, (err) => {
-              if (!err) this.state.projectModalProps.onClick();
-              api.putDataInCommon('saveLocation', filePath);
-            });
-          },
-          projects: fs.readdirSync(defaultSave),
-          syncProject: (projectPath) => {
-            sync(projectPath)
-          }
-        }
       });
     var tutorialState = api.getSettings('tutorialView');
     if (tutorialState === 'show' || tutorialState === null) {
@@ -922,7 +755,10 @@ var Main = React.createClass({
       gogs(Token).login(userdata).then((userdata) => {
         CoreActions.login(userdata);
         CoreActions.updateOnlineStatus(true);
-        this.props.dispatch(updateProfileModal(true));
+        this.props.dispatch({
+          type: "RECEIVE_LOGIN",
+          val: userdata
+        });
       }).catch(function (reason) {
         console.log(reason);
         if (reason.status === 401) {
@@ -945,30 +781,28 @@ var Main = React.createClass({
           var lastCheckModule = localStorage.getItem('lastCheckModule');
           if (lastCheckModule) {
             CoreActions.startLoading();
-            CheckDataGrabber.loadModuleAndDependencies(lastCheckModule);
+            this.props.loadTool(lastCheckModule);
           }
         });
       }
     } catch (e) {
       var splitArr = e.path.split("/");
-          api.createAlert(
-      {
-        title: 'Error Opening Last Project',
-        content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
-        moreInfo: e,
-        leftButtonText: "Ok"
-      },
-      () => {
-        localStorage.removeItem('lastProject');
-      });
+      api.createAlert(
+        {
+          title: 'Error Opening Last Project',
+          content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
+          moreInfo: e,
+          leftButtonText: "Ok"
+        },
+        () => {
+          localStorage.removeItem('lastProject');
+        });
     }
 
   },
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.showCheck == true) {
-      var dispatch = this.props.dispatch;
-      dispatch(showCreateProject("Languages"));
       this.showCheck = false;
     }
   },
@@ -991,11 +825,6 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <ModalContainer />
-          <LoginModal {...this.props.modalReducers.login_profile} loginProps={this.state.loginProps} profileProps={this.state.profileProps} profileProjectsProps={this.state.profileProjectsProps} {...this.state.loginModalProps} />
-          <ProjectModal {...this.props.loginModalReducer} {...this.state.projectModalProps} uploadProps={this.state.uploadProps} importUsfmProps={this.state.importUsfmProps} dragDropProps={this.state.dragDropProps} profileProjectsProps={this.state.profileProjectsProps} recentProjectsProps={this.state.recentProjectsProps} />
-          <SwitchCheckModal {...this.state.switchCheckModalProps} {...this.props.modalReducers.switch_check}>
-            <SwitchCheck {...this.state.switchCheckProps} />
-          </SwitchCheckModal>
           <Popover />
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
@@ -1012,7 +841,7 @@ var Main = React.createClass({
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.state.recentProjectsProps} />
+              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
             </Col>
           </Grid>
         </div>
@@ -1020,7 +849,43 @@ var Main = React.createClass({
     }
   }
 });
-//fixed to chevron, explicity declare width in main col, set width in both chevron and drop down
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return merge({}, { dispatch: dispatch }, {
+    getToolsMetadatas: () => {
+      dispatch(ToolsActions.getToolsMetadatas());
+    },
+    handleLoadTool: (toolFolderPath) => {
+      dispatch(ToolsActions.loadTool(toolFolderPath));
+    },
+    showLoad: () => {
+      dispatch(modalActions.selectModalTab(2))
+    },
+    showToolsInModal: (visible) => {
+      if (visible) {
+        dispatch(modalActions.showModalContainer(true));
+        dispatch(modalActions.selectModalTab(3))
+      } else {
+        dispatch(modalActions.showModalContainer(false));
+      }
+    },
+    showProjectsInModal: (visible) => {
+      if (visible) {
+        dispatch(modalActions.showModalContainer(true));
+        dispatch(modalActions.selectModalTab(2))
+      } else {
+        dispatch(modalActions.showModalContainer(false));
+      }
+    },
+    loadTool: (folderName) => {
+      dispatch(ToolsActions.loadTool(folderName));
+    },
+    openModalAndSpecificTab: (visible, tabkey) => {
+      dispatch(modalActions.showModalContainer(true));
+      dispatch(modalActions.selectModalTab(tabkey));
+    },
+  });
+}
 
 function mapStateToProps(state) {
   //This will come in handy when we separate corestore and checkstore in two different reducers
@@ -1028,4 +893,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-module.exports = connect(mapStateToProps)(Main);
+module.exports = connect(mapStateToProps, mapDispatchToProps)(Main);

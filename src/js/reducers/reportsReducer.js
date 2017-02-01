@@ -1,16 +1,15 @@
 const consts = require('../actions/CoreActionConsts');
-const api = window.ModuleApi;
 const merge = require('lodash.merge');
 
 const initialState = {
-  currentSettings: api.getSettings()
+  reportVisibility: false,
 };
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGE_SETTINGS:
+    case consts.LOAD_REPORTS:
       return merge({}, state, {
-        currentSettings: action.val
+        reportVisibility: action.val,
       });
       break;
     default:

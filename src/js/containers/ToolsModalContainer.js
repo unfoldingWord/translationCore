@@ -7,7 +7,7 @@ const SwitchCheck = require('../components/core/SwitchCheck.js');
 
 class ToolsModalContainer extends React.Component {
     componentWillMount(){
-      this.props.getToolsMetadatas();
+        this.props.getToolsMetadatas();
     }
     render() {
         return (
@@ -19,7 +19,6 @@ class ToolsModalContainer extends React.Component {
                 <SwitchCheck {...this.props}/>
               </Tab>
               <Tab eventKey={2} title="Online Tools" style={{backgroundColor: "#333333"}}>
-
               </Tab>
             </Tabs>
           </div>
@@ -38,9 +37,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         handleLoadTool: (toolFolderPath) => {
             dispatch(ToolsActions.loadTool(toolFolderPath));
-        },
-        onHandleUserName: (e) => {
-            dispatch(ToolsActions.setUserName(e.target.value));
         },
         showLoad: () => {
             dispatch(modalActions.selectModalTab(2))

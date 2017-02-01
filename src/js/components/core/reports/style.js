@@ -2,45 +2,36 @@ var style = {
   ReportSideBar:{
     layout:{
       backgroundColor: "#333333",
-      width: "25%",
-      height: "100vh",
-      marginLeft: "0px",
-      position: "fixed",
-      zIndex: "99",
-      left: "0px",
+      width: "100%",
+      height: "100%",
+      margin: "0px",
       fontSize: "12px",
       color: "white",
-      overflowX: "hidden",
-      overflowY: "auto",
-      border: "1px solid rgba(0, 0, 0, 0.5)",
     },
     FormGroup:{
-      marginLeft: "30px",
-      width: "80%",
-      bottom: "0px",
+      margin: "0px",
+      width: "100%",
+      padding: "15px",
     },
+    FormControl:{
+      backgroundColor: "#333333",
+      color: "#ffffff",
+      width: "100%",
+      float: "right",
+    }
   },
 
   reportContainer:{
     backgroundColor: "#333333",
-    width: "88.5%",
-    height: "100vh",
-    marginLeft: "0px",
+    width: "100%",
+    height: "100%",
+    margin: "0px",
     display: "inline-block",
-    position: "fixed",
-    zIndex: "99",
-    left: "25%",
     fontSize: "12px",
     overflowX: "hidden",
-    overflowY: "scroll",
-  },
-
-  reportHeader:{
-    width: "100%",
-    height: "20px",
-    backgroundColor:"#333333",
-    position: "fixed",
-    zIndex: "100",
+    overflowY: "auto",
+    padding: "15px 5px 5px 5px",
+    border: "1px solid rgba(0, 0, 0, 0.5)",
   },
 
   hidePageGlyph:{
@@ -57,8 +48,11 @@ var style = {
   searchBox:{
     height: "34px",
     fontSize: "16px",
-    width: "128%",
+    width: "100%",
     borderRadius: "5px",
+    backgroundColor: "#5c5c5c",
+    color: "#FFFFFF",
+    borderColor: "#000000",
   },
 
 
