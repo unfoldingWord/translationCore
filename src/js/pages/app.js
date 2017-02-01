@@ -97,11 +97,6 @@ var Main = React.createClass({
     }
     else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
   },
-  updateCheckStore() {
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentCheckIndex', this.state.currentCheckIndex);
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentGroupIndex', this.state.currentGroupIndex);
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'groups', this.state.currentGroupObjects);
-  },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
     newSubGroupObjects[this.state.currentCheckIndex].checkStatus = checkStatus;
@@ -833,7 +828,6 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
-    this.updateCheckStore();
     if (this.state.firstTime) {
       return (
         <Welcome initialize={this.finishWelcome} />
@@ -849,11 +843,19 @@ var Main = React.createClass({
               <StatusBar />
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
-              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
-                subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
-                currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
-                isOpen={this.state.subMenuOpen} />
+              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace}
+                currentGroupObjects={this.state.currentGroupObjects}
+                subMenuProps={this.state.subMenuProps}
+                isCurrentHeader={this.props.checkStoreReducer.currentGroupIndex}
+                {...this.state.sideBarContainerProps}
+                menuClick={this.state.menuHeadersProps.menuClick}
+                {...this.state.sideNavBarProps}
+                currentBookName={this.state.currentBookName}
+                isCurrentSubMenu={this.props.checkStoreReducer.currentCheckIndex}
+                currentCheckIndex={this.props.checkStoreReducer.currentCheckIndex}
+                currentGroupIndex={this.props.checkStoreReducer.currentGroupIndex}
+                currentSubGroupObjects={this.state.currentSubGroupObjects}
+                isOpen={this.state.subMenuOpen} />currentCheckIndex
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
