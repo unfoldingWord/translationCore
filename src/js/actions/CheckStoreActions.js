@@ -38,6 +38,8 @@ module.exports.goToCheck = function (NAMESPACE, newGroupIndex, newCheckIndex) {
   return ((dispatch) => {
     let groups = api.getDataFromCheckStore(NAMESPACE, 'groups');
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
+    api.putDataInCheckStore(NAMESPACE, 'currentGroupIndex', newGroupIndex);
+    api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
     dispatch({
       type: "GO_TO_CHECK",
       currentGroupIndex: newGroupIndex,
@@ -69,8 +71,6 @@ module.exports.goToNext = function (NAMESPACE) {
       api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
     }
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
-    console.log(newGroupIndex);
-    console.log(newCheckIndex);
     dispatch({
       type: "GO_TO_NEXT",
       currentGroupIndex: newGroupIndex,
