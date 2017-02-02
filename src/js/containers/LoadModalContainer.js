@@ -17,7 +17,7 @@ class LoadModalContainer extends React.Component {
   render() {
     return (
       <div>
-        <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
+        <Tabs defaultActiveKey={this.props.currentSection} id="uncontrolled-tab-example"
           bsStyle="pills"
           style={{ borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%" }}>
           <Tab eventKey={1} title="My Projects" style={{ backgroundColor: "#333333" }}>

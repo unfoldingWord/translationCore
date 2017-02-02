@@ -10,12 +10,14 @@ module.exports = (state = initialState, action) => {
     switch (action.type) {
         case consts.SHOW_MODAL_CONTAINER:
             return merge({}, state, {
-                visible:action.val
+                visible:action.val,
+                currentSection:1
             });
             break;
         case consts.SELECT_MODAL_TAB:
             return merge({}, state, {
-                currentTab:action.val
+                currentTab:action.tab,
+                currentSection:action.section
             });
             break;
         default:

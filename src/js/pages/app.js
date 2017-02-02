@@ -359,6 +359,9 @@ var Main = React.createClass({
           },
           handleSelectTool: () => {
             this.props.showToolsInModal(true);
+          },
+          handleSelectReports: () => {
+            this.props.openModalAndSpecificTab(true, 2, 4);
           }
         },
         menuHeadersProps: {
@@ -834,7 +837,7 @@ var Main = React.createClass({
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
             <Row style={{ margin: 0, }}>
-              <StatusBar />
+              <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
@@ -885,9 +888,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     loadTool: (folderName) => {
       dispatch(ToolsActions.loadTool(folderName));
     },
-    openModalAndSpecificTab: (visible, tabkey) => {
+    openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
-      dispatch(modalActions.selectModalTab(tabkey));
+      dispatch(modalActions.selectModalTab(tabkey, sectionKey));
     },
   });
 }

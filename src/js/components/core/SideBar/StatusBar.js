@@ -54,6 +54,30 @@ class StatusBar extends React.Component {
     this.setState({ path: "" });
   }
 
+  onPress(tab) {
+    switch (tab) {
+      case 1:
+        this.setState({ pressed: tab });
+        this.props.changeView();
+        break;
+      case 2:
+        this.setState({ pressed: tab });
+        this.props.handleOpenProject();
+        break;
+      case 3:
+        this.setState({ pressed: tab });
+        this.props.handleSelectTool();
+        break;
+      case 4:
+        this.setState({ pressed: tab });
+        this.props.handleSelectReports();
+        break;
+      default:
+        this.setState({ pressed: 0 });
+        break;
+    }
+  }
+
   render() {
     const styles = {
       container: {
@@ -64,7 +88,7 @@ class StatusBar extends React.Component {
       },
       inner: {
         overflow: 'hidden',
-        height:'100%'
+        height: '100%'
       },
       child: {
         width: 'auto',
@@ -77,7 +101,7 @@ class StatusBar extends React.Component {
         border: 0,
         outline: 'none',
         backgroundColor: '#333333',
-        height:'100%'
+        height: '100%'
       },
       childActive: {
         width: 'auto',
@@ -90,7 +114,7 @@ class StatusBar extends React.Component {
         border: 0,
         outline: 'none',
         backgroundColor: '#AAAAAA',
-        height:'100%'
+        height: '100%'
       },
       childRight: {
         width: 'auto',
@@ -105,21 +129,21 @@ class StatusBar extends React.Component {
           <div style={styles.childRight}>
             <OnlineStatus />
           </div>
-          <button onMouseDown={()=>this.setState({pressed:1})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 1 ? styles.child : styles.childActive}>
+          <button onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1 ? styles.child : styles.childActive}>
             <img src="images/TC_Icon_White.png" style={{ marginRight: 5, height: 17, width: 17 }} />
             Application
           </button>
-          <button onMouseDown={()=>this.setState({pressed:2})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 2 ? styles.child : styles.childActive}>
+          <button onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
             Project
           </button>
-          <button onMouseDown={()=>this.setState({pressed:3})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 3 ? styles.child : styles.childActive}>
+          <button onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
             <div style={{ float: 'left' }}>
               Tool: {this.state.currentCheckNamespace}
             </div>
           </button>
-          <button onMouseDown={()=>this.setState({pressed:4})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 4 ? styles.child : styles.childActive}>
+          <button onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"list-alt"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
             Report
           </button>
