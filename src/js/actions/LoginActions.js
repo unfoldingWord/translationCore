@@ -63,6 +63,13 @@ module.exports.feedbackChange = function (e) {
   }
 }
 
+module.exports.subjectChange = function (subject) {
+  return {
+    type: 'FEEDBACK_SUBJECT_CHANGE',
+    val: subject
+  }
+}
+
 module.exports.submitFeedback = function () {
   return {
     type: consts.SUBMIT_FEEDBACK,
