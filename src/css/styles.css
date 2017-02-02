@@ -52,21 +52,9 @@ body {
     font-weight: bold;
     src: url(../fonts/NotoSans-BoldItalic.ttf);
 }
-/*
-  TODO:
-  This selector is going to give is problems when we have a setting to switch between
-  drag to select and click to select. It will need to be moved to a JSX style that we
-  can changed based on an api property.
 
-  BUT we cant use psuedo classes within the JSX styling syntax. If anyone finds a way
-  to do this that would be great but my research shows that is not possible so we may
-  have to go another route.
-*/
 * {
   font-family: Noto Sans;
-}
-.TargetVerseSelectionArea::selection{
-  background: yellow;
 }
 
 /*
