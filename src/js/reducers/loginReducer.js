@@ -4,7 +4,7 @@ const merge = require('lodash.merge');
 const initialState = {
   loggedInUser: false,
   displayLogin: true,
-  userdata:null
+  userdata: null
 };
 
 module.exports = (state = initialState, action) => {
@@ -37,15 +37,7 @@ module.exports = (state = initialState, action) => {
     case consts.LOGOUT_USER:
       localStorage.removeItem('user');
       return merge({}, state, {
-        userdata: {
-          username: "",
-          id:"",
-          full_name: "",
-          password: "",
-          email: "",
-          avatar_url: "",
-          token: "",
-        },
+        userdata: null,
         loggedInUser: false
       });
       break;
