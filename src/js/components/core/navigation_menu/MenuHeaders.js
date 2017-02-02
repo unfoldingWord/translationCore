@@ -9,7 +9,7 @@ class MenuHeaders extends React.Component {
   render() {
     let { groups, currentGroupIndex, currentCheckIndex } = this.props;
     let subGroupObjects = {};
-    if(groups && currentGroupIndex){
+    if(groups != null && currentGroupIndex != null){
       subGroupObjects = groups[currentGroupIndex]['checks'];
     }
     var groupsName = [];
