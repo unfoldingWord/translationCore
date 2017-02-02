@@ -4,7 +4,8 @@ const merge = require('lodash.merge');
 const initialState = {
   loggedInUser: false,
   displayLogin: true,
-  userdata: null
+  userdata: null,
+  subject: null
 };
 
 module.exports = (state = initialState, action) => {
@@ -44,6 +45,12 @@ module.exports = (state = initialState, action) => {
     case consts.FEEDBACK_CHANGE:
       return merge({}, state, {
         feedback: action.val
+      });
+      break;
+    case 'FEEDBACK_SUBJECT_CHANGE':
+      console.log(action.val)
+      return merge({}, state, {
+        subject: action.val
       });
       break;
     case consts.SUBMIT_FEEDBACK:
