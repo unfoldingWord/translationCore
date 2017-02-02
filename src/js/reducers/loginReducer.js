@@ -5,6 +5,7 @@ const initialState = {
   loggedInUser: false,
   displayLogin: true,
   userdata: null,
+  feedback: '',
   subject: null
 };
 
@@ -48,7 +49,6 @@ module.exports = (state = initialState, action) => {
       });
       break;
     case 'FEEDBACK_SUBJECT_CHANGE':
-      console.log(action.val)
       return merge({}, state, {
         subject: action.val
       });
