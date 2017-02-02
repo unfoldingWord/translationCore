@@ -71,6 +71,10 @@ module.exports.goToNext = function (NAMESPACE) {
       api.putDataInCheckStore(NAMESPACE, 'currentCheckIndex', newCheckIndex);
     }
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
+    var lastCheck = newCheckIndex + 1 >= groups[currentGroupIndex].checks.length;
+    if (lastCheck) {
+      dispatch({type: "TOGGLE_SUBMENU", val: true});
+    }
     dispatch({
       type: "GO_TO_NEXT",
       currentGroupIndex: newGroupIndex,
@@ -105,6 +109,10 @@ module.exports.goToPrevious = function (NAMESPACE) {
       newCheckIndex = currentCheckIndex;
     }
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
+    var lastCheck = newCheckIndex - 1 < 0;
+    if (lastCheck) {
+      dispatch({type: "TOGGLE_SUBMENU", val: true});
+    }
     dispatch({
       type: "GO_TO_PREVIOUS",
       currentGroupIndex: newGroupIndex,
