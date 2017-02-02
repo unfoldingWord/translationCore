@@ -7,7 +7,6 @@ const MenuHeadersItems = require('./MenuHeadersItem');
 
 class MenuHeaders extends React.Component {
   render() {
-    console.log(this.props);
     let { groups, currentGroupIndex, currentCheckIndex } = this.props;
     let subGroupObjects = {};
     if(groups && currentGroupIndex){
