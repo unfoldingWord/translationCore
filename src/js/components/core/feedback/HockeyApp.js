@@ -14,8 +14,8 @@ const url = 'https://rink.hockeyapp.net/api/2/apps/2be18e8dac7c4d799c8c23d80a435
  * @param {string} username - The username of the poster.
  * @param {function} callback - To be initiated after posting.
  ******************************************************************************/
-function postMessage(message, username, callback) {
-  var dataString = "subject=User Message&text=" + message + "&name=" + username;
+function postMessage(message, username, subject, callback) {
+  var dataString = "subject=User Message&text=" + message + "&name=" + username + "&subject=" + subject;
   var options = {
       url: url,
       method: 'POST',
