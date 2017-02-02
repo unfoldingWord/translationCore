@@ -49,7 +49,6 @@ function sendPath(path, link, callback) {
             (err, translationStudioManifest) => {
               if (translationStudioManifest) {
                 let tsManifest = verifyChunks(path, translationStudioManifest);
-                console.log(tsManifest);
                 //ts-manifest is present, creating tc-manifest and initiate load
                 saveManifest(path, link, tsManifest, (err, tcManifest) => {
                   loadProjectThatHasManifest(path, callback, tcManifest);
