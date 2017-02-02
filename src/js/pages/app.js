@@ -60,42 +60,17 @@ var Main = React.createClass({
     this.updateTools();
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
-    //changing tool
-    api.registerEventListener('goToCheck', this.changeCheck);
     //changing check, (group index, check index) ...one or the other or both
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
-    //changing the status of the current check
-    api.registerEventListener('goToNext', this.goToNextCheck);
-    //going to next check in entire list of checks, will go to next group also
-    api.registerEventListener('goToPrevious', this.goToPreviousCheck);
   },
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
-    api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
-    api.removeEventListener('goToNext', this.goToNextCheck);
-    api.removeEventListener('goToPrevious', this.goToPreviousCheck);
-  },
-
-  goToPreviousCheck() {
-    var lastCheck = this.state.currentCheckIndex - 1 < 0;
-    if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1, true);
-    }
-    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex - 1);
-  },
-
-  goToNextCheck() {
-    var lastCheck = this.state.currentCheckIndex + 1 >= this.state.currentSubGroupObjects.length;
-    if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1, true);
-    }
-    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
   },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
@@ -370,47 +345,34 @@ var Main = React.createClass({
             } else {
               menuOpen = menuOpen || !this.state.subMenuOpen;
             }
-            id = id >= 0 ? id : 0;
-            id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
-            this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
-              var currentCheck = this.state.currentGroupObjects[this.state.currentCheckIndex].checks[0];
-              api.emitEvent('goToCheck', {
-                chapterNumber: currentCheck.chapter,
-                verseNumber: currentCheck.verse
-              });
-            }, menuOpen);
-          },
-          setIsCurrentCheck: (status, id, callback, menuOpen) => {
-            const newObj = this.state.currentGroupObjects.slice(0);
-            const currentSubGroupObjects = newObj[id].checks;
+            let currentSubGroupObjects;
+            let currentGroupIndex = parseInt(id);
+            let groupObjects = this.props.checkStoreReducer.groups;
+            if(currentGroupIndex != null && groupObjects != null){
+              currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
+            }
             this.setState({
-              currentGroupIndex: parseInt(id),
+              currentGroupIndex: currentGroupIndex,
               currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
               subMenuOpen: menuOpen
-            }, callback);
-            this.props.dispatch(CheckStoreActions.goToCheck(this.state.currentToolNamespace, parseInt(id), 0));
-          },
+            });
+            this.props.dispatch(
+              CheckStoreActions.goToCheck(
+                this.state.currentToolNamespace, parseInt(id), 0
+              )
+            );
+          }
         },
         subMenuProps: {
           checkClicked: (id) => {
-            this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
-              var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
-              api.emitEvent('goToCheck', {
-                chapterNumber: currentCheck.chapter,
-                verseNumber: currentCheck.verse
-              });
-            });
-          },
-          setIsCurrentCheck: (status, id, callback) => {
-            this.setState({
-              currentCheckIndex: parseInt(id),
-            }, callback);
+            this.setState({currentCheckIndex: parseInt(id)});
             this.props.dispatch(
-                        CheckStoreActions.goToCheck(this.state.currentToolNamespace,
-                                                    this.state.currentGroupIndex, parseInt(id))
-                      );
-          },
+                CheckStoreActions.goToCheck(this.state.currentToolNamespace,
+                                            this.state.currentGroupIndex, parseInt(id)
+                )
+            );
+          }
         },
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
@@ -827,6 +789,14 @@ var Main = React.createClass({
   },
 
   render: function () {
+    console.log(this.props.checkStoreReducer.currentGroupIndex);
+    console.log(this.props.checkStoreReducer.currentCheckIndex);
+    let groupObjects = this.props.checkStoreReducer.groups;
+    let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
+    let subGroupObjects;
+    if(currentGroupIndex != null && groupObjects != null){
+      subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+    }
     var _this = this;
     if (this.state.firstTime) {
       return (
@@ -843,18 +813,19 @@ var Main = React.createClass({
               <StatusBar />
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
-              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace}
-                currentGroupObjects={this.state.currentGroupObjects}
+              <SideBarContainer ref='sidebar'
+                currentToolNamespace={this.state.currentToolNamespace}
+                currentGroupObjects={this.props.checkStoreReducer.groups}
                 subMenuProps={this.state.subMenuProps}
                 isCurrentHeader={this.props.checkStoreReducer.currentGroupIndex}
                 {...this.state.sideBarContainerProps}
                 menuClick={this.state.menuHeadersProps.menuClick}
                 {...this.state.sideNavBarProps}
-                currentBookName={this.state.currentBookName}
+                currentBookName={this.props.checkStoreReducer.book}
                 isCurrentSubMenu={this.props.checkStoreReducer.currentCheckIndex}
                 currentCheckIndex={this.props.checkStoreReducer.currentCheckIndex}
                 currentGroupIndex={this.props.checkStoreReducer.currentGroupIndex}
-                currentSubGroupObjects={this.state.currentSubGroupObjects}
+                currentSubGroupObjects={subGroupObjects}
                 isOpen={this.state.subMenuOpen} />currentCheckIndex
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
