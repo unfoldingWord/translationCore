@@ -11,11 +11,22 @@ const style = require('./loginStyle');
 class Profile extends React.Component {
   render(){
     let { userdata, onHandleLogout } = this.props;
-    const panelTitle = (<div><h3>Category:</h3>
-      <FormControl onChange={this.props.subjectChange} componentClass="select" placeholder="Select Category">
-        <option value="Bug Report">Bug Report</option>
-        <option value="Feedback">General Feedback</option>
-      </FormControl></div>);
+    const panelTitle = (
+      <div style={{display:"flex"}}>
+        <h3>Category:</h3>
+        <FormControl onChange={this.props.subjectChange}
+                     componentClass="select"
+                     placeholder="Select Category"
+                     style={{
+                       marginTop: "15px",
+                       width: "50%",
+                       marginLeft: "100px"
+                     }}>
+          <option value="Bug Report">Bug Report</option>
+          <option value="Feedback">General Feedback</option>
+        </FormControl>
+      </div>
+    );
     return(
       <div>
         <style type="text/css">
