@@ -7,19 +7,34 @@ const MenuHeadersItems = require('./MenuHeadersItem');
 
 class MenuHeaders extends React.Component {
   render() {
+    console.log(this.props);
+    let { groups, currentGroupIndex, currentCheckIndex } = this.props;
+    let subGroupObjects = {};
+    if(groups && currentGroupIndex){
+      subGroupObjects = groups[currentGroupIndex]['checks'];
+    }
     var groupsName = [];
     if (this.props.currentToolNamespace) {
-      for (var i in this.props.currentGroupObjects) {
-        const menuItem = this.props.currentGroupObjects[i];
-        menuItem.isCurrentItem = this.props.isCurrentHeader == i;
+      for (var i in groups) {
+        const menuItem = groups[i];
+        menuItem.isCurrentItem = currentGroupIndex == i;
         menuItem.currentGroupprogress = menuItem.currentGroupprogress || 0;
-        menuItem.open = this.props.isOpen;
+        menuItem.open = this.props.subMenuOpen;
         groupsName.push(
-          <MenuHeadersItems onClick={this.props.menuClick} subMenuProps={this.props.subMenuProps}
-             {...menuItem} id={i} key={i} ref={menuItem.group.toString()}
-             currentBookName={this.props.currentBookName} isCurrentSubMenu={this.props.isCurrentSubMenu}
-             currentSubGroupObjects={this.props.currentSubGroupObjects}
-             currentCheckIndex={this.props.currentCheckIndex} currentGroupIndex={this.props.currentGroupIndex}/>
+          <MenuHeadersItems
+              key={i}
+              id={i}
+              menuClick={this.props.menuClick}
+              checkClicked={this.props.checkClicked}
+              currentToolNamespace={this.props.currentToolNamespace}
+              {...menuItem}
+              ref={menuItem.group.toString()}
+              currentBookName={this.props.book}
+              isCurrentSubMenu={currentCheckIndex}
+              currentSubGroupObjects={subGroupObjects}
+              currentCheckIndex={currentCheckIndex}
+              currentGroupIndex={currentGroupIndex}
+          />
         );
       }
     }
