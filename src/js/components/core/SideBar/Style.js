@@ -74,18 +74,12 @@ var style = {
   },
 
   textOffline: {
-    float: "right",
     color: "#FF0000",
-    padding: "3px",
-    marginRight: "15px",
     display: "inline",
   },
 
   textOnline: {
-    float: "right",
     color: "#4eba6f",
-    padding: "3px",
-    marginRight: "15px",
     display: "inline",
   },
 

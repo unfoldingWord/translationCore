@@ -111,6 +111,7 @@ var Main = React.createClass({
       currentGroupObjects: newGroupObjects
     });
   },
+
   getGroupProgress: (groupObj) => {
     var numChecked = 0;
     for (var i = 0; i < groupObj.checks.length; i++) {
@@ -126,6 +127,7 @@ var Main = React.createClass({
       currentCheckIndex: 0
     });
   },
+
   changeCheck(tool) {
     this.setState(merge({}, this.state, {
       currentGroupIndex: tool.groupIndex,
@@ -213,11 +215,13 @@ var Main = React.createClass({
       callback(defaultModules);
     });
   },
+  
   sortMetadatas(metadatas) {
     metadatas.sort((a, b) => {
       return a.title < b.title ? -1 : 1;
     });
   },
+  
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
     //This makes sure we're done with all the files first before we call the callback
@@ -282,6 +286,7 @@ var Main = React.createClass({
       i++
     }
   },
+
   getSubMenuItems(name, groupName) {
     var namespace = this.state.currentToolNamespace || name;
     if (!namespace) return 'No namespace';
@@ -828,7 +833,7 @@ var Main = React.createClass({
           <Popover />
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
-            <Row>
+            <Row style={{ margin: 0, }}>
               <StatusBar />
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
