@@ -21,7 +21,6 @@ var sideBarContainerStyle = {
 
 class SideBarContainer extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <Grid fluid style={sideBarContainerStyle}>
@@ -47,17 +46,18 @@ class SideBarContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.checkStoreReducer, state.sideBarReducer);
+  return Object.assign({}, state.checkStoreReducer, state.sideBarReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     menuClick: (id, currentToolNamespace, bool) => {
-      dispatch(SideBarActions.toggleSubmenu(currentToolNamespace, parseInt(id), 0, bool));
+      dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
     },
-    checkClicked: (id, currentGroupIndex, currentToolNamespace) => {
+    checkClicked: (currentGroupIndex, id, currentToolNamespace) => {
+      console.log(currentGroupIndex, id,  currentToolNamespace);
       dispatch(
-        CheckStoreActions.goToCheck(this.props.currentToolNamespace, currentGroupIndex, parseInt(id))
+        CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, parseInt(id))
       );
     },
   }
