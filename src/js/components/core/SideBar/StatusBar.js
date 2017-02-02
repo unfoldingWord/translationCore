@@ -14,6 +14,7 @@ class StatusBar extends React.Component {
       path: "",
       currentCheckNamespace: "",
       newToolSelected: false,
+      pressed: false
     }
     this.currentCheckNamespace = this.currentCheckNamespace.bind(this);
     this.getSwitchCheckToolEvent = this.getSwitchCheckToolEvent.bind(this);
@@ -63,7 +64,7 @@ class StatusBar extends React.Component {
       },
       inner: {
         overflow: 'hidden',
-        paddingTop: 5
+        height:'100%'
       },
       child: {
         width: 'auto',
@@ -72,12 +73,30 @@ class StatusBar extends React.Component {
         paddingLeft: 30,
         paddingRight: 30,
         width: 'auto',
-        minWidth:'200px'
+        minWidth: '200px',
+        border: 0,
+        outline: 'none',
+        backgroundColor: '#333333',
+        height:'100%'
+      },
+      childActive: {
+        width: 'auto',
+        float: 'left',
+        color: 'white',
+        paddingLeft: 30,
+        paddingRight: 30,
+        width: 'auto',
+        minWidth: '200px',
+        border: 0,
+        outline: 'none',
+        backgroundColor: '#AAAAAA',
+        height:'100%'
       },
       childRight: {
         width: 'auto',
         float: 'right',
         paddingRight: 10,
+
       }
     }
     return (
@@ -86,24 +105,24 @@ class StatusBar extends React.Component {
           <div style={styles.childRight}>
             <OnlineStatus />
           </div>
-          <div style={styles.child}>
-          <img src="images/TC_Icon_White.png" style={{marginRight: 5, height:17, width:17}}/>
+          <button onMouseDown={()=>this.setState({pressed:1})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 1 ? styles.child : styles.childActive}>
+            <img src="images/TC_Icon_White.png" style={{ marginRight: 5, height: 17, width: 17 }} />
             Application
-          </div>
-          <div style={styles.child}>
-          <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
+          </button>
+          <button onMouseDown={()=>this.setState({pressed:2})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 2 ? styles.child : styles.childActive}>
+            <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
             Project
-          </div>
-          <div style={styles.child}>
-            <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, float:'left' }} />
-            <div style={{float:'left'}}>
+          </button>
+          <button onMouseDown={()=>this.setState({pressed:3})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 3 ? styles.child : styles.childActive}>
+            <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
+            <div style={{ float: 'left' }}>
               Tool: {this.state.currentCheckNamespace}
             </div>
-          </div>
-          <div style={styles.child}>
-          <Glyphicon glyph={"list-alt"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, float:'left' }} />
+          </button>
+          <button onMouseDown={()=>this.setState({pressed:4})} onMouseUp={()=>this.setState({pressed:0})} style={this.state.pressed != 4 ? styles.child : styles.childActive}>
+            <Glyphicon glyph={"list-alt"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
             Report
-          </div>
+          </button>
         </div>
       </div>
     );
