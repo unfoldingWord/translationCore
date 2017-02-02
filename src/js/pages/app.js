@@ -789,8 +789,6 @@ var Main = React.createClass({
   },
 
   render: function () {
-    console.log(this.props.checkStoreReducer.currentGroupIndex);
-    console.log(this.props.checkStoreReducer.currentCheckIndex);
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let subGroupObjects;
