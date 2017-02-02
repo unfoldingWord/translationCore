@@ -18,9 +18,8 @@ class Profile extends React.Component {
                      componentClass="select"
                      placeholder="Select Category"
                      style={{
-                       marginTop: "15px",
-                       width: "50%",
-                       marginLeft: "100px"
+                       marginTop: "16px",
+                       marginLeft: "200px"
                      }}>
           <option value="Bug Report">Bug Report</option>
           <option value="Feedback">General Feedback</option>
