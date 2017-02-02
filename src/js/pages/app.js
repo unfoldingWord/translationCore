@@ -22,7 +22,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
 
-const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
+const SideBarContainer = require('../containers/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
@@ -73,11 +73,19 @@ var Main = React.createClass({
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
-    const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
-    newSubGroupObjects[this.state.currentCheckIndex].checkStatus = checkStatus;
-    const newGroupObjects = this.state.currentGroupObjects.slice(0);
-    newGroupObjects[this.state.currentGroupIndex].checks = newSubGroupObjects;
-    newGroupObjects[this.state.currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[this.state.currentGroupIndex]);
+    console.log(this.props.checkStoreReducer);
+    let groupObjects = this.props.checkStoreReducer.groups;
+    let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
+    let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
+    let currentSubGroupObjects;
+    if(currentGroupIndex != null && groupObjects != null){
+      currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
+    }
+    const newSubGroupObjects = currentSubGroupObjects.slice(0);
+    newSubGroupObjects[currentCheckIndex].checkStatus = checkStatus;
+    const newGroupObjects = groupObjects.slice(0);
+    newGroupObjects[currentGroupIndex].checks = newSubGroupObjects;
+    newGroupObjects[currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[currentGroupIndex]);
     this.setState({
       currentSubGroupObjects: newSubGroupObjects,
       currentGroupObjects: newGroupObjects
@@ -98,12 +106,12 @@ var Main = React.createClass({
       currentCheckIndex: 0
     });
   },
-  changeCheck(tool) {
+  /*changeCheck(tool) {
     this.setState(merge({}, this.state, {
       currentGroupIndex: tool.groupIndex,
       currentCheckIndex: tool.checkIndex
     }))
-  },
+  },*/
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
@@ -340,7 +348,7 @@ var Main = React.createClass({
         },
         menuHeadersProps: {
           menuClick: (id, menuOpen) => {
-            if (id != this.state.currentGroupIndex) {
+            if (id != this.props.checkStoreReducer.currentGroupIndex) {
               menuOpen = true;
             } else {
               menuOpen = menuOpen || !this.state.subMenuOpen;
@@ -369,7 +377,7 @@ var Main = React.createClass({
             this.setState({currentCheckIndex: parseInt(id)});
             this.props.dispatch(
                 CheckStoreActions.goToCheck(this.state.currentToolNamespace,
-                                            this.state.currentGroupIndex, parseInt(id)
+                                            this.props.checkStoreReducer.currentGroupIndex, parseInt(id)
                 )
             );
           }
@@ -789,14 +797,6 @@ var Main = React.createClass({
   },
 
   render: function () {
-    console.log(this.props.checkStoreReducer.currentGroupIndex);
-    console.log(this.props.checkStoreReducer.currentCheckIndex);
-    let groupObjects = this.props.checkStoreReducer.groups;
-    let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
-    let subGroupObjects;
-    if(currentGroupIndex != null && groupObjects != null){
-      subGroupObjects = groupObjects[currentGroupIndex]['checks'];
-    }
     var _this = this;
     if (this.state.firstTime) {
       return (
@@ -813,20 +813,10 @@ var Main = React.createClass({
               <StatusBar />
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
-              <SideBarContainer ref='sidebar'
+              <SideBarContainer
                 currentToolNamespace={this.state.currentToolNamespace}
-                currentGroupObjects={this.props.checkStoreReducer.groups}
-                subMenuProps={this.state.subMenuProps}
-                isCurrentHeader={this.props.checkStoreReducer.currentGroupIndex}
                 {...this.state.sideBarContainerProps}
-                menuClick={this.state.menuHeadersProps.menuClick}
-                {...this.state.sideNavBarProps}
-                currentBookName={this.props.checkStoreReducer.book}
-                isCurrentSubMenu={this.props.checkStoreReducer.currentCheckIndex}
-                currentCheckIndex={this.props.checkStoreReducer.currentCheckIndex}
-                currentGroupIndex={this.props.checkStoreReducer.currentGroupIndex}
-                currentSubGroupObjects={subGroupObjects}
-                isOpen={this.state.subMenuOpen} />currentCheckIndex
+              />
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
