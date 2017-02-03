@@ -3,7 +3,7 @@ const { Button, Row, Col, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'white');
 
-var tW = {
+var iW = {
   appWindow: {
     marginRight: "0px",
     marginLeft: "0px",
@@ -56,8 +56,8 @@ class AppDescription extends React.Component{
     let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
     let Styles;
     switch (name) {
-      case "TranslationWordsChecker":
-        Styles = tW.appWindow;
+      case "ImportantWords":
+        Styles = iW.appWindow;
         break;
       case "TranslationNotesChecker":
         Styles = tN.appWindow;
