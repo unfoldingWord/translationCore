@@ -27,6 +27,7 @@ var CheckDataGrabber = {
    */
   fetchModules: function (checkArray, callback = () =>{}) {
     try {
+      fs.ensureDirSync(api.getDataFromCommon('saveLocation'));
       var params = api.getDataFromCommon('params');
       this.doneModules = 0;
       this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
