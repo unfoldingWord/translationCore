@@ -106,12 +106,6 @@ var Main = React.createClass({
       currentCheckIndex: 0
     });
   },
-  /*changeCheck(tool) {
-    this.setState(merge({}, this.state, {
-      currentGroupIndex: tool.groupIndex,
-      currentCheckIndex: tool.checkIndex
-    }))
-  },*/
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
