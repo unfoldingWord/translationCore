@@ -823,7 +823,7 @@ var Main = React.createClass({
                 currentToolNamespace={this.state.currentToolNamespace}
               />
             </Col>
-            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10} style={{ width: "calc(100vw - 300px)"}}>
+            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
