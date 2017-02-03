@@ -10,7 +10,6 @@ var RootStyles = {
     paddingLeft:"15px",
     overflowX:'hidden',
     float:'right',
-    width: '77%'
   },
   AfterCheck: {
     minWidth:'100vh',
