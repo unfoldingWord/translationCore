@@ -8,6 +8,7 @@ function buildInstaller(packageLocation) {
     outputDirectory: packageLocation + '/installer',
     loadingGif: './images/TC_ANIMATED_Logo.gif',
     setupIcon: './build/icon.ico',
+    skipUpdateIcon: true, 
     setupExe: 'translationCoreSetup.exe'
   });
   resultPromise.then(() => console.log("Installer build succesful"), (e) => console.log(`Installer build failed: ${e.message}`));
