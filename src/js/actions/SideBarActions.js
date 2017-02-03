@@ -1,19 +1,16 @@
 const api = window.ModuleApi;
 const CheckStoreActions = require('./CheckStoreActions.js');
 
-module.exports.toggleSubmenu = function () {
+module.exports.toggleSubmenu = function (id) {
   return {
     type: "TOGGLE_SUBMENU",
-    val: bool
+    openCheck: id,
   }
 };
 
-module.exports.menuHeaderClicked = function (currentToolNamespace, currentGroupIndex, currentCheckIndex, bool) {
+module.exports.menuHeaderClicked = function (currentToolNamespace, currentGroupIndex, currentCheckIndex) {
   return ((dispatch) => {
       dispatch(CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, currentCheckIndex));
-      dispatch({
-        type: "TOGGLE_SUBMENU",
-        val: bool
-      });
+      dispatch(this.toggleSubmenu(currentGroupIndex));
   })
 };
