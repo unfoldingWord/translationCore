@@ -197,11 +197,15 @@ function checkIfUSFMFile(savePath, callback) {
     const ext = savePath.split(".")[1];
     callback(ext  == "usfm"|| ext == "sfm");
   } catch (e) {
-    var dir = fs.readdirSync(savePath);
-    if (dir.length === 1 || dir.shift() == '.git') {
-      const ext = dir[0].split(".")[1];
-      callback(ext  == "usfm"|| ext == "sfm", Path.join(savePath, dir[0]));
-    } else {
+    try {
+      var dir = fs.readdirSync(savePath);
+      if (dir.length === 1 || dir.shift() == '.git') {
+        const ext = dir[0].split(".")[1];
+        callback(ext  == "usfm"|| ext == "sfm", Path.join(savePath, dir[0]));
+      } else {
+        callback(false);
+      }
+    } catch(err) {
       callback(false);
     }
   }
