@@ -73,7 +73,6 @@ var Main = React.createClass({
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
-    console.log(this.props.checkStoreReducer);
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
