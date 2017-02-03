@@ -55,7 +55,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
     },
     checkClicked: (currentGroupIndex, id, currentToolNamespace) => {
-      console.log(currentGroupIndex, id,  currentToolNamespace);
       dispatch(
         CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, parseInt(id))
       );
