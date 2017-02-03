@@ -8,8 +8,9 @@ var RootStyles = {
     overflowY: 'scroll',
     bottom:0,
     paddingLeft:"15px",
-    paddingRight: "0px",
-    overflowX:'hidden'
+    overflowX:'hidden',
+    float:'right',
+    width: '77%'
   },
   AfterCheck: {
     minWidth:'100vh',

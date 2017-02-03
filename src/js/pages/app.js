@@ -812,13 +812,13 @@ var Main = React.createClass({
             <Row style={{ margin: 0, }}>
               <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
             </Row>
-            <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
+            <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
                 currentToolNamespace={this.state.currentToolNamespace}
                 {...this.state.sideBarContainerProps}
               />
             </Col>
-            <Col style={RootStyles.ScrollableSection} md={9}>
+            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
