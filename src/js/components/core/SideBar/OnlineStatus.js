@@ -38,6 +38,7 @@ class OnlineStatus extends React.Component{
     return(
       <div style={textStatusColor}>
           Status: {status}
+          <Glyphicon glyph={"triangle-bottom"} style={{fontSize:10}}/>
       </div>
       );
   }

@@ -90,6 +90,7 @@ var Main = React.createClass({
       currentGroupObjects: newGroupObjects
     });
   },
+
   getGroupProgress: (groupObj) => {
     var numChecked = 0;
     for (var i = 0; i < groupObj.checks.length; i++) {
@@ -196,11 +197,13 @@ var Main = React.createClass({
       callback(defaultModules);
     });
   },
+  
   sortMetadatas(metadatas) {
     metadatas.sort((a, b) => {
       return a.title < b.title ? -1 : 1;
     });
   },
+  
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
     //This makes sure we're done with all the files first before we call the callback
@@ -265,6 +268,7 @@ var Main = React.createClass({
       i++
     }
   },
+
   getSubMenuItems(name, groupName) {
     var namespace = this.state.currentToolNamespace || name;
     if (!namespace) return 'No namespace';
@@ -337,6 +341,9 @@ var Main = React.createClass({
           },
           handleSelectTool: () => {
             this.props.showToolsInModal(true);
+          },
+          handleSelectReports: () => {
+            this.props.openModalAndSpecificTab(true, 2, 4);
           }
         },
         menuHeadersProps: {
@@ -802,16 +809,16 @@ var Main = React.createClass({
           <Popover />
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
-            <Row>
-              <StatusBar />
+            <Row style={{ margin: 0, }}>
+              <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
             </Row>
-            <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
+            <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
                 currentToolNamespace={this.state.currentToolNamespace}
                 {...this.state.sideBarContainerProps}
               />
             </Col>
-            <Col style={RootStyles.ScrollableSection} md={9}>
+            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
@@ -853,9 +860,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     loadTool: (folderName) => {
       dispatch(ToolsActions.loadTool(folderName));
     },
-    openModalAndSpecificTab: (visible, tabkey) => {
+    openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
-      dispatch(modalActions.selectModalTab(tabkey));
+      dispatch(modalActions.selectModalTab(tabkey, sectionKey));
     },
   });
 }
