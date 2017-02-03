@@ -33,6 +33,7 @@ class MenuHeaders extends React.Component {
               currentSubGroupObjects={subGroupObjects}
               currentCheckIndex={currentCheckIndex}
               currentGroupIndex={currentGroupIndex}
+              openCheck={this.props.openCheck}
           />
         );
       }

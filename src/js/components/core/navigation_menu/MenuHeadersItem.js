@@ -12,7 +12,7 @@ class MenuHeadersItems extends React.Component {
     var itemStyle = this.props.isCurrentItem ? style.activeMenuHeader : style.menuHeader;
     return (
       <tbody>
-        <tr onClick={() => this.props.menuClick(this.props.id, this.props.currentToolNamespace, !this.props.open)}
+        <tr onClick={() => this.props.menuClick(this.props.id, this.props.currentToolNamespace)}
           style={itemStyle}
           title="Click to select this reference">
           <th>
@@ -36,11 +36,11 @@ class MenuHeadersItems extends React.Component {
             {this.props.checks[0].groupName}
           </td>
           <td style={{paddingBottom:5}}>
-            {this.props.isCurrentItem && this.props.open ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
+            {this.props.isCurrentItem && this.props.openCheck == this.props.id && this.props.open ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
               <Glyphicon glyph="chevron-down" style={{ position: "absolute", right: "5px", top: "auto" }} />}
           </td>
         </tr>
-        {this.props.isCurrentItem && this.props.open ?
+        {this.props.isCurrentItem && this.props.openCheck == this.props.id && this.props.open ?
           <tr>
             <td style={{paddingBottom:5}}>
               <SubMenu ref='submenu'
