@@ -39,7 +39,11 @@ class RecentProjectsContainer extends React.Component {
                 // Happens with USFM projects
                 manifest = { target_language: {}, ts_project: {} }
             }
-            var stats = fs.statSync(projectPath);
+            try {
+              var stats = fs.statSync(projectPath);
+            } catch (e) {
+              continue;
+            }
             var mtime = new Date(stats.mtime);
             var difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
             var buttonSpan = (this.generateButton(projectPath));
