@@ -14,7 +14,6 @@ module.exports.onLoad = function (filePath) {
         const _this = this;
         Upload.sendFilePath(filePath, undefined, (err) => {
             if (!err) {
-                api.putDataInCommon('saveLocation', filePath);
                 dispatch(_this.startLoadingNewProject());
             }
         });

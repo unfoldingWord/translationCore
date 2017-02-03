@@ -33,9 +33,9 @@ function clearPreviousData() {
 */
 function sendPath(path, link, callback) {
   clearPreviousData();
-  checkIfUSFMFile(path, (isUSFM) => {
+  checkIfUSFMFile(path, (isUSFM, newPath) => {
     if (isUSFM) {
-      ImportUsfm.open(path, 'ltr', link, callback);
+      ImportUsfm.open(newPath || path, 'ltr', link, callback);
       return;
     }
     if (path) {
@@ -197,7 +197,17 @@ function checkIfUSFMFile(savePath, callback) {
     const ext = savePath.split(".")[1];
     callback(ext  == "usfm"|| ext == "sfm");
   } catch (e) {
-    callback(false);
+    try {
+      var dir = fs.readdirSync(savePath);
+      if (dir.length === 1 || dir.shift() == '.git') {
+        const ext = dir[0].split(".")[1];
+        callback(ext  == "usfm"|| ext == "sfm", Path.join(savePath, dir[0]));
+      } else {
+        callback(false);
+      }
+    } catch(err) {
+      callback(false);
+    }
   }
 }
 
