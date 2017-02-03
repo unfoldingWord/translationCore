@@ -18,7 +18,7 @@ module.exports = (state = initialState, action) => {
       });
       break;
     case "SET_GROUPS_OBJECTS":
-      return merge({}, state, {
+      return Object.assign({}, state, {
         groups: action.val,
       });
       break;
