@@ -275,6 +275,12 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
+      case consts.KILL_LOADING:
+        this.doneLoading = true;
+        this.checkCategoryOptions = null;
+        this.emitChange();
+      break;
+
       case consts.ACCOUNT_LOGIN:
         this.userLoggedIn = action.user;
         this.emitChange();

@@ -31,15 +31,19 @@ class RecentProjectsContainer extends React.Component {
             var projectPath = path.join(DEFAULT_SAVE, projectPaths[project]);
             var projectName = projectPaths[project];
             if (projectName === '.DS_Store' || projectName === '.git') continue;
-            var manifestLocation = path.join(projectPath, 'manifest.json');
+            var manifestLocation = path.join(projectPath, 'tc-manifest.json');
             var manifest = {};
             try {
                 manifest = require(manifestLocation);
             } catch (err) {
                 // Happens with USFM projects
-                manifest = { target_language: {}, project: {} }
+                manifest = { target_language: {}, ts_project: {} }
             }
-            var stats = fs.statSync(projectPath);
+            try {
+              var stats = fs.statSync(projectPath);
+            } catch (e) {
+              continue;
+            }
             var mtime = new Date(stats.mtime);
             var difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
             var buttonSpan = (this.generateButton(projectPath));
@@ -47,7 +51,7 @@ class RecentProjectsContainer extends React.Component {
                 {
                     '': <Glyphicon glyph={'folder-open'} />,
                     'Project Name': projectName,
-                    'Book': manifest.project.name || 'Unknown',
+                    'Book': manifest.ts_project.name || 'Unknown',
                     'Language': manifest.target_language.name || 'Unknown',
                     'Date Updated': difference,
                     ' ': buttonSpan

@@ -4,7 +4,9 @@ const merge = require('lodash.merge');
 const initialState = {
   loggedInUser: false,
   displayLogin: true,
-  userdata:null
+  userdata: null,
+  feedback: '',
+  subject: null
 };
 
 module.exports = (state = initialState, action) => {
@@ -37,15 +39,7 @@ module.exports = (state = initialState, action) => {
     case consts.LOGOUT_USER:
       localStorage.removeItem('user');
       return merge({}, state, {
-        userdata: {
-          username: "",
-          id:"",
-          full_name: "",
-          password: "",
-          email: "",
-          avatar_url: "",
-          token: "",
-        },
+        userdata: null,
         loggedInUser: false
       });
       break;
@@ -54,8 +48,13 @@ module.exports = (state = initialState, action) => {
         feedback: action.val
       });
       break;
+    case 'FEEDBACK_SUBJECT_CHANGE':
+      return merge({}, state, {
+        subject: action.val
+      });
+      break;
     case consts.SUBMIT_FEEDBACK:
-      ModuleApi.HockeyApp.postMessage(state.feedback, state.userdata.username);
+      ModuleApi.HockeyApp.postMessage(state.feedback, state.userdata.username, state.subject);
       return merge({}, state, {
         feedback: 'Feedback Submitted!'
       });

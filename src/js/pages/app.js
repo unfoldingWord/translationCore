@@ -10,7 +10,7 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const bootstrap = require('react-bootstrap');
-var CryptoJS = require("crypto-js");
+const CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const sync = require('../components/core/SideBar/GitSync.js');
 const remote = require('electron').remote;
@@ -22,7 +22,7 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
 
-const SideBarContainer = require('../components/core/SideBar/SideBarContainer');
+const SideBarContainer = require('../containers/SideBarContainer');
 const StatusBar = require('../components/core/SideBar/StatusBar');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
@@ -42,12 +42,13 @@ const Welcome = require('../components/core/welcome/welcome');
 const AlertModal = require('../components/core/AlertModal');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
-const ModuleWrapper = require('../components/core/ModuleWrapper');
+const ModuleWrapperContainer = require('../containers/ModuleWrapperContainer');
 const CoreStore = require('../stores/CoreStore.js');
 const Popover = require('../components/core/Popover');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
+const CheckStoreActions = require('../actions/CheckStoreActions.js');
 
 const showMainView = CoreActionsRedux.showMainView;
 
@@ -59,53 +60,31 @@ var Main = React.createClass({
     this.updateTools();
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
-    //changing tool
-    api.registerEventListener('goToCheck', this.changeCheck);
     //changing check, (group index, check index) ...one or the other or both
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
-    //changing the status of the current check
-    api.registerEventListener('goToNext', this.goToNextCheck);
-    //going to next check in entire list of checks, will go to next group also
-    api.registerEventListener('goToPrevious', this.goToPreviousCheck);
   },
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
-    api.removeEventListener('goToCheck', this.changeCheck);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
-    api.removeEventListener('goToPrevious', this.goToPreviousCheck);
-  },
-
-  goToPreviousCheck() {
-    var lastCheck = this.state.currentCheckIndex - 1 < 0;
-    if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex - 1, true);
-    }
-    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex - 1);
-  },
-
-  goToNextCheck() {
-    var lastCheck = this.state.currentCheckIndex + 1 >= this.state.currentSubGroupObjects.length;
-    if (lastCheck) {
-      this.state.menuHeadersProps.menuClick(this.state.currentGroupIndex + 1, true);
-    }
-    else this.state.subMenuProps.checkClicked(this.state.currentCheckIndex + 1);
-  },
-  updateCheckStore() {
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentCheckIndex', this.state.currentCheckIndex);
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'currentGroupIndex', this.state.currentGroupIndex);
-    api.putDataInCheckStore(this.state.currentToolNamespace, 'groups', this.state.currentGroupObjects);
   },
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
-    const newSubGroupObjects = this.state.currentSubGroupObjects.slice(0);
-    newSubGroupObjects[this.state.currentCheckIndex].checkStatus = checkStatus;
-    const newGroupObjects = this.state.currentGroupObjects.slice(0);
-    newGroupObjects[this.state.currentGroupIndex].checks = newSubGroupObjects;
-    newGroupObjects[this.state.currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[this.state.currentGroupIndex]);
+    let groupObjects = this.props.checkStoreReducer.groups;
+    let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
+    let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
+    let currentSubGroupObjects;
+    if(currentGroupIndex != null && groupObjects != null){
+      currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
+    }
+    const newSubGroupObjects = currentSubGroupObjects.slice(0);
+    newSubGroupObjects[currentCheckIndex].checkStatus = checkStatus;
+    const newGroupObjects = groupObjects.slice(0);
+    newGroupObjects[currentGroupIndex].checks = newSubGroupObjects;
+    newGroupObjects[currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[currentGroupIndex]);
     this.setState({
       currentSubGroupObjects: newSubGroupObjects,
       currentGroupObjects: newGroupObjects
@@ -128,19 +107,13 @@ var Main = React.createClass({
     });
   },
 
-  changeCheck(tool) {
-    this.setState(merge({}, this.state, {
-      currentGroupIndex: tool.groupIndex,
-      currentCheckIndex: tool.checkIndex
-    }))
-  },
-
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
-    //switched Tool therefore generate New MenuHeader
     var groupName = this.state.currentGroupName;
+    let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     var currentGroupIndex = 0;
     var currentCheckIndex = 0;
+    //switched Tool therefore generate New MenuHeader
     /*first load of fresh project thus no groupName
     * in checkstore then get groupName at groupindex 0
     */
@@ -163,7 +136,17 @@ var Main = React.createClass({
     } catch (e) {
       console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
     }
-    let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
+    /*
+    Temporary code below to initializes the new checkStoreReducer
+    */
+    groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
+    currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
+    currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
+    let currentCheck = groupObjects[currentGroupIndex]['checks'][currentCheckIndex];
+    this.props.dispatch(CheckStoreActions.setBookName(bookName));
+    this.props.dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
+    this.props.dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
+    this.props.dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
     //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
     //attached to every menu/submenuitem
     this.setState({
@@ -179,7 +162,6 @@ var Main = React.createClass({
         this.props.dispatch(showMainView(true));
       });
     });
-
   },
 
   getDefaultModules(callback) {
@@ -366,47 +348,39 @@ var Main = React.createClass({
         },
         menuHeadersProps: {
           menuClick: (id, menuOpen) => {
-            if (id != this.state.currentGroupIndex) {
+            if (id != this.props.checkStoreReducer.currentGroupIndex) {
               menuOpen = true;
             } else {
               menuOpen = menuOpen || !this.state.subMenuOpen;
             }
-            id = id >= 0 ? id : 0;
-            id = id <= this.state.currentGroupObjects.length - 1 ? id : this.state.currentGroupObjects.length - 1;
-            this.state.menuHeadersProps.setIsCurrentCheck(true, id, () => {
-              var currentCheck = this.state.currentGroupObjects[this.state.currentCheckIndex].checks[0];
-              api.emitEvent('goToCheck', {
-                chapterNumber: currentCheck.chapter,
-                verseNumber: currentCheck.verse
-              });
-            }, menuOpen);
-          },
-          setIsCurrentCheck: (status, id, callback, menuOpen) => {
-            const newObj = this.state.currentGroupObjects.slice(0);
-            const currentSubGroupObjects = newObj[id].checks;
+            let currentSubGroupObjects;
+            let currentGroupIndex = parseInt(id);
+            let groupObjects = this.props.checkStoreReducer.groups;
+            if(currentGroupIndex != null && groupObjects != null){
+              currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
+            }
             this.setState({
-              currentGroupIndex: parseInt(id),
+              currentGroupIndex: currentGroupIndex,
               currentSubGroupObjects: currentSubGroupObjects,
               currentCheckIndex: 0,
               subMenuOpen: menuOpen
-            }, callback);
-          },
+            });
+            this.props.dispatch(
+              CheckStoreActions.goToCheck(
+                this.state.currentToolNamespace, parseInt(id), 0
+              )
+            );
+          }
         },
         subMenuProps: {
           checkClicked: (id) => {
-            this.state.subMenuProps.setIsCurrentCheck(true, id, () => {
-              var currentCheck = this.state.currentGroupObjects[this.state.currentGroupIndex].checks[this.state.currentCheckIndex];
-              api.emitEvent('goToCheck', {
-                chapterNumber: currentCheck.chapter,
-                verseNumber: currentCheck.verse
-              });
-            });
-          },
-          setIsCurrentCheck: (status, id, callback) => {
-            this.setState({
-              currentCheckIndex: parseInt(id),
-            }, callback);
-          },
+            this.setState({currentCheckIndex: parseInt(id)});
+            this.props.dispatch(
+                CheckStoreActions.goToCheck(this.state.currentToolNamespace,
+                                            this.props.checkStoreReducer.currentGroupIndex, parseInt(id)
+                )
+            );
+          }
         },
         importUsfmProps: {
           openUSFM: ImportUsfm.open,
@@ -824,7 +798,6 @@ var Main = React.createClass({
 
   render: function () {
     var _this = this;
-    this.updateCheckStore();
     if (this.state.firstTime) {
       return (
         <Welcome initialize={this.finishWelcome} />
@@ -840,16 +813,15 @@ var Main = React.createClass({
               <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
-              <SideBarContainer ref='sidebar' currentToolNamespace={this.state.currentToolNamespace} currentGroupObjects={this.state.currentGroupObjects}
-                subMenuProps={this.state.subMenuProps} isCurrentHeader={this.state.currentGroupIndex} {...this.state.sideBarContainerProps} menuClick={this.state.menuHeadersProps.menuClick} {...this.state.sideNavBarProps}
-                currentBookName={this.state.currentBookName} isCurrentSubMenu={this.state.currentCheckIndex} currentCheckIndex={this.state.currentCheckIndex}
-                currentGroupIndex={this.state.currentGroupIndex} currentSubGroupObjects={this.state.currentSubGroupObjects}
-                isOpen={this.state.subMenuOpen} />
+              <SideBarContainer
+                currentToolNamespace={this.state.currentToolNamespace}
+                {...this.state.sideBarContainerProps}
+              />
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapper mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
+              <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
             </Col>
           </Grid>
         </div>

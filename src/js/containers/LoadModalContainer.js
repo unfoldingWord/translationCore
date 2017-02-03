@@ -57,6 +57,9 @@ function mapDispatchToProps(dispatch, ownProps) {
     },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
+    },
+    sendFilePath: (filePath) => {
+      dispatch(dragDropActions.sendFilePath(filePath));
     }
   }
 }

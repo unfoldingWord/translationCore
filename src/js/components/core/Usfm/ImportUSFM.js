@@ -7,7 +7,6 @@ const pathex = require('path-extra');
 const api = window.ModuleApi;
 
 const ManifestGenerator = require('../create_project/ProjectManifest.js');
-const books = require('../BooksOfBible.js');
 
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
@@ -33,7 +32,7 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
   Upload.clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
-    saveParamsInAPI(parsedUSFM.book, saveLocation, direction);
+    saveParamsInAPI(parsedUSFM.book, saveLocation, direction, api.getDataFromCommon('language'));
     Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
         Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
@@ -52,7 +51,7 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
           target_language: {
             direction: direction,
             id: "",
-            name: targetLanguage.title
+            name: api.getDataFromCommon('language')
           },
           project_id: parsedUSFM.book,
           ts_project: {
@@ -72,14 +71,15 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
     });
   });
 }
-function saveParamsInAPI(bookAbbr, saveLocation, direction) {
+function saveParamsInAPI(bookAbbr, saveLocation, direction, language) {
   Upload = require('../UploadMethods.js');
   if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
   var params = {
     originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
     targetLanguagePath: saveLocation,
     direction: direction,
-    bookAbbr: bookAbbr
+    bookAbbr: bookAbbr,
+    language: language
   };
   if (Upload.isOldTestament(params.bookAbbr)) {
     params.originalLanguage = "hebrew";
@@ -95,7 +95,7 @@ function saveTargetLangeInAPI(parsedUSFM) {
   }
   var targetLanguage = {};
   targetLanguage.title = parsedUSFM.book;
-  parsedUSFM.bookName = books[parsedUSFM.book]
+  parsedUSFM.bookName = api.convertToFullBookName(parsedUSFM.book);
   var chapters = parsedUSFM.chapters;
   for (var ch in chapters) {
     targetLanguage[chapters[ch].number] = {};
@@ -108,9 +108,24 @@ function saveTargetLangeInAPI(parsedUSFM) {
   if (parsedUSFM.headers) {
     var parsedHeaders = parsedUSFM.headers;
     if (parsedHeaders['mt1']) {
-      targetLanguage.title = parsedHeaders['mt1'];
+      targetLanguage.title = api.convertToFullBookName(parsedHeaders['mt1']) || parsedHeaders['mt1'];
+    } else if (parsedHeaders['mt']) {
+      targetLanguage.title = api.convertToFullBookName(parsedHeaders['mt']) || parsedHeaders['mt'];
     } else if (parsedHeaders['id']) {
-      targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
+      let id = parsedHeaders['id'].split(' ');
+      targetLanguage.title = api.convertToFullBookName(id[0]) || id[0];
+    }
+    if (parsedHeaders['rem']) {
+      let id = parsedHeaders['rem'].split(' ');
+      id.pop()
+      let language = id.pop();
+      api.putDataInCommon('language', language);
+    } else if (parsedHeaders['id']) {
+      let id = parsedHeaders['id'].split(' ');
+      let language = id[3];
+      if (language) {
+        api.putDataInCommon('language', language);
+      }
     }
   }
   api.putDataInCommon('targetLanguage', targetLanguage);

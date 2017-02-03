@@ -31,7 +31,7 @@ class SideBarContainer extends React.Component {
                 isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
                 currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}
                 currentSubGroupObjects={this.props.currentSubGroupObjects} isCurrentSubMenu={this.props.currentCheckIndex}
-                isOpen={this.props.isOpen}/>
+                isOpen={this.props.isOpen} openCheck={this.props.openCheck}/>
             </Col>
           </Grid>);
     return (

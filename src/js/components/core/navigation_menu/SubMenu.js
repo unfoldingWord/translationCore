@@ -77,7 +77,9 @@ class SubMenu extends React.Component {
         item.isCurrentItem = this.props.isCurrentSubMenu == i;
         subMenuItems.push(
           <SubMenuItem key={i} {...item} id={i} checkClicked={this.props.checkClicked} groupIndex={this.props.currentGroupIndex}
-            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props} />
+            ref={this.props.currentGroupIndex.toString() + ' ' + i.toString()} {...this.props}
+            currentToolNamespace={this.props.currentToolNamespace}
+          />
         );
       }
     }

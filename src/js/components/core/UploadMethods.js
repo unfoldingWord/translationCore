@@ -33,9 +33,9 @@ function clearPreviousData() {
 */
 function sendPath(path, link, callback) {
   clearPreviousData();
-  checkIfUSFMFile(path, (isUSFM) => {
+  checkIfUSFMFile(path, (isUSFM, newPath) => {
     if (isUSFM) {
-      ImportUsfm.open(path, 'ltr', link, callback);
+      ImportUsfm.open(newPath || path, 'ltr', link, callback);
       return;
     }
     if (path) {
@@ -48,8 +48,9 @@ function sendPath(path, link, callback) {
           loadFile(path, 'manifest.json',
             (err, translationStudioManifest) => {
               if (translationStudioManifest) {
+                let tsManifest = verifyChunks(path, translationStudioManifest);
                 //ts-manifest is present, creating tc-manifest and initiate load
-                saveManifest(path, link, translationStudioManifest, (err, tcManifest) => {
+                saveManifest(path, link, tsManifest, (err, tcManifest) => {
                   loadProjectThatHasManifest(path, callback, tcManifest);
                 });
               }
@@ -196,9 +197,18 @@ function checkIfUSFMFile(savePath, callback) {
     const ext = savePath.split(".")[1];
     callback(ext  == "usfm"|| ext == "sfm");
   } catch (e) {
-    callback(false);
+    try {
+      var dir = fs.readdirSync(savePath);
+      if (dir.length === 1 || dir.shift() == '.git') {
+        const ext = dir[0].split(".")[1];
+        callback(ext  == "usfm"|| ext == "sfm", Path.join(savePath, dir[0]));
+      } else {
+        callback(false);
+      }
+    } catch(err) {
+      callback(false);
+    }
   }
-
 }
 
 function checkIfUSFMProject(savePath, callback) {
@@ -271,6 +281,29 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
     callback(err, null);
   }
 }
+/**
+ * @description - Fixes an issue where manifest chunks are misleading.
+ * @param {Object} tsManifest - A translation studio manifest
+ * @param {String} path - The location of the project
+ */
+ function verifyChunks(path, tsManifest) {
+   let chunkChapters = fs.readdirSync(path);
+   let finishedChunks = [];
+   for (let chapter in chunkChapters) {
+     if (!isNaN(chunkChapters[chapter])) {
+       let chunkVerses = fs.readdirSync(path + '/' + chunkChapters[chapter]);
+       for (let chunk in chunkVerses) {
+         let currentChunk = chunkVerses[chunk].replace(/(?:\(.*\))?\.txt/g, '');
+         let chunkString = chunkChapters[chapter].trim()+ '-' + currentChunk.trim();
+         if (!finishedChunks.includes(chunkString)) {
+           finishedChunks.push(chunkString);
+         }
+       }
+     }
+   }
+   tsManifest.finished_chunks = finishedChunks;
+   return tsManifest;
+ }
 /**
  * @desription - Uses the tc-standard format for projects to make package_version 3 compatible
  * @param oldManifest - The name of an employee.
