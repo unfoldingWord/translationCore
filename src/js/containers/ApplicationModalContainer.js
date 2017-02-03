@@ -62,6 +62,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         feedbackChange: (e) => {
           dispatch(LoginActions.feedbackChange(e.target.value));
         },
+        subjectChange: (e) => {
+          dispatch(LoginActions.subjectChange(e.target.value));
+        },
         submitFeedback: () => {
           dispatch(LoginActions.submitFeedback());
         }
