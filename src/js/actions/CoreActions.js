@@ -71,6 +71,12 @@ module.exports = {
     });
   },
 
+  killLoading: function() {
+    Dispatcher.handleAction({
+      type: consts.KILL_LOADING
+    });
+  },
+
   newProject: function(){
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,

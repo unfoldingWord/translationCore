@@ -161,10 +161,24 @@ var CheckDataGrabber = {
         //update stuff
         var path = api.getDataFromCommon('saveLocation');
         if (path) {
-          git(path).init(function () {
-            git(path).save('Initial TC Commit', path, function () {
-              CoreActions.doneLoadingFetchData();
-            });
+          var newError = console.error;
+          console.error = console.errorold;
+          git(path).init(function (err) {
+            if (!err) {
+              git(path).save('Initial TC Commit', path, function (err) {
+                CoreActions.doneLoadingFetchData();
+                console.error = newError;
+              });
+            } else {
+              CoreActions.killLoading();
+              api.createAlert({
+                title: 'Error Saving Data To Project',
+                content: 'There was an error with saving project data.',
+                moreInfo: err,
+                leftButtonText: "Ok"
+              });
+              console.error = newError;
+            }
           });
         }
         else {
