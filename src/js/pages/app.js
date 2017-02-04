@@ -55,6 +55,7 @@ const showMainView = CoreActionsRedux.showMainView;
 
 var Main = React.createClass({
   componentWillMount() {
+    api.dispatch = this.props.dispatch;
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -109,6 +110,12 @@ var Main = React.createClass({
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
+    if (currentCheckNamespace === ' ') {
+      this.setState({
+        currentToolNamespace: null,
+      });
+      return;
+    }
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     var currentGroupIndex = 0;
@@ -197,13 +204,13 @@ var Main = React.createClass({
       callback(defaultModules);
     });
   },
-  
+
   sortMetadatas(metadatas) {
     metadatas.sort((a, b) => {
       return a.title < b.title ? -1 : 1;
     });
   },
-  
+
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
     //This makes sure we're done with all the files first before we call the callback
@@ -236,12 +243,12 @@ var Main = React.createClass({
         this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
           this.sortMetadatas(metadatas);
           api.putToolMetaDatasInStore(metadatas);
+          this.props.updateModuleView('recent');
           this.setState(merge({}, this.state, {
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
             moduleWrapperProps: {
-              type: 'recent',
               mainViewVisible: true
             },
             uploadProps: {
@@ -252,9 +259,9 @@ var Main = React.createClass({
       })
     } else {
       var newCheckCategory = api.getModule(namespace);
+      this.props.updateModuleView('main');
       this.setState(merge({}, this.state, {
         moduleWrapperProps: {
-          type: 'main',
           mainTool: newCheckCategory
         }
       }), callback)
@@ -821,7 +828,7 @@ var Main = React.createClass({
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
+              <ModuleWrapperContainer mainViewVisible={this.state.moduleWrapperProps.mainViewVisible} mainTool={this.state.moduleWrapperProps.mainTool} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} type={this.props.coreStoreReducer.type} />
             </Col>
           </Grid>
         </div>
@@ -863,6 +870,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
       dispatch(modalActions.selectModalTab(tabkey, sectionKey));
+    },
+    updateModuleView: (type) => {
+      dispatch(CoreActionsRedux.changeModuleView(type));
     },
   });
 }
