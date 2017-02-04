@@ -1,6 +1,6 @@
 const React = require('react');
 const { connect  } = require('react-redux');
-const modalActions = require('../actions/modalActions.js');
+const modalActions = require('../actions/ModalActions.js');
 const StatusBar = require('../components/core/SideBar/StatusBar.js');
 
 class StatusBarContainer extends React.Component {
