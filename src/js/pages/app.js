@@ -197,13 +197,13 @@ var Main = React.createClass({
       callback(defaultModules);
     });
   },
-  
+
   sortMetadatas(metadatas) {
     metadatas.sort((a, b) => {
       return a.title < b.title ? -1 : 1;
     });
   },
-  
+
   fillDefaultModules(moduleFilePathList, callback) {
     var tempMetadatas = [];
     //This makes sure we're done with all the files first before we call the callback
@@ -802,14 +802,19 @@ var Main = React.createClass({
             </Row>
             <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
-                currentToolNamespace={this.state.currentToolNamespace}
                 {...this.state.sideBarContainerProps}
+                currentToolNamespace={this.state.currentToolNamespace}
               />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
+              <ModuleWrapperContainer
+                {...this.state.moduleWrapperProps}
+                mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
+                witchCheckProps={this.state.switchCheckProps}
+                recentProjectsProps={this.props.recentProjectsReducer}
+              />
             </Col>
           </Grid>
         </div>
