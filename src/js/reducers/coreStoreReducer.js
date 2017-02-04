@@ -9,7 +9,8 @@ const merge = require('lodash.merge');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 const initialState = {
-    mainViewVisible:false
+    mainViewVisible:false,
+    type: 'recent'
 };
 module.exports = function coreStore(state, action) {
     state = state || initialState
@@ -17,6 +18,11 @@ module.exports = function coreStore(state, action) {
         case consts.SHOW_APPS:
             return merge({}, state, {
                 mainViewVisible:action.val
+            });
+            break;
+        case consts.CHANGE_WRAPPER_VIEW:
+            return merge({}, state, {
+                type: action.val
             });
             break;
         default:

@@ -4,11 +4,13 @@
  *              be added from here.
  ******************************************************************************/
 const CoreActions = require('../../actions/CoreActions.js');
+const CoreActionsRedux = require('../../actions/CoreActionsRedux.js');
 const CoreStore = require('../../stores/CoreStore.js');
 const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
 const exportUsfm = require('./Usfm/ExportUSFM');
+const Upload = require('./UploadMethods');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
@@ -17,6 +19,16 @@ var template = [
   {
     label: 'File',
     submenu: [
+      {
+        label: 'Close Project',
+        click: function() {
+          Upload.clearPreviousData();
+          //TODO: Figure out how to hide current tool
+          CoreActionsRedux.changeModuleView('recent');
+          CoreStore.currentCheckNamespace = ' ';
+          api.emitEvent('changeCheckType', {currentCheckNamespace: ' '})
+        }
+      },
       {
         label: 'Toggle Tutorial',
         click: function() {
