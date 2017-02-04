@@ -9,6 +9,7 @@ var RootStyles = {
     bottom:0,
     paddingLeft:"15px",
     overflowX:'hidden',
+    width: "calc(100vw - 300px)",
   },
   AfterCheck: {
     minWidth:'100vh',
