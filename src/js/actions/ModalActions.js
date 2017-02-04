@@ -6,10 +6,11 @@ module.exports.showModalContainer = function (val) {
   }
 }
 
-module.exports.selectModalTab = function (tabKey, sectionKey) {
+module.exports.selectModalTab = function (tabKey, sectionKey, visiblity) {
   return {
     type: consts.SELECT_MODAL_TAB,
     tab: tabKey,
-    section: sectionKey
+    section: sectionKey,
+    visible:visiblity
   }
 }

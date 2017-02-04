@@ -17,7 +17,8 @@ module.exports = (state = initialState, action) => {
         case consts.SELECT_MODAL_TAB:
             return merge({}, state, {
                 currentTab:action.tab,
-                currentSection:action.section
+                currentSection:action.section,
+                visible:action.visible
             });
             break;
         default:

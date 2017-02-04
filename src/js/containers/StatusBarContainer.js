@@ -15,9 +15,8 @@ class StatusBarContainer extends React.Component {
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
-        openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
-            dispatch(modalActions.showModalContainer(true));
-            dispatch(modalActions.selectModalTab(tabkey, sectionKey));
+        openModalAndSpecificTab: (tabkey, sectionKey, visible) => {
+            dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
         },
     }
 }
