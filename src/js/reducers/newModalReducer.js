@@ -4,7 +4,7 @@ const merge = require('lodash.merge');
 const initialState = {
     visible: false,
     currentTab: 1,
-    currentSection: ""
+    currentSection: 0
 }
 module.exports = (state = initialState, action) => {
     switch (action.type) {

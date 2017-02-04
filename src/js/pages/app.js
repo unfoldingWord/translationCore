@@ -21,9 +21,8 @@ const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
-
+const StatusBarContainer = require('../containers/StatusBarContainer');
 const SideBarContainer = require('../containers/SideBarContainer');
-const StatusBar = require('../components/core/SideBar/StatusBar');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheck = require('../components/core/SwitchCheck');
@@ -109,6 +108,7 @@ var Main = React.createClass({
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
+    this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     var currentGroupIndex = 0;
@@ -333,18 +333,6 @@ var Main = React.createClass({
               }));
             }
           },
-          handleOpenProject: () => {
-            this.props.openModalAndSpecificTab(true, 2);
-          },
-          changeView: () => {
-            this.props.openModalAndSpecificTab(true, 1);
-          },
-          handleSelectTool: () => {
-            this.props.showToolsInModal(true);
-          },
-          handleSelectReports: () => {
-            this.props.openModalAndSpecificTab(true, 2, 4);
-          }
         },
         menuHeadersProps: {
           menuClick: (id, menuOpen) => {
@@ -810,7 +798,7 @@ var Main = React.createClass({
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
             <Row style={{ margin: 0, }}>
-              <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
+              <StatusBarContainer />
             </Row>
             <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
