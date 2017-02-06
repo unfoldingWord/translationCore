@@ -124,3 +124,10 @@ module.exports.goToPrevious = function (NAMESPACE) {
     });
   })
 }
+
+module.exports.setCheckNameSpace = function (currentCheckNameSpace) { 
+  return {
+    type:"UPDATE_NAMESPACE",
+    currentCheckNameSpace:currentCheckNameSpace
+  }
+}

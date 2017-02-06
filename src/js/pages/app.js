@@ -21,9 +21,8 @@ const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
-
+const StatusBarContainer = require('../containers/StatusBarContainer');
 const SideBarContainer = require('../containers/SideBarContainer');
-const StatusBar = require('../components/core/SideBar/StatusBar');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheck = require('../components/core/SwitchCheck');
@@ -108,6 +107,7 @@ var Main = React.createClass({
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
+    this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     var currentGroupIndex = 0;
@@ -329,15 +329,6 @@ var Main = React.createClass({
               }));
             }
           },
-          handleOpenProject: () => {
-            this.props.openModalAndSpecificTab(true, 2);
-          },
-          changeView: () => {
-            this.props.openModalAndSpecificTab(true, 1);
-          },
-          handleSelectTool: () => {
-            this.props.showToolsInModal(true);
-          }
         },
         menuHeadersProps: {
           menuClick: (id, menuOpen) => {
@@ -808,19 +799,24 @@ var Main = React.createClass({
           <Popover />
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
-            <Row>
-              <StatusBar />
+            <Row style={{ margin: 0, }}>
+              <StatusBarContainer />
             </Row>
             <Col className="col-fluid" md={3} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
-                currentToolNamespace={this.state.currentToolNamespace}
                 {...this.state.sideBarContainerProps}
+                currentToolNamespace={this.state.currentToolNamespace}
               />
             </Col>
             <Col style={RootStyles.ScrollableSection} md={9}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapperContainer mainViewVisible={this.props.coreStoreReducer.mainViewVisible} {...this.state.moduleWrapperProps} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} />
+              <ModuleWrapperContainer
+                {...this.state.moduleWrapperProps}
+                mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
+                witchCheckProps={this.state.switchCheckProps}
+                recentProjectsProps={this.props.recentProjectsReducer}
+              />
             </Col>
           </Grid>
         </div>
