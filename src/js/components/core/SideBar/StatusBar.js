@@ -8,52 +8,13 @@ const OnlineStatus = require("./OnlineStatus");
 const Chevron = require('./Chevron');
 
 class StatusBar extends React.Component {
-  constructor() {
+    constructor() {
     super();
     this.state = {
-      path: "",
-      currentCheckNamespace: "",
-      newToolSelected: false,
-      pressed: false
-    }
-    this.currentCheckNamespace = this.currentCheckNamespace.bind(this);
-    this.getSwitchCheckToolEvent = this.getSwitchCheckToolEvent.bind(this);
-  }
-
-  componentWillMount() {
-    api.registerEventListener('changeCheckType', this.currentCheckNamespace);
-    api.registerEventListener('newToolSelected', this.getSwitchCheckToolEvent);
-  }
-
-  componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.currentCheckNamespace);
-    api.removeEventListener('newToolSelected', this.getSwitchCheckToolEvent);
-  }
-
-  currentCheckNamespace() {
-    let bookName = "";
-    let content = "";
-    let manifest = ModuleApi.getDataFromCommon("tcManifest");
-    if (manifest && manifest.ts_project) {
-      bookName = manifest.ts_project.name;
-    }
-    let currentTool = CoreStore.getCurrentCheckNamespace();
-    if (currentTool) {
-      this.setState({ currentCheckNamespace: currentTool });
-    }
-    if (this.state.currentCheckNamespace !== "") {
-      content = <div>
-        {bookName + " "}<Glyphicon glyph={"menu-right"} />
-        {" " + currentTool + " "}
-      </div>;
-      this.setState({ path: content });
+      hovered:null,
+      pressed: null
     }
   }
-
-  getSwitchCheckToolEvent() {
-    this.setState({ path: "" });
-  }
-
   onHover(id) {
     this.setState({hovered:id})
   }
@@ -62,23 +23,23 @@ class StatusBar extends React.Component {
     switch (tab) {
       case 1:
         this.setState({ pressed: tab });
-        this.props.changeView();
+        this.props.open(1, 1, true);
         break;
       case 2:
         this.setState({ pressed: tab });
-        this.props.handleOpenProject();
+        this.props.open(2, 1, true);
         break;
       case 3:
         this.setState({ pressed: tab });
-        this.props.handleSelectTool();
+        this.props.open(3, 1, true);
         break;
       case 4:
         this.setState({ pressed: tab });
-        this.props.handleSelectReports();
+        this.props.open(2, 4, true);
         break;
       default:
         this.setState({ pressed: 0 });
-        this.onHover(0)
+        this.onHover(0);
         break;
     }
   }
@@ -118,7 +79,7 @@ class StatusBar extends React.Component {
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: '#AAAAAA',
+        backgroundColor: '#0277BD',
         height: '100%'
       },
       childRight: {
@@ -145,7 +106,7 @@ class StatusBar extends React.Component {
           <button  onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered != 3 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
             <div style={{ float: 'left' }}>
-              Tool: {this.state.currentCheckNamespace}
+              Tool: {this.props.currentCheckNameSpace}
             </div>
           </button>
           <button  onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>

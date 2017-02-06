@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch(ToolsActions.loadTool(toolFolderPath));
         },
         showLoad: () => {
-            dispatch(modalActions.selectModalTab(2))
+            dispatch(modalActions.selectModalTab(2, 1, true))
         }
     }
 }

@@ -8,6 +8,7 @@ const initialState = {
   currentCheck: null,
   currentGroupIndex: null,
   currentCheckIndex: null,
+  currentCheckNameSpace:null
 };
 
 module.exports = (state = initialState, action) => {
@@ -45,6 +46,10 @@ module.exports = (state = initialState, action) => {
         currentCheckIndex: action.currentCheckIndex,
       });
       break;
+      case "UPDATE_NAMESPACE":
+      return merge ({}, state, {
+        currentCheckNameSpace:action.currentCheckNameSpace
+      });
     default:
       return state;
   }

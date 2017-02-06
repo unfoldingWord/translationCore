@@ -15,9 +15,12 @@ const Report = require("../components/core/reports/ReportGenerator");
 
 class LoadModalContainer extends React.Component {
   render() {
+    let { selectSectionTab } = this.props;
     return (
       <div>
-        <Tabs defaultActiveKey={this.props.currentSection} id="uncontrolled-tab-example"
+        <Tabs id="controlled-tab-example"
+          activeKey={this.props.currentSection}
+          onSelect={(e) => selectSectionTab(2, e)}
           bsStyle="pills"
           style={{ borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%" }}>
           <Tab eventKey={1} title="My Projects" style={{ backgroundColor: "#333333" }}>
@@ -60,6 +63,9 @@ function mapDispatchToProps(dispatch, ownProps) {
     },
     sendFilePath: (filePath) => {
       dispatch(dragDropActions.sendFilePath(filePath));
+    },
+    selectModalTab: (e, section, visible) => {
+        dispatch(modalActions.selectModalTab(e, section, visible));
     }
   }
 }
