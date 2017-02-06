@@ -36,13 +36,17 @@ class ModalContainer extends React.Component {
                   id="tabs"
                   style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
               <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Application currentSection={this.props.currentSection}/>
+                  <Application
+                    currentSection={this.props.currentSection}
+                    selectSectionTab={this.props.selectSectionTab}/>
               </Tab>
               <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Load currentSection={this.props.currentSection}/>
+                  <Load currentSection={this.props.currentSection}
+                    selectSectionTab={this.props.selectSectionTab}/>
               </Tab>
               <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
-                  <Tools currentSection={this.props.currentSection}/>
+                  <Tools currentSection={this.props.currentSection}
+                    selectSectionTab={this.props.selectSectionTab}/>
               </Tab>
             </Tabs>
           </Modal.Body>
@@ -68,6 +72,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         selectModalTab: (e, section, visible) => {
             dispatch(modalActions.selectModalTab(e, section, visible));
+        },
+        selectSectionTab: (tabKey, sectionKey) => {
+            dispatch(modalActions.selectSectionTab(tabKey, sectionKey));
         }
     }
 }
