@@ -16,7 +16,6 @@ module.exports.showMainView = function (val) {
 }
 
 module.exports.changeModuleView = function (val) {
-    debugger;
     return {
       type: consts.CHANGE_WRAPPER_VIEW,
       val: val

@@ -1,4 +1,5 @@
-var consts = require('./CoreActionConsts');
+const consts = require('./CoreActionConsts');
+
 module.exports.showModalContainer = function (val) {
   return {
     type: consts.SHOW_MODAL_CONTAINER,
@@ -6,9 +7,18 @@ module.exports.showModalContainer = function (val) {
   }
 }
 
-module.exports.selectModalTab = function (tabKey, sectionKey) {
+module.exports.selectModalTab = function (tabKey, sectionKey, visiblity) {
   return {
     type: consts.SELECT_MODAL_TAB,
+    tab: tabKey,
+    section: sectionKey,
+    visible:visiblity
+  }
+}
+
+module.exports.selectSectionTab = function (tabKey, sectionKey) {
+  return {
+    type: 'SELECT_MODAL_SECTION',
     tab: tabKey,
     section: sectionKey
   }

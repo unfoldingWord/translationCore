@@ -23,8 +23,6 @@ var template = [
         label: 'Close Project',
         click: function() {
           Upload.clearPreviousData();
-          //TODO: Figure out how to hide current tool
-          CoreActionsRedux.changeModuleView('recent');
           CoreStore.currentCheckNamespace = ' ';
           api.emitEvent('changeCheckType', {currentCheckNamespace: ' '})
         }
