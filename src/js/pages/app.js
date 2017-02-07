@@ -679,7 +679,7 @@ var Main = React.createClass({
         },
         moduleWrapperProps: {
           mainTool: null,
-          type: ''
+          type: 'recent'
         },
         switchCheckProps: {
           moduleMetadatas: [],
