@@ -26,8 +26,9 @@ var template = [
           //TODO: Figure out how to hide current tool
           api.dispatch(CoreActionsRedux.changeModuleView('recent'));
           CoreStore.currentCheckNamespace = ' ';
-          api.emitEvent('changeCheckType', {currentCheckNamespace: ' '})
-        }
+          api.emitEvent('changeCheckType', {currentCheckNamespace: ' '});
+        },
+        accelerator: 'CmdOrCtrl+W'
       },
       {
         label: 'Toggle Tutorial',
@@ -92,11 +93,6 @@ var template = [
          },
          accelerator: 'CmdOrCtrl+H'
        },
-       {
-         label: 'Close',
-         accelerator: 'CmdOrCtrl+W',
-         role: 'close'
-       }
     ]
   },
   {
