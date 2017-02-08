@@ -7,7 +7,6 @@ function buildInstaller(packageLocation) {
     exe: 'translationCore.exe',
     outputDirectory: packageLocation + '/installer',
     loadingGif: './images/TC_ANIMATED_Logo.gif',
-    setupIcon: './build/icon.ico',
     skipUpdateIcon: true, 
     setupExe: 'translationCoreSetup.exe'
   });
