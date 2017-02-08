@@ -76,7 +76,7 @@ var Main = React.createClass({
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
     let currentSubGroupObjects;
-    if(currentGroupIndex != null && groupObjects != null){
+    if (currentGroupIndex != null && groupObjects != null) {
       currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
     }
     const newSubGroupObjects = currentSubGroupObjects.slice(0);
@@ -84,10 +84,8 @@ var Main = React.createClass({
     const newGroupObjects = groupObjects.slice(0);
     newGroupObjects[currentGroupIndex].checks = newSubGroupObjects;
     newGroupObjects[currentGroupIndex].currentGroupprogress = this.getGroupProgress(newGroupObjects[currentGroupIndex]);
-    this.setState({
-      currentSubGroupObjects: newSubGroupObjects,
-      currentGroupObjects: newGroupObjects
-    });
+    api.putDataInCheckStore(this.state.currentToolNamespace, 'groups', newGroupObjects);
+    this.props.dispatch(CheckStoreActions.setGroupsObjects(newGroupObjects));
   },
 
   getGroupProgress: (groupObj) => {
@@ -344,7 +342,7 @@ var Main = React.createClass({
             let currentSubGroupObjects;
             let currentGroupIndex = parseInt(id);
             let groupObjects = this.props.checkStoreReducer.groups;
-            if(currentGroupIndex != null && groupObjects != null){
+            if (currentGroupIndex != null && groupObjects != null) {
               currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
             }
             this.setState({
@@ -362,11 +360,11 @@ var Main = React.createClass({
         },
         subMenuProps: {
           checkClicked: (id) => {
-            this.setState({currentCheckIndex: parseInt(id)});
+            this.setState({ currentCheckIndex: parseInt(id) });
             this.props.dispatch(
-                CheckStoreActions.goToCheck(this.state.currentToolNamespace,
-                                            this.props.checkStoreReducer.currentGroupIndex, parseInt(id)
-                )
+              CheckStoreActions.goToCheck(this.state.currentToolNamespace,
+                this.props.checkStoreReducer.currentGroupIndex, parseInt(id)
+              )
             );
           }
         },
