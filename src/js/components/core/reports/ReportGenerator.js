@@ -118,17 +118,17 @@ class Report extends React.Component {
     const listOfChecks = ModuleApi.getDataFromCommon("arrayOfChecks");
     const targetLang = ModuleApi.getDataFromCommon("targetLanguage");
     if (!listOfChecks) {
-      api.Toast.error("Report Open Error", "No project data for checks found", 3);
-      return (<div></div>);
+      // api.Toast.error("Report Open Error", "No project data for checks found", 3);
+      return (<div>No project data for checks found</div>);
     }
     if (!targetLang) {
-      api.Toast.error("Report Open Error", "No target language found", 3);
-      return (<div></div>);
+      // api.Toast.error("Report Open Error", "No target language found", 3);
+      return (<div>No target language found</div>);
     }
     // array of the functions in the ReportView.js's for the project
-    if (reportViews.length == 0) {
-      api.Toast.error("Report Open Error", "No report views found", 3);
-      return (<div></div>);
+    if (!reportViews || reportViews.length == 0) {
+      // api.Toast.error("Report Open Error", "No report views found", 3);
+      return (<div>No report views found</div>);
     }
     // array of JSX to be rendered
     // loop through all verses and chapters in the target language
@@ -184,6 +184,9 @@ class Report extends React.Component {
       var chHeader = <h3 key={`${ch}-header`}>{`${bookName} ${ch}`}</h3>
       var isEmpty = true;
       for (let view in reportViews) {
+        if (!reportViews[view].view) {
+          continue;
+        }
         let viewResult = reportViews[view].view(ch, 0);
         if (viewResult) {
           reportHeadersOutput.push(<span key={`${ch}-header-${view}`}>{viewResult}</span>);
@@ -198,6 +201,9 @@ class Report extends React.Component {
           var moduleStore = api.getDataFromCheckStore(reportNameSpace, 'groups');
           if (query && moduleStore) {
             moduleStore = ReportFilters.byCustom(query, moduleStore);
+          }
+          if (!reportViews[view].view) {
+            continue;
           }
           let viewResult = reportViews[view].view(ch, v, moduleStore);
           if (viewResult) {

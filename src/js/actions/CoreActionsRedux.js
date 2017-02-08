@@ -14,3 +14,10 @@ module.exports.showMainView = function(val) {
     val:val
   }
 }
+
+module.exports.changeModuleView = function(val) {
+  return {
+    type: consts.CHANGE_WRAPPER_VIEW,
+    val:val
+  }
+}
