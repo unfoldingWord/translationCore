@@ -108,6 +108,15 @@ var Main = React.createClass({
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
+    if (currentCheckNamespace === ' ') {
+      this.setState({
+        currentToolNamespace: null,
+      });
+      this.props.dispatch(CoreActionsRedux.changeModuleView('recent'));
+      this.props.dispatch(CheckStoreActions.setBookName(null));
+      this.props.dispatch(CheckStoreActions.setCheckNameSpace(null));
+      return;
+    }
     this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
@@ -236,12 +245,12 @@ var Main = React.createClass({
         this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
           this.sortMetadatas(metadatas);
           api.putToolMetaDatasInStore(metadatas);
+          this.props.updateModuleView('recent');
           this.setState(merge({}, this.state, {
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
             moduleWrapperProps: {
-              type: 'recent',
               mainViewVisible: true
             },
             uploadProps: {
@@ -252,9 +261,9 @@ var Main = React.createClass({
       })
     } else {
       var newCheckCategory = api.getModule(namespace);
+      this.props.updateModuleView('main');
       this.setState(merge({}, this.state, {
         moduleWrapperProps: {
-          type: 'main',
           mainTool: newCheckCategory
         }
       }), callback)
@@ -709,6 +718,12 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    var packageJson = require(window.__base + '/package.json');
+      if (localStorage.getItem('version') !== packageJson.version) {
+       localStorage.removeItem('lastProject');
+       localStorage.removeItem('lastCheckModule');
+       localStorage.setItem('version', packageJson.version);
+    }
     window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
@@ -811,8 +826,10 @@ var Main = React.createClass({
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
                 {...this.state.moduleWrapperProps}
+                mainTool={this.state.moduleWrapperProps.mainTool}
+                type={this.props.coreStoreReducer.type}
                 mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
-                witchCheckProps={this.state.switchCheckProps}
+                switchCheckProps={this.state.switchCheckProps}
                 recentProjectsProps={this.props.recentProjectsReducer}
               />
             </Col>
@@ -852,6 +869,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loadTool: (folderName) => {
       dispatch(ToolsActions.loadTool(folderName));
+    },
+    openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
+      dispatch(modalActions.showModalContainer(true));
+      dispatch(modalActions.selectModalTab(tabkey, sectionKey));
+    },
+    updateModuleView: (type) => {
+      dispatch(CoreActionsRedux.changeModuleView(type));
     },
   });
 }
