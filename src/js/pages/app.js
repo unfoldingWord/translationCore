@@ -21,9 +21,8 @@ const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
-
+const StatusBarContainer = require('../containers/StatusBarContainer');
 const SideBarContainer = require('../containers/SideBarContainer');
-const StatusBar = require('../components/core/SideBar/StatusBar');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheck = require('../components/core/SwitchCheck');
@@ -55,7 +54,6 @@ const showMainView = CoreActionsRedux.showMainView;
 
 var Main = React.createClass({
   componentWillMount() {
-    api.dispatch = this.props.dispatch;
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -114,8 +112,12 @@ var Main = React.createClass({
       this.setState({
         currentToolNamespace: null,
       });
+      this.props.dispatch(CoreActionsRedux.changeModuleView('recent'));
+      this.props.dispatch(CheckStoreActions.setBookName(null));
+      this.props.dispatch(CheckStoreActions.setCheckNameSpace(null));
       return;
     }
+    this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
     var currentGroupIndex = 0;
@@ -340,18 +342,6 @@ var Main = React.createClass({
               }));
             }
           },
-          handleOpenProject: () => {
-            this.props.openModalAndSpecificTab(true, 2);
-          },
-          changeView: () => {
-            this.props.openModalAndSpecificTab(true, 1);
-          },
-          handleSelectTool: () => {
-            this.props.showToolsInModal(true);
-          },
-          handleSelectReports: () => {
-            this.props.openModalAndSpecificTab(true, 2, 4);
-          }
         },
         menuHeadersProps: {
           menuClick: (id, menuOpen) => {
@@ -817,18 +807,25 @@ var Main = React.createClass({
           <Toast />
           <Grid fluid style={{ padding: 0, }}>
             <Row style={{ margin: 0, }}>
-              <StatusBar handleOpenProject={this.state.sideBarContainerProps.handleOpenProject} changeView={this.state.sideBarContainerProps.changeView} handleSelectTool={this.state.sideBarContainerProps.handleSelectTool} handleSelectReports={this.state.sideBarContainerProps.handleSelectReports}/>
+              <StatusBarContainer />
             </Row>
             <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
-                currentToolNamespace={this.state.currentToolNamespace}
                 {...this.state.sideBarContainerProps}
+                currentToolNamespace={this.state.currentToolNamespace}
               />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapperContainer mainViewVisible={this.state.moduleWrapperProps.mainViewVisible} mainTool={this.state.moduleWrapperProps.mainTool} switchCheckProps={this.state.switchCheckProps} recentProjectsProps={this.props.recentProjectsReducer} type={this.props.coreStoreReducer.type} />
+              <ModuleWrapperContainer
+                {...this.state.moduleWrapperProps}
+                mainTool={this.state.moduleWrapperProps.mainTool}
+                type={this.props.coreStoreReducer.type}
+                mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
+                switchCheckProps={this.state.switchCheckProps}
+                recentProjectsProps={this.props.recentProjectsReducer}
+              />
             </Col>
           </Grid>
         </div>

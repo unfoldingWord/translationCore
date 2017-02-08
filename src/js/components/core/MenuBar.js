@@ -24,7 +24,6 @@ var template = [
         click: function() {
           Upload.clearPreviousData();
           //TODO: Figure out how to hide current tool
-          api.dispatch(CoreActionsRedux.changeModuleView('recent'));
           CoreStore.currentCheckNamespace = ' ';
           api.emitEvent('changeCheckType', {currentCheckNamespace: ' '});
         },
