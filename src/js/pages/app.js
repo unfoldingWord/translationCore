@@ -54,6 +54,7 @@ const showMainView = CoreActionsRedux.showMainView;
 
 var Main = React.createClass({
   componentWillMount() {
+    //api.dispatch = this.props.dispatch;
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -108,6 +109,15 @@ var Main = React.createClass({
 
   setCurrentToolNamespace({currentCheckNamespace}) {
     if (!currentCheckNamespace) return;
+    if (currentCheckNamespace === ' ') {
+      this.setState({
+        currentToolNamespace: null,
+      });
+      this.props.updateModuleView('recent');
+      this.props.dispatch(CheckStoreActions.setBookName(null));
+      this.props.dispatch(CheckStoreActions.setCheckNameSpace(null));
+      return;
+    }
     this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
     var groupName = this.state.currentGroupName;
     let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
@@ -236,12 +246,12 @@ var Main = React.createClass({
         this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
           this.sortMetadatas(metadatas);
           api.putToolMetaDatasInStore(metadatas);
+          this.props.updateModuleView('recent');
           this.setState(merge({}, this.state, {
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
             moduleWrapperProps: {
-              type: 'recent',
               mainViewVisible: true
             },
             uploadProps: {
@@ -252,9 +262,9 @@ var Main = React.createClass({
       })
     } else {
       var newCheckCategory = api.getModule(namespace);
+      this.props.updateModuleView('main');
       this.setState(merge({}, this.state, {
         moduleWrapperProps: {
-          type: 'main',
           mainTool: newCheckCategory
         }
       }), callback)
@@ -810,10 +820,11 @@ var Main = React.createClass({
               <Loader {...this.state.loaderModalProps} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
-                {...this.state.moduleWrapperProps}
-                mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
-                witchCheckProps={this.state.switchCheckProps}
+                mainViewVisible={this.state.moduleWrapperProps.mainViewVisible}
+                mainTool={this.state.moduleWrapperProps.mainTool}
+                switchCheckProps={this.state.switchCheckProps}
                 recentProjectsProps={this.props.recentProjectsReducer}
+                type={this.props.coreStoreReducer.type}
               />
             </Col>
           </Grid>
@@ -856,6 +867,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
       dispatch(modalActions.selectModalTab(tabkey, sectionKey));
+    },
+    updateModuleView: (type) => {
+      dispatch(CoreActionsRedux.changeModuleView(type));
     },
   });
 }

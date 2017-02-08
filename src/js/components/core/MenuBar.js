@@ -9,6 +9,7 @@ const git = require('./GitApi.js');
 const api = window.ModuleApi;
 const sync = require('./SideBar/GitSync.js');
 const exportUsfm = require('./Usfm/ExportUSFM');
+const Upload = require('./UploadMethods');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
@@ -17,6 +18,14 @@ var template = [
   {
     label: 'File',
     submenu: [
+      {
+        label: 'Close Project',
+        click: function() {
+          Upload.clearPreviousData();
+          CoreStore.currentCheckNamespace = ' ';
+          api.emitEvent('changeCheckType', {currentCheckNamespace: ' '})
+        }
+      },
       {
         label: 'Toggle Tutorial',
         click: function() {

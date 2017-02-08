@@ -8,9 +8,16 @@ listener
 (See ExampleComponent.js)
 */
 
-module.exports.showMainView = function(val) {
+module.exports.showMainView = function (val) {
   return {
     type: consts.SHOW_APPS,
-    val:val
+    val: val
   }
+}
+
+module.exports.changeModuleView = function (val) {
+    return {
+      type: consts.CHANGE_WRAPPER_VIEW,
+      val: val
+    }
 }
