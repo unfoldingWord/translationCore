@@ -39,7 +39,6 @@ var Access = {
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
-      _this.addToRecent(folderpath);
       fs.readdir(folderpath, function (err, files) {
         if (err) {
           this.loadingProjectError(err.message);
@@ -101,17 +100,6 @@ var Access = {
         if (callback) callback(error)
       }
     });
-  },
-
-  addToRecent(path) {
-    var previousProjects = localStorage.getItem('previousProjects');
-    previousProjects = previousProjects ? JSON.parse(previousProjects) : [];
-    if (previousProjects.includes(path)) {
-      var indexOfProject = previousProjects.indexOf(path);
-      previousProjects.splice(indexOfProject, 1);
-    }
-    previousProjects.push(path);
-    localStorage.setItem('previousProjects', JSON.stringify(previousProjects));
   },
 
   putModulesInCheckstore: function (arrayOfChecks, path, callback) {

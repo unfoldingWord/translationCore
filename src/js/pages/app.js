@@ -686,7 +686,7 @@ var Main = React.createClass({
         },
         moduleWrapperProps: {
           mainTool: null,
-          type: ''
+          type: 'recent'
         },
         switchCheckProps: {
           moduleMetadatas: [],
@@ -716,6 +716,12 @@ var Main = React.createClass({
   },
 
   componentDidMount: function () {
+    var packageJson = require(window.__base + '/package.json');
+      if (localStorage.getItem('version') !== packageJson.version) {
+       localStorage.removeItem('lastProject');
+       localStorage.removeItem('lastCheckModule');
+       localStorage.setItem('version', packageJson.version);
+    }
     window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');

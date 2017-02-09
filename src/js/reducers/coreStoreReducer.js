@@ -9,7 +9,7 @@ const merge = require('lodash.merge');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 const initialState = {
-    mainViewVisible:false,
+    mainViewVisible: true,
     type: 'recent'
 };
 module.exports = function coreStore(state, action) {
