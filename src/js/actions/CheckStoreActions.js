@@ -16,8 +16,9 @@ module.exports.setGroupsObjects = function (groupsObjects) {
   }
 }
 
-module.exports.updateCurrentCheck = function (NAMESPACE, newCurrentCheck) {
+module.exports.updateCurrentCheck = function (NAMESPACE, oldCheck) {
   return ((dispatch) => {
+    const newCurrentCheck = JSON.parse(JSON.stringify(oldCheck));
     let currentGroupIndex = api.getDataFromCheckStore(NAMESPACE, 'currentGroupIndex');
     let currentCheckIndex = api.getDataFromCheckStore(NAMESPACE, 'currentCheckIndex');
     let newGroupsObjects = api.getDataFromCheckStore(NAMESPACE, 'groups');

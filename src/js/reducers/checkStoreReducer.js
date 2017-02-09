@@ -24,7 +24,7 @@ module.exports = (state = initialState, action) => {
       });
       break;
     case "UPDATE_CURRENT_CHECK":
-      return merge({}, state, {
+      return Object.assign({}, state, {
         currentCheck: action.val,
       });
       break;
