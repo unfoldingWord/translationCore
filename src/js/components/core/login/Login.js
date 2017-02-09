@@ -3,7 +3,28 @@ const Registration = require('./Registration.js');
 const { Button, Row, Col, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
-const Style = require('style-it/dist/style-it-standalone.js');
+const styles = {
+    button: {
+      backgroundColor: '#0277BD',
+      color: 'white',
+      width: '40%',
+      fontWeight: 'bold',
+      borderRadius: 4,
+      borderWidth: 0,
+      height: 34,
+      outline: 'none',
+    },
+    buttonActive: {
+      backgroundColor: '#C6C4C4',
+      color: 'white',
+      width: '40%',
+      fontWeight: 'bold',
+      borderRadius: 4,
+      borderWidth: 0,
+      height: 34,
+      outline: 'none',
+    }
+  }
 
 class Login extends React.Component {
   constructor() {
@@ -34,28 +55,6 @@ class Login extends React.Component {
     }
   }
   render() {
-    const styles = {
-      button: {
-        backgroundColor: '#0277BD',
-        color: 'white',
-        width: '40%',
-        fontWeight: 'bold',
-        borderRadius: 4,
-        borderWidth: 0,
-        height: 34,
-        outline: 'none',
-      },
-      buttonActive: {
-        backgroundColor: '#C6C4C4',
-        color: 'white',
-        width: '40%',
-        fontWeight: 'bold',
-        borderRadius: 4,
-        borderWidth: 0,
-        height: 34,
-        outline: 'none',
-      }
-    }
     let { displayLogin } = this.props;
     if (!displayLogin) {
       return (
