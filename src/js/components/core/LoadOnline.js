@@ -65,6 +65,7 @@ module.exports = (function() {
   function runGitCommand(savePath, url, callback) {
     git(savePath).mirror(url, savePath, function(err) {
       if (err) {
+        fs.removeSync(savePath);
         if (callback)
           callback(err, null, null);
         return;
