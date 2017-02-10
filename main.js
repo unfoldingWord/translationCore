@@ -21,7 +21,7 @@ if (handleStartupEvent()) {
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
-  exec('gist', (err, data) => {
+  exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
         dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
