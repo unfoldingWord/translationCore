@@ -23,8 +23,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
   exec('gist', (err, data) => {
     if (!data) {
-      dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
       if (process.platform == 'win32') {
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
         exec('Git-2.11.1.exe', {cwd: __dirname + '/installers'}, function(err, data) {
           if (err) {
             dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
@@ -34,14 +34,9 @@ function createWindow () {
           }
         });
       } else {
-        exec('Git-2.10.1.dmg', {cwd: __dirname + '/installers'}, function(err, data) {
-          if (err) {
-            dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
-            app.quit();
-          } else {
-            mainWindow.loadURL(`file://${__dirname}/index.html`);
-          }
-        });
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore.');
+        exec('open https://git-scm.com/downloads');
+        app.quit();
       }
     } else {
       mainWindow.loadURL(`file://${__dirname}/index.html`);
