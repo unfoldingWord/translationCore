@@ -673,12 +673,27 @@ var Main = React.createClass({
         loaderModalProps: {
           progress: 0,
           showModal: false,
+          killLoading: () => {
+            Upload.clearPreviousData();
+            CoreActions.killLoading();
+            this.props.showProjectsInModal(true);
+          },
           update: () => {
             if (CoreStore.doneLoading === this.state.loaderModalProps.showModal) {
+              if (!CoreStore.doneLoading) {
+                setTimeout(() => {
+                  this.setState(merge({}, this.state, {
+                    loaderModalProps: {
+                      reloadContent: <h3>Taking too long? <a onClick={this.state.loaderModalProps.killLoading}>Cancel loading</a></h3>
+                    }
+                  }));
+                }, 10000);
+              }
               this.setState(merge({}, this.state, {
                 loaderModalProps: {
                   progress: CoreStore.getProgress(),
-                  showModal: !CoreStore.doneLoading
+                  showModal: !CoreStore.doneLoading,
+                  reloadContent: null
                 }
               }));
             }
