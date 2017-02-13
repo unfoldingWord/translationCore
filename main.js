@@ -3,7 +3,7 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-
+const dialog = electron.dialog;
 const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
@@ -21,8 +21,29 @@ if (handleStartupEvent()) {
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
+  exec('git', (err, data) => {
+    if (!data) {
+      if (process.platform == 'win32') {
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
+        exec('Git-2.11.1.exe', {cwd: __dirname + '/installers'}, function(err, data) {
+          if (err) {
+            dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
+            app.quit();
+          } else {
+            mainWindow.loadURL(`file://${__dirname}/index.html`);
+          }
+        });
+      } else {
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore.');
+        exec('open https://git-scm.com/downloads');
+        app.quit();
+      }
+    } else {
+      mainWindow.loadURL(`file://${__dirname}/index.html`);
+    }
+  })
+  // dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
