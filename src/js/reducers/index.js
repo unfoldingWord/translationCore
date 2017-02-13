@@ -11,4 +11,5 @@ module.exports.reportsReducer = require('./reportsReducer');
 module.exports.checkStoreReducer = require('./checkStoreReducer');
 module.exports.sideBarReducer = require('./sideBarReducer');
 module.exports.statusBarReducer = require('./statusBarReducer');
+module.exports.loaderReducer = require('./loaderReducer');
 //module.exports.checkStoreReducer = require('./checkStoreReducer');
