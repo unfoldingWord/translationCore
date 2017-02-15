@@ -48,6 +48,7 @@ const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
+const LoaderActions = require('../actions/LoaderActions.js');
 
 const showMainView = CoreActionsRedux.showMainView;
 
@@ -672,15 +673,29 @@ var Main = React.createClass({
         },
         loaderModalProps: {
           progress: 0,
-          showModal: false,
+          killLoading: () => {
+            Upload.clearPreviousData();
+            this.props.toggleLoaderModal();
+            this.props.showProjectsInModal(true);
+          },
           update: () => {
-            if (CoreStore.doneLoading === this.state.loaderModalProps.showModal) {
+            if (CoreStore.doneLoading === this.props.loaderReducer.show) {
+              if (!CoreStore.doneLoading) {
+                setTimeout(() => {
+                  this.setState(merge({}, this.state, {
+                    loaderModalProps: {
+                      reloadContent: <h3>Taking too long? <a onClick={this.state.loaderModalProps.killLoading}>Cancel loading</a></h3>
+                    }
+                  }));
+                }, 10000);
+              }
               this.setState(merge({}, this.state, {
                 loaderModalProps: {
                   progress: CoreStore.getProgress(),
-                  showModal: !CoreStore.doneLoading
+                  reloadContent: null
                 }
               }));
+              this.props.toggleLoaderModal();
             }
           },
         },
@@ -820,7 +835,7 @@ var Main = React.createClass({
               />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
-              <Loader {...this.state.loaderModalProps} />
+              <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show}/>
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
                 {...this.state.moduleWrapperProps}
@@ -874,6 +889,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     updateModuleView: (type) => {
       dispatch(CoreActionsRedux.changeModuleView(type));
+    },
+    toggleLoaderModal: () => {
+      dispatch(LoaderActions.toggleLoader());
     },
   });
 }
