@@ -23,8 +23,8 @@ var template = [
         label: 'Close Project',
         click: function() {
           Upload.clearPreviousData();
-          //TODO: Figure out how to hide current tool
           CoreStore.currentCheckNamespace = ' ';
+          CoreActions.killLoading();
           api.emitEvent('changeCheckType', {currentCheckNamespace: ' '});
         },
         accelerator: 'CmdOrCtrl+W'
