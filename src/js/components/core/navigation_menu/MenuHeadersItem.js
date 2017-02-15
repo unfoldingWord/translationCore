@@ -33,7 +33,7 @@ class MenuHeadersItems extends React.Component {
               />
           </th>
           <td>
-            {this.props.checks[0].groupName}
+            {this.props.groups[this.props.id]['groupName']}
           </td>
           <td style={{paddingBottom:5}}>
             {this.props.isCurrentItem && this.props.openCheck == this.props.id && this.props.open ? <Glyphicon glyph="chevron-right" style={{ position: "absolute", right: "5px", top: "auto" }} /> :
