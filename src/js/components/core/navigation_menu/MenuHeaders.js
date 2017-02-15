@@ -21,6 +21,7 @@ class MenuHeaders extends React.Component {
         menuItem.open = this.props.subMenuOpen;
         groupsName.push(
           <MenuHeadersItems
+              {...this.props}
               key={i}
               id={i}
               menuClick={this.props.menuClick}
