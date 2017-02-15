@@ -9,7 +9,8 @@ class OnlineStatus extends React.Component{
   constructor(){
     super();
     this.state ={
-      online: window.navigator.onLine
+      online: window.navigator.onLine,
+      showToggle: false
     };
 
     this.setOnline = this.setOnline.bind(this);
@@ -32,13 +33,26 @@ class OnlineStatus extends React.Component{
     this.setState({online: false});
   }
 
+  toggleVisibility(){
+    this.setState({showToggle: !this.state.showToggle});
+  }
+
   render(){
     const textStatusColor = this.state.online ? style.textOnline : style.textOffline;
     const status = this.state.online ? "Online " : "Offline ";
     return(
       <div style={textStatusColor}>
           Status: {status}
-          <Glyphicon glyph={"triangle-bottom"} style={{fontSize:10}}/>
+          <Glyphicon glyph={"triangle-bottom"}
+                     style={{fontSize:10}}
+                     onClick={this.toggleVisibility}
+                     />
+          <div onClick={()=>{
+            this.state.online ? this.setOffline() : this.setOnline();
+          }}
+          style={{display: this.state.showToggle ? "block" : "none"}}>
+            Switch to {this.state.online ? "offline" : "online"}
+          </div>
       </div>
       );
   }
