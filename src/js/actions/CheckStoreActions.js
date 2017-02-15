@@ -10,10 +10,35 @@ module.exports.setBookName = function (bookName) {
 }
 
 module.exports.setGroupsObjects = function (groupsObjects) {
-  return {
-    type: "SET_GROUPS_OBJECTS",
-    val: groupsObjects,
-  }
+  return ((dispatch) => {
+
+    function quickSort(array) {
+      if(array.length < 2) {
+        return array;
+      }
+
+      const pivot = array[0];
+      const lesser = [];
+      const greater = [];
+
+      for(let i = 1; i < array.length; i++) {
+        if(array[i].chapter <= pivot.chapter && array[i].verse <= pivot.verse) {
+          lesser.push(array[i]);
+        } else {
+          greater.push(array[i]);
+        }
+      }
+      return quickSort(lesser).concat(pivot, quickSort(greater));
+    }
+    for (let group in groupsObjects) {
+      let newGroup = quickSort(groupsObjects[group].checks)
+      groupsObjects[group].checks = newGroup;
+    }
+    dispatch({
+      type: "SET_GROUPS_OBJECTS",
+      val: groupsObjects,
+    });
+  });
 }
 
 module.exports.updateCurrentCheck = function (NAMESPACE, oldCheck) {
@@ -126,7 +151,7 @@ module.exports.goToPrevious = function (NAMESPACE) {
   })
 }
 
-module.exports.setCheckNameSpace = function (currentCheckNameSpace) { 
+module.exports.setCheckNameSpace = function (currentCheckNameSpace) {
   return {
     type:"UPDATE_NAMESPACE",
     currentCheckNameSpace:currentCheckNameSpace
