@@ -15,6 +15,7 @@ class OnlineStatus extends React.Component{
 
     this.setOnline = this.setOnline.bind(this);
     this.setOffline = this.setOffline.bind(this);
+    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
   componentWillMount(){
     window.addEventListener("offline", this.setOffline);
@@ -48,9 +49,16 @@ class OnlineStatus extends React.Component{
                      onClick={this.toggleVisibility}
                      />
           <div onClick={()=>{
-            this.state.online ? this.setOffline() : this.setOnline();
-          }}
-          style={{display: this.state.showToggle ? "block" : "none"}}>
+                  this.state.online ? this.setOffline() : this.setOnline();
+                }}
+               style={{
+                 display: this.state.showToggle ? "block" : "none",
+                  position: "absolute",
+                  zIndex: "9999",
+                  background: "#333",
+                  padding: "3px",
+                  borderRadius: "5px"
+               }}>
             Switch to {this.state.online ? "offline" : "online"}
           </div>
       </div>
