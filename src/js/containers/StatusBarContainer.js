@@ -19,8 +19,8 @@ function mapDispatchToProps(dispatch, ownProps) {
         openModalAndSpecificTab: (tabkey, sectionKey, visible) => {
             dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
         },
-        changeOnlineStatus: (val, reload) => {
-            dispatch(coreStoreActions.changeOnlineStatus(val, reload));
+        changeOnlineStatus: (val) => {
+            dispatch(coreStoreActions.changeOnlineStatus(val));
         },
         changeOnlineStyle: (val) => {
             dispatch(coreStoreActions.changeOnlineStyle(val));

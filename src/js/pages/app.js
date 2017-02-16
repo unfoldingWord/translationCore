@@ -65,7 +65,7 @@ var Main = React.createClass({
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     var online = window.navigator.onLine;
-    this.props.changeOnlineStatus(online);
+    this.props.changeOnlineStatus(online, true);
   },
 
   componentWillUnmount() {
@@ -895,8 +895,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     toggleLoaderModal: () => {
       dispatch(LoaderActions.toggleLoader());
     },
-    changeOnlineStatus: (val, reload) => {
-      dispatch(CoreActionsRedux.changeOnlineStatus(val));
+    changeOnlineStatus: (val, first) => {
+      dispatch(CoreActionsRedux.changeOnlineStatus(val, first));
     }
   });
 }

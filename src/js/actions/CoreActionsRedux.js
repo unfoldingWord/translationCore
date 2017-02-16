@@ -2,6 +2,11 @@ var consts = require('./CoreActionConsts');
 var Path = require('path');
 var fs = require(window.__base + 'node_modules/fs-extra');
 const exec = require('child_process').exec;
+var sudo = require('sudo-prompt');
+var options = {
+  name: 'Electron'
+};
+sudo.exec('echo hello', options, function (error, stdout, stderr) { });
 
 /**
 How to use the actions:
@@ -33,23 +38,49 @@ module.exports.changeOnlineStyle = function (online) {
   }
 }
 
-module.exports.changeOnlineStatus = function (online, reload) {
+module.exports.changeOnlineStatus = function (online, firstLoad) {
   return ((dispatch) => {
-    if (online == window.navigator.onLine) {
-      dispatch({
-        type: "CHANGE_ONLINE_STATUS",
-        online: online
-      });
-      return;
-    }
     if (process.platform == 'win32') {
-      if (online) require('windosu').exec("netsh advfirewall firewall delete rule name='block tc in' && netsh advfirewall firewall delete rule name='block tc out'");
-      else require('windosu').exec('netsh advfirewall firewall add rule name="block tc in" dir=in program="~\translationCore\node_modules\electron\dist\electron.exe" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out')
-      return {
-        type: "CHANGE_ONLINE_STATUS",
-        online: online
+      var TCportAllowed = true;
+      if (firstLoad) {
+        sudo.exec(`netsh advfirewall firewall show rule name="block tc out"`, options, function (error, stdout, stderror) {
+          if (!error) {
+            stdout = stdout.replace(/ /g, '');
+            TCportAllowed = !stdout.includes("Enabled:Yes");
+          }
+          dispatch({
+            type: "CHANGE_ONLINE_STATUS",
+            online: TCportAllowed
+          });
+          return;
+        })
+      } else {
+        const electronDir = window.__base + "\\node_modules\\electron\\dist\\electron.exe";
+        if (online) {
+          sudo.exec(`netsh advfirewall firewall delete rule name="block tc in" && netsh advfirewall firewall delete rule name="block tc out"`, options, function (error, stdout, stderror) {
+            dispatch({
+              type: "CHANGE_ONLINE_STATUS",
+              online: online
+            })
+          })
+        }
+        else {
+          sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program=${electronDir} action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${electronDir} action=block`, options, () => {
+            dispatch({
+              type: "CHANGE_ONLINE_STATUS",
+              online: online
+            })
+          })
+        }
       }
     } else {
+      if (online == window.navigator.onLine && firstLoad) {
+        dispatch({
+          type: "CHANGE_ONLINE_STATUS",
+          online: online
+        });
+        return;
+      }
       if (online) {
         exec('networksetup -setairportpower en1 on').then(function (cp) {
           dispatch({

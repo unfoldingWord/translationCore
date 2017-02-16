@@ -49,7 +49,7 @@ class OnlineStatus extends React.Component {
   }
 
   onPress() {
-    this.props.changeOnlineStatus(!this.props.online, true);
+    this.props.changeOnlineStatus(!this.props.online);
   }
 
   render() {
