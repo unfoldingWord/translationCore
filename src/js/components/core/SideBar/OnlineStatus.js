@@ -53,7 +53,6 @@ class OnlineStatus extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const textStatusColor = this.props.online ? style.textOnline : style.textOffline;
     const status = this.props.online ? "Online " : "Offline ";
     return (

@@ -65,7 +65,7 @@ var Main = React.createClass({
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     var online = window.navigator.onLine;
-    if (online != undefined) this.props.changeOnlineStatus(online);
+    this.props.changeOnlineStatus(online);
   },
 
   componentWillUnmount() {
