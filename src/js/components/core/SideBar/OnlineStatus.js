@@ -42,11 +42,10 @@ class OnlineStatus extends React.Component{
     const textStatusColor = this.state.online ? style.textOnline : style.textOffline;
     const status = this.state.online ? "Online " : "Offline ";
     return(
-      <div style={textStatusColor}>
+      <div style={textStatusColor} onClick={this.toggleVisibility}>
           Status: {status}
           <Glyphicon glyph={"triangle-bottom"}
                      style={{fontSize:10}}
-                     onClick={this.toggleVisibility}
                      />
           <div onClick={()=>{
                   this.state.online ? this.setOffline() : this.setOnline();
@@ -57,9 +56,10 @@ class OnlineStatus extends React.Component{
                   zIndex: "9999",
                   background: "#333",
                   padding: "3px",
-                  borderRadius: "5px"
+                  borderRadius: "5px",
+                  color: status == "Online " ? "#FF0000" : "#4eba6f"
                }}>
-            Switch to {this.state.online ? "offline" : "online"}
+            Switch to {this.state.online ? "Offline" : "Online"}
           </div>
       </div>
       );
