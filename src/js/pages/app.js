@@ -64,6 +64,8 @@ var Main = React.createClass({
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
     //changing just the group index
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
+    var online = window.navigator.onLine;
+    if (online != undefined) this.props.changeOnlineStatus(online);
   },
 
   componentWillUnmount() {
@@ -732,10 +734,10 @@ var Main = React.createClass({
 
   componentDidMount: function () {
     var packageJson = require(window.__base + '/package.json');
-      if (localStorage.getItem('version') !== packageJson.version) {
-       localStorage.removeItem('lastProject');
-       localStorage.removeItem('lastCheckModule');
-       localStorage.setItem('version', packageJson.version);
+    if (localStorage.getItem('version') !== packageJson.version) {
+      localStorage.removeItem('lastProject');
+      localStorage.removeItem('lastCheckModule');
+      localStorage.setItem('version', packageJson.version);
     }
     window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
@@ -835,7 +837,7 @@ var Main = React.createClass({
               />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
-              <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show}/>
+              <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
                 {...this.state.moduleWrapperProps}
@@ -893,6 +895,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     toggleLoaderModal: () => {
       dispatch(LoaderActions.toggleLoader());
     },
+    changeOnlineStatus: (val, reload) => {
+      dispatch(CoreActionsRedux.changeOnlineStatus(val));
+    }
   });
 }
 

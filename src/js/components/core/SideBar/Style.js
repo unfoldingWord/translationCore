@@ -73,16 +73,6 @@ var style = {
     cursor: "pointer",
   },
 
-  textOffline: {
-    color: "#FF0000",
-    display: "inline",
-  },
-
-  textOnline: {
-    color: "#4eba6f",
-    display: "inline",
-  },
-
   img: {
     width: "25px",
     height: "30px",

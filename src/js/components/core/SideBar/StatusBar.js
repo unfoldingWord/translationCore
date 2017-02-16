@@ -93,7 +93,7 @@ class StatusBar extends React.Component {
       <div style={styles.container}>
         <div style={styles.inner}>
           <div style={styles.childRight}>
-            <OnlineStatus />
+            <OnlineStatus {...this.props}/>
           </div>
           <button onMouseOver={()=>this.onHover(1)} onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1  && this.state.hovered != 1 ? styles.child : styles.childActive}>
             <img src="images/TC_Icon_White.png" style={{ marginRight: 5, height: 17, width: 17 }} />

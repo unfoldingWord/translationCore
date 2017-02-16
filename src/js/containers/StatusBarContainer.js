@@ -1,13 +1,14 @@
 const React = require('react');
 const { connect  } = require('react-redux');
 const modalActions = require('../actions/ModalActions.js');
+const coreStoreActions = require('../actions/CoreActionsRedux.js');
 const StatusBar = require('../components/core/SideBar/StatusBar.js');
 
 class StatusBarContainer extends React.Component {
     render() {
         return (
             <div>
-            <StatusBar bookName={this.props.bookName} currentCheckNameSpace={this.props.currentCheckNameSpace} open={this.props.openModalAndSpecificTab}/>
+            <StatusBar bookName={this.props.bookName} currentCheckNameSpace={this.props.currentCheckNameSpace} open={this.props.openModalAndSpecificTab} online={this.props.online} changeOnlineStyle={this.props.changeOnlineStyle} changeOnlineStatus={this.props.changeOnlineStatus}/>
             </div>
         )
     }
@@ -18,6 +19,12 @@ function mapDispatchToProps(dispatch, ownProps) {
         openModalAndSpecificTab: (tabkey, sectionKey, visible) => {
             dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
         },
+        changeOnlineStatus: (val, reload) => {
+            dispatch(coreStoreActions.changeOnlineStatus(val, reload));
+        },
+        changeOnlineStyle: (val) => {
+            dispatch(coreStoreActions.changeOnlineStyle(val));
+        }
     }
 }
 
