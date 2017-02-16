@@ -4,9 +4,8 @@ var fs = require(window.__base + 'node_modules/fs-extra');
 const exec = require('child_process').exec;
 var sudo = require('sudo-prompt');
 var options = {
-  name: 'Electron'
+  name: 'Translation Core'
 };
-sudo.exec('echo hello', options, function (error, stdout, stderr) { });
 
 /**
 How to use the actions:
