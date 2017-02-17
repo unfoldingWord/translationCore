@@ -83,14 +83,14 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
         return;
       }
       if (online) {
-        exec('networksetup -setairportpower en1 on').then(function (cp) {
+        exec('networksetup -setairportpower en1 on', function (cp) {
           dispatch({
             type: "CHANGE_ONLINE_STATUS",
             online: online
           })
         });
       } else {
-        exec('networksetup -setairportpower en1 off').then(function (cp) {
+        exec('networksetup -setairportpower en1 off', function (cp) {
           dispatch({
             type: "CHANGE_ONLINE_STATUS",
             online: online
