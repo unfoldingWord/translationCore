@@ -3,12 +3,27 @@ const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
-const style = require("./Style");
+const style = {
+  textOffline: {
+    color: "#FF0000",
+    display: "inline",
+    backgroundColor: '#333333',
+    outline: 'none',
+    border: 0,
+  },
+  textOnline: {
+    color: "#4eba6f",
+    display: "inline",
+    backgroundColor: '#333333',
+    outline: 'none',
+    border: 0,
+  }
+}
 
-class OnlineStatus extends React.Component{
-  constructor(){
+class OnlineStatus extends React.Component {
+  constructor() {
     super();
-    this.state ={
+    this.state = {
       online: window.navigator.onLine,
       showToggle: false
     };
@@ -17,20 +32,22 @@ class OnlineStatus extends React.Component{
     this.setOffline = this.setOffline.bind(this);
     this.toggleVisibility = this.toggleVisibility.bind(this);
   }
-  componentWillMount(){
+  componentWillMount() {
     window.addEventListener("offline", this.setOffline);
     window.addEventListener("online", this.setOnline);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener("offline", this.setOffline);
     window.removeEventListener("online", this.setOnline);
   }
 
   setOnline() {
+    this.props.changeOnlineStatus(true);
     this.setState({online: true});
   }
 
   setOffline() {
+    this.props.changeOnlineStatus(false);
     this.setState({online: false});
   }
 
