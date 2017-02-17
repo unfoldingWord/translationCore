@@ -9,11 +9,13 @@ class OnlineStatus extends React.Component{
   constructor(){
     super();
     this.state ={
-      online: window.navigator.onLine
+      online: window.navigator.onLine,
+      showToggle: false
     };
 
     this.setOnline = this.setOnline.bind(this);
     this.setOffline = this.setOffline.bind(this);
+    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
   componentWillMount(){
     window.addEventListener("offline", this.setOffline);
@@ -32,13 +34,33 @@ class OnlineStatus extends React.Component{
     this.setState({online: false});
   }
 
+  toggleVisibility(){
+    this.setState({showToggle: !this.state.showToggle});
+  }
+
   render(){
     const textStatusColor = this.state.online ? style.textOnline : style.textOffline;
     const status = this.state.online ? "Online " : "Offline ";
     return(
-      <div style={textStatusColor}>
+      <div style={textStatusColor} onClick={this.toggleVisibility}>
           Status: {status}
-          <Glyphicon glyph={"triangle-bottom"} style={{fontSize:10}}/>
+          <Glyphicon glyph={"triangle-bottom"}
+                     style={{fontSize:10}}
+                     />
+          <div onClick={()=>{
+                  this.state.online ? this.setOffline() : this.setOnline();
+                }}
+               style={{
+                 display: this.state.showToggle ? "block" : "none",
+                  position: "absolute",
+                  zIndex: "9999",
+                  background: "#333",
+                  padding: "3px",
+                  borderRadius: "5px",
+                  color: status == "Online " ? "#FF0000" : "#4eba6f"
+               }}>
+            Switch to {this.state.online ? "Offline" : "Online"}
+          </div>
       </div>
       );
   }
