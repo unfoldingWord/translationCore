@@ -54,7 +54,6 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
           return;
         })
       } else {
-        const electronDir = window.__base + "\\node_modules\\electron\\dist\\electron.exe";
         if (online) {
           sudo.exec(`netsh advfirewall firewall delete rule name="block tc in" && netsh advfirewall firewall delete rule name="block tc out"`, options, function (error, stdout, stderror) {
             dispatch({
@@ -64,12 +63,14 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
           })
         }
         else {
-          sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program=${electronDir} action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${electronDir} action=block`, options, () => {
-            dispatch({
-              type: "CHANGE_ONLINE_STATUS",
-              online: online
-            })
-          })
+          exec(`wmic process where processId=${process.pid} get ExecutablePath`, options, function (error, execPath, stderror) {
+            sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program="${execPath}" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${electronDir} action=block`, options, () => {
+              dispatch({
+                type: "CHANGE_ONLINE_STATUS",
+                online: online
+              });
+            });
+          });
         }
       }
     } else {
