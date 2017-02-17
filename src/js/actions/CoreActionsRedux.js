@@ -30,13 +30,6 @@ module.exports.changeModuleView = function (val) {
   }
 }
 
-module.exports.changeOnlineStyle = function (online) {
-  return {
-    type: "CHANGE_ONLINE_STATUS",
-    online: online
-  }
-}
-
 module.exports.changeOnlineStatus = function (online, firstLoad) {
   return ((dispatch) => {
     if (process.platform == 'win32') {
