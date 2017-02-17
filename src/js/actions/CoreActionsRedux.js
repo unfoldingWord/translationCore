@@ -64,7 +64,7 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
         }
         else {
           exec(`wmic process where processId=${process.pid} get ExecutablePath`, options, function (error, execPath, stderror) {
-            sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program="${execPath}" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${electronDir} action=block`, options, () => {
+            sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program="${execPath}" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${execPath} action=block`, options, () => {
               dispatch({
                 type: "CHANGE_ONLINE_STATUS",
                 online: online
