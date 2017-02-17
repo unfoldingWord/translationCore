@@ -28,7 +28,14 @@ console.error = function(err){
     },
     ()=>{
       var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
-      api.HockeyApp.postBug(err, loggedInUser.userName);
+      Rollbar.configure({
+        payload: {
+          person: {
+            username: loggedInUser.userName,
+          }
+        }
+      });
+      Rollbar.error(JSON.stringify(err));
       localStorage.setItem('crashed', true);
       remote.getCurrentWindow().reload();
     });

@@ -6,7 +6,7 @@ const initialState = {
   displayLogin: true,
   userdata: null,
   feedback: '',
-  subject: null
+  subject: 'Bug Report'
 };
 
 module.exports = (state = initialState, action) => {
@@ -54,7 +54,14 @@ module.exports = (state = initialState, action) => {
       });
       break;
     case consts.SUBMIT_FEEDBACK:
-      ModuleApi.HockeyApp.postMessage(state.feedback, state.userdata.username, state.subject);
+      Rollbar.configure({
+        payload: {
+          person: {
+            username: state.userdata.username,
+          }
+        }
+      });
+      Rollbar.info(state.subject+ ':\n' + state.feedback);
       return merge({}, state, {
         feedback: 'Feedback Submitted!'
       });
