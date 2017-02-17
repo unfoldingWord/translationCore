@@ -42,7 +42,7 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
     if (process.platform == 'win32') {
       var TCportAllowed = true;
       if (firstLoad) {
-        sudo.exec(`netsh advfirewall firewall show rule name="block tc out"`, options, function (error, stdout, stderror) {
+        exec(`netsh advfirewall firewall show rule name="block tc out"`, options, function (error, stdout, stderror) {
           if (!error) {
             stdout = stdout.replace(/ /g, '');
             TCportAllowed = !stdout.includes("Enabled:Yes");
@@ -64,7 +64,8 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
         }
         else {
           exec(`wmic process where processId=${process.pid} get ExecutablePath`, options, function (error, execPath, stderror) {
-            sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program="${execPath}" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program=${execPath} action=block`, options, () => {
+            execPath = execPath.replace(/\r?\n|\r|\s|ExecutablePath/g, '');
+            sudo.exec(`netsh advfirewall firewall add rule name="block tc in" dir=in program="${execPath}" action=block && netsh advfirewall firewall add rule name="block tc out" dir=out program="${execPath}" action=block`, options, () => {
               dispatch({
                 type: "CHANGE_ONLINE_STATUS",
                 online: online
