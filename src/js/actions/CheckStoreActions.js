@@ -22,7 +22,7 @@ module.exports.setGroupsObjects = function (groupsObjects) {
       const greater = [];
 
       for(let i = 1; i < array.length; i++) {
-        if(array[i].chapter <= pivot.chapter && array[i].verse <= pivot.verse) {
+        if(array[i].chapter <= pivot.chapter && array[i].verse <= pivot.verse && array[i].wordIndex <= pivot.wordIndex) {
           lesser.push(array[i]);
         } else {
           greater.push(array[i]);
