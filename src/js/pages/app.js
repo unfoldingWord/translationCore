@@ -49,12 +49,14 @@ const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const LoaderActions = require('../actions/LoaderActions.js');
-
+const SettingsActions = require('../actions/SettingsActions.js');
 const showMainView = CoreActionsRedux.showMainView;
 
 
 var Main = React.createClass({
   componentWillMount() {
+    //initializing app settings
+    this.props.dispatch(SettingsActions.setSettings());
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
