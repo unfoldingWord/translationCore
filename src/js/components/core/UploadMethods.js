@@ -41,6 +41,10 @@ function sendPath(path, link, callback) {
     if (path) {
       var parsedPath = pathex.parse(path);
       var saveLocation = pathex.join(defaultSave, parsedPath.name);
+      if (!fs.existsSync(path)) {
+        callback('Location does not exist', null);
+        return;
+      }
       if (fs.existsSync(saveLocation)) {
         if (path != saveLocation) {
           var continueCopy = confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
