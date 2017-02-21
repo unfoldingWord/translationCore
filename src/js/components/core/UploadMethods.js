@@ -39,6 +39,20 @@ function sendPath(path, link, callback) {
       return;
     }
     if (path) {
+      var parsedPath = pathex.parse(path);
+      var saveLocation = pathex.join(defaultSave, parsedPath.name);
+      if (fs.existsSync(saveLocation)) {
+        if (path != saveLocation) {
+          var continueCopy = confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
+          if (continueCopy) {
+            fs.removeSync(saveLocation);
+            fs.copySync(path, saveLocation);
+          }
+          path = saveLocation;
+        }
+      } else {
+        fs.copySync(path, saveLocation);
+      }
       loadFile(path, 'tc-manifest.json', (err, tcManifest) => {
         if (tcManifest) {
           //tc-manifest is present initiate load
