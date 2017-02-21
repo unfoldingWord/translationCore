@@ -32,6 +32,7 @@ var template = [
       {
         label: 'Toggle Tutorial',
         click: function() {
+          //TODO: find a way to use the new setSettings() from SettingsActions
           if (api.getSettings('showTutorial') === true) {
             api.setSettings('showTutorial', false);
           } else {

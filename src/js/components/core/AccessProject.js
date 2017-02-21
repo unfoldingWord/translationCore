@@ -88,7 +88,8 @@ var Access = {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
           _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
             api.putDataInCommon('saveLocation', folderpath);
-            api.setSettings('showTutorial', false);
+            //TODO: find a way to use the new setSettings() from SettingsActions
+            //api.setSettings('showTutorial', false);
             localStorage.setItem('lastProject', folderpath);
             if (callback) {
               callback();
