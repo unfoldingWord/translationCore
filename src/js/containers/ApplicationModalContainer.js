@@ -56,8 +56,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onHandleLogout: () => {
           dispatch(LoginActions.logoutUser());
         },
-        onSettingsChange: (field)=> {
-          dispatch(SettingsActions.onSettingsChange(field.target));
+        onSettingsChange: (field, value)=> {
+          dispatch(SettingsActions.setSettings(field, value));
         },
         feedbackChange: (e) => {
           dispatch(LoginActions.feedbackChange(e.target.value));
