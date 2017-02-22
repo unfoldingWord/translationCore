@@ -13,7 +13,8 @@ const exportUsfm = require('./Usfm/ExportUSFM');
 const Upload = require('./UploadMethods');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
-
+const dispatch = require('../../utils/reduxActionDispatcher.js').dispatch;
+const SettingsActions = require('../../actions/SettingsActions.js');
 
 var template = [
   {
@@ -32,12 +33,7 @@ var template = [
       {
         label: 'Toggle Tutorial',
         click: function() {
-          //TODO: find a way to use the new setSettings() from SettingsActions
-          if (api.getSettings('showTutorial') === true) {
-            api.setSettings('showTutorial', false);
-          } else {
-            api.setSettings('showTutorial', true);
-          }
+          dispatch(SettingsActions.toggleSettings('showTutorial'));
         },
         accelerator: 'CmdOrCtrl+T'
       },
