@@ -7,7 +7,7 @@ const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 
 module.exports.setSettings = function(field, value) {
   return ((dispatch) => {
-    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings/settings.json');
+    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
     fs.readJson(dir, function (err, settingsObj) {
       if(err){
         settingsObj = {};
@@ -15,6 +15,24 @@ module.exports.setSettings = function(field, value) {
         if(field && value != undefined){
           settingsObj[field] = value;
         }
+      }
+      fs.outputJson(dir, settingsObj);
+      dispatch({
+        type: consts.CHANGE_SETTINGS,
+        val: settingsObj,
+      });
+    })
+  });
+};
+
+module.exports.toggleSettings = function(field) {
+  return ((dispatch) => {
+    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
+    fs.readJson(dir, function (err, settingsObj) {
+      if(err){
+        console.error(err);
+      }else {
+        settingsObj[field] = !settingsObj[field];
       }
       fs.outputJson(dir, settingsObj);
       dispatch({
