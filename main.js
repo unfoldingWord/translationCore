@@ -22,13 +22,14 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
   let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe');
-  exec('gist', (err, data) => {
+  exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
         dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
         fs.copySync(__dirname + '/installers/Git-2.11.1.exe', installerLocation);
-        exec(installerLocation, {cwd: __dirname + '/installers'}, function(err, data) {
+        exec('Git-2.11.1.exe', {cwd: path.datadir('translationCore')}, function(err, data) {
           if (err) {
+            console.log(err);
             dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
             app.quit();
           } else {
