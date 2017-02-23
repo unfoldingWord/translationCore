@@ -11,7 +11,6 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
-const dispatch = require('../../utils/reduxActionDispatcher.js').dispatch;
 const SettingsActions = require('../../actions/SettingsActions.js');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 var checkList = [];
@@ -88,7 +87,6 @@ var Access = {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
           _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
             api.putDataInCommon('saveLocation', folderpath);
-            dispatch(SettingsActions.setSettings('showTutorial', false));
             localStorage.setItem('lastProject', folderpath);
             if (callback) {
               callback();
