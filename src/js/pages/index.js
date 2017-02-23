@@ -14,12 +14,11 @@
   window.BooksOfBible = require('../components/core/BooksOfBible.js');
   window.ModuleApi = moduleApi;
   const MenuBar = require('../components/core/MenuBar');
-
   var App = {
     init: function () {
       var menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-      var Application = require("./root");
+      var Application = require("./root").App;
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };

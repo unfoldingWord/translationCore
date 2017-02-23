@@ -8,6 +8,7 @@ const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
 
 module.exports.setSettings = function(field, value) {
   return ((dispatch) => {
+    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
     fs.readJson(dir, function (err, settingsObj) {
       if(err){
         settingsObj = {};
@@ -27,6 +28,7 @@ module.exports.setSettings = function(field, value) {
 
 module.exports.toggleSettings = function(field) {
   return ((dispatch) => {
+    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
     fs.readJson(dir, function (err, settingsObj) {
       if(err){
         console.error(err);
