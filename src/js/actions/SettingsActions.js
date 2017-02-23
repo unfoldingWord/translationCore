@@ -4,10 +4,10 @@ const fs = require('fs-extra');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
 
 module.exports.setSettings = function(field, value) {
   return ((dispatch) => {
-    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
     fs.readJson(dir, function (err, settingsObj) {
       if(err){
         settingsObj = {};
@@ -27,7 +27,6 @@ module.exports.setSettings = function(field, value) {
 
 module.exports.toggleSettings = function(field) {
   return ((dispatch) => {
-    var dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
     fs.readJson(dir, function (err, settingsObj) {
       if(err){
         console.error(err);
