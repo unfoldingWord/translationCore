@@ -3,7 +3,7 @@ const api = window.ModuleApi;
 const merge = require('lodash.merge');
 
 const initialState = {
-  currentSettings: null,
+  currentSettings: {},
 };
 
 module.exports = (state = initialState, action) => {
