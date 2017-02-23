@@ -4,6 +4,7 @@ const remote = require('electron').remote;
 const {dialog} = remote;
 const Upload = require('../components/core/UploadMethods.js');
 const toolsActions = require('./ToolsActions.js');
+const SettingsActions = require('./SettingsActions.js');
 
 module.exports.sendFilePath = function (path, link, callback) {
     return ((dispatch) => {
@@ -11,7 +12,10 @@ module.exports.sendFilePath = function (path, link, callback) {
             type: consts.DRAG_DROP_SENDPATH,
             filePath: path,
         });
-        Upload.sendFilePath(path, link, callback);
+        Upload.sendFilePath(path, link, ()=>{
+            dispatch(SettingsActions.setSettings('showTutorial', false));
+            callback();
+        });
     })
 }
 
