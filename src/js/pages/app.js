@@ -49,12 +49,14 @@ const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const LoaderActions = require('../actions/LoaderActions.js');
-
-const showMainView = CoreActionsRedux.showMainView;
+const SettingsActions = require('../actions/SettingsActions.js');
+const DragDropActions = require('../actions/DragDropActions.js');
 
 
 var Main = React.createClass({
   componentWillMount() {
+    //initializing app settings
+    this.props.dispatch(SettingsActions.setSettings());
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -169,7 +171,7 @@ var Main = React.createClass({
       currentBookName: bookName,
     }, () => {
       this.updateTools(this.state.currentToolNamespace, () => {
-        this.props.dispatch(showMainView(true));
+        this.props.showMainView(true);
       });
     });
   },
@@ -293,15 +295,6 @@ var Main = React.createClass({
     else return;
   },
 
-  startLoadingNewProject() {
-    api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-    api.emitEvent('newToolSelected', { 'newToolSelected': true });
-    this.state.projectModalProps.close();
-    api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-    this.props.dispatch(showMainView(true));
-    this.props.showToolsInModal(true);
-  },
-
   getInitialState() {
     const user = CoreStore.getLoggedInUser();
     this.state =
@@ -344,269 +337,6 @@ var Main = React.createClass({
             }
           },
         },
-        menuHeadersProps: {
-          menuClick: (id, menuOpen) => {
-            if (id != this.props.checkStoreReducer.currentGroupIndex) {
-              menuOpen = true;
-            } else {
-              menuOpen = menuOpen || !this.state.subMenuOpen;
-            }
-            let currentSubGroupObjects;
-            let currentGroupIndex = parseInt(id);
-            let groupObjects = this.props.checkStoreReducer.groups;
-            if (currentGroupIndex != null && groupObjects != null) {
-              currentSubGroupObjects = groupObjects[currentGroupIndex]['checks'];
-            }
-            this.setState({
-              currentGroupIndex: currentGroupIndex,
-              currentSubGroupObjects: currentSubGroupObjects,
-              currentCheckIndex: 0,
-              subMenuOpen: menuOpen
-            });
-            this.props.dispatch(
-              CheckStoreActions.goToCheck(
-                this.state.currentToolNamespace, parseInt(id), 0
-              )
-            );
-          }
-        },
-        subMenuProps: {
-          checkClicked: (id) => {
-            this.setState({ currentCheckIndex: parseInt(id) });
-            this.props.dispatch(
-              CheckStoreActions.goToCheck(this.state.currentToolNamespace,
-                this.props.checkStoreReducer.currentGroupIndex, parseInt(id)
-              )
-            );
-          }
-        },
-        importUsfmProps: {
-          openUSFM: ImportUsfm.open,
-          filePath: 'No file selected',
-          checkIfValid: (location) => {
-            this.setState(merge({}, this.state, {
-              importUsfmProps: {
-                filePath: location,
-                usfmSave: !(location == 'No file selected')
-              }
-            }));
-          },
-        },
-        projectModalProps: {
-          showModal: false,
-          showD43: () => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                show: 'd43',
-              }
-            }));
-          },
-          show: 'link',
-          submitLink: (callback) => {
-            var link = this.state.projectModalProps.link;
-            loadOnline(link, function (err, savePath, url) {
-              if (!err) {
-                Upload.sendFilePath(savePath, url, callback);
-              } else {
-                alert(err);
-              }
-            });
-          },
-
-          close: () => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                showModal: false,
-              }
-            }));
-          },
-
-          onClick: (type) => {
-            if (type == 'link') {
-              this.state.projectModalProps.submitLink((err) => {
-                if (!err) {
-                  this.startLoadingNewProject()
-                } else if (err != "") {
-                  api.createAlert(
-                    {
-                      title: 'Error Setting Up Project',
-                      content: err,
-                      moreInfo: "",
-                      leftButtonText: "Ok"
-                    },
-                    () => {
-                    });
-                }
-              });
-            }
-            else if (type == 'usfm') {
-              if (!this.state.importUsfmProps.usfmSave) {
-                return;
-              }
-              this.startLoadingNewProject();
-            } else {
-              this.startLoadingNewProject()
-            }
-          },
-          _handleKeyPress: (e, type) => {
-            if (e.key === 'Enter') {
-              this.state.projectModalProps.onClick(type);
-            }
-          }
-        },
-
-        uploadProps: {
-          active: 1,
-          changeActive: (key) => {
-            switch (key) {
-              case 1:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'link',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 2:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'file',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 3:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'usfm',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              case 4:
-                this.setState(merge({}, this.state, {
-                  projectModalProps: {
-                    show: 'recent',
-                  },
-                  uploadProps: {
-                    active: key
-                  }
-                }));
-                break;
-              default:
-                break;
-            }
-          }
-        },
-        profileProjectsProps: {
-          back: () => {
-            this.setState(merge({}, this.state, {
-              projectModalProps: {
-                show: 'link',
-              }
-            }));
-          },
-          repos: [],
-          updateRepos: () => {
-            var user = api.getLoggedInUser();
-            if (user) {
-              var _this = this;
-              return Gogs.retrieveRepos(user.userName).then((repos) => {
-                this.setState(merge({}, this.state, {
-                  profileProjectsProps: {
-                    repos: repos,
-                  }
-                }));
-              });
-            }
-          },
-          openSelected: (projectPath) => {
-            var dispatch = this.props.dispatch;
-            var link = 'https://git.door43.org/' + projectPath + '.git';
-            var _this = this;
-            loadOnline(link, function (err, savePath, url) {
-              if (err) {
-                alert(loadOnline);
-              } else {
-                Upload.sendFilePath(savePath, url, () => {
-                })
-              }
-            });
-          },
-          makeList: (repos) => {
-            var user = api.getLoggedInUser();
-            if (!user) {
-              return (
-                <div>
-                  <center>
-                    <br />
-                    <h4> Please login first </h4>
-                    <br />
-                  </center>
-                </div>
-              )
-            }
-            var projectArray = repos;
-            var projectList = []
-            for (var p in projectArray) {
-              var projectName = projectArray[p].project;
-              var repoName = projectArray[p].repo;
-              projectList.push(
-                <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
-                  {projectName}
-                  <Button bsStyle='primary' className={'pull-right'} bsSize='sm' onClick={this.state.profileProjectsProps.openSelected.bind(this, repoName)}>Load Project</Button>
-                </div>
-              );
-            }
-            if (projectList.length === 0) {
-              projectList.push(
-                <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
-                  No Projects Found
-                </div>
-              );
-            }
-            return projectList;
-          }
-        },
-        switchCheckModalProps: {
-          showModal: false,
-          localAppFilePath: '',
-          handleFilePathChange: (event) => {
-            this.setState(merge({}, this.state, {
-              switchCheckModalProps: {
-                localAppFilePath: event.target.value,
-              }
-            }));
-          },
-          developerApp: (filepath) => {
-            var folderName = path.join(window.__base, filepath);
-            fs.access(folderName, fs.F_OK, (err) => {
-              if (!err) {
-
-                CheckDataGrabber.loadModuleAndDependencies(folderName);
-                localStorage.setItem('lastCheckModule', folderName);
-              } else {
-                console.error(err);
-              }
-            });
-            this.props.dispatch(showMainView(false));
-          },
-          developerMode: api.getSettings('developerMode') === 'enable',
-          showDevOptions: false,
-          updateDevOptions: () => {
-            this.setState(merge({}, this.state, {
-              switchCheckModalProps: {
-                showDevOptions: !this.state.switchCheckModalProps.showDevOptions,
-              }
-            }));
-          }
-        },
         alertModalProps: {
           open: false,
           handleOpen: () => {
@@ -644,6 +374,7 @@ var Main = React.createClass({
                 alertMessage: {}
               }
             }), CoreActions.sendAlertResponse(response));
+            //CoreActions.sendAlertResponse will need to be refactored out eventually, may be one of the harder functions to fix
           },
 
           handleAlertOK: () => {
@@ -654,6 +385,7 @@ var Main = React.createClass({
                 alertMessage: {}
               }
             }), CoreActions.sendAlertResponse(response));
+            //CoreActions.sendAlertResponse will need to be refactored out eventually, may be one of the harder functions to fix
           },
 
           getStyleFromState: (value) => {
@@ -708,7 +440,7 @@ var Main = React.createClass({
         switchCheckProps: {
           moduleMetadatas: [],
           moduleClick: (folderName) => {
-            this.props.dispatch(showMainView(false));
+            this.props.showMainView(false);
             this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
               CheckDataGrabber.loadModuleAndDependencies(folderName);
@@ -777,10 +509,10 @@ var Main = React.createClass({
     try {
       if (api.getSettings('tutorialView') !== 'show' && saveLocation) {
         var lastProjectFiles = fs.readdirSync(saveLocation);
-        Upload.sendFilePath(saveLocation, null, (err) => {
+        this.props.sendFilePath(saveLocation, null, (err) => {
           var lastCheckModule = localStorage.getItem('lastCheckModule');
           if (lastCheckModule) {
-            CoreActions.startLoading();
+            this.props.startLoadingNewProject();
             this.props.loadTool(lastCheckModule);
           }
         });
@@ -897,6 +629,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     changeOnlineStatus: (val, first) => {
       dispatch(CoreActionsRedux.changeOnlineStatus(val, first));
+    },
+    sendFilePath: (filePath, link, callback) => {
+      dispatch(DragDropActions.sendFilePath(filePath, link, callback));
+    },
+    startLoadingNewProject: () => {
+      dispatch(recentProjectActions.startLoadingNewProject());
+    },
+    showMainView: (val) => {
+      dispatch(CoreActionsRedux.showMainView(val));
     }
   });
 }
