@@ -21,7 +21,7 @@ packager({
   dir: './',
   platform: 'win32',
   asar: true,
-  'build-version': '0.4.1',
+  'build-version': '0.5.0',
   icon: './build/icon.ico',
   name: 'translationCore',
   overwrite: 'true',
