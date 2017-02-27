@@ -7,9 +7,6 @@ const OnlineInput = require('../components/core/OnlineInput');
 
 
 class ImportOnlineContainer extends React.Component {
-    componentWillMount() {
-        this.props.updateRepos();
-    }
 
     importOnlineButtion(projectName, p, repoName) {
         return (
@@ -48,7 +45,8 @@ class ImportOnlineContainer extends React.Component {
         return projectList;
     }
     render() {
-        const onlineProjects = this.makeList(this.props.repos);
+        this.props.updateRepos();
+        let onlineProjects = this.makeList(this.props.repos);
         return (
             <div>
                 {this.props.showOnlineButton ?
@@ -67,7 +65,9 @@ class ImportOnlineContainer extends React.Component {
                         </center>
                     </div>)
                     :
-                    <Projects onlineProjects={onlineProjects} back={() => this.props.changeShowOnlineView(true)} />}
+                    <Projects onlineProjects={onlineProjects}
+                      back={() => this.props.changeShowOnlineView(true)}
+                      refresh={this.props.updateRepos} />
             </div>
         )
     }
