@@ -67,7 +67,7 @@ class ImportOnlineContainer extends React.Component {
                     :
                     <Projects onlineProjects={onlineProjects}
                       back={() => this.props.changeShowOnlineView(true)}
-                      refresh={this.props.updateRepos} />
+                      refresh={this.props.updateRepos} />}
             </div>
         )
     }
