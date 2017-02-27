@@ -26,13 +26,18 @@ describe('loadOnline.openManifest', function() {
       done();
     });
   });
-  it('loadOnline.openManifest should deny a non .git link.', function(done){
-    loadOnline('https://git.door43.org/royalsix/id_-co_text_reg', function(err, savePath, url) {
-      assert.isNull(savePath);
-      assert.isNull(url);
-      assert.equal(err, 'Invalid Project, URL needs to end with .git');
+  
+  it('loadOnline.openManifest should not deny a non .git link.', function(done){
+    this.timeout(50000);
+    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
+    var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg';
+    loadOnline(expectedURL, function(err, savePath, url) {
+      assert.equal(savePath, expectedSavePath);
+      assert.equal(url, expectedURL);
+      fs.removeSync(expectedSavePath);
       done();
     });
+  });
   });
 
   it('loadOnline.openManifest should return the home directory and url', function(done){
