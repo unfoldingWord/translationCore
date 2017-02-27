@@ -26,7 +26,7 @@ describe('loadOnline.openManifest', function() {
       done();
     });
   });
-  
+
   it('loadOnline.openManifest should not deny a non .git link.', function(done){
     this.timeout(50000);
     var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
@@ -37,7 +37,6 @@ describe('loadOnline.openManifest', function() {
       fs.removeSync(expectedSavePath);
       done();
     });
-  });
   });
 
   it('loadOnline.openManifest should return the home directory and url', function(done){
