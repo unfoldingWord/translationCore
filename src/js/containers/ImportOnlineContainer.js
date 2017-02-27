@@ -45,7 +45,6 @@ class ImportOnlineContainer extends React.Component {
         return projectList;
     }
     render() {
-        this.props.updateRepos();
         let onlineProjects = this.makeList(this.props.repos);
         return (
             <div>

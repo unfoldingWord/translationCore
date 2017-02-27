@@ -19,6 +19,7 @@ module.exports.changeShowOnlineView = function (val) {
 }
 
 module.exports.updateRepos = function () {
+    console.log("updating repos");
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata;
         if (user) {
@@ -69,4 +70,4 @@ module.exports.loadProjectFromLink = function (link) {
             }
         });
     })
-}  
+}
