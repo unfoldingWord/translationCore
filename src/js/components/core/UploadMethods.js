@@ -153,11 +153,13 @@ function getParams(path) {
     manifestError("Project has no finished content in manifest");
     return;
   }
-  var ogPath = Path.join(window.__base, 'static', 'tagged');
+  var ogPath = Path.join(window.__base, 'static', 'taggedULB');
   var params = {
     'originalLanguagePath': ogPath
   }
+  var UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
   params.targetLanguagePath = path;
+  params.gatewayLanguageUDBPath = UDBPath;
   try {
     if (tcManifest.ts_project) {
       params.bookAbbr = tcManifest.ts_project.id;
@@ -169,9 +171,9 @@ function getParams(path) {
       params.bookAbbr = tcManifest.project_id;
     }
     if (isArray(tcManifest.source_translations)) {
-      params.gatewayLanguage = tcManifest.source_translations[0].language_id;
+      params.gatewayLanguageULB = tcManifest.source_translations[0].language_id;
     } else {
-      params.gatewayLanguage = tcManifest.source_translations.language_id;
+      params.gatewayLanguageULB = tcManifest.source_translations.language_id;
     }
     params.direction = tcManifest.target_language ? tcManifest.target_language.direction : null;
     if (isOldTestament(params.bookAbbr)) {
@@ -209,6 +211,7 @@ function saveTargetLangeInAPI(parsedUSFM) {
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
 }
+
 function checkIfUSFMFile(savePath, callback) {
   try {
     var usfmFile = fs.readFileSync(savePath);

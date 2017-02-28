@@ -73,6 +73,8 @@ class ModuleApi {
   }
 
   getDataFromCheckStore(field, key = null) {
+    if (key == 'staticSettings') {
+    }
     var obj = CheckStore.getModuleDataObject(field);
     if (obj && typeof obj == "object") {
       if (key) {
@@ -163,23 +165,23 @@ class ModuleApi {
         console.error('Door43Fetcher throwing error');
       }
       else {
-        var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
+        var gatewayLanguageULB = api.getDataFromCommon('gatewayLanguageULB');
         var bookData;
         /*
-        * we found the gatewayLanguage already loaded, now we must convert it
+        * we found the gatewayLanguageULB already loaded, now we must convert it
         * to the format needed by the parsers
         */
-        if (gatewayLanguage) {
+        if (gatewayLanguageULB) {
           var reformattedBookData = { chapters: [] };
-          for (var chapter in gatewayLanguage) {
+          for (var chapter in gatewayLanguageULB) {
             var chapterObject = {
               verses: [],
               num: parseInt(chapter)
             }
-            for (var verse in gatewayLanguage[chapter]) {
+            for (var verse in gatewayLanguageULB[chapter]) {
               var verseObject = {
                 num: parseInt(verse),
-                text: gatewayLanguage[chapter][verse]
+                text: gatewayLanguageULB[chapter][verse]
               }
               chapterObject.verses.push(verseObject);
             }
@@ -206,7 +208,7 @@ class ModuleApi {
           }
           newBookData.title = api.convertToFullBookName(params.bookAbbr);
           //load it into checkstore
-          api.putDataInCommon('gatewayLanguage', newBookData);
+          api.putDataInCommon('gatewayLanguageULB', newBookData);
           //resume fetchData
           for (var chapter of bookData.chapters) {
             chapter.verses.sort(function (first, second) {
@@ -264,7 +266,7 @@ class ModuleApi {
       saveLocation += '/tc-manifest.json';
       this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(saveLocation, manifest, callback);
-    } else if (!manifest){
+    } else if (!manifest) {
       callback("No manifest found");
     } else {
       manifest[field] = data;
@@ -342,15 +344,15 @@ class ModuleApi {
     localStorage.setItem('settings', settingsString);
   }
 
-  putToolMetaDatasInStore(metadatas){
+  putToolMetaDatasInStore(metadatas) {
     this.currentToolMetaData = metadatas;
   }
 
-  getToolMetaDataFromStore(){
+  getToolMetaDataFromStore() {
     return this.currentToolMetaData;
   }
 
-  setCurrentGroupName(groupName){
+  setCurrentGroupName(groupName) {
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return;
@@ -360,50 +362,50 @@ class ModuleApi {
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     this.emitEvent('changeGroupName',
-    {
-      "groupName": groupName
-    });
+      {
+        "groupName": groupName
+      });
   }
 
-  getCurrentGroupName(){
+  getCurrentGroupName() {
     return this.currentGroupName;
   }
 
-  initialCurrentGroupName(){
+  initialCurrentGroupName() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
     let foundGroup = [];
-    if(currentNamespace && currentGroupIndex && currentGroupIndex >= 0){
+    if (currentNamespace && currentGroupIndex && currentGroupIndex >= 0) {
       foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
     }
     this.currentGroupName = foundGroup.group;
   }
 
-  getSubMenuItems(){
+  getSubMenuItems() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = [];
-    if(this.currentGroupName){
-      if(groups){
+    if (this.currentGroupName) {
+      if (groups) {
         foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       }
     }
     return foundGroup.checks;
   }
 
-  getCurrentGroupIndex(){
+  getCurrentGroupIndex() {
     let groupIndex = null;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    if(groups){
+    if (groups) {
       let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       groupIndex = groups.indexOf(foundGroup);
     }
     return groupIndex;
   }
 
-  changeCurrentIndexes(checkIndex){
+  changeCurrentIndexes(checkIndex) {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
@@ -421,7 +423,7 @@ class ModuleApi {
   }
 
   //this method returns the Current Check Namespace
-  getCurrentCheckNamespace(){
+  getCurrentCheckNamespace() {
     return CoreStore.getCurrentCheckNamespace();
   }
 

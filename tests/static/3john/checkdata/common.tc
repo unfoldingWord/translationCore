@@ -31,7 +31,7 @@
   },
   "saveLocation": "/Users/jay/translationCore/60JASOSJNT",
   "params": {
-    "originalLanguagePath": "/Users/jay/Desktop/translationCore/static/tagged",
+    "originalLanguagePath": "/Users/jay/Desktop/translationCore/static/taggedULB",
     "targetLanguagePath": "/Users/jay/translationCore/60JASOSJNT",
     "direction": "ltr",
     "bookAbbr": "jas",
@@ -157,7 +157,7 @@
     },
     "title": "याकूब"
   },
-  "gatewayLanguage": {
+  "gatewayLanguageULB": {
     "1": {
       "1": "James, a servant of God and of the Lord Jesus Christ, to the twelve tribes in the dispersion: greetings.\n",
       "2": "Consider it all joy, my brothers, when you experience various troubles.\n",
