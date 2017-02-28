@@ -1,0 +1,705 @@
+{
+  "package_version": 0.1,
+  "modified_at": "20161114000000",
+  "content_mime_type": "text/usfm",
+  "versification_slug": "ufw",
+  "language": {
+    "slug": "en",
+    "name": "English",
+    "dir": "ltr"
+  },
+  "resource": {
+    "slug": "en-udb",
+    "name": "Unlocked Dynamic Bible",
+    "icon": "https://cdn.door43.org/en/udb/v7/icon.jpg",
+    "status": {
+      "translate_mode": "all",
+      "checking_entity": [
+        "Wycliffe Associates"
+      ],
+      "checking_level": "3",
+      "comments": "",
+      "contributors": [
+        "Wycliffe Associates"
+      ],
+      "pub_date": "2016-10-03",
+      "license": "CC BY-SA 4.0",
+      "checks_performed": [
+        "keyword",
+        "metaphor",
+        "etc..."
+      ],
+      "source_translations": [
+        {
+          "language_slug": "en",
+          "resource_slug": "en-asv",
+          "version": "1901"
+        }
+      ],
+      "version": "7"
+    },
+    "projects": [
+      {
+        "name": "Genesis",
+         "desc": "",
+         "slug": "gen",
+         "sort": 1,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/gen/v3/chunks.json"
+      },
+      {
+        "name": "Exodus",
+         "desc": "",
+         "slug": "exo",
+         "sort": 2,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/exo/v3/chunks.json"
+      },
+      {
+        "name": "Leviticus",
+         "desc": "",
+         "slug": "lev",
+         "sort": 3,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/lev/v3/chunks.json"
+      },
+      {
+        "name": "Numbers",
+         "desc": "",
+         "slug": "num",
+         "sort": 4,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/num/v3/chunks.json"
+      },
+      {
+        "name": "Deuteronomy",
+         "desc": "",
+         "slug": "deu",
+         "sort": 5,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/deu/v3/chunks.json"
+      },
+      {
+        "name": "Joshua",
+         "desc": "",
+         "slug": "jos",
+         "sort": 6,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jos/v3/chunks.json"
+      },
+      {
+        "name": "Judges",
+         "desc": "",
+         "slug": "jdg",
+         "sort": 7,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jdg/v3/chunks.json"
+      },
+      {
+        "name": "Ruth",
+         "desc": "",
+         "slug": "rut",
+         "sort": 8,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/rut/v3/chunks.json"
+      },
+      {
+        "name": "1 Samuel",
+         "desc": "",
+         "slug": "1sa",
+         "sort": 9,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1sa/v3/chunks.json"
+      },
+      {
+        "name": "2 Samuel",
+         "desc": "",
+         "slug": "2sa",
+         "sort": 10,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2sa/v3/chunks.json"
+      },
+      {
+        "name": "1 Kings",
+         "desc": "",
+         "slug": "1ki",
+         "sort": 11,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1ki/v3/chunks.json"
+      },
+      {
+        "name": "2 Kings",
+         "desc": "",
+         "slug": "2ki",
+         "sort": 12,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2ki/v3/chunks.json"
+      },
+      {
+        "name": "1 Chronicles",
+         "desc": "",
+         "slug": "1ch",
+         "sort": 13,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1ch/v3/chunks.json"
+      },
+      {
+        "name": "2 Chronicles",
+         "desc": "",
+         "slug": "2ch",
+         "sort": 14,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2ch/v3/chunks.json"
+      },
+      {
+        "name": "Ezra",
+         "desc": "",
+         "slug": "ezr",
+         "sort": 15,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/ezr/v3/chunks.json"
+      },
+      {
+        "name": "Nehemiah",
+         "desc": "",
+         "slug": "neh",
+         "sort": 16,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/neh/v3/chunks.json"
+      },
+      {
+        "name": "Esther",
+         "desc": "",
+         "slug": "est",
+         "sort": 17,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/est/v3/chunks.json"
+      },
+      {
+        "name": "Job",
+         "desc": "",
+         "slug": "job",
+         "sort": 18,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/job/v3/chunks.json"
+      },
+      {
+        "name": "Psalms",
+         "desc": "",
+         "slug": "psa",
+         "sort": 19,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/psa/v3/chunks.json"
+      },
+      {
+        "name": "Proverbs",
+         "desc": "",
+         "slug": "pro",
+         "sort": 20,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/pro/v3/chunks.json"
+      },
+      {
+        "name": "Ecclesiastes",
+         "desc": "",
+         "slug": "ecc",
+         "sort": 21,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/ecc/v3/chunks.json"
+      },
+      {
+        "name": "Song of Solomon",
+         "desc": "",
+         "slug": "sng",
+         "sort": 22,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/sng/v3/chunks.json"
+      },
+      {
+        "name": "Isaiah",
+         "desc": "",
+         "slug": "isa",
+         "sort": 23,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/isa/v3/chunks.json"
+      },
+      {
+        "name": "Jeremiah",
+         "desc": "",
+         "slug": "jer",
+         "sort": 24,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jer/v3/chunks.json"
+      },
+      {
+        "name": "Lamentations",
+         "desc": "",
+         "slug": "lam",
+         "sort": 25,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/lam/v3/chunks.json"
+      },
+      {
+        "name": "Ezekiel",
+         "desc": "",
+         "slug": "ezk",
+         "sort": 26,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/ezk/v3/chunks.json"
+      },
+      {
+        "name": "Daniel",
+         "desc": "",
+         "slug": "dan",
+         "sort": 27,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/dan/v3/chunks.json"
+      },
+      {
+        "name": "Hosea",
+         "desc": "",
+         "slug": "hos",
+         "sort": 28,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/hos/v3/chunks.json"
+      },
+      {
+        "name": "Joel",
+         "desc": "",
+         "slug": "jol",
+         "sort": 29,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jol/v3/chunks.json"
+      },
+      {
+        "name": "Amos",
+         "desc": "",
+         "slug": "amo",
+         "sort": 30,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/amo/v3/chunks.json"
+      },
+      {
+        "name": "Obadiah",
+         "desc": "",
+         "slug": "oba",
+         "sort": 31,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/oba/v3/chunks.json"
+      },
+      {
+        "name": "Jonah",
+         "desc": "",
+         "slug": "jon",
+         "sort": 32,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jon/v3/chunks.json"
+      },
+      {
+        "name": "Micah",
+         "desc": "",
+         "slug": "mic",
+         "sort": 33,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/mic/v3/chunks.json"
+      },
+      {
+        "name": "Nahum",
+         "desc": "",
+         "slug": "nam",
+         "sort": 34,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/nam/v3/chunks.json"
+      },
+      {
+        "name": "Habakkuk",
+         "desc": "",
+         "slug": "hab",
+         "sort": 35,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/hab/v3/chunks.json"
+      },
+      {
+        "name": "Zephaniah",
+         "desc": "",
+         "slug": "zep",
+         "sort": 36,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/zep/v3/chunks.json"
+      },
+      {
+        "name": "Haggai",
+         "desc": "",
+         "slug": "hag",
+         "sort": 37,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/hag/v3/chunks.json"
+      },
+      {
+        "name": "Zechariah",
+         "desc": "",
+         "slug": "zec",
+         "sort": 38,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/zec/v3/chunks.json"
+      },
+      {
+        "name": "Malachi",
+         "desc": "",
+         "slug": "mal",
+         "sort": 39,
+         "categories": [
+           "bible-ot"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/mal/v3/chunks.json"
+      },
+      {
+        "name": "Matthew",
+         "desc": "",
+         "slug": "mat",
+         "sort": 40,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/mat/v3/chunks.json"
+      },
+      {
+        "name": "Mark",
+         "desc": "",
+         "slug": "mrk",
+         "sort": 41,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/mrk/v3/chunks.json"
+      },
+      {
+        "name": "Luke",
+         "desc": "",
+         "slug": "luk",
+         "sort": 42,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/luk/v3/chunks.json"
+      },
+      {
+        "name": "John",
+         "desc": "",
+         "slug": "jhn",
+         "sort": 43,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jhn/v3/chunks.json"
+      },
+      {
+        "name": "Acts",
+         "desc": "",
+         "slug": "act",
+         "sort": 44,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/act/v3/chunks.json"
+      },
+      {
+        "name": "Romans",
+         "desc": "",
+         "slug": "rom",
+         "sort": 45,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/rom/v3/chunks.json"
+      },
+      {
+        "name": "1 Corinthians",
+         "desc": "",
+         "slug": "1co",
+         "sort": 46,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1co/v3/chunks.json"
+      },
+      {
+        "name": "2 Corinthians",
+         "desc": "",
+         "slug": "2co",
+         "sort": 47,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2co/v3/chunks.json"
+      },
+      {
+        "name": "Galatians",
+         "desc": "",
+         "slug": "gal",
+         "sort": 48,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/gal/v3/chunks.json"
+      },
+      {
+        "name": "Ephesians",
+         "desc": "",
+         "slug": "eph",
+         "sort": 49,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/eph/v3/chunks.json"
+      },
+      {
+        "name": "Philippians",
+         "desc": "",
+         "slug": "php",
+         "sort": 50,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/php/v3/chunks.json"
+      },
+      {
+        "name": "Colossians",
+         "desc": "",
+         "slug": "col",
+         "sort": 51,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/col/v3/chunks.json"
+      },
+      {
+        "name": "1 Thessalonians",
+         "desc": "",
+         "slug": "1th",
+         "sort": 52,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1th/v3/chunks.json"
+      },
+      {
+        "name": "2 Thessalonians",
+         "desc": "",
+         "slug": "2th",
+         "sort": 53,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2th/v3/chunks.json"
+      },
+      {
+        "name": "1 Timothy",
+         "desc": "",
+         "slug": "1ti",
+         "sort": 54,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1ti/v3/chunks.json"
+      },
+      {
+        "name": "2 Timothy",
+         "desc": "",
+         "slug": "2ti",
+         "sort": 55,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2ti/v3/chunks.json"
+      },
+      {
+        "name": "Titus",
+         "desc": "",
+         "slug": "tit",
+         "sort": 56,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/tit/v3/chunks.json"
+      },
+      {
+        "name": "Philemon",
+         "desc": "",
+         "slug": "phm",
+         "sort": 57,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/phm/v3/chunks.json"
+      },
+      {
+        "name": "Hebrews",
+         "desc": "",
+         "slug": "heb",
+         "sort": 58,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/heb/v3/chunks.json"
+      },
+      {
+        "name": "James",
+         "desc": "",
+         "slug": "jas",
+         "sort": 59,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jas/v3/chunks.json"
+      },
+      {
+        "name": "1 Peter",
+         "desc": "",
+         "slug": "1pe",
+         "sort": 60,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1pe/v3/chunks.json"
+      },
+      {
+        "name": "2 Peter",
+         "desc": "",
+         "slug": "2pe",
+         "sort": 61,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2pe/v3/chunks.json"
+      },
+      {
+        "name": "1 John",
+         "desc": "",
+         "slug": "1jn",
+         "sort": 62,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/1jn/v3/chunks.json"
+      },
+      {
+        "name": "2 John",
+         "desc": "",
+         "slug": "2jn",
+         "sort": 63,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/2jn/v3/chunks.json"
+      },
+      {
+        "name": "3 John",
+         "desc": "",
+         "slug": "3jn",
+         "sort": 64,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/3jn/v3/chunks.json"
+      },
+      {
+        "name": "Jude",
+         "desc": "",
+         "slug": "jud",
+         "sort": 65,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/jud/v3/chunks.json"
+      },
+      {
+        "name": "Revelation",
+         "desc": "",
+         "slug": "rev",
+         "sort": 66,
+         "categories": [
+           "bible-nt"
+         ],
+         "chunks_url": "https://cdn.door43.org/bible/rev/v3/chunks.json"
+      }
+    ]
+  }
+}
+

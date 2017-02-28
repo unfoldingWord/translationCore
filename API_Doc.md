@@ -117,7 +117,7 @@ Puts a *value* in the CheckStore in the *common* field and tags it with the *key
 Data put into common is available at all times, even if the check type changes.
 
 ```javascript
-api.putDataInCommon('gatewayLanguage', 'Jesus wept');
+api.putDataInCommon('gatewayLanguageULB', 'Jesus wept');
 ```
 
 #### `getDataFromCommon(key)`

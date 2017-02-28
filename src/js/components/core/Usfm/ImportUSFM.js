@@ -75,7 +75,7 @@ function saveParamsInAPI(bookAbbr, saveLocation, direction, language) {
   Upload = require('../UploadMethods.js');
   if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
   var params = {
-    originalLanguagePath: path.join(window.__base, 'static', 'tagged'),
+    originalLanguagePath: path.join(window.__base, 'static', 'taggedULB'),
     targetLanguagePath: saveLocation,
     direction: direction,
     bookAbbr: bookAbbr,

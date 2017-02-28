@@ -50,7 +50,7 @@ function exportAllBooks() {
       var book = require('../../../../../static/ulgb/' + fileName + '.json');
       exportUsfm(book, true, savePath, 'Greek');
     }
-    var gateway = api.getDataFromCommon('gatewayLanguage');
+    var gateway = api.getDataFromCommon('gatewayLanguageULB');
     if (gateway) {
       var bookTitle = gateway.title;
       delete gateway.title;
