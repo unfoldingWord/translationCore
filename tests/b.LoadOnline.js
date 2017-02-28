@@ -45,7 +45,6 @@ describe('loadOnline.openManifest', function() {
     var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg.git';
     loadOnline(expectedURL, function(err, savePath, url) {
       assert.equal(savePath, expectedSavePath);
-      fs.removeSync(savePath);
       assert.equal(url, expectedURL);
       done();
     });
