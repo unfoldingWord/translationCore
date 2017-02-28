@@ -1,4 +1,5 @@
 const consts = require('./CoreActionConsts');
+const ImportOnlineActions = require('./ImportOnlineActions');
 
 module.exports.showModalContainer = function (val) {
   return {
@@ -17,9 +18,12 @@ module.exports.selectModalTab = function (tabKey, sectionKey, visiblity) {
 }
 
 module.exports.selectSectionTab = function (tabKey, sectionKey) {
-  return {
-    type: 'SELECT_MODAL_SECTION',
-    tab: tabKey,
-    section: sectionKey
-  }
+  return ((dispatch) => {
+    dispatch({
+      type: 'SELECT_MODAL_SECTION',
+      tab: tabKey,
+      section: sectionKey
+    })
+  })
+  if(sectionKey==2) dispatch(ImportOnlineActions.updateRepos());
 }
