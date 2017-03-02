@@ -24,7 +24,6 @@ class ModuleApi {
     this.CheckModule = CheckModule;
     this.modules = {};
     this.Popover = require('./components/core/PopoverApi');
-    this.Toast = require('./NotificationApi/ToastApi');
     this.Git = require('./components/core/GitApi.js');
     this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
     this.ReportFilters = this.ReportFiltersTools.filter;
