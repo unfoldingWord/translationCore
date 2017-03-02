@@ -29,7 +29,7 @@ class SideBarContainer extends React.Component {
             <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
           </Col>
         </Grid>
-        <Glyphicon style={style.slideButton} glyph={'chevron-left'} />
+        <Glyphicon style={style.slideButton} glyph={'chevron-left'} onClick={this.props.onToggleMenu} />
       </div>
     );
   }
@@ -42,6 +42,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    onToggleMenu: () => {
+      dispatch(SideBarActions.toggleMenu());
+    },
     menuClick: (id, currentToolNamespace, bool) => {
       dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
     },
