@@ -4,6 +4,7 @@ const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const SideBarActions = require('../actions/SideBarActions.js');
 const MenuHeaders = require('../components/core/navigation_menu/MenuHeaders');
 const {Grid, Row, Col} = require('react-bootstrap/lib');
+const {Glyphicon} = require('react-bootstrap');
 const Chevron = require('../components/core/SideBar/Chevron');
 const style = require("../components/core/SideBar/Style");
 
@@ -28,6 +29,7 @@ class SideBarContainer extends React.Component {
             <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
           </Col>
         </Grid>
+        <Glyphicon style={style.slideButton} glyph={'chevron-left'} />
       </div>
     );
   }
