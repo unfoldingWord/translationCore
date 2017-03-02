@@ -69,6 +69,7 @@
     "http": "0.0.0",
     "lodash.merge": "^4.6.0",
     "marked": "^0.3.5",
+    "material-ui": "^0.17.0",
     "natural": "^0.4.0",
     "npm": "2.14.12",
     "path-extra": "3.0.0",
