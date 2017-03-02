@@ -48,7 +48,8 @@ function syncToGit(inputPath) {
             }
           } else {
             console.error = alertError;
-            api.Toast.success('Update succesful', '', 7);
+            //TODO: find a way to make the dispatch work in this file 
+            //api.Toast.success('Update succesful', '', 7);
           }
         });
       } else {
@@ -72,27 +73,31 @@ function syncToGit(inputPath) {
                   if (err) {
                     git(path).update(newRemote, 'master', false, function(err){
                       if (!err) {
-                        api.Toast.success('Update succesful', '', 7);
+                        //TODO: find a way to make the dispatch work in this file 
+                        //api.Toast.success('Update succesful', '', 7);
                       }
                       console.error = alertError;
                     });
                   } else {
                     console.error = alertError;
-                    api.Toast.success('Update succesful', '', 7);
+                    //TODO: find a way to make the dispatch work in this file 
+                    //api.Toast.success('Update succesful', '', 7);
                   }
                 });
               });
             } else {
               console.log('happend');
               console.error = alertError;
-              api.Toast.success('Update succesful', '', 7);
+              //TODO: find a way to make the dispatch work in this file 
+              //api.Toast.success('Update succesful', '', 7);
             }
           });
         }
       }
     });
   } else {
-    api.Toast.info('Login then try again', '', 7);
+    //TODO: find a way to make the dispatch work in this file 
+    //api.Toast.info('Login then try again', '', 7);
   }
 }
 
