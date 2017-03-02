@@ -1,6 +1,7 @@
 const React = require('react');
 const { connect  } = require('react-redux');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
+import { showNotification } from '../actions/NotificationActions.js'
 
 
 class ToolsContainer extends React.Component {
@@ -30,6 +31,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       handleGoToPrevious: (NAMESPACE) => {
         dispatch(CheckStoreActions.goToPrevious(NAMESPACE));
       },
+      showNotification: (message, duration) => {
+        dispatch(showNotification(message, duration));
+      }
     }
 }
 
