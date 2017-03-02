@@ -7,6 +7,8 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const git = require('../GitApi.js');
 const api = window.ModuleApi;
 const babel = require('babel-core');
+const dispatch = require("../../../pages/root").dispatch;
+import { showNotification } from '../../../actions/NotificationActions.js'
 var installQueue = [];
 
 const PARENT = path.datadir('translationCore')
@@ -94,7 +96,8 @@ function compilePackage(destination, packageName, callback) {
     if (callback) {
       callback(null, 'Installation Successful')
     }
-    api.Toast.success("Installation Successful", packageName + 'Was Successfully Installed', 3);
+    let message = "Installation Successful: " + packageName + ' Was Successfully Installed';
+    dispatch(showNotification(message, 5));
   });
 }
 /**
@@ -236,10 +239,11 @@ function uninstall(packageName) {
   try {
     fs.emptyDirSync(compiledLocation);
     fs.removeSync(compiledLocation);
-    api.Toast.success("Uninstallation Successful", packageName + 'Was Successfully Uninstalled', 3);
+    let message = "Uninstallation Successful: " + packageName + ' Was Successfully Uninstalled';
+    dispatch(showNotification(message, 5));
   } catch (err) {
     console.warn(err);
-    api.Toast.error("Error", "There was an error in removing the tool", 3)
+    dispatch(showNotification("Error: There was an error in removing the tool", 4));
   }
 }
 /**
