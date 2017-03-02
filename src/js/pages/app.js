@@ -33,7 +33,6 @@ const Button = require('react-bootstrap/lib/Button.js');
 const Row = require('react-bootstrap/lib/Row.js');
 const Col = require('react-bootstrap/lib/Col.js');
 const ModuleProgress = require('../components/core/ModuleProgress/ModuleProgressBar')
-const Toast = require('../NotificationApi/ToastComponent');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const loadOnline = require('../components/core/LoadOnline');
 const RecentProjects = require('../components/core/RecentProjects');
@@ -51,7 +50,8 @@ const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const LoaderActions = require('../actions/LoaderActions.js');
 const SettingsActions = require('../actions/SettingsActions.js');
 const DragDropActions = require('../actions/DragDropActions.js');
-
+import NotificationContainer from '../containers/NotificationContainer';
+import { showNotification } from '../actions/NotificationActions.js'
 
 var Main = React.createClass({
   componentWillMount() {
@@ -446,7 +446,7 @@ var Main = React.createClass({
               CheckDataGrabber.loadModuleAndDependencies(folderName);
               localStorage.setItem('lastCheckModule', folderName);
             } else {
-              api.Toast.error('No save location selected', '', 3);
+              dispatch(showNotification('No save location selected', 3));
               return;
             }
           },
@@ -557,7 +557,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <ModalContainer />
           <Popover />
-          <Toast />
+          <NotificationContainer />
           <Grid fluid style={{ padding: 0, }}>
             <Row style={{ margin: 0, }}>
               <StatusBarContainer />
