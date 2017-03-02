@@ -73,8 +73,6 @@ class ModuleApi {
   }
 
   getDataFromCheckStore(field, key = null) {
-    if (key == 'staticSettings') {
-    }
     var obj = CheckStore.getModuleDataObject(field);
     if (obj && typeof obj == "object") {
       if (key) {
