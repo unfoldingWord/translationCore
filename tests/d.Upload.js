@@ -94,8 +94,7 @@ describe('Upload.getParams(testProjectPath)', function () {
         expect(params.originalLanguagePath).to.be.string;
         expect(params.bookAbbr).to.be.string;
         expect(params.targetLanguagePath).to.be.string;
-        expect(params.gatewayLanguageUDBPath).to.be.string;
-        expect(params.gatewayLanguageULB).to.be.object;
+        expect(params.gatewayLanguage).to.be.object;
         expect(params.direction).to.be.string;
         expect(params.originalLanguage).to.be.string;
         done();
@@ -108,8 +107,7 @@ describe('Upload.getParams(testUSFMProjectPath)', function () {
         expect(params.originalLanguagePath).to.be.string;
         expect(params.bookAbbr).to.be.string;
         expect(params.targetLanguagePath).to.be.string;
-        expect(params.gatewayLanguageUDBPath).to.be.string;
-        expect(params.gatewayLanguageULB).to.be.object;
+        expect(params.gatewayLanguage).to.be.object;
         expect(params.direction).to.be.string;
         expect(params.originalLanguage).to.be.string;
         done();
@@ -122,8 +120,7 @@ describe('Upload.getParams(noTCManifestProject)', function () {
         expect(params.originalLanguagePath).to.be.string;
         expect(params.bookAbbr).to.be.string;
         expect(params.targetLanguagePath).to.be.string;
-        expect(params.gatewayLanguageUDBPath).to.be.string;
-        expect(params.gatewayLanguageULB).to.be.object;
+        expect(params.gatewayLanguage).to.be.object;
         expect(params.direction).to.be.string;
         expect(params.originalLanguage).to.be.string;
         done();

@@ -564,11 +564,11 @@ describe('ModuleApi.getGatewayLanguageAndSaveInCheckStore', function() {
       bookAbbr: '3jn'
     };
     function progressCallback() { };
-    assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguageULB'));
+    assert.isUndefined(ModuleApi.getDataFromCommon('gatewayLanguage'));
     ModuleApi.getGatewayLanguageAndSaveInCheckStore(params, progressCallback, function (data) {
       assert.isObject(data);
       assert.isArray(data.chapters);
-      assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguageULB'));
+      assert.isObject(ModuleApi.getDataFromCommon('gatewayLanguage'));
       done();
     });
   });

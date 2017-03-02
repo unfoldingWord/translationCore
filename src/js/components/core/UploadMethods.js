@@ -171,9 +171,9 @@ function getParams(path) {
       params.bookAbbr = tcManifest.project_id;
     }
     if (isArray(tcManifest.source_translations)) {
-      params.gatewayLanguageULB = tcManifest.source_translations[0].language_id;
+      params.gatewayLanguage = tcManifest.source_translations[0].language_id;
     } else {
-      params.gatewayLanguageULB = tcManifest.source_translations.language_id;
+      params.gatewayLanguage = tcManifest.source_translations.language_id;
     }
     params.direction = tcManifest.target_language ? tcManifest.target_language.direction : null;
     if (isOldTestament(params.bookAbbr)) {

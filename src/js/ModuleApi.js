@@ -165,23 +165,23 @@ class ModuleApi {
         console.error('Door43Fetcher throwing error');
       }
       else {
-        var gatewayLanguageULB = api.getDataFromCommon('gatewayLanguageULB');
+        var gatewayLanguage = api.getDataFromCommon('gatewayLanguage');
         var bookData;
         /*
-        * we found the gatewayLanguageULB already loaded, now we must convert it
+        * we found the gatewayLanguage already loaded, now we must convert it
         * to the format needed by the parsers
         */
-        if (gatewayLanguageULB) {
+        if (gatewayLanguage) {
           var reformattedBookData = { chapters: [] };
-          for (var chapter in gatewayLanguageULB) {
+          for (var chapter in gatewayLanguage) {
             var chapterObject = {
               verses: [],
               num: parseInt(chapter)
             }
-            for (var verse in gatewayLanguageULB[chapter]) {
+            for (var verse in gatewayLanguage[chapter]) {
               var verseObject = {
                 num: parseInt(verse),
-                text: gatewayLanguageULB[chapter][verse]
+                text: gatewayLanguage[chapter][verse]
               }
               chapterObject.verses.push(verseObject);
             }
@@ -208,7 +208,7 @@ class ModuleApi {
           }
           newBookData.title = api.convertToFullBookName(params.bookAbbr);
           //load it into checkstore
-          api.putDataInCommon('gatewayLanguageULB', newBookData);
+          api.putDataInCommon('gatewayLanguage', newBookData);
           //resume fetchData
           for (var chapter of bookData.chapters) {
             chapter.verses.sort(function (first, second) {
