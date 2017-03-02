@@ -7,7 +7,7 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const Upload = require('../components/core/UploadMethods.js');
 const modalActions = require('./ModalActions');
 const toolsActions = require('./ToolsActions');
-
+import { showNotification } from './NotificationActions'
 
 module.exports.onLoad = function (filePath) {
     return ((dispatch) => {
@@ -39,7 +39,7 @@ module.exports.startLoadingNewProject = function () {
     return ((dispatch) => {
         api.emitEvent('changeCheckType', { currentCheckNamespace: null });
         api.emitEvent('newToolSelected', { 'newToolSelected': true });
-        api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
+        dispatch(showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
         dispatch({ type: consts.SHOW_APPS, val: true });
         dispatch(toolsActions.getToolsMetadatas());
         dispatch(modalActions.selectModalTab(3, 1, true))
