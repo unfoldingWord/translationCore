@@ -14,6 +14,7 @@ const Upload = require('./UploadMethods');
 const Path = require('path');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const SettingsActions = require('../../actions/SettingsActions.js');
+import { showNotification } from '../../actions/NotificationActions.js'
 const dispatch = require("../../pages/root").dispatch;
 
 var template = [
@@ -45,7 +46,7 @@ var template = [
           if (path) {
             git(path).save('Manual Save', path);
           } else {
-            api.Toast.error('Save location is not defined', 'Load a project first', 3)
+            dispatch(showNotification('Save location is not defined: Load a project first', 5));
           }
         },
         accelerator: 'CmdOrCtrl+S'
