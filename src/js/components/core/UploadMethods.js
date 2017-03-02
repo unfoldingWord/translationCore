@@ -328,19 +328,23 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
  */
 function fixManifestVerThree(oldManifest) {
   var newManifest = {};
-  for (var oldElements in oldManifest) {
-    newManifest[oldElements] = oldManifest[oldElements];
-  }
-  newManifest.finished_chunks = oldManifest.finished_frames;
-  newManifest.ts_project = {};
-  newManifest.ts_project.id = oldManifest.project_id;
-  newManifest.ts_project.name = api.convertToFullBookName(oldManifest.project_id);
-  for (var el in oldManifest.source_translations) {
-    newManifest.source_translations = oldManifest.source_translations[el];
-    var parameters = el.split("-");
-    newManifest.source_translations.language_id = parameters[1];
-    newManifest.source_translations.resource_id = parameters[2];
-    break;
+  try{
+    for (var oldElements in oldManifest) {
+      newManifest[oldElements] = oldManifest[oldElements];
+    }
+    newManifest.finished_chunks = oldManifest.finished_frames;
+    newManifest.ts_project = {};
+    newManifest.ts_project.id = oldManifest.project_id;
+    newManifest.ts_project.name = api.convertToFullBookName(oldManifest.project_id);
+    for (var el in oldManifest.source_translations) {
+      newManifest.source_translations = oldManifest.source_translations[el];
+      var parameters = el.split("-");
+      newManifest.source_translations.language_id = parameters[1];
+      newManifest.source_translations.resource_id = parameters[2];
+      break;
+    }
+  }catch(e){
+    console.error(e);
   }
   return newManifest;
 }

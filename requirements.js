@@ -18,6 +18,7 @@ var bigError;
 
 console.error = function(err){
   console.errorold(err);
+  Rollbar.error(JSON.stringify(err));
   bigError += "(" + err + ")";
   api.createAlert(
     {
@@ -35,7 +36,6 @@ console.error = function(err){
           }
         }
       });
-      Rollbar.error(JSON.stringify(err));
       localStorage.setItem('crashed', true);
       remote.getCurrentWindow().reload();
     });
