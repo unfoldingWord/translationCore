@@ -263,7 +263,7 @@ class ModuleApi {
       saveLocation += '/tc-manifest.json';
       this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(saveLocation, manifest, callback);
-    } else if (!manifest){
+    } else if (!manifest) {
       callback("No manifest found");
     } else {
       manifest[field] = data;
@@ -341,15 +341,15 @@ class ModuleApi {
     localStorage.setItem('settings', settingsString);
   }
 
-  putToolMetaDatasInStore(metadatas){
+  putToolMetaDatasInStore(metadatas) {
     this.currentToolMetaData = metadatas;
   }
 
-  getToolMetaDataFromStore(){
+  getToolMetaDataFromStore() {
     return this.currentToolMetaData;
   }
 
-  setCurrentGroupName(groupName){
+  setCurrentGroupName(groupName) {
     this.currentGroupName = groupName;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return;
@@ -359,50 +359,50 @@ class ModuleApi {
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     this.emitEvent('changeGroupName',
-    {
-      "groupName": groupName
-    });
+      {
+        "groupName": groupName
+      });
   }
 
-  getCurrentGroupName(){
+  getCurrentGroupName() {
     return this.currentGroupName;
   }
 
-  initialCurrentGroupName(){
+  initialCurrentGroupName() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
     let foundGroup = [];
-    if(currentNamespace && currentGroupIndex && currentGroupIndex >= 0){
+    if (currentNamespace && currentGroupIndex && currentGroupIndex >= 0) {
       foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
     }
     this.currentGroupName = foundGroup.group;
   }
 
-  getSubMenuItems(){
+  getSubMenuItems() {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = [];
-    if(this.currentGroupName){
-      if(groups){
+    if (this.currentGroupName) {
+      if (groups) {
         foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       }
     }
     return foundGroup.checks;
   }
 
-  getCurrentGroupIndex(){
+  getCurrentGroupIndex() {
     let groupIndex = null;
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    if(groups){
+    if (groups) {
       let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       groupIndex = groups.indexOf(foundGroup);
     }
     return groupIndex;
   }
 
-  changeCurrentIndexes(checkIndex){
+  changeCurrentIndexes(checkIndex) {
     let currentNamespace = CoreStore.getCurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
@@ -420,7 +420,7 @@ class ModuleApi {
   }
 
   //this method returns the Current Check Namespace
-  getCurrentCheckNamespace(){
+  getCurrentCheckNamespace() {
     return CoreStore.getCurrentCheckNamespace();
   }
 
