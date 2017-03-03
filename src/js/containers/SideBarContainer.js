@@ -22,23 +22,24 @@ var sideBarContainerStyle = {
 
 class SideBarContainer extends React.Component {
   render() {
-    let concatStyle = Object.assign(sideBarContainerStyle, {display: this.props.menuVisibility ? "block" : "none"})
     return (
       <div>
-        <Grid fluid style={concatStyle}>
-          <Col style={
-            {
-              width:"300px",
-              position: "fixed",
-              padding: 0,
-              backgroundColor: "#333333",
-              height: "95%",
-              overflowY: "scroll"
-            }
-          }>
-            <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
-          </Col>
-        </Grid>
+        <div style={{display: this.props.menuVisibility ? "block" : "none"}}>
+          <Grid fluid style={sideBarContainerStyle}>
+            <Col style={
+              {
+                width:"300px",
+                position: "fixed",
+                padding: 0,
+                backgroundColor: "#333333",
+                height: "95%",
+                overflowY: "scroll"
+              }
+            }>
+              <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
+            </Col>
+          </Grid>
+        </div>
         <Glyphicon style={this.props.menuVisibility ? style.slideButton : style.slideButtonCollapsed}
                    glyph={this.props.menuVisibility ? 'chevron-left' : 'chevron-right'}
                    onClick={this.props.onToggleMenu} />

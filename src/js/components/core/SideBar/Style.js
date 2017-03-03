@@ -94,7 +94,7 @@ var style = {
     backgroundColor: "#333333",
     padding: "10px 5px 10px 0",
     marginRight: "-15px",
-    borderRadius: "5px"
+    borderRadius: "0 5px 5px 0"
   },
 
   slideButtonCollapsed: {
@@ -105,7 +105,7 @@ var style = {
     backgroundColor: "#333333",
     padding: "10px 5px 10px 0",
     marginRight: "-15px",
-    borderRadius: "5px"
+    borderRadius: "0 5px 5px 0"
   }
 
 };
