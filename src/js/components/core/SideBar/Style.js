@@ -95,6 +95,17 @@ var style = {
     padding: "10px 5px 10px 0",
     marginRight: "-15px",
     borderRadius: "5px"
+  },
+
+  slideButtonCollapsed: {
+    float: "left",
+    marginTop: "100%",
+    zIndex: "999",
+    color: "#fff",
+    backgroundColor: "#333333",
+    padding: "10px 5px 10px 0",
+    marginRight: "-15px",
+    borderRadius: "5px"
   }
 
 };
