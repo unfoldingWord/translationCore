@@ -13,7 +13,7 @@ class SwitchCheck extends React.Component{
       for (let i in toolsMetadatas) {
         const metadata = toolsMetadatas[i];
         if(metadata.name == "ToolsTester"){
-          if(this.props.currentSettings.developerMode == 'enable'){
+          if(this.props.currentSettings.developerMode){
             buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
           }
         }else{
