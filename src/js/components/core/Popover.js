@@ -38,7 +38,6 @@ class PopoverComponent extends React.Component{
       return(
         <Popover
                id="popoverDisplay"
-               rootClose
                placement="bottom"
                positionLeft={this.state.left}
                positionTop={this.state.top}
