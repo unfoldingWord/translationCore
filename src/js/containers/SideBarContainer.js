@@ -3,7 +3,7 @@ const { connect } = require('react-redux');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const SideBarActions = require('../actions/SideBarActions.js');
 const MenuHeaders = require('../components/core/navigation_menu/MenuHeaders');
-const {Grid, Row, Col} = require('react-bootstrap/lib');
+const {Grid, Row, Col, Glyphicon} = require('react-bootstrap');
 const Chevron = require('../components/core/SideBar/Chevron');
 const style = require("../components/core/SideBar/Style");
 
@@ -23,11 +23,25 @@ class SideBarContainer extends React.Component {
   render() {
     return (
       <div>
-        <Grid fluid style={sideBarContainerStyle}>
-          <Col style={{width:"300px", position: "fixed", padding: 0, backgroundColor: "#333333", height: "95%", overflowY: "scroll" }}>
-            <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
-          </Col>
-        </Grid>
+        <div style={{display: this.props.menuVisibility ? "block" : "none"}}>
+          <Grid fluid style={sideBarContainerStyle}>
+            <Col style={
+              {
+                width:"300px",
+                position: "fixed",
+                padding: 0,
+                backgroundColor: "#333333",
+                height: "95%",
+                overflowY: "scroll"
+              }
+            }>
+              <MenuHeaders {...this.props} currentToolNamespace={this.props.currentToolNamespace}/>
+            </Col>
+          </Grid>
+        </div>
+        <Glyphicon style={this.props.menuVisibility ? style.slideButton : style.slideButtonCollapsed}
+                   glyph={this.props.menuVisibility ? 'chevron-left' : 'chevron-right'}
+                   onClick={this.props.onToggleMenu} />
       </div>
     );
   }
@@ -40,6 +54,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    onToggleMenu: () => {
+      dispatch(SideBarActions.toggleMenu());
+    },
     menuClick: (id, currentToolNamespace, bool) => {
       dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
     },
