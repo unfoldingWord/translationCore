@@ -1,6 +1,7 @@
 const merge = require('lodash.merge');
 
 const initialState = {
+  menuVisibility: true,
   subMenuOpen: true,
   openCheck:0
 };
@@ -13,6 +14,11 @@ module.exports = (state = initialState, action) => {
         openCheck: action.openCheck,
       });
       break;
+    case "TOGGLE_MENU_DRAWER":
+      return merge({}, state, {
+        menuVisibility: !state.menuVisibility
+      });
+    break;
     default:
       return state;
   }
