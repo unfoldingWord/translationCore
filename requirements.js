@@ -18,7 +18,9 @@ var bigError;
 
 console.error = function(err){
   console.errorold(err);
-  Rollbar.error(JSON.stringify(err));
+  if (Rollbar) {
+    Rollbar.error(JSON.stringify(err));
+  }
   bigError += "(" + err + ")";
   api.createAlert(
     {
@@ -29,13 +31,15 @@ console.error = function(err){
     },
     ()=>{
       var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
-      Rollbar.configure({
-        payload: {
-          person: {
-            username: loggedInUser.userName,
+      if (Rollbar) {
+        Rollbar.configure({
+          payload: {
+            person: {
+              username: loggedInUser.userName,
+            }
           }
-        }
-      });
+        });
+      }
       localStorage.setItem('crashed', true);
       remote.getCurrentWindow().reload();
     });
