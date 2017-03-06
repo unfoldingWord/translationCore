@@ -3,8 +3,7 @@ const { connect } = require('react-redux');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const SideBarActions = require('../actions/SideBarActions.js');
 const MenuHeaders = require('../components/core/navigation_menu/MenuHeaders');
-const {Grid, Row, Col} = require('react-bootstrap/lib');
-const {Glyphicon} = require('react-bootstrap');
+const {Grid, Row, Col, Glyphicon} = require('react-bootstrap');
 const Chevron = require('../components/core/SideBar/Chevron');
 const style = require("../components/core/SideBar/Style");
 
