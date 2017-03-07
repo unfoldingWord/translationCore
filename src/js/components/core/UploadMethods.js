@@ -91,7 +91,8 @@ function sendPath(path, link, callback) {
 }
 
 function checkIfValidBetaProject(manifest) {
-  return manifest.project.id == "eph" || manifest.project.id == "tit";
+  if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
+  else return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
 }
 /**
   * @description - Checks to see if the file is present, and loads it.
