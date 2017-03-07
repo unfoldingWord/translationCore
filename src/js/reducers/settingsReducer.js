@@ -1,6 +1,4 @@
 const consts = require('../actions/CoreActionConsts');
-const api = window.ModuleApi;
-const merge = require('lodash.merge');
 
 const initialState = {
   currentSettings: {},
@@ -9,10 +7,7 @@ const initialState = {
 module.exports = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
-      return merge({}, state, {
-        currentSettings: action.val
-      });
-      break;
+      return { ...state, currentSettings: action.val }
     default:
       return state;
   }
