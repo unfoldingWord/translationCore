@@ -48,6 +48,8 @@ module.exports.startLoadingNewProject = function (lastCheckModule) {
         } else {
             dispatch(showNotification('You can only load Ephisians or Titus projects for now.', 5));
             dispatch(this.getProjectsFromFolder());
+            dispatch({type:"DRAG_DROP_SENDPATH", filePath:''})
+            dispatch({type:"LOAD_TOOL"})
             Upload.clearPreviousData()
         }
     })
