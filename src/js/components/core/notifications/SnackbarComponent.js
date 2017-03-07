@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Snackbar from 'material-ui/Snackbar'
 
 
-class ToastComponent extends Component{
+class SnackbarComponent extends Component{
 
   render(){
     let { notificationObject, hideNotification } = this.props;
@@ -24,4 +24,4 @@ class ToastComponent extends Component{
   }
 }
 
-module.exports = ToastComponent;
+module.exports = SnackbarComponent;
