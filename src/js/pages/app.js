@@ -512,8 +512,7 @@ var Main = React.createClass({
         this.props.sendFilePath(saveLocation, null, (err) => {
           var lastCheckModule = localStorage.getItem('lastCheckModule');
           if (lastCheckModule) {
-            this.props.startLoadingNewProject();
-            this.props.loadTool(lastCheckModule);
+            this.props.startLoadingNewProject(lastCheckModule);
           }
         });
       }
@@ -614,9 +613,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(modalActions.showModalContainer(false));
       }
     },
-    loadTool: (folderName) => {
-      dispatch(ToolsActions.loadTool(folderName));
-    },
     openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
       dispatch(modalActions.selectModalTab(tabkey, sectionKey));
@@ -633,8 +629,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     sendFilePath: (filePath, link, callback) => {
       dispatch(DragDropActions.sendFilePath(filePath, link, callback));
     },
-    startLoadingNewProject: () => {
-      dispatch(recentProjectActions.startLoadingNewProject());
+    startLoadingNewProject: (lastCheckModule) => {
+      dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
     },
     showMainView: (val) => {
       dispatch(CoreActionsRedux.showMainView(val));
