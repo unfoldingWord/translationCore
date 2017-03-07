@@ -14,7 +14,7 @@ module.exports.sendFilePath = function (path, link, callback) {
         });
         Upload.sendFilePath(path, link, ()=>{
             dispatch(SettingsActions.setSettings('showTutorial', false));
-            callback();
+            if(callback) callback();
         });
     })
 }
