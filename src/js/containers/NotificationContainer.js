@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Snackbar from '../components/core/notifications/Snackbar.js'
+import SnackbarComponent from '../components/core/notifications/SnackbarComponent.js'
 import { hideNotification } from '../actions/NotificationActions.js'
 
 class NotificationContainer extends Component {
@@ -9,7 +9,7 @@ class NotificationContainer extends Component {
     return (
       <div>
         <MuiThemeProvider>
-          <Snackbar {...this.props}/>
+          <SnackbarComponent {...this.props}/>
         </MuiThemeProvider>
       </div>
     );
