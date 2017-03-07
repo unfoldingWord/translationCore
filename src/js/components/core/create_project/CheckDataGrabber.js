@@ -61,8 +61,12 @@ var CheckDataGrabber = {
           var viewObj = require(Path.join(module.location, 'Container'));
           var container = true;
         } catch (err) {
-          var viewObj = require(Path.join(module.location, 'View'));
-          var container = false;
+          try {
+            var viewObj = require(Path.join(module.location, 'View'));
+            var container = false;
+          } catch(err) {
+            console.error(err);
+          }
         } finally {
           api.saveModule(module.name, viewObj.view || viewObj.container);
         }

@@ -68,6 +68,7 @@
     "fs-extra": "^0.30.0",
     "gogs-client": "^0.5.2",
     "http": "0.0.0",
+    "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
     "marked": "^0.3.5",
     "material-ui": "^0.17.0",
