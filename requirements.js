@@ -18,7 +18,7 @@ var bigError;
 
 console.error = function(err){
   console.errorold(err);
-  if (Rollbar) {
+  if (window.Rollbar) {
     Rollbar.error(JSON.stringify(err));
   }
   bigError += "(" + err + ")";
@@ -31,7 +31,7 @@ console.error = function(err){
     },
     ()=>{
       var loggedInUser = api.getLoggedInUser() || {userName: 'Unknown'};
-      if (Rollbar) {
+      if (window.Rollbar) {
         Rollbar.configure({
           payload: {
             person: {
