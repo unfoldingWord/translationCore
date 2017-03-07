@@ -47,7 +47,6 @@ module.exports.startLoadingNewProject = function (lastCheckModule) {
             if (lastCheckModule) dispatch(toolsActions.loadTool(lastCheckModule));
         } else {
             dispatch(showNotification('You can only load Ephisians or Titus projects for now.', 5));
-            fs.remove(api.getDataFromCommon('saveLocation'))
             dispatch(this.getProjectsFromFolder());
             Upload.clearPreviousData()
         }
