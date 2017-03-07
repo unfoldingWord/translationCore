@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "pull-apps": "npm run apps-master && npm run git-pull",
     "git-pull": "git submodule foreach --recursive git pull",
     "apps-master": "git submodule foreach --recursive git checkout master",
+    "update-version": "node ./scripts/builds/VersionScripts.js",
     "start": "electron ."
   },
   "build": {
@@ -55,7 +56,7 @@
     "enzyme-redux": "^0.1.6",
     "eslint": "^2.13.1",
     "eslint-config-google": "^0.6.0",
-    "react-addons-test-utils": "15.1.0",
+    "react-addons-test-utils": "15.4.2",
     "redux-test-utils": "^0.1.1"
   },
   "dependencies": {
@@ -73,13 +74,14 @@
     "natural": "^0.4.0",
     "npm": "2.14.12",
     "path-extra": "3.0.0",
-    "react": "15.1.0",
-    "react-bootstrap": "^0.29.5",
-    "react-dom": "15.1.0",
-    "react-dropzone": "3.5.1",
+    "react": "15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "15.4.2",
+    "react-dropzone": "3.11.0",
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
     "react-remarkable": "^1.1.1",
+    "react-tap-event-plugin": "^2.0.1",
     "reactable": "^0.14.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",

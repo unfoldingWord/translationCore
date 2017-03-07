@@ -1,7 +1,7 @@
 const React = require('react');
 const CoreStore = require('../../../stores/CoreStore.js');
 const CoreActions = require('../../../actions/CoreActions.js');
-const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
+const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl, utils } = require('react-bootstrap');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
 bootstrapUtils.addStyle(Button, 'small-blue');

@@ -558,17 +558,17 @@ var Main = React.createClass({
           <ModalContainer />
           <Popover />
           <NotificationContainer />
-          <Grid fluid style={{ padding: 0, }}>
-            <Row style={{ margin: 0, }}>
+          <Grid fluid style={{ padding: 0 }}>
+            <Row style={{ margin: 0 }}>
               <StatusBarContainer />
             </Row>
-            <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} xl={4} style={{ padding: 0, width: "300px" }}>
+            <Col className="col-fluid" xs={1} sm={2} md={3} lg={3.5} style={{ padding: 0, width: "300px" }}>
               <SideBarContainer
                 {...this.state.sideBarContainerProps}
                 currentToolNamespace={this.state.currentToolNamespace}
               />
             </Col>
-            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5} xl={10}>
+            <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
               <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show} />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer
