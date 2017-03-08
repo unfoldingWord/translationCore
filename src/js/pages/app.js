@@ -56,7 +56,6 @@ import { showNotification } from '../actions/NotificationActions.js'
 var Main = React.createClass({
   componentWillMount() {
     //initializing app settings
-    this.props.dispatch(SettingsActions.setSettings());
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -76,6 +75,7 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
+  
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
