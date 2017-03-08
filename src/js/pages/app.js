@@ -19,6 +19,7 @@ const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
+const Konami = require("konami-code-js");
 
 const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
@@ -68,6 +69,13 @@ var Main = React.createClass({
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
+
+    new Konami(
+      ()=>{
+        this.props.dispatch(SettingsActions.toggleSettings("developerMode"));
+        alert("Developer Mode Toggled: no tech support provided for developer mode");
+      }
+    );
   },
 
   componentWillUnmount() {
