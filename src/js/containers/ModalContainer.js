@@ -1,5 +1,5 @@
 const React = require('react');
-const { Modal, Button, Tabs, Tab, Glyphicon } = require('react-bootstrap/lib');
+const { Modal, Button, Tabs, Tab, Glyphicon } = require('react-bootstrap');
 const api = window.ModuleApi;
 const modalActions = require('../actions/ModalActions.js');
 const { connect  } = require('react-redux');
