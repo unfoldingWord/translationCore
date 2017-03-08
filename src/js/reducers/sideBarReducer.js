@@ -1,3 +1,4 @@
+const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
   menuVisibility: true,
@@ -7,13 +8,13 @@ const initialState = {
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case "TOGGLE_SUBMENU":
+    case consts.TOGGLE_SUBMENU:
       return {
         ...state,
         subMenuOpen: (action.newGroup || state.openCheck != action.openCheck) ? true: !state.subMenuOpen,
         openCheck: action.openCheck,
       }
-    case "TOGGLE_MENU_DRAWER":
+    case consts.TOGGLE_MENU_DRAWER:
       return { ...state, menuVisibility: !state.menuVisibility }
     default:
       return state;
