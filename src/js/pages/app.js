@@ -70,10 +70,17 @@ var Main = React.createClass({
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
 
+    //Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
+    //This is used to enable or disable developer mode
     new Konami(
       ()=>{
+        let developerMode = this.props.settingsReducer.currentSettings.developerMode;
         this.props.dispatch(SettingsActions.toggleSettings("developerMode"));
-        alert("Developer Mode Toggled: no tech support provided for developer mode");
+        if(developerMode){
+          alert("Developer Mode Disabled");
+        } else {
+          alert("Developer Mode Enabled: no technical support is provided for translationCore in developer mode!");
+        }
       }
     );
   },
