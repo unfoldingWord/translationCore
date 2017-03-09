@@ -42,7 +42,7 @@ const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const ModuleWrapperContainer = require('../containers/ModuleWrapperContainer');
 const CoreStore = require('../stores/CoreStore.js');
-const Popover = require('../components/core/Popover');
+const PopoverContainer = require('../containers/PopoverContainer');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
@@ -555,7 +555,7 @@ var Main = React.createClass({
       return (
         <div className='fill-height'>
           <ModalContainer />
-          <Popover />
+          <PopoverContainer />
           <NotificationContainer />
           <Grid fluid style={{ padding: 0 }}>
             <Row style={{ margin: 0 }}>

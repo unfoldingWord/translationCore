@@ -196,7 +196,7 @@ class CheckStore extends EventEmitter {
 
   /**
    * @description - This returns a boolean if the parameters exist within the checkstore
-   * @param {string} namespace - The namespace to check under, or if the second parameter 
+   * @param {string} namespace - The namespace to check under, or if the second parameter
    * doesn't exist, check this parameter by itself
    * @param {string} key - optional, if supplied will check if this key is defined under
    * the given namespace
@@ -207,7 +207,7 @@ class CheckStore extends EventEmitter {
         return true;
       }
       else {
-        return !(this.storeData[namespace][key] === null || 
+        return !(this.storeData[namespace][key] === null ||
           this.storeData[namespace][key] === undefined);
       }
     }
