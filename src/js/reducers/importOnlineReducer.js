@@ -1,5 +1,4 @@
-var consts = require('../actions/CoreActionConsts');
-const merge = require('lodash.merge');
+const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     showOnlineButton: true,
@@ -12,27 +11,15 @@ const initialState = {
 
 module.exports = (state = initialState, action) => {
     switch (action.type) {
-        case consts.CHANGED_IMPORT_VIEW:
-            return merge({}, state, {
-                showOnlineButton: action.view
-            })
-            break;
-        case consts.IMPORT_LINK:
-            return merge({}, state, {
-                importLink: action.importLink
-            })
-            break;
-        case consts.RECIEVE_REPOS:
-            return merge({}, state, {
-                repos: action.repos
-            })
-            break;
-        case consts.RECEIVE_LOGIN:
-            return merge({}, state, {
-                loggedIn: action.val ? true : false
-            })
-            break;
-        default:
-            return state;
+      case consts.CHANGED_IMPORT_VIEW:
+        return { ...state, showOnlineButton: action.view }
+      case consts.IMPORT_LINK:
+        return { ...state, importLink: action.importLink }
+      case consts.RECIEVE_REPOS:
+        return { ...state, repos: action.repos }
+      case consts.RECEIVE_LOGIN:
+        return { ...state, loggedIn: action.val ? true : false }
+      default:
+          return state;
     }
 }
