@@ -4,7 +4,7 @@ const consts = require('./CoreActionConsts');
 module.exports.toggleSubmenu = function (id) {
   return {
     type: consts.TOGGLE_SUBMENU,
-    openCheck: id,
+    openCheck: id
   }
 };
 

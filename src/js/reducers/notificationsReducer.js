@@ -19,7 +19,7 @@ module.exports = (state = initialState, action) => {
           ...state.notificationObject,
           visibleNotification: true,
           message: action.message,
-          duration: duration,
+          duration: duration
         }
       }
     case consts.HIDE_NOTIFICATION:

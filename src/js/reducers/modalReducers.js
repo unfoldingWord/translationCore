@@ -36,7 +36,7 @@ module.exports = (state = initialState, action) => {
             ...state,
             login_profile: {
               ...state.login_profile,
-              loginModalVisibility: action.val,
+              loginModalVisibility: action.val
             }
           }
         case consts.CHANGE_PROFILE_MODAL_VISIBILITY:
@@ -44,7 +44,7 @@ module.exports = (state = initialState, action) => {
             ...state,
             login_profile: {
               ...state.login_profile,
-              profileModalVisibility: action.val,
+              profileModalVisibility: action.val
             }
           }
         case consts.SHOW_PROFILE_LOGIN_MODAL:
@@ -52,7 +52,7 @@ module.exports = (state = initialState, action) => {
             ...state,
             login_profile: {
               ...state.login_profile,
-              showModal: action.val,
+              showModal: action.val
             }
           }
         case consts.SHOW_SWITCH_CHECK_MODAL:
@@ -60,7 +60,7 @@ module.exports = (state = initialState, action) => {
             ...state,
             switch_check: {
               ...state.switch_check,
-              showModal: action.val,
+              showModal: action.val
             }
           }
         default:
