@@ -18,13 +18,13 @@ module.exports = (state = initialState, action) => {
           ...state,
           visible:action.visible,
           currentTab:action.tab,
-          currentSection:action.section,
+          currentSection:action.section
         }
       case consts.SELECT_MODAL_SECTION:
         return {
           ...state,
           currentTab:action.tab,
-          currentSection:action.section,
+          currentSection:action.section
         }
       default:
           return state;
