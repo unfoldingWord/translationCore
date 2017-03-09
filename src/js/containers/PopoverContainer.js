@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Popover from '../components/core/Popover.js'
-import { closePopover, showPopover } from '../actions/PopoverActions.js'
+import { closePopover } from '../actions/PopoverActions.js'
 
 class PopoverContainer extends React.Component {
   render(){
