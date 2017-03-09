@@ -100,6 +100,7 @@ var Main = React.createClass({
     }
     return numChecked / groupObj.checks.length;
   },
+  
   changeSubMenuItems({groupName}) {
     const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
     this.setState({
