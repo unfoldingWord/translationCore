@@ -1,5 +1,4 @@
 const consts = require('../actions/CoreActionConsts');
-const merge = require('lodash.merge');
 
 const initialState = {
   reportVisibility: false,
@@ -8,10 +7,7 @@ const initialState = {
 module.exports = (state = initialState, action) => {
   switch (action.type) {
     case consts.LOAD_REPORTS:
-      return merge({}, state, {
-        reportVisibility: action.val,
-      });
-      break;
+      return { ...state, reportVisibility: action.val }
     default:
       return state;
   }
