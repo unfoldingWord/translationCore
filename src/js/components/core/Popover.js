@@ -9,6 +9,17 @@ class PopoverComponent extends Component{
     if (!popoverVisibility) {
       return (<div></div>);
     } else {
+      let titleNode = (
+            <span>
+              {title}
+              <span
+                className={"pull-right"}
+                onClick={onClosePopover}
+                style={{marginLeft: '20px', cursor: 'pointer'}}>
+                x
+              </span>
+            </span>
+          );
       return(
         <Popover
           id="popoverDisplay"
@@ -17,15 +28,7 @@ class PopoverComponent extends Component{
           positionTop={y}
           arrowOffsetLeft={-1000}
           arrowOffsetTop={-1000}
-          title={<span>
-                  {title}
-                  <span
-                    className={"pull-right"}
-                    onClick={onClosePopover}
-                    style={{marginLeft: '20px', cursor: 'pointer'}}>
-                    x
-                  </span>
-                </span>}>
+          title={titleNode}>
           {bodyText}
         </Popover>
       );
