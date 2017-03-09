@@ -7,37 +7,23 @@ const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
 
 module.exports.setSettings = function(field, value) {
-  return ((dispatch) => {
-    fs.readJson(dir, function (err, settingsObj) {
-      if(err){
-        settingsObj = {};
-      }else {
-        if(field && value != undefined){
-          settingsObj[field] = value;
-        }
-      }
-      fs.outputJson(dir, settingsObj);
-      dispatch({
-        type: consts.CHANGE_SETTINGS,
-        val: settingsObj,
-      });
-    })
+  return ((dispatch, getState) => {
+    let settingsObj = getState().settingsReducer.currentSettings;
+    settingsObj[field] = value;
+    dispatch({
+      type: consts.CHANGE_SETTINGS,
+      val: settingsObj,
+    });
   });
 };
 
 module.exports.toggleSettings = function(field) {
-  return ((dispatch) => {
-    fs.readJson(dir, function (err, settingsObj) {
-      if(err){
-        console.error(err);
-      }else {
-        settingsObj[field] = !settingsObj[field];
-      }
-      fs.outputJson(dir, settingsObj);
-      dispatch({
-        type: consts.CHANGE_SETTINGS,
-        val: settingsObj,
-      });
-    })
+  return ((dispatch, getState) => {
+    let settingsObj = getState().settingsReducer.currentSettings;
+    settingsObj[field] = !settingsObj[field];
+    dispatch({
+      type: consts.CHANGE_SETTINGS,
+      val: settingsObj,
+    });
   });
 };
