@@ -26,19 +26,19 @@ module.exports = (state = initialState, action) => {
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
+        currentCheckIndex: action.currentCheckIndex
       }
     case "GO_TO_NEXT":
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
+        currentCheckIndex: action.currentCheckIndex
       }
     case "GO_TO_PREVIOUS":
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
+        currentCheckIndex: action.currentCheckIndex
       }
     case "UPDATE_NAMESPACE":
       return { ...state, currentCheckNameSpace:action.currentCheckNameSpace }

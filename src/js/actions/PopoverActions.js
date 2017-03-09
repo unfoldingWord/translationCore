@@ -11,6 +11,6 @@ export const showPopover = (title, bodyText, positionCoord) => {
 
 export const closePopover = () => {
   return {
-    type: consts.CLOSE_POPOVER,
+    type: consts.CLOSE_POPOVER
   }
 }

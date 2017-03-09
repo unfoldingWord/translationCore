@@ -15,7 +15,7 @@ module.exports = (state = initialState, action) => {
         popoverVisibility: true,
         title: action.title,
         bodyText: action.bodyText,
-        positionCoord: action.positionCoord,
+        positionCoord: action.positionCoord
       }
     case consts.CLOSE_POPOVER:
       return {
@@ -23,7 +23,7 @@ module.exports = (state = initialState, action) => {
         popoverVisibility: false,
         title: '',
         bodyText: '',
-        positionCoord: [0, 0],
+        positionCoord: [0, 0]
       }
     default:
       return state;
