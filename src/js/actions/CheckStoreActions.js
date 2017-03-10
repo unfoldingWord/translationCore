@@ -5,7 +5,7 @@ const CoreStore = require('../stores/CoreStore.js');
 module.exports.setBookName = function (bookName) {
   return {
     type: "SET_BOOK_NAME",
-    val: bookName,
+    val: bookName
   }
 }
 

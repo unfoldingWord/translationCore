@@ -43,7 +43,7 @@ const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const ModuleWrapperContainer = require('../containers/ModuleWrapperContainer');
 const CoreStore = require('../stores/CoreStore.js');
-const Popover = require('../components/core/Popover');
+const PopoverContainer = require('../containers/PopoverContainer');
 const Upload = require('../components/core/UploadMethods.js');
 const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
@@ -57,7 +57,6 @@ import { showNotification } from '../actions/NotificationActions.js'
 var Main = React.createClass({
   componentWillMount() {
     //initializing app settings
-    this.props.dispatch(SettingsActions.setSettings());
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
     this.updateTools();
@@ -77,6 +76,7 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
+  
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
@@ -513,8 +513,7 @@ var Main = React.createClass({
         this.props.sendFilePath(saveLocation, null, (err) => {
           var lastCheckModule = localStorage.getItem('lastCheckModule');
           if (lastCheckModule) {
-            this.props.startLoadingNewProject();
-            this.props.loadTool(lastCheckModule);
+            this.props.startLoadingNewProject(lastCheckModule);
           }
         });
       }
@@ -558,7 +557,7 @@ var Main = React.createClass({
         <div className='fill-height'>
           <Konami />
           <ModalContainer />
-          <Popover />
+          <PopoverContainer />
           <NotificationContainer />
           <Grid fluid style={{ padding: 0 }}>
             <Row style={{ margin: 0 }}>
@@ -616,9 +615,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(modalActions.showModalContainer(false));
       }
     },
-    loadTool: (folderName) => {
-      dispatch(ToolsActions.loadTool(folderName));
-    },
     openModalAndSpecificTab: (visible, tabkey, sectionKey) => {
       dispatch(modalActions.showModalContainer(true));
       dispatch(modalActions.selectModalTab(tabkey, sectionKey));
@@ -635,8 +631,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     sendFilePath: (filePath, link, callback) => {
       dispatch(DragDropActions.sendFilePath(filePath, link, callback));
     },
-    startLoadingNewProject: () => {
-      dispatch(recentProjectActions.startLoadingNewProject());
+    startLoadingNewProject: (lastCheckModule) => {
+      dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
     },
     showMainView: (val) => {
       dispatch(CoreActionsRedux.showMainView(val));

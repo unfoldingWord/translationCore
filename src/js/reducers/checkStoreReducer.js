@@ -1,6 +1,3 @@
-const merge = require('lodash.merge');
-const api = window.ModuleApi;
-
 
 const initialState = {
   book: null,
@@ -14,10 +11,7 @@ const initialState = {
 module.exports = (state = initialState, action) => {
   switch (action.type) {
     case "SET_BOOK_NAME":
-      return merge({}, state, {
-        book: action.val,
-      });
-      break;
+      return { ...state, book: action.val }
     case "SET_GROUPS_OBJECTS":
       return Object.assign({}, state, {
         groups: action.val,
@@ -29,27 +23,25 @@ module.exports = (state = initialState, action) => {
       });
       break;
     case "GO_TO_CHECK":
-      return merge({}, state, {
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
+        currentCheckIndex: action.currentCheckIndex
+      }
     case "GO_TO_NEXT":
-      return merge({}, state, {
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
+        currentCheckIndex: action.currentCheckIndex
+      }
     case "GO_TO_PREVIOUS":
-      return merge({}, state, {
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
-      case "UPDATE_NAMESPACE":
-      return merge ({}, state, {
-        currentCheckNameSpace:action.currentCheckNameSpace
-      });
+        currentCheckIndex: action.currentCheckIndex
+      }
+    case "UPDATE_NAMESPACE":
+      return { ...state, currentCheckNameSpace:action.currentCheckNameSpace }
     default:
       return state;
   }

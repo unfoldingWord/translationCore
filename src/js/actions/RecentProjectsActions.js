@@ -35,13 +35,22 @@ module.exports.getProjectsFromFolder = function () {
     }
 }
 
-module.exports.startLoadingNewProject = function () {
-    return ((dispatch) => {
-        api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-        api.emitEvent('newToolSelected', { 'newToolSelected': true });
-        dispatch(showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
-        dispatch({ type: consts.SHOW_APPS, val: true });
-        dispatch(toolsActions.getToolsMetadatas());
-        dispatch(modalActions.selectModalTab(3, 1, true))
+module.exports.startLoadingNewProject = function (lastCheckModule) {
+    return ((dispatch, getState) => {
+        if (Upload.checkIfValidBetaProject(api.getDataFromCommon('tcManifest')) || getState().settingsReducer.currentSettings.developerMode) {
+            api.emitEvent('changeCheckType', { currentCheckNamespace: null });
+            api.emitEvent('newToolSelected', { 'newToolSelected': true });
+            if (!lastCheckModule) dispatch(showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
+            dispatch({ type: consts.SHOW_APPS, val: true });
+            dispatch(toolsActions.getToolsMetadatas());
+            dispatch(modalActions.selectModalTab(3, 1, true));
+            if (lastCheckModule) dispatch(toolsActions.loadTool(lastCheckModule));
+        } else {
+            dispatch(showNotification('You can only load Ephisians or Titus projects for now.', 5));
+            dispatch(this.getProjectsFromFolder());
+            dispatch({type:"DRAG_DROP_SENDPATH", filePath:''})
+            dispatch({type:"LOAD_TOOL"})
+            Upload.clearPreviousData()
+        }
     })
 }
