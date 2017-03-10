@@ -1,11 +1,13 @@
 var consts = require('./CoreActionConsts');
 var Path = require('path');
+const pathex = require('path-extra');
 var fs = require(window.__base + 'node_modules/fs-extra');
 const exec = require('child_process').exec;
 var sudo = require('sudo-prompt');
 var options = {
   name: 'Translation Core'
 };
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 
 /**
 How to use the actions:
@@ -92,4 +94,26 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
       }
     }
   })
+}
+
+module.exports.loadModuleAndDependencies = function (currentCheckNamespace) {
+  return ((dispatch) => {
+    var reports = [];
+    fs.readdir(PACKAGE_SUBMODULE_LOCATION, function (err, modules) {
+      for (var module of modules) {
+        try {
+          let aReportView = require(Path.join(PACKAGE_SUBMODULE_LOCATION, module, "ReportView.js"));
+          reports.push(aReportView);
+        } catch (e) {
+        }
+      }
+      dispatch({
+        type: consts.DONE_LOADING,
+        doneLoading: true,
+        progressKeyObj: null,
+        reportViews: reports,
+        currentCheckNamespace:currentCheckNamespace
+      })
+    });
+  });
 }

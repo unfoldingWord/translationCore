@@ -5,7 +5,7 @@ const recentProjectActions = require('../actions/RecentProjectsActions.js');
 const CoreActionsRedux = require('../actions/CoreActionsRedux.js');
 const modalActions = require('../actions/ModalActions.js');
 const CheckStore = require('../stores/CheckStore.js');
-const { connect  } = require('react-redux');
+const { connect } = require('react-redux');
 const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
@@ -14,10 +14,10 @@ const CryptoJS = require("crypto-js");
 const gogs = require('../components/core/login/GogsApi.js');
 const sync = require('../components/core/SideBar/GitSync.js');
 const remote = require('electron').remote;
-const {dialog} = remote;
+const { dialog } = remote;
 const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
-const {shell} = require('electron');
+const { shell } = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 const merge = require('lodash.merge');
@@ -75,8 +75,8 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
-  
-  changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
+
+  changeSubMenuItemStatus({ groupIndex, checkIndex, checkStatus }) {
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
@@ -100,8 +100,8 @@ var Main = React.createClass({
     }
     return numChecked / groupObj.checks.length;
   },
-  
-  changeSubMenuItems({groupName}) {
+
+  changeSubMenuItems({ groupName }) {
     const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
     this.setState({
       currentSubGroupObjects: newSubGroupObjects,
@@ -110,7 +110,7 @@ var Main = React.createClass({
     });
   },
 
-  setCurrentToolNamespace({currentCheckNamespace}) {
+  setCurrentToolNamespace({ currentCheckNamespace }) {
     if (!currentCheckNamespace) return;
     if (currentCheckNamespace === ' ') {
       this.setState({
@@ -414,6 +414,7 @@ var Main = React.createClass({
             this.props.showProjectsInModal(true);
           },
           update: () => {
+            //TODO
             if (CoreStore.doneLoading === this.props.loaderReducer.show) {
               if (!CoreStore.doneLoading) {
                 setTimeout(() => {
@@ -444,7 +445,7 @@ var Main = React.createClass({
             this.props.showMainView(false);
             this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              CheckDataGrabber.loadModuleAndDependencies(folderName);
+              CheckDataGrabber.loadModuleAndDependencies(folderName, null, this.props.loadModuleAndDependencies);
               localStorage.setItem('lastCheckModule', folderName);
             } else {
               dispatch(showNotification('No save location selected', 3));
@@ -635,6 +636,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     showMainView: (val) => {
       dispatch(CoreActionsRedux.showMainView(val));
+    },
+    loadModuleAndDependencies: (namespace) => {
+      dispatch(CoreActionsRedux.loadModuleAndDependencies(namespace));
     }
   });
 }

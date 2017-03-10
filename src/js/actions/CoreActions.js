@@ -65,11 +65,11 @@ module.exports = {
     });
   },
 
-  doneLoadingFetchData: function() {
-    Dispatcher.handleAction({
-      type: consts.DONE_LOADING
-    });
-  },
+  // doneLoadingFetchData: function() {
+  //   Dispatcher.handleAction({
+  //     type: consts.DONE_LOADING
+  //   });
+  // },
 
   killLoading: function() {
     Dispatcher.handleAction({

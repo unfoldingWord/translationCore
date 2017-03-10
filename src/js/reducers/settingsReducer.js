@@ -4,9 +4,13 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
-
+var lastSettings = null;
+try {
+  lastSettings = fs.readJsonSync(dir);
+} catch (e) {
+}
 const initialState = {
-  currentSettings: fs.readJsonSync(dir),
+  currentSettings: lastSettings,
 };
 
 module.exports = (state = initialState, action) => {

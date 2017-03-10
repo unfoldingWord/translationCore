@@ -2,7 +2,10 @@ const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     mainViewVisible: true,
-    type: 'recent'
+    type: 'recent',
+    doneLoading: 'false',
+    currentCheckNamespace: null,
+    common: null
 };
 
 module.exports = function coreStore(state, action) {

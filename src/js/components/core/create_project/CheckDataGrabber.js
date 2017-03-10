@@ -25,7 +25,7 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray, callback = () =>{}) {
+  fetchModules: function (checkArray, callback = () =>{}, doneLoadingFetchData, currentCheckNamespace) {
     try {
       fs.ensureDirSync(api.getDataFromCommon('saveLocation'));
       var params = api.getDataFromCommon('params');
@@ -33,10 +33,10 @@ var CheckDataGrabber = {
       this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
         if (!err) {
           if (checksThatNeedToBeFetched.length < 1) {
-            CoreActions.doneLoadingFetchData();
+              doneLoadingFetchData(currentCheckNamespace)
           }
           for (let moduleObj of checksThatNeedToBeFetched) {
-            this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
+            this.getDataFromOnline(moduleObj.name, moduleObj.location, params, doneLoadingFetchData, currentCheckNamespace);
           }
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
@@ -90,17 +90,16 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}, doneLoadingFetchData) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
     fs.readJson(modulePath, (error, dataObject) => {
       if (!error) {
-        CoreStore.setCurrentCheckCategory(dataObject.name);
         _this.saveModuleMenu(dataObject, moduleFolderName);
         _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
           if (!err) {
-            _this.fetchModules(checkArray, callback);
+            _this.fetchModules(checkArray, callback, doneLoadingFetchData, dataObject.name);
           }
           else {
             callback(err, false);
@@ -159,7 +158,7 @@ var CheckDataGrabber = {
    * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure
    * if still needed
    */
-  onComplete: function (err, data) {
+  onComplete: function (doneLoadingFetchData, currentCheckNamespace, err, data) {
     this.doneModules++;
     if (!err) {
       if (this.doneModules >= this.totalModules) {
@@ -171,7 +170,7 @@ var CheckDataGrabber = {
           git(path).init(function (err) {
             if (!err) {
               git(path).save('Initial TC Commit', path, function (err) {
-                CoreActions.doneLoadingFetchData();
+                doneLoadingFetchData(currentCheckNamespace);
                 console.error = newError;
               });
             } else {
@@ -246,7 +245,7 @@ var CheckDataGrabber = {
    * @param {object} params - Object that gets passed to FetchData's, contains necessary
    * params for the FetchData's to load their data
    */
-  getDataFromOnline: function (name, path, params) {
+  getDataFromOnline: function (name, path, params, doneLoadingFetchData, currentCheckNamespace) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
     //call the FetchData function
     var _this = this;
@@ -255,7 +254,7 @@ var CheckDataGrabber = {
       function (data) {
         _this.Progress(name, data);
       },
-      this.onComplete.bind(this)
+      this.onComplete.bind(this, doneLoadingFetchData, currentCheckNamespace)
     );
   }
 };
