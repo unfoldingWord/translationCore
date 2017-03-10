@@ -1,8 +1,8 @@
 import fs from 'fs-extra'
 import pathex from 'path-extra'
-
+//translationCore PARENT directory
 const PARENT = pathex.datadir('translationCore')
-//const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+//settings.json directory 
 const settingsDirectory = pathex.join(PARENT, 'settings.json');
 
 export const loadState = () => {
