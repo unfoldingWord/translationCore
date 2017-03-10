@@ -1,14 +1,16 @@
-const React = require('react');
-const Konami = require('konami-code-js');
+import React from 'react'
+import Konami from 'konami-code-js'
+import {connect} from 'react-redux'
+import SettingsActions from '../actions/SettingsActions.js'
 
-var Konami extends React.Component{
+class KonamiContainer extends React.Component{
   componentWillMount(){
     //Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     //This is used to enable or disable developer mode
     new Konami(
       ()=>{
-        let developerMode = this.props.settingsReducer.currentSettings.developerMode;
-        this.props.dispatch(SettingsActions.toggleSettings("developerMode"));
+        let developerMode = this.props.currentSettings.developerMode;
+        this.props.onToggleSettings();
         if(developerMode){
           alert("Developer Mode Disabled");
         } else {
@@ -22,4 +24,19 @@ var Konami extends React.Component{
   }
 }
 
-module.exports = Konami;
+const mapStateToProps = (state) => {
+ return Object.assign({}, state.settingsReducer);
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+ return {
+   onToggleSettings: () => {
+     dispatch(SettingsActions.toggleSettings("developerMode")())
+   }
+ }
+}
+
+module.exports = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(KonamiContainer)
