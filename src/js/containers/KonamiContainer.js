@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
  return {
    onToggleSettings: () => {
-     dispatch(SettingsActions.toggleSettings("developerMode")())
+     dispatch(SettingsActions.toggleSettings("developerMode"))
    }
  }
 }
