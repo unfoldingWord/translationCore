@@ -19,7 +19,7 @@ const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const Konami = require("konami-code-js");
+const Konami = require("../containers/KonamiContainer.js");
 
 const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
@@ -69,20 +69,6 @@ var Main = React.createClass({
     api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
-
-    //Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
-    //This is used to enable or disable developer mode
-    new Konami(
-      ()=>{
-        let developerMode = this.props.settingsReducer.currentSettings.developerMode;
-        this.props.dispatch(SettingsActions.toggleSettings("developerMode"));
-        if(developerMode){
-          alert("Developer Mode Disabled");
-        } else {
-          alert("Developer Mode Enabled: no technical support is provided for translationCore in developer mode!");
-        }
-      }
-    );
   },
 
   componentWillUnmount() {
@@ -570,6 +556,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
+          <Konami />
           <ModalContainer />
           <Popover />
           <NotificationContainer />
