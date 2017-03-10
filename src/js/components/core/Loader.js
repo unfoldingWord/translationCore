@@ -16,7 +16,7 @@ class Loader extends React.Component {
 
     return (
       <div>
-        <Modal show={this.props.showModal}>
+        <Modal show={false}>
           <ProgressBar striped active now={this.props.progress} style={{top:'50vh', left: '50vw'}}/>
           <center>
             <img src="images/TC_ANIMATED_Logo.gif"/>

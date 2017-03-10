@@ -60,7 +60,6 @@ var Main = React.createClass({
     fs.ensureDirSync(tCDir);
     this.updateTools();
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
-    api.registerEventListener('changeCheckType', this.setCurrentToolNamespace);
     //changing check, (group index, check index) ...one or the other or both
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
     //changing just the group index
@@ -71,7 +70,6 @@ var Main = React.createClass({
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
-    api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
@@ -93,87 +91,12 @@ var Main = React.createClass({
     this.props.dispatch(CheckStoreActions.setGroupsObjects(newGroupObjects));
   },
 
-  getGroupProgress: (groupObj) => {
-    var numChecked = 0;
-    for (var i = 0; i < groupObj.checks.length; i++) {
-      if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
-    }
-    return numChecked / groupObj.checks.length;
-  },
-
   changeSubMenuItems({ groupName }) {
     const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
     this.setState({
       currentSubGroupObjects: newSubGroupObjects,
       currentGroupName: groupName,
       currentCheckIndex: 0
-    });
-  },
-
-  setCurrentToolNamespace({ currentCheckNamespace }) {
-    if (!currentCheckNamespace) return;
-    if (currentCheckNamespace === ' ') {
-      this.setState({
-        currentToolNamespace: null,
-      });
-      this.props.dispatch(CoreActionsRedux.changeModuleView('recent'));
-      this.props.dispatch(CheckStoreActions.setBookName(null));
-      this.props.dispatch(CheckStoreActions.setCheckNameSpace(null));
-      return;
-    }
-    this.props.dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
-    var groupName = this.state.currentGroupName;
-    let bookName = api.getDataFromCheckStore(currentCheckNamespace, 'book');
-    var currentGroupIndex = 0;
-    var currentCheckIndex = 0;
-    //switched Tool therefore generate New MenuHeader
-    /*first load of fresh project thus no groupName
-    * in checkstore then get groupName at groupindex 0
-    */
-    if (currentCheckNamespace && !groupName) {
-      currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
-      currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
-      if (currentGroupIndex && currentCheckIndex) {
-        groupName = api.getDataFromCheckStore(currentCheckNamespace, 'groups')[currentGroupIndex].group;
-      }
-    }
-    var groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
-    for (var el in groupObjects) {
-      groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
-    }
-    if (!groupObjects || !groupObjects[currentGroupIndex]) currentGroupIndex = 0;
-    if (!subGroupObjects || !subGroupObjects[currentCheckIndex]) currentCheckIndex = 0;
-    var subGroupObjects = null;
-    try {
-      subGroupObjects = groupObjects[currentGroupIndex]['checks'];
-    } catch (e) {
-      console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
-    }
-    /*
-    Temporary code below to initializes the new checkStoreReducer
-    */
-    groupObjects = api.getDataFromCheckStore(currentCheckNamespace, 'groups');
-    currentGroupIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentGroupIndex');
-    currentCheckIndex = api.getDataFromCheckStore(currentCheckNamespace, 'currentCheckIndex');
-    let currentCheck = groupObjects[currentGroupIndex]['checks'][currentCheckIndex];
-    this.props.dispatch(CheckStoreActions.setBookName(bookName));
-    this.props.dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
-    this.props.dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
-    this.props.dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
-    //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
-    //attached to every menu/submenuitem
-    this.setState({
-      currentGroupIndex: currentGroupIndex || 0,
-      currentCheckIndex: currentCheckIndex || 0,
-      currentToolNamespace: currentCheckNamespace,
-      currentGroupName: groupName,
-      currentGroupObjects: groupObjects,
-      currentSubGroupObjects: subGroupObjects,
-      currentBookName: bookName,
-    }, () => {
-      this.updateTools(this.state.currentToolNamespace, () => {
-        this.props.showMainView(true);
-      });
     });
   },
 
@@ -257,9 +180,6 @@ var Main = React.createClass({
             moduleWrapperProps: {
               mainViewVisible: true
             },
-            uploadProps: {
-              active: 1
-            }
           }), callback)
         })
       })

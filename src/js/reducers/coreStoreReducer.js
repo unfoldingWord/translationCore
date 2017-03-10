@@ -5,7 +5,7 @@ const initialState = {
     type: 'recent',
     doneLoading: 'false',
     currentCheckNamespace: null,
-    common: null
+    common: null,
 };
 
 module.exports = function coreStore(state, action) {
