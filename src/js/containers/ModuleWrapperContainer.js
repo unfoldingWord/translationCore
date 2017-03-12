@@ -9,8 +9,8 @@ const api = window.ModuleApi;
 
 class ModuleWrapperContainer extends React.Component {
   render() {
-    let { mainViewVisible, type, currentCheckNameSpace, onGetModule } = this.props;
-    let mainTool = onGetModule(currentCheckNameSpace);
+    let { mainViewVisible, type, currentCheckNameSpace, modules } = this.props;
+    let mainTool = modules[currentCheckNameSpace];
     let mainContent;
     if (mainViewVisible) {
       switch (type) {
@@ -42,7 +42,8 @@ function mapStateToProps(state) {
       state.coreStoreReducer,
       state.toolsReducer,
       state.settingsReducer,
-      state.checkStoreReducer
+      state.checkStoreReducer,
+      state.loaderReducer,
     );
 }
 
@@ -53,10 +54,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       handleLoadTool: (toolFolderPath) => {
         dispatch(ToolsActions.loadTool(toolFolderPath));
-      },
-      onGetModule: (currentCheckNameSpace) => {
-        //we need to make this  redux action 
-        return api.getModule(currentCheckNameSpace);
       }
     }
 }
