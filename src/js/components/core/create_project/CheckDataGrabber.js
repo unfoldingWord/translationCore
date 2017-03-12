@@ -12,7 +12,6 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 import { saveModule } from '../../../actions/LoaderActions'
-import { showNotification } from '../../../actions/NotificationActions.js'
 import { dispatch } from "../../../pages/root"
 
 var CheckDataGrabber = {
@@ -71,6 +70,7 @@ var CheckDataGrabber = {
             console.error(err);
           }
         } finally {
+          dispatch(saveModule(module.name, viewObj.view || viewObj.container));
           api.saveModule(module.name, viewObj.view || viewObj.container);
         }
         if (module.location && !CheckStore.hasData(module.name)) {
