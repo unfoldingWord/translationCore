@@ -19,6 +19,7 @@ const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
+const KonamiContainer = require("../containers/KonamiContainer.js");
 
 const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
@@ -505,6 +506,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
+          <KonamiContainer />
           <ModalContainer />
           <PopoverContainer />
           <NotificationContainer />
