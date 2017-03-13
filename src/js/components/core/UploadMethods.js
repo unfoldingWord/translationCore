@@ -1,5 +1,5 @@
 /**
- * @author Ian Hoegen
+ * @author Ian Hoegen & Luke Wilson
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 const React = require('react');
@@ -103,6 +103,24 @@ function loadFile(path, file, callback) {
   }
   catch (e) {
     callback(e, null);
+  }
+}
+/**
+  * @description - Checks to see if the file is present and renames it.
+  * @param {string} path - existing absolute path to a file
+  * @param {string} newPath - desired absolute path to the file
+*/
+function renameFile(path, newPath, callback) {
+  try {
+    fs.access(path, (err) => {
+      if(!err){
+        fs.rename(path, newPath, callback);
+      }else{
+        callback(e);
+      }
+    })
+  } catch (e) {
+    callback(e);
   }
 }
 
