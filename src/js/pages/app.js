@@ -19,7 +19,7 @@ const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 const {shell} = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const Konami = require("../containers/KonamiContainer.js");
+const KonamiContainer = require("../containers/KonamiContainer.js");
 
 const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
@@ -76,7 +76,7 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
-  
+
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
@@ -555,7 +555,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
-          <Konami />
+          <KonamiContainer />
           <ModalContainer />
           <PopoverContainer />
           <NotificationContainer />
