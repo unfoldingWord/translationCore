@@ -54,7 +54,7 @@ describe('example shallowWithStore', () => {
 //     assert.equal(wrapper.find('ModuleWrapper').length, 1);
 //   });
 //   it('should render <Welcome /> if first time is set to true', function() {
-//     ModuleApi.setSettings('tutorialView', 'show');
+//     ModuleApi.setSettings('showTutorial', 'show');
 //     newWrapper = shallow(App);
 //     assert.equal(newWrapper.find('Welcome').length, 1)
 //   });

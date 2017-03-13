@@ -48,7 +48,7 @@ const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const LoaderActions = require('../actions/LoaderActions.js');
-const SettingsActions = require('../actions/SettingsActions.js');
+import { setSettings } from '../actions/SettingsActions.js'
 const DragDropActions = require('../actions/DragDropActions.js');
 import NotificationContainer from '../containers/NotificationContainer';
 import { showNotification } from '../actions/NotificationActions.js'
@@ -75,7 +75,7 @@ var Main = React.createClass({
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
-  
+
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
@@ -475,7 +475,7 @@ var Main = React.createClass({
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
-      api.setSettings('tutorialView', 'hide');
+      this.props.dispatch(setSettings('showTutorial', false));
     }
 
     if (localStorage.getItem('user')) {
