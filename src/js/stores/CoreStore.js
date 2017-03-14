@@ -167,16 +167,6 @@ class CoreStore extends EventEmitter {
     return this.currentCheckNamespace;
   }
 
-  getPopoverVisibility() {
-    return {
-      visibility: this.popoverVisibility,
-      title: this.popoverTitle,
-      body: this.popoverBody,
-      left: this.popoverLeft,
-      top: this.popoverTop
-    }
-  }
-
 /**
   * @param {function} callback
   */

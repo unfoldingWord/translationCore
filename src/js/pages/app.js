@@ -19,6 +19,7 @@ const path = require('path-extra');
 const defaultSave = path.join(path.homedir(), 'translationCore');
 const { shell } = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
+const KonamiContainer = require("../containers/KonamiContainer.js");
 
 const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
@@ -48,7 +49,7 @@ const ModalContainer = require('../containers/ModalContainer.js');
 const ToolsActions = require('../actions/ToolsActions.js');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const LoaderActions = require('../actions/LoaderActions.js');
-const SettingsActions = require('../actions/SettingsActions.js');
+import { setSettings } from '../actions/SettingsActions.js'
 const DragDropActions = require('../actions/DragDropActions.js');
 import NotificationContainer from '../containers/NotificationContainer';
 import { showNotification } from '../actions/NotificationActions.js'
@@ -69,12 +70,20 @@ var Main = React.createClass({
   },
 
   componentWillUnmount() {
+<<<<<<< HEAD
     window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
+=======
+    api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
+>>>>>>> develop
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
 
+<<<<<<< HEAD
   changeSubMenuItemStatus({ groupIndex, checkIndex, checkStatus }) {
+=======
+  changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
+>>>>>>> develop
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
@@ -177,20 +186,20 @@ var Main = React.createClass({
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
+<<<<<<< HEAD
             moduleWrapperProps: {
               mainViewVisible: true
             },
+=======
+            uploadProps: {
+              active: 1
+            }
+>>>>>>> develop
           }), callback)
         })
       })
     } else {
-      var newCheckCategory = api.getModule(namespace);
       this.props.updateModuleView('main');
-      this.setState(merge({}, this.state, {
-        moduleWrapperProps: {
-          mainTool: newCheckCategory
-        }
-      }), callback)
     }
   },
 
@@ -224,40 +233,6 @@ var Main = React.createClass({
         mainViewVisible: this.props.coreStoreReducer.mainViewVisible,
         currentToolNamespace: null,
         currentGroupName: null,
-        sideBarContainerProps: {
-          screenHeight: window.innerHeight,
-          updateDimensions: () => {
-            if (this.state.sideBarContainerProps.screenHeight != window.innerHeight) {
-              this.setState(merge({}, this.state, {
-                sideBarContainerProps: {
-                  screenHeight: window.innerHeight
-                }
-              }));
-            }
-          },
-          imgPath: null,
-          getCurrentToolNamespace: () => {
-            this.state.sideBarContainerProps.getToolIcon(this.state.currentToolNamespace);
-          },
-          getToolIcon: (currentToolNamespace) => {
-            let iconPathName = null;
-            let currentToolMetadata = null;
-            let toolsMetadata = api.getToolMetaDataFromStore();
-            if (toolsMetadata) {
-              currentToolMetadata = toolsMetadata.find(
-                (tool) => tool.name === currentToolNamespace
-              );
-            }
-            if (currentToolMetadata) {
-              let iconPathName = currentToolMetadata.imagePath;
-              this.setState(merge({}, this.state, {
-                sideBarContainerProps: {
-                  imgPath: iconPathName
-                }
-              }));
-            }
-          },
-        },
         alertModalProps: {
           open: false,
           handleOpen: () => {
@@ -355,10 +330,6 @@ var Main = React.createClass({
             }
           },
         },
-        moduleWrapperProps: {
-          mainTool: null,
-          type: 'recent'
-        },
         switchCheckProps: {
           moduleMetadatas: [],
           moduleClick: (folderName) => {
@@ -393,11 +364,10 @@ var Main = React.createClass({
       localStorage.removeItem('lastCheckModule');
       localStorage.setItem('version', packageJson.version);
     }
-    window.addEventListener("resize", this.state.sideBarContainerProps.updateDimensions);
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
-      api.setSettings('tutorialView', 'hide');
+      this.props.dispatch(setSettings('showTutorial', false));
     }
 
     if (localStorage.getItem('user')) {
@@ -476,6 +446,7 @@ var Main = React.createClass({
     } else {
       return (
         <div className='fill-height'>
+          <KonamiContainer />
           <ModalContainer />
           <PopoverContainer />
           <NotificationContainer />
@@ -484,22 +455,12 @@ var Main = React.createClass({
               <StatusBarContainer />
             </Row>
             <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
-              <SideBarContainer
-                {...this.state.sideBarContainerProps}
-                currentToolNamespace={this.state.currentToolNamespace}
-              />
+              <SideBarContainer />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
               <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show} />
               <AlertModal {...this.state.alertModalProps} />
-              <ModuleWrapperContainer
-                {...this.state.moduleWrapperProps}
-                mainTool={this.state.moduleWrapperProps.mainTool}
-                type={this.props.coreStoreReducer.type}
-                mainViewVisible={this.props.coreStoreReducer.mainViewVisible}
-                switchCheckProps={this.state.switchCheckProps}
-                recentProjectsProps={this.props.recentProjectsReducer}
-              />
+              <ModuleWrapperContainer />
             </Col>
           </Grid>
         </div>
@@ -512,12 +473,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return merge({}, { dispatch: dispatch }, {
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
-    },
-    handleLoadTool: (toolFolderPath) => {
-      dispatch(ToolsActions.loadTool(toolFolderPath));
-    },
-    showLoad: () => {
-      dispatch(modalActions.selectModalTab(2))
     },
     showToolsInModal: (visible) => {
       if (visible) {

@@ -23,7 +23,6 @@ class ModuleApi {
     this.ReactBootstrap = ReactBootstrap;
     this.CheckModule = CheckModule;
     this.modules = {};
-    this.Popover = require('./components/core/PopoverApi');
     this.Git = require('./components/core/GitApi.js');
     this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
     this.ReportFilters = this.ReportFiltersTools.filter;

@@ -4,10 +4,10 @@ import rootReducers from '../reducers/index.js'
 
 //preloadedState will be used for Data persistence
 
-export default function configureStore(preloadedState) {
+export default function configureStore(persistedState) {
   return createStore(
     rootReducers,
-    preloadedState,
+    persistedState,
     applyMiddleware(
       thunkMiddleware
     )

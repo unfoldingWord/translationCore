@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const consts = require('../actions/CoreActionConsts');
 const fs = require('fs-extra');
 const pathex = require('path-extra');
@@ -11,9 +12,19 @@ try {
 }
 const initialState = {
   currentSettings: lastSettings,
+=======
+import consts from '../actions/CoreActionConsts'
+
+const initialState = {
+  currentSettings: {
+    showTutorial: false,
+    textSelect: 'drag',
+    developerMode: false
+  }
+>>>>>>> develop
 };
 
-module.exports = (state = initialState, action) => {
+const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
       return { ...state, currentSettings: action.val }
@@ -21,3 +32,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 }
+
+export default settingsReducer

@@ -1,24 +1,27 @@
-const React = require('react');
-const { connect } = require('react-redux');
-const CoreStore = require('../stores/CoreStore.js');
-const SwitchCheck = require('../components/core/SwitchCheck');
-const RecentProjectsContainer = require('./RecentProjectsContainer');
-const ToolsContainer = require('./ToolsContainer');
-
+import React from 'react'
+import { connect } from 'react-redux'
+import SwitchCheck from '../components/core/SwitchCheck'
+import RecentProjectsContainer from './RecentProjectsContainer'
+import ToolsContainer from './ToolsContainer'
+import modalActions from '../actions/modalActions.js'
+import ToolsActions from '../actions/ToolsActions.js'
+const api = window.ModuleApi;
 
 class ModuleWrapperContainer extends React.Component {
   render() {
-    var mainContent;
-    if (this.props.mainViewVisible) {
-      switch (this.props.type) {
+    let { mainViewVisible, type, currentCheckNameSpace, modules } = this.props;
+    let mainTool = modules[currentCheckNameSpace];
+    let mainContent;
+    if (mainViewVisible) {
+      switch (type) {
         case 'tools':
-          mainContent = <SwitchCheck {...this.props.switchCheckProps} />;
+          mainContent = <SwitchCheck {...this.props} />;
           break;
         case 'recent':
           mainContent = <RecentProjectsContainer />;
           break;
         case 'main':
-          mainContent = <ToolsContainer currentTool={this.props.mainTool}/>;
+          mainContent = <ToolsContainer currentTool={mainTool}/>;
           break;
         default:
           mainContent = (<div> </div>);
@@ -35,14 +38,23 @@ class ModuleWrapperContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-    return Object.assign({}, state);
+    return Object.assign({},
+      state.coreStoreReducer,
+      state.toolsReducer,
+      state.settingsReducer,
+      state.checkStoreReducer,
+      state.loaderReducer,
+    );
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        /*anyactionmethod: () => {
-            dispatch(anyactions.anyactionmethod());
-        }*/
+      showLoad: () => {
+        dispatch(modalActions.selectModalTab(2))
+      },
+      handleLoadTool: (toolFolderPath) => {
+        dispatch(ToolsActions.loadTool(toolFolderPath));
+      }
     }
 }
 
