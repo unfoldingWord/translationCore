@@ -26,7 +26,7 @@ var template = [
         click: function () {
           Upload.clearPreviousData();
           CoreStore.currentCheckNamespace = ' ';
-          CoreActions.killLoading();
+          CoreActionsRedux.killLoading();
           api.emitEvent('changeCheckType', { currentCheckNamespace: ' ' });
         },
         accelerator: 'CmdOrCtrl+W'

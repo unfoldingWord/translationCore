@@ -284,42 +284,13 @@ var Main = React.createClass({
             }
           }
         },
-        loaderModalProps: {
-          progress: 0,
-          killLoading: () => {
-            Upload.clearPreviousData();
-            this.props.toggleLoaderModal();
-            this.props.showProjectsInModal(true);
-          },
-          update: () => {
-            //TODO
-            if (CoreStore.doneLoading === this.props.loaderReducer.show) {
-              if (!CoreStore.doneLoading) {
-                setTimeout(() => {
-                  this.setState(merge({}, this.state, {
-                    loaderModalProps: {
-                      reloadContent: <h3>Taking too long? <a onClick={this.state.loaderModalProps.killLoading}>Cancel loading</a></h3>
-                    }
-                  }));
-                }, 10000);
-              }
-              this.setState(merge({}, this.state, {
-                loaderModalProps: {
-                  progress: CoreStore.getProgress(),
-                  reloadContent: null
-                }
-              }));
-              this.props.toggleLoaderModal();
-            }
-          },
-        },
         switchCheckProps: {
           moduleMetadatas: [],
           moduleClick: (folderName) => {
             this.props.showMainView(false);
             this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              CheckDataGrabber.loadModuleAndDependencies(folderName, null, this.props.loadModuleAndDependencies);
+              CheckDataGrabber.loadModuleAndDependencies(folderName, null);
               localStorage.setItem('lastCheckModule', folderName);
             } else {
               dispatch(showNotification('No save location selected', 3));

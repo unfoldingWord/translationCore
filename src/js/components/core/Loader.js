@@ -4,19 +4,10 @@ const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
 class Loader extends React.Component {
-  componentWillMount() {
-    CoreStore.addChangeListener(this.props.update);
-  }
-
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.props.update);
-  }
-
   render() {
-
     return (
       <div>
-        <Modal show={false}>
+        <Modal show={this.props.showLoader}>
           <ProgressBar striped active now={this.props.progress} style={{top:'50vh', left: '50vw'}}/>
           <center>
             <img src="images/TC_ANIMATED_Logo.gif"/>

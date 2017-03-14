@@ -2,7 +2,8 @@ const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
   modules: {},
-  show: false
+  show: false,
+  progress:0
 };
 
 module.exports = (state = initialState, action) => {

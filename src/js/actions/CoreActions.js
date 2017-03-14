@@ -71,11 +71,11 @@ module.exports = {
   //   });
   // },
 
-  killLoading: function() {
-    Dispatcher.handleAction({
-      type: consts.KILL_LOADING
-    });
-  },
+  // killLoading: function() {
+  //   Dispatcher.handleAction({
+  //     type: consts.KILL_LOADING
+  //   });
+  // },
 
   newProject: function(){
     Dispatcher.handleAction({
