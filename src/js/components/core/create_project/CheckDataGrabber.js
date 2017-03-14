@@ -12,6 +12,7 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CoreActionsRedux = require('../../.././actions/CoreActionsRedux');
+const LoaderActions = require('../../.././actions/LoaderActions');
 import { saveModule } from '../../../actions/LoaderActions'
 import { dispatch } from "../../../pages/root"
 
@@ -28,7 +29,7 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray, callback = () =>{}, currentCheckNamespace) {
+  fetchModules: function (checkArray, callback = () => { }, currentCheckNamespace, progressFunc) {
     try {
       fs.ensureDirSync(api.getDataFromCommon('saveLocation'));
       var params = api.getDataFromCommon('params');
@@ -36,10 +37,11 @@ var CheckDataGrabber = {
       this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
         if (!err) {
           if (checksThatNeedToBeFetched.length < 1) {
-              dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
+            dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
           }
+          dispatch(LoaderActions.toggleLoader(true));
           for (let moduleObj of checksThatNeedToBeFetched) {
-            this.getDataFromOnline(moduleObj.name, moduleObj.location, params, currentCheckNamespace);
+            this.getDataFromOnline(moduleObj.name, moduleObj.location, params, currentCheckNamespace, progressFunc);
           }
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
@@ -67,7 +69,7 @@ var CheckDataGrabber = {
           try {
             var viewObj = require(Path.join(module.location, 'View'));
             var container = false;
-          } catch(err) {
+          } catch (err) {
             console.error(err);
           }
         } finally {
@@ -77,7 +79,7 @@ var CheckDataGrabber = {
         if (module.location && !CheckStore.hasData(module.name)) {
           checksThatNeedToBeFetched.push(module);
         }
-        CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+        dispatch(LoaderActions.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length));
         this.totalModules = checksThatNeedToBeFetched.length;
       }
       callback(null, checksThatNeedToBeFetched);
@@ -94,7 +96,7 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => { }, progressFunc) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
@@ -103,7 +105,7 @@ var CheckDataGrabber = {
         _this.saveModuleMenu(dataObject, moduleFolderName);
         _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
           if (!err) {
-            _this.fetchModules(checkArray, callback, dataObject.name);
+            _this.fetchModules(checkArray, callback, dataObject.name, progressFunc);
           }
           else {
             callback(err, false);
@@ -205,21 +207,6 @@ var CheckDataGrabber = {
   },
 
   /**
-   * @description - This sends a CoreAction that in turn updates the progress bar according
-   * to the name and progress of a single FetchData see {@link getDataFromCheck}
-   * @param {string} name - The name or 'namespace' of the module's FetchData that is updating
-   * their progress
-   * @param {integer} data - the quantifiable number of how far done a FetchData has fetched their
-   * appropriate data. Should be from 0-100, but no error checking to make it sure
-   */
-  Progress: function (name, data) {
-    CoreActions.sendProgressForKey({ progress: data, key: name });
-    if (data == 100) {
-      console.log(name + " finished loading.");
-    }
-  },
-
-  /**
    * @description - This function tests to see if a module is a 'main' module as opposed to a
    * 'tool'. Main modules define the layout for nearly the entire page while tools are what
    * supplment the main module in that layout and are enclosed in the main module
@@ -249,15 +236,13 @@ var CheckDataGrabber = {
    * @param {object} params - Object that gets passed to FetchData's, contains necessary
    * params for the FetchData's to load their data
    */
-  getDataFromOnline: function (name, path, params, currentCheckNamespace) {
+  getDataFromOnline: function (name, path, params, currentCheckNamespace, progressFunc) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
     //call the FetchData function
     var _this = this;
     DataFetcher(
       params,
-      function (data) {
-        _this.Progress(name, data);
-      },
+      (data) => progressFunc(data, name),
       this.onComplete.bind(this, currentCheckNamespace)
     );
   }

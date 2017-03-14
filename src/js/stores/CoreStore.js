@@ -42,11 +42,6 @@ class CoreStore extends EventEmitter {
     this.doneLoading = true;
   }
 
-  updateNumberOfFetchDatas(number) {
-    //console.log('Number: ' + number);
-    this.numberOfFetchDatas = number;
-  }
-
   getNumberOfFetchDatas() {
     return this.numberOfFetchDatas;
   }

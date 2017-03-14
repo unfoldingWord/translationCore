@@ -27,7 +27,7 @@ const SideBarContainer = require('../containers/SideBarContainer');
 const Gogs = require('../components/core/login/GogsApi')();
 const ImportUsfm = require('../components/core/Usfm/ImportUSFM.js');
 const SwitchCheck = require('../components/core/SwitchCheck');
-const Loader = require('../components/core/Loader');
+const LoaderContainer = require('../containers/LoaderContainer');
 const RootStyles = require('./RootStyle');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Button = require('react-bootstrap/lib/Button.js');
@@ -290,7 +290,7 @@ var Main = React.createClass({
             this.props.showMainView(false);
             this.props.showToolsInModal(false);
             if (api.getDataFromCommon('saveLocation') && api.getDataFromCommon('tcManifest')) {
-              CheckDataGrabber.loadModuleAndDependencies(folderName, null);
+              CheckDataGrabber.loadModuleAndDependencies(folderName, null, progressFunc);
               localStorage.setItem('lastCheckModule', folderName);
             } else {
               dispatch(showNotification('No save location selected', 3));
@@ -412,7 +412,7 @@ var Main = React.createClass({
               <SideBarContainer />
             </Col>
             <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
-              <Loader {...this.state.loaderModalProps} showModal={this.props.loaderReducer.show} />
+              <LoaderContainer />
               <AlertModal {...this.state.alertModalProps} />
               <ModuleWrapperContainer />
             </Col>
@@ -468,6 +468,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loadModuleAndDependencies: (namespace) => {
       dispatch(CoreActionsRedux.loadModuleAndDependencies(namespace));
+    },
+    progressFunc: (key, name) => {
+      dispatch(LoaderActions.sendProgressForKey(key, name, this.props.loaderReducer));
     }
   });
 }

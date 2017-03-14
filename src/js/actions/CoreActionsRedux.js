@@ -113,7 +113,6 @@ module.exports.loadModuleAndDependencies = function (currentCheckNamespace) {
       dispatch({
         type: consts.DONE_LOADING,
         doneLoading: true,
-        progressKeyObj: null,
         reportViews: reports,
         currentCheckNamespace: currentCheckNamespace
       })
@@ -216,12 +215,12 @@ module.exports.updateTools = function (namespace) {
       }), callback)
     }
   });
-},
+}
 
-  module.exports.getGroupProgress = function (groupObj) {
-    var numChecked = 0;
-    for (var i = 0; i < groupObj.checks.length; i++) {
-      if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
-    }
-    return numChecked / groupObj.checks.length;
+module.exports.getGroupProgress = function (groupObj) {
+  var numChecked = 0;
+  for (var i = 0; i < groupObj.checks.length; i++) {
+    if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
   }
+  return numChecked / groupObj.checks.length;
+}

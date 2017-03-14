@@ -6,6 +6,7 @@ const initialState = {
     doneLoading: 'false',
     currentCheckNamespace: null,
     common: null,
+    fetchDatas:0
 };
 
 module.exports = function coreStore(state, action) {
