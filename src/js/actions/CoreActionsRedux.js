@@ -30,8 +30,9 @@ module.exports.changeModuleView = function (val) {
   }
 }
 
-module.exports.changeOnlineStatus = function (online, firstLoad) {
+module.exports.changeOnlineStatus = function (online, firstLoad, fromButton) {
   return ((dispatch) => {
+    if (!document.hasFocus() && !fromButton) return;
     if (process.platform == 'win32') {
       var TCportAllowed = true;
       if (firstLoad) {

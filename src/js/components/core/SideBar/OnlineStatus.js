@@ -41,13 +41,13 @@ class OnlineStatus extends React.Component {
     window.removeEventListener("online", this.setOnline);
   }
 
-  setOnline() {
-    this.props.changeOnlineStatus(true);
+  setOnline(fromButton) {
+    this.props.changeOnlineStatus(true, false, fromButton);
     this.setState({online: true});
   }
 
-  setOffline() {
-    this.props.changeOnlineStatus(false);
+  setOffline(fromButton) {
+    this.props.changeOnlineStatus(false, false, fromButton);
     this.setState({online: false});
   }
 
@@ -65,7 +65,7 @@ class OnlineStatus extends React.Component {
                      style={{fontSize:10}}
                      />
           <div onClick={()=>{
-                  this.state.online ? this.setOffline() : this.setOnline();
+                  this.state.online ? this.setOffline(true) : this.setOnline(true);
                 }}
                style={{
                  display: this.state.showToggle ? "block" : "none",
