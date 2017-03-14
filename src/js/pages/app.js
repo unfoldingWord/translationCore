@@ -70,20 +70,12 @@ var Main = React.createClass({
   },
 
   componentWillUnmount() {
-<<<<<<< HEAD
-    window.removeEventListener('resize', this.state.sideBarContainerProps.updateDimensions);
-=======
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
->>>>>>> develop
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
     api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
 
-<<<<<<< HEAD
-  changeSubMenuItemStatus({ groupIndex, checkIndex, checkStatus }) {
-=======
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
->>>>>>> develop
     let groupObjects = this.props.checkStoreReducer.groups;
     let currentGroupIndex = this.props.checkStoreReducer.currentGroupIndex;
     let currentCheckIndex = this.props.checkStoreReducer.currentCheckIndex;
@@ -186,15 +178,9 @@ var Main = React.createClass({
             switchCheckProps: {
               moduleMetadatas: metadatas,
             },
-<<<<<<< HEAD
-            moduleWrapperProps: {
-              mainViewVisible: true
-            },
-=======
             uploadProps: {
               active: 1
             }
->>>>>>> develop
           }), callback)
         })
       })
