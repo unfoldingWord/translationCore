@@ -11,12 +11,7 @@ const CoreStore = require('../../stores/CoreStore.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
 class AlertModal extends React.Component {
-  componentWillMount() {
-    CoreStore.addChangeListener(this.props.alertMessage);
-  }
-  componentWillUnmount() {
-    CoreStore.removeChangeListener(this.props.alertMessage);
-  }
+    //CoreStore.removeChangeListener(this.props.alertMessage);
 
   render() {
     var alertStyle = {
@@ -35,12 +30,12 @@ class AlertModal extends React.Component {
       <div>
         <Modal show={this.props.visibility}>
           <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
-              <Alert bsStyle="danger" onDismiss={this.props.handleAlertDismiss} style={alertStyle}>
+              <Alert bsStyle="danger" onDismiss={this.props.showAlert(false)} style={alertStyle}>
                 <center>
                   <div style={alertDiv}>
                     <h3>{this.props.title}</h3>
                     <p>{this.props.content}</p>
-                    <Button bsStyle="danger" style={this.props.getStyleFromState(this.props.leftButtonText)} onClick={this.props.handleAlertDismiss}>
+                    <Button bsStyle="danger" style={this.props.getStyleFromState(this.props.leftButtonText)} onClick={this.props.alertDismiss}>
                       {this.props.leftButtonText}
                     </Button>
                     <Button style={this.props.getStyleFromState(this.props.rightButtonText)} onClick={this.props.handleAlertOK}>

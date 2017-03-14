@@ -224,3 +224,19 @@ module.exports.getGroupProgress = function (groupObj) {
   }
   return numChecked / groupObj.checks.length;
 }
+
+module.exports.getAlert = function () {
+  var data = CoreStore.getAlertResponseMessage();
+  if (data) {
+    try {
+      var callback = this.alertObj['alertCallback'];
+      callback(data);
+      this.alertObj['alertCallback'] = null;
+      api.clearAlertCallback();
+    }
+    catch (e) {
+    }
+    data = null;
+    this.alertResponseObj = null;
+  }
+}
