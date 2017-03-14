@@ -63,8 +63,6 @@ var Main = React.createClass({
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     //changing check, (group index, check index) ...one or the other or both
     api.registerEventListener('changeGroupName', this.changeSubMenuItems);
-    //changing just the group index
-    api.registerEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
   },
@@ -72,7 +70,6 @@ var Main = React.createClass({
   componentWillUnmount() {
     api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
     api.removeEventListener('changeGroupName', this.changeSubMenuItems);
-    api.removeEventListener('changedCheckStatus', this.changeSubMenuItemStatus);
   },
 
   changeSubMenuItemStatus({groupIndex, checkIndex, checkStatus}) {
