@@ -57,19 +57,32 @@ function sendPath(path, link, callback) {
       } else {
         fs.copySync(path, saveLocation);
       }
-      loadFile(path, 'tc-manifest.json', (err, tcManifest) => {
-        if (tcManifest) {
+      loadFile(path, 'manifest.json', (err, manifest) => {
+        if (manifest && manifest.tcInitialized) { // fs.access('manifest.json')
           //tc-manifest is present initiate load
-          loadProjectThatHasManifest(path, callback, tcManifest);
-        } else if (!tcManifest) {
-          //no tc-manifest checking for ts-manifest
-          loadFile(path, 'manifest.json',
-            (err, translationStudioManifest) => {
-              if (translationStudioManifest) {
-                let tsManifest = verifyChunks(path, translationStudioManifest);
+          loadProjectThatHasManifest(path, callback, manifest);
+        } else if (manifest && !manifest.tcInitialized){
+          //no tc-manifest present checking for ts-manifest
+          let verifiedManifest = verifyChunks(path, manifest);
+          verifiedManifest.tcInitialized = true;
+          saveManifest(path, link, verifiedManifest, (err, newManifest) => {
+            loadProjectThatHasManifest(path, callback, newManifest);
+          });
+        } else if (!manifest){
+          //no 'manifest.json' found, checking for old 'tc-manifest.json'
+          loadFile(path, 'tc-manifest.json',
+            (err, oldManifest) => {
+              if (oldManifest) { // fs.access('tc-manifest.json')
+                let verifiedManifest = verifyChunks(path, oldManifest);
                 //ts-manifest is present, creating tc-manifest and initiate load
-                saveManifest(path, link, tsManifest, (err, tcManifest) => {
-                  loadProjectThatHasManifest(path, callback, tcManifest);
+                saveManifest(path, link, verifiedManifest, (err, newManifest) => {
+                  fs.unlink(Path.join(path, 'tc-manifest.json'), (err) =>{
+                    // delete the old 'tc-manifest.json' if it exists.
+                    if(err){
+                      manifestError(err.message);
+                    }
+                  });
+                  loadProjectThatHasManifest(path, callback, newManifest);
                 });
               }
               else if (err) {
@@ -300,7 +313,7 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
   }
   var manifest;
   try {
-    var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
+    var manifestLocation = Path.join(saveLocation, 'manifest.json');
     if (tsManifest.package_version == '3') {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(tsManifest);
