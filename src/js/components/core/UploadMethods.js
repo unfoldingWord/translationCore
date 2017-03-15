@@ -81,7 +81,7 @@ function sendPath(path, link, callback) {
                   //   if(err){
                   //     manifestError(err.message);
                   //   }
-                  });
+                  // });
                   loadProjectThatHasManifest(path, callback, newManifest);
                 });
               }
