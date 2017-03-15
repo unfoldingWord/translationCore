@@ -66,6 +66,7 @@ class OnlineStatus extends React.Component {
                      />
           <div onClick={()=>{
                   this.state.online ? this.setOffline(true) : this.setOnline(true);
+                  //designates a user action for setOffline function
                 }}
                style={{
                  display: this.state.showToggle ? "block" : "none",
