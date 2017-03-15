@@ -1,5 +1,4 @@
 const consts = require('./CoreActionConsts');
-const api = window.ModuleApi;
 
 module.exports.loadReports = function () {
   return ((dispatch) => {

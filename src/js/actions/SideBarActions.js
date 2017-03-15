@@ -1,16 +1,16 @@
-const api = window.ModuleApi;
 const CheckStoreActions = require('./CheckStoreActions.js');
+const consts = require('./CoreActionConsts');
 
 module.exports.toggleSubmenu = function (id) {
   return {
-    type: "TOGGLE_SUBMENU",
-    openCheck: id,
+    type: consts.TOGGLE_SUBMENU,
+    openCheck: id
   }
 };
 
 module.exports.toggleMenu = function () {
   return {
-    type: "TOGGLE_MENU_DRAWER"
+    type: consts.TOGGLE_MENU_DRAWER
   }
 };
 

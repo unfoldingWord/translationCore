@@ -36,7 +36,7 @@
     "name": "Wycliffe Associates",
     "email": "info@unfoldingword.org"
   },
-  "license": "ISC",
+  "license": "GPL2",
   "bugs": {
     "url": "https://github.com/unfoldingWord-dev/translationCore/issues"
   },
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "babel-core": "^6.13.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.8",
     "event-emitter": "^0.3.4",
@@ -68,6 +69,7 @@
     "fs-extra": "^0.30.0",
     "gogs-client": "^0.5.2",
     "http": "0.0.0",
+    "konami-code-js": "^0.8.0",
     "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
     "marked": "^0.3.5",

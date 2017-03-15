@@ -1,4 +1,5 @@
-const merge = require('lodash.merge');
+const consts = require('../actions/CoreActionConsts');
+
 const initialState = {
     path: "",
     currentCheckNamespace: "",
@@ -9,17 +10,8 @@ const initialState = {
 
 module.exports = (state = initialState, action) => {
     switch (action.type) {
-        case "TOGGLE_SUBMENU":
-            return merge({}, state, {
-                subMenuOpen: (action.newGroup || state.openCheck != action.openCheck) ? true : !state.subMenuOpen,
-                openCheck: action.openCheck,
-            });
-            break;
-        case "CHANGE_ONLINE_STATUS":
-            return merge({}, state, {
-                online: action.online
-            });
-            break;
+        case consts.CHANGE_ONLINE_STATUS:
+          return { ...state, online: action.online }
         default:
             return state;
     }

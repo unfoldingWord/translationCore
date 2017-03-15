@@ -1,4 +1,4 @@
-const merge = require('lodash.merge');
+const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
   menuVisibility: true,
@@ -8,17 +8,14 @@ const initialState = {
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case "TOGGLE_SUBMENU":
-      return merge({}, state, {
-      subMenuOpen: (action.newGroup || state.openCheck != action.openCheck) ? true: !state.subMenuOpen,
+    case consts.TOGGLE_SUBMENU:
+      return {
+        ...state,
+        subMenuOpen: (action.newGroup || state.openCheck != action.openCheck) ? true: !state.subMenuOpen,
         openCheck: action.openCheck,
-      });
-      break;
-    case "TOGGLE_MENU_DRAWER":
-      return merge({}, state, {
-        menuVisibility: !state.menuVisibility
-      });
-    break;
+      }
+    case consts.TOGGLE_MENU_DRAWER:
+      return { ...state, menuVisibility: !state.menuVisibility }
     default:
       return state;
   }

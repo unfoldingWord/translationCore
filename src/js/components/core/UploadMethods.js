@@ -102,6 +102,11 @@ function sendPath(path, link, callback) {
     }
   });
 }
+
+function checkIfValidBetaProject(manifest) {
+  if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
+  else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
+}
 /**
   * @description - Checks to see if the file is present, and loads it.
   * @param {string} path - absolute path to a translationStudio project folder
@@ -247,17 +252,17 @@ function checkIfUSFMFile(savePath, callback) {
   try {
     var usfmFile = fs.readFileSync(savePath);
     const ext = savePath.split(".")[1];
-    callback(ext  == "usfm"|| ext == "sfm");
+    callback(ext == "usfm" || ext == "sfm");
   } catch (e) {
     try {
       var dir = fs.readdirSync(savePath);
       if (dir.length === 1 || dir.shift() == '.git') {
         const ext = dir[0].split(".")[1];
-        callback(ext  == "usfm"|| ext == "sfm", Path.join(savePath, dir[0]));
+        callback(ext == "usfm" || ext == "sfm", Path.join(savePath, dir[0]));
       } else {
         callback(false);
       }
-    } catch(err) {
+    } catch (err) {
       callback(false);
     }
   }
@@ -338,31 +343,31 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
  * @param {Object} tsManifest - A translation studio manifest
  * @param {String} path - The location of the project
  */
- function verifyChunks(path, tsManifest) {
-   let chunkChapters = fs.readdirSync(path);
-   let finishedChunks = [];
-   for (let chapter in chunkChapters) {
-     if (!isNaN(chunkChapters[chapter])) {
-       let chunkVerses = fs.readdirSync(path + '/' + chunkChapters[chapter]);
-       for (let chunk in chunkVerses) {
-         let currentChunk = chunkVerses[chunk].replace(/(?:\(.*\))?\.txt/g, '');
-         let chunkString = chunkChapters[chapter].trim()+ '-' + currentChunk.trim();
-         if (!finishedChunks.includes(chunkString)) {
-           finishedChunks.push(chunkString);
-         }
-       }
-     }
-   }
-   tsManifest.finished_chunks = finishedChunks;
-   return tsManifest;
- }
+function verifyChunks(path, tsManifest) {
+  let chunkChapters = fs.readdirSync(path);
+  let finishedChunks = [];
+  for (let chapter in chunkChapters) {
+    if (!isNaN(chunkChapters[chapter])) {
+      let chunkVerses = fs.readdirSync(path + '/' + chunkChapters[chapter]);
+      for (let chunk in chunkVerses) {
+        let currentChunk = chunkVerses[chunk].replace(/(?:\(.*\))?\.txt/g, '');
+        let chunkString = chunkChapters[chapter].trim() + '-' + currentChunk.trim();
+        if (!finishedChunks.includes(chunkString)) {
+          finishedChunks.push(chunkString);
+        }
+      }
+    }
+  }
+  tsManifest.finished_chunks = finishedChunks;
+  return tsManifest;
+}
 /**
  * @desription - Uses the tc-standard format for projects to make package_version 3 compatible
  * @param oldManifest - The name of an employee.
  */
 function fixManifestVerThree(oldManifest) {
   var newManifest = {};
-  try{
+  try {
     for (var oldElements in oldManifest) {
       newManifest[oldElements] = oldManifest[oldElements];
     }
@@ -377,7 +382,7 @@ function fixManifestVerThree(oldManifest) {
       newManifest.source_translations.resource_id = parameters[2];
       break;
     }
-  }catch(e){
+  } catch (e) {
     console.error(e);
   }
   return newManifest;
@@ -425,4 +430,5 @@ module.exports = {
   fixManifestVerThree: fixManifestVerThree,
   manifestError: manifestError,
   isOldTestament: isOldTestament,
+  checkIfValidBetaProject:checkIfValidBetaProject
 };

@@ -1,8 +1,8 @@
-const React = require('react');
-const { connect  } = require('react-redux');
-const CheckStoreActions = require('../actions/CheckStoreActions.js');
+import React from 'react'
+import { connect } from 'react-redux'
+import CheckStoreActions from '../actions/CheckStoreActions.js'
 import { showNotification } from '../actions/NotificationActions.js'
-
+import { showPopover } from '../actions/PopoverActions.js'
 
 class ToolsContainer extends React.Component {
     render() {
@@ -14,7 +14,14 @@ class ToolsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.checkStoreReducer, state.loginReducer, state.settingsReducer, state.statusBarReducer);
+    return Object.assign(
+      {},
+      state.checkStoreReducer,
+      state.loginReducer,
+      state.settingsReducer,
+      state.statusBarReducer,
+      state.loaderReducer,
+    );
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -33,6 +40,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       showNotification: (message, duration) => {
         dispatch(showNotification(message, duration));
+      },
+      showPopover: (title, bodyText, positionCoord) => {
+        dispatch(showPopover(title, bodyText, positionCoord));
       }
     }
 }

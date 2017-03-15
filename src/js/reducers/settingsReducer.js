@@ -1,19 +1,20 @@
-const consts = require('../actions/CoreActionConsts');
-const api = window.ModuleApi;
-const merge = require('lodash.merge');
+import consts from '../actions/CoreActionConsts'
 
 const initialState = {
-  currentSettings: {},
+  currentSettings: {
+    showTutorial: false,
+    textSelect: 'drag',
+    developerMode: false
+  }
 };
 
-module.exports = (state = initialState, action) => {
+const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
-      return merge({}, state, {
-        currentSettings: action.val
-      });
-      break;
+      return { ...state, currentSettings: action.val }
     default:
       return state;
   }
 }
+
+export default settingsReducer
