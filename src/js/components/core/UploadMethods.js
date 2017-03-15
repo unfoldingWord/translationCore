@@ -76,11 +76,11 @@ function sendPath(path, link, callback) {
                 let verifiedManifest = verifyChunks(path, oldManifest);
                 //ts-manifest is present, creating tc-manifest and initiate load
                 saveManifest(path, link, verifiedManifest, (err, newManifest) => {
-                  fs.unlink(Path.join(path, 'tc-manifest.json'), (err) =>{
-                    // delete the old 'tc-manifest.json' if it exists.
-                    if(err){
-                      manifestError(err.message);
-                    }
+                  // fs.unlink(Path.join(path, 'tc-manifest.json'), (err) =>{
+                  //   // delete the old 'tc-manifest.json' if it exists.
+                  //   if(err){
+                  //     manifestError(err.message);
+                  //   }
                   });
                   loadProjectThatHasManifest(path, callback, newManifest);
                 });
