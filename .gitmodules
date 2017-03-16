@@ -4,12 +4,6 @@
 [submodule "tC_apps/ScripturePane"]
 	path = tC_apps/ScripturePane
 	url = https://github.com/translationCoreApps/ScripturePane.git
-[submodule "tC_apps/CommentBox"]
-	path = tC_apps/CommentBox
-	url = https://github.com/translationCoreApps/comment_box.git
-[submodule "tC_apps/ProposedChanges"]
-	path = tC_apps/ProposedChanges
-	url = https://github.com/translationCoreApps/proposed_changes_module.git
 [submodule "tC_apps/TranslationHelps"]
 	path = tC_apps/TranslationHelps
 	url = https://github.com/translationCoreApps/translationHelps.git
