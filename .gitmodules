@@ -19,3 +19,6 @@
 [submodule "tC_apps/ToolsTester"]
 	path = tC_apps/ToolsTester
 	url = https://github.com/translationCoreApps/ToolsTester.git
+[submodule "tC_apps/VerseCheck"]
+	path = tC_apps/VerseCheck
+	url = https://github.com/translationCoreApps/VerseCheck.git
