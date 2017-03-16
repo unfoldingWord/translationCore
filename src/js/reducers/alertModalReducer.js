@@ -2,48 +2,37 @@ const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     visibility: false,
-    title: alertMessage['title'],
-    content: alertMessage['content'],
-    leftButtonText: alertMessage['leftButtonText'],
-    rightButtonText: alertMessage['rightButtonText'],
-    moreInfo: alertMessage['moreInfo'].toString(),
-    alertMessage: {},
-    response:null
+    title: null,
+    content: null,
+    leftButtonText: null,
+    rightButtonText: null,
+    moreInfo: null,
+    response: null,
+    callback: null,
+    moreInfoOpen: false
 };
 
 module.exports = (state = initialState, action) => {
     switch (action.type) {
+        case consts.SHOW_ALERT_MODAL:
+            return {
+                ...state,
+                title: action.title,
+                content: action.content,
+                leftButtonText: action.leftButtonText,
+                rightButtonText: action.rightButtonText,
+                moreInfo: action.moreInfo,
+                visibility: action.visibility,
+                callback: action.callback,
+            }
+            break;
+        case consts.TOGGLE_MORE_INFO:
+            return {
+                ...state,
+                moreInfoOpen: !state.moreInfoOpen
+            }
+            break;
         default:
             return state;
     }
 }
-
-
-
-            handleAlertOK: () => {
-                var response = this.state.alertModalProps.rightButtonText;
-                this.setState(merge({}, this.state, {
-                    switchCheckModalProps: {
-                        visibility: false,
-                        alertMessage: {}
-                    }
-                }), CoreActions.sendAlertResponse(response));
-                //CoreActions.sendAlertResponse will need to be refactored out eventually, may be one of the harder functions to fix
-            },
-
-                getStyleFromState: (value) => {
-                    if (value) {
-                        return {
-                            height: '30px',
-                            width: '60px',
-                            textAlign: 'center',
-                            verticalAlign: 'middle',
-                            padding: 0,
-                            left: '50%'
-                        }
-                    } else {
-                        return {
-                            display: 'none'
-                        }
-                    }
-                }

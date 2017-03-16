@@ -38,7 +38,7 @@ const CheckDataGrabber = require('../components/core/create_project/CheckDataGra
 const loadOnline = require('../components/core/LoadOnline');
 const RecentProjects = require('../components/core/RecentProjects');
 const Welcome = require('../components/core/welcome/welcome');
-const AlertModalContainer = require('../containers/core/AlertModalContainer');
+const AlertModalContainer = require('../containers/AlertModalContainer');
 const Access = require('../components/core/AccessProject.js');
 const api = window.ModuleApi;
 const ModuleWrapperContainer = require('../containers/ModuleWrapperContainer');
@@ -59,17 +59,10 @@ var Main = React.createClass({
     //initializing app settings
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
-    this.updateTools();
     this.props.dispatch(recentProjectActions.getProjectsFromFolder());
     //changing check, (group index, check index) ...one or the other or both
-    api.registerEventListener('changeGroupName', this.changeSubMenuItems);
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
-  },
-
-  componentWillUnmount() {
-    api.removeEventListener('changeCheckType', this.setCurrentToolNamespace);
-    api.removeEventListener('changeGroupName', this.changeSubMenuItems);
   },
 
   getInitialState() {

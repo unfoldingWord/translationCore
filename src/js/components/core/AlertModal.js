@@ -25,26 +25,27 @@ class AlertModal extends React.Component {
       position: 'relative',
       maxHeight: '60px'
     }
-
     return (
       <div>
         <Modal show={this.props.visibility}>
           <Modal.Footer style={{position:'fixed', top:-100, marginTop:200, right:60, borderTop:'none'}}>
-              <Alert bsStyle="danger" onDismiss={this.props.showAlert(false)} style={alertStyle}>
+              <Alert bsStyle="danger" onDismiss={()=>this.props.alertDismiss(null, this.props.callback)} style={alertStyle}>
                 <center>
                   <div style={alertDiv}>
                     <h3>{this.props.title}</h3>
                     <p>{this.props.content}</p>
-                    <Button bsStyle="danger" style={this.props.getStyleFromState(this.props.leftButtonText)} onClick={this.props.alertDismiss}>
+                    {this.props.leftButtonText ? <Button bsStyle="danger" style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.lefttButtonText, this.props.callback)}>
                       {this.props.leftButtonText}
-                    </Button>
-                    <Button style={this.props.getStyleFromState(this.props.rightButtonText)} onClick={this.props.handleAlertOK}>
+                    </Button> : null}
+
+                    {this.props.rightButtonText ? <Button style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.rightButtonText, this.props.callback)}>
                       {this.props.rightButtonText}
-                    </Button>
-                    <Button onClick={this.props.handleOpen}>
+                    </Button> : null}
+
+                    <Button onClick={this.props.toggleMoreInfo}>
                       More Info
                     </Button>
-                    <Panel collapsible expanded={this.props.open}>
+                    <Panel collapsible expanded={this.props.moreInfoOpen}>
                       {this.props.moreInfo}
                     </Panel>
                   </div>

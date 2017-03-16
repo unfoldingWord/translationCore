@@ -1,8 +1,6 @@
 const consts = require('./CoreActionConsts');
-const UploadMethods = require('../components/core/UploadMethods.js');
-const ModalActions = require('./ModalActions.js');
 
-module.exports.showAlert = (alertMessage) => {
+module.exports.showAlert = (alertMessage, callback) => {
     if (alertMessage) {
         return {
             type: consts.SHOW_ALERT_MODAL,
@@ -10,8 +8,9 @@ module.exports.showAlert = (alertMessage) => {
             content: alertMessage['content'],
             leftButtonText: alertMessage['leftButtonText'],
             rightButtonText: alertMessage['rightButtonText'],
-            moreInfo: alertMessage['moreInfo'].toString(),
-            visibility: true
+            moreInfo: alertMessage['moreInfo'] ? alertMessage['moreInfo'].toString() : null,
+            visibility: true,
+            callback: callback
         }
     } else {
         return {
@@ -21,20 +20,21 @@ module.exports.showAlert = (alertMessage) => {
             leftButtonText: null,
             rightButtonText: null,
             moreInfo: null,
-            visibility: false
+            visibility: false,
+            callback: null
         }
     }
 }
 
-module.exports.alertDismiss = () => {
-    
-    var response = this.state.alertModalProps.leftButtonText;
-    this.setState(merge({}, this.state, {
-        alertModalProps: {
-            visibility: false,
-            alertMessage: {}
-        }
-    }), CoreActions.sendAlertResponse(response));
-    //CoreActions.sendAlertResponse will need to be refactored out eventually, may be one of the harder functions to fix
-},
+module.exports.alertDismiss = (response, callback) => {
+    return ((dispatch) => {
+        if (callback) callback(response);
+        dispatch(this.showAlert(false))
+    })
+}
 
+module.exports.toggleMoreInfo = () => {
+    return {
+        type:consts.TOGGLE_MORE_INFO
+    }
+}
