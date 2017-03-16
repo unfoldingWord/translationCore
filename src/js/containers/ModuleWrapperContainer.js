@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SwitchCheck from '../components/core/SwitchCheck'
 import RecentProjectsContainer from './RecentProjectsContainer'
 import ToolsContainer from './ToolsContainer'
-import modalActions from '../actions/modalActions.js'
+import modalActions from '../actions/ModalActions.js'
 import ToolsActions from '../actions/ToolsActions.js'
 const api = window.ModuleApi;
 
