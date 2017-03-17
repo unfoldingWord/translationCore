@@ -43,11 +43,13 @@ class OnlineStatus extends React.Component {
 
   setOnline(fromButton) {
     this.props.changeOnlineStatus(true, false, fromButton);
+    //This designates if the call was actually from a button or not
     this.setState({online: true});
   }
 
   setOffline(fromButton) {
     this.props.changeOnlineStatus(false, false, fromButton);
+    //This designates if the call was actually from a button or not
     this.setState({online: false});
   }
 
