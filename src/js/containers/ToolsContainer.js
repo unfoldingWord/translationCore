@@ -20,7 +20,7 @@ function mapStateToProps(state) {
       state.loginReducer,
       state.settingsReducer,
       state.statusBarReducer,
-      state.loaderReducer,
+      state.loaderReducer
     );
 }
 
