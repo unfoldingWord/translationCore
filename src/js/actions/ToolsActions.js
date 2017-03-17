@@ -6,11 +6,14 @@ const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const modalActions = require('./ModalActions.js');
+const LoaderActions = require('./LoaderActions.js');
+const coreStoreActions = require('./CoreActionsRedux.js');
+
 
 
 
 module.exports.loadTool = function (folderName) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     /*this CheckDataGrabber function call will have to change in
     order for us to fully implement redux*/
     dispatch(modalActions.showModalContainer(false));
@@ -23,6 +26,8 @@ module.exports.loadTool = function (folderName) {
         });
         dispatch({ type: consts.SHOW_MODAL_CONTAINER, visible: false });
       }
+    }, (data, key)=>{
+      dispatch(LoaderActions.sendProgressForKey(key, data, getState().loaderReducer));
     });
   })
 }

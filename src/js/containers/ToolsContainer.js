@@ -20,7 +20,7 @@ function mapStateToProps(state) {
       state.loginReducer,
       state.settingsReducer,
       state.statusBarReducer,
-      state.loaderReducer
+      state.loaderReducer,
     );
 }
 
@@ -43,6 +43,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
+      },
+      changedCheckStatus: (groupIndex, checkIndex, checkStatus) => {
+        dispatch(CheckStoreActions.changedCheckStatus(groupIndex, checkIndex, checkStatus));
       }
     }
 }

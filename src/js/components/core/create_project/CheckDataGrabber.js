@@ -11,6 +11,8 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
+const CoreActionsRedux = require('../../.././actions/CoreActionsRedux');
+const LoaderActions = require('../../.././actions/LoaderActions');
 import { saveModule } from '../../../actions/LoaderActions'
 import { dispatch } from "../../../pages/root"
 
@@ -27,7 +29,7 @@ var CheckDataGrabber = {
    * @param {object} params - This is an object containing params that was gotten from CheckStore
    * and is passed to the FetchDatas
    */
-  fetchModules: function (checkArray, callback = () =>{}) {
+  fetchModules: function (checkArray, callback = () => { }, currentCheckNamespace, progressFunc) {
     try {
       fs.ensureDirSync(api.getDataFromCommon('saveLocation'));
       var params = api.getDataFromCommon('params');
@@ -35,10 +37,11 @@ var CheckDataGrabber = {
       this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
         if (!err) {
           if (checksThatNeedToBeFetched.length < 1) {
-            CoreActions.doneLoadingFetchData();
+            dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
           }
+          dispatch(LoaderActions.toggleLoader(true));
           for (let moduleObj of checksThatNeedToBeFetched) {
-            this.getDataFromOnline(moduleObj.name, moduleObj.location, params);
+            this.getDataFromOnline(moduleObj.name, moduleObj.location, params, currentCheckNamespace, progressFunc);
           }
           api.putDataInCommon('arrayOfChecks', checkArray);
           callback(null, true);
@@ -66,7 +69,7 @@ var CheckDataGrabber = {
           try {
             var viewObj = require(Path.join(module.location, 'View'));
             var container = false;
-          } catch(err) {
+          } catch (err) {
             console.error(err);
           }
         } finally {
@@ -76,7 +79,7 @@ var CheckDataGrabber = {
         if (module.location && !CheckStore.hasData(module.name)) {
           checksThatNeedToBeFetched.push(module);
         }
-        CoreStore.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length);
+        dispatch(LoaderActions.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length));
         this.totalModules = checksThatNeedToBeFetched.length;
       }
       callback(null, checksThatNeedToBeFetched);
@@ -93,17 +96,16 @@ var CheckDataGrabber = {
    * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
    * that module is located in
    */
-  loadModuleAndDependencies: function (moduleFolderName, callback = () => {}) {
+  loadModuleAndDependencies: function (moduleFolderName, callback = () => { }, progressFunc) {
     CoreActions.startLoading();
     var _this = this;
     var modulePath = Path.join(moduleFolderName, 'package.json');
     fs.readJson(modulePath, (error, dataObject) => {
       if (!error) {
-        CoreStore.setCurrentCheckCategory(dataObject.name);
         _this.saveModuleMenu(dataObject, moduleFolderName);
         _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
           if (!err) {
-            _this.fetchModules(checkArray, callback);
+            _this.fetchModules(checkArray, callback, dataObject.name, progressFunc);
           }
           else {
             callback(err, false);
@@ -162,7 +164,7 @@ var CheckDataGrabber = {
    * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure
    * if still needed
    */
-  onComplete: function (err, data) {
+  onComplete: function (currentCheckNamespace, err, data) {
     this.doneModules++;
     if (!err) {
       if (this.doneModules >= this.totalModules) {
@@ -174,11 +176,11 @@ var CheckDataGrabber = {
           git(path).init(function (err) {
             if (!err) {
               git(path).save('Initial TC Commit', path, function (err) {
-                CoreActions.doneLoadingFetchData();
+                dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
                 console.error = newError;
               });
             } else {
-              CoreActions.killLoading();
+              CoreActionsRedux.killLoading();
               api.createAlert({
                 title: 'Error Saving Data To Project',
                 content: 'There was an error with saving project data.',
@@ -201,21 +203,6 @@ var CheckDataGrabber = {
     }
     else {
       console.error(err);
-    }
-  },
-
-  /**
-   * @description - This sends a CoreAction that in turn updates the progress bar according
-   * to the name and progress of a single FetchData see {@link getDataFromCheck}
-   * @param {string} name - The name or 'namespace' of the module's FetchData that is updating
-   * their progress
-   * @param {integer} data - the quantifiable number of how far done a FetchData has fetched their
-   * appropriate data. Should be from 0-100, but no error checking to make it sure
-   */
-  Progress: function (name, data) {
-    CoreActions.sendProgressForKey({ progress: data, key: name });
-    if (data == 100) {
-      console.log(name + " finished loading.");
     }
   },
 
@@ -249,16 +236,14 @@ var CheckDataGrabber = {
    * @param {object} params - Object that gets passed to FetchData's, contains necessary
    * params for the FetchData's to load their data
    */
-  getDataFromOnline: function (name, path, params) {
+  getDataFromOnline: function (name, path, params, currentCheckNamespace, progressFunc) {
     var DataFetcher = require(Path.join(path, 'FetchData'));
     //call the FetchData function
     var _this = this;
     DataFetcher(
       params,
-      function (data) {
-        _this.Progress(name, data);
-      },
-      this.onComplete.bind(this)
+      (data) => progressFunc(data, name),
+      this.onComplete.bind(this, currentCheckNamespace)
     );
   }
 };
