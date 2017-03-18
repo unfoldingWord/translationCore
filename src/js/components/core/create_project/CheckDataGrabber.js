@@ -13,8 +13,9 @@ const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CoreActionsRedux = require('../../.././actions/CoreActionsRedux');
 const LoaderActions = require('../../.././actions/LoaderActions');
-import { saveModule } from '../../../actions/LoaderActions'
+import { saveModule } from '../../../actions/LoaderActions';
 import { dispatch } from "../../../pages/root"
+import consts from '../../../actions/CoreActionConsts';
 
 var CheckDataGrabber = {
   doneModules: 0,
@@ -37,7 +38,12 @@ var CheckDataGrabber = {
       this.saveModules(checkArray, (err, checksThatNeedToBeFetched) => {
         if (!err) {
           if (checksThatNeedToBeFetched.length < 1) {
-            dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
+            dispatch({
+              type: consts.DONE_LOADING,
+              doneLoading: true,
+              currentCheckNamespace: currentCheckNamespace
+            });
+            dispatch(CoreActionsRedux.setToolNamespace(currentCheckNamespace));
           }
           dispatch(LoaderActions.toggleLoader(true));
           for (let moduleObj of checksThatNeedToBeFetched) {
@@ -176,7 +182,12 @@ var CheckDataGrabber = {
           git(path).init(function (err) {
             if (!err) {
               git(path).save('Initial TC Commit', path, function (err) {
-                dispatch(CoreActionsRedux.loadModuleAndDependencies(currentCheckNamespace));
+                dispatch({
+                  type: consts.DONE_LOADING,
+                  doneLoading: true,
+                  currentCheckNamespace: currentCheckNamespace
+                });
+                dispatch(CoreActionsRedux.setToolNamespace(currentCheckNamespace));
                 console.error = newError;
               });
             } else {

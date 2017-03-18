@@ -99,28 +99,6 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
   })
 }
 
-module.exports.loadModuleAndDependencies = function (currentCheckNamespace) {
-  return ((dispatch) => {
-    var reports = [];
-    fs.readdir(PACKAGE_SUBMODULE_LOCATION, (err, modules) => {
-      for (var module of modules) {
-        try {
-          let aReportView = require(Path.join(PACKAGE_SUBMODULE_LOCATION, module, "ReportView.js"));
-          reports.push(aReportView);
-        } catch (e) {
-        }
-      }
-      dispatch({
-        type: consts.DONE_LOADING,
-        doneLoading: true,
-        reportViews: reports,
-        currentCheckNamespace: currentCheckNamespace
-      })
-      dispatch(this.setToolNamespace(currentCheckNamespace))
-    });
-  });
-}
-
 module.exports.changeSubMenuItems = function (groupName) {
   const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
   this.setState({

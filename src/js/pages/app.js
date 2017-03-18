@@ -241,9 +241,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     showMainView: (val) => {
       dispatch(CoreActionsRedux.showMainView(val));
     },
-    loadModuleAndDependencies: (namespace) => {
-      dispatch(CoreActionsRedux.loadModuleAndDependencies(namespace));
-    },
     progressFunc: (key, name) => {
       dispatch(LoaderActions.sendProgressForKey(key, name, this.props.loaderReducer));
     }
