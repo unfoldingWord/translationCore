@@ -84,13 +84,6 @@ module.exports = {
     });
   },
 
-  sendAlert: function(alertObj) {
-    Dispatcher.handleAction({
-      type: consts.ALERT_MODAL,
-      alert: alertObj
-    });
-  },
-
     sendNotificationToast: function(visible, toastParamsObj) {
       Dispatcher.handleAction({
         type: consts.SHOW_TOAST_PARAMS,
@@ -103,12 +96,6 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.ALERT_MODAL_RESPONSE,
       alertResponse: alertResponseObj
-    });
-  },
-
-  startLoading: function() {
-    Dispatcher.handleAction({
-      type: consts.START_LOADING
     });
   },
 

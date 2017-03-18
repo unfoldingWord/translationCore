@@ -4,19 +4,15 @@ const pathex = require('path-extra');
 const path = require('path-extra');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
 const modalActions = require('./ModalActions.js');
 const LoaderActions = require('./LoaderActions.js');
 const coreStoreActions = require('./CoreActionsRedux.js');
-
-
-
+const GetDataActions = require('./GetDataActions.js');
 
 module.exports.loadTool = function (folderName) {
   return ((dispatch, getState) => {
-    /*this CheckDataGrabber function call will have to change in
-    order for us to fully implement redux*/
     dispatch(modalActions.showModalContainer(false));
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
     CheckDataGrabber.loadModuleAndDependencies(folderName, (err, success) => {
       if (!err) {
         localStorage.setItem('lastCheckModule', folderName);

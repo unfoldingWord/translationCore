@@ -216,12 +216,6 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
-      case consts.START_LOADING:
-        this.doneLoading = false;
-        this.progressObject = [];
-        this.emitChange();
-      break;
-
       case consts.SEND_PROGRESS_FOR_KEY:
         var progressKey = action.progressRecieved;
         this.calculateProgress(progressKey);
