@@ -1,4 +1,4 @@
-const consts = require('../actions/CoreActionConsts');
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
     visibility: false,

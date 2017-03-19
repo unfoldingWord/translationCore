@@ -110,14 +110,6 @@ module.exports.changeSubMenuItems = function (groupName) {
 
   module.exports.setToolNamespace = function (currentCheckNamespace) {
     return ((dispatch, getState) => {
-      // const store = getState().checkStoreReducer;
-      // var groupName = store.groupName;
-      // var bookName = store.bookName;
-      // var currentGroupIndex = store.currentGroupIndex;
-      // var currentCheckIndex = store.currentCheckIndex;
-      // var groupObjects = store.groups;
-      // var subGroupObjects = store.subgroups;
-      //can be refactored when api.putDataInCheckStore is finished
       if (!currentCheckNamespace) return {
         type: "SET_TOOL_NAMESPACE"
       };

@@ -11,8 +11,6 @@ const CoreStore = require('../../stores/CoreStore.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 
 class AlertModal extends React.Component {
-    //CoreStore.removeChangeListener(this.props.alertMessage);
-
   render() {
     var alertStyle = {
       display:'tableCell',
@@ -35,11 +33,13 @@ class AlertModal extends React.Component {
                     <h3>{this.props.title}</h3>
                     <p>{this.props.content}</p>
                     
-                    {this.props.leftButtonText ? <Button bsStyle="danger" style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.lefttButtonText, this.props.callback)}>
+                    {this.props.leftButtonText ?
+                       <Button bsStyle="danger" style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.lefttButtonText, this.props.callback)}>
                       {this.props.leftButtonText}
                     </Button> : null}
 
-                    {this.props.rightButtonText ? <Button style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.rightButtonText, this.props.callback)}>
+                    {this.props.rightButtonText ?
+                       <Button style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.rightButtonText, this.props.callback)}>
                       {this.props.rightButtonText}
                     </Button> : null}
 

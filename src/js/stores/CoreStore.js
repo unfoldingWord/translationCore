@@ -201,11 +201,6 @@ class CoreStore extends EventEmitter {
         this.emitChange();
       break;
 
-      // case consts.CREATE_PROJECT:
-      //   this.projectModalVisibility = action.createProjectModal;
-      //   this.emitChange();
-      // break;
-
       case consts.CHANGE_CREATE_PROJECT_TEXT:
         this.projectText = action.modalValue;
         this.emitChange();
@@ -232,27 +227,6 @@ class CoreStore extends EventEmitter {
         this.modProgressView = action.view;
         this.emitChange();
       break;
-
-      // case consts.DONE_LOADING:
-      //   this.doneLoading = true;
-      //   this.modProgressView = true;
-      //   this.progressKeyObj = null;
-      //   this.loaderModalVisibility = false;
-      //   CheckStore.emitEvent('changeCheckType', {currentCheckNamespace: this.currentCheckNamespace});
-      //   var reports = [];
-      //   let modulesFolder = PACKAGE_SUBMODULE_LOCATION;
-      //   fs.readdir(modulesFolder, function(err, modules){
-      //   for (var module of modules) {
-      //     try {
-      //       let aReportView = require(path.join(modulesFolder, module, "ReportView.js"));
-      //       reports.push(aReportView);
-      //     } catch (e) {
-      //     }
-      //   }
-      //   CheckStore.putInCommon("reportViews", reports);
-      //   });
-      //   this.emitChange();
-      // break;
 
       case consts.NEW_PROJECT:
         this.doneLoading = false;

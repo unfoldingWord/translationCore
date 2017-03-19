@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import AlertModalActions from '../actions/AlertModalActions.js'
-const AlertModal = require('../components/core/AlertModal.js');
+import AlertModal from '../components/core/AlertModal.js';
 
 
 class AlertModalContainer extends React.Component {

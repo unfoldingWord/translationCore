@@ -32,14 +32,14 @@ module.exports.update = function (show, progess) {
     if (!show) {
       setTimeout(() => {
         dispatch({
-          type: "UPDATE_LOADER",
+          type: consts.UPDATE_LOADER,
           reloadContent: <h3>Taking too long? <a onClick={this.killLoading}>Cancel loading</a></h3>
         });
       }, 10000);
     }
 
     dispatch({
-      type: "UPDATE_LOADER",
+      type: consts.UPDATE_LOADER,
       progress: progess,
       reloadContent: null
     })
@@ -56,7 +56,7 @@ module.exports.sendProgressForKey = function (name, progress, store) {
     currentProgress += progressObject[key];
   }
   return {
-    type: "UPDATE_PROGRESS",
+    type: consts.UPDATE_PROGRESS,
     progress: currentProgress / fetchDatas,
     progressObject:progressObject
   }
@@ -65,7 +65,7 @@ module.exports.sendProgressForKey = function (name, progress, store) {
 
 module.exports.updateNumberOfFetchDatas = function (fetchDatas) {
   return {
-    type: "FETCH_DATA_NUMBER",
+    type: consts.FETCH_DATA_NUMBER,
     fetchDatas: fetchDatas
   }
 }
