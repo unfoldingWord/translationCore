@@ -1,6 +1,6 @@
  /**
- * @description this file holds all methods that handle saving/persisting data in the file system
- *  add your methods as need and then import them into localstorage.js
+ * @description this file holds all methods that handle saving/persisting data in the
+ *  file system add your methods as need and then import them into localstorage.js
  */
 
 import fs from 'fs-extra'
