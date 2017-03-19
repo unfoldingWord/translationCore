@@ -16,7 +16,8 @@ import statusBarReducer from './statusBarReducer'
 import loaderReducer from './loaderReducer'
 import notificationsReducer from './notificationsReducer'
 import popoverReducer from './popoverReducer'
-
+import resourcesReducer from './resourcesReducer'
+import projectDetailsReducer from './projectDetailsReducer'
 //combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -34,7 +35,9 @@ const rootReducers = combineReducers({
   statusBarReducer,
   loaderReducer,
   notificationsReducer,
-  popoverReducer
+  popoverReducer,
+  resourcesReducer,
+  projectDetailsReducer
 })
 
 export default rootReducers

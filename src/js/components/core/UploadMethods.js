@@ -16,6 +16,8 @@ const pathex = require('path-extra');
 const defaultSave = Path.join(pathex.homedir(), 'translationCore');
 const usfm = require('usfm-parser');
 const ImportUsfm = require('./Usfm/ImportUSFM.js');
+import { addNewBible } from '../../actions/ResourcesActions.js'
+import { dispatch } from "../../pages/root"
 
 function clearPreviousData() {
   CheckStore.WIPE_ALL_DATA();
@@ -127,6 +129,8 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
     api.putDataInCommon('params', params);
     checkIfUSFMProject(path, function (targetLanguage) {
       if (targetLanguage) {
+        dispatch(addNewBible('targetLanguage', targetLanguage));
+        //TODO: remove api call once implementation is ready
         api.putDataInCommon('targetLanguage', targetLanguage);
       }
       try {
@@ -213,6 +217,8 @@ function saveTargetLangeInAPI(parsedUSFM) {
       targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
     }
   }
+  dispatch(addNewBible('targetLanguage', targetLanguage));
+  //TODO: remove api call once implementation is ready
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
 }

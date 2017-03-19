@@ -3,19 +3,19 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const CoreActions = require('../../actions/CoreActions.js');
-const CoreActionsRedux = require('../../actions/CoreActionsRedux.js');
-const CoreStore = require('../../stores/CoreStore.js');
-const git = require('./GitApi.js');
 const api = window.ModuleApi;
-const sync = require('./SideBar/GitSync.js');
-const exportUsfm = require('./Usfm/ExportUSFM');
-const Upload = require('./UploadMethods');
-const Path = require('path');
-const fs = require(window.__base + 'node_modules/fs-extra');
-const SettingsActions = require('../../actions/SettingsActions.js');
+import CoreActions from '../../actions/CoreActions.js'
+import CoreActionsRedux from '../../actions/CoreActionsRedux.js'
+import CoreStore from '../../stores/CoreStore.js'
+import git from './GitApi.js'
+import sync from './SideBar/GitSync.js'
+import exportUsfm from './Usfm/ExportUSFM'
+import Upload from './UploadMethods'
+import Path from 'path'
+import SettingsActions from '../../actions/SettingsActions.js'
 import { showNotification } from '../../actions/NotificationActions.js'
-const dispatch = require("../../pages/root").dispatch;
+import { dispatch } from "../../pages/root"
+const fs = require(window.__base + 'node_modules/fs-extra');
 
 var template = [
   {

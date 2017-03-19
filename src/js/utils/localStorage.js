@@ -1,14 +1,14 @@
 import fs from 'fs-extra'
+import path from 'path'
 import pathex from 'path-extra'
-//translationCore PARENT directory
-const PARENT = pathex.datadir('translationCore')
-//settings.json directory 
-const settingsDirectory = pathex.join(PARENT, 'settings.json');
+import { loadSettings } from './loadMethods'
+import { saveSettings, saveResources } from './saveMethods'
+
 
 export const loadState = () => {
   try {
     const serializedState = {
-      settingsReducer: loadSettings(),
+      settingsReducer: loadSettings()
     }
     if(serializedState === null){
       //returning undefined to allow the reducers to initialize the app state
@@ -25,20 +25,12 @@ export const loadState = () => {
 export const saveState = (state) => {
   try {
     if(state.settingsReducer){
-      fs.outputJson(settingsDirectory, state.settingsReducer);
+      saveSettings(state)
+    }
+    if(state.resourcesReducer){
+      saveResources(state)
     }
   } catch(err) {
     console.warn(err);
   }
-};
-
-//Helpers TODO: will probably move this function helpers to a separate file.
-const loadSettings = () => {
-  let settings = undefined;
-  try {
-    settings = fs.readJsonSync(settingsDirectory)
-  } catch (err) {
-    console.warn(err)
-  }
-  return settings
 };

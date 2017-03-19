@@ -12,6 +12,7 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 import { saveModule } from '../../../actions/LoaderActions'
+import { addNewResource, addNewBible } from '../../../actions/ResourcesActions'
 import { dispatch } from "../../../pages/root"
 
 var CheckDataGrabber = {
@@ -258,7 +259,15 @@ var CheckDataGrabber = {
       function (data) {
         _this.Progress(name, data);
       },
-      this.onComplete.bind(this)
+      this.onComplete.bind(this),
+      //pasing down actions to tools/modules fethdatas
+      function (bibleName, bibleData) {
+        dispatch(addNewBible(bibleName, bibleData));
+      },
+      //pasing down actions to tools/modules fethdatas
+      function (resourceName, resourceData) {
+        dispatch(addNewResource(resourceName, resourceData));
+      }
     );
   }
 };
