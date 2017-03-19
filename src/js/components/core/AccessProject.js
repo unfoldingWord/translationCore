@@ -26,7 +26,6 @@ var Access = {
    * @param {function} callback - A fucntion that gets called after relevant data is in checkstore
    */
   loadFromFilePath: function (folderpath, callback) {
-    console.log('hello2');
     if (!folderpath) {
       this.loadingProjectError('Must specify location');
       if (callback) {
@@ -80,8 +79,6 @@ var Access = {
    * the checkData folder is loaded
    */
   loadCheckData: function (checkDataFolderPath, folderpath, callback) {
-    console.log('hello3');
-
     if (!checkDataFolderPath || !folderpath) {
       this.loadingProjectError('No checkdata or save path specified');
       if (callback) callback('No checkdata or save path specified');
@@ -108,7 +105,6 @@ var Access = {
   },
 
   putModulesInCheckstore: function (arrayOfChecks, path, callback) {
-    console.log('hello4');
     try {
       var files = fs.readdirSync(path);
       var index = 0;
@@ -128,8 +124,6 @@ var Access = {
   },
 
   loadingProjectError: function (content, callback = () => { }) {
-    console.log('hello5');
-
     api.createAlert(
       {
         title: 'Error Setting Up Project',
@@ -154,7 +148,6 @@ var Access = {
  * the checkData folder is loaded
  */
   getArrayOfChecks(pathToCommon, callback) {
-    console.log('hello1');
     const _this = this;
     fs.readJson(pathToCommon, (err, common) => {
       for (var element in common) {
