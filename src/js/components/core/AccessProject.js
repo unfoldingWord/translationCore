@@ -13,7 +13,7 @@ const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const SettingsActions = require('../../actions/SettingsActions.js');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
-import { setSaveLocation } from '../../actions/projectInfoActions'
+import { setSaveLocation } from '../../actions/projectDetailsActions'
 import { dispatch } from "../../pages/root"
 var checkList = [];
 
