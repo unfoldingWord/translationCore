@@ -5,19 +5,17 @@ const {dialog} = require('electron').remote;
 const usfm = require('usfm-parser');
 const pathex = require('path-extra');
 const api = window.ModuleApi;
-
 const ManifestGenerator = require('../create_project/ProjectManifest.js');
-
 const CoreStore = require('../../../stores/CoreStore.js');
 const CheckStore = require('../../../stores/CheckStore');
-
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 var Upload = require('../UploadMethods.js');
-
+import { addNewBible } from '../../../actions/ResourcesActions.js'
+import { dispatch } from "../../../pages/root"
 const defaultSave = path.join(pathex.homedir(), 'translationCore');
 
 /**
@@ -36,6 +34,8 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
     Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
         Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
+        dispatch(addNewBible('targetLanguage', targetLanguage));
+        //TODO: remove api call once implementation is ready
         ModuleApi.putDataInCommon('targetLanguage', targetLanguage);
       } else if (!tcManifest) {
         var defaultManifest = {
@@ -128,6 +128,8 @@ function saveTargetLangeInAPI(parsedUSFM) {
       }
     }
   }
+  dispatch(addNewBible('targetLanguage', targetLanguage));
+  //TODO: remove api call once implementation is ready
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
 }
