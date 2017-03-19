@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SwitchCheck from '../components/core/SwitchCheck'
 import RecentProjectsContainer from './RecentProjectsContainer'
 import ToolsContainer from './ToolsContainer'
-import modalActions from '../actions/ModalActions.js'
+import modalActions from '../actions/modalActions.js'
 import ToolsActions from '../actions/ToolsActions.js'
 const api = window.ModuleApi;
 
@@ -43,7 +43,7 @@ function mapStateToProps(state) {
       state.toolsReducer,
       state.settingsReducer,
       state.checkStoreReducer,
-      state.loaderReducer
+      state.loaderReducer,
     );
 }
 

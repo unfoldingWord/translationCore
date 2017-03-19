@@ -8,7 +8,6 @@ const ReactDOM = require('react-dom');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
-const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
@@ -16,6 +15,7 @@ const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.j
 const BooksOfBible = require('./components/core/BooksOfBible');
 const CheckModule = require('./components/core/CheckModule');
 const MENU_WARN = 'Attempting to save another menu over namespace: ';
+const AlertModalActions = require('./actions/AlertModalActions.js');
 
 class ModuleApi {
   constructor() {
@@ -220,16 +220,6 @@ class ModuleApi {
     });
   }
 
-  initializeCheckStore(nameSpace, params, groups) {
-    if (!nameSpace || !params || !groups) {
-      return 'Missing one or more parameters'
-    }
-    this.putDataInCheckStore(nameSpace, 'groups', groups);
-    this.putDataInCheckStore(nameSpace, 'currentCheckIndex', 0);
-    this.putDataInCheckStore(nameSpace, 'currentGroupIndex', 0);
-    this.putDataInCheckStore(nameSpace, 'book', this.convertToFullBookName(params.bookAbbr));
-  }
-
   getLoggedInUser() {
     let user = CoreStore.getLoggedInUser();
     if (!user) {
@@ -239,19 +229,12 @@ class ModuleApi {
     let userName = user.username;
     return { fullName, userName };
   }
-
-  clearAlertCallback() {
-    CoreStore.alertObj = null;
-  }
   /**
   * @description - Displays alert and returns user response
   */
   createAlert(obj, callback = () => { }) {
-    Alert.startListener(callback);
-    CoreActions.sendAlert({
-      alertObj: obj,
-      alertCallback: callback
-    });
+    const dispatch = require('./pages/root.js').dispatch;
+    dispatch(AlertModalActions.showAlert(obj, callback));
   }
 
   updateManifest(field, data, callback = () => { }) {

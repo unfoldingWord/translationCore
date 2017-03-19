@@ -37,7 +37,8 @@ module.exports.getProjectsFromFolder = function () {
 
 module.exports.startLoadingNewProject = function (lastCheckModule) {
     return ((dispatch, getState) => {
-        if (Upload.checkIfValidBetaProject(api.getDataFromCommon('tcManifest')) || getState().settingsReducer.currentSettings.developerMode) {
+        const currentState = getState();
+        if (Upload.checkIfValidBetaProject(api.getDataFromCommon('tcManifest')) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             if (!lastCheckModule) dispatch(showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
