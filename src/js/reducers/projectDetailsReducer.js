@@ -16,4 +16,4 @@ const projectDetailsReducer = (state = initialState, action) => {
     }
 }
 
-export default projectManifestReducer
+export default projectDetailsReducer
