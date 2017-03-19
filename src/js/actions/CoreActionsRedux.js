@@ -121,40 +121,56 @@ module.exports.changeSubMenuItems = function (groupName) {
       if (!currentCheckNamespace) return {
         type: "SET_TOOL_NAMESPACE"
       };
+      //if for some reason currentCheckNamespace is undefined it shouldn't continue
       const store = api.getDataFromCheckStore(currentCheckNamespace);
       var bookName = store.book;
       var currentGroupIndex = store.currentGroupIndex;
       var currentCheckIndex = store.currentCheckIndex;
       var groupObjects = store.groups;
       var groupName = groupObjects[currentGroupIndex].group;
+      var currentCheck;
+      var subGroupObjects;
+
+      //getting the data required to initialize a new tool being loaded
 
       if (currentCheckNamespace === ' ') {
         dispatch(this.changeModuleView('recent'));
         dispatch(CheckStoreActions.setBookName(null));
         dispatch(CheckStoreActions.setCheckNameSpace(null));
-        return;
+        return {
+          type: "SET_TOOL_NAMESPACE"
+        };
       }
-      dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
+      //if currentCheckNamespace is ' ' that means we are showing the recent projects and not a tool
 
-      for (var el in groupObjects) {
-        groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
-      }
-      if (!groupObjects || !groupObjects[currentGroupIndex]) currentGroupIndex = 0;
+      dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
+      //populating the checkstore field for namespace
+
+      if (!groupObjects[currentGroupIndex]) currentGroupIndex = 0;
+      this.setUpGroupObjects(groupObjects);
+
       if (!subGroupObjects || !subGroupObjects[currentCheckIndex]) currentCheckIndex = 0;
-      var subGroupObjects = null;
-      var currentCheck = null;
+
       try {
         subGroupObjects = groupObjects[currentGroupIndex]['checks'];
-        currentCheck = subGroupObjects[currentCheckIndex]
+        currentCheck = subGroupObjects[currentCheckIndex];
       } catch (e) {
         console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
       }
+
       dispatch(CheckStoreActions.setBookName(bookName));
+      //populating the checkstore field for bookName
+
       dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
+      //populating the checkstore field for groupobjects
+
       dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
+      //populating the checkstore field for namespace
+
       dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
-      //We are going to have to change the way we are handling the isCurrentItem, it does not need to be
-      //attached to every menu/submenuitem
+      //populating the checkstore field for the currentCheck, a tool may have a
+      //prior checkindex and group index
+
       dispatch({
         type: "SET_TOOL_NAMESPACE",
         currentGroupIndex: currentGroupIndex || 0,
@@ -166,10 +182,18 @@ module.exports.changeSubMenuItems = function (groupName) {
         currentBookName: bookName,
       });
       dispatch(ToolsActions.getToolsMetadatas());
-      //dispatch(this.showMainView(true));
+
       dispatch(this.changeModuleView('main'));
+      //updating the current view of the app
     })
   }
+
+module.exports.setUpGroupObjects = function (groupObjects) {
+  for (var el in groupObjects) {
+    groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
+  }
+
+}
 
 
 module.exports.updateTools = function (namespace) {
