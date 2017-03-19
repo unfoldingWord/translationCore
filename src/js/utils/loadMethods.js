@@ -1,3 +1,8 @@
+ /**
+  * @description this file holds all methods that handle preloading data into the
+  *  store add your methods as needed and then import them into localstorage.js to
+  *  be used with the loadState method.
+  */
 import fs from 'fs-extra'
 import pathex from 'path-extra'
 //consts declaration
