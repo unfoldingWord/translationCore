@@ -4,7 +4,7 @@ const initialState = {
     projectSaveLocation: ''
 };
 
-const projectManifestReducer = (state = initialState, action) => {
+const projectDetailsReducer = (state = initialState, action) => {
     switch (action.type) {
       case consts.SET_SAVE_PATH_LOCATION:
         return {
