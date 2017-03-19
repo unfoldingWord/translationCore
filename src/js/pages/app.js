@@ -20,8 +20,6 @@ const defaultSave = path.join(path.homedir(), 'translationCore');
 const { shell } = require('electron');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const KonamiContainer = require("../containers/KonamiContainer.js");
-
-const merge = require('lodash.merge');
 const StatusBarContainer = require('../containers/StatusBarContainer');
 const SideBarContainer = require('../containers/SideBarContainer');
 const Gogs = require('../components/core/login/GogsApi')();
@@ -76,13 +74,15 @@ var Main = React.createClass({
       });
     var tutorialState = api.getSettings('tutorialView');
     if (tutorialState === 'show' || tutorialState === null) {
-      return merge({}, this.state, {
+      return {
+        ...this.state,
         firstTime: true
-      })
+      }
     } else {
-      return merge({}, this.state, {
+      return {
+        ...this.state,
         firstTime: false
-      })
+      }
     }
   },
 
@@ -199,7 +199,8 @@ var Main = React.createClass({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return merge({}, { dispatch: dispatch }, {
+  return {
+    dispatch: dispatch,
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
     },
@@ -244,7 +245,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     progressFunc: (key, name) => {
       dispatch(LoaderActions.sendProgressForKey(key, name, this.props.loaderReducer));
     }
-  });
+  };
 }
 
 function mapStateToProps(state) {
