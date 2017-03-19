@@ -43,7 +43,7 @@ function mapStateToProps(state) {
       state.toolsReducer,
       state.settingsReducer,
       state.checkStoreReducer,
-      state.loaderReducer
+      state.loaderReducer,
     );
 }
 

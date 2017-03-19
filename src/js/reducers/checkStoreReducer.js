@@ -3,10 +3,12 @@ const initialState = {
   book: null,
   bookAbbr: null,
   groups: null,
+  subgroups:null,
   currentCheck: null,
   currentGroupIndex: null,
   currentCheckIndex: null,
-  currentCheckNameSpace:null
+  currentCheckNameSpace: null,
+  groupName: null,
 };
 
 module.exports = (state = initialState, action) => {
@@ -46,7 +48,7 @@ module.exports = (state = initialState, action) => {
         currentCheckIndex: action.currentCheckIndex
       }
     case "UPDATE_NAMESPACE":
-      return { ...state, currentCheckNameSpace:action.currentCheckNameSpace }
+      return { ...state, currentCheckNameSpace: action.currentCheckNameSpace }
     default:
       return state;
   }
