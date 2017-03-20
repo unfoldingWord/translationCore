@@ -11,7 +11,7 @@ export const saveSettings = (state) => {
 }
 
 export const saveResources = (state) => {
-  const PROJECT_SAVE_LOCATION = state.projectInfoReducer.projectSaveLocation;
+  const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
   let biblesObject = state.resourcesReducer.bibles;
   let resourcesObject = state.resourcesReducer.resources;
   for(var keyName in biblesObject){
