@@ -65,18 +65,6 @@ module.exports = {
     });
   },
 
-  doneLoadingFetchData: function() {
-    Dispatcher.handleAction({
-      type: consts.DONE_LOADING
-    });
-  },
-
-  killLoading: function() {
-    Dispatcher.handleAction({
-      type: consts.KILL_LOADING
-    });
-  },
-
   newProject: function(){
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,

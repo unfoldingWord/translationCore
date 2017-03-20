@@ -18,6 +18,7 @@ import notificationsReducer from './notificationsReducer'
 import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
 import projectDetailsReducer from './projectDetailsReducer'
+import alertModalReducer from './alertModalReducer'
 //combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -38,6 +39,7 @@ const rootReducers = combineReducers({
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer
+  alertModalReducer
 })
 
 export default rootReducers
