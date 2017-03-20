@@ -36,7 +36,7 @@ var Access = {
     let checkDataPresent;
     var _this = this;
     var fileObj = {};
-    var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
+    var manifestLocation = Path.join(folderpath, 'manifest.json');
     try {
       fs.readdir(folderpath, function (err, files) {
         if (err) {

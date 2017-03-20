@@ -33,7 +33,7 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction, api.getDataFromCommon('language'));
-    Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
+    Upload.loadFile(saveLocation, 'manifest.json', (err, tcManifest) => {
       if (tcManifest) {
         Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
         ModuleApi.putDataInCommon('targetLanguage', targetLanguage);

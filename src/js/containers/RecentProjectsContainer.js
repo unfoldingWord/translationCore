@@ -31,7 +31,7 @@ class RecentProjectsContainer extends React.Component {
             var projectPath = path.join(DEFAULT_SAVE, projectPaths[project]);
             var projectName = projectPaths[project];
             if (projectName === '.DS_Store' || projectName === '.git') continue;
-            var manifestLocation = path.join(projectPath, 'tc-manifest.json');
+            var manifestLocation = path.join(projectPath, 'manifest.json');
             var manifest = {};
             try {
                 manifest = require(manifestLocation);
