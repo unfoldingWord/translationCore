@@ -11,13 +11,8 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-<<<<<<< HEAD
-import { saveModule } from '../../../actions/LoaderActions'
-import { addNewResource, addNewBible } from '../../../actions/ResourcesActions'
-=======
 import { saveModule } from '../../../actions/LoaderActions';
 import { addNewResource, addNewBible } from '../../../actions/ResourcesActions';
->>>>>>> 544e5a244d9c42a74c60b0511a79a6268e10586e
 import CoreActionsRedux from '../../.././actions/CoreActionsRedux';
 import LoaderActions from '../../.././actions/LoaderActions';
 import { dispatch } from "../../../pages/root";
