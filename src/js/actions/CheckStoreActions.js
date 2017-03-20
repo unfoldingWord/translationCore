@@ -1,11 +1,7 @@
 const api = window.ModuleApi;
-<<<<<<< HEAD
 import BooksOfBible from '../components/core/BooksOfBible'
-=======
 const CoreStore = require('../stores/CoreStore.js');
 const CoreActionsRedux = require('./CoreActionsRedux.js');
-
->>>>>>> cb65b1508eb9e7c672b638a01334487d58364b3b
 
 
 module.exports.setBookName = function (bookName) {

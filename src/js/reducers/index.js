@@ -38,7 +38,11 @@ const rootReducers = combineReducers({
   notificationsReducer,
   popoverReducer,
   resourcesReducer,
+<<<<<<< HEAD
   projectDetailsReducer
+=======
+  projectDetailsReducer,
+>>>>>>> 544e5a244d9c42a74c60b0511a79a6268e10586e
   alertModalReducer
 })
 
