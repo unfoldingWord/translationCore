@@ -16,6 +16,7 @@ import statusBarReducer from './statusBarReducer'
 import loaderReducer from './loaderReducer'
 import notificationsReducer from './notificationsReducer'
 import popoverReducer from './popoverReducer'
+import alertModalReducer from './alertModalReducer'
 
 //combining reducers
 const rootReducers = combineReducers({
@@ -34,7 +35,8 @@ const rootReducers = combineReducers({
   statusBarReducer,
   loaderReducer,
   notificationsReducer,
-  popoverReducer
+  popoverReducer,
+  alertModalReducer
 })
 
 export default rootReducers
