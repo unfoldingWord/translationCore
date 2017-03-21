@@ -5,6 +5,7 @@ import RecentProjectsContainer from './RecentProjectsContainer'
 import ToolsContainer from './ToolsContainer'
 import { selectModalTab } from '../actions/ModalActions.js'
 import { loadTool } from '../actions/ToolsActions.js'
+//const declarations
 const api = window.ModuleApi;
 
 class ModuleWrapperContainer extends React.Component {
