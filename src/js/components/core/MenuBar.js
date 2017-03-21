@@ -10,7 +10,7 @@ import CoreStore from '../../stores/CoreStore.js'
 import git from './GitApi.js'
 import sync from './SideBar/GitSync.js'
 import exportUsfm from './Usfm/ExportUSFM'
-import Upload from './UploadMethods'
+import {clearPreviousData} from './UploadMethods'
 import Path from 'path'
 import SettingsActions from '../../actions/SettingsActions.js'
 import { showNotification } from '../../actions/NotificationActions.js'
@@ -24,7 +24,7 @@ var template = [
       {
         label: 'Close Project',
         click: function () {
-          Upload.clearPreviousData();
+          clearPreviousData();
           CoreStore.currentCheckNamespace = ' ';
           CoreActionsRedux.killLoading();
           api.emitEvent('changeCheckType', { currentCheckNamespace: ' ' });
