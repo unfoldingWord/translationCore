@@ -18,3 +18,30 @@ const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources')
 export const saveSettings = (state) => {
   fs.outputJson(SETTINGS_DIRECTORY, state.settingsReducer);
 }
+
+export const saveResources = (state) => {
+  const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+  let biblesObject = state.resourcesReducer.bibles;
+  let resourcesObject = state.resourcesReducer.resources;
+  for(var keyName in biblesObject){
+    let bibleVersion = keyName + '.json';
+    let savePath = pathex.join(
+      PROJECT_SAVE_LOCATION,
+      RESOURCES_DATA_DIR,
+      'bibles',
+      bibleVersion
+    )
+    fs.outputJson(savePath, biblesObject[keyName])
+  }
+  for(var resources in resourcesObject){
+    for(var file in resourcesObject[resources]){
+      let savePath = pathex.join(
+        PROJECT_SAVE_LOCATION,
+        RESOURCES_DATA_DIR,
+        resources,
+        file
+      )
+      fs.outputJson(savePath, resourcesObject[resources][file])
+    }
+  }
+}

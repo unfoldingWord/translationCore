@@ -41,7 +41,6 @@ let api = window.ModuleApi;
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import CoreStore from '../stores/CoreStore.js';
 import PopoverContainer from '../containers/PopoverContainer';
-import Upload from '../components/core/UploadMethods.js';
 import ModalContainer from '../containers/ModalContainer.js';
 import ToolsActions from '../actions/ToolsActions.js';
 import CheckStoreActions from '../actions/CheckStoreActions.js';

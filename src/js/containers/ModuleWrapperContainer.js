@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import SwitchCheck from '../components/core/SwitchCheck'
 import RecentProjectsContainer from './RecentProjectsContainer'
 import ToolsContainer from './ToolsContainer'
-import modalActions from '../actions/modalActions.js'
-import ToolsActions from '../actions/ToolsActions.js'
+import { selectModalTab } from '../actions/ModalActions.js'
+import { loadTool } from '../actions/ToolsActions.js'
 const api = window.ModuleApi;
 
 class ModuleWrapperContainer extends React.Component {
@@ -50,10 +50,10 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       showLoad: () => {
-        dispatch(modalActions.selectModalTab(2))
+        dispatch(selectModalTab(2))
       },
       handleLoadTool: (toolFolderPath) => {
-        dispatch(ToolsActions.loadTool(toolFolderPath));
+        dispatch(loadTool(toolFolderPath));
       }
     }
 }

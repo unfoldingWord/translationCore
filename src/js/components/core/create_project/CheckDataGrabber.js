@@ -11,10 +11,11 @@ const pathex = require('path-extra');
 const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const CoreActionsRedux = require('../../.././actions/CoreActionsRedux');
-const LoaderActions = require('../../.././actions/LoaderActions');
 import { saveModule } from '../../../actions/LoaderActions';
-import { dispatch } from "../../../pages/root"
+import { addNewResource, addNewBible } from '../../../actions/ResourcesActions';
+import CoreActionsRedux from '../../.././actions/CoreActionsRedux';
+import LoaderActions from '../../.././actions/LoaderActions';
+import { dispatch } from "../../../pages/root";
 import consts from '../../../actions/CoreActionConsts';
 
 var CheckDataGrabber = {
@@ -254,7 +255,15 @@ var CheckDataGrabber = {
     DataFetcher(
       params,
       (data) => progressFunc(data, name),
-      this.onComplete.bind(this, currentCheckNamespace)
+      this.onComplete.bind(this, currentCheckNamespace),
+      //pasing down actions to tools/modules fethdatas
+      function (bibleName, bibleData) {
+        dispatch(addNewBible(bibleName, bibleData));
+      },
+      //pasing down actions to tools/modules fethdatas
+      function (resourceName, resourceData) {
+        dispatch(addNewResource(resourceName, resourceData));
+      }
     );
   }
 };

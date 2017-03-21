@@ -13,6 +13,8 @@ const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const CheckDataGrabber = require('./create_project/CheckDataGrabber.js');
 const SettingsActions = require('../../actions/SettingsActions.js');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
+import { setSaveLocation } from '../../actions/projectDetailsActions'
+import { dispatch } from "../../pages/root"
 var checkList = [];
 
 var Access = {
@@ -38,6 +40,7 @@ var Access = {
     var fileObj = {};
     var manifestLocation = Path.join(folderpath, 'tc-manifest.json');
     try {
+      dispatch(setSaveLocation(folderpath));
       fs.readdir(folderpath, function (err, files) {
         if (err) {
           this.loadingProjectError(err.message);
@@ -86,6 +89,7 @@ var Access = {
       if (!error) {
         _this.getArrayOfChecks(Path.join(checkDataFolderPath, "common.tc"), (arrayOfChecks) => {
           _this.putModulesInCheckstore(arrayOfChecks, checkDataFolderPath, () => {
+            dispatch(setSaveLocation(folderpath));
             api.putDataInCommon('saveLocation', folderpath);
             localStorage.setItem('lastProject', folderpath);
             if (callback) {

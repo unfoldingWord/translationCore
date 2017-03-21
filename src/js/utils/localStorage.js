@@ -1,5 +1,8 @@
+import fs from 'fs-extra'
+import path from 'path'
+import pathex from 'path-extra'
 import { loadSettings } from './loadMethods'
-import { saveSettings } from './saveMethods'
+import { saveSettings, saveResources } from './saveMethods'
 
 /**
  * @description loads state needed to set up reducers with preloaded data
@@ -32,6 +35,9 @@ export const saveState = (state) => {
   try {
     if(state.settingsReducer){
       saveSettings(state)
+    }
+    if(state.resourcesReducer){
+      saveResources(state)
     }
   } catch(err) {
     console.warn(err);

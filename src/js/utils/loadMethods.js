@@ -10,6 +10,7 @@ const PARENT = path.datadir('translationCore')
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json')
 const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources')
 
+
 export const loadSettings = () => {
   let settings = undefined;
   try {
