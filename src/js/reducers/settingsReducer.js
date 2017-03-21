@@ -1,10 +1,14 @@
-const consts = require('../actions/CoreActionConsts');
+import consts from '../actions/CoreActionConsts'
 
 const initialState = {
-  currentSettings: {},
+  currentSettings: {
+    showTutorial: false,
+    textSelect: 'drag',
+    developerMode: false
+  }
 };
 
-module.exports = (state = initialState, action) => {
+const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
       return { ...state, currentSettings: action.val }
@@ -12,3 +16,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 }
+
+export default settingsReducer

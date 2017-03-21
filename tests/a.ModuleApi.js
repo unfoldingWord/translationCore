@@ -36,8 +36,6 @@ describe('ModuleApi.constructor', function() {
 
     assert.isObject(ModuleApi.modules);
 
-    assert.isFunction(ModuleApi.Popover);
-
     assert.isFunction(ModuleApi.Git);
     assert.isObject(ModuleApi.Git());
     assert.isFunction(ModuleApi.Git().commit);
