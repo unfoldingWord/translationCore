@@ -4,7 +4,7 @@ const loadOnline = require('../components/core/LoadOnline');
 const Gogs = require('../components/core/login/GogsApi')();
 const modalActions = require('./ModalActions');
 const recentProjectsActions = require('./RecentProjectsActions');
-const Upload = require('../components/core/UploadMethods.js');
+const {sendPath} = require('../components/core/UploadMethods.js');
 
 module.exports.changeShowOnlineView = function (val) {
     return ((dispatch, getState) => {
@@ -42,7 +42,7 @@ module.exports.openOnlineProject = function (projectPath) {
                 alert(err);
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
-                Upload.sendFilePath(savePath, url, (err)=>{
+                sendPath(savePath, url, (err)=>{
                     if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
                 });
             }
@@ -61,7 +61,7 @@ module.exports.loadProjectFromLink = function (link) {
     return ((dispatch) => {
         loadOnline(link, function (err, savePath, url) {
             if (!err) {
-                Upload.sendFilePath(savePath, url, (err)=>{
+                sendPath(savePath, url, (err)=>{
                     if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
                 });
             } else {
