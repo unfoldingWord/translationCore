@@ -3,7 +3,6 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const api = window.ModuleApi;
 import CoreActions from '../../actions/CoreActions.js'
 import CoreActionsRedux from '../../actions/CoreActionsRedux.js'
 import CoreStore from '../../stores/CoreStore.js'
@@ -15,7 +14,9 @@ import Path from 'path'
 import SettingsActions from '../../actions/SettingsActions.js'
 import { showNotification } from '../../actions/NotificationActions.js'
 import { dispatch } from "../../pages/root"
-const fs = require(window.__base + 'node_modules/fs-extra');
+import fs from 'fs-extra'
+//const declaration
+const api = window.ModuleApi;
 
 var template = [
   {
