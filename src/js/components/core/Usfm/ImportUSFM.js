@@ -1,22 +1,21 @@
-const React = require('react');
-const fs = require(window.__base + 'node_modules/fs-extra');
-const path = require('path');
-const {dialog} = require('electron').remote;
-const usfm = require('usfm-parser');
-const pathex = require('path-extra');
-const api = window.ModuleApi;
-const ManifestGenerator = require('../create_project/ProjectManifest.js');
-const CoreStore = require('../../../stores/CoreStore.js');
-const CheckStore = require('../../../stores/CheckStore');
-const FormGroup = require('react-bootstrap/lib/FormGroup.js');
-const ButtonGroup = require('react-bootstrap/lib/ButtonGroup.js');
-const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-const FormControl = require('react-bootstrap/lib/FormControl.js');
-const Button = require('react-bootstrap/lib/Button.js');
-var Upload = require('../UploadMethods.js');
+import React from 'react';
+import fs from 'fs-extra';
+import usfm from 'usfm-parser';
+import path from 'path-extra';
+import {FormGroup, ButtonGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
+import {
+  loadFile,
+  clearPreviousData,
+  loadProjectThatHasManifest,
+  saveManifest,
+  isOldTestament
+} from '../UploadMethods.js';
 import { addNewBible } from '../../../actions/ResourcesActions.js'
 import { dispatch } from "../../../pages/root"
-const defaultSave = path.join(pathex.homedir(), 'translationCore');
+//const declaration
+const api = window.ModuleApi;
+const defaultSave = path.join(path.homedir(), 'translationCore');
+const {dialog} = require('electron').remote;
 
 /**
  * @description This function converts usfm into the target language format.
@@ -26,14 +25,13 @@ const defaultSave = path.join(pathex.homedir(), 'translationCore');
 function openUSFMProject(savePath, direction, link, callback = () => { }) {
   if (!savePath || !direction)
     return 'No file or text direction specified'
-  Upload = require('../UploadMethods.js');
-  Upload.clearPreviousData();
+  clearPreviousData();
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction, api.getDataFromCommon('language'));
-    Upload.loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
+    loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
-        Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
+        loadProjectThatHasManifest(saveLocation, callback, tcManifest);
         dispatch(addNewBible('targetLanguage', targetLanguage));
         //TODO: remove api call once implementation is ready
         ModuleApi.putDataInCommon('targetLanguage', targetLanguage);
@@ -59,9 +57,9 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
             name: parsedUSFM.bookName
           }
         }
-        Upload.saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
+        saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
-            Upload.loadProjectThatHasManifest(saveLocation, callback, tcManifest);
+            loadProjectThatHasManifest(saveLocation, callback, tcManifest);
           }
           else {
             console.error(err);
@@ -72,7 +70,6 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
   });
 }
 function saveParamsInAPI(bookAbbr, saveLocation, direction, language) {
-  Upload = require('../UploadMethods.js');
   if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
   var params = {
     originalLanguagePath: path.join(window.__base, 'static', 'taggedULB'),
@@ -81,7 +78,7 @@ function saveParamsInAPI(bookAbbr, saveLocation, direction, language) {
     bookAbbr: bookAbbr,
     language: language
   };
-  if (Upload.isOldTestament(params.bookAbbr)) {
+  if (isOldTestament(params.bookAbbr)) {
     params.originalLanguage = "hebrew";
   } else {
     params.originalLanguage = "greek";
