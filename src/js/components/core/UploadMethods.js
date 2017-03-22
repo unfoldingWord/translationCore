@@ -39,8 +39,8 @@ export const sendPath = (path, link, callback) => {
       return;
     }
     if (path) {
-      var parsedPath = path.parse(path);
-      var saveLocation = path.join(defaultSave, parsedPath.name);
+      var parsedPath = Path.parse(path);
+      var saveLocation = Path.join(defaultSave, parsedPath.name);
       if (!fs.existsSync(path)) {
         callback('Location does not exist', null);
         return;

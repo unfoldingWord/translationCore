@@ -136,17 +136,19 @@ var Main = React.createClass({
         });
       }
     } catch (e) {
-      var splitArr = e.path.split("/");
-      api.createAlert(
-        {
-          title: 'Error Opening Last Project',
-          content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
-          moreInfo: e,
-          leftButtonText: "Ok"
-        },
-        () => {
-          localStorage.removeItem('lastProject');
-        });
+      if(e.path){
+        var splitArr = e.path.split("/");
+        api.createAlert(
+          {
+            title: 'Error Opening Last Project',
+            content: `Last project ${splitArr[splitArr.length - 1]} was not found.`,
+            moreInfo: e,
+            leftButtonText: "Ok"
+          },
+          () => {
+            localStorage.removeItem('lastProject');
+          });
+      }
     }
 
   },
