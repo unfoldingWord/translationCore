@@ -7,6 +7,7 @@ const assert = chai.assert;
 require('../src/js/pages/index');
 const ModuleApi = require('../src/js/ModuleApi.js');
 const CoreActions = require('../src/js/actions/CoreActions.js');
+const dispatch = require('../src/js/pages/root.js').dispatch;
 var testObj = {test: 'abcd'};
 var testNumber = 42;
 var unexpectedValue = 'abc';
@@ -115,30 +116,10 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
   });
 });
 
-describe('ModuleApi.initializeCheckStore', function() {
-  it('initializeCheckStore should return an error if parameters are undefined', function() {
-    assert.equal(ModuleApi.initializeCheckStore(), 'Missing one or more parameters');
-  });
-  it('initializeCheckStore should initialize a CheckStore with default values', function() {
-    var params = {
-      bookAbbr: 'mrk'
-    };
-    var nameSpace = 'tests';
-    var groups = [{group: 'test group'}];
-    ModuleApi.initializeCheckStore(nameSpace, params, groups);
-    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'currentCheckIndex'), 0);
-    assert.isUndefined(ModuleApi.getDataFromCheckStore(nameSpace, 'invalidData'));
-    assert.isArray(ModuleApi.getDataFromCheckStore(nameSpace, 'groups'));
-    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'book'), 'Mark');
-  });
-});
-
 describe('ModuleApi.logCheckStore', function() {
   it('logCheckStore should return the entire CheckStore.', function() {
     var loggedCheckStore = ModuleApi.logCheckStore();
     assert.isObject(loggedCheckStore);
-    assert.isObject(loggedCheckStore.common);
-    assert.isObject(loggedCheckStore.tests)
   });
 });
 
@@ -386,7 +367,6 @@ describe('ModuleApi.createAlert', function () {
   it('createAlert should not crash if no parameters are specified', function() {
     try {
       ModuleApi.createAlert();
-      CoreActions.sendAlertResponse('fail');
       assert.isTrue(true);
     } catch (err) {
       assert.equal(false, err);
