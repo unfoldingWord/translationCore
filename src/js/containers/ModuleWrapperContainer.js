@@ -1,16 +1,14 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import SwitchCheck from '../components/core/SwitchCheck'
-import RecentProjectsContainer from './RecentProjectsContainer'
-import ToolsContainer from './ToolsContainer'
-import { selectModalTab } from '../actions/ModalActions.js'
-import { loadTool } from '../actions/ToolsActions.js'
-//const declarations
-const api = window.ModuleApi;
+import React from 'react';
+import {connect} from 'react-redux';
+import SwitchCheck from '../components/core/SwitchCheck';
+import RecentProjectsContainer from './RecentProjectsContainer';
+import ToolsContainer from './ToolsContainer';
+import {selectModalTab} from '../actions/ModalActions.js';
+import {loadTool} from '../actions/ToolsActions.js';
 
 class ModuleWrapperContainer extends React.Component {
   render() {
-    let { mainViewVisible, type, currentCheckNameSpace, modules } = this.props;
+    let {mainViewVisible, type, currentCheckNameSpace, modules} = this.props;
     let mainTool = modules[currentCheckNameSpace];
     let mainContent;
     if (mainViewVisible) {
@@ -38,25 +36,25 @@ class ModuleWrapperContainer extends React.Component {
 }
 
 
-function mapStateToProps(state) {
-    return Object.assign({},
+const mapStateToProps = state => {
+  return Object.assign({},
       state.coreStoreReducer,
       state.toolsReducer,
       state.settingsReducer,
       state.checkStoreReducer,
-      state.loaderReducer,
-    );
-}
+      state.loaderReducer
+  );
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-      showLoad: () => {
-        dispatch(selectModalTab(2))
-      },
-      handleLoadTool: (toolFolderPath) => {
-        dispatch(loadTool(toolFolderPath));
-      }
+  return {
+    showLoad: () => {
+      dispatch(selectModalTab(2));
+    },
+    handleLoadTool: toolFolderPath => {
+      dispatch(loadTool(toolFolderPath));
     }
-}
+  };
+};
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(ModuleWrapperContainer);
