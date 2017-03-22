@@ -4,9 +4,11 @@ import CheckStoreActions from '../actions/CheckStoreActions.js'
 import { showNotification } from '../actions/NotificationActions.js'
 import { showPopover } from '../actions/PopoverActions.js'
 import { addNewResource, addNewBible } from '../actions/ResourcesActions.js'
+import { addComment } from '../actions/commentsActions.js';
 
 class ToolsContainer extends React.Component {
     render() {
+      console.log(this.props)
       let Tool = this.props.currentTool;
       return (
         <Tool {...this.props}/>
@@ -22,7 +24,8 @@ function mapStateToProps(state) {
       state.settingsReducer,
       state.statusBarReducer,
       state.loaderReducer,
-      state.resourcesReducer
+      state.resourcesReducer,
+      state.commentsReducer
     );
 }
 
@@ -51,8 +54,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addNewBible: (bibleName, bibleData) => {
         dispatch(addNewBible(bibleName, bibleData));
+      },
+      addComment: (text, userName) => {
+        dispatch(addComment(text, userName));
       }
-
     }
 }
 
