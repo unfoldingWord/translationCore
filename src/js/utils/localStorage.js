@@ -1,10 +1,11 @@
-import fs from 'fs-extra'
-import path from 'path'
-import pathex from 'path-extra'
 import { loadSettings } from './loadMethods'
 import { saveSettings, saveResources } from './saveMethods'
 
-
+/**
+ * @description loads state needed to set up reducers with preloaded data
+ * Takes in loadSettings()
+ * @returns {object} - preloaded state
+ */
 export const loadState = () => {
   try {
     const serializedState = {
@@ -22,6 +23,11 @@ export const loadState = () => {
   }
 };
 
+/**
+ * @description saves state to the filesystem on state change
+ * Takes in saveSettings()
+ * @returns {object} - preloaded state
+ */
 export const saveState = (state) => {
   try {
     if(state.settingsReducer){
