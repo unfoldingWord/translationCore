@@ -1,6 +1,6 @@
 const consts = require('./CoreActionConsts');
 
-module.exports.showAlert = (alertMessage, callback) => {
+export const showAlert = (alertMessage, callback) => {
     if (alertMessage) {
         return {
             type: consts.SHOW_ALERT_MODAL,
@@ -26,14 +26,14 @@ module.exports.showAlert = (alertMessage, callback) => {
     }
 }
 
-module.exports.alertDismiss = (response, callback) => {
+export const alertDismiss = (response, callback) => {
     return ((dispatch) => {
         if (callback) callback(response);
-        dispatch(module.exports.showAlert(false))
+        dispatch(showAlert(false))
     })
 }
 
-module.exports.toggleMoreInfo = () => {
+export const toggleMoreInfo = () => {
     return {
         type:consts.TOGGLE_MORE_INFO
     }
