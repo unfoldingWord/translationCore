@@ -29,7 +29,7 @@ module.exports.showAlert = (alertMessage, callback) => {
 module.exports.alertDismiss = (response, callback) => {
     return ((dispatch) => {
         if (callback) callback(response);
-        dispatch(this.showAlert(false))
+        dispatch(module.exports.showAlert(false))
     })
 }
 
