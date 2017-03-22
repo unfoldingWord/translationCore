@@ -1,6 +1,3 @@
-import fs from 'fs-extra'
-import path from 'path'
-import pathex from 'path-extra'
 import { loadSettings } from './loadMethods'
 import { saveSettings, saveResources } from './saveMethods'
 
