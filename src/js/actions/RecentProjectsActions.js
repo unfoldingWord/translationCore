@@ -4,7 +4,7 @@ const sync = require('../components/core/SideBar/GitSync.js');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const path = require('path-extra');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-const Upload = require('../components/core/UploadMethods.js');
+import {sendPath, checkIfValidBetaProject, clearPreviousData} from '../components/core/UploadMethods.js';
 const modalActions = require('./ModalActions');
 const toolsActions = require('./ToolsActions');
 import { showNotification } from './NotificationActions'
@@ -12,7 +12,7 @@ import { showNotification } from './NotificationActions'
 module.exports.onLoad = function (filePath) {
     return ((dispatch) => {
         const _this = this;
-        Upload.sendFilePath(filePath, undefined, (err) => {
+        sendPath(filePath, undefined, (err) => {
             if (!err) {
                 dispatch(_this.startLoadingNewProject());
             }
@@ -38,7 +38,7 @@ module.exports.getProjectsFromFolder = function () {
 module.exports.startLoadingNewProject = function (lastCheckModule) {
     return ((dispatch, getState) => {
         const currentState = getState();
-        if (Upload.checkIfValidBetaProject(api.getDataFromCommon('tcManifest')) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
+        if (checkIfValidBetaProject(api.getDataFromCommon('tcManifest')) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
             api.emitEvent('changeCheckType', { currentCheckNamespace: null });
             api.emitEvent('newToolSelected', { 'newToolSelected': true });
             if (!lastCheckModule) dispatch(showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
@@ -51,7 +51,7 @@ module.exports.startLoadingNewProject = function (lastCheckModule) {
             dispatch(this.getProjectsFromFolder());
             dispatch({type:"DRAG_DROP_SENDPATH", filePath:''})
             dispatch({type:"LOAD_TOOL"})
-            Upload.clearPreviousData()
+            clearPreviousData()
         }
     })
 }

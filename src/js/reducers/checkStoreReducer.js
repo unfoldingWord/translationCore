@@ -1,6 +1,7 @@
 
 const initialState = {
   book: null,
+  bookAbbr: null,
   groups: null,
   subgroups:null,
   currentCheck: null,
@@ -13,7 +14,11 @@ const initialState = {
 module.exports = (state = initialState, action) => {
   switch (action.type) {
     case "SET_BOOK_NAME":
-      return { ...state, book: action.val }
+      return {
+        ...state,
+        book: action.val,
+        bookAbbr: action.bookAbbr
+      }
     case "SET_GROUPS_OBJECTS":
       return Object.assign({}, state, {
         groups: action.val,

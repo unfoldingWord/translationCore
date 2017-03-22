@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import CheckStoreActions from '../actions/CheckStoreActions.js'
 import { showNotification } from '../actions/NotificationActions.js'
 import { showPopover } from '../actions/PopoverActions.js'
+import { addNewResource, addNewBible } from '../actions/ResourcesActions.js'
 
 class ToolsContainer extends React.Component {
     render() {
@@ -21,6 +22,7 @@ function mapStateToProps(state) {
       state.settingsReducer,
       state.statusBarReducer,
       state.loaderReducer,
+      state.resourcesReducer
     );
 }
 
@@ -43,7 +45,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
+      },
+      addNewResource: (resourceName, resourceData) => {
+        dispatch(addNewResource(resourceName, resourceData));
+      },
+      addNewBible: (bibleName, bibleData) => {
+        dispatch(addNewBible(bibleName, bibleData));
       }
+
     }
 }
 

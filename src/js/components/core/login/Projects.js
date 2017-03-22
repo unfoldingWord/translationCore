@@ -1,10 +1,5 @@
-const React = require('react');
-
-const api = window.ModuleApi;
-const loadOnline = require('../LoadOnline.js');
-const Upload = require('../UploadMethods.js');
-const Button = require('react-bootstrap/lib/Button.js');
-const CoreActions = require('../../../actions/CoreActions.js');
+import React from 'react';
+import {Button} from 'react-bootstrap';
 
 class Projects extends React.Component {
   render() {

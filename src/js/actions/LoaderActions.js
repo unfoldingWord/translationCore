@@ -1,6 +1,6 @@
-const consts = require('./CoreActionConsts');
-const UploadMethods = require('../components/core/UploadMethods.js');
-const ModalActions = require('./ModalActions.js');
+import consts from './CoreActionConsts';
+import {clearPreviousData} from '../components/core/UploadMethods.js';
+import ModalActions from './ModalActions.js';
 
 module.exports.toggleLoader = function (val) {
   return {
@@ -19,7 +19,7 @@ module.exports.saveModule = function (identifier, module) {
 
 module.exports.killLoading = function () {
   return ((dispatch) => {
-    UploadMethods.clearPreviousData();
+    clearPreviousData();
     dispatch(this.toggleLoader());
     dispatch(ModalActions.showModalContainer(true));
     dispatch(ModalActions.selectModalTab(2));

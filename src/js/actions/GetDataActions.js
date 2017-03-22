@@ -12,7 +12,7 @@ import PACKAGE_SUBMODULE_LOCATION from pathex.join(window.__base, 'tC_apps');
 import CoreActionsRedux from './CoreActionsRedux';
 import LoaderActions from './LoaderActions';
 import AlertModalActions from './AlertModalActions';
-import Upload from '../components/core/UploadMethods.js';
+import {clearPreviousData} from '../components/core/UploadMethods.js';
 
 
 
@@ -258,6 +258,6 @@ module.exports.errorLoadingProject = function (err) {
             visibility: true,
         }
         dispatch(AlertModalActions.showAlert(alertMessage));
-        Upload.clearPreviousData();
+        clearPreviousData();
     });
 }
