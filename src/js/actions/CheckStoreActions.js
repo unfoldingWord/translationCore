@@ -1,13 +1,36 @@
 const api = window.ModuleApi;
+import BooksOfBible from '../components/core/BooksOfBible'
 const CoreStore = require('../stores/CoreStore.js');
 const CoreActionsRedux = require('./CoreActionsRedux.js');
 
 
-
 module.exports.setBookName = function (bookName) {
+  let bookAbbr = convertToBookAbbreviation(bookName);
   return {
     type: "SET_BOOK_NAME",
-    val: bookName
+    val: bookName,
+    bookAbbr
+  }
+}
+
+export const convertToFullBookName = (bookAbbr) => {
+  if (!bookAbbr) return;
+  return BooksOfBible[bookAbbr.toString().toLowerCase()];
+}
+
+/**
+  * @description - Takes in a full book name or book abbreviation and returns the abbreviation.
+  * ex. convertToBookAbbreviation('2 Timothy') => '2ti'
+  * @param {string} fullBookName - A book name or abbreviation. In the case of abbreviation the
+  * abbreviation will just be returned
+*/
+export const convertToBookAbbreviation = (fullBookName) => {
+  if (!fullBookName) return;
+  for (var key in BooksOfBible) {
+    if (BooksOfBible[key].toString().toLowerCase() == fullBookName.toString().toLowerCase() ||
+      fullBookName.toString().toLowerCase() == key) {
+      return key;
+    }
   }
 }
 

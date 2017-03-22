@@ -27,9 +27,9 @@ const testUSFMProjectPath = path.join(window.__base, '/tests/static/3john');
 const noTCManifestProject = path.join(window.__base, '/tests/static/id_-co_text_reg');
 const undefinedProject = path.join(window.__base, '/tests/static/JesusSaves');
 
-describe('Upload.sendFilePath(undefined project)', function () {
+describe('Upload.sendPath(undefined project)', function () {
     it('should fail', function (done) {
-        Upload.sendFilePath(undefinedProject, null, function () {
+        Upload.sendPath(undefinedProject, null, function () {
             assert.isNotOk(api.getDataFromCommon('tcManifest'));
             assert.isNotOk(api.getDataFromCommon('saveLocation'));
             assert.isNotOk(api.getDataFromCommon('params'));
@@ -48,9 +48,10 @@ describe('Upload.sendFilePath(undefined project)', function () {
     });
 });
 
-describe('Upload.sendFilePath(USFM project)', function () {
+describe('Upload.sendPath(USFM project)', function () {
     it('should load a USFM project', function (done) {
-        Upload.sendFilePath(testUSFMProjectPath, null, function () {
+      this.timeout(50000);
+        Upload.sendPath(testUSFMProjectPath, null, function () {
             assert.isObject(api.getDataFromCommon('tcManifest'));
             assert.isString(api.getDataFromCommon('saveLocation'));
             assert.isObject(api.getDataFromCommon('params'));
@@ -68,22 +69,11 @@ describe('Upload.sendFilePath(USFM project)', function () {
     });
 });
 
-describe('Upload.sendFilePath(non-USFM project)', function () {
+describe('Upload.sendPath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
-        Upload.sendFilePath(testProjectPath, null, function () {
-            assert.isObject(api.getDataFromCommon('tcManifest'));
-            assert.isString(api.getDataFromCommon('saveLocation'));
-            assert.isObject(api.getDataFromCommon('params'));
-            assert.isObject(api.getDataFromCommon('targetLanguage'));
-            api.inputJson(testProjectPath + '/tc-manifest.json', function (err, data) {
-                if (err || !data) {
-                    assert.equal(true, false);
-                } else {
-                    assert.isObject(data);
-                    assert(data.target_language);
-                }
-                done();
-            });
+        Upload.sendPath(testProjectPath, null, function (err, data) {
+          assert.isUndefined(err);
+          done();
         });
     });
 });
