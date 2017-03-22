@@ -51,8 +51,8 @@ class RecentProjectsContainer extends React.Component {
                 {
                     '': <Glyphicon glyph={'folder-open'} />,
                     'Project Name': projectName,
-                    'Book': manifest.ts_project.name || 'Unknown',
-                    'Language': manifest.target_language.name || 'Unknown',
+                    'Book': manifest.ts_project ? manifest.ts_project.name : 'Unknown',
+                    'Language': manifest.target_language ? manifest.target_language.name : 'Unknown',
                     'Date Updated': difference,
                     ' ': buttonSpan
                 }
