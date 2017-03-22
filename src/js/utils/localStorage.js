@@ -1,24 +1,24 @@
-import { loadSettings } from './loadMethods'
-import { saveSettings } from './saveMethods'
+import {loadSettings} from './loadMethods';
+import {saveSettings, saveResources} from './saveMethods';
 
 /**
  * @description loads state needed to set up reducers with preloaded data
  * Takes in loadSettings()
- * @returns {object} - preloaded state
+ * @return {object} - preloaded state
  */
 export const loadState = () => {
   try {
     const serializedState = {
       settingsReducer: loadSettings()
-    }
-    if(serializedState === null){
-      //returning undefined to allow the reducers to initialize the app state
+    };
+    if (serializedState === null) {
+      //  returning undefined to allow the reducers to initialize the app state
       return undefined;
     }
     return serializedState;
-  } catch(err) {
+  } catch (err) {
     console.warn(err);
-    //returning undefined to allow the reducers to initialize the app state
+    //  returning undefined to allow the reducers to initialize the app state
     return undefined;
   }
 };
@@ -26,14 +26,17 @@ export const loadState = () => {
 /**
  * @description saves state to the filesystem on state change
  * Takes in saveSettings()
- * @returns {object} - preloaded state
+ * @param {object} state - object of reducers (objects).
  */
-export const saveState = (state) => {
+export const saveState = state => {
   try {
-    if(state.settingsReducer){
-      saveSettings(state)
+    if (state.settingsReducer) {
+      saveSettings(state);
     }
-  } catch(err) {
+    if (state.resourcesReducer) {
+      saveResources(state);
+    }
+  } catch (err) {
     console.warn(err);
   }
 };

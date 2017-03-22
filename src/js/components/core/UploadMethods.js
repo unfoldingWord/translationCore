@@ -1,23 +1,23 @@
 /**
- * @author Ian Hoegen & Luke Wilson
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
-const React = require('react');
-const Path = require('path');
-const fs = require(window.__base + 'node_modules/fs-extra');
-
-const CoreStore = require('../../stores/CoreStore');
-const ManifestGenerator = require('./create_project/ProjectManifest.js');
-const CheckStore = require('../../stores/CheckStore');
+import React from 'react';
+import fs from 'fs-extra';
+import CoreStore from '../../stores/CoreStore';
+import ManifestGenerator from './create_project/ProjectManifest.js';
+import CheckStore from '../../stores/CheckStore';
+import books from './BooksOfBible.js';
+import Path from 'path-extra';
+import usfm from 'usfm-parser';
+import ImportUsfm from './Usfm/ImportUSFM.js';
+import { addNewBible } from '../../actions/ResourcesActions.js';
+import { dispatch } from "../../pages/root";
+//const declaration
 const api = window.ModuleApi;
-const books = require('./BooksOfBible.js');
+const defaultSave = Path.join(Path.homedir(), 'translationCore');
 
-const pathex = require('path-extra');
-const defaultSave = Path.join(pathex.homedir(), 'translationCore');
-const usfm = require('usfm-parser');
-const ImportUsfm = require('./Usfm/ImportUSFM.js');
 
-function clearPreviousData() {
+export const clearPreviousData = () => {
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
 }
@@ -31,7 +31,7 @@ function clearPreviousData() {
 * the GOGS server
 * This is the main function to initiate a load of a project
 */
-function sendPath(path, link, callback) {
+export const sendPath = (path, link, callback) => {
   clearPreviousData();
   checkIfUSFMFile(path, (isUSFM, newPath) => {
     if (isUSFM) {
@@ -39,8 +39,8 @@ function sendPath(path, link, callback) {
       return;
     }
     if (path) {
-      var parsedPath = pathex.parse(path);
-      var saveLocation = pathex.join(defaultSave, parsedPath.name);
+      var parsedPath = Path.parse(path);
+      var saveLocation = Path.join(defaultSave, parsedPath.name);
       if (!fs.existsSync(path)) {
         callback('Location does not exist', null);
         return;
@@ -103,7 +103,7 @@ function sendPath(path, link, callback) {
   });
 }
 
-function checkIfValidBetaProject(manifest) {
+export const checkIfValidBetaProject = (manifest) => {
   if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
   else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
 }
@@ -112,7 +112,7 @@ function checkIfValidBetaProject(manifest) {
   * @param {string} path - absolute path to a translationStudio project folder
   * @param {String} file - The file name to load
 */
-function loadFile(path, file, callback) {
+export const loadFile = (path, file, callback) => {
   try {
     var hasManifest = fs.readJsonSync(Path.join(path, file));
     if (hasManifest) {
@@ -149,7 +149,7 @@ function renameFile(path, newPath, callback) {
  * @param {function} callback - function that happens after all data is in CheckStore i.e. CheckDatagrabber.loadModuleAnd...
  * @param {function} tcManifest - the tc-manifest to put in common
  */
-function loadProjectThatHasManifest(path, callback, tcManifest) {
+export const loadProjectThatHasManifest = (path, callback, tcManifest) => {
   var Access = require('./AccessProject');
   api.putDataInCommon('tcManifest', tcManifest);
   api.putDataInCommon('saveLocation', path);
@@ -158,6 +158,8 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
     api.putDataInCommon('params', params);
     checkIfUSFMProject(path, function (targetLanguage) {
       if (targetLanguage) {
+        dispatch(addNewBible('targetLanguage', targetLanguage));
+        //TODO: remove api call once implementation is ready
         api.putDataInCommon('targetLanguage', targetLanguage);
       }
       try {
@@ -176,7 +178,7 @@ function loadProjectThatHasManifest(path, callback, tcManifest) {
  * @param {string} path - The path to the folder containing the translationStudio project
  * manifest
  */
-function getParams(path) {
+export const getParams = (path) => {
   var tcManifest = api.getDataFromCommon('tcManifest');
   const isArray = (a) => {
     return (!!a) && (a.constructor === Array);
@@ -223,7 +225,7 @@ function getParams(path) {
   return params;
 }
 
-function saveTargetLangeInAPI(parsedUSFM) {
+export const saveTargetLangeInAPI = (parsedUSFM) => {
   var targetLanguage = {};
   targetLanguage.title = parsedUSFM.book;
   // targetLanguage.header = parsedUSFM.headers;
@@ -244,11 +246,13 @@ function saveTargetLangeInAPI(parsedUSFM) {
       targetLanguage.title = books[parsedHeaders['id'].toLowerCase()];
     }
   }
+  dispatch(addNewBible('targetLanguage', targetLanguage));
+  //TODO: remove api call once implementation is ready
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
 }
 
-function checkIfUSFMFile(savePath, callback) {
+export const checkIfUSFMFile = (savePath, callback) => {
   try {
     var usfmFile = fs.readFileSync(savePath);
     const ext = savePath.split(".")[1];
@@ -268,7 +272,7 @@ function checkIfUSFMFile(savePath, callback) {
   }
 }
 
-function checkIfUSFMProject(savePath, callback) {
+export const checkIfUSFMProject = (savePath, callback) => {
   var projectFolder = fs.readdirSync(savePath);
   var targetLanguage;
   for (var file in projectFolder) {
@@ -310,7 +314,7 @@ function checkIfUSFMProject(savePath, callback) {
  * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
  * studio project
  */
-function saveManifest(saveLocation, link, tsManifest, callback) {
+export const saveManifest = (saveLocation, link, tsManifest, callback) => {
   var data = {
     //hardcoded for data specific to tc-manifest
     user: [CoreStore.getLoggedInUser()],
@@ -343,7 +347,7 @@ function saveManifest(saveLocation, link, tsManifest, callback) {
  * @param {Object} tsManifest - A translation studio manifest
  * @param {String} path - The location of the project
  */
-function verifyChunks(path, tsManifest) {
+export const verifyChunks = (path, tsManifest) => {
   let chunkChapters = fs.readdirSync(path);
   let finishedChunks = [];
   for (let chapter in chunkChapters) {
@@ -365,7 +369,7 @@ function verifyChunks(path, tsManifest) {
  * @desription - Uses the tc-standard format for projects to make package_version 3 compatible
  * @param oldManifest - The name of an employee.
  */
-function fixManifestVerThree(oldManifest) {
+export const fixManifestVerThree = (oldManifest) => {
   var newManifest = {};
   try {
     for (var oldElements in oldManifest) {
@@ -391,7 +395,7 @@ function fixManifestVerThree(oldManifest) {
  * @desription - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  */
-function manifestError(content) {
+export const manifestError = (content) => {
   api.createAlert(
     {
       title: 'Error Setting Up Project',
@@ -407,7 +411,7 @@ function manifestError(content) {
  * @param {string} projectBook - the book in abr form
  * manifest
  */
-function isOldTestament(projectBook) {
+export const isOldTestament = (projectBook) => {
   var passedBook = false;
   for (var book in books) {
     if (book == projectBook) passedBook = true;
@@ -417,18 +421,3 @@ function isOldTestament(projectBook) {
   }
   return false;
 }
-
-module.exports = {
-  clearPreviousData: clearPreviousData,
-  sendFilePath: sendPath,
-  loadFile: loadFile,
-  loadProjectThatHasManifest: loadProjectThatHasManifest,
-  getParams: getParams,
-  saveTargetLangeInAPI: saveTargetLangeInAPI,
-  checkIfUSFMProject: checkIfUSFMProject,
-  saveManifest: saveManifest,
-  fixManifestVerThree: fixManifestVerThree,
-  manifestError: manifestError,
-  isOldTestament: isOldTestament,
-  checkIfValidBetaProject:checkIfValidBetaProject
-};
