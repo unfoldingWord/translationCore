@@ -5,7 +5,8 @@ import { showNotification } from '../actions/NotificationActions.js';
 import { showPopover } from '../actions/PopoverActions.js';
 import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
-import { addVerseEdit } from '../actions/addVerseEditActions.js';
+import { addVerseEdit } from '../actions/VerseEditActions.js';
+import { toggleReminder } from '../actions/RemindersActions.js';
 
 class ToolsContainer extends React.Component {
     render() {
@@ -25,7 +26,9 @@ const mapStateToProps = (state) => {
     state.statusBarReducer,
     state.loaderReducer,
     state.resourcesReducer,
-    state.commentsReducer
+    state.commentsReducer,
+    state.remindersReducer
+
   );
 };
 
@@ -57,6 +60,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
+      },
+      toggleReminder: (userName) => {
+        dispatch(toggleReminder(userName));
       },
       addVerseEdit: (text, userName) => {
         dispatch(addVerseEdit(text, userName));
