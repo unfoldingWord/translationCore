@@ -8,7 +8,6 @@ import { addComment } from '../actions/commentsActions.js';
 
 class ToolsContainer extends React.Component {
     render() {
-      console.log(this.props)
       let Tool = this.props.currentTool;
       return (
         <Tool {...this.props}/>
