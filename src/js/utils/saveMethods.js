@@ -23,25 +23,27 @@ export const saveResources = state => {
   const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
   let biblesObject = state.resourcesReducer.bibles;
   let resourcesObject = state.resourcesReducer.resources;
-  for (var keyName in biblesObject) {
-    let bibleVersion = keyName + '.json';
-    let savePath = path.join(
-      PROJECT_SAVE_LOCATION,
-      RESOURCES_DATA_DIR,
-      'bibles',
-      bibleVersion
-    );
-    fs.outputJson(savePath, biblesObject[keyName])
-  }
-  for (var resources in resourcesObject) {
-    for (var file in resourcesObject[resources]) {
+  if (PROJECT_SAVE_LOCATION) {
+    for (var keyName in biblesObject) {
+      let bibleVersion = keyName + '.json';
       let savePath = path.join(
         PROJECT_SAVE_LOCATION,
         RESOURCES_DATA_DIR,
-        resources,
-        file
+        'bibles',
+        bibleVersion
       );
-      fs.outputJson(savePath, resourcesObject[resources][file]);
+      fs.outputJson(savePath, biblesObject[keyName])
+    }
+    for (var resources in resourcesObject) {
+      for (var file in resourcesObject[resources]) {
+        let savePath = path.join(
+          PROJECT_SAVE_LOCATION,
+          RESOURCES_DATA_DIR,
+          resources,
+          file
+        );
+        fs.outputJson(savePath, resourcesObject[resources][file]);
+      }
     }
   }
 }
