@@ -1,9 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import CheckStoreActions from '../actions/CheckStoreActions.js'
-import { showNotification } from '../actions/NotificationActions.js'
-import { showPopover } from '../actions/PopoverActions.js'
-import { addNewResource, addNewBible } from '../actions/ResourcesActions.js'
+import React from 'react';
+import { connect } from 'react-redux';
+import CheckStoreActions from '../actions/CheckStoreActions.js';
+import { showNotification } from '../actions/NotificationActions.js';
+import { showPopover } from '../actions/PopoverActions.js';
+import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/addVerseEditActions.js';
 
