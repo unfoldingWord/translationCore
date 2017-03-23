@@ -20,6 +20,8 @@ import resourcesReducer from './resourcesReducer'
 import projectDetailsReducer from './projectDetailsReducer'
 import alertModalReducer from './alertModalReducer'
 import commentsReducer from './commentsReducer'
+import selectionsReducer from './selectionsReducer'
+
 //combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -41,7 +43,8 @@ const rootReducers = combineReducers({
   resourcesReducer,
   projectDetailsReducer,
   alertModalReducer,
-  commentsReducer
+  commentsReducer,
+  selectionsReducer
 })
 
 export default rootReducers

@@ -4,7 +4,9 @@ import CheckStoreActions from '../actions/CheckStoreActions.js'
 import { showNotification } from '../actions/NotificationActions.js'
 import { showPopover } from '../actions/PopoverActions.js'
 import { addNewResource, addNewBible } from '../actions/ResourcesActions.js'
-import { addComment } from '../actions/commentsActions.js';
+import { addComment } from '../actions/CommentsActions.js';
+import { addSelections, removeSelections } from '../actions/SelectionsActions.js';
+
 
 class ToolsContainer extends React.Component {
     render() {
@@ -56,6 +58,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
+      },
+      addSelections: (text, userName) => {
+        dispatch(addSelections(text, userName));
+      },
+      removeSelections: (text, userName) => {
+        dispatch(removeSelections(text, userName));
       }
     }
 }
