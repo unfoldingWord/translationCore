@@ -4,6 +4,6 @@
  *              generate filenames and modified dates.
  * @return {Integer} The timestamp in milliseconds
  ******************************************************************************/
-export default function generateTimestamp() {
-  return (new Date()).getTime();
+export const generateTimestamp = () => {
+  return (new Date()).toJSON();
 }
