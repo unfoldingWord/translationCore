@@ -1,16 +1,20 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  text: null,
+  before: null,
+  after: null,
+  tags: null,
   userName: null,
   modifiedTimestamp: null
 };
 
-const commentsReducer = (state = initialState, action) => {
+const verseEditReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.ADD_COMMENT:
+    case consts.ADD_VERSE_EDIT:
       return Object.assign({}, state, {
-        text: action.text,
+        before: action.before,
+        after: action.after,
+        tags: action.tags,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
       });
@@ -19,4 +23,4 @@ const commentsReducer = (state = initialState, action) => {
   }
 };
 
-export default commentsReducer;
+export default verseEditReducer;
