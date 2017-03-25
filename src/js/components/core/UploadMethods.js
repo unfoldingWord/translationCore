@@ -20,7 +20,27 @@ const defaultSave = Path.join(Path.homedir(), 'translationCore');
 export const clearPreviousData = () => {
   CheckStore.WIPE_ALL_DATA();
   api.modules = {};
-}
+};
+
+export const checkIfUSFMFile = (savePath, callback) => {
+  try {
+    var usfmFile = fs.readFileSync(savePath);
+    const ext = savePath.split(".")[1];
+    callback(ext == "usfm" || ext == "sfm");
+  } catch (e) {
+    try {
+      var dir = fs.readdirSync(savePath);
+      if (dir.length === 1 || dir.shift() == '.git') {
+        const ext = dir[0].split(".")[1];
+        callback(ext == "usfm" || ext == "sfm", Path.join(savePath, dir[0]));
+      } else {
+        callback(false);
+      }
+    } catch (err) {
+      callback(false);
+    }
+  }
+};
 /**
 * @description - Sets the target language filepath and/or link, while also generatering a TC
 * manifest file and saving the params and saveLocation under the 'common' namespace in the
@@ -47,7 +67,7 @@ export const sendPath = (path, link, callback) => {
       }
       if (fs.existsSync(saveLocation)) {
         if (path != saveLocation) {
-          var continueCopy = confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
+          var continueCopy = window.confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
           if (continueCopy) {
             fs.removeSync(saveLocation);
             fs.copySync(path, saveLocation);
@@ -88,12 +108,12 @@ export const sendPath = (path, link, callback) => {
       callback('No path', null)
     }
   });
-}
+};
 
 export const checkIfValidBetaProject = (manifest) => {
   if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
   else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
-}
+};
 /**
   * @description - Checks to see if the file is present, and loads it.
   * @param {string} path - absolute path to a translationStudio project folder
@@ -109,7 +129,7 @@ export const loadFile = (path, file, callback) => {
   catch (e) {
     callback(e, null);
   }
-}
+};
 
 /**
  * @desription - Does the rest of requirements for a project to be loaded after
@@ -140,7 +160,7 @@ export const loadProjectThatHasManifest = (path, callback, tcManifest) => {
       }
     });
   }
-}
+};
 
 /**
  * @desription - This generates the default params from the path and saves it in the CheckStore
@@ -192,7 +212,7 @@ export const getParams = (path) => {
     manifestError(e.message);
   }
   return params;
-}
+};
 
 export const saveTargetLangeInAPI = (parsedUSFM) => {
   var targetLanguage = {};
@@ -219,27 +239,7 @@ export const saveTargetLangeInAPI = (parsedUSFM) => {
   //TODO: remove api call once implementation is ready
   api.putDataInCommon('targetLanguage', targetLanguage);
   return targetLanguage;
-}
-
-export const checkIfUSFMFile = (savePath, callback) => {
-  try {
-    var usfmFile = fs.readFileSync(savePath);
-    const ext = savePath.split(".")[1];
-    callback(ext == "usfm" || ext == "sfm");
-  } catch (e) {
-    try {
-      var dir = fs.readdirSync(savePath);
-      if (dir.length === 1 || dir.shift() == '.git') {
-        const ext = dir[0].split(".")[1];
-        callback(ext == "usfm" || ext == "sfm", Path.join(savePath, dir[0]));
-      } else {
-        callback(false);
-      }
-    } catch (err) {
-      callback(false);
-    }
-  }
-}
+};
 
 export const checkIfUSFMProject = (savePath, callback) => {
   var projectFolder = fs.readdirSync(savePath);
@@ -273,7 +273,7 @@ export const checkIfUSFMProject = (savePath, callback) => {
     }
   }
   callback(targetLanguage);
-}
+};
 
 /**
  * @description - Generates and saves a translationCore manifest file
@@ -288,7 +288,7 @@ export const saveManifest = (saveLocation, link, tsManifest, callback) => {
     //hardcoded for data specific to tc-manifest
     user: [CoreStore.getLoggedInUser()],
     repo: link || undefined
-  }
+  };
   var manifest;
   try {
     var manifestLocation = Path.join(saveLocation, 'tc-manifest.json');
@@ -306,11 +306,10 @@ export const saveManifest = (saveLocation, link, tsManifest, callback) => {
       //overwrites old manifest if present, or else creates new one
       callback(null, manifest);
     });
-  }
-  catch (err) {
+  } catch (err) {
     callback(err, null);
   }
-}
+};
 /**
  * @description - Fixes an issue where manifest chunks are misleading.
  * @param {Object} tsManifest - A translation studio manifest
@@ -333,7 +332,7 @@ export const verifyChunks = (path, tsManifest) => {
   }
   tsManifest.finished_chunks = finishedChunks;
   return tsManifest;
-}
+};
 /**
  * @desription - Uses the tc-standard format for projects to make package_version 3 compatible
  * @param oldManifest - The name of an employee.
@@ -359,10 +358,10 @@ export const fixManifestVerThree = (oldManifest) => {
     console.error(e);
   }
   return newManifest;
-}
+};
 /**
- * @desription - This returns true if the book is an OldTestament one
- * @param {string} projectBook - the book in abr form
+ * @description - This returns true if the book is an OldTestament one
+ * @param {string} content (projectBook) - the book in abr form
  */
 export const manifestError = (content) => {
   api.createAlert(
@@ -373,10 +372,10 @@ export const manifestError = (content) => {
       leftButtonText: "Ok"
     });
   clearPreviousData();
-}
+};
 
 /**
- * @desription - This returns true if the book is an OldTestament one
+ * @description - This returns true if the book is an OldTestament one
  * @param {string} projectBook - the book in abr form
  * manifest
  */
@@ -389,4 +388,4 @@ export const isOldTestament = (projectBook) => {
     }
   }
   return false;
-}
+};
