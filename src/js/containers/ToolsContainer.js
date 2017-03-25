@@ -8,6 +8,7 @@ import {addComment} from '../actions/CommentsActions.js';
 import {addVerseEdit} from '../actions/VerseEditActions.js';
 import {toggleReminder} from '../actions/RemindersActions.js';
 import {addSelections, removeSelections} from '../actions/SelectionsActions.js';
+import {addGroupData} from '../actions/GroupDataActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -74,6 +75,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addVerseEdit: (text, userName) => {
         dispatch(addVerseEdit(text, userName));
+      },
+      addGroupData: (groupName, payload) => {
+        dispatch(addGroupData(groupName, payload));
       }
     };
 };
