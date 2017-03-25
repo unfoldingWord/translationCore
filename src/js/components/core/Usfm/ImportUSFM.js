@@ -29,7 +29,7 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
   createTCProject(savePath, (parsedUSFM, saveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
     saveParamsInAPI(parsedUSFM.book, saveLocation, direction, api.getDataFromCommon('language'));
-    loadFile(saveLocation, 'tc-manifest.json', (err, tcManifest) => {
+    loadFile(saveLocation, 'manifest.json', (err, tcManifest) => {
       if (tcManifest) {
         loadProjectThatHasManifest(saveLocation, callback, tcManifest);
         dispatch(addNewBible('targetLanguage', targetLanguage));
