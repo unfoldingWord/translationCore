@@ -22,6 +22,7 @@ import alertModalReducer from './alertModalReducer'
 import commentsReducer from './commentsReducer'
 import selectionsReducer from './selectionsReducer'
 import remindersReducer from './remindersReducer'
+import groupDataReducer from './groupDataReducer'
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
