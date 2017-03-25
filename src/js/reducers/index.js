@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-//List of reducers
+// List of reducers
 import coreStoreReducer from './coreStoreReducer'
 import modalReducers from './modalReducers'
 import newModalReducer from './newModalReducer'
@@ -19,7 +19,10 @@ import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
 import projectDetailsReducer from './projectDetailsReducer'
 import alertModalReducer from './alertModalReducer'
-//combining reducers
+import commentsReducer from './commentsReducer'
+import selectionsReducer from './selectionsReducer'
+import remindersReducer from './remindersReducer'
+// combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
   modalReducers,
@@ -39,7 +42,10 @@ const rootReducers = combineReducers({
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,
-  alertModalReducer
-})
+  alertModalReducer,
+  commentsReducer,
+  selectionsReducer,
+  remindersReducer
+});
 
 export default rootReducers
