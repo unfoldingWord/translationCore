@@ -8,6 +8,7 @@ import {addComment} from '../actions/CommentsActions.js';
 import {addVerseEdit} from '../actions/VerseEditActions.js';
 import {toggleReminder} from '../actions/RemindersActions.js';
 import {addSelections, removeSelections} from '../actions/SelectionsActions.js';
+import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 
 
@@ -30,7 +31,8 @@ const mapStateToProps = (state) => {
     state.loaderReducer,
     state.resourcesReducer,
     state.commentsReducer,
-    state.remindersReducer
+    state.remindersReducer,
+    state.contextIdReducer
 
   );
 };
@@ -75,6 +77,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addVerseEdit: (text, userName) => {
         dispatch(addVerseEdit(text, userName));
+      },
+      changeCurrentContextId: (contextId) => {
+        dispatch(changeCurrentContextId(contextId));
       },
       addGroupData: (groupName, payload) => {
         dispatch(addGroupData(groupName, payload));
