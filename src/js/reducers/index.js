@@ -24,6 +24,7 @@ import selectionsReducer from './selectionsReducer'
 import remindersReducer from './remindersReducer'
 import contextIdReducer from './contextIdReducer'
 import groupDataReducer from './groupDataReducer'
+import groupIndexReducer from './groupIndexReducer'
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -49,7 +50,8 @@ const rootReducers = combineReducers({
   selectionsReducer,
   remindersReducer,
   contextIdReducer,
-  groupDataReducer
+  groupDataReducer,
+  groupIndexReducer
 });
 
 export default rootReducers
