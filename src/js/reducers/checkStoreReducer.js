@@ -1,3 +1,4 @@
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   book: null,
@@ -13,54 +14,49 @@ const initialState = {
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_BOOK_NAME":
+    case consts.SET_BOOK_NAME:
       return {
         ...state,
         book: action.book,
         bookAbbr: action.bookAbbr
       }
-    case "SET_GROUPS_OBJECTS":
-      return Object.assign({}, state, {
+    case consts.SET_GROUPS_OBJECTS:
+      return {
+        ...state,
         groups: action.val,
-      });
-      break;
-    case "SET_SUBGROUPS_OBJECTS":
-      return Object.assign({}, state, {
+      }
+    case consts.SET_SUBGROUPS_OBJECTS:
+      return {
+        ...state,
         subgroups: action.val,
-      });
-      break;
-    case "UPDATE_CURRENT_CHECK":
-      return Object.assign({}, state, {
+      }
+    case consts.UPDATE_CURRENT_CHECK:
+      return {
+        ...state,
         currentCheck: action.val,
-      });
-      break;
-    case "GO_TO_CHECK":
+      }
+    case consts.GO_TO_CHECK:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
       }
-      break;
-    case "GO_TO_NEXT":
+    case consts.GO_TO_NEXT:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
       }
-      break;
-    case "GO_TO_PREVIOUS":
+    case consts.GO_TO_PREVIOUS:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
       }
-      break;
-    case "UPDATE_NAMESPACE":
+    case consts.UPDATE_NAMESPACE:
       return { ...state, currentCheckNamespace: action.currentCheckNamespace }
-      break;
-    case "SET_GROUP_NAME":
+    case consts.SET_GROUP_NAME:
       return { ...state, groupName: action.groupName }
-      break;
     default:
       return state;
   }

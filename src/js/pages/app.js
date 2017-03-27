@@ -44,7 +44,6 @@ var Main = React.createClass({
     //initializing app settings
     const tCDir = path.join(pathex.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
-    this.props.getProjectsFromFolder();
     //changing check, (group index, check index) ...one or the other or both
     var online = window.navigator.onLine;
     this.props.changeOnlineStatus(online, true);
@@ -154,10 +153,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     startLoadingNewProject: (lastCheckModule) => {
       dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
-    },
-   getProjectsFromFolder: () => {
-     dispatch(recentProjectActions.getProjectsFromFolder());
-   }
+    }
   };
 }
 

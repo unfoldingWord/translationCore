@@ -88,7 +88,9 @@ export function setGroupsObjects(groupsObjects) {
 
 export function goToCheck(newGroupIndex, newCheckIndex) {
   return ((dispatch, getState) => {
-    const { groups } = getState().checkStoreReducer;
+    let { groups } = getState().checkStoreReducer;
+    newGroupIndex = newGroupIndex || 0;
+    newCheckIndex = newCheckIndex || 0;
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
     dispatch({
       type: "GO_TO_CHECK",

@@ -13,11 +13,7 @@ class ToolsContainer extends React.Component {
   render() {
     let Tool = this.props.currentTool;
     return (
-      <Tool {...this.props} progress={this.props.progress}
-        addNewBible={this.props.addNewBible}
-        addNewResource={this.props.addNewResource}
-        updateCheckIndex={this.props.updateCheckIndex}
-      />
+      <Tool {...this.props} />
     );
   }
 }

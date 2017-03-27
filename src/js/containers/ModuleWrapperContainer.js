@@ -8,7 +8,7 @@ import { loadTool } from '../actions/ToolsActions.js';
 
 class ModuleWrapperContainer extends React.Component {
   render() {
-    let { mainViewVisible, type, currentCheckNamespace, modules, } = this.props;
+    let { mainViewVisible, type, currentCheckNamespace, modules } = this.props;
     let mainTool = modules[currentCheckNamespace];
     let mainContent;
     if (mainViewVisible) {
@@ -36,7 +36,7 @@ class ModuleWrapperContainer extends React.Component {
 }
 
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return Object.assign({},
     state.coreStoreReducer,
     state.toolsReducer,
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(modalActions.selectModalTab(2))
     },
     handleLoadTool: (toolFolderPath) => {
-      dispatch(ToolsActions.loadTool(toolFolderPath));
+      dispatch(loadTool(toolFolderPath));
     },
   }
 }

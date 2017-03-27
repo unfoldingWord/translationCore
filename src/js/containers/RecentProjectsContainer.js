@@ -1,5 +1,5 @@
 const React = require('react');
-const { connect  } = require('react-redux');
+const { connect } = require('react-redux');
 const recentProjectsActions = require('../actions/RecentProjectsActions.js');
 const { Modal, Tabs, Tab } = require('react-bootstrap/lib');
 const Button = require('react-bootstrap/lib/Button.js');
@@ -10,6 +10,9 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
 class RecentProjectsContainer extends React.Component {
+    componentWillMount() {
+        this.props.getProjectsFromFolder()
+    }
     generateButton(projectPath) {
         return (
             <span>
@@ -40,9 +43,9 @@ class RecentProjectsContainer extends React.Component {
                 manifest = { target_language: {}, ts_project: {} }
             }
             try {
-              var stats = fs.statSync(projectPath);
+                var stats = fs.statSync(projectPath);
             } catch (e) {
-              continue;
+                continue;
             }
             var mtime = new Date(stats.mtime);
             var difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
@@ -72,7 +75,7 @@ class RecentProjectsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.recentProjectsReducer, { manifest: state.projectDetailsReducer.manifest});
+    return Object.assign({}, state.recentProjectsReducer, { manifest: state.projectDetailsReducer.manifest });
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -85,6 +88,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         loadProject: () => {
             dispatch(recentProjectsActions.startLoadingNewProject());
+        },
+        getProjectsFromFolder: () => {
+            dispatch(recentProjectsActions.getProjectsFromFolder());
         }
     }
 }
