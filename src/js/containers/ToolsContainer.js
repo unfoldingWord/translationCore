@@ -9,6 +9,7 @@ import {addVerseEdit} from '../actions/VerseEditActions.js';
 import {toggleReminder} from '../actions/RemindersActions.js';
 import {addSelections, removeSelections} from '../actions/SelectionsActions.js';
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
+import {addGroupData} from '../actions/GroupDataActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -79,6 +80,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
+      },
+      addGroupData: (groupName, payload) => {
+        dispatch(addGroupData(groupName, payload));
       }
     };
 };

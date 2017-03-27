@@ -197,7 +197,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
     }
   });
   it('inputJson should be able to read a json manifest from a file', function(done){
-    ModuleApi.inputJson('./tests/testIO/tc-manifest.json', function(err, data) {
+    ModuleApi.inputJson('./tests/testIO/manifest.json', function(err, data) {
       if (err || !data) {
         assert.equal(true, false);
       } else {
