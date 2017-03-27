@@ -167,6 +167,8 @@ var Main = React.createClass({
   },
 
   render: function () {
+    // logging the store for testing.
+    console.log(this.props);
     var _this = this;
     if (this.state.firstTime) {
       return (
