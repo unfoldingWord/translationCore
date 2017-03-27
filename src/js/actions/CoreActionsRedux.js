@@ -247,19 +247,3 @@ export function getAlert() {
     this.alertResponseObj = null;
   }
 }
-
-// export function updateCurrentCheckIndex(index){
-//   return {
-//     type:consts.UPDATE_CHECK_INDEX,
-//     ...state,
-//     checkIndex: index
-//   }
-// }
-
-// export function updateCurrentGroupIndex(index){
-//   return {
-//     type:consts.UPDATE_GROUP_INDEX,
-//     ...state,
-//     groupIndex: index
-//   }
-// }
