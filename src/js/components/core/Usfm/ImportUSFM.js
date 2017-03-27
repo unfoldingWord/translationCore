@@ -3,19 +3,15 @@ import fs from 'fs-extra';
 import usfm from 'usfm-parser';
 import path from 'path-extra';
 import {FormGroup, ButtonGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
-import {
-  loadFile,
-  clearPreviousData,
-  loadProjectThatHasManifest,
-  saveManifest,
-  isOldTestament
-} from '../UploadMethods.js';
-import { addNewBible } from '../../../actions/ResourcesActions.js'
-import { dispatch } from "../../../pages/root"
+import { addNewBible } from '../../../actions/ResourcesActions.js';
+import { loadProjectThatHasManifest } from '../../../actions/CoreActionsRedux';
+import { dispatch } from "../../../pages/root";
+import pathex from 'path-extra';
 //const declaration
 const api = window.ModuleApi;
-const defaultSave = path.join(path.homedir(), 'translationCore');
-const {dialog} = require('electron').remote;
+const defaultSave = path.join(pathex.homedir(), 'translationCore');
+import Helpers from '../../../utils/helpers';
+
 
 /**
  * @description This function converts usfm into the target language format.
@@ -24,14 +20,13 @@ const {dialog} = require('electron').remote;
  ******************************************************************************/
 function openUSFMProject(savePath, direction, link, callback = () => { }) {
   if (!savePath || !direction)
-    return 'No file or text direction specified'
-  clearPreviousData();
-  createTCProject(savePath, (parsedUSFM, saveLocation) => {
+    return 'No file or text direction specified';
+  createTCProject(savePath, (parsedUSFM, projectSaveLocation) => {
     var targetLanguage = saveTargetLangeInAPI(parsedUSFM);
-    saveParamsInAPI(parsedUSFM.book, saveLocation, direction, api.getDataFromCommon('language'));
-    loadFile(saveLocation, 'manifest.json', (err, tcManifest) => {
+    saveParamsInAPI(parsedUSFM.book, projectSaveLocation, direction, api.getDataFromCommon('language'));
+    Helpers.loadFile(projectSaveLocation, 'tc-manifest.json', (err, tcManifest) => {
       if (tcManifest) {
-        loadProjectThatHasManifest(saveLocation, callback, tcManifest);
+        dispatch(loadProjectThatHasManifest(projectSaveLocation, callback, tcManifest));
         dispatch(addNewBible('targetLanguage', targetLanguage));
         //TODO: remove api call once implementation is ready
         ModuleApi.putDataInCommon('targetLanguage', targetLanguage);
@@ -57,9 +52,9 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
             name: parsedUSFM.bookName
           }
         }
-        saveManifest(saveLocation, link, defaultManifest, (err, tcManifest) => {
+        Helpers.saveManifest(projectSaveLocation, link, defaultManifest, (err, tcManifest) => {
           if (tcManifest) {
-            loadProjectThatHasManifest(saveLocation, callback, tcManifest);
+            dispatch(loadProjectThatHasManifest(projectSaveLocation, callback, tcManifest));
           }
           else {
             console.error(err);
@@ -69,16 +64,16 @@ function openUSFMProject(savePath, direction, link, callback = () => { }) {
     });
   });
 }
-function saveParamsInAPI(bookAbbr, saveLocation, direction, language) {
-  if (!bookAbbr || !saveLocation || !direction) return 'Missing params';
+function saveParamsInAPI(bookAbbr, projectSaveLocation, direction, language) {
+  if (!bookAbbr || !projectSaveLocation || !direction) return 'Missing params';
   var params = {
     originalLanguagePath: path.join(window.__base, 'static', 'taggedULB'),
-    targetLanguagePath: saveLocation,
+    targetLanguagePath: projectSaveLocation,
     direction: direction,
     bookAbbr: bookAbbr,
     language: language
   };
-  if (isOldTestament(params.bookAbbr)) {
+  if (Helpers.isOldTestament(params.bookAbbr)) {
     params.originalLanguage = "hebrew";
   } else {
     params.originalLanguage = "greek";
@@ -136,12 +131,12 @@ function createTCProject(savePath, callback) {
     return 'No save path or callback specified'
   }
   var parsedPath = path.parse(savePath);
-  var saveLocation = path.join(defaultSave, parsedPath.name);
-  var saveFile = path.join(saveLocation, parsedPath.base);
-  api.putDataInCommon('saveLocation', saveLocation);
+  var projectSaveLocation = path.join(defaultSave, parsedPath.name);
+  var saveFile = path.join(projectSaveLocation, parsedPath.base);
+  api.putDataInCommon('projectSaveLocation', projectSaveLocation);
   try {
     var data = fs.readFileSync(savePath);
-    fs.ensureDirSync(saveLocation);
+    fs.ensureDirSync(projectSaveLocation);
     fs.writeFileSync(saveFile, data.toString());
     var usfmData = data.toString();
     var parsedUSFM = usfm.toJSON(usfmData);
@@ -149,17 +144,13 @@ function createTCProject(savePath, callback) {
   } catch (e) {
     console.error(e);
   }
-  callback(parsedUSFM, saveLocation);
+  callback(parsedUSFM, projectSaveLocation);
 }
 
 class ImportComponent extends React.Component {
   constructor() {
     super();
     this.direction = 'ltr';
-  }
-
-  componentDidMount() {
-    this.props.checkIfValid('No file selected');
   }
 
   showDialog() {

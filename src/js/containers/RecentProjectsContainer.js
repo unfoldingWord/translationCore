@@ -17,7 +17,7 @@ class RecentProjectsContainer extends React.Component {
                     <Glyphicon glyph={'folder-open'} />
                     <span style={{ marginLeft: '10px', marginRight: '20px' }}>Open</span>
                 </Button>
-                <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath)}>
+                <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
                     <Glyphicon glyph={'refresh'} />
                     <span style={{ marginLeft: '5px' }}> Sync </span>
                 </Button>
@@ -72,7 +72,7 @@ class RecentProjectsContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.recentProjectsReducer);
+    return Object.assign({}, state.recentProjectsReducer, { manifest: state.projectDetailsReducer.manifest});
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -80,8 +80,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onLoad: (projectPath) => {
             dispatch(recentProjectsActions.onLoad(projectPath));
         },
-        syncProject: (projectPath) => {
-            dispatch(recentProjectsActions.syncProject(projectPath));
+        syncProject: (projectPath, manifest) => {
+            dispatch(recentProjectsActions.syncProject(projectPath, manifest));
         },
         loadProject: () => {
             dispatch(recentProjectsActions.startLoadingNewProject());

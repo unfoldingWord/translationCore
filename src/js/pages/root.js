@@ -23,3 +23,4 @@ module.exports.App = (
   </Provider>
 );
 module.exports.dispatch = store.dispatch;
+module.exports.store = store;

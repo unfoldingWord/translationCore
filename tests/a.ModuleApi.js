@@ -144,8 +144,8 @@ describe('ModuleApi.updateManifest', function() {
       assert.isNull(ModuleApi.getDataFromCommon('tcManifest').undefined);
     });
   });
-  it('updateManifest should update the manifest and write it to a file with a saveLocation present', function(done) {
-    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
+  it('updateManifest should update the manifest and write it to a file with a projectSaveLocation present', function(done) {
+    ModuleApi.putDataInCommon('projectSaveLocation', './tests/testIO/');
     ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
     ModuleApi.updateManifest('type', 'test', function(err) {
       if (err) {

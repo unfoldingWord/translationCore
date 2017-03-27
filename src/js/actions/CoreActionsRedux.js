@@ -8,7 +8,7 @@ var options = {
   name: 'Translation Core'
 };
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const CheckStoreActions = require('./CheckStoreActions.js');
+import * as CheckStoreActions from './CheckStoreActions.js';
 const ToolsActions = require('./ToolsActions.js');
 const api = window.ModuleApi;
 
@@ -21,21 +21,21 @@ listener
 (See ExampleComponent.js)
 */
 
-module.exports.showMainView = function (val) {
+export function showMainView(val) {
   return {
     type: consts.SHOW_APPS,
     val: val
   }
 }
 
-module.exports.changeModuleView = function (val) {
+export function changeModuleView(val) {
   return {
     type: consts.CHANGE_WRAPPER_VIEW,
     val: val
   }
 }
 
-module.exports.changeOnlineStatus = function (online, firstLoad, fromButton) {
+export function changeOnlineStatus(online, firstLoad, fromButton) {
   return ((dispatch) => {
     if (!document.hasFocus() && !fromButton) return;
     //If the document is out of focus and the action is not created by the user
@@ -101,96 +101,107 @@ module.exports.changeOnlineStatus = function (online, firstLoad, fromButton) {
   })
 }
 
-module.exports.changeSubMenuItems = function (groupName) {
+export function changeSubMenuItems(groupName) {
   const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
   this.setState({
     currentSubGroupObjects: newSubGroupObjects,
     currentGroupName: groupName,
     currentCheckIndex: 0
   });
-},
+}
 
-  module.exports.setToolNamespace = function (currentCheckNamespace) {
-    return ((dispatch, getState) => {
-      if (!currentCheckNamespace) return {
+export function setToolNamespace(currentCheckNamespace) {
+  return ((dispatch, getState) => {
+    if (!currentCheckNamespace) return {
+      type: "SET_TOOL_NAMESPACE"
+    };
+    //if for some reason currentCheckNamespace is undefined it shouldn't continue
+    const store = getState().checkStoreReducer;
+    var bookName = store.book;
+    var currentGroupIndex = store.currentGroupIndex;
+    var currentCheckIndex = store.currentCheckIndex;
+    var groupObjects = store.groups;
+    var groupName = groupObjects[currentGroupIndex].group;
+    var currentCheck;
+    var subGroupObjects;
+
+    //getting the data required to initialize a new tool being loaded
+
+    if (currentCheckNamespace === ' ') {
+      dispatch(this.changeModuleView('recent'));
+      dispatch(CheckStoreActions.setBookName(null));
+      dispatch(CheckStoreActions.setCheckNameSpace(null));
+      return {
         type: "SET_TOOL_NAMESPACE"
       };
-      //if for some reason currentCheckNamespace is undefined it shouldn't continue
-      const store = api.getDataFromCheckStore(currentCheckNamespace);
-      var bookName = store.book;
-      var currentGroupIndex = store.currentGroupIndex;
-      var currentCheckIndex = store.currentCheckIndex;
-      var groupObjects = store.groups;
-      var groupName = groupObjects[currentGroupIndex].group;
-      var currentCheck;
-      var subGroupObjects;
+    }
+    //if currentCheckNamespace is ' ' that means we are showing the recent projects and not a tool
 
-      //getting the data required to initialize a new tool being loaded
+    dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
+    //populating the checkstore field for namespace
 
-      if (currentCheckNamespace === ' ') {
-        dispatch(this.changeModuleView('recent'));
-        dispatch(CheckStoreActions.setBookName(null));
-        dispatch(CheckStoreActions.setCheckNameSpace(null));
-        return {
-          type: "SET_TOOL_NAMESPACE"
-        };
+    if (!groupObjects[currentGroupIndex]) currentGroupIndex = 0;
+    this.setUpGroupObjectsAndCurrentCheck(groupObjects);
+
+    dispatch(CheckStoreActions.setBookName(bookName));
+    //populating the checkstore field for bookName
+
+    dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
+    //populating the checkstore field for namespace
+
+    dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
+    //populating the checkstore field for the currentCheck, a tool may have a
+    //prior checkindex and group index
+
+    dispatch({
+      type: "SET_TOOL_NAMESPACE",
+      currentGroupIndex: currentGroupIndex || 0,
+      currentCheckIndex: currentCheckIndex || 0,
+      currentToolNamespace: currentCheckNamespace,
+      currentGroupName: groupName,
+      currentGroupObjects: groupObjects,
+      currentSubGroupObjects: subGroupObjects,
+      currentBookName: bookName,
+    });
+    dispatch(ToolsActions.getToolsMetadatas());
+
+    dispatch(this.changeModuleView('main'));
+    //updating the current view of the app
+  })
+}
+
+export function setUpGroupObjectsAndCurrentCheck(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
+  return ((dispatch) => {
+    try {
+      var groupObjects = JSON.parse(JSON.stringify(oldGroupObjects));
+      for (var el in groupObjects) {
+        groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
       }
-      //if currentCheckNamespace is ' ' that means we are showing the recent projects and not a tool
-
-      dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
-      //populating the checkstore field for namespace
-
-      if (!groupObjects[currentGroupIndex]) currentGroupIndex = 0;
-      this.setUpGroupObjects(groupObjects);
-
-      if (!subGroupObjects || !subGroupObjects[currentCheckIndex]) currentCheckIndex = 0;
-
-      try {
-        subGroupObjects = groupObjects[currentGroupIndex]['checks'];
-        currentCheck = subGroupObjects[currentCheckIndex];
-      } catch (e) {
-        console.log("Its possible the tools data structure doesnt follow the groups and checks pattern");
-      }
-
-      dispatch(CheckStoreActions.setBookName(bookName));
-      //populating the checkstore field for bookName
-
       dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
       //populating the checkstore field for groupobjects
-
-      dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
-      //populating the checkstore field for namespace
-
-      dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
-      //populating the checkstore field for the currentCheck, a tool may have a
-      //prior checkindex and group index
-
+      let subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+      let currentCheck = subGroupObjects[currentCheckIndex];
+      let groupName = groupObjects[currentGroupIndex]['groupName'].trim();
       dispatch({
-        type: "SET_TOOL_NAMESPACE",
-        currentGroupIndex: currentGroupIndex || 0,
-        currentCheckIndex: currentCheckIndex || 0,
-        currentToolNamespace: currentCheckNamespace,
-        currentGroupName: groupName,
-        currentGroupObjects: groupObjects,
-        currentSubGroupObjects: subGroupObjects,
-        currentBookName: bookName,
+        type: "SET_SUBGROUPS_OBJECTS",
+        val: subGroupObjects,
       });
-      dispatch(ToolsActions.getToolsMetadatas());
-
-      dispatch(this.changeModuleView('main'));
-      //updating the current view of the app
-    })
-  }
-
-module.exports.setUpGroupObjects = function (groupObjects) {
-  for (var el in groupObjects) {
-    groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
-  }
-
+      dispatch({
+        type: "UPDATE_CURRENT_CHECK",
+        val: currentCheck,
+      });
+      dispatch({
+        type:"SET_GROUP_NAME",
+        groupName:groupName
+      })
+    } catch (e) {
+      consle.warn(e)
+    }
+  })
 }
 
 
-module.exports.updateTools = function (namespace) {
+export function updateTools(namespace) {
   //TODO
   return ((dispatch) => {
     if (!namespace) {
@@ -213,7 +224,7 @@ module.exports.updateTools = function (namespace) {
   });
 }
 
-module.exports.getGroupProgress = function (groupObj) {
+export function getGroupProgress(groupObj) {
   var numChecked = 0;
   for (var i = 0; i < groupObj.checks.length; i++) {
     if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
@@ -221,7 +232,7 @@ module.exports.getGroupProgress = function (groupObj) {
   return numChecked / groupObj.checks.length;
 }
 
-module.exports.getAlert = function () {
+export function getAlert() {
   var data = CoreStore.getAlertResponseMessage();
   if (data) {
     try {
@@ -236,3 +247,19 @@ module.exports.getAlert = function () {
     this.alertResponseObj = null;
   }
 }
+
+// export function updateCurrentCheckIndex(index){
+//   return {
+//     type:consts.UPDATE_CHECK_INDEX,
+//     ...state,
+//     checkIndex: index
+//   }
+// }
+
+// export function updateCurrentGroupIndex(index){
+//   return {
+//     type:consts.UPDATE_GROUP_INDEX,
+//     ...state,
+//     groupIndex: index
+//   }
+// }

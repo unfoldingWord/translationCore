@@ -158,7 +158,7 @@ class CoreStore extends EventEmitter {
     this.currentCheckNamespace = value;
   }
 
-  getCurrentCheckNamespace() {
+  getcurrentCheckNamespace() {
     return this.currentCheckNamespace;
   }
 
@@ -208,12 +208,6 @@ class CoreStore extends EventEmitter {
 
       case consts.SEND_FETCH_DATA:
         this.FetchDataArray = action.array;
-        this.emitChange();
-      break;
-
-      case consts.START_LOADING:
-        this.doneLoading = false;
-        this.progressObject = [];
         this.emitChange();
       break;
 

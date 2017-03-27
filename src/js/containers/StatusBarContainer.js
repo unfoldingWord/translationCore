@@ -8,7 +8,7 @@ class StatusBarContainer extends React.Component {
     render() {
         return (
             <div>
-            <StatusBar bookName={this.props.bookName} currentCheckNameSpace={this.props.currentCheckNameSpace} open={this.props.openModalAndSpecificTab} online={this.props.online} changeOnlineStatus={this.props.changeOnlineStatus}/>
+            <StatusBar bookName={this.props.bookName} currentCheckNamespace={this.props.currentCheckNamespace} open={this.props.openModalAndSpecificTab} online={this.props.online} changeOnlineStatus={this.props.changeOnlineStatus}/>
             </div>
         )
     }
@@ -27,7 +27,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 
 function mapStateToProps(state) {
     return Object.assign({}, state.statusBarReducer, {
-        currentCheckNameSpace:state.checkStoreReducer.currentCheckNameSpace,
+        currentCheckNamespace:state.checkStoreReducer.currentCheckNamespace,
         bookName:state.checkStoreReducer.book
     });
 }

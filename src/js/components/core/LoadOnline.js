@@ -11,7 +11,6 @@ const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const git = require('./GitApi.js');
-const Access = require('./AccessProject');
 
 const CoreActions = require('../../actions/CoreActions.js');
 

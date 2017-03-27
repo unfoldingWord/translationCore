@@ -151,7 +151,6 @@ function filterBySearchTerm(query, store) {
  ******************************************************************************/
 function searchText(query, text) {
   if (!query || query.length === 0) {return text};
-  if (!text) text = window.ModuleApi.getDataFromCommon("targetLanguage");
   var refinedText = {};
   for (var chapter in text) {
     for (var verse in text[chapter]) {
@@ -234,8 +233,7 @@ function filterByVerse(query, store) {
  * @description Gets the chapters that are included in the target language.
  * @return {Array} targetLang - An array of strings, that denote chapter numbers.
  ******************************************************************************/
-function getChapters() {
-  var targetLang = window.ModuleApi.getDataFromCommon("targetLanguage");
+function getChapters(targetLang) {
   return Object.getOwnPropertyNames(targetLang);
 }
 
