@@ -123,6 +123,5 @@ export const saveVerseEdit = state => {
     ...state.contextIdReducer,
     ...state.verseEditReducer
   }
-  console.log(verseEditPayload)
   saveData(state, "verseEdits", verseEditPayload)
 }
