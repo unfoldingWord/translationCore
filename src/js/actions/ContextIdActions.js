@@ -5,9 +5,9 @@ import {generateTimestamp} from '../helpers/index';
  * @param {object} contextId - the contextId object.
  * @return {object} New state for contextId reducer.
  */
-export const changeContextId = (contextId) => {
+export const changeCurrentContextId = (contextId) => {
   return {
-    type: consts.CHANGE_CONTEXT_ID,
+    type: consts.CHANGE_CURRENT_CONTEXT_ID,
     contextId
   };
 };

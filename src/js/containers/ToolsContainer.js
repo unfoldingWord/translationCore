@@ -8,7 +8,7 @@ import {addComment} from '../actions/CommentsActions.js';
 import {addVerseEdit} from '../actions/VerseEditActions.js';
 import {toggleReminder} from '../actions/RemindersActions.js';
 import {addSelections, removeSelections} from '../actions/SelectionsActions.js';
-import {changeContextId} from '../actions/ContextIdActions.js';
+import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -77,8 +77,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addVerseEdit: (text, userName) => {
         dispatch(addVerseEdit(text, userName));
       },
-      changeContextId: (contextId) => {
-        dispatch(changeContextId(contextId));
+      changeCurrentContextId: (contextId) => {
+        dispatch(changeCurrentContextId(contextId));
       }
     };
 };

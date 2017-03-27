@@ -6,7 +6,7 @@ const initialState = {
 
 const contextIdReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGE_CONTEXT_ID:
+    case consts.CHANGE_CURRENT_CONTEXT_ID:
       return Object.assign({}, state, {
         contextId: action.contextId
       })
