@@ -8,7 +8,7 @@ const groupDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.ADD_GROUP_DATA: {
       let groups = state.groups;
-      groups[action.groupName] = action.groupPayload;
+      groups[action.groupName] = action.groupData;
       return Object.assign({}, state, {
         groups: groups
       });
