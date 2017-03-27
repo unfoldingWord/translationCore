@@ -34,13 +34,13 @@ describe('Upload.sendPath(undefined project)', function () {
             assert.isNotOk(api.getDataFromCommon('saveLocation'));
             assert.isNotOk(api.getDataFromCommon('params'));
             assert.isNotOk(api.getDataFromCommon('targetLanguage'));
-            api.inputJson(undefinedProject + '/manifest.json', function (err, data) {
+            api.inputJson(undefinedProject + '/tc-manifest.json', function (err, data) {
                 if (!err) {
                     assert.equal(true, false);
                 } else {
                     assert.isNotOk(data);
                 }
-                api.outputJson(noTCManifestProject + '/manifest.json', null, function () {
+                api.outputJson(noTCManifestProject + '/tc-manifest.json', null, function () {
                     done();
                 });
             });
