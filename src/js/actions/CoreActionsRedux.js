@@ -141,7 +141,7 @@ export function setToolNamespace(currentCheckNamespace) {
     //populating the checkstore field for namespace
 
     if (!groupObjects[currentGroupIndex]) currentGroupIndex = 0;
-    this.setUpGroupObjectsAndCurrentCheck(groupObjects);
+    this.setUpGroupObjectsFromIndex(groupObjects);
 
     dispatch(CheckStoreActions.setBookName(bookName));
     //populating the checkstore field for bookName
@@ -170,7 +170,7 @@ export function setToolNamespace(currentCheckNamespace) {
   })
 }
 
-export function setUpGroupObjectsAndCurrentCheck(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
+export function setUpGroupObjectsFromIndex(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
   return ((dispatch) => {
     try {
       var groupObjects = JSON.parse(JSON.stringify(oldGroupObjects));
@@ -182,20 +182,11 @@ export function setUpGroupObjectsAndCurrentCheck(oldGroupObjects, currentCheckIn
       let subGroupObjects = groupObjects[currentGroupIndex]['checks'];
       let currentCheck = subGroupObjects[currentCheckIndex];
       let groupName = groupObjects[currentGroupIndex]['groupName'].trim();
-      dispatch({
-        type: "SET_SUBGROUPS_OBJECTS",
-        val: subGroupObjects,
-      });
-      dispatch({
-        type: "UPDATE_CURRENT_CHECK",
-        val: currentCheck,
-      });
-      dispatch({
-        type:"SET_GROUP_NAME",
-        groupName:groupName
-      })
+      dispatch(CheckStoreActions.setSubgroupObjects(subGroupObjects));
+      dispatch(CheckStoreActions.updateCurrentCheck(currentCheck));
+      dispatch(CheckStoreActions.setGroupName(groupName));
     } catch (e) {
-      consle.warn(e)
+      console.warn(e)
     }
   })
 }

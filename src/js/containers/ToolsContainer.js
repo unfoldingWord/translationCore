@@ -16,6 +16,7 @@ class ToolsContainer extends React.Component {
       <Tool {...this.props} progress={this.props.progress}
         addNewBible={this.props.addNewBible}
         addNewResource={this.props.addNewResource}
+        updateCheckIndex={this.props.updateCheckIndex}
       />
     );
   }
@@ -79,6 +80,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     addVerseEdit: (text, userName) => {
       dispatch(addVerseEdit(text, userName));
+    },
+    updateCheckIndex: (index) => {
+      dispatch(CheckStoreActions.goToCheck(null, index));
+    },
+    updateGroupIndex: (index) => {
+      dispatch(CheckStoreActions.goToCheck(index, null));
     }
   }
 }

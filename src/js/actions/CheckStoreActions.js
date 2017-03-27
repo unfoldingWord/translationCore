@@ -4,7 +4,7 @@ const CoreStore = require('../stores/CoreStore.js');
 import * as CoreActionsRedux from './CoreActionsRedux.js';
 
 
-export function setBookName (bookName) {
+export function setBookName(bookName) {
   let bookAbbr = convertToBookAbbreviation(bookName);
   return {
     type: "SET_BOOK_NAME",
@@ -16,6 +16,26 @@ export function setBookName (bookName) {
 export const convertToFullBookName = (bookAbbr) => {
   if (!bookAbbr) return;
   return BooksOfBible[bookAbbr.toString().toLowerCase()];
+}
+
+
+export function setGroupName(groupName) {
+  return {
+    type: consts.SET_GROUP_NAME,
+    groupName:groupName
+  }
+}
+export function setSubGroupObjects(subGroupObjects) {
+  return {
+    type: "SET_SUBGROUPS_OBJECTS",
+    val: subGroupObjects,
+  }
+}
+
+export function updateCurrentCheck(newCheck) {
+  return ((dispatch) => {
+    //TODO
+  })
 }
 
 /**
@@ -34,7 +54,7 @@ export const convertToBookAbbreviation = (fullBookName) => {
   }
 }
 
-export function setGroupsObjects (groupsObjects) {
+export function setGroupsObjects(groupsObjects) {
   return ((dispatch) => {
 
     function quickSort(array) {
@@ -66,24 +86,9 @@ export function setGroupsObjects (groupsObjects) {
   });
 }
 
-export function updateCurrentCheck (NAMESPACE, oldCheck) {
-  return ((dispatch) => {
-    const newCurrentCheck = JSON.parse(JSON.stringify(oldCheck));
-    newGroupsObjects[currentGroupIndex]['checks'][currentCheckIndex] = newCurrentCheck;
-    dispatch({
-      type: "SET_GROUPS_OBJECTS",
-      val: newGroupsObjects,
-    });
-    dispatch({
-      type: "UPDATE_CURRENT_CHECK",
-      val: newCurrentCheck,
-    });
-  })
-}
-
-export function goToCheck (newGroupIndex, newCheckIndex) {
+export function goToCheck(newGroupIndex, newCheckIndex) {
   return ((dispatch, getState) => {
-    const {groups} = getState().checkStoreReducer;
+    const { groups } = getState().checkStoreReducer;
     let currentCheck = groups[newGroupIndex]['checks'][newCheckIndex];
     dispatch({
       type: "GO_TO_CHECK",
@@ -97,7 +102,7 @@ export function goToCheck (newGroupIndex, newCheckIndex) {
   })
 }
 
-export function goToNext () {
+export function goToNext() {
   return ((dispatch, getState) => {
     const { currentGroupIndex, currentCheckIndex, groups } = getState().checkStoreReducer;
     let newGroupIndex = 0;
@@ -126,9 +131,9 @@ export function goToNext () {
   })
 }
 
-export function goToPrevious (currentGroupIndex, currentCheckIndex, groups) {
+export function goToPrevious(currentGroupIndex, currentCheckIndex, groups) {
   return ((dispatch, getState) => {
-     const { currentGroupIndex, currentCheckIndex, groups } = getState().checkStoreReducer;
+    const { currentGroupIndex, currentCheckIndex, groups } = getState().checkStoreReducer;
     let newGroupIndex;
     let newCheckIndex;
     if (currentCheckIndex >= 1) {
@@ -158,14 +163,14 @@ export function goToPrevious (currentGroupIndex, currentCheckIndex, groups) {
   })
 }
 
-export function setCheckNameSpace (currentCheckNamespace) {
+export function setCheckNameSpace(currentCheckNamespace) {
   return {
     type: "UPDATE_NAMESPACE",
     currentCheckNamespace: currentCheckNamespace
   }
 }
 
-export function changedCheckStatus (groupIndex, checkIndex, checkStatus) {
+export function changedCheckStatus(groupIndex, checkIndex, checkStatus) {
   return ((dispatch, getState) => {
     const store = getState().checkStoreReducer;
     let groupObjects = store.groups;
