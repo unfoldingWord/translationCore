@@ -83,7 +83,6 @@ export const saveState = state => {
       saveResources(state);
     }
     if (state.commentsReducer) {
-      console.log("hello")
       saveComments(state);
     }
   } catch (err) {
