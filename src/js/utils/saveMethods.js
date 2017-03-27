@@ -115,6 +115,14 @@ export const saveComments = state => {
   saveData(state, "comments", commentsPayload);
 };
 
-
-
-
+/**
+ * @description This function saves the selections data.
+ * @param {Object} state - The state object courtesy of the store
+ ******************************************************************************/
+export const saveSelections = state => {
+  let selectionsPayload = {
+    ...state.contextIdReducer,
+    ...state.selectionsReducer
+  };
+  saveData(state, "selections", selectionsPayload);
+};
