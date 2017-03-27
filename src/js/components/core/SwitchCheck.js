@@ -7,9 +7,9 @@ class SwitchCheck extends React.Component{
     let buttons = [];
     if(toolsMetadatas.length == 0 ) {
       return <div style={{color: "#FFFFFF"}}>No tC default tools found.</div>;
-    } else if (!api.getDataFromCommon('saveLocation') || !api.getDataFromCommon('tcManifest')) {
-      return <h3 style={{marginTop: "0px", color: 'white', textAlign: 'center', fontWeight: 'bold', padding: '55px 0'}}>Please <span onClick={this.props.showLoad} style={{cursor: 'pointer', color: '#337ab7'}}> load a project </span> before choosing a tool</h3>;
-    } else {
+    }// else if (false) {
+      // return <h3 style={{marginTop: "0px", color: 'white', textAlign: 'center', fontWeight: 'bold', padding: '55px 0'}}>Please <span onClick={this.props.showLoad} style={{cursor: 'pointer', color: '#337ab7'}}> load a project </span> before choosing a tool</h3>;
+    else {
       for (let i in toolsMetadatas) {
         const metadata = toolsMetadatas[i];
         if(metadata.name == "ToolsTester"){
