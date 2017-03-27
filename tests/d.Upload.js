@@ -48,27 +48,6 @@ describe('Upload.sendPath(undefined project)', function () {
     });
 });
 
-describe('Upload.sendPath(USFM project)', function () {
-    it('should load a USFM project', function (done) {
-      this.timeout(50000);
-        Upload.sendPath(testUSFMProjectPath, null, function () {
-            assert.isObject(api.getDataFromCommon('tcManifest'));
-            assert.isString(api.getDataFromCommon('projectSaveLocation'));
-            assert.isObject(api.getDataFromCommon('params'));
-            assert.isObject(api.getDataFromCommon('targetLanguage'));
-            api.inputJson(testUSFMProjectPath + '/manifest.json', function (err, data) {
-                if (err || !data) {
-                    assert.equal(true, false);
-                } else {
-                    assert.isObject(data);
-                    assert(data.target_language);
-                }
-                done();
-            });
-        });
-    });
-});
-
 describe('Upload.sendPath(non-USFM project)', function () {
     it('should load a regular project', function (done) {
         Upload.sendPath(testProjectPath, null, function (err, data) {
