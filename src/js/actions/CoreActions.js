@@ -46,9 +46,9 @@ module.exports = {
 
   changeCreateProjectText: function(string) {
     Dispatcher.handleAction({
-      type:  consts.CHANGE_CREATE_PROJECT_TEXT,
+      type: consts.CHANGE_CREATE_PROJECT_TEXT,
       modalValue: string
-    })
+    });
   },
 
   getFetchData: function(FetchDataArray) {
@@ -65,10 +65,10 @@ module.exports = {
     });
   },
 
-  newProject: function(){
+  newProject: function() {
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,
-      reportViews:[]
+      reportViews: []
     });
   },
 
@@ -79,13 +79,13 @@ module.exports = {
     });
   },
 
-    sendNotificationToast: function(visible, toastParamsObj) {
-      Dispatcher.handleAction({
-        type: consts.SHOW_TOAST_PARAMS,
-        toastOption: visible,
-        toastParams: toastParamsObj
-      });
-    },
+  sendNotificationToast: function(visible, toastParamsObj) {
+    Dispatcher.handleAction({
+      type: consts.SHOW_TOAST_PARAMS,
+      toastOption: visible,
+      toastParams: toastParamsObj
+    });
+  },
 
   sendAlertResponse: function(alertResponseObj) {
     Dispatcher.handleAction({
@@ -108,7 +108,7 @@ module.exports = {
       body,
       left,
       top
-    })
+    });
   }
 
 };

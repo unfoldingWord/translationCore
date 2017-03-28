@@ -1,20 +1,15 @@
-const consts = require('./CoreActionConsts');
+import consts from './CoreActionConsts';
+import path from 'path-extra';
+import fs from 'fs-extra';
+import CheckDataGrabber from '../components/core/create_project/CheckDataGrabber.js';
+import modalActions from './ModalActions.js';
+import LoaderActions from './LoaderActions.js';
 const api = window.ModuleApi;
-const pathex = require('path-extra');
-const path = require('path-extra');
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const fs = require(window.__base + 'node_modules/fs-extra');
-const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
-const modalActions = require('./ModalActions.js');
-const LoaderActions = require('./LoaderActions.js');
-const coreStoreActions = require('./CoreActionsRedux.js');
+const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 
-
-
-
-module.exports.loadTool = function (folderName) {
+module.exports.loadTool = function(folderName) {
   return ((dispatch, getState) => {
-    /*this CheckDataGrabber function call will have to change in
+    /*this CheckDataGrabber functioncall will have to change in
     order for us to fully implement redux*/
     dispatch(modalActions.showModalContainer(false));
     CheckDataGrabber.loadModuleAndDependencies(folderName, (err, success) => {
@@ -24,15 +19,15 @@ module.exports.loadTool = function (folderName) {
           type: consts.LOAD_TOOL,
           val: true
         });
-        dispatch({ type: consts.SHOW_MODAL_CONTAINER, visible: false });
+        dispatch({type: consts.SHOW_MODAL_CONTAINER, visible: false});
       }
-    }, (data, key)=>{
+    }, (data, key) => {
       dispatch(LoaderActions.sendProgressForKey(key, data, getState().loaderReducer));
     });
-  })
-}
+  });
+};
 
-module.exports.getToolsMetadatas = function () {
+module.exports.getToolsMetadatas = function() {
   return ((dispatch) => {
     getDefaultModules((moduleFolderPathList) => {
       fillDefaultModules(moduleFolderPathList, (metadatas) => {
@@ -42,20 +37,19 @@ module.exports.getToolsMetadatas = function () {
           type: consts.GET_TOOLS_METADATAS,
           val: metadatas
         });
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
 
 const getDefaultModules = (callback) => {
   var defaultModules = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   var moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
-  fs.readdir(moduleBasePath, function (error, folders) {
+  fs.readdir(moduleBasePath, function(error, folders) {
     if (error) {
       console.error(error);
-    }
-    else {
+    } else {
       for (var folder of folders) {
         try {
           var manifestPath = path.join(moduleBasePath, folder, 'package.json');
@@ -72,20 +66,19 @@ const getDefaultModules = (callback) => {
               defaultModules.push(manifestPath);
             }
           }
-        }
-        catch (e) {
+        } catch (e) {
         }
       }
     }
     callback(defaultModules);
   });
-}
+};
 
 const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
     return a.title < b.title ? -1 : 1;
   });
-}
+};
 
 const fillDefaultModules = (moduleFilePathList, callback) => {
   var tempMetadatas = [];
@@ -94,7 +87,7 @@ const fillDefaultModules = (moduleFilePathList, callback) => {
     doneFiles = 0;
   function onComplete() {
     doneFiles++;
-    if (doneFiles == totalFiles) {
+    if (doneFiles === totalFiles) {
       callback(tempMetadatas);
     }
   }
@@ -102,8 +95,7 @@ const fillDefaultModules = (moduleFilePathList, callback) => {
     fs.readJson(filePath, (error, metadata) => {
       if (error) {
         console.error(error);
-      }
-      else {
+      } else {
         metadata.folderName = path.dirname(filePath);
         metadata.imagePath = path.resolve(filePath, '../icon.png');
         metadata.badgeImagePath = path.resolve(filePath, '../badge.png');
@@ -112,4 +104,4 @@ const fillDefaultModules = (moduleFilePathList, callback) => {
       onComplete();
     });
   }
-}
+};
