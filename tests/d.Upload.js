@@ -31,7 +31,7 @@ describe('Upload.sendPath(undefined project)', function () {
     it('should fail', function (done) {
         Upload.sendPath(undefinedProject, null, function () {
             assert.isNotOk(api.getDataFromCommon('tcManifest'));
-            assert.isNotOk(api.getDataFromCommon('saveLocation'));
+            assert.isNotOk(api.getDataFromCommon('projectSaveLocation'));
             assert.isNotOk(api.getDataFromCommon('params'));
             assert.isNotOk(api.getDataFromCommon('targetLanguage'));
             api.inputJson(undefinedProject + '/manifest.json', function (err, data) {
@@ -43,27 +43,6 @@ describe('Upload.sendPath(undefined project)', function () {
                 api.outputJson(noTCManifestProject + '/manifest.json', null, function () {
                     done();
                 });
-            });
-        });
-    });
-});
-
-describe('Upload.sendPath(USFM project)', function () {
-    it('should load a USFM project', function (done) {
-      this.timeout(50000);
-        Upload.sendPath(testUSFMProjectPath, null, function () {
-            assert.isObject(api.getDataFromCommon('tcManifest'));
-            assert.isString(api.getDataFromCommon('saveLocation'));
-            assert.isObject(api.getDataFromCommon('params'));
-            assert.isObject(api.getDataFromCommon('targetLanguage'));
-            api.inputJson(testUSFMProjectPath + '/manifest.json', function (err, data) {
-                if (err || !data) {
-                    assert.equal(true, false);
-                } else {
-                    assert.isObject(data);
-                    assert(data.target_language);
-                }
-                done();
             });
         });
     });
@@ -133,7 +112,7 @@ describe('Upload.checkIfUSFMProject(USFM project)', function () {
             if (targetLanguage) {
                 expect(targetLanguage.title).to.be.string;
                 expect(targetLanguage[1]).to.be.object;
-                assert.isString(api.getDataFromCommon('saveLocation'));
+                assert.isString(api.getDataFromCommon('projectSaveLocation'));
                 assert.isObject(api.getDataFromCommon('targetLanguage'));
                 done();
             }

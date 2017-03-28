@@ -32,12 +32,12 @@ describe('ImportUSFM.createTCProject', function() {
     assert.equal(res, 'No save path or callback specified');
   });
   it('createTCProject takes in a file path, parses the usfm file, and saves it to a save location', function(done){
-    ImportUSFM.createTCProject(testFile, function(parsedUSFM, saveLocation) {
+    ImportUSFM.createTCProject(testFile, function(parsedUSFM, projectSaveLocation) {
       parsedBook = parsedUSFM;
       assert.isObject(parsedUSFM);
       assert.isObject(parsedUSFM.headers);
       assert.isArray(parsedUSFM.chapters);
-      assert.isString(saveLocation);
+      assert.isString(projectSaveLocation);
       done()
     });
   });
@@ -68,7 +68,7 @@ describe('ImportUSFM.openUSFMProject', function() {
   it('openUSFMProject should open a usfm file and load it to memory', function(){
     ImportUSFM.open(testFile, testDir);
     var CheckStore = ModuleApi.logCheckStore().common;
-    assert.isString(CheckStore.saveLocation);
+    assert.isString(CheckStore.projectSaveLocation);
     assert.isObject(CheckStore.params);
     assert.isObject(CheckStore.targetLanguage);
   });

@@ -9,7 +9,6 @@ import CoreStore from '../../stores/CoreStore.js'
 import git from './GitApi.js'
 import sync from './SideBar/GitSync.js'
 import exportUsfm from './Usfm/ExportUSFM'
-import {clearPreviousData} from './UploadMethods'
 import Path from 'path'
 import SettingsActions from '../../actions/SettingsActions.js'
 import { showNotification } from '../../actions/NotificationActions.js'
@@ -25,7 +24,6 @@ var template = [
       {
         label: 'Close Project',
         click: function () {
-          clearPreviousData();
           CoreStore.currentCheckNamespace = ' ';
           CoreActionsRedux.killLoading();
           api.emitEvent('changeCheckType', { currentCheckNamespace: ' ' });
@@ -43,7 +41,7 @@ var template = [
         label: 'Save',
         click: function () {
           const api = window.ModuleApi;
-          const path = api.getDataFromCommon('saveLocation');
+          const path = store.getState().projectDetailsReducer.projectSaveLocation;
           if (path) {
             git(path).save('Manual Save', path);
           } else {

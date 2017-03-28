@@ -29,7 +29,7 @@ class SubMenuItem extends React.Component {
     }
     var itemStyle = this.props.isCurrentItem ? style.activeSubMenuItem : style.subMenuItem;
     return (
-      <tr onClick={() => this.props.checkClicked(this.props.currentGroupIndex, this.props.id, this.props.currentToolNamespace)}
+      <tr onClick={() => this.props.checkClicked(this.props.currentGroupIndex, this.props.id)}
           style={itemStyle}
           title="Click to select this check">
         <td>
