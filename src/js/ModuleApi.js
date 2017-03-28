@@ -241,7 +241,7 @@ class ModuleApi {
     var projectSaveLocation = this.getDataFromCommon('projectSaveLocation');
     if (manifest && projectSaveLocation) {
       manifest[field] = data;
-      projectSaveLocation += '/tc-manifest.json';
+      projectSaveLocation += '/manifest.json';
       this.putDataInCommon('tcManifest', manifest);
       fs.outputJson(projectSaveLocation, manifest, callback);
     } else if (!manifest) {
