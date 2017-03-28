@@ -1,5 +1,5 @@
 import {loadSettings} from './loadMethods';
-import {saveSettings, saveResources, saveComments, saveVerseEdit, saveSelections, remindersReducer} from './saveMethods';
+import {saveSettings, saveResources, saveComments, saveVerseEdit, saveSelections, saveReminders} from './saveMethods';
 
 /**
  * @description loads state needed to set up reducers with preloaded data
