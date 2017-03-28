@@ -91,6 +91,9 @@ export const saveState = state => {
     if (state.verseEditReducer) {
       saveVerseEdit(state);
     }
+    if(state.remindersReducer){
+      saveReminders(state);
+    }
   } catch (err) {
     console.warn(err);
   }
