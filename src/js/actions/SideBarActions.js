@@ -1,22 +1,22 @@
 const CheckStoreActions = require('./CheckStoreActions.js');
 const consts = require('./CoreActionConsts');
 
-module.exports.toggleSubmenu = function (id) {
+export function toggleSubmenu (id) {
   return {
     type: consts.TOGGLE_SUBMENU,
     openCheck: id
   }
 };
 
-module.exports.toggleMenu = function () {
+export function toggleMenu () {
   return {
     type: consts.TOGGLE_MENU_DRAWER
   }
 };
 
-module.exports.menuHeaderClicked = function (currentToolNamespace, currentGroupIndex, currentCheckIndex) {
+export function menuHeaderClicked (currentGroupIndex, currentCheckIndex) {
   return ((dispatch) => {
-      dispatch(CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, currentCheckIndex));
+      dispatch(CheckStoreActions.goToCheck(currentGroupIndex, currentCheckIndex));
       dispatch(this.toggleSubmenu(currentGroupIndex));
   })
 };

@@ -1,32 +1,32 @@
 const api = window.ModuleApi;
 const consts = require('./CoreActionConsts');
 const CoreActions = require('./CoreActions.js');
-const gogs = require('../components/core/login/GogsApi.js');
+import gogs from '../components/core/login/GogsApi.js';
 const remote = require('electron').remote;
 const { dialog } = remote;
 
-module.exports.setUserName = function (val) {
+export function setUserName(val) {
   return {
     type: consts.SET_USER_NAME,
     val: val
   }
 }
 
-module.exports.setUserPassword = function (val) {
+export function setUserPassword(val) {
   return {
     type: consts.SET_USER_PASSWORD,
     val: val
   }
 }
 
-module.exports.displayLogin = function (val) {
+export function displayLogin(val) {
   return {
     type: consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN,
     val: val
   }
 }
 
-module.exports.loginUser = function (newUserdata) {
+export function loginUser(newUserdata) {
   return ((dispatch) => {
     var Token = api.getAuthToken('gogs');
     gogs(Token).login(newUserdata).then((newUserdata) => {
@@ -50,27 +50,27 @@ module.exports.loginUser = function (newUserdata) {
   })
 }
 
-module.exports.logoutUser = function (val) {
+export function logoutUser(val) {
   return {
     type: consts.LOGOUT_USER,
   }
 }
 
-module.exports.feedbackChange = function (e) {
+export function feedbackChange(e) {
   return {
     type: consts.FEEDBACK_CHANGE,
     val: e
   }
 }
 
-module.exports.subjectChange = function (subject) {
+export function subjectChange(subject) {
   return {
     type: 'FEEDBACK_SUBJECT_CHANGE',
     val: subject
   }
 }
 
-module.exports.submitFeedback = function () {
+export function submitFeedback() {
   return {
     type: consts.SUBMIT_FEEDBACK,
   }

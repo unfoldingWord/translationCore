@@ -93,7 +93,8 @@ class Report extends React.Component {
 
   render() {
     let { reportVisibility, toolLoaded } = this.props;
-    let reportViews = api.getDataFromCommon("reportViews");
+    let reportViews = this.props.reportViews;
+    //Will need to be passed down from coreStore when reports are used again.
     if(!reportVisibility){
       if(toolLoaded){
         return (
@@ -115,8 +116,8 @@ class Report extends React.Component {
     //get the total of Flagged checks
     let flaggedChecks = this.getFlaggedChecks();
     // get all of the checks associated with this project
-    const listOfChecks = ModuleApi.getDataFromCommon("arrayOfChecks");
-    const targetLang = ModuleApi.getDataFromCommon("targetLanguage");
+    const listOfChecks = this.props.listOfChecks;
+    const targetLang = this.props.targetLang;
     if (!listOfChecks) {
       return (<div>No project data for checks found</div>);
     }
@@ -134,8 +135,8 @@ class Report extends React.Component {
     let reportHeadersOutput = [];
     let bookName = "-bookName-";
     let authors = "-authors-";
-    let manifest = ModuleApi.getDataFromCommon("tcManifest");
-    let params = ModuleApi.getDataFromCommon('params');
+    let manifest = this.props.manifest;
+    let params = this.props.params;
     let bookAbbr;
     if (params) bookAbbr = params.bookAbbr;
     if (manifest && (manifest.ts_project || bookAbbr)) {
