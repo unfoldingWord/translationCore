@@ -105,6 +105,7 @@ function generateSavePath(state, checkDataName) {
 }
 
 /**
+ * @description This function saves the comments data.
  * @param {object} state - store state object.
  */
 export const saveComments = state => {
@@ -116,6 +117,18 @@ export const saveComments = state => {
 };
 
 /**
+ * @description This function saves the selections data.
+ * @param {Object} state - The state object courtesy of the store
+ */
+export const saveSelections = state => {
+  let selectionsPayload = {
+    ...state.contextIdReducer,
+    ...state.selectionsReducer
+  };
+  saveData(state, "selections", selectionsPayload);
+};
+ /**
+ * @description This function saves the verse Edit data.
  * @param {object} state - store state object.
  */
 export const saveVerseEdit = state => {
@@ -125,3 +138,4 @@ export const saveVerseEdit = state => {
   }
   saveData(state, "verseEdits", verseEditPayload)
 }
+

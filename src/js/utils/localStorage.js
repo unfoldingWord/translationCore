@@ -1,5 +1,5 @@
 import {loadSettings} from './loadMethods';
-import {saveSettings, saveResources, saveComments, saveVerseEdit} from './saveMethods';
+import {saveSettings, saveResources, saveComments, saveVerseEdit, saveSelections} from './saveMethods';
 
 /**
  * @description loads state needed to set up reducers with preloaded data
@@ -84,6 +84,9 @@ export const saveState = state => {
     }
     if (state.commentsReducer) {
       saveComments(state);
+    }
+    if (state.selectionsReducer) {
+      saveSelections(state);
     }
     if (state.verseEditReducer) {
       saveVerseEdit(state);
