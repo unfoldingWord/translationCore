@@ -1,14 +1,14 @@
 const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
-  reportVisibility: false,
+  reportVisibility: false
 };
 
-module.exports = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case consts.LOAD_REPORTS:
-      return { ...state, reportVisibility: action.val }
+      return {...state, reportVisibility: action.val};
     default:
       return state;
   }
-}
+};

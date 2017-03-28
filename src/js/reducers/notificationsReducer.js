@@ -4,14 +4,14 @@ const initialState = {
   notificationObject: {
     visibleNotification: false,
     message: "",
-    duration: 0,
+    duration: 0
   }
 };
 
-module.exports = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case consts.SHOW_NOTIFICATION:
-      //converting duration from sec to milliseconds
+      // converting duration from sec to milliseconds
       let duration = action.duration * 1000;
       return {
         ...state,
@@ -21,7 +21,7 @@ module.exports = (state = initialState, action) => {
           message: action.message,
           duration: duration
         }
-      }
+      };
     case consts.HIDE_NOTIFICATION:
       return {
         ...state,
@@ -30,8 +30,8 @@ module.exports = (state = initialState, action) => {
           visibleNotification: false,
           message: ""
         }
-      }
+      };
     default:
       return state;
   }
-}
+};

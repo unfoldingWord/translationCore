@@ -7,7 +7,7 @@ const initialState = {
   positionCoord: [0, 0]
 };
 
-module.exports = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case consts.SHOW_POPOVER:
       return {
@@ -16,7 +16,7 @@ module.exports = (state = initialState, action) => {
         title: action.title,
         bodyText: action.bodyText,
         positionCoord: action.positionCoord
-      }
+      };
     case consts.CLOSE_POPOVER:
       return {
         ...state,
@@ -24,8 +24,8 @@ module.exports = (state = initialState, action) => {
         title: '',
         bodyText: '',
         positionCoord: [0, 0]
-      }
+      };
     default:
       return state;
   }
-}
+};
