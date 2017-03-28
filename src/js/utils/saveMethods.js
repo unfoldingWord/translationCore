@@ -115,6 +115,13 @@ export const saveComments = state => {
   saveData(state, "comments", commentsPayload);
 };
 
-
-
-
+/**
+ * @param {object} state - store state object.
+ */
+export const saveVerseEdit = state => {
+  let verseEditPayload = {
+    ...state.contextIdReducer,
+    ...state.verseEditReducer
+  }
+  saveData(state, "verseEdits", verseEditPayload)
+}
