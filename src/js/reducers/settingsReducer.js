@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts'
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   currentSettings: {
@@ -11,10 +11,10 @@ const initialState = {
 const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
-      return { ...state, currentSettings: action.val }
+      return {...state, currentSettings: action.val};
     default:
       return state;
   }
-}
+};
 
-export default settingsReducer
+export default settingsReducer;

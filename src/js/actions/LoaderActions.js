@@ -2,33 +2,32 @@ import consts from './CoreActionConsts';
 import {clearPreviousData} from '../components/core/UploadMethods.js';
 import ModalActions from './ModalActions.js';
 
-module.exports.toggleLoader = function (val) {
+module.exports.toggleLoader = function(val) {
   return {
     type: consts.TOGGLE_LOADER_MODAL,
     show: val
-  }
-}
+  };
+};
 
-module.exports.saveModule = function (identifier, module) {
+module.exports.saveModule = function(identifier, module) {
   return {
     type: consts.SAVE_MODULE,
     identifier,
     module
-  }
-}
+  };
+};
 
-module.exports.killLoading = function () {
+module.exports.killLoading = function() {
   return ((dispatch) => {
     clearPreviousData();
     dispatch(this.toggleLoader());
     dispatch(ModalActions.showModalContainer(true));
     dispatch(ModalActions.selectModalTab(2));
   });
-}
+};
 
-module.exports.update = function (show, progess) {
+module.exports.update = function(show, progess) {
   return ((dispatch) => {
-    debugger;
     if (!show) {
       setTimeout(() => {
         dispatch({
@@ -42,13 +41,13 @@ module.exports.update = function (show, progess) {
       type: consts.UPDATE_LOADER,
       progress: progess,
       reloadContent: null
-    })
+    });
     dispatch(this.toggleLoader());
   });
-}
+};
 
-module.exports.sendProgressForKey = function (name, progress, store) {
-  var progressObject = JSON.parse(JSON.stringify(store.progressObject))
+module.exports.sendProgressForKey = function(name, progress, store) {
+  var progressObject = JSON.parse(JSON.stringify(store.progressObject));
   var fetchDatas = store.fetchDatas;
   progressObject[name] = progress;
   var currentProgress = 0;
@@ -58,14 +57,13 @@ module.exports.sendProgressForKey = function (name, progress, store) {
   return {
     type: consts.UPDATE_PROGRESS,
     progress: currentProgress / fetchDatas,
-    progressObject:progressObject
-  }
-}
+    progressObject: progressObject
+  };
+};
 
-
-module.exports.updateNumberOfFetchDatas = function (fetchDatas) {
+module.exports.updateNumberOfFetchDatas = function(fetchDatas) {
   return {
     type: consts.FETCH_DATA_NUMBER,
     fetchDatas: fetchDatas
-  }
-}
+  };
+};

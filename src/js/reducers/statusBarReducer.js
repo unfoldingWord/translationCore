@@ -1,18 +1,18 @@
 const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
-    path: "",
-    currentCheckNamespace: "",
-    newToolSelected: false,
-    pressed: false,
-    online: true
+  path: "",
+  currentCheckNamespace: "",
+  newToolSelected: false,
+  pressed: false,
+  online: true
 };
 
-module.exports = (state = initialState, action) => {
-    switch (action.type) {
-        case consts.CHANGE_ONLINE_STATUS:
-          return { ...state, online: action.online }
-        default:
-            return state;
-    }
-}
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case consts.CHANGE_ONLINE_STATUS:
+      return {...state, online: action.online};
+    default:
+      return state;
+  }
+};

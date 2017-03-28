@@ -1,11 +1,11 @@
-const consts = require('./CoreActionConsts');
+import consts from './CoreActionConsts';
 
-module.exports.loadReports = function () {
+export const loadReports = function () {
   return ((dispatch) => {
     dispatch({
       type: consts.SHOW_NOTIFICATION,
       message: 'Generating reports',
-      duration: 5,
+      duration: 5
     });
     dispatch({
       type: consts.LOAD_REPORTS,

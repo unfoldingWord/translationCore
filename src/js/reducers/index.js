@@ -1,27 +1,27 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux';
 // List of reducers
-import coreStoreReducer from './coreStoreReducer'
-import modalReducers from './modalReducers'
-import newModalReducer from './newModalReducer'
-import loginReducer from './loginReducer'
-import settingsReducer from './settingsReducer'
-import dragDropReducer from './dragDropReducer'
-import toolsReducer from './toolsReducer'
-import recentProjectsReducer from './recentProjectsReducer'
-import importOnlineReducer from './importOnlineReducer'
-import reportsReducer from './reportsReducer'
-import checkStoreReducer from './checkStoreReducer'
-import sideBarReducer from './sideBarReducer'
-import statusBarReducer from './statusBarReducer'
-import loaderReducer from './loaderReducer'
-import notificationsReducer from './notificationsReducer'
-import popoverReducer from './popoverReducer'
-import resourcesReducer from './resourcesReducer'
-import projectDetailsReducer from './projectDetailsReducer'
-import alertModalReducer from './alertModalReducer'
-import commentsReducer from './commentsReducer'
-import selectionsReducer from './selectionsReducer'
-import remindersReducer from './remindersReducer'
+import coreStoreReducer from './coreStoreReducer';
+import modalReducers from './modalReducers';
+import newModalReducer from './newModalReducer';
+import loginReducer from './loginReducer';
+import settingsReducer from './settingsReducer';
+import dragDropReducer from './dragDropReducer';
+import toolsReducer from './toolsReducer';
+import recentProjectsReducer from './recentProjectsReducer';
+import importOnlineReducer from './importOnlineReducer';
+import reportsReducer from './reportsReducer';
+import checkStoreReducer from './checkStoreReducer';
+import sideBarReducer from './sideBarReducer';
+import statusBarReducer from './statusBarReducer';
+import loaderReducer from './loaderReducer';
+import notificationsReducer from './notificationsReducer';
+import popoverReducer from './popoverReducer';
+import resourcesReducer from './resourcesReducer';
+import projectDetailsReducer from './projectDetailsReducer';
+import alertModalReducer from './alertModalReducer';
+import commentsReducer from './commentsReducer';
+import selectionsReducer from './selectionsReducer';
+import remindersReducer from './remindersReducer';
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -48,4 +48,4 @@ const rootReducers = combineReducers({
   remindersReducer
 });
 
-export default rootReducers
+export default rootReducers;
