@@ -1,9 +1,9 @@
-let consts = require('./CoreActionConsts');
-let api = window.ModuleApi;
+const consts = require('./CoreActionConsts');
+const api = window.ModuleApi;
 import sync from '../components/core/SideBar/GitSync.js';
 import * as fs from 'fs-extra';
 import path from 'path-extra';
-let DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 import * as modalActions from './ModalActions';
 import * as toolsActions from './ToolsActions';
 import * as getDataActions from './GetDataActions';

@@ -1,9 +1,10 @@
 /**
  * @file These are the actions that load a tC project from
  * the manifest.json to the tools being loaded into the store
+ * @author RoyalSix (I ate Seven)
  *
  * @exports GetData Actions
- * @version 0.0.1
+ * @version 1.0.0
  */
 
 import React from 'react'
@@ -25,9 +26,9 @@ import usfm from 'usfm-parser';
 import { remote } from 'electron';
 import BOOKS from '../components/core/BooksOfBible.js';
 import Path from 'path';
+import GIT from '../components/core/GitApi.js';
 
 const api = window.ModuleApi;
-const GIT = require('../components/core/GitApi.js');
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
@@ -39,7 +40,7 @@ const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
 
 
 /**
- * Sends project path to the store
+ * @description Sends project path to the store
  */
 export function setProjectPath(pathLocation) {
     return {
@@ -49,7 +50,7 @@ export function setProjectPath(pathLocation) {
 }
 
 /**
- * Sends project manifest to the store
+ * @description Sends project manifest to the store
  */
 export function setProjectManifest(manifest) {
     return {
@@ -59,7 +60,7 @@ export function setProjectManifest(manifest) {
 }
 
 /**
- * Sends project parameters to the store
+ * @description Sends project parameters to the store
  */
 export function setProjectParams(params) {
     return {
@@ -72,7 +73,7 @@ export function setProjectParams(params) {
 
 
 /**
- * Formats and saves manifest according to tC standards, 
+ * @description Formats and saves manifest according to tC standards, 
  * if not already done so
  * 
  * @param {string} projectPath - Path in which the project is being loaded from
@@ -86,7 +87,7 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
 }
 
 /**
- * Returns the current user logged in from the current app state, 
+ * @description Returns the current user logged in from the current app state, 
  * not meant to be used outside of an action
  * 
  * @requires not a dispatch function
@@ -99,7 +100,7 @@ export function getCurrentUser(state) {
 }
 
 /**
- * Stores the project path loaded into the default tC folder 
+ * @description Stores the project path loaded into the default tC folder 
  * location. If the project is exists in the default save location and it is
  * loaded from some place else, user will be prompted to overwrite it. Which results
  * in a deletion of the non-tC folder loaction project.
@@ -130,7 +131,7 @@ export function correctSaveLocation(projectPath) {
 }
 
 /**
- * Starter function to load a project from a folder path or link.
+ * @description Starter function to load a project from a folder path or link.
  * 
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
@@ -164,7 +165,7 @@ export function openProject(projectPath, projectLink) {
 }
 
 /**
- * Sets up the folder in the tC save location for a USFM project
+ * @description Sets up the folder in the tC save location for a USFM project
  * 
  * @param {string} usfmFilePath - Path of the usfm file that has been loaded
  * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
@@ -179,7 +180,7 @@ export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
 }
 
 /**
- * Sets up a USFM project manifest according to tC standards.
+ * @description Sets up a USFM project manifest according to tC standards.
  * 
  * @param {object} parsedUSFM - The object containing usfm parsed by chapters
  * @param {string} direction - Direction of the book being read for the project target language
@@ -211,7 +212,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
 }
 
 /**
- * Initiates the loading of a usfm file into current project, puts the target language, params,
+ * @description Initiates the loading of a usfm file into current project, puts the target language, params,
  * save location, and manifest into the store.
  * 
  * @param {string} projectPath - Path in which the USFM project is being loaded from 
@@ -237,7 +238,7 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
 }
 
 /**
- * Parses the usfm file using usfm-parse library.
+ * @description Parses the usfm file using usfm-parse library.
  * 
  * @param {string} projectPath - Path in which the USFM project is being loaded from
  */
@@ -252,7 +253,7 @@ export function getParsedUSFM(usfmData) {
 }
 
 /**
- * Starts loading a project that has a standard manifest created.
+ * @description Starts loading a project that has a standard manifest created.
  * Adds manifest, params, book name, and target language bible
  * (if usfm), and project data from file to store.
  * 
@@ -277,7 +278,7 @@ export function addLoadedProjectToStore(projectPath, manifest) {
 }
 
 /**
- * Displays the currently loaded tools in the app, if 
+ * @description Displays the currently loaded tools in the app, if 
  * project is a titus or ephisians, or if the userdata
  * is in developer mode.
  * 
@@ -300,7 +301,7 @@ export function displayToolsToLoad(manifest) {
 }
 
 /**
- * Loaded previous project data into the filesystem given a path.
+ * @description Loaded previous project data into the filesystem given a path.
  * 
  * @param {string} projectPath - Path in which the project is being loaded from 
  */
@@ -312,7 +313,7 @@ export function loadProjectDataFromFileSystem(projectPath) {
 
 
 /**
- * Check if project is ephesians or titus, or if user is in developer mode.
+ * @description Check if project is ephesians or titus, or if user is in developer mode.
  * 
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
@@ -322,7 +323,7 @@ export function checkIfValidBetaProject(manifest) {
 }
 
 /**
- * This methods will set the corestore reducer store state back to the inital state.
+ * @description This methods will set the corestore reducer store state back to the inital state.
  * 
  */
 export function clearPreviousData() {
@@ -332,7 +333,7 @@ export function clearPreviousData() {
 }
 
 /**
- * 
+ * @description Formats a default manifest according to tC standards
  * 
  * @param {string} path - Path in which the project is being loaded from, also should contain
  * the target language.
@@ -383,7 +384,7 @@ export function getParams(path, manifest) {
 }
 
 /**
- * 
+ * @description Formated the target language accoring to tC standards
  * @param {object} parsedUSFM - The object containing usfm parsed by chapters
  */
 export function formatTargetLanguage(parsedUSFM) {
@@ -410,6 +411,7 @@ export function formatTargetLanguage(parsedUSFM) {
 }
 
 /**
+ * @description Checks if the folder/file specified is a usfm project
  * 
  * @param {string} projectPath - Path in which the project is being loaded from 
  */
@@ -434,6 +436,7 @@ export function checkIfUSFMFileOrProject(projectPath) {
 
 
 /**
+ * @description Verifies that the manifest given has an accurate count of finished chunks.
  * 
  * @param {string} projectPath - Path in which the project is being loaded from 
  * @param {object} manifest - Manifest specified for tC load, already formatted.
@@ -492,6 +495,7 @@ export function isOldTestament(projectBook) {
 
 
 /**
+ * @description Loads the tool into the main app view, and initates the tool Container component
  * 
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
@@ -513,6 +517,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
 }
 
 /**
+ * @description Saves tools included module Containers in the store
  * 
  * @param {Array} checkArray - Array of the checks that the views should be loaded
  */
@@ -530,6 +535,7 @@ export function saveModules(checkArray) {
 }
 
 /**
+ * @description creates an array that has the data of each included tool and 'subtool'
  * 
  * @param {object} dataObject - Package json of the tool being loaded, 
  * meta data of what the tool needs to load.
@@ -586,6 +592,7 @@ export function errorLoadingProject(err) {
 
 
 /**
+ * @description Set ups a tC project parameters for a usfm project
  * 
  * @param {string} bookAbbr - Book abbreviation
  * @param {path} projectSaveLocation - Path of the usfm project being loaded
