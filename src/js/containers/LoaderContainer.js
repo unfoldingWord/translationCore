@@ -19,9 +19,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         reloadContent: () => {
             dispatch(LoaderActions.killLoading());
-        },
-        sendProgressForKey: (name, data) => {
-            dispatch(LoaderActions.sendProgressForKey(name, data))
         }
     }
 }
