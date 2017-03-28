@@ -7,7 +7,10 @@ import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
 import { addSelections, removeSelections } from '../actions/SelectionsActions.js';
-import * as CheckStoreActions from '../actions/CheckStoreActions.js'
+import {changeCurrentContextId} from '../actions/ContextIdActions.js';
+import {addGroupData} from '../actions/GroupDataActions.js';
+import * as CheckStoreActions from '../actions/CheckStoreActions.js';
+
 
 class ToolsContainer extends React.Component {
   render() {
@@ -18,7 +21,7 @@ class ToolsContainer extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     ...state.checkStoreReducer,
     ...state.loginReducer,
@@ -28,10 +31,11 @@ function mapStateToProps(state) {
     ...state.resourcesReducer,
     ...state.commentsReducer,
     ...state.remindersReducer,
+    ...state.contextIdReducer,
     ...state.projectDetailsReducer,
     modules: state.coreStoreReducer.modules
   }
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -82,8 +86,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     updateGroupIndex: (index) => {
       dispatch(CheckStoreActions.goToCheck(index, null));
+    },
+    changeCurrentContextId: (contextId) => {
+      dispatch(changeCurrentContextId(contextId));
+    },
+    addGroupData: (groupName, groupData) => {
+      dispatch(addGroupData(groupName, groupData));
     }
-  }
-}
+  };
+};
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(ToolsContainer);

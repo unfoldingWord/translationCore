@@ -1,7 +1,7 @@
 const React = require('react');
 const AppDescription = require('./AppDescription');
 
-class SwitchCheck extends React.Component{
+class SwitchCheck extends React.Component {
   render() {
     let { toolsMetadatas } = this.props;
     let buttons = [];
@@ -12,11 +12,11 @@ class SwitchCheck extends React.Component{
     } else {
       for (let i in toolsMetadatas) {
         const metadata = toolsMetadatas[i];
-        if(metadata.name == "ToolsTester"){
-          if(this.props.currentSettings.developerMode){
+        if (metadata.name == "ToolsTester") {
+          if (this.props.currentSettings.developerMode) {
             buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
           }
-        } else{
+        } else {
           buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
         }
       }

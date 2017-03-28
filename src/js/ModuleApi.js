@@ -232,8 +232,8 @@ class ModuleApi {
   * @description - Displays alert and returns user response
   */
   createAlert(obj, callback = () => { }) {
-    //const dispatch = require('./pages/root.js').dispatch;
-    //dispatch(AlertModalActions.showAlert(obj, callback));
+    // const dispatch = require('./pages/root.js').dispatch;
+    // dispatch(AlertModalActions.showAlert(obj, callback));
   }
 
   updateManifest(field, data, callback = () => { }) {
