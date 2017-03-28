@@ -61,7 +61,11 @@ export const saveResources = state => {
 function saveData(state, checkDataName, payload) {
   try {
     let savePath = generateSavePath(state, checkDataName);
-    fs.outputJson(savePath, payload);
+    if (savePath) {
+      fs.outputJson(savePath, payload);
+    } else {
+      console.warn('savePath is undefined');
+    }
   } catch (err) {
     console.warn(err);
   }
