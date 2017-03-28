@@ -58,24 +58,10 @@ module.exports = {
     });
   },
 
-  sendProgressForKey: function(progressKeyObj) {
-    Dispatcher.handleAction({
-      type: consts.SEND_PROGRESS_FOR_KEY,
-      progressRecieved: progressKeyObj
-    });
-  },
-
   newProject: function(){
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,
       reportViews:[]
-    });
-  },
-
-  sendAlert: function(alertObj) {
-    Dispatcher.handleAction({
-      type: consts.ALERT_MODAL,
-      alert: alertObj
     });
   },
 
@@ -91,12 +77,6 @@ module.exports = {
     Dispatcher.handleAction({
       type: consts.ALERT_MODAL_RESPONSE,
       alertResponse: alertResponseObj
-    });
-  },
-
-  startLoading: function() {
-    Dispatcher.handleAction({
-      type: consts.START_LOADING
     });
   },
 

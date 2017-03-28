@@ -12,7 +12,7 @@ class MenuHeadersItems extends React.Component {
     var itemStyle = this.props.isCurrentItem ? style.activeMenuHeader : style.menuHeader;
     return (
       <tbody>
-        <tr onClick={() => this.props.menuClick(this.props.id, this.props.currentToolNamespace)}
+        <tr onClick={() => this.props.menuClick(this.props.id)}
           style={itemStyle}
           title="Click to select this reference">
           <th>
