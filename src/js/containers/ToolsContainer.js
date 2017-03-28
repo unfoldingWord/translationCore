@@ -86,6 +86,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     updateGroupIndex: (index) => {
       dispatch(CheckStoreActions.goToCheck(index, null));
+    },
+    changeCurrentContextId: (contextId) => {
+      dispatch(changeCurrentContextId(contextId));
+    },
+    addGroupData: (groupName, groupData) => {
+      dispatch(addGroupData(groupName, groupData));
     }
   };
 };
