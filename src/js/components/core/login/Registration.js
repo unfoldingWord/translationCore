@@ -15,7 +15,7 @@ const FormControl = require('react-bootstrap/lib/FormControl.js');
 const Button = require('react-bootstrap/lib/Button.js');
 var Token = window.ModuleApi.getAuthToken('gogs');
 const CoreActions = require('../../../actions/CoreActions.js');
-const GogsApi = require('./GogsApi');
+import GogsApi from './GogsApi';
 const ACCOUNT_CREATION_ERROR = 'Account Creation Error';
 const UNKNOWN_ERROR = 'Unknown Error';
 const EMPTY = {

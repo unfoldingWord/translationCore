@@ -21,7 +21,7 @@ var sideBarContainerStyle = {
 
 class SideBarContainer extends React.Component {
   render() {
-    let { menuVisibility, currentCheckNameSpace, onToggleMenu } = this.props;
+    let { menuVisibility, currentCheckNamespace, onToggleMenu } = this.props;
     return (
       <div>
         <div style={{display: menuVisibility ? "block" : "none"}}>
@@ -36,7 +36,7 @@ class SideBarContainer extends React.Component {
                 overflowY: "scroll"
               }
             }>
-              <MenuHeaders {...this.props} currentToolNamespace={currentCheckNameSpace}/>
+              <MenuHeaders {...this.props} currentToolNamespace={currentCheckNamespace}/>
             </Col>
           </Grid>
         </div>
@@ -58,12 +58,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onToggleMenu: () => {
       dispatch(SideBarActions.toggleMenu());
     },
-    menuClick: (id, currentToolNamespace, bool) => {
-      dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
+    menuClick: (id) => {
+      dispatch(SideBarActions.menuHeaderClicked(parseInt(id), 0));
     },
-    checkClicked: (currentGroupIndex, id, currentToolNamespace) => {
+    checkClicked: (currentGroupIndex, id) => {
       dispatch(
-        CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, parseInt(id))
+        CheckStoreActions.goToCheck(currentGroupIndex, parseInt(id))
       );
     },
   }

@@ -23,7 +23,7 @@ class SubMenu extends React.Component {
   }
 
   goToNext() {
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
     if (groups) {
@@ -44,7 +44,7 @@ class SubMenu extends React.Component {
   }
 
   goToPrevious() {
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     let groupName = api.getCurrentGroupName();
     let groups = api.getDataFromCheckStore(currentNamespace, 'groups');
     if (groups) {

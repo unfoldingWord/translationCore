@@ -1,7 +1,6 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  modules: {},
   show: false,
   progress: 0,
   progressObject: {},
@@ -12,14 +11,7 @@ module.exports = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_LOADER_MODAL:
       return { ...state, show: action.show || !state.show }
-    case consts.SAVE_MODULE:
-      state.modules[action.identifier] = action.module;
-      return {
-        ...state,
-        modules: {
-          ...state.modules,
-        }
-      }
+      break;
     case consts.UPDATE_PROGRESS:
       return {
         ...state,
@@ -27,11 +19,13 @@ module.exports = (state = initialState, action) => {
         reloadContent: action.reloadContent,
         progressObject: action.progressObject
       }
+      break;
     case consts.FETCH_DATA_NUMBER:
       return {
         ...state,
         fetchDatas: action.fetchDatas
       }
+      break;
       case consts.DONE_LOADING: 
       return {
         ...state,
@@ -40,6 +34,7 @@ module.exports = (state = initialState, action) => {
         fetchDatas:0,
         show:false
       }
+      break;
     default:
       return state;
   }

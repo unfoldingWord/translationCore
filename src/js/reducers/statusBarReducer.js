@@ -2,7 +2,6 @@ const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     path: "",
-    currentCheckNamespace: "",
     newToolSelected: false,
     pressed: false,
     online: true

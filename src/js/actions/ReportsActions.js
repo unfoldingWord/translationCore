@@ -1,6 +1,6 @@
 const consts = require('./CoreActionConsts');
 
-module.exports.loadReports = function () {
+export function loadReports () {
   return ((dispatch) => {
     dispatch({
       type: consts.SHOW_NOTIFICATION,
