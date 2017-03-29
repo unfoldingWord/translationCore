@@ -13,7 +13,7 @@ const modulesSettingsReducer = (state = initialState, action) => {
         }
       };
     default:
-      break;
+      return state;
   }
 };
 
