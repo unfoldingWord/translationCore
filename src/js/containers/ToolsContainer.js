@@ -70,8 +70,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
-      addSelections: (text, userName) => {
-        dispatch(addSelections(text, userName));
+      changeSelections: (text, userName) => {
+        dispatch(changeSelections(text, userName));
       },
       removeSelections: (text, userName) => {
         dispatch(removeSelections(text, userName));
