@@ -35,6 +35,8 @@ const mapStateToProps = state => {
     remindersReducer: state.remindersReducer,
     contextIdReducer: state.contextIdReducer,
     projectDetailsReducer: state.projectDetailsReducer,
+    selectionsReducer: state.selectionsReducer,
+    verseEditReducer: state.verseEditReducer,
     modulesSettingsReducer: state.modulesSettingsReducer
   };
 };
@@ -81,8 +83,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleReminder: (userName) => {
         dispatch(toggleReminder(userName));
       },
-      addVerseEdit: (text, userName) => {
-        dispatch(addVerseEdit(text, userName));
+      addVerseEdit: (before, after, tags, userName) => {
+        dispatch(addVerseEdit(before, after, tags, userName));
       },
       updateCheckIndex: (index) => {
         dispatch(CheckStoreActions.goToCheck(null, index));
