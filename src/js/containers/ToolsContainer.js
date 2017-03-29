@@ -10,6 +10,7 @@ import { addSelections, removeSelections } from '../actions/SelectionsActions.js
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
+import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -21,8 +22,9 @@ class ToolsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
+    modules: state.coreStoreReducer.modules,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -33,7 +35,7 @@ const mapStateToProps = (state) => {
     remindersReducer: state.remindersReducer,
     contextIdReducer: state.contextIdReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    modules: state.coreStoreReducer.modules
+    modulesSettingsReducer: state.modulesSettingsReducer
   };
 };
 
@@ -93,6 +95,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addGroupData: (groupName, groupData) => {
         dispatch(addGroupData(groupName, groupData));
+      },
+      setModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(setModuleSettings(moduleName, moduleSettingsData));
+      },
+      changeModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(changeModuleSettings(moduleName, moduleSettingsData));
       }
     }
   };
