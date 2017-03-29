@@ -69,22 +69,28 @@ export function setProjectParams(params) {
     }
 }
 
-
-
+/**
+ * @description This method will set the corestore reducer store state back to the inital state.
+ * 
+ */
+export function clearPreviousData() {
+    return {
+        type: consts.CLEAR_PREVIOUS_DATA
+    }
+}
 
 /**
- * @description Formats and saves manifest according to tC standards, 
- * if not already done so
+ * @description This method will set the corestore view for the corresponding module
  * 
- * @param {string} projectPath - Path in which the project is being loaded from
- * @param {string} projectLink - Link given to load project if taken from online
- * @param {object} manifest - Default manifest given in order to load a non-usfm project
  */
-export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
-    const verifiedManifest = verifyChunks(projectPath, manifest);
-    let newManifest = LoadHelpers.saveManifest(projectPath, projectLink, verifiedManifest, currentUser);
-    return newManifest;
+export function setModuleView(identifier, view){
+    return {
+        type: consts.SAVE_MODULE_VIEW,
+        identifier: identifier,
+        module:view
+    }
 }
+
 
 /**
  * @description Returns the current user logged in from the current app state, 
@@ -100,37 +106,6 @@ export function getCurrentUser(state) {
 }
 
 /**
- * @description Stores the project path loaded into the default tC folder 
- * location. If the project is exists in the default save location and it is
- * loaded from some place else, user will be prompted to overwrite it. Which results
- * in a deletion of the non-tC folder loaction project.
- * 
- * @param {string} projectPath - Path in which the project is being loaded from
- */
-export function correctSaveLocation(projectPath) {
-    const parsedPath = pathex.parse(projectPath);
-    const tCProjectsSaveLocation = pathex.join(DEFAULT_SAVE, parsedPath.name);
-    if (!fs.existsSync(projectPath)) {
-        return false;
-    }
-    if (fs.existsSync(tCProjectsSaveLocation)) {
-        if (projectPath != tCProjectsSaveLocation) {
-            const continueCopy = confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
-            if (continueCopy) {
-                fs.removeSync(tCProjectsSaveLocation);
-                fs.copySync(projectPath, tCProjectsSaveLocation);
-            }
-            return tCProjectsSaveLocation;
-        } else {
-            return projectPath;
-        }
-    } else {
-        fs.copySync(projectPath, tCProjectsSaveLocation);
-        return projectPath;
-    }
-}
-
-/**
  * @description Starter function to load a project from a folder path or link.
  * 
  * @param {string} projectPath - Path in which the project is being loaded from
@@ -140,7 +115,7 @@ export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
         const currentUser = getCurrentUser(getState());
-        const usfmFilePath = checkIfUSFMFileOrProject(projectPath);
+        const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
         let manifest;
 
         if (usfmFilePath) {
@@ -148,14 +123,14 @@ export function openProject(projectPath, projectLink) {
             dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser));
         } else {
             //No USFM detected, initiating 'standard' loading process
-            projectPath = correctSaveLocation(projectPath);
+            projectPath = LoadHelpers.correctSaveLocation(projectPath);
             manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
             if (!manifest && !manifest.tcInitialized) {
-                manifest = setUpManifest(projectPath, projectLink, manifest, currentUser);
+                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
                 let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
                 if (oldManifest) {
-                    manifest = setUpManifest(projectPath, oldManifest);
+                    manifest = LoadHelpers.setUpManifest(projectPath, oldManifest);
                 }
             }
             dispatch(addLoadedProjectToStore(projectPath, manifest));
@@ -164,52 +139,6 @@ export function openProject(projectPath, projectLink) {
     });
 }
 
-/**
- * @description Sets up the folder in the tC save location for a USFM project
- * 
- * @param {string} usfmFilePath - Path of the usfm file that has been loaded
- * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
- */
-export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
-    const parsedPath = pathex.parse(usfmFilePath);
-    const saveFile = Path.join(projectSaveLocation, parsedPath.base);
-    const usfmData = fs.readFileSync(usfmFilePath).toString();
-    fs.ensureDirSync(projectSaveLocation);
-    fs.writeFileSync(saveFile, usfmData);
-    return usfmData
-}
-
-/**
- * @description Sets up a USFM project manifest according to tC standards.
- * 
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- * @param {string} direction - Direction of the book being read for the project target language
- * @param {objet} user - The current user loaded
- */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
-    const name = user.username;
-    const defaultManifest = {
-        "source_translations": [
-            {
-                "language_id": "en",
-                "resource_id": "ulb",
-                "checking_level": "",
-                "date_modified": new Date(),
-                "version": ""
-            }
-        ],
-        target_language: {
-            direction: direction,
-            id: "",
-            name: name
-        },
-        project_id: parsedUSFM.book,
-        ts_project: {
-            id: parsedUSFM.book,
-            name: LoadHelpers.convertToFullBookName(parsedUSFM.book)
-        }
-    }
-}
 
 /**
  * @description Initiates the loading of a usfm file into current project, puts the target language, params,
@@ -221,36 +150,22 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
  */
 export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser) {
     return ((dispatch) => {
-        const projectSaveLocation = correctSaveLocation(projectPath);
+        const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
         dispatch(setProjectPath(projectSaveLocation));
-        const usfmData = setUpUSFMProject(usfmFilePath, projectSaveLocation);
-        const parsedUSFM = getParsedUSFM(usfmData);
-        const targetLanguage = formatTargetLanguage(parsedUSFM);
+        const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectSaveLocation);
+        const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
+        const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
         dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
-        setUSFMParams(parsedUSFM.book, projectSaveLocation, direction);
+        dispatch(setUSFMParams(parsedUSFM.book, projectSaveLocation, direction));
         let manifest = LoadHelpers.loadFile(projectSaveLocation, 'manifest.json');
         if (!manifest) {
-            const defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
+            const defaultManifest = LoadHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
             manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
         }
         dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
     });
 }
 
-/**
- * @description Parses the usfm file using usfm-parse library.
- * 
- * @param {string} projectPath - Path in which the USFM project is being loaded from
- */
-export function getParsedUSFM(usfmData) {
-    try {
-        let parsedUSFM = usfm.toJSON(usfmData);
-        parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
-        return parsedUSFM;
-    } catch (e) {
-        console.error(e);
-    }
-}
 
 /**
  * @description Starts loading a project that has a standard manifest created.
@@ -264,7 +179,7 @@ export function addLoadedProjectToStore(projectPath, manifest) {
     return ((dispatch) => {
         dispatch(setProjectPath(projectPath));
         dispatch(setProjectManifest(manifest));
-        const params = getParams(projectPath, manifest);
+        const params = LoadHelpers.getParams(projectPath, manifest);
         if (params) {
             dispatch(setProjectParams(params));
             const book = LoadHelpers.convertToFullBookName(params.bookAbbr);
@@ -312,154 +227,6 @@ export function loadProjectDataFromFileSystem(projectPath) {
 }
 
 
-/**
- * @description Check if project is ephesians or titus, or if user is in developer mode.
- * 
- * @param {object} manifest - Manifest specified for tC load, already formatted.
- */
-export function checkIfValidBetaProject(manifest) {
-    if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
-    else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
-}
-
-/**
- * @description This methods will set the corestore reducer store state back to the inital state.
- * 
- */
-export function clearPreviousData() {
-    return {
-        type: consts.CLEAR_PREVIOUS_DATA
-    }
-}
-
-/**
- * @description Formats a default manifest according to tC standards
- * 
- * @param {string} path - Path in which the project is being loaded from, also should contain
- * the target language.
- * @param {object} manifest - Manifest specified for tC load, already formatted.
- */
-export function getParams(path, manifest) {
-    const isArray = (a) => {
-        return (!!a) && (a.constructor === Array);
-    }
-    if (manifest.package_version == '3') {
-        manifest = fixManifestVerThree(manifest);
-    }
-    if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
-        return null;
-    }
-    const ogPath = Path.join(window.__base, 'static', 'taggedULB');
-    let params = {
-        'originalLanguagePath': ogPath
-    }
-    const UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
-    params.targetLanguagePath = path;
-    params.gatewayLanguageUDBPath = UDBPath;
-    try {
-        if (manifest.ts_project) {
-            params.bookAbbr = manifest.ts_project.id;
-        }
-        else if (manifest.project) {
-            params.bookAbbr = manifest.project.id;
-        }
-        else {
-            params.bookAbbr = manifest.project_id;
-        }
-        if (isArray(manifest.source_translations)) {
-            params.gatewayLanguage = manifest.source_translations[0].language_id;
-        } else {
-            params.gatewayLanguage = manifest.source_translations.language_id;
-        }
-        params.direction = manifest.target_language ? manifest.target_language.direction : null;
-        if (isOldTestament(params.bookAbbr)) {
-            params.originalLanguage = "hebrew";
-        } else {
-            params.originalLanguage = "greek";
-        }
-    } catch (e) {
-        console.error(e);
-    }
-    return params;
-}
-
-/**
- * @description Formated the target language accoring to tC standards
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- */
-export function formatTargetLanguage(parsedUSFM) {
-    let targetLanguage = {};
-    targetLanguage.title = parsedUSFM.book;
-    const chapters = parsedUSFM.chapters;
-    for (let ch in chapters) {
-        targetLanguage[chapters[ch].number] = {};
-        const verses = chapters[ch].verses;
-        for (let v in verses) {
-            const verseText = verses[v].text.trim();
-            targetLanguage[chapters[ch].number][verses[v].number] = verseText;
-        }
-    }
-    if (parsedUSFM.headers) {
-        const parsedHeaders = parsedUSFM.headers;
-        if (parsedHeaders['mt1']) {
-            targetLanguage.title = parsedHeaders['mt1'];
-        } else if (parsedHeaders['id']) {
-            targetLanguage.title = BOOKS[parsedHeaders['id'].toLowerCase()];
-        }
-    }
-    return targetLanguage;
-}
-
-/**
- * @description Checks if the folder/file specified is a usfm project
- * 
- * @param {string} projectPath - Path in which the project is being loaded from 
- */
-export function checkIfUSFMFileOrProject(projectPath) {
-    try {
-        fs.readFileSync(projectPath);
-        const ext = projectPath.split(".")[1];
-        if (ext == "usfm" || ext == "sfm") return projectPath;
-    } catch (e) {
-        try {
-            let dir = fs.readdirSync(projectPath);
-            for (let i in dir) {
-                const ext = dir[i].split(".")[1];
-                if (ext == "usfm" || ext == "sfm") return Path.join(projectPath, dir[i]);
-            }
-            return false;
-        } catch (err) {
-            return false;
-        }
-    }
-}
-
-
-/**
- * @description Verifies that the manifest given has an accurate count of finished chunks.
- * 
- * @param {string} projectPath - Path in which the project is being loaded from 
- * @param {object} manifest - Manifest specified for tC load, already formatted.
- */
-export function verifyChunks(projectPath, manifest) {
-    const chunkChapters = fs.readdirSync(projectPath);
-    let finishedChunks = [];
-    for (const chapter in chunkChapters) {
-        if (!isNaN(chunkChapters[chapter])) {
-            const chunkVerses = fs.readdirSync(projectPath + '/' + chunkChapters[chapter]);
-            for (let chunk in chunkVerses) {
-                const currentChunk = chunkVerses[chunk].replace(/(?:\(.*\))?\.txt/g, '');
-                const chunkString = chunkChapters[chapter].trim() + '-' + currentChunk.trim();
-                if (!finishedChunks.includes(chunkString)) {
-                    finishedChunks.push(chunkString);
-                }
-            }
-        }
-    }
-    manifest.finished_chunks = finishedChunks;
-    manifest.tcInitialized = true;
-    return manifest;
-}
 
 /**
  * 
@@ -478,21 +245,6 @@ export function manifestError(content) {
     });
 }
 
-/**
- * 
- * @param {string} projectBook - book abbreviation of book to be converted
- */
-export function isOldTestament(projectBook) {
-    let passedBook = false;
-    for (const book in BOOKS) {
-        if (book == projectBook) passedBook = true;
-        if (BOOKS[book] == "Malachi" && passedBook) {
-            return true;
-        }
-    }
-    return false;
-}
-
 
 /**
  * @description Loads the tool into the main app view, and initates the tool Container component
@@ -505,7 +257,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
             dispatch({ type: consts.START_LOADING });
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
-            const checkArray = createCheckArray(dataObject, moduleFolderName);
+            const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
             dispatch(CheckStoreActions.setCheckNameSpace(dataObject.name))
             dispatch(CoreActionsRedux.changeModuleView('main'));
@@ -526,47 +278,12 @@ export function saveModules(checkArray) {
         for (let module of checkArray) {
             try {
                 const viewObj = require(Path.join(module.location, 'Container'));
-                dispatch({ type: consts.SAVE_MODULE_VIEW, identifier: module.name, module: viewObj.view || viewObj.container });
+                dispatch(setModuleView(module.name, viewObj.view || viewObj.container));
             } catch (e) {
                 console.log(e);
             }
         }
     });
-}
-
-/**
- * @description creates an array that has the data of each included tool and 'subtool'
- * 
- * @param {object} dataObject - Package json of the tool being loaded, 
- * meta data of what the tool needs to load.
- * @param {string} moduleFolderName - Folder path of the tool being loaded.
- */
-export function createCheckArray(dataObject, moduleFolderName) {
-    let modulePaths = [];
-    try {
-        if (!dataObject.name || !dataObject.version || !dataObject.title || !dataObject.main) {
-            return;
-        } else {
-            modulePaths.push({ name: dataObject.name, location: moduleFolderName });
-            for (let childFolderName in dataObject.include) {
-                //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-                if (Array.isArray(dataObject.include)) {
-                    modulePaths.push({
-                        name: dataObject.include[childFolderName],
-                        location: Path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
-                    });
-                } else {
-                    modulePaths.push({
-                        name: childFolderName,
-                        location: Path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
-                    });
-                }
-            }
-            return modulePaths;
-        }
-    } catch (e) {
-        console.error(e)
-    }
 }
 
 /**
