@@ -23,75 +23,77 @@ class ToolsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    ...state.checkStoreReducer,
-    ...state.loginReducer,
-    ...state.settingsReducer,
-    ...state.statusBarReducer,
-    ...state.loaderReducer,
-    ...state.resourcesReducer,
-    ...state.commentsReducer,
-    ...state.remindersReducer,
-    ...state.contextIdReducer,
-    ...state.projectDetailsReducer,
+    checkStoreReducer: state.checkStoreReducer,
+    loginReducer: state.loginReducer,
+    settingsReducer: state.settingsReducer,
+    statusBarReducer: state.statusBarReducer,
+    loaderReducer: state.loaderReducer,
+    resourcesReducer: state.resourcesReducer,
+    commentsReducer: state.commentsReducer,
+    remindersReducer: state.remindersReducer,
+    contextIdReducer: state.contextIdReducer,
+    projectDetailsReducer: state.projectDetailsReducer,
     modules: state.coreStoreReducer.modules
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updateCurrentCheck: (NAMESPACE, newCurrentCheck) => {
-      dispatch(CheckStoreActions.updateCurrentCheck(NAMESPACE, newCurrentCheck));
-    },
-    handleGoToCheck: (newGroupIndex, newCheckIndex, groups) => {
-      dispatch(CheckStoreActions.goToCheck(newGroupIndex, newCheckIndex, groups));
-    },
-    handleGoToNext: () => {
-      dispatch(CheckStoreActions.goToNext());
-    },
-    handleGoToPrevious: () => {
-      dispatch(CheckStoreActions.goToPrevious());
-    },
-    showNotification: (message, duration) => {
-      dispatch(showNotification(message, duration));
-    },
-    showPopover: (title, bodyText, positionCoord) => {
-      dispatch(showPopover(title, bodyText, positionCoord));
-    },
-    addNewResource: (resourceName, resourceData) => {
-      dispatch(addNewResource(resourceName, resourceData));
-    },
-    addNewBible: (bibleName, bibleData) => {
-      dispatch(addNewBible(bibleName, bibleData));
-    },
-    progress: (progress) => {
-      console.log(progress)
-    },
-    addComment: (text, userName) => {
-      dispatch(addComment(text, userName));
-    },
-    addSelections: (text, userName) => {
-      dispatch(addSelections(text, userName));
-    },
-    removeSelections: (text, userName) => {
-      dispatch(removeSelections(text, userName));
-    },
-    toggleReminder: (userName) => {
-      dispatch(toggleReminder(userName));
-    },
-    addVerseEdit: (text, userName) => {
-      dispatch(addVerseEdit(text, userName));
-    },
-    updateCheckIndex: (index) => {
-      dispatch(CheckStoreActions.goToCheck(null, index));
-    },
-    updateGroupIndex: (index) => {
-      dispatch(CheckStoreActions.goToCheck(index, null));
-    },
-    changeCurrentContextId: (contextId) => {
-      dispatch(changeCurrentContextId(contextId));
-    },
-    addGroupData: (groupName, groupData) => {
-      dispatch(addGroupData(groupName, groupData));
+    actions: {
+      updateCurrentCheck: (NAMESPACE, newCurrentCheck) => {
+        dispatch(CheckStoreActions.updateCurrentCheck(NAMESPACE, newCurrentCheck));
+      },
+      handleGoToCheck: (newGroupIndex, newCheckIndex, groups) => {
+        dispatch(CheckStoreActions.goToCheck(newGroupIndex, newCheckIndex, groups));
+      },
+      handleGoToNext: () => {
+        dispatch(CheckStoreActions.goToNext());
+      },
+      handleGoToPrevious: () => {
+        dispatch(CheckStoreActions.goToPrevious());
+      },
+      showNotification: (message, duration) => {
+        dispatch(showNotification(message, duration));
+      },
+      showPopover: (title, bodyText, positionCoord) => {
+        dispatch(showPopover(title, bodyText, positionCoord));
+      },
+      addNewResource: (resourceName, resourceData) => {
+        dispatch(addNewResource(resourceName, resourceData));
+      },
+      addNewBible: (bibleName, bibleData) => {
+        dispatch(addNewBible(bibleName, bibleData));
+      },
+      progress: (progress) => {
+        console.log(progress);
+      },
+      addComment: (text, userName) => {
+        dispatch(addComment(text, userName));
+      },
+      addSelections: (text, userName) => {
+        dispatch(addSelections(text, userName));
+      },
+      removeSelections: (text, userName) => {
+        dispatch(removeSelections(text, userName));
+      },
+      toggleReminder: (userName) => {
+        dispatch(toggleReminder(userName));
+      },
+      addVerseEdit: (text, userName) => {
+        dispatch(addVerseEdit(text, userName));
+      },
+      updateCheckIndex: (index) => {
+        dispatch(CheckStoreActions.goToCheck(null, index));
+      },
+      updateGroupIndex: (index) => {
+        dispatch(CheckStoreActions.goToCheck(index, null));
+      },
+      changeCurrentContextId: (contextId) => {
+        dispatch(changeCurrentContextId(contextId));
+      },
+      addGroupData: (groupName, groupData) => {
+        dispatch(addGroupData(groupName, groupData));
+      }
     }
   };
 };
