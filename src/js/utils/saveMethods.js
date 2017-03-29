@@ -143,3 +143,14 @@ export const saveVerseEdit = state => {
   saveData(state, "verseEdits", verseEditPayload)
 }
 
+/**
+ * @description This function saves the reminders data.
+ * @param {object} state - store state object.
+ */
+export const saveReminders = state => {
+  let remindersPayload = {
+    ...state.contextId,
+    ...state.remindersReducer
+  }
+  saveData(state, "reminders", remindersPayload);
+}

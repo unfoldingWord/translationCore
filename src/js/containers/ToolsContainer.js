@@ -6,7 +6,7 @@ import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
-import { addSelections, removeSelections } from '../actions/SelectionsActions.js';
+import { changeSelections, removeSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
@@ -72,8 +72,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
-      addSelections: (text, userName) => {
-        dispatch(addSelections(text, userName));
+      changeSelections: (text, userName) => {
+        dispatch(changeSelections(text, userName));
       },
       removeSelections: (text, userName) => {
         dispatch(removeSelections(text, userName));

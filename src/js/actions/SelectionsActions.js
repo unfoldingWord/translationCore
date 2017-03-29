@@ -8,11 +8,11 @@ import {generateTimestamp} from '../helpers/index';
  * @return {Object} - An action object, consiting of a timestamp, action type,
  *                    a selection array, and a username.
  ******************************************************************************/
-export const addSelections = (selection, userName) => {
+export const changeSelections = (selections, userName) => {
   return {
     type: consts.ADD_SELECTIONS,
     modifiedTimestamp: generateTimestamp(),
-    selection,
+    selections,
     userName
   };
 };
