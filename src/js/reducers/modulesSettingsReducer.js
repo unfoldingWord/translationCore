@@ -6,7 +6,11 @@ const modulesSettingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.UPDATE_MODULE_SETTINGS:
       return {
-        [state.action.moduleName]: action.moduleSettingsData
+        ...state,
+        [action.moduleNamespace]: {
+          ...state.action.moduleNamespace,
+          [action.settingsPropertyName]: action.moduleSettingsData
+        }
       };
     default:
       break;
