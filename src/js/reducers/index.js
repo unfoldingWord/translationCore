@@ -26,6 +26,7 @@ import contextIdReducer from './contextIdReducer'
 import groupDataReducer from './groupDataReducer'
 import groupIndexReducer from './groupIndexReducer'
 import verseEditReducer from './verseEditReducer'
+import modulesSettingsReducer from './modulesSettingsReducer'
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -53,7 +54,8 @@ const rootReducers = combineReducers({
   contextIdReducer,
   groupDataReducer,
   groupIndexReducer,
-  verseEditReducer
+  verseEditReducer,
+  modulesSettingsReducer
 });
 
 export default rootReducers;
