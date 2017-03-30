@@ -98,11 +98,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addGroupData: (groupName, groupData) => {
         dispatch(addGroupData(groupName, groupData));
       },
-      setModuleSettings: (moduleName, moduleSettingsData) => {
-        dispatch(setModuleSettings(moduleName, moduleSettingsData));
+      setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+        dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
       },
-      changeModuleSettings: (moduleName, moduleSettingsData) => {
-        dispatch(changeModuleSettings(moduleName, moduleSettingsData));
+      changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+        dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
       }
     }
   };

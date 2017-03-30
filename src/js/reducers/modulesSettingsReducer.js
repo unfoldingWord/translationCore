@@ -8,7 +8,7 @@ const modulesSettingsReducer = (state = initialState, action) => {
       return {
         ...state,
         [action.moduleNamespace]: {
-          ...state.action.moduleNamespace,
+          ...state[action.moduleNamespace],
           [action.settingsPropertyName]: action.moduleSettingsData
         }
       };
