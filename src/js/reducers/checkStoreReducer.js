@@ -9,7 +9,7 @@ const initialState = {
   currentGroupIndex: null,
   currentCheckIndex: null,
   currentCheckNamespace: null,
-  groupName: null
+  groupName: null,
 };
 
 module.exports = (state = initialState, action) => {
@@ -19,34 +19,34 @@ module.exports = (state = initialState, action) => {
         ...state,
         book: action.book,
         bookAbbr: action.bookAbbr
-      };
+      }
     case consts.SET_GROUPS_OBJECTS:
       return {
         ...state,
-        groups: action.val
-      };
+        groups: action.val,
+      }
     case consts.SET_SUBGROUPS_OBJECTS:
       return {
         ...state,
-        subgroups: action.val
-      };
+        subgroups: action.val,
+      }
     case consts.UPDATE_CURRENT_CHECK:
       return {
         ...state,
-        currentCheck: action.val
-      };
+        currentCheck: action.val,
+      }
     case consts.GO_TO_CHECK:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
-      };
+      }
     case consts.GO_TO_NEXT:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
-      };
+      }
     case consts.GO_TO_PREVIOUS:
       return {
         ...state,
@@ -54,16 +54,10 @@ module.exports = (state = initialState, action) => {
         currentCheckIndex: action.currentCheckIndex
       }
     case consts.UPDATE_NAMESPACE:
-      return {
-        ...state,
-        currentCheckNamespace: action.currentCheckNamespace
-      };
+      return { ...state, currentCheckNamespace: action.currentCheckNamespace }
     case consts.SET_GROUP_NAME:
-      return {
-        ...state,
-        groupName: action.groupName
-      };
+      return { ...state, groupName: action.groupName }
     default:
       return state;
   }
-};
+}

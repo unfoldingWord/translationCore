@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from '../actions/CoreActionConsts'
 
 const initialState = {
   bibles: {}
@@ -13,15 +13,15 @@ const resourcesReducer = (state = initialState, action) => {
           ...state.bibles,
           [action.bibleName]: action.bibleData
         }
-      };
+      }
     case consts.ADD_NEW_RESOURCE:
       return {
         ...state,
         [action.resourceName]: action.resourceData
-      };
+      }
     default:
       return state;
   }
-};
+}
 
-export default resourcesReducer;
+export default resourcesReducer
