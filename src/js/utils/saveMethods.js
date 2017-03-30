@@ -2,7 +2,6 @@
  * @description this file holds all methods that handle saving/persisting data in the
  *  file system add your methods as need and then import them into localstorage.js
  */
-
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration
@@ -139,9 +138,9 @@ export const saveVerseEdit = state => {
   let verseEditPayload = {
     ...state.contextIdReducer,
     ...state.verseEditReducer
-  }
-  saveData(state, "verseEdits", verseEditPayload)
-}
+  };
+  saveData(state, "verseEdits", verseEditPayload);
+};
 
 /**
  * @description This function saves the reminders data.
@@ -151,6 +150,6 @@ export const saveReminders = state => {
   let remindersPayload = {
     ...state.contextId,
     ...state.remindersReducer
-  }
+  };
   saveData(state, "reminders", remindersPayload);
-}
+};

@@ -10,6 +10,7 @@ import { changeSelections, removeSelections } from '../actions/SelectionsActions
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
+import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -21,8 +22,9 @@ class ToolsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
+    modules: state.coreStoreReducer.modules,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -33,7 +35,9 @@ const mapStateToProps = (state) => {
     remindersReducer: state.remindersReducer,
     contextIdReducer: state.contextIdReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    modules: state.coreStoreReducer.modules
+    selectionsReducer: state.selectionsReducer,
+    verseEditReducer: state.verseEditReducer,
+    modulesSettingsReducer: state.modulesSettingsReducer
   };
 };
 
@@ -79,8 +83,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleReminder: (userName) => {
         dispatch(toggleReminder(userName));
       },
-      addVerseEdit: (text, userName) => {
-        dispatch(addVerseEdit(text, userName));
+      addVerseEdit: (before, after, tags, userName) => {
+        dispatch(addVerseEdit(before, after, tags, userName));
       },
       updateCheckIndex: (index) => {
         dispatch(CheckStoreActions.goToCheck(null, index));
@@ -93,6 +97,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addGroupData: (groupName, groupData) => {
         dispatch(addGroupData(groupName, groupData));
+      },
+      setModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(setModuleSettings(moduleName, moduleSettingsData));
+      },
+      changeModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(changeModuleSettings(moduleName, moduleSettingsData));
       }
     }
   };
