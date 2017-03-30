@@ -10,23 +10,9 @@ import {generateTimestamp} from '../helpers/index';
  ******************************************************************************/
 export const changeSelections = (selections, userName) => {
   return {
-    type: consts.ADD_SELECTIONS,
+    type: consts.CHANGE_SELECTIONS,
     modifiedTimestamp: generateTimestamp(),
     selections,
-    userName
-  };
-};
-
-/**
- * @description This method removes the selection array from the selections reducer.
- * @param {String} userName - The username of the author of the selection.
- * @return {Object} - An action object, consiting of a timestamp, action type,
- *                    and a username.
- ******************************************************************************/
-export const removeSelections = userName => {
-  return {
-    type: consts.REMOVE_SELECTIONS,
-    modifiedTimestamp: generateTimestamp(),
     userName
   };
 };
