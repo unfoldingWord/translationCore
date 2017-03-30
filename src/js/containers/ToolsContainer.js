@@ -6,10 +6,11 @@ import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
-import { addSelections, removeSelections } from '../actions/SelectionsActions.js';
+import { changeSelections, removeSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
+import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 
 
 class ToolsContainer extends React.Component {
@@ -21,8 +22,9 @@ class ToolsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
+    modules: state.coreStoreReducer.modules,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -35,7 +37,7 @@ const mapStateToProps = (state) => {
     projectDetailsReducer: state.projectDetailsReducer,
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
-    modules: state.coreStoreReducer.modules
+    modulesSettingsReducer: state.modulesSettingsReducer
   };
 };
 
@@ -72,8 +74,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
-      addSelections: (text, userName) => {
-        dispatch(addSelections(text, userName));
+      changeSelections: (text, userName) => {
+        dispatch(changeSelections(text, userName));
       },
       removeSelections: (text, userName) => {
         dispatch(removeSelections(text, userName));
@@ -95,6 +97,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       addGroupData: (groupName, groupData) => {
         dispatch(addGroupData(groupName, groupData));
+      },
+      setModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(setModuleSettings(moduleName, moduleSettingsData));
+      },
+      changeModuleSettings: (moduleName, moduleSettingsData) => {
+        dispatch(changeModuleSettings(moduleName, moduleSettingsData));
       }
     }
   };
