@@ -2,13 +2,11 @@ import consts from './CoreActionConsts'
 import * as coreActions from './CoreActionsRedux'
 
 
-export const addNewBible = (bibleName, bibleData) => {
-  return {
-    type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-    bibleName,
-    bibleData
-  };
-};
+export const addNewBible = (bibleName, bibleData) => ({
+  type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
+  bibleName,
+  bibleData
+})
 
 export const addNewResource = (resourceName, resourceData, namespace) => {
   return ((dispatch, getState) => {
@@ -24,4 +22,5 @@ export const addNewResource = (resourceName, resourceData, namespace) => {
       namespace
     });
   });
-};
+}
+

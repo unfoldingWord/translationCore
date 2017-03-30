@@ -39,8 +39,8 @@ export const loadState = () => {
       verseEditReducer: {
         before: "സഹോദരന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
         after: "സഹോദ-രന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
-        tags: [],
-        userName: "klappy",
+        tags: ["wordChoice", "punctuation", "i didn't like it"],
+        user: "klappy",
         modifiedTimestamp: "2017-02-17T22:23:49.357Z"
       },
       contextIdReducer: {
@@ -50,9 +50,9 @@ export const loadState = () => {
             chapter: 1,
             verse: 3
           },
-          tool: 'ImportantWords',
-          group: 'Aaron',
-          quote: 'Aaron',
+          tool: 'translationNotes',
+          group: 'figs_metaphor',
+          quote: 'the son of destruction',
           occurrence: 1
         }
       }
