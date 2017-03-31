@@ -11,15 +11,10 @@ import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
-import {loadSelections} from '../actions/checkDataLoadActions.js';
 
 
 class ToolsContainer extends React.Component {
 
-  componentWillMount() {
-    this.props.actions.loadSelections();
-  }
-  
   render() {
     let Tool = this.props.currentTool;
     return (
@@ -109,9 +104,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-      },
-      loadSelections: () => {
-        dispatch(loadSelections());
       }
     }
   };
