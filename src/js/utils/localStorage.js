@@ -24,7 +24,7 @@ export const loadState = () => {
       //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
       // },
       // selectionsReducer: {
-      //   selection: [
+      //   selections: [
       //     {
       //       text: "സഹോദരന്മാരേ",
       //       occurrence: 1,
