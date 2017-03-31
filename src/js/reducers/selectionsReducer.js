@@ -1,22 +1,16 @@
 import consts from '../actions/CoreActionConsts.js';
 
 const initialState = {
-  selection: [],
+  selections: [],
   userName: null,
   modifiedTimestamp: null
 };
 
 const selectionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.ADD_SELECTION:
+    case consts.CHANGE_SELECTIONS:
       return Object.assign({}, state, {
-        selection: action.selection,
-        userName: action.userName,
-        modifiedTimestamp: action.modifiedTimestamp
-      });
-    case consts.REMOVE_SELECTION:
-      return Object.assign({}, state, {
-        selection: [],
+        selections: action.selections,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
       });
