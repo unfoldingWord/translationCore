@@ -75,7 +75,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(addComment(text, userName));
       },
       changeSelections: (selections, userName) => {
-        console.log(selections, userName)
         dispatch(changeSelections(selections, userName));
       },
       removeSelections: (text, userName) => {
