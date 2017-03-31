@@ -60,11 +60,15 @@ function loadCheckData(loadPath) {
       fileName = file;
     }
   });
-  let readPath = loadPath + '/' + fileName;
+  let readPath = path.join(loadPath, fileName);
   let checkDataObject = fs.readJsonSync(readPath);
   return checkDataObject;
 }
-
+/**
+ * @description loads the latest comment file from the file system for the specify
+ * contextID.
+ * @return {object} Dispatches an action that loads the commentsReducer with data.
+ */
 export function loadComments() {
   return (dispatch, getState) => {
     let state = getState();
@@ -78,7 +82,11 @@ export function loadComments() {
     });
   };
 }
-
+/**
+ * @description loads the latest reminders file from the file system for the specify
+ * contextID.
+ * @return {object} Dispatches an action that loads the remindersReducer with data.
+ */
 export function loadReminders() {
   return (dispatch, getState) => {
     let state = getState();
@@ -91,7 +99,11 @@ export function loadReminders() {
     });
   };
 }
-
+/**
+ * @description loads the latest selections file from the file system for the specify
+ * contextID.
+ * @return {object} Dispatches an action that loads the selectionsReducer with data.
+ */
 export function loadSelections() {
   return (dispatch, getState) => {
     let state = getState();
@@ -105,7 +117,11 @@ export function loadSelections() {
     });
   };
 }
-
+/**
+ * @description loads the latest verseEdit file from the file system for the specify
+ * contextID.
+ * @return {object} Dispatches an action that loads the verseEditReducer with data.
+ */
 export function loadVerseEdit() {
   return (dispatch, getState) => {
     let state = getState();
