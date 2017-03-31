@@ -14,7 +14,6 @@ import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSetting
 
 
 class ToolsContainer extends React.Component {
-
   render() {
     let Tool = this.props.currentTool;
     return (
