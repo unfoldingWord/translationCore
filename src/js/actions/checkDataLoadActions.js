@@ -98,7 +98,7 @@ export function loadSelections() {
     let loadPath = generateLoadPath(state, 'selections');
     let selectionsObject = loadCheckData(loadPath);
     dispatch({
-      type: consts.ADD_SELECTIONS,
+      type: consts.CHANGE_SELECTIONS,
       modifiedTimestamp: selectionsObject.modifiedTimestamp,
       selections: selectionsObject.selections,
       userName: selectionsObject.userName
