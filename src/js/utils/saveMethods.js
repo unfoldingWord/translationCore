@@ -56,10 +56,11 @@ export const saveResources = state => {
  * @param {string} checkDataName - checkDate folder name where data will be saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc
  * @param {object} payload - object of data: merged contextIdReducer and commentsReducer.
+ * @param {sting} modifiedTimestamp - timestamp.
  */
-function saveData(state, checkDataName, payload, reducer) {
+function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
-    let savePath = generateSavePath(state, checkDataName, reducer);
+    let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
     if (savePath) {
       fs.outputJson(savePath, payload);
     } else {
@@ -75,11 +76,11 @@ function saveData(state, checkDataName, payload, reducer) {
  * @param {object} state - store state object.
  * @param {string} checkDataName - checkDate folder name where data is saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
- * @param {object} reducer - comments/reminders/selections/verseEdits reducer
+ * @param {string} modifiedTimestamp - timestamp.
  * that contains the specific timestamp.
  * @return {string} save path.
  */
-function generateSavePath(state, checkDataName, reducer) {
+function generateSavePath(state, checkDataName, modifiedTimestamp) {
   /**
   * @description output directory
   *  /translationCore/ar_eph_text_ulb/apps/translationCore/checkData/comments/eph/1/3
@@ -91,11 +92,11 @@ function generateSavePath(state, checkDataName, reducer) {
   * @example verse - /3
   */
   const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-  if (PROJECT_SAVE_LOCATION && state && reducer.modifiedTimestamp) {
+  if (PROJECT_SAVE_LOCATION && state && modifiedTimestamp) {
     let bookAbbreviation = state.contextIdReducer.contextId.reference.bookId;
     let chapter = state.contextIdReducer.contextId.reference.chapter.toString();
     let verse = state.contextIdReducer.contextId.reference.verse.toString();
-    let fileName = reducer.modifiedTimestamp + '.json';
+    let fileName = modifiedTimestamp + '.json';
     let savePath = path.join(
         PROJECT_SAVE_LOCATION,
         CHECKDATA_DIRECTORY,
@@ -118,7 +119,8 @@ export const saveComments = state => {
     ...state.contextIdReducer,
     ...state.commentsReducer
   };
-  saveData(state, "comments", commentsPayload, state.commentsReducer);
+  let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
+  saveData(state, "comments", commentsPayload, modifiedTimestamp);
 };
 
 /**
@@ -130,7 +132,8 @@ export const saveSelections = state => {
     ...state.contextIdReducer,
     ...state.selectionsReducer
   };
-  saveData(state, "selections", selectionsPayload, state.selectionsReducer);
+  let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
+  saveData(state, "selections", selectionsPayload, modifiedTimestamp);
 };
  /**
  * @description This function saves the verse Edit data.
@@ -141,7 +144,8 @@ export const saveVerseEdit = state => {
     ...state.contextIdReducer,
     ...state.verseEditReducer
   };
-  saveData(state, "verseEdits", verseEditPayload, state.verseEditReducer);
+  let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
+  saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
 };
 
 /**
@@ -153,5 +157,6 @@ export const saveReminders = state => {
     ...state.contextIdReducer,
     ...state.remindersReducer
   };
-  saveData(state, "reminders", remindersPayload, state.remindersReducer);
+  let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+  saveData(state, "reminders", remindersPayload, modifiedTimestamp);
 };
