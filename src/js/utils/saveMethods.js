@@ -57,9 +57,9 @@ export const saveResources = state => {
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc
  * @param {object} payload - object of data: merged contextIdReducer and commentsReducer.
  */
-function saveData(state, checkDataName, payload) {
+function saveData(state, checkDataName, payload, reducer) {
   try {
-    let savePath = generateSavePath(state, checkDataName);
+    let savePath = generateSavePath(state, checkDataName, reducer);
     if (savePath) {
       fs.outputJson(savePath, payload);
     } else {
@@ -73,11 +73,13 @@ function saveData(state, checkDataName, payload) {
 /**
  * @description generates the output directory.
  * @param {object} state - store state object.
- * @param {string} checkDataName - checkDate folder name where data will be saved.
+ * @param {string} checkDataName - checkDate folder name where data is saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
- * @return {string} save path
+ * @param {object} reducer - comments/reminders/selections/verseEdits reducer
+ * that contains the specific timestamp.
+ * @return {string} save path.
  */
-function generateSavePath(state, checkDataName) {
+function generateSavePath(state, checkDataName, reducer) {
   /**
   * @description output directory
   *  /translationCore/ar_eph_text_ulb/apps/translationCore/checkData/comments/eph/1/3
@@ -89,19 +91,19 @@ function generateSavePath(state, checkDataName) {
   * @example verse - /3
   */
   const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-  if (PROJECT_SAVE_LOCATION && state) {
+  if (PROJECT_SAVE_LOCATION && state && reducer.modifiedTimestamp) {
     let bookAbbreviation = state.contextIdReducer.contextId.reference.bookId;
     let chapter = state.contextIdReducer.contextId.reference.chapter.toString();
     let verse = state.contextIdReducer.contextId.reference.verse.toString();
-    let fileName = state.commentsReducer.modifiedTimestamp + '.json';
+    let fileName = reducer.modifiedTimestamp + '.json';
     let savePath = path.join(
-      PROJECT_SAVE_LOCATION,
-      CHECKDATA_DIRECTORY,
-      checkDataName,
-      bookAbbreviation,
-      chapter,
-      verse,
-      fileName
+        PROJECT_SAVE_LOCATION,
+        CHECKDATA_DIRECTORY,
+        checkDataName,
+        bookAbbreviation,
+        chapter,
+        verse,
+        fileName
     );
     return savePath;
   }
@@ -116,7 +118,7 @@ export const saveComments = state => {
     ...state.contextIdReducer,
     ...state.commentsReducer
   };
-  saveData(state, "comments", commentsPayload);
+  saveData(state, "comments", commentsPayload, state.commentsReducer);
 };
 
 /**
@@ -128,7 +130,7 @@ export const saveSelections = state => {
     ...state.contextIdReducer,
     ...state.selectionsReducer
   };
-  saveData(state, "selections", selectionsPayload);
+  saveData(state, "selections", selectionsPayload, state.selectionsReducer);
 };
  /**
  * @description This function saves the verse Edit data.
@@ -139,7 +141,7 @@ export const saveVerseEdit = state => {
     ...state.contextIdReducer,
     ...state.verseEditReducer
   };
-  saveData(state, "verseEdits", verseEditPayload);
+  saveData(state, "verseEdits", verseEditPayload, state.verseEditReducer);
 };
 
 /**
@@ -148,8 +150,8 @@ export const saveVerseEdit = state => {
  */
 export const saveReminders = state => {
   let remindersPayload = {
-    ...state.contextId,
+    ...state.contextIdReducer,
     ...state.remindersReducer
   };
-  saveData(state, "reminders", remindersPayload);
+  saveData(state, "reminders", remindersPayload, state.remindersReducer);
 };
