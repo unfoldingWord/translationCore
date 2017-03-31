@@ -45,24 +45,34 @@ function generateLoadPath(state, checkDataName) {
  * @return {object} returns the object loaded from the file system.
  */
 function loadCheckData(loadPath) {
-  let files = fs.readdirSync(loadPath);
-  let ext = '.json';
-  let fileName = '';
-  let sorted = files.sort((a, b) => {
-    if (path.extname(a) === ext && path.extname(b) === ext) {
-      // Turn strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      return new Date(b) - new Date(a);
-    }
-  });
-  sorted.forEach((file, index) => {
-    if (path.extname(file) === ext && index === files.length - 1) {
-      fileName = file;
-    }
-  });
-  let readPath = path.join(loadPath, fileName);
-  let checkDataObject = fs.readJsonSync(readPath);
-  return checkDataObject;
+  try {
+    let files = fs.readdirSync(loadPath);
+    let ext = '.json';
+    let fileName = '';
+    let sorted = files.sort((a, b) => {
+      if (path.extname(a) === ext && path.extname(b) === ext) {
+        // Turn strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b) - new Date(a);
+      }
+    });
+    sorted.forEach((file, index) => {
+      if (path.extname(file) === ext && index === files.length - 1) {
+        fileName = file;
+      }
+    });
+    let readPath = path.join(loadPath, fileName);
+    console.log(readPath)
+    let checkDataObject = fs.readJsonSync(readPath);
+    return checkDataObject;
+  } catch (err) {
+    /**
+     * @description Will return undefined so that the load method returns and then
+     * dispatches an empty action object to initialized the reducer.
+     */
+    console.warn('No file found in the directory therefore an empty reducer will be initialiazed instead \n', err);
+    return undefined;
+  }
 }
 /**
  * @description loads the latest comment file from the file system for the specify
@@ -74,12 +84,22 @@ export function loadComments() {
     let state = getState();
     let loadPath = generateLoadPath(state, 'comments');
     let commentsObject = loadCheckData(loadPath);
-    dispatch({
-      type: consts.ADD_COMMENT,
-      modifiedTimestamp: commentsObject.modifiedTimestamp,
-      text: commentsObject.text,
-      userName: commentsObject.userName
-    });
+    if (commentsObject) {
+      dispatch({
+        type: consts.ADD_COMMENT,
+        modifiedTimestamp: commentsObject.modifiedTimestamp,
+        text: commentsObject.text,
+        userName: commentsObject.userName
+      });
+    } else {
+      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+      dispatch({
+        type: consts.ADD_COMMENT,
+        modifiedTimestamp: "",
+        text: "",
+        userName: ""
+      });
+    }
   };
 }
 /**
@@ -92,11 +112,20 @@ export function loadReminders() {
     let state = getState();
     let loadPath = generateLoadPath(state, 'reminders');
     let remindersObject = loadCheckData(loadPath);
-    dispatch({
-      type: consts.TOGGLE_REMINDER,
-      modifiedTimestamp: remindersObject.modifiedTimestamp,
-      userName: remindersObject.userName
-    });
+    if (remindersObject) {
+      dispatch({
+        type: consts.TOGGLE_REMINDER,
+        modifiedTimestamp: remindersObject.modifiedTimestamp,
+        userName: remindersObject.userName
+      });
+    } else {
+      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+      dispatch({
+        type: consts.TOGGLE_REMINDER,
+        modifiedTimestamp: "",
+        userName: ""
+      });
+    }
   };
 }
 /**
@@ -109,12 +138,22 @@ export function loadSelections() {
     let state = getState();
     let loadPath = generateLoadPath(state, 'selections');
     let selectionsObject = loadCheckData(loadPath);
-    dispatch({
-      type: consts.CHANGE_SELECTIONS,
-      modifiedTimestamp: selectionsObject.modifiedTimestamp,
-      selections: selectionsObject.selections,
-      userName: selectionsObject.userName
-    });
+    if (selectionsObject) {
+      dispatch({
+        type: consts.CHANGE_SELECTIONS,
+        modifiedTimestamp: selectionsObject.modifiedTimestamp,
+        selections: selectionsObject.selections,
+        userName: selectionsObject.userName
+      });
+    } else {
+      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+      dispatch({
+        type: consts.CHANGE_SELECTIONS,
+        modifiedTimestamp: "",
+        selections: [],
+        userName: ""
+      });
+    }
   };
 }
 /**
@@ -127,13 +166,25 @@ export function loadVerseEdit() {
     let state = getState();
     let loadPath = generateLoadPath(state, 'verseEdits');
     let verseEditsObject = loadCheckData(loadPath);
-    dispatch({
-      type: consts.ADD_VERSE_EDIT,
-      before: verseEditsObject.before,
-      after: verseEditsObject.after,
-      tags: verseEditsObject.tags,
-      userName: verseEditsObject.userName,
-      modifiedTimestamp: verseEditsObject.modifiedTimestamp
-    });
+    if (verseEditsObject) {
+      dispatch({
+        type: consts.ADD_VERSE_EDIT,
+        before: verseEditsObject.before,
+        after: verseEditsObject.after,
+        tags: verseEditsObject.tags,
+        userName: verseEditsObject.userName,
+        modifiedTimestamp: verseEditsObject.modifiedTimestamp
+      });
+    } else {
+      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+      dispatch({
+        type: consts.ADD_VERSE_EDIT,
+        before: "",
+        after: "",
+        tags: [],
+        userName: [],
+        modifiedTimestamp: ""
+      });
+    }
   };
 }
