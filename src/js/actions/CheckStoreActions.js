@@ -1,7 +1,8 @@
-const api = window.ModuleApi;
-import BooksOfBible from '../components/core/BooksOfBible'
-const CoreStore = require('../stores/CoreStore.js');
+import BooksOfBible from '../components/core/BooksOfBible';
+import CoreStore from '../stores/CoreStore.js';
 import * as CoreActionsRedux from './CoreActionsRedux.js';
+// constant declaration
+const api = window.ModuleApi;
 
 
 export function setBookName(bookName) {
@@ -10,13 +11,13 @@ export function setBookName(bookName) {
     type: "SET_BOOK_NAME",
     val: bookName,
     bookAbbr
-  }
+  };
 }
 
 export const convertToFullBookName = (bookAbbr) => {
   if (!bookAbbr) return;
   return BooksOfBible[bookAbbr.toString().toLowerCase()];
-}
+};
 
 
 export function setGroupName(groupName) {
