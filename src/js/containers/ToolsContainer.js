@@ -9,7 +9,7 @@ import { toggleReminder } from '../actions/RemindersActions.js';
 import { changeSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
 import {addGroupsData} from '../actions/GroupsDataActions.js';
-import {changeGroupsIndex} from '../actions/GroupsIndexActions.js';
+import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 
@@ -89,8 +89,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addGroupData: (groupId, groupData) => {
         dispatch(addGroupData(groupId, groupData));
       },
-      changeGroupsIndex: (groupsIndex) => {
-        dispatch(changeGroupsIndex(groupsIndex));
+      setGroupsIndex: (groupsIndex) => {
+        dispatch(setGroupsIndex(groupsIndex));
       },
       setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
