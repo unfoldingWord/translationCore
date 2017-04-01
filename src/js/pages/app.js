@@ -38,6 +38,7 @@ let api = window.ModuleApi;
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
+import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 
 var Main = React.createClass({
   componentWillMount() {
@@ -118,7 +119,7 @@ var Main = React.createClass({
 
   render: function () {
     // logging the store for testing.
-    console.log(this.props)
+    console.log('~ app.js ~',this.props)
     return (
       <div className='fill-height'>
         <KonamiContainer />
@@ -130,7 +131,7 @@ var Main = React.createClass({
             <StatusBarContainer />
           </Row>
           <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
-            <SideBarContainer />
+            <SideBarContainer {...this.props} />
           </Col>
           <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
             <LoaderContainer />
@@ -154,6 +155,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     startLoadingNewProject: (lastCheckModule) => {
       dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
+    },
+    actions: {
+      changeCurrentContextId: (contextId) => {
+        dispatch(changeCurrentContextId(contextId));
+      }
     }
   };
 }

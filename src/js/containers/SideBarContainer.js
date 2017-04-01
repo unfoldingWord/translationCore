@@ -2,7 +2,7 @@ const React = require('react');
 const { connect } = require('react-redux');
 const CheckStoreActions = require('../actions/CheckStoreActions.js');
 const SideBarActions = require('../actions/SideBarActions.js');
-const MenuHeaders = require('../components/core/navigation_menu/MenuHeaders');
+const Groups = require('../components/core/navigation_menu/Groups');
 const {Grid, Row, Col, Glyphicon} = require('react-bootstrap');
 const Chevron = require('../components/core/SideBar/Chevron');
 const style = require("../components/core/SideBar/Style");
@@ -36,7 +36,7 @@ class SideBarContainer extends React.Component {
                 overflowY: "scroll"
               }
             }>
-              <MenuHeaders {...this.props} currentToolNamespace={currentCheckNamespace}/>
+              <Groups {...this.props} />
             </Col>
           </Grid>
         </div>

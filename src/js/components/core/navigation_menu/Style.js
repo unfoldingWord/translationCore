@@ -1,17 +1,29 @@
  var style = {
   menuItem: {
-    text: {
+    heading: {
       normal: {
+        display: "block",
+        paddingTop: "7px",
+        paddingRight: '5px',
+        paddingBottom: "10px",
+        paddingLeft: '15px',
+        cursor: "pointer",
+        borderBottom: "1px solid #747474",
         cursor: 'pointer',
         fontWeight: 'normal',
-        paddingLeft: '15px',
-        paddingRight: '5px'
+        color: 'white'
       },
       current: {
-        cursor: 'pointer',
-        fontWeight: 'bold',
+        display: "block",
+        paddingTop: "7px",
+        paddingRight: '5px',
+        paddingBottom: "10px",
         paddingLeft: '15px',
-        paddingRight: '5px'
+        cursor: "pointer",
+        borderBottom: "1px solid #747474",
+        backgroundColor: "#0277BD",
+        fontWeight: 'bold',
+        color: 'white'
       }
     },
     statusIcon: {
@@ -27,21 +39,6 @@
         display: 'none'
       }
     }
-  },
-
-  menuHeader: {
-    display: "block",
-    padding: "10px",
-    cursor: "pointer",
-    borderBottom: "1px solid #747474"
-  },
-
-  activeMenuHeader: {
-    display: "block",
-    padding: "10px",
-    cursor: "pointer",
-    borderBottom: "1px solid #747474",
-    backgroundColor: "#0277BD",
   },
 
   subMenuItem: {

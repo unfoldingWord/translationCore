@@ -6,9 +6,9 @@ import consts from '../actions/CoreActionConsts';
  * @param {string} groupIndex - The object of group indecies
  * @return {object} action object.
  */
-export const addGroupIndex = (groupIndex) => {
+export const changeGroupsIndex = (groupsIndex) => {
   return {
-    type: consts.ADD_GROUP_INDEX,
-    groupIndex
+    type: consts.SET_GROUPS_INDEX,
+    groupsIndex
   };
 };
