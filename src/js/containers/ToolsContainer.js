@@ -12,6 +12,7 @@ import {addGroupData} from '../actions/GroupDataActions.js';
 import {addGroupIndex} from '../actions/GroupIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
+import { sendProgressForKey } from '../actions/LoaderActions'
 
 
 class ToolsContainer extends React.Component {
@@ -70,7 +71,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(addNewBible(bibleName, bibleData));
       },
       progress: (progress) => {
-        console.log(progress);
+        dispatch(sendProgressForKey(progress))
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
