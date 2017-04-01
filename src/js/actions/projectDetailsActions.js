@@ -12,22 +12,22 @@ export const setSaveLocation = pathLocation => {
   };
 };
 /**
- * @description this sets a property name and a value name in the project detail reducer.
- *  @example detailName = bookName and detailtData = 'Matthew' then
+ * @description this sets a key name and a value name in the project detail reducer.
+ *  @example key = bookName and value = 'Matthew' then
  *  projectDetailReducer will look as follow:
  *  {
  *    ...,
  *    bookname: Matthew
  *  }
- * @param {sting} detailName - projectDetailReducer property name where detailData is saved.
- * @param {multiple} detailData - this varaiable could be anything from a string, array,
+ * @param {sting} key - projectDetailReducer key name where value is saved.
+ * @param {*} value - this variable could be anything from a string, array,
  * object, boolean ect.
  * @return {object} action object.
  */
-export const setProjectDetail = (detailName, detailData) => {
+export const setProjectDetail = (key, value) => {
   return {
     type: consts.SET_PROJECT_DETAIL,
-    detailName,
-    detailData
+    key,
+    value
   };
 };

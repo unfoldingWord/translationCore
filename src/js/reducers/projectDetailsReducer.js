@@ -16,7 +16,7 @@ const projectDetailsReducer = (state = initialState, action) => {
     case consts.SET_PROJECT_DETAIL:
       return {
         ...state,
-        [action.detailName]: action.detailData
+        [action.key]: action.value
       };
     case consts.STORE_MANIFEST:
       return {
