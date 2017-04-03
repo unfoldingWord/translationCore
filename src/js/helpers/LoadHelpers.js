@@ -1,12 +1,11 @@
-import Path from 'path';
+import Path from 'path-extra';
 import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/core/create_project/ProjectManifest';
 import BooksOfBible from '../components/core/BooksOfBible';
-import pathex from 'path-extra';
 import usfm from 'usfm-parser';
 
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(pathex.homedir(), 'translationCore');
+const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 
 /**
  * 
@@ -127,8 +126,8 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
  * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function correctSaveLocation(projectPath) {
-    const parsedPath = pathex.parse(projectPath);
-    const tCProjectsSaveLocation = pathex.join(DEFAULT_SAVE, parsedPath.name);
+    const parsedPath = Path.parse(projectPath);
+    const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
     if (!fs.existsSync(projectPath)) {
         return false;
     }
@@ -156,7 +155,7 @@ export function correctSaveLocation(projectPath) {
  * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
  */
 export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
-    const parsedPath = pathex.parse(usfmFilePath);
+    const parsedPath = Path.parse(usfmFilePath);
     const saveFile = Path.join(projectSaveLocation, parsedPath.base);
     const usfmData = fs.readFileSync(usfmFilePath).toString();
     fs.ensureDirSync(projectSaveLocation);
