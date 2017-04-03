@@ -9,7 +9,7 @@ const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
-
+const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
 /**
  * @description saves all data in settingsReducer to the specified directory.
  * @param {object} state - object of reducers (objects).
@@ -159,4 +159,48 @@ export const saveReminders = state => {
   };
   let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
   saveData(state, "reminders", remindersPayload, modifiedTimestamp);
+};
+/**
+ * @description saves the groups index array in the file system.
+ * @param {object} state - store state object.
+ */
+export const saveGroupsIndex = state => {
+  try {
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    let tool = state.contextIdReducer.contextId ?
+               state.contextIdReducer.contextId.tool : undefined;
+    let fileName = "index.json";
+    let groupsIndex = state.groupsIndexReducer.groupsIndex;
+    if (tool && PROJECT_SAVE_LOCATION && groupsIndex) {
+      let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, tool, fileName);
+      console.log(savePath);
+      console.log(groupsIndex);
+      fs.outputJson(savePath, groupsIndex);
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
+/**
+ * @description saves the groups data by groupId name.
+ * @param {object} state - store state object.
+ */
+export const saveGroupsData = state => {
+  try {
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    let tool = state.contextIdReducer.contextId ?
+               state.contextIdReducer.contextId.tool : undefined;
+    let bookAbbreviation = state.contextIdReducer.contextId ? 
+                           state.contextIdReducer.contextId.reference.bookId : undefined;
+    if (PROJECT_SAVE_LOCATION && tool && bookAbbreviation) {
+      let groupsData = state.groupsDataReducer.groupsData;
+      for (let groupID in groupsData) {
+        let fileName = groupID + ".json";
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, tool, bookAbbreviation, fileName);
+        fs.outputJson(savePath, groupsData[groupID]);
+      }
+    }
+  } catch (err) {
+    console.warn(err);
+  }
 };
