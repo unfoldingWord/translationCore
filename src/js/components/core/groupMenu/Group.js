@@ -27,7 +27,7 @@ class Group extends React.Component {
  */
   groupItems(groupData, active) {
     let groupItems = <div /> // leave empty while there is no data to populate
-    if (active && groupData !== undefined) { // populate the data when it exists
+    if (active && groupData.constructor == Array) { // populate the data when it exists
       groupItems = groupData.map((groupItemData, index) =>
         <GroupItem {...this.props} {...groupItemData} key={index} />
       )
