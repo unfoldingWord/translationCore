@@ -4,11 +4,11 @@ const initialState = {
   groupIndex: []
 };
 
-const groupIndexReducer = (state = initialState, action) => {
+const groupsIndexReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.ADD_GROUP_INDEX: {
+    case consts.ADD_GROUPS_INDEX: {
       return Object.assign({}, state, {
-        groupIndex: action.groupIndex
+        groupsIndex: action.groupsIndex
       });
     }
     default:
@@ -16,4 +16,4 @@ const groupIndexReducer = (state = initialState, action) => {
   }
 };
 
-export default groupIndexReducer;
+export default groupsIndexReducer;

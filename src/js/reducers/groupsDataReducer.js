@@ -1,17 +1,17 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  groups: {}
+  groupsData: {}
 };
 
-const groupDataReducer = (state = initialState, action) => {
+const groupsDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.ADD_GROUP_DATA:
       return {
         ...state,
-        groups: {
-          ...state.groups,
-          [action.groupName]: action.groupData
+        groupsData: {
+          ...state.groupsData,
+          [action.groupId]: action.groupData
         }
       };
     default:
@@ -19,4 +19,4 @@ const groupDataReducer = (state = initialState, action) => {
   }
 };
 
-export default groupDataReducer;
+export default groupsDataReducer;

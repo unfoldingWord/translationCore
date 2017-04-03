@@ -157,11 +157,11 @@ export function goToPrevious(currentGroupIndex, currentCheckIndex, groups) {
     dispatch({
       type: "GO_TO_PREVIOUS",
       currentGroupIndex: newGroupIndex,
-      currentCheckIndex: newCheckIndex,
+      currentCheckIndex: newCheckIndex
     });
     dispatch({
       type: "UPDATE_CURRENT_CHECK",
-      val: currentCheck,
+      val: currentCheck
     });
   })
 }
