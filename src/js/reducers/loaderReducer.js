@@ -3,8 +3,7 @@ import consts from '../actions/CoreActionConsts';
 const initialState = {
   show: false,
   progress: 0,
-  progressObject: {},
-  fetchDatas: 0
+  reloadContent:null
 };
 
 module.exports = (state = initialState, action) => {
@@ -17,24 +16,21 @@ module.exports = (state = initialState, action) => {
         ...state,
         progress: action.progress,
         reloadContent: action.reloadContent,
-        progressObject: action.progressObject
-      }
-      break;
-    case consts.FETCH_DATA_NUMBER:
-      return {
-        ...state,
-        fetchDatas: action.fetchDatas
+        show:true
       }
       break;
       case consts.DONE_LOADING: 
       return {
         ...state,
         progress:0,
-        progressObject:{},
-        fetchDatas:0,
         show:false
       }
       break;
+      case consts.START_LOADING:
+      return {
+        ...state, 
+         show:true
+      }
     default:
       return state;
   }

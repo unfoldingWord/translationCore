@@ -38,28 +38,14 @@ export function update (show, progess) {
   });
 }
 
-export function sendProgressForKey (name, progress) {
-  return ((dispatch, getState) => {
-    const loaderState = getState().loaderReducer;
-    var progressObject = JSON.parse(JSON.stringify(loaderState.progressObject))
-    var fetchDatas = loaderState.fetchDatas;
-    progressObject[name] = progress;
-    var currentProgress = 0;
-    for (var key in progressObject) {
-      currentProgress += progressObject[key];
-    }
-    return {
+export function sendProgressForKey (progress) {
+  return ((dispatch)=>{
+    dispatch({
       type: consts.UPDATE_PROGRESS,
-      progress: currentProgress / fetchDatas,
-      progressObject: progressObject
+      progress: progress,
+    });
+    if (progress == 100) {
+      dispatch(toggleLoader(false));
     }
-  })
-}
-
-
-export function updateNumberOfFetchDatas (fetchDatas) {
-  return {
-    type: consts.FETCH_DATA_NUMBER,
-    fetchDatas: fetchDatas
-  }
+  });
 }

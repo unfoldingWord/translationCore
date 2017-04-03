@@ -117,8 +117,6 @@ var Main = React.createClass({
   },
 
   render: function () {
-    // logging the store for testing.
-    console.log('~ app.js ~',this.props)
     return (
       <div className='fill-height'>
         <KonamiContainer />

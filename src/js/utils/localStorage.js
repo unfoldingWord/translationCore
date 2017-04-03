@@ -18,12 +18,11 @@ export const loadState = () => {
       //   userName: 'manny',
       //   modifiedTimestamp: '2017-02-17T22:23:49.357Z'
       // },
-      remindersReducer: {
-        enabled: true,
-        verseEditId: "2017-02-17T22:23:50.357Z",
-        user: "klappy",
-        modifiedTimestamp: "2017-02-17T22:23:49.357Z"
-      },
+      // remindersReducer: {
+      //   enabled: true,
+      //   userName: "klappy",
+      //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
+      // },
       // selectionsReducer: {
       //   selections: [
       //     {
@@ -32,8 +31,7 @@ export const loadState = () => {
       //       occurrences: 1
       //     }
       //   ],
-      //   verseEditId: "2017-02-17T22:23:49.357Z",
-      //   user: "klappy",
+      //   userName: "klappy",
       //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
       // },
       // verseEditReducer: {
@@ -164,7 +162,7 @@ export const saveState = state => {
     if (state.verseEditReducer) {
       saveVerseEdit(state);
     }
-    if(state.remindersReducer){
+    if (state.remindersReducer) {
       saveReminders(state);
     }
   } catch (err) {
