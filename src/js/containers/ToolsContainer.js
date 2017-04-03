@@ -12,7 +12,8 @@ import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
-import { sendProgressForKey } from '../actions/LoaderActions'
+import { sendProgressForKey } from '../actions/LoaderActions';
+import { setProjectDetail } from '../actions/projectDetailsActions';
 
 
 class ToolsContainer extends React.Component {
@@ -98,6 +99,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
+      },
+      setProjectDetail: (key, value) => {
+        dispatch(setProjectDetail(key, value));
       }
     }
   };
