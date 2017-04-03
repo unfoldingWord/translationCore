@@ -38,7 +38,6 @@ let api = window.ModuleApi;
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
-import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 
 var Main = React.createClass({
   componentWillMount() {
@@ -155,11 +154,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     startLoadingNewProject: (lastCheckModule) => {
       dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
-    },
-    actions: {
-      changeCurrentContextId: (contextId) => {
-        dispatch(changeCurrentContextId(contextId));
-      }
     }
   };
 }
