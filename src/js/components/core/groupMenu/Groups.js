@@ -1,5 +1,3 @@
-// SubMenu.js//
-//api imports
 import React from 'react'
 import Group from './Group'
 import { connect } from 'react-redux'
