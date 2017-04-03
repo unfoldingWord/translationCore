@@ -209,6 +209,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
             name: LoadHelpers.convertToFullBookName(parsedUSFM.book)
         }
     }
+    return defaultManifest;
 }
 
 /**
@@ -230,7 +231,7 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
         setUSFMParams(parsedUSFM.book, projectSaveLocation, direction);
         let manifest = LoadHelpers.loadFile(projectSaveLocation, 'manifest.json');
         if (!manifest) {
-            const defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
+            let defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
             manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
         }
         dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
