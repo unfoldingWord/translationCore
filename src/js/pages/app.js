@@ -130,7 +130,7 @@ var Main = React.createClass({
             <StatusBarContainer />
           </Row>
           <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
-            <SideBarContainer {...this.props} />
+            <SideBarContainer />
           </Col>
           <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
             <LoaderContainer />
