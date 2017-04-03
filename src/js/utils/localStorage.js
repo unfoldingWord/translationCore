@@ -13,36 +13,34 @@ export const loadState = () => {
       /**
        * @description this a temporary dummy data so that we can use to implement data persistence.
        */
-      commentsReducer: {
-        text: 'hello world!',
-        userName: 'manny',
-        modifiedTimestamp: '2017-02-17T22:23:49.357Z'
-      },
-      remindersReducer: {
-        enabled: true,
-        verseEditId: "2017-02-17T22:23:50.357Z",
-        user: "klappy",
-        modifiedTimestamp: "2017-02-17T22:23:49.357Z"
-      },
-      selectionsReducer: {
-        selection: [
-          {
-            text: "സഹോദരന്മാരേ",
-            occurrence: 1,
-            occurrences: 1
-          }
-        ],
-        verseEditId: "2017-02-17T22:23:49.357Z",
-        user: "klappy",
-        modifiedTimestamp: "2017-02-17T22:23:49.357Z"
-      },
-      verseEditReducer: {
-        before: "സഹോദരന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
-        after: "സഹോദ-രന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
-        tags: [],
-        userName: "klappy",
-        modifiedTimestamp: "2017-02-17T22:23:49.357Z"
-      },
+      // commentsReducer: {
+      //   text: 'hello world!',
+      //   userName: 'manny',
+      //   modifiedTimestamp: '2017-02-17T22:23:49.357Z'
+      // },
+      // remindersReducer: {
+      //   enabled: true,
+      //   userName: "klappy",
+      //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
+      // },
+      // selectionsReducer: {
+      //   selections: [
+      //     {
+      //       text: "സഹോദരന്മാരേ",
+      //       occurrence: 1,
+      //       occurrences: 1
+      //     }
+      //   ],
+      //   userName: "klappy",
+      //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
+      // },
+      // verseEditReducer: {
+      //   before: "സഹോദരന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
+      //   after: "സഹോദ-രന്മാരേ, നിങ്ങളുടെ വിശ്വാസം ഏറ്റവും വർദ്ധിച്ചും നിങ്ങൾ ഓരോരുത്തർക്കും അന്യോന്യം സ്നേഹം പെരുകിയും വരികയാൽ ഞങ്ങൾ ഉചിതമാകുംവണ്ണം ദൈവത്തിന്നു എപ്പോഴും നിങ്ങളെക്കുറിച്ചു സ്തോത്രം ചെയ്‌വാൻ കടപ്പെട്ടിരിക്കുന്നു.",
+      //   tags: [],
+      //   userName: "klappy",
+      //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
+      // },
       contextIdReducer: {
         contextId: {
           reference: {
@@ -91,7 +89,7 @@ export const saveState = state => {
     if (state.verseEditReducer) {
       saveVerseEdit(state);
     }
-    if(state.remindersReducer){
+    if (state.remindersReducer) {
       saveReminders(state);
     }
   } catch (err) {

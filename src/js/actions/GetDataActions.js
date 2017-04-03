@@ -139,7 +139,6 @@ export function openProject(projectPath, projectLink) {
     });
 }
 
-
 /**
  * @description Initiates the loading of a usfm file into current project, puts the target language, params,
  * save location, and manifest into the store.

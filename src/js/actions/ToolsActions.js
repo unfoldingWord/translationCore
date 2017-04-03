@@ -9,20 +9,17 @@ import * as LoaderActions from './LoaderActions.js';
 import * as coreStoreActions from './CoreActionsRedux.js';
 import * as GetDataActions from './GetDataActions.js';
 
-export function loadTool (folderName) {
+export function loadTool(folderName) {
   return ((dispatch, getState) => {
+    localStorage.setItem('lastCheckModule', folderName);
+    dispatch({ type: consts.LOAD_TOOL, val: true });
+    dispatch(LoaderActions.toggleLoader(true));
     dispatch(modalActions.showModalContainer(false));
     dispatch(GetDataActions.loadModuleAndDependencies(folderName));
-    localStorage.setItem('lastCheckModule', folderName);
-    dispatch({
-      type: consts.LOAD_TOOL,
-      val: true
-    });
-    dispatch({ type: consts.SHOW_MODAL_CONTAINER, visible: false });
-  })
+  });
 }
 
-export function getToolsMetadatas () {
+export function getToolsMetadatas() {
   return ((dispatch) => {
     getDefaultModules((moduleFolderPathList) => {
       fillDefaultModules(moduleFolderPathList, (metadatas) => {

@@ -6,11 +6,13 @@ import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
-import { changeSelections, removeSelections } from '../actions/SelectionsActions.js';
+import { changeSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupDataActions.js';
+import {addGroupIndex} from '../actions/GroupIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
+import { sendProgressForKey } from '../actions/LoaderActions'
 
 
 class ToolsContainer extends React.Component {
@@ -69,13 +71,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(addNewBible(bibleName, bibleData));
       },
       progress: (progress) => {
-        console.log(progress);
+        dispatch(sendProgressForKey(progress))
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
-      changeSelections: (text, userName) => {
-        dispatch(changeSelections(text, userName));
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
       },
       removeSelections: (text, userName) => {
         dispatch(removeSelections(text, userName));
@@ -98,11 +100,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addGroupData: (groupName, groupData) => {
         dispatch(addGroupData(groupName, groupData));
       },
-      setModuleSettings: (moduleName, moduleSettingsData) => {
-        dispatch(setModuleSettings(moduleName, moduleSettingsData));
+      addGroupIndex: (groupIndex) => {
+        dispatch(addGroupIndex(groupIndex));
       },
-      changeModuleSettings: (moduleName, moduleSettingsData) => {
-        dispatch(changeModuleSettings(moduleName, moduleSettingsData));
+      setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+        dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
+      },
+      changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+        dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
       }
     }
   };
