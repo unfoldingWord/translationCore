@@ -6,11 +6,13 @@ import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
-import { changeSelections, removeSelections } from '../actions/SelectionsActions.js';
-import {changeCurrentContextId} from '../actions/ContextIdActions.js';
-import {addGroupData} from '../actions/GroupDataActions.js';
+import { changeSelections } from '../actions/SelectionsActions.js';
+import {changeCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
+import {addGroupData} from '../actions/GroupsDataActions.js';
+import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
+import { sendProgressForKey } from '../actions/LoaderActions'
 
 
 class ToolsContainer extends React.Component {
@@ -37,6 +39,8 @@ const mapStateToProps = state => {
     projectDetailsReducer: state.projectDetailsReducer,
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
+    groupsIndexReducer: state.groupsIndexReducer,
+    groupsDataReducer: state.groupsDataReducer,
     modulesSettingsReducer: state.modulesSettingsReducer
   };
 };
@@ -44,17 +48,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      updateCurrentCheck: (NAMESPACE, newCurrentCheck) => {
-        dispatch(CheckStoreActions.updateCurrentCheck(NAMESPACE, newCurrentCheck));
+      goToNext: () => {
+        dispatch(changeToNextContextId());
       },
-      handleGoToCheck: (newGroupIndex, newCheckIndex, groups) => {
-        dispatch(CheckStoreActions.goToCheck(newGroupIndex, newCheckIndex, groups));
-      },
-      handleGoToNext: () => {
-        dispatch(CheckStoreActions.goToNext());
-      },
-      handleGoToPrevious: () => {
-        dispatch(CheckStoreActions.goToPrevious());
+      goToPrevious: () => {
+        dispatch(changeToPreviousContextId());
       },
       showNotification: (message, duration) => {
         dispatch(showNotification(message, duration));
@@ -69,13 +67,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(addNewBible(bibleName, bibleData));
       },
       progress: (progress) => {
-        console.log(progress);
+        dispatch(sendProgressForKey(progress))
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
-      changeSelections: (text, userName) => {
-        dispatch(changeSelections(text, userName));
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
       },
       removeSelections: (text, userName) => {
         dispatch(removeSelections(text, userName));
@@ -86,17 +84,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addVerseEdit: (before, after, tags, userName) => {
         dispatch(addVerseEdit(before, after, tags, userName));
       },
-      updateCheckIndex: (index) => {
-        dispatch(CheckStoreActions.goToCheck(null, index));
-      },
-      updateGroupIndex: (index) => {
-        dispatch(CheckStoreActions.goToCheck(index, null));
-      },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
       },
-      addGroupData: (groupName, groupData) => {
-        dispatch(addGroupData(groupName, groupData));
+      addGroupData: (groupId, groupData) => {
+        dispatch(addGroupData(groupId, groupData));
+      },
+      setGroupsIndex: (groupsIndex) => {
+        dispatch(setGroupsIndex(groupsIndex));
       },
       setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));

@@ -23,8 +23,8 @@ import commentsReducer from './commentsReducer'
 import selectionsReducer from './selectionsReducer'
 import remindersReducer from './remindersReducer'
 import contextIdReducer from './contextIdReducer'
-import groupDataReducer from './groupDataReducer'
-import groupIndexReducer from './groupIndexReducer'
+import groupsDataReducer from './groupsDataReducer'
+import groupsIndexReducer from './groupsIndexReducer'
 import verseEditReducer from './verseEditReducer'
 import modulesSettingsReducer from './modulesSettingsReducer'
 // combining reducers
@@ -52,8 +52,8 @@ const rootReducers = combineReducers({
   selectionsReducer,
   remindersReducer,
   contextIdReducer,
-  groupDataReducer,
-  groupIndexReducer,
+  groupsDataReducer,
+  groupsIndexReducer,
   verseEditReducer,
   modulesSettingsReducer
 });
