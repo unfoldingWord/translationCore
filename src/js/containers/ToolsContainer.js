@@ -8,7 +8,7 @@ import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
 import { changeSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
-import {addGroupsData} from '../actions/GroupsDataActions.js';
+import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
