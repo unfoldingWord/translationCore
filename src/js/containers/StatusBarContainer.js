@@ -6,12 +6,12 @@ const StatusBar = require('../components/core/SideBar/StatusBar.js');
 
 class StatusBarContainer extends React.Component {
     render() {
-      let { currentBook } = this.props.projectDetailsReducer;
-      let { currentTool } = this.props.currentToolReducer;
+      let { bookName } = this.props.projectDetailsReducer;
+      let { toolName } = this.props.currentToolReducer;
         return (
             <div>
-            <StatusBar bookName={currentBook}
-                       currentCheckNamespace={currentTool}
+            <StatusBar bookName={bookName}
+                       currentCheckNamespace={toolName}
                        open={this.props.openModalAndSpecificTab}
                        online={this.props.online}
                        changeOnlineStatus={this.props.changeOnlineStatus}/>
