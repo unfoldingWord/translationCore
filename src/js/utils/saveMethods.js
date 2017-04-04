@@ -64,7 +64,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
     if (savePath) {
       fs.outputJson(savePath, payload);
     } else {
-      console.warn('savePath is undefined');
+      // savePath is undefined
     }
   } catch (err) {
     console.warn(err);
