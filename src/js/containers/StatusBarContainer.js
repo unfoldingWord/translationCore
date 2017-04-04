@@ -26,10 +26,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.statusBarReducer, {
-        currentCheckNamespace:state.checkStoreReducer.currentCheckNamespace,
-        bookName:state.checkStoreReducer.book
-    });
+    return Object.assign({}, state.statusBarReducer);
 }
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(StatusBarContainer);

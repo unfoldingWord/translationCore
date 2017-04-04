@@ -20,10 +20,19 @@ var sideBarContainerStyle = {
 }
 
 class SideBarContainer extends React.Component {
+
+  menu(toolName) {
+    let menu = <div />
+    if (toolName !== null) {
+      menu = <Groups {...this.props} />
+    }
+    return menu
+  }
+
   render() {
     let { onToggleMenu } = this.props
-    let { menuVisibility, currentCheckNamespace } = this.props.sideBarReducer;
-
+    let { menuVisibility, currentCheckNamespace } = this.props.sideBarReducer
+    let { toolName } = this.props.currentToolReducer
     return (
       <div>
         <div style={{display: menuVisibility ? "block" : "none"}}>
@@ -38,7 +47,7 @@ class SideBarContainer extends React.Component {
                 overflowY: "scroll"
               }
             }>
-              <Groups {...this.props} />
+              {this.menu(toolName)}
             </Col>
           </Grid>
         </div>
@@ -59,7 +68,8 @@ function mapStateToProps(state) {
     contextIdReducer: state.contextIdReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    sideBarReducer: state.sideBarReducer
+    sideBarReducer: state.sideBarReducer,
+    currentToolReducer: state.currentToolReducer
   }
 }
 
