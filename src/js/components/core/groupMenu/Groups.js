@@ -10,8 +10,11 @@ class Groups extends React.Component {
  */
   groups(groupsIndex) {
     let groups = <div /> // leave an empty container when required data isn't available
+    let {groupsData} = this.props.groupsDataReducer
     if (groupsIndex !== undefined) {
-      groups = groupsIndex.map(groupIndex =>
+      groups = groupsIndex.filter( groupIndex => {
+        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id)
+      }).map( groupIndex =>
         <Group {...this.props} groupIndex={groupIndex} key={groupIndex.id} />
       )
     }
