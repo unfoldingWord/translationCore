@@ -71,7 +71,7 @@ export const loadState = () => {
     return serializedState;
   } catch (err) {
     // not using console.error because in some cases we still want the app to continue
-    // and by makin it undefined the reduecrs will be ibitialized with its default state.
+    // and by making it undefined the reducers will be initialized with its default state.
     console.warn(err);
     //  returning undefined to allow the reducers to initialize the app state
     return undefined;
