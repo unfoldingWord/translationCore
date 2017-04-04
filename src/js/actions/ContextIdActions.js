@@ -1,16 +1,29 @@
-import consts from '../actions/CoreActionConsts'
-import {generateTimestamp} from '../helpers/index'
+import consts from './CoreActionConsts'
 import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers'
+import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions'
+
+
+function loadCheckData(dispatch) {
+  dispatch(loadComments());
+  dispatch(loadReminders());
+  dispatch(loadSelections());
+  dispatch(loadVerseEdit());
+}
+
+
 /**
  * @description this action changes the contextId to the current check.
  * @param {object} contextId - the contextId object.
  * @return {object} New state for contextId reducer.
  */
-export const changeCurrentContextId = (contextId) => {
-  return {
-    type: consts.CHANGE_CURRENT_CONTEXT_ID,
-    contextId
-  }
+export const changeCurrentContextId = contextId => {
+  return ((dispatch, getState) => {
+    dispatch({
+      type: consts.CHANGE_CURRENT_CONTEXT_ID,
+      contextId
+    })
+    loadCheckData(dispatch);
+  });
 }
 
 export const changeToNextContextId = () => {
@@ -30,6 +43,7 @@ export const changeToNextContextId = () => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
+    loadCheckData(dispatch);
   })
 }
 
@@ -50,5 +64,6 @@ export const changeToPreviousContextId = () => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
+    loadCheckData(dispatch);
   })
 }
