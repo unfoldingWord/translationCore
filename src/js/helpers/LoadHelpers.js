@@ -8,7 +8,7 @@ const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 
 /**
- * 
+ *
  * @param {string} projectBook - Book abbreviation
  */
 export function isOldTestament (projectBook) {
@@ -23,7 +23,7 @@ export function isOldTestament (projectBook) {
 }
 
 /**
- * 
+ *
  * @param {string} path - Directorty of the file to load, not the file name.
  * @param {string} file - The file name to load.
  */
@@ -95,7 +95,7 @@ export function fixManifestVerThree (oldManifest) {
 }
 
 /**
- * 
+ *
  * @param {string} bookAbbr - The book abbreviation to convert
  */
 export function convertToFullBookName (bookAbbr) {
@@ -104,9 +104,9 @@ export function convertToFullBookName (bookAbbr) {
 }
 
 /**
- * @description Formats and saves manifest according to tC standards, 
+ * @description Formats and saves manifest according to tC standards,
  * if not already done so
- * 
+ *
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
  * @param {object} manifest - Default manifest given in order to load a non-usfm project
@@ -118,39 +118,35 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
 }
 
 /**
- * @description Stores the project path loaded into the default tC folder 
+ * @description Stores the project path loaded into the default tC folder
  * location. If the project is exists in the default save location and it is
  * loaded from some place else, user will be prompted to overwrite it. Which results
  * in a deletion of the non-tC folder loaction project.
- * 
+ *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
-export function correctSaveLocation(projectPath) {
-    const parsedPath = Path.parse(projectPath);
-    const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
-    if (!fs.existsSync(projectPath)) {
-        return false;
-    }
-    if (fs.existsSync(tCProjectsSaveLocation)) {
-        if (projectPath != tCProjectsSaveLocation) {
-            const continueCopy = confirm("This project is saved elsewhere on your computer. \nDo you want to overwrite it?");
-            if (continueCopy) {
-                fs.removeSync(tCProjectsSaveLocation);
-                fs.copySync(projectPath, tCProjectsSaveLocation);
-            }
-            return tCProjectsSaveLocation;
-        } else {
-            return projectPath;
-        }
-    } else {
-        fs.copySync(projectPath, tCProjectsSaveLocation);
-        return projectPath;
-    }
-}
+ export function correctSaveLocation(projectPath) {
+   const parsedPath = Path.parse(projectPath);
+   const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
+
+   if (!fs.existsSync(projectPath)) {
+     return false;
+   }
+   if (fs.existsSync(tCProjectsSaveLocation)) {
+     return tCProjectsSaveLocation;
+   } else {
+     let newPath = tCProjectsSaveLocation
+     if (checkIfUSFMFileOrProject(projectPath) !== false) {
+       newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
+     }
+     fs.copySync(projectPath, newPath);
+     return tCProjectsSaveLocation;
+   }
+ }
 
 /**
  * @description Sets up the folder in the tC save location for a USFM project
- * 
+ *
  * @param {string} usfmFilePath - Path of the usfm file that has been loaded
  * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
  */
@@ -158,15 +154,13 @@ export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
     const parsedPath = Path.parse(usfmFilePath);
     const saveFile = Path.join(projectSaveLocation, parsedPath.base);
     const usfmData = fs.readFileSync(usfmFilePath).toString();
-    fs.ensureDirSync(projectSaveLocation);
-    fs.writeFileSync(saveFile, usfmData);
     return usfmData
 }
 
 
 /**
  * @description Sets up a USFM project manifest according to tC standards.
- * 
+ *
  * @param {object} parsedUSFM - The object containing usfm parsed by chapters
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {objet} user - The current user loaded
@@ -183,6 +177,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
                 "version": ""
             }
         ],
+        tcInitialized: true,
         target_language: {
             direction: direction,
             id: "",
@@ -191,7 +186,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
         project_id: parsedUSFM.book,
         ts_project: {
             id: parsedUSFM.book,
-            name: LoadHelpers.convertToFullBookName(parsedUSFM.book)
+            name: convertToFullBookName(parsedUSFM.book)
         }
     }
     return defaultManifest;
@@ -199,7 +194,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
 
 /**
  * @description Parses the usfm file using usfm-parse library.
- * 
+ *
  * @param {string} projectPath - Path in which the USFM project is being loaded from
  */
 export function getParsedUSFM(usfmData) {
@@ -214,7 +209,7 @@ export function getParsedUSFM(usfmData) {
 
 /**
  * @description Check if project is ephesians or titus, or if user is in developer mode.
- * 
+ *
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
@@ -225,7 +220,7 @@ export function checkIfValidBetaProject(manifest) {
 
 /**
  * @description Formats a default manifest according to tC standards
- * 
+ *
  * @param {string} path - Path in which the project is being loaded from, also should contain
  * the target language.
  * @param {object} manifest - Manifest specified for tC load, already formatted.
@@ -295,7 +290,7 @@ export function formatTargetLanguage(parsedUSFM) {
         if (parsedHeaders['mt1']) {
             targetLanguage.title = parsedHeaders['mt1'];
         } else if (parsedHeaders['id']) {
-            targetLanguage.title = BOOKS[parsedHeaders['id'].toLowerCase()];
+            targetLanguage.title = BooksOfBible[parsedHeaders['id'].toLowerCase()];
         }
     }
     return targetLanguage;
@@ -303,8 +298,8 @@ export function formatTargetLanguage(parsedUSFM) {
 
 /**
  * @description Checks if the folder/file specified is a usfm project
- * 
- * @param {string} projectPath - Path in which the project is being loaded from 
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function checkIfUSFMFileOrProject(projectPath) {
     try {
@@ -327,8 +322,8 @@ export function checkIfUSFMFileOrProject(projectPath) {
 
 /**
  * @description Verifies that the manifest given has an accurate count of finished chunks.
- * 
- * @param {string} projectPath - Path in which the project is being loaded from 
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function verifyChunks(projectPath, manifest) {
@@ -354,8 +349,8 @@ export function verifyChunks(projectPath, manifest) {
 
 /**
  * @description creates an array that has the data of each included tool and 'subtool'
- * 
- * @param {object} dataObject - Package json of the tool being loaded, 
+ *
+ * @param {object} dataObject - Package json of the tool being loaded,
  * meta data of what the tool needs to load.
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
  */

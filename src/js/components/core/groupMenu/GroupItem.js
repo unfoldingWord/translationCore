@@ -28,7 +28,7 @@ class GroupItem extends React.Component {
           style={active ? style.activeSubMenuItem : style.subMenuItem}
           title="Click to select this check">
           {this.statusGlyph(selections, active)}
-          {" " + this.props.resourcesReducer.book + " " + reference.chapter + ":" + reference.verse}
+          {" " + this.props.projectDetailsReducer.bookName + " " + reference.chapter + ":" + reference.verse}
       </div>
     );
   }

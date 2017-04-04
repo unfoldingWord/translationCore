@@ -20,6 +20,7 @@ import * as ModalActions from './ModalActions';
 import * as ToolsActions from './ToolsActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as RecentProjectsActions from './RecentProjectsActions';
+import * as CurrentToolActions from './currentToolActions';
 
 import pathex from 'path-extra';
 import usfm from 'usfm-parser';
@@ -71,7 +72,7 @@ export function setProjectParams(params) {
 
 /**
  * @description This method will set the corestore reducer store state back to the inital state.
- * 
+ *
  */
 export function clearPreviousData() {
     return {
@@ -81,7 +82,7 @@ export function clearPreviousData() {
 
 /**
  * @description This method will set the corestore view for the corresponding module
- * 
+ *
  */
 export function setModuleView(identifier, view){
     return {
@@ -93,11 +94,11 @@ export function setModuleView(identifier, view){
 
 
 /**
- * @description Returns the current user logged in from the current app state, 
+ * @description Returns the current user logged in from the current app state,
  * not meant to be used outside of an action
- * 
+ *
  * @requires not a dispatch function
- * @param {object} state 
+ * @param {object} state
  */
 export function getCurrentUser(state) {
     const loginStore = state.loginReducer;
@@ -107,7 +108,7 @@ export function getCurrentUser(state) {
 
 /**
  * @description Starter function to load a project from a folder path or link.
- * 
+ *
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
  */
@@ -142,8 +143,8 @@ export function openProject(projectPath, projectLink) {
 /**
  * @description Initiates the loading of a usfm file into current project, puts the target language, params,
  * save location, and manifest into the store.
- * 
- * @param {string} projectPath - Path in which the USFM project is being loaded from 
+ *
+ * @param {string} projectPath - Path in which the USFM project is being loaded from
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {string} projectLink - Link given to load project if taken from online
  */
@@ -170,7 +171,7 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
  * @description Starts loading a project that has a standard manifest created.
  * Adds manifest, params, book name, and target language bible
  * (if usfm), and project data from file to store.
- * 
+ *
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {object} manifest - Manifest specified for tC load
  */
@@ -181,8 +182,6 @@ export function addLoadedProjectToStore(projectPath, manifest) {
         const params = LoadHelpers.getParams(projectPath, manifest);
         if (params) {
             dispatch(setProjectParams(params));
-            const book = LoadHelpers.convertToFullBookName(params.bookAbbr);
-            dispatch(CheckStoreActions.setBookName(book));
         } else {
             //no finished_chunks in manifest
             dispatch(manifestError('No finished chunks specified in project manifest'))
@@ -192,10 +191,10 @@ export function addLoadedProjectToStore(projectPath, manifest) {
 }
 
 /**
- * @description Displays the currently loaded tools in the app, if 
+ * @description Displays the currently loaded tools in the app, if
  * project is a titus or ephisians, or if the userdata
  * is in developer mode.
- * 
+ *
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function displayToolsToLoad(manifest) {
@@ -216,8 +215,8 @@ export function displayToolsToLoad(manifest) {
 
 /**
  * @description Loaded previous project data into the filesystem given a path.
- * 
- * @param {string} projectPath - Path in which the project is being loaded from 
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function loadProjectDataFromFileSystem(projectPath) {
     return ((dispatch) => {
@@ -228,7 +227,7 @@ export function loadProjectDataFromFileSystem(projectPath) {
 
 
 /**
- * 
+ *
  * @param {string} content - Message of the alert to be shown
  */
 export function manifestError(content) {
@@ -247,7 +246,7 @@ export function manifestError(content) {
 
 /**
  * @description Loads the tool into the main app view, and initates the tool Container component
- * 
+ *
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
 export function loadModuleAndDependencies(moduleFolderName) {
@@ -258,7 +257,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
             const dataObject = fs.readJsonSync(modulePath);
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
-            dispatch(CheckStoreActions.setCheckNameSpace(dataObject.name))
+            dispatch(CurrentToolActions.setToolName(dataObject.name))
             dispatch(CoreActionsRedux.changeModuleView('main'));
         } catch (e) {
             dispatch(errorLoadingProject(e));
@@ -269,7 +268,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
 
 /**
  * @description Saves tools included module Containers in the store
- * 
+ *
  * @param {Array} checkArray - Array of the checks that the views should be loaded
  */
 export function saveModules(checkArray) {
@@ -286,7 +285,7 @@ export function saveModules(checkArray) {
 }
 
 /**
- * 
+ *
  * @param {object} err - Message object of the alert to be shown
  */
 export function errorLoadingProject(err) {
@@ -309,7 +308,7 @@ export function errorLoadingProject(err) {
 
 /**
  * @description Set ups a tC project parameters for a usfm project
- * 
+ *
  * @param {string} bookAbbr - Book abbreviation
  * @param {path} projectSaveLocation - Path of the usfm project being loaded
  * @param {path} direction - Reading direction of the project books
