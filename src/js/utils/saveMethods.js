@@ -167,14 +167,12 @@ export const saveReminders = state => {
 export const saveGroupsIndex = state => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let tool = state.contextIdReducer.contextId ?
+    let toolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
     let fileName = "index.json";
     let groupsIndex = state.groupsIndexReducer.groupsIndex;
-    if (tool && PROJECT_SAVE_LOCATION && groupsIndex) {
-      let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, tool, fileName);
-      console.log(savePath);
-      console.log(groupsIndex);
+    if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
+      let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
       fs.outputJson(savePath, groupsIndex);
     }
   } catch (err) {
@@ -188,15 +186,15 @@ export const saveGroupsIndex = state => {
 export const saveGroupsData = state => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let tool = state.contextIdReducer.contextId ?
+    let toolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
-    let bookAbbreviation = state.contextIdReducer.contextId ? 
+    let bookAbbreviation = state.contextIdReducer.contextId ?
                            state.contextIdReducer.contextId.reference.bookId : undefined;
-    if (PROJECT_SAVE_LOCATION && tool && bookAbbreviation) {
+    if (PROJECT_SAVE_LOCATION && toolName && bookAbbreviation) {
       let groupsData = state.groupsDataReducer.groupsData;
       for (let groupID in groupsData) {
         let fileName = groupID + ".json";
-        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, tool, bookAbbreviation, fileName);
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
         fs.outputJson(savePath, groupsData[groupID]);
       }
     }
