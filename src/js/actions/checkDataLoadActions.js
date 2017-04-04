@@ -46,25 +46,28 @@ function generateLoadPath(state, checkDataName) {
  */
 function loadCheckData(loadPath) {
   try {
-    let files = fs.readdirSync(loadPath);
-    let ext = '.json';
-    let fileName = '';
-    let sorted = files.sort((a, b) => {
-      if (path.extname(a) === ext && path.extname(b) === ext) {
-        // Turn strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
-        return new Date(b) - new Date(a);
-      }
-    });
-    sorted.forEach((file, index) => {
-      if (path.extname(file) === ext && index === files.length - 1) {
-        fileName = file;
-      }
-    });
-    let readPath = path.join(loadPath, fileName);
-    console.log(readPath)
-    let checkDataObject = fs.readJsonSync(readPath);
-    return checkDataObject;
+    if (fs.existsSync(loadPath)) {
+      let files = fs.readdirSync(loadPath);
+      let ext = '.json';
+      let fileName = '';
+      let sorted = files.sort((a, b) => {
+        if (path.extname(a) === ext && path.extname(b) === ext) {
+          // Turn strings into dates, and then subtract them
+          // to get a value that is either negative, positive, or zero.
+          return new Date(b) - new Date(a);
+        }
+      });
+      sorted.forEach((file, index) => {
+        if (path.extname(file) === ext && index === files.length - 1) {
+          fileName = file;
+        }
+      });
+      let readPath = path.join(loadPath, fileName);
+      let checkDataObject = fs.readJsonSync(readPath);
+      return checkDataObject;
+    } else {
+      return null;
+    }
   } catch (err) {
     /**
      * @description Will return undefined so that the load method returns and then
@@ -115,6 +118,7 @@ export function loadReminders() {
     if (remindersObject) {
       dispatch({
         type: consts.TOGGLE_REMINDER,
+        enabled: remindersObject.enabled,
         modifiedTimestamp: remindersObject.modifiedTimestamp,
         userName: remindersObject.userName
       });
@@ -122,6 +126,7 @@ export function loadReminders() {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
         type: consts.TOGGLE_REMINDER,
+        enabled: false,
         modifiedTimestamp: "",
         userName: ""
       });
