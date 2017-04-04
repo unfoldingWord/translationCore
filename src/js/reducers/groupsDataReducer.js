@@ -9,7 +9,10 @@ const groupsDataReducer = (state = initialState, action) => {
     case consts.ADD_GROUP_DATA:
       return {
         ...state,
-        groupsData:action.groupsData
+        groupsData: {
+          ...state.groupsData,
+          [action.groupId]: action.groupsData
+        }
       };
     default:
       return state;
