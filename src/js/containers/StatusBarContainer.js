@@ -6,9 +6,15 @@ const StatusBar = require('../components/core/SideBar/StatusBar.js');
 
 class StatusBarContainer extends React.Component {
     render() {
+      let { currentBook } = this.props.projectDetailsReducer;
+      let { currentTool } = this.props.currentToolReducer;
         return (
             <div>
-            <StatusBar bookName={this.props.bookName} currentCheckNamespace={this.props.currentCheckNamespace} open={this.props.openModalAndSpecificTab} online={this.props.online} changeOnlineStatus={this.props.changeOnlineStatus}/>
+            <StatusBar bookName={currentBook}
+                       currentCheckNamespace={currentTool}
+                       open={this.props.openModalAndSpecificTab}
+                       online={this.props.online}
+                       changeOnlineStatus={this.props.changeOnlineStatus}/>
             </div>
         )
     }
@@ -26,7 +32,11 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.statusBarReducer);
+    return {
+       statusBarReducer: state.statusBarReducer,
+       currentToolReducer: state.currentToolReducer,
+       projectDetailsReducer: state.projectDetailsReducer
+    }
 }
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(StatusBarContainer);
