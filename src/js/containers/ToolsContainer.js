@@ -42,7 +42,8 @@ const mapStateToProps = state => {
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer,
-    modulesSettingsReducer: state.modulesSettingsReducer
+    modulesSettingsReducer: state.modulesSettingsReducer,
+    currentToolReducer: state.currentToolReducer
   };
 };
 
