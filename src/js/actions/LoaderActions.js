@@ -1,32 +1,23 @@
 import consts from './CoreActionConsts';
-import {clearPreviousData} from '../components/core/UploadMethods.js';
-import ModalActions from './ModalActions.js';
+import * as ModalActions from './ModalActions.js';
 
-module.exports.toggleLoader = function (val) {
+export function toggleLoader (val) {
   return {
     type: consts.TOGGLE_LOADER_MODAL,
     show: val
   }
 }
 
-module.exports.saveModule = function (identifier, module) {
-  return {
-    type: consts.SAVE_MODULE,
-    identifier,
-    module
-  }
-}
-
-module.exports.killLoading = function () {
+export function killLoading () {
   return ((dispatch) => {
-    clearPreviousData();
+    dispatch(GetDataActions.clearPreviousData());
     dispatch(this.toggleLoader());
     dispatch(ModalActions.showModalContainer(true));
     dispatch(ModalActions.selectModalTab(2));
   });
 }
 
-module.exports.update = function (show, progess) {
+export function update (show, progess) {
   return ((dispatch) => {
     debugger;
     if (!show) {
@@ -47,25 +38,14 @@ module.exports.update = function (show, progess) {
   });
 }
 
-module.exports.sendProgressForKey = function (name, progress, store) {
-  var progressObject = JSON.parse(JSON.stringify(store.progressObject))
-  var fetchDatas = store.fetchDatas;
-  progressObject[name] = progress;
-  var currentProgress = 0;
-  for (var key in progressObject) {
-    currentProgress += progressObject[key];
-  }
-  return {
-    type: consts.UPDATE_PROGRESS,
-    progress: currentProgress / fetchDatas,
-    progressObject:progressObject
-  }
-}
-
-
-module.exports.updateNumberOfFetchDatas = function (fetchDatas) {
-  return {
-    type: consts.FETCH_DATA_NUMBER,
-    fetchDatas: fetchDatas
-  }
+export function sendProgressForKey (progress) {
+  return ((dispatch)=>{
+    dispatch({
+      type: consts.UPDATE_PROGRESS,
+      progress: progress,
+    });
+    if (progress == 100) {
+      dispatch(toggleLoader(false));
+    }
+  });
 }

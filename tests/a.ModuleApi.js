@@ -7,6 +7,8 @@ const assert = chai.assert;
 require('../src/js/pages/index');
 const ModuleApi = require('../src/js/ModuleApi.js');
 const CoreActions = require('../src/js/actions/CoreActions.js');
+const dispatch = require('../src/js/pages/root.js').dispatch;
+const AlertModalActions = require('../src/js/actions/AlertModalActions.js');
 var testObj = {test: 'abcd'};
 var testNumber = 42;
 var unexpectedValue = 'abc';
@@ -115,30 +117,10 @@ describe('ModuleApi.putDataInCommon and ModuleApi.getDataFromCommon', function()
   });
 });
 
-describe('ModuleApi.initializeCheckStore', function() {
-  it('initializeCheckStore should return an error if parameters are undefined', function() {
-    assert.equal(ModuleApi.initializeCheckStore(), 'Missing one or more parameters');
-  });
-  it('initializeCheckStore should initialize a CheckStore with default values', function() {
-    var params = {
-      bookAbbr: 'mrk'
-    };
-    var nameSpace = 'tests';
-    var groups = [{group: 'test group'}];
-    ModuleApi.initializeCheckStore(nameSpace, params, groups);
-    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'currentCheckIndex'), 0);
-    assert.isUndefined(ModuleApi.getDataFromCheckStore(nameSpace, 'invalidData'));
-    assert.isArray(ModuleApi.getDataFromCheckStore(nameSpace, 'groups'));
-    assert.equal(ModuleApi.getDataFromCheckStore(nameSpace, 'book'), 'Mark');
-  });
-});
-
 describe('ModuleApi.logCheckStore', function() {
   it('logCheckStore should return the entire CheckStore.', function() {
     var loggedCheckStore = ModuleApi.logCheckStore();
     assert.isObject(loggedCheckStore);
-    assert.isObject(loggedCheckStore.common);
-    assert.isObject(loggedCheckStore.tests)
   });
 });
 
@@ -162,8 +144,8 @@ describe('ModuleApi.updateManifest', function() {
       assert.isNull(ModuleApi.getDataFromCommon('tcManifest').undefined);
     });
   });
-  it('updateManifest should update the manifest and write it to a file with a saveLocation present', function(done) {
-    ModuleApi.putDataInCommon('saveLocation', './tests/testIO/');
+  it('updateManifest should update the manifest and write it to a file with a projectSaveLocation present', function(done) {
+    ModuleApi.putDataInCommon('projectSaveLocation', './tests/testIO/');
     ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
     ModuleApi.updateManifest('type', 'test', function(err) {
       if (err) {
@@ -215,7 +197,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
     }
   });
   it('inputJson should be able to read a json manifest from a file', function(done){
-    ModuleApi.inputJson('./tests/testIO/tc-manifest.json', function(err, data) {
+    ModuleApi.inputJson('./tests/testIO/manifest.json', function(err, data) {
       if (err || !data) {
         assert.equal(true, false);
       } else {
@@ -386,18 +368,10 @@ describe('ModuleApi.createAlert', function () {
   it('createAlert should not crash if no parameters are specified', function() {
     try {
       ModuleApi.createAlert();
-      CoreActions.sendAlertResponse('fail');
       assert.isTrue(true);
     } catch (err) {
       assert.equal(false, err);
     }
-  });
-  it('createAlert should display an alert on screen and handle callback', function (done) {
-    ModuleApi.createAlert({}, (response) => {
-      assert.equal(response, 'Success');
-      done();
-    });
-    CoreActions.sendAlertResponse('Success');
   });
 });
 

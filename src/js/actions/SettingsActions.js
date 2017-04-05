@@ -6,7 +6,7 @@ const PARENT = pathex.datadir('translationCore')
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
 
-module.exports.setSettings = function(field, value) {
+export function setSettings (field, value) {
   return ((dispatch, getState) => {
     let settingsObj = getState().settingsReducer.currentSettings;
     settingsObj[field] = value;
@@ -17,7 +17,7 @@ module.exports.setSettings = function(field, value) {
   });
 };
 
-module.exports.toggleSettings = function(field) {
+export function toggleSettings (field) {
   return ((dispatch, getState) => {
     let settingsObj = getState().settingsReducer.currentSettings;
     settingsObj[field] = !settingsObj[field];

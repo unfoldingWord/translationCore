@@ -58,13 +58,6 @@ module.exports = {
     });
   },
 
-  sendProgressForKey: function(progressKeyObj) {
-    Dispatcher.handleAction({
-      type: consts.SEND_PROGRESS_FOR_KEY,
-      progressRecieved: progressKeyObj
-    });
-  },
-
   newProject: function(){
     Dispatcher.handleAction({
       type: consts.NEW_PROJECT,
@@ -72,31 +65,18 @@ module.exports = {
     });
   },
 
-  sendAlert: function(alertObj) {
+  sendNotificationToast: function(visible, toastParamsObj) {
     Dispatcher.handleAction({
-      type: consts.ALERT_MODAL,
-      alert: alertObj
+      type: consts.SHOW_TOAST_PARAMS,
+      toastOption: visible,
+      toastParams: toastParamsObj
     });
   },
-
-    sendNotificationToast: function(visible, toastParamsObj) {
-      Dispatcher.handleAction({
-        type: consts.SHOW_TOAST_PARAMS,
-        toastOption: visible,
-        toastParams: toastParamsObj
-      });
-    },
 
   sendAlertResponse: function(alertResponseObj) {
     Dispatcher.handleAction({
       type: consts.ALERT_MODAL_RESPONSE,
       alertResponse: alertResponseObj
-    });
-  },
-
-  startLoading: function() {
-    Dispatcher.handleAction({
-      type: consts.START_LOADING
     });
   },
 

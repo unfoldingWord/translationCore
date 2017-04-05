@@ -1,253 +1,294 @@
-import fs from window.__base + 'node_modules/fs-extra';
-import consts from './CoreActionConsts';
-import api from window.ModuleApi;
-import Books from '../components/core/BooksOfBible.js';
-import Path from 'path';
-import ManifestGenerator from '../components/core/create_project/ProjectManifest.js';
-import git from '../components/core/login/GogsApi.js';
+/**
+ * @file These are the actions that load a tC project from
+ * the manifest.json to the tools being loaded into the store
+ * @author RoyalSix (I ate Seven)
+ *
+ * @exports GetData Actions
+ * @version 1.0.0
+ */
+
+import React from 'react'
+import * as fs from 'fs-extra';
+import * as consts from './CoreActionConsts';
+import * as CoreActionsRedux from './CoreActionsRedux';
+import * as LoaderActions from './LoaderActions';
+import * as AlertModalActions from './AlertModalActions';
+import * as ResourcesActions from './ResourcesActions';
+import * as CheckStoreActions from './CheckStoreActions';
+import * as NotificationActions from './NotificationActions';
+import * as ModalActions from './ModalActions';
+import * as ToolsActions from './ToolsActions';
+import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as RecentProjectsActions from './RecentProjectsActions';
+import * as CurrentToolActions from './currentToolActions';
+
 import pathex from 'path-extra';
-import PARENT from pathex.datadir('translationCore')
-import PACKAGE_COMPILE_LOCATION from pathex.join(PARENT, 'packages-compiled');
-import PACKAGE_SUBMODULE_LOCATION from pathex.join(window.__base, 'tC_apps');
-import CoreActionsRedux from './CoreActionsRedux';
-import LoaderActions from './LoaderActions';
-import AlertModalActions from './AlertModalActions';
-import {clearPreviousData} from '../components/core/UploadMethods.js';
+import usfm from 'usfm-parser';
+import { remote } from 'electron';
+import BOOKS from '../components/core/BooksOfBible.js';
+import Path from 'path';
+import GIT from '../components/core/GitApi.js';
+
+const api = window.ModuleApi;
+const PARENT = pathex.datadir('translationCore');
+const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
+const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
+const DEFAULT_SAVE = Path.join(pathex.homedir(), 'translationCore');
+const { dialog } = remote;
+const extensionRegex = new RegExp('(\\.\\w+)', 'i');
+const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
 
 
 
-module.exports.fetchModules = function (checkArray, currentCheckNamespace) {
-    try {
-        fs.ensureDirSync(api.getDataFromCommon('saveLocation'));
-        //TODO factor out call
-        var params = api.getDataFromCommon('params');
-        this.saveModules(checkArray, (err, checksThatNeedToBeFetched, totalModules) => {
-            if (!err) {
-                if (checksThatNeedToBeFetched.length < 1) {
-                    dispatch({
-                        type: consts.DONE_LOADING,
-                        doneLoading: true,
-                        currentCheckNamespace: currentCheckNamespace
-                    })
-                    dispatch(CoreActionsRedux.setToolNamespace(currentCheckNamespace))
-                }
-                dispatch(LoaderActions.toggleLoader(true));
-                for (let moduleObj of checksThatNeedToBeFetched) {
-                    this.getDataFromOnline(moduleObj.name, moduleObj.location, params, currentCheckNamespace, totalModules);
-                }
-                api.putDataInCommon('arrayOfChecks', checkArray);
-            } else {
-                dispatch(this.errorLoadingProject(err));
-            }
-        });
+/**
+ * @description Sends project path to the store
+ */
+export function setProjectPath(pathLocation) {
+    return {
+        type: consts.SET_SAVE_PATH_LOCATION,
+        pathLocation: pathLocation
     }
-    catch (error) {
-        dispatch(this.errorLoadingProject(error));
-    }
+}
 
+/**
+ * @description Sends project manifest to the store
+ */
+export function setProjectManifest(manifest) {
+    return {
+        type: consts.STORE_MANIFEST,
+        manifest: manifest
+    }
+}
+
+/**
+ * @description Sends project parameters to the store
+ */
+export function setProjectParams(params) {
+    return {
+        type: consts.STORE_PARAMS,
+        params: params
+    }
+}
+
+/**
+ * @description This method will set the corestore reducer store state back to the inital state.
+ *
+ */
+export function clearPreviousData() {
+    return {
+        type: consts.CLEAR_PREVIOUS_DATA
+    }
+}
+
+/**
+ * @description This method will set the corestore view for the corresponding module
+ *
+ */
+export function setModuleView(identifier, view){
+    return {
+        type: consts.SAVE_MODULE_VIEW,
+        identifier: identifier,
+        module:view
+    }
 }
 
 
-module.exports.saveModules = function (checkArray, callback) {
-    let checksThatNeedToBeFetched = [];
-    try {
+/**
+ * @description Returns the current user logged in from the current app state,
+ * not meant to be used outside of an action
+ *
+ * @requires not a dispatch function
+ * @param {object} state
+ */
+export function getCurrentUser(state) {
+    const loginStore = state.loginReducer;
+    const currentUser = loginStore.userdata ? loginStore.userdata.username : null;
+    return currentUser;
+}
+
+/**
+ * @description Starter function to load a project from a folder path or link.
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
+ * @param {string} projectLink - Link given to load project if taken from online
+ */
+export function openProject(projectPath, projectLink) {
+    return ((dispatch, getState) => {
+        if (!projectPath && !projectLink) return;
+        const currentUser = getCurrentUser(getState());
+        const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
+        let manifest;
+
+        if (usfmFilePath) {
+            //USFM detected, initiating separate loading process
+            dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser));
+        } else {
+            //No USFM detected, initiating 'standard' loading process
+            projectPath = LoadHelpers.correctSaveLocation(projectPath);
+            manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+            if (!manifest && !manifest.tcInitialized) {
+                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+            } else {
+                let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+                if (oldManifest) {
+                    manifest = LoadHelpers.setUpManifest(projectPath, oldManifest);
+                }
+            }
+            dispatch(addLoadedProjectToStore(projectPath, manifest));
+        }
+        dispatch(displayToolsToLoad(manifest));
+    });
+}
+
+/**
+ * @description Initiates the loading of a usfm file into current project, puts the target language, params,
+ * save location, and manifest into the store.
+ *
+ * @param {string} projectPath - Path in which the USFM project is being loaded from
+ * @param {string} direction - Direction of the book being read for the project target language
+ * @param {string} projectLink - Link given to load project if taken from online
+ */
+export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser) {
+    return ((dispatch) => {
+        const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
+        dispatch(setProjectPath(projectSaveLocation));
+        const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectSaveLocation);
+        const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
+        const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
+        dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
+        dispatch(setUSFMParams(parsedUSFM.book, projectSaveLocation, direction));
+        let manifest = LoadHelpers.loadFile(projectSaveLocation, 'manifest.json');
+        if (!manifest) {
+            const defaultManifest = LoadHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
+            manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
+        }
+        dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
+    });
+}
+
+
+/**
+ * @description Starts loading a project that has a standard manifest created.
+ * Adds manifest, params, book name, and target language bible
+ * (if usfm), and project data from file to store.
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
+ * @param {object} manifest - Manifest specified for tC load
+ */
+export function addLoadedProjectToStore(projectPath, manifest) {
+    return ((dispatch) => {
+        dispatch(setProjectPath(projectPath));
+        dispatch(setProjectManifest(manifest));
+        const params = LoadHelpers.getParams(projectPath, manifest);
+        if (params) {
+            dispatch(setProjectParams(params));
+        } else {
+            //no finished_chunks in manifest
+            dispatch(manifestError('No finished chunks specified in project manifest'))
+        }
+        dispatch(loadProjectDataFromFileSystem(projectPath));
+    });
+}
+
+/**
+ * @description Displays the currently loaded tools in the app, if
+ * project is a titus or ephisians, or if the userdata
+ * is in developer mode.
+ *
+ * @param {object} manifest - Manifest specified for tC load, already formatted.
+ */
+export function displayToolsToLoad(manifest) {
+    return ((dispatch, getState) => {
+        const currentState = getState();
+        if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
+            dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
+            dispatch({ type: consts.SHOW_APPS, val: true });
+            dispatch(ToolsActions.getToolsMetadatas());
+            dispatch(ModalActions.selectModalTab(3, 1, true));
+        } else {
+            dispatch(NotificationActions.showNotification('You can only load Ephisians or Titus projects for now.', 5));
+            dispatch(RecentProjectsActions.getProjectsFromFolder());
+            dispatch(clearPreviousData());
+        }
+    })
+}
+
+/**
+ * @description Loaded previous project data into the filesystem given a path.
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
+ */
+export function loadProjectDataFromFileSystem(projectPath) {
+    return ((dispatch) => {
+        //TODO retrieve previous project data to put in store
+    });
+}
+
+
+
+/**
+ *
+ * @param {string} content - Message of the alert to be shown
+ */
+export function manifestError(content) {
+    return ((dispatch) => {
+        AlertModalActions.showAlert(
+            {
+                title: 'Error Setting Up Project',
+                content: content,
+                moreInfo: "",
+                leftButtonText: "Ok"
+            });
+        dispatch(clearPreviousData());
+    });
+}
+
+
+/**
+ * @description Loads the tool into the main app view, and initates the tool Container component
+ *
+ * @param {string} moduleFolderName - Folder path of the tool being loaded
+ */
+export function loadModuleAndDependencies(moduleFolderName) {
+    return ((dispatch) => {
+        try {
+            dispatch({ type: consts.START_LOADING });
+            const modulePath = Path.join(moduleFolderName, 'package.json');
+            const dataObject = fs.readJsonSync(modulePath);
+            const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+            dispatch(saveModules(checkArray));
+            dispatch(CurrentToolActions.setToolName(dataObject.name))
+            dispatch(CoreActionsRedux.changeModuleView('main'));
+        } catch (e) {
+            dispatch(errorLoadingProject(e));
+        }
+
+    });
+}
+
+/**
+ * @description Saves tools included module Containers in the store
+ *
+ * @param {Array} checkArray - Array of the checks that the views should be loaded
+ */
+export function saveModules(checkArray) {
+    return ((dispatch) => {
         for (let module of checkArray) {
             try {
-                var viewObj = require(Path.join(module.location, 'Container'));
-                var container = true;
-            } catch (err) {
-                try {
-                    var viewObj = require(Path.join(module.location, 'View'));
-                    var container = false;
-                } catch (err) {
-                    console.error(err);
-                }
-            } finally {
-                dispatch(LoaderActions.saveModule(module.name, viewObj.view || viewObj.container));
-                api.saveModule(module.name, viewObj.view || viewObj.container);
+                const viewObj = require(Path.join(module.location, 'Container'));
+                dispatch(setModuleView(module.name, viewObj.view || viewObj.container));
+            } catch (e) {
+                console.log(e);
             }
-            if (module.location && !CheckStore.hasData(module.name)) {
-                checksThatNeedToBeFetched.push(module);
-            }
-            dispatch(LoaderActions.updateNumberOfFetchDatas(checksThatNeedToBeFetched.length));
-            var totalModules = checksThatNeedToBeFetched.length;
-        }
-        callback(null, checksThatNeedToBeFetched, totalModules);
-    } catch (e) {
-        callback(e, null);
-    }
-}
-
-
-/**
- * @description - Loads in a module and dependencies depending on the dependencies found in
- * the manifest file within the main module folder. Doesn't load a module if it is already
- * found in the CheckStore
- * @param {string} moduleFolderPath - the name of the folder the module and manifest file for
- * that module is located in
- */
-module.exports.loadModuleAndDependencies = function (moduleFolderName) {
-    return ((dispatch) => {
-        dispatch({ type: consts.START_LOADING })
-        var _this = this;
-        var modulePath = Path.join(moduleFolderName, 'package.json');
-        fs.readJson(modulePath, (error, dataObject) => {
-            if (!error) {
-                _this.saveModuleMenu(dataObject, moduleFolderName);
-                _this.createCheckArray(dataObject, moduleFolderName, (err, checkArray) => {
-                    if (!err) {
-                        _this.fetchModules(checkArray, dataObject.name);
-                    }
-                    else {
-                        dispatch(this.errorLoadingProject(err));
-                    }
-                });
-            }
-            else {
-                dispatch(this.errorLoadingProject(error));
-            }
-        });
-    });
-}
-
-module.exports.createCheckArray = function (dataObject, moduleFolderName, callback) {
-    var modulePaths = [];
-    try {
-        if (!dataObject.name || !dataObject.version || !dataObject.title || !dataObject.main) {
-            callback("Bad package.json for tool", null);
-        } else {
-            modulePaths.push({ name: dataObject.name, location: moduleFolderName });
-            for (let childFolderName in dataObject.include) {
-                //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-                if (Array.isArray(dataObject.include)) {
-                    modulePaths.push({
-                        name: dataObject.include[childFolderName],
-                        location: Path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
-                    });
-                } else {
-                    modulePaths.push({
-                        name: childFolderName,
-                        location: Path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
-                    });
-                }
-            }
-            callback(null, modulePaths);
-        }
-    } catch (e) {
-        console.error(e)
-        callback(e, null);
-    }
-}
-
-module.exports.saveModuleMenu = function (dataObject, moduleFolderName) {
-    try {
-        api.saveMenu(dataObject.name, require(Path.join(moduleFolderName, 'MenuView.js')));
-    }
-    catch (e) {
-        if (e.code != "MODULE_NOT_FOUND") {
-            console.error(e);
-        }
-    }
-}
-
-/**
- * @description - This is called whenever each FetchData finishes. See {@link getDataFromCheck}.
- * @param {string || null} - An potential error string if one happened, null if it didn't
- * @param {object} data - optional parameter that FetchData's can return. TODO: Not sure
- * if still needed
- */
-module.exports.onComplete = function (currentCheckNamespace, totalModules, err, data) {
-    return ((dispatch, getState) => {
-        dispatch({ type: consts.DONE_MODULES });
-        if (!err) {
-            const doneModules = getState().coreStoreReducer.doneModules;
-            if (doneModules >= totalModules) {
-                //update stuff
-                var path = api.getDataFromCommon('saveLocation');
-                if (path) {
-                    var newError = console.error;
-                    console.error = console.errorold;
-                    git(path).init(function (err) {
-                        if (!err) {
-                            git(path).save('Initial TC Commit', path, function (err) {
-                                dispatch({
-                                    type: consts.DONE_LOADING,
-                                    doneLoading: true,
-                                    currentCheckNamespace: currentCheckNamespace
-                                });
-                                dispatch(CoreActionsRedux.setToolNamespace(currentCheckNamespace));
-                                console.error = newError;
-                            });
-                        } else {
-                            CoreActionsRedux.killLoading();
-                            api.createAlert({
-                                title: 'Error Saving Data To Project',
-                                content: 'There was an error with saving project data.',
-                                moreInfo: err,
-                                leftButtonText: "Ok"
-                            });
-                            console.error = newError;
-                        }
-                    });
-                }
-                else {
-                    var Alert = {
-                        title: "Warning",
-                        content: "Save location is not defined",
-                        leftButtonText: "Ok"
-                    }
-                    api.createAlert(Alert);
-                }
-            }
-        }
-        else {
-            console.error(err);
         }
     });
 }
 
 /**
- * @description - This function tests to see if a module is a 'main' module as opposed to a
- * 'tool'. Main modules define the layout for nearly the entire page while tools are what
- * supplment the main module in that layout and are enclosed in the main module
- * @param {string} folderpath - absolute file path to the enclosing module's folder
+ *
+ * @param {object} err - Message object of the alert to be shown
  */
-module.exports.isMainModule = function (filepath) {
-    try {
-        var stats = fs.lstatSync(filepath);
-        if (!stats.isDirectory()) {
-            return false;
-        }
-        try {
-            fs.accessSync(Path.join(filepath, 'ReportView.js'));
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
-    catch (e) {
-        return false;
-    }
-}
-
-/**
- * @description - This loads a single FetchData
- * @param {string} path - This is a relative path to the enclosing module's folder
- * @param {object} params - Object that gets passed to FetchData's, contains necessary
- * params for the FetchData's to load their data
- */
-module.exports.getDataFromOnline = function (name, path, params, currentCheckNamespace, progressFunc, totalModules) {
-    var DataFetcher = require(Path.join(path, 'FetchData'));
-    //call the FetchData function
-    var _this = this;
-    DataFetcher(
-        params,
-        (data) => progressFunc(data, name),
-        this.onComplete.bind(this, currentCheckNamespace, totalModules)
-    );
-}
-
-module.exports.errorLoadingProject = function (err) {
+export function errorLoadingProject(err) {
     return ((dispatch) => {
         dispatch({ type: consts.DONE_LOADING });
         const alertMessage = {
@@ -258,6 +299,33 @@ module.exports.errorLoadingProject = function (err) {
             visibility: true,
         }
         dispatch(AlertModalActions.showAlert(alertMessage));
-        clearPreviousData();
+        dispatch(clearPreviousData());
+        console.error(err)
+    });
+}
+
+
+
+/**
+ * @description Set ups a tC project parameters for a usfm project
+ *
+ * @param {string} bookAbbr - Book abbreviation
+ * @param {path} projectSaveLocation - Path of the usfm project being loaded
+ * @param {path} direction - Reading direction of the project books
+ */
+export function setUSFMParams(bookAbbr, projectSaveLocation, direction) {
+    return ((dispatch) => {
+        let params = {
+            originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
+            targetLanguagePath: projectSaveLocation,
+            direction: direction,
+            bookAbbr: bookAbbr
+        };
+        if (LoadHelpers.isOldTestament(bookAbbr)) {
+            params.originalLanguage = "hebrew";
+        } else {
+            params.originalLanguage = "greek";
+        }
+        dispatch(setProjectParams(params));
     });
 }

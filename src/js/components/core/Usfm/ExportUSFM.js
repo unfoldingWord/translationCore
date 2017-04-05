@@ -8,11 +8,11 @@ const api = window.ModuleApi;
  * @description This function takes JSON and a save location, exporting it as USFM.
  * @param {Object} json - The scripture in json format.
  * @param {Object} reorder - Whether or not the structure needs to be formatted
- * @param {String} saveLocation - The save location for the usfm file.
+ * @param {String} projectSaveLocation - The save location for the usfm file.
  * @param {Object} nameflag - Appends to the book name.
  * @param {Object} callback - To be called on completion.
  ******************************************************************************/
-function exportUsfm(json, reorder, saveLocation, nameflag, callback) {
+function exportUsfm(json, reorder, projectSaveLocation, nameflag, callback) {
   if (reorder) {
     var book = json;
     var finalJson = {chapters: []};
@@ -29,10 +29,10 @@ function exportUsfm(json, reorder, saveLocation, nameflag, callback) {
         finalJson.chapters.push({number: chapter, verses: verseArray});
       }
     }
-    fs.writeFile(saveLocation + '/' + finalJson.book + nameflag + '.usfm', usfm.toUSFM(finalJson));
+    fs.writeFile(projectSaveLocation + '/' + finalJson.book + nameflag + '.usfm', usfm.toUSFM(finalJson));
   } else {
     var saveName = json.book + nameflag + '.usfm';
-    var saveFilePath = path.join(saveLocation, saveName);
+    var saveFilePath = path.join(projectSaveLocation, saveName);
     var jsonToUsfm = usfm.toUSFM(json);
     fs.writeFile(saveFilePath, jsonToUsfm, callback);
   }

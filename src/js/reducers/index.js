@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-//List of reducers
+// List of reducers
 import coreStoreReducer from './coreStoreReducer'
 import modalReducers from './modalReducers'
 import newModalReducer from './newModalReducer'
@@ -19,7 +19,16 @@ import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
 import projectDetailsReducer from './projectDetailsReducer'
 import alertModalReducer from './alertModalReducer'
-//combining reducers
+import commentsReducer from './commentsReducer'
+import selectionsReducer from './selectionsReducer'
+import remindersReducer from './remindersReducer'
+import contextIdReducer from './contextIdReducer'
+import groupsDataReducer from './groupsDataReducer'
+import groupsIndexReducer from './groupsIndexReducer'
+import verseEditReducer from './verseEditReducer'
+import modulesSettingsReducer from './modulesSettingsReducer'
+import currentToolReducer from './currentToolReducer'
+// combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
   modalReducers,
@@ -39,7 +48,16 @@ const rootReducers = combineReducers({
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,
-  alertModalReducer
-})
+  alertModalReducer,
+  commentsReducer,
+  selectionsReducer,
+  remindersReducer,
+  contextIdReducer,
+  groupsDataReducer,
+  groupsIndexReducer,
+  verseEditReducer,
+  modulesSettingsReducer,
+  currentToolReducer
+});
 
-export default rootReducers
+export default rootReducers;

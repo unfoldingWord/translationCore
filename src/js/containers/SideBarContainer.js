@@ -1,12 +1,12 @@
-const React = require('react');
-const { connect } = require('react-redux');
-const CheckStoreActions = require('../actions/CheckStoreActions.js');
-const SideBarActions = require('../actions/SideBarActions.js');
-const MenuHeaders = require('../components/core/navigation_menu/MenuHeaders');
-const {Grid, Row, Col, Glyphicon} = require('react-bootstrap');
-const Chevron = require('../components/core/SideBar/Chevron');
-const style = require("../components/core/SideBar/Style");
-
+import React from 'react'
+import { connect } from 'react-redux'
+import CheckStoreActions from '../actions/CheckStoreActions.js'
+import SideBarActions from '../actions/SideBarActions.js'
+import Groups from '../components/core/groupMenu/Groups'
+import {Grid, Row, Col, Glyphicon} from 'react-bootstrap'
+import Chevron from '../components/core/SideBar/Chevron'
+import * as style from '../components/core/SideBar/Style'
+import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 
 var sideBarContainerStyle = {
   backgroundColor: "#333333",
@@ -20,8 +20,19 @@ var sideBarContainerStyle = {
 }
 
 class SideBarContainer extends React.Component {
+
+  menu(toolName) {
+    let menu = <div />
+    if (toolName !== null) {
+      menu = <Groups {...this.props} />
+    }
+    return menu
+  }
+
   render() {
-    let { menuVisibility, currentCheckNameSpace, onToggleMenu } = this.props;
+    let { onToggleMenu } = this.props
+    let { menuVisibility, currentCheckNamespace } = this.props.sideBarReducer
+    let { toolName } = this.props.currentToolReducer
     return (
       <div>
         <div style={{display: menuVisibility ? "block" : "none"}}>
@@ -36,7 +47,7 @@ class SideBarContainer extends React.Component {
                 overflowY: "scroll"
               }
             }>
-              <MenuHeaders {...this.props} currentToolNamespace={currentCheckNameSpace}/>
+              {this.menu(toolName)}
             </Col>
           </Grid>
         </div>
@@ -50,7 +61,16 @@ class SideBarContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.checkStoreReducer, state.sideBarReducer);
+  return {
+    groupsIndexReducer: state.groupsIndexReducer,
+    groupsDataReducer: state.groupsDataReducer,
+    selectionsReducer: state.selectionsReducer,
+    contextIdReducer: state.contextIdReducer,
+    resourcesReducer: state.resourcesReducer,
+    projectDetailsReducer: state.projectDetailsReducer,
+    sideBarReducer: state.sideBarReducer,
+    currentToolReducer: state.currentToolReducer
+  }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -58,14 +78,19 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onToggleMenu: () => {
       dispatch(SideBarActions.toggleMenu());
     },
-    menuClick: (id, currentToolNamespace, bool) => {
-      dispatch(SideBarActions.menuHeaderClicked(currentToolNamespace, parseInt(id), 0, bool));
+    menuClick: (id) => {
+      dispatch(SideBarActions.menuHeaderClicked(parseInt(id), 0));
     },
-    checkClicked: (currentGroupIndex, id, currentToolNamespace) => {
+    checkClicked: (currentGroupIndex, id) => {
       dispatch(
-        CheckStoreActions.goToCheck(currentToolNamespace, currentGroupIndex, parseInt(id))
+        CheckStoreActions.goToCheck(currentGroupIndex, parseInt(id))
       );
     },
+    actions: {
+      changeCurrentContextId: (contextId) => {
+        dispatch(changeCurrentContextId(contextId));
+      }
+    }
   }
 }
 

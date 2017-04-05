@@ -4,35 +4,22 @@ const pathex = require('path-extra');
 const path = require('path-extra');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
 const fs = require(window.__base + 'node_modules/fs-extra');
-const CheckDataGrabber = require('../components/core/create_project/CheckDataGrabber.js');
-const modalActions = require('./ModalActions.js');
-const LoaderActions = require('./LoaderActions.js');
-const coreStoreActions = require('./CoreActionsRedux.js');
+import * as modalActions from './ModalActions.js';
+import * as LoaderActions from './LoaderActions.js';
+import * as coreStoreActions from './CoreActionsRedux.js';
+import * as GetDataActions from './GetDataActions.js';
 
-
-
-
-module.exports.loadTool = function (folderName) {
+export function loadTool(folderName) {
   return ((dispatch, getState) => {
-    /*this CheckDataGrabber function call will have to change in
-    order for us to fully implement redux*/
+    localStorage.setItem('lastCheckModule', folderName);
+    dispatch({ type: consts.LOAD_TOOL, val: true });
+    dispatch(LoaderActions.toggleLoader(true));
     dispatch(modalActions.showModalContainer(false));
-    CheckDataGrabber.loadModuleAndDependencies(folderName, (err, success) => {
-      if (!err) {
-        localStorage.setItem('lastCheckModule', folderName);
-        dispatch({
-          type: consts.LOAD_TOOL,
-          val: true
-        });
-        dispatch({ type: consts.SHOW_MODAL_CONTAINER, visible: false });
-      }
-    }, (data, key)=>{
-      dispatch(LoaderActions.sendProgressForKey(key, data, getState().loaderReducer));
-    });
-  })
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
+  });
 }
 
-module.exports.getToolsMetadatas = function () {
+export function getToolsMetadatas() {
   return ((dispatch) => {
     getDefaultModules((moduleFolderPathList) => {
       fillDefaultModules(moduleFolderPathList, (metadatas) => {

@@ -1,55 +1,69 @@
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   book: null,
   bookAbbr: null,
   groups: null,
-  subgroups:null,
+  subgroups: null,
   currentCheck: null,
   currentGroupIndex: null,
   currentCheckIndex: null,
-  currentCheckNameSpace: null,
-  groupName: null,
+  currentCheckNamespace: null,
+  groupName: null
 };
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_BOOK_NAME":
+    case consts.SET_BOOK_NAME:
       return {
         ...state,
-        book: action.val,
+        book: action.book,
         bookAbbr: action.bookAbbr
-      }
-    case "SET_GROUPS_OBJECTS":
-      return Object.assign({}, state, {
-        groups: action.val,
-      });
-      break;
-    case "UPDATE_CURRENT_CHECK":
-      return Object.assign({}, state, {
-        currentCheck: action.val,
-      });
-      break;
-    case "GO_TO_CHECK":
+      };
+    case consts.SET_GROUPS_OBJECTS:
+      return {
+        ...state,
+        groups: action.val
+      };
+    case consts.SET_SUBGROUPS_OBJECTS:
+      return {
+        ...state,
+        subgroups: action.val
+      };
+    case consts.UPDATE_CURRENT_CHECK:
+      return {
+        ...state,
+        currentCheck: action.val
+      };
+    case consts.GO_TO_CHECK:
+      return {
+        ...state,
+        currentGroupIndex: action.currentGroupIndex,
+        currentCheckIndex: action.currentCheckIndex
+      };
+    case consts.GO_TO_NEXT:
+      return {
+        ...state,
+        currentGroupIndex: action.currentGroupIndex,
+        currentCheckIndex: action.currentCheckIndex
+      };
+    case consts.GO_TO_PREVIOUS:
       return {
         ...state,
         currentGroupIndex: action.currentGroupIndex,
         currentCheckIndex: action.currentCheckIndex
       }
-    case "GO_TO_NEXT":
+    case consts.UPDATE_NAMESPACE:
       return {
         ...state,
-        currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex
-      }
-    case "GO_TO_PREVIOUS":
+        currentCheckNamespace: action.currentCheckNamespace
+      };
+    case consts.SET_GROUP_NAME:
       return {
         ...state,
-        currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex
-      }
-    case "UPDATE_NAMESPACE":
-      return { ...state, currentCheckNameSpace: action.currentCheckNameSpace }
+        groupName: action.groupName
+      };
     default:
       return state;
   }
-}
+};

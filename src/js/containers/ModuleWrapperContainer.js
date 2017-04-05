@@ -1,16 +1,17 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import SwitchCheck from '../components/core/SwitchCheck'
-import RecentProjectsContainer from './RecentProjectsContainer'
-import ToolsContainer from './ToolsContainer'
-import { selectModalTab } from '../actions/ModalActions.js'
-import { loadTool } from '../actions/ToolsActions.js'
-const api = window.ModuleApi;
+import React from 'react';
+import { connect } from 'react-redux';
+import SwitchCheck from '../components/core/SwitchCheck';
+import RecentProjectsContainer from './RecentProjectsContainer';
+import ToolsContainer from './ToolsContainer';
+import { selectModalTab } from '../actions/ModalActions.js';
+import { loadTool } from '../actions/ToolsActions.js';
+
 
 class ModuleWrapperContainer extends React.Component {
   render() {
-    let { mainViewVisible, type, currentCheckNameSpace, modules } = this.props;
-    let mainTool = modules[currentCheckNameSpace];
+    let {modules, type, mainViewVisible} = this.props.coreStoreReducer
+    let {toolName} = this.props.currentToolReducer
+    let mainTool = modules[toolName];
     let mainContent;
     if (mainViewVisible) {
       switch (type) {
@@ -21,7 +22,7 @@ class ModuleWrapperContainer extends React.Component {
           mainContent = <RecentProjectsContainer />;
           break;
         case 'main':
-          mainContent = <ToolsContainer currentTool={mainTool}/>;
+          mainContent = <ToolsContainer currentTool={mainTool} />;
           break;
         default:
           mainContent = (<div> </div>);
@@ -37,25 +38,24 @@ class ModuleWrapperContainer extends React.Component {
 }
 
 
-function mapStateToProps(state) {
-    return Object.assign({},
-      state.coreStoreReducer,
-      state.toolsReducer,
-      state.settingsReducer,
-      state.checkStoreReducer,
-      state.loaderReducer,
-    );
+const mapStateToProps = (state) => {
+  return {
+    contextIdReducer: state.contextIdReducer,
+    coreStoreReducer: state.coreStoreReducer,
+    toolsReducer: state.toolsReducer,
+    settingsReducer: state.settingsReducer,
+    loaderReducer: state.loaderReducer,
+    projectDetailsReducer: state.projectDetailsReducer,
+    currentToolReducer: state.currentToolReducer
+  }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-      showLoad: () => {
-        dispatch(selectModalTab(2))
-      },
-      handleLoadTool: (toolFolderPath) => {
-        dispatch(loadTool(toolFolderPath));
-      }
+  return {
+    showLoad: () => {
+      dispatch(modalActions.selectModalTab(2))
     }
+  }
 }
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(ModuleWrapperContainer);
