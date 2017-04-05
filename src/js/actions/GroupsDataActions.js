@@ -7,10 +7,10 @@ import consts from '../actions/CoreActionConsts';
  * @param {array} groupData - array of objects containing group data.
  * @return {object} action object.
  */
-export const addGroupData = (groupId, groupData) => {
+export const addGroupData = (groupId, groupsData) => {
   return {
     type: consts.ADD_GROUP_DATA,
     groupId,
-    groupData
+    groupsData
   };
 };

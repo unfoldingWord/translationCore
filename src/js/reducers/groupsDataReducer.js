@@ -11,7 +11,7 @@ const groupsDataReducer = (state = initialState, action) => {
         ...state,
         groupsData: {
           ...state.groupsData,
-          [action.groupId]: action.groupData
+          [action.groupId]: action.groupsData
         }
       };
     default:
