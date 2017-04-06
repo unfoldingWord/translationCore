@@ -50,19 +50,19 @@ export const loadState = () => {
       //   userName: "klappy",
       //   modifiedTimestamp: "2017-02-17T22:23:49.357Z"
       // },
-      contextIdReducer: {
-        contextId: {
-          reference: {
-            bookId: '2th',
-            chapter: 1,
-            verse: 6
-          },
-          tool: 'ImportantWords',
-          groupId: 'afflict',
-          quote: 'affliction',
-          occurrence: 1
-        }
-      }
+      // contextIdReducer: {
+      //   contextId: {
+      //     reference: {
+      //       bookId: '2th',
+      //       chapter: 1,
+      //       verse: 6
+      //     },
+      //     tool: 'ImportantWords',
+      //     groupId: 'afflict',
+      //     quote: 'affliction',
+      //     occurrence: 1
+      //   }
+      // }
     };
     if (serializedState === null) {
       //  returning undefined to allow the reducers to initialize the app state
