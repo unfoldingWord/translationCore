@@ -37,6 +37,10 @@
       },
       unchecked: {
         display: 'none'
+      },
+      bookmark: {
+        color: '#FFFFFF',
+        display: 'initial'
       }
     }
   },
