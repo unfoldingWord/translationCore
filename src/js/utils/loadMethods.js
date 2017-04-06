@@ -8,8 +8,7 @@ import path from 'path-extra';
 //  consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources');
-
+const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
@@ -22,3 +21,23 @@ export const loadSettings = () => {
   }
   return settings;
 };
+
+/**
+ * @description
+ * @const MODULES_SETTINGS_DIRECTORY - directory where module settings is located.
+ * @return {object} action object.
+ */
+export function loadModulesSettings() {
+  try {
+    if (fs.existsSync(MODULES_SETTINGS_DIRECTORY)) {
+      let moduleSettings = fs.readJsonSync(MODULES_SETTINGS_DIRECTORY);
+      return moduleSettings;
+    } else {
+      // no module settings file found and/or directory not found.
+      return {};
+    }
+  } catch (err) {
+    console.warn(err);
+    return {};
+  }
+}
