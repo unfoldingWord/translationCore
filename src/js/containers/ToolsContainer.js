@@ -18,6 +18,21 @@ import { setProjectDetail } from '../actions/projectDetailsActions';
 
 class ToolsContainer extends React.Component {
   render() {
+    let {contextId} = this.props.contextIdReducer
+    let {groupsIndex} = this.props.groupsIndexReducer
+    let {groupsData} = this.props.groupsDataReducer
+
+    if (groupsIndex !== undefined && groupsData !== undefined && contextId === null) {
+      let valid = false, i = 0
+      while (!valid && i < groupsIndex.length-1) {
+        let groupId = groupsIndex[i].id
+        let groupData = groupsData[groupId]
+        if (groupData !== undefined && groupData[0] !== undefined) contextId = groupData[0].contextId
+        valid = (contextId !== null)
+      }
+      this.props.actions.changeCurrentContextId(contextId)
+    }
+
     let Tool = this.props.currentTool;
     return (
       <Tool {...this.props} />
