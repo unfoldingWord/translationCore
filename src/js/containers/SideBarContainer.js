@@ -69,7 +69,8 @@ function mapStateToProps(state) {
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     sideBarReducer: state.sideBarReducer,
-    currentToolReducer: state.currentToolReducer
+    currentToolReducer: state.currentToolReducer,
+    remindersReducer: state.remindersReducer
   }
 }
 

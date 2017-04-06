@@ -14,7 +14,18 @@ class Groups extends React.Component {
     if (groupsIndex !== undefined) {
       groups = groupsIndex.filter( groupIndex => {
         return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id)
-      }).map( groupIndex =>
+      })
+      //Alphabetize the groups order
+      groups = groups.sort( (a, b) => {
+        if(a.id.toUpperCase() < b.id.toUpperCase()){
+          return -1;
+        }
+        if(a.id.toUpperCase() > b.id.toUpperCase()){
+          return 1;
+        }
+        return 0;
+      })
+      groups = groups.map( groupIndex =>
         <Group {...this.props} groupIndex={groupIndex} key={groupIndex.id} />
       )
     }
