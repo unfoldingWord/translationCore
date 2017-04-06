@@ -5,8 +5,8 @@ export const shiftGroupIndex = (_shift, contextId, groupsIndex) => {
     return (groupIndex.id === contextId.groupId)
   })
   let shiftedIndex = currentIndex + _shift
-  shiftedIndex = Math.max(0, shiftedIndex) // don't go below zero, return the first
-  shiftedIndex = Math.min(shiftedIndex, groupsIndex.length-1) // don't go above the last element
+  if (shiftedIndex < 0) shiftedIndex = groupsIndex.length-1 // don't go below zero, return the last
+  if (shiftedIndex > groupsIndex.length-1) shiftedIndex = 0 // don't go past the last, return the first
   return groupsIndex[shiftedIndex]
 }
 
