@@ -13,3 +13,11 @@ export const toggleReminder = userName => {
     userName
   };
 };
+
+export const setReminder = (userName, enabled) => {
+  return {
+    type: consts.SET_REMINDER,
+    modifiedTimestamp: generateTimestamp();,
+    userName
+  };
+};
