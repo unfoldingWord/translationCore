@@ -115,7 +115,6 @@ export function loadReminders() {
     let state = getState();
     let loadPath = generateLoadPath(state, 'reminders');
     let remindersObject = loadCheckData(loadPath);
-    console.log(remindersObject);
     if (remindersObject) {
       dispatch({
         type: consts.SET_REMINDER,
