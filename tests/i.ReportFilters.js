@@ -226,15 +226,6 @@ describe('ReportFilters.get.retainedList', function() {
   });
 });
 
-describe('ReportFilters.get.chapters', function() {
-  it('chapters should return an array of chapter numbers', function() {
-    var chapters = ReportFilters.get.chapters();
-    assert.isArray(chapters);
-    chapters.pop();
-    assert.equal(chapters.length, parseInt(chapters.pop()));
-  });
-});
-
 describe('ReportFilters.searchText', function() {
   var testTargetLanguage = window.ModuleApi.getDataFromCommon("targetLanguage");
   it('searchText should return undefined if no parameters are passed', function() {
@@ -250,9 +241,5 @@ describe('ReportFilters.searchText', function() {
     var filteredByText = ReportFilters.searchText('alskldk', testTargetLanguage);
     assert.isObject(filteredByText);
     assert.equal(Object.keys(filteredByText).length, 0);
-  });
-  it('searchText should filter a target language by querysnumber', function() {
-    var filteredByText = ReportFilters.searchText('Tidak', testTargetLanguage);
-    assert.equal(Object.keys(filteredByText).length, 16);
   });
 });
