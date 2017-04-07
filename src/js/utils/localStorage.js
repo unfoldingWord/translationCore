@@ -1,4 +1,4 @@
-import {loadSettings} from './loadMethods';
+import {loadSettings, loadModulesSettings} from './loadMethods';
 import {
   saveSettings,
   saveResources,
@@ -7,7 +7,8 @@ import {
   saveSelections,
   saveReminders,
   saveGroupsIndex,
-  saveGroupsData
+  saveGroupsData,
+  saveModuleSettings
 } from './saveMethods';
 
 /**
@@ -19,6 +20,7 @@ export const loadState = () => {
   try {
     const serializedState = {
       settingsReducer: loadSettings(),
+      modulesSettingsReducer: loadModulesSettings(),
       /**
        * @description this a temporary dummy data so that we can use to implement data persistence.
        */
@@ -93,6 +95,7 @@ export const saveState = state => {
     saveReminders(state);
     saveGroupsIndex(state);
     saveGroupsData(state);
+    saveModuleSettings(state);
   } catch (err) {
     console.warn(err);
   }
