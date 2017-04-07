@@ -199,6 +199,8 @@ export const saveReminders = state => {
       ...state.remindersReducer
     };
     let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+    console.log("Modified Timestamp", modifiedTimestamp);
+    console.log("Reminders Payload", remindersPayload);
     saveData(state, "reminders", remindersPayload, modifiedTimestamp);
   } catch (err) {
     console.warn(err)
