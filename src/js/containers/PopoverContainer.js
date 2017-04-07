@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Popover from '../components/core/Popover.js'
 import { closePopover } from '../actions/PopoverActions.js'
 
@@ -7,7 +8,9 @@ class PopoverContainer extends React.Component {
   render(){
     return (
       <div>
-        <Popover {...this.props}/>
+        <MuiThemeProvider>
+          <Popover {...this.props}/>
+        </MuiThemeProvider>
       </div>
     );
   }
@@ -25,7 +28,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(PopoverContainer)
