@@ -25,6 +25,33 @@ export const changeCurrentContextId = contextId => {
     loadCheckData(dispatch);
   });
 }
+/**
+ * @description this action changes the contextId to the first check.
+ * @return {object} New state for contextId reducer.
+ */
+export const changeToFirstContextId = () => {
+  return ((dispatch, getState) => {
+    let state = getState()
+    let {contextId} = state.contextIdReducer
+    let {groupsIndex} = state.groupsIndexReducer
+    let {groupsData} = state.groupsDataReducer
+    if (!!groupsIndex && !!groupsData && !contextId) {
+      let valid = false, i = 0
+      while (!valid && i < groupsIndex.length-1) {
+        let groupId = groupsIndex[i].id
+        let groupData = groupsData[groupId]
+        if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId
+        valid = !!contextId
+      }
+      debugger
+      dispatch({
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId
+      })
+      loadCheckData(dispatch);
+    }
+  })
+}
 
 export const changeToNextContextId = () => {
   return ((dispatch, getState) => {

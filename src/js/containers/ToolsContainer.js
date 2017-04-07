@@ -7,7 +7,7 @@ import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
 import { changeSelections } from '../actions/SelectionsActions.js';
-import {changeCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
+import {changeCurrentContextId, changeToFirstContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
@@ -19,19 +19,7 @@ import { setProjectDetail } from '../actions/projectDetailsActions';
 class ToolsContainer extends React.Component {
   render() {
     let {contextId} = this.props.contextIdReducer
-    let {groupsIndex} = this.props.groupsIndexReducer
-    let {groupsData} = this.props.groupsDataReducer
-
-    if (groupsIndex !== undefined && groupsData !== undefined && contextId === null) {
-      let valid = false, i = 0
-      while (!valid && i < groupsIndex.length-1) {
-        let groupId = groupsIndex[i].id
-        let groupData = groupsData[groupId]
-        if (groupData !== undefined && groupData[0] !== undefined) contextId = groupData[0].contextId
-        valid = (contextId !== null)
-      }
-      this.props.actions.changeCurrentContextId(contextId)
-    }
+    if (!contextId) this.props.actions.changeToFirstContextId()
 
     let Tool = this.props.currentTool;
     return (
@@ -103,6 +91,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
+      },
+      changeToFirstContextId: () => {
+        dispatch(changeToFirstContextId());
       },
       addGroupData: (groupId, groupData) => {
         dispatch(addGroupData(groupId, groupData));
