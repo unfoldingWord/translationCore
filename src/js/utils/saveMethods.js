@@ -7,6 +7,7 @@ import path from 'path-extra';
 // consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
+const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
 const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
@@ -16,37 +17,60 @@ const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
  * @const {string} SETTINGS_DIRECTORY - directory to path where settigns is being saved.
  */
 export const saveSettings = state => {
-  fs.outputJson(SETTINGS_DIRECTORY, state.settingsReducer);
+  try {
+    fs.outputJson(SETTINGS_DIRECTORY, state.settingsReducer);
+  } catch (err) {
+    console.warn(err);
+  }
 };
-
+/**
+ * @description save all the modules settings in a json file in the specified directory.
+ * @param {object} state - object of reducers (objects).
+ * @const {string} MODULES_SETTINGS_DIRECTORY - directory where module settigns is being saved.
+ */
+export const saveModuleSettings = state => {
+  try {
+    fs.outputJson(MODULES_SETTINGS_DIRECTORY, state.modulesSettingsReducer);
+  } catch (err) {
+    console.warn(err);
+  }
+};
+/**
+ * @description this function saves bibles, tN and tW reosuces into the file system.
+ * @param {object} state - store state object.
+ */
 export const saveResources = state => {
-  const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-  let biblesObject = state.resourcesReducer.bibles;
-  let resourcesObject = state.resourcesReducer.resources;
-  if (PROJECT_SAVE_LOCATION) {
-    for (var keyName in biblesObject) {
-      let bibleVersion = keyName + '.json';
-      let savePath = path.join(
-        PROJECT_SAVE_LOCATION,
-        RESOURCES_DATA_DIR,
-        'bibles',
-        bibleVersion
-      );
-      fs.outputJson(savePath, biblesObject[keyName]);
-    }
+  try {
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    let biblesObject = state.resourcesReducer.bibles;
+    let resourcesObject = state.resourcesReducer.resources;
     if (PROJECT_SAVE_LOCATION) {
-      for (var resources in resourcesObject) {
-        for (var file in resourcesObject[resources]) {
-          let savePath = path.join(
-            PROJECT_SAVE_LOCATION,
-            RESOURCES_DATA_DIR,
-            resources,
-            file
-          );
-          fs.outputJson(savePath, resourcesObject[resources][file]);
+      for (var keyName in biblesObject) {
+        let bibleVersion = keyName + '.json';
+        let savePath = path.join(
+          PROJECT_SAVE_LOCATION,
+          RESOURCES_DATA_DIR,
+          'bibles',
+          bibleVersion
+        );
+        fs.outputJson(savePath, biblesObject[keyName]);
+      }
+      if (PROJECT_SAVE_LOCATION) {
+        for (var resources in resourcesObject) {
+          for (var file in resourcesObject[resources]) {
+            let savePath = path.join(
+              PROJECT_SAVE_LOCATION,
+              RESOURCES_DATA_DIR,
+              resources,
+              file
+            );
+            fs.outputJson(savePath, resourcesObject[resources][file]);
+          }
         }
       }
     }
+  } catch (err) {
+    console.warn(err)
   }
 };
 
@@ -91,22 +115,26 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
   * @example chapter - /1
   * @example verse - /3
   */
-  const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-  if (PROJECT_SAVE_LOCATION && state && modifiedTimestamp) {
-    let bookAbbreviation = state.contextIdReducer.contextId.reference.bookId;
-    let chapter = state.contextIdReducer.contextId.reference.chapter.toString();
-    let verse = state.contextIdReducer.contextId.reference.verse.toString();
-    let fileName = modifiedTimestamp + '.json';
-    let savePath = path.join(
-        PROJECT_SAVE_LOCATION,
-        CHECKDATA_DIRECTORY,
-        checkDataName,
-        bookAbbreviation,
-        chapter,
-        verse,
-        fileName
-    );
-    return savePath;
+  try {
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    if (PROJECT_SAVE_LOCATION && state && modifiedTimestamp) {
+      let bookAbbreviation = state.contextIdReducer.contextId.reference.bookId;
+      let chapter = state.contextIdReducer.contextId.reference.chapter.toString();
+      let verse = state.contextIdReducer.contextId.reference.verse.toString();
+      let fileName = modifiedTimestamp + '.json';
+      let savePath = path.join(
+          PROJECT_SAVE_LOCATION,
+          CHECKDATA_DIRECTORY,
+          checkDataName,
+          bookAbbreviation,
+          chapter,
+          verse,
+          fileName
+      );
+      return savePath;
+    }
+  } catch (err) {
+    console.warn(err);
   }
 }
 
@@ -115,12 +143,16 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
  * @param {object} state - store state object.
  */
 export const saveComments = state => {
-  let commentsPayload = {
-    ...state.contextIdReducer,
-    ...state.commentsReducer
-  };
-  let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
-  saveData(state, "comments", commentsPayload, modifiedTimestamp);
+  try {
+    let commentsPayload = {
+      ...state.contextIdReducer,
+      ...state.commentsReducer
+    };
+    let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
+    saveData(state, "comments", commentsPayload, modifiedTimestamp);
+  } catch (err) {
+    console.warn(err)
+  }
 };
 
 /**
@@ -128,24 +160,32 @@ export const saveComments = state => {
  * @param {Object} state - The state object courtesy of the store
  */
 export const saveSelections = state => {
-  let selectionsPayload = {
-    ...state.contextIdReducer,
-    ...state.selectionsReducer
-  };
-  let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
-  saveData(state, "selections", selectionsPayload, modifiedTimestamp);
+  try {
+    let selectionsPayload = {
+      ...state.contextIdReducer,
+      ...state.selectionsReducer
+    };
+    let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
+    saveData(state, "selections", selectionsPayload, modifiedTimestamp);
+  } catch (err) {
+    console.warn(err)
+  }
 };
  /**
  * @description This function saves the verse Edit data.
  * @param {object} state - store state object.
  */
 export const saveVerseEdit = state => {
-  let verseEditPayload = {
-    ...state.contextIdReducer,
-    ...state.verseEditReducer
-  };
-  let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
-  saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
+  try {
+    let verseEditPayload = {
+      ...state.contextIdReducer,
+      ...state.verseEditReducer
+    };
+    let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
+    saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
+  } catch (err) {
+    console.warn(err)
+  }
 };
 
 /**
@@ -153,12 +193,16 @@ export const saveVerseEdit = state => {
  * @param {object} state - store state object.
  */
 export const saveReminders = state => {
-  let remindersPayload = {
-    ...state.contextIdReducer,
-    ...state.remindersReducer
-  };
-  let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
-  saveData(state, "reminders", remindersPayload, modifiedTimestamp);
+  try {
+    let remindersPayload = {
+      ...state.contextIdReducer,
+      ...state.remindersReducer
+    };
+    let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+    saveData(state, "reminders", remindersPayload, modifiedTimestamp);
+  } catch (err) {
+    console.warn(err)
+  }
 };
 /**
  * @description saves the groups index array in the file system.
