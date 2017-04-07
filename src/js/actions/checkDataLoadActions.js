@@ -117,7 +117,7 @@ export function loadReminders() {
     let remindersObject = loadCheckData(loadPath);
     if (remindersObject) {
       dispatch({
-        type: consts.TOGGLE_REMINDER,
+        type: consts.SET_REMINDER,
         enabled: remindersObject.enabled,
         modifiedTimestamp: remindersObject.modifiedTimestamp,
         userName: remindersObject.userName
@@ -125,7 +125,7 @@ export function loadReminders() {
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
-        type: consts.TOGGLE_REMINDER,
+        type: consts.SET_REMINDER,
         enabled: false,
         modifiedTimestamp: "",
         userName: ""

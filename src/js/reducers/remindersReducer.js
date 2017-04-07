@@ -14,6 +14,12 @@ const remindersReducer = (state = initialState, action) => {
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
       });
+    case consts.SET_REMINDER:
+      return Object.assign({}, state, {
+        enabled: action.enabled,
+        userName: action.userName,
+        modifiedTimestamp: action.modifiedTimestamp
+      });
     default:
       return state;
   }
