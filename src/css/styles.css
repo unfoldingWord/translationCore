@@ -146,3 +146,13 @@ tools. they basically override bootstrap styling for this components
 #table *{
   border-color: transparent
 }
+
+.remarkableStyling h1{
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.remarkableStyling h2{
+  font-size: 14px;
+  font-weight: normal;
+}
