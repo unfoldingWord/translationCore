@@ -30,8 +30,8 @@ export const loadSettings = () => {
 export function loadModulesSettings() {
   try {
     if (fs.existsSync(MODULES_SETTINGS_DIRECTORY)) {
-      let moduleSettings = fs.readJsonSync(MODULES_SETTINGS_DIRECTORY);
-      return moduleSettings;
+      let modulesSettings = fs.readJsonSync(MODULES_SETTINGS_DIRECTORY);
+      return modulesSettings;
     } else {
       // no module settings file found and/or directory not found.
       return {};
