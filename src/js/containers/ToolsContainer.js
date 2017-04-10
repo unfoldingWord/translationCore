@@ -17,10 +17,12 @@ import { setProjectDetail } from '../actions/projectDetailsActions';
 
 
 class ToolsContainer extends React.Component {
-  render() {
-    let {contextId} = this.props.contextIdReducer
-    if (!contextId) this.props.actions.changeToFirstContextId()
+  componentWillReceiveProps(nextProps) {
+    let { contextId } = nextProps.contextIdReducer
+    if (!contextId) nextProps.actions.changeToFirstContextId()
+  }
 
+  render() {
     let Tool = this.props.currentTool;
     return (
       <Tool {...this.props} />
