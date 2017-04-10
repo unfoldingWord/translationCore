@@ -1,3 +1,4 @@
+/**
 const assert = require('chai').assert;
 const React = require('react');
 const {mount, shallow} = require('enzyme');
@@ -136,3 +137,4 @@ describe('<PackageManagerView />', function() {
     assert.equal(wrapper.find('PackManagerSideBar').length, 1);
   })
 });
+*/
