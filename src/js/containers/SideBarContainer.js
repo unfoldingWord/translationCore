@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CheckStoreActions from '../actions/CheckStoreActions.js'
-import SideBarActions from '../actions/SideBarActions.js'
+import { toggleMenu } from '../actions/SideBarActions.js'
 import Groups from '../components/core/groupMenu/Groups'
 import {Grid, Row, Col, Glyphicon} from 'react-bootstrap'
 import Chevron from '../components/core/SideBar/Chevron'
@@ -30,7 +30,7 @@ class SideBarContainer extends React.Component {
   }
 
   render() {
-    let { onToggleMenu } = this.props
+    let { onToggleMenu } = this.props.actions
     let { menuVisibility, currentCheckNamespace } = this.props.sideBarReducer
     let { toolName } = this.props.currentToolReducer
     return (
@@ -76,20 +76,12 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onToggleMenu: () => {
-      dispatch(SideBarActions.toggleMenu());
-    },
-    menuClick: (id) => {
-      dispatch(SideBarActions.menuHeaderClicked(parseInt(id), 0));
-    },
-    checkClicked: (currentGroupIndex, id) => {
-      dispatch(
-        CheckStoreActions.goToCheck(currentGroupIndex, parseInt(id))
-      );
-    },
     actions: {
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
+      },
+      onToggleMenu: () => {
+        dispatch(toggleMenu());
       }
     }
   }
