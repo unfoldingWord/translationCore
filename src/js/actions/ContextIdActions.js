@@ -43,7 +43,6 @@ export const changeToFirstContextId = () => {
         if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId
         valid = !!contextId
       }
-      debugger
       dispatch({
         type: consts.CHANGE_CURRENT_CONTEXT_ID,
         contextId
