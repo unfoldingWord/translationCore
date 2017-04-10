@@ -54,6 +54,7 @@ class Group extends React.Component {
     return (
       <div>
         <div style={style} onClick={() => this.props.actions.changeCurrentContextId(groupData[0].contextId)} >
+          {active ? expandedGlyph : collapsedGlyph}
           <Circle
             progress={0.5}
             options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
@@ -61,7 +62,6 @@ class Group extends React.Component {
             containerStyle={{ width: '20px', height: '20px', marginRight: '5px', float: 'left' }}
           />
           {this.props.groupIndex.name}
-          {active ? expandedGlyph : collapsedGlyph}
         </div>
         {this.groupItems(groupData, active)}
       </div>
