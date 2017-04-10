@@ -1,13 +1,13 @@
-const consts = require('../actions/CoreActionConsts');
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   popoverVisibility: false,
   title: '',
   bodyText: '',
-  positionCoord: [0, 0]
+  positionCoord: {}
 };
 
-module.exports = (state = initialState, action) => {
+const popoverReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SHOW_POPOVER:
       return {
@@ -29,3 +29,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 }
+
+export default popoverReducer
