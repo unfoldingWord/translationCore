@@ -1,29 +1,34 @@
-const consts = require('./CoreActionConsts');
-const api = window.ModuleApi;
-const fs = require('fs-extra');
-const pathex = require('path-extra');
-const PARENT = pathex.datadir('translationCore')
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
-const dir = pathex.join(PACKAGE_COMPILE_LOCATION, 'settings.json');
+import consts from './CoreActionConsts';
 
-export function setSettings (field, value) {
+/**
+ * @description initializes settings. In other words ,creates a
+ * settings property and assign a value to it.
+ * @param {string} field - settings property name.
+ * @param {*} value - any data type to assign to the property as a value.
+ * @return {object} action object.
+ */
+export function setSettings(field, value) {
   return ((dispatch, getState) => {
     let settingsObj = getState().settingsReducer.currentSettings;
     settingsObj[field] = value;
     dispatch({
       type: consts.CHANGE_SETTINGS,
-      val: settingsObj,
+      val: settingsObj
     });
   });
-};
-
-export function toggleSettings (field) {
+}
+/**
+ * @description toggles settings any kind of settings to eeither false or tru.
+ * @param {string} field - settings property name.
+ * @return {object} action object.
+ */
+export function toggleSettings(field) {
   return ((dispatch, getState) => {
     let settingsObj = getState().settingsReducer.currentSettings;
     settingsObj[field] = !settingsObj[field];
     dispatch({
       type: consts.CHANGE_SETTINGS,
-      val: settingsObj,
+      val: settingsObj
     });
   });
-};
+}
