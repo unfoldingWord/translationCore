@@ -243,6 +243,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
     return ((dispatch) => {
         try {
             dispatch({ type: consts.START_LOADING });
+            dispatch(CoreActionsRedux.changeModuleView(''));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
@@ -269,6 +270,7 @@ export function loadGroupDataFromFileSystem(toolName) {
         try {
             dispatch(setGroupIndexInStore(dataFolder, params));
         } catch (e) {
+            console.warn('failed loading group index')
             dispatch(CoreActionsRedux.changeModuleView('main'));
         }
     });
@@ -281,7 +283,7 @@ export function setGroupDataInStore(dataFolder, params) {
             if (!err) {
                 var allGroupsObjects = {};
                 var total = groupDataFolderObjs.length;
-                var i = 1;
+                var i = 0;
                 for (var groupId in groupDataFolderObjs) {
                     if (Path.extname(groupDataFolderObjs[groupId]) != '.json') {
                         total--;
@@ -297,8 +299,10 @@ export function setGroupDataInStore(dataFolder, params) {
                                 if (i >= total) {
                                     dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
                                     dispatch(CoreActionsRedux.changeModuleView('main'));
+                                    console.log('Loaded group data from fs')
                                 }
                             } else {
+                                console.warn('failed loading group data')
                                 dispatch(CoreActionsRedux.changeModuleView('main'));
                             }
                         });
@@ -306,6 +310,7 @@ export function setGroupDataInStore(dataFolder, params) {
                     saveGroup(groupName, groupDataFolderPath);
                 }
             } else {
+                console.warn('failed loading group data')
                 dispatch(CoreActionsRedux.changeModuleView('main'));
             }
         });
@@ -315,7 +320,10 @@ export function setGroupDataInStore(dataFolder, params) {
 export function setGroupIndexInStore(dataFolder, params) {
     return ((dispatch) => {
         fs.readJson(Path.join(dataFolder, 'index.json'), (err, groupIndexObj) => {
-            if (!err) dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
+            if (!err) {
+                dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
+                console.log('Loaded group index from fs');
+            } else console.warn('failed loading group index')
             dispatch(setGroupDataInStore(dataFolder, params));
         });
     });

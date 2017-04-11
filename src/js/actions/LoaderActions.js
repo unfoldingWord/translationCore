@@ -44,7 +44,7 @@ export function sendProgressForKey (progress) {
       type: consts.UPDATE_PROGRESS,
       progress: progress,
     });
-    if (progress => 100) {
+    if (progress >= 100) {
       dispatch(toggleLoader(false));
     }
   });
