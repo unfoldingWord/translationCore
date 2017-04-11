@@ -7,7 +7,7 @@ import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
 import { changeSelections } from '../actions/SelectionsActions.js';
-import {changeCurrentContextId, changeToFirstContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
+import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import * as CheckStoreActions from '../actions/CheckStoreActions.js';
@@ -19,7 +19,7 @@ import { setProjectDetail } from '../actions/projectDetailsActions';
 class ToolsContainer extends React.Component {
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer
-    if (!contextId) nextProps.actions.changeToFirstContextId()
+    if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {
@@ -94,8 +94,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
       },
-      changeToFirstContextId: () => {
-        dispatch(changeToFirstContextId());
+      loadCurrentContextId: () => {
+        dispatch(loadCurrentContextId());
       },
       addGroupData: (groupId, groupData) => {
         dispatch(addGroupData(groupId, groupData));
