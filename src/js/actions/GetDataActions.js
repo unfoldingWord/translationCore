@@ -267,8 +267,7 @@ export function loadGroupDataFromFileSystem(toolName) {
         let { projectSaveLocation, params } = projectDetailsStore;
         let dataFolder = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
         try {
-            dispatch(setGroupIndexInStore(dataFolder));
-            dispatch(setGroupDataInStore(dataFolder, params));
+            dispatch(setGroupIndexInStore(dataFolder, params));
         } catch (e) {
             dispatch(CoreActionsRedux.changeModuleView('main'));
         }
@@ -299,20 +298,26 @@ export function setGroupDataInStore(dataFolder, params) {
                                     dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
                                     dispatch(CoreActionsRedux.changeModuleView('main'));
                                 }
+                            } else {
+                                dispatch(CoreActionsRedux.changeModuleView('main'));
                             }
                         });
                     }
                     saveGroup(groupName, groupDataFolderPath);
                 }
-            } else throw err
+            } else {
+                dispatch(CoreActionsRedux.changeModuleView('main'));
+            }
         });
     });
 }
 
-export function setGroupIndexInStore(dataFolder) {
+export function setGroupIndexInStore(dataFolder, params) {
     return ((dispatch) => {
-        let groupIndexObj = fs.readJsonSync(Path.join(dataFolder, 'index.json'))
-        dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
+        fs.readJson(Path.join(dataFolder, 'index.json'), (err, groupIndexObj) => {
+            if (!err) dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
+            dispatch(setGroupDataInStore(dataFolder, params));
+        });
     });
 }
 
