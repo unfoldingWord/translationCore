@@ -294,15 +294,17 @@ export function setGroupDataInStore(dataFolder, params) {
                         fs.readJson(Path.join(groupDataFolderPath, groupName + '.json'), (err, groupObj) => {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
-                                dispatch(LoaderActions.sendProgressForKey(i / total * 100));
-                                i++;
-                                if (i >= total) {
-                                    dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-                                    dispatch(CoreActionsRedux.changeModuleView('main'));
-                                    console.log('Loaded group data from fs')
-                                }
+                                setTimeout(() => {
+                                    dispatch(LoaderActions.sendProgressForKey(i / total * 100));
+                                    i++;
+                                    if (i >= total) {
+                                        dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+                                        dispatch(CoreActionsRedux.changeModuleView('main'));
+                                        console.log('Loaded group data from fs');
+                                    }
+                                }, 1)
                             } else {
-                                console.warn('failed loading group data')
+                                console.warn('failed loading group data');
                                 dispatch(CoreActionsRedux.changeModuleView('main'));
                             }
                         });
