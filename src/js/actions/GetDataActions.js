@@ -252,12 +252,14 @@ export function manifestError(content) {
 export function loadModuleAndDependencies(moduleFolderName) {
     return ((dispatch) => {
         try {
+            dispatch(CoreActionsRedux.changeModuleView(''));
             dispatch({ type: consts.START_LOADING });
+            dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
-            dispatch(CurrentToolActions.setToolName(dataObject.name))
+            dispatch(CurrentToolActions.setToolName(dataObject.name));
             dispatch(CoreActionsRedux.changeModuleView('main'));
         } catch (e) {
             dispatch(errorLoadingProject(e));

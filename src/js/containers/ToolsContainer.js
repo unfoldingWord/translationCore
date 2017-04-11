@@ -14,6 +14,7 @@ import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
+import { setDataFetched } from '../actions/currentToolActions';
 
 
 class ToolsContainer extends React.Component {
@@ -111,6 +112,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));
+      },
+      dataFetched: (val) => {
+        dispatch(setDataFetched(val));
+      },
+      doneLoading: () => {
+        dispatch({type:"DONE_LOADING"})
       }
     }
   };

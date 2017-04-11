@@ -16,3 +16,10 @@ export const setToolName = (toolName) => {
     toolName
   }
 }
+
+export const setDataFetched = (val) => {
+  return {
+    type:consts.SET_DATA_FETCHED,
+    dataFetched:val
+  }
+}

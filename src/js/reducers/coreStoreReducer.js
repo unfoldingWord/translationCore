@@ -30,7 +30,8 @@ module.exports = function coreStore(state, action) {
         case consts.DONE_LOADING:
             return {
                 ...state,
-                doneModules: 0
+                doneModules: 0,
+                doneLoading:true
             }
             break;
         case consts.UPDATE_NAMESPACE:
