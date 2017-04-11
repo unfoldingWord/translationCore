@@ -32,7 +32,9 @@ export const addVerseEdit = (before, after, tags, userName, context, saveLocatio
   let tokenizedFile = fileContents.split('\\v');
   for (let i = 0; i < tokenizedFile.length; i++) {
     let item = tokenizedFile[i];
-    if (parseInt(item.trim()[0]) === verse) {
+    let trimmedItem = item.trim();
+    let currentVerse = parseInt(trimmedItem.split(' ')[0]);
+    if (currentVerse === verse) {
       tokenizedFile[i] = " " + verse + " " + after + " ";
       break;
     }
