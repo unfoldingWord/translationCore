@@ -1,7 +1,8 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  groupIndex: []
+  groupIndex: [],
+  loadedFromFileSystem: false
 };
 
 const groupsIndexReducer = (state = initialState, action) => {
@@ -11,6 +12,12 @@ const groupsIndexReducer = (state = initialState, action) => {
         groupsIndex: action.groupsIndex
       });
     }
+    case consts.LOADED_GROUPS_INDEX_FROM_FS:
+      return {
+        ...state,
+        loadedFromFileSystem: action.val
+      }
+      break;
     default:
       return state;
   }

@@ -14,3 +14,10 @@ export const addGroupData = (groupId, groupsData) => {
     groupsData
   };
 };
+
+export const loadedGroupsDataFromFS = (allGroupsData) =>{
+  return {
+    type: consts.LOADED_GROUPS_DATA_FROM_FS,
+    allGroupsData
+  }
+}

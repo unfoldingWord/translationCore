@@ -23,3 +23,10 @@ export const setGroupsIndex = (groupsIndex) => {
     groupsIndex
   };
 };
+
+export const loadedGroupsIndexFromFS = (val) =>{
+  return {
+    type: consts.LOADED_GROUPS_INDEX_FROM_FS,
+    val
+  }
+}

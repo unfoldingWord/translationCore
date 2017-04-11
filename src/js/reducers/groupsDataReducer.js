@@ -1,7 +1,8 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  groupsData: {}
+  groupsData: {},
+  loadedFromFileSystem:false
 };
 
 const groupsDataReducer = (state = initialState, action) => {
@@ -14,6 +15,13 @@ const groupsDataReducer = (state = initialState, action) => {
           [action.groupId]: action.groupsData
         }
       };
+    case consts.LOADED_GROUPS_DATA_FROM_FS:
+      return {
+        ...state,
+        groupsData:action.allGroupsData,
+        loadedFromFileSystem: true
+      }
+      break;
     default:
       return state;
   }
