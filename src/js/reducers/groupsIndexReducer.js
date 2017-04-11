@@ -12,10 +12,10 @@ const groupsIndexReducer = (state = initialState, action) => {
         groupsIndex: action.groupsIndex
       });
     }
-    case consts.LOADED_GROUPS_INDEX_FROM_FS:
+    case consts.LOAD_GROUPS_INDEX_FROM_FS:
       return {
         ...state,
-        loadedFromFileSystem: action.val
+        loadedFromFileSystem: true
       }
       break;
     default:

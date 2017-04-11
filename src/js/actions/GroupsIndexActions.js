@@ -8,11 +8,11 @@ import consts from '../actions/CoreActionConsts';
  */
 export const setGroupsIndex = (groupsIndex) => {
   //Alphabetize the groups order
-  groupsIndex = groupsIndex.sort( (a, b) => {
-    if(a.id.toUpperCase() < b.id.toUpperCase()){
+  groupsIndex = groupsIndex.sort((a, b) => {
+    if (a.id.toUpperCase() < b.id.toUpperCase()) {
       return -1;
     }
-    if(a.id.toUpperCase() > b.id.toUpperCase()){
+    if (a.id.toUpperCase() > b.id.toUpperCase()) {
       return 1;
     }
     return 0;
@@ -24,9 +24,9 @@ export const setGroupsIndex = (groupsIndex) => {
   };
 };
 
-export const loadedGroupsIndexFromFS = (val) =>{
-  return {
-    type: consts.LOADED_GROUPS_INDEX_FROM_FS,
-    val
-  }
+export const loadGroupsIndexFromFS = (groups) => {
+  return ((dispatch) => {
+    dispatch(setGroupsIndex(groups))
+    dispatch({ type: consts.LOAD_GROUPS_INDEX_FROM_FS})
+  })
 }

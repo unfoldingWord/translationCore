@@ -15,9 +15,9 @@ export const addGroupData = (groupId, groupsData) => {
   };
 };
 
-export const loadedGroupsDataFromFS = (allGroupsData) =>{
+export const loadGroupsDataFromFS = (allGroupsData) =>{
   return {
-    type: consts.LOADED_GROUPS_DATA_FROM_FS,
+    type: consts.LOAD_GROUPS_DATA_FROM_FS,
     allGroupsData
   }
 }

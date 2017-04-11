@@ -15,7 +15,7 @@ const groupsDataReducer = (state = initialState, action) => {
           [action.groupId]: action.groupsData
         }
       };
-    case consts.LOADED_GROUPS_DATA_FROM_FS:
+    case consts.LOAD_GROUPS_DATA_FROM_FS:
       return {
         ...state,
         groupsData:action.allGroupsData,

@@ -267,41 +267,49 @@ export function loadGroupDataFromFileSystem(toolName) {
         let { projectSaveLocation, params } = projectDetailsStore;
         let dataFolder = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
         try {
-            let groupIndexObj = fs.readJsonSync(Path.join(dataFolder, 'index.json'))
-            dispatch(GroupsIndexActions.setGroupsIndex(groupIndexObj));
-            dispatch(GroupsIndexActions.loadedGroupsIndexFromFS(true));
-            let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
-            fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
-                if (!err) {
-                    var allGroupsObjects = {};
-                    var total = groupDataFolderObjs.length;
-                    var i = 1;
-                    for (var groupId in groupDataFolderObjs) {
-                        if (groupDataFolderObjs[groupId].split('.')[1] != 'json') {
-                            total--;
-                            continue;
-                        }
-                        let groupName = groupDataFolderObjs[groupId].split('.')[0];
-                        const saveGroup = (groupName, groupDataFolderPath) => {
-                            fs.readJson(Path.join(groupDataFolderPath, groupName + '.json'), (err, groupObj) => {
-                                if (!err) {
-                                    allGroupsObjects[groupName] = groupObj;
-                                    dispatch(LoaderActions.sendProgressForKey(i / total * 100));
-                                    i++;
-                                    if (i >= total) {
-                                        dispatch(GroupsDataActions.loadedGroupsDataFromFS(allGroupsObjects));
-                                        dispatch(CoreActionsRedux.changeModuleView('main'));
-                                    }
-                                }
-                            });
-                        }
-                        saveGroup(groupName, groupDataFolderPath);
-                    }
-                }
-            });
+            setGroupIndexInStore(dataFolder);
+            setGroupDataInStore(dataFolder);
         } catch (e) {
         }
     });
+}
+
+export function setGroupDataInStore(dataFolder, params) {
+    let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
+    fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
+        if (!err) {
+            var allGroupsObjects = {};
+            var total = groupDataFolderObjs.length;
+            var i = 1;
+            for (var groupId in groupDataFolderObjs) {
+                if (Path.extname(groupDataFolderObjs[groupId]) != 'json') {
+                    total--;
+                    continue;
+                }
+                let groupName = groupDataFolderObjs[groupId].split('.')[0];
+                const saveGroup = (groupName, groupDataFolderPath) => {
+                    fs.readJson(Path.join(groupDataFolderPath, groupName + '.json'), (err, groupObj) => {
+                        if (!err) {
+                            allGroupsObjects[groupName] = groupObj;
+                            dispatch(LoaderActions.sendProgressForKey(i / total * 100));
+                            i++;
+                            if (i >= total) {
+                                dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+                                dispatch(CoreActionsRedux.changeModuleView('main'));
+                            }
+                        }
+                    });
+                }
+                saveGroup(groupName, groupDataFolderPath);
+            }
+        } else throw err
+    });
+}
+
+export function setGroupIndexInStore(dataFolder) {
+    let groupIndexObj = fs.readJsonSync(Path.join(dataFolder, 'index.json'))
+    dispatch(GroupsIndexActions.setGroupsIndex(groupIndexObj));
+    dispatch(GroupsIndexActions.loadedGroupsIndexFromFS(true));
 }
 
 /**
