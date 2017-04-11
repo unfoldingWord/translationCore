@@ -270,7 +270,7 @@ export function loadGroupDataFromFileSystem(toolName) {
             dispatch(setGroupIndexInStore(dataFolder));
             dispatch(setGroupDataInStore(dataFolder, params));
         } catch (e) {
-            console.warn(e)
+            dispatch(CoreActionsRedux.changeModuleView('main'));
         }
     });
 }
