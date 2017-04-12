@@ -120,7 +120,7 @@ export function loadCurrentContextId() {
       let contextId
       try {
         let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
-        if (fs.existsSync()) {
+        if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath)
         } else {
           contextId = firstContextId(state)
