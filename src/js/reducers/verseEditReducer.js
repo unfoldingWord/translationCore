@@ -17,8 +17,11 @@ const verseEditReducer = (state = initialState, action) => {
         tags: action.tags,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp,
-        context: action.context,
-        saveLocation: action.saveLocation
+      });
+    case consts.ADD_VERSE_EDIT_STATUS:
+      return Object.assign({}, state, {
+        file: action.file,
+        pass: action.pass
       });
     default:
       return state;
