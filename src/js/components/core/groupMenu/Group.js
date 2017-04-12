@@ -59,7 +59,7 @@ class Group extends React.Component {
             progress={0.5}
             options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
             initialAnimate={false}
-            containerStyle={{ width: '20px', height: '20px', marginRight: '5px', float: 'left' }}
+            containerStyle={{ width: '20px', height: '20px', marginRight: '10px', float: 'left' }}
           />
           {this.props.groupIndex.name}
         </div>

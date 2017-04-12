@@ -9,7 +9,6 @@
         paddingLeft: '15px',
         cursor: "pointer",
         borderBottom: "1px solid #747474",
-        cursor: 'pointer',
         fontWeight: 'normal',
         color: 'white'
       },
@@ -29,7 +28,8 @@
     statusIcon: {
       correct: {
         color: '#4EBA67',
-        display: 'initial'
+        display: 'initial',
+        padding: '0 10px 0 20px'
       },
       flagged: {
         color: '#FDD910',
@@ -40,22 +40,29 @@
       },
       bookmark: {
         color: '#FFFFFF',
-        display: 'initial'
+        display: 'initial',
+        padding: '0 10px 0 20px'
+      },
+      blank: {
+        display: 'initial',
+        color: 'none',
+        padding: '0 25px 0 20px'
       }
     }
   },
 
   subMenuItem: {
     display: "block",
-    padding: "10px 10px 10px 15px",
+    padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid #333333",
     color: "#FFF",
+    backgroundColor: "#666666",
   },
 
   activeSubMenuItem:  {
     display: "block",
-    padding: "10px 10px 10px 15px",
+    padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid #333333",
     color: "#FFF",
