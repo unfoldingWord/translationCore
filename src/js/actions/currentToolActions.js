@@ -17,6 +17,13 @@ export const setToolName = (toolName) => {
   }
 }
 
+/**
+ * @description This action should be used to set whether or
+ * not a tool should run a 'fetchData' in the componentWillReceiveProps
+ * function
+ * 
+ * @param {boolean} val - Designates if the data has been fetched from a tool load
+ */
 export const setDataFetched = (val) => {
   return {
     type:consts.SET_DATA_FETCHED,
