@@ -1,6 +1,7 @@
 import consts from '../actions/CoreActionConsts';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import isEqual from 'lodash/isEqual'
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
 
@@ -44,7 +45,7 @@ function generateLoadPath(state, checkDataName) {
  * @param {string} loadPath - load path.
  * @return {object} returns the object loaded from the file system.
  */
-function loadCheckData(loadPath) {
+function loadCheckData(loadPath, contextId) {
   try {
     if (fs.existsSync(loadPath)) {
       let files = fs.readdirSync(loadPath);
@@ -56,15 +57,15 @@ function loadCheckData(loadPath) {
           // to get a value that is either negative, positive, or zero.
           return new Date(b) - new Date(a);
         }
-      });
-      sorted.forEach((file, index) => {
-        if (path.extname(file) === ext && index === files.length - 1) {
-          fileName = file;
-        }
-      });
-      let readPath = path.join(loadPath, fileName);
-      let checkDataObject = fs.readJsonSync(readPath);
-      return checkDataObject;
+      })
+      let checkDataObjects = sorted.map( file => {
+        let readPath = path.join(loadPath, file)
+        let checkDataObject = fs.readJsonSync(readPath)
+        return checkDataObject
+      }).filter( (checkDataObject, index) => {
+        return isEqual(checkDataObject.contextId, contextId)
+      })
+      return checkDataObjects[0]
     } else {
       return null;
     }
@@ -86,7 +87,7 @@ export function loadComments() {
   return (dispatch, getState) => {
     let state = getState();
     let loadPath = generateLoadPath(state, 'comments');
-    let commentsObject = loadCheckData(loadPath);
+    let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (commentsObject) {
       dispatch({
         type: consts.ADD_COMMENT,
@@ -114,7 +115,7 @@ export function loadReminders() {
   return (dispatch, getState) => {
     let state = getState();
     let loadPath = generateLoadPath(state, 'reminders');
-    let remindersObject = loadCheckData(loadPath);
+    let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (remindersObject) {
       dispatch({
         type: consts.SET_REMINDER,
@@ -142,7 +143,7 @@ export function loadSelections() {
   return (dispatch, getState) => {
     let state = getState();
     let loadPath = generateLoadPath(state, 'selections');
-    let selectionsObject = loadCheckData(loadPath);
+    let selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (selectionsObject) {
       dispatch({
         type: consts.CHANGE_SELECTIONS,
@@ -170,7 +171,7 @@ export function loadVerseEdit() {
   return (dispatch, getState) => {
     let state = getState();
     let loadPath = generateLoadPath(state, 'verseEdits');
-    let verseEditsObject = loadCheckData(loadPath);
+    let verseEditsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (verseEditsObject) {
       dispatch({
         type: consts.ADD_VERSE_EDIT,
