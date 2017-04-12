@@ -21,6 +21,8 @@ import * as ToolsActions from './ToolsActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as CurrentToolActions from './currentToolActions';
+import * as GroupsDataActions from './GroupsDataActions';
+import * as GroupsIndexActions from './GroupsIndexActions';
 
 import pathex from 'path-extra';
 import usfm from 'usfm-parser';
@@ -84,11 +86,11 @@ export function clearPreviousData() {
  * @description This method will set the corestore view for the corresponding module
  *
  */
-export function setModuleView(identifier, view){
+export function setModuleView(identifier, view) {
     return {
         type: consts.SAVE_MODULE_VIEW,
         identifier: identifier,
-        module:view
+        module: view
     }
 }
 
@@ -117,15 +119,13 @@ export function openProject(projectPath, projectLink) {
         if (!projectPath && !projectLink) return;
         const currentUser = getCurrentUser(getState());
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
-        let manifest;
-
         if (usfmFilePath) {
             //USFM detected, initiating separate loading process
             dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser));
         } else {
             //No USFM detected, initiating 'standard' loading process
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
-            manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+            let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
             if (!manifest && !manifest.tcInitialized) {
                 manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
@@ -135,8 +135,8 @@ export function openProject(projectPath, projectLink) {
                 }
             }
             dispatch(addLoadedProjectToStore(projectPath, manifest));
+            dispatch(displayToolsToLoad(manifest));
         }
-        dispatch(displayToolsToLoad(manifest));
     });
 }
 
@@ -163,6 +163,7 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
             manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
         }
         dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
+        dispatch(displayToolsToLoad(manifest));
     });
 }
 
@@ -186,7 +187,6 @@ export function addLoadedProjectToStore(projectPath, manifest) {
             //no finished_chunks in manifest
             dispatch(manifestError('No finished chunks specified in project manifest'))
         }
-        dispatch(loadProjectDataFromFileSystem(projectPath));
     });
 }
 
@@ -213,16 +213,6 @@ export function displayToolsToLoad(manifest) {
     })
 }
 
-/**
- * @description Loaded previous project data into the filesystem given a path.
- *
- * @param {string} projectPath - Path in which the project is being loaded from
- */
-export function loadProjectDataFromFileSystem(projectPath) {
-    return ((dispatch) => {
-        //TODO retrieve previous project data to put in store
-    });
-}
 
 
 
@@ -253,16 +243,91 @@ export function loadModuleAndDependencies(moduleFolderName) {
     return ((dispatch) => {
         try {
             dispatch({ type: consts.START_LOADING });
+            dispatch(CoreActionsRedux.changeModuleView(''));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
-            dispatch(CurrentToolActions.setToolName(dataObject.name))
-            dispatch(CoreActionsRedux.changeModuleView('main'));
+            dispatch(CurrentToolActions.setToolName(dataObject.name));
+            dispatch(loadGroupDataFromFileSystem(dataObject.name));
         } catch (e) {
             dispatch(errorLoadingProject(e));
         }
 
+    });
+}
+
+/*
+ * @description Loaded previous project data into the filesystem given a path.
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
+ */
+export function loadGroupDataFromFileSystem(toolName) {
+    return ((dispatch, getState) => {
+        const projectDetailsStore = getState().projectDetailsReducer;
+        let { projectSaveLocation, params } = projectDetailsStore;
+        let dataFolder = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
+        try {
+            dispatch(setGroupIndexInStore(dataFolder, params));
+        } catch (e) {
+            console.warn('failed loading group index')
+            dispatch(CoreActionsRedux.changeModuleView('main'));
+        }
+    });
+}
+
+export function setGroupDataInStore(dataFolder, params) {
+    return ((dispatch) => {
+        let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
+        fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
+            if (!err) {
+                var allGroupsObjects = {};
+                var total = groupDataFolderObjs.length;
+                var i = 0;
+                for (var groupId in groupDataFolderObjs) {
+                    if (Path.extname(groupDataFolderObjs[groupId]) != '.json') {
+                        total--;
+                        continue;
+                    }
+                    let groupName = groupDataFolderObjs[groupId].split('.')[0];
+                    const saveGroup = (groupName, groupDataFolderPath) => {
+                        fs.readJson(Path.join(groupDataFolderPath, groupName + '.json'), (err, groupObj) => {
+                            if (!err) {
+                                allGroupsObjects[groupName] = groupObj;
+                                setTimeout(() => {
+                                    dispatch(LoaderActions.sendProgressForKey(i / total * 100));
+                                    i++;
+                                    if (i >= total) {
+                                        dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+                                        dispatch(CoreActionsRedux.changeModuleView('main'));
+                                        console.log('Loaded group data from fs');
+                                    }
+                                }, 1)
+                            } else {
+                                console.warn('failed loading group data');
+                                dispatch(CoreActionsRedux.changeModuleView('main'));
+                            }
+                        });
+                    }
+                    saveGroup(groupName, groupDataFolderPath);
+                }
+            } else {
+                console.warn('failed loading group data')
+                dispatch(CoreActionsRedux.changeModuleView('main'));
+            }
+        });
+    });
+}
+
+export function setGroupIndexInStore(dataFolder, params) {
+    return ((dispatch) => {
+        fs.readJson(Path.join(dataFolder, 'index.json'), (err, groupIndexObj) => {
+            if (!err) {
+                dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
+                console.log('Loaded group index from fs');
+            } else console.warn('failed loading group index')
+            dispatch(setGroupDataInStore(dataFolder, params));
+        });
     });
 }
 
