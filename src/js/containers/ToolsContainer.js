@@ -88,8 +88,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleReminder: (userName) => {
         dispatch(toggleReminder(userName));
       },
-      addVerseEdit: (before, after, tags, userName, contextId, saveLocation) => {
-        dispatch(addVerseEdit(before, after, tags, userName, contextId, saveLocation));
+      addVerseEdit: (before, after, tags, userName) => {
+        dispatch(addVerseEdit(before, after, tags, userName));
       },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));

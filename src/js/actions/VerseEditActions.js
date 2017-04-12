@@ -58,10 +58,5 @@ export function editTargetVerseSource() {
     }
     let saveFile = tokenizedFile.join('\\v');
     fs.writeFileSync(writeFile, saveFile);
-    dispatch({
-      type: consts.ADD_VERSE_EDIT_STATUS,
-      pass: true,
-      file: saveFile
-    })
   });
 }
