@@ -40,7 +40,7 @@ export function editTargetVerseSource() {
     for (let i = 0; i < contents.length; i++) {
       let chunk = contents[i];
       let numChunk = parseInt(chunk.split('.txt')[0]);
-      if ((numChunk <= verse && contents[i+1] === undefined) || (numChunk <= verse && parseInt(contents[i+1].split('.txt')[0]) > verse)) {
+      if (numChunk <= verse && (contents[i + 1] === undefined || parseInt(contents[i + 1].split('.txt')[0]) > verse)) {
         writeFile = path.join(writeFolder, chunk);
         break;
       }
