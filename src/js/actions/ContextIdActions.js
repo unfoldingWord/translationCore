@@ -120,18 +120,19 @@ export function loadCurrentContextId() {
       let contextId
       try {
         let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
-        contextId = fs.readJsonSync(loadPath)
-      } catch (err) {
-        // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-        contextId = firstContextId(state)
-        console.warn(err)
-      }
-      if (contextId) {
+        if (fs.existsSync()) {
+          contextId = fs.readJsonSync(loadPath)
+        } else {
+          contextId = firstContextId(state)
+        }
         dispatch({
           type: consts.CHANGE_CURRENT_CONTEXT_ID,
           contextId
         })
         loadCheckData(dispatch)
+      } catch (err) {
+        // The object is undefined because the file wasn't found in the directory
+        console.warn(err)
       }
     }
   }
