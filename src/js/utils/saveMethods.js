@@ -219,7 +219,7 @@ export const saveGroupsIndex = state => {
       let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
       fs.outputJson(savePath, groupsIndex);
     } else {
-      throw('saveGroupsIndex: missing required data')
+      // saveGroupsIndex: missing required data
     }
   } catch (err) {
     console.warn(err);
@@ -244,7 +244,7 @@ export const saveGroupsData = state => {
         fs.outputJson(savePath, groupsData[groupID]);
       }
     } else {
-      throw('saveGroupsData: missing required data')
+      // saveGroupsData: missing required data
     }
   } catch (err) {
     console.warn(err);
@@ -264,7 +264,7 @@ export const saveContextId = (state, contextId) => {
       let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
       fs.outputJson(savePath, contextId)
     } else {
-      throw('saveCurrentContextId: missing required data')
+      // saveCurrentContextId: missing required data
     }
   } catch (err) {
     console.warn(err)

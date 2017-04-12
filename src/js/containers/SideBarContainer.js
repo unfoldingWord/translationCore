@@ -39,7 +39,7 @@ class SideBarContainer extends React.Component {
           <Grid fluid style={sideBarContainerStyle}>
             <Col style={
               {
-                width:"250px",
+                width: "250px",
                 position: "fixed",
                 padding: 0,
                 backgroundColor: "#333333",
