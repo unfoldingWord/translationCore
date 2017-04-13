@@ -16,7 +16,7 @@ const verseEditReducer = (state = initialState, action) => {
         after: action.after,
         tags: action.tags,
         userName: action.userName,
-        modifiedTimestamp: action.modifiedTimestamp,
+        modifiedTimestamp: action.modifiedTimestamp
       });
     default:
       return state;
