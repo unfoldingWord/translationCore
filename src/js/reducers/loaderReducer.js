@@ -3,7 +3,7 @@ import consts from '../actions/CoreActionConsts';
 const initialState = {
   show: false,
   progress: 0,
-  reloadContent:null
+  reloadContent: null
 };
 
 module.exports = (state = initialState, action) => {
@@ -16,20 +16,20 @@ module.exports = (state = initialState, action) => {
         ...state,
         progress: action.progress,
         reloadContent: action.reloadContent,
-        show:true
+        show: true
       }
       break;
-      case consts.DONE_LOADING: 
+    case consts.DONE_LOADING:
       return {
         ...state,
-        progress:0,
-        show:false
+        progress: 0,
+        show: false
       }
       break;
-      case consts.START_LOADING:
+    case consts.START_LOADING:
       return {
-        ...state, 
-         show:true
+        ...state,
+        show: true
       }
     default:
       return state;

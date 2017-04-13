@@ -23,6 +23,7 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
+import { resetProjectDetail } from './projectDetailsActions'
 
 import pathex from 'path-extra';
 import usfm from 'usfm-parser';
@@ -118,6 +119,7 @@ export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
         const currentUser = getCurrentUser(getState());
+        dispatch(resetProjectDetail());
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
         if (usfmFilePath) {
             //USFM detected, initiating separate loading process
@@ -131,7 +133,7 @@ export function openProject(projectPath, projectLink) {
             } else {
                 let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
                 if (oldManifest) {
-                    manifest = LoadHelpers.setUpManifest(projectPath, oldManifest);
+                    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
                 }
             }
             dispatch(addLoadedProjectToStore(projectPath, manifest));
@@ -242,8 +244,9 @@ export function manifestError(content) {
 export function loadModuleAndDependencies(moduleFolderName) {
     return ((dispatch) => {
         try {
+            dispatch(CoreActionsRedux.changeModuleView());
             dispatch({ type: consts.START_LOADING });
-            dispatch(CoreActionsRedux.changeModuleView(''));
+            dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
