@@ -88,22 +88,22 @@ var style = {
 
   slideButton: {
     float: "right",
-    marginTop: "100%",
+    marginTop: "50vh",
     zIndex: "999",
     color: "#fff",
-    backgroundColor: "#333333",
-    padding: "10px 5px 10px 0",
+    backgroundColor: "#000",
+    padding: "10px 0",
     marginRight: "-15px",
     borderRadius: "0 5px 5px 0"
   },
 
   slideButtonCollapsed: {
     float: "left",
-    marginTop: "100%",
+    marginTop: "50vh",
     zIndex: "999",
     color: "#fff",
-    backgroundColor: "#333333",
-    padding: "10px 5px 10px 0",
+    backgroundColor: "#000",
+    padding: "10px 0",
     marginRight: "-15px",
     borderRadius: "0 5px 5px 0"
   }

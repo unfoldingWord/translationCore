@@ -10,7 +10,7 @@ class GroupItem extends React.Component {
    * @return {component} statusGlyph - component to render
    */
   statusGlyph(selections, active) {
-    let statusGlyph = <div /> // blank as default, in case no data or not active
+    let statusGlyph = <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
     let { enabled } = this.props.remindersReducer //Is this check bookmarked?
     if (active && enabled) {
       statusGlyph = <Glyphicon glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />
