@@ -86,7 +86,11 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
     if (savePath) {
-      fs.outputJson(savePath, payload);
+      // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
+      // let's not overwrite files, so check to see if it exists.
+      if (!fs.existsSync(savePath)) {
+        fs.outputJson(savePath, payload);
+      }
     } else {
       // savePath is undefined
     }
