@@ -125,11 +125,13 @@ export function loadCurrentContextId() {
         } else {
           contextId = firstContextId(state)
         }
-        dispatch({
-          type: consts.CHANGE_CURRENT_CONTEXT_ID,
-          contextId
-        })
-        loadCheckData(dispatch)
+        if (contextId) {
+          dispatch({
+            type: consts.CHANGE_CURRENT_CONTEXT_ID,
+            contextId
+          })
+          loadCheckData(dispatch)
+        }
       } catch (err) {
         // The object is undefined because the file wasn't found in the directory
         console.warn(err)
