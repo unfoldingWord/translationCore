@@ -46,37 +46,40 @@ function generateLoadPath(state, checkDataName) {
  * @return {object} returns the object loaded from the file system.
  */
 function loadCheckData(loadPath, contextId) {
-  try {
-    if (fs.existsSync(loadPath)) {
-      let files = fs.readdirSync(loadPath);
-      let ext = '.json';
-      let fileName = '';
-      let sorted = files.sort((a, b) => {
-        if (path.extname(a) === ext && path.extname(b) === ext) {
-          // Turn strings into dates, and then subtract them
-          // to get a value that is either negative, positive, or zero.
-          return new Date(b) - new Date(a);
-        }
-      })
-      let checkDataObjects = sorted.map( file => {
+  let checkDataObject
+
+  if (loadPath && contextId && fs.existsSync(loadPath)) {
+    let files = fs.readdirSync(loadPath);
+
+    files = files.filter( file => { // filter the filenames to only use .json
+      return path.extname(file) === '.json'
+    })
+    let sorted = files.sort().reverse() // sort the files to use latest
+    let checkDataObjects = sorted.map( file => {
+      // get the json of all files to later filter by contextId
+      try {
         let readPath = path.join(loadPath, file)
-        let checkDataObject = fs.readJsonSync(readPath)
-        return checkDataObject
-      }).filter( (checkDataObject, index) => {
-        return isEqual(checkDataObject.contextId, contextId)
-      })
-      return checkDataObjects[0]
-    } else {
-      return null;
-    }
-  } catch (err) {
-    /**
-     * @description Will return undefined so that the load method returns and then
-     * dispatches an empty action object to initialized the reducer.
-     */
-    console.warn('No file found in the directory therefore an empty reducer will be initialiazed instead \n', err);
-    return undefined;
+        let _checkDataObject = fs.readJsonSync(readPath)
+        return _checkDataObject
+      } catch (err) {
+        console.warn('File exists but could not be loaded \n', err);
+        return undefined;
+      }
+    })
+    checkDataObjects = checkDataObjects.filter( _checkDataObject => {
+      // filter the checkDataObjects to only use the ones that match the current contextId
+      let keep = _checkDataObject && _checkDataObject.contextId.occurrence === contextId.occurrence
+      return keep
+    })
+    // return the first one since it is the latest modified one
+    checkDataObject = checkDataObjects[0]
   }
+  /**
+  * @description Will return undefined if checkDataObject was not populated
+  * so that the load method returns and then dispatches an empty action object
+  * to initialized the reducer.
+  */
+  return checkDataObject
 }
 /**
  * @description loads the latest comment file from the file system for the specify
