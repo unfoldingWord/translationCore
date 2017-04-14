@@ -7,7 +7,6 @@ export default class PopoverComponent extends Component {
     if (!popoverVisibility) {
       return (<div></div>);
     } else {
-      let testtitle = title.props.children[0].replace(" |", "");
       return (
         <div>
           <Popover
@@ -19,7 +18,7 @@ export default class PopoverComponent extends Component {
             onRequestClose={onClosePopover}
           >
             <span style={{padding: '0 10px'}}>
-              {testtitle}
+              {title}
             </span>
             <Divider />
             <span style={{padding: '0 20px'}}>
