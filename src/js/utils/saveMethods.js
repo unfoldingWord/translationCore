@@ -86,7 +86,11 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
     if (savePath) {
-      fs.outputJson(savePath, payload);
+      // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
+      // let's not overwrite files, so check to see if it exists.
+      if (!fs.existsSync(savePath)) {
+        fs.outputJson(savePath, payload);
+      }
     } else {
       // savePath is undefined
     }
@@ -218,6 +222,8 @@ export const saveGroupsIndex = state => {
     if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
       let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
       fs.outputJson(savePath, groupsIndex);
+    } else {
+      // saveGroupsIndex: missing required data
     }
   } catch (err) {
     console.warn(err);
@@ -241,8 +247,30 @@ export const saveGroupsData = state => {
         let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
         fs.outputJson(savePath, groupsData[groupID]);
       }
+    } else {
+      // saveGroupsData: missing required data
     }
   } catch (err) {
     console.warn(err);
+  }
+};
+/**
+ * @description saves the contextId data.
+ * @param {object} state - store state object.
+ */
+export const saveContextId = (state, contextId) => {
+  try {
+    let {projectSaveLocation} = state.projectDetailsReducer
+    let toolName = contextId ? contextId.tool : undefined
+    let bookId = contextId ? contextId.reference.bookId : undefined
+    if (projectSaveLocation && toolName && bookId) {
+      let fileName = "contextId.json"
+      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
+      fs.outputJson(savePath, contextId)
+    } else {
+      // saveCurrentContextId: missing required data
+    }
+  } catch (err) {
+    console.warn(err)
   }
 };

@@ -31,3 +31,9 @@ export const setProjectDetail = (key, value) => {
     value
   };
 };
+
+export const resetProjectDetail = () => {
+    return {
+    type: 'RESET_PROJECT_DETAIL'
+  };
+}

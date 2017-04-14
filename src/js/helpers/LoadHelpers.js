@@ -166,7 +166,7 @@ export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
  * @param {objet} user - The current user loaded
  */
 export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
-    const name = user.username;
+    const name = user ? user.username : 'Unknown';
     const defaultManifest = {
         "source_translations": [
             {

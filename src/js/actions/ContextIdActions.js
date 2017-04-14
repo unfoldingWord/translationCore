@@ -1,7 +1,12 @@
+import fs from 'fs-extra'
+import path from 'path-extra'
+
 import consts from './CoreActionConsts'
 import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers'
 import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions'
+import {saveContextId} from '../utils/saveMethods'
 
+const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
 
 function loadCheckData(dispatch) {
   dispatch(loadComments());
@@ -9,7 +14,6 @@ function loadCheckData(dispatch) {
   dispatch(loadSelections());
   dispatch(loadVerseEdit());
 }
-
 
 /**
  * @description this action changes the contextId to the current check.
@@ -22,34 +26,29 @@ export const changeCurrentContextId = contextId => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
-    loadCheckData(dispatch);
-  });
+    loadCheckData(dispatch)
+    let state = getState()
+    saveContextId(state, contextId)
+  })
 }
 /**
  * @description this action changes the contextId to the first check.
  * @return {object} New state for contextId reducer.
  */
-export const changeToFirstContextId = () => {
-  return ((dispatch, getState) => {
-    let state = getState()
-    let {contextId} = state.contextIdReducer
-    let {groupsIndex} = state.groupsIndexReducer
-    let {groupsData} = state.groupsDataReducer
-    if (!!groupsIndex && !!groupsData && !contextId) {
-      let valid = false, i = 0
-      while (!valid && i < groupsIndex.length-1) {
-        let groupId = groupsIndex[i].id
-        let groupData = groupsData[groupId]
-        if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId
-        valid = !!contextId
-      }
-      dispatch({
-        type: consts.CHANGE_CURRENT_CONTEXT_ID,
-        contextId
-      })
-      loadCheckData(dispatch);
+function firstContextId(state) {
+  let {contextId} = state.contextIdReducer
+  let {groupsIndex} = state.groupsIndexReducer
+  let {groupsData} = state.groupsDataReducer
+  if (!!groupsIndex && !!groupsData && !contextId) {
+    let valid = false, i = 0
+    while (!valid && i < groupsIndex.length-1) {
+      let groupId = groupsIndex[i].id
+      let groupData = groupsData[groupId]
+      if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId
+      valid = !!contextId
     }
-  })
+    return contextId
+  }
 }
 
 export const changeToNextContextId = () => {
@@ -75,7 +74,7 @@ export const changeToNextContextId = () => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
-    loadCheckData(dispatch);
+    loadCheckData(dispatch)
   })
 }
 
@@ -102,6 +101,41 @@ export const changeToPreviousContextId = () => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
-    loadCheckData(dispatch);
+    loadCheckData(dispatch)
   })
+}
+/**
+ * @description loads the latest contextId file from the file system.
+ * @return {object} Dispatches an action that loads the contextId with data.
+ */
+export function loadCurrentContextId() {
+  return (dispatch, getState) => {
+    let state = getState();
+    let {projectSaveLocation, params} = state.projectDetailsReducer
+    let {toolName} = state.currentToolReducer
+    let bookId = params ? params.bookAbbr : undefined
+    let fileName = "contextId.json"
+
+    if (projectSaveLocation && toolName && bookId) {
+      let contextId
+      try {
+        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
+        if (fs.existsSync(loadPath)) {
+          contextId = fs.readJsonSync(loadPath)
+        } else {
+          contextId = firstContextId(state)
+        }
+        if (contextId) {
+          dispatch({
+            type: consts.CHANGE_CURRENT_CONTEXT_ID,
+            contextId
+          })
+          loadCheckData(dispatch)
+        }
+      } catch (err) {
+        // The object is undefined because the file wasn't found in the directory
+        console.warn(err)
+      }
+    }
+  }
 }
