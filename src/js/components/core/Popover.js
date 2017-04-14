@@ -7,21 +7,22 @@ export default class PopoverComponent extends Component {
     if (!popoverVisibility) {
       return (<div></div>);
     } else {
+      let testtitle = title.props.children[0].replace(" |", "");
       return (
         <div>
           <Popover
-            style={{padding: '10px 0px 10px 0px', backgroundColor: "#f5f5f5"}}
+            style={{padding: '10px 0', backgroundColor: "#f5f5f5"}}
             open={popoverVisibility}
             anchorEl={positionCoord}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
             targetOrigin={{horizontal: 'left', vertical: 'top'}}
             onRequestClose={onClosePopover}
           >
-            <span style={{padding: '10px'}}>
-              {title}
+            <span style={{padding: '0 10px'}}>
+              {testtitle}
             </span>
             <Divider />
-            <span style={{padding: '15px'}}>
+            <span style={{padding: '0 20px'}}>
               {bodyText}
             </span>
           </Popover>
