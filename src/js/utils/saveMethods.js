@@ -110,6 +110,12 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
   }
 }
 
+/**
+ *@description recursively generetes directory to fix windows specific issue.
+ *@param {string} path - filepath of where you want to create a directory
+ *@param {function} callback - callback function.
+ */
+
 function mkdirRecursive(path, callback) {
   let controlledPaths = []
   let paths = path.split(
