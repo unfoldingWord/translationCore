@@ -5,6 +5,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration
+const mkdirp = require('mkdirp')
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
@@ -85,22 +86,31 @@ export const saveResources = state => {
 function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
     console.log("---saveData CALLED!---")
-    console.log("state is: ", state)
-    console.log("checkDataName is: ", checkDataName)
-    console.log("payload is: ", payload)
-    console.log("modifiedTimestamp is: ", modifiedTimestamp)
 
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
-    console.log("savePath: ", savePath)
-    console.log("savePath is a: ", typeof savePath)
     if (savePath !== undefined) {
+      console.log("savePath: ", savePath)
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
       if (fs.existsSync(savePath)) {
         fs.writeJson(savePath, payload, err => {console.log(err)});
       } else {
-        fs.mkdirSync(savePath);
-        fs.writeJson(savePath, payload, err => {console.log(err)});
+        console.log("the file did not exist!")
+        mkdirp(savePath, err => {
+          console.log("we made it to mkdirps callback")
+          if (err){
+            console.error(err)
+          } else {
+            fs.writeJson(savePath, payload, err => {
+              console.log("we made it to the writejson callback")
+              if (err) {
+                console.error(err)
+              } else {
+                console.log("Successfully wrote JSON to: ", savePath)
+              }
+            })
+          }
+        })
       }
     } else {
       //no savepath
