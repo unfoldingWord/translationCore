@@ -5,7 +5,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration
-const mkdirp = require('mkdirp')
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
@@ -95,17 +94,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
       if (fs.existsSync(savePath)) {
         fs.writeJson(savePath, payload, err => {console.log(err)});
       } else {
-        // mkdirp(savePath, err =>{if(err) console.error(err)});
         fs.outputJson(savePath, payload, err => {console.log(err)});
-        // mkdirp(savePath, function(err) {
-        //   if (err) {
-        //     console.error(err)
-        //   } else {
-        //     fs.writeJson(savePath, payload, err => {
-        //       if (err) console.error(err)
-        //     })
-        //   }
-        // })
       }
     } else {
       //no savepath
