@@ -84,19 +84,53 @@ export const saveResources = state => {
  */
 function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
+    console.log("---saveData CALLED!---")
+    console.log("state is: ", state)
+    console.log("checkDataName is: ", checkDataName)
+    console.log("payload is: ", payload)
+    console.log("modifiedTimestamp is: ", modifiedTimestamp)
+
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
-    if (savePath) {
+    console.log("savePath: ", savePath)
+    console.log("savePath is a: ", typeof savePath)
+    if (savePath !== undefined) {
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
-      if (!fs.existsSync(savePath)) {
-        fs.outputJson(savePath, payload);
+      if (fs.existsSync(savePath)) {
+        fs.writeJson(savePath, payload, err => {console.log(err)});
+      } else {
+        fs.mkdirSync(savePath);
+        fs.writeJson(savePath, payload, err => {console.log(err)});
       }
     } else {
-      // savePath is undefined
+      //no savepath
     }
   } catch (err) {
     console.warn(err);
   }
+}
+
+function mkdirRecursive(path, callback) {
+  let controlledPaths = []
+  let paths = path.split(
+    '/' // Put each path in an array
+  ).filter(
+    p => p != '.' // Skip root path indicator (.)
+  ).reduce((memo, item) => {
+    // Previous item prepended to each item so we preserve realpaths
+    const prevItem = memo.length > 0 ? memo.join('/').replace(/\.\//g, '')+'/' : ''
+    controlledPaths.push('./'+prevItem+item)
+    return [...memo, './'+prevItem+item]
+  }, []).map(dir => {
+    fs.mkdir(dir, err => {
+      if (err && err.code != 'EEXIST') throw err
+      // Delete created directory (or skipped) from controlledPath
+      controlledPaths.splice(controlledPaths.indexOf(dir), 1)
+      if (controlledPaths.length === 0) {
+        return callback()
+      }
+    })
+  })
 }
 
 /**
