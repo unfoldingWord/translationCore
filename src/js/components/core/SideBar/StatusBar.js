@@ -35,7 +35,7 @@ class StatusBar extends React.Component {
         break;
       case 4:
         this.setState({ pressed: tab });
-        this.props.open(2, 4, true);
+        this.props.open(1, 1, true);
         break;
       default:
         this.setState({ pressed: 0 });
@@ -56,7 +56,7 @@ class StatusBar extends React.Component {
         overflow: 'hidden',
         height: '100%'
       },
-      child: {
+      home: {
         width: 'auto',
         float: 'left',
         color: 'white',
@@ -69,9 +69,35 @@ class StatusBar extends React.Component {
         backgroundColor: '#333333',
         height: '100%'
       },
-      childActive: {
+      homeActive: {
         width: 'auto',
         float: 'left',
+        color: 'white',
+        paddingLeft: 30,
+        paddingRight: 30,
+        width: 'auto',
+        minWidth: '200px',
+        border: 0,
+        outline: 'none',
+        backgroundColor: '#0277BD',
+        height: '100%'
+      },
+      child: {
+        width: 'auto',
+        float: 'right',
+        color: 'white',
+        paddingLeft: 30,
+        paddingRight: 30,
+        width: 'auto',
+        minWidth: '200px',
+        border: 0,
+        outline: 'none',
+        backgroundColor: '#333333',
+        height: '100%'
+      },
+      childActive: {
+        width: 'auto',
+        float: 'right',
         color: 'white',
         paddingLeft: 30,
         paddingRight: 30,
@@ -95,9 +121,9 @@ class StatusBar extends React.Component {
           <div style={styles.childRight}>
             <OnlineStatus {...this.props}/>
           </div>
-          <button onMouseOver={()=>this.onHover(1)} onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1  && this.state.hovered != 1 ? styles.child : styles.childActive}>
-            <img src="images/TC_Icon_White.png" style={{ marginRight: 5, height: 17, width: 17 }} />
-            Application
+          <button onMouseOver={()=>this.onHover(1)} onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1  && this.state.hovered != 1 ? styles.home : styles.homeActive}>
+            <Glyphicon glyph={"home"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
+            Home
           </button>
           <button onMouseOver={()=>this.onHover(2)} onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 && this.state.hovered  != 2 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
@@ -110,8 +136,8 @@ class StatusBar extends React.Component {
             </div>
           </button>
           <button  onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
-            <Glyphicon glyph={"list-alt"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
-            Report
+            <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
+            User: {this.props.currentUser}
           </button>
         </div>
       </div>
