@@ -89,27 +89,22 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
 
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
     if (savePath !== undefined) {
+      savePath = savePath.replace(/[:"]/g, '_')
       console.log("savePath: ", savePath)
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
       if (fs.existsSync(savePath)) {
         fs.writeJson(savePath, payload, err => {console.log(err)});
       } else {
-        console.log("the file did not exist!")
-        mkdirp(savePath, err => {
-          console.log("we made it to mkdirps callback")
-          if (err){
+        mkdirp(savePath, function(err) {
+          if (err) {
             console.error(err)
           } else {
-            fs.writeJson(savePath, payload, err => {
-              console.log("we made it to the writejson callback")
-              if (err) {
-                console.error(err)
-              } else {
-                console.log("Successfully wrote JSON to: ", savePath)
-              }
-            })
+            console.log("pow!")
           }
+        })
+        fs.writeJson(savePath, payload, err => {
+          if (err) console.error(err)
         })
       }
     } else {
