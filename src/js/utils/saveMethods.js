@@ -89,23 +89,23 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
 
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
     if (savePath !== undefined) {
-      savePath = savePath.replace(/[:"]/g, '_')
       console.log("savePath: ", savePath)
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
       if (fs.existsSync(savePath)) {
         fs.writeJson(savePath, payload, err => {console.log(err)});
       } else {
-        mkdirp(savePath, function(err) {
-          if (err) {
-            console.error(err)
-          } else {
-            console.log("pow!")
-          }
-        })
-        fs.writeJson(savePath, payload, err => {
-          if (err) console.error(err)
-        })
+        // mkdirp(savePath, err =>{if(err) console.error(err)});
+        fs.outputJson(savePath, payload, err => {console.log(err)});
+        // mkdirp(savePath, function(err) {
+        //   if (err) {
+        //     console.error(err)
+        //   } else {
+        //     fs.writeJson(savePath, payload, err => {
+        //       if (err) console.error(err)
+        //     })
+        //   }
+        // })
       }
     } else {
       //no savepath
@@ -178,7 +178,7 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
           bookAbbreviation,
           chapter,
           verse,
-          fileName
+          fileName.replace(/[:"]/g, '_')
       );
       return savePath;
     }
