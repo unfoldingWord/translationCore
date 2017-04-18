@@ -31,6 +31,16 @@
         display: 'initial',
         padding: '0 10px 0 20px'
       },
+      comment: {
+        color: '#f9c000',
+        display: 'initial',
+        padding: '0 10px 0 20px'
+      },
+      verseEdit: {
+        color: '#FFFFFF',
+        display: 'initial',
+        padding: '0 10px 0 20px'
+      },
       flagged: {
         color: '#FDD910',
         display: 'initial'

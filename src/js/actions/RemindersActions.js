@@ -7,9 +7,18 @@ import {generateTimestamp} from '../helpers/index';
  * @return {object} action state.
  */
 export const toggleReminder = userName => {
-  return {
-    type: consts.TOGGLE_REMINDER,
-    modifiedTimestamp: generateTimestamp(),
-    userName
-  };
+  return ((dispatch, getState) => {
+    let state = getState()
+    let contextId = state.contextIdReducer.contextId
+
+    dispatch({
+      type: consts.TOGGLE_REMINDER,
+      modifiedTimestamp: generateTimestamp(),
+      userName
+    });
+    dispatch({
+      type: consts.TOGGLE_REMINDERS_IN_GROUPDATA,
+      contextId
+    });
+  });
 };

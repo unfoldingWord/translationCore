@@ -1,4 +1,5 @@
-import consts from '../actions/CoreActionConsts';
+import consts from '../actions/CoreActionConsts'
+import {getToggledGroupData} from '../helpers/getToggledGroupData'
 
 const initialState = {
   groupsData: {},
@@ -20,8 +21,39 @@ const groupsDataReducer = (state = initialState, action) => {
         ...state,
         groupsData: action.allGroupsData,
         loadedFromFileSystem: true
-      }
-      break;
+      };
+    case consts.TOGGLE_REMINDERS_IN_GROUPDATA:
+      return {
+        ...state,
+        groupsData: {
+          ...state.groupsData,
+          [action.contextId.groupId]: getToggledGroupData(state, action, "reminders")
+        }
+      };
+    case consts.TOGGLE_SELECTIONS_IN_GROUPDATA:
+      return {
+        ...state,
+        groupsData: {
+          ...state.groupsData,
+          [action.contextId.groupId]: getToggledGroupData(state, action, "selections")
+        }
+      };
+    case consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA:
+      return {
+        ...state,
+        groupsData: {
+          ...state.groupsData,
+          [action.contextId.groupId]: getToggledGroupData(state, action, "verseEdits")
+        }
+      };
+    case consts.TOGGLE_COMMENTS_IN_GROUPDATA:
+      return {
+        ...state,
+        groupsData: {
+          ...state.groupsData,
+          [action.contextId.groupId]: getToggledGroupData(state, action, "comments")
+        }
+      };
     case consts.CLEAR_OLD_GROUPS:
       return initialState;
     default:
