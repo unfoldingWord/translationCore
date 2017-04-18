@@ -85,18 +85,47 @@ export const saveResources = state => {
 function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
     let savePath = generateSavePath(state, checkDataName, modifiedTimestamp);
-    if (savePath) {
+    if (savePath !== undefined) {
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
       if (!fs.existsSync(savePath)) {
-        fs.outputJson(savePath, payload);
+        fs.outputJson(savePath, payload, err => {console.log(err)});
       }
     } else {
-      // savePath is undefined
+      //no savepath
     }
   } catch (err) {
     console.warn(err);
   }
+}
+
+/**
+ *@description recursively generetes directory to fix windows specific issue.
+ *@param {string} path - filepath of where you want to create a directory
+ *@param {function} callback - callback function.
+ */
+
+function mkdirRecursive(path, callback) {
+  let controlledPaths = []
+  let paths = path.split(
+    '/' // Put each path in an array
+  ).filter(
+    p => p != '.' // Skip root path indicator (.)
+  ).reduce((memo, item) => {
+    // Previous item prepended to each item so we preserve realpaths
+    const prevItem = memo.length > 0 ? memo.join('/').replace(/\.\//g, '')+'/' : ''
+    controlledPaths.push('./'+prevItem+item)
+    return [...memo, './'+prevItem+item]
+  }, []).map(dir => {
+    fs.mkdir(dir, err => {
+      if (err && err.code != 'EEXIST') throw err
+      // Delete created directory (or skipped) from controlledPath
+      controlledPaths.splice(controlledPaths.indexOf(dir), 1)
+      if (controlledPaths.length === 0) {
+        return callback()
+      }
+    })
+  })
 }
 
 /**
@@ -133,7 +162,7 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
           bookAbbreviation,
           chapter,
           verse,
-          fileName
+          fileName.replace(/[:"]/g, '_')
       );
       return savePath;
     }
