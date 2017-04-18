@@ -39,8 +39,8 @@ function firstContextId(state) {
   let {contextId} = state.contextIdReducer
   let {groupsIndex} = state.groupsIndexReducer
   let {groupsData} = state.groupsDataReducer
-  var groupsIndexEmpty = groupsIndex.length === 0;
-  var groupsDataEmpty = Object.keys(groupsData).length === 0;
+  let groupsIndexEmpty = groupsIndex.length === 0;
+  let groupsDataEmpty = Object.keys(groupsData).length === 0;
   if (!groupsIndexEmpty && !groupsDataEmpty && !contextId) {
     let valid = false, i = 0
     while (!valid && i < groupsIndex.length-1) {
