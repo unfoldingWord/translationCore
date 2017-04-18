@@ -92,7 +92,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
         fs.outputJson(savePath, payload, err => {console.log(err)});
       }
     } else {
-      //no savepath
+      // no savepath
     }
   } catch (err) {
     console.warn(err);

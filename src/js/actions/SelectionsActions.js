@@ -9,10 +9,20 @@ import {generateTimestamp} from '../helpers/index';
  *                    a selection array, and a username.
  ******************************************************************************/
 export const changeSelections = (selections, userName) => {
-  return {
-    type: consts.CHANGE_SELECTIONS,
-    modifiedTimestamp: generateTimestamp(),
-    selections,
-    userName
-  };
+  return ((dispatch, getState) => {
+    let state = getState()
+    let contextId = state.contextIdReducer.contextId
+
+    dispatch({
+      type: consts.CHANGE_SELECTIONS,
+      modifiedTimestamp: generateTimestamp(),
+      selections,
+      userName
+    });
+    dispatch({
+      type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
+      contextId,
+      selections
+    });
+  });
 };

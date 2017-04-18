@@ -13,6 +13,8 @@ import path from 'path-extra';
  */
 export const addVerseEdit = (before, after, tags, userName) => {
   return ((dispatch, getState) => {
+    let state = getState()
+    let contextId = state.contextIdReducer.contextId
     dispatch({
       type: consts.ADD_VERSE_EDIT,
       before,
@@ -20,6 +22,10 @@ export const addVerseEdit = (before, after, tags, userName) => {
       tags,
       userName,
       modifiedTimestamp: generateTimestamp()
+    });
+    dispatch({
+      type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+      contextId
     });
     dispatch(editTargetVerseSource());
   });

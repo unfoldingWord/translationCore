@@ -10,15 +10,16 @@ class Group extends React.Component {
 /**
  * @description filters groupData from groupsData to the this groupId
  * @param {array} groupsData - array of all groupData objects
+ * @param {string} groupId - string name of a group.
  * @return {array} groupData - array of groupData objects
  */
- groupData(groupsData, groupId) {
-   let groupData
-   if (groupsData !== undefined) {
-     groupData = groupsData[groupId]
-   }
-   return groupData
- }
+  groupData(groupsData, groupId) {
+    let groupData
+    if (groupsData !== undefined) {
+      groupData = groupsData[groupId]
+    }
+    return groupData
+  }
 /**
  * @description Maps all groupData aka check objects to GroupItem components
  * @param {array} groupsData - array of all groupData objects

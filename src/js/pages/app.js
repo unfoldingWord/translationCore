@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import CoreActions from '../actions/CoreActions.js';
 import * as recentProjectActions from '../actions/RecentProjectsActions.js';
 import * as CoreActionsRedux from '../actions/CoreActionsRedux.js';
@@ -9,16 +8,11 @@ import NotificationContainer from '../containers/NotificationContainer';
 import CheckStore from '../stores/CheckStore.js';
 import { connect } from 'react-redux';
 import pathex from 'path-extra';
-let PARENT = pathex.datadir('translationCore');
-let PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-import bootstrap from 'react-bootstrap';
 import CryptoJS from "crypto-js";
 import gogs from '../components/core/login/GogsApi.js';
 import sync from '../components/core/SideBar/GitSync.js';
 import { remote } from 'electron';
-let dialog = remote.dialog;
 import path from 'path-extra';
-let defaultSave = path.join(path.homedir(), 'translationCore');
 import { shell } from 'electron';
 import fs from 'fs-extra';
 import KonamiContainer from "../containers/KonamiContainer.js";
@@ -26,18 +20,18 @@ import StatusBarContainer from '../containers/StatusBarContainer';
 import SideBarContainer from '../containers/SideBarContainer';
 import LoaderContainer from '../containers/LoaderContainer';
 import RootStyles from './RootStyle';
-import Grid from 'react-bootstrap/lib/Grid.js';
-import Button from 'react-bootstrap/lib/Button.js';
-import Row from 'react-bootstrap/lib/Row.js';
-import Col from 'react-bootstrap/lib/Col.js';
+import {Grid, Button, Row, Col } from 'react-bootstrap';
 import loadOnline from '../components/core/LoadOnline';
 import RecentProjects from '../components/core/RecentProjects';
 import Welcome from '../components/core/welcome/welcome';
 import AlertModalContainer from '../containers/AlertModalContainer';
-let api = window.ModuleApi;
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
+// constant declarations
+const api = window.ModuleApi;
+const dialog = remote.dialog;
+
 
 var Main = React.createClass({
   componentWillMount() {
@@ -117,6 +111,7 @@ var Main = React.createClass({
   },
 
   render: function () {
+    console.log(this.props)
     return (
       <div className='fill-height'>
         <KonamiContainer />
@@ -156,7 +151,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return state;
 }
 

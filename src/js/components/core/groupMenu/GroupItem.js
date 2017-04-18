@@ -5,32 +5,58 @@ import style from './Style'
 class GroupItem extends React.Component {
   /**
    * @description Generate the proper glyphicon based on selections
-   * @param {array} selections - array of selection objects
-   * @param {bool} active - whether or not the group is active/current
    * @return {component} statusGlyph - component to render
    */
-  statusGlyph(selections, active) {
-    let statusGlyph = <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
-    let { enabled } = this.props.remindersReducer //Is this check bookmarked?
-    if (active && enabled) {
-      statusGlyph = <Glyphicon glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />
-    } else if (active && selections.length > 0) {
-      statusGlyph = <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
+  statusGlyph() {
+    let statusBooleans = this.getGroupData()
+    let {comments, reminders, selections, verseEdits} = statusBooleans
+    console.log(comments, reminders, selections, verseEdits)
+    let statusGlyph = (
+      <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
+    )
+    if (reminders) {
+      statusGlyph = (
+        <Glyphicon glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />
+      )
+    } else if (selections) {
+      statusGlyph = (
+        <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
+      )
+    } else if (verseEdits) {
+      statusGlyph = (
+        <Glyphicon glyph="pencil" style={style.menuItem.statusIcon.verseEdit} />
+      )
+    } else if (comments) {
+      statusGlyph = (
+        <Glyphicon glyph="comment" style={style.menuItem.statusIcon.comment} />
+      )
     }
     return statusGlyph
   }
+/**
+ * @description gets the group data for the groupItem.
+ * @return {object} groud data object.
+ */
+  getGroupData() {
+    let {groupsData} = this.props.groupsDataReducer
+    let groupId = this.props.groupIndex.id
+
+    let groupData = groupsData[groupId].filter(groupData => {
+      return groupData.contextId == this.props.contextId
+    })
+
+    return groupData[0]
+  }
 
   render() {
-    let {selections} = this.props.selectionsReducer
     let {reference} = this.props.contextId
-
     let active = this.props.contextId == this.props.contextIdReducer.contextId
 
     return (
       <div onClick={() => this.props.actions.changeCurrentContextId(this.props.contextId)}
           style={active ? style.activeSubMenuItem : style.subMenuItem}
           title="Click to select this check">
-          {this.statusGlyph(selections, active)}
+          {this.statusGlyph()}
           {" " + this.props.projectDetailsReducer.bookName + " " + reference.chapter + ":" + reference.verse}
       </div>
     );
