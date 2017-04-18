@@ -1,40 +1,10 @@
-import consts from '../actions/CoreActionConsts';
+import consts from '../actions/CoreActionConsts'
+import getToggledGroupData from '../helpers/getToggledGroupData'
 
 const initialState = {
   groupsData: {},
   loadedFromFileSystem: false
 };
-
-const getToggledGroupData = (state, action, label) => {
-  let groupData = state.groupsData[action.contextId.groupId]
-  let groupObject = groupData.find(groupObject => {
-    return groupObject.contextId === action.contextId
-  })
-  let index = groupData.indexOf(groupObject)
-  switch (label) {
-    case "comments":
-      if (action.text.length > 0) {
-        groupData[index][label] = true;
-      } else {
-        groupData[index][label] = false;
-      }
-      break;
-    case "reminders":
-      groupData[index][label] = !groupData[index][label];
-      break;
-    case "selections":
-      if (action.selections.length > 0) {
-        groupData[index][label] = true;
-      } else {
-        groupData[index][label] = false;
-      }
-      break;
-    default:
-      groupData[index][label] = true;
-      break;
-  }
-  return groupData
-}
 
 const groupsDataReducer = (state = initialState, action) => {
   switch (action.type) {
