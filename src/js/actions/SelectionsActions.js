@@ -8,7 +8,7 @@ import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
  * @param {String} userName - The username of the author of the selection.
  * @return {Object} - An action object, consiting of a timestamp, action type,
  *                    a selection array, and a username.
- ******************************************************************************/
+ */
 export const changeSelections = (selections, userName) => {
   return ((dispatch, getState) => {
     let state = getState()
@@ -33,7 +33,7 @@ export const changeSelections = (selections, userName) => {
  * @param {String} userName - The username of the author of the selection.
  * @return {Object} - An action object, consiting of a timestamp, action type,
  *                    a selection array, and a username.
- ******************************************************************************/
+ */
 export const validateSelections = (targetVerse) => {
   return ((dispatch, getState) => {
     const state = getState();
