@@ -10,7 +10,6 @@ class GroupItem extends React.Component {
   statusGlyph() {
     let statusBooleans = this.getGroupData()
     let {comments, reminders, selections, verseEdits} = statusBooleans
-    console.log(comments, reminders, selections, verseEdits)
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
     )
