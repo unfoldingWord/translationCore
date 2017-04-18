@@ -111,7 +111,7 @@ var Main = React.createClass({
   },
 
   render: function () {
-    console.log(this.props)
+
     return (
       <div className='fill-height'>
         <KonamiContainer />
