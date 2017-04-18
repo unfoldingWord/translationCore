@@ -6,7 +6,7 @@ import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
 import { addComment } from '../actions/CommentsActions.js';
 import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
-import { changeSelections } from '../actions/SelectionsActions.js';
+import { changeSelections, validateSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
@@ -83,8 +83,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       changeSelections: (selections, userName) => {
         dispatch(changeSelections(selections, userName));
       },
-      removeSelections: (text, userName) => {
-        dispatch(removeSelections(text, userName));
+      validateSelections: (targetVerse) => {
+        dispatch(validateSelections(targetVerse));
       },
       toggleReminder: (userName) => {
         dispatch(toggleReminder(userName));
