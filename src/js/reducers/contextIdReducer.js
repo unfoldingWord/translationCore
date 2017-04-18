@@ -10,6 +10,8 @@ const contextIdReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         contextId: action.contextId
       });
+    case consts.CLEAR_CONTEXT_ID:
+      return initialState;
     default:
       return state;
   }

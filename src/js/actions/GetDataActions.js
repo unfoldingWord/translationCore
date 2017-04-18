@@ -78,9 +78,11 @@ export function setProjectParams(params) {
  *
  */
 export function clearPreviousData() {
-    return {
-        type: consts.CLEAR_PREVIOUS_DATA
-    }
+    return ((dispatch) => {
+        dispatch(resetProjectDetail());
+        dispatch({ type: consts.CLEAR_OLD_GROUPS });
+        dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    })
 }
 
 /**
@@ -118,8 +120,8 @@ export function getCurrentUser(state) {
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
+        dispatch(clearPreviousData());
         const currentUser = getCurrentUser(getState());
-        dispatch(resetProjectDetail());
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
         if (usfmFilePath) {
             //USFM detected, initiating separate loading process
@@ -294,7 +296,8 @@ export function setGroupDataInStore(dataFolder, params) {
                     }
                     let groupName = groupDataFolderObjs[groupId].split('.')[0];
                     const saveGroup = (groupName, groupDataFolderPath) => {
-                        fs.readJson(Path.join(groupDataFolderPath, groupName + '.json'), (err, groupObj) => {
+                        const groupPath = Path.join(groupDataFolderPath, groupName + '.json');
+                        fs.readJson(groupPath, (err, groupObj) => {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
                                 setTimeout(() => {
@@ -307,8 +310,8 @@ export function setGroupDataInStore(dataFolder, params) {
                                     }
                                 }, 1)
                             } else {
-                                console.warn('failed loading group data');
-                                dispatch(CoreActionsRedux.changeModuleView('main'));
+                                console.warn('failed loading group data for ' + groupName);
+                                total--;
                             }
                         });
                     }
@@ -324,8 +327,9 @@ export function setGroupDataInStore(dataFolder, params) {
 
 export function setGroupIndexInStore(dataFolder, params) {
     return ((dispatch) => {
-        fs.readJson(Path.join(dataFolder, 'index.json'), (err, groupIndexObj) => {
-            if (!err) {
+        const pathToRead = Path.join(dataFolder, 'index.json');
+        fs.readJson(pathToRead, (err, groupIndexObj) => {
+            if (!err && groupIndexObj.length != 0) {
                 dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
                 console.log('Loaded group index from fs');
             } else console.warn('failed loading group index')

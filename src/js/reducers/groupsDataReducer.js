@@ -54,6 +54,8 @@ const groupsDataReducer = (state = initialState, action) => {
           [action.contextId.groupId]: getToggledGroupData(state, action, "comments")
         }
       };
+    case consts.CLEAR_OLD_GROUPS:
+      return initialState;
     default:
       return state;
   }
