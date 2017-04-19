@@ -68,7 +68,10 @@ function loadCheckData(loadPath, contextId) {
     })
     checkDataObjects = checkDataObjects.filter( _checkDataObject => {
       // filter the checkDataObjects to only use the ones that match the current contextId
-      let keep = _checkDataObject && _checkDataObject.contextId.occurrence === contextId.occurrence
+      let keep = _checkDataObject &&
+                _checkDataObject.contextId.groupId === contextId.groupId &&
+                _checkDataObject.contextId.quote === contextId.quote &&
+                _checkDataObject.contextId.occurrence === contextId.occurrence
       return keep
     })
     // return the first one since it is the latest modified one
