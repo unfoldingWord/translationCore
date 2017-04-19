@@ -1,6 +1,7 @@
 import React from 'react'
 import {Glyphicon} from 'react-bootstrap'
 import style from './Style'
+import isEqual from 'lodash/isEqual'
 
 class GroupItem extends React.Component {
   /**
@@ -41,7 +42,7 @@ class GroupItem extends React.Component {
     let groupId = this.props.groupIndex.id
 
     let groupData = groupsData[groupId].filter(groupData => {
-      return groupData.contextId == this.props.contextId
+      return isEqual(groupData.contextId, this.props.contextId)
     })
 
     return groupData[0]
@@ -49,7 +50,7 @@ class GroupItem extends React.Component {
 
   render() {
     let {reference} = this.props.contextId
-    let active = this.props.contextId == this.props.contextIdReducer.contextId
+    let active = isEqual(this.props.contextId, this.props.contextIdReducer.contextId)
 
     return (
       <div onClick={() => this.props.actions.changeCurrentContextId(this.props.contextId)}
