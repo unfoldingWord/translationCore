@@ -1,4 +1,4 @@
-
+import isEqual from 'lodash/isEqual'
 /**
  * @description returns the toggled group data based on the key string name passed in.
  * @param {object} state - app store state.
@@ -9,7 +9,7 @@
 export const getToggledGroupData = (state, action, key) => {
   let groupData = state.groupsData[action.contextId.groupId]
   let groupObject = groupData.find(groupObject => {
-    return groupObject.contextId === action.contextId
+    return isEqual(groupObject.contextId, action.contextId)
   })
   let index = groupData.indexOf(groupObject)
   switch (key) {
