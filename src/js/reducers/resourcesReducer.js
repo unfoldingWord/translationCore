@@ -19,6 +19,9 @@ const resourcesReducer = (state = initialState, action) => {
         ...state,
         [action.resourceName]: action.resourceData
       };
+    case consts.UPDATE_EDITED_TARGET_VERSE:
+      state.bibles.targetLanguage[action.chapter][action.verse] = action.editedText;
+      return state;
     default:
       return state;
   }

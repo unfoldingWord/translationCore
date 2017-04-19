@@ -6,7 +6,7 @@ import path from 'path-extra';
 /**
  * @description This action updates or adds the data needed to
  * @param {string} before - Previous text version of the verse.
- * @param {string} after - New edited text version  of the verse.
+ * @param {string} after - New edited text version of the verse.
  * @param {array} tags - Array of tags used for verse Edit check boxes.
  * @param {string} userName - Alias name.
  * @return {object} New state for verse Edit reducer.
@@ -23,13 +23,34 @@ export const addVerseEdit = (before, after, tags, userName) => {
       userName,
       modifiedTimestamp: generateTimestamp()
     });
+    dispatch(editTargetVerseInBiblesReducer(after));
+    dispatch(editTargetVerseSource());
     dispatch({
       type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId
     });
-    dispatch(editTargetVerseSource());
   });
 };
+
+/**
+ * @description dispatches an action that updates the a verse for the target
+ * language bible in  the reosurces reducer.
+ * @param {string} editedText - new edited version of the verse.
+ * @return {object} action object to be handle by the reducer.
+ */
+export function editTargetVerseInBiblesReducer(editedText) {
+  return ((dispatch, getState) => {
+    let {contextIdReducer} = getState()
+    let {chapter, verse} = contextIdReducer.contextId.reference
+    dispatch({
+      type: consts.UPDATE_EDITED_TARGET_VERSE,
+      editedText,
+      chapter,
+      verse
+    });
+  });
+}
+
 
 export function editTargetVerseSource() {
   return ((dispatch, getState) => {
