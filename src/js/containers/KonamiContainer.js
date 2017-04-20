@@ -1,7 +1,7 @@
 import React from 'react'
 import Konami from 'konami-code-js'
 import {connect} from 'react-redux'
-import SettingsActions from '../actions/SettingsActions.js'
+import {toggleSettings} from '../actions/SettingsActions.js'
 
 class KonamiContainer extends React.Component{
   componentWillMount(){
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
  return {
    onToggleSettings: () => {
-     dispatch(SettingsActions.toggleSettings("developerMode"))
+     dispatch(toggleSettings("developerMode"))
    }
  }
 }
