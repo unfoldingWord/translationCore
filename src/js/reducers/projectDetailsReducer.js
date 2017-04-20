@@ -2,8 +2,8 @@ import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   projectSaveLocation: '',
-  manifest: null,
-  params: null
+  manifest: {},
+  params: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
