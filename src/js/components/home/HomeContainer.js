@@ -8,9 +8,9 @@
       <HomeButton />
       <Stepper />
     </StepperContainer>
+    <InstructionsContainer>
+    </InstructionsContainer>
     <DisplayContainer>
-      <InstructionsContainer>
-      </InstructionsContainer>
       <HomeScreenContainer>
         <User />
         <Project />
