@@ -50,7 +50,7 @@ describe('ProjectManifest.populate', function() {
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);
-    assert.isUndefined(generatedManifest.checkers[0].token);
+    assert.isString(generatedManifest.checkers[0].token);
     assert.isUndefined(generatedManifest.invalidData);
   });
   it('populate should populate a TC manifest, with both arguments specified', function() {

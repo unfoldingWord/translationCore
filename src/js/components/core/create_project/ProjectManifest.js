@@ -66,7 +66,7 @@ function populate(data, tsManifest) {
   }
 
   if (data && data.checkLocations) {
-    for (let item in data.checkLocations) {
+    for (var item in data.checkLocations) {
       var currentItem = data.checkLocations[item];
       projectManifest.check_modules.push(currentItem.name);
     }
