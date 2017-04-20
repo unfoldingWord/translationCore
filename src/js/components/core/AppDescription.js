@@ -56,7 +56,7 @@ class AppDescription extends React.Component{
     let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
     let Styles;
     switch (name) {
-      case "ImportantWords":
+      case "translationWords":
         Styles = iW.appWindow;
         break;
       case "TranslationNotesChecker":
