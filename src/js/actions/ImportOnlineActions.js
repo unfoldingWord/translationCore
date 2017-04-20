@@ -42,9 +42,7 @@ export function openOnlineProject (projectPath) {
                 alert(err);
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
-                getDataActions.openProject(savePath, url, (err)=>{
-                    if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
-                });
+                dispatch(getDataActions.openProject(savePath, url));
             }
         });
     })
