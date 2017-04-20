@@ -1,5 +1,5 @@
-const React = require('react');
-const AppDescription = require('./AppDescription');
+import React from 'react';
+import AppDescription from './AppDescription';
 
 class SwitchCheck extends React.Component {
   render() {
@@ -28,4 +28,5 @@ class SwitchCheck extends React.Component {
     );
   }
 }
-module.exports = SwitchCheck;
+
+export default SwitchCheck;
