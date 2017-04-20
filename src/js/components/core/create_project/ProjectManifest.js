@@ -60,9 +60,6 @@ function populate(data, tsManifest) {
     for (var users in data.user) {
       var user = data.user[users];
       if (user) {
-        user.token = undefined;
-        user.avatar_url = undefined;
-        user.id = undefined;
         projectManifest.checkers.push(user);
       }
     }
