@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class LicenseModal extends Component {
+class BackNavigation extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class LicenseModal extends Component {
   }
 }
 
-export default LicenseModal
+export default BackNavigation

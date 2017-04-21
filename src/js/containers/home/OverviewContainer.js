@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// containers
-
+// components
+import UserCard from '../../components/home/overview/UserCard'
+import ProjectCard from '../../components/home/overview/ProjectCard'
+import ToolCard from '../../components/home/overview/ToolCard'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
-class UserSelectionContainer extends Component {
+class OverviewContainer extends Component {
   render() {
     return (
       <div>
-
+        <UserCard {...this.props} />
+        <ProjectCard {...this.props} />
+        <ToolCard {...this.props} />
       </div>
     );
   }
@@ -32,4 +36,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserSelectionContainer);
+)(OverviewContainer);

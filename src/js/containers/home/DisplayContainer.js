@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // containers
-import HomeScreenContainer from './HomeScreenContainer'
-import UserSelectionContainer from './UserSelectionContainer'
-import ProjectSelectionContainer from './ProjectSelectionContainer'
-import ToolSelectionContainer from './ToolSelectionContainer'
+import OverviewContainer from './OverviewContainer'
+import UsersManagementContainer from './UsersManagementContainer'
+import ProjectsManagementContainer from './ProjectsManagementContainer'
+import ToolsManagementContainer from './ToolsManagementContainer'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
@@ -12,10 +12,10 @@ class DisplayContainer extends Component {
   render() {
     return (
       <div>
-        <HomeScreenContainer {...this.props} />
-        <UserSelectionContainer {...this.props} />
-        <ProjectSelectionContainer {...this.props} />
-        <ToolSelectionContainer {...this.props} />
+        <OverviewContainer {...this.props} />
+        <UsersManagementContainer {...this.props} />
+        <ProjectsManagementContainer {...this.props} />
+        <ToolsManagementContainer {...this.props} />
       </div>
     );
   }
