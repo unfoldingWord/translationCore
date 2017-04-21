@@ -72,8 +72,8 @@ class RecentProjectsContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.manifest)
     let recentProjectsData = this.getRecentProjects();
+
     return (
       <div>
         <RecentProjects.Component data={recentProjectsData} />
