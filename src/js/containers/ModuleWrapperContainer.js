@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SwitchCheck from '../components/core/SwitchCheck';
+// container
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ToolsContainer from './ToolsContainer';
+// components
+import SwitchCheck from '../components/core/SwitchCheck';
+// actions
 import { selectModalTab } from '../actions/ModalActions.js';
-import { loadTool } from '../actions/ToolsActions.js';
-
 
 class ModuleWrapperContainer extends React.Component {
+
   render() {
     let {modules, type, mainViewVisible} = this.props.coreStoreReducer
     let {toolName} = this.props.currentToolReducer
     let mainTool = modules[toolName];
     let mainContent;
+
     if (mainViewVisible) {
       switch (type) {
         case 'tools':
@@ -53,9 +56,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     showLoad: () => {
-      dispatch(modalActions.selectModalTab(2))
+      dispatch(selectModalTab(2))
     }
   }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(ModuleWrapperContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ModuleWrapperContainer);

@@ -1,24 +1,28 @@
-const React = require('react');
-const { connect  } = require('react-redux');
-const Modal = require('react-bootstrap/lib/Modal.js');
-const Button = require('react-bootstrap/lib/Button.js');
-const api = window.ModuleApi;
-const RecentProjectsContainer = require('./RecentProjectsContainer');
-const DragDrop = require('../components/core/DragDrop');
-const ImportOnlineContainer = require('./ImportOnlineContainer');
-const Projects = require('../components/core/login/Projects');
-const { Tabs, Tab } = require('react-bootstrap/lib');
-const dragDropActions = require('../actions/DragDropActions.js');
-const ReportsActions = require('../actions/ReportsActions.js')
-const recentProjectsActions = require('../actions/RecentProjectsActions.js')
-const Report = require("../components/core/reports/ReportGenerator");
+import React from 'react';
+import { connect } from 'react-redux';
+import { Modal, Button, Tabs, Tab } from 'react-bootstrap/lib';
+// containers
+import RecentProjectsContainer from './RecentProjectsContainer';
+import ImportOnlineContainer from './ImportOnlineContainer';
+// Components
+import DragDrop from '../components/core/DragDrop';
+import Projects from '../components/core/login/Projects';
+import Report from "../components/core/reports/ReportGenerator";
+// Actions
+import * as dragDropActions from '../actions/DragDropActions.js';
+import * as ReportsActions from '../actions/ReportsActions.js';
+import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
+import * as ModalActions from '../actions/ModalActions';
 
 class LoadModalContainer extends React.Component {
+
   render() {
     let { selectSectionTab } = this.props;
+
     return (
       <div>
-        <Tabs id="controlled-tab-example"
+        <Tabs
+          id="controlled-tab-example"
           activeKey={this.props.currentSection}
           onSelect={(e) => selectSectionTab(2, e)}
           bsStyle="pills"
@@ -37,17 +41,18 @@ class LoadModalContainer extends React.Component {
           </Tab>
         </Tabs>
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.dragDropReducer,
-    state.recentProjectsReducer,
-    state.reportsReducer,
-    state.toolsReducer,
-    state.importOnlineReducer
-  );
+  return {
+    ...state.dragDropReducer,
+    ...state.recentProjectsReducer,
+    ...state.reportsReducer,
+    ...state.toolsReducer,
+    ...state.importOnlineReducer
+  };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
@@ -61,13 +66,13 @@ function mapDispatchToProps(dispatch, ownProps) {
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
     },
-    sendFilePath: (filePath) => {
+    sendFilePath: filePath => {
       dispatch(dragDropActions.sendFilePath(filePath));
     },
     selectModalTab: (e, section, visible) => {
-        dispatch(modalActions.selectModalTab(e, section, visible));
+      dispatch(ModalActions.selectModalTab(e, section, visible));
     }
   }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(LoadModalContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LoadModalContainer);
