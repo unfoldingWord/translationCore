@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
+// components
+import SwitchCheck from '../components/core/SwitchCheck.js';
+// actions
 import * as ToolsActions from '../actions/ToolsActions.js';
 import * as modalActions from '../actions/ModalActions.js';
-import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
-import SwitchCheck from '../components/core/SwitchCheck.js';
 
 class ToolsModalContainer extends React.Component {
 
@@ -46,4 +48,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(ToolsModalContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolsModalContainer);
