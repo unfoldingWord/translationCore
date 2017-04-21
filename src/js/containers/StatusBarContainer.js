@@ -9,24 +9,24 @@ import * as coreStoreActions from '../actions/CoreActionsRedux.js';
 
 class StatusBarContainer extends React.Component {
 
-  render() {
-    let { bookName } = this.props.projectDetailsReducer;
-    let { toolName } = this.props.currentToolReducer;
-    let { username } = this.props.loginReducer.userdata;
+    render() {
+      let { bookName } = this.props.projectDetailsReducer;
+      let { toolTitle } = this.props.currentToolReducer;
+      let { username } = this.props.loginReducer.userdata;
 
-    return (
-      <div>
-        <StatusBar
-          bookName={bookName}
-          currentCheckNamespace={toolName}
-          open={this.props.openModalAndSpecificTab}
-          online={this.props.online}
-          changeOnlineStatus={this.props.changeOnlineStatus}
-          currentUser={username}
-        />
-      </div>
-    );
-  }
+        return (
+            <div>
+                <StatusBar
+                    bookName={bookName}
+                    currentCheckNamespace={toolTitle}
+                    open={this.props.openModalAndSpecificTab}
+                    online={this.props.online}
+                    changeOnlineStatus={this.props.changeOnlineStatus}
+                    currentUser={username}
+                />
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = (state) => {

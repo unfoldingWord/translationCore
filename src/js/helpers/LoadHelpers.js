@@ -328,6 +328,7 @@ export function checkIfUSFMFileOrProject(projectPath) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function verifyChunks(projectPath, manifest) {
+    if (!projectPath || !manifest) return null;
     const chunkChapters = fs.readdirSync(projectPath);
     let finishedChunks = [];
     for (const chapter in chunkChapters) {

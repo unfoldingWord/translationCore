@@ -130,6 +130,7 @@ export function openProject(projectPath, projectLink) {
             //No USFM detected, initiating 'standard' loading process
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
             let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+            manifest = LoadHelpers.verifyChunks(projectPath, manifest);
             if (!manifest && !manifest.tcInitialized) {
                 manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
@@ -254,6 +255,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
             dispatch(CurrentToolActions.setToolName(dataObject.name));
+            dispatch(CurrentToolActions.setToolTitle(dataObject.title));
             dispatch(loadGroupDataFromFileSystem(dataObject.name));
         } catch (e) {
             dispatch(errorLoadingProject(e));
