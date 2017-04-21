@@ -35,7 +35,6 @@ export function loadModulesSettings() {
   try {
     if (fs.existsSync(MODULES_SETTINGS_DIRECTORY)) {
       let modulesSettings = fs.readJsonSync(MODULES_SETTINGS_DIRECTORY);
-      console.log(modulesSettings)
       return modulesSettings;
     } else {
       // no module settings file found and/or directory not found.
