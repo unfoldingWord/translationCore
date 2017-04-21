@@ -8,15 +8,15 @@
       <HomeButton />
       <Stepper />
     </StepperContainer>
-    <InstructionsContainer>
-    </InstructionsContainer>
+    <InstructionsComponent>
+    </InstructionsComponent>
     <DisplayContainer>
-      <HomeScreenContainer>
-        <User />
-        <Project />
-        <Tool />
+      <HomeScreenContainer> {/* we must change this name */}
+        <UserInfoCard />
+        <ProjectInfoCard />
+        <ToolInfoCard />
       </HomeScreenContainer>
-      <UserSelectionContainer>
+      <UserSelectionContainer>{/* we must change this name */}
         <LoginContainer>
           <LoginD43>
             <CreateDialog />
@@ -24,13 +24,13 @@
           <LoginOffline />
         </LoginContainer>
       </UserSelectionContainer>
-      <ProjectSelectionContainer>
+      <ProjectSelectionContainer> {/* we must change this name */}
         <MyProjects>
           <SortMenu />
           <Projects>
             <Project>
-              <Upload />
-              <Export />
+              <Upload /> {/* i think this is functionality/ action rather than component*/}
+              <Export /> {/* i think this is functionality/ action rather than component*/}
             </Project>
           </Projects>
         </MyProjects>
@@ -40,9 +40,10 @@
           <SearchResults />
         </OnlineImportModal>
       </ProjectSelectionContainer>
-      <ToolSelectionContainer>
-        <Cards />
+      <ToolSelectionContainer> {/* we must change this name */}
+        <ToolsCards /> {/* already built somewhere else */}
       </ToolSelectionContainer>
     </DisplayContainer>
+    <Navigation /> {/* we forgot to add the go back and continue buttons*/}
   </MainContainer>
 </HomeContainer>
