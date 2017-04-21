@@ -1,5 +1,7 @@
 import consts from '../actions/CoreActionConsts';
+// helpers
 import {generateTimestamp} from '../helpers/index';
+
 /**
  * @description this action adds a comment to the current check.
  * @param {string} text - comment text.

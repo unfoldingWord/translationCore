@@ -33,7 +33,7 @@ export const setProjectDetail = (key, value) => {
 };
 
 export const resetProjectDetail = () => {
-    return {
+  return {
     type: 'RESET_PROJECT_DETAIL'
   };
-}
+};

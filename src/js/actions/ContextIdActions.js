@@ -1,11 +1,12 @@
-import fs from 'fs-extra'
-import path from 'path-extra'
-
-import consts from './CoreActionConsts'
-import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers'
-import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions'
-import {saveContextId} from '../utils/saveMethods'
-
+import consts from './CoreActionConsts';
+import fs from 'fs-extra';
+import path from 'path-extra';
+// helpers
+import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers';
+// actions
+import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions';
+import {saveContextId} from '../utils/saveMethods';
+// constant declaration
 const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
 
 function loadCheckData(dispatch) {

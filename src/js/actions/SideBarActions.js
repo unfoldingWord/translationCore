@@ -1,22 +1,23 @@
-const CheckStoreActions = require('./CheckStoreActions.js');
-const consts = require('./CoreActionConsts');
+import consts from './CoreActionConsts';
+// actions
+import * as CheckStoreActions from './CheckStoreActions';
 
-export function toggleSubmenu (id) {
+export function toggleSubmenu(id) {
   return {
     type: consts.TOGGLE_SUBMENU,
     openCheck: id
   }
-};
+}
 
-export function toggleMenu () {
+export function toggleMenu() {
   return {
     type: consts.TOGGLE_MENU_DRAWER
   }
-};
+}
 
-export function menuHeaderClicked (currentGroupIndex, currentCheckIndex) {
+export function menuHeaderClicked(currentGroupIndex, currentCheckIndex) {
   return ((dispatch) => {
-      dispatch(CheckStoreActions.goToCheck(currentGroupIndex, currentCheckIndex));
-      dispatch(this.toggleSubmenu(currentGroupIndex));
+    dispatch(CheckStoreActions.goToCheck(currentGroupIndex, currentCheckIndex));
+    dispatch(this.toggleSubmenu(currentGroupIndex));
   })
-};
+}

@@ -1,14 +1,14 @@
 import consts from './CoreActionConsts';
 import { remote } from 'electron';
-import { setSettings } from './SettingsActions.js';
-//const declaration
-const {dialog} = remote;
-import * as toolsActions from './ToolsActions.js';
+// actions
 import * as SettingsActions from './SettingsActions.js';
 import * as GetDataActions from './GetDataActions.js';
 import * as RecentProjectsActions from './RecentProjectsActions.js';
+// const declaration
+const {dialog} = remote;
 
-export function sendFilePath (path, link, callback = ()=>{}) {
+
+export function sendFilePath(path, link, callback = () => {}) {
     return ((dispatch) => {
         dispatch({
             type: consts.DRAG_DROP_SENDPATH,
