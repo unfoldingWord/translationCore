@@ -1,5 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
+import setupSubscriptions from 'redux-subscriptions'
 import configureStore from '../utils/configureStore'
 import Application from './app'
 import { loadState, saveState } from '../utils/localStorage'
@@ -13,9 +14,15 @@ const store = configureStore(persistedState)
  * throttle makes the state to be save only once per second (1000),
  * which could be increase if we need to
  */
-store.subscribe(throttle(() => {
-  saveState(store.getState());
-}, 1000));
+// TODO: figure out if throttle is still needed and if so, figure out how to use it with setupSubscriptions
+// store.subscribe(throttle(() => {
+//   saveState(store.getState());
+// }, 1000));
+store.subscribe(setupSubscriptions(store)(
+  ({ prevState, newState }) => {
+    saveState(prevState, newState);
+  }
+));
 
 module.exports.App = (
   <Provider store={store}>

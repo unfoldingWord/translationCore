@@ -23,10 +23,8 @@ export const setToolName = (toolName) => {
  * @return {object} New state for currentTool reducer.
  */
 export const setToolTitle = (toolTitle) => {
-  if (!toolTitle || toolTitle === ' ') {
-    return {
-      type: consts.SET_TOOL_TITLE
-    }
+  if (!toolTitle) {
+    toolTitle = "";
   }
   return {
     type: consts.SET_TOOL_TITLE,

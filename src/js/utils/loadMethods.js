@@ -12,10 +12,14 @@ const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
-  // return undefined never null
+  // return undefined, never null
   let settings = undefined;
   try {
-    settings = fs.readJsonSync(SETTINGS_DIRECTORY);
+    if (fs.existsSync(SETTINGS_DIRECTORY)) {
+      settings = fs.readJsonSync(SETTINGS_DIRECTORY);
+    } else {
+      console.log("No settings file found therefore it will be created when the settings reducer is fully loaded");
+    }
   } catch (err) {
     console.warn(err);
   }
@@ -23,7 +27,7 @@ export const loadSettings = () => {
 };
 
 /**
- * @description
+ * @description loads the modules settings from file system.
  * @const MODULES_SETTINGS_DIRECTORY - directory where module settings is located.
  * @return {object} action object.
  */
