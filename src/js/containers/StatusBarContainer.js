@@ -8,6 +8,7 @@ import * as coreStoreActions from '../actions/CoreActionsRedux.js';
 
 
 class StatusBarContainer extends React.Component {
+
     render() {
       let { bookName } = this.props.projectDetailsReducer;
       let { toolTitle } = this.props.currentToolReducer;
