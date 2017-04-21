@@ -254,6 +254,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
             dispatch(CurrentToolActions.setToolName(dataObject.name));
+            dispatch(CurrentToolActions.setToolTitle(dataObject.title));
             dispatch(loadGroupDataFromFileSystem(dataObject.name));
         } catch (e) {
             dispatch(errorLoadingProject(e));
