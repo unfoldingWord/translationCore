@@ -7,14 +7,14 @@
  * @version 1.0.0
  */
 
-import React from 'react'
+import React from 'react';
+// actions
 import * as fs from 'fs-extra';
 import * as consts from './CoreActionConsts';
 import * as CoreActionsRedux from './CoreActionsRedux';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
-import * as CheckStoreActions from './CheckStoreActions';
 import * as NotificationActions from './NotificationActions';
 import * as ModalActions from './ModalActions';
 import * as ToolsActions from './ToolsActions';
@@ -32,7 +32,7 @@ import BOOKS from '../components/core/BooksOfBible.js';
 import Path from 'path';
 import GIT from '../components/core/GitApi.js';
 
-const api = window.ModuleApi;
+// constant declarations
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');

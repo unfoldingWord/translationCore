@@ -1,4 +1,5 @@
 import consts from './CoreActionConsts'
+// actions
 import * as coreActions from './CoreActionsRedux'
 
 

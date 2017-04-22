@@ -1,9 +1,10 @@
-const api = window.ModuleApi;
-const consts = require('./CoreActionConsts');
-const CoreActions = require('./CoreActions.js');
+import consts from './CoreActionConsts';
+import * as CoreActions from './CoreActions.js';
 import gogs from '../components/core/login/GogsApi.js';
-const remote = require('electron').remote;
-const { dialog } = remote;
+import { remote } from 'electron';
+// const delclarations
+const { dialog } = remote; 
+const api = window.ModuleApi;
 
 export function setUserName(val) {
   return {
@@ -35,7 +36,7 @@ export function loginUser(newUserdata) {
         type: consts.RECEIVE_LOGIN,
         val: newUserdata
       });
-    }).catch(function (reason) {
+    }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {
         dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
@@ -52,7 +53,7 @@ export function loginUser(newUserdata) {
 
 export function logoutUser(val) {
   return {
-    type: consts.LOGOUT_USER,
+    type: consts.LOGOUT_USER
   }
 }
 
@@ -72,6 +73,6 @@ export function subjectChange(subject) {
 
 export function submitFeedback() {
   return {
-    type: consts.SUBMIT_FEEDBACK,
+    type: consts.SUBMIT_FEEDBACK
   }
 }

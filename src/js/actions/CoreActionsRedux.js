@@ -1,25 +1,15 @@
-var consts = require('./CoreActionConsts');
-var Path = require('path');
-const pathex = require('path-extra');
-var fs = require(window.__base + 'node_modules/fs-extra');
+import consts from './CoreActionConsts';
+import sudo from 'sudo-prompt';
+// actions
+import * as CheckStoreActions from './CheckStoreActions.js';
+import * as ToolsActions from './ToolsActions.js';
+// constant declarations
 const exec = require('child_process').exec;
-var sudo = require('sudo-prompt');
-var options = {
+const options = {
   name: 'Translation Core'
 };
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-import * as CheckStoreActions from './CheckStoreActions.js';
-const ToolsActions = require('./ToolsActions.js');
 const api = window.ModuleApi;
 
-/**
-How to use the actions:
-Just require this file in your component, call
-one of the functions and the event will automatically
-be dispatched to all of the stores that have registered
-listener
-(See ExampleComponent.js)
-*/
 
 export function showMainView(val) {
   return {
@@ -161,7 +151,7 @@ export function setToolNamespace(currentCheckNamespace) {
       currentGroupName: groupName,
       currentGroupObjects: groupObjects,
       currentSubGroupObjects: subGroupObjects,
-      currentBookName: bookName,
+      currentBookName: bookName
     });
     dispatch(ToolsActions.getToolsMetadatas());
 
@@ -231,8 +221,7 @@ export function getAlert() {
       callback(data);
       this.alertObj['alertCallback'] = null;
       api.clearAlertCallback();
-    }
-    catch (e) {
+    } catch (e) {
     }
     data = null;
     this.alertResponseObj = null;

@@ -4,7 +4,7 @@ import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
 
 /**
  * @description This method adds a selection array to the selections reducer.
- * @param {Array} selection - An array of selections.
+ * @param {Array} selections - An array of selections.
  * @param {String} userName - The username of the author of the selection.
  * @return {Object} - An action object, consiting of a timestamp, action type,
  *                    a selection array, and a username.
@@ -28,13 +28,11 @@ export const changeSelections = (selections, userName) => {
   });
 };
 /**
- * @description This method validates the current selections to see if they are still valid
- * @param {Array} selection - An array of selections.
- * @param {String} userName - The username of the author of the selection.
- * @return {Object} - An action object, consiting of a timestamp, action type,
- *                    a selection array, and a username.
+ * @description This method validates the current selections to see if they are still valid.
+ * @param {String} targetVerse - target bible verse.
+ * @return {Object} - dipatches the changeSelections action.
  */
-export const validateSelections = (targetVerse) => {
+export function validateSelections(targetVerse) {
   return ((dispatch, getState) => {
     const state = getState();
     let {username} = state.loginReducer.userdata;
