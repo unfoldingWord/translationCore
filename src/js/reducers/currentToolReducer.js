@@ -22,6 +22,8 @@ const currentToolReducer = (state = initialState, action) => {
         ...state,
         isDataFetched: action.isDataFetched
       }
+    case consts.CLEAR_CURRENT_TOOL:
+      return initialState;
     default:
       return state
   }
