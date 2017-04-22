@@ -29,13 +29,13 @@ class Settings extends React.Component {
   render() {
     let { currentSettings } = this.props;
     let textSelect = currentSettings.textSelect ? currentSettings.textSelect : 'click';
-    let tutorialView = currentSettings.tutorialView ? currentSettings.tutorialView.toString() : 'false';
+    let tutorialView = currentSettings.showTutorial ? currentSettings.showTutorial.toString() : 'false';
     let developerMode = currentSettings.developerMode ? currentSettings.developerMode.toString() : "false";
     return (
       <div style={{paddingTop: '65px', width: '40%', marginLeft: 'auto', marginRight: 'auto'}}>
         <FormGroup controlId="tutorialView">
           <ControlLabel>Tutorial</ControlLabel>
-          <FormControl componentClass="select" placeholder="select" name="tutorialView"
+          <FormControl componentClass="select" placeholder="select" name="showTutorial"
             style={{marginBottom: '25px'}}
             defaultValue={tutorialView} onChange={this.settingsChange.bind(this)}>
             <option value="true">Show</option>

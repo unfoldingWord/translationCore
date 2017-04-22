@@ -1,6 +1,4 @@
-var consts = require('../actions/CoreActionConsts');
-const gogs = require('../components/core/login/GogsApi.js');
-const merge = require('lodash.merge');
+const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     filePath: '',
@@ -12,24 +10,13 @@ const initialState = {
 module.exports = (state = initialState, action) => {
     switch (action.type) {
         case consts.DRAG_DROP_SENDPATH:
-            return merge({}, state, {
-                filePath: action.filePath
-            })
-            break;
+          return { ...state, filePath: action.filePath }
         case consts.DRAG_DROP_OPENDIALOG:
-            return merge({}, state, {
-                dialogOpen: action.dialogOpen
-            })
-            break;
+          return { ...state, dialogOpen: action.dialogOpen }
         case consts.VALID_OPENED_PROJECT:
-            return merge({}, state, {
-                validFile: true
-            })
-            break;
+          return { ...state, validFile: true }
         case consts.LOAD_TOOL:
-            return merge({}, state, {
-                validFile: false
-            })
+          return { ...state, validFile: false }
             break;
         default:
             return state;

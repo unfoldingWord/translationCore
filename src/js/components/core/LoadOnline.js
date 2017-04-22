@@ -11,7 +11,6 @@ const pathex = require('path-extra');
 const fs = require(window.__base + 'node_modules/fs-extra');
 const api = window.ModuleApi;
 const git = require('./GitApi.js');
-const Access = require('./AccessProject');
 
 const CoreActions = require('../../actions/CoreActions.js');
 
@@ -29,17 +28,11 @@ module.exports = (function() {
       return;
     }
     var splitUrl = url.split('.');
-    if (splitUrl.pop() !== 'git') {
-      const alert = {
-            title: 'Import Error',
-            content: 'Please Make Sure That This Is a Valid Project.',
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-      if (callback)
-        callback('Invalid Project, URL needs to end with .git', null, null)
-      return;
+    if (splitUrl[splitUrl.length-1] !== 'git') {
+      splitUrl.push('git');
+      url+='.git';
     }
+    splitUrl.pop();
     var projectPath = splitUrl.pop().split('/');
     var projectName = projectPath.pop();
     const savePath = path.join(pathex.homedir(), 'translationCore', projectName);

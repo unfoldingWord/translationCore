@@ -1,30 +1,76 @@
-var consts = require('../actions/CoreActionConsts');
-var CheckStore = require('../stores/CheckStore'); //factoring this out
-var path = require('path');
-var fs = require(window.__base + 'node_modules/fs-extra');
-var pathex = require('path-extra');
-var PARENT = pathex.datadir('translationCore')
-var PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled')
-const merge = require('lodash.merge');
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
+const consts = require('../actions/CoreActionConsts');
 
 const initialState = {
     mainViewVisible: true,
-    type: 'recent'
+    type: 'recent',
+    doneLoading: true,
+    currentCheckNamespace: null,
+    fetchDatas: 0,
+    doneModules: 0,
+    modules: {},
+    moduleData: {},
+    toolsArray:[]
 };
+
 module.exports = function coreStore(state, action) {
     state = state || initialState
     switch (action.type) {
         case consts.SHOW_APPS:
-            return merge({}, state, {
-                mainViewVisible:action.val
-            });
+            return { ...state, mainViewVisible: action.val }
             break;
         case consts.CHANGE_WRAPPER_VIEW:
-            return merge({}, state, {
-                type: action.val
-            });
+            return { ...state, type: action.val }
             break;
+        case consts.DONE_MODULES:
+            return {
+                ...state,
+                doneModules: state.doneModules
+            }
+            break;
+        case consts.DONE_LOADING:
+            return {
+                ...state,
+                doneModules: 0,
+                doneLoading:true
+            }
+            break;
+        case consts.UPDATE_NAMESPACE:
+            return {
+                ...state,
+                currentCheckNamespace: action.currentCheckNamespace
+            }
+            break;
+        case consts.SAVE_MODULE_VIEW:
+            return {
+                ...state,
+                modules: {
+                    ...state.modules,
+                    [action.identifier]: action.module
+                }
+            }
+            break;
+        case consts.SAVE_MODULE_DATA:
+            return {
+                ...state,
+                moduleData: {
+                    ...state.moduleData,
+                    [action.identifier]: action.data
+                }
+            }
+            break;
+        case consts.CLEAR_PREVIOUS_DATA:
+            return {
+                ...state,
+                ...initialState
+            }
+            break;
+        case consts.STORE_TOOLS_ARRAY:
+            return {
+                ...state,
+
+            }
+            break;
+        //THINK ABOUT WHAT IS BEING LOADED FROM STORE
         default:
             return state;
     }

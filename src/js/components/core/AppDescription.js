@@ -1,9 +1,10 @@
-const React = require('react');
-const { Button, Row, Col, utils } = require('react-bootstrap/lib');
+import React from 'react';
+import { Button, Row, Col, utils } from 'react-bootstrap/lib';
+// constant declaration.
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'white');
 
-var iW = {
+const iW = {
   appWindow: {
     marginRight: "0px",
     marginLeft: "0px",
@@ -15,11 +16,11 @@ var iW = {
     backgroundColor: "#409EBA",
     color: "#FFFFFF",
     display: "inline-table",
-    boxSizing: "border-box",
-  },
+    boxSizing: "border-box"
+  }
 };
 
-var tN = {
+const tN = {
   appWindow: {
     marginRight: "0px",
     marginLeft: "0px",
@@ -31,11 +32,11 @@ var tN = {
     backgroundColor: "#58C17A",
     color: "#FFFFFF",
     display: "inline-table",
-    boxSizing: "border-box",
-  },
+    boxSizing: "border-box"
+  }
 };
 
-var tT ={
+const tT ={
   appWindow: {
     marginRight: "0px",
     marginLeft: "0px",
@@ -47,16 +48,16 @@ var tT ={
     backgroundColor: "#D71A19",
     color: "#FFFFFF",
     display: "inline-table",
-    boxSizing: "border-box",
-  },
+    boxSizing: "border-box"
+  }
 };
 
-class AppDescription extends React.Component{
-  render(){
+class AppDescription extends React.Component {
+  render() {
     let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
     let Styles;
     switch (name) {
-      case "ImportantWords":
+      case "translationWords":
         Styles = iW.appWindow;
         break;
       case "TranslationNotesChecker":
@@ -82,7 +83,7 @@ class AppDescription extends React.Component{
         </style>
       <Row style={Styles}>
         <Col md={8} sm={8} xs={8} style={{margin: "0px", padding: "10px"}}>
-          <h4 style={{display: 'inline-block', marginRight:'15px', color: "#FFFFFF"}}>
+          <h4 style={{display: 'inline-block', marginRight: '15px', color: "#FFFFFF"}}>
             {title}
           </h4><span>{"Version " + version}</span><br />
           <span style={{color: "#FFFFFF", marginBottom: ""}}>{description}</span><br /><br /><br />
@@ -100,4 +101,4 @@ class AppDescription extends React.Component{
   }
 }
 
-module.exports = AppDescription;
+export default AppDescription;

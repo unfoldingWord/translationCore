@@ -8,7 +8,6 @@ const ReactDOM = require('react-dom');
 const fs = require(window.__base + 'node_modules/fs-extra');
 
 //user imports
-const Alert = require('./components/core/Alert.js')
 const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
 const CoreActions = require('./actions/CoreActions.js');
@@ -23,8 +22,6 @@ class ModuleApi {
     this.ReactBootstrap = ReactBootstrap;
     this.CheckModule = CheckModule;
     this.modules = {};
-    this.Popover = require('./components/core/PopoverApi');
-    this.Toast = require('./NotificationApi/ToastApi');
     this.Git = require('./components/core/GitApi.js');
     this.ReportFiltersTools = require('./components/core/reports/ReportFilters.js');
     this.ReportFilters = this.ReportFiltersTools.filter;
@@ -222,16 +219,6 @@ class ModuleApi {
     });
   }
 
-  initializeCheckStore(nameSpace, params, groups) {
-    if (!nameSpace || !params || !groups) {
-      return 'Missing one or more parameters'
-    }
-    this.putDataInCheckStore(nameSpace, 'groups', groups);
-    this.putDataInCheckStore(nameSpace, 'currentCheckIndex', 0);
-    this.putDataInCheckStore(nameSpace, 'currentGroupIndex', 0);
-    this.putDataInCheckStore(nameSpace, 'book', this.convertToFullBookName(params.bookAbbr));
-  }
-
   getLoggedInUser() {
     let user = CoreStore.getLoggedInUser();
     if (!user) {
@@ -241,30 +228,23 @@ class ModuleApi {
     let userName = user.username;
     return { fullName, userName };
   }
-
-  clearAlertCallback() {
-    CoreStore.alertObj = null;
-  }
   /**
   * @description - Displays alert and returns user response
   */
   createAlert(obj, callback = () => { }) {
-    Alert.startListener(callback);
-    CoreActions.sendAlert({
-      alertObj: obj,
-      alertCallback: callback
-    });
+    // const dispatch = require('./pages/root.js').dispatch;
+    // dispatch(AlertModalActions.showAlert(obj, callback));
   }
 
   updateManifest(field, data, callback = () => { }) {
     var manifest = this.getDataFromCommon('tcManifest');
-    var saveLocation = this.getDataFromCommon('saveLocation');
-    if (manifest && saveLocation) {
+    var projectSaveLocation = this.getDataFromCommon('projectSaveLocation');
+    if (manifest && projectSaveLocation) {
       manifest[field] = data;
-      saveLocation += '/tc-manifest.json';
+      projectSaveLocation += '/manifest.json';
       this.putDataInCommon('tcManifest', manifest);
-      fs.outputJson(saveLocation, manifest, callback);
-    } else if (!manifest){
+      fs.outputJson(projectSaveLocation, manifest, callback);
+    } else if (!manifest) {
       callback("No manifest found");
     } else {
       manifest[field] = data;
@@ -277,7 +257,7 @@ class ModuleApi {
     var _this = this;
     _this.gitCallback = callback;
     var git = require('./components/core/GitApi.js');
-    var path = this.getDataFromCommon('saveLocation');
+    var path = this.getDataFromCommon('projectSaveLocation');
     if (path && this.gitDone) {
       _this.gitDone = false;
       git(path).save(message, path, function (err) {
@@ -342,17 +322,17 @@ class ModuleApi {
     localStorage.setItem('settings', settingsString);
   }
 
-  putToolMetaDatasInStore(metadatas){
+  putToolMetaDatasInStore(metadatas) {
     this.currentToolMetaData = metadatas;
   }
 
-  getToolMetaDataFromStore(){
+  getToolMetaDataFromStore() {
     return this.currentToolMetaData;
   }
 
-  setCurrentGroupName(groupName){
+  setCurrentGroupName(groupName) {
     this.currentGroupName = groupName;
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     if (!currentNamespace) return;
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
@@ -360,51 +340,51 @@ class ModuleApi {
     this.putDataInCheckStore(currentNamespace, 'currentCheckIndex', 0);
     this.putDataInCheckStore(currentNamespace, 'currentGroupIndex', groupIndex);
     this.emitEvent('changeGroupName',
-    {
-      "groupName": groupName
-    });
+      {
+        "groupName": groupName
+      });
   }
 
-  getCurrentGroupName(){
+  getCurrentGroupName() {
     return this.currentGroupName;
   }
 
-  initialCurrentGroupName(){
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+  initialCurrentGroupName() {
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     let currentGroupIndex = this.getDataFromCheckStore(currentNamespace, 'currentGroupIndex');
     let foundGroup = [];
-    if(currentNamespace && currentGroupIndex && currentGroupIndex >= 0){
+    if (currentNamespace && currentGroupIndex && currentGroupIndex >= 0) {
       foundGroup = this.getDataFromCheckStore(currentNamespace, 'groups')[currentGroupIndex];
     }
     this.currentGroupName = foundGroup.group;
   }
 
-  getSubMenuItems(){
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+  getSubMenuItems() {
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = [];
-    if(this.currentGroupName){
-      if(groups){
+    if (this.currentGroupName) {
+      if (groups) {
         foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       }
     }
     return foundGroup.checks;
   }
 
-  getCurrentGroupIndex(){
+  getCurrentGroupIndex() {
     let groupIndex = null;
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
-    if(groups){
+    if (groups) {
       let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
       groupIndex = groups.indexOf(foundGroup);
     }
     return groupIndex;
   }
 
-  changeCurrentIndexes(checkIndex){
-    let currentNamespace = CoreStore.getCurrentCheckNamespace();
+  changeCurrentIndexes(checkIndex) {
+    let currentNamespace = CoreStore.getcurrentCheckNamespace();
     if (!currentNamespace) return 'No namespace';
     let groups = this.getDataFromCheckStore(currentNamespace, 'groups');
     let foundGroup = groups.find(arrayElement => arrayElement.group === this.currentGroupName);
@@ -421,8 +401,8 @@ class ModuleApi {
   }
 
   //this method returns the Current Check Namespace
-  getCurrentCheckNamespace(){
-    return CoreStore.getCurrentCheckNamespace();
+  getcurrentCheckNamespace() {
+    return CoreStore.getcurrentCheckNamespace();
   }
 
 }

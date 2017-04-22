@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "pull-apps": "npm run apps-master && npm run git-pull",
     "git-pull": "git submodule foreach --recursive git pull",
     "apps-master": "git submodule foreach --recursive git checkout master",
+    "update-version": "node ./scripts/builds/VersionScripts.js",
     "start": "electron ."
   },
   "build": {
@@ -35,7 +36,7 @@
     "name": "Wycliffe Associates",
     "email": "info@unfoldingword.org"
   },
-  "license": "ISC",
+  "license": "GPL2",
   "bugs": {
     "url": "https://github.com/unfoldingWord-dev/translationCore/issues"
   },
@@ -55,11 +56,12 @@
     "enzyme-redux": "^0.1.6",
     "eslint": "^2.13.1",
     "eslint-config-google": "^0.6.0",
-    "react-addons-test-utils": "15.1.0",
+    "react-addons-test-utils": "15.4.2",
     "redux-test-utils": "^0.1.1"
   },
   "dependencies": {
     "babel-core": "^6.13.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.8",
     "event-emitter": "^0.3.4",
@@ -67,20 +69,26 @@
     "fs-extra": "^0.30.0",
     "gogs-client": "^0.5.2",
     "http": "0.0.0",
+    "konami-code-js": "^0.8.0",
+    "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
     "marked": "^0.3.5",
+    "material-ui": "^0.17.0",
     "natural": "^0.4.0",
     "npm": "2.14.12",
     "path-extra": "3.0.0",
-    "react": "15.1.0",
-    "react-bootstrap": "^0.29.5",
-    "react-dom": "15.1.0",
-    "react-dropzone": "3.5.1",
+    "prop-types": "^15.5.8",
+    "react": "15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "15.4.2",
+    "react-dropzone": "3.11.0",
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
     "react-remarkable": "^1.1.1",
+    "react-tap-event-plugin": "^2.0.1",
     "reactable": "^0.14.1",
     "redux": "^3.6.0",
+    "redux-subscriptions": "^0.2.0",
     "redux-thunk": "^2.1.0",
     "request": "^2.79.0",
     "simple-git": "1.43.0",
@@ -88,5 +96,9 @@
     "sudo-prompt": "^6.2.1",
     "usfm-parser": "^0.1.4",
     "xregexp": "^3.1.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
+    "redux": "^2.0.0 || ^3.0.0"
   }
 }

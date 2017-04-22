@@ -1,47 +1,29 @@
-const consts = require('./CoreActionConsts');
-const api = window.ModuleApi;
-const sync = require('../components/core/SideBar/GitSync.js');
-const fs = require(window.__base + 'node_modules/fs-extra');
-const path = require('path-extra');
+import consts from './CoreActionConsts';
+import sync from '../components/core/SideBar/GitSync.js';
+import fs from 'fs-extra';
+import path from 'path-extra';
+// actions
+import * as getDataActions from './GetDataActions';
+// contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-const Upload = require('../components/core/UploadMethods.js');
-const modalActions = require('./ModalActions');
-const toolsActions = require('./ToolsActions');
 
-
-module.exports.onLoad = function (filePath) {
-    return ((dispatch) => {
-        const _this = this;
-        Upload.sendFilePath(filePath, undefined, (err) => {
-            if (!err) {
-                dispatch(_this.startLoadingNewProject());
-            }
-        });
-    })
+export function onLoad(filePath) {
+  return ((dispatch) => {
+    dispatch(getDataActions.openProject(filePath));
+  })
 }
 
-module.exports.syncProject = function (projectPath) {
-    sync(projectPath);
-    return {
-        type: consts.SYNC_PROJECT,
-    }
+export function syncProject(projectPath) {
+  sync(projectPath, manifest);
+  return {
+    type: consts.SYNC_PROJECT
+  }
 }
 
-module.exports.getProjectsFromFolder = function () {
-    const recentProjects = fs.readdirSync(DEFAULT_SAVE);
-    return {
-        type: consts.GET_RECENT_PROJECTS,
-        recentProjects: recentProjects
-    }
-}
-
-module.exports.startLoadingNewProject = function () {
-    return ((dispatch) => {
-        api.emitEvent('changeCheckType', { currentCheckNamespace: null });
-        api.emitEvent('newToolSelected', { 'newToolSelected': true });
-        api.Toast.info('Info:', 'Your project is ready to be loaded once you select a tool', 5);
-        dispatch({ type: consts.SHOW_APPS, val: true });
-        dispatch(toolsActions.getToolsMetadatas());
-        dispatch(modalActions.selectModalTab(3, 1, true))
-    })
+export function getProjectsFromFolder() {
+  const recentProjects = fs.readdirSync(DEFAULT_SAVE);
+  return {
+    type: consts.GET_RECENT_PROJECTS,
+    recentProjects: recentProjects
+  }
 }

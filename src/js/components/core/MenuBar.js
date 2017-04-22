@@ -3,18 +3,19 @@
  *@description: The JSON outlines a template for the menu, and menu items can
  *              be added from here.
  ******************************************************************************/
-const CoreActions = require('../../actions/CoreActions.js');
-const CoreActionsRedux = require('../../actions/CoreActionsRedux.js');
-const CoreStore = require('../../stores/CoreStore.js');
-const git = require('./GitApi.js');
+import CoreActions from '../../actions/CoreActions.js'
+import CoreActionsRedux from '../../actions/CoreActionsRedux.js'
+import CoreStore from '../../stores/CoreStore.js'
+import git from './GitApi.js'
+import sync from './SideBar/GitSync.js'
+import exportUsfm from './Usfm/ExportUSFM'
+import Path from 'path'
+import SettingsActions from '../../actions/SettingsActions.js'
+import { showNotification } from '../../actions/NotificationActions.js'
+import { dispatch } from "../../pages/root"
+import fs from 'fs-extra'
+//const declaration
 const api = window.ModuleApi;
-const sync = require('./SideBar/GitSync.js');
-const exportUsfm = require('./Usfm/ExportUSFM');
-const Upload = require('./UploadMethods');
-const Path = require('path');
-const fs = require(window.__base + 'node_modules/fs-extra');
-const SettingsActions = require('../../actions/SettingsActions.js');
-const dispatch = require("../../pages/root").dispatch;
 
 var template = [
   {
@@ -23,9 +24,8 @@ var template = [
       {
         label: 'Close Project',
         click: function () {
-          Upload.clearPreviousData();
           CoreStore.currentCheckNamespace = ' ';
-          CoreActions.killLoading();
+          CoreActionsRedux.killLoading();
           api.emitEvent('changeCheckType', { currentCheckNamespace: ' ' });
         },
         accelerator: 'CmdOrCtrl+W'
@@ -41,11 +41,11 @@ var template = [
         label: 'Save',
         click: function () {
           const api = window.ModuleApi;
-          const path = api.getDataFromCommon('saveLocation');
+          const path = store.getState().projectDetailsReducer.projectSaveLocation;
           if (path) {
             git(path).save('Manual Save', path);
           } else {
-            api.Toast.error('Save location is not defined', 'Load a project first', 3)
+            dispatch(showNotification('Save location is not defined: Load a project first', 5));
           }
         },
         accelerator: 'CmdOrCtrl+S'

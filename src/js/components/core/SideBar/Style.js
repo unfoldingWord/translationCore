@@ -86,6 +86,28 @@ var style = {
     zIndex: "97",
   },
 
+  slideButton: {
+    float: "right",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "#fff",
+    backgroundColor: "#000",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
+  },
+
+  slideButtonCollapsed: {
+    float: "left",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "#fff",
+    backgroundColor: "#000",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
+  }
+
 };
 
 module.exports = style;

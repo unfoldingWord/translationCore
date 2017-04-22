@@ -3,18 +3,16 @@ const api = window.ModuleApi;
 const CoreActions = require('../../../actions/CoreActions.js');
 const CoreStore = require('../../../stores/CoreStore.js');
 const pathFinder = require('path');
-const gogs = require('../login/GogsApi.js');
-const { connect  } = require('react-redux');
+import gogs from '../login/GogsApi.js';
 
 
-function syncToGit(inputPath) {
+function syncToGit(inputPath, manifest) {
   var alertError = console.error;
   console.error = console.errorold;
   const user = CoreStore.getLoggedInUser();
-  const path = inputPath || api.getDataFromCommon('saveLocation');
+  const path = inputPath;
   if (user) {
     git(path).save('Updating with Door43', path, function() {
-      var manifest = api.getDataFromCommon('tcManifest');
       if (manifest.repo) {
         var urlArray = manifest.repo.split('.');
         urlArray.pop();
@@ -48,7 +46,8 @@ function syncToGit(inputPath) {
             }
           } else {
             console.error = alertError;
-            api.Toast.success('Update succesful', '', 7);
+            //TODO: find a way to make the dispatch work in this file 
+            //api.Toast.success('Update succesful', '', 7);
           }
         });
       } else {
@@ -72,27 +71,31 @@ function syncToGit(inputPath) {
                   if (err) {
                     git(path).update(newRemote, 'master', false, function(err){
                       if (!err) {
-                        api.Toast.success('Update succesful', '', 7);
+                        //TODO: find a way to make the dispatch work in this file 
+                        //api.Toast.success('Update succesful', '', 7);
                       }
                       console.error = alertError;
                     });
                   } else {
                     console.error = alertError;
-                    api.Toast.success('Update succesful', '', 7);
+                    //TODO: find a way to make the dispatch work in this file 
+                    //api.Toast.success('Update succesful', '', 7);
                   }
                 });
               });
             } else {
               console.log('happend');
               console.error = alertError;
-              api.Toast.success('Update succesful', '', 7);
+              //TODO: find a way to make the dispatch work in this file 
+              //api.Toast.success('Update succesful', '', 7);
             }
           });
         }
       }
     });
   } else {
-    api.Toast.info('Login then try again', '', 7);
+    //TODO: find a way to make the dispatch work in this file 
+    //api.Toast.info('Login then try again', '', 7);
   }
 }
 

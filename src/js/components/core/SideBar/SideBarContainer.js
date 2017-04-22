@@ -2,7 +2,6 @@ const api = window.ModuleApi;
 const React = api.React;
 const Chevron = require('./Chevron');
 const style = require("./Style");
-const MenuHeaders = require('../navigation_menu/MenuHeaders');
 const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');

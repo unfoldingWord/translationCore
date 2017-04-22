@@ -1,12 +1,13 @@
-const api = window.ModuleApi;
-const consts = require('./CoreActionConsts');
+import consts from './CoreActionConsts';
+import Gogs from '../components/core/login/GogsApi';
+import * as modalActions from './ModalActions';
+import * as recentProjectsActions from './RecentProjectsActions';
+import * as getDataActions from './GetDataActions';
+// constant declaration
 const loadOnline = require('../components/core/LoadOnline');
-const Gogs = require('../components/core/login/GogsApi')();
-const modalActions = require('./ModalActions');
-const recentProjectsActions = require('./RecentProjectsActions');
-const Upload = require('../components/core/UploadMethods.js');
 
-module.exports.changeShowOnlineView = function (val) {
+
+export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata
             dispatch({
@@ -18,12 +19,12 @@ module.exports.changeShowOnlineView = function (val) {
     });
 }
 
-module.exports.updateRepos = function () {
+export function updateRepos() {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata;
         if (user) {
             var _this = this;
-            Gogs.retrieveRepos(user.username).then((repos) => {
+            Gogs().retrieveRepos(user.username).then((repos) => {
                 dispatch({
                     type: consts.RECIEVE_REPOS,
                     repos: repos
@@ -33,7 +34,7 @@ module.exports.updateRepos = function () {
     })
 }
 
-module.exports.openOnlineProject = function (projectPath) {
+export function openOnlineProject(projectPath) {
     return ((dispatch) => {
         var link = 'https://git.door43.org/' + projectPath + '.git';
         var _this = this;
@@ -42,26 +43,24 @@ module.exports.openOnlineProject = function (projectPath) {
                 alert(err);
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
-                Upload.sendFilePath(savePath, url, (err)=>{
-                    if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
-                });
+                dispatch(getDataActions.openProject(savePath, url));
             }
         });
     })
 }
 
-module.exports.getLink = function (e) {
+export function getLink(e) {
     return {
         type: consts.IMPORT_LINK,
         importLink: e.target.value
     }
 }
 
-module.exports.loadProjectFromLink = function (link) {
+export function loadProjectFromLink(link) {
     return ((dispatch) => {
         loadOnline(link, function (err, savePath, url) {
             if (!err) {
-                Upload.sendFilePath(savePath, url, (err)=>{
+                getDataActions.openProject(savePath, url, (err)=>{
                     if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
                 });
             } else {
@@ -69,4 +68,4 @@ module.exports.loadProjectFromLink = function (link) {
             }
         });
     })
-}  
+}

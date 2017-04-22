@@ -1,10 +1,19 @@
-const consts = require('./CoreActionConsts');
-const api = window.ModuleApi;
+import consts from './CoreActionConsts';
 
-module.exports.loadReports = function () {
-  api.Toast.info('Generating reports...', '', 4);
-  return {
-    type: consts.LOAD_REPORTS,
-    val: true
-  }
-};
+/**
+ * @description loas/generates reports.
+ * @return {object} dispatches multiple actions.
+ */
+export function loadReports() {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SHOW_NOTIFICATION,
+      message: 'Generating reports',
+      duration: 5
+    });
+    dispatch({
+      type: consts.LOAD_REPORTS,
+      val: true
+    });
+  });
+}

@@ -1,56 +1,69 @@
-const merge = require('lodash.merge');
-const api = window.ModuleApi;
-
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   book: null,
+  bookAbbr: null,
   groups: null,
+  subgroups: null,
   currentCheck: null,
   currentGroupIndex: null,
   currentCheckIndex: null,
-  currentCheckNameSpace:null
+  currentCheckNamespace: null,
+  groupName: null
 };
 
 module.exports = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_BOOK_NAME":
-      return merge({}, state, {
-        book: action.val,
-      });
-      break;
-    case "SET_GROUPS_OBJECTS":
-      return Object.assign({}, state, {
-        groups: action.val,
-      });
-      break;
-    case "UPDATE_CURRENT_CHECK":
-      return Object.assign({}, state, {
-        currentCheck: action.val,
-      });
-      break;
-    case "GO_TO_CHECK":
-      return merge({}, state, {
+    case consts.SET_BOOK_NAME:
+      return {
+        ...state,
+        book: action.book,
+        bookAbbr: action.bookAbbr
+      };
+    case consts.SET_GROUPS_OBJECTS:
+      return {
+        ...state,
+        groups: action.val
+      };
+    case consts.SET_SUBGROUPS_OBJECTS:
+      return {
+        ...state,
+        subgroups: action.val
+      };
+    case consts.UPDATE_CURRENT_CHECK:
+      return {
+        ...state,
+        currentCheck: action.val
+      };
+    case consts.GO_TO_CHECK:
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
-    case "GO_TO_NEXT":
-      return merge({}, state, {
+        currentCheckIndex: action.currentCheckIndex
+      };
+    case consts.GO_TO_NEXT:
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
-    case "GO_TO_PREVIOUS":
-      return merge({}, state, {
+        currentCheckIndex: action.currentCheckIndex
+      };
+    case consts.GO_TO_PREVIOUS:
+      return {
+        ...state,
         currentGroupIndex: action.currentGroupIndex,
-        currentCheckIndex: action.currentCheckIndex,
-      });
-      break;
-      case "UPDATE_NAMESPACE":
-      return merge ({}, state, {
-        currentCheckNameSpace:action.currentCheckNameSpace
-      });
+        currentCheckIndex: action.currentCheckIndex
+      }
+    case consts.UPDATE_NAMESPACE:
+      return {
+        ...state,
+        currentCheckNamespace: action.currentCheckNamespace
+      };
+    case consts.SET_GROUP_NAME:
+      return {
+        ...state,
+        groupName: action.groupName
+      };
     default:
       return state;
   }
-}
+};

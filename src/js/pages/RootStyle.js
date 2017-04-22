@@ -7,9 +7,9 @@ var RootStyles = {
     position: 'relative',
     overflowY: 'scroll',
     bottom:0,
-    paddingLeft:"15px",
+    padding:"0px",
     overflowX:'hidden',
-    width: "calc(100vw - 300px)",
+    width: "calc(100vw - 250px)",
   },
   AfterCheck: {
     minWidth:'100vh',

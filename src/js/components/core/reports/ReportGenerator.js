@@ -93,7 +93,8 @@ class Report extends React.Component {
 
   render() {
     let { reportVisibility, toolLoaded } = this.props;
-    let reportViews = api.getDataFromCommon("reportViews");
+    let reportViews = this.props.reportViews;
+    //Will need to be passed down from coreStore when reports are used again.
     if(!reportVisibility){
       if(toolLoaded){
         return (
@@ -115,19 +116,16 @@ class Report extends React.Component {
     //get the total of Flagged checks
     let flaggedChecks = this.getFlaggedChecks();
     // get all of the checks associated with this project
-    const listOfChecks = ModuleApi.getDataFromCommon("arrayOfChecks");
-    const targetLang = ModuleApi.getDataFromCommon("targetLanguage");
+    const listOfChecks = this.props.listOfChecks;
+    const targetLang = this.props.targetLang;
     if (!listOfChecks) {
-      // api.Toast.error("Report Open Error", "No project data for checks found", 3);
       return (<div>No project data for checks found</div>);
     }
     if (!targetLang) {
-      // api.Toast.error("Report Open Error", "No target language found", 3);
       return (<div>No target language found</div>);
     }
     // array of the functions in the ReportView.js's for the project
     if (!reportViews || reportViews.length == 0) {
-      // api.Toast.error("Report Open Error", "No report views found", 3);
       return (<div>No report views found</div>);
     }
     // array of JSX to be rendered
@@ -137,8 +135,8 @@ class Report extends React.Component {
     let reportHeadersOutput = [];
     let bookName = "-bookName-";
     let authors = "-authors-";
-    let manifest = ModuleApi.getDataFromCommon("tcManifest");
-    let params = ModuleApi.getDataFromCommon('params');
+    let manifest = this.props.manifest;
+    let params = this.props.params;
     let bookAbbr;
     if (params) bookAbbr = params.bookAbbr;
     if (manifest && (manifest.ts_project || bookAbbr)) {

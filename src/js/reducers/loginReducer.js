@@ -1,10 +1,9 @@
 const consts = require('../actions/CoreActionConsts');
-const merge = require('lodash.merge');
 
 const initialState = {
   loggedInUser: false,
   displayLogin: true,
-  userdata: null,
+  userdata: {},
   feedback: '',
   subject: 'Bug Report'
 };
@@ -12,47 +11,40 @@ const initialState = {
 module.exports = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_USER_NAME:
-      return merge({}, state, {
+      return {
+        ...state,
         userdata: {
+          ...state.userdata,
           username: action.val
         }
-      });
-      break;
+      }
     case consts.SET_USER_PASSWORD:
-      return merge({}, state, {
+      return {
+        ...state,
         userdata: {
+          ...state.userdata,
           password: action.val
         }
-      });
-      break;
+      }
     case consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN:
-      return merge({}, state, {
-        displayLogin: action.val
-      });
-      break;
+      return { ...state, displayLogin: action.val }
     case consts.RECEIVE_LOGIN:
-      return merge({}, state, {
+      return {
+        ...state,
         userdata: action.val,
         loggedInUser: true
-      });
-      break;
+      }
     case consts.LOGOUT_USER:
       localStorage.removeItem('user');
-      return merge({}, state, {
-        userdata: null,
+      return {
+        ...state,
+        userdata: {},
         loggedInUser: false
-      });
-      break;
+      }
     case consts.FEEDBACK_CHANGE:
-      return merge({}, state, {
-        feedback: action.val
-      });
-      break;
-    case 'FEEDBACK_SUBJECT_CHANGE':
-      return merge({}, state, {
-        subject: action.val
-      });
-      break;
+      return { ...state, feedback: action.val }
+    case consts.FEEDBACK_SUBJECT_CHANGE:
+      return { ...state, subject: action.val }
     case consts.SUBMIT_FEEDBACK:
       Rollbar.configure({
         payload: {
@@ -62,10 +54,7 @@ module.exports = (state = initialState, action) => {
         }
       });
       Rollbar.info(state.subject+ ':\n' + state.feedback);
-      return merge({}, state, {
-        feedback: 'Feedback Submitted!'
-      });
-      break;
+      return { ...state,   feedback: 'Feedback Submitted!' }
     default:
       return state;
   }

@@ -1,37 +1,34 @@
-var consts = require('./CoreActionConsts');
-var Path = require('path');
-var fs = require(window.__base + 'node_modules/fs-extra');
+import consts from './CoreActionConsts';
+import sudo from 'sudo-prompt';
+// actions
+import * as CheckStoreActions from './CheckStoreActions.js';
+import * as ToolsActions from './ToolsActions.js';
+// constant declarations
 const exec = require('child_process').exec;
-var sudo = require('sudo-prompt');
-var options = {
+const options = {
   name: 'Translation Core'
 };
+const api = window.ModuleApi;
 
-/**
-How to use the actions:
-Just require this file in your component, call
-one of the functions and the event will automatically
-be dispatched to all of the stores that have registered
-listener
-(See ExampleComponent.js)
-*/
 
-module.exports.showMainView = function (val) {
+export function showMainView(val) {
   return {
     type: consts.SHOW_APPS,
     val: val
   }
 }
 
-module.exports.changeModuleView = function (val) {
+export function changeModuleView(val) {
   return {
     type: consts.CHANGE_WRAPPER_VIEW,
     val: val
   }
 }
 
-module.exports.changeOnlineStatus = function (online, firstLoad) {
+export function changeOnlineStatus(online, firstLoad, fromButton) {
   return ((dispatch) => {
+    if (!document.hasFocus() && !fromButton) return;
+    //If the document is out of focus and the action is not created by the user
     if (process.platform == 'win32') {
       var TCportAllowed = true;
       if (firstLoad) {
@@ -92,4 +89,141 @@ module.exports.changeOnlineStatus = function (online, firstLoad) {
       }
     }
   })
+}
+
+export function changeSubMenuItems(groupName) {
+  const newSubGroupObjects = this.getSubMenuItems(this.state.currentToolNamespace, groupName);
+  this.setState({
+    currentSubGroupObjects: newSubGroupObjects,
+    currentGroupName: groupName,
+    currentCheckIndex: 0
+  });
+}
+
+export function setToolNamespace(currentCheckNamespace) {
+  return ((dispatch, getState) => {
+    if (!currentCheckNamespace) return {
+      type: "SET_TOOL_NAMESPACE"
+    };
+    //if for some reason currentCheckNamespace is undefined it shouldn't continue
+    const store = getState().checkStoreReducer;
+    var bookName = store.book;
+    var currentGroupIndex = store.currentGroupIndex;
+    var currentCheckIndex = store.currentCheckIndex;
+    var groupObjects = store.groups;
+    var groupName = groupObjects[currentGroupIndex].group;
+    var currentCheck;
+    var subGroupObjects;
+
+    //getting the data required to initialize a new tool being loaded
+
+    if (currentCheckNamespace === ' ') {
+      dispatch(this.changeModuleView('recent'));
+      dispatch(CheckStoreActions.setBookName(null));
+      dispatch(CheckStoreActions.setCheckNameSpace(null));
+      return {
+        type: "SET_TOOL_NAMESPACE"
+      };
+    }
+    //if currentCheckNamespace is ' ' that means we are showing the recent projects and not a tool
+
+    dispatch(CheckStoreActions.setCheckNameSpace(currentCheckNamespace));
+    //populating the checkstore field for namespace
+
+    if (!groupObjects[currentGroupIndex]) currentGroupIndex = 0;
+    this.setUpGroupObjectsFromIndex(groupObjects);
+
+    dispatch(CheckStoreActions.setBookName(bookName));
+    //populating the checkstore field for bookName
+
+    dispatch(CheckStoreActions.goToCheck(currentCheckNamespace, currentGroupIndex || 0, currentCheckIndex || 0));
+    //populating the checkstore field for namespace
+
+    dispatch(CheckStoreActions.updateCurrentCheck(currentCheckNamespace, currentCheck));
+    //populating the checkstore field for the currentCheck, a tool may have a
+    //prior checkindex and group index
+
+    dispatch({
+      type: "SET_TOOL_NAMESPACE",
+      currentGroupIndex: currentGroupIndex || 0,
+      currentCheckIndex: currentCheckIndex || 0,
+      currentToolNamespace: currentCheckNamespace,
+      currentGroupName: groupName,
+      currentGroupObjects: groupObjects,
+      currentSubGroupObjects: subGroupObjects,
+      currentBookName: bookName
+    });
+    dispatch(ToolsActions.getToolsMetadatas());
+
+    dispatch(this.changeModuleView('main'));
+    //updating the current view of the app
+  })
+}
+
+export function setUpGroupObjectsFromIndex(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
+  return ((dispatch) => {
+    try {
+      var groupObjects = JSON.parse(JSON.stringify(oldGroupObjects));
+      for (var el in groupObjects) {
+        groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
+      }
+      dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
+      //populating the checkstore field for groupobjects
+      let subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+      let currentCheck = subGroupObjects[currentCheckIndex];
+      let groupName = groupObjects[currentGroupIndex]['groupName'].trim();
+      dispatch(CheckStoreActions.setSubgroupObjects(subGroupObjects));
+      dispatch(CheckStoreActions.updateCurrentCheck(currentCheck));
+      dispatch(CheckStoreActions.setGroupName(groupName));
+    } catch (e) {
+      console.warn(e)
+    }
+  })
+}
+
+
+export function updateTools(namespace) {
+  //TODO
+  return ((dispatch) => {
+    if (!namespace) {
+      this.getDefaultModules((moduleFolderPathList) => {
+        this.fillDefaultModules(moduleFolderPathList, (metadatas) => {
+          this.sortMetadatas(metadatas);
+          api.putToolMetaDatasInStore(metadatas);
+          this.props.updateModuleView('recent');
+        })
+      })
+    } else {
+      var newCheckCategory = api.getModule(namespace);
+      this.props.updateModuleView('main');
+      this.setState(merge({}, this.state, {
+        moduleWrapperProps: {
+          mainTool: newCheckCategory
+        }
+      }), callback)
+    }
+  });
+}
+
+export function getGroupProgress(groupObj) {
+  var numChecked = 0;
+  for (var i = 0; i < groupObj.checks.length; i++) {
+    if (groupObj.checks[i].checkStatus != "UNCHECKED") numChecked++;
+  }
+  return numChecked / groupObj.checks.length;
+}
+
+export function getAlert() {
+  var data = CoreStore.getAlertResponseMessage();
+  if (data) {
+    try {
+      var callback = this.alertObj['alertCallback'];
+      callback(data);
+      this.alertObj['alertCallback'] = null;
+      api.clearAlertCallback();
+    } catch (e) {
+    }
+    data = null;
+    this.alertResponseObj = null;
+  }
 }
