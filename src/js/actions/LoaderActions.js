@@ -1,14 +1,16 @@
 import consts from './CoreActionConsts';
 import * as ModalActions from './ModalActions.js';
+import * as GetDataActions from './GetDataActions';
 
-export function toggleLoader (val) {
+
+export function toggleLoader(val) {
   return {
     type: consts.TOGGLE_LOADER_MODAL,
     show: val
   }
 }
 
-export function killLoading () {
+export function killLoading() {
   return ((dispatch) => {
     dispatch(GetDataActions.clearPreviousData());
     dispatch(this.toggleLoader());
@@ -17,9 +19,8 @@ export function killLoading () {
   });
 }
 
-export function update (show, progess) {
+export function update(show, progess) {
   return ((dispatch) => {
-    debugger;
     if (!show) {
       setTimeout(() => {
         dispatch({
@@ -38,11 +39,11 @@ export function update (show, progess) {
   });
 }
 
-export function sendProgressForKey (progress) {
-  return ((dispatch)=>{
+export function sendProgressForKey(progress) {
+  return (dispatch => {
     dispatch({
       type: consts.UPDATE_PROGRESS,
-      progress: progress,
+      progress: progress
     });
     if (progress >= 100) {
       dispatch(toggleLoader(false));

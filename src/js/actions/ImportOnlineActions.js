@@ -1,12 +1,13 @@
-const api = window.ModuleApi;
-const consts = require('./CoreActionConsts');
-const loadOnline = require('../components/core/LoadOnline');
+import consts from './CoreActionConsts';
 import Gogs from '../components/core/login/GogsApi';
 import * as modalActions from './ModalActions';
 import * as recentProjectsActions from './RecentProjectsActions';
 import * as getDataActions from './GetDataActions';
+// constant declaration
+const loadOnline = require('../components/core/LoadOnline');
 
-export function changeShowOnlineView (val) {
+
+export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata
             dispatch({
@@ -18,7 +19,7 @@ export function changeShowOnlineView (val) {
     });
 }
 
-export function updateRepos () {
+export function updateRepos() {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata;
         if (user) {
@@ -33,7 +34,7 @@ export function updateRepos () {
     })
 }
 
-export function openOnlineProject (projectPath) {
+export function openOnlineProject(projectPath) {
     return ((dispatch) => {
         var link = 'https://git.door43.org/' + projectPath + '.git';
         var _this = this;
@@ -48,14 +49,14 @@ export function openOnlineProject (projectPath) {
     })
 }
 
-export function getLink (e) {
+export function getLink(e) {
     return {
         type: consts.IMPORT_LINK,
         importLink: e.target.value
     }
 }
 
-export function loadProjectFromLink (link) {
+export function loadProjectFromLink(link) {
     return ((dispatch) => {
         loadOnline(link, function (err, savePath, url) {
             if (!err) {

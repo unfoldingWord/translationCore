@@ -1,8 +1,6 @@
 import BooksOfBible from '../components/core/BooksOfBible';
 import CoreStore from '../stores/CoreStore.js';
 import * as CoreActionsRedux from './CoreActionsRedux.js';
-// constant declaration
-const api = window.ModuleApi;
 
 
 export function setBookName(bookName) {

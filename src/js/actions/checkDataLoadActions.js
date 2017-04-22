@@ -1,7 +1,6 @@
 import consts from '../actions/CoreActionConsts';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import isEqual from 'lodash/isEqual'
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
 
