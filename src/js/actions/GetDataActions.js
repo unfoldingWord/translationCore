@@ -251,7 +251,6 @@ export function loadModuleAndDependencies(moduleFolderName) {
             dispatch({ type: consts.CLEAR_OLD_GROUPS });
             dispatch({ type: consts.CLEAR_CONTEXT_ID });
             dispatch(CoreActionsRedux.changeModuleView());
-            console.log('cleared data', getState())
             dispatch({ type: consts.START_LOADING });
             dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
