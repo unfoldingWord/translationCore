@@ -21,11 +21,17 @@ class ToolsContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer
+    let { toolName } = nextProps.currentToolReducer
+    // if contextId does not match current tool, then remove contextId
+    if (contextId && contextId.tool !== toolName) {
+      nextProps.actions.changeCurrentContextId(undefined)
+    }
+    // check to see if groupData and groupIndex
     if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {
-    let Tool = this.props.currentTool;
+    let Tool = this.props.currentTool
     return (
       <Tool {...this.props} />
     );

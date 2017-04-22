@@ -245,8 +245,11 @@ export function manifestError(content) {
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
 export function loadModuleAndDependencies(moduleFolderName) {
-    return ((dispatch) => {
+    return ((dispatch, getState) => {
         try {
+            dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+            dispatch({ type: consts.CLEAR_OLD_GROUPS });
+            dispatch({ type: consts.CLEAR_CONTEXT_ID });
             dispatch(CoreActionsRedux.changeModuleView());
             dispatch({ type: consts.START_LOADING });
             dispatch(CurrentToolActions.setDataFetched(false));

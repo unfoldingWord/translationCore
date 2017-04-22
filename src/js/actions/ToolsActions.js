@@ -11,9 +11,6 @@ const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 
 export function loadTool(folderName) {
   return ((dispatch, getState) => {
-    localStorage.setItem('lastCheckModule', folderName);
-    dispatch({ type: consts.LOAD_TOOL, val: true });
-    dispatch(LoaderActions.toggleLoader(true));
     dispatch(modalActions.showModalContainer(false));
     dispatch(GetDataActions.loadModuleAndDependencies(folderName));
   });

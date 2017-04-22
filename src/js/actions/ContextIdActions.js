@@ -27,9 +27,11 @@ export const changeCurrentContextId = contextId => {
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
     })
-    loadCheckData(dispatch)
-    let state = getState()
-    saveContextId(state, contextId)
+    if (contextId) {
+      loadCheckData(dispatch)
+      let state = getState()
+      saveContextId(state, contextId)
+    }
   })
 }
 /**
