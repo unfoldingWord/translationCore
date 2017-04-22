@@ -54,9 +54,14 @@ export const saveState = (prevState, newState) => {
       if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
     }
     // TODO: only save groupsIndex and groupsData if project and tool have not changed
-    if (true) {
-      saveGroupsIndex(newState);
-      saveGroupsData(newState);
+    if (
+      // make sure project has not changed
+      isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
+      // make sure tool has not changed
+      isEqual(prevState.currentToolReducer.toolName, newState.currentToolReducer.toolName)
+    ) {
+        saveGroupsIndex(newState);
+        saveGroupsData(newState);
     }
     saveModuleSettings(newState);
   } catch (err) {
