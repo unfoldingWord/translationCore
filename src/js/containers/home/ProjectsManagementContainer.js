@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 // components
-import MyProjects from '../../components/home/projectManagement/MyProjects'
-import ProjectsFAB from '../../components/home/projectManagement/ProjectsFAB'
-import OnlineImportModal from '../../components/home/projectManagement/OnlineImportModal'
+import MyProjects from '../../components/home/projectsManagement/MyProjects'
+import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB'
+import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
@@ -11,9 +11,11 @@ class ProjectsManagementContainer extends Component {
   render() {
     return (
       <div>
+        {/*
         <MyProjects />
         <ProjectsFAB />
-        <OnlineImportModal />>
+        <OnlineImportModal />
+        */}
       </div>
     );
   }
