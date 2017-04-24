@@ -6,10 +6,9 @@ import {
   Stepper,
   StepLabel,
 } from 'material-ui/Stepper';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 
-class HorizontalLinearStepper extends Component {
+class StepperComponent extends Component {
+  // TODO: move state to reducer.
   constructor() {
     super();
     this.state = {
@@ -20,6 +19,7 @@ class HorizontalLinearStepper extends Component {
     this.handlePrev = this.handlePrev.bind(this);
   }
 
+  // TODO: move function as actions to actions file.
   handleNext() {
     const stepIndex = this.state.stepIndex;
     console.log(stepIndex)
@@ -36,25 +36,11 @@ class HorizontalLinearStepper extends Component {
     }
   }
 
-  getStepContent(stepIndex) {
-    switch (stepIndex) {
-      case 0:
-        return 'Select campaign settings...';
-      case 1:
-        return 'What is an ad group anyways?';
-      case 2:
-        return 'This is the bit I really care about!';
-      default:
-        return 'You\'re a long way from home sonny jim!';
-    }
-  }
-
   render() {
-    const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px'};
-    const userIcon = <Glyphicon glyph={"user"} />
-    const projectIcon = <Glyphicon glyph={"folder-open"} />
-    const toolIcon = <Glyphicon glyph={"wrench"} />
+    const {stepIndex} = this.state;
+    const userIcon = <Glyphicon glyph={"user"} style={{fontSize: "25px"}}/>
+    const projectIcon = <Glyphicon glyph={"folder-open"} style={{fontSize: "25px"}}/>
+    const toolIcon = <Glyphicon glyph={"wrench"} style={{fontSize: "25px"}}/>
 
     return (
       <Card>
@@ -64,48 +50,16 @@ class HorizontalLinearStepper extends Component {
               <StepLabel icon={userIcon}> User </StepLabel>
             </Step>
             <Step>
-              <StepLabel icon={projectIcon}> Project </StepLabel>
+              <StepLabel icon={projectIcon}>{"  Project "}</StepLabel>
             </Step>
             <Step>
               <StepLabel icon={toolIcon}> Tool </StepLabel>
             </Step>
           </Stepper>
-          <div style={contentStyle}>
-            {finished ? (
-              <p>
-                <a
-                  href="#"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    this.setState({stepIndex: 0, finished: false});
-                  }}
-                >
-                  Click here
-                </a> to reset the example.
-              </p>
-            ) : (
-              <div>
-                <p>{this.getStepContent(stepIndex)}</p>
-                <div style={{marginTop: 12}}>
-                  <FlatButton
-                    label="Back"
-                    disabled={stepIndex === 0}
-                    onTouchTap={this.handlePrev}
-                    style={{marginRight: 12}}
-                  />
-                  <RaisedButton
-                    label={stepIndex === 2 ? 'Finish' : 'Next'}
-                    primary={true}
-                    onTouchTap={this.handleNext}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </Card>
     );
   }
 }
 
-export default HorizontalLinearStepper;
+export default StepperComponent;
