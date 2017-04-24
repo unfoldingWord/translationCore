@@ -7,8 +7,6 @@
   });
   const path = require('path');
   window.__base = path.join(__dirname, '../../../');
-  const injectTapEventPlugin = require('react-tap-event-plugin');
-  injectTapEventPlugin();
   const ReactDOM = require('react-dom');
   const React = require('react');
   const remote = require('electron').remote;
