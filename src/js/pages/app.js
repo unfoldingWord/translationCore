@@ -103,6 +103,7 @@ class Main extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="fill-height">
         <KonamiContainer />

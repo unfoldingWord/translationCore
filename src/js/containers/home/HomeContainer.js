@@ -6,13 +6,14 @@ import LicenseModal from '../../components/home/LicenseModal'
 // containers
 import MainContainer from './MainContainer'
 // actions
-// import {actionCreator} from 'actionCreatorPath'
-
+import * as BodyUIActions from '../../actions/BodyUIActions'
 
 class HomeContainer extends Component {
   render() {
+    let {toggleHomeView} = this.props.actions;
     return (
       <div>
+        <h1 onClick={toggleHomeView}>hello</h1>
         <WelcomeSplash />
         <LicenseModal />
        {/* <MainContainer {...this.props} /> */}
@@ -29,8 +30,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator);
+    actions: {
+      toggleHomeView: () => {
+        dispatch(BodyUIActions.toggleHomeView())
+      }
     }
   };
 };

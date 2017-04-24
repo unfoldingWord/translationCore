@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // components
-import Instructions from '../../components/home/Instructions'
-import Navigation from '../../components/home/Navigation'
+import Instructions from '../../components/home/instructions/Instructions'
+import BackNavigation from '../../components/home/BackNavigation'
 // containers
 import StepperContainer from './StepperContainer'
 import DisplayContainer from './DisplayContainer'
@@ -16,7 +16,7 @@ class MainContainer extends Component {
         <StepperContainer {...this.props} />
         <Instructions {...this.props} />
         <DisplayContainer {...this.props} />
-        <Navigation {...this.props} />
+        <BackNavigation {...this.props} />
       </div>
     );
   }
