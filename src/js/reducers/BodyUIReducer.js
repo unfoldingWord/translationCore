@@ -1,7 +1,8 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  displayHomeView: true
+  displayHomeView: true,
+  showWelcomeSplash: true
 };
 
 const BodyUIReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const BodyUIReducer = (state = initialState, action) => {
       return {
         ...state,
         displayHomeView: !state.displayHomeView
+      };
+    case consts.TOGGLE_WELCOME_SPLASH:
+      return {
+        ...state,
+        showWelcomeSplash: !state.displayHomeView
       };
     default:
       return state;

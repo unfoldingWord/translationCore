@@ -14,9 +14,9 @@ class MainContainer extends Component {
     return (
       <div>
         <StepperContainer {...this.props} />
-        <Instructions {...this.props} />
+        {/*<Instructions {...this.props} />
         <DisplayContainer {...this.props} />
-        <BackNavigation {...this.props} />
+        <BackNavigation {...this.props} />*/}
       </div>
     );
   }

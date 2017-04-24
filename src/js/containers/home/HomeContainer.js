@@ -9,14 +9,28 @@ import MainContainer from './MainContainer'
 import * as BodyUIActions from '../../actions/BodyUIActions'
 
 class HomeContainer extends Component {
+
+  homeContainerDisplay() {
+    let {showWelcomeSplash} = this.props.BodyUIReducer;
+    let display = <div />;
+    if (showWelcomeSplash) {
+      display = (
+        <WelcomeSplash {...this.props} />
+      );
+    } else {
+      display = (
+        <MainContainer {...this.props} />
+      );
+    }
+    return display;
+  }
+
   render() {
     let {toggleHomeView} = this.props.actions;
     return (
       <div>
-        <h1 onClick={toggleHomeView}>hello</h1>
-        <WelcomeSplash />
-        <LicenseModal />
-       {/* <MainContainer {...this.props} /> */}
+        {this.homeContainerDisplay()}
+        <LicenseModal {...this.props} />
       </div>
     );
   }
@@ -24,7 +38,7 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    BodyUIReducer: state.BodyUIReducer
   };
 };
 
@@ -33,6 +47,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     actions: {
       toggleHomeView: () => {
         dispatch(BodyUIActions.toggleHomeView())
+      },
+      togglewWelcomeSplash: () => {
+        dispatch(BodyUIActions.togglewWelcomeSplash())
       }
     }
   };

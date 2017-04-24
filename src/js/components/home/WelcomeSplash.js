@@ -4,7 +4,7 @@ class WelcomeSplash extends Component {
   render() {
     return (
       <div>
-        
+        <h1 onClick={this.props.actions.togglewWelcomeSplash} style={{cursor: "pointer"}}>Get started!</h1>
       </div>
     );
   }
