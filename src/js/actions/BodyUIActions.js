@@ -6,7 +6,7 @@ export const toggleHomeView = () => {
   };
 };
 
-export const togglewWelcomeSplash = () => {
+export const toggleWelcomeSplash = () => {
   return {
     type: consts.TOGGLE_WELCOME_SPLASH
   };

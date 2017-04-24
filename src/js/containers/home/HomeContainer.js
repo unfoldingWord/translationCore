@@ -48,8 +48,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleHomeView: () => {
         dispatch(BodyUIActions.toggleHomeView())
       },
-      togglewWelcomeSplash: () => {
-        dispatch(BodyUIActions.togglewWelcomeSplash())
+      toggleWelcomeSplash: () => {
+        dispatch(BodyUIActions.toggleWelcomeSplash())
       }
     }
   };
