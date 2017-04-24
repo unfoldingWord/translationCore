@@ -15,7 +15,7 @@ class HomeContainer extends Component {
       <div>
         <WelcomeSplash />
         <LicenseModal />
-        <MainContainer {...this.props} />
+       {/* <MainContainer {...this.props} /> */}
       </div>
     );
   }
