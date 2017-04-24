@@ -1,49 +1,43 @@
-import React from 'react';
-import CoreActions from '../actions/CoreActions.js';
-import * as recentProjectActions from '../actions/RecentProjectsActions.js';
-import * as CoreActionsRedux from '../actions/CoreActionsRedux.js';
-import { setSettings } from '../actions/SettingsActions.js'
-import * as DragDropActions from '../actions/DragDropActions.js';
-import NotificationContainer from '../containers/NotificationContainer';
-import CheckStore from '../stores/CheckStore.js';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import pathex from 'path-extra';
+import fs from 'fs-extra';
+import path from 'path-extra';
+import { remote } from 'electron';
 import CryptoJS from "crypto-js";
 import gogs from '../components/core/login/GogsApi.js';
-import sync from '../components/core/SideBar/GitSync.js';
-import { remote } from 'electron';
-import path from 'path-extra';
-import { shell } from 'electron';
-import fs from 'fs-extra';
+import {Grid, Row, Col } from 'react-bootstrap';
+import RootStyles from './RootStyle';
+// container
+import NotificationContainer from '../containers/NotificationContainer';
 import KonamiContainer from "../containers/KonamiContainer.js";
 import StatusBarContainer from '../containers/StatusBarContainer';
 import SideBarContainer from '../containers/SideBarContainer';
 import LoaderContainer from '../containers/LoaderContainer';
-import RootStyles from './RootStyle';
-import {Grid, Button, Row, Col } from 'react-bootstrap';
-import loadOnline from '../components/core/LoadOnline';
-import RecentProjects from '../components/core/RecentProjects';
-import Welcome from '../components/core/welcome/welcome';
 import AlertModalContainer from '../containers/AlertModalContainer';
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
+// actions
+import CoreActions from '../actions/CoreActions.js';
+import * as recentProjectActions from '../actions/RecentProjectsActions.js';
+import * as CoreActionsRedux from '../actions/CoreActionsRedux.js';
+import * as DragDropActions from '../actions/DragDropActions.js';
 // constant declarations
 const api = window.ModuleApi;
-const dialog = remote.dialog;
+const {dialog} = remote;
 
 
-var Main = React.createClass({
+class Main extends Component {
+
   componentWillMount() {
-    //initializing app settings
-    const tCDir = path.join(pathex.homedir(), 'translationCore');
+    const tCDir = path.join(path.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
-    //changing check, (group index, check index) ...one or the other or both
-    var online = window.navigator.onLine;
-    this.props.changeOnlineStatus(online, true);
-  },
 
-  componentDidMount: function () {
+    let online = window.navigator.onLine;
+    this.props.changeOnlineStatus(online, true);
+  }
+
+  componentDidMount() {
     var packageJson = require(window.__base + '/package.json');
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.removeItem('lastProject');
@@ -53,7 +47,6 @@ var Main = React.createClass({
     if (localStorage.getItem('crashed') == 'true') {
       localStorage.removeItem('crashed');
       localStorage.removeItem('lastProject');
-      this.props.dispatch(setSettings('showTutorial', false));
     }
 
     if (localStorage.getItem('user')) {
@@ -108,12 +101,11 @@ var Main = React.createClass({
       }
     }
 
-  },
+  }
 
-  render: function () {
-
+  render() {
     return (
-      <div className='fill-height'>
+      <div className="fill-height">
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />
@@ -132,9 +124,9 @@ var Main = React.createClass({
           </Col>
         </Grid>
       </div>
-    )
+    );
   }
-});
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -155,4 +147,7 @@ const mapStateToProps = state => {
   return state;
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);
