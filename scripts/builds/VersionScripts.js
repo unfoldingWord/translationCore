@@ -19,5 +19,5 @@ var script = "git checkout develop &&  \
     console.log(err);
     return;
   }
-  console.log('Version updated succesfully to ' + version);
+  console.log('Version updated succesfully to ' + versionNumber);
 });
