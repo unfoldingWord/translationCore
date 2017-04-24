@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import HomeButton from '../../components/home/stepper/HomeButton'
 import Stepper from '../../components/home/stepper/Stepper'
@@ -11,8 +12,12 @@ class StepperContainer extends Component {
     return (
       <div>
         <h1>stepper</h1>
-        {/*<HomeButton {...this.props} />
-        <Stepper {...this.props} />*/}
+        {/*
+        <HomeButton {...this.props} />
+        */}
+        <MuiThemeProvider>
+          <Stepper {...this.props} />
+        </MuiThemeProvider>
       </div>
     );
   }
