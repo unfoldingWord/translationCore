@@ -1,3 +1,4 @@
+import isEqual from 'lodash/isEqual'
 import {loadSettings, loadModulesSettings} from './loadMethods';
 import {
   saveSettings,
@@ -41,17 +42,28 @@ export const loadState = () => {
  * Takes in saveSettings()
  * @param {object} state - object of reducers (objects).
  */
-export const saveState = state => {
+export const saveState = (prevState, newState) => {
   try {
-    saveSettings(state);
-    saveResources(state);
-    saveComments(state);
-    saveSelections(state);
-    saveVerseEdit(state);
-    saveReminders(state);
-    saveGroupsIndex(state);
-    saveGroupsData(state);
-    saveModuleSettings(state);
+    saveSettings(newState);
+    saveResources(newState);
+    // only save checkData reducers if contextId hasn't changed
+    if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
+      if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);
+      if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) saveSelections(newState);
+      if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) saveVerseEdit(newState);
+      if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
+    }
+    // TODO: only save groupsIndex and groupsData if project and tool have not changed
+    if (
+      // make sure project has not changed
+      isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
+      // make sure tool has not changed
+      isEqual(prevState.currentToolReducer.toolName, newState.currentToolReducer.toolName)
+    ) {
+        saveGroupsIndex(newState);
+        saveGroupsData(newState);
+    }
+    saveModuleSettings(newState);
   } catch (err) {
     console.warn(err);
   }

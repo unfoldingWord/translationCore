@@ -16,8 +16,7 @@ const groupsIndexReducer = (state = initialState, action) => {
       return {
         ...state,
         loadedFromFileSystem: true
-      }
-      break;
+      };
     case consts.CLEAR_OLD_GROUPS:
       return initialState;
     default:

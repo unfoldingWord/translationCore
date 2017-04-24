@@ -7,14 +7,14 @@
  * @version 1.0.0
  */
 
-import React from 'react'
+import React from 'react';
+// actions
 import * as fs from 'fs-extra';
 import * as consts from './CoreActionConsts';
 import * as CoreActionsRedux from './CoreActionsRedux';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
-import * as CheckStoreActions from './CheckStoreActions';
 import * as NotificationActions from './NotificationActions';
 import * as ModalActions from './ModalActions';
 import * as ToolsActions from './ToolsActions';
@@ -32,7 +32,7 @@ import BOOKS from '../components/core/BooksOfBible.js';
 import Path from 'path';
 import GIT from '../components/core/GitApi.js';
 
-const api = window.ModuleApi;
+// constant declarations
 const PARENT = pathex.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
@@ -130,6 +130,7 @@ export function openProject(projectPath, projectLink) {
             //No USFM detected, initiating 'standard' loading process
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
             let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+            manifest = LoadHelpers.verifyChunks(projectPath, manifest);
             if (!manifest && !manifest.tcInitialized) {
                 manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
@@ -244,8 +245,11 @@ export function manifestError(content) {
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
 export function loadModuleAndDependencies(moduleFolderName) {
-    return ((dispatch) => {
+    return ((dispatch, getState) => {
         try {
+            dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+            dispatch({ type: consts.CLEAR_OLD_GROUPS });
+            dispatch({ type: consts.CLEAR_CONTEXT_ID });
             dispatch(CoreActionsRedux.changeModuleView());
             dispatch({ type: consts.START_LOADING });
             dispatch(CurrentToolActions.setDataFetched(false));
@@ -254,6 +258,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
             const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
             dispatch(saveModules(checkArray));
             dispatch(CurrentToolActions.setToolName(dataObject.name));
+            dispatch(CurrentToolActions.setToolTitle(dataObject.title));
             dispatch(loadGroupDataFromFileSystem(dataObject.name));
         } catch (e) {
             dispatch(errorLoadingProject(e));

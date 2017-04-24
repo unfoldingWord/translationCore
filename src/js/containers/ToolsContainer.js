@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// actions
 import { showNotification } from '../actions/NotificationActions.js';
 import { showPopover } from '../actions/PopoverActions.js';
 import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
@@ -10,7 +11,6 @@ import { changeSelections, validateSelections } from '../actions/SelectionsActio
 import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
 import {addGroupData} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
-import * as CheckStoreActions from '../actions/CheckStoreActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
@@ -18,13 +18,20 @@ import { setDataFetched } from '../actions/currentToolActions';
 
 
 class ToolsContainer extends React.Component {
+
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer
+    let { toolName } = nextProps.currentToolReducer
+    // if contextId does not match current tool, then remove contextId
+    if (contextId && contextId.tool !== toolName) {
+      nextProps.actions.changeCurrentContextId(undefined)
+    }
+    // check to see if groupData and groupIndex
     if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {
-    let Tool = this.props.currentTool;
+    let Tool = this.props.currentTool
     return (
       <Tool {...this.props} />
     );
@@ -113,14 +120,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));
       },
-      isDataFetched: (val) => {
+      isDataFetched: val => {
         dispatch(setDataFetched(val));
       },
       doneLoading: () => {
-        dispatch({type:"DONE_LOADING"})
+        dispatch({type: "DONE_LOADING"})
       }
     }
   };
 };
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(ToolsContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolsContainer);

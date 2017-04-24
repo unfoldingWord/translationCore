@@ -1,26 +1,34 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import LoaderActions from '../actions/LoaderActions.js'
+import React from 'react';
+import { connect } from 'react-redux';
+// Components
 import Loader from '../components/core/Loader';
+// Actions
+import * as LoaderActions from '../actions/LoaderActions.js';
 
 class LoaderContainer extends React.Component {
-    render() {
-      return (
-        <Loader {...this.props}/>
-      );
-    }
+
+  render() {
+    return (
+      <Loader {...this.props}/>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    return Object.assign({}, state.loaderReducer);
+  return {
+    ...state.loaderReducer
+  };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        reloadContent: () => {
-            dispatch(LoaderActions.killLoading());
-        }
+  return {
+    reloadContent: () => {
+      dispatch(LoaderActions.killLoading());
     }
+  }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(LoaderContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoaderContainer);

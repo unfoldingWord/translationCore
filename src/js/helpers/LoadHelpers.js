@@ -253,7 +253,8 @@ export function getParams(path, manifest) {
             params.bookAbbr = manifest.project_id;
         }
         if (isArray(manifest.source_translations)) {
-            params.gatewayLanguage = manifest.source_translations[0].language_id;
+            if (manifest.source_translations.length == 0) params.gatewayLanguage = "Unknown";
+            else params.gatewayLanguage = manifest.source_translations[0].language_id;
         } else {
             params.gatewayLanguage = manifest.source_translations.language_id;
         }
@@ -327,6 +328,7 @@ export function checkIfUSFMFileOrProject(projectPath) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function verifyChunks(projectPath, manifest) {
+    if (!projectPath || !manifest) return null;
     const chunkChapters = fs.readdirSync(projectPath);
     let finishedChunks = [];
     for (const chapter in chunkChapters) {

@@ -60,16 +60,13 @@ function populate(data, tsManifest) {
     for (var users in data.user) {
       var user = data.user[users];
       if (user) {
-        user.token = undefined;
-        user.avatar_url = undefined;
-        user.id = undefined;
         projectManifest.checkers.push(user);
       }
     }
   }
 
   if (data && data.checkLocations) {
-    for (let item in data.checkLocations) {
+    for (var item in data.checkLocations) {
       var currentItem = data.checkLocations[item];
       projectManifest.check_modules.push(currentItem.name);
     }

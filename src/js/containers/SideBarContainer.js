@@ -1,23 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import CheckStoreActions from '../actions/CheckStoreActions.js'
-import { toggleMenu } from '../actions/SideBarActions.js'
-import Groups from '../components/core/groupMenu/Groups'
 import {Grid, Row, Col, Glyphicon} from 'react-bootstrap'
-import Chevron from '../components/core/SideBar/Chevron'
+// components
+import Groups from '../components/core/groupMenu/Groups'
 import * as style from '../components/core/SideBar/Style'
+// actions
 import {changeCurrentContextId} from '../actions/ContextIdActions.js'
+import {toggleMenu} from '../actions/SideBarActions.js'
 
-var sideBarContainerStyle = {
+const sideBarContainerStyle = {
   backgroundColor: "#333333",
   zIndex: "98",
   fontSize: "12px",
   overflowX: "hidden",
   height: "100%",
   padding: 0,
-  position:"fixed",
-  width:"250px"
-}
+  position: "fixed",
+  width: "250px"
+};
 
 class SideBarContainer extends React.Component {
 
@@ -51,16 +51,18 @@ class SideBarContainer extends React.Component {
             </Col>
           </Grid>
         </div>
-        <Glyphicon style={menuVisibility ? style.slideButton : style.slideButtonCollapsed}
-                   glyph={menuVisibility ? 'chevron-left' : 'chevron-right'}
-                   onClick={onToggleMenu} />
+        <Glyphicon
+          style={menuVisibility ? style.slideButton : style.slideButtonCollapsed}
+          glyph={menuVisibility ? 'chevron-left' : 'chevron-right'}
+          onClick={onToggleMenu}
+        />
       </div>
     );
   }
 }
 
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer,
@@ -71,13 +73,13 @@ function mapStateToProps(state) {
     sideBarReducer: state.sideBarReducer,
     currentToolReducer: state.currentToolReducer,
     remindersReducer: state.remindersReducer
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      changeCurrentContextId: (contextId) => {
+      changeCurrentContextId: contextId => {
         dispatch(changeCurrentContextId(contextId));
       },
       onToggleMenu: () => {
@@ -87,4 +89,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(SideBarContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SideBarContainer);

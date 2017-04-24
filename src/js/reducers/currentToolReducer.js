@@ -12,11 +12,18 @@ const currentToolReducer = (state = initialState, action) => {
         ...state,
         toolName: action.toolName
       }
+    case consts.SET_TOOL_TITLE:
+      return {
+        ...state,
+        toolTitle: action.toolTitle
+      }
     case consts.SET_FETCHED_DATA:
       return {
         ...state,
         isDataFetched: action.isDataFetched
       }
+    case consts.CLEAR_CURRENT_TOOL:
+      return initialState;
     default:
       return state
   }

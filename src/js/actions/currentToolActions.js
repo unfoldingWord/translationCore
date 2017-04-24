@@ -18,6 +18,21 @@ export const setToolName = (toolName) => {
 }
 
 /**
+ * @description this action sets current tool title
+ * @param {string} toolTitle - title of current tool
+ * @return {object} New state for currentTool reducer.
+ */
+export const setToolTitle = (toolTitle) => {
+  if (!toolTitle) {
+    toolTitle = "";
+  }
+  return {
+    type: consts.SET_TOOL_TITLE,
+    toolTitle
+  }
+}
+
+/**
  * @description This action should be used to set whether or
  * not a tool should run a 'fetchData' in the componentWillReceiveProps
  * function

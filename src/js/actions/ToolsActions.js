@@ -1,19 +1,16 @@
-const consts = require('./CoreActionConsts');
-const api = window.ModuleApi;
-const pathex = require('path-extra');
-const path = require('path-extra');
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const fs = require(window.__base + 'node_modules/fs-extra');
+import consts from './CoreActionConsts';
+import path from 'path-extra';
+import fs from 'fs-extra';
+// actions
 import * as modalActions from './ModalActions.js';
 import * as LoaderActions from './LoaderActions.js';
-import * as coreStoreActions from './CoreActionsRedux.js';
 import * as GetDataActions from './GetDataActions.js';
+// constant declarations
+const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
+// const api = window.ModuleApi;
 
 export function loadTool(folderName) {
   return ((dispatch, getState) => {
-    localStorage.setItem('lastCheckModule', folderName);
-    dispatch({ type: consts.LOAD_TOOL, val: true });
-    dispatch(LoaderActions.toggleLoader(true));
     dispatch(modalActions.showModalContainer(false));
     dispatch(GetDataActions.loadModuleAndDependencies(folderName));
   });
@@ -24,7 +21,7 @@ export function getToolsMetadatas() {
     getDefaultModules((moduleFolderPathList) => {
       fillDefaultModules(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
-        api.putToolMetaDatasInStore(metadatas);
+        // api.putToolMetaDatasInStore(metadatas);
         dispatch({
           type: consts.GET_TOOLS_METADATAS,
           val: metadatas
@@ -41,8 +38,7 @@ const getDefaultModules = (callback) => {
   fs.readdir(moduleBasePath, function (error, folders) {
     if (error) {
       console.error(error);
-    }
-    else {
+    } else {
       for (var folder of folders) {
         try {
           var manifestPath = path.join(moduleBasePath, folder, 'package.json');
@@ -75,10 +71,10 @@ const sortMetadatas = (metadatas) => {
 }
 
 const fillDefaultModules = (moduleFilePathList, callback) => {
-  var tempMetadatas = [];
-  //This makes sure we're done with all the files first before we call the callback
-  var totalFiles = moduleFilePathList.length,
-    doneFiles = 0;
+  let tempMetadatas = [];
+  // This makes sure we're done with all the files first before we call the callback
+  let totalFiles = moduleFilePathList.length;
+  let doneFiles = 0;
   function onComplete() {
     doneFiles++;
     if (doneFiles == totalFiles) {
