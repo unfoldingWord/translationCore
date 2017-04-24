@@ -5,6 +5,7 @@ if (!versionNumber) {
   return;
 }
 var script = "git checkout develop &&  \
+  git pull && \
   npm version --git-tag-version=false " + versionNumber + '&& \
   git commit package.json -m"Update version to ' + versionNumber + '" && \
   git push && \
@@ -12,6 +13,7 @@ var script = "git checkout develop &&  \
   git merge develop && \
   git tag v' + versionNumber + '&& \
   git push origin v' + versionNumber;
+  
   exec(script, (err, data) => {
   if (err) {
     console.log(err);
