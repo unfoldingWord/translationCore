@@ -9,24 +9,29 @@ import * as coreStoreActions from '../actions/CoreActionsRedux.js';
 
 class StatusBarContainer extends React.Component {
 
-    render() {
-      let { bookName } = this.props.projectDetailsReducer;
-      let { toolTitle } = this.props.currentToolReducer;
-      let { username } = this.props.loginReducer.userdata;
+  componentWillMount() {
+    let online = window.navigator.onLine;
+    this.props.changeOnlineStatus(online, true);
+  }
 
-        return (
-            <div>
-                <StatusBar
-                    bookName={bookName}
-                    currentCheckNamespace={toolTitle}
-                    open={this.props.openModalAndSpecificTab}
-                    online={this.props.online}
-                    changeOnlineStatus={this.props.changeOnlineStatus}
-                    currentUser={username}
-                />
-            </div>
-        );
-    }
+  render() {
+    let { bookName } = this.props.projectDetailsReducer;
+    let { toolTitle } = this.props.currentToolReducer;
+    let { username } = this.props.loginReducer.userdata;
+
+    return (
+      <div>
+        <StatusBar
+            bookName={bookName}
+            currentCheckNamespace={toolTitle}
+            open={this.props.openModalAndSpecificTab}
+            online={this.props.online}
+            changeOnlineStatus={this.props.changeOnlineStatus}
+            currentUser={username}
+        />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -43,8 +48,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     openModalAndSpecificTab: (tabkey, sectionKey, visible) => {
       dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
     },
-    changeOnlineStatus: val => {
-      dispatch(coreStoreActions.changeOnlineStatus(val));
+    changeOnlineStatus: (val, first) => {
+      dispatch(coreStoreActions.changeOnlineStatus(val, first));
     }
   };
 };

@@ -20,7 +20,6 @@ import ModalContainer from '../containers/ModalContainer.js';
 // actions
 import CoreActions from '../actions/CoreActions.js';
 import * as recentProjectActions from '../actions/RecentProjectsActions.js';
-import * as CoreActionsRedux from '../actions/CoreActionsRedux.js';
 import * as DragDropActions from '../actions/DragDropActions.js';
 // constant declarations
 const api = window.ModuleApi;
@@ -32,9 +31,6 @@ class Main extends Component {
   componentWillMount() {
     const tCDir = path.join(path.homedir(), 'translationCore');
     fs.ensureDirSync(tCDir);
-
-    let online = window.navigator.onLine;
-    this.props.changeOnlineStatus(online, true);
   }
 
   componentDidMount() {
@@ -100,7 +96,6 @@ class Main extends Component {
           });
       }
     }
-
   }
 
   render() {
@@ -131,21 +126,18 @@ class Main extends Component {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     dispatch: dispatch,
-    changeOnlineStatus: (val, first) => {
-      dispatch(CoreActionsRedux.changeOnlineStatus(val, first));
-    },
     sendFilePath: (filePath, link, callback) => {
       dispatch(DragDropActions.sendFilePath(filePath, link, callback));
     },
-    startLoadingNewProject: (lastCheckModule) => {
+    startLoadingNewProject: lastCheckModule => {
       dispatch(recentProjectActions.startLoadingNewProject(lastCheckModule));
     }
   };
-}
+};
 
 const mapStateToProps = state => {
   return state;
-}
+};
 
 export default connect(
   mapStateToProps,
