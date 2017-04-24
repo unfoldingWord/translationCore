@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // components
-import Login from '../../components/home/Login'
+import Login from '../../components/home/usersManagement/Login'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 

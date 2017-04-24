@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 // components
-import MyProjects from '../../components/home/projectManagement/MyProjects'
-import ProjectsFAB from '../../components/home/projectManagement/ProjectsFAB'
-import OnlineImportModal from '../../components/home/projectManagement/OnlineImportModal'
+import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
@@ -29,4 +27,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolsManagementContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolsManagementContainer)

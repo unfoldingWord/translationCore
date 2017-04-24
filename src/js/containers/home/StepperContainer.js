@@ -10,8 +10,9 @@ class StepperContainer extends Component {
   render() {
     return (
       <div>
-        <HomeButton {...this.props} />
-        <Stepper {...this.props} />
+        <h1>stepper</h1>
+        {/*<HomeButton {...this.props} />
+        <Stepper {...this.props} />*/}
       </div>
     );
   }

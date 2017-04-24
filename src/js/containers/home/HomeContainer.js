@@ -6,16 +6,31 @@ import LicenseModal from '../../components/home/LicenseModal'
 // containers
 import MainContainer from './MainContainer'
 // actions
-// import {actionCreator} from 'actionCreatorPath'
-
+import * as BodyUIActions from '../../actions/BodyUIActions'
 
 class HomeContainer extends Component {
+
+  homeContainerDisplay() {
+    let {showWelcomeSplash} = this.props.BodyUIReducer;
+    let display = <div />;
+    if (showWelcomeSplash) {
+      display = (
+        <WelcomeSplash {...this.props} />
+      );
+    } else {
+      display = (
+        <MainContainer {...this.props} />
+      );
+    }
+    return display;
+  }
+
   render() {
+    let {toggleHomeView} = this.props.actions;
     return (
       <div>
-        <WelcomeSplash />
-        <LicenseModal />
-        <MainContainer {...this.props} />
+        {this.homeContainerDisplay()}
+        <LicenseModal {...this.props} />
       </div>
     );
   }
@@ -23,14 +38,19 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    BodyUIReducer: state.BodyUIReducer
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator);
+    actions: {
+      toggleHomeView: () => {
+        dispatch(BodyUIActions.toggleHomeView())
+      },
+      togglewWelcomeSplash: () => {
+        dispatch(BodyUIActions.togglewWelcomeSplash())
+      }
     }
   };
 };
