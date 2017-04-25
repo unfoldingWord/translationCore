@@ -8,38 +8,38 @@ const { shallowWithStore } = require('enzyme-redux');
 const { createMockStore  } = require('redux-test-utils');
 const App = require('../src/js/pages/app');
 
-describe('example shallowWithStore', () => {
-  describe('state', () => {
-    it('works', () => {
-      const expectedState = 'expectedState';
-      const mapStateToProps = (state) => ({
-        state,
-      });
-      const ConnectedComponent = connect(mapStateToProps)(App);
-      const component = shallowWithStore(<ConnectedComponent />, createMockStore(expectedState));
-      expect(component.props().state).to.equal(expectedState);
-    });
-  });
+// describe('example shallowWithStore', () => {
+//   describe('state', () => {
+//     it('works', () => {
+//       const expectedState = 'expectedState';
+//       const mapStateToProps = (state) => ({
+//         state,
+//       });
+//       const ConnectedComponent = connect(mapStateToProps)(<App/>);
+//       const component = shallowWithStore(<ConnectedComponent />, createMockStore(expectedState));
+//       expect(component.props().state).to.equal(expectedState);
+//     });
+//   });
 
-  describe('dispatch', () => {
-    it('works', () => {
-      const action = {
-        type: 'type',
-      };
-      const mapDispatchToProps = (dispatch) => ({
-        dispatchProp() {
-          dispatch(action);
-        },
-      });
-      const store = createMockStore();
+//   describe('dispatch', () => {
+//     it('works', () => {
+//       const action = {
+//         type: 'type',
+//       };
+//       const mapDispatchToProps = (dispatch) => ({
+//         dispatchProp() {
+//           dispatch(action);
+//         },
+//       });
+//       const store = createMockStore();
 
-      const ConnectedComponent = connect(undefined, mapDispatchToProps)(App);
-      const component = shallowWithStore(<ConnectedComponent />, store);
-      component.props().dispatchProp();
-      expect(store.isActionDispatched(action)).to.be.true;
-    });
-  });
-});
+//       const ConnectedComponent = connect(undefined, mapDispatchToProps)(<App/>);
+//       const component = shallowWithStore(<ConnectedComponent />, store);
+//       component.props().dispatchProp();
+//       expect(store.isActionDispatched(action)).to.be.true;
+//     });
+//   });
+// });
 // describe('<App />', function() {}, function() {
 //   it('should render one <Application />', function() {
 //     assert.equal(wrapper.find('Provider').length, 1);
