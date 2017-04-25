@@ -5,11 +5,11 @@ class Licenses extends React.Component {
   render() {
     return(
       <div>
-        <center>{"Find out more about translationCore at: unfoldingword.org/tc"}</center>
+        <center>{"Find out more about translationCore at: "}<a href="http://unfoldingword.org/tc">{"unfoldingword.org/tc"}</a></center>
         <center><b>{"License"}</b></center>
         <center>{"Copyright (c) 2017 unfoldingWord"}</center>
         <center>{"Based on an earlier work by Wycliffe Associates released under the ISC"}</center>
-        <center>{"https://opensource.org/licenses/ISC"}</center>
+        <center><a href="https://opensource.org/licenses/ISC">{"https://opensource.org/licenses/ISC"}</a></center>
         <center>{"ISC License (ISC)"}</center>
         <center>{"Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies."}</center>
         <center>{"THE SOFTWARE IS PROVIDED 'AS IS' AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."}</center>
