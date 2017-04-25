@@ -25,14 +25,16 @@ class StepperContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    BodyUIReducer: state.BodyUIReducer
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator);
+    actions: {
+      dispatch1: () => {
+        // dispatch(actionCreator);
+      }
     }
   };
 };

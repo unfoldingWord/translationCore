@@ -8,36 +8,9 @@ import {
 } from 'material-ui/Stepper';
 
 class StepperComponent extends Component {
-  // TODO: move state to reducer.
-  constructor() {
-    super();
-    this.state = {
-      finished: false,
-      stepIndex: 0
-    };
-    this.handleNext = this.handleNext.bind(this);
-    this.handlePrev = this.handlePrev.bind(this);
-  }
-
-  // TODO: move function as actions to actions file.
-  handleNext() {
-    const stepIndex = this.state.stepIndex;
-    console.log(stepIndex)
-    this.setState({
-      stepIndex: stepIndex + 1,
-      finished: stepIndex >= 2
-    });
-  }
-
-  handlePrev() {
-    const {stepIndex} = this.state;
-    if (stepIndex > 0) {
-      this.setState({stepIndex: stepIndex - 1});
-    }
-  }
-
   render() {
-    const {stepIndex} = this.state;
+    const {stepIndex} = this.props.BodyUIReducer.stepper;
+    console.log(stepIndex)
     const userIcon = <Glyphicon glyph={"user"} style={{fontSize: "25px"}}/>
     const projectIcon = <Glyphicon glyph={"folder-open"} style={{fontSize: "25px"}}/>
     const toolIcon = <Glyphicon glyph={"wrench"} style={{fontSize: "25px"}}/>

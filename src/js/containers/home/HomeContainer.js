@@ -10,26 +10,15 @@ import * as BodyUIActions from '../../actions/BodyUIActions'
 
 class HomeContainer extends Component {
 
-  homeContainerDisplay() {
-    let {showWelcomeSplash} = this.props.BodyUIReducer;
-    let display = <div />;
-    if (showWelcomeSplash) {
-      display = (
-        <WelcomeSplash {...this.props} />
-      );
-    } else {
-      display = (
-        <MainContainer {...this.props} />
-      );
-    }
-    return display;
-  }
-
   render() {
-    let {toggleHomeView} = this.props.actions;
+    let {showWelcomeSplash} = this.props.BodyUIReducer;
     return (
       <div>
-        {this.homeContainerDisplay()}
+        {showWelcomeSplash ? (
+          <WelcomeSplash {...this.props} />
+        ) : (
+          <MainContainer {...this.props} />
+        )}
         <LicenseModal {...this.props} />
       </div>
     );

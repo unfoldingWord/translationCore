@@ -7,7 +7,7 @@ import BackNavigation from '../../components/home/BackNavigation'
 import StepperContainer from './StepperContainer'
 import DisplayContainer from './DisplayContainer'
 // actions
-// import {actionCreator} from 'actionCreatorPath'
+import * as BodyUIActions from '../../actions/BodyUIActions'
 
 class MainContainer extends Component {
   render() {
@@ -15,8 +15,8 @@ class MainContainer extends Component {
       <div>
         <StepperContainer {...this.props} />
         {/*<Instructions {...this.props} />
-        <DisplayContainer {...this.props} />
-        <BackNavigation {...this.props} />*/}
+        <DisplayContainer {...this.props} />*/}
+        <BackNavigation {...this.props} />
       </div>
     );
   }
@@ -30,8 +30,14 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-     // dispatch(actionCreator);
+    actions: {
+      goToNextStep: () => {
+        console.log("hello")
+        dispatch(BodyUIActions.goToNextStep());
+      },
+      goToPrevStep: () => {
+        dispatch(BodyUIActions.goToPrevStep());
+      }
     }
   };
 };
