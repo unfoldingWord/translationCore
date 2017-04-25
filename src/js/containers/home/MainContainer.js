@@ -14,8 +14,10 @@ class MainContainer extends Component {
     return (
       <div>
         <StepperContainer {...this.props} />
-        {/*<Instructions {...this.props} />
-        <DisplayContainer {...this.props} />*/}
+        {/*
+        <Instructions {...this.props} />
+        <DisplayContainer {...this.props} />
+        */}
         <BackNavigation {...this.props} />
       </div>
     );
@@ -32,7 +34,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
       goToNextStep: () => {
-        console.log("hello")
         dispatch(BodyUIActions.goToNextStep());
       },
       goToPrevStep: () => {

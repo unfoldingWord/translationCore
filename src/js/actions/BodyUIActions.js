@@ -14,7 +14,6 @@ export const togglewWelcomeSplash = () => {
 
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
-    console.log("heyyyy")
     const {stepIndex} = getState().BodyUIReducer.stepper;
     dispatch({
       type: consts.GO_TO_NEXT_STEP,
