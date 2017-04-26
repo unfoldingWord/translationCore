@@ -27,9 +27,6 @@ class ApplicationModalContainer extends React.Component {
           <Tab eventKey={1} title="Account" style={{backgroundColor: "#333333"}}>
               {accountDisplay}
           </Tab>
-          <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-              <Settings {...this.props}/>
-          </Tab>
         </Tabs>
       </div>
     );
