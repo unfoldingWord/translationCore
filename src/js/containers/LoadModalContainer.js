@@ -36,9 +36,6 @@ class LoadModalContainer extends React.Component {
           <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
             <ImportOnlineContainer />
           </Tab>
-          <Tab eventKey={4} title="Reports" style={{ backgroundColor: "#333333" }}>
-            <Report {...this.props} />
-          </Tab>
         </Tabs>
       </div>
     );
