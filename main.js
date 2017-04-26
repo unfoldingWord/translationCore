@@ -20,7 +20,7 @@ if (handleStartupEvent()) {
 }
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1300, minHeight: 700, center: true, useContentSize: true, show: false});
   let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe');
   exec('git', (err, data) => {
     if (!data) {
