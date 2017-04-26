@@ -20,10 +20,13 @@ before_deploy:
 - npm i -g babel-cli
 - npm i -g electron-builder@5.26.0 ;
 - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    sudo apt-get install -y wine ;
+    sudo apt-get install -y -q innoextract wine python-software-properties ;
     sudo apt-get -qq update ;
-    chmod +x ./scripts/builds/travis.sh ;
-    "./scripts/builds/travis.sh" ;
+    "./scripts/inno/InnoInstall.sh" ;
+    sudo cp scripts/innosetup/iscc /usr/local/bin/iscc ;
+    iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
+    chmod +x ./scripts/builds/windows.sh ;
+    "./scripts/builds/windows.sh" ;
   else
     cp ./scripts/builds/index.js ./src/js/pages/index.js ;
     cp ./scripts/builds/index.html ./index.html ;
