@@ -22,9 +22,10 @@ before_deploy:
 - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     sudo apt-get install -y -q innoextract wine python-software-properties ;
     sudo apt-get -qq update ;
-    "./scripts/inno/InnoInstall.sh" ;
-    sudo cp scripts/innosetup/iscc /usr/local/bin/iscc ;
+    "./scripts/inno/innoinstall.sh" ;
+    sudo cp scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
+    rm -rf tmp
     chmod +x ./scripts/builds/windows.sh ;
     "./scripts/builds/windows.sh" ;
   else
