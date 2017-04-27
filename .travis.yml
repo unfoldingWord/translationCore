@@ -34,7 +34,7 @@ before_deploy:
     innoextract is.exe ;
     mkdir -p ~/".wine/drive_c/inno" ;
     cp -a app/* ~/".wine/drive_c/inno" ;
-    cd /home/travis/build/unfoldingWord-dev/translationCore
+    cd /home/travis/build/unfoldingWord-dev/translationCore ;
     sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
     rm -rf tmp ;
