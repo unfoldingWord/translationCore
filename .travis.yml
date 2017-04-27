@@ -25,16 +25,10 @@ before_deploy:
     sudo add-apt-repository --yes ppa:arx/release ;
     sudo apt-get update -d ;
     sudo apt-get install -y -q innoextract wine python-software-properties ;
-    pwd ;
-    rm -rf /tmp/inno ;
-    mkdir /tmp/inno ;
-    cd /tmp/inno ;
-    wget -O is.exe http://files.jrsoftware.org/is/5/isetup-5.5.3.exe --no-check-certificate ;
-    innoextract is.exe ;
-    mkdir -p ~/".wine/drive_c/inno" ;
-    cp -a app/* ~/".wine/drive_c/inno" ;
-    cd /home/travis/build/unfoldingWord-dev/translationCore
-    sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
+    chmod +x ./scripts/inno/InnoInstall.sh ;
+    "./scripts/inno/InnoInstall.sh" ;
+    cd /home/travis/build/unfoldingWord-dev/translationCore ;
+    cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
     rm -rf tmp ;
     chmod +x ./scripts/builds/windows.sh ;
