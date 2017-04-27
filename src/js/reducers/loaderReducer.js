@@ -19,8 +19,7 @@ module.exports = (state = initialState, action) => {
         [action.processName]: {
           progress: action.progress
         },
-        reloadContent: action.reloadContent ? action.reloadContent : null,
-        show: true
+        reloadContent: action.reloadContent ? action.reloadContent : null
       };
     case consts.DONE_LOADING:
       return {
