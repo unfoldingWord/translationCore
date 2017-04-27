@@ -1,22 +1,44 @@
-const React = require('react');
-const CoreStore = require('../../stores/CoreStore.js');
-const ProgressBar = require('react-bootstrap/lib/ProgressBar.js');
-const Modal = require('react-bootstrap/lib/Modal.js');
+import React from 'react';
+import ProgressBar from 'react-bootstrap/lib/ProgressBar.js';
+import Modal from 'react-bootstrap/lib/Modal.js';
+import {Circle} from 'react-progressbar.js';
+import Dialog from 'material-ui/Dialog';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class Loader extends React.Component {
   render() {
+    const {Bibles, translationWords, show, reloadContent} = this.props.loaderReducer;
+    let biblesProgress = Bibles ? parseInt(Bibles.progress, 10) : 0;
+    let tProgress = translationWords ? parseInt(translationWords.progress, 10) : 0;
     return (
-      <div>
-        <Modal show={this.props.show}>
-          <ProgressBar striped active now={this.props.progress} style={{top:'50vh', left: '50vw'}}/>
-          <center>
-            <img src="images/TC_ANIMATED_Logo.gif"/>
-            {this.props.reloadContent}
-          </center>
-        </Modal>
-      </div>
+      <MuiThemeProvider>
+        <Dialog modal={false} open={show}>
+          <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
+            <img src="images/TC_icon.png" className="App-logo" alt="logo" />
+            <span>Loading Resources...</span><br />
+            <span>translationWords</span>
+              <Circle
+                progress={tProgress}
+                text={tProgress + "%"}
+                options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
+                initialAnimate={true}
+                containerStyle={{ width: '50px', height: '50px' }}
+              />
+            <span>Bibles</span>
+              <Circle
+                progress={biblesProgress}
+                text={biblesProgress + "%"}
+                options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
+                initialAnimate={true}
+                containerStyle={{ width: '50px', height: '50px' }}
+              />
+            <br/><br/>
+            {reloadContent}
+          </div>
+        </Dialog>
+      </MuiThemeProvider>
     );
   }
 }
 
-module.exports = Loader;
+export default Loader;
