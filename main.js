@@ -72,8 +72,8 @@ function createMainWindow () {
 
 function createMainSplash() {
   splashScreen = new BrowserWindow({
-    width: 500,
-    height: 500,
+    width: 600,
+    height: 600,
     resizable: false,
     autoHideMenuBar: true,
     icon: 'images/TC_Icon.png',
