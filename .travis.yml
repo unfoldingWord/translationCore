@@ -28,7 +28,7 @@ before_deploy:
     chmod +x ./scripts/inno/InnoInstall.sh ;
     "./scripts/inno/InnoInstall.sh" ;
     cd /home/travis/build/unfoldingWord-dev/translationCore ;
-    cp ./scripts/inno/iscc /usr/local/bin/iscc ;
+    sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
     rm -rf tmp ;
     chmod +x ./scripts/builds/windows.sh ;
