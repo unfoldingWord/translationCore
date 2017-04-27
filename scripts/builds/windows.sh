@@ -4,4 +4,6 @@ babel src --out-dir src
 babel tC_apps --out-dir tC_apps
 node scripts/builds/build-win.js
 unset DISPLAY
+echo $TRAVIS_TAG
+echo $TRAVIS_BRANCH
 wine "C:\inno\ISCC.exe" ".\scripts\inno\windows.iss" "/Qp" "/DVersion=$TRAVIS_TAG"
