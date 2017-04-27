@@ -20,6 +20,8 @@ before_deploy:
 - npm i -g babel-cli
 - npm i -g electron-builder@5.26.0 ;
 - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    sudo add-apt-repository --yes ppa:ubuntu-wine/ppa
+    sudo add-apt-repository --yes ppa:arx/release
     sudo apt-get install -y -q innoextract wine python-software-properties ;
     sudo apt-get -qq update ;
     "./scripts/inno/innoinstall.sh" ;
