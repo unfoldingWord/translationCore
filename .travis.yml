@@ -38,7 +38,12 @@ before_deploy:
     sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
     rm -rf tmp ;
-    "./scripts/builds/windows.sh" ;
+    cp ./scripts/builds/index.js ./src/js/pages/index.js ;
+    cp ./scripts/builds/index.html ./index.html ;
+    babel src --out-dir src ;
+    babel tC_apps --out-dir tC_apps ;
+    node scripts/builds/build-win.js ;
+    iscc .\scripts\builds\windows.iss /DVersion=${TRAVIS_BRANCH} ;
   else
     cp ./scripts/builds/index.js ./src/js/pages/index.js ;
     cp ./scripts/builds/index.html ./index.html ;
