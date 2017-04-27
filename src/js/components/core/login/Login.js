@@ -1,4 +1,5 @@
 import React from 'react';
+import { shell } from 'electron';
 const Registration = require('./Registration.js');
 const { Button, Row, Col, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;
@@ -88,7 +89,7 @@ class Login extends React.Component {
                 </button>
                 <div>
                   <h4>{"Don't have an account?"}</h4>
-                  <button onMouseOver={() => this.onHover(2)} onMouseDown={() => this.onPress(2, displayLogin)}
+                  <button onMouseOver={() => this.onHover(2)} onMouseDown={() => shell.openExternal('https://git.door43.org/user/sign_up')}
                     onMouseOut={() => this.onPress(0)} onMouseUp={() => this.onPress(0)}
                     style={this.state.pressed != 2  && this.state.hovered != 2 ? styles.button : styles.buttonActive}
                     >
