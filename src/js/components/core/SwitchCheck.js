@@ -12,7 +12,7 @@ class SwitchCheck extends React.Component {
       );
     } else if (!this.props.projectSaveLocation || !this.props.manifest) {
       return (
-        <h3 style={{marginTop: "0px", color: 'white', textAlign: 'center', fontWeight: 'bold', padding: '55px 0'}}>
+        <h3 style={{marginTop: "0px", textAlign: 'center', fontWeight: 'bold', padding: '55px 0'}}>
           Please <span onClick={this.props.showLoad} style={{cursor: 'pointer', color: '#337ab7'}}>
           load a project </span> before choosing a tool
         </h3>

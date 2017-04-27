@@ -50,9 +50,9 @@ class ModalContainer extends React.Component {
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "#333333", borderTop: "none"}}>
+        <Modal.Footer style={{padding: "10px", backgroundColor: "#ffffff", borderTop: "none"}}>
           <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-          <center style={{color: "#FFFFFF", padding: "6px"}}>
+          <center style={{color: "#333333", padding: "6px"}}>
             {"Version " + packageJson.version}
           </center>
         </Modal.Footer>
