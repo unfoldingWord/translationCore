@@ -19,10 +19,12 @@ class Profile extends React.Component {
                      placeholder="Select Category"
                      style={{
                        marginTop: "16px",
-                       marginLeft: "200px"
+                       marginLeft: "130px",
+                       width: "240px"
                      }}>
+          <option value="General Feedback">General Feedback</option>
+          <option value="Content Feedback">Content & Resources Feedback</option>
           <option value="Bug Report">Bug Report</option>
-          <option value="Feedback">General Feedback</option>
         </FormControl>
       </div>
     );
@@ -61,8 +63,6 @@ class Profile extends React.Component {
                    src={userdata.avatar_url} circle /><br /><br />
             <span><strong>Username: </strong>{userdata.username}</span><br />
             <small style={{color: "#BFBFBF"}}>This is publicly visible</small><br /><br />
-            <span><strong>Email: </strong>{userdata.email ? userdata.email : "No email address found"}</span><br />
-            <small style={{color: "#BFBFBF"}}>This is visible to other users and may appear in the revision history of files you edit.</small><br /><br />
           </div><br /><br />
           <Button bsStyle="blue"
                   style={{marginBottom:"0px", width: '100%', marginTop: '5px', bottom: "0px", position: "absolute"}}
