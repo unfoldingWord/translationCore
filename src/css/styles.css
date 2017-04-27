@@ -146,3 +146,13 @@ tools. they basically override bootstrap styling for this components
 #table *{
   border-color: transparent
 }
+
+.App-logo {
+  animation: App-logo-spin infinite 5s linear;
+  height: 300px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

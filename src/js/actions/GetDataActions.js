@@ -306,7 +306,7 @@ export function setGroupDataInStore(dataFolder, params) {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
                                 setTimeout(() => {
-                                    dispatch(LoaderActions.sendProgressForKey(i / total * 100));
+                                    dispatch(LoaderActions.sendProgressForKey("translationWords", i / total * 100));
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
