@@ -15,21 +15,19 @@ class ModalContainer extends React.Component {
 
   render() {
     let { currentTab, visible, hide, selectModalTab } = this.props;
-    let activeStyle = {color: "#FFFFFF", fontSize: "20px", margin: "0px 10px 0px 0px"};
-    let inactiveStyle = {color: "#333333", fontSize: "20px", margin: "auto"};
-    let appGlyph = <div style={{display: "flex"}}><div style={{margin: (currentTab === 1) ?  "0px 10px 0px 0px" : "auto"}}>
-                      <SvgLogo height="24px" color={(currentTab === 1) ? "#FFFFFF" : "#333333" }/></div>
-                        {(currentTab === 1) ? ' Application' : " "}
+    let activeStyle = {display: "flex", color: "#FFFFFF"};
+    let inactiveStyle = {display: "flex", color: "#333333"};
+    let appGlyph = <div style={(currentTab === 1) ? activeStyle : inactiveStyle}>
+                        <Glyphicon glyph="user" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+                        User
                     </div>;
-    let projectsGlyph = <div style={{display: "flex"}}>
-                          <Glyphicon glyph="folder-open"
-                                      style={(currentTab === 2) ? activeStyle : inactiveStyle} />
-                          {(currentTab === 2) ? " Projects" : " "}
+    let projectsGlyph = <div style={(currentTab === 2) ? activeStyle : inactiveStyle}>
+                          <Glyphicon glyph="folder-open" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+                          Projects
                         </div>;
-    let toolsGlyph = <div style={{display: "flex"}}>
-                        <Glyphicon glyph="wrench"
-                                    style={(currentTab === 3) ? activeStyle : inactiveStyle} />
-                          {(currentTab === 3) ? " Tools" : " "}
+    let toolsGlyph = <div style={(currentTab === 3) ? activeStyle : inactiveStyle}>
+                        <Glyphicon glyph="wrench" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+                          Tools
                       </div>;
     return (
       <Modal bsSize="lg" show={visible} onHide={hide}>

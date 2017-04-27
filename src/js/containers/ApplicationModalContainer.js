@@ -4,7 +4,6 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import Login from '../components/core/login/Login.js';
 import Profile from '../components/core/login/Profile';
-import Settings from '../components/core/Settings.js';
 import Licenses from '../components/core/licenses/Licenses.js'
 // Actions
 import * as LoginActions from '../actions/LoginActions.js';
@@ -28,10 +27,7 @@ class ApplicationModalContainer extends React.Component {
           <Tab eventKey={1} title="Account" style={{backgroundColor: "#333333"}}>
               {accountDisplay}
           </Tab>
-          <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-              <Settings {...this.props}/>
-          </Tab>
-          <Tab eventKey={3} title="Licenses" style={{backgroundColor: "#333333"}}>
+          <Tab eventKey={2} title="Licenses" style={{backgroundColor: "#333333"}}>
               <Licenses />
           </Tab>
         </Tabs>
