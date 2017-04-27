@@ -4,7 +4,6 @@ node_js:
 os:
   - linux
   - osx
-sudo: true
 before_script:
 # - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install build-essential libssl-dev ; fi
 # - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
@@ -39,7 +38,7 @@ before_deploy:
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
     rm -rf tmp
     chmod +x ./scripts/builds/windows.sh ;
-    sudo "./scripts/builds/windows.sh" ;
+    "./scripts/builds/windows.sh" ;
   else
     cp ./scripts/builds/index.js ./src/js/pages/index.js ;
     cp ./scripts/builds/index.html ./index.html ;

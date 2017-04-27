@@ -1,5 +1,3 @@
-cd node_modules/electron-packager
-npm i rcedit@0.5.0
 cd ../..
 cp ./scripts/builds/index.js ./src/js/pages/index.js
 cp ./scripts/builds/index.html ./index.html
