@@ -4,6 +4,9 @@ node_js:
 os:
   - linux
   - osx
+cache:
+ directories:
+ - node_modules
 before_script:
 # - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install build-essential libssl-dev ; fi
 # - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
@@ -56,8 +59,8 @@ deploy:
   file: "./dist/mac/translationCore-*.dmg"
   on:
     repo: unfoldingWord-dev/translationCore
-    branch: master
-    tags: true
+    branch: feature/ih-inno-installer
+    tags: false
     condition: "$TRAVIS_OS_NAME == osx"
 before_install:
 - openssl aes-256-cbc -K $encrypted_23522de69895_key -iv $encrypted_23522de69895_iv
