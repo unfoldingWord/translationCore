@@ -19,10 +19,12 @@ class Profile extends React.Component {
                      placeholder="Select Category"
                      style={{
                        marginTop: "16px",
-                       marginLeft: "200px"
+                       marginLeft: "130px",
+                       width: "240px"
                      }}>
+          <option value="General Feedback">General Feedback</option>
+          <option value="Content Feedback">Content & Resources Feedback</option>
           <option value="Bug Report">Bug Report</option>
-          <option value="Feedback">General Feedback</option>
         </FormControl>
       </div>
     );
