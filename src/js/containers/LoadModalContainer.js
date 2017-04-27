@@ -4,8 +4,6 @@ import { Modal, Button, Tabs, Tab } from 'react-bootstrap/lib';
 // containers
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
-// Components
-import DragDrop from '../components/core/DragDrop';
 // Actions
 import * as dragDropActions from '../actions/DragDropActions.js';
 import * as ReportsActions from '../actions/ReportsActions.js';
@@ -27,9 +25,6 @@ class LoadModalContainer extends React.Component {
           style={{ borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%" }}>
           <Tab eventKey={1} title="My Projects" style={{ backgroundColor: "#333333" }}>
             <RecentProjectsContainer />
-          </Tab>
-          <Tab eventKey={2} title="Import Local Project" style={{ backgroundColor: "#333333" }}>
-            <DragDrop {...this.props} />
           </Tab>
           <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
             <ImportOnlineContainer />
