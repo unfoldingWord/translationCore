@@ -34,16 +34,12 @@ before_deploy:
     innoextract is.exe ;
     mkdir -p ~/".wine/drive_c/inno" ;
     cp -a app/* ~/".wine/drive_c/inno" ;
-    cd /home/travis/build/unfoldingWord-dev/translationCore ;
+    cd /home/travis/build/unfoldingWord-dev/translationCore
     sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
-    rm -rf tmp ;
-    cp ./scripts/builds/index.js ./src/js/pages/index.js ;
-    cp ./scripts/builds/index.html ./index.html ;
-    babel src --out-dir src ;
-    babel tC_apps --out-dir tC_apps ;
-    node scripts/builds/build-win.js ;
-    iscc .\scripts\builds\windows.iss /DVersion=${TRAVIS_BRANCH} ;
+    rm -rf tmp
+    chmod +x ./scripts/builds/windows.sh ;
+    sudo "./scripts/builds/windows.sh" ;
   else
     cp ./scripts/builds/index.js ./src/js/pages/index.js ;
     cp ./scripts/builds/index.html ./index.html ;
