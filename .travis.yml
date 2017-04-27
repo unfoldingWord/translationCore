@@ -37,8 +37,7 @@ before_deploy:
     cd /home/travis/build/unfoldingWord-dev/translationCore
     sudo cp ./scripts/inno/iscc /usr/local/bin/iscc ;
     iscc /? 2> /dev/null | grep "Inno Setup Preprocessor" ;
-    rm -rf tmp
-    chmod +x ./scripts/builds/windows.sh ;
+    rm -rf tmp ;
     "./scripts/builds/windows.sh" ;
   else
     cp ./scripts/builds/index.js ./src/js/pages/index.js ;
