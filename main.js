@@ -10,11 +10,6 @@ const exec = require('child_process').exec;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-if (process.platform == 'win32') {
-  updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-  var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-  exec(createShortcut);
-}
 if (handleStartupEvent()) {
   return;
 }

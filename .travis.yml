@@ -15,7 +15,6 @@ before_script:
     sh -e /etc/init.d/xvfb start ;
   fi'
 script:
-- pwd
 - xvfb-maybe npm test
 before_deploy:
 - npm i -g babel-cli
