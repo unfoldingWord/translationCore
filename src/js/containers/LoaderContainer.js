@@ -15,7 +15,8 @@ class LoaderContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    loaderReducer: state.loaderReducer
+    loaderReducer: state.loaderReducer,
+    currentToolReducer: state.currentToolReducer
   };
 };
 

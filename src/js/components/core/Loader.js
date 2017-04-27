@@ -1,22 +1,28 @@
 import React from 'react';
-import ProgressBar from 'react-bootstrap/lib/ProgressBar.js';
-import Modal from 'react-bootstrap/lib/Modal.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Circle} from 'react-progressbar.js';
 import Dialog from 'material-ui/Dialog';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class Loader extends React.Component {
   render() {
-    const {Bibles, translationWords, show, reloadContent} = this.props.loaderReducer;
+    const {Bibles, translationWords, translationNotes, show, reloadContent} = this.props.loaderReducer;
+    let { toolTitle } = this.props.currentToolReducer;
     let biblesProgress = Bibles ? parseInt(Bibles.progress, 10) : 0;
-    let tProgress = translationWords ? parseInt(translationWords.progress, 10) : 0;
+    let tProgress = 0;
+    if (translationWords) {
+      tProgress = parseInt(translationWords.progress, 10);
+    } else if (translationNotes) {
+      tProgress = parseInt(translationNotes.progress, 10);
+    }
+
     return (
       <MuiThemeProvider>
         <Dialog modal={true} open={show}>
           <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
             <img src="images/TC_icon.png" className="App-logo" alt="logo" />
-            <span>Loading Resources...</span><br />
-            <span>translationWords</span>
+            <span>Loading...</span><br />
+            <span>{"Loading " + toolTitle + " data"}</span>
               <Circle
                 progress={tProgress}
                 text={tProgress + "%"}
@@ -24,7 +30,7 @@ class Loader extends React.Component {
                 initialAnimate={true}
                 containerStyle={{ width: '50px', height: '50px' }}
               />
-            <span>Bibles</span>
+            <span>{"Loading bibles data"}</span>
               <Circle
                 progress={biblesProgress}
                 text={biblesProgress + "%"}
