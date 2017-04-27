@@ -45,8 +45,8 @@ deploy:
   file: "./dist/translationCore-win32-ia32/installer/translationCoreSetup.exe"
   on:
     repo: unfoldingWord-dev/translationCore
-    branch: feature/ih-inno-installer
-    tags: false
+    branch: master
+    tags: true
     condition: "$TRAVIS_OS_NAME == linux"
 - provider: releases
   skip_cleanup: true
