@@ -13,14 +13,6 @@ const exec = require('child_process').exec;
 let mainWindow;
 let splashScreen;
 
-if (process.platform == 'win32') {
-  updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-  var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-  exec(createShortcut);
-}
-if (handleStartupEvent()) {
-  return;
-}
 function createMainWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1300, minHeight: 700, center: true, useContentSize: true, show: false});
@@ -118,42 +110,3 @@ app.on('activate', function () {
     createMainWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-function handleStartupEvent() {
-    if (process.platform !== 'win32') {
-        return false;
-    }
-    var squirrelCommand = process.argv[1];
-    switch (squirrelCommand) {
-        case '--squirrel-install':
-        case '--squirrel-updated':
-          target = path.basename(process.execPath);
-          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-          var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-          exec(createShortcut);
-          // Always quit when done
-          app.quit();
-          return true;
-
-        case '--squirrel-uninstall':
-          // Undo anything you did in the --squirrel-install and
-          // --squirrel-updated handlers
-          target = path.basename(process.execPath);
-          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-          var createShortcut = updateDotExe + ' --removeShortcut=' + target ;
-          exec(createShortcut);
-          // Always quit when done
-          app.quit();
-          return true;
-
-        case '--squirrel-obsolete':
-            // This is called on the outgoing version of your app before
-            // we update to the new version - it's the opposite of
-            // --squirrel-updated
-            app.quit();
-            return true;
-    }
-};
