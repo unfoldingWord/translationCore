@@ -6,8 +6,6 @@ import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
 // Components
 import DragDrop from '../components/core/DragDrop';
-import Projects from '../components/core/login/Projects';
-import Report from "../components/core/reports/ReportGenerator";
 // Actions
 import * as dragDropActions from '../actions/DragDropActions.js';
 import * as ReportsActions from '../actions/ReportsActions.js';
