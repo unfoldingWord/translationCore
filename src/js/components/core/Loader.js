@@ -12,7 +12,7 @@ class Loader extends React.Component {
     let tProgress = translationWords ? parseInt(translationWords.progress, 10) : 0;
     return (
       <MuiThemeProvider>
-        <Dialog modal={false} open={show}>
+        <Dialog modal={true} open={show}>
           <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
             <img src="images/TC_icon.png" className="App-logo" alt="logo" />
             <span>Loading Resources...</span><br />
