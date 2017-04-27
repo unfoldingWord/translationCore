@@ -7,13 +7,18 @@ const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
 const exec = require('child_process').exec;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow;
+let splashScreen;
 
-function createWindow () {
+function createMainWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1300, minHeight: 700, center: true, useContentSize: true, show: false});
+
+  //mainWindow.webContents.openDevTools();
+
   let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe');
   exec('git', (err, data) => {
     if (!data) {
@@ -43,8 +48,9 @@ function createWindow () {
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+    mainWindow.show();
     mainWindow.maximize();
+    splashScreen.close();
   });
 
   // Emitted when the window is closed.
@@ -56,10 +62,37 @@ function createWindow () {
   })
 }
 
+function createMainSplash() {
+  splashScreen = new BrowserWindow({
+    width: 600,
+    height: 600,
+    resizable: false,
+    autoHideMenuBar: true,
+    icon: 'images/TC_Icon.png',
+    frame: false,
+    center: true,
+    show: false
+  });
+
+  //splashScreen.webContents.openDevTools();
+
+  splashScreen.loadURL(`file://${__dirname}/splash.html`);
+
+  splashScreen.on('closed', function() {
+    splashScreen = null;
+  });
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', function () {
+  createMainSplash();
+  setTimeout(function () {
+    splashScreen.show();
+    createMainWindow();
+  }, 500);
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -74,6 +107,6 @@ app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+    createMainWindow()
   }
 })
