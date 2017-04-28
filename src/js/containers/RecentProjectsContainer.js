@@ -20,13 +20,17 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath) {
     return (
         <span>
-            <Button style={{ width: "50%", backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
+            <Button style={{ width: "30%", backgroundColor: '#145396', border: '2px solid #145396', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#145396 0,#145396 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
                 <Glyphicon glyph={'folder-open'} />
                 <span style={{ marginLeft: '10px', marginRight: '20px' }}>Select</span>
             </Button>
-            <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
-                <Glyphicon glyph={'refresh'} />
-                <span style={{ marginLeft: '5px' }}> Sync </span>
+            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 5px 10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }}>
+                <Glyphicon glyph={'download'} />
+                <span style={{ marginLeft: '10px' }}>Export</span>
+            </Button>
+            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+                <Glyphicon glyph={'upload'} />
+                <span style={{ marginLeft: '10px' }}>Upload</span>
             </Button>
         </span>
     )
@@ -60,7 +64,7 @@ class RecentProjectsContainer extends React.Component {
         {
           '': <Glyphicon glyph={'folder-open'} />,
           'Project Name': projectName,
-          'Book': manifest.ts_project ? manifest.ts_project.name : 'Unknown',
+          'Book': manifest.project ? manifest.project.name : 'Unknown',
           'Language': manifest.target_language ? manifest.target_language.name : 'Unknown',
           'Date Updated': difference,
           ' ': buttonSpan

@@ -23,8 +23,8 @@ class ApplicationModalContainer extends React.Component {
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
               bsStyle="pills"
-              style={{borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%"}}>
-          <Tab eventKey={1} title="Account" style={{backgroundColor: "#333333"}}>
+              style={{borderBottom: "none", backgroundColor: "#ffffff", color: '#333333', width: "100%"}}>
+          <Tab eventKey={1} title="Account">
               {accountDisplay}
           </Tab>
           <Tab eventKey={2} title="Licenses" style={{backgroundColor: "#333333"}}>

@@ -56,13 +56,13 @@ class Profile extends React.Component {
           `}
         </style>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
-        <Col sm={12} md={4} lg={4} style={{backgroundColor: "#434343", padingTop: "20px", padding: "0px", height: "520px"}}>
+        <Col sm={12} md={4} lg={4} style={{backgroundColor: "white", padingTop: "20px", padding: "0px", height: "520px", borderRight: "1px solid #333333"}}>
           <div style={{padding: "20px 10px 10px 10px"}}>
             <h3>Account Information</h3><br />
             <Image style={{height: '85px', width:'85px', margin:"auto", display: "flex"}}
                    src={userdata.avatar_url} circle /><br /><br />
             <span><strong>Username: </strong>{userdata.username}</span><br />
-            <small style={{color: "#BFBFBF"}}>This is publicly visible</small><br /><br />
+            <small>This is publicly visible</small><br /><br />
           </div><br /><br />
           <Button bsStyle="blue"
                   style={{marginBottom:"0px", width: '100%', marginTop: '5px', bottom: "0px", position: "absolute"}}
