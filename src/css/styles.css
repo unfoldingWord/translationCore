@@ -67,47 +67,49 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav>li>a:hover {
-  background-color: #C6C4C4;
+  background-color: #145396;
   border: none;
+  border-radius: 0;
   outline: none;
 }
 
 .nav-tabs>li>a {
   color: white;
-  background-color: #747474;
-  margin-right: 2px;
-  border-radius: 10px 10px 0 0;
-  min-width: 75px;
-  padding: 10px 15px 28px 15px;
-  height: 35px;
-  margin-top: 4px;
+  background-color: #145396;
+  width: 150px;
+  height: 40px;
   border: none;
+  border-radius: 0;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  color: #FFFFFF;
+  color: #145396;
   cursor: default;
-  background-color: rgb(51, 51, 51);
-  border-bottom-color: rgb(51, 51, 51);
-  height: 35px;
+  background-color: white;
   outline: none;
-  margin-top: 4px;
   border: none;
+  border-radius: 0;
+}
+
+.nav-pills {
+  border-bottom: 1px solid #333333;
 }
 
 .nav-pills>li>a {
   position: relative;
   display: block;
-  padding: 10px 60px;
-  color: #ffffff;
+  width: 250px;
+  height: 40px;
+  color: #333333;
+  background-color: white;
   outline: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .nav-pills>li>a:hover {
-  background-color: #C6C4C4;
+  background-color: white;
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .nav-pills>li.active>a {
@@ -115,34 +117,30 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  color: #333333;
-  background-color: #C6C4C4;
-  border-radius: 0px;
+  color: #145396;
+  background-color: white;
+  border-radius: 0;
   box-sizing: border-box;
-  padding: 10px 58px;
 }
 
-#table tr:nth-child(even) {
-    background-color: #747474;
-}
 #table td:nth-child(n+3):nth-child(-n+5) {
   font-style: italic;
 }
 #table td:nth-child(2) {
     font-weight: bold;
 }
-#table td:nth-child(6) {
-  background-color: #333;
-  padding-left: 0;
-  padding-right: 0;
-}
+
 #table>tbody>tr>td {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#table td:nth-child(n+1):nth-child(-n+5) {
+  padding-top: 15px;
 }
 #table th {
   font-weight: normal;
 }
-#table *{
-  border-color: transparent
+
+#table>tbody>tr {
+    border-bottom: 1px solid #cccccc;
 }

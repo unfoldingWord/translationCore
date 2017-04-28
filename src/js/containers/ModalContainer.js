@@ -15,45 +15,44 @@ class ModalContainer extends React.Component {
 
   render() {
     let { currentTab, visible, hide, selectModalTab } = this.props;
-    let activeStyle = {display: "flex", color: "#FFFFFF"};
-    let inactiveStyle = {display: "flex", color: "#333333"};
-    let appGlyph = <div style={(currentTab === 1) ? activeStyle : inactiveStyle}>
-                        <Glyphicon glyph="user" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+
+    let appGlyph = <div>
+                        <Glyphicon glyph="user" style={{marginRight: "10px", fontSize: "20px"}} />
                         User
                     </div>;
-    let projectsGlyph = <div style={(currentTab === 2) ? activeStyle : inactiveStyle}>
-                          <Glyphicon glyph="folder-open" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+    let projectsGlyph = <div>
+                          <Glyphicon glyph="folder-open" style={{marginRight: "10px", fontSize: "20px"}} />
                           Projects
                         </div>;
-    let toolsGlyph = <div style={(currentTab === 3) ? activeStyle : inactiveStyle}>
-                        <Glyphicon glyph="wrench" style={{margin: "0px 10px 0px 0px", fontSize: "20px"}} />
+    let toolsGlyph = <div>
+                        <Glyphicon glyph="wrench" style={{marginRight: "10px", fontSize: "20px"}} />
                           Tools
                       </div>;
     return (
       <Modal bsSize="lg" show={visible} onHide={hide}>
-        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "#333333" }}>
+        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "#ffffff" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(e, 1, true)}
                 id="tabs"
-                style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
-            <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+                style={{borderBottom: "none", backgroundColor: "#145396", color: '#FFFFFF', width: "100%"}}>
+            <Tab eventKey={1} title={appGlyph}>
                 <Application
                   currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
-            <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+            <Tab eventKey={2} title={projectsGlyph}>
                 <Load currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
-            <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+            <Tab eventKey={3} title={toolsGlyph}>
                 <Tools currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "#333333", borderTop: "none"}}>
+        <Modal.Footer style={{padding: "10px", backgroundColor: "#ffffff", borderTop: "1px solid #333333"}}>
           <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-          <center style={{color: "#FFFFFF", padding: "6px"}}>
+          <center style={{color: "#333333", padding: "6px"}}>
             {"Version " + packageJson.version}
           </center>
         </Modal.Footer>

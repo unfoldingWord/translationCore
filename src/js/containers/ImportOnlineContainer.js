@@ -62,7 +62,7 @@ class ImportOnlineContainer extends React.Component {
                           Browse Door43 Projects
       </Button>
                       <div style={{ width: '60%', height: '20px', borderBottom: '2px solid white', textAlign: 'center', margin: '20px 0' }}>
-                          <span style={{ fontSize: '20px', backgroundColor: '#333', fontWeight: 'bold', padding: '0 40px' }}>
+                          <span style={{ fontSize: '20px', backgroundColor: '#ffffff', fontWeight: 'bold', padding: '0 40px' }}>
                               or
         </span>
                       </div>

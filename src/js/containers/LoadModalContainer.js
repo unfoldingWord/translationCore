@@ -22,11 +22,11 @@ class LoadModalContainer extends React.Component {
           activeKey={this.props.currentSection}
           onSelect={(e) => selectSectionTab(2, e)}
           bsStyle="pills"
-          style={{ borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%" }}>
-          <Tab eventKey={1} title="My Projects" style={{ backgroundColor: "#333333" }}>
+          style={{ borderBottom: "none", backgroundColor: "#ffffff", color: '#333333', width: "100%" }}>
+          <Tab eventKey={1} title="My Projects">
             <RecentProjectsContainer />
           </Tab>
-          <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
+          <Tab eventKey={3} title="Import Online Project">
             <ImportOnlineContainer />
           </Tab>
         </Tabs>
