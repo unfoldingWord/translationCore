@@ -5,7 +5,6 @@ class ThirdParty extends React.Component {
   render() {
     let libraries = []
     for(let license in Licenses){
-      console.log(license);
       libraries.push(
         <div style={{padding: "20px"}}>
           <center>{license}</center>

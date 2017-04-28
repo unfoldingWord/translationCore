@@ -39,7 +39,7 @@ export function loginUser(newUserdata) {
     }).catch(function(reason) {
       console.log(reason);
       if (reason.status === 401) {
-        dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
+        dialog.showErrorBox('Login Failed', 'Invalid username or password');
       } else {
         dialog.showErrorBox('Login Failed', 'Either you are not connected to the internet or something is wrong with the GOGS server');
       }
