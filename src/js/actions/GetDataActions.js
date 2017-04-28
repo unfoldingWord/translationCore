@@ -305,6 +305,7 @@ export function setGroupDataInStore(dataFolder, params) {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
                                 setTimeout(() => {
+                                  console.log("being called")
                                     dispatch(LoaderActions.sendProgressForKey("translationWords", i / total * 100));
                                     i++;
                                     if (i >= total) {
