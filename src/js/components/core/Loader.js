@@ -9,19 +9,21 @@ class Loader extends React.Component {
   displayProgress(toolsProgress) {
     let progressCircle = [];
     for (var toolName in toolsProgress) {
-      let progress = toolsProgress[toolName] ? parseInt(toolsProgress[toolName].progress, 10) : 0;
-      progressCircle.push(
-        <div key={toolName} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
-          <span>{"Loading " + toolName + " data"}</span>
-          <Circle
-            progress={progress}
-            text={progress + "%"}
-            options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
-            initialAnimate={true}
-            containerStyle={{ width: '50px', height: '50px' }}
-          />
-        </div>
-      );
+      if (toolsProgress[toolName] && toolsProgress[toolName].progress) {
+        let progress = parseInt(toolsProgress[toolName].progress, 10);
+        progressCircle.push(
+          <div key={toolName} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
+            <span>{"Loading " + toolName + " data"}</span>
+            <Circle
+              progress={progress}
+              text={progress + "%"}
+              options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
+              initialAnimate={true}
+              containerStyle={{ width: '50px', height: '50px' }}
+            />
+          </div>
+        );
+      }
     }
     return progressCircle
   }

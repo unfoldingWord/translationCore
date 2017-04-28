@@ -286,7 +286,8 @@ export function loadGroupDataFromFileSystem(toolName) {
 }
 
 export function setGroupDataInStore(dataFolder, params) {
-    return ((dispatch) => {
+    return ((dispatch, getState) => {
+        let toolName = getState().currentToolReducer.toolName;
         let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
         fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
             if (!err) {
@@ -305,8 +306,7 @@ export function setGroupDataInStore(dataFolder, params) {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
                                 setTimeout(() => {
-                                  console.log("being called")
-                                    dispatch(LoaderActions.sendProgressForKey("translationWords", i / total * 100));
+                                    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
