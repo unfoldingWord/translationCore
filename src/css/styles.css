@@ -1,3 +1,5 @@
+
+@import 'colorscheme.css';
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection
@@ -10,7 +12,7 @@ body, html, #content, .fill-height {
 }
 
 body {
-  background-color: white;
+  background-color: var(--reverse-color);
 }
 
 .main-view h1,
@@ -26,7 +28,7 @@ body {
 }
 
 .text-primary-highlighted{
-  background-color: #FDD910;
+  background-color: var(--highlight-color);
   font-weight: bold;
 }
 
@@ -67,15 +69,15 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav>li>a:hover {
-  background-color: #145396;
+  background-color: var(--accent-color-dark);
   border: none;
   border-radius: 0;
   outline: none;
 }
 
 .nav-tabs>li>a {
-  color: white;
-  background-color: #145396;
+  color: var(--reverse-color);
+  background-color: var(--accent-color-dark);
   width: 150px;
   height: 40px;
   border: none;
@@ -83,16 +85,16 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  color: #145396;
+  color: var(--accent-color-dark);
   cursor: default;
-  background-color: white;
+  background-color: var(--reverse-color);
   outline: none;
   border: none;
   border-radius: 0;
 }
 
 .nav-pills {
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-pills>li>a {
@@ -100,14 +102,14 @@ tools. they basically override bootstrap styling for this components
   display: block;
   width: 250px;
   height: 40px;
-  color: #333333;
-  background-color: white;
+  color: var(--text-color-light);
+  background-color: var(--reverse-color);
   outline: none;
   border-radius: 0;
 }
 
 .nav-pills>li>a:hover {
-  background-color: white;
+  background-color: var(--reverse-color);
   border: none;
   border-radius: 0;
 }
@@ -117,8 +119,8 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  color: #145396;
-  background-color: white;
+  color: var(--accent-color-dark);
+  background-color: var(--reverse-color);
   border-radius: 0;
   box-sizing: border-box;
 }
@@ -142,5 +144,5 @@ tools. they basically override bootstrap styling for this components
 }
 
 #table>tbody>tr {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid var(--border-color);
 }
