@@ -20,17 +20,17 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath) {
     return (
         <span>
-            <Button style={{ width: "30%", backgroundColor: '#145396', border: '2px solid #145396', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#145396 0,#145396 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
+            <Button style={{ width: "90px", padding: "5px", backgroundColor: '#145396', border: '2px solid #145396', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#145396 0,#145396 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
                 <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px', marginRight: '20px' }}>Select</span>
+                <span style={{ marginLeft: '10px' }}>Select</span>
             </Button>
-            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 5px 10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }}>
+            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 5px 10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }}>
                 <Glyphicon glyph={'download'} />
-                <span style={{ marginLeft: '10px' }}>Export</span>
+                <span style={{ marginLeft: '5px' }}>Export (csv)</span>
             </Button>
-            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
                 <Glyphicon glyph={'upload'} />
-                <span style={{ marginLeft: '10px' }}>Upload</span>
+                <span style={{ marginLeft: '5px' }}>Upload</span>
             </Button>
         </span>
     )
