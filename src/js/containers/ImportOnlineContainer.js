@@ -105,8 +105,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       }
       dispatch(importOnlineActions.loadProjectFromLink(link));
     },
-    openOnlineProject: (projectPath) => {
+    openOnlineProject: (projectPath, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(ModalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        return;
+      }
       dispatch(importOnlineActions.openOnlineProject(projectPath));
+      
     }
   };
 };
