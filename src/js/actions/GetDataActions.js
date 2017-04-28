@@ -128,21 +128,26 @@ export function openProject(projectPath, projectLink) {
             dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser));
         } else {
             //No USFM detected, initiating 'standard' loading process
-            projectPath = LoadHelpers.correctSaveLocation(projectPath);
-            let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-            manifest = LoadHelpers.verifyChunks(projectPath, manifest);
-            if (!manifest && !manifest.tcInitialized) {
-                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
-            } else {
-                let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-                if (oldManifest) {
-                    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
-                }
-            }
+            let manifest = setUpManifestAndParams(projectPath, projectLink, currentUser);
             dispatch(addLoadedProjectToStore(projectPath, manifest));
             dispatch(displayToolsToLoad(manifest));
         }
     });
+}
+
+export function setUpManifestAndParams(projectPath, projectLink, currentUser) {
+    projectPath = LoadHelpers.correctSaveLocation(projectPath);
+    let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+    manifest = LoadHelpers.verifyChunks(projectPath, manifest);
+    if (!manifest && !manifest.tcInitialized) {
+        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+    } else {
+        let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+        if (oldManifest) {
+            manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
+        }
+    }
+    return manifest;
 }
 
 /**

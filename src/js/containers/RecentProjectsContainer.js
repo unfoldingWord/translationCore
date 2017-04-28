@@ -7,6 +7,7 @@ import { Modal, Tabs, Tab, Button, Glyphicon } from 'react-bootstrap/lib';
 import RecentProjects from '../components/core/RecentProjects';
 // actions
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
+import * as NotificationActions from '../actions/NotificationActions';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -19,16 +20,20 @@ class RecentProjectsContainer extends React.Component {
 
   generateButton(projectPath) {
     return (
-        <span>
-            <Button style={{ width: "50%", backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
-                <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px', marginRight: '20px' }}>Select</span>
-            </Button>
-            <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
-                <Glyphicon glyph={'refresh'} />
-                <span style={{ marginLeft: '5px' }}> Sync </span>
-            </Button>
-        </span>
+      <span style={{marginLeft:2}}>
+        <Button style={{ width: '33%', backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
+          <Glyphicon glyph={'folder-open'} />
+          <span style={{ marginLeft: '10px', marginRight: '20px' }}>Open</span>
+        </Button>
+        <Button style={{ width: '33%', fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+          <Glyphicon glyph={'refresh'} />
+          <span style={{ marginLeft: '5px' }}> Sync </span>
+        </Button>
+        <Button style={{ width: '33%', backgroundColor: '#0277BD', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#0277BD 0,#0277BD 100%)', color: 'white' }} onClick={() => this.props.exportToCSV(projectPath)}>
+          <Glyphicon glyph={'folder-open'} />
+          <span style={{ marginLeft: '10px', marginRight: '20px' }}>Export</span>
+        </Button>
+      </span>
     )
   }
 
@@ -42,7 +47,7 @@ class RecentProjectsContainer extends React.Component {
       let manifestLocation = path.join(projectPath, 'manifest.json');
       let manifest = {};
       try {
-          manifest = require(manifestLocation);
+        manifest = require(manifestLocation);
       } catch (err) {
         // Happens with USFM projects
         manifest = { target_language: {}, ts_project: {} }
@@ -58,7 +63,8 @@ class RecentProjectsContainer extends React.Component {
       let buttonSpan = (this.generateButton(projectPath));
       projects.push(
         {
-          '': <Glyphicon glyph={'folder-open'} />,
+          '':
+          <Glyphicon glyph={'folder-open'} />,
           'Project Name': projectName,
           'Book': manifest.ts_project ? manifest.ts_project.name : 'Unknown',
           'Language': manifest.target_language ? manifest.target_language.name : 'Unknown',
@@ -102,6 +108,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     getProjectsFromFolder: () => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
+    },
+    exportToCSV: (projectPath) => {
+      dispatch(recentProjectsActions.exportToCSV(projectPath, 
+      (result)=> dispatch(NotificationActions.showNotification(result, 5)
+      )));
     }
   }
 }
