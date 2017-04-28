@@ -146,3 +146,33 @@ tools. they basically override bootstrap styling for this components
 #table>tbody>tr {
     border-bottom: 1px solid var(--border-color);
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus {
+    background-color: var(--accent-color-dark);
+    background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--reverse-color);
+    color: var(--accent-color-dark);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
