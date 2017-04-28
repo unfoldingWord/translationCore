@@ -28,6 +28,7 @@ import groupsIndexReducer from './groupsIndexReducer'
 import verseEditReducer from './verseEditReducer'
 import modulesSettingsReducer from './modulesSettingsReducer'
 import currentToolReducer from './currentToolReducer'
+import BodyUIReducer from './BodyUIReducer'
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
@@ -57,7 +58,8 @@ const rootReducers = combineReducers({
   groupsIndexReducer,
   verseEditReducer,
   modulesSettingsReducer,
-  currentToolReducer
+  currentToolReducer,
+  BodyUIReducer
 });
 
 export default rootReducers;
