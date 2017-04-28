@@ -6,6 +6,8 @@ import Projects from '../components/core/login/Projects';
 import OnlineInput from '../components/core/OnlineInput';
 // Actions
 import * as importOnlineActions from '../actions/ImportOnlineActions.js';
+import * as ModalActions from '../actions/ModalActions.js';
+import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ImportOnlineContainer extends React.Component {
 
@@ -66,7 +68,7 @@ class ImportOnlineContainer extends React.Component {
                               or
         </span>
                       </div>
-                      <OnlineInput onChange={this.props.handleOnlineChange} load={() => this.props.loadProjectFromLink(this.props.importLink)} />
+                      <OnlineInput onChange={this.props.handleOnlineChange} load={() => this.props.loadProjectFromLink(this.props.importLink, this.props.loggedIn)} />
                   </center>
               </div>)
               :
@@ -95,11 +97,22 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     updateRepos: () => {
       dispatch(importOnlineActions.updateRepos());
     },
-    loadProjectFromLink: (link) => {
+    loadProjectFromLink: (link, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(ModalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        return;
+      }
       dispatch(importOnlineActions.loadProjectFromLink(link));
     },
-    openOnlineProject: (projectPath) => {
+    openOnlineProject: (projectPath, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(ModalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        return;
+      }
       dispatch(importOnlineActions.openOnlineProject(projectPath));
+      
     }
   };
 };
