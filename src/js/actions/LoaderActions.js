@@ -39,14 +39,17 @@ export function update(show, progess) {
   });
 }
 
-export function sendProgressForKey(progress) {
+/**
+ * @description gets the progress for a specific process.
+ * @param {string} processName - label name for the specific process that the progress is being loaded for.
+ * @param {number} progress - calculated progress of a specific process.
+ */
+export function sendProgressForKey(processName, progress) {
   return (dispatch => {
     dispatch({
       type: consts.UPDATE_PROGRESS,
-      progress: progress
+      processName,
+      progress
     });
-    if (progress >= 100) {
-      dispatch(toggleLoader(false));
-    }
   });
 }

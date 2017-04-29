@@ -81,8 +81,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addNewBible: (bibleName, bibleData) => {
         dispatch(addNewBible(bibleName, bibleData));
       },
-      progress: (progress) => {
-        dispatch(sendProgressForKey(progress))
+      progress: (label, progress) => {
+        dispatch(sendProgressForKey(label, progress));
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));

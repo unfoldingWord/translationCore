@@ -6,7 +6,6 @@ import Loader from '../components/core/Loader';
 import * as LoaderActions from '../actions/LoaderActions.js';
 
 class LoaderContainer extends React.Component {
-
   render() {
     return (
       <Loader {...this.props}/>
@@ -14,19 +13,20 @@ class LoaderContainer extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
-    ...state.loaderReducer
+    loaderReducer: state.loaderReducer,
+    currentToolReducer: state.currentToolReducer
   };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     reloadContent: () => {
       dispatch(LoaderActions.killLoading());
     }
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,

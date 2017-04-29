@@ -4,7 +4,7 @@ import ThirdPartyCode from "./ThirdParty.js"
 class Licenses extends React.Component {
   render() {
     return(
-      <div>
+      <div style={{padding: '20px 50px'}}>
         <center>{"Find out more about translationCore at: "}<a href="http://unfoldingword.org/tc">{"unfoldingword.org/tc"}</a></center>
         <center><b>{"License"}</b></center>
         <center>{"Copyright (c) 2017 unfoldingWord"}</center>
