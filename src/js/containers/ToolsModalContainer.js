@@ -6,6 +6,7 @@ import SwitchCheck from '../components/core/SwitchCheck.js';
 // actions
 import * as ToolsActions from '../actions/ToolsActions.js';
 import * as modalActions from '../actions/ModalActions.js';
+import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ToolsModalContainer extends React.Component {
 
@@ -29,7 +30,7 @@ class ToolsModalContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return Object.assign({}, state.toolsReducer, state.settingsReducer, state.projectDetailsReducer);
+  return Object.assign({}, state.toolsReducer, state.settingsReducer, state.projectDetailsReducer, state.loginReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -37,7 +38,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
     },
-    handleLoadTool: (toolFolderPath) => {
+    handleLoadTool: (toolFolderPath, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(modalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before opening a tool", 5));
+        return;
+      }
       dispatch(ToolsActions.loadTool(toolFolderPath));
     },
     showLoad: () => {
