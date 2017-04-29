@@ -30,11 +30,11 @@ class ModalContainer extends React.Component {
                       </div>;
     return (
       <Modal bsSize="lg" show={visible} onHide={hide}>
-        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "#ffffff" }}>
+        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(e, 1, true)}
                 id="tabs"
-                style={{borderBottom: "none", backgroundColor: "#145396", color: '#FFFFFF', width: "100%"}}>
+                style={{borderBottom: "none", backgroundColor: "var(--accent-color-dark)", color: 'var(--reverse-color)', width: "100%"}}>
             <Tab eventKey={1} title={appGlyph}>
                 <Application
                   currentSection={this.props.currentSection}
@@ -50,9 +50,9 @@ class ModalContainer extends React.Component {
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "#ffffff", borderTop: "1px solid #333333"}}>
-          <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-          <center style={{color: "#333333", padding: "6px"}}>
+        <Modal.Footer style={{padding: "10px", backgroundColor: "var(--reverse-color)", borderTop: "1px solid var(--border-color)"}}>
+          <Button style={{float: "right", width: "90px", padding: "5px", border: '2px solid var(--accent-color-dark)', color: 'var(--accent-color-dark)', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)', borderRadius: "0px"}} onClick={() => hide()}>Close</Button>
+          <center style={{color: "var(--text-color)", padding: "6px"}}>
             {"Version " + packageJson.version}
           </center>
         </Modal.Footer>

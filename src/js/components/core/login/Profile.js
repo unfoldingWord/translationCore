@@ -33,30 +33,32 @@ class Profile extends React.Component {
         <style type="text/css">
           {`
             .btn-blue {
-              background-color: #0277BD;
-              color: white;
+              background-color: var(--accent-color-dark);
+              color: var(--reverse-color);
               height: 60px;
               border-radius: 0px;
               font-weight: bold;
             }
             .btn-blue:hover {
-              background-color: #C6C4C4;
+              background-color: var(--accent-color-dark);
+              color: var(--reverse-color);
             }
             .btn-small-blue {
               width: 100%;
-              background-color: #0277BD;
-              color: white;
+              background-color: var(--accent-color-dark);
+              color: var(--reverse-color);
               border-radius: 0px;
               font-weight: bold;
               margin: 0px;
             }
             .btn-small-blue:hover {
-              background-color: #C6C4C4;
+              background-color: var(--accent-color-dark);
+              color: var(--reverse-color);
             }
           `}
         </style>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
-        <Col sm={12} md={4} lg={4} style={{backgroundColor: "white", padingTop: "20px", padding: "0px", height: "520px", borderRight: "1px solid #333333"}}>
+        <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", padingTop: "20px", padding: "0px", height: "520px", borderRight: "1px solid var(--border-color)"}}>
           <div style={{padding: "20px 10px 10px 10px"}}>
             <h3>Account Information</h3><br />
             <Image style={{height: '85px', width:'85px', margin:"auto", display: "flex"}}
@@ -72,10 +74,10 @@ class Profile extends React.Component {
         </Col>
         <Col sm={12} md={6} lg={8} style={{padding: "20px 25px 0px 25px", height: "520px"}}>
           <h3>Feedback and Comments</h3><br />
-          <Panel header={panelTitle} style={{padding: "0px", borderColor: "#333333"}}>
+          <Panel header={panelTitle} style={{padding: "0px", borderColor: "var(--border-color)"}}>
             <ListGroup fill>
             <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
-              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "#000000", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
+              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
             </FormGroup>
             <Button onClick={this.props.submitFeedback} bsStyle="small-blue">
               Submit

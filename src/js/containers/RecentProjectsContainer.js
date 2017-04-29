@@ -7,6 +7,8 @@ import { Modal, Tabs, Tab, Button, Glyphicon } from 'react-bootstrap/lib';
 import RecentProjects from '../components/core/RecentProjects';
 // actions
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
+import * as ModalActions from '../actions/ModalActions.js';
+import * as NotificationActions from '../actions/NotificationActions.js';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -20,17 +22,17 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath) {
     return (
         <span>
-            <Button style={{ width: "30%", backgroundColor: '#145396', border: '2px solid #145396', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#145396 0,#145396 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath)}>
+            <Button style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
                 <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px', marginRight: '20px' }}>Select</span>
+                <span style={{ marginLeft: '10px' }}>Select</span>
             </Button>
-            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 5px 10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }}>
+            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}>
                 <Glyphicon glyph={'download'} />
-                <span style={{ marginLeft: '10px' }}>Export</span>
+                <span style={{ marginLeft: '5px' }}>Export (csv)</span>
             </Button>
-            <Button style={{ width: "30%", fontWeight: 'bold', border: '2px solid #145396', margin: '10px 0', color: '#145396', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,white 0,white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
                 <Glyphicon glyph={'upload'} />
-                <span style={{ marginLeft: '10px' }}>Upload</span>
+                <span style={{ marginLeft: '5px' }}>Upload</span>
             </Button>
         </span>
     )
@@ -89,13 +91,19 @@ class RecentProjectsContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     ...state.recentProjectsReducer,
-    manifest: state.projectDetailsReducer.manifest
+    manifest: state.projectDetailsReducer.manifest,
+    loggedInUser: state.loginReducer.loggedInUser
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onLoad: projectPath => {
+    onLoad: (projectPath, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(ModalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        return;
+      }
       dispatch(recentProjectsActions.onLoad(projectPath));
     },
     syncProject: (projectPath, manifest) => {

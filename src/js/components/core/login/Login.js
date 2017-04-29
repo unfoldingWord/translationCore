@@ -6,8 +6,8 @@ const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
 const styles = {
     button: {
-      backgroundColor: '#0277BD',
-      color: 'white',
+      backgroundColor: 'var(--accent-color-dark)',
+      color: 'var(--reverse-color)',
       width: '40%',
       fontWeight: 'bold',
       borderRadius: 4,
@@ -16,8 +16,8 @@ const styles = {
       outline: 'none',
     },
     buttonActive: {
-      backgroundColor: '#C6C4C4',
-      color: 'white',
+      backgroundColor: 'var(--accent-color-dark)',
+      color: 'var(--reverse-color)',
       width: '40%',
       fontWeight: 'bold',
       borderRadius: 4,
