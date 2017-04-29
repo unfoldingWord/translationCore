@@ -1,37 +1,44 @@
 import React from 'react';
-import ProgressBar from 'react-bootstrap/lib/ProgressBar.js';
-import Modal from 'react-bootstrap/lib/Modal.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Circle} from 'react-progressbar.js';
 import Dialog from 'material-ui/Dialog';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class Loader extends React.Component {
+
+  displayProgress(toolsProgress) {
+    let progressCircle = [];
+    for (var toolName in toolsProgress) {
+      if (toolsProgress[toolName] && toolsProgress[toolName].progress) {
+        let progress = parseInt(toolsProgress[toolName].progress, 10);
+        progressCircle.push(
+          <div key={toolName} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
+            <span>{"Loading " + toolName + " data"}</span>
+            <Circle
+              progress={progress}
+              text={progress + "%"}
+              options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
+              initialAnimate={true}
+              containerStyle={{ width: '50px', height: '50px' }}
+            />
+          </div>
+        );
+      }
+    }
+    return progressCircle
+  }
+
+
+
   render() {
-    const {Bibles, translationWords, show, reloadContent} = this.props.loaderReducer;
-    let biblesProgress = Bibles ? parseInt(Bibles.progress, 10) : 0;
-    let tProgress = translationWords ? parseInt(translationWords.progress, 10) : 0;
+    const {toolsProgress, show, reloadContent} = this.props.loaderReducer;
     return (
       <MuiThemeProvider>
-        <Dialog modal={false} open={show}>
+        <Dialog modal={true} open={show}>
           <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
             <img src="images/TC_icon.png" className="App-logo" alt="logo" />
-            <span>Loading Resources...</span><br />
-            <span>translationWords</span>
-              <Circle
-                progress={tProgress}
-                text={tProgress + "%"}
-                options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
-                initialAnimate={true}
-                containerStyle={{ width: '50px', height: '50px' }}
-              />
-            <span>Bibles</span>
-              <Circle
-                progress={biblesProgress}
-                text={biblesProgress + "%"}
-                options={{ strokeWidth: 15, color: "#4ABBE6", trailColor: "#FFF", trailWidth: 15 }}
-                initialAnimate={true}
-                containerStyle={{ width: '50px', height: '50px' }}
-              />
+            <span>Loading...</span><br />
+            {this.displayProgress(toolsProgress)}
             <br/><br/>
             {reloadContent}
           </div>

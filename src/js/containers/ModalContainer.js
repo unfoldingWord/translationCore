@@ -15,47 +15,44 @@ class ModalContainer extends React.Component {
 
   render() {
     let { currentTab, visible, hide, selectModalTab } = this.props;
-    let activeStyle = {color: "#FFFFFF", fontSize: "20px", margin: "0px 10px 0px 0px"};
-    let inactiveStyle = {color: "#333333", fontSize: "20px", margin: "auto"};
-    let appGlyph = <div style={{display: "flex"}}><div style={{margin: (currentTab === 1) ?  "0px 10px 0px 0px" : "auto"}}>
-                      <SvgLogo height="24px" color={(currentTab === 1) ? "#FFFFFF" : "#333333" }/></div>
-                        {(currentTab === 1) ? ' Application' : " "}
+
+    let appGlyph = <div>
+                        <Glyphicon glyph="user" style={{marginRight: "10px", fontSize: "20px"}} />
+                        User
                     </div>;
-    let projectsGlyph = <div style={{display: "flex"}}>
-                          <Glyphicon glyph="folder-open"
-                                      style={(currentTab === 2) ? activeStyle : inactiveStyle} />
-                          {(currentTab === 2) ? " Projects" : " "}
+    let projectsGlyph = <div>
+                          <Glyphicon glyph="folder-open" style={{marginRight: "10px", fontSize: "20px"}} />
+                          Projects
                         </div>;
-    let toolsGlyph = <div style={{display: "flex"}}>
-                        <Glyphicon glyph="wrench"
-                                    style={(currentTab === 3) ? activeStyle : inactiveStyle} />
-                          {(currentTab === 3) ? " Tools" : " "}
+    let toolsGlyph = <div>
+                        <Glyphicon glyph="wrench" style={{marginRight: "10px", fontSize: "20px"}} />
+                          Tools
                       </div>;
     return (
       <Modal bsSize="lg" show={visible} onHide={hide}>
-        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "#333333" }}>
+        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(e, 1, true)}
                 id="tabs"
-                style={{paddingTop: "3px", borderBottom: "none", backgroundColor: "#474747", color: '#FFFFFF', width: "100%"}}>
-            <Tab eventKey={1} title={appGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+                style={{borderBottom: "none", backgroundColor: "var(--accent-color-dark)", color: 'var(--reverse-color)', width: "100%"}}>
+            <Tab eventKey={1} title={appGlyph}>
                 <Application
                   currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
-            <Tab eventKey={2} title={projectsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+            <Tab eventKey={2} title={projectsGlyph}>
                 <Load currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
-            <Tab eventKey={3} title={toolsGlyph} style={{backgroundColor: "#333333", paddingTop: "1px"}}>
+            <Tab eventKey={3} title={toolsGlyph}>
                 <Tools currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "#333333", borderTop: "none"}}>
-          <Button bsStyle="danger" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-          <center style={{color: "#FFFFFF", padding: "6px"}}>
+        <Modal.Footer style={{padding: "10px", backgroundColor: "var(--reverse-color)", borderTop: "1px solid var(--border-color)"}}>
+          <Button style={{float: "right", width: "90px", padding: "5px", border: '2px solid var(--accent-color-dark)', color: 'var(--accent-color-dark)', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)', borderRadius: "0px"}} onClick={() => hide()}>Close</Button>
+          <center style={{color: "var(--text-color)", padding: "6px"}}>
             {"Version " + packageJson.version}
           </center>
         </Modal.Footer>
