@@ -251,7 +251,6 @@ export function loadModuleAndDependencies(moduleFolderName) {
             dispatch({ type: consts.CLEAR_OLD_GROUPS });
             dispatch({ type: consts.CLEAR_CONTEXT_ID });
             dispatch(CoreActionsRedux.changeModuleView());
-            dispatch({ type: consts.START_LOADING });
             dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
@@ -287,7 +286,8 @@ export function loadGroupDataFromFileSystem(toolName) {
 }
 
 export function setGroupDataInStore(dataFolder, params) {
-    return ((dispatch) => {
+    return ((dispatch, getState) => {
+        let toolName = getState().currentToolReducer.toolName;
         let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
         fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
             if (!err) {
@@ -306,7 +306,7 @@ export function setGroupDataInStore(dataFolder, params) {
                             if (!err) {
                                 allGroupsObjects[groupName] = groupObj;
                                 setTimeout(() => {
-                                    dispatch(LoaderActions.sendProgressForKey("translationWords", i / total * 100));
+                                    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
