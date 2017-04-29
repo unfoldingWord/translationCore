@@ -63,8 +63,8 @@ class ImportOnlineContainer extends React.Component {
                           <img src="images/D43.svg" width="90" style={{ marginRight: '25px', padding: '10px' }} />
                           Browse Door43 Projects
       </Button>
-                      <div style={{ width: '60%', height: '20px', borderBottom: '2px solid white', textAlign: 'center', margin: '20px 0' }}>
-                          <span style={{ fontSize: '20px', backgroundColor: '#333', fontWeight: 'bold', padding: '0 40px' }}>
+                      <div style={{ width: '60%', height: '20px', borderBottom: '2px solid var(--reverse-color)', textAlign: 'center', margin: '20px 0' }}>
+                          <span style={{ fontSize: '20px', backgroundColor: 'var(--reverse-color)', fontWeight: 'bold', padding: '0 40px' }}>
                               or
         </span>
                       </div>
