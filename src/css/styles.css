@@ -147,7 +147,7 @@ tools. they basically override bootstrap styling for this components
     border-bottom: 1px solid var(--border-color);
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:focus {
+.btn-prime, .btn-prime:hover, .btn-prime:focus {
     background-color: var(--accent-color-dark);
     background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
     color: var(--reverse-color);
@@ -162,7 +162,7 @@ tools. they basically override bootstrap styling for this components
     outline: none;
 }
 
-.btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
+.btn-second, .btn-second:hover, .btn-second:focus {
     background-color: var(--reverse-color);
     color: var(--accent-color-dark);
     height: 35px;
