@@ -1,3 +1,5 @@
+
+@import 'colorscheme.css';
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection
@@ -10,7 +12,7 @@ body, html, #content, .fill-height {
 }
 
 body {
-  background-color: white;
+  background-color: var(--reverse-color);
 }
 
 .main-view h1,
@@ -26,7 +28,7 @@ body {
 }
 
 .text-primary-highlighted{
-  background-color: #FDD910;
+  background-color: var(--highlight-color);
   font-weight: bold;
 }
 
@@ -67,47 +69,49 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav>li>a:hover {
-  background-color: #C6C4C4;
+  background-color: var(--accent-color-dark);
   border: none;
+  border-radius: 0;
   outline: none;
 }
 
 .nav-tabs>li>a {
-  color: white;
-  background-color: #747474;
-  margin-right: 2px;
-  border-radius: 10px 10px 0 0;
-  min-width: 75px;
-  padding: 10px 15px 28px 15px;
-  height: 35px;
-  margin-top: 4px;
+  color: var(--reverse-color);
+  background-color: var(--accent-color-dark);
+  width: 150px;
+  height: 40px;
   border: none;
+  border-radius: 0;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  color: #FFFFFF;
+  color: var(--accent-color-dark);
   cursor: default;
-  background-color: rgb(51, 51, 51);
-  border-bottom-color: rgb(51, 51, 51);
-  height: 35px;
+  background-color: var(--reverse-color);
   outline: none;
-  margin-top: 4px;
   border: none;
+  border-radius: 0;
+}
+
+.nav-pills {
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-pills>li>a {
   position: relative;
   display: block;
-  padding: 10px 60px;
-  color: #ffffff;
+  width: 250px;
+  height: 40px;
+  color: var(--text-color-light);
+  background-color: var(--reverse-color);
   outline: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .nav-pills>li>a:hover {
-  background-color: #C6C4C4;
+  background-color: var(--reverse-color);
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .nav-pills>li.active>a {
@@ -115,36 +119,61 @@ tools. they basically override bootstrap styling for this components
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  color: #333333;
-  background-color: #C6C4C4;
-  border-radius: 0px;
+  color: var(--accent-color-dark);
+  background-color: var(--reverse-color);
+  border-radius: 0;
   box-sizing: border-box;
-  padding: 10px 58px;
 }
 
-#table tr:nth-child(even) {
-    background-color: #747474;
-}
 #table td:nth-child(n+3):nth-child(-n+5) {
   font-style: italic;
 }
 #table td:nth-child(2) {
     font-weight: bold;
 }
-#table td:nth-child(6) {
-  background-color: #333;
-  padding-left: 0;
-  padding-right: 0;
-}
+
 #table>tbody>tr>td {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#table td:nth-child(n+1):nth-child(-n+5) {
+  padding-top: 15px;
 }
 #table th {
   font-weight: normal;
 }
-#table *{
-  border-color: transparent
+
+#table>tbody>tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-prime, .btn-prime:hover, .btn-prime:focus {
+    background-color: var(--accent-color-dark);
+    background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second, .btn-second:hover, .btn-second:focus {
+    background-color: var(--reverse-color);
+    color: var(--accent-color-dark);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
 }
 
 .App-logo {
@@ -156,3 +185,4 @@ tools. they basically override bootstrap styling for this components
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+

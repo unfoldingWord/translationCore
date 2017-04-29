@@ -22,13 +22,17 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath) {
     return (
         <span>
-            <Button style={{ width: "50%", backgroundColor: '#C3105A', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,#C3105A 0,#C3105A 100%)', color: 'white' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
+            <Button style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
                 <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px', marginRight: '20px' }}>Select</span>
+                <span style={{ marginLeft: '10px' }}>Select</span>
             </Button>
-            <Button style={{ width: "50%", fontWeight: 'bold', borderWidth: '0px', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom, white 0, white 100%)', backgroundColor: 'white' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
-                <Glyphicon glyph={'refresh'} />
-                <span style={{ marginLeft: '5px' }}> Sync </span>
+            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}>
+                <Glyphicon glyph={'download'} />
+                <span style={{ marginLeft: '5px' }}>Export (csv)</span>
+            </Button>
+            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+                <Glyphicon glyph={'upload'} />
+                <span style={{ marginLeft: '5px' }}>Upload</span>
             </Button>
         </span>
     )
@@ -62,7 +66,7 @@ class RecentProjectsContainer extends React.Component {
         {
           '': <Glyphicon glyph={'folder-open'} />,
           'Project Name': projectName,
-          'Book': manifest.ts_project ? manifest.ts_project.name : 'Unknown',
+          'Book': manifest.project ? manifest.project.name : 'Unknown',
           'Language': manifest.target_language ? manifest.target_language.name : 'Unknown',
           'Date Updated': difference,
           ' ': buttonSpan

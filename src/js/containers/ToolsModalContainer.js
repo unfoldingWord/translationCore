@@ -19,8 +19,8 @@ class ToolsModalContainer extends React.Component {
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
               bsStyle="pills"
-              style={{borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%"}}>
-          <Tab eventKey={1} title="Available Tools" style={{backgroundColor: "#333333"}}>
+              style={{borderBottom: "none", backgroundColor: "var(--reverse-color)", color: 'var(--text-color)', width: "100%"}}>
+          <Tab eventKey={1} title="Available Tools">
             <SwitchCheck {...this.props}/>
           </Tab>
         </Tabs>
