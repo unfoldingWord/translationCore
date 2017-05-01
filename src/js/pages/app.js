@@ -27,6 +27,10 @@ import * as DragDropActions from '../actions/DragDropActions.js';
 // constant declarations
 const api = window.ModuleApi;
 const {dialog} = remote;
+const { Button, utils } = require('react-bootstrap');
+const bootstrapUtils = utils.bootstrapUtils;
+bootstrapUtils.addStyle(Button, 'prime');
+bootstrapUtils.addStyle(Button, 'second');
 
 
 class Main extends Component {

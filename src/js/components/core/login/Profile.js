@@ -1,12 +1,5 @@
 const React = require('react');
-const CoreStore = require('../../../stores/CoreStore.js');
-const CoreActions = require('../../../actions/CoreActions.js');
-const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl, utils } = require('react-bootstrap');
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'blue');
-bootstrapUtils.addStyle(Button, 'small-blue');
-const style = require('./loginStyle');
-
+const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } = require('react-bootstrap');
 
 class Profile extends React.Component {
   render(){
@@ -29,48 +22,22 @@ class Profile extends React.Component {
       </div>
     );
     return(
-      <div>
-        <style type="text/css">
-          {`
-            .btn-blue {
-              background-color: var(--accent-color-dark);
-              color: var(--reverse-color);
-              height: 60px;
-              border-radius: 0px;
-              font-weight: bold;
-            }
-            .btn-blue:hover {
-              background-color: var(--accent-color-dark);
-              color: var(--reverse-color);
-            }
-            .btn-small-blue {
-              width: 100%;
-              background-color: var(--accent-color-dark);
-              color: var(--reverse-color);
-              border-radius: 0px;
-              font-weight: bold;
-              margin: 0px;
-            }
-            .btn-small-blue:hover {
-              background-color: var(--accent-color-dark);
-              color: var(--reverse-color);
-            }
-          `}
-        </style>
+    <div>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
-        <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", padingTop: "20px", padding: "0px", height: "520px", borderRight: "1px solid var(--border-color)"}}>
-          <div style={{padding: "20px 10px 10px 10px"}}>
-            <h3>Account Information</h3><br />
-            <Image style={{height: '85px', width:'85px', margin:"auto", display: "flex"}}
-                   src={userdata.avatar_url} circle /><br /><br />
-            <span><strong>Username: </strong>{userdata.username}</span><br />
-            <small>This is publicly visible</small><br /><br />
-          </div><br /><br />
-          <Button bsStyle="blue"
-                  style={{marginBottom:"0px", width: '100%', marginTop: '5px', bottom: "0px", position: "absolute"}}
-                  onClick={onHandleLogout}>
-                Sign Out
-          </Button>
+        <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", paddingTop: "20px", height: "520px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid var(--border-color)"}}>
+          <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <h3>Account Information</h3>
+            <Image style={{height: '85px', width:'85px', margin: "30px 0" }}
+                   src={userdata.avatar_url} circle />
+            <span><strong>Username: </strong>{userdata.username}</span>
+            <small>This is publicly visible</small>
+          </div>
+          <div style={{display: "flex", justifyContent: "center" }}>
+              <Button bsStyle="prime"
+                      onClick={onHandleLogout}>
+                  Sign Out
+              </Button>
+          </div>
         </Col>
         <Col sm={12} md={6} lg={8} style={{padding: "20px 25px 0px 25px", height: "520px"}}>
           <h3>Feedback and Comments</h3><br />
@@ -79,7 +46,7 @@ class Profile extends React.Component {
             <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
               <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
             </FormGroup>
-            <Button onClick={this.props.submitFeedback} bsStyle="small-blue">
+            <Button onClick={this.props.submitFeedback} bsStyle="prime" style={{width: '100%', margin: "0"}}>
               Submit
             </Button>
             </ListGroup>
