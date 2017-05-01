@@ -7,6 +7,9 @@ import * as getDataActions from './GetDataActions';
 import { loadGroupsData, loadCheckDataData } from '../utils/loadMethods';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+import zipFolder from 'zip-folder';
+import { remote } from 'electron';
+const { dialog } = remote;
 
 export function onLoad(filePath) {
   return ((dispatch) => {
@@ -39,26 +42,15 @@ export function exportToCSV(projectPath, callback) {
 
     let toolPaths = getToolFolderNames(projectPath);
     if (!toolPaths) callback('Could Not Find Data To Export')
-    for (var tool of toolPaths) {
-      if (tool == '.DS_Store') continue;
-      let dataFolder = path.join(projectPath, 'apps', 'translationCore');
-
-      loadGroupsData(tool, dataFolder, params)
-        .then((obj) => saveGroupsCSVToFs(obj, dataFolder))
-
-      loadCheckDataData(dataFolder, params, 'reminders')
-        .then((obj) => saveRemindersToCSV(obj, dataFolder))
-
-      loadCheckDataData(dataFolder, params, 'selections')
-        .then((obj) => saveSelectionsToCSV(obj, dataFolder))
-
-      loadCheckDataData(dataFolder, params, 'comments')
-        .then((obj) => saveCommentsToCSV(obj, dataFolder))
-
-      loadCheckDataData(dataFolder, params, 'verseEdits')
-        .then((obj) => saveVerseEditsToCSV(obj, dataFolder))
+    let dataFolder = path.join(projectPath, 'apps', 'translationCore');
+    var fn = function (newPaths) {
+      saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
+        newPaths.shift();
+        if (newPaths.length) fn(newPaths)
+        else fs.remove(path.join(dataFolder, 'output'));
+      })
     }
-     callback('Exported To CSV');
+    fn(toolPaths);
   });
 }
 
@@ -138,6 +130,36 @@ export function addContextIdToCSV(currentRowArray, contextId) {
 export function getToolFolderNames(projectPath) {
   try {
     return fs.readdirSync(path.join(projectPath, 'apps', 'translationCore', 'index'));
-  } catch(e) {
+  } catch (e) {
   }
+}
+
+
+export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback) {
+  if (toolName == '.DS_Store') callback();
+  else {
+    loadGroupsData(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder))
+      .then(() => loadCheckDataData(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder))
+      .then(() => loadCheckDataData(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder))
+      .then(() => loadCheckDataData(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder))
+      .then(() => loadCheckDataData(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder))
+      .then(() => saveDialog(toolName, dataFolder, callback))
+  }
+}
+
+export function saveDialog(toolName, dataFolder, callback) {
+  let source = path.join(dataFolder, 'output');
+  let defaultPath = `${dataFolder}/${toolName}_csv.zip`;
+  let title = `${toolName} CSV Save Location`;
+  dialog.showSaveDialog({
+    title: title,
+    defaultPath: defaultPath,
+    extensions: ['zip']
+  }, (fileName) => {
+    if (fileName) {
+      zipFolder(source, fileName, function (err) {
+        callback(err);
+      })
+    } else callback('error')
+  })
 }

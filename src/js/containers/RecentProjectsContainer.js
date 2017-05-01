@@ -21,20 +21,20 @@ class RecentProjectsContainer extends React.Component {
 
   generateButton(projectPath) {
     return (
-        <span>
-            <Button style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
-                <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px' }}>Select</span>
-            </Button>
-            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.exportToCSV(projectPath)}>
-                <Glyphicon glyph={'download'} />
-                <span style={{ marginLeft: '5px' }}>Export (csv)</span>
-            </Button>
-            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
-                <Glyphicon glyph={'upload'} />
-                <span style={{ marginLeft: '5px' }}>Upload</span>
-            </Button>
-        </span>
+      <span>
+        <Button style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
+          <Glyphicon glyph={'folder-open'} />
+          <span style={{ marginLeft: '10px' }}>Select</span>
+        </Button>
+        <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.exportToCSV(projectPath)}>
+          <Glyphicon glyph={'download'} />
+          <span style={{ marginLeft: '5px' }}>Export (csv)</span>
+        </Button>
+        <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+          <Glyphicon glyph={'upload'} />
+          <span style={{ marginLeft: '5px' }}>Upload</span>
+        </Button>
+      </span>
     )
   }
 
@@ -117,9 +117,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
     },
     exportToCSV: (projectPath) => {
-      dispatch(recentProjectsActions.exportToCSV(projectPath, 
-      (result)=> dispatch(NotificationActions.showNotification(result, 5)
-      )));
+      dispatch(recentProjectsActions.exportToCSV(projectPath,
+        (result) => {
+          dispatch(NotificationActions.showNotification(result, 5))
+          debugger;
+        }
+      ));
     }
   }
 }
