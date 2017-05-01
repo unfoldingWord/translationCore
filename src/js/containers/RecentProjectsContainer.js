@@ -117,12 +117,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
     },
     exportToCSV: (projectPath) => {
-      dispatch(recentProjectsActions.exportToCSV(projectPath,
-        (result) => {
-          dispatch(NotificationActions.showNotification(result, 5))
-          debugger;
-        }
-      ));
+      dispatch(recentProjectsActions.exportToCSV(projectPath));
     }
   }
 }
