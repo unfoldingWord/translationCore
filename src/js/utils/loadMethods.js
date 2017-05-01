@@ -81,7 +81,7 @@ export function loadGroupsData(tool, dataFolder, params) {
   });
 }
 
-export function loadCheckDataData(dataFolder, params, type) {
+export function loadProjectDataByType(dataFolder, params, type) {
   return new Promise((resolve, reject) => {
     try {
       let chapterFolder = path.join(dataFolder, 'checkData', type, params.bookAbbr);

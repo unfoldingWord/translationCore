@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as getDataActions from './GetDataActions';
-import { loadGroupsData, loadCheckDataData } from '../utils/loadMethods';
+import { loadGroupsData, loadProjectDataByType } from '../utils/loadMethods';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 import zipFolder from 'zip-folder';
@@ -139,10 +139,10 @@ export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback)
   if (toolName == '.DS_Store') callback();
   else {
     loadGroupsData(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder))
-      .then(() => loadCheckDataData(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder))
-      .then(() => loadCheckDataData(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder))
-      .then(() => loadCheckDataData(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder))
-      .then(() => loadCheckDataData(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByType(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByType(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByType(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByType(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder))
       .then(() => saveDialog(toolName, dataFolder, callback))
   }
 }
