@@ -1,12 +1,13 @@
 import React from 'react';
+import { shell } from 'electron';
 const Registration = require('./Registration.js');
 const { Button, Row, Col, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'blue');
 const styles = {
     button: {
-      backgroundColor: '#0277BD',
-      color: 'white',
+      backgroundColor: 'var(--accent-color-dark)',
+      color: 'var(--reverse-color)',
       width: '40%',
       fontWeight: 'bold',
       borderRadius: 4,
@@ -15,8 +16,8 @@ const styles = {
       outline: 'none',
     },
     buttonActive: {
-      backgroundColor: '#C6C4C4',
-      color: 'white',
+      backgroundColor: 'var(--accent-color-dark)',
+      color: 'var(--reverse-color)',
       width: '40%',
       fontWeight: 'bold',
       borderRadius: 4,
@@ -88,7 +89,7 @@ class Login extends React.Component {
                 </button>
                 <div>
                   <h4>{"Don't have an account?"}</h4>
-                  <button onMouseOver={() => this.onHover(2)} onMouseDown={() => this.onPress(2, displayLogin)}
+                  <button onMouseOver={() => this.onHover(2)} onMouseDown={() => shell.openExternal('https://git.door43.org/user/sign_up')}
                     onMouseOut={() => this.onPress(0)} onMouseUp={() => this.onPress(0)}
                     style={this.state.pressed != 2  && this.state.hovered != 2 ? styles.button : styles.buttonActive}
                     >

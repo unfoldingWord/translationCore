@@ -7,25 +7,24 @@ const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
 const exec = require('child_process').exec;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
-if (process.platform == 'win32') {
-  updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-  var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-  exec(createShortcut);
-}
-if (handleStartupEvent()) {
-  return;
-}
-function createWindow () {
+
+let mainWindow;
+let splashScreen;
+
+function createMainWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', useContentSize: true, show: false});
-  let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe');
+  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1300, minHeight: 700, center: true, useContentSize: true, show: false});
+
+  //mainWindow.webContents.openDevTools();
+
+  let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe /SILENT /COMPONENTS="assoc"');
   exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
-        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nInstalling Git now.');
         fs.copySync(__dirname + '/installers/Git-2.11.1.exe', installerLocation);
         exec('Git-2.11.1.exe', {cwd: path.datadir('translationCore')}, function(err, data) {
           if (err) {
@@ -50,8 +49,9 @@ function createWindow () {
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+    mainWindow.show();
     mainWindow.maximize();
+    splashScreen.close();
   });
 
   // Emitted when the window is closed.
@@ -63,10 +63,37 @@ function createWindow () {
   })
 }
 
+function createMainSplash() {
+  splashScreen = new BrowserWindow({
+    width: 600,
+    height: 600,
+    resizable: false,
+    autoHideMenuBar: true,
+    icon: 'images/TC_Icon.png',
+    frame: false,
+    center: true,
+    show: false
+  });
+
+  //splashScreen.webContents.openDevTools();
+
+  splashScreen.loadURL(`file://${__dirname}/splash.html`);
+
+  splashScreen.on('closed', function() {
+    splashScreen = null;
+  });
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', function () {
+  createMainSplash();
+  setTimeout(function () {
+    splashScreen.show();
+    createMainWindow();
+  }, 500);
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -81,45 +108,6 @@ app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+    createMainWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-function handleStartupEvent() {
-    if (process.platform !== 'win32') {
-        return false;
-    }
-    var squirrelCommand = process.argv[1];
-    switch (squirrelCommand) {
-        case '--squirrel-install':
-        case '--squirrel-updated':
-          target = path.basename(process.execPath);
-          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-          var createShortcut = updateDotExe + ' --createShortcut translationCore.exe';
-          exec(createShortcut);
-          // Always quit when done
-          app.quit();
-          return true;
-
-        case '--squirrel-uninstall':
-          // Undo anything you did in the --squirrel-install and
-          // --squirrel-updated handlers
-          target = path.basename(process.execPath);
-          updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'update.exe');
-          var createShortcut = updateDotExe + ' --removeShortcut=' + target ;
-          exec(createShortcut);
-          // Always quit when done
-          app.quit();
-          return true;
-
-        case '--squirrel-obsolete':
-            // This is called on the outgoing version of your app before
-            // we update to the new version - it's the opposite of
-            // --squirrel-updated
-            app.quit();
-            return true;
-    }
-};

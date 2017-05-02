@@ -4,10 +4,6 @@ import { Modal, Button, Tabs, Tab } from 'react-bootstrap/lib';
 // containers
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
-// Components
-import DragDrop from '../components/core/DragDrop';
-import Projects from '../components/core/login/Projects';
-import Report from "../components/core/reports/ReportGenerator";
 // Actions
 import * as dragDropActions from '../actions/DragDropActions.js';
 import * as ReportsActions from '../actions/ReportsActions.js';
@@ -26,18 +22,12 @@ class LoadModalContainer extends React.Component {
           activeKey={this.props.currentSection}
           onSelect={(e) => selectSectionTab(2, e)}
           bsStyle="pills"
-          style={{ borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%" }}>
-          <Tab eventKey={1} title="My Projects" style={{ backgroundColor: "#333333" }}>
+          style={{ borderBottom: "none", backgroundColor: "var(--reverse-color)", color: 'var(--text-color)', width: "100%" }}>
+          <Tab eventKey={1} title="My Projects">
             <RecentProjectsContainer />
           </Tab>
-          <Tab eventKey={2} title="Import Local Project" style={{ backgroundColor: "#333333" }}>
-            <DragDrop {...this.props} />
-          </Tab>
-          <Tab eventKey={3} title="Import Online Project" style={{ backgroundColor: "#333333" }}>
+          <Tab eventKey={3} title="Import Online Project">
             <ImportOnlineContainer />
-          </Tab>
-          <Tab eventKey={4} title="Reports" style={{ backgroundColor: "#333333" }}>
-            <Report {...this.props} />
           </Tab>
         </Tabs>
       </div>

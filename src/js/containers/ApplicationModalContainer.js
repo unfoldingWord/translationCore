@@ -4,7 +4,7 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import Login from '../components/core/login/Login.js';
 import Profile from '../components/core/login/Profile';
-import Settings from '../components/core/Settings.js';
+import Licenses from '../components/core/licenses/Licenses.js'
 // Actions
 import * as LoginActions from '../actions/LoginActions.js';
 import * as SettingsActions from '../actions/SettingsActions.js';
@@ -23,12 +23,12 @@ class ApplicationModalContainer extends React.Component {
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
               bsStyle="pills"
-              style={{borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%"}}>
-          <Tab eventKey={1} title="Account" style={{backgroundColor: "#333333"}}>
+              style={{borderBottom: "none", backgroundColor: "var(--reverse-color)", color: 'var(--text-color)', width: "100%"}}>
+          <Tab eventKey={1} title="Account">
               {accountDisplay}
           </Tab>
-          <Tab eventKey={2} title="Global Settings" style={{backgroundColor: "#333333"}}>
-              <Settings {...this.props}/>
+          <Tab eventKey={2} title="Licenses" style={{backgroundColor: "var(--reverse-color)"}}>
+              <Licenses />
           </Tab>
         </Tabs>
       </div>

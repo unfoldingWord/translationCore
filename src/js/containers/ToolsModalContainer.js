@@ -6,6 +6,7 @@ import SwitchCheck from '../components/core/SwitchCheck.js';
 // actions
 import * as ToolsActions from '../actions/ToolsActions.js';
 import * as modalActions from '../actions/ModalActions.js';
+import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ToolsModalContainer extends React.Component {
 
@@ -18,11 +19,9 @@ class ToolsModalContainer extends React.Component {
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
               bsStyle="pills"
-              style={{borderBottom: "none", backgroundColor: "#5C5C5C", color: '#FFFFFF', width: "100%"}}>
-          <Tab eventKey={1} title="Available Tools" style={{backgroundColor: "#333333"}}>
+              style={{borderBottom: "none", backgroundColor: "var(--reverse-color)", color: 'var(--text-color)', width: "100%"}}>
+          <Tab eventKey={1} title="Available Tools">
             <SwitchCheck {...this.props}/>
-          </Tab>
-          <Tab eventKey={2} title="Online Tools" style={{backgroundColor: "#333333"}}>
           </Tab>
         </Tabs>
       </div>
@@ -31,7 +30,7 @@ class ToolsModalContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return Object.assign({}, state.toolsReducer, state.settingsReducer, state.projectDetailsReducer);
+  return Object.assign({}, state.toolsReducer, state.settingsReducer, state.projectDetailsReducer, state.loginReducer);
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -39,7 +38,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
     },
-    handleLoadTool: (toolFolderPath) => {
+    handleLoadTool: (toolFolderPath, loggedInUser) => {
+      if (!loggedInUser) {
+        dispatch(modalActions.selectModalTab(1, 1, true));
+        dispatch(NotificationActions.showNotification("Please login before opening a tool", 5));
+        return;
+      }
       dispatch(ToolsActions.loadTool(toolFolderPath));
     },
     showLoad: () => {

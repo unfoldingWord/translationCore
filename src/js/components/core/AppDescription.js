@@ -87,9 +87,9 @@ class AppDescription extends React.Component {
             {title}
           </h4><span>{"Version " + version}</span><br />
           <span style={{color: "#FFFFFF", marginBottom: ""}}>{description}</span><br /><br /><br />
-          <Button bsStyle="white" onClick={() => this.props.handleLoadTool(folderName)}
+          <Button bsStyle="white" onClick={() => this.props.handleLoadTool(folderName, this.props.loggedInUser)}
                   title={"Click to load tool"}>
-            Load Tool
+            Select
           </Button>
         </Col>
         <Col md={4} sm={4} xs={4} style={{margin: "0px", padding: "0px"}}>
