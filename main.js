@@ -24,7 +24,7 @@ function createMainWindow () {
   exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
-        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nDuring installation, select the option: "Use git from the Windows Command Prompt" if you are on Windows.');
+        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore. \nInstalling Git now.');
         fs.copySync(__dirname + '/installers/Git-2.11.1.exe', installerLocation);
         exec('Git-2.11.1.exe', {cwd: path.datadir('translationCore')}, function(err, data) {
           if (err) {
