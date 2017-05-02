@@ -20,7 +20,7 @@ function createMainWindow () {
 
   //mainWindow.webContents.openDevTools();
 
-  let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe');
+  let installerLocation = path.join(path.datadir('translationCore'), 'Git-2.11.1.exe /SILENT /COMPONENTS="assoc"');
   exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
