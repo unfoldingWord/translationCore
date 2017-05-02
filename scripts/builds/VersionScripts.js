@@ -11,6 +11,7 @@ var script = "git checkout develop &&  \
   git push && \
   git checkout master && \
   git merge develop && \
+  git push && \
   git tag v' + versionNumber + '&& \
   git push origin v' + versionNumber;
   
