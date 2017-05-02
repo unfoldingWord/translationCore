@@ -50,22 +50,35 @@ export function openOnlineProject(projectPath) {
 }
 
 export function getLink(e) {
-    return {
-        type: consts.IMPORT_LINK,
-        importLink: e.target.value
-    }
+  return {
+    type: consts.IMPORT_LINK,
+    importLink: e.target.value
+  };
+}
+/**
+ * @description loads/doanloads a project repo using a door43 link.
+ * @param {string} link - repo link to a door43 project.
+ */
+export function loadProjectFromLink(link) {
+  return (dispatch => {
+    dispatch({ type: consts.SHOW_LOADING_CIRCLE });
+    loadOnline(link, (err, savePath, url) => {
+      if (!err) {
+        dispatch(getDataActions.openProject(savePath, url));
+        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
+      } else {
+        alert(err);
+      }
+    })
+  });
 }
 
-export function loadProjectFromLink(link) {
-    return ((dispatch) => {
-        loadOnline(link, function (err, savePath, url) {
-            if (!err) {
-                getDataActions.openProject(savePath, url, (err)=>{
-                    if (!err) dispatch(recentProjectsActions.startLoadingNewProject());
-                });
-            } else {
-                alert(err);
-            }
-        });
-    })
-}
+// return new Promise(function(resolve, reject) {
+//     scripturePaneData(projectDetails, bibles, actions, progress, scripturePaneSettings)
+//     .then(() => {
+//       tWFetchData(projectDetails, bibles, actions, progress, groupsIndexLoaded, groupsDataLoaded);
+//     })
+//     .then(resolve).catch(e => {
+//       console.warn(e);
+//     });
+//   });
