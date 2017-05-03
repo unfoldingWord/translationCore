@@ -23,8 +23,13 @@ class ImportOnlineContainer extends React.Component {
     );
   }
 
-  makeList(repos) {
+  componentWillReceiveProps(newProps) {
+    if (newProps.modalReducer.currentSection === 3 && newProps.modalReducer.currentTab === 2 && !newProps.importOnlineReducer.showOnlineButton && (newProps.modalReducer.currentTab !== this.props.modalReducer.currentTab || newProps.modalReducer.currentSection !== this.props.modalReducer.currentSection)) {
+      this.props.actions.updateRepos();
+    }
+  }
 
+  makeList(repos) {
     if (!this.props.importOnlineReducer.loggedIn) {
       return (
         <div>
@@ -82,7 +87,6 @@ class ImportOnlineContainer extends React.Component {
             (<Projects
               onlineProjects={onlineProjects}
               back={() => this.props.actions.changeShowOnlineView(true)}
-              refresh={this.props.updateRepos}
             />)
         }
       </div>
@@ -92,7 +96,8 @@ class ImportOnlineContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    importOnlineReducer: state.importOnlineReducer
+    importOnlineReducer: state.importOnlineReducer,
+    modalReducer: state.newModalReducer
   };
 };
 
