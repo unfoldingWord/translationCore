@@ -29,6 +29,11 @@ export function updateRepos() {
                     type: consts.RECIEVE_REPOS,
                     repos: repos
                 })
+            }).catch((e)=>{
+              dispatch({
+                type: consts.GOGS_SERVER_ERROR,
+                err: e
+              })
             });
         }
     })
