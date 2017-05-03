@@ -30,6 +30,7 @@ export function updateRepos() {
                     repos: repos
                 })
             }).catch((e)=>{
+              console.log(e)
               dispatch({
                 type: consts.GOGS_SERVER_ERROR,
                 err: e

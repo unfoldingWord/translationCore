@@ -41,7 +41,7 @@ class ImportOnlineContainer extends React.Component {
         </div>
       )
     }
-    if(this.props.err){
+    if(this.props.importOnlineReducer.err != null){
       return (
         <div>
           <center>
@@ -71,7 +71,6 @@ class ImportOnlineContainer extends React.Component {
 
   render() {
     let onlineProjects = this.makeList(this.props.importOnlineReducer.repos);
-    console.log(onlineProjects)
     let {changeShowOnlineView, handleOnlineChange, loadProjectFromLink} = this.props.actions;
     let {importLink, showOnlineButton, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
     return (
