@@ -15,9 +15,9 @@ class ImportOnlineContainer extends React.Component {
     return (
         <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
             {projectName}
-            <Button bsStyle="primary" className={'pull-right'} bsSize="sm"
+            <Button bsStyle="prime" className={'pull-right'}
                     onClick={() => this.props.actions.openOnlineProject(repoName)}>
-              Load Project
+              Import & Select
             </Button>
         </div>
     );
