@@ -27,8 +27,7 @@ class OnlineInput extends React.Component {
               }
             </div>
             <Button bsStyle="prime" onClick={load}>
-              <Glyphicon glyph="folder-open"/>
-              <span style={{marginLeft: '10px'}}>Import</span>
+              <span style={{marginLeft: '10px'}}>Import & Select</span>
             </Button>
           </InputGroup>
         </FormGroup>

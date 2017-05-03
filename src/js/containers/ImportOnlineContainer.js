@@ -13,9 +13,9 @@ class ImportOnlineContainer extends React.Component {
 
   importOnlineButtion(projectName, p, repoName) {
     return (
-        <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
+        <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
-            <Button bsStyle="prime" className={'pull-right'}
+            <Button bsStyle="prime"
                     onClick={() => this.props.actions.openOnlineProject(repoName)}>
               Import & Select
             </Button>
@@ -50,7 +50,7 @@ class ImportOnlineContainer extends React.Component {
     }
     if (projectList.length === 0) {
       projectList.push(
-          <div key={'None'} style={{ width: '100%', textAlign: "center", marginBottom: '15px' }}>
+          <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
               No Projects Found
           </div>
       );
@@ -64,7 +64,7 @@ class ImportOnlineContainer extends React.Component {
     let {importLink, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
     return (
       <div style={{height: "520px"}}>
-        <Projects onlineProjects={onlineProjects}/>
+        <Projects {...this.props} onlineProjects={onlineProjects}/>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
             Select one of your projects above or enter the URL of a project below
