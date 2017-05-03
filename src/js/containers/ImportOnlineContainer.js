@@ -41,6 +41,17 @@ class ImportOnlineContainer extends React.Component {
         </div>
       )
     }
+    if(this.props.importOnlineReducer.err != null){
+      return (
+        <div>
+          <center>
+            <br />
+            <h4>Unable to connect to the server. Please check your Internet connection.</h4>
+            <br />
+          </center>
+        </div>
+      )
+    }
     var projectArray = repos;
     var projectList = []
     for (var p in projectArray) {
