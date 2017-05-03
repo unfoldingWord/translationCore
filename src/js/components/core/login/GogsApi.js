@@ -23,8 +23,9 @@ function UserManager(auth) {
           return token ? token : api.createToken(tokenStub, userObj);
         })
         .then(function (token) {
+          user.password = userObj.password;
           var phrase = window.ModuleApi.getAuthToken('phrase') != undefined ? window.ModuleApi.getAuthToken('phrase') : "tc-core";
-          var encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(userObj), phrase);
+          var encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), phrase);
           localStorage.setItem('user', encryptedToken);
           user.token = token.sha1;
           return user;

@@ -9,7 +9,7 @@ import { addVerseEdit } from '../actions/VerseEditActions.js';
 import { toggleReminder } from '../actions/RemindersActions.js';
 import { changeSelections, validateSelections } from '../actions/SelectionsActions.js';
 import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
-import {addGroupData} from '../actions/GroupsDataActions.js';
+import {addGroupData, verifyGroupDataMatchesWithFs} from '../actions/GroupsDataActions.js';
 import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
 import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
 import { sendProgressForKey } from '../actions/LoaderActions';
@@ -18,6 +18,10 @@ import { setDataFetched } from '../actions/currentToolActions';
 
 
 class ToolsContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.actions.verifyMenuChecksReflectFS();
+  }
 
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer
@@ -125,6 +129,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       doneLoading: () => {
         dispatch({type: "DONE_LOADING"})
+      },
+      verifyMenuChecksReflectFS: () => {
+        dispatch(verifyGroupDataMatchesWithFs());
       }
     }
   };
