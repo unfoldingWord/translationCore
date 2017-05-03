@@ -40,9 +40,7 @@ class ToolsContainer extends React.Component {
     let Tool = modules[toolName];
 
     return (
-      <div>
-        <Tool {...this.props} />
-      </div>
+      <Tool {...this.props} modules={modules} />
     );
   }
 }

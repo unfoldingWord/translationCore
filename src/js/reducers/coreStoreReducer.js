@@ -1,8 +1,6 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-  mainViewVisible: true,
-  type: 'empty',
   doneLoading: true,
   currentCheckNamespace: null,
   fetchDatas: 0,
@@ -14,10 +12,8 @@ const initialState = {
 
 const coreStoreReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SHOW_APPS:
-      return { ...state, mainViewVisible: action.val }
     case consts.CHANGE_WRAPPER_VIEW:
-      return { ...state, type: action.val }
+      return { ...state, showTool: action.val }
     case consts.DONE_MODULES:
       return {
         ...state,

@@ -1,8 +1,13 @@
 import consts from '../actions/CoreActionConsts';
 
-export const toggleHomeView = () => {
+/**
+ * @description toggles the home view based on param.
+ * @param {boolean} boolean - true or false either shows or hides it.
+ */
+export const toggleHomeView = boolean => {
   return {
-    type: consts.TOGGLE_HOME_VIEW
+    type: consts.TOGGLE_HOME_VIEW,
+    boolean
   };
 };
 

@@ -20,7 +20,7 @@ class BodyContainer extends Component {
                   <SideBarContainer />
                 </Col>
                 <Col id="scrollableSection" xs={7} sm={8} md={9} lg={9.5}>
-                  <ToolsContainer />;
+                  <ToolsContainer />
                 </Col>
               </div>
             )

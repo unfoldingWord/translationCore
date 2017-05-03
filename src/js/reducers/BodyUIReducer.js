@@ -14,7 +14,7 @@ const BodyUIReducer = (state = initialState, action) => {
     case consts.TOGGLE_HOME_VIEW:
       return {
         ...state,
-        displayHomeView: !state.displayHomeView
+        displayHomeView: action.boolean
       };
     case consts.TOGGLE_WELCOME_SPLASH:
       return {

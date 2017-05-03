@@ -11,7 +11,6 @@ import React from 'react';
 // actions
 import * as fs from 'fs-extra';
 import * as consts from './CoreActionConsts';
-import * as CoreActionsRedux from './CoreActionsRedux';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
@@ -121,6 +120,8 @@ export function getCurrentUser(state) {
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
+        // TODO: this action maybe stay here temporary until the home screen implementation.
+        dispatch(BodyUIActions.toggleHomeView(true))
         dispatch(clearPreviousData());
         const currentUser = getCurrentUser(getState());
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
@@ -208,7 +209,6 @@ export function displayToolsToLoad(manifest) {
         const currentState = getState();
         if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
             dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
-            dispatch({ type: consts.SHOW_APPS, val: true });
             dispatch(ToolsActions.getToolsMetadatas());
             dispatch(ModalActions.selectModalTab(3, 1, true));
         } else {
@@ -251,7 +251,6 @@ export function loadModuleAndDependencies(moduleFolderName) {
             dispatch({ type: consts.CLEAR_CURRENT_TOOL });
             dispatch({ type: consts.CLEAR_OLD_GROUPS });
             dispatch({ type: consts.CLEAR_CONTEXT_ID });
-            dispatch(CoreActionsRedux.changeModuleView());
             dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
@@ -281,8 +280,8 @@ export function loadGroupDataFromFileSystem(toolName) {
             dispatch(setGroupIndexInStore(dataFolder, params));
         } catch (e) {
             console.warn('failed loading group index')
-            // this action will live here temprorary until the home screen implementation.
-            dispatch(BodyUIActions.toggleHomeView())
+            // TODO: this action maybe stay here temporary until the home screen implementation.
+            dispatch(BodyUIActions.toggleHomeView(false))
         }
     });
 }
@@ -312,8 +311,8 @@ export function setGroupDataInStore(dataFolder, params) {
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-                                        // this action will live here temprorary until the home screen implementation.
-                                        dispatch(BodyUIActions.toggleHomeView())
+                                        // TODO: this action maybe stay here temporary until the home screen implementation.
+                                        dispatch(BodyUIActions.toggleHomeView(false))
                                         console.log('Loaded group data from fs');
                                     }
                                 }, 1)
@@ -327,8 +326,8 @@ export function setGroupDataInStore(dataFolder, params) {
                 }
             } else {
                 console.warn('failed loading group data')
-                // this action will live here temprorary until the home screen implementation.
-               dispatch(BodyUIActions.toggleHomeView())
+                // TODO: this action maybe stay here temporary until the home screen implementation.
+                dispatch(BodyUIActions.toggleHomeView(false))
             }
         });
     });
