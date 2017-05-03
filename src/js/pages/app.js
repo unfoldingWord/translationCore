@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import { remote } from 'electron';
 import CryptoJS from "crypto-js";
-import gogs from '../components/core/login/GogsApi.js';
 import { Grid, Row, Col } from 'react-bootstrap';
 import RootStyles from './RootStyle';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -26,7 +24,6 @@ import * as recentProjectActions from '../actions/RecentProjectsActions.js';
 import * as DragDropActions from '../actions/DragDropActions.js';
 // constant declarations
 const api = window.ModuleApi;
-const { dialog } = remote;
 
 
 class Main extends Component {
