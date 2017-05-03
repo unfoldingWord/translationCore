@@ -21,11 +21,20 @@ export function syncProject(projectPath, manifest, lastUser) {
     var Token = api.getAuthToken('gogs');
     gogs(Token).login(lastUser).then((authenticatedUser) => {
       sync(projectPath, manifest, authenticatedUser);
-       dispatch({
+      dispatch({
         type: consts.SYNC_PROJECT
       })
     }).catch(function (reason) {
-        dialog.showErrorBox('Error Uploading', "You must be logged in to upload");
+      if (reason.status === 401) {
+        dialog.showErrorBox('Error Uploading', 'Incorrect username or password');
+      } else if (reason.hasOwnProperty('message')) {
+        dialog.showErrorBox('Error Uploading', reason.message);
+      } else if (reason.hasOwnProperty('data')) {
+        let errorMessage = reason.data;
+        dialog.showErrorBox('Error Uploading', errorMessage);
+      } else {
+        dialog.showErrorBox('Error Uploading', 'Unknown Error');
+      }
     });
   });
 }
