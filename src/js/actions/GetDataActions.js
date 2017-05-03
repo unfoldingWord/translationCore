@@ -23,7 +23,8 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
-import { resetProjectDetail } from './projectDetailsActions'
+import * as BodyUIActions from './BodyUIActions';
+import { resetProjectDetail } from './projectDetailsActions';
 
 import pathex from 'path-extra';
 import usfm from 'usfm-parser';
@@ -280,7 +281,8 @@ export function loadGroupDataFromFileSystem(toolName) {
             dispatch(setGroupIndexInStore(dataFolder, params));
         } catch (e) {
             console.warn('failed loading group index')
-            dispatch(CoreActionsRedux.changeModuleView('main'));
+            // this action will live here temprorary until the home screen implementation.
+            dispatch(BodyUIActions.toggleHomeView())
         }
     });
 }
@@ -310,7 +312,8 @@ export function setGroupDataInStore(dataFolder, params) {
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-                                        dispatch(CoreActionsRedux.changeModuleView('main'));
+                                        // this action will live here temprorary until the home screen implementation.
+                                        dispatch(BodyUIActions.toggleHomeView())
                                         console.log('Loaded group data from fs');
                                     }
                                 }, 1)
@@ -324,7 +327,8 @@ export function setGroupDataInStore(dataFolder, params) {
                 }
             } else {
                 console.warn('failed loading group data')
-                dispatch(CoreActionsRedux.changeModuleView('main'));
+                // this action will live here temprorary until the home screen implementation.
+               dispatch(BodyUIActions.toggleHomeView())
             }
         });
     });

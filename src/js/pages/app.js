@@ -14,7 +14,7 @@ injectTapEventPlugin();
 import NotificationContainer from '../containers/NotificationContainer';
 import KonamiContainer from "../containers/KonamiContainer.js";
 import StatusBarContainer from '../containers/StatusBarContainer';
-import BodyContainer from '../containers/BodyContainer';
+import BodyContainer from '../containers/home/BodyContainer';
 
 import LoaderContainer from '../containers/LoaderContainer';
 import AlertModalContainer from '../containers/AlertModalContainer';
@@ -61,7 +61,7 @@ class Main extends Component {
           type: "RECEIVE_LOGIN",
           val: userdata
         });
-      }).catch(function (reason) {
+      }).catch(reason => {
         console.log(reason);
         if (reason.status === 401) {
           dialog.showErrorBox('Login Failed', 'Incorrect username or password');
@@ -103,7 +103,7 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.props)
+
     return (
       <div className="fill-height">
         <KonamiContainer />

@@ -7,6 +7,7 @@ import LicenseModal from '../../components/home/LicenseModal'
 import MainContainer from './MainContainer'
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions'
+import * as modalActions from '../../actions/ModalActions';
 
 class HomeContainer extends Component {
 
@@ -34,8 +35,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      toggleHomeView: () => {
-        dispatch(BodyUIActions.toggleHomeView())
+      toggleModal: () => {
+        // temporary action being dispatched until we move to home screen implementation.
+        dispatch(modalActions.selectModalTab(1, 1, true));
       },
       toggleWelcomeSplash: () => {
         dispatch(BodyUIActions.toggleWelcomeSplash())

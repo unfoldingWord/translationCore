@@ -9,7 +9,7 @@ class WelcomeSplash extends Component {
         <h3 style={{fontWeight: "bold", margin: "30px"}}>Welcome to translationCore!</h3>
         <Button
           style={{background: "#145396", color: "white", margin: "30px", padding: "10px 70px"}}
-          onClick={this.props.actions.toggleHomeView}>
+          onClick={this.props.actions.toggleModal}>
           Get Started!
         </Button>
       </div>
