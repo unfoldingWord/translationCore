@@ -30,7 +30,7 @@ class RecentProjectsContainer extends React.Component {
                 <Glyphicon glyph={'download'} />
                 <span style={{ marginLeft: '5px' }}>Export (csv)</span>
             </Button>
-            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest)}>
+            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest, this.props.userdata)}>
                 <Glyphicon glyph={'upload'} />
                 <span style={{ marginLeft: '5px' }}>Upload</span>
             </Button>
@@ -92,7 +92,8 @@ const mapStateToProps = (state) => {
   return {
     ...state.recentProjectsReducer,
     manifest: state.projectDetailsReducer.manifest,
-    loggedInUser: state.loginReducer.loggedInUser
+    loggedInUser: state.loginReducer.loggedInUser,
+    userdata: state.loginReducer.userdata,
   };
 };
 
@@ -106,8 +107,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       }
       dispatch(recentProjectsActions.onLoad(projectPath));
     },
-    syncProject: (projectPath, manifest) => {
-      dispatch(recentProjectsActions.syncProject(projectPath, manifest));
+    syncProject: (projectPath, manifest, user) => {
+      dispatch(recentProjectsActions.syncProject(projectPath, manifest, user));
     },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());

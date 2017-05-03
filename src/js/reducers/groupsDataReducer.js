@@ -30,6 +30,14 @@ const groupsDataReducer = (state = initialState, action) => {
           [action.contextId.groupId]: getToggledGroupData(state, action, "reminders")
         }
       };
+    case consts.SET_REMINDERS_IN_GROUPDATA:
+      return {
+        ...state,
+        groupsData: {
+          ...state.groupsData,
+          [action.contextId.groupId]: getToggledGroupData(state, action, "reminders")
+        }
+      };
     case consts.TOGGLE_SELECTIONS_IN_GROUPDATA:
       return {
         ...state,

@@ -21,7 +21,11 @@ export const getToggledGroupData = (state, action, key) => {
       }
       break;
     case "reminders":
-      groupData[index][key] = !groupData[index][key];
+      if (action.boolean) {
+        groupData[index][key] = action.boolean;
+      } else {
+        groupData[index][key] = !groupData[index][key];
+      }
       break;
     case "selections":
       if (action.selections.length > 0) {
