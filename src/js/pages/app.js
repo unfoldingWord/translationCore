@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import CryptoJS from "crypto-js";
-import gogs from '../components/core/login/GogsApi.js';
 import {Grid, Row, Col } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
