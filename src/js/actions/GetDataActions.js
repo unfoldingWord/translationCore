@@ -133,7 +133,7 @@ export function openProject(projectPath, projectLink) {
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
             let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
             manifest = LoadHelpers.verifyChunks(projectPath, manifest);
-            if (!manifest && !manifest.tcInitialized) {
+            if (!manifest || !manifest.tcInitialized) {
                 manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
                 let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');

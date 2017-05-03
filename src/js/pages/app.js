@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import { remote } from 'electron';
 import CryptoJS from "crypto-js";
-import gogs from '../components/core/login/GogsApi.js';
 import {Grid, Row, Col } from 'react-bootstrap';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
@@ -27,7 +24,6 @@ import * as recentProjectActions from '../actions/RecentProjectsActions.js';
 import * as DragDropActions from '../actions/DragDropActions.js';
 // constant declarations
 const api = window.ModuleApi;
-const {dialog} = remote;
 
 
 class Main extends Component {
@@ -53,26 +49,9 @@ class Main extends Component {
       var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
       var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
       var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      var Token = api.getAuthToken('gogs');
-      gogs(Token).login(userdata).then((userdata) => {
-        CoreActions.login(userdata);
-        CoreActions.updateOnlineStatus(true);
-        this.props.dispatch({
-          type: "RECEIVE_LOGIN",
-          val: userdata
-        });
-      }).catch(reason => {
-        console.log(reason);
-        if (reason.status === 401) {
-          dialog.showErrorBox('Login Failed', 'Incorrect username or password');
-        } else if (reason.hasOwnProperty('message')) {
-          dialog.showErrorBox('Login Failed', reason.message);
-        } else if (reason.hasOwnProperty('data')) {
-          let errorMessage = reason.data;
-          dialog.showErrorBox('Login Failed', errorMessage);
-        } else {
-          dialog.showErrorBox('Login Failed', 'Unknown Error');
-        }
+      this.props.dispatch({
+        type: "RECEIVE_LOGIN",
+        val: userdata
       });
     }
     var projectSaveLocation = localStorage.getItem('lastProject');
