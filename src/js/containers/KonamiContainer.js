@@ -2,7 +2,8 @@ import React from 'react';
 import Konami from 'konami-code-js';
 import {connect} from 'react-redux';
 // Actions
-import {toggleSettings} from '../actions/SettingsActions.js';
+import {toggleSettings} from '../actions/SettingsActions';
+import * as AlertModalActions from '../actions/AlertModalActions';
 
 class KonamiContainer extends React.Component {
 
@@ -12,11 +13,11 @@ class KonamiContainer extends React.Component {
     new Konami(
       () => {
         let developerMode = this.props.currentSettings.developerMode;
-        this.props.onToggleSettings();
+        this.props.actions.onToggleSettings();
         if (developerMode) {
-          alert("Developer Mode Disabled");
+          this.props.actions.openAlertDialog("Developer Mode Disabled");
         } else {
-          alert("Developer Mode Enabled: no technical support is provided for translationCore in developer mode!");
+          this.props.actions.openAlertDialog("Developer Mode Enabled: No technical support is provided for translationCore in developer mode!");
         }
       }
     );
@@ -34,8 +35,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onToggleSettings: () => {
-      dispatch(toggleSettings("developerMode"))
+    actions: {
+      onToggleSettings: () => {
+        dispatch(toggleSettings("developerMode"))
+      },
+      openAlertDialog: (message) => {
+        dispatch(AlertModalActions.openAlertDialog(message));
+      }
     }
   };
 }

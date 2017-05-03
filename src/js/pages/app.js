@@ -18,6 +18,7 @@ import AlertModalContainer from '../containers/AlertModalContainer';
 import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
+import AlertDialogContainer from '../containers/AlertDialogContainer.js';
 // actions
 import CoreActions from '../actions/CoreActions.js';
 import * as recentProjectActions from '../actions/RecentProjectsActions.js';
@@ -84,6 +85,7 @@ class Main extends Component {
   render() {
     return (
       <div className="fill-height">
+        <AlertDialogContainer />
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />

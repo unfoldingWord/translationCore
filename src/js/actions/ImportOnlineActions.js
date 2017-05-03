@@ -3,6 +3,7 @@ import Gogs from '../components/core/login/GogsApi';
 import * as modalActions from './ModalActions';
 import * as recentProjectsActions from './RecentProjectsActions';
 import * as getDataActions from './GetDataActions';
+import { openAlertDialog } from '../actions/AlertModalActions'
 // constant declaration
 const loadOnline = require('../components/core/LoadOnline');
 
@@ -47,7 +48,7 @@ export function openOnlineProject(projectPath) {
         var _this = this;
         loadOnline(link, function (err, savePath, url) {
             if (err) {
-                alert(err);
+                dispatch(openAlertDialog(err));
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
                 dispatch(getDataActions.openProject(savePath, url));
@@ -68,13 +69,16 @@ export function getLink(e) {
  */
 export function loadProjectFromLink(link) {
   return (dispatch => {
-    dispatch({ type: consts.SHOW_LOADING_CIRCLE });
+    if(link) {
+      dispatch({ type: consts.SHOW_LOADING_CIRCLE });
+    }
     loadOnline(link, (err, savePath, url) => {
       if (!err) {
         dispatch(getDataActions.openProject(savePath, url));
         dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       } else {
-        alert(err);
+        dispatch(openAlertDialog(err));
+        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       }
     })
   });

@@ -211,7 +211,7 @@ export function displayToolsToLoad(manifest) {
             dispatch(ToolsActions.getToolsMetadatas());
             dispatch(ModalActions.selectModalTab(3, 1, true));
         } else {
-            dispatch(NotificationActions.showNotification('You can only load Ephisians or Titus projects for now.', 5));
+            dispatch(AlertModalActions.openAlertDialog('You can only load Ephisians or Titus projects for now.', 5));
             dispatch(RecentProjectsActions.getProjectsFromFolder());
             dispatch(clearPreviousData());
         }
