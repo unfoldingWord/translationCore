@@ -27,8 +27,8 @@ class Profile extends React.Component {
         <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", paddingTop: "20px", height: "520px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid var(--border-color)"}}>
           <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h3>Account Information</h3>
-            <Image style={{height: '85px', width:'85px', margin: "30px 0" }}
-                   src={userdata.avatar_url} circle />
+            <Image style={{height: '85px', margin: "30px 0" }}
+                   src="images/TC_Icon.png" circle />
             <span><strong>Username: </strong>{userdata.username}</span>
             <small>This is publicly visible</small>
           </div>
