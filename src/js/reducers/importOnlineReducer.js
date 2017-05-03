@@ -7,7 +7,8 @@ const initialState = {
   repos: null,
   onlineProjects: null,
   loggedIn: false,
-  showLoadingCircle: false
+  showLoadingCircle: false,
+  err: null
 };
 
 module.exports = (state = initialState, action) => {
@@ -20,6 +21,8 @@ module.exports = (state = initialState, action) => {
       return { ...state, repos: action.repos }
     case consts.RECEIVE_LOGIN:
       return { ...state, loggedIn: action.val ? true : false }
+    case consts.GOGS_SERVER_ERROR:
+      return { ...state, err: action.err }
     case consts.SHOW_LOADING_CIRCLE:
       return {
         ...state,
