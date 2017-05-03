@@ -1,60 +1,10 @@
 import React from 'react';
 import { shell } from 'electron';
 const Registration = require('./Registration.js');
-const { Button, Row, Col, FormGroup, FormControl, utils } = require('react-bootstrap/lib');
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'blue');
-const styles = {
-    button: {
-      backgroundColor: 'var(--accent-color-dark)',
-      color: 'var(--reverse-color)',
-      width: '40%',
-      fontWeight: 'bold',
-      borderRadius: 4,
-      borderWidth: 0,
-      height: 34,
-      outline: 'none',
-    },
-    buttonActive: {
-      backgroundColor: 'var(--accent-color-dark)',
-      color: 'var(--reverse-color)',
-      width: '40%',
-      fontWeight: 'bold',
-      borderRadius: 4,
-      borderWidth: 0,
-      height: 34,
-      outline: 'none',
-    }
-  }
+const { Row, Col, FormGroup, FormControl } = require('react-bootstrap/lib');
 
 class Login extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      hovered: null,
-      pressed: null
-    }
-  }
-  onHover(id) {
-    this.setState({ hovered: id })
-  }
-  onPress(tab, displayLogin) {
-    switch (tab) {
-      case 1:
-        this.setState({ pressed: tab });
-        this.props.handleSubmit(this.props.userdata);
-        break;
-      case 2:
-        this.setState({ pressed: tab });
-        this.props.onSwitchToLoginPage(!displayLogin);
-        this.onPress(0);
-        break;
-      default:
-        this.setState({ pressed: 0 });
-        this.onHover(0);
-        break;
-    }
-  }
+
   render() {
     let { displayLogin } = this.props;
     if (!displayLogin) {
@@ -81,18 +31,12 @@ class Login extends React.Component {
                     style={{ width: '40%' }}
                     onChange={this.props.onHandlePassword} />
                 </FormGroup>
-                <button onMouseOver={() => this.onHover(1)} onMouseDown={() => this.onPress(1)}
-                  onMouseOut={() => this.onPress(0)} onMouseUp={() => this.onPress(0)}
-                  style={this.state.pressed != 1  && this.state.hovered != 1 ? Object.assign(styles.button, { marginBottom: '50px' }) :
-                  Object.assign(styles.buttonActive, { marginBottom: '50px' })}>
+                <button className="btn-prime" onClick={() => this.props.handleSubmit(this.props.userdata)}>
                   Sign In
                 </button>
                 <div>
-                  <h4>{"Don't have an account?"}</h4>
-                  <button onMouseOver={() => this.onHover(2)} onMouseDown={() => shell.openExternal('https://git.door43.org/user/sign_up')}
-                    onMouseOut={() => this.onPress(0)} onMouseUp={() => this.onPress(0)}
-                    style={this.state.pressed != 2  && this.state.hovered != 2 ? styles.button : styles.buttonActive}
-                    >
+                  <h4>Don't have an account?</h4>
+                  <button className="btn-prime" onClick={() => shell.openExternal('https://git.door43.org/user/sign_up')}>
                     Create an Account
                 </button><br /><br />
                 </div>
