@@ -11,7 +11,6 @@ class OnlineInput extends React.Component {
 
   render() {
     let {showLoadingCircle, load, onChange} = this.props;
-    console.log(showLoadingCircle)
     return (
       <MuiThemeProvider>
         <FormGroup controlId="onlineInput">

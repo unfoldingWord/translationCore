@@ -60,7 +60,7 @@ class AppDescription extends React.Component {
       case "translationWords":
         Styles = iW.appWindow;
         break;
-      case "TranslationNotesChecker":
+      case "translationNotes":
         Styles = tN.appWindow;
         break;
       default:

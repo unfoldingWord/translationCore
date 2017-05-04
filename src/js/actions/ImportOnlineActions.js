@@ -28,7 +28,14 @@ export function updateRepos() {
                 dispatch({
                     type: consts.RECIEVE_REPOS,
                     repos: repos
-                })
+                });
+                dispatch({type: consts.GOGS_SERVER_ERROR, err: null}); //Equivalent of saying "there is no error, successfull fetch"
+            }).catch((e)=>{
+              console.log(e)
+              dispatch({
+                type: consts.GOGS_SERVER_ERROR,
+                err: e
+              })
             });
         }
     })

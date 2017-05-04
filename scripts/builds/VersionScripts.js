@@ -4,13 +4,13 @@ if (!versionNumber) {
   console.log("No version number specified");
   return;
 }
-var script = "git checkout develop &&  \
-  git pull && \
+var script = "git pull && \
   npm version --git-tag-version=false " + versionNumber + '&& \
   git commit package.json -m"Update version to ' + versionNumber + '" && \
   git push && \
   git checkout master && \
   git merge develop && \
+  git push && \
   git tag v' + versionNumber + '&& \
   git push origin v' + versionNumber;
   

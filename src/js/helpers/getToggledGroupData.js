@@ -8,9 +8,10 @@ import isEqual from 'lodash/isEqual'
  */
 export const getToggledGroupData = (state, action, key) => {
   let groupData = state.groupsData[action.contextId.groupId]
-  let groupObject = groupData.find(groupObject => {
-    return isEqual(groupObject.contextId, action.contextId)
-  })
+  if(groupData == undefined) return groupData
+  let groupObject = groupObject = groupData.find(groupObject => {
+      return isEqual(groupObject.contextId, action.contextId)
+    })
   let index = groupData.indexOf(groupObject)
   switch (key) {
     case "comments":
@@ -21,7 +22,11 @@ export const getToggledGroupData = (state, action, key) => {
       }
       break;
     case "reminders":
-      groupData[index][key] = !groupData[index][key];
+      if (action.boolean) {
+        groupData[index][key] = action.boolean;
+      } else {
+        groupData[index][key] = !groupData[index][key];
+      }
       break;
     case "selections":
       if (action.selections.length > 0) {

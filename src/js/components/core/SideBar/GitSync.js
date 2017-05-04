@@ -6,13 +6,12 @@ const pathFinder = require('path');
 import gogs from '../login/GogsApi.js';
 
 
-function syncToGit(inputPath, manifest) {
+function syncToGit(inputPath, manifest, user) {
   var alertError = console.error;
   console.error = console.errorold;
-  const user = CoreStore.getLoggedInUser();
   const path = inputPath;
   if (user) {
-    git(path).save('Updating with Door43', path, function() {
+    git(path).save(user, 'Updating with Door43', path, function() {
       if (manifest.repo) {
         var urlArray = manifest.repo.split('.');
         urlArray.pop();
