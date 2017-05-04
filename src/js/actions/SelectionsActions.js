@@ -40,7 +40,7 @@ export function validateSelections(targetVerse) {
     let {selections} = state.selectionsReducer;
     let validSelections = checkSelectionOccurrences(targetVerse, selections);
     if (selections.length !== validSelections.length) {
-      dispatch(changeSelections(validSelections, username));AlertModalActions
+      dispatch(changeSelections(validSelections, username));
       dispatch(AlertModalActions.openAlertDialog('Some selections are no longer valid and are removed.'));
     }
   });
