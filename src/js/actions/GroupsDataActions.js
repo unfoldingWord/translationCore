@@ -23,17 +23,23 @@ export const loadGroupsDataFromFS = (allGroupsData) => {
   return {
     type: consts.LOAD_GROUPS_DATA_FROM_FS,
     allGroupsData
-  }
-}
-
+  };
+};
+/**
+ * @description verifies that the data in the checkdata folder is reflected in the menu.
+ * @return {object} action object.
+ */
 export function verifyGroupDataMatchesWithFs() {
   return ((dispatch, getState) => {
     let state = getState();
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let checkDataPath = path.join(
-      PROJECT_SAVE_LOCATION,
-      CHECKDATA_DIRECTORY
-    );
+    let checkDataPath;
+    if (PROJECT_SAVE_LOCATION) {
+      checkDataPath = path.join(
+        PROJECT_SAVE_LOCATION,
+        CHECKDATA_DIRECTORY
+      );
+    }
     if (fs.existsSync(checkDataPath)) {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
@@ -51,7 +57,6 @@ export function verifyGroupDataMatchesWithFs() {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestFile = loadFile(filePath);
             if (latestFile.contextId.tool === state.currentToolReducer.toolName) {
-              console.log(folderName, chapterFolder, verseFolder)
               toggleGroupDataItems(folderName, latestFile, dispatch);
             }
           });
