@@ -1,5 +1,6 @@
 
 @import 'colorscheme.css';
+@import 'BodyContainer.css';
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection
