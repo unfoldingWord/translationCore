@@ -16,7 +16,7 @@ class ImportOnlineContainer extends React.Component {
         <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
             {projectName}
             <Button bsStyle="primary" className={'pull-right'} bsSize="sm"
-                    onClick={() => this.props.actions.openOnlineProject(repoName)}>
+                    onClick={() => this.props.actions.openOnlineProject(repoName, this.props.importOnlineReducer.loggedIn)}>
               Load Project
             </Button>
         </div>
