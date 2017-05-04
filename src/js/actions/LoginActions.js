@@ -36,13 +36,17 @@ export function loginUser(newUserdata) {
         type: consts.RECEIVE_LOGIN,
         val: newUserdata
       });
-    }).catch(function(reason) {
-      console.log(reason);
-      if (reason.status === 401) {
-        dialog.showErrorBox('Login Failed', 'Invalid username or password');
-      } else {
-        dialog.showErrorBox('Login Failed', 'Either you are not connected to the internet or something is wrong with the GOGS server');
+    }).catch(function(err) {
+      console.log(err);
+      var errmessage = "An error occurred while trying to login";
+      if (err.syscall === "getaddrinfo") {
+        errmessage = "Unable to connect to server";
+      } else if (err.status === 404) {
+        errmessage = "Incorrect Username";
+      } else if (err.status === 401) {
+        errmessage = "Incorrect Password";
       }
+      dialog.showErrorBox('Login Failed', errmessage);
     });
   })
 }

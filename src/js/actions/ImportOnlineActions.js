@@ -48,7 +48,11 @@ export function openOnlineProject(projectPath) {
         var _this = this;
         loadOnline(link, function (err, savePath, url) {
             if (err) {
-                dispatch(openAlertDialog(err));
+                var errmessage = "Problem occurred during import";
+                if (err.syscall === "getaddrinfo") {
+                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
+                }
+                dispatch(openAlertDialog(errmessage));
                 dispatch({ type: "LOADED_ONLINE_FAILED" })
             } else {
                 dispatch(getDataActions.openProject(savePath, url));
@@ -77,7 +81,11 @@ export function loadProjectFromLink(link) {
         dispatch(getDataActions.openProject(savePath, url));
         dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       } else {
-        dispatch(openAlertDialog(err));
+        var errmessage = "Problem occurred during import";
+        if (err.syscall === "getaddrinfo") {
+           errmessage = "Unable to connect to the server. Please check your Internet connection.";
+        }
+        dispatch(openAlertDialog(errmessage));
         dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       }
     })
