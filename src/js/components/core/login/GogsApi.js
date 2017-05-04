@@ -78,7 +78,7 @@ function UserManager(auth) {
            var limit = 50;
 
            function searchUsers (visit) {
-               return api.searchUsers(username).then(function (users) {
+               return api.searchUsers(username, limit).then(function (users) {
                    var arr = users.map(visit);
 
                    arr.push(visit(0).then(function (repos) {
