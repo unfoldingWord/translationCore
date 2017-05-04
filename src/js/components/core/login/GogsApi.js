@@ -75,7 +75,7 @@ function UserManager(auth) {
            username = username === '*' ? '' : (username || '');
            query = query === '*' ? '_' : (query || '_');
 
-           var limit = 20;
+           var limit = 50;
 
            function searchUsers (visit) {
                return api.searchUsers(username, limit).then(function (users) {
