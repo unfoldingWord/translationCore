@@ -13,8 +13,8 @@ export function selectModalTab(tabKey, sectionKey, visiblity) {
     type: consts.SELECT_MODAL_TAB,
     tab: tabKey,
     section: sectionKey,
-    visible: visiblity
-  };
+    visible:visiblity
+  }
 }
 
 export function selectSectionTab(tabKey, sectionKey) {

@@ -29,14 +29,9 @@ class ToolsModalContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    ...state.toolsReducer,
-    ...state.settingsReducer,
-    ...state.projectDetailsReducer,
-    ...state.loginReducer
-  };
-};
+const mapStateToProps = (state) => {
+  return Object.assign({}, state.toolsReducer, state.settingsReducer, state.projectDetailsReducer, state.loginReducer);
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -54,8 +49,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     showLoad: () => {
       dispatch(modalActions.selectModalTab(2, 1, true))
     }
-  };
-};
+  }
+}
 
 export default connect(
   mapStateToProps,

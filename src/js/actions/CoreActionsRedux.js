@@ -10,11 +10,19 @@ const options = {
 };
 const api = window.ModuleApi;
 
+
+export function showMainView(val) {
+  return {
+    type: consts.SHOW_APPS,
+    val: val
+  }
+}
+
 export function changeModuleView(val) {
   return {
     type: consts.CHANGE_WRAPPER_VIEW,
     val: val
-  };
+  }
 }
 
 export function changeOnlineStatus(online, firstLoad, fromButton) {

@@ -1,8 +1,8 @@
- /**
-  * @description this file holds all methods that handle preloading data into the
-  *  store add your methods as needed and then import them into localstorage.js to
-  *  be used with the loadState method.
-  */
+/**
+ * @description this file holds all methods that handle preloading data into the
+ *  store add your methods as needed and then import them into localstorage.js to
+ *  be used with the loadState method.
+ */
 import fs from 'fs-extra';
 import path from 'path-extra';
 //  consts declaration
@@ -44,4 +44,65 @@ export function loadModulesSettings() {
     console.warn(err);
     return {};
   }
+}
+
+export function loadGroupsData(tool, dataFolder, params) {
+  return new Promise((resolve, reject) => {
+    let groupDataFolderPath = path.join(dataFolder, 'index', tool, params.bookAbbr);
+    fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
+      if (!err) {
+        var allGroupsObjects = {};
+        var total = groupDataFolderObjs.length;
+        var i = 0;
+        for (var groupId in groupDataFolderObjs) {
+          if (path.extname(groupDataFolderObjs[groupId]) != '.json') {
+            total--;
+            continue;
+          }
+          let groupName = groupDataFolderObjs[groupId].split('.')[0];
+          const saveGroup = (groupName, groupDataFolderPath) => {
+            const groupPath = path.join(groupDataFolderPath, groupName + '.json');
+            fs.readJson(groupPath, (err, groupObj) => {
+              if (!err) {
+                allGroupsObjects[groupName] = groupObj;
+                i++;
+                if (i >= total) {
+                  resolve(allGroupsObjects, dataFolder);
+                }
+              } else {
+                total--;
+              }
+            });
+          }
+          saveGroup(groupName, groupDataFolderPath);
+        }
+      } else reject(err);
+    });
+  });
+}
+
+export function loadProjectDataByType(dataFolder, params, type) {
+  return new Promise((resolve, reject) => {
+    try {
+      let chapterFolder = path.join(dataFolder, 'checkData', type, params.bookAbbr);
+      let chapters = fs.readdirSync(chapterFolder);
+      let checkDataArray = [];
+      for (var chapter of chapters) {
+        if (!parseInt(chapter)) continue;
+        let verses = fs.readdirSync(path.join(chapterFolder, chapter));
+        for (var verse of verses) {
+          if (!parseInt(verse)) continue;
+          let chapterObjects = path.join(chapterFolder, chapter, verse);
+          let verseObjects = fs.readdirSync(chapterObjects);
+          for (var index in verseObjects) {
+            const currentDataObjectPath = path.join(chapterObjects, verseObjects[index])
+            let dataObject = fs.readJsonSync(currentDataObjectPath);
+            checkDataArray.push(dataObject);
+          }
+        }
+      }
+      resolve(checkDataArray, dataFolder);
+    } catch (e) {
+    }
+  });
 }

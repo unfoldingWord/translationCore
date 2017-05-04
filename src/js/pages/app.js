@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import CryptoJS from "crypto-js";
-import {Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
+import RootStyles from './RootStyle';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
@@ -11,11 +12,10 @@ injectTapEventPlugin();
 import NotificationContainer from '../containers/NotificationContainer';
 import KonamiContainer from "../containers/KonamiContainer.js";
 import StatusBarContainer from '../containers/StatusBarContainer';
-import BodyContainer from '../containers/home/BodyContainer';
-
+import SideBarContainer from '../containers/SideBarContainer';
 import LoaderContainer from '../containers/LoaderContainer';
 import AlertModalContainer from '../containers/AlertModalContainer';
-
+import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer.js';
 // actions
@@ -82,20 +82,24 @@ class Main extends Component {
   }
 
   render() {
-
     return (
       <div className="fill-height">
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />
         <NotificationContainer />
-        <LoaderContainer />
-        <AlertModalContainer />
         <Grid fluid style={{ padding: 0 }}>
           <Row style={{ margin: 0 }}>
             <StatusBarContainer />
           </Row>
-          <BodyContainer />
+          <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
+            <SideBarContainer />
+          </Col>
+          <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
+            <LoaderContainer />
+            <AlertModalContainer />
+            <ModuleWrapperContainer />
+          </Col>
         </Grid>
       </div>
     );
