@@ -134,7 +134,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(verifyGroupDataMatchesWithFs());
       },
       openAlertDialog: (message) => {
-        console.log(message)
         dispatch(openAlertDialog(message));
       }
     }
