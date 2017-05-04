@@ -135,6 +135,13 @@ export function openProject(projectPath, projectLink) {
     });
 }
 
+/**
+ * Pure function to get the manifest of a project
+ * 
+ * @param {string} projectPath - Path in which the USFM project is being loaded from
+ * @param {string} projectLink - Link given to load project if taken from online
+ * @param {object} currentUser - current user who is logged in
+ */
 export function setUpManifestAndParams(projectPath, projectLink, currentUser) {
     projectPath = LoadHelpers.correctSaveLocation(projectPath);
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');

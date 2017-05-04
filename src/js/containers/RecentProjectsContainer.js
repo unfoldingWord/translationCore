@@ -7,8 +7,9 @@ import { Modal, Tabs, Tab, Button, Glyphicon } from 'react-bootstrap/lib';
 import RecentProjects from '../components/core/RecentProjects';
 // actions
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
-import * as ModalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
+import { selectModalTab } from '../actions/ModalActions.js';
+import { showNotification } from '../actions/NotificationActions.js';
+import { openProject } from '../actions/getDataActions.js'; 
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -102,11 +103,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onLoad: (projectPath, loggedInUser) => {
       if (!loggedInUser) {
-        dispatch(ModalActions.selectModalTab(1, 1, true));
-        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        dispatch(selectModalTab(1, 1, true));
+        dispatch(showNotification("Please login before loading a project", 5));
         return;
       }
-      dispatch(recentProjectsActions.onLoad(projectPath));
+      dispatch(openProject(projectPath));
     },
     syncProject: (projectPath, manifest, user) => {
       dispatch(recentProjectsActions.syncProject(projectPath, manifest, user));
