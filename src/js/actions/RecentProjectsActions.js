@@ -8,7 +8,7 @@ const { dialog } = remote;
 // actions
 import * as getDataActions from './GetDataActions';
 import { showNotification } from './NotificationActions';
-import { loadGroupsData, loadProjectDataByType } from '../utils/loadMethods';
+import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 import zipFolder from 'zip-folder';
@@ -80,7 +80,7 @@ export function exportToCSV(projectPath) {
     const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer, projectDetailsReducer } = getState();
     let manifest = getDataActions.setUpManifestAndParams(projectPath);
     dispatch(getDataActions.addLoadedProjectToStore(projectPath, manifest));
-    const params = getState().projectDetailsReducer.params;
+    const params = projectDetailsReducer.params;
     dispatch(getDataActions.clearPreviousData());
 
     let toolPaths = getToolFolderNames(projectPath);
@@ -228,11 +228,11 @@ export function getToolFolderNames(projectPath) {
 export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback) {
   if (toolName == '.DS_Store') callback();
   else {
-    loadGroupsData(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder))
-      .then(() => loadProjectDataByType(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder))
-      .then(() => loadProjectDataByType(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder))
-      .then(() => loadProjectDataByType(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder))
-      .then(() => loadProjectDataByType(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder))
+    loadGroupsDataToExport(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder))
       .then(() => saveDialog(toolName, dataFolder, callback))
   }
 }

@@ -46,7 +46,7 @@ export function loadModulesSettings() {
   }
 }
 
-export function loadGroupsData(tool, dataFolder, params) {
+export function loadGroupsDataToExport(tool, dataFolder, params) {
   return new Promise((resolve, reject) => {
     let groupDataFolderPath = path.join(dataFolder, 'index', tool, params.bookAbbr);
     fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
@@ -81,7 +81,7 @@ export function loadGroupsData(tool, dataFolder, params) {
   });
 }
 
-export function loadProjectDataByType(dataFolder, params, type) {
+export function loadProjectDataByTypeToExport(dataFolder, params, type) {
   return new Promise((resolve, reject) => {
     try {
       let chapterFolder = path.join(dataFolder, 'checkData', type, params.bookAbbr);
