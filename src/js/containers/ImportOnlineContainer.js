@@ -16,7 +16,7 @@ class ImportOnlineContainer extends React.Component {
         <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
             <Button bsStyle="prime"
-                    onClick={() => this.props.actions.openOnlineProject(repoName)}>
+                    onClick={() => this.props.actions.openOnlineProject(repoName, this.props.importOnlineReducer.loggedIn)}>
               Import & Select
             </Button>
         </div>
@@ -36,6 +36,17 @@ class ImportOnlineContainer extends React.Component {
           <center>
             <br />
             <h4> Please login first </h4>
+            <br />
+          </center>
+        </div>
+      )
+    }
+    if(this.props.importOnlineReducer.err != null){
+      return (
+        <div>
+          <center>
+            <br />
+            <h4>Unable to connect to the server. Please check your Internet connection.</h4>
             <br />
           </center>
         </div>

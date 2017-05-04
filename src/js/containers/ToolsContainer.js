@@ -35,16 +35,19 @@ class ToolsContainer extends React.Component {
   }
 
   render() {
-    let Tool = this.props.currentTool
+    let {modules} = this.props.coreStoreReducer;
+    let {toolName} = this.props.currentToolReducer;
+    let Tool = modules[toolName];
+
     return (
-      <Tool {...this.props} />
+      <Tool {...this.props} modules={modules} />
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    modules: state.coreStoreReducer.modules,
+    coreStoreReducer: state.coreStoreReducer,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
