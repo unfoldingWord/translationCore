@@ -9,7 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 // container
 import NotificationContainer from '../containers/NotificationContainer';
-import KonamiContainer from "../containers/KonamiContainer.js";
+import KonamiContainer from "../containers/KonamiContainer";
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
 
@@ -17,11 +17,12 @@ import LoaderContainer from '../containers/LoaderContainer';
 import AlertModalContainer from '../containers/AlertModalContainer';
 
 import PopoverContainer from '../containers/PopoverContainer';
-import ModalContainer from '../containers/ModalContainer.js';
+import ModalContainer from '../containers/ModalContainer';
+import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import CoreActions from '../actions/CoreActions.js';
-import * as recentProjectActions from '../actions/RecentProjectsActions.js';
-import * as DragDropActions from '../actions/DragDropActions.js';
+import * as recentProjectActions from '../actions/RecentProjectsActions';
+import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
 const api = window.ModuleApi;
 
@@ -85,6 +86,7 @@ class Main extends Component {
 
     return (
       <div className="fill-height">
+        <AlertDialogContainer />
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />
