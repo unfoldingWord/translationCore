@@ -5,7 +5,7 @@ var RootStyles = {
   ScrollableSection: {
     height: '100%',
     position: 'relative',
-    overflowY: 'scroll',
+    overflowY: 'auto',
     bottom:0,
     padding:"0px",
     overflowX:'hidden',
