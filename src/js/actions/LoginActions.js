@@ -3,7 +3,7 @@ import * as CoreActions from './CoreActions.js';
 import gogs from '../components/core/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
-const { dialog } = remote; 
+const { dialog } = remote;
 const api = window.ModuleApi;
 
 export function setUserName(val) {
@@ -36,17 +36,17 @@ export function loginUser(newUserdata) {
         type: consts.RECEIVE_LOGIN,
         val: newUserdata
       });
-    }).catch(function(reason) {
-      console.log(reason);
-      if (reason.status === 401) {
-        dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
-      } else if (reason.message) {
-        dialog.showErrorBox('Login Failed', reason.message);
-      } else if (reason.data) {
-        dialog.showErrorBox('Login Failed', reason.data);
-      } else {
-        dialog.showErrorBox('Login Failed', 'Unknown Error');
+    }).catch(function(err) {
+      console.log(err);
+      var errmessage = "An error occurred while trying to login";
+      if (err.syscall === "getaddrinfo") {
+        errmessage = "Unable to connect to server";
+      } else if (err.status === 404) {
+        errmessage = "Incorrect Username";
+      } else if (err.status === 401) {
+        errmessage = "Incorrect Password";
       }
+      dialog.showErrorBox('Login Failed', errmessage);
     });
   })
 }

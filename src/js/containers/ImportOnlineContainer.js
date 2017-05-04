@@ -13,18 +13,18 @@ class ImportOnlineContainer extends React.Component {
 
   importOnlineButtion(projectName, p, repoName) {
     return (
-        <div key={p} style={{ width: '100%', marginBottom: '15px' }}>
+        <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
-            <Button bsStyle="primary" className={'pull-right'} bsSize="sm"
-                    onClick={() => this.props.actions.openOnlineProject(repoName)}>
-              Load Project
+            <Button bsStyle="prime"
+                    onClick={() => this.props.actions.openOnlineProject(repoName, this.props.importOnlineReducer.loggedIn)}>
+              Import & Select
             </Button>
         </div>
     );
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.modalReducer.currentSection === 3 && newProps.modalReducer.currentTab === 2 && !newProps.importOnlineReducer.showOnlineButton && (newProps.modalReducer.currentTab !== this.props.modalReducer.currentTab || newProps.modalReducer.currentSection !== this.props.modalReducer.currentSection)) {
+    if (newProps.modalReducer.currentSection === 3 && newProps.modalReducer.currentTab === 2 && (newProps.modalReducer.currentTab !== this.props.modalReducer.currentTab || newProps.modalReducer.currentSection !== this.props.modalReducer.currentSection)) {
       this.props.actions.updateRepos();
     }
   }
@@ -41,6 +41,17 @@ class ImportOnlineContainer extends React.Component {
         </div>
       )
     }
+    if(this.props.importOnlineReducer.err != null){
+      return (
+        <div>
+          <center>
+            <br />
+            <h4>Unable to connect to the server. Please check your Internet connection.</h4>
+            <br />
+          </center>
+        </div>
+      )
+    }
     var projectArray = repos;
     var projectList = []
     for (var p in projectArray) {
@@ -50,7 +61,7 @@ class ImportOnlineContainer extends React.Component {
     }
     if (projectList.length === 0) {
       projectList.push(
-          <div key={'None'} style={{ width: '100%', marginBottom: '15px' }}>
+          <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
               No Projects Found
           </div>
       );
@@ -60,35 +71,21 @@ class ImportOnlineContainer extends React.Component {
 
   render() {
     let onlineProjects = this.makeList(this.props.importOnlineReducer.repos);
-    let {changeShowOnlineView, handleOnlineChange, loadProjectFromLink} = this.props.actions;
-    let {importLink, showOnlineButton, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
+    let {handleOnlineChange, loadProjectFromLink} = this.props.actions;
+    let {importLink, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
     return (
-      <div>
-        {showOnlineButton ?
-            (<div style={{ padding: '10% 0' }}>
-                <center>
-                <Button onClick={() => changeShowOnlineView(false)} style={{ width: '60%', fontWeight: 'bold', fontSize: '20px' }} bsStyle='primary' bsSize='large'>
-                  <img src="images/D43.svg" width="90" style={{ marginRight: '25px', padding: '10px' }} />
-                  Browse Door43 Projects
-                </Button>
-                <div style={{ width: '60%', height: '20px', borderBottom: '2px solid var(--reverse-color)', textAlign: 'center', margin: '20px 0' }}>
-                  <span style={{ fontSize: '20px', backgroundColor: 'var(--reverse-color)', fontWeight: 'bold', padding: '0 40px' }}>
-                    or
-                  </span>
-                </div>
-                <OnlineInput
-                  onChange={handleOnlineChange}
-                  load={() => loadProjectFromLink(importLink, loggedIn)}
-                  showLoadingCircle={showLoadingCircle}
-                />
-              </center>
-            </div>)
-            :
-            (<Projects
-              onlineProjects={onlineProjects}
-              back={() => this.props.actions.changeShowOnlineView(true)}
-            />)
-        }
+      <div style={{height: "520px"}}>
+        <Projects {...this.props} onlineProjects={onlineProjects}/>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
+            Select one of your projects above or enter the URL of a project below
+          </div>
+          <OnlineInput
+              onChange={handleOnlineChange}
+              load={() => loadProjectFromLink(importLink, loggedIn)}
+              showLoadingCircle={showLoadingCircle}
+          />
+        </div>
       </div>
     );
   }

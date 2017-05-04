@@ -3,27 +3,32 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import CryptoJS from "crypto-js";
-import { Grid, Row, Col } from 'react-bootstrap';
-import RootStyles from './RootStyle';
+import {Grid, Row, Col } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
 import NotificationContainer from '../containers/NotificationContainer';
-import KonamiContainer from "../containers/KonamiContainer.js";
+import KonamiContainer from "../containers/KonamiContainer";
 import StatusBarContainer from '../containers/StatusBarContainer';
-import SideBarContainer from '../containers/SideBarContainer';
+import BodyContainer from '../containers/home/BodyContainer';
+
 import LoaderContainer from '../containers/LoaderContainer';
 import AlertModalContainer from '../containers/AlertModalContainer';
-import ModuleWrapperContainer from '../containers/ModuleWrapperContainer';
+
 import PopoverContainer from '../containers/PopoverContainer';
-import ModalContainer from '../containers/ModalContainer.js';
+import ModalContainer from '../containers/ModalContainer';
+import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import CoreActions from '../actions/CoreActions.js';
-import * as recentProjectActions from '../actions/RecentProjectsActions.js';
-import * as DragDropActions from '../actions/DragDropActions.js';
+import * as recentProjectActions from '../actions/RecentProjectsActions';
+import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
 const api = window.ModuleApi;
+const { Button, utils } = require('react-bootstrap');
+const bootstrapUtils = utils.bootstrapUtils;
+bootstrapUtils.addStyle(Button, 'prime');
+bootstrapUtils.addStyle(Button, 'second');
 
 
 class Main extends Component {
@@ -82,24 +87,21 @@ class Main extends Component {
   }
 
   render() {
+
     return (
       <div className="fill-height">
+        <AlertDialogContainer />
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />
         <NotificationContainer />
+        <LoaderContainer />
+        <AlertModalContainer />
         <Grid fluid style={{ padding: 0 }}>
           <Row style={{ margin: 0 }}>
             <StatusBarContainer />
           </Row>
-          <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
-            <SideBarContainer />
-          </Col>
-          <Col style={RootStyles.ScrollableSection} xs={7} sm={8} md={9} lg={9.5}>
-            <LoaderContainer />
-            <AlertModalContainer />
-            <ModuleWrapperContainer />
-          </Col>
+          <BodyContainer />
         </Grid>
       </div>
     );

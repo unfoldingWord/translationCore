@@ -38,3 +38,24 @@ export const toggleMoreInfo = () => {
     type: consts.TOGGLE_MORE_INFO
   }
 }
+/**
+ * @description opens the alert dialog with the specified alert message.
+ * @param {string} alertMessage - message to be displayed inside the alert dialog.
+ * @return {object} action content.
+ */
+export function openAlertDialog(alertMessage) {
+  return {
+    type: consts.OPEN_ALERT_DIALOG,
+    alertMessage
+  }
+}
+
+/**
+ * @description closes the alert dialog.
+ * @return {object} action content.
+ */
+export function closeAlertDialog() {
+  return {
+    type: consts.CLOSE_ALERT_DIALOG,
+  }
+}

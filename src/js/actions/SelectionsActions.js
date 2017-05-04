@@ -1,6 +1,7 @@
 import consts from '../actions/CoreActionConsts';
 import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
+import * as AlertModalActions from './AlertModalActions';
 
 /**
  * @description This method adds a selection array to the selections reducer.
@@ -40,7 +41,7 @@ export function validateSelections(targetVerse) {
     let validSelections = checkSelectionOccurrences(targetVerse, selections);
     if (selections.length !== validSelections.length) {
       dispatch(changeSelections(validSelections, username));
-      alert('Some selections are no longer valid and are removed.')
+      dispatch(AlertModalActions.openAlertDialog('Some selections are no longer valid and are removed.'));
     }
   });
 }

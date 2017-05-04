@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // actions
-import { showNotification } from '../actions/NotificationActions.js';
-import { showPopover } from '../actions/PopoverActions.js';
-import { addNewResource, addNewBible } from '../actions/ResourcesActions.js';
-import { addComment } from '../actions/CommentsActions.js';
-import { addVerseEdit } from '../actions/VerseEditActions.js';
-import { toggleReminder } from '../actions/RemindersActions.js';
-import { changeSelections, validateSelections } from '../actions/SelectionsActions.js';
-import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions.js';
-import {addGroupData, verifyGroupDataMatchesWithFs} from '../actions/GroupsDataActions.js';
-import {setGroupsIndex} from '../actions/GroupsIndexActions.js';
-import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions.js';
+import { showNotification } from '../actions/NotificationActions';
+import { showPopover } from '../actions/PopoverActions';
+import { addNewResource, addNewBible } from '../actions/ResourcesActions';
+import { addComment } from '../actions/CommentsActions';
+import { addVerseEdit } from '../actions/VerseEditActions';
+import { toggleReminder } from '../actions/RemindersActions';
+import { changeSelections, validateSelections } from '../actions/SelectionsActions';
+import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions';
+import {addGroupData, verifyGroupDataMatchesWithFs} from '../actions/GroupsDataActions';
+import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions';
 import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
-
+import { openAlertDialog } from '../actions/AlertModalActions';
 
 class ToolsContainer extends React.Component {
 
@@ -35,16 +35,19 @@ class ToolsContainer extends React.Component {
   }
 
   render() {
-    let Tool = this.props.currentTool
+    let {modules} = this.props.coreStoreReducer;
+    let {toolName} = this.props.currentToolReducer;
+    let Tool = modules[toolName];
+
     return (
-      <Tool {...this.props} />
+      <Tool {...this.props} modules={modules} />
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    modules: state.coreStoreReducer.modules,
+    coreStoreReducer: state.coreStoreReducer,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -132,6 +135,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       verifyMenuChecksReflectFS: () => {
         dispatch(verifyGroupDataMatchesWithFs());
+      },
+      openAlertDialog: (message) => {
+        dispatch(openAlertDialog(message));
       }
     }
   };

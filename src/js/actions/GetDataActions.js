@@ -11,7 +11,6 @@ import React from 'react';
 // actions
 import * as fs from 'fs-extra';
 import * as consts from './CoreActionConsts';
-import * as CoreActionsRedux from './CoreActionsRedux';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
@@ -23,7 +22,8 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
-import { resetProjectDetail } from './projectDetailsActions'
+import * as BodyUIActions from './BodyUIActions';
+import { resetProjectDetail } from './projectDetailsActions';
 
 import pathex from 'path-extra';
 import usfm from 'usfm-parser';
@@ -120,6 +120,8 @@ export function getCurrentUser(state) {
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
+        // TODO: this action maybe stay here temporary until the home screen implementation.
+        dispatch(BodyUIActions.toggleHomeView(true))
         dispatch(clearPreviousData());
         const currentUser = getCurrentUser(getState());
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
@@ -207,11 +209,10 @@ export function displayToolsToLoad(manifest) {
         const currentState = getState();
         if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
             dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
-            dispatch({ type: consts.SHOW_APPS, val: true });
             dispatch(ToolsActions.getToolsMetadatas());
             dispatch(ModalActions.selectModalTab(3, 1, true));
         } else {
-            dispatch(NotificationActions.showNotification('You can only load Ephisians or Titus projects for now.', 5));
+            dispatch(AlertModalActions.openAlertDialog('You can only load Ephisians or Titus projects for now.', 5));
             dispatch(RecentProjectsActions.getProjectsFromFolder());
             dispatch(clearPreviousData());
         }
@@ -250,7 +251,6 @@ export function loadModuleAndDependencies(moduleFolderName) {
             dispatch({ type: consts.CLEAR_CURRENT_TOOL });
             dispatch({ type: consts.CLEAR_OLD_GROUPS });
             dispatch({ type: consts.CLEAR_CONTEXT_ID });
-            dispatch(CoreActionsRedux.changeModuleView());
             dispatch(CurrentToolActions.setDataFetched(false));
             const modulePath = Path.join(moduleFolderName, 'package.json');
             const dataObject = fs.readJsonSync(modulePath);
@@ -280,7 +280,8 @@ export function loadGroupDataFromFileSystem(toolName) {
             dispatch(setGroupIndexInStore(dataFolder, params));
         } catch (e) {
             console.warn('failed loading group index')
-            dispatch(CoreActionsRedux.changeModuleView('main'));
+            // TODO: this action maybe stay here temporary until the home screen implementation.
+            dispatch(BodyUIActions.toggleHomeView(false))
         }
     });
 }
@@ -310,7 +311,8 @@ export function setGroupDataInStore(dataFolder, params) {
                                     i++;
                                     if (i >= total) {
                                         dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-                                        dispatch(CoreActionsRedux.changeModuleView('main'));
+                                        // TODO: this action maybe stay here temporary until the home screen implementation.
+                                        dispatch(BodyUIActions.toggleHomeView(false))
                                         console.log('Loaded group data from fs');
                                     }
                                 }, 1)
@@ -324,7 +326,8 @@ export function setGroupDataInStore(dataFolder, params) {
                 }
             } else {
                 console.warn('failed loading group data')
-                dispatch(CoreActionsRedux.changeModuleView('main'));
+                // TODO: this action maybe stay here temporary until the home screen implementation.
+                dispatch(BodyUIActions.toggleHomeView(false))
             }
         });
     });
