@@ -30,7 +30,7 @@ class SwitchCheck extends React.Component {
       }
     }
     return (
-      <div style={{padding: "10px"}}>
+      <div style={{padding: "10px", height: "520px", overflowY: "auto"}}>
           {buttons}
       </div>
     );

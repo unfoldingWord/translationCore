@@ -51,10 +51,7 @@ class ModalContainer extends React.Component {
           </Tabs>
         </Modal.Body>
         <Modal.Footer style={{padding: "10px", backgroundColor: "var(--reverse-color)", borderTop: "1px solid var(--border-color)"}}>
-          <Button style={{float: "right", width: "90px", padding: "5px", border: '2px solid var(--accent-color-dark)', color: 'var(--accent-color-dark)', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)', borderRadius: "0px"}} onClick={() => hide()}>Close</Button>
-          <center style={{color: "var(--text-color)", padding: "6px"}}>
-            {"Version " + packageJson.version}
-          </center>
+          <Button bsStyle="second" style={{float: "right"}} onClick={() => hide()}>Close</Button>
         </Modal.Footer>
       </Modal>
     )
