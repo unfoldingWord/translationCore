@@ -51,7 +51,6 @@ export function verifyGroupDataMatchesWithFs() {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestFile = loadFile(filePath);
             if (latestFile.contextId.tool === state.currentToolReducer.toolName) {
-              console.log(folderName, chapterFolder, verseFolder)
               toggleGroupDataItems(folderName, latestFile, dispatch);
             }
           });
