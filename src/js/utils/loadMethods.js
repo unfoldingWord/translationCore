@@ -83,10 +83,10 @@ export function loadGroupsDataToExport(tool, dataFolder, params) {
 
 export function loadProjectDataByTypeToExport(dataFolder, params, type) {
   return new Promise((resolve, reject) => {
+    let checkDataArray = [];
     try {
       let chapterFolder = path.join(dataFolder, 'checkData', type, params.bookAbbr);
       let chapters = fs.readdirSync(chapterFolder);
-      let checkDataArray = [];
       for (var chapter of chapters) {
         if (!parseInt(chapter)) continue;
         let verses = fs.readdirSync(path.join(chapterFolder, chapter));
@@ -101,8 +101,8 @@ export function loadProjectDataByTypeToExport(dataFolder, params, type) {
           }
         }
       }
-      resolve(checkDataArray, dataFolder);
     } catch (e) {
     }
+    resolve(checkDataArray, dataFolder);
   });
 }

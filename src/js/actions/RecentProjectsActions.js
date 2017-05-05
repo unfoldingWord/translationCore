@@ -12,8 +12,6 @@ import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 import zipFolder from 'zip-folder';
-import { remote } from 'electron';
-const { dialog } = remote;
 
 
 /**
@@ -77,10 +75,9 @@ export function getProjectsFromFolder() {
  */
 export function exportToCSV(projectPath) {
   return ((dispatch, getState) => {
-    const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer, projectDetailsReducer } = getState();
-    let manifest = getDataActions.setUpManifestAndParams(projectPath);
-    dispatch(getDataActions.addLoadedProjectToStore(projectPath, manifest));
-    const params = projectDetailsReducer.params;
+    const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer } = getState();
+    dispatch(getDataActions.openProject(projectPath, null, true));
+    const params = getState().projectDetailsReducer.params;
     dispatch(getDataActions.clearPreviousData());
 
     let toolPaths = getToolFolderNames(projectPath);
@@ -88,6 +85,7 @@ export function exportToCSV(projectPath) {
     let dataFolder = path.join(projectPath, 'apps', 'translationCore');
     var fn = function (newPaths) {
       saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
+        debugger;
         newPaths.shift();
         if (newPaths.length) fn(newPaths);
         else fs.remove(path.join(dataFolder, 'output'));

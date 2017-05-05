@@ -27,7 +27,7 @@ class RecentProjectsContainer extends React.Component {
                 <Glyphicon glyph={'folder-open'} />
                 <span style={{ marginLeft: '10px' }}>Select</span>
             </Button>
-            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}>
+            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={()=>this.props.exportToCSV(projectPath)}>
                 <Glyphicon glyph={'download'} />
                 <span style={{ marginLeft: '5px' }}>Export (csv)</span>
             </Button>
