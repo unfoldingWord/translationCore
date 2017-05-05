@@ -14,7 +14,7 @@
   var moduleApi = require('../ModuleApi');
   window.BooksOfBible = require('../components/core/BooksOfBible.js');
   window.ModuleApi = moduleApi;
-  const MenuBar = require('../components/core/BlankMenuBar');
+  const MenuBar = require('../components/core/MenuBar');
   var App = {
     init: function () {
       var menu = Menu.buildFromTemplate(MenuBar.template);

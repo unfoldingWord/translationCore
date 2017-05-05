@@ -10,7 +10,7 @@ import {CircularProgress} from 'material-ui';
 class OnlineInput extends React.Component {
 
   render() {
-    let {showLoadingCircle, load, onChange} = this.props;
+    let {showLoadingCircle, load, onChange, importLink} = this.props;
     return (
       <MuiThemeProvider>
         <FormGroup controlId="onlineInput">
@@ -26,7 +26,7 @@ class OnlineInput extends React.Component {
                   (<CircularProgress size={30} thickness={4} color={"var(--accent-color-dark)"} />) : ""
               }
             </div>
-            <Button bsStyle="prime" onClick={load}>
+            <Button bsStyle="prime" disabled={!importLink} onClick={load}>
               <span style={{marginLeft: '10px'}}>Import & Select</span>
             </Button>
           </InputGroup>
