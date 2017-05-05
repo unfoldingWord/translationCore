@@ -9,7 +9,7 @@ import RecentProjects from '../components/core/RecentProjects';
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import { selectModalTab } from '../actions/ModalActions.js';
 import { showNotification } from '../actions/NotificationActions.js';
-import { openProject } from '../actions/getDataActions.js'; 
+import { openProject } from '../actions/GetDataActions.js'; 
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
