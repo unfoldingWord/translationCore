@@ -94,7 +94,8 @@
     "style-it": "^1.2.11",
     "sudo-prompt": "^6.2.1",
     "usfm-parser": "^0.1.4",
-    "xregexp": "^3.1.1"
+    "xregexp": "^3.1.1",
+    "zip-folder": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
