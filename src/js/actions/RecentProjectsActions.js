@@ -28,9 +28,9 @@ export function onLoad(filePath) {
 /**
  * Sync project to door 43, based on currently logged in user.
  * 
- * @param {string} projectPath 
- * @param {object} manifest 
- * @param {object} lastUser 
+ * @param {string} projectPath - Path to the project to sync
+ * @param {object} manifest - manifest of the project to sync
+ * @param {object} lastUser - currently logged in user
  */
 export function syncProject(projectPath, manifest, lastUser) {
   return ((dispatch) => {
