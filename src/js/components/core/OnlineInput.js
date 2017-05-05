@@ -14,21 +14,22 @@ class OnlineInput extends React.Component {
     return (
       <MuiThemeProvider>
         <FormGroup controlId="onlineInput">
-          <InputGroup style={{width: '60%', color: '#ffffff'}}>
+          <InputGroup style={{display: "flex", alignItems: "center"}}>
             <FormControl
               type="text"
-              style={{width: '78%', borderRadius: '4px'}}
+              style={{width: '400px', borderRadius: '4px'}}
               placeholder="Enter URL"
               onChange={onChange}
             />
-            <Button bsStyle="primary" onClick={load}>
-              <Glyphicon glyph="folder-open"/>
-              <span style={{marginLeft: '15px', fontWeight: 'bold'}}>Import</span>
+            <div style={{width: "60px", display: "flex", justifyContent: "center"}}>
+              {showLoadingCircle ?
+                  (<CircularProgress size={30} thickness={4} color={"var(--accent-color-dark)"} />) : ""
+              }
+            </div>
+            <Button bsStyle="prime" onClick={load}>
+              <span style={{marginLeft: '10px'}}>Import & Select</span>
             </Button>
-          </InputGroup><br />
-          {showLoadingCircle ?
-            (<CircularProgress size={70} thickness={8} color={"#19579E"} />) : ""
-          }
+          </InputGroup>
         </FormGroup>
       </MuiThemeProvider>
     );
