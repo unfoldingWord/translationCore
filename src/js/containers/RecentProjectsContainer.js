@@ -16,26 +16,34 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 class RecentProjectsContainer extends React.Component {
 
   componentWillMount() {
-    this.props.getProjectsFromFolder()
+    this.props.getProjectsFromFolder();
   }
 
-  generateButton(projectPath) {
+  generateButton(projectPath, manifest) {
     return (
-        <span>
-            <Button style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }} onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}>
-                <Glyphicon glyph={'folder-open'} />
-                <span style={{ marginLeft: '10px' }}>Select</span>
-            </Button>
-            <Button style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}>
-                <Glyphicon glyph={'download'} />
-                <span style={{ marginLeft: '5px' }}>Export (csv)</span>
-            </Button>
-            <Button style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }} onClick={() => this.props.syncProject(projectPath, this.props.manifest, this.props.userdata)}>
-                <Glyphicon glyph={'upload'} />
-                <span style={{ marginLeft: '5px' }}>Upload</span>
-            </Button>
-        </span>
-    )
+      <span>
+        <Button
+          style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }}
+          onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}
+        >
+          <Glyphicon glyph={'folder-open'} />
+          <span style={{ marginLeft: '10px' }}>Select</span>
+        </Button>
+        <Button
+          style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}
+        >
+          <Glyphicon glyph={'download'} />
+          <span style={{ marginLeft: '5px' }}>Export (csv)</span>
+        </Button>
+        <Button
+          style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}
+          onClick={() => this.props.syncProject(projectPath, manifest, this.props.userdata)}
+        >
+          <Glyphicon glyph={'upload'} />
+          <span style={{ marginLeft: '5px' }}>Upload</span>
+        </Button>
+      </span>
+    );
   }
 
   getRecentProjects() {
@@ -48,7 +56,7 @@ class RecentProjectsContainer extends React.Component {
       let manifestLocation = path.join(projectPath, 'manifest.json');
       let manifest = {};
       try {
-          manifest = require(manifestLocation);
+        manifest = require(manifestLocation);
       } catch (err) {
         // Happens with USFM projects
         manifest = { target_language: {}, ts_project: {} }
@@ -61,7 +69,7 @@ class RecentProjectsContainer extends React.Component {
       }
       let mtime = new Date(stats.mtime);
       let difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
-      let buttonSpan = (this.generateButton(projectPath));
+      let buttonSpan = (this.generateButton(projectPath, manifest));
       projects.push(
         {
           '': <Glyphicon glyph={'folder-open'} />,
@@ -88,12 +96,12 @@ class RecentProjectsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     ...state.recentProjectsReducer,
     manifest: state.projectDetailsReducer.manifest,
     loggedInUser: state.loginReducer.loggedInUser,
-    userdata: state.loginReducer.userdata,
+    userdata: state.loginReducer.userdata
   };
 };
 
@@ -116,8 +124,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getProjectsFromFolder: () => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
     }
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
