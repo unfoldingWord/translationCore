@@ -1,39 +1,53 @@
 import consts from './CoreActionConsts';
-import sync from '../components/core/SideBar/GitSync.js';
+import sync from '../components/core/SideBar/GitSync';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import gogs from '../components/core/login/GogsApi.js';
-import { remote } from 'electron';
-const { dialog } = remote;
+import gogs from '../components/core/login/GogsApi';
 // actions
 import * as getDataActions from './GetDataActions';
+import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
 export function onLoad(filePath) {
-  return ((dispatch) => {
+  return (dispatch => {
     dispatch(getDataActions.openProject(filePath));
-  })
+  });
 }
 
 export function syncProject(projectPath, manifest, lastUser) {
-  return ((dispatch) => {
+  return (dispatch => {
     var Token = api.getAuthToken('gogs');
-    gogs(Token).login(lastUser).then((authenticatedUser) => {
-      sync(projectPath, manifest, authenticatedUser);
+    gogs(Token).login(lastUser).then(authenticatedUser => {
+      const showAlert = message => {
+        dispatch(AlertModalActions.openAlertDialog(message));
+      };
+      sync(projectPath, manifest, authenticatedUser, showAlert);
       dispatch({
         type: consts.SYNC_PROJECT
-      })
-    }).catch(function (reason) {
+      });
+    }).catch(reason => {
       if (reason.status === 401) {
-        dialog.showErrorBox('Error Uploading', 'Incorrect username or password');
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
+        );
       } else if (reason.hasOwnProperty('message')) {
-        dialog.showErrorBox('Error Uploading', reason.message);
-      } else if (reason.hasOwnProperty('data')) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading' + reason.message)
+        );
+      } else if (reason.hasOwnProperty('data') && reason.data) {
         let errorMessage = reason.data;
-        dialog.showErrorBox('Error Uploading', errorMessage);
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading' + errorMessage)
+        );
+      } else if (reason.hasOwnProperty('data') && typeof reason.data === "string") {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Please verify your are logged into your door43 account.')
+        );
       } else {
-        dialog.showErrorBox('Error Uploading', 'Unknown Error');
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
+        );
       }
     });
   });
