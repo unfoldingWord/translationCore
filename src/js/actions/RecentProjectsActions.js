@@ -1,14 +1,15 @@
 import consts from './CoreActionConsts';
-import sync from '../components/core/SideBar/GitSync.js';
+import sync from '../components/core/SideBar/GitSync';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import gogs from '../components/core/login/GogsApi.js';
+import gogs from '../components/core/login/GogsApi';
 import { remote } from 'electron';
 const { dialog } = remote;
 // actions
 import * as getDataActions from './GetDataActions';
 import { showNotification } from './NotificationActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
+import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 import zipFolder from 'zip-folder';
@@ -16,40 +17,55 @@ import zipFolder from 'zip-folder';
 
 /**
  * @description - Initiate a project load
- * 
+ *
  * @param {string} filePath - Path to the project to open i.e. ~/translationCore/{PROJECT_NAME}
  */
 export function onLoad(filePath) {
-  return ((dispatch) => {
+  return (dispatch => {
     dispatch(getDataActions.openProject(filePath));
-  })
+  });
 }
 
 /**
  * Sync project to door 43, based on currently logged in user.
- * 
+ *
  * @param {string} projectPath - Path to the project to sync
  * @param {object} manifest - manifest of the project to sync
  * @param {object} lastUser - currently logged in user
  */
 export function syncProject(projectPath, manifest, lastUser) {
-  return ((dispatch) => {
+  return (dispatch => {
     var Token = api.getAuthToken('gogs');
-    gogs(Token).login(lastUser).then((authenticatedUser) => {
-      sync(projectPath, manifest, authenticatedUser);
+    gogs(Token).login(lastUser).then(authenticatedUser => {
+      const showAlert = message => {
+        dispatch(AlertModalActions.openAlertDialog(message));
+      };
+      sync(projectPath, manifest, authenticatedUser, showAlert);
       dispatch({
         type: consts.SYNC_PROJECT
-      })
-    }).catch(function (reason) {
+      });
+    }).catch(reason => {
       if (reason.status === 401) {
-        dialog.showErrorBox('Error Uploading', 'Incorrect username or password');
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
+        );
       } else if (reason.hasOwnProperty('message')) {
-        dialog.showErrorBox('Error Uploading', reason.message);
-      } else if (reason.hasOwnProperty('data')) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading' + reason.message)
+        );
+      } else if (reason.hasOwnProperty('data') && reason.data) {
         let errorMessage = reason.data;
-        dialog.showErrorBox('Error Uploading', errorMessage);
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading' + errorMessage)
+        );
+      } else if (reason.hasOwnProperty('data') && typeof reason.data === "string") {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Please verify your are logged into your door43 account.')
+        );
       } else {
-        dialog.showErrorBox('Error Uploading', 'Unknown Error');
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
+        );
       }
     });
   });
@@ -70,7 +86,7 @@ export function getProjectsFromFolder() {
 
 /**
  * @description - Wrapper function to handle exporting to CSV
- * 
+ *
  * @param {string} projectPath - Path to current project
  */
 export function exportToCSV(projectPath) {
@@ -85,7 +101,6 @@ export function exportToCSV(projectPath) {
     let dataFolder = path.join(projectPath, 'apps', 'translationCore');
     var fn = function (newPaths) {
       saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
-        debugger;
         newPaths.shift();
         if (newPaths.length) fn(newPaths);
         else fs.remove(path.join(dataFolder, 'output'));
@@ -97,7 +112,7 @@ export function exportToCSV(projectPath) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
@@ -116,7 +131,7 @@ export function saveVerseEditsToCSV(obj, dataFolder) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
@@ -133,7 +148,7 @@ export function saveCommentsToCSV(obj, dataFolder) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
@@ -154,7 +169,7 @@ export function saveSelectionsToCSV(obj, dataFolder) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
@@ -171,7 +186,7 @@ export function saveRemindersToCSV(obj, dataFolder) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
@@ -191,7 +206,7 @@ export function saveGroupsCSVToFs(obj, dataFolder) {
 
 /**
  * @description - Creates csv from object and saves it.
- * 
+ *
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
  */
@@ -206,8 +221,8 @@ export function addContextIdToCSV(currentRowArray, contextId) {
 
 /**
  * @description - Gets the tool folder names
- * 
- * @param {string} projectPath 
+ *
+ * @param {string} projectPath
  */
 export function getToolFolderNames(projectPath) {
   try {
@@ -217,7 +232,7 @@ export function getToolFolderNames(projectPath) {
 }
 
 /**
- * 
+ *
  * @param {string} toolName - current tool name
  * @param {string} dataFolder - path of the folder to load csv from
  * @param {object} params - params of current project
@@ -237,7 +252,7 @@ export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback)
 
 /**
  * @description - method to save csv output from user selection by dialoag
- * 
+ *
  * @param {string} toolName - current tool name
  * @param {string} dataFolder - path of the folder to load csv from
  * @param {function} callback - function to call when complete
