@@ -69,7 +69,7 @@ module.exports = (function() {
           callback(null, savePath, url);
       } catch (error) {
         if (callback)
-          callback("Cannot read project manifest file", null, null);
+          callback("Cannot read project manifest file", savePath, null);
       }
     });
   }

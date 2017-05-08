@@ -6,7 +6,7 @@ import * as getDataActions from './GetDataActions';
 import { openAlertDialog } from '../actions/AlertModalActions'
 // constant declaration
 const loadOnline = require('../components/core/LoadOnline');
-
+var rimraf = require('rimraf');
 
 export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
@@ -56,6 +56,10 @@ export function importOnlineProject(link) {
                 } else if (err === "Cannot read project manifest file") {
                     errmessage = err;
                 }
+
+                try {
+                    rimraf(savePath, function () {});
+                } catch (e) {}
 
                 dispatch(openAlertDialog(errmessage));
                 dispatch({ type: "LOADED_ONLINE_FAILED" });
