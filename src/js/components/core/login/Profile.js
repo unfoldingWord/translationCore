@@ -21,7 +21,7 @@ class Profile extends React.Component {
         </FormControl>
       </div>
     );
-    return(
+    return (
     <div>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
         <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", paddingTop: "20px", height: "520px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid var(--border-color)"}}>
