@@ -42,20 +42,27 @@ export function updateRepos() {
     })
 }
 
-export function openOnlineProject(projectPath) {
+export function importOnlineProject(link) {
     return ((dispatch) => {
-        var link = 'https://git.door43.org/' + projectPath + '.git';
-        var _this = this;
+        dispatch({ type: consts.SHOW_LOADING_CIRCLE });
         loadOnline(link, function (err, savePath, url) {
             if (err) {
-                var errmessage = "Problem occurred during import";
-                if (err.syscall === "getaddrinfo") {
+                var errmessage = "An unknown problem occurred during import";
+
+                if (err.toString().includes("fatal: unable to access")) {
                     errmessage = "Unable to connect to the server. Please check your Internet connection.";
+                } else if (err.toString().includes("fatal: repository")) {
+                    errmessage = "The URL does not reference a valid project";
+                } else if (err === "Cannot read project manifest file") {
+                    errmessage = err;
                 }
+
                 dispatch(openAlertDialog(errmessage));
-                dispatch({ type: "LOADED_ONLINE_FAILED" })
+                dispatch({ type: "LOADED_ONLINE_FAILED" });
+                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             } else {
                 dispatch(getDataActions.openProject(savePath, url));
+                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             }
         });
     })
@@ -67,41 +74,4 @@ export function getLink(e) {
     importLink: e.target.value
   };
 }
-/**
- * @description loads/doanloads a project repo using a door43 link.
- * @param {string} link - repo link to a door43 project.
- */
-export function loadProjectFromLink(link) {
-  return (dispatch => {
-    if(link) {
-      dispatch({ type: consts.SHOW_LOADING_CIRCLE });
-    }
-    loadOnline(link, (err, savePath, url) => {
-      if (!err) {
-        dispatch(getDataActions.openProject(savePath, url));
-        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
-      } else {
-        var errmessage = "An unknown problem occurred during import";
 
-        if (err.toString().includes("fatal: unable to access")) {
-           errmessage = "Unable to connect to the server. Please check your Internet connection.";
-        } else if (err.toString().includes("fatal: repository")) {
-            errmessage = "The URL does not reference a valid project";
-        }
-
-        dispatch(openAlertDialog(errmessage));
-        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
-      }
-    })
-  });
-}
-
-// return new Promise(function(resolve, reject) {
-//     scripturePaneData(projectDetails, bibles, actions, progress, scripturePaneSettings)
-//     .then(() => {
-//       tWFetchData(projectDetails, bibles, actions, progress, groupsIndexLoaded, groupsDataLoaded);
-//     })
-//     .then(resolve).catch(e => {
-//       console.warn(e);
-//     });
-//   });
