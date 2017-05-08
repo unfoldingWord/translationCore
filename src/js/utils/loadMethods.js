@@ -54,6 +54,7 @@ export function loadGroupsDataToExport(tool, dataFolder, params) {
         var allGroupsObjects = {};
         var total = groupDataFolderObjs.length;
         var i = 0;
+        if (groupDataFolderObjs.length == 0) return resolve({}, dataFolder);
         for (var groupId in groupDataFolderObjs) {
           if (path.extname(groupDataFolderObjs[groupId]) != '.json') {
             total--;

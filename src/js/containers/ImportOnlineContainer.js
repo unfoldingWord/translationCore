@@ -84,6 +84,7 @@ class ImportOnlineContainer extends React.Component {
               onChange={handleOnlineChange}
               load={() => loadProjectFromLink(importLink, loggedIn)}
               showLoadingCircle={showLoadingCircle}
+              importLink = {importLink}
           />
         </div>
       </div>
