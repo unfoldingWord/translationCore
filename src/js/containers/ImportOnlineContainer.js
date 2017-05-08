@@ -6,8 +6,6 @@ import Projects from '../components/core/login/Projects';
 import OnlineInput from '../components/core/OnlineInput';
 // Actions
 import * as importOnlineActions from '../actions/ImportOnlineActions.js';
-import * as ModalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ImportOnlineContainer extends React.Component {
 
@@ -35,7 +33,7 @@ class ImportOnlineContainer extends React.Component {
         <div>
           <center>
             <br />
-            <h4> Please login first </h4>
+            <h4> You must be logged in to a Door43 account </h4>
             <br />
           </center>
         </div>
