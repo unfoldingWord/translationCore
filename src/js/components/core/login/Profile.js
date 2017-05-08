@@ -4,7 +4,6 @@ const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } = re
 class Profile extends React.Component {
   render(){
     let { userdata, onHandleLogout } = this.props;
-    console.log(this.props)
     const panelTitle = (
       <div style={{display:"flex"}}>
         <h3>Category:</h3>
