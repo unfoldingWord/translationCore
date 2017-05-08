@@ -1,5 +1,6 @@
 import consts from './CoreActionConsts';
 import * as CoreActions from './CoreActions.js';
+import * as AlertModalActions from './AlertModalActions';
 import gogs from '../components/core/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
@@ -37,7 +38,6 @@ export function loginUser(newUserdata) {
         val: newUserdata
       });
     }).catch(function(err) {
-      console.log(err);
       var errmessage = "An error occurred while trying to login";
       if (err.syscall === "getaddrinfo") {
         errmessage = "Unable to connect to server";
@@ -46,7 +46,7 @@ export function loginUser(newUserdata) {
       } else if (err.status === 401) {
         errmessage = "Incorrect Password";
       }
-      dialog.showErrorBox('Login Failed', errmessage);
+      dispatch(AlertModalActions.openAlertDialog(errmessage));
     });
   })
 }
