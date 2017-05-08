@@ -35,13 +35,13 @@ class ImportOnlineContainer extends React.Component {
         <div>
           <center>
             <br />
-            <h4> Please login first </h4>
+            <h4> Unable to connect to the online projects. Please log into your Door43 account. </h4>
             <br />
           </center>
         </div>
       )
     }
-    if(this.props.importOnlineReducer.err != null){
+    if (this.props.importOnlineReducer.err != null){
       return (
         <div>
           <center>

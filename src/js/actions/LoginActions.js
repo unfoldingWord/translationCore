@@ -27,6 +27,17 @@ export function displayLogin(val) {
   }
 }
 
+export function loginLocalUser() {
+  return ((dispatch, getState) => {
+    let userdata = getState().loginReducer.userdata;
+    localStorage.setItem('user', userdata);
+    dispatch({
+      type: consts.LOGIN_LOCAL_USER,
+      userdata
+    });
+  });
+}
+
 export function loginUser(newUserdata) {
   return ((dispatch) => {
     var Token = api.getAuthToken('gogs');

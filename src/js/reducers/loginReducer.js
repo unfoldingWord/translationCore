@@ -33,7 +33,13 @@ module.exports = (state = initialState, action) => {
         ...state,
         userdata: action.val,
         loggedInUser: true
-      }
+      };
+    case consts.LOGIN_LOCAL_USER:
+      return {
+        ...state,
+        userdata: action.userdata,
+        loggedInUser: true
+      };
     case consts.LOGOUT_USER:
       localStorage.removeItem('user');
       return {

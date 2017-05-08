@@ -194,6 +194,21 @@ tools. they basically override bootstrap styling for this components
     outline: none;
 }
 
+.btn-second-reverse, .btn-second-reverse:hover, .btn-second-reverse:focus {
+    background-color: var(--accent-color-dark);
+    opacity: 0.6;
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--reverse-color);
+    outline: none;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
   height: 300px;

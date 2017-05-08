@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import Door43Login from './Door43Login'
+import Door43Login from './Door43Login';
+import LocalLogin from './LocalLogin';
 
 class Login extends Component {
 
   render() {
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td style={{backgroundColor: "#000"}}>
-
-              </td>
-              <td>
-                <Door43Login {...this.props} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div style={{display: "flex"}}>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--accent-color-dark)", flex: "1", padding: "1rem", height: "520px"}}>
+          <LocalLogin {...this.props} />
+        </div>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--reverse-color)", flex: "1", padding: "1rem", height: "520px"}}>
+          <Door43Login {...this.props} />
+        </div>
       </div>
     );
   }

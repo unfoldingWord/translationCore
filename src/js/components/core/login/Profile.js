@@ -1,5 +1,5 @@
-const React = require('react');
-const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } = require('react-bootstrap');
+import React from 'react';
+import { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
 
 class Profile extends React.Component {
   render(){
@@ -58,4 +58,4 @@ class Profile extends React.Component {
   }
 }
 
-module.exports = Profile;
+export default Profile;
