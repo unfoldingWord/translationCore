@@ -165,13 +165,13 @@ tools. they basically override bootstrap styling for this components
     border-bottom: 1px solid var(--border-color);
 }
 
-.btn-prime, .btn-prime:hover, .btn-prime:focus {
+.btn-prime {
     background-color: var(--accent-color-dark);
     background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
     color: var(--reverse-color);
     height: 35px;
     width: 190px;
-    border-radius: 0;
+    border-radius: 2px;
     margin: 10px;
     padding: 0;
     vertical-align: middle;
@@ -180,12 +180,43 @@ tools. they basically override bootstrap styling for this components
     outline: none;
 }
 
-.btn-second, .btn-second:hover, .btn-second:focus {
+.btn-prime:hover, .btn-prime:focus {
+    background-color: var(--accent-color-dark);
+    background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px var(--text-color-light);
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second {
     background-color: var(--reverse-color);
     color: var(--accent-color-dark);
     height: 35px;
     width: 190px;
-    border-radius: 0;
+    border-radius: 2px;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second:hover, .btn-second:focus {
+    background-color: var(--reverse-color);
+    color: var(--accent-color-dark);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px var(--text-color-light);
     margin: 10px;
     padding: 0;
     vertical-align: middle;

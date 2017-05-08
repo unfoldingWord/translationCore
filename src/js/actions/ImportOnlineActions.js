@@ -81,10 +81,14 @@ export function loadProjectFromLink(link) {
         dispatch(getDataActions.openProject(savePath, url));
         dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       } else {
-        var errmessage = "Problem occurred during import";
-        if (err.syscall === "getaddrinfo") {
+        var errmessage = "An unknown problem occurred during import";
+
+        if (err.toString().includes("fatal: unable to access")) {
            errmessage = "Unable to connect to the server. Please check your Internet connection.";
+        } else if (err.toString().includes("fatal: repository")) {
+            errmessage = "The URL does not reference a valid project";
         }
+
         dispatch(openAlertDialog(errmessage));
         dispatch({ type: consts.HIDE_LOADING_CIRCLE });
       }

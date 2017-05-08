@@ -16,6 +16,7 @@ import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog } from '../actions/AlertModalActions';
+import { selectModalTab } from '../actions/ModalActions';
 
 class ToolsContainer extends React.Component {
 
@@ -102,6 +103,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       toggleReminder: (userName) => {
         dispatch(toggleReminder(userName));
+      },
+      selectModalTab: (tab, section, vis) => {
+        dispatch(selectModalTab(tab, section, vis));
       },
       addVerseEdit: (before, after, tags, userName) => {
         dispatch(addVerseEdit(before, after, tags, userName));
