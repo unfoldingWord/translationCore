@@ -117,7 +117,7 @@ export function getCurrentUser(state) {
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
  */
-export function openProject(projectPath, projectLink) {
+export function openProject(projectPath, projectLink, exporting = false) {
     return ((dispatch, getState) => {
         if (!projectPath && !projectLink) return;
         // TODO: this action maybe stay here temporary until the home screen implementation.
@@ -127,7 +127,7 @@ export function openProject(projectPath, projectLink) {
         const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
         if (usfmFilePath) {
             //USFM detected, initiating separate loading process
-            dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser));
+            dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser, exporting));
         } else {
             //No USFM detected, initiating 'standard' loading process
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
@@ -142,7 +142,7 @@ export function openProject(projectPath, projectLink) {
                 }
             }
             dispatch(addLoadedProjectToStore(projectPath, manifest));
-            dispatch(displayToolsToLoad(manifest));
+            if (!exporting) dispatch(displayToolsToLoad(manifest));
         }
     });
 }
@@ -155,7 +155,7 @@ export function openProject(projectPath, projectLink) {
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {string} projectLink - Link given to load project if taken from online
  */
-export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser) {
+export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser, exporting) {
     return ((dispatch) => {
         const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
         dispatch(setProjectPath(projectSaveLocation));
@@ -170,7 +170,7 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
             manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
         }
         dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
-        dispatch(displayToolsToLoad(manifest));
+        if (!exporting) dispatch(displayToolsToLoad(manifest));
     });
 }
 
