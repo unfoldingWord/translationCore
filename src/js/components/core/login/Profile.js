@@ -28,7 +28,7 @@ class Profile extends React.Component {
           <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h3>Account Information</h3>
             <Image style={{height: '85px', margin: "30px 0" }}
-                   src={userdata.avatar_url} circle />
+                   src={userdata.avatar_url ? userdata.avatar_url : "images/user.png"} circle />
             <span><strong>Username: </strong>{userdata.username}</span>
             <small>This is publicly visible</small>
           </div>
