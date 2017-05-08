@@ -4,6 +4,7 @@ const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } = re
 class Profile extends React.Component {
   render(){
     let { userdata, onHandleLogout } = this.props;
+    console.log(this.props)
     const panelTitle = (
       <div style={{display:"flex"}}>
         <h3>Category:</h3>
@@ -28,7 +29,7 @@ class Profile extends React.Component {
           <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h3>Account Information</h3>
             <Image style={{height: '85px', margin: "30px 0" }}
-                   src="images/TC_Icon.png" circle />
+                   src={userdata.avatar_url} circle />
             <span><strong>Username: </strong>{userdata.username}</span>
             <small>This is publicly visible</small>
           </div>
