@@ -8,7 +8,7 @@ import RecentProjects from '../components/core/RecentProjects';
 // actions
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import * as ModalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
+import * as AlertModalActions from '../actions/AlertModalActions.js';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onLoad: (projectPath, loggedInUser) => {
       if (!loggedInUser) {
         dispatch(ModalActions.selectModalTab(1, 1, true));
-        dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
+        dispatch(AlertModalActions.openAlertDialog("Please login before loading a project"));
         return;
       }
       dispatch(recentProjectsActions.onLoad(projectPath));
