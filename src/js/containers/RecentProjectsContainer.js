@@ -9,6 +9,7 @@ import RecentProjects from '../components/core/RecentProjects';
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import * as ModalActions from '../actions/ModalActions.js';
 import * as AlertModalActions from '../actions/AlertModalActions.js';
+import { openProject } from '../actions/GetDataActions.js';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -31,6 +32,7 @@ class RecentProjectsContainer extends React.Component {
         </Button>
         <Button bsStyle="second"
           style={{width: "120px", margin: "10px 5px 10px 0"}}
+          onClick={()=>this.props.exportToCSV(projectPath)}
         >
           <Glyphicon glyph={'download'} />
           <span style={{ marginLeft: '5px' }}>Export (csv)</span>
@@ -72,7 +74,8 @@ class RecentProjectsContainer extends React.Component {
       let buttonSpan = (this.generateButton(projectPath, manifest));
       projects.push(
         {
-          '': <Glyphicon glyph={'folder-open'} />,
+          '':
+          <Glyphicon glyph={'folder-open'} />,
           'Project Name': projectName,
           'Book': manifest.project ? manifest.project.name : 'Unknown',
           'Language': manifest.target_language ? manifest.target_language.name : 'Unknown',
@@ -113,7 +116,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(AlertModalActions.openAlertDialog("Please login before loading a project"));
         return;
       }
-      dispatch(recentProjectsActions.onLoad(projectPath));
+      dispatch(openProject(projectPath));
     },
     syncProject: (projectPath, manifest, user) => {
       dispatch(recentProjectsActions.syncProject(projectPath, manifest, user));
@@ -123,6 +126,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     getProjectsFromFolder: () => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
+    },
+    exportToCSV: (projectPath) => {
+      dispatch(recentProjectsActions.exportToCSV(projectPath));
     }
   };
 };
