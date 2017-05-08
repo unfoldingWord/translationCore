@@ -19,6 +19,7 @@ class OnlineInput extends React.Component {
               type="text"
               style={{width: '400px', borderRadius: '4px'}}
               placeholder="Enter URL"
+              value={importLink}
               onChange={onChange}
             />
             <Button bsStyle="prime" disabled={!importLink} onClick={load}>

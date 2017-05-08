@@ -61,6 +61,7 @@ export function importOnlineProject(link) {
                 dispatch({ type: "LOADED_ONLINE_FAILED" });
                 dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             } else {
+                dispatch(clearLink());
                 dispatch(getDataActions.openProject(savePath, url));
                 dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             }
@@ -73,5 +74,12 @@ export function getLink(e) {
     type: consts.IMPORT_LINK,
     importLink: e.target.value
   };
+}
+
+export function clearLink() {
+    return {
+        type: consts.IMPORT_LINK,
+        importLink: ""
+    };
 }
 
