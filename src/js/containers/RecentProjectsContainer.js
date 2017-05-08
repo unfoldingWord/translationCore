@@ -23,22 +23,21 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath, manifest) {
     return (
       <span>
-        <Button
-          style={{ width: "90px", padding: "5px", backgroundColor: 'var(--accent-color-dark)', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--accent-color-dark) 0,var(--accent-color-dark) 100%)', color: 'var(--reverse-color)' }}
+        <Button bsStyle="prime"
+          style={{width: "90px", margin: "10px 5px 10px 0"}}
           onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}
         >
           <Glyphicon glyph={'folder-open'} />
           <span style={{ marginLeft: '10px' }}>Select</span>
         </Button>
-        <Button
-          style={{ width: "120px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 5px 10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}
-          onClick={()=>this.props.exportToCSV(projectPath)}
+        <Button bsStyle="second"
+          style={{width: "120px", margin: "10px 5px 10px 0"}}
         >
           <Glyphicon glyph={'download'} />
           <span style={{ marginLeft: '5px' }}>Export (csv)</span>
         </Button>
-        <Button
-          style={{ width: "90px", padding: "5px", fontWeight: 'bold', border: '2px solid var(--accent-color-dark)', margin: '10px 0', color: 'var(--accent-color-dark)', borderRadius: '0px', backgroundImage: 'linear-gradient(to bottom,var(--reverse-color) 0,var(--reverse-color) 100%)', backgroundColor: 'var(--reverse-color)' }}
+        <Button bsStyle="second"
+          style={{width: "90px", margin: "10px 0"}}
           onClick={() => this.props.syncProject(projectPath, manifest, this.props.userdata)}
         >
           <Glyphicon glyph={'upload'} />
