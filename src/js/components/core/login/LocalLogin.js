@@ -20,7 +20,6 @@ class LocalLogin extends Component {
   render() {
     let {showTermsAndConds} = this.state;
     let disabledButton = this.props.userdata.username && this.state.checkBoxChecked ? false : true;
-    console.log(disabledButton)
     return (
       <div>
         {showTermsAndConds ?
