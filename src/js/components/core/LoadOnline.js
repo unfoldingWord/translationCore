@@ -68,16 +68,8 @@ module.exports = (function() {
         if (callback)
           callback(null, savePath, url);
       } catch (error) {
-          const alert = {
-            title: 'Error Getting Transaltion Studio Manifest',
-            content: error.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-          console.error(error);
         if (callback)
-          callback(error, null, null);
-        return;
+          callback("Cannot read project manifest file", savePath, null);
       }
     });
   }

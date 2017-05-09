@@ -3,10 +3,10 @@ import Gogs from '../components/core/login/GogsApi';
 import * as modalActions from './ModalActions';
 import * as recentProjectsActions from './RecentProjectsActions';
 import * as getDataActions from './GetDataActions';
-import { openAlertDialog } from '../actions/AlertModalActions'
+import { openAlertDialog } from '../actions/AlertModalActions';
+import rimraf from 'rimraf';
 // constant declaration
 const loadOnline = require('../components/core/LoadOnline');
-
 
 export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
@@ -42,20 +42,32 @@ export function updateRepos() {
     })
 }
 
-export function openOnlineProject(projectPath) {
+export function importOnlineProject(link) {
     return ((dispatch) => {
-        var link = 'https://git.door43.org/' + projectPath + '.git';
-        var _this = this;
+        dispatch({ type: consts.SHOW_LOADING_CIRCLE });
         loadOnline(link, function (err, savePath, url) {
             if (err) {
-                var errmessage = "Problem occurred during import";
-                if (err.syscall === "getaddrinfo") {
+                var errmessage = "An unknown problem occurred during import";
+
+                if (err.toString().includes("fatal: unable to access")) {
                     errmessage = "Unable to connect to the server. Please check your Internet connection.";
+                } else if (err.toString().includes("fatal: repository")) {
+                    errmessage = "The URL does not reference a valid project";
+                } else if (err === "Cannot read project manifest file") {
+                    errmessage = err;
                 }
+
+                try {
+                    rimraf(savePath, function () {});
+                } catch (e) {}
+
                 dispatch(openAlertDialog(errmessage));
-                dispatch({ type: "LOADED_ONLINE_FAILED" })
+                dispatch({ type: "LOADED_ONLINE_FAILED" });
+                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             } else {
+                dispatch(clearLink());
                 dispatch(getDataActions.openProject(savePath, url));
+                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             }
         });
     })
@@ -67,41 +79,10 @@ export function getLink(e) {
     importLink: e.target.value
   };
 }
-/**
- * @description loads/doanloads a project repo using a door43 link.
- * @param {string} link - repo link to a door43 project.
- */
-export function loadProjectFromLink(link) {
-  return (dispatch => {
-    if(link) {
-      dispatch({ type: consts.SHOW_LOADING_CIRCLE });
-    }
-    loadOnline(link, (err, savePath, url) => {
-      if (!err) {
-        dispatch(getDataActions.openProject(savePath, url));
-        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
-      } else {
-        var errmessage = "An unknown problem occurred during import";
 
-        if (err.toString().includes("fatal: unable to access")) {
-           errmessage = "Unable to connect to the server. Please check your Internet connection.";
-        } else if (err.toString().includes("fatal: repository")) {
-            errmessage = "The URL does not reference a valid project";
-        }
-
-        dispatch(openAlertDialog(errmessage));
-        dispatch({ type: consts.HIDE_LOADING_CIRCLE });
-      }
-    })
-  });
+export function clearLink() {
+    return {
+        type: consts.IMPORT_LINK,
+        importLink: ""
+    };
 }
-
-// return new Promise(function(resolve, reject) {
-//     scripturePaneData(projectDetails, bibles, actions, progress, scripturePaneSettings)
-//     .then(() => {
-//       tWFetchData(projectDetails, bibles, actions, progress, groupsIndexLoaded, groupsDataLoaded);
-//     })
-//     .then(resolve).catch(e => {
-//       console.warn(e);
-//     });
-//   });

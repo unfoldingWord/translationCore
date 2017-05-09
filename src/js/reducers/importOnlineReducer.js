@@ -3,7 +3,7 @@ import consts from '../actions/CoreActionConsts';
 const initialState = {
   showOnlineButton: true,
   showBack: false,
-  importLink: null,
+  importLink: "",
   repos: null,
   onlineProjects: null,
   loggedIn: false,

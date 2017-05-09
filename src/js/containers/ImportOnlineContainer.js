@@ -6,8 +6,6 @@ import Projects from '../components/core/login/Projects';
 import OnlineInput from '../components/core/OnlineInput';
 // Actions
 import * as importOnlineActions from '../actions/ImportOnlineActions.js';
-import * as ModalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ImportOnlineContainer extends React.Component {
 
@@ -16,7 +14,7 @@ class ImportOnlineContainer extends React.Component {
         <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
             <Button bsStyle="prime"
-                    onClick={() => this.props.actions.openOnlineProject(repoName, this.props.importOnlineReducer.loggedIn)}>
+                    onClick={() => this.props.actions.openOnlineProject(repoName)}>
               Import & Select
             </Button>
         </div>
@@ -72,18 +70,17 @@ class ImportOnlineContainer extends React.Component {
   render() {
     let onlineProjects = this.makeList(this.props.importOnlineReducer.repos);
     let {handleOnlineChange, loadProjectFromLink} = this.props.actions;
-    let {importLink, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
+    let {importLink, showLoadingCircle} = this.props.importOnlineReducer;
     return (
       <div style={{height: "520px"}}>
-        <Projects {...this.props} onlineProjects={onlineProjects}/>
+        <Projects {...this.props} onlineProjects={onlineProjects} showLoadingCircle={showLoadingCircle}/>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
             Select one of your projects above or enter the URL of a project below
           </div>
           <OnlineInput
               onChange={handleOnlineChange}
-              load={() => loadProjectFromLink(importLink, loggedIn)}
-              showLoadingCircle={showLoadingCircle}
+              load={() => loadProjectFromLink(importLink)}
               importLink = {importLink}
           />
         </div>
@@ -112,21 +109,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       updateRepos: () => {
         dispatch(importOnlineActions.updateRepos());
       },
-      loadProjectFromLink: (link, loggedInUser) => {
-        if (!loggedInUser) {
-          dispatch(ModalActions.selectModalTab(1, 1, true));
-          dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
-          return;
-       };
-        dispatch(importOnlineActions.loadProjectFromLink(link));
+      loadProjectFromLink: (link) => {
+        dispatch(importOnlineActions.importOnlineProject(link));
       },
-      openOnlineProject: (projectPath, loggedInUser) => {
-        if (!loggedInUser) {
-          dispatch(ModalActions.selectModalTab(1, 1, true));
-          dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
-          return;
-        }
-        dispatch(importOnlineActions.openOnlineProject(projectPath));
+      openOnlineProject: (projectPath) => {
+        var link = 'https://git.door43.org/' + projectPath + '.git';
+        dispatch(importOnlineActions.importOnlineProject(link));
       }
     }
   };
