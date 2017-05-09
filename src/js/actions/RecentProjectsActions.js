@@ -60,7 +60,7 @@ export function syncProject(projectPath, manifest, lastUser) {
         );
       } else if (reason.hasOwnProperty('data') && typeof reason.data === "string") {
         dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading: \n Please verify your are logged into your door43 account.')
+          AlertModalActions.openAlertDialog('Error Uploading: \n Please log in to Door43 to upload your project.')
         );
       } else {
         dispatch(
