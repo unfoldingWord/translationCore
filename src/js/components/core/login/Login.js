@@ -1,52 +1,21 @@
-import React from 'react';
-import { shell } from 'electron';
-const Registration = require('./Registration.js');
-const { Row, Col, FormGroup, FormControl } = require('react-bootstrap/lib');
+import React, { Component } from 'react';
+import Door43Login from './Door43Login';
+import LocalLogin from './LocalLogin';
 
-class Login extends React.Component {
+class Login extends Component {
 
   render() {
-    let { displayLogin } = this.props;
-    if (!displayLogin) {
-      return (
-        <Col md={12} sm={12} xs={12} style={{ marginTop: "50px" }}>
-          <center>
-            <Registration back={() => this.props.onSwitchToLoginPage(!displayLogin)} />
-          </center>
-        </Col>
-      );
-    } else {
-      return (
-        <div>
-          <Row className="show-grid">
-            <Col md={12} sm={12} xs={12} style={{ marginTop: "50px" }}>
-              <center>
-                <h4>Welcome!</h4>
-                <FormGroup controlId="login-form">
-                  <FormControl type="text" placeholder="Username"
-                    style={{ width: '40%', margin: '15px' }}
-                    onChange={this.props.onHandleUserName} />
-                  <FormControl type="password"
-                    placeholder="Password"
-                    style={{ width: '40%' }}
-                    onChange={this.props.onHandlePassword} />
-                </FormGroup>
-                <button className="btn-prime" onClick={() => this.props.handleSubmit(this.props.userdata)}>
-                  Sign In
-                </button>
-                <div>
-                  <h4>Don't have an account?</h4>
-                  <button className="btn-prime" onClick={() => shell.openExternal('https://git.door43.org/user/sign_up')}>
-                    Create an Account
-                </button><br /><br />
-                </div>
-              </center>
-            </Col>
-          </Row>
+    return (
+      <div style={{display: "flex"}}>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--accent-color-dark)", flex: "1", padding: "1rem", height: "520px"}}>
+          <LocalLogin {...this.props} />
         </div>
-      );
-    }
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--reverse-color)", flex: "1", padding: "1rem", height: "520px"}}>
+          <Door43Login {...this.props} />
+        </div>
+      </div>
+    );
   }
 }
 
-module.exports = Login;
+export default Login;

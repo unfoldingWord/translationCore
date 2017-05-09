@@ -72,6 +72,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     submitFeedback: () => {
       dispatch(LoginActions.submitFeedback());
+    },
+    loginLocalUser: () => {
+      dispatch(LoginActions.loginLocalUser());
     }
   };
 };

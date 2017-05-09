@@ -6,7 +6,7 @@ import SwitchCheck from '../components/core/SwitchCheck.js';
 // actions
 import * as ToolsActions from '../actions/ToolsActions.js';
 import * as modalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
+import * as AlertModalActions from '../actions/AlertModalActions.js';
 
 class ToolsModalContainer extends React.Component {
 
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     handleLoadTool: (toolFolderPath, loggedInUser) => {
       if (!loggedInUser) {
         dispatch(modalActions.selectModalTab(1, 1, true));
-        dispatch(NotificationActions.showNotification("Please login before opening a tool", 5));
+        dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
         return;
       }
       dispatch(ToolsActions.loadTool(toolFolderPath));
