@@ -303,3 +303,11 @@ export const saveContextId = (state, contextId) => {
     console.warn(err)
   }
 };
+
+export function saveLocalUserdata(state) {
+  let userdata = state.loginReducer.userdata;
+
+  if (userdata.localUser) {
+    localStorage.setItem('localUser', JSON.stringify(userdata));
+  }
+}

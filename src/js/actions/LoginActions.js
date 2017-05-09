@@ -28,6 +28,16 @@ export function displayLogin(val) {
   }
 }
 
+export function loginLocalUser() {
+  return ((dispatch, getState) => {
+    let username = getState().loginReducer.userdata.username;
+    dispatch({
+      type: consts.LOGIN_LOCAL_USER,
+      username
+    });
+  });
+}
+
 export function loginUser(newUserdata) {
   return ((dispatch) => {
     var Token = api.getAuthToken('gogs');
