@@ -55,6 +55,9 @@ export function importOnlineProject(link) {
                     errmessage = err;
                 }
 
+                // If the import fails for any reason, we need to remove the partial project folder that may have been created
+                // rimraf works best when deleting a folder with subfolders
+                // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
                 try {
                     rimraf(savePath, function () {});
                 } catch (e) {}
