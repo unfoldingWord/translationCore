@@ -5,10 +5,13 @@
  */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import CryptoJS from "crypto-js";
 //  consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
+const api = window.ModuleApi;
+
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
@@ -106,4 +109,29 @@ export function loadProjectDataByTypeToExport(dataFolder, params, type) {
     }
     resolve(checkDataArray, dataFolder);
   });
+}
+
+export function loadUserdata() {
+  let loginReducer = {
+    loggedInUser: false,
+    displayLogin: true,
+    userdata: {},
+    feedback: '',
+    subject: 'Bug Report'
+  };
+
+  let localUserdata = JSON.parse(localStorage.getItem('localUser'));
+
+  if (localStorage.getItem('user')) {
+    let phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
+    let decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
+    let userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+    loginReducer.userdata = userdata;
+    loginReducer.loggedInUser = true;
+  } else if (localUserdata) {
+    loginReducer.userdata = localUserdata;
+    loginReducer.loggedInUser = true;
+  }
+
+  return loginReducer;
 }

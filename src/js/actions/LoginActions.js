@@ -30,11 +30,10 @@ export function displayLogin(val) {
 
 export function loginLocalUser() {
   return ((dispatch, getState) => {
-    let userdata = getState().loginReducer.userdata;
-    localStorage.setItem('user', userdata);
+    let username = getState().loginReducer.userdata.username;
     dispatch({
       type: consts.LOGIN_LOCAL_USER,
-      userdata
+      username
     });
   });
 }

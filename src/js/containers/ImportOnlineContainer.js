@@ -30,7 +30,7 @@ class ImportOnlineContainer extends React.Component {
   }
 
   makeList(repos) {
-    if (!this.props.importOnlineReducer.loggedIn) {
+    if (!this.props.loginReducer.loggedInUser) {
       return (
         <div>
           <center>
@@ -95,7 +95,8 @@ class ImportOnlineContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     importOnlineReducer: state.importOnlineReducer,
-    modalReducer: state.newModalReducer
+    modalReducer: state.newModalReducer,
+    loginReducer: state.loginReducer
   };
 };
 

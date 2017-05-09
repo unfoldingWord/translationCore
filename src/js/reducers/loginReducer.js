@@ -1,4 +1,4 @@
-const consts = require('../actions/CoreActionConsts');
+import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   loggedInUser: false,
@@ -8,7 +8,7 @@ const initialState = {
   subject: 'Bug Report'
 };
 
-module.exports = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_USER_NAME:
       return {
@@ -37,16 +37,20 @@ module.exports = (state = initialState, action) => {
     case consts.LOGIN_LOCAL_USER:
       return {
         ...state,
-        userdata: action.userdata,
+        userdata: {
+          username: action.username,
+          localUser: true
+        },
         loggedInUser: true
       };
     case consts.LOGOUT_USER:
+      localStorage.removeItem('localUser');
       localStorage.removeItem('user');
       return {
         ...state,
         userdata: {},
         loggedInUser: false
-      }
+      };
     case consts.FEEDBACK_CHANGE:
       return { ...state, feedback: action.val }
     case consts.FEEDBACK_SUBJECT_CHANGE:
@@ -64,4 +68,6 @@ module.exports = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
+
+export default loginReducer;
