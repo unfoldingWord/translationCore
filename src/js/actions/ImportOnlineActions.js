@@ -3,10 +3,10 @@ import Gogs from '../components/core/login/GogsApi';
 import * as modalActions from './ModalActions';
 import * as recentProjectsActions from './RecentProjectsActions';
 import * as getDataActions from './GetDataActions';
-import { openAlertDialog } from '../actions/AlertModalActions'
+import { openAlertDialog } from '../actions/AlertModalActions';
+import rimraf from 'rimraf';
 // constant declaration
 const loadOnline = require('../components/core/LoadOnline');
-var rimraf = require('rimraf');
 
 export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
@@ -86,4 +86,3 @@ export function clearLink() {
         importLink: ""
     };
 }
-

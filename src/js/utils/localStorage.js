@@ -1,5 +1,5 @@
-import isEqual from 'lodash/isEqual'
-import {loadSettings, loadModulesSettings} from './loadMethods';
+import isEqual from 'lodash/isEqual';
+import {loadSettings, loadModulesSettings, loadUserdata} from './loadMethods';
 import {
   saveSettings,
   saveResources,
@@ -9,7 +9,8 @@ import {
   saveReminders,
   saveGroupsIndex,
   saveGroupsData,
-  saveModuleSettings
+  saveModuleSettings,
+  saveLocalUserdata
 } from './saveMethods';
 
 /**
@@ -21,7 +22,8 @@ export const loadState = () => {
   try {
     const serializedState = {
       settingsReducer: loadSettings(),
-      modulesSettingsReducer: loadModulesSettings()
+      modulesSettingsReducer: loadModulesSettings(),
+      loginReducer: loadUserdata()
     };
     if (serializedState === null) {
       //  returning undefined to allow the reducers to initialize the app state
@@ -46,6 +48,8 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveResources(newState);
+    saveLocalUserdata(newState);
+    saveModuleSettings(newState);
     // only save checkData reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
       if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);
@@ -60,10 +64,9 @@ export const saveState = (prevState, newState) => {
       // make sure tool has not changed
       isEqual(prevState.currentToolReducer.toolName, newState.currentToolReducer.toolName)
     ) {
-        saveGroupsIndex(newState);
-        saveGroupsData(newState);
+      saveGroupsIndex(newState);
+      saveGroupsData(newState);
     }
-    saveModuleSettings(newState);
   } catch (err) {
     console.warn(err);
   }
