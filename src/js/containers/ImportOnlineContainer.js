@@ -28,12 +28,12 @@ class ImportOnlineContainer extends React.Component {
   }
 
   makeList(repos) {
-    if (!this.props.loginReducer.loggedInUser) {
+    if (!this.props.loginReducer.loggedInUser || this.props.loginReducer.userdata.localUser) {
       return (
         <div>
           <center>
             <br />
-            <h4> Unable to connect to the online projects. Please log into your Door43 account. </h4>
+            <h4>You must log in with a Door43 account to see projects here.</h4>
             <br />
           </center>
         </div>
