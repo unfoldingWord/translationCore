@@ -13,7 +13,7 @@ class Alert extends Component {
         label="Cancel"
         className="btn-prime"
         onClick={closeAlertDialog}
-      > Ok
+      > OK
       </button>
     ];
 

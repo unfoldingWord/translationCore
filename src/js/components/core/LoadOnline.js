@@ -23,19 +23,26 @@ module.exports = (function() {
   function openManifest(url, callback) {
     if (!url) {
       if (callback) {
-        callback('No link specified', null, null)
+        callback({type: "custom", text: 'No link specified'}, null, null)
       }
       return;
     }
     var splitUrl = url.split('.');
     if (splitUrl[splitUrl.length-1] !== 'git') {
-      splitUrl.push('git');
       url+='.git';
     }
-    splitUrl.pop();
-    var projectPath = splitUrl.pop().split('/');
-    var projectName = projectPath.pop();
-    const savePath = path.join(pathex.homedir(), 'translationCore', projectName);
+
+    var expression = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/.]+).git$/);
+
+    if (expression.test(url)) {
+      var projectName = expression.exec(url)[1];
+      var savePath = path.join(pathex.homedir(), 'translationCore', projectName);
+    } else {
+      if (callback) {
+        callback({type: "custom", text: 'The URL does not reference a valid project'}, null, url)
+      }
+      return;
+    }
 
     fs.readdir(savePath, function(err, contents) {
       if (err) {
@@ -44,7 +51,7 @@ module.exports = (function() {
         });
       } else {
         if (callback)
-          callback(null, savePath, url);
+          callback({type: "custom", text: 'That project already exists. The reimporting of existing projects is not currently supported.'}, savePath, url);
       }
     });
   }
@@ -68,16 +75,8 @@ module.exports = (function() {
         if (callback)
           callback(null, savePath, url);
       } catch (error) {
-          const alert = {
-            title: 'Error Getting Transaltion Studio Manifest',
-            content: error.message,
-            leftButtonText: 'Ok'
-          }
-          api.createAlert(alert);
-          console.error(error);
         if (callback)
-          callback(error, null, null);
-        return;
+          callback({type: "custom", text: "Cannot read project manifest file"}, savePath, null);
       }
     });
   }

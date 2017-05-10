@@ -35,7 +35,7 @@ class Profile extends React.Component {
           <div style={{display: "flex", justifyContent: "center" }}>
               <Button bsStyle="prime"
                       onClick={onHandleLogout}>
-                  Sign Out
+                  Log Out
               </Button>
           </div>
         </Col>

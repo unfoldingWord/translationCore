@@ -7,7 +7,7 @@ class TermsAndConditionsPage extends Component {
         <h4 style={{marginTop: "40px"}}>Terms and Conditions</h4>
         <div>
           <p style={{padding: "15px", opacity: "0.8"}}>
-            By creating a Door43 account you affirm that you have read
+            By creating a Door43 account, you affirm that you have read
             and understand the terms and conditions and agree to:
           </p>
           <ul style={{marginLeft: "50px", padding: "10px", opacity: "0.8"}}>
@@ -17,7 +17,7 @@ class TermsAndConditionsPage extends Component {
             <li>
               Only add content to Door43 that does not conflict with the&nbsp;
               <span style={{cursor: "pointer", textDecoration: "underline"}}>
-                Stament of Faith.
+                Statement of Faith.
               </span>
             </li><br />
             <li>
