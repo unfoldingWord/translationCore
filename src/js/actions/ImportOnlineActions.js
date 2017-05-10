@@ -51,16 +51,19 @@ export function importOnlineProject(link) {
                     errmessage = "Unable to connect to the server. Please check your Internet connection.";
                 } else if (err.toString().includes("fatal: repository")) {
                     errmessage = "The URL does not reference a valid project";
-                } else if (err === "Cannot read project manifest file") {
-                    errmessage = err;
+                } else if (err.type && err.type === "custom") {
+                    errmessage = err.text;
                 }
 
-                // If the import fails for any reason, we need to remove the partial project folder that may have been created
+                // If the import fails for any reason except for the project already existing,
+                // we need to remove the partial project folder that may have been created
                 // rimraf works best when deleting a folder with subfolders
                 // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
-                try {
-                    rimraf(savePath, function () {});
-                } catch (e) {}
+                if (!err.text || !err.text.includes("project already exists")) {
+                    try {
+                        rimraf(savePath, function () {});
+                    } catch (e) {}
+                }
 
                 dispatch(openAlertDialog(errmessage));
                 dispatch({ type: "LOADED_ONLINE_FAILED" });
