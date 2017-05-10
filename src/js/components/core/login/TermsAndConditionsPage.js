@@ -17,7 +17,7 @@ class TermsAndConditionsPage extends Component {
             <li>
               Only add content to Door43 that does not conflict with the&nbsp;
               <span style={{cursor: "pointer", textDecoration: "underline"}}>
-                Stament of Faith.
+                Statement of Faith.
               </span>
             </li><br />
             <li>
