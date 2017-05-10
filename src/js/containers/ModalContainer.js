@@ -9,6 +9,7 @@ import Tools from './ToolsModalContainer';
 import SvgLogo from '../components/core/svg_components/svgLogo.js';
 import packageJson from '../../../package.json';
 // actions
+import * as NotificationActions from '../actions/NotificationActions.js';
 import * as modalActions from '../actions/ModalActions.js';
 
 class ModalContainer extends React.Component {
@@ -32,7 +33,7 @@ class ModalContainer extends React.Component {
       <Modal bsSize="large" show={visible} onHide={hide}>
         <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
           <Tabs activeKey={currentTab}
-                onSelect={(e) => selectModalTab(e, 1, true)}
+                onSelect={(e) => selectModalTab(this.props.loginReducer.loggedInUser, e, 1, true)}
                 id="tabs"
                 style={{borderBottom: "none", backgroundColor: "var(--accent-color-dark)", color: 'var(--reverse-color)', width: "100%"}}>
             <Tab eventKey={1} title={appGlyph}>
@@ -60,7 +61,8 @@ class ModalContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    ...state.newModalReducer
+    ...state.newModalReducer,
+    loginReducer: state.loginReducer
   };
 }
 
@@ -69,7 +71,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     hide: () => {
       dispatch(modalActions.showModalContainer(false));
     },
-    selectModalTab: (e, section, visible) => {
+    selectModalTab: (loggedInUser, e, section, visible) => {
+      if (!loggedInUser) {
+        if (e !== 1) {
+          dispatch(NotificationActions.showNotification("You must be logged in to use translationCore", 5));
+          return;
+        }
+      }
       dispatch(modalActions.selectModalTab(e, section, visible));
     },
     selectSectionTab: (tabKey, sectionKey) => {

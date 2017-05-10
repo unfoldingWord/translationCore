@@ -1,6 +1,8 @@
 import consts from './CoreActionConsts';
 import * as CoreActions from './CoreActions.js';
 import * as AlertModalActions from './AlertModalActions';
+import * as GetDataActions from './GetDataActions';
+import * as BodyUIActions from './BodyUIActions';
 import gogs from '../components/core/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
@@ -62,9 +64,13 @@ export function loginUser(newUserdata) {
 }
 
 export function logoutUser(val) {
-  return {
-    type: consts.LOGOUT_USER
-  }
+  return ((dispatch) => {
+    dispatch({
+      type: consts.LOGOUT_USER
+    });
+    dispatch(GetDataActions.clearPreviousData());
+    dispatch(BodyUIActions.toggleHomeView(true));
+  });
 }
 
 export function feedbackChange(e) {
