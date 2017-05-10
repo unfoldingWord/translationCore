@@ -120,9 +120,11 @@ function UserManager(auth) {
            })
            .then(function (repos) {
                return repos.map(function (repo) {
-                   var user = repo.full_name.split("/")[0];
-                   var project = repo.full_name.split("/")[1];
-                   return {repo: repo.full_name, user: user, project: project};
+                   if (repo.full_name) {
+                       var user = repo.full_name.split("/")[0];
+                       var project = repo.full_name.split("/")[1];
+                       return {repo: repo.full_name, user: user, project: project};
+                   }
                })
            });
        }
