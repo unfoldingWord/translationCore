@@ -15,7 +15,7 @@ class TermsAndConditionsPage extends Component {
           <h4 style={{marginTop: "40px"}}><b>Terms and Conditions</b></h4>
           <div>
             <p style={{padding: "15px"}}>
-              By creating a Door43 account you affirm that you have read
+              By creating a Door43 account, you affirm that you have read
               and understand the terms and conditions and agree to:
             </p>
             <ul style={{marginLeft: "50px", padding: "10px"}}>
