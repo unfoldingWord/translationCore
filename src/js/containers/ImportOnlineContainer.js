@@ -51,11 +51,13 @@ class ImportOnlineContainer extends React.Component {
       )
     }
     var projectArray = repos;
-    var projectList = []
+    var projectList = [];
     for (var p in projectArray) {
-      var projectName = projectArray[p].project;
-      var repoName = projectArray[p].repo;
-      projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      if (projectArray[p]) {
+          var projectName = projectArray[p].project;
+          var repoName = projectArray[p].repo;
+          projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      }
     }
     if (projectList.length === 0) {
       projectList.push(
