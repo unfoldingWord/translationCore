@@ -7,45 +7,31 @@ import { remote } from 'electron';
 const { dialog } = remote;
 const api = window.ModuleApi;
 
-export function setUserName(val) {
-  return {
-    type: consts.SET_USER_NAME,
-    val: val
-  }
-}
-
-export function setUserPassword(val) {
-  return {
-    type: consts.SET_USER_PASSWORD,
-    val: val
-  }
-}
 
 export function displayLogin(val) {
   return {
     type: consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN,
     val: val
-  }
+  };
 }
 
-export function loginLocalUser() {
+export function loginLocalUser(localUsername) {
   return ((dispatch, getState) => {
-    let username = getState().loginReducer.userdata.username;
     dispatch({
       type: consts.LOGIN_LOCAL_USER,
-      username
+      username: localUsername
     });
   });
 }
 
 export function loginUser(newUserdata) {
-  return ((dispatch) => {
+  return (dispatch => {
     var Token = api.getAuthToken('gogs');
-    gogs(Token).login(newUserdata).then((newUserdata) => {
+    gogs(Token).login(newUserdata).then(newUserdata => {
       CoreActions.login(newUserdata);
       dispatch({
         type: consts.RECEIVE_LOGIN,
-        val: newUserdata
+        userdata: newUserdata
       });
     }).catch(function(err) {
       var errmessage = "An error occurred while trying to login";
@@ -58,31 +44,31 @@ export function loginUser(newUserdata) {
       }
       dispatch(AlertModalActions.openAlertDialog(errmessage));
     });
-  })
+  });
 }
 
 export function logoutUser(val) {
   return {
     type: consts.LOGOUT_USER
-  }
+  };
 }
 
 export function feedbackChange(e) {
   return {
     type: consts.FEEDBACK_CHANGE,
     val: e
-  }
+  };
 }
 
 export function subjectChange(subject) {
   return {
     type: 'FEEDBACK_SUBJECT_CHANGE',
     val: subject
-  }
+  };
 }
 
 export function submitFeedback() {
   return {
     type: consts.SUBMIT_FEEDBACK
-  }
+  };
 }

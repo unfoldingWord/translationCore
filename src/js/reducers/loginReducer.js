@@ -10,28 +10,15 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SET_USER_NAME:
-      return {
-        ...state,
-        userdata: {
-          ...state.userdata,
-          username: action.val
-        }
-      }
-    case consts.SET_USER_PASSWORD:
-      return {
-        ...state,
-        userdata: {
-          ...state.userdata,
-          password: action.val
-        }
-      }
     case consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN:
-      return { ...state, displayLogin: action.val }
+      return {
+        ...state,
+        displayLogin: action.val
+      };
     case consts.RECEIVE_LOGIN:
       return {
         ...state,
-        userdata: action.val,
+        userdata: action.userdata,
         loggedInUser: true
       };
     case consts.LOGIN_LOCAL_USER:

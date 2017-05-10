@@ -30,7 +30,8 @@ class ImportOnlineContainer extends React.Component {
   }
 
   makeList(repos) {
-    if (!this.props.loginReducer.loggedInUser) {
+    console.log(this.props.loginReducer.loggedInUser)
+    if (!this.props.loginReducer.loggedInUser || this.props.loginReducer.userdata.localUser) {
       return (
         <div>
           <center>
@@ -40,8 +41,7 @@ class ImportOnlineContainer extends React.Component {
           </center>
         </div>
       )
-    }
-    if (this.props.importOnlineReducer.err != null){
+    } else if (this.props.importOnlineReducer.err != null) {
       return (
         <div>
           <center>
@@ -51,22 +51,23 @@ class ImportOnlineContainer extends React.Component {
           </center>
         </div>
       )
+    } else {
+      var projectArray = repos;
+      var projectList = [];
+      for (var p in projectArray) {
+        var projectName = projectArray[p].project;
+        var repoName = projectArray[p].repo;
+        projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      }
+      if (projectList.length === 0) {
+        projectList.push(
+            <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
+                No Projects Found
+            </div>
+        );
+      }
+      return projectList;
     }
-    var projectArray = repos;
-    var projectList = []
-    for (var p in projectArray) {
-      var projectName = projectArray[p].project;
-      var repoName = projectArray[p].repo;
-      projectList.push(this.importOnlineButtion(projectName, p, repoName));
-    }
-    if (projectList.length === 0) {
-      projectList.push(
-          <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
-              No Projects Found
-          </div>
-      );
-    }
-    return projectList;
   }
 
   render() {
