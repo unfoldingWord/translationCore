@@ -1,5 +1,5 @@
-const React = require('react');
-const { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } = require('react-bootstrap');
+import React from 'react';
+import { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
 
 class Profile extends React.Component {
   render(){
@@ -21,14 +21,14 @@ class Profile extends React.Component {
         </FormControl>
       </div>
     );
-    return(
+    return (
     <div>
       <Row style={{marginLeft: "0px", marginRight: "0px"}}>
         <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", paddingTop: "20px", height: "520px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid var(--border-color)"}}>
           <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h3>Account Information</h3>
             <Image style={{height: '85px', margin: "30px 0" }}
-                   src={userdata.avatar_url} circle />
+                   src={userdata.avatar_url ? userdata.avatar_url : "images/user.png"} circle />
             <span><strong>Username: </strong>{userdata.username}</span>
             <small>This is publicly visible</small>
           </div>
@@ -58,4 +58,4 @@ class Profile extends React.Component {
   }
 }
 
-module.exports = Profile;
+export default Profile;

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import CryptoJS from "crypto-js";
-import {Grid, Row, Col } from 'react-bootstrap';
+import {Grid, Row, Col, Button, utils } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
@@ -12,10 +11,8 @@ import NotificationContainer from '../containers/NotificationContainer';
 import KonamiContainer from "../containers/KonamiContainer";
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
-
 import LoaderContainer from '../containers/LoaderContainer';
 import AlertModalContainer from '../containers/AlertModalContainer';
-
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
@@ -25,7 +22,6 @@ import * as recentProjectActions from '../actions/RecentProjectsActions';
 import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
 const api = window.ModuleApi;
-const { Button, utils } = require('react-bootstrap');
 const bootstrapUtils = utils.bootstrapUtils;
 bootstrapUtils.addStyle(Button, 'prime');
 bootstrapUtils.addStyle(Button, 'second');
@@ -50,15 +46,6 @@ class Main extends Component {
       localStorage.removeItem('lastProject');
     }
 
-    if (localStorage.getItem('user')) {
-      var phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
-      var decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
-      var userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.props.dispatch({
-        type: "RECEIVE_LOGIN",
-        val: userdata
-      });
-    }
     var projectSaveLocation = localStorage.getItem('lastProject');
     try {
       if (api.getSettings('tutorialView') !== 'show' && projectSaveLocation) {

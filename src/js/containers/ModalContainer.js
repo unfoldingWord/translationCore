@@ -29,7 +29,7 @@ class ModalContainer extends React.Component {
                           Tools
                       </div>;
     return (
-      <Modal bsSize="lg" show={visible} onHide={hide}>
+      <Modal bsSize="large" show={visible} onHide={hide}>
         <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(e, 1, true)}
