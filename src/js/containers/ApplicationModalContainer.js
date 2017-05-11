@@ -46,12 +46,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onHandleUserName: (e) => {
-      dispatch(LoginActions.setUserName(e.target.value));
-    },
-    onHandlePassword: (e) => {
-      dispatch(LoginActions.setUserPassword(e.target.value));
-    },
     onSwitchToLoginPage: (displayLoginBool) => {
       dispatch(LoginActions.displayLogin(displayLoginBool));
     },
@@ -73,8 +67,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     submitFeedback: () => {
       dispatch(LoginActions.submitFeedback());
     },
-    loginLocalUser: () => {
-      dispatch(LoginActions.loginLocalUser());
+    loginLocalUser: (localUsername) => {
+      dispatch(LoginActions.loginLocalUser(localUsername));
     }
   };
 };

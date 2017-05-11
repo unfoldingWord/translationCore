@@ -7,10 +7,10 @@ class Login extends Component {
   render() {
     return (
       <div style={{display: "flex"}}>
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--accent-color-dark)", flex: "1", padding: "1rem", height: "520px"}}>
+        <div style={{overflowY: "auto", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--accent-color-dark)", flex: "1", padding: "1rem", height: "520px"}}>
           <LocalLogin {...this.props} />
         </div>
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--reverse-color)", flex: "1", padding: "1rem", height: "520px"}}>
+        <div style={{overflowY: "auto", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", backgroundColor: "var(--reverse-color)", flex: "1", padding: "1rem", height: "520px"}}>
           <Door43Login {...this.props} />
         </div>
       </div>

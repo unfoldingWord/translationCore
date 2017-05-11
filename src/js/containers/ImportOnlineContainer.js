@@ -38,8 +38,7 @@ class ImportOnlineContainer extends React.Component {
           </center>
         </div>
       )
-    }
-    if (this.props.importOnlineReducer.err != null){
+    } else if (this.props.importOnlineReducer.err != null) {
       return (
         <div>
           <center>
@@ -49,24 +48,23 @@ class ImportOnlineContainer extends React.Component {
           </center>
         </div>
       )
-    }
-    var projectArray = repos;
-    var projectList = [];
-    for (var p in projectArray) {
-      if (projectArray[p]) {
-          var projectName = projectArray[p].project;
-          var repoName = projectArray[p].repo;
-          projectList.push(this.importOnlineButtion(projectName, p, repoName));
+    } else {
+      var projectArray = repos;
+      var projectList = [];
+      for (var p in projectArray) {
+        var projectName = projectArray[p].project;
+        var repoName = projectArray[p].repo;
+        projectList.push(this.importOnlineButtion(projectName, p, repoName));
       }
+      if (projectList.length === 0) {
+        projectList.push(
+            <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
+                No Projects Found
+            </div>
+        );
+      }
+      return projectList;
     }
-    if (projectList.length === 0) {
-      projectList.push(
-          <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
-              No Projects Found
-          </div>
-      );
-    }
-    return projectList;
   }
 
   render() {
