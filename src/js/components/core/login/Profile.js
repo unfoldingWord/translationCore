@@ -1,20 +1,16 @@
 import React from 'react';
-import { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
+import { Glyphicon, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
 
 class Profile extends React.Component {
   render() {
-    let { userdata, onHandleLogout } = this.props;
+    let { userdata, onHandleLogout, goToProjectsTab } = this.props;
     const panelTitle = (
-      <div style={{display: "flex"}}>
-        <h3>Category:</h3>
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+        <h3 style={{marginTop: "10px"}}>Category:</h3>
         <FormControl onChange={this.props.subjectChange}
                      componentClass="select"
                      placeholder="Select Category"
-                     style={{
-                       marginTop: "16px",
-                       marginLeft: "130px",
-                       width: "240px"
-                     }}>
+                     style={{display: "flex", justifyContent: "flex-end", width: "200px", marginTop: "10px"}}>
           <option value="General Feedback">General Feedback</option>
           <option value="Content Feedback">Content & Resources Feedback</option>
           <option value="Bug Report">Bug Report</option>
@@ -22,9 +18,8 @@ class Profile extends React.Component {
       </div>
     );
     return (
-    <div>
-      <Row style={{marginLeft: "0px", marginRight: "0px"}}>
-        <Col sm={12} md={4} lg={4} style={{backgroundColor: "var(--reverse-color)", paddingTop: "20px", height: "520px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid var(--border-color)"}}>
+    <div style={{display: "flex"}}>
+        <div style={{backgroundColor: "var(--reverse-color)", overflowY: "auto", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", flex: "1", padding: "1rem", height: "520px"}}>
           <div style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h3>Account Information</h3>
             <Image style={{height: '85px', margin: "30px 0" }}
@@ -33,26 +28,39 @@ class Profile extends React.Component {
             <small>This is publicly visible</small>
           </div>
           <div style={{display: "flex", justifyContent: "center" }}>
-              <Button bsStyle="prime"
-                      onClick={onHandleLogout}>
-                  Log Out
-              </Button>
+              <button
+                className="btn-prime"
+                onClick={onHandleLogout}>
+                Log Out
+              </button>
           </div>
-        </Col>
-        <Col sm={12} md={6} lg={8} style={{padding: "20px 25px 0px 25px", height: "520px"}}>
+        </div>
+        <div style={{backgroundColor: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "space-between", flex: "2", padding: "1rem", height: "520px"}}>
+          <div style={{alignItems: "center"}}>
           <h3>Feedback and Comments</h3><br />
           <Panel header={panelTitle} style={{padding: "0px", borderColor: "var(--border-color)"}}>
             <ListGroup fill>
             <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
-              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "250px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
+              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "200px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
             </FormGroup>
-            <Button onClick={this.props.submitFeedback} bsStyle="prime" style={{width: '100%', margin: "0"}}>
+            <button
+              className="btn-prime"
+              style={{width: '100%', margin: "0"}}
+              onClick={this.props.submitFeedback}>
               Submit
-            </Button>
+            </button>
             </ListGroup>
           </Panel>
-        </Col>
-      </Row>
+          </div>
+          <div style={{display: "flex", justifyContent: "flex-end"}}>
+            <button
+              className="btn-second"
+              onClick={goToProjectsTab}>
+              Next&nbsp;&nbsp;
+              <Glyphicon glyph="share-alt" />
+            </button>
+          </div>
+        </div>
     </div>
     );
   }

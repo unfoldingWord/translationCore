@@ -30,7 +30,12 @@ class ModalContainer extends React.Component {
                       </div>;
     return (
       <Modal bsSize="large" show={visible} onHide={hide}>
-        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
+              <Glyphicon
+                onClick={() => hide()}
+                glyph={"remove"}
+                style={{color: "#ffffff", cursor: "pointer", fontSize: "16px", float: "right", zIndex: "9999", margin: "10px"}}
+              />
+        <Modal.Body style={{height: "550px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(e, 1, true)}
                 id="tabs"
@@ -50,11 +55,8 @@ class ModalContainer extends React.Component {
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "var(--reverse-color)", borderTop: "1px solid var(--border-color)"}}>
-          <Button bsStyle="second" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-        </Modal.Footer>
       </Modal>
-    )
+    );
   }
 }
 
@@ -69,8 +71,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     hide: () => {
       dispatch(modalActions.showModalContainer(false));
     },
-    selectModalTab: (e, section, visible) => {
-      dispatch(modalActions.selectModalTab(e, section, visible));
+    selectModalTab: (tabKey, sectionKey, visible) => {
+      dispatch(modalActions.selectModalTab(tabKey, sectionKey, visible));
     },
     selectSectionTab: (tabKey, sectionKey) => {
       dispatch(modalActions.selectSectionTab(tabKey, sectionKey));
