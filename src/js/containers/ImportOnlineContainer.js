@@ -73,7 +73,7 @@ class ImportOnlineContainer extends React.Component {
     let {handleOnlineChange, loadProjectFromLink} = this.props.actions;
     let {importLink, showLoadingCircle} = this.props.importOnlineReducer;
     return (
-      <div style={{height: "520px"}}>
+      <div style={{height: "520px", backgroundColor: "var(--reverse-color)"}}>
         <Projects {...this.props} onlineProjects={onlineProjects} showLoadingCircle={showLoadingCircle}/>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
