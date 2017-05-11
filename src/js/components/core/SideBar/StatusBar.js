@@ -20,22 +20,23 @@ class StatusBar extends React.Component {
   }
 
   onPress(tab) {
+    let {loggedInUser} = this.props;
     switch (tab) {
       case 1:
         this.setState({ pressed: tab });
-        this.props.open(1, 1, true);
+        this.props.open(loggedInUser, 1, 1, true);
         break;
       case 2:
         this.setState({ pressed: tab });
-        this.props.open(2, 1, true);
+        this.props.open(loggedInUser, 2, 1, true);
         break;
       case 3:
         this.setState({ pressed: tab });
-        this.props.open(3, 1, true);
+        this.props.open(loggedInUser, 3, 1, true);
         break;
       case 4:
         this.setState({ pressed: tab });
-        this.props.open(1, 1, true);
+        this.props.open(loggedInUser, 1, 1, true);
         break;
       default:
         this.setState({ pressed: 0 });
