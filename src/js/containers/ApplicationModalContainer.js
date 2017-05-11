@@ -2,12 +2,13 @@ import React from 'react';
 import { connect  } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
-import Login from '../components/core/login/Login.js';
+import Login from '../components/core/login/Login';
 import Profile from '../components/core/login/Profile';
-import Licenses from '../components/core/licenses/Licenses.js'
+import Licenses from '../components/core/licenses/Licenses';
 // Actions
-import * as LoginActions from '../actions/LoginActions.js';
-import * as SettingsActions from '../actions/SettingsActions.js';
+import * as LoginActions from '../actions/LoginActions';
+import * as SettingsActions from '../actions/SettingsActions';
+import * as modalActions from '../actions/ModalActions';
 
 class ApplicationModalContainer extends React.Component {
 
@@ -69,7 +70,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loginLocalUser: (localUsername) => {
       dispatch(LoginActions.loginLocalUser(localUsername));
-    }
+    },
+    goToProjectsTab: () => {
+      dispatch(modalActions.selectModalTab(2, 1, true));
+    },
   };
 };
 

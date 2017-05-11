@@ -93,7 +93,7 @@ class AppDescription extends React.Component {
           </Button>
         </Col>
         <Col md={4} sm={4} xs={4} style={{margin: "0px", padding: "0px"}}>
-          <img style={{width: '100%'}} src={badgeImagePath} />
+          <img style={{width: '100%', height: "230px"}} src={badgeImagePath} />
         </Col>
       </Row>
       </div>
