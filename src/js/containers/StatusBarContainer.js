@@ -4,6 +4,7 @@ import { connect  } from 'react-redux';
 import StatusBar from '../components/core/SideBar/StatusBar.js';
 // Actions
 import * as modalActions from '../actions/ModalActions.js';
+import { openAlertDialog } from '../actions/AlertModalActions.js';
 import * as coreStoreActions from '../actions/CoreActionsRedux.js';
 
 
@@ -18,6 +19,7 @@ class StatusBarContainer extends React.Component {
     let { bookName } = this.props.projectDetailsReducer;
     let { toolTitle } = this.props.currentToolReducer;
     let { username } = this.props.loginReducer.userdata;
+    let { loggedInUser } = this.props.loginReducer;
 
     return (
       <div>
@@ -28,6 +30,7 @@ class StatusBarContainer extends React.Component {
             online={this.props.online}
             changeOnlineStatus={this.props.changeOnlineStatus}
             currentUser={username}
+            loggedInUser={loggedInUser}
         />
       </div>
     );
@@ -45,7 +48,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    openModalAndSpecificTab: (tabkey, sectionKey, visible) => {
+    openModalAndSpecificTab: (loggedInUser, tabkey, sectionKey, visible) => {
+      if (!loggedInUser) {
+        if (tabkey !== 1) {
+          dispatch(openAlertDialog("You must be logged in to use translationCore"));
+          return;
+        }
+      }
       dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
     },
     changeOnlineStatus: (val, first) => {
