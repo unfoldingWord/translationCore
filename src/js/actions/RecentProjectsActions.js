@@ -4,15 +4,16 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import gogs from '../components/core/login/GogsApi';
 import { remote } from 'electron';
-const { dialog } = remote;
+import zipFolder from 'zip-folder';
 // actions
 import * as getDataActions from './GetDataActions';
 import { showNotification } from './NotificationActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
+const api = window.ModuleApi;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-import zipFolder from 'zip-folder';
+const { dialog } = remote;
 
 
 /**
