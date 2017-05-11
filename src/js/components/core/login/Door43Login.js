@@ -23,7 +23,7 @@ class Door43Login extends React.Component {
           <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
             <img src="images/D43_LOGO.png" style={{margin: "30px 0px 0px"}} /><br/>
             <h4>
-              <b>{"Login in with Door43 "}</b>
+              <b>{"Log in with Door43"}</b>&nbsp;
               <Glyphicon glyph="info-sign" style={{fontSize: "20px"}} />
             </h4>
             <TextField

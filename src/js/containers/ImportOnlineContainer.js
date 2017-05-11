@@ -6,8 +6,6 @@ import Projects from '../components/core/login/Projects';
 import OnlineInput from '../components/core/OnlineInput';
 // Actions
 import * as importOnlineActions from '../actions/ImportOnlineActions.js';
-import * as ModalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
 
 class ImportOnlineContainer extends React.Component {
 
@@ -16,7 +14,7 @@ class ImportOnlineContainer extends React.Component {
         <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
             <Button bsStyle="prime"
-                    onClick={() => this.props.actions.openOnlineProject(repoName, this.props.importOnlineReducer.loggedIn)}>
+                    onClick={() => this.props.actions.openOnlineProject(repoName)}>
               Import & Select
             </Button>
         </div>
@@ -30,12 +28,12 @@ class ImportOnlineContainer extends React.Component {
   }
 
   makeList(repos) {
-    if (!this.props.loginReducer.loggedInUser) {
+    if (!this.props.loginReducer.loggedInUser || this.props.loginReducer.userdata.localUser) {
       return (
         <div>
           <center>
             <br />
-            <h4> Unable to connect to the online projects. Please log into your Door43 account. </h4>
+            <h4>You must log in with a Door43 account to see projects here.</h4>
             <br />
           </center>
         </div>
@@ -53,11 +51,13 @@ class ImportOnlineContainer extends React.Component {
       )
     }
     var projectArray = repos;
-    var projectList = []
+    var projectList = [];
     for (var p in projectArray) {
-      var projectName = projectArray[p].project;
-      var repoName = projectArray[p].repo;
-      projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      if (projectArray[p]) {
+          var projectName = projectArray[p].project;
+          var repoName = projectArray[p].repo;
+          projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      }
     }
     if (projectList.length === 0) {
       projectList.push(
@@ -72,18 +72,17 @@ class ImportOnlineContainer extends React.Component {
   render() {
     let onlineProjects = this.makeList(this.props.importOnlineReducer.repos);
     let {handleOnlineChange, loadProjectFromLink} = this.props.actions;
-    let {importLink, showLoadingCircle, loggedIn} = this.props.importOnlineReducer;
+    let {importLink, showLoadingCircle} = this.props.importOnlineReducer;
     return (
       <div style={{height: "520px"}}>
-        <Projects {...this.props} onlineProjects={onlineProjects}/>
+        <Projects {...this.props} onlineProjects={onlineProjects} showLoadingCircle={showLoadingCircle}/>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
             Select one of your projects above or enter the URL of a project below
           </div>
           <OnlineInput
               onChange={handleOnlineChange}
-              load={() => loadProjectFromLink(importLink, loggedIn)}
-              showLoadingCircle={showLoadingCircle}
+              load={() => loadProjectFromLink(importLink)}
               importLink = {importLink}
           />
         </div>
@@ -112,21 +111,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       updateRepos: () => {
         dispatch(importOnlineActions.updateRepos());
       },
-      loadProjectFromLink: (link, loggedInUser) => {
-        if (!loggedInUser) {
-          dispatch(ModalActions.selectModalTab(1, 1, true));
-          dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
-          return;
-       };
-        dispatch(importOnlineActions.loadProjectFromLink(link));
+      loadProjectFromLink: (link) => {
+        dispatch(importOnlineActions.importOnlineProject(link));
       },
-      openOnlineProject: (projectPath, loggedInUser) => {
-        if (!loggedInUser) {
-          dispatch(ModalActions.selectModalTab(1, 1, true));
-          dispatch(NotificationActions.showNotification("Please login before loading a project", 5));
-          return;
-        }
-        dispatch(importOnlineActions.openOnlineProject(projectPath));
+      openOnlineProject: (projectPath) => {
+        var link = 'https://git.door43.org/' + projectPath + '.git';
+        dispatch(importOnlineActions.importOnlineProject(link));
       }
     }
   };
