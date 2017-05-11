@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, Row, Col, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
 
 class Profile extends React.Component {
-  render(){
+  render() {
     let { userdata, onHandleLogout } = this.props;
     const panelTitle = (
-      <div style={{display:"flex"}}>
+      <div style={{display: "flex"}}>
         <h3>Category:</h3>
         <FormControl onChange={this.props.subjectChange}
                      componentClass="select"

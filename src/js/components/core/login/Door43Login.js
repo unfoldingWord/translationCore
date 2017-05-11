@@ -6,6 +6,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 
 class Door43Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: null,
+      password: null
+    };
+  }
 
   render() {
     let { displayLogin } = this.props;
@@ -30,19 +37,19 @@ class Door43Login extends React.Component {
               floatingLabelText="Username"
               underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
               floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
-              onChange={this.props.onHandleUserName}
+              onChange={e => this.setState({username: e.target.value})}
             />
             <TextField
               floatingLabelText="Password"
               type="password"
               underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
               floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
-              onChange={this.props.onHandlePassword}
+              onChange={e => this.setState({password: e.target.value})}
             />
             <button
               className="btn-prime"
               style={{width: "100%", margin: "40px 0px 20px"}}
-              onClick={() => this.props.handleSubmit(this.props.userdata)}>
+              onClick={() => this.props.handleSubmit(this.state)}>
               Log In
             </button>
             <button

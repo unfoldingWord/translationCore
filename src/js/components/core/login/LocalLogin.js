@@ -1,30 +1,48 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {TextField, Checkbox} from 'material-ui';
-import TermsAndConditionsPage from './TermsAndConditionsPage';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+import StatementOfFaithPage from './pages/StatementOfFaithPage';
+import CreativeCommonsPage from './pages/CreativeCommonsPage';
 
 class LocalLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showTermsAndConds: false,
-      checkBoxChecked: false
+      localUsername: "",
+      checkBoxChecked: false,
+      infoPage: ""
     };
-    this.showLocalUserScreen = this.showLocalUserScreen.bind(this);
+    this.switchInfoPage = this.switchInfoPage.bind(this);
   }
 
-  showLocalUserScreen(option) {
-    this.setState({showTermsAndConds: option})
+  switchInfoPage(pageName) {
+    this.setState({infoPage: pageName});
   }
 
   render() {
-    let {showTermsAndConds} = this.state;
-    let disabledButton = this.props.userdata.username && this.state.checkBoxChecked ? false : true;
+    let {loggedInUser, userdata, loginLocalUser} = this.props;
+    let disabledButton = this.state.localUsername && this.state.checkBoxChecked ? false : true;
+    let infoPage = <div />
 
+    switch (this.state.infoPage) {
+      case "termsAndConditions":
+        infoPage = <TermsAndConditionsPage switchInfoPage={this.switchInfoPage} />
+        break;
+      case "statementOfFaith":
+        infoPage = <StatementOfFaithPage switchInfoPage={this.switchInfoPage} />;
+        break;
+      case "creativeCommons":
+        infoPage = <CreativeCommonsPage switchInfoPage={this.switchInfoPage} />;
+        break;
+      default:
+        infoPage = "";
+        break;
+    }
     return (
       <div>
-        {showTermsAndConds ?
-          (<TermsAndConditionsPage showLocalUserScreen={this.showLocalUserScreen} />)
+        {infoPage ?
+          infoPage
           :
           (<MuiThemeProvider>
             <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -34,22 +52,23 @@ class LocalLogin extends Component {
                 choose a username you are comfortable with sharing.
               </p>
               <TextField
+                value={this.state.localUsername}
                 floatingLabelText="Username"
                 inputStyle={{color: "var(--reverse-color)"}}
                 underlineFocusStyle={{ borderColor: "var(--reverse-color)" }}
                 floatingLabelStyle={{ color: "var(--reverse-color)", opacity: "0.5", fontWeight: "500"}}
-                onChange={this.props.onHandleUserName}
+                onChange={e => this.setState({localUsername: e.target.value})}
               /><br /><br />
               <div style={{display: "flex", marginBottom: "80px"}}>
                 <Checkbox
                   label=""
-                  disabled={!this.props.userdata.username}
+                  disabled={!this.state.localUsername}
                   checked={this.state.checkBoxChecked}
                   style={{width: "0px"}}
                   iconStyle={{fill: 'white'}}
                   labelStyle={{color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500"}}
                   onCheck={(e, isInputChecked) => {
-                    this.setState({checkBoxChecked: isInputChecked})
+                    this.setState({checkBoxChecked: isInputChecked});
                   }}
                 />
                 <span>
@@ -58,14 +77,14 @@ class LocalLogin extends Component {
                 &nbsp;
                 <span
                   style={{cursor: "pointer", textDecoration: "underline"}}
-                  onClick={() => this.showLocalUserScreen(true)}>
+                  onClick={() => this.switchInfoPage("termsAndConditions")}>
                   terms and conditions
                 </span>
               </div>
               <button
                 className={disabledButton ? "btn-second-reverse" : "btn-second"}
                 disabled={disabledButton}
-                onClick={() => this.props.loginLocalUser()}>
+                onClick={() => loginLocalUser(this.state.localUsername)}>
                   Create
               </button>
             </div>

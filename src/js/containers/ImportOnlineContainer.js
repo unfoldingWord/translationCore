@@ -38,35 +38,34 @@ class ImportOnlineContainer extends React.Component {
           </center>
         </div>
       )
-    }
-    if (this.props.importOnlineReducer.err != null){
-      return (
-        <div>
-          <center>
-            <br />
-            <h4>Unable to connect to the server. Please check your Internet connection.</h4>
-            <br />
-          </center>
-        </div>
-      )
-    }
-    var projectArray = repos;
-    var projectList = [];
-    for (var p in projectArray) {
-      if (projectArray[p]) {
-          var projectName = projectArray[p].project;
-          var repoName = projectArray[p].repo;
-          projectList.push(this.importOnlineButtion(projectName, p, repoName));
-      }
-    }
-    if (projectList.length === 0) {
-      projectList.push(
-          <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
-              No Projects Found
+    } else {
+      if (this.props.importOnlineReducer.err != null) {
+        return (
+          <div>
+            <center>
+              <br />
+              <h4>Unable to connect to the server. Please check your Internet connection.</h4>
+              <br />
+            </center>
           </div>
-      );
+        )
+      }
+      var projectArray = repos;
+      var projectList = [];
+      for (var p in projectArray) {
+        var projectName = projectArray[p].project;
+        var repoName = projectArray[p].repo;
+        projectList.push(this.importOnlineButtion(projectName, p, repoName));
+      }
+      if (projectList.length === 0) {
+        projectList.push(
+            <div key={'None'} style={{ width: '100%', textAlign: "center", marginTop: '30px', fontSize: "18px", fontWeight: "bold" }}>
+                No Projects Found
+            </div>
+        );
+      }
+      return projectList;
     }
-    return projectList;
   }
 
   render() {
