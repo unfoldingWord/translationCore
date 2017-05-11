@@ -24,7 +24,7 @@ class ApplicationModalContainer extends React.Component {
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example"
               bsStyle="pills"
-              style={{borderBottom: "none", backgroundColor: "var(--reverse-color)", color: 'var(--text-color)', width: "100%"}}>
+              style={{borderBottom: "none", backgroundColor: "var(--accent-color)", color: 'var(--text-color)', width: "100%"}}>
           <Tab eventKey={1} title="Account">
               {accountDisplay}
           </Tab>

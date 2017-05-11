@@ -92,7 +92,7 @@ class RecentProjectsContainer extends React.Component {
     let recentProjectsData = this.getRecentProjects();
 
     return (
-      <div>
+      <div style={{ backgroundColor: "var(--reverse-color)" }}>
         <RecentProjects.Component data={recentProjectsData} />
       </div>
     )

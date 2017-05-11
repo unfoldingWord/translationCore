@@ -34,9 +34,9 @@ class ModalContainer extends React.Component {
               <Glyphicon
                 onClick={() => hide()}
                 glyph={"remove"}
-                style={{color: "#ffffff", cursor: "pointer", fontSize: "16px", float: "right", zIndex: "9999", margin: "10px"}}
+                style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "16px", float: "right", zIndex: "9999", margin: "10px"}}
               />
-        <Modal.Body style={{height: "550px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
+        <Modal.Body style={{height: "550px", padding: "0px", backgroundColor: "var(--accent-color-dark)" }}>
           <Tabs activeKey={currentTab}
                 onSelect={(e) => selectModalTab(this.props.loginReducer.loggedInUser, e, 1, true)}
                 id="tabs"
