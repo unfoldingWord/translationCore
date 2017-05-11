@@ -113,7 +113,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onLoad: (projectPath, loggedInUser) => {
       if (!loggedInUser) {
         dispatch(ModalActions.selectModalTab(1, 1, true));
-        dispatch(AlertModalActions.openAlertDialog("Please login before loading a project"));
+        dispatch(AlertModalActions.openAlertDialog("Please log in before loading a project"));
         return;
       }
       dispatch(openProject(projectPath));

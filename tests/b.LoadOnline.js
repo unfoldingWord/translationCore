@@ -9,10 +9,10 @@ const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
 describe('loadOnline.openManifest', function() {
   it('loadOnline.openManifest should return an error if no link is specified', function(done) {
     loadOnline(null, function(err, savePath, url) {
-      assert.isString(err);
+      assert.isString(err.text);
       assert.isNull(savePath);
       assert.isNull(url);
-      assert.equal(err, 'No link specified');
+      assert.equal(err.text, 'No link specified');
       done();
     });
   });
