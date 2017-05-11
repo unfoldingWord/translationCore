@@ -80,7 +80,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           return;
         }
       }
-      dispatch(modalActions.selectModalTab(e, section, visible));
+      dispatch(modalActions.selectModalTab(tabKey, sectionKey, visible));
     },
     selectSectionTab: (tabKey, sectionKey) => {
       dispatch(modalActions.selectSectionTab(tabKey, sectionKey));
