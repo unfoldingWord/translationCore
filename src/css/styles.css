@@ -78,37 +78,29 @@ body {
 }
 
 /*
-The following .nav, .nav-tabs classes hanlde the styling for the tabs in the
-tools. they basically override bootstrap styling for this components
+The following .nav-tabs and .nav-pills classes handle the styling for the tabs in the
+main modal. They basically override bootstrap styling for these components
 */
 
 .nav-tabs {
-  border-bottom: none;
+  border-bottom: 1px solid var(--accent-color-dark);
 }
 
-.nav>li>a:hover {
-  background-color: var(--accent-color-dark);
-  border: none;
-  border-radius: 0;
-  outline: none;
-}
-
-.nav-tabs>li>a {
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
   color: var(--reverse-color);
   background-color: var(--accent-color-dark);
   width: 150px;
   height: 40px;
+  outline: none;
   border: none;
   border-radius: 0;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
   color: var(--accent-color-dark);
-  cursor: default;
   background-color: var(--reverse-color);
-  outline: none;
-  border: none;
-  border-radius: 0;
+  cursor: default;
+  font-weight: bold;
 }
 
 .nav-pills {
