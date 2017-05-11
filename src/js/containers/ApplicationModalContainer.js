@@ -8,7 +8,7 @@ import Licenses from '../components/core/licenses/Licenses';
 // Actions
 import * as LoginActions from '../actions/LoginActions';
 import * as SettingsActions from '../actions/SettingsActions';
-import * as modalActions from '../actions/modalActions';
+import * as modalActions from '../actions/ModalActions';
 
 class ApplicationModalContainer extends React.Component {
 
