@@ -9,7 +9,7 @@ import Tools from './ToolsModalContainer';
 import SvgLogo from '../components/core/svg_components/svgLogo.js';
 import packageJson from '../../../package.json';
 // actions
-import * as NotificationActions from '../actions/NotificationActions.js';
+import { openAlertDialog } from '../actions/AlertModalActions.js';
 import * as modalActions from '../actions/ModalActions.js';
 
 class ModalContainer extends React.Component {
@@ -74,7 +74,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     selectModalTab: (loggedInUser, e, section, visible) => {
       if (!loggedInUser) {
         if (e !== 1) {
-          dispatch(NotificationActions.showNotification("You must be logged in to use translationCore", 5));
+          dispatch(openAlertDialog("You must be logged in to use translationCore"));
           return;
         }
       }

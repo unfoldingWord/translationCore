@@ -4,7 +4,7 @@ import { connect  } from 'react-redux';
 import StatusBar from '../components/core/SideBar/StatusBar.js';
 // Actions
 import * as modalActions from '../actions/ModalActions.js';
-import * as NotificationActions from '../actions/NotificationActions.js';
+import { openAlertDialog } from '../actions/AlertModalActions.js';
 import * as coreStoreActions from '../actions/CoreActionsRedux.js';
 
 
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     openModalAndSpecificTab: (loggedInUser, tabkey, sectionKey, visible) => {
       if (!loggedInUser) {
         if (tabkey !== 1) {
-          dispatch(NotificationActions.showNotification("You must be logged in to use translationCore", 5));
+          dispatch(openAlertDialog("You must be logged in to use translationCore"));
           return;
         }
       }
