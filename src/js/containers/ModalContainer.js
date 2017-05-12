@@ -9,6 +9,7 @@ import Tools from './ToolsModalContainer';
 import SvgLogo from '../components/core/svg_components/svgLogo.js';
 import packageJson from '../../../package.json';
 // actions
+import { openAlertDialog } from '../actions/AlertModalActions.js';
 import * as modalActions from '../actions/ModalActions.js';
 
 class ModalContainer extends React.Component {
@@ -30,9 +31,14 @@ class ModalContainer extends React.Component {
                       </div>;
     return (
       <Modal bsSize="large" show={visible} onHide={hide}>
-        <Modal.Body style={{height: "600px", padding: "0px", backgroundColor: "var(--reverse-color)" }}>
+              <Glyphicon
+                onClick={() => hide()}
+                glyph={"remove"}
+                style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "16px", float: "right", zIndex: "9999", margin: "10px"}}
+              />
+        <Modal.Body style={{height: "550px", padding: "0px", backgroundColor: "var(--accent-color-dark)" }}>
           <Tabs activeKey={currentTab}
-                onSelect={(e) => selectModalTab(e, 1, true)}
+                onSelect={(e) => selectModalTab(this.props.loginReducer.loggedInUser, e, 1, true)}
                 id="tabs"
                 style={{borderBottom: "none", backgroundColor: "var(--accent-color-dark)", color: 'var(--reverse-color)', width: "100%"}}>
             <Tab eventKey={1} title={appGlyph}>
@@ -50,17 +56,15 @@ class ModalContainer extends React.Component {
             </Tab>
           </Tabs>
         </Modal.Body>
-        <Modal.Footer style={{padding: "10px", backgroundColor: "var(--reverse-color)", borderTop: "1px solid var(--border-color)"}}>
-          <Button bsStyle="second" style={{float: "right"}} onClick={() => hide()}>Close</Button>
-        </Modal.Footer>
       </Modal>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    ...state.newModalReducer
+    ...state.newModalReducer,
+    loginReducer: state.loginReducer
   };
 }
 
@@ -69,8 +73,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     hide: () => {
       dispatch(modalActions.showModalContainer(false));
     },
-    selectModalTab: (e, section, visible) => {
-      dispatch(modalActions.selectModalTab(e, section, visible));
+    selectModalTab: (loggedInUser, tabKey, sectionKey, visible) => {
+      if (!loggedInUser) {
+        if (tabKey !== 1) {
+          dispatch(openAlertDialog("You must be logged in to use translationCore"));
+          return;
+        }
+      }
+      dispatch(modalActions.selectModalTab(tabKey, sectionKey, visible));
     },
     selectSectionTab: (tabKey, sectionKey) => {
       dispatch(modalActions.selectSectionTab(tabKey, sectionKey));

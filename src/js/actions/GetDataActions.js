@@ -82,6 +82,7 @@ export function clearPreviousData() {
         dispatch(resetProjectDetail());
         dispatch({ type: consts.CLEAR_OLD_GROUPS });
         dispatch({ type: consts.CLEAR_CONTEXT_ID });
+        dispatch(CurrentToolActions.setToolTitle(""));
     })
 }
 

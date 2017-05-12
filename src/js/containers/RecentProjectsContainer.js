@@ -32,7 +32,7 @@ class RecentProjectsContainer extends React.Component {
         </Button>
         <Button bsStyle="second"
           style={{width: "120px", margin: "10px 5px 10px 0"}}
-          onClick={()=>this.props.exportToCSV(projectPath)}
+          onClick={()=> this.props.exportToCSV(projectPath)}
         >
           <Glyphicon glyph={'download'} />
           <span style={{ marginLeft: '5px' }}>Export (csv)</span>
@@ -92,7 +92,7 @@ class RecentProjectsContainer extends React.Component {
     let recentProjectsData = this.getRecentProjects();
 
     return (
-      <div>
+      <div style={{ backgroundColor: "var(--reverse-color)" }}>
         <RecentProjects.Component data={recentProjectsData} />
       </div>
     )
