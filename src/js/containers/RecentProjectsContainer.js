@@ -20,6 +20,12 @@ class RecentProjectsContainer extends React.Component {
     this.props.getProjectsFromFolder();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.modalReducer.currentSection === 1 && newProps.modalReducer.currentTab === 2 && (newProps.modalReducer.currentTab !== this.props.modalReducer.currentTab || newProps.modalReducer.currentSection !== this.props.modalReducer.currentSection)) {
+      this.props.getProjectsFromFolder();
+    }
+  }
+
   generateButton(projectPath, manifest) {
     return (
       <span>
@@ -104,7 +110,8 @@ const mapStateToProps = state => {
     ...state.recentProjectsReducer,
     manifest: state.projectDetailsReducer.manifest,
     loggedInUser: state.loginReducer.loggedInUser,
-    userdata: state.loginReducer.userdata
+    userdata: state.loginReducer.userdata,
+    modalReducer: state.newModalReducer
   };
 };
 
