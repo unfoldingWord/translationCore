@@ -15,7 +15,7 @@ function syncToGit(projectPath, manifest, user, showAlert) {
   var alertError = console.error;
   console.error = console.errorold;
   if (user) {
-    git(projectPath).save(user, 'Updating with Door43', projectPath, function() {
+    git(projectPath).save(user, 'Uploading to Door43', projectPath, function() {
       if (manifest.repo) {
         var urlArray = manifest.repo.split('.');
         urlArray.pop();

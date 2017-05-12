@@ -43,7 +43,7 @@ export function syncProject(projectPath, manifest, lastUser) {
       };
       sync(projectPath, manifest, authenticatedUser, showAlert);
       dispatch({
-        type: consts.SYNC_PROJECT
+        type: consts.UPLOAD_PROJECT
       });
     }).catch(reason => {
       if (reason.code === "ENOTFOUND") {
