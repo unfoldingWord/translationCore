@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // components
-import Alert from '../components/core/dialogComponents/Alert'
+import Alert from '../components/dialogComponents/Alert'
 // actions
 import { closeAlertDialog } from '../actions/AlertModalActions'
 
