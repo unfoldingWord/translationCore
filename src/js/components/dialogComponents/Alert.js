@@ -35,7 +35,6 @@ class Alert extends Component {
           actions={actions}
           modal={false}
           open={alertDialogVisibility}
-          onRequestClose={closeAlertDialog}
         >
         <CardHeader
             style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}

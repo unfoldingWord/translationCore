@@ -49,6 +49,10 @@ export function importOnlineProject(link) {
 
                 if (err.toString().includes("fatal: unable to access")) {
                     errmessage = "Unable to connect to the server. Please check your Internet connection.";
+                } else if (err.toString().includes("fatal: The remote end hung up")) {
+                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
+                } else if (err.toString().includes("Failed to load")) {
+                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
                 } else if (err.toString().includes("fatal: repository")) {
                     errmessage = "The URL does not reference a valid project";
                 } else if (err.type && err.type === "custom") {
