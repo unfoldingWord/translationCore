@@ -23,7 +23,7 @@ export function updateRepos() {
         var user = getState().loginReducer.userdata;
         if (user) {
             var _this = this;
-            Gogs().retrieveRepos(user.username).then((repos) => {
+            Gogs().listRepos(user).then((repos) => {
                 dispatch({
                     type: consts.RECIEVE_REPOS,
                     repos: repos
@@ -94,4 +94,3 @@ export function clearLink() {
         importLink: ""
     };
 }
-
