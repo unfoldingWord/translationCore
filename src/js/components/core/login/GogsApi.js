@@ -49,7 +49,7 @@ function UserManager(auth) {
           return updatedUser;
         });
       });
-    }
+    },
 /**
   * @description - Create a repo for a user.
   * @param {Object} user - Must contain fields username, password, and token.
