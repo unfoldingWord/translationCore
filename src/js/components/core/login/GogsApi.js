@@ -14,14 +14,17 @@ function UserManager(auth) {
   * @return {Promise} - Returns a promise with a user object.
   *****************************************************************/
     login: function (userObj) {
-      return api.getUser(userObj).then(function (user) {
+      return api.getUser(userObj).then(user => {
         return api.listTokens(userObj)
+
         .then(function (tokens) {
           return tokens.find((el) => el.name == tokenStub.name);
         })
+
         .then(function (token) {
           return token ? token : api.createToken(tokenStub, userObj);
         })
+
         .then(function (token) {
           user.password = userObj.password;
           var phrase = window.ModuleApi.getAuthToken('phrase') != undefined ? window.ModuleApi.getAuthToken('phrase') : "tc-core";

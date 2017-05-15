@@ -43,10 +43,15 @@ export function syncProject(projectPath, manifest, lastUser) {
       };
       sync(projectPath, manifest, authenticatedUser, showAlert);
       dispatch({
-        type: consts.SYNC_PROJECT
+        type: consts.UPLOAD_PROJECT
       });
     }).catch(reason => {
-      if (reason.status === 401) {
+      if (reason.code === "ENOTFOUND") {
+        // ENOTFOUND: client was not able to connect to given address
+        dispatch(
+          AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+        );
+      } else if (reason.status === 401) {
         dispatch(
           AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
         );
