@@ -31,7 +31,7 @@ function syncToGit(projectPath, manifest, user, showAlert) {
             gogs(user.token).createRepo(user, projectName).then(repo => {
               var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
               var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
-              updateManifest(projectPath, remoteLink);
+              updateManifest(projectPath, remoteLink, showAlert);
               git(projectPath).update(newRemote, 'master', true, err => {
                 if (err) {
                   git(projectPath).update(newRemote, 'master', false, () => {
@@ -55,13 +55,13 @@ function syncToGit(projectPath, manifest, user, showAlert) {
         let repoPath = user.username + '/' + nameOfProject;
         let remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
         let remoteLink = 'https://git.door43.org/' + repoPath + '.git';
-        updateManifest(projectPath, remoteLink);
+        updateManifest(projectPath, remoteLink, showAlert);
         git(projectPath).update(remote, 'master', true, err => {
           if (err) {
             gogs(user.token).createRepo(user, nameOfProject).then(repo => {
               var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
               remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
-              updateManifest(projectPath, remoteLink);
+              updateManifest(projectPath, remoteLink, showAlert);
               git(projectPath).update(newRemote, 'master', true, err => {
                 if (err) {
                   git(projectPath).update(newRemote, 'master', false, err => {
