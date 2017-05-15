@@ -19,53 +19,37 @@ function syncToGit(projectPath, manifest, user, showAlert) {
         var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
         var equalHistory = false;
 
-        git(projectPath).revparse(["HEAD"], (err, localResult) => {
-          if(err){
-            console.error = alertError;
-          } else {
-            git(projectPath).listRemote([remote, "HEAD"], (err, remoteResult) => {
-              if(err){
-                console.lerror = alertError;
-              }
-              if(localResult == remoteResult){
-                equalHistory = true
-              }
-            })
-          }
-        })
-
-        if(equalHistory == true){
-          git(projectPath).update(remote, 'master', false, function(err) {
-            if (err) {
-              var ask = 'You don\'t have permission to push to this repository.\nWould you like to create a new Door43 project?';
-              var result = confirm(ask);
-              if (result) {
-                const projectName = repoName;
-                gogs(user.token).createRepo(user, projectName).then(function(repo) {
-                  var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
-                  var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
-                  updateManifest(projectPath, remoteLink);
-                  git(projectPath).update(newRemote, 'master', true, function(err){
-                    if (err) {
-                      git(projectPath).update(newRemote, 'master', false, function(){
-                        console.error = alertError;
-                      });
-                    } else {
+        git(projectPath).update(remote, 'master', false, function(err) {
+          if (err) {
+            if(err.includes("rejected because the remote contains work")){
+              showAlert("The project cannot be uploaded because there have been changes to the translation of "+repoName+" on your Door43 account")
+            }
+            var ask = 'You don\'t have permission to push to this repository.\nWould you like to create a new Door43 project?';
+            var result = confirm(ask);
+            if (result) {
+              const projectName = repoName;
+              gogs(user.token).createRepo(user, projectName).then(function(repo) {
+                var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+                var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
+                updateManifest(projectPath, remoteLink);
+                git(projectPath).update(newRemote, 'master', true, function(err){
+                  if (err) {
+                    git(projectPath).update(newRemote, 'master', false, function(){
                       console.error = alertError;
-                    }
-                  });
+                    });
+                  } else {
+                    console.error = alertError;
+                  }
                 });
-              } else {
-                console.error = alertError;
-              }
+              });
             } else {
               console.error = alertError;
-              showAlert("Your project was sucessfully uploaded and sync with your door43 account");
             }
-          });
-        } else {
-          showAlert("The project cannot be uploaded because there have been changes to the translation of " + repoName + " on your Door43 account")
-        }
+          } else {
+            console.error = alertError;
+            showAlert("Your project was sucessfully uploaded and sync with your door43 account");
+          }
+        });
       } else {
         var ask = 'There is no associated repository with this translationCore project.\nWould you like to create a new Door43 project?'
         var result = confirm(ask);
