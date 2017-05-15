@@ -102,18 +102,15 @@ function GitApi(directory) {
       var _this = this;
       if (first) {
         this.push(remoteRepo, branch, function(err) {
-          console.log(err)
           callback(err);
         });
       } else {
         this.pull(remoteRepo, branch, function(err) {
           if (err) {
-            console.log(err)
             callback(err);
             return;
           }
           _this.push(remoteRepo, branch, function(err) {
-            console.log(err)
             callback(err);
           });
         });
