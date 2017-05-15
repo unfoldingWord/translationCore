@@ -34,8 +34,17 @@ function GitApi(directory) {
      * @param {string} branch - The branch to be pulled from, typically master.
      * @param {function} callback - A callback to be run on complete.
      */
-    push: function(remote, branch, callback) {
-      git.push(remote, branch, callback);
+    push: function(remote, branch) {
+      return Promise.resolve(true).then(()=>{
+          return git.push(remote, branch, err =>{
+            if(err){
+              return Promise.resolve(err)
+            } else {
+              return Promise.resolve(false)
+            }
+          });
+      })
+
     },
     /**
      * @description Commits items that have been added.

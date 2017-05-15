@@ -41,15 +41,24 @@ export function syncProject(projectPath, manifest, lastUser) {
       const showAlert = message => {
         dispatch(AlertModalActions.openAlertDialog(message));
       };
-      sync(projectPath, authenticatedUser);
       dispatch({
         type: consts.UPLOAD_PROJECT
       });
-    }).then(()=>{
-      dispatch(
-        AlertModalActions.openAlertDialog("Successful Upload")
-      )
+      let test = sync(projectPath, authenticatedUser)
+      console.log(test)
+      return test
+    }).then(err=>{
+      console.log("were in then")
+      console.log(err)
+      if(!err){
+        dispatch(
+          AlertModalActions.openAlertDialog("Successful Upload")
+        )
+      } else {
+        throw(err)
+      }
     }).catch(reason => {
+      console.log("were in catch")
       console.log(reason)
       if (reason.code === "ENOTFOUND") {
         // ENOTFOUND: client was not able to connect to given address
