@@ -50,7 +50,7 @@ export function syncProject(projectPath, manifest, lastUser) {
     }).then(err=>{
       console.log("were in then")
       console.log(err)
-      if(!err){
+      if(err == "successful"){
         dispatch(
           AlertModalActions.openAlertDialog("Successful Upload")
         )

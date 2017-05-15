@@ -38,9 +38,9 @@ function GitApi(directory) {
       return Promise.resolve(true).then(()=>{
           return git.push(remote, branch, err =>{
             if(err){
-              return Promise.resolve(err)
+              return err
             } else {
-              return Promise.resolve(false)
+              return "successful"
             }
           });
       })
