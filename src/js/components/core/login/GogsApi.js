@@ -58,6 +58,8 @@ function UserManager(auth) {
   * @return {Promise} - Returns a promise with a repo object.
   *****************************************************************/
     createRepo: function (user, reponame) {
+      console.log("were in create repo")
+      console.log(user, reponame)
       return api.listRepos(user).then(function (repos) {
         return repos.find((el) => el.full_name == user.username + '/' + reponame);
       }).then(function (repo) {

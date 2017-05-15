@@ -45,7 +45,12 @@ export function syncProject(projectPath, manifest, lastUser) {
       dispatch({
         type: consts.UPLOAD_PROJECT
       });
+    }).then(()=>{
+      dispatch(
+        AlertModalActions.openAlertDialog("Successful Upload")
+      )
     }).catch(reason => {
+      console.log(reason)
       if (reason.code === "ENOTFOUND") {
         // ENOTFOUND: client was not able to connect to given address
         dispatch(
