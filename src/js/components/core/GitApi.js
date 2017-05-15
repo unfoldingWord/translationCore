@@ -34,8 +34,17 @@ function GitApi(directory) {
      * @param {string} branch - The branch to be pulled from, typically master.
      * @param {function} callback - A callback to be run on complete.
      */
-    push: function(remote, branch, callback) {
-      git.push(remote, branch, callback);
+    push: function(remote, branch) {
+      return Promise.resolve(true).then(()=>{
+          return git.push(remote, branch, err =>{
+            if(err){
+              return err
+            } else {
+              return "successful"
+            }
+          });
+      })
+
     },
     /**
      * @description Commits items that have been added.
@@ -137,6 +146,12 @@ function GitApi(directory) {
             }
           });
         });
+    },
+    revparse: function(options, callback){
+      return git.revparse(options, callback);
+    },
+    listRemote: function(options, callback){
+      return git.listRemote(options, callback);
     },
     checkout: function(branch, callback) {
       if (!branch) {

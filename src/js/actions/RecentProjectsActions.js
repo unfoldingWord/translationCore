@@ -1,5 +1,5 @@
 import consts from './CoreActionConsts';
-import sync from '../components/core/SideBar/GitSync';
+import sync from '../components/core/SideBar/NewGitSync';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import gogs from '../components/core/login/GogsApi';
@@ -41,11 +41,25 @@ export function syncProject(projectPath, manifest, lastUser) {
       const showAlert = message => {
         dispatch(AlertModalActions.openAlertDialog(message));
       };
-      sync(projectPath, manifest, authenticatedUser, showAlert);
       dispatch({
         type: consts.UPLOAD_PROJECT
       });
+      let test = sync(projectPath, authenticatedUser)
+      console.log(test)
+      return test
+    }).then(err=>{
+      console.log("were in then")
+      console.log(err)
+      if(err == "successful"){
+        dispatch(
+          AlertModalActions.openAlertDialog("Successful Upload")
+        )
+      } else {
+        throw(err)
+      }
     }).catch(reason => {
+      console.log("were in catch")
+      console.log(reason)
       if (reason.code === "ENOTFOUND") {
         // ENOTFOUND: client was not able to connect to given address
         dispatch(
