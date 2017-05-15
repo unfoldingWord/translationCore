@@ -105,7 +105,7 @@ export function exportToCSV(projectPath) {
     dispatch(getDataActions.clearPreviousData());
 
     let toolPaths = getToolFolderNames(projectPath);
-    if (!toolPaths) dispatch(AlertModalActions.openAlertDialog('Project Has No Checkdata'));
+    if (!toolPaths) dispatch(AlertModalActions.openAlertDialog('No checks have been performed in this project.'));
     let dataFolder = path.join(projectPath, 'apps', 'translationCore');
     var fn = function (newPaths) {
       saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
@@ -115,8 +115,9 @@ export function exportToCSV(projectPath) {
         else {
           saveDialog(dataFolder, projectName, (result) => {
             fs.remove(path.join(dataFolder, 'output'));
-            if (loadedSuccessfully) dispatch(AlertModalActions.openAlertDialog('Data Exported Successfully To CSV'));
-            else dispatch(AlertModalActions.openAlertDialog('Failed To Export To CSV'));
+            if (loadedSuccessfully && result) dispatch(AlertModalActions.openAlertDialog('Export Successful'));
+            else if (!result) dispatch(AlertModalActions.openAlertDialog('Export Cancelled'));
+            else dispatch(AlertModalActions.openAlertDialog('Failed To Export'));
           })
         }
       })
@@ -143,7 +144,7 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId)
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'verseEditsData.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
     } catch (e) { reject(false) };
     resolve(true);
   });
@@ -165,7 +166,7 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId)
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'commentsData.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
     } catch (e) { reject(false) };
     resolve(true);
   });
@@ -191,7 +192,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
           csvString += currentRowArray.join(',') + "\n";
         }
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'selectionsData.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
     } catch (e) { reject(false) };
     resolve(true);
   });
@@ -213,7 +214,7 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId)
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'remindersData.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
     } catch (e) { reject(false) };
     resolve(true);
   });
@@ -238,7 +239,7 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
           csvString += currentRowArray.join(',') + "\n";
         }
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'groupsData.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
     } catch (e) { reject(false) };
     resolve(true);
   });
