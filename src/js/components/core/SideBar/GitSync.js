@@ -23,13 +23,13 @@ function syncToGit(projectPath, manifest, user, showAlert) {
         var repoName = finalPath.pop();
         var userName = finalPath.pop();
         var repoPath = userName + '/' + repoName;
-        var remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
+        var remote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repoPath + '.git';
         git(projectPath).update(remote, 'master', false, err => {
           if (err) {
             // user doesn't have permission to push to this repository thus create a new Door43 project repo.
             const projectName = repoName;
             gogs(user.token).createRepo(user, projectName).then(repo => {
-              var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+              var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
               var remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
               updateManifest(projectPath, remoteLink, showAlert);
               git(projectPath).update(newRemote, 'master', true, err => {
@@ -53,13 +53,13 @@ function syncToGit(projectPath, manifest, user, showAlert) {
         let nameOfProject = projectName.pop();
         nameOfProject = nameOfProject.replace(/[^A-Za-z-_\d]/g, '_')
         let repoPath = user.username + '/' + nameOfProject;
-        let remote = 'https://' + user.token + '@git.door43.org/' + repoPath + '.git';
+        let remote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repoPath + '.git';
         let remoteLink = 'https://git.door43.org/' + repoPath + '.git';
         updateManifest(projectPath, remoteLink, showAlert);
         git(projectPath).update(remote, 'master', true, err => {
           if (err) {
             gogs(user.token).createRepo(user, nameOfProject).then(repo => {
-              var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+              var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
               remoteLink = 'https://git.door43.org/' + repo.full_name + '.git';
               updateManifest(projectPath, remoteLink, showAlert);
               git(projectPath).update(newRemote, 'master', true, err => {
