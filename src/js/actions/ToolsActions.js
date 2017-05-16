@@ -13,7 +13,9 @@ export function loadTool(folderName) {
   return ((dispatch, getState) => {
     dispatch(modalActions.showModalContainer(false));
     dispatch({ type: consts.START_LOADING });
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
+    setTimeout(() => {
+      dispatch(GetDataActions.loadModuleAndDependencies(folderName));
+    }, 1);
   });
 }
 

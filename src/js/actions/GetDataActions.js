@@ -7,7 +7,6 @@
  * @version 1.0.0
  */
 
-import React from 'react';
 // actions
 import * as fs from 'fs-extra';
 import * as consts from './CoreActionConsts';
@@ -23,6 +22,8 @@ import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as ModulesSettingsActions from '../actions/ModulesSettingsActions';
+import * as projectDetailsActions from '../actions/projectDetailsActions';
 import { resetProjectDetail } from './projectDetailsActions';
 
 import pathex from 'path-extra';
@@ -47,30 +48,30 @@ const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
  * @description Sends project path to the store
  */
 export function setProjectPath(pathLocation) {
-    return {
-        type: consts.SET_SAVE_PATH_LOCATION,
-        pathLocation: pathLocation
-    }
+  return {
+    type: consts.SET_SAVE_PATH_LOCATION,
+    pathLocation: pathLocation
+  };
 }
 
 /**
  * @description Sends project manifest to the store
  */
 export function setProjectManifest(manifest) {
-    return {
-        type: consts.STORE_MANIFEST,
-        manifest: manifest
-    }
+  return {
+    type: consts.STORE_MANIFEST,
+    manifest: manifest
+  }
 }
 
 /**
  * @description Sends project parameters to the store
  */
 export function setProjectParams(params) {
-    return {
-        type: consts.STORE_PARAMS,
-        params: params
-    }
+  return {
+    type: consts.STORE_PARAMS,
+    params: params
+  }
 }
 
 /**
@@ -78,38 +79,13 @@ export function setProjectParams(params) {
  *
  */
 export function clearPreviousData() {
-    return ((dispatch) => {
-        dispatch(resetProjectDetail());
-        dispatch({ type: consts.CLEAR_OLD_GROUPS });
-        dispatch({ type: consts.CLEAR_CONTEXT_ID });
-        dispatch(CurrentToolActions.setToolTitle(""));
-    })
-}
-
-/**
- * @description This method will set the corestore view for the corresponding module
- *
- */
-export function setModuleView(identifier, view) {
-    return {
-        type: consts.SAVE_MODULE_VIEW,
-        identifier: identifier,
-        module: view
-    }
-}
-
-
-/**
- * @description Returns the current user logged in from the current app state,
- * not meant to be used outside of an action
- *
- * @requires not a dispatch function
- * @param {object} state
- */
-export function getCurrentUser(state) {
-    const loginStore = state.loginReducer;
-    const currentUser = loginStore.userdata ? loginStore.userdata.username : null;
-    return currentUser;
+  return ((dispatch) => {
+    dispatch(resetProjectDetail());
+    dispatch({ type: consts.CLEAR_OLD_GROUPS });
+    dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch(CurrentToolActions.setToolTitle(""));
+    dispatch(saveModuleFetchData(null));
+  })
 }
 
 /**
@@ -119,33 +95,34 @@ export function getCurrentUser(state) {
  * @param {string} projectLink - Link given to load project if taken from online
  */
 export function openProject(projectPath, projectLink, exporting = false) {
-    return ((dispatch, getState) => {
-        if (!projectPath && !projectLink) return;
-        // TODO: this action maybe stay here temporary until the home screen implementation.
-        dispatch(BodyUIActions.toggleHomeView(true))
-        dispatch(clearPreviousData());
-        const currentUser = getCurrentUser(getState());
-        const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
-        if (usfmFilePath) {
-            //USFM detected, initiating separate loading process
-            dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser, exporting));
-        } else {
-            //No USFM detected, initiating 'standard' loading process
-            projectPath = LoadHelpers.correctSaveLocation(projectPath);
-            let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-            manifest = LoadHelpers.verifyChunks(projectPath, manifest);
-            if (!manifest || !manifest.tcInitialized) {
-                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
-            } else {
-                let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-                if (oldManifest) {
-                    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
-                }
-            }
-            dispatch(addLoadedProjectToStore(projectPath, manifest));
-            if (!exporting) dispatch(displayToolsToLoad(manifest));
+  return ((dispatch, getState) => {
+    if (!projectPath && !projectLink) return;
+    // TODO: this action may stay here temporary until the home screen implementation.
+    dispatch(BodyUIActions.toggleHomeView(true));
+    dispatch(clearPreviousData());
+    const loginStore = getState().loginReducer;
+    const currentUser = loginStore.userdata ? loginStore.userdata.username : null;
+    const usfmFilePath = LoadHelpers.checkIfUSFMFileOrProject(projectPath);
+    if (usfmFilePath) {
+      // USFM detected, initiating separate loading process
+      dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, currentUser, exporting));
+    } else {
+      // No USFM detected, initiating 'standard' loading process
+      projectPath = LoadHelpers.correctSaveLocation(projectPath);
+      let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+      manifest = LoadHelpers.verifyChunks(projectPath, manifest);
+      if (!manifest || !manifest.tcInitialized) {
+        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+      } else {
+        let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+        if (oldManifest) {
+          manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
         }
-    });
+      }
+      dispatch(addLoadedProjectToStore(projectPath, manifest));
+      if (!exporting) dispatch(displayToolsToLoad(manifest));
+    }
+  });
 }
 
 /**
@@ -157,22 +134,22 @@ export function openProject(projectPath, projectLink, exporting = false) {
  * @param {string} projectLink - Link given to load project if taken from online
  */
 export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser, exporting) {
-    return ((dispatch) => {
-        const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
-        dispatch(setProjectPath(projectSaveLocation));
-        const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectSaveLocation);
-        const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-        const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
-        dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
-        dispatch(setUSFMParams(parsedUSFM.book, projectSaveLocation, direction));
-        let manifest = LoadHelpers.loadFile(projectSaveLocation, 'manifest.json');
-        if (!manifest) {
-            const defaultManifest = LoadHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
-            manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
-        }
-        dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
-        if (!exporting) dispatch(displayToolsToLoad(manifest));
-    });
+  return ((dispatch) => {
+    const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
+    dispatch(setProjectPath(projectSaveLocation));
+    const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectSaveLocation);
+    const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
+    const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
+    dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
+    dispatch(setUSFMParams(parsedUSFM.book, projectSaveLocation, direction));
+    let manifest = LoadHelpers.loadFile(projectSaveLocation, 'manifest.json');
+    if (!manifest) {
+      const defaultManifest = LoadHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, currentUser);
+      manifest = LoadHelpers.saveManifest(projectSaveLocation, projectLink, defaultManifest);
+    }
+    dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
+    if (!exporting) dispatch(displayToolsToLoad(manifest));
+  });
 }
 
 
@@ -185,17 +162,17 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
  * @param {object} manifest - Manifest specified for tC load
  */
 export function addLoadedProjectToStore(projectPath, manifest) {
-    return ((dispatch) => {
-        dispatch(setProjectPath(projectPath));
-        dispatch(setProjectManifest(manifest));
-        const params = LoadHelpers.getParams(projectPath, manifest);
-        if (params) {
-            dispatch(setProjectParams(params));
-        } else {
-            //no finished_chunks in manifest
-            dispatch(manifestError('No finished chunks specified in project manifest'))
-        }
-    });
+  return ((dispatch) => {
+    dispatch(setProjectPath(projectPath));
+    dispatch(setProjectManifest(manifest));
+    const params = LoadHelpers.getParams(projectPath, manifest);
+    if (params) {
+      dispatch(setProjectParams(params));
+    } else {
+      // no finished_chunks in manifest
+      dispatch(manifestError('No finished chunks specified in project manifest'))
+    }
+  });
 }
 
 /**
@@ -206,18 +183,18 @@ export function addLoadedProjectToStore(projectPath, manifest) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function displayToolsToLoad(manifest) {
-    return ((dispatch, getState) => {
-        const currentState = getState();
-        if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
-            dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
-            dispatch(ToolsActions.getToolsMetadatas());
-            dispatch(ModalActions.selectModalTab(3, 1, true));
-        } else {
-            dispatch(AlertModalActions.openAlertDialog('You can only load Ephisians or Titus projects for now.', 5));
-            dispatch(RecentProjectsActions.getProjectsFromFolder());
-            dispatch(clearPreviousData());
-        }
-    })
+  return ((dispatch, getState) => {
+    const currentState = getState();
+    if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
+      dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
+      dispatch(ToolsActions.getToolsMetadatas());
+      dispatch(ModalActions.selectModalTab(3, 1, true));
+    } else {
+      dispatch(AlertModalActions.openAlertDialog('You can only load Ephisians or Titus projects for now.', 5));
+      dispatch(RecentProjectsActions.getProjectsFromFolder());
+      dispatch(clearPreviousData());
+    }
+  });
 }
 
 
@@ -228,16 +205,12 @@ export function displayToolsToLoad(manifest) {
  * @param {string} content - Message of the alert to be shown
  */
 export function manifestError(content) {
-    return ((dispatch) => {
-        AlertModalActions.showAlert(
-            {
-                title: 'Error Setting Up Project',
-                content: content,
-                moreInfo: "",
-                leftButtonText: "Ok"
-            });
-        dispatch(clearPreviousData());
-    });
+  return (dispatch => {
+    dispatch(
+      AlertModalActions.openAlertDialog('Error Setting Up Project: \n' + content)
+    );
+    dispatch(clearPreviousData());
+  });
 }
 
 
@@ -247,122 +220,234 @@ export function manifestError(content) {
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
 export function loadModuleAndDependencies(moduleFolderName) {
-    return ((dispatch, getState) => {
-        try {
-            dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-            dispatch({ type: consts.CLEAR_OLD_GROUPS });
-            dispatch({ type: consts.CLEAR_CONTEXT_ID });
-            dispatch(CurrentToolActions.setDataFetched(false));
-            const modulePath = Path.join(moduleFolderName, 'package.json');
-            const dataObject = fs.readJsonSync(modulePath);
-            const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-            dispatch(saveModules(checkArray));
-            dispatch(CurrentToolActions.setToolName(dataObject.name));
-            dispatch(CurrentToolActions.setToolTitle(dataObject.title));
-            dispatch(loadGroupDataFromFileSystem(dataObject.name));
-        } catch (e) {
-            dispatch(errorLoadingProject(e));
-        }
-
-    });
-}
-
-/*
- * @description Loaded previous project data into the filesystem given a path.
- *
- * @param {string} projectPath - Path in which the project is being loaded from
- */
-export function loadGroupDataFromFileSystem(toolName) {
-    return ((dispatch, getState) => {
-        const projectDetailsStore = getState().projectDetailsReducer;
-        let { projectSaveLocation, params } = projectDetailsStore;
-        let dataFolder = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
-        try {
-            dispatch(setGroupIndexInStore(dataFolder, params));
-        } catch (e) {
-            console.warn('failed loading group index')
-            // TODO: this action maybe stay here temporary until the home screen implementation.
-            dispatch(BodyUIActions.toggleHomeView(false))
-        }
-    });
-}
-
-export function setGroupDataInStore(dataFolder, params) {
-    return ((dispatch, getState) => {
-        let toolName = getState().currentToolReducer.toolName;
-        let groupDataFolderPath = Path.join(dataFolder, params.bookAbbr);
-        fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
-            if (!err) {
-                var allGroupsObjects = {};
-                var total = groupDataFolderObjs.length;
-                var i = 0;
-                for (var groupId in groupDataFolderObjs) {
-                    if (Path.extname(groupDataFolderObjs[groupId]) != '.json') {
-                        total--;
-                        continue;
-                    }
-                    let groupName = groupDataFolderObjs[groupId].split('.')[0];
-                    const saveGroup = (groupName, groupDataFolderPath) => {
-                        const groupPath = Path.join(groupDataFolderPath, groupName + '.json');
-                        fs.readJson(groupPath, (err, groupObj) => {
-                            if (!err) {
-                                allGroupsObjects[groupName] = groupObj;
-                                setTimeout(() => {
-                                    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
-                                    i++;
-                                    if (i >= total) {
-                                        dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-                                        // TODO: this action maybe stay here temporary until the home screen implementation.
-                                        dispatch(BodyUIActions.toggleHomeView(false))
-                                        console.log('Loaded group data from fs');
-                                    }
-                                }, 1)
-                            } else {
-                                console.warn('failed loading group data for ' + groupName);
-                                total--;
-                            }
-                        });
-                    }
-                    saveGroup(groupName, groupDataFolderPath);
-                }
-            } else {
-                console.warn('failed loading group data')
-                // TODO: this action maybe stay here temporary until the home screen implementation.
-                dispatch(BodyUIActions.toggleHomeView(false))
-            }
-        });
-    });
-}
-
-export function setGroupIndexInStore(dataFolder, params) {
-    return ((dispatch) => {
-        const pathToRead = Path.join(dataFolder, 'index.json');
-        fs.readJson(pathToRead, (err, groupIndexObj) => {
-            if (!err && groupIndexObj.length != 0) {
-                dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexObj));
-                console.log('Loaded group index from fs');
-            } else console.warn('failed loading group index')
-            dispatch(setGroupDataInStore(dataFolder, params));
-        });
-    });
+  return ((dispatch, getState) => {
+    console.log(moduleFolderName)
+    try {
+      dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+      dispatch({ type: consts.CLEAR_OLD_GROUPS });
+      dispatch({ type: consts.CLEAR_CONTEXT_ID });
+      dispatch(CurrentToolActions.setDataFetched(false));
+      const modulePath = Path.join(moduleFolderName, 'package.json');
+      const dataObject = fs.readJsonSync(modulePath);
+      const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+      dispatch(saveModules(checkArray));
+      dispatch(CurrentToolActions.setToolName(dataObject.name));
+      dispatch(CurrentToolActions.setToolTitle(dataObject.title));
+      dispatch(loadProjectDataFromFileSystem(dataObject.name));
+    } catch (e) {
+      console.log(e)
+      dispatch(errorLoadingProject(e));
+    }
+  });
 }
 
 /**
  * @description Saves tools included module Containers in the store
- *
  * @param {Array} checkArray - Array of the checks that the views should be loaded
  */
 export function saveModules(checkArray) {
-    return ((dispatch) => {
-        for (let module of checkArray) {
-            try {
-                const viewObj = require(Path.join(module.location, 'Container'));
-                dispatch(setModuleView(module.name, viewObj.view || viewObj.container));
-            } catch (e) {
-                console.log(e);
-            }
+  return (dispatch => {
+    for (let module of checkArray) {
+      try {
+        const viewObj = require(Path.join(module.location, 'Container'));
+        const moduleFetchData = viewObj.fetchData;
+        if (moduleFetchData) {
+          dispatch(saveModuleFetchData(moduleFetchData));
         }
+        dispatch(setModuleView(module.name, viewObj.view || viewObj.container));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  });
+}
+
+/**
+ * @description this function saves a modules fethdata files in the reducer.
+ * @param {function} moduleFetchData - module fethdata code.
+ * @return {object} action being dispatched.
+ */
+export function saveModuleFetchData(moduleFetchData) {
+  return {
+    type: consts.SAVE_MODULE_FETCHDATA,
+    moduleFetchData
+  };
+}
+
+/**
+ * @description This method will set the corestore view for the corresponding module
+ * @param identifier
+ * @param view
+ * @return action being dispatched.
+ */
+export function setModuleView(identifier, view) {
+  return {
+    type: consts.SAVE_MODULE_VIEW,
+    identifier: identifier,
+    module: view
+  };
+}
+
+// new implemention
+function loadProjectDataFromFileSystem(toolName) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve, reject) => {
+      let { projectSaveLocation, params } = getState().projectDetailsReducer;
+      const dataDirectory = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
+
+      loadGroupIndexFromFS(dispatch, dataDirectory)
+
+      .then(() => {
+        loadGroupDataFromFS(dispatch, dataDirectory, getState, params)
+        .then(() => {
+          dispatch({ type: consts.DONE_LOADING });
+        })
+
+        .catch(err => {
+          console.warn(err);
+          // TODO: this action may stay here temporary until the home screen implementation.
+          dispatch(BodyUIActions.toggleHomeView(false));
+        });
+      })
+
+      .catch(err => {
+        console.warn(err);
+      });
     });
+  });
+}
+
+//// new implementation
+function loadGroupIndexFromFS(dispatch, dataDirectory) {
+  return new Promise((resolve, reject) => {
+    const groupIndexDataDirectory = Path.join(dataDirectory, 'index.json');
+    let groupIndexData;
+    if (fs.existsSync(groupIndexDataDirectory)) {
+      try {
+        groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
+        dispatch(GroupsIndexActions.setGroupsIndex(groupIndexData));
+        console.log('Loaded group index data from fs');
+        resolve();
+      } catch (err) {
+        console.log(err)
+        dispatch(startModuleFetchData());
+      }
+    } else {
+      dispatch(startModuleFetchData());
+    }
+  });
+}
+
+// new implementation
+function loadGroupDataFromFS(dispatch, dataDirectory, getState, params) {
+  return new Promise((resolve, reject) => {
+    let toolName = getState().currentToolReducer.toolName;
+    let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
+    if (fs.existsSync(groupDataDirectory)) {
+      fs.readdir(groupDataDirectory, (err, groupDataFolderObjs) => {
+        if (err) {
+          console.warn('failed loading group data')
+          reject(err);
+        } else {
+          let allGroupsObjects = {};
+          let total = groupDataFolderObjs.length;
+          let i = 0;
+          for (var groupId in groupDataFolderObjs) {
+            if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+              total--;
+              continue;
+            }
+            let groupName = groupDataFolderObjs[groupId].split('.')[0];
+            let groupData = loadGroupData(groupName, groupDataDirectory);
+            if (groupData) {
+              allGroupsObjects[groupName] = groupData;
+            }
+            dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
+            i++;
+          }
+          dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+          // TODO: this action may stay here temporary until the home screen implementation.
+          dispatch(BodyUIActions.toggleHomeView(false));
+          console.log('Loaded group data from fs');
+          resolve();
+        }
+      });
+    } else {
+      dispatch(startModuleFetchData());
+    }
+  });
+}
+
+// new implementation helper
+function loadGroupData(groupName, groupDataFolderPath) {
+  const groupPath = Path.join(groupDataFolderPath, groupName + '.json');
+  let groupData;
+  try {
+    groupData = fs.readJsonSync(groupPath);
+  } catch (err) {
+    console.warn('failed loading group data for ' + groupName);
+  }
+  return groupData;
+}
+
+/**
+ * @description
+ * 
+ */
+export function startModuleFetchData() {
+  return ((dispatch, getState) => {
+    let {
+      coreStoreReducer,
+      projectDetailsReducer,
+      resourcesReducer,
+      modulesSettingsReducer,
+      groupsDataReducer,
+      groupsIndexReducer
+    } = getState();
+
+    let currentModuleFetchData = coreStoreReducer.currentModuleFetchData;
+
+    const addNewBible = (bibleName, bibleData) => {
+      dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
+    };
+    const setModuleSettings = (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+      dispatch(ModulesSettingsActions.setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
+    };
+    const progress = (label, progress) => {
+      dispatch(LoaderActions.sendProgressForKey(label, progress));
+    };
+    const addGroupData = (groupId, groupData) => {
+      dispatch(GroupsDataActions.addGroupData(groupId, groupData));
+    };
+    const setGroupsIndex = (groupsIndex) => {
+      dispatch(GroupsIndexActions.setGroupsIndex(groupsIndex));
+    };
+    const setProjectDetail = (key, value) => {
+      dispatch(projectDetailsActions.setProjectDetail(key, value));
+    };
+
+    let props = {
+      actions: {
+        addNewBible,
+        setModuleSettings,
+        progress,
+        addGroupData,
+        setGroupsIndex,
+        setProjectDetail
+      },
+      projectDetailsReducer,
+      resourcesReducer,
+      progress,
+      modulesSettingsReducer,
+      groupsDataReducer,
+      groupsIndexReducer
+    };
+
+    currentModuleFetchData(props).then(dispatch({type: consts.DONE_LOADING}));
+    dispatch(CurrentToolActions.setDataFetched(true));
+    // TODO: this action may stay here temporary until the home screen implementation.
+    dispatch(BodyUIActions.toggleHomeView(false));
+  });
 }
 
 /**
@@ -370,19 +455,16 @@ export function saveModules(checkArray) {
  * @param {object} err - Message object of the alert to be shown
  */
 export function errorLoadingProject(err) {
-    return ((dispatch) => {
-        dispatch({ type: consts.DONE_LOADING });
-        const alertMessage = {
-            title: "Problem Loading Your Project",
-            content: err.message,
-            leftButtonText: "Ok",
-            moreInfo: err,
-            visibility: true,
-        }
-        dispatch(AlertModalActions.showAlert(alertMessage));
-        dispatch(clearPreviousData());
-        console.error(err)
-    });
+  return ((dispatch) => {
+    dispatch({ type: consts.DONE_LOADING });
+    dispatch(
+      AlertModalActions.openAlertDialog(
+        "Problem Loading Your Project" + err.message
+      )
+    );
+    dispatch(clearPreviousData());
+    console.error(err)
+  });
 }
 
 
@@ -395,18 +477,18 @@ export function errorLoadingProject(err) {
  * @param {path} direction - Reading direction of the project books
  */
 export function setUSFMParams(bookAbbr, projectSaveLocation, direction) {
-    return ((dispatch) => {
-        let params = {
-            originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
-            targetLanguagePath: projectSaveLocation,
-            direction: direction,
-            bookAbbr: bookAbbr
-        };
-        if (LoadHelpers.isOldTestament(bookAbbr)) {
-            params.originalLanguage = "hebrew";
-        } else {
-            params.originalLanguage = "greek";
-        }
-        dispatch(setProjectParams(params));
-    });
+  return ((dispatch) => {
+    let params = {
+      originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
+      targetLanguagePath: projectSaveLocation,
+      direction: direction,
+      bookAbbr: bookAbbr
+    };
+    if (LoadHelpers.isOldTestament(bookAbbr)) {
+      params.originalLanguage = "hebrew";
+    } else {
+      params.originalLanguage = "greek";
+    }
+    dispatch(setProjectParams(params));
+  });
 }
