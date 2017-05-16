@@ -8,6 +8,10 @@ class GroupItem extends React.Component {
    * @description Generate the proper glyphicon based on selections
    * @return {component} statusGlyph - component to render
    */
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
   statusGlyph() {
     let statusBooleans = this.getGroupData()
     let {comments, reminders, selections, verseEdits} = statusBooleans
@@ -45,15 +49,20 @@ class GroupItem extends React.Component {
       return isEqual(groupData.contextId, this.props.contextId)
     })
 
-    return groupData[0]
+    return groupData[0];
+  }
+
+  onClick(){
+    this.props.actions.changeCurrentContextId(this.props.contextId);
+    this.props.scrollIntoView(this);
   }
 
   render() {
-    let {reference} = this.props.contextId
+    let {reference} = this.props.contextId;
     let active = isEqual(this.props.contextId, this.props.contextIdReducer.contextId)
 
     return (
-      <div onClick={() => this.props.actions.changeCurrentContextId(this.props.contextId)}
+      <div onClick={this.onClick}
           style={active ? style.activeSubMenuItem : style.subMenuItem}
           title="Click to select this check">
           {this.statusGlyph()}

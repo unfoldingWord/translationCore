@@ -14,14 +14,17 @@ function UserManager(auth) {
   * @return {Promise} - Returns a promise with a user object.
   *****************************************************************/
     login: function (userObj) {
-      return api.getUser(userObj).then(function (user) {
+      return api.getUser(userObj).then(user => {
         return api.listTokens(userObj)
+
         .then(function (tokens) {
           return tokens.find((el) => el.name == tokenStub.name);
         })
+
         .then(function (token) {
           return token ? token : api.createToken(tokenStub, userObj);
         })
+
         .then(function (token) {
           user.password = userObj.password;
           var phrase = window.ModuleApi.getAuthToken('phrase') != undefined ? window.ModuleApi.getAuthToken('phrase') : "tc-core";
@@ -67,68 +70,19 @@ function UserManager(auth) {
     },
 /**
   * @description - Gets a user's repos.
-  * @param {String} username - The optional user to search for.
-  * @param {String} query - The optional serch term.
-  * @return {Promise} - Returns a promise with an array of repo objects.
+  * @param {Object} user - Must contain fields username, password, and token.
+  *                        Typically obtained from logging in.
+  * @return {Array} - Returns an array of repo objects.
   *****************************************************************/
-    retrieveRepos: function (username, query) {
-           username = username === '*' ? '' : (username || '');
-           query = query === '*' ? '_' : (query || '_');
-
-           var limit = 50;
-
-           function searchUsers (visit) {
-               return api.searchUsers(username, limit).then(function (users) {
-                   var arr = users.map(visit);
-
-                   arr.push(visit(0).then(function (repos) {
-                       return repos.filter(function (repo) {
-                           var repoUsername = repo.full_name.split('/').shift();
-                           return repoUsername.includes(username);
-                       });
-                   }));
-
-                   return Promise.all(arr);
-               });
-           }
-
-           function searchRepos (user) {
-               var userId = (typeof user === 'object' ? user.id : user) || 0;
-               return api.searchRepos(query, userId, limit);
-           }
-
-           var projectSearch = username ? searchUsers(searchRepos) : searchRepos();
-
-           return projectSearch.then(function(data){
-             var flat = [];
-             for (var array in data) {
-               for (var repo in data[array]) {
-                 flat.push(data[array][repo])
-               }
-             }
-             return flat;
-           }).then(function (repos) {
-             var repoIds = [];
-             var uniqueRepos = [];
-             for (let repo in repos) {
-               if (repos[repo] && !repoIds.includes(repos[repo].id)) {
-                 repoIds.push(repos[repo].id);
-                 uniqueRepos.push(repos[repo]);
-               }
-             }
-             return uniqueRepos;
-           })
-           .then(function (repos) {
-               return repos.map(function (repo) {
-                   if (repo.full_name) {
-                       var user = repo.full_name.split("/")[0];
-                       var project = repo.full_name.split("/")[1];
-                       return {repo: repo.full_name, user: user, project: project};
-                   }
-               })
-           });
-       }
-
+    listRepos: function (user) {
+      return api.listRepos(user).then(function (repos) {
+        return repos.map( repo => {
+          var user = repo.full_name.split("/")[0];
+          var project = repo.full_name.split("/")[1];
+          return {repo: repo.full_name, user: user, project: project};
+        });
+      });
+    }
   }
 }
 
