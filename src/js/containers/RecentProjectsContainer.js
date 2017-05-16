@@ -26,7 +26,7 @@ class RecentProjectsContainer extends React.Component {
     }
   }
 
-  generateButton(projectPath, manifest) {
+  generateButton(projectPath) {
     return (
       <span>
         <Button bsStyle="prime"
@@ -45,7 +45,7 @@ class RecentProjectsContainer extends React.Component {
         </Button>
         <Button bsStyle="second"
           style={{width: "90px", margin: "10px 0"}}
-          onClick={() => this.props.syncProject(projectPath, manifest, this.props.userdata)}
+          onClick={() => this.props.uploadProject(projectPath, this.props.userdata)}
         >
           <Glyphicon glyph={'upload'} />
           <span style={{ marginLeft: '5px' }}>Upload</span>
@@ -77,7 +77,7 @@ class RecentProjectsContainer extends React.Component {
       }
       let mtime = new Date(stats.mtime);
       let difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
-      let buttonSpan = (this.generateButton(projectPath, manifest));
+      let buttonSpan = (this.generateButton(projectPath));
       projects.push(
         {
           '':
@@ -125,8 +125,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       }
       dispatch(openProject(projectPath));
     },
-    syncProject: (projectPath, manifest, user) => {
-      dispatch(recentProjectsActions.syncProject(projectPath, manifest, user));
+    uploadProject: (projectPath, user) => {
+      dispatch(recentProjectsActions.uploadProject(projectPath, user));
     },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
