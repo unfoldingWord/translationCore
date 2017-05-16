@@ -26,9 +26,9 @@ export function onLoad(filePath) {
 }
 
 /**
- * Sync project to door 43, based on currently logged in user.
+ * Upload project to door 43, based on currently logged in user.
  *
- * @param {string} projectPath - Path to the project to sync
+ * @param {string} projectPath - Path to the project to upload
  * @param {object} user - currently logged in user
  */
 export function uploadProject(projectPath, user) {
@@ -46,35 +46,25 @@ export function uploadProject(projectPath, user) {
         } else {
           git(projectPath).push(newRemote, "master", err => {
             if (err) {
-              if (err.code === "ENOTFOUND") {
-                // ENOTFOUND: client was not able to connect to given address
+              if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
                 dispatch(
                     AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
                 );
-              } else if (err.status === 401) {
+              } else if (err.toString().includes("rejected because the remote contains work")) {
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
+                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
                 );
               } else if (err.hasOwnProperty('message')) {
                 dispatch(
                     AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
                 );
               } else if (err.hasOwnProperty('data') && err.data) {
-                let errorMessage = err.data;
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: ' + errorMessage)
-                );
-              } else if (err.hasOwnProperty('data') && typeof err.data === "string") {
-                dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: \n Please log into your Door43 account.')
-                );
-              } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
-                dispatch(
-                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
+                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.data)
                 );
               } else {
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
+                    AlertModalActions.openAlertDialog('Error Uploading: Unknown error')
                 );
               }
             } else {
@@ -89,18 +79,17 @@ export function uploadProject(projectPath, user) {
         }
       })
     }).catch(err => {
-        if (err.code === "ENOTFOUND") {
-          // ENOTFOUND: client was not able to connect to given address
+        if (user.localUser) {
           dispatch(
-              AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+              AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
           );
-        } else if (err.status === 401) {
+        } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT")) {
           dispatch(
-              AlertModalActions.openAlertDialog('Error Uploading: \n Can not find the repository of this user')
+              AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
           );
         } else {
           dispatch (
-            AlertModalActions.openAlertDialog("Could not create a repository: " + err)
+            AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
           )
         }
     });
