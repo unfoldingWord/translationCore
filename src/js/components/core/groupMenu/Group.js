@@ -53,9 +53,7 @@ class Group extends React.Component {
     let items = [];
     let index = 0;
     for (var groupItemData of groupData) {
-      const reference = groupItemData.contextId.reference;
-      const ref = `${reference.bookId}_${reference.chapter}_${reference.verse}`;
-      items.push(<GroupItem scrollIntoView={this.scrollIntoView} ref={ref} {...this.props} {...groupItemData} key={index} />)
+      items.push(<GroupItem scrollIntoView={this.scrollIntoView} {...this.props} {...groupItemData} key={index} />)
       index++
     }
     return items;
