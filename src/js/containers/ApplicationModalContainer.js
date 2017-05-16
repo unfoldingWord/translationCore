@@ -9,6 +9,7 @@ import Licenses from '../components/core/licenses/Licenses';
 import * as LoginActions from '../actions/LoginActions';
 import * as SettingsActions from '../actions/SettingsActions';
 import * as modalActions from '../actions/ModalActions';
+import * as PopoverActions from '../actions/PopoverActions';
 
 class ApplicationModalContainer extends React.Component {
 
@@ -74,6 +75,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     goToProjectsTab: () => {
       dispatch(modalActions.selectModalTab(2, 1, true));
     },
+    showPopover: (title, bodyText, positionCoord) => {
+      dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+    }
   };
 };
 

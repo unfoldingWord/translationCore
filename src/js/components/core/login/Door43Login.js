@@ -15,7 +15,7 @@ class Door43Login extends React.Component {
   }
 
   render() {
-    let { displayLogin } = this.props;
+    let { displayLogin, showPopover } = this.props;
     if (!displayLogin) {
       return (
         <Col md={12} sm={12} xs={12} style={{ marginTop: "50px" }}>
@@ -31,7 +31,27 @@ class Door43Login extends React.Component {
             <img src="images/D43_LOGO.png" style={{margin: "30px 0px 0px"}} /><br/>
             <h4>
               <b>{"Log in with Door43"}</b>&nbsp;
-              <Glyphicon glyph="info-sign" style={{fontSize: "20px"}} />
+              <Glyphicon
+                glyph="info-sign"
+                style={{fontSize: "20px"}}
+                onClick={
+                  (e) => {
+                    let positionCoord = e.target;
+                    let title = <strong>Door43 Information</strong>
+                    let text = <div style={{ padding: "0 20px" }}>
+                      <p>
+                        Door43 is a free, online, revision-controlled content management
+                        <br/>system for open-licensed biblical material.
+                      </p>
+                      <p>
+                        It provides free, remote storage and collaboration services
+                        <br/>for creators and translators of biblical content.
+                      </p>
+                    </div>;
+                    showPopover(title, text, positionCoord);
+                  }
+                }
+              />
             </h4>
             <TextField
               floatingLabelText="Username"
