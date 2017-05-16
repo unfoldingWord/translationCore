@@ -37,8 +37,13 @@ export function uploadProject(projectPath, user) {
     gogs(user.token).createRepo(user, projectName).then(repo => {
       var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
 
-      git(projectPath).save(user, 'Uploading to Door43', projectPath, () => {
-        git(projectPath).push(newRemote, "master", (err) => {
+      git(projectPath).save(user, 'Uploading to Door43', projectPath, err => {
+        if(err) {
+          dispatch(
+            AlertModalActions.openAlertDialog("Error saving project: " + err)
+          )
+        }
+        git(projectPath).push(newRemote, "master", err => {
           if (err) {
             if (err.code === "ENOTFOUND") {
               // ENOTFOUND: client was not able to connect to given address
