@@ -5,14 +5,18 @@ import fs from 'fs-extra';
 import * as modalActions from './ModalActions.js';
 import * as LoaderActions from './LoaderActions.js';
 import * as GetDataActions from './GetDataActions.js';
+import * as CurrentToolActions from './currentToolActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 // const api = window.ModuleApi;
 
-export function loadTool(folderName) {
+export function loadTool(folderName, toolName) {
   return ((dispatch, getState) => {
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+    dispatch(CurrentToolActions.setToolName(toolName));
     dispatch(modalActions.showModalContainer(false));
     dispatch(GetDataActions.loadModuleAndDependencies(folderName));
+    
   });
 }
 

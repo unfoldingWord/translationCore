@@ -224,7 +224,6 @@ export function loadModuleAndDependencies(moduleFolderName) {
     try {
       dispatch({ type: consts.START_LOADING });
       setTimeout(() => {
-        dispatch({ type: consts.CLEAR_CURRENT_TOOL });
         dispatch({ type: consts.CLEAR_OLD_GROUPS });
         dispatch({ type: consts.CLEAR_CONTEXT_ID });
         dispatch(CurrentToolActions.setDataFetched(false));
@@ -232,7 +231,7 @@ export function loadModuleAndDependencies(moduleFolderName) {
         const dataObject = fs.readJsonSync(modulePath);
         const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
         dispatch(saveModules(checkArray));
-        dispatch(CurrentToolActions.setToolName(dataObject.name));
+        // dispatch(CurrentToolActions.setToolName(dataObject.name));
         dispatch(CurrentToolActions.setToolTitle(dataObject.title));
         dispatch(loadProjectDataFromFileSystem(dataObject.name));
       }, 2000);
