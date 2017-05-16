@@ -5,7 +5,6 @@
 
 const assert = require('chai').assert;
 const GitApi = require('../src/js/components/core/GitApi.js');
-const GitSync = require('../src/js/components/core/SideBar/GitSync.js');
 const CoreStore = require('../src/js/stores/CoreStore.js');
 const fs = require('fs-extra');
 

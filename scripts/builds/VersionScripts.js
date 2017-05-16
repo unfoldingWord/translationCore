@@ -9,7 +9,7 @@ var script = "git pull && \
   git commit package.json -m"Update version to ' + versionNumber + '" && \
   git push && \
   git checkout master && \
-  git merge develop && \
+  git merge develop --ff && \
   git push && \
   git tag v' + versionNumber + '&& \
   git push origin v' + versionNumber;
