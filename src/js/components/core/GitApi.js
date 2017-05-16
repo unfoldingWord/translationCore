@@ -138,12 +138,6 @@ function GitApi(directory) {
           });
         });
     },
-    revparse: function(options, callback){
-      return git.revparse(options, callback);
-    },
-    listRemote: function(options, callback){
-      return git.listRemote(options, callback);
-    },
     checkout: function(branch, callback) {
       if (!branch) {
         callback("No branch");
