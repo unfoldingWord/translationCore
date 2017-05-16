@@ -4,6 +4,7 @@ import path from 'path-extra';
 import gogs from '../components/core/login/GogsApi';
 import { remote } from 'electron';
 import zipFolder from 'zip-folder';
+import git from '../components/core/GitApi.js'
 // actions
 import * as getDataActions from './GetDataActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
@@ -11,7 +12,7 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const { dialog } = remote;
-const git = require('../components/core/GitApi.js');
+
 
 /**
  * @description - Initiate a project load
@@ -69,7 +70,7 @@ export function uploadProject(projectPath, user) {
                 );
               } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
                 dispatch(
-                    AlertModalActions.openAlertDialog('The project cannot be uploaded because there have been changes to the translation of ' + projectName + ' on your Door43 account.')
+                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
                 );
               } else {
                 dispatch(
