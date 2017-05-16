@@ -11,7 +11,7 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const { dialog } = remote;
-const git = require('../components/core/GitApi.js');
+import git from '../components/core/GitApi.js'
 
 /**
  * @description - Initiate a project load
