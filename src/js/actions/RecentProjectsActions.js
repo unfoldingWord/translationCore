@@ -4,6 +4,7 @@ import path from 'path-extra';
 import gogs from '../components/core/login/GogsApi';
 import { remote } from 'electron';
 import zipFolder from 'zip-folder';
+import git from '../components/core/GitApi.js'
 // actions
 import * as getDataActions from './GetDataActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
@@ -11,7 +12,7 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const { dialog } = remote;
-import git from '../components/core/GitApi.js'
+
 
 /**
  * @description - Initiate a project load
