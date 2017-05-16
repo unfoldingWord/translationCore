@@ -69,7 +69,7 @@ export function uploadProject(projectPath, user) {
                 );
               } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
                 dispatch(
-                    AlertModalActions.openAlertDialog('The project cannot be uploaded because there have been changes to the translation of ' + projectName + ' on your Door43 account.')
+                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
                 );
               } else {
                 dispatch(
