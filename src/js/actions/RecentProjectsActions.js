@@ -81,6 +81,10 @@ export function uploadProject(projectPath, user) {
           }
         })
       })
+    }).catch(err => {
+      dispatch (
+        AlertModalActions.openDialog("Could not create a repository: " + err)
+      )
     });
   });
 }
