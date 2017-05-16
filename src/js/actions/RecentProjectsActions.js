@@ -42,54 +42,66 @@ export function uploadProject(projectPath, user) {
           dispatch(
             AlertModalActions.openAlertDialog("Error saving project: " + err)
           )
-        }
-        git(projectPath).push(newRemote, "master", err => {
-          if (err) {
-            if (err.code === "ENOTFOUND") {
-              // ENOTFOUND: client was not able to connect to given address
-              dispatch(
-                  AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
-              );
-            } else if (err.status === 401) {
-              dispatch(
-                  AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
-              );
-            } else if (err.hasOwnProperty('message')) {
-              dispatch(
-                  AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
-              );
-            } else if (err.hasOwnProperty('data') && err.data) {
-              let errorMessage = err.data;
-              dispatch(
-                  AlertModalActions.openAlertDialog('Error Uploading: ' + errorMessage)
-              );
-            } else if (err.hasOwnProperty('data') && typeof err.data === "string") {
-              dispatch(
-                  AlertModalActions.openAlertDialog('Error Uploading: \n Please log into your Door43 account.')
-              );
-            } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
-              dispatch(
-                  AlertModalActions.openAlertDialog('The project cannot be uploaded because there have been changes to the translation of ' + projectName + ' on your Door43 account.')
-              );
+        } else {
+          git(projectPath).push(newRemote, "master", err => {
+            if (err) {
+              if (err.code === "ENOTFOUND") {
+                // ENOTFOUND: client was not able to connect to given address
+                dispatch(
+                    AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+                );
+              } else if (err.status === 401) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
+                );
+              } else if (err.hasOwnProperty('message')) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
+                );
+              } else if (err.hasOwnProperty('data') && err.data) {
+                let errorMessage = err.data;
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: ' + errorMessage)
+                );
+              } else if (err.hasOwnProperty('data') && typeof err.data === "string") {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Please log into your Door43 account.')
+                );
+              } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('The project cannot be uploaded because there have been changes to the translation of ' + projectName + ' on your Door43 account.')
+                );
+              } else {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
+                );
+              }
             } else {
+              dispatch({
+                type: consts.UPLOAD_PROJECT
+              });
               dispatch(
-                  AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
-              );
+                  AlertModalActions.openAlertDialog("Successful Upload")
+              )
             }
-          } else {
-            dispatch({
-              type: consts.UPLOAD_PROJECT
-            });
-            dispatch(
-                AlertModalActions.openAlertDialog("Successful Upload")
-            )
-          }
-        })
+          })
+        }
       })
     }).catch(err => {
-      dispatch (
-        AlertModalActions.openDialog("Could not create a repository: " + err)
-      )
+        if (err.code === "ENOTFOUND") {
+          // ENOTFOUND: client was not able to connect to given address
+          dispatch(
+              AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+          );
+        } else if (err.status === 401) {
+          dispatch(
+              AlertModalActions.openAlertDialog('Error Uploading: \n Can not find the repository of this user')
+          );
+        } else {
+          dispatch (
+            AlertModalActions.openAlertDialog("Could not create a repository: " + err)
+          )
+        }
     });
   });
 }
