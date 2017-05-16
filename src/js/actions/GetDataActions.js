@@ -221,19 +221,22 @@ export function manifestError(content) {
  */
 export function loadModuleAndDependencies(moduleFolderName) {
   return ((dispatch, getState) => {
-    console.log(moduleFolderName)
     try {
-      dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-      dispatch({ type: consts.CLEAR_OLD_GROUPS });
-      dispatch({ type: consts.CLEAR_CONTEXT_ID });
-      dispatch(CurrentToolActions.setDataFetched(false));
-      const modulePath = Path.join(moduleFolderName, 'package.json');
-      const dataObject = fs.readJsonSync(modulePath);
-      const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-      dispatch(saveModules(checkArray));
-      dispatch(CurrentToolActions.setToolName(dataObject.name));
-      dispatch(CurrentToolActions.setToolTitle(dataObject.title));
-      dispatch(loadProjectDataFromFileSystem(dataObject.name));
+      dispatch({ type: consts.START_LOADING });
+      setTimeout(() => {
+        dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+        dispatch({ type: consts.CLEAR_OLD_GROUPS });
+        dispatch({ type: consts.CLEAR_CONTEXT_ID });
+        dispatch(CurrentToolActions.setDataFetched(false));
+        const modulePath = Path.join(moduleFolderName, 'package.json');
+        const dataObject = fs.readJsonSync(modulePath);
+        const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+        dispatch(saveModules(checkArray));
+        dispatch(CurrentToolActions.setToolName(dataObject.name));
+        dispatch(CurrentToolActions.setToolTitle(dataObject.title));
+        dispatch(loadProjectDataFromFileSystem(dataObject.name));
+      }, 2000);
+      
     } catch (e) {
       console.log(e)
       dispatch(errorLoadingProject(e));

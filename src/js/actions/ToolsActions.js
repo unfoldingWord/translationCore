@@ -12,10 +12,7 @@ const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 export function loadTool(folderName) {
   return ((dispatch, getState) => {
     dispatch(modalActions.showModalContainer(false));
-    dispatch({ type: consts.START_LOADING });
-    setTimeout(() => {
-      dispatch(GetDataActions.loadModuleAndDependencies(folderName));
-    }, 1);
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
   });
 }
 
