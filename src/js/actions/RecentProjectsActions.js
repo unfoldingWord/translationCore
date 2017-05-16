@@ -1,5 +1,4 @@
 import consts from './CoreActionConsts';
-import sync from '../components/core/SideBar/GitSync';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import gogs from '../components/core/login/GogsApi';
@@ -7,14 +6,12 @@ import { remote } from 'electron';
 import zipFolder from 'zip-folder';
 // actions
 import * as getDataActions from './GetDataActions';
-import { showNotification } from './NotificationActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
-const api = window.ModuleApi;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const { dialog } = remote;
-
+const git = require('../components/core/GitApi.js');
 
 /**
  * @description - Initiate a project load
@@ -31,48 +28,80 @@ export function onLoad(filePath) {
  * Sync project to door 43, based on currently logged in user.
  *
  * @param {string} projectPath - Path to the project to sync
- * @param {object} manifest - manifest of the project to sync
- * @param {object} lastUser - currently logged in user
+ * @param {object} user - currently logged in user
  */
-export function syncProject(projectPath, manifest, lastUser) {
+export function uploadProject(projectPath, user) {
   return (dispatch => {
-    var Token = api.getAuthToken('gogs');
-    gogs(Token).login(lastUser).then(authenticatedUser => {
-      const showAlert = message => {
-        dispatch(AlertModalActions.openAlertDialog(message));
-      };
-      sync(projectPath, manifest, authenticatedUser, showAlert);
-      dispatch({
-        type: consts.UPLOAD_PROJECT
-      });
-    }).catch(reason => {
-      if (reason.code === "ENOTFOUND") {
-        // ENOTFOUND: client was not able to connect to given address
-        dispatch(
-          AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
-        );
-      } else if (reason.status === 401) {
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
-        );
-      } else if (reason.hasOwnProperty('message')) {
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading' + reason.message)
-        );
-      } else if (reason.hasOwnProperty('data') && reason.data) {
-        let errorMessage = reason.data;
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading' + errorMessage)
-        );
-      } else if (reason.hasOwnProperty('data') && typeof reason.data === "string") {
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading: \n Please log into your Door43 account.')
-        );
-      } else {
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
-        );
-      }
+    var projectName = projectPath.split(path.sep).pop();
+
+    gogs(user.token).createRepo(user, projectName).then(repo => {
+      var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
+
+      git(projectPath).save(user, 'Uploading to Door43', projectPath, err => {
+        if(err) {
+          dispatch(
+            AlertModalActions.openAlertDialog("Error saving project: " + err)
+          )
+        } else {
+          git(projectPath).push(newRemote, "master", err => {
+            if (err) {
+              if (err.code === "ENOTFOUND") {
+                // ENOTFOUND: client was not able to connect to given address
+                dispatch(
+                    AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+                );
+              } else if (err.status === 401) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Incorrect username or password')
+                );
+              } else if (err.hasOwnProperty('message')) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
+                );
+              } else if (err.hasOwnProperty('data') && err.data) {
+                let errorMessage = err.data;
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: ' + errorMessage)
+                );
+              } else if (err.hasOwnProperty('data') && typeof err.data === "string") {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Please log into your Door43 account.')
+                );
+              } else if (typeof err === 'string' && err.includes("rejected because the remote contains work")) {
+                dispatch(
+                    AlertModalActions.openAlertDialog('The project cannot be uploaded because there have been changes to the translation of ' + projectName + ' on your Door43 account.')
+                );
+              } else {
+                dispatch(
+                    AlertModalActions.openAlertDialog('Error Uploading: \n Unknown error')
+                );
+              }
+            } else {
+              dispatch({
+                type: consts.UPLOAD_PROJECT
+              });
+              dispatch(
+                  AlertModalActions.openAlertDialog("Successful Upload")
+              )
+            }
+          })
+        }
+      })
+    }).catch(err => {
+        if (err.code === "ENOTFOUND") {
+          // ENOTFOUND: client was not able to connect to given address
+          dispatch(
+              AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+          );
+        } else if (err.status === 401) {
+          dispatch(
+              AlertModalActions.openAlertDialog('Error Uploading: \n Can not find the repository of this user')
+          );
+        } else {
+          dispatch (
+            AlertModalActions.openAlertDialog("Could not create a repository: " + err)
+          )
+        }
     });
   });
 }
