@@ -17,7 +17,6 @@ class Door43Login extends React.Component {
   render() {
     let { displayLogin, showPopover } = this.props;
     let disabledButton = this.state.username == null || this.state.password == null
-    console.log(disabledButton)
     if (!displayLogin) {
       return (
         <Col md={12} sm={12} xs={12} style={{ marginTop: "50px" }}>

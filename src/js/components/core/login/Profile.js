@@ -29,7 +29,7 @@ class Profile extends React.Component {
           </div>
           <div style={{display: "flex", justifyContent: "center" }}>
               <button
-                className="btn-prime"
+                className="btn-second"
                 onClick={onHandleLogout}>
                 Log Out
               </button>
@@ -44,7 +44,7 @@ class Profile extends React.Component {
               <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "200px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
             </FormGroup>
             <button
-              className="btn-prime"
+              className={(this.props.feedback == null) || (this.props.feedback == "") ? "btn-prime-reverse" : "btn-prime"}
               style={{width: '100%', margin: "0"}}
               onClick={this.props.submitFeedback}>
               Submit
@@ -54,7 +54,7 @@ class Profile extends React.Component {
           </div>
           <div style={{display: "flex", justifyContent: "flex-end"}}>
             <button
-              className="btn-second"
+              className="btn-prime"
               onClick={goToProjectsTab}>
               Next&nbsp;&nbsp;
               <Glyphicon glyph="share-alt" />
