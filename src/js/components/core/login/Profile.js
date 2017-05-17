@@ -41,7 +41,11 @@ class Profile extends React.Component {
           <Panel header={panelTitle} style={{padding: "0px", borderColor: "var(--border-color)"}}>
             <ListGroup fill>
             <FormGroup controlId="formControlsTextarea" style={{marginBottom: '0px'}}>
-              <FormControl value={this.props.feedback} onChange={this.props.feedbackChange} componentClass="textarea" style={{height: "200px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}} placeholder="Leave us your feedback!" />
+              <FormControl value={this.props.feedback}
+                onChange={this.props.feedbackChange}
+                componentClass="textarea"
+                style={{height: "200px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}}
+                placeholder={this.props.placeholder == undefined ? "Leave us your feedback!" : this.props.placeholder} />
             </FormGroup>
             <button
               className={(this.props.feedback == null) || (this.props.feedback == "") ? "btn-prime-reverse" : "btn-prime"}

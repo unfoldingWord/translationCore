@@ -5,7 +5,8 @@ const initialState = {
   displayLogin: true,
   userdata: {},
   feedback: '',
-  subject: 'Bug Report'
+  subject: 'Bug Report',
+  placeholder: 'Leave us your feedback!'
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -51,7 +52,7 @@ const loginReducer = (state = initialState, action) => {
         }
       });
       Rollbar.info(state.subject+ ':\n' + state.feedback);
-      return { ...state,   feedback: 'Feedback Submitted!' }
+      return { ...state,   placeholder:"Feedback Submitted!", feedback:"" }
     default:
       return state;
   }
