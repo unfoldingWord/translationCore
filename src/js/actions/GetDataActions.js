@@ -7,8 +7,11 @@
  * @version 1.0.0
  */
 
-// actions
 import * as fs from 'fs-extra';
+import Path from 'path-extra';
+import usfm from 'usfm-parser';
+import BOOKS from '../components/core/BooksOfBible.js';
+// actions
 import * as consts from './CoreActionConsts';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
@@ -26,19 +29,11 @@ import * as ModulesSettingsActions from '../actions/ModulesSettingsActions';
 import * as projectDetailsActions from '../actions/projectDetailsActions';
 import { resetProjectDetail } from './projectDetailsActions';
 
-import pathex from 'path-extra';
-import usfm from 'usfm-parser';
-import { remote } from 'electron';
-import BOOKS from '../components/core/BooksOfBible.js';
-import Path from 'path';
-import GIT from '../components/core/GitApi.js';
-
 // constant declarations
-const PARENT = pathex.datadir('translationCore');
-const PACKAGE_COMPILE_LOCATION = pathex.join(PARENT, 'packages-compiled');
-const PACKAGE_SUBMODULE_LOCATION = pathex.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(pathex.homedir(), 'translationCore');
-const { dialog } = remote;
+const PARENT = Path.datadir('translationCore');
+const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
+const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
 
@@ -165,6 +160,7 @@ export function addLoadedProjectToStore(projectPath, manifest) {
   return ((dispatch) => {
     dispatch(setProjectPath(projectPath));
     dispatch(setProjectManifest(manifest));
+    dispatch(projectDetailsActions.setProjectDetail("bookName", manifest.project.name));
     const params = LoadHelpers.getParams(projectPath, manifest);
     if (params) {
       dispatch(setProjectParams(params));
@@ -212,7 +208,13 @@ export function manifestError(content) {
     dispatch(clearPreviousData());
   });
 }
-
+/**
+ * @description helper to delay actions to a specific number of ms.
+ * @param {number} ms - miliseconds delay.
+ */
+const delay = (ms) => new Promise(resolve =>
+  setTimeout(resolve, ms)
+);
 
 /**
  * @description Loads the tool into the main app view, and initates the tool Container component
@@ -223,19 +225,21 @@ export function loadModuleAndDependencies(moduleFolderName) {
   return ((dispatch, getState) => {
     try {
       dispatch({ type: consts.START_LOADING });
-      setTimeout(() => {
-        dispatch({ type: consts.CLEAR_OLD_GROUPS });
-        dispatch({ type: consts.CLEAR_CONTEXT_ID });
-        dispatch(CurrentToolActions.setDataFetched(false));
-        const modulePath = Path.join(moduleFolderName, 'package.json');
-        const dataObject = fs.readJsonSync(modulePath);
-        const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-        dispatch(saveModules(checkArray));
-        // dispatch(CurrentToolActions.setToolName(dataObject.name));
-        dispatch(CurrentToolActions.setToolTitle(dataObject.title));
-        dispatch(loadProjectDataFromFileSystem(dataObject.name));
-      }, 2000);
-      
+      delay(2000)
+        .then(() => {
+          dispatch({ type: consts.CLEAR_OLD_GROUPS });
+          dispatch({ type: consts.CLEAR_CONTEXT_ID });
+          dispatch(CurrentToolActions.setDataFetched(false));
+          const modulePath = Path.join(moduleFolderName, 'package.json');
+          const dataObject = fs.readJsonSync(modulePath);
+          const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+          dispatch(saveModules(checkArray));
+          dispatch(CurrentToolActions.setToolTitle(dataObject.title));
+          delay(3000)
+            .then(
+              dispatch(loadProjectDataFromFileSystem(dataObject.name))
+            );
+        });
     } catch (e) {
       console.log(e)
       dispatch(errorLoadingProject(e));
@@ -298,23 +302,32 @@ function loadProjectDataFromFileSystem(toolName) {
       const dataDirectory = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
+        .then((successMessage) => {
+          loadGroupDataFromFS(dispatch, dataDirectory, getState, params)
+          .then((successMessage) => {
+            let delayTime = 0;
+            if (successMessage === "success") {
+              dispatch(ResourcesActions.loadBiblesFromFS());
+              delayTime = 1000;
+            }
+            delay(delayTime)
+              .then(
+                // TODO: this action may stay here temporary until the home screen implementation.
+                dispatch(BodyUIActions.toggleHomeView(false))
+              )
+              .then(dispatch({ type: consts.DONE_LOADING }));
+          })
 
-      .then(() => {
-        loadGroupDataFromFS(dispatch, dataDirectory, getState, params)
-        .then(() => {
-          dispatch({ type: consts.DONE_LOADING });
+          .catch(err => {
+            console.warn(err);
+            // TODO: this action may stay here temporary until the home screen implementation.
+            dispatch(BodyUIActions.toggleHomeView(false));
+          });
         })
 
         .catch(err => {
           console.warn(err);
-          // TODO: this action may stay here temporary until the home screen implementation.
-          dispatch(BodyUIActions.toggleHomeView(false));
         });
-      })
-
-      .catch(err => {
-        console.warn(err);
-      });
     });
   });
 }
@@ -327,9 +340,9 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
     if (fs.existsSync(groupIndexDataDirectory)) {
       try {
         groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
-        dispatch(GroupsIndexActions.setGroupsIndex(groupIndexData));
+        dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexData));
         console.log('Loaded group index data from fs');
-        resolve();
+        resolve("success");
       } catch (err) {
         console.log(err)
         dispatch(startModuleFetchData());
@@ -346,39 +359,42 @@ function loadGroupDataFromFS(dispatch, dataDirectory, getState, params) {
     let toolName = getState().currentToolReducer.toolName;
     let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     if (fs.existsSync(groupDataDirectory)) {
-      fs.readdir(groupDataDirectory, (err, groupDataFolderObjs) => {
-        if (err) {
-          console.warn('failed loading group data')
-          reject(err);
-        } else {
-          let allGroupsObjects = {};
-          let total = groupDataFolderObjs.length;
-          let i = 0;
-          for (var groupId in groupDataFolderObjs) {
-            if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
-              total--;
-              continue;
-            }
-            let groupName = groupDataFolderObjs[groupId].split('.')[0];
-            let groupData = loadGroupData(groupName, groupDataDirectory);
-            if (groupData) {
-              allGroupsObjects[groupName] = groupData;
-            }
-            dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
-            i++;
-          }
-          dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
-          // TODO: this action may stay here temporary until the home screen implementation.
-          dispatch(BodyUIActions.toggleHomeView(false));
-          console.log('Loaded group data from fs');
-          resolve();
+      let groupDataFolderObjs = fs.readdirSync(groupDataDirectory);
+      let allGroupsObjects = {};
+      let total = groupDataFolderObjs.length;
+      let i = 0;
+      for (let groupId in groupDataFolderObjs) {
+        if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+          total--;
+          continue;
         }
-      });
+        let groupName = groupDataFolderObjs[groupId].split('.')[0];
+        let groupData = loadGroupData(groupName, groupDataDirectory);
+        if (groupData) {
+          allGroupsObjects[groupName] = groupData;
+        }
+        dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
+        i++;
+      }
+      dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+      console.log('Loaded group data from fs');
+      resolve("success");
     } else {
+      console.log("hey fetch data start")
       dispatch(startModuleFetchData());
     }
   });
 }
+
+
+/**
+ *       (err, groupDataFolderObjs) => {
+        if (err) {
+          console.warn('Failed loading group data')
+          reject(err);
+          // take a second look at the reject above just in case
+        } else {
+ */
 
 // new implementation helper
 function loadGroupData(groupName, groupDataFolderPath) {
