@@ -33,7 +33,7 @@ class ImportOnlineContainer extends React.Component {
         <div>
           <center>
             <br />
-            <h4>You must log in with a Door43 account to see projects here.</h4>
+            <h4>Unable to connect to the online projects. Please log in to your Door43 account.</h4>
             <br />
           </center>
         </div>
