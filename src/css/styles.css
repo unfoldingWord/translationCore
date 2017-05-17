@@ -125,11 +125,11 @@ main modal. They basically override bootstrap styling for these components
 
 #recentProjects td:nth-child(n+3):nth-child(-n+5) {
   font-style: italic;
-  width: 100px
+  width: 100px;
 }
 #recentProjects td:nth-child(2) {
     font-weight: bold;
-    width: 100px
+    width: 100px;
 }
 
 #recentProjects>tbody>tr>td {
