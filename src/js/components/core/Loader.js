@@ -37,7 +37,7 @@ class Loader extends React.Component {
       <MuiThemeProvider>
         <Dialog modal={true} open={show}>
           <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
-            <img className="App-logo" src={path.join(window.__base, "images/TC_icon.png")} alt="logo" />
+            <img className="App-logo" height="300px" src={path.join(window.__base, "images/TC_icon.png")} alt="logo" />
             <span>Loading...</span><br />
             {this.displayProgress(toolsProgress)}
             <br/><br/>

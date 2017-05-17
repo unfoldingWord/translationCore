@@ -35,10 +35,14 @@ export function uploadProject(projectPath, user) {
   return (dispatch => {
     var projectName = projectPath.split(path.sep).pop();
 
+    dispatch(
+        AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
+    );
+
     gogs(user.token).createRepo(user, projectName).then(repo => {
       var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
 
-      git(projectPath).save(user, 'Uploading to Door43', projectPath, err => {
+      git(projectPath).save(user, 'Commit before upload', projectPath, err => {
         if(err) {
           dispatch(
             AlertModalActions.openAlertDialog("Error saving project: " + err)
@@ -72,7 +76,7 @@ export function uploadProject(projectPath, user) {
                 type: consts.UPLOAD_PROJECT
               });
               dispatch(
-                  AlertModalActions.openAlertDialog("Successful Upload")
+                  AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
               )
             }
           })
