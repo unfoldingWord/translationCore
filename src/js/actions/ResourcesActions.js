@@ -30,9 +30,11 @@ export const addNewResource = (resourceName, resourceData, namespace) => {
   });
 };
 
+/**
+ * @description loads bibles from the filesystem and saves them in the resources reducer.
+ */
 export function loadBiblesFromFS() {
   return ((dispatch, getState) => {
-    console.log(getState().projectDetailsReducer)
     const projectSaveLocation = getState().projectDetailsReducer.projectSaveLocation;
     const biblesDirectory = path.join(projectSaveLocation, RESOURCES_DATA_DIR, 'bibles');
 
