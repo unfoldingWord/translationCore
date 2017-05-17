@@ -2,6 +2,7 @@ import consts from '../actions/CoreActionConsts';
 
 const initialState = {
   projectSaveLocation: '',
+  bookName: '',
   manifest: {},
   params: {}
 };
