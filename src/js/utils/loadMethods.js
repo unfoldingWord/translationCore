@@ -48,7 +48,7 @@ export function loadModulesSettings() {
     return {};
   }
 }
-
+// TODO: change to readJson to readJsonSync
 export function loadGroupsDataToExport(tool, dataFolder, params) {
   return new Promise((resolve, reject) => {
     let groupDataFolderPath = path.join(dataFolder, 'index', tool, params.bookAbbr);
