@@ -299,11 +299,15 @@ function loadProjectDataFromFileSystem(toolName) {
             console.warn(err);
             // TODO: this action may stay here temporary until the home screen implementation.
             dispatch(BodyUIActions.toggleHomeView(false));
+            AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
           });
         })
 
         .catch(err => {
           console.warn(err);
+          // TODO: this action may stay here temporary until the home screen implementation.
+          dispatch(BodyUIActions.toggleHomeView(false));
+          AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
         });
     });
   });
