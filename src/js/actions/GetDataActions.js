@@ -134,16 +134,39 @@ export function openProject(projectPath, projectLink, exporting = false) {
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
             let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
             manifest = LoadHelpers.verifyChunks(projectPath, manifest);
-            if (!manifest || !manifest.tcInitialized) {
-                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+            if (LoadHelpers.checkMissingVerses(manifest.project.name, projectPath)) {
+                dispatch(AlertModalActions.openOptionDialog('Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly', 
+                (option)=> {
+                    if (option === "Cancel") {
+                        dispatch(clearPreviousData());
+                        dispatch(AlertModalActions.closeAlertDialog());
+                    } else {
+                        dispatch(AlertModalActions.closeAlertDialog());
+                        if (!manifest || !manifest.tcInitialized) {
+                            manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+                        } else {
+                            let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+                            if (oldManifest) {
+                                manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
+                            }
+                        }
+                        dispatch(addLoadedProjectToStore(projectPath, manifest));
+                        if (!exporting) dispatch(displayToolsToLoad(manifest));
+                    }
+                }, "Continue Without Fixing", "Cancel"));
             } else {
-                let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-                if (oldManifest) {
-                    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
+                if (!manifest || !manifest.tcInitialized) {
+                    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
+                } else {
+                    let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+                    if (oldManifest) {
+                        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
+                    }
                 }
+                dispatch(addLoadedProjectToStore(projectPath, manifest));
+                if (!exporting) dispatch(displayToolsToLoad(manifest));
             }
-            dispatch(addLoadedProjectToStore(projectPath, manifest));
-            if (!exporting) dispatch(displayToolsToLoad(manifest));
+
         }
     });
 }
