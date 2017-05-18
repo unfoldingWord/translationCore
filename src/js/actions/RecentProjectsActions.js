@@ -170,7 +170,7 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName, username) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
-    } catch (e) {  debugger; reject(false) };
+    } catch (e) {   reject(false) };
     resolve(true);
   });
 }
@@ -194,7 +194,7 @@ export function saveCommentsToCSV(obj, dataFolder, toolName, username) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
-    } catch (e) { debugger; reject(false) };
+    } catch (e) {  reject(false) };
     resolve(true);
   });
 }
@@ -222,7 +222,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName, username) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
-    } catch (e) { debugger; reject(false) };
+    } catch (e) {  reject(false) };
     resolve(true);
   });
 }
@@ -246,7 +246,7 @@ export function saveRemindersToCSV(obj, dataFolder, toolName, username) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
-    } catch (e) { debugger; reject(false) };
+    } catch (e) {  reject(false) };
     resolve(true);
   });
 }
@@ -272,7 +272,7 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName, username) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
-    } catch (e) { debugger; reject(false) };
+    } catch (e) {  reject(false) };
     resolve(true);
   });
 }
