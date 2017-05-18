@@ -47,9 +47,13 @@ export function loadBiblesFromFS() {
 
       for (let bibleName in biblesObjects) {
         if (biblesObjects.hasOwnProperty(bibleName)) {
-          let bibleCurrentName = biblesObjects[bibleName].replace('.json', '');
+          let currentBibleName = biblesObjects[bibleName].replace('.json', '');
           let bibleData = fs.readJsonSync(path.join(biblesDirectory, biblesObjects[bibleName]));
-          dispatch(addNewBible(bibleCurrentName, bibleData));
+          if (bibleData) {
+            dispatch(addNewBible(currentBibleName, bibleData));
+          } else {
+            console.warn("Couldn't load " + currentBibleName + "bible");
+          }
         }
       }
     } else {
