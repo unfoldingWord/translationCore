@@ -249,7 +249,7 @@ export const saveGroupsIndex = state => {
     let fileName = "index.json";
     let groupsIndex = state.groupsIndexReducer.groupsIndex;
     // Not saving if the array is empty.
-    // without it it will overwrite the data in the filesystem.
+    // without this if it will overwrite the data in the filesystem.
     if (groupsIndex.length > 0) {
       if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
         let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
