@@ -126,7 +126,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(openProject(projectPath));
     },
     uploadProject: (projectPath, user) => {
-      dispatch(recentProjectsActions.uploadProject(projectPath, user));
+      if(user.localUser){
+        dispatch(AlertModalActions.openAlertDialog("Please log in to Door43 to upload your projects"))
+      } else {
+        dispatch(recentProjectsActions.uploadProject(projectPath, user));
+      }
     },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());

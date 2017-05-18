@@ -182,6 +182,21 @@ main modal. They basically override bootstrap styling for these components
     opacity: .6;
 }
 
+.btn-prime-reverse, .btn-prime-reverse:hover, .btn-prime-reverse:focus {
+    background-color: var(--accent-color-dark);
+    opacity: 0.6;
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
 .btn-second {
     background-color: var(--reverse-color);
     color: var(--accent-color-dark);
@@ -240,4 +255,3 @@ main modal. They basically override bootstrap styling for these components
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
