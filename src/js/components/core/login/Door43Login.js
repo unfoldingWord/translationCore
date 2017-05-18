@@ -16,6 +16,7 @@ class Door43Login extends React.Component {
 
   render() {
     let { displayLogin, showPopover } = this.props;
+    let disabledButton = this.state.username == null || this.state.password == null
     if (!displayLogin) {
       return (
         <Col md={12} sm={12} xs={12} style={{ marginTop: "50px" }}>
@@ -67,7 +68,8 @@ class Door43Login extends React.Component {
               onChange={e => this.setState({password: e.target.value})}
             />
             <button
-              className="btn-prime"
+              className={disabledButton ? "btn-prime-reverse" : "btn-prime"}
+              disabled={disabledButton}
               style={{width: "100%", margin: "40px 0px 20px"}}
               onClick={() => this.props.handleSubmit(this.state)}>
               Log In
