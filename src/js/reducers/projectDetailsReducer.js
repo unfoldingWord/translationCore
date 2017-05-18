@@ -34,7 +34,7 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         projectSaveLocation: action.filePath
       };
-    case 'RESET_PROJECT_DETAIL':
+    case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:
       return state;
