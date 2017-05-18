@@ -193,7 +193,7 @@ export function loadModuleAndDependencies(moduleFolderName, toolName) {
     try {
       dispatch({ type: consts.START_LOADING });
       dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-      delay(2000)
+      delay(1000)
         .then(() => {
           dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
           dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
@@ -206,7 +206,7 @@ export function loadModuleAndDependencies(moduleFolderName, toolName) {
           const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
           dispatch(saveModules(checkArray));
           dispatch(CurrentToolActions.setToolTitle(dataObject.title));
-          delay(3000)
+          delay(2000)
             .then(
               dispatch(loadProjectDataFromFileSystem(dataObject.name))
             );
@@ -285,8 +285,8 @@ function loadProjectDataFromFileSystem(toolName) {
             let delayTime = 0;
             if (successMessage === "success") {
               dispatch(ResourcesActions.loadBiblesFromFS());
-              delayTime = 1000;
-            } 
+              delayTime = 800;
+            }
             delay(delayTime)
               .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
