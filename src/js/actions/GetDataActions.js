@@ -134,6 +134,12 @@ export function openProject(projectPath, projectLink, exporting = false) {
             projectPath = LoadHelpers.correctSaveLocation(projectPath);
             let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
             manifest = LoadHelpers.verifyChunks(projectPath, manifest);
+            let conflictsFound = LoadHelpers.findMergeConflicts(manifest.finished_chunks, projectPath);
+            if (conflictsFound) {
+                dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+                dispatch(clearPreviousData());
+                return;
+            }
             if (!manifest || !manifest.tcInitialized) {
                 manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, currentUser);
             } else {
