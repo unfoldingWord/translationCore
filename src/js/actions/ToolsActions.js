@@ -3,20 +3,17 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import * as modalActions from './ModalActions.js';
-import * as LoaderActions from './LoaderActions.js';
 import * as GetDataActions from './GetDataActions.js';
-import * as CurrentToolActions from './currentToolActions';
+import * as BodyUIActions from './BodyUIActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 // const api = window.ModuleApi;
 
 export function loadTool(folderName, toolName) {
   return ((dispatch, getState) => {
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-    dispatch(CurrentToolActions.setToolName(toolName));
+    dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(modalActions.showModalContainer(false));
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
-    
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName, toolName));
   });
 }
 
@@ -39,7 +36,7 @@ const getDefaultModules = (callback) => {
   var defaultModules = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   var moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
-  fs.readdir(moduleBasePath, function (error, folders) {
+  fs.readdir(moduleBasePath, (error, folders) => {
     if (error) {
       console.error(error);
     } else {
@@ -59,14 +56,13 @@ const getDefaultModules = (callback) => {
               defaultModules.push(manifestPath);
             }
           }
-        }
-        catch (e) {
+        } catch (e) {
         }
       }
     }
     callback(defaultModules);
   });
-}
+};
 
 const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
