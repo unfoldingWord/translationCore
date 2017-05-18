@@ -11,6 +11,7 @@ const initialState = {
     callback: null,
     moreInfoOpen: false,
     alertDialogVisibility: false,
+    alertDialogLoading: false,
     alertText: null
 };
 
@@ -36,12 +37,14 @@ const alertModalReducer = (state = initialState, action) => {
       return {
         ...state,
         alertDialogVisibility: true,
+        alertDialogLoading: action.loading,
         alertText: action.alertMessage
       }
     case consts.CLOSE_ALERT_DIALOG:
       return {
         ...state,
-        alertDialogVisibility: false
+        alertDialogVisibility: false,
+        alertDialogLoading: false,
       }
     default:
       return state;
