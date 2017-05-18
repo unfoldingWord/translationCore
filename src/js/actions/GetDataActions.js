@@ -36,8 +36,6 @@ const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
 
-
-
 /**
  * @description Sends project path to the store
  */
@@ -75,7 +73,8 @@ export function setProjectParams(params) {
 export function clearPreviousData() {
   return ((dispatch) => {
     dispatch(resetProjectDetail());
-    dispatch({ type: consts.CLEAR_OLD_GROUPS });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
     dispatch(CurrentToolActions.setToolTitle(""));
     dispatch(saveModuleFetchData(null));
@@ -220,14 +219,18 @@ const delay = (ms) => new Promise(resolve =>
  *
  * @param {string} moduleFolderName - Folder path of the tool being loaded
  */
-export function loadModuleAndDependencies(moduleFolderName) {
+export function loadModuleAndDependencies(moduleFolderName, toolName) {
   return ((dispatch, getState) => {
     try {
       dispatch({ type: consts.START_LOADING });
+      dispatch({ type: consts.CLEAR_CURRENT_TOOL });
       delay(2000)
         .then(() => {
-          dispatch({ type: consts.CLEAR_OLD_GROUPS });
+          dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
+          dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+          dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
           dispatch({ type: consts.CLEAR_CONTEXT_ID });
+          dispatch(CurrentToolActions.setToolName(toolName));
           dispatch(CurrentToolActions.setDataFetched(false));
           const modulePath = Path.join(moduleFolderName, 'package.json');
           const dataObject = fs.readJsonSync(modulePath);
@@ -308,7 +311,7 @@ function loadProjectDataFromFileSystem(toolName) {
             if (successMessage === "success") {
               dispatch(ResourcesActions.loadBiblesFromFS());
               delayTime = 1000;
-            }
+            } 
             delay(delayTime)
               .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
