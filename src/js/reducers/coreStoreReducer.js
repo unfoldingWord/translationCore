@@ -48,10 +48,7 @@ const coreStoreReducer = (state = initialState, action) => {
         }
       }
     case consts.CLEAR_PREVIOUS_DATA:
-      return {
-        ...state,
-        ...initialState
-     }
+      return initialState;
     case consts.STORE_TOOLS_ARRAY:
       return {
         ...state
