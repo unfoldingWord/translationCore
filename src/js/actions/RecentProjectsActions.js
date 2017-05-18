@@ -40,7 +40,7 @@ export function uploadProject(projectPath, user) {
     );
 
     gogs(user.token).createRepo(user, projectName).then(repo => {
-      var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
+      var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
       git(projectPath).save(user, 'Commit before upload', projectPath, err => {
         if(err) {
