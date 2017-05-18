@@ -24,10 +24,8 @@ import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ModulesSettingsActions from '../actions/ModulesSettingsActions';
-import * as projectDetailsActions from '../actions/projectDetailsActions';
-import { resetProjectDetail } from './projectDetailsActions';
-
+import * as ModulesSettingsActions from './ModulesSettingsActions';
+import * as projectDetailsActions from './projectDetailsActions';
 // constant declarations
 const PARENT = Path.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
@@ -37,42 +35,12 @@ const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
 
 /**
- * @description Sends project path to the store
- */
-export function setProjectPath(pathLocation) {
-  return {
-    type: consts.SET_SAVE_PATH_LOCATION,
-    pathLocation: pathLocation
-  };
-}
-
-/**
- * @description Sends project manifest to the store
- */
-export function setProjectManifest(manifest) {
-  return {
-    type: consts.STORE_MANIFEST,
-    manifest: manifest
-  }
-}
-
-/**
- * @description Sends project parameters to the store
- */
-export function setProjectParams(params) {
-  return {
-    type: consts.STORE_PARAMS,
-    params: params
-  }
-}
-
-/**
  * @description This method will set the corestore reducer store state back to the inital state.
- *
+ * @return {object} returns a bunch of action dispatch.
  */
 export function clearPreviousData() {
   return ((dispatch) => {
-    dispatch(resetProjectDetail());
+    dispatch(projectDetailsActions.resetProjectDetail());
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
@@ -129,7 +97,7 @@ export function openProject(projectPath, projectLink, exporting = false) {
 export function openUSFMProject(usfmFilePath, projectPath, direction, projectLink, currentUser, exporting) {
   return ((dispatch) => {
     const projectSaveLocation = LoadHelpers.correctSaveLocation(projectPath);
-    dispatch(setProjectPath(projectSaveLocation));
+    dispatch(projectDetailsActions.setSaveLocation(projectSaveLocation));
     const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectSaveLocation);
     const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
     const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
@@ -156,12 +124,12 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
  */
 export function addLoadedProjectToStore(projectPath, manifest) {
   return ((dispatch) => {
-    dispatch(setProjectPath(projectPath));
-    dispatch(setProjectManifest(manifest));
+    dispatch(projectDetailsActions.setSaveLocation(projectPath));
+    dispatch(projectDetailsActions.setProjectManifest(manifest));
     dispatch(projectDetailsActions.setProjectDetail("bookName", manifest.project.name));
     const params = LoadHelpers.getParams(projectPath, manifest);
     if (params) {
-      dispatch(setProjectParams(params));
+      dispatch(projectDetailsActions.setProjectParams(params));
     } else {
       // no finished_chunks in manifest
       dispatch(manifestError('No finished chunks specified in project manifest'))
@@ -191,12 +159,10 @@ export function displayToolsToLoad(manifest) {
   });
 }
 
-
-
-
 /**
- *
+ * @description hanldes manifest errors.
  * @param {string} content - Message of the alert to be shown
+ * @return {object} action object.
  */
 export function manifestError(content) {
   return (dispatch => {
@@ -209,15 +175,18 @@ export function manifestError(content) {
 /**
  * @description helper to delay actions to a specific number of ms.
  * @param {number} ms - miliseconds delay.
+ * @return {*} none.
  */
 const delay = (ms) => new Promise(resolve =>
   setTimeout(resolve, ms)
 );
 
 /**
- * @description Loads the tool into the main app view, and initates the tool Container component
- *
- * @param {string} moduleFolderName - Folder path of the tool being loaded
+ * @description Loads the tool into the main app view, and initates the
+ * tool Container component
+ * @param {string} moduleFolderName - Folder path of the tool being loaded.
+ * @param {string} toolName - name of the current tool being loaded.
+ * @return {object} action object.
  */
 export function loadModuleAndDependencies(moduleFolderName, toolName) {
   return ((dispatch, getState) => {
@@ -243,7 +212,7 @@ export function loadModuleAndDependencies(moduleFolderName, toolName) {
             );
         });
     } catch (e) {
-      console.log(e)
+      console.log(e);
       dispatch(errorLoadingProject(e));
     }
   });
@@ -251,7 +220,8 @@ export function loadModuleAndDependencies(moduleFolderName, toolName) {
 
 /**
  * @description Saves tools included module Containers in the store
- * @param {Array} checkArray - Array of the checks that the views should be loaded
+ * @param {Array} checkArray - Array of the checks that the views should be loaded.
+ * @return {object} action object.
  */
 export function saveModules(checkArray) {
   return (dispatch => {
@@ -284,9 +254,9 @@ export function saveModuleFetchData(moduleFetchData) {
 
 /**
  * @description This method will set the corestore view for the corresponding module
- * @param identifier
- * @param view
- * @return action being dispatched.
+ * @param {string} identifier - label/property name.
+ * @param {object} view - tool component being saved.
+ * @return {object} action being dispatched.
  */
 export function setModuleView(identifier, view) {
   return {
@@ -296,7 +266,12 @@ export function setModuleView(identifier, view) {
   };
 }
 
-// new implemention
+/**
+ * @description function that handles both loadGroupIndexFromFS and
+ * loadGroupDataFromFS with promises.
+ * @param {string} toolName - name of the tool being loaded.
+ * @return {object} object action.
+ */
 function loadProjectDataFromFileSystem(toolName) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
@@ -305,7 +280,7 @@ function loadProjectDataFromFileSystem(toolName) {
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
-          loadGroupDataFromFS(dispatch, dataDirectory, getState, params)
+          loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
           .then((successMessage) => {
             let delayTime = 0;
             if (successMessage === "success") {
@@ -334,7 +309,13 @@ function loadProjectDataFromFileSystem(toolName) {
   });
 }
 
-//// new implementation
+/**
+ * @description loads the group index from the filesystem.
+ * @param {function} dispatch - redux action dispatcher.
+ * @param {string} dataDirectory - group index data path
+ * location in the filesystem.
+ * @return {object} object action / Promises.
+ */
 function loadGroupIndexFromFS(dispatch, dataDirectory) {
   return new Promise((resolve, reject) => {
     const groupIndexDataDirectory = Path.join(dataDirectory, 'index.json');
@@ -355,10 +336,17 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
   });
 }
 
-// new implementation
-function loadGroupDataFromFS(dispatch, dataDirectory, getState, params) {
+/**
+ * @description loads the group index from the filesystem.
+ * @param {function} dispatch - redux action dispatcher.
+ * @param {string} dataDirectory - group data path or save
+ * location in the filesystem.
+ * @param {string} toolName - name if the tool being loaded.
+ * @param {object} params - object of project details params.
+ * @return {object} object action / Promises.
+ */
+function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
   return new Promise((resolve, reject) => {
-    let toolName = getState().currentToolReducer.toolName;
     let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     if (fs.existsSync(groupDataDirectory)) {
       let groupDataFolderObjs = fs.readdirSync(groupDataDirectory);
@@ -382,23 +370,19 @@ function loadGroupDataFromFS(dispatch, dataDirectory, getState, params) {
       console.log('Loaded group data from fs');
       resolve("success");
     } else {
-      console.log("hey fetch data start")
       dispatch(startModuleFetchData());
     }
   });
 }
 
-
 /**
- *       (err, groupDataFolderObjs) => {
-        if (err) {
-          console.warn('Failed loading group data')
-          reject(err);
-          // take a second look at the reject above just in case
-        } else {
+ * @description helper function that loads a group data file
+ * from the filesystem.
+ * @param {string} groupName - group data name.
+ * @param {string} groupDataFolderPath - group data save location
+ * in the filesystem.
+ * @return {object} object action / Promises.
  */
-
-// new implementation helper
 function loadGroupData(groupName, groupDataFolderPath) {
   const groupPath = Path.join(groupDataFolderPath, groupName + '.json');
   let groupData;
@@ -411,8 +395,8 @@ function loadGroupData(groupName, groupDataFolderPath) {
 }
 
 /**
- * @description
- * 
+ * @description this function handles running the tools fetchdata when needed.
+ * @return {object} action object.
  */
 export function startModuleFetchData() {
   return ((dispatch, getState) => {
@@ -471,8 +455,9 @@ export function startModuleFetchData() {
 }
 
 /**
- *
+ * @description handles erros when loading a project.
  * @param {object} err - Message object of the alert to be shown
+ * @return {object} action object.
  */
 export function errorLoadingProject(err) {
   return ((dispatch) => {
@@ -483,18 +468,16 @@ export function errorLoadingProject(err) {
       )
     );
     dispatch(clearPreviousData());
-    console.error(err)
+    console.error(err);
   });
 }
 
-
-
 /**
  * @description Set ups a tC project parameters for a usfm project
- *
  * @param {string} bookAbbr - Book abbreviation
  * @param {path} projectSaveLocation - Path of the usfm project being loaded
  * @param {path} direction - Reading direction of the project books
+ * @return {object} action object.
  */
 export function setUSFMParams(bookAbbr, projectSaveLocation, direction) {
   return ((dispatch) => {
@@ -509,6 +492,6 @@ export function setUSFMParams(bookAbbr, projectSaveLocation, direction) {
     } else {
       params.originalLanguage = "greek";
     }
-    dispatch(setProjectParams(params));
+    dispatch(projectDetailsActions.setProjectParams(params));
   });
 }
