@@ -5,13 +5,14 @@ import Dialog from 'material-ui/Dialog';
 
 class Alert extends Component {
   render() {
-    let {alertText, alertDialogVisibility} = this.props.alertModalReducer;
+    let {alertText, alertDialogVisibility, alertDialogLoading} = this.props.alertModalReducer;
     let {closeAlertDialog} =this.props.actions;
 
     const actions = [
       <button
         label="Cancel"
         className="btn-prime"
+        disabled={alertDialogLoading}
         onClick={closeAlertDialog}
       > OK
       </button>
@@ -20,11 +21,12 @@ class Alert extends Component {
     const headerContent = (
       <div>
         <span>{"Alert"}</span>
-        <Glyphicon
-          onClick={closeAlertDialog}
-          glyph={"remove"}
-          style={{color: "#ffffff", cursor: "pointer", fontSize: "18px", float: "right"}}
-        />
+          {alertDialogLoading ? null :
+              <Glyphicon
+                  onClick={closeAlertDialog}
+                  glyph={"remove"}
+                  style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
+              />}
        </div>
     );
 
@@ -45,7 +47,7 @@ class Alert extends Component {
               <tbody>
               <tr>
                 <td>
-                  <img src={window.__base + "images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
+                  <img className={alertDialogLoading ? "App-logo" : ""} src={window.__base + "images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
                 </td>
                 <td>
                   <div style={{color: "var(--text-color-dark)"}}>

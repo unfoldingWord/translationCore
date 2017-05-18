@@ -160,7 +160,7 @@ main modal. They basically override bootstrap styling for these components
     outline: none;
 }
 
-.btn-prime:hover, .btn-prime:focus {
+.btn-prime:enabled:hover, .btn-prime:focus {
     background-color: var(--accent-color-dark);
     background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
     color: var(--reverse-color);
@@ -168,6 +168,27 @@ main modal. They basically override bootstrap styling for these components
     width: 190px;
     border-radius: 2px;
     box-shadow: 0 2px 2px var(--text-color-light);
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-prime:disabled, .btn-prime:disabled:hover {
+    color: var(--reverse-color);
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+.btn-prime-reverse, .btn-prime-reverse:hover, .btn-prime-reverse:focus {
+    background-color: var(--accent-color-dark);
+    opacity: 0.6;
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
     margin: 10px;
     padding: 0;
     vertical-align: middle;
@@ -190,7 +211,7 @@ main modal. They basically override bootstrap styling for these components
     outline: none;
 }
 
-.btn-second:hover, .btn-second:focus {
+.btn-second:enabled:hover, .btn-second:focus {
     background-color: var(--reverse-color);
     color: var(--accent-color-dark);
     height: 35px;
@@ -203,6 +224,12 @@ main modal. They basically override bootstrap styling for these components
     text-align: center;
     border: 2px solid var(--accent-color-dark);
     outline: none;
+}
+
+.btn-second:disabled, .btn-second:disabled:hover {
+    color: var(--accent-color-dark);
+    cursor: not-allowed;
+    opacity: .6;
 }
 
 .btn-second-reverse, .btn-second-reverse:hover, .btn-second-reverse:focus {
@@ -222,11 +249,9 @@ main modal. They basically override bootstrap styling for these components
 
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
-  height: 300px;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-

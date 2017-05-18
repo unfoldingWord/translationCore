@@ -26,9 +26,9 @@ class CreativeCommonsPage extends Component {
           </p>
           <h4><b>Under the following terms:</b></h4>
           <p>
-            <b>Attribution</b> — You must give appropriate credit, provide a link to the license,&nbsp;
-            and indicate if changes were made. You may do so in any reasonable manner, but not in&nbsp;
-            any way that suggests the licensor endorses you or your use.
+            <b>Attribution</b> —  You must attribute the work as follows: "Original work available&nbsp;
+            at https://door43.org/." Attribution statements in derivative works should not in any way&nbsp;
+            suggest that we endorse you or your use of this work
           </p>
           <p>
             <b>ShareAlike</b> — If you remix, transform, or build upon the material, you must&nbsp;

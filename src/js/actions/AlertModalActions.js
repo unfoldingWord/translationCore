@@ -41,12 +41,14 @@ export const toggleMoreInfo = () => {
 /**
  * @description opens the alert dialog with the specified alert message.
  * @param {string} alertMessage - message to be displayed inside the alert dialog.
+ * @param {boolean} loading - true displays spinning icon and no action button in dialog.
  * @return {object} action content.
  */
-export function openAlertDialog(alertMessage) {
+export function openAlertDialog(alertMessage, loading) {
   return {
     type: consts.OPEN_ALERT_DIALOG,
-    alertMessage
+    alertMessage,
+    loading
   }
 }
 
