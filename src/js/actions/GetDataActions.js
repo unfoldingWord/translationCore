@@ -1,8 +1,7 @@
 /**
  * @file These are the actions that load a tC project from
  * the manifest.json to the tools being loaded into the store
- * @author RoyalSix (I ate Seven)
- *
+ * @author RoyalSix (I ate Seven) and Manny Colon
  * @exports GetData Actions
  * @version 1.0.0
  */
