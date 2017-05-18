@@ -4,7 +4,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import { Modal, Tabs, Tab, Button, Glyphicon } from 'react-bootstrap/lib';
 // components
-import RecentProjects from '../components/core/RecentProjects';
+import RecentProjects from '../components/RecentProjects';
 // actions
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import * as ModalActions from '../actions/ModalActions.js';

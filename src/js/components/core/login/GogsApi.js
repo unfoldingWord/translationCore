@@ -80,6 +80,8 @@ function UserManager(auth) {
           var user = repo.full_name.split("/")[0];
           var project = repo.full_name.split("/")[1];
           return {repo: repo.full_name, user: user, project: project};
+        }).filter( repo => {
+          return repo.user === user.username;
         });
       });
     }
