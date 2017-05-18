@@ -24,7 +24,8 @@ class SwitchCheck extends React.Component {
         const metadata = toolsMetadatas[i];
         if (metadata.name == "ToolsTester") {
           if (this.props.currentSettings.developerMode) {
-            buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
+            // Removing tool tester for beta
+            // buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
           }
         } else {
           buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
