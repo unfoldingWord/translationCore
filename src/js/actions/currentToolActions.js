@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts'
+import consts from '../actions/CoreActionConsts';
 
 /**
  * @description this action sets current tool name
@@ -9,13 +9,13 @@ export const setToolName = (toolName) => {
   if (!toolName || toolName === ' ') {
     return {
       type: consts.SET_TOOL_NAME
-    }
+    };
   }
   return {
     type: consts.SET_TOOL_NAME,
     toolName
-  }
-}
+  };
+};
 
 /**
  * @description this action sets current tool title
@@ -29,19 +29,18 @@ export const setToolTitle = (toolTitle) => {
   return {
     type: consts.SET_TOOL_TITLE,
     toolTitle
-  }
-}
+  };
+};
 
 /**
- * @description This action should be used to set whether or
- * not a tool should run a 'fetchData' in the componentWillReceiveProps
- * function
- * 
+ * @description This action should be used to set whether or not a tool
+ * should run a 'fetchData' in the componentWillReceiveProps function
  * @param {boolean} val - Designates if the data has been fetched from a tool load
+ * @return {object} action object.
  */
 export const setDataFetched = (val) => {
   return {
-    type:consts.SET_FETCHED_DATA,
-    isDataFetched:val
+    type: consts.SET_FETCHED_DATA,
+    isDataFetched: val
   }
 }
