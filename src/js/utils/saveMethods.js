@@ -8,9 +8,9 @@ import path from 'path-extra';
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
-const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources');
-const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
-const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
+const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
+const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
+const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 /**
  * @description saves all data in settingsReducer to the specified directory.
  * @param {object} state - object of reducers (objects).
@@ -140,9 +140,9 @@ function mkdirRecursive(path, callback) {
 function generateSavePath(state, checkDataName, modifiedTimestamp) {
   /**
   * @description output directory
-  *  /translationCore/ar_eph_text_ulb/apps/translationCore/checkData/comments/eph/1/3
+  *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
   * @example PROJECT_SAVE_LOCATION - /translationCore/ar_eph_text_ulb
-  * @example CHECKDATA_DIRECTORY - /apps/translationCore/checkData
+  * @example CHECKDATA_DIRECTORY - /.apps/translationCore/checkData
   * @example bookAbbreviation - /eph
   * @example checkDataName - /comments
   * @example chapter - /1

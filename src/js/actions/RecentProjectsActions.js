@@ -129,7 +129,7 @@ export function exportToCSV(projectPath) {
 
     let toolPaths = getToolFolderNames(projectPath);
     if (!toolPaths) dispatch(AlertModalActions.openAlertDialog('No checks have been performed in this project.'));
-    let dataFolder = path.join(projectPath, 'apps', 'translationCore');
+    let dataFolder = path.join(projectPath, '.apps', 'translationCore');
     var fn = function (newPaths) {
       saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
         loadedSuccessfully = result && loadedSuccessfully;
@@ -301,7 +301,7 @@ export function addContextIdToCSV(currentRowArray, contextId, username, time) {
  */
 export function getToolFolderNames(projectPath) {
   try {
-    return fs.readdirSync(path.join(projectPath, 'apps', 'translationCore', 'index'));
+    return fs.readdirSync(path.join(projectPath, '.apps', 'translationCore', 'index'));
   } catch (e) {
   }
 }
