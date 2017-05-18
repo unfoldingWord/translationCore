@@ -50,7 +50,7 @@ export function uploadProject(projectPath, user) {
         } else {
           git(projectPath).push(newRemote, "master", err => {
             if (err) {
-              if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
+              if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
                 dispatch(
                   AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
                 );
@@ -83,19 +83,19 @@ export function uploadProject(projectPath, user) {
         }
       })
     }).catch(err => {
-      if (user.localUser) {
-        dispatch(
-          AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
-        );
-      } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT")) {
-        dispatch(
-          AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
-        );
-      } else {
-        dispatch(
-          AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
-        )
-      }
+        if (user.localUser) {
+          dispatch(
+              AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
+          );
+        } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
+          dispatch(
+              AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
+          );
+        } else {
+          dispatch (
+            AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
+          )
+        }
     });
   });
 }

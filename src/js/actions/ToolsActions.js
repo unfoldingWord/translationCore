@@ -3,17 +3,16 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import * as modalActions from './ModalActions.js';
-import * as LoaderActions from './LoaderActions.js';
 import * as GetDataActions from './GetDataActions.js';
+import * as BodyUIActions from './BodyUIActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
-// const api = window.ModuleApi;
 
-export function loadTool(folderName) {
+export function loadTool(folderName, toolName) {
   return ((dispatch, getState) => {
+    dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(modalActions.showModalContainer(false));
-    dispatch({ type: consts.START_LOADING });
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName));
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName, toolName));
   });
 }
 
@@ -22,7 +21,6 @@ export function getToolsMetadatas() {
     getDefaultModules((moduleFolderPathList) => {
       fillDefaultModules(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
-        // api.putToolMetaDatasInStore(metadatas);
         dispatch({
           type: consts.GET_TOOLS_METADATAS,
           val: metadatas
@@ -33,37 +31,37 @@ export function getToolsMetadatas() {
 }
 
 const getDefaultModules = (callback) => {
-  var defaultModules = [];
+  let defaultModules = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
-  var moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
-  fs.readdir(moduleBasePath, function (error, folders) {
-    if (error) {
-      console.error(error);
-    } else {
-      for (var folder of folders) {
-        try {
-          var manifestPath = path.join(moduleBasePath, folder, 'package.json');
-          var packageJson = require(manifestPath);
-          var installedPackages = fs.readdirSync(moduleBasePath);
-          if (packageJson.display === 'app') {
-            var dependencies = true;
-            for (var app in packageJson.include) {
-              if (!installedPackages.includes(app)) {
-                dependencies = false;
-              }
-            }
-            if (dependencies) {
-              defaultModules.push(manifestPath);
+  let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
+  let folders = fs.readdirSync(moduleBasePath);
+  folders = folders.filter(folder => { // filter the folder to not include .DS_Store.
+    return folder !== '.DS_Store';
+  });
+  if (folders) {
+    for (let folder of folders) {
+      try {
+        let manifestPath = path.join(moduleBasePath, folder, 'package.json');
+        let packageJson = require(manifestPath);
+        let installedPackages = fs.readdirSync(moduleBasePath);
+        if (packageJson.display === 'app') {
+          let dependencies = true;
+          for (let app in packageJson.include) {
+            if (!installedPackages.includes(app)) {
+              dependencies = false;
             }
           }
+          if (dependencies) {
+            defaultModules.push(manifestPath);
+          }
         }
-        catch (e) {
-        }
+      } catch (e) {
+        console.log(e);
       }
     }
-    callback(defaultModules);
-  });
-}
+  }
+  callback(defaultModules);
+};
 
 const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {

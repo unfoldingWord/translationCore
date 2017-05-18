@@ -18,7 +18,7 @@ const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
  */
 export const saveSettings = state => {
   try {
-    fs.outputJson(SETTINGS_DIRECTORY, state.settingsReducer);
+    fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer);
   } catch (err) {
     console.warn(err);
   }
@@ -30,7 +30,7 @@ export const saveSettings = state => {
  */
 export const saveModuleSettings = state => {
   try {
-    fs.outputJson(MODULES_SETTINGS_DIRECTORY, state.modulesSettingsReducer);
+    fs.outputJsonSync(MODULES_SETTINGS_DIRECTORY, state.modulesSettingsReducer);
   } catch (err) {
     console.warn(err);
   }
@@ -53,7 +53,7 @@ export const saveResources = state => {
           'bibles',
           bibleVersion
         );
-        fs.outputJson(savePath, biblesObject[keyName]);
+        fs.outputJsonSync(savePath, biblesObject[keyName]);
       }
       if (PROJECT_SAVE_LOCATION) {
         for (var resources in resourcesObject) {
@@ -64,7 +64,7 @@ export const saveResources = state => {
               resources,
               file
             );
-            fs.outputJson(savePath, resourcesObject[resources][file]);
+            fs.outputJsonSync(savePath, resourcesObject[resources][file]);
           }
         }
       }
@@ -89,7 +89,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
       if (!fs.existsSync(savePath)) {
-        fs.outputJson(savePath, payload, err => {console.log(err)});
+        fs.outputJsonSync(savePath, payload, err => {console.log(err)});
       }
     } else {
       // no savepath
@@ -248,11 +248,15 @@ export const saveGroupsIndex = state => {
                state.contextIdReducer.contextId.tool : undefined;
     let fileName = "index.json";
     let groupsIndex = state.groupsIndexReducer.groupsIndex;
-    if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
-      let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
-      fs.outputJson(savePath, groupsIndex);
-    } else {
-      // saveGroupsIndex: missing required data
+    // Not saving if the array is empty.
+    // without this if it will overwrite the data in the filesystem.
+    if (groupsIndex.length > 0) {
+      if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
+        fs.outputJsonSync(savePath, groupsIndex);
+      } else {
+        // saveGroupsIndex: missing required data
+      }
     }
   } catch (err) {
     console.warn(err);
@@ -274,7 +278,7 @@ export const saveGroupsData = state => {
       for (let groupID in groupsData) {
         let fileName = groupID + ".json";
         let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
-        fs.outputJson(savePath, groupsData[groupID]);
+        fs.outputJsonSync(savePath, groupsData[groupID]);
       }
     } else {
       // saveGroupsData: missing required data
@@ -295,7 +299,7 @@ export const saveContextId = (state, contextId) => {
     if (projectSaveLocation && toolName && bookId) {
       let fileName = "contextId.json"
       let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
-      fs.outputJson(savePath, contextId)
+      fs.outputJsonSync(savePath, contextId)
     } else {
       // saveCurrentContextId: missing required data
     }
