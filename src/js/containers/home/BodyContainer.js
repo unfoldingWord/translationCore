@@ -11,17 +11,19 @@ class BodyContainer extends Component {
   render() {
     let {displayHomeView} = this.props.BodyUIReducer;
     return (
-        <div>
+        <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
           {displayHomeView ? (
-              <HomeContainer />
+              <div style={{flex: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <HomeContainer />
+              </div>
             ) : (
-              <div>
-                <Col className="col-fluid" xs={1} sm={2} md={2} lg={3} style={{ padding: 0, width: "250px" }}>
+              <div style={{display: 'flex', flex: 'auto'}}>
+                <div style={{ flex: "0 0 250px" }}>
                   <SideBarContainer />
-                </Col>
-                <Col id="scrollableSection" xs={7} sm={8} md={9} lg={9.5}>
+                </div>
+                <div style={{flex: 'auto', display: 'flex'}}>
                   <ToolsContainer />
-                </Col>
+                </div>
               </div>
             )
           }
