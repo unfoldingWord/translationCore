@@ -175,21 +175,3 @@ describe('GitApi.checkout', function() {
     })
   });
 });
-
-describe('GitApi.update', function() {
-  it ('update should push a change to a remote repo', function(done) {
-    this.timeout(50000)
-    var user = CoreStore.getLoggedInUser();
-    var timeStamp = Math.floor(Date.now());
-    var remote = 'https://817fd7e100e939b93fd362879c377cf01993c712@git.door43.org/royalsix/test1133.git';
-    fs.writeFileSync('../testRepo/timestamp.txt', timeStamp);
-    GitApi('../testRepo').add(function(err, data) {
-      GitApi('../testRepo').commit('MochaTesting', 'MochaTesting', function(err) {
-        GitApi('../testRepo').update(remote, 'master', false, function(err) {
-          assert.isNull(err);
-          done();
-        });
-      });
-    });
-  });
-});
