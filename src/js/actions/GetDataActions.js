@@ -280,10 +280,8 @@ function loadProjectDataFromFileSystem(toolName) {
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
-          console.log(successMessage)
           loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
           .then((successMessage) => {
-            console.log(successMessage)
             let delayTime = 0;
             if (successMessage === "success") {
               dispatch(ResourcesActions.loadBiblesFromFS());
