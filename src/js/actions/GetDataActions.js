@@ -280,8 +280,10 @@ function loadProjectDataFromFileSystem(toolName) {
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
+          console.log(successMessage)
           loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
           .then((successMessage) => {
+            console.log(successMessage)
             let delayTime = 0;
             if (successMessage === "success") {
               dispatch(ResourcesActions.loadBiblesFromFS());
@@ -331,11 +333,15 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
         console.log('Loaded group index data from fs');
         resolve("success");
       } catch (err) {
-        console.log(err)
-        dispatch(startModuleFetchData());
+        console.log(err);
+        dispatch(startModuleFetchData()).then(successMessage => {
+          resolve(successMessage);
+        });
       }
     } else {
-      dispatch(startModuleFetchData());
+      dispatch(startModuleFetchData()).then(successMessage => {
+        resolve(successMessage);
+      });
     }
   });
 }
@@ -374,7 +380,9 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
       console.log('Loaded group data from fs');
       resolve("success");
     } else {
-      dispatch(startModuleFetchData());
+      dispatch(startModuleFetchData()).then(successMessage => {
+        resolve(successMessage);
+      });
     }
   });
 }
@@ -404,57 +412,62 @@ function loadGroupData(groupName, groupDataFolderPath) {
  */
 export function startModuleFetchData() {
   return ((dispatch, getState) => {
-    let {
-      coreStoreReducer,
-      projectDetailsReducer,
-      resourcesReducer,
-      modulesSettingsReducer,
-      groupsDataReducer,
-      groupsIndexReducer
-    } = getState();
+    return new Promise((resolve, reject) => {
+      let {
+        coreStoreReducer,
+        projectDetailsReducer,
+        resourcesReducer,
+        modulesSettingsReducer,
+        groupsDataReducer,
+        groupsIndexReducer
+      } = getState();
 
-    let currentModuleFetchData = coreStoreReducer.currentModuleFetchData;
+      let currentModuleFetchData = coreStoreReducer.currentModuleFetchData;
 
-    const addNewBible = (bibleName, bibleData) => {
-      dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
-    };
-    const setModuleSettings = (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-      dispatch(ModulesSettingsActions.setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-    };
-    const progress = (label, progress) => {
-      dispatch(LoaderActions.sendProgressForKey(label, progress));
-    };
-    const addGroupData = (groupId, groupData) => {
-      dispatch(GroupsDataActions.addGroupData(groupId, groupData));
-    };
-    const setGroupsIndex = (groupsIndex) => {
-      dispatch(GroupsIndexActions.setGroupsIndex(groupsIndex));
-    };
-    const setProjectDetail = (key, value) => {
-      dispatch(projectDetailsActions.setProjectDetail(key, value));
-    };
+      const addNewBible = (bibleName, bibleData) => {
+        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
+      };
+      const setModuleSettings = (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
+        dispatch(ModulesSettingsActions.setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
+      };
+      const progress = (label, progress) => {
+        dispatch(LoaderActions.sendProgressForKey(label, progress));
+      };
+      const addGroupData = (groupId, groupData) => {
+        dispatch(GroupsDataActions.addGroupData(groupId, groupData));
+      };
+      const setGroupsIndex = (groupsIndex) => {
+        dispatch(GroupsIndexActions.setGroupsIndex(groupsIndex));
+      };
+      const setProjectDetail = (key, value) => {
+        dispatch(projectDetailsActions.setProjectDetail(key, value));
+      };
 
-    let props = {
-      actions: {
-        addNewBible,
-        setModuleSettings,
+      let props = {
+        actions: {
+          addNewBible,
+          setModuleSettings,
+          progress,
+          addGroupData,
+          setGroupsIndex,
+          setProjectDetail
+        },
+        projectDetailsReducer,
+        resourcesReducer,
         progress,
-        addGroupData,
-        setGroupsIndex,
-        setProjectDetail
-      },
-      projectDetailsReducer,
-      resourcesReducer,
-      progress,
-      modulesSettingsReducer,
-      groupsDataReducer,
-      groupsIndexReducer
-    };
+        modulesSettingsReducer,
+        groupsDataReducer,
+        groupsIndexReducer
+      };
 
-    currentModuleFetchData(props).then(dispatch({type: consts.DONE_LOADING}));
-    dispatch(CurrentToolActions.setDataFetched(true));
-    // TODO: this action may stay here temporary until the home screen implementation.
-    dispatch(BodyUIActions.toggleHomeView(false));
+      currentModuleFetchData(props)
+      .then(dispatch({type: consts.DONE_LOADING}))
+      .then(() => {
+        // TODO: this action may stay here temporary until the home screen implementation.
+        dispatch(BodyUIActions.toggleHomeView(false));
+      });
+      resolve("success");
+    });
   });
 }
 
