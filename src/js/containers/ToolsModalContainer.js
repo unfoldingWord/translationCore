@@ -43,13 +43,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
     },
-    handleLoadTool: (toolFolderPath, loggedInUser) => {
+    handleLoadTool: (toolFolderPath, loggedInUser, toolName) => {
       if (!loggedInUser) {
         dispatch(modalActions.selectModalTab(1, 1, true));
         dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
         return;
       }
-      dispatch(ToolsActions.loadTool(toolFolderPath));
+      dispatch(ToolsActions.loadTool(toolFolderPath, toolName));
     },
     showLoad: () => {
       dispatch(modalActions.selectModalTab(2, 1, true))
