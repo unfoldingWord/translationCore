@@ -12,10 +12,6 @@ class Group extends React.Component {
    * @param {string} groupId - string name of a group.
    * @return {array} groupData - array of groupData objects
    */
-  constructor(props) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
   groupData(groupsData, groupId) {
     let groupData
     if (groupsData !== undefined) {
@@ -63,11 +59,6 @@ class Group extends React.Component {
     ReactDOM.findDOMNode(element).scrollIntoView({ block: 'end', behavior: 'smooth' });
   }
 
-  onClick(groupData) {
-    this.props.actions.changeCurrentContextId(groupData[0].contextId);
-    this.scrollIntoView(this);
-  }
-
   render() {
     let { groupsData } = this.props.groupsDataReducer
     let { contextId } = this.props.contextIdReducer
@@ -85,7 +76,7 @@ class Group extends React.Component {
     let progress = this.generateProgress();
     return (
       <div>
-        <div style={style} onClick={() => this.onClick(groupData)} >
+        <div style={style} onClick={() => this.props.actions.changeCurrentContextId(groupData[0].contextId)} >
           {active ? expandedGlyph : collapsedGlyph}
           <Circle
             progress={progress}
