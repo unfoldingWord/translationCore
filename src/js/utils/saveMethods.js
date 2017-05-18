@@ -248,11 +248,15 @@ export const saveGroupsIndex = state => {
                state.contextIdReducer.contextId.tool : undefined;
     let fileName = "index.json";
     let groupsIndex = state.groupsIndexReducer.groupsIndex;
-    if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
-      let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
-      fs.outputJsonSync(savePath, groupsIndex);
-    } else {
-      // saveGroupsIndex: missing required data
+    // Not saving if the array is empty.
+    // without it it will overwrite the data in the filesystem.
+    if (groupsIndex.length > 0) {
+      if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
+        fs.outputJsonSync(savePath, groupsIndex);
+      } else {
+        // saveGroupsIndex: missing required data
+      }
     }
   } catch (err) {
     console.warn(err);
