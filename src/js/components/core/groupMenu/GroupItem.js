@@ -12,6 +12,13 @@ class GroupItem extends React.Component {
     super(props);
     this.onClick = this.onClick.bind(this);
   }
+
+  componentWillReceiveProps(nextProps, context){
+    if (isEqual(nextProps.contextId, nextProps.contextIdReducer.contextId)) {
+       this.props.scrollIntoView(this);
+    }
+  }
+
   statusGlyph() {
     let statusBooleans = this.getGroupData()
     let {comments, reminders, selections, verseEdits} = statusBooleans
