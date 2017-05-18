@@ -383,3 +383,23 @@ export function createCheckArray(dataObject, moduleFolderName) {
         console.error(e)
     }
 }
+
+/**
+ * This method reads in all the chunks of a project, and determines if there is any merge conflicts.
+ * @param {Array} projectChunks - An array of finished chunks, as defined by the manfest
+ * @param {String} projectPath - The current save location of the project
+ * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
+ */
+export function findMergeConflicts(projectChunks, projectPath) {
+    for (let chapterVerse in projectChunks) {
+        let splitID = projectChunks[chapterVerse].split('-');
+        let chapter = splitID[0];
+        let verse = splitID[1];
+        let filePath = Path.join(projectPath, chapter, verse + ".txt");
+        let fileContents = fs.readFileSync(filePath).toString();
+        if (~fileContents.indexOf('<<<<<<<')) {
+            return true;
+        }
+    }
+    return false;
+}

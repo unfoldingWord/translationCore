@@ -44,9 +44,11 @@ export function clearPreviousData() {
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+    dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
     dispatch(CurrentToolActions.setToolTitle(""));
     dispatch(saveModuleFetchData(null));
-  })
+  });
 }
 
 /**
@@ -78,6 +80,12 @@ export function openProject(projectPath, projectLink, exporting = false) {
         let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
         if (oldManifest) {
           manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, currentUser);
+          let conflictsFound = LoadHelpers.findMergeConflicts(manifest.finished_chunks, projectPath);
+          if (conflictsFound) {
+            dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+            dispatch(clearPreviousData());
+            return;
+          }
         }
       }
       dispatch(addLoadedProjectToStore(projectPath, manifest));
