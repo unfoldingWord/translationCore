@@ -102,7 +102,8 @@ export function loadProjectDataByTypeToExport(dataFolder, params, type) {
             const currentDataObjectPath = path.join(chapterObjects, time)
             let dataObject = fs.readJsonSync(currentDataObjectPath);
             time = time.split('.json')[0];
-            checkDataArray.push({dataObject, time});
+            const username = dataObject.userName || "Anonymous";
+            checkDataArray.push({dataObject, time, username});
           }
         }
       }
