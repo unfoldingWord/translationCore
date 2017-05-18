@@ -35,7 +35,7 @@ const getDefaultModules = (callback) => {
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
   let folders = fs.readdirSync(moduleBasePath);
-  folders = folders.filter(folder => { // filter the filenames to only use .json
+  folders = folders.filter(folder => { // filter the folder to not include .DS_Store.
     return folder !== '.DS_Store';
   });
   if (folders) {
