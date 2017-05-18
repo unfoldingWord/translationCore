@@ -98,10 +98,11 @@ export function loadProjectDataByTypeToExport(dataFolder, params, type) {
           if (!parseInt(verse)) continue;
           let chapterObjects = path.join(chapterFolder, chapter, verse);
           let verseObjects = fs.readdirSync(chapterObjects);
-          for (var index in verseObjects) {
-            const currentDataObjectPath = path.join(chapterObjects, verseObjects[index])
+          for (var time of verseObjects) {
+            const currentDataObjectPath = path.join(chapterObjects, time)
             let dataObject = fs.readJsonSync(currentDataObjectPath);
-            checkDataArray.push(dataObject);
+            time = time.split('.json')[0];
+            checkDataArray.push({dataObject, time});
           }
         }
       }

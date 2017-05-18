@@ -36,14 +36,14 @@ export function uploadProject(projectPath, user) {
     var projectName = projectPath.split(path.sep).pop();
 
     dispatch(
-        AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
+      AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
     );
 
     gogs(user.token).createRepo(user, projectName).then(repo => {
       var newRemote = 'https://' + user.username + ":" + user.password + '@git.door43.org/' + repo.full_name + '.git';
 
       git(projectPath).save(user, 'Commit before upload', projectPath, err => {
-        if(err) {
+        if (err) {
           dispatch(
             AlertModalActions.openAlertDialog("Error saving project: " + err)
           )
@@ -52,23 +52,23 @@ export function uploadProject(projectPath, user) {
             if (err) {
               if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
                 dispatch(
-                    AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
+                  AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
                 );
               } else if (err.toString().includes("rejected because the remote contains work")) {
                 dispatch(
-                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
+                  AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
                 );
               } else if (err.hasOwnProperty('message')) {
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
+                  AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
                 );
               } else if (err.hasOwnProperty('data') && err.data) {
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.data)
+                  AlertModalActions.openAlertDialog('Error Uploading: ' + err.data)
                 );
               } else {
                 dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: Unknown error')
+                  AlertModalActions.openAlertDialog('Error Uploading: Unknown error')
                 );
               }
             } else {
@@ -76,26 +76,26 @@ export function uploadProject(projectPath, user) {
                 type: consts.UPLOAD_PROJECT
               });
               dispatch(
-                  AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
+                AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
               )
             }
           })
         }
       })
     }).catch(err => {
-        if (user.localUser) {
-          dispatch(
-              AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
-          );
-        } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT")) {
-          dispatch(
-              AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
-          );
-        } else {
-          dispatch (
-            AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
-          )
-        }
+      if (user.localUser) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
+        );
+      } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT")) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
+        );
+      } else {
+        dispatch(
+          AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
+        )
+      }
     });
   });
 }
@@ -121,7 +121,7 @@ export function getProjectsFromFolder() {
 export function exportToCSV(projectPath) {
   return ((dispatch, getState) => {
     var loadedSuccessfully = true;
-    const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer } = getState();
+    const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer, loginReducer } = getState();
     dispatch(getDataActions.openProject(projectPath, null, true));
     const { params, manifest } = getState().projectDetailsReducer;
     const projectName = `${params.bookAbbr.toUpperCase()}_${manifest.target_language.name}`;
@@ -131,7 +131,7 @@ export function exportToCSV(projectPath) {
     if (!toolPaths) dispatch(AlertModalActions.openAlertDialog('No checks have been performed in this project.'));
     let dataFolder = path.join(projectPath, 'apps', 'translationCore');
     var fn = function (newPaths) {
-      saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
+      saveAllCSVDataByToolName(newPaths[0], dataFolder, params, loginReducer.userdata.username, (result) => {
         loadedSuccessfully = result && loadedSuccessfully;
         newPaths.shift();
         if (newPaths.length) fn(newPaths);
@@ -155,20 +155,22 @@ export function exportToCSV(projectPath) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
+export function saveVerseEditsToCSV(obj, dataFolder, toolName, username) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse\n";
-      for (var currentRow of obj) {
+      let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      for (var currentRowObject of obj) {
         let currentRowArray = [];
+        const currentRow = currentRowObject.dataObject;
+        const time = currentRowObject.time;
         currentRowArray.push(`"${currentRow.after.replace('"', '""')}"`);
         currentRowArray.push(`"${currentRow.before.replace('"', '""')}"`);
         currentRowArray.push(`"${currentRow.tags}"`);
-        addContextIdToCSV(currentRowArray, currentRow.contextId)
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time);
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) {  debugger; reject(false) };
     resolve(true);
   });
 }
@@ -179,18 +181,20 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveCommentsToCSV(obj, dataFolder, toolName) {
+export function saveCommentsToCSV(obj, dataFolder, toolName, username) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse\n";
-      for (var currentRow of obj) {
+      let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      for (var currentRowObject of obj) {
+        const currentRow = currentRowObject.dataObject;
+        const time = currentRowObject.time;
         let currentRowArray = [];
         currentRowArray.push(currentRow.text);
-        addContextIdToCSV(currentRowArray, currentRow.contextId)
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { debugger; reject(false) };
     resolve(true);
   });
 }
@@ -201,22 +205,24 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveSelectionsToCSV(obj, dataFolder, toolName) {
+export function saveSelectionsToCSV(obj, dataFolder, toolName, username) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse\n";
-      for (var col of obj) {
+      let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse, username, time\n";
+      for (var currentRowObject of obj) {
+        const col = currentRowObject.dataObject;
+        const time = currentRowObject.time;
         for (var currentSelection of col.selections) {
           let currentRowArray = [];
           currentRowArray.push(currentSelection.text);
           currentRowArray.push(currentSelection.occurrence);
           currentRowArray.push(currentSelection.occurrences);
-          addContextIdToCSV(currentRowArray, col.contextId)
+          addContextIdToCSV(currentRowArray, col.contextId, username, time)
           csvString += currentRowArray.join(',') + "\n";
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { debugger; reject(false) };
     resolve(true);
   });
 }
@@ -227,18 +233,20 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveRemindersToCSV(obj, dataFolder, toolName) {
+export function saveRemindersToCSV(obj, dataFolder, toolName, username) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse\n";
-      for (var currentRow of obj) {
+      let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      for (var currentRowObject of obj) {
+        const currentRow = currentRowObject.dataObject;
+        const time = currentRowObject.time;
         let currentRowArray = [];
         currentRowArray.push(currentRow.enabled);
-        addContextIdToCSV(currentRowArray, currentRow.contextId)
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { debugger; reject(false) };
     resolve(true);
   });
 }
@@ -249,21 +257,22 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
+export function saveGroupsCSVToFs(obj, dataFolder, toolName, username) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "groupId, occurrence, quote, bookId, chapter, verse, priority\n";
+      var time = "";
+      let csvString = "priority, groupId, occurrence, quote, bookId, chapter, verse\n";
       for (var col in obj) {
         for (var row in obj[col]) {
           const currentRow = obj[col][row];
           let currentRowArray = [];
-          addContextIdToCSV(currentRowArray, currentRow.contextId)
           currentRowArray.push(currentRow.priority);
+          addContextIdToCSV(currentRowArray, currentRow.contextId);
           csvString += currentRowArray.join(',') + "\n";
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { debugger; reject(false) };
     resolve(true);
   });
 }
@@ -274,13 +283,15 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
  */
-export function addContextIdToCSV(currentRowArray, contextId) {
+export function addContextIdToCSV(currentRowArray, contextId, username, time) {
   currentRowArray.push(contextId.groupId);
   currentRowArray.push(contextId.occurrence);
   currentRowArray.push(`"${contextId.quote}"`);
   currentRowArray.push(contextId.reference.bookId);
   currentRowArray.push(contextId.reference.chapter);
   currentRowArray.push(contextId.reference.verse);
+  if (username) currentRowArray.push(username);
+  if (time) currentRowArray.push(time);
 }
 
 /**
@@ -302,14 +313,14 @@ export function getToolFolderNames(projectPath) {
  * @param {object} params - params of current project
  * @param {function} callback - called when all promises completed
  */
-export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback) {
+export function saveAllCSVDataByToolName(toolName, dataFolder, params, username, callback) {
   if (toolName == '.DS_Store') callback(true);
   else {
-    loadGroupsDataToExport(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, toolName))
+    loadGroupsDataToExport(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder, toolName, username))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, toolName, username))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, toolName, username))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, toolName, username))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, toolName, username))
       .then(callback);
   }
 }
