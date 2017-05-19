@@ -2,7 +2,7 @@ import consts from './CoreActionConsts';
 import Gogs from '../components/core/login/GogsApi';
 import rimraf from 'rimraf';
 import * as getDataActions from './GetDataActions';
-import { openAlertDialog } from '../actions/AlertModalActions'
+import * as AlertModalActions from './AlertModalActions';
 // constant declaration
 const loadOnline = require('../components/core/LoadOnline');
 
@@ -42,7 +42,11 @@ export function updateRepos() {
 
 export function importOnlineProject(link) {
     return ((dispatch) => {
-        dispatch({ type: consts.SHOW_LOADING_CIRCLE });
+
+        dispatch(
+            AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
+        );
+
         loadOnline(link, function (err, savePath, url) {
             if (err) {
                 var errmessage = "An unknown problem occurred during import";
@@ -69,13 +73,12 @@ export function importOnlineProject(link) {
                     } catch (e) {}
                 }
 
-                dispatch(openAlertDialog(errmessage));
+                dispatch(AlertModalActions.openAlertDialog(errmessage));
                 dispatch({ type: "LOADED_ONLINE_FAILED" });
-                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             } else {
                 dispatch(clearLink());
+                dispatch(AlertModalActions.closeAlertDialog());
                 dispatch(getDataActions.openProject(savePath, url));
-                dispatch({ type: consts.HIDE_LOADING_CIRCLE });
             }
         });
     })
