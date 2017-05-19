@@ -470,3 +470,13 @@ export function findMergeConflicts(projectChunks, projectPath) {
     }
     return false;
 }
+
+export function migrateAppsToDotApps(projectPath) {
+    let projectDir = fs.readdirSync(projectPath);
+    if (projectDir.includes('apps') && projectDir.includes('.apps')) {
+        fs.removeSync(Path.join(projectPath, '.apps'))
+    }
+    if (projectDir.includes('apps')) {
+        fs.renameSync(Path.join(projectPath, 'apps'), Path.join(projectPath, '.apps'));
+    }
+}

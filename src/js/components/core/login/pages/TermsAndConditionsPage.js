@@ -14,16 +14,6 @@ class TermsAndConditionsPage extends Component {
         <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
           <h4 style={{marginTop: "40px"}}><b>Terms and Conditions</b></h4>
           <div>
-          <p style={{padding: "15px"}}>
-            Creative Commons Attribution-ShareAlike 4.0 License
-          </p>
-          <p style={{padding: "15px"}}>
-            This is a human-readable summary of (and not a substitute for) the&nbsp;
-            <a style={{color: "var(--reverse-color)",cursor: "pointer", textDecoration: "underline"}}
-              href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
-              license
-            </a>
-          </p>
             <p style={{padding: "15px"}}>
               By creating a Door43 account, you affirm that you have read
               and understand the terms and conditions and agree to:
