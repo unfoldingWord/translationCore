@@ -2,7 +2,7 @@ import consts from '../actions/CoreActionConsts';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration
-const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
+const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * @description This action adds a groupName as a property to the

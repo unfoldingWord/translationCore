@@ -34,6 +34,30 @@ export const setProjectDetail = (key, value) => {
 
 export const resetProjectDetail = () => {
   return {
-    type: 'RESET_PROJECT_DETAIL'
+    type: consts.RESET_PROJECT_DETAIL
   };
 };
+
+/**
+ * @description Sends project manifest to the store
+ * @param {object} manifest - manifest file of a project.
+ * @return {object} action object.
+ */
+export function setProjectManifest(manifest) {
+  return {
+    type: consts.STORE_MANIFEST,
+    manifest: manifest
+  };
+}
+
+/**
+ * @description Sends project parameters to the store
+ * @param {*} params - any params to be saved.
+ * @return {object} action object.
+ */
+export function setProjectParams(params) {
+  return {
+    type: consts.STORE_PARAMS,
+    params: params
+  };
+}
