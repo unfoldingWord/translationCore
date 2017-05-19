@@ -6,6 +6,7 @@ const initialState = {
   fetchDatas: 0,
   doneModules: 0,
   modules: {},
+  currentModuleFetchData: null,
   moduleData: {},
   toolsArray: []
 };
@@ -47,15 +48,16 @@ const coreStoreReducer = (state = initialState, action) => {
         }
       }
     case consts.CLEAR_PREVIOUS_DATA:
-      return {
-        ...state,
-        ...initialState
-     }
+      return initialState;
     case consts.STORE_TOOLS_ARRAY:
       return {
         ...state
       };
-    // THINK ABOUT WHAT IS BEING LOADED FROM STORE
+    case consts.SAVE_MODULE_FETCHDATA:
+      return {
+        ...state,
+        currentModuleFetchData: action.moduleFetchData
+      };
     default:
       return state;
   }

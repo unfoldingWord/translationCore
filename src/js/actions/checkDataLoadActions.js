@@ -2,7 +2,7 @@ import consts from '../actions/CoreActionConsts';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration
-const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
+const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * @description generates the output directory.
@@ -14,9 +14,9 @@ const CHECKDATA_DIRECTORY = path.join('apps', 'translationCore', 'checkData');
 function generateLoadPath(state, checkDataName) {
   /**
   * @description output directory
-  *  /translationCore/ar_eph_text_ulb/apps/translationCore/checkData/comments/eph/1/3
+  *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
   * @example PROJECT_SAVE_LOCATION - /translationCore/ar_eph_text_ulb
-  * @example CHECKDATA_DIRECTORY - /apps/translationCore/checkData
+  * @example CHECKDATA_DIRECTORY - /.apps/translationCore/checkData
   * @example bookAbbreviation - /eph
   * @example checkDataName - /comments
   * @example chapter - /1

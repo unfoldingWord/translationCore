@@ -5,7 +5,7 @@ import Dialog from 'material-ui/Dialog';
 
 class Alert extends Component {
   render() {
-    let {alertText, alertDialogVisibility, alertDialogLoading} = this.props.alertModalReducer;
+    let {alertText, alertDialogVisibility, alertDialogLoading, callback, button1, button2} = this.props.alertModalReducer;
     let {closeAlertDialog} =this.props.actions;
 
     const actions = [
@@ -13,10 +13,21 @@ class Alert extends Component {
         label="Cancel"
         className="btn-prime"
         disabled={alertDialogLoading}
-        onClick={closeAlertDialog}
-      > OK
+        onClick={callback ? () => { callback(button1 || "OK"); } : closeAlertDialog}
+      > {this.props.alertModalReducer.button1 || "OK"}
       </button>
     ];
+    if (this.props.alertModalReducer.button1) {
+      actions.unshift(
+        <button
+        label="Cancel"
+        className="btn-second"
+        disabled={alertDialogLoading}
+        onClick={callback ? () => { callback(button2); } : closeAlertDialog}
+      > {this.props.alertModalReducer.button2}
+      </button>
+      );
+    }
 
     const headerContent = (
       <div>
