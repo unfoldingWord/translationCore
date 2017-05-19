@@ -23,14 +23,21 @@ export function updateRepos() {
         var user = getState().loginReducer.userdata;
         if (user) {
             var _this = this;
+
+            dispatch(
+                AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
+            );
+
             Gogs().listRepos(user).then((repos) => {
+                dispatch(AlertModalActions.closeAlertDialog());
                 dispatch({
                     type: consts.RECIEVE_REPOS,
                     repos: repos
                 });
                 dispatch({type: consts.GOGS_SERVER_ERROR, err: null}); //Equivalent of saying "there is no error, successfull fetch"
             }).catch((e)=>{
-              console.log(e)
+              console.log(e);
+              dispatch(AlertModalActions.closeAlertDialog());
               dispatch({
                 type: consts.GOGS_SERVER_ERROR,
                 err: e
