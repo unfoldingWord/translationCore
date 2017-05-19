@@ -298,7 +298,7 @@ function loadProjectDataFromFileSystem(toolName) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
       let { projectSaveLocation, params } = getState().projectDetailsReducer;
-      const dataDirectory = Path.join(projectSaveLocation, 'apps', 'translationCore', 'index', toolName);
+      const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {

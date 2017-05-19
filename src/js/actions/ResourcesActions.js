@@ -4,7 +4,7 @@ import path from 'path-extra';
 // actions
 import * as coreActions from './CoreActionsRedux';
 // constant declaraton
-const RESOURCES_DATA_DIR = path.join('apps', 'translationCore', 'resources');
+const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 
 export const addNewBible = (bibleName, bibleData) => {
   return {

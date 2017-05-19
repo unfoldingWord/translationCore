@@ -7,7 +7,7 @@ import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers'
 import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions';
 import {saveContextId} from '../utils/saveMethods';
 // constant declaration
-const INDEX_DIRECTORY = path.join('apps', 'translationCore', 'index');
+const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
 function loadCheckData(dispatch) {
   dispatch(loadComments());
