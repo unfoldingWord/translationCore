@@ -12,6 +12,14 @@ class CreativeCommonsPage extends Component {
           Go Back
         </button>
         <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+          <h4><b>Creative Commons Attribution-ShareAlike 4.0 License</b></h4>
+          <p style={{padding: "15px"}}>
+            This is a human-readable summary of (and not a substitute for) the&nbsp;
+            <a style={{color: "var(--reverse-color)",cursor: "pointer", textDecoration: "underline"}}
+              href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+              license
+            </a>
+          </p>
           <h4><b>You are free to:</b></h4>
           <p>
             <b>Share</b> — copy and redistribute the material in any medium or format.
