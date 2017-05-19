@@ -24,6 +24,9 @@ before_deploy:
     sudo add-apt-repository --yes ppa:arx/release ;
     sudo apt-get update -d ;
     sudo apt-get install -y -q innoextract wine python-software-properties ;
+    mkdir installers ;
+    curl -L https://github.com/git-for-windows/git/releases/download/v2.9.2.windows.1/Git-2.9.2-32-bit.exe > ./installers/GitInstaller-32.exe ;
+    curl -L https://github.com/git-for-windows/git/releases/download/v2.9.2.windows.1/Git-2.9.2-64-bit.exe > ./installers/GitInstaller-64.exe ;
     chmod +x ./scripts/inno/InnoInstall.sh ;
     "./scripts/inno/InnoInstall.sh" ;
     cd /home/travis/build/unfoldingWord-dev/translationCore ;
