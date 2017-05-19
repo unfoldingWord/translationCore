@@ -15,7 +15,9 @@ export function editTargetVerseSource(state, editedText) {
     chapter = "0" + chapter;
   }
   let writeFolder = path.join(saveLocation, chapter);
-  let contents = fs.readdirSync(writeFolder);
+  let contents = fs.readdirSync(writeFolder).filter(file => {
+    return file !== "title.txt";
+  });
   let writeFile = null;
   for (let i = 0; i < contents.length; i++) {
     let chunk = contents[i];
@@ -30,7 +32,7 @@ export function editTargetVerseSource(state, editedText) {
   for (let i = 0; i < tokenizedFile.length; i++) {
     let item = tokenizedFile[i];
     let trimmedItem = item.trim();
-    let currentVerse = parseInt(trimmedItem.split(' ')[0]);
+    let currentVerse = parseInt(trimmedItem.split(' ')[0], 10);
     if (currentVerse === verse) {
       tokenizedFile[i] = " " + verse + " " + editedText + " ";
       break;
