@@ -16,17 +16,20 @@ let splashScreen;
 
 function createMainWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1100, minHeight: 650, center: true, useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
   //mainWindow.webContents.openDevTools();
-
-  let installerLocation = path.join(path.datadir('translationCore'), 'GitInstaller.exe');
+  var gitFile = 'GitInstaller-32.exe';
+  if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
+    gitFile = 'GitInstaller-64.exe';
+  }
+  let installerLocation = path.join(path.datadir('translationCore'), gitFile);
   exec('git', (err, data) => {
     if (!data) {
       if (process.platform == 'win32') {
         dialog.showErrorBox('Startup Failed', 'You must have Git installed and on your path in order to use translationCore. \nClick OK to install Git now.');
-        fs.copySync(__dirname + '/installers/GitInstaller.exe', installerLocation);
-        exec('GitInstaller.exe /SILENT /COMPONENTS="assoc"', {cwd: path.datadir('translationCore')}, function(err, data) {
+        fs.copySync(__dirname + '/installers/' + gitFile, installerLocation);
+        exec(gitFile + ' /SILENT /COMPONENTS="assoc"', {cwd: path.datadir('translationCore')}, function(err, data) {
           if (err) {
             console.log(err);
             dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');

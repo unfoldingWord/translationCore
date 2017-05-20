@@ -5,10 +5,10 @@ import path from 'path-extra';
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
- * @description This action adds a groupName as a property to the
+ * @description This action adds a groupId as a property to the
  *  groups object and assigns payload as its value.
- * @param {string} groupName - groupName of object ex. figs_metaphor.
- * @param {array} groupData - array of objects containing group data.
+ * @param {string} groupId - groupId of object ex. figs_metaphor.
+ * @param {array} groupsData - array of objects containing group data.
  * @return {object} action object.
  */
 export const addGroupData = (groupId, groupsData) => {
@@ -19,7 +19,7 @@ export const addGroupData = (groupId, groupsData) => {
   };
 };
 
-export const loadGroupsDataFromFS = (allGroupsData) => {
+export const loadGroupsDataFromFS = allGroupsData => {
   return {
     type: consts.LOAD_GROUPS_DATA_FROM_FS,
     allGroupsData
@@ -121,7 +121,7 @@ function toggleGroupDataItems(label, fileObject, dispatch) {
       });
       break;
     default:
-      console.warn("undefined label in toggleGroupDataItems switch");
+      console.warn("Undefined label in toggleGroupDataItems switch");
       break;
   }
 }

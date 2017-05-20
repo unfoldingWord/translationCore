@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Button} from 'react-bootstrap/lib';
 // Components
 import Projects from '../components/core/login/Projects';
 import OnlineInput from '../components/core/OnlineInput';
@@ -13,10 +12,10 @@ class ImportOnlineContainer extends React.Component {
     return (
         <div key={p} style={{ width: '100%', padding: "0 80px", display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", alignItems: "center" }}>
             {projectName}
-            <Button bsStyle="prime"
+            <button className="btn-prime"
                     onClick={() => this.props.actions.openOnlineProject(repoName)}>
               Import & Select
-            </Button>
+            </button>
         </div>
     );
   }
@@ -71,10 +70,10 @@ class ImportOnlineContainer extends React.Component {
   render() {
     let onlineProjects = this.makeList(this.props.importOnlineReducer.repos);
     let {handleOnlineChange, loadProjectFromLink} = this.props.actions;
-    let {importLink, showLoadingCircle} = this.props.importOnlineReducer;
+    let {importLink} = this.props.importOnlineReducer;
     return (
       <div style={{height: "520px", backgroundColor: "var(--reverse-color)"}}>
-        <Projects {...this.props} onlineProjects={onlineProjects} showLoadingCircle={showLoadingCircle}/>
+        <Projects {...this.props} onlineProjects={onlineProjects}/>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div style={{fontSize: "18px", fontWeight: "bold", margin: "15px 0 10px"}}>
             Select one of your projects above or enter the URL of a project below
