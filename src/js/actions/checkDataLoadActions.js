@@ -50,7 +50,7 @@ function loadCheckData(loadPath, contextId) {
   if (loadPath && contextId && fs.existsSync(loadPath)) {
     let files = fs.readdirSync(loadPath);
 
-    files = files.filter( file => { // filter the filenames to only use .json
+    files = files.filter(file => { // filter the filenames to only use .json
       return path.extname(file) === '.json'
     })
     let sorted = files.sort().reverse() // sort the files to use latest
