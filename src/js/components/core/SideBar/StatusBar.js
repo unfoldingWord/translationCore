@@ -3,9 +3,7 @@ const React = api.React;
 const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const CoreStore = require('../../../stores/CoreStore.js');
-const style = require("./Style");
 const OnlineStatus = require("./OnlineStatus");
-const Chevron = require('./Chevron');
 
 class StatusBar extends React.Component {
     constructor() {
@@ -48,7 +46,7 @@ class StatusBar extends React.Component {
   render() {
     const styles = {
       container: {
-        backgroundColor: '#333333',
+        backgroundColor: 'var(--background-color-dark)',
         overflow: 'hidden',
         width: '100%',
         height: '30px'
@@ -60,60 +58,55 @@ class StatusBar extends React.Component {
       home: {
         width: 'auto',
         float: 'left',
-        color: 'white',
+        color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
-        width: 'auto',
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: '#333333',
+        backgroundColor: 'var(--background-color-dark)',
         height: '100%'
       },
       homeActive: {
         width: 'auto',
         float: 'left',
-        color: 'white',
+        color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
-        width: 'auto',
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: '#0277BD',
+        backgroundColor: 'var(--accent-color)',
         height: '100%'
       },
       child: {
         width: 'auto',
         float: 'right',
-        color: 'white',
+        color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
-        width: 'auto',
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: '#333333',
+        backgroundColor: 'var(--background-color-dark)',
         height: '100%'
       },
       childActive: {
         width: 'auto',
         float: 'right',
-        color: 'white',
+        color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
-        width: 'auto',
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: '#0277BD',
+        backgroundColor: 'var(--accent-color)',
         height: '100%'
       },
       childRight: {
         width: 'auto',
         float: 'right',
         paddingRight: 10,
-
       }
     }
     return (
