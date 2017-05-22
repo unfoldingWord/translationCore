@@ -1,8 +1,5 @@
 import React from 'react';
-import { Button, Row, Col, utils } from 'react-bootstrap/lib';
-// constant declaration.
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'white');
+import { Row, Col, utils } from 'react-bootstrap/lib';
 
 const iW = {
   appWindow: {
@@ -68,29 +65,16 @@ class AppDescription extends React.Component {
     }
     return (
       <div>
-        <style type="text/css">
-          {`
-            .btn-white {
-              background-color: #FFFFFF;
-              color: #000000;
-              font-weight: bold;
-            }
-            .btn-white:hover {
-              background-color: #000000;
-              color: #FFFFFF;
-            }
-          `}
-        </style>
       <Row style={Styles}>
         <Col md={8} sm={8} xs={8} style={{margin: "0px", padding: "10px"}}>
           <h4 style={{display: 'inline-block', marginRight: '15px', color: "#FFFFFF"}}>
             {title}
           </h4><span>{"Version " + version}</span><br />
           <span style={{color: "#FFFFFF", marginBottom: ""}}>{description}</span><br /><br /><br />
-          <Button bsStyle="white" onClick={() => this.props.handleLoadTool(folderName, this.props.loggedInUser, name)}
+          <button className="btn-second" onClick={() => this.props.handleLoadTool(folderName, this.props.loggedInUser, name)}
                   title={"Click to load tool"}>
             Select
-          </Button>
+          </button>
         </Col>
         <Col md={4} sm={4} xs={4} style={{margin: "0px", padding: "0px"}}>
           <img style={{width: '100%', height: "230px"}} src={badgeImagePath} />
