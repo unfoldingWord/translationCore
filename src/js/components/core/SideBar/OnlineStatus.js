@@ -5,16 +5,16 @@ const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const style = {
   textOffline: {
-    color: "#FF0000",
+    color: "var(--warning-color)",
     display: "inline",
-    backgroundColor: '#333333',
+    backgroundColor: 'var(--background-color-dark)',
     outline: 'none',
     border: 0,
   },
   textOnline: {
-    color: "#4eba6f",
+    color: "var(--completed-color)",
     display: "inline",
-    backgroundColor: '#333333',
+    backgroundColor: 'var(--background-color-dark)',
     outline: 'none',
     border: 0,
   }
@@ -74,10 +74,10 @@ class OnlineStatus extends React.Component {
                  display: this.state.showToggle ? "block" : "none",
                   position: "absolute",
                   zIndex: "9999",
-                  background: "#333",
+                  background: "var(--background-color-dark)",
                   padding: "3px",
                   borderRadius: "5px",
-                  color: status == "Online " ? "#FF0000" : "#4eba6f"
+                  color: status == "Online " ? "var(--warning-color)" : "var(--completed-color)"
                }}>
             Switch to {this.state.online ? "Offline" : "Online"}
           </div>

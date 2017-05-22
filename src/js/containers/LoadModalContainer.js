@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Modal, Button, Tabs, Tab } from 'react-bootstrap/lib';
+import { Tabs, Tab } from 'react-bootstrap/lib';
 // containers
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';

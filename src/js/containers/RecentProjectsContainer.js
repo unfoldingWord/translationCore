@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { Modal, Tabs, Tab, Button, Glyphicon } from 'react-bootstrap/lib';
+import { Glyphicon } from 'react-bootstrap/lib';
 // components
 import RecentProjects from '../components/RecentProjects';
 // actions
@@ -29,27 +29,27 @@ class RecentProjectsContainer extends React.Component {
   generateButton(projectPath) {
     return (
       <span>
-        <Button bsStyle="prime"
-          style={{width: "90px", margin: "10px 5px 10px 0"}}
+        <button className="btn-prime"
+          style={{width: "100px", margin: "10px 5px 10px 0"}}
           onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}
         >
           <Glyphicon glyph={'folder-open'} />
           <span style={{ marginLeft: '10px' }}>Select</span>
-        </Button>
-        <Button bsStyle="second"
+        </button>
+        <button className="btn-second"
           style={{width: "120px", margin: "10px 5px 10px 0"}}
           onClick={()=> this.props.exportToCSV(projectPath)}
         >
           <Glyphicon glyph={'download'} />
           <span style={{ marginLeft: '5px' }}>Export (csv)</span>
-        </Button>
-        <Button bsStyle="second"
-          style={{width: "90px", margin: "10px 0"}}
+        </button>
+        <button className="btn-second"
+          style={{width: "100px", margin: "10px 0"}}
           onClick={() => this.props.uploadProject(projectPath, this.props.userdata)}
         >
           <Glyphicon glyph={'upload'} />
           <span style={{ marginLeft: '5px' }}>Upload</span>
-        </Button>
+        </button>
       </span>
     );
   }
