@@ -12,14 +12,14 @@ const style = {
   },
   dropzone: {
     active: {
-      border: '2px solid #0277BD',
-      backgroundColor: '#747474'
+      border: '2px solid var(--accent-color)',
+      backgroundColor: 'var(--background-color)'
     },
     main: {
       width: '100%',
-      color: '#FFFFFF',
+      color: 'var(--reverse-color)',
       height: '200px',
-      border: '2px dashed #0277BD',
+      border: '2px dashed var(--accent-color)',
       borderRadius: '10px',
       fontStyle: 'italic',
       padding: "5px",
@@ -29,7 +29,7 @@ const style = {
     },
     welcome: {
       width: '100%',
-      color: '#212121',
+      color: 'var(--text-color)',
       height: '200px',
       borderRadius: '5px',
       fontSize: '25px'

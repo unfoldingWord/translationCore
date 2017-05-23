@@ -11,7 +11,7 @@ const iW = {
     borderRadius: '0px',
     padding: '0px',
     backgroundColor: "#409EBA",
-    color: "#FFFFFF",
+    color: "var(--reverse-color)",
     display: "inline-table",
     boxSizing: "border-box"
   }
@@ -26,8 +26,8 @@ const tN = {
     minHeight: "120px",
     borderRadius: '0px',
     padding: '0px',
-    backgroundColor: "#58C17A",
-    color: "#FFFFFF",
+    backgroundColor: "var(--completed-color)",
+    color: "var(--reverse-color)",
     display: "inline-table",
     boxSizing: "border-box"
   }
@@ -42,8 +42,8 @@ const tT ={
     minHeight: "120px",
     borderRadius: '0px',
     padding: '0px',
-    backgroundColor: "#D71A19",
-    color: "#FFFFFF",
+    backgroundColor: "var(--warning-color)",
+    color: "var(--reverse-color)",
     display: "inline-table",
     boxSizing: "border-box"
   }
@@ -67,10 +67,10 @@ class AppDescription extends React.Component {
       <div>
       <Row style={Styles}>
         <Col md={8} sm={8} xs={8} style={{margin: "0px", padding: "10px"}}>
-          <h4 style={{display: 'inline-block', marginRight: '15px', color: "#FFFFFF"}}>
+          <h4 style={{display: 'inline-block', marginRight: '15px', color: "var(--reverse-color)"}}>
             {title}
           </h4><span>{"Version " + version}</span><br />
-          <span style={{color: "#FFFFFF", marginBottom: ""}}>{description}</span><br /><br /><br />
+          <span style={{color: "var(--reverse-color)", marginBottom: ""}}>{description}</span><br /><br /><br />
           <button className="btn-second" onClick={() => this.props.handleLoadTool(folderName, this.props.loggedInUser, name)}
                   title={"Click to load tool"}>
             Select
