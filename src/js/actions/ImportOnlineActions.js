@@ -24,6 +24,7 @@ export function updateRepos() {
         if (user) {
             var _this = this;
 
+            dispatch(clearLink());
             dispatch(
                 AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
             );

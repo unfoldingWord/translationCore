@@ -46,13 +46,11 @@ export function verifyGroupDataMatchesWithFs() {
       });
       folders.forEach(folderName => {
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
-        let chapters = fs.readdirSync(dataPath).filter(folder => {
-          return folder !== ".DS_Store";
-        });
+        let chapters = fs.readdirSync(dataPath);
+        chapters = filterAndSort(chapters);
         chapters.forEach(chapterFolder => {
-          let verses = fs.readdirSync(path.join(dataPath, chapterFolder)).filter(folder => {
-            return folder !== ".DS_Store";
-          });
+          let verses = fs.readdirSync(path.join(dataPath, chapterFolder));
+          verses = filterAndSort(verses);
           verses.forEach(verseFolder => {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestFile = loadFile(filePath);
@@ -77,6 +75,17 @@ function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
     );
     return loadPath;
   }
+}
+
+function filterAndSort(array) {
+  let filteredArray = array.filter(folder => {
+    return folder !== ".DS_Store";
+  }).sort((a, b) => {
+    a = parseInt(a, 10);
+    b = parseInt(b, 10);
+    return a - b;
+  });
+  return filteredArray;
 }
 
 function loadFile(loadPath) {

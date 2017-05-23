@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect  } from 'react-redux';
-import { Modal, Button, Tabs, Tab, Glyphicon } from 'react-bootstrap';
+import { Modal, Tabs, Tab, Glyphicon } from 'react-bootstrap';
 // container
 import Application from './ApplicationModalContainer';
 import Load from './LoadModalContainer';

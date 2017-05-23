@@ -110,7 +110,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(importOnlineActions.updateRepos());
       },
       loadProjectFromLink: (link) => {
-        dispatch(importOnlineActions.importOnlineProject(link));
+        dispatch(importOnlineActions.importOnlineProject(link.trim()));
       },
       openOnlineProject: (projectPath) => {
         var link = 'https://git.door43.org/' + projectPath + '.git';
