@@ -1,7 +1,6 @@
 const React = require('react');
 const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const Dropzone = require('react-dropzone');
-const Button = require('react-bootstrap/lib/Button.js');
 
 const style = {
   div: {
@@ -72,10 +71,10 @@ class DragDrop extends React.Component {
             </div>
           </Dropzone>
         </div>
-        {this.props.validFile ? <Button bsStyle="primary" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
+        {this.props.validFile ? <button className="btn-prime" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
           <Glyphicon glyph="folder-open" />
           <span style={{ marginLeft: '15px', fontWeight: 'bold' }}>Load</span>
-        </Button> : null}
+        </button> : null}
       </div>
     );
   }

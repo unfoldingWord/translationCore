@@ -16,7 +16,7 @@ const ReactDOM = require("react-dom");
 const api = window.ModuleApi;
 const ReactBootstrap = api.ReactBootstrap;
 const RB = api.ReactBootstrap;
-const {Glyphicon, Grid, Row, Col, Button} = RB;
+const {Row, Col} = RB;
 const fs = require('fs');
 const {BrowserWindow} = require('electron').remote;
 const ReportSideBar = require('./ReportSideBar.js')
@@ -100,7 +100,7 @@ class Report extends React.Component {
         return (
           <div>
           {/*this will change once we implement the projects list for reports*/}
-            <Button bsStyle="primary" onClick={() => this.props.onLoadReports()}>Generate Report</Button>
+            <button className="btn-prime" onClick={() => this.props.onLoadReports()}>Generate Report</button>
           </div>
         );
       }else{

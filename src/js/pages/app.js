@@ -22,10 +22,6 @@ import * as recentProjectActions from '../actions/RecentProjectsActions';
 import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
 const api = window.ModuleApi;
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'prime');
-bootstrapUtils.addStyle(Button, 'second');
-
 
 class Main extends Component {
 
