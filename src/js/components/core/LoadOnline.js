@@ -67,16 +67,16 @@ module.exports = (function() {
       if (err) {
         fs.removeSync(savePath);
         if (callback)
-          callback(err, null, null);
-        return;
-      }
-      try {
-        fs.readFileSync(path.join(savePath, 'manifest.json'));
-        if (callback)
-          callback(null, savePath, url);
-      } catch (error) {
-        if (callback)
-          callback({type: "custom", text: "Cannot read project manifest file"}, savePath, null);
+          callback({type: "custom", text: "Cannot clone repository"}, savePath, null);
+      } else {
+        try {
+          fs.readFileSync(path.join(savePath, 'manifest.json'));
+          if (callback)
+            callback(null, savePath, url);
+        } catch (error) {
+          if (callback)
+            callback({type: "custom", text: "Cannot read project files"}, savePath, null);
+        }
       }
     });
   }
