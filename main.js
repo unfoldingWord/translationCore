@@ -146,7 +146,6 @@ app.on('activate', function () {
 })
 
 ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
-    console.log("were in open helper")
     if (helperWindow) {
         helperWindow.show();
         helperWindow.loadURL(url);
