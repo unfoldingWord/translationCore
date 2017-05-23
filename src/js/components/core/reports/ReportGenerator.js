@@ -105,7 +105,7 @@ class Report extends React.Component {
         );
       }else{
         return (
-          <h1 style={{color: "#ffffff", marginTop: "0px"}}>
+          <h1 style={{color: "var(--reverse-color)", marginTop: "0px"}}>
             Please Open a project and Load a Tool
           </h1>
         );

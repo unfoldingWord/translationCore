@@ -5,7 +5,7 @@
     },
     flag: {
       enabled: {
-        color: '#CC0000',
+        color: 'var(--warning-color)',
         visibility: 'visible'
       },
       disabled: {
@@ -14,15 +14,15 @@
     },
     statusIcon: {
       correct: {
-        color: 'green',
+        color: 'var(--completed-color)',
         display: 'initial'
       },
       replaced: {
-        color: 'gold',
+        color: 'var(--highlight-color)',
         display: 'initial'
       },
       flagged: {
-        color: 'red',
+        color: 'var(--warning-color)',
         display: 'initial'
       },
       unchecked: {

@@ -53,7 +53,7 @@ class PackageCard extends React.Component{
     return(
         <div style={style.cardLayout}>
           <div className="pull-right" style={style.cardBody} title="Number of Downloads">
-            <Glyphicon glyph="cloud-download" style={{color: "#555555"}}/>{" " + this.props.numOfDownloads}
+            <Glyphicon glyph="cloud-download" style={{color: "var(--text-color-light)"}}/>{" " + this.props.numOfDownloads}
           </div>
           <h4 style={{marginTop: "0px"}}>
             {this.props.packName}
