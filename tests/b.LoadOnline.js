@@ -22,7 +22,7 @@ describe('loadOnline.openManifest', function() {
     loadOnline('https://git.door43.org/ianhoegen123/id_-cfksl.git', function(err, savePath, url) {
       assert.isNull(savePath);
       assert.isNull(url);
-      assert.isString(err);
+      assert.isString(err.text);
       done();
     });
   });

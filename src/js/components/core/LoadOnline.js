@@ -67,7 +67,7 @@ module.exports = (function() {
       if (err) {
         fs.removeSync(savePath);
         if (callback)
-          callback({type: "custom", text: "Cannot clone repository"}, savePath, null);
+          callback({type: "custom", text: "Cannot clone repository"}, null, null);
       } else {
         try {
           fs.readFileSync(path.join(savePath, 'manifest.json'));
