@@ -9,7 +9,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const SideBarButton = require("./SideBarButton");
 
 const RB = api.ReactBootstrap;
-const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
+const {Glyphicon, FormControl} = RB;
 const Style = require("./Style");
 const PackageCard = require("./PackageCard");
 const PackManagerSideBar = require("./PackManagerSideBar");
