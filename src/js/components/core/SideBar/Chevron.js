@@ -4,6 +4,8 @@ const RB = api.ReactBootstrap;
 const {Glyphicon} = RB;
 const Style = require('style-it/dist/style-it-standalone.js');
 
+// ToDo This file appears to be obsolete. It should be removed.
+
 class Chevron extends React.Component{
   render() {
     let chevronShape = "";
@@ -13,7 +15,7 @@ class Chevron extends React.Component{
         position: relative;
         text-align: center;
         width: 200px;
-        color: #FFF;
+        color: var(--reverse-color);
         z-index: 100;
         display: block;
         box-sizing: border-box;
@@ -27,8 +29,8 @@ class Chevron extends React.Component{
         height: 80px;
         width: 50%;
         transform: skew(0deg, 18deg);
-        background-color: #c3105a;
-        border-top: 2px solid white;
+        background-color: var(--warning-color);
+        border-top: 2px solid var(--reverse-color);
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
       }
       .chevron:after {
@@ -39,8 +41,8 @@ class Chevron extends React.Component{
         height: 80px;
         width: 50%;
         transform: skew(0deg, -18deg);
-        background-color: #c3105a;
-        border-top: 2px solid white;
+        background-color: var(--warning-color);
+        border-top: 2px solid var(--reverse-color);
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
       }
 
@@ -58,7 +60,7 @@ class Chevron extends React.Component{
         position: relative;
         text-align: center;
         width: 200px;
-        color: #FFF;
+        color: var(--reverse-color);
         z-index: 100;
         margin-bottom: 30px;
         display: block;
@@ -73,9 +75,9 @@ class Chevron extends React.Component{
         height: 60px;
         width: 50%;
         transform: skew(0deg, 18deg);
-        background-color: #0277BD;
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
+        background-color: var(--accent-color);
+        border-top: 2px solid var(--reverse-color);
+        border-bottom: 2px solid var(--reverse-color);
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
       }
       .chevron:after {
@@ -86,9 +88,9 @@ class Chevron extends React.Component{
         height: 60px;
         width: 50%;
         transform: skew(0deg, -18deg);
-        background-color: #0277BD;
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
+        background-color: var(--accent-color);
+        border-top: 2px solid var(--reverse-color);
+        border-bottom: 2px solid var(--reverse-color);
         box-shadow: 0 18px 18px -18px rgba(0, 0, 0, 0.8) inset, 0 -18px 18px -18px rgba(0, 0, 0, 0.8) inset;
       }
 
@@ -114,7 +116,7 @@ class Chevron extends React.Component{
       content = <img src={this.props.imagePath} style={{width: "45px"}} />
     }else{
       content = <div><Glyphicon glyph={glyphiconType}
-                                style={{color: "#FFF", fontSize: "25px"}}/>
+                                style={{color: "var(--reverse-color)", fontSize: "25px"}}/>
                                 {text}
                 </div>
     }

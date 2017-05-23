@@ -1,9 +1,8 @@
 const api = window.ModuleApi;
 const React = api.React;
 const fs = require('fs');
-const { Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button, utils } = require('react-bootstrap/lib');
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'blue');
+const { Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup } = require('react-bootstrap/lib');
+
 const ReportFilters = require("./ReportFilters.js");
 const style = require("./style");
 
@@ -150,23 +149,6 @@ class ReportSideBar extends React.Component{
     let chapterOptionArray = this.getChapters();
     return(
       <div style={style.ReportSideBar.layout}>
-        <style type="text/css">
-          {`
-            .btn-blue {
-              background-color: #0277BD;
-              color: white;
-              height: 60px;
-              border-radius: 0px;
-              font-weight: bold;
-              width: 100%;
-              position: absolute;
-              bottom: 0px;
-            }
-            .btn-blue:hover {
-              background-color: #C6C4C4;
-            }
-          `}
-        </style>
         <FormGroup bsSize="small" style={style.ReportSideBar.FormGroup}>
           <InputGroup>
             <FormControl type="text" placeholder="Search"
@@ -234,7 +216,7 @@ class ReportSideBar extends React.Component{
             <option value="false">Without Proposed Changes</option>
           </FormControl>
           <br />*/}
-            <h5 style={{color: "#44c6ff"}}>{`Report for the book of ${this.props.bookName} `}<br />
+            <h5 style={{color: "var(--accent-color-light)"}}>{`Report for the book of ${this.props.bookName} `}<br />
               <small>
                 {"\n By " + this.props.authors}<br />
                 {"Created on " + new Date().toDateString()}
@@ -244,9 +226,9 @@ class ReportSideBar extends React.Component{
             <h5>Flagged: {this.props.flagged}</h5>
             {this.props.reportHeadersOutput}
         </FormGroup>
-        <Button bsStyle="blue" style={{}} onClick={this.generatePDF.bind(this)}>
+        <button className="btn-prime" onClick={this.generatePDF.bind(this)}>
           <Glyphicon glyph="file" style={{fontSize: "20px"}} />  Print PDF
-        </Button>
+        </button>
       </div>
     );
   }
