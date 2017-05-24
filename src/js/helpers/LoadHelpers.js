@@ -391,12 +391,11 @@ export function createCheckArray(dataObject, moduleFolderName) {
  */
 export function checkMissingVerses(book, projectSaveLocation) {
     let chapterArray = [];
-    let hash = {}
+    let hash = {};
     let chapters = fs.readdirSync(projectSaveLocation);
     for (let chapter of chapters) {
-        let intRepresentation = parseInt(chapter);
-        if (!isNaN(intRepresentation)) {
-            chapterArray[intRepresentation] = chapter;
+        if (chapter.length < 4 && !isNaN(parseInt(chapter))) {
+            chapterArray[parseInt(chapter)] = chapter;
         }
     }
     if (expectedVerses[book]) {
