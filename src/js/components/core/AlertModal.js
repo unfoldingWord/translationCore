@@ -3,8 +3,6 @@
 * @description - Displays alert and returns user response
 */
 const React = require('react');
-const Button = require('react-bootstrap/lib/Button.js');
-const ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar.js');
 const Panel = require('react-bootstrap/lib/Panel.js');
 const Alert = require('react-bootstrap/lib/Alert.js');
 const CoreStore = require('../../stores/CoreStore.js');
@@ -34,18 +32,18 @@ class AlertModal extends React.Component {
                     <p>{this.props.content}</p>
                     
                     {this.props.leftButtonText ?
-                       <Button bsStyle="danger" style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.lefttButtonText, this.props.callback)}>
+                       <button className="btn-second" style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.leftButtonText, this.props.callback)}>
                       {this.props.leftButtonText}
-                    </Button> : null}
+                    </button> : null}
 
                     {this.props.rightButtonText ?
-                       <Button style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.rightButtonText, this.props.callback)}>
+                       <button style={this.props.currentStyle} onClick={()=>this.props.alertDismiss(this.props.rightButtonText, this.props.callback)}>
                       {this.props.rightButtonText}
-                    </Button> : null}
+                    </button> : null}
 
-                    <Button onClick={this.props.toggleMoreInfo}>
+                    <button onClick={this.props.toggleMoreInfo}>
                       More Info
-                    </Button>
+                    </button>
                     <Panel collapsible expanded={this.props.moreInfoOpen}>
                       {this.props.moreInfo}
                     </Panel>

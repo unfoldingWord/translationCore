@@ -1,7 +1,7 @@
 
 var style = {
   sideBarcontainer: {
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     zIndex: "98",
     fontSize: "12px",
     overflowX: "hidden",
@@ -12,7 +12,7 @@ var style = {
   },
 
   container: {
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     height: "100vh",
     display: "inline-block",
     zIndex: "99",
@@ -23,7 +23,7 @@ var style = {
 
   fixedChevrons: {
     zIndex: 1000,
-    backgroundColor: '#333333',
+    backgroundColor: 'var(--background-color-dark)',
   },
 
   ul: {
@@ -36,24 +36,24 @@ var style = {
     textAlign: "center",
     paddingTop: "15px",
     paddingBottom: "15px",
-    color: "white",
+    color: "var(--reverse-color)",
     cursor: "pointer",
     userSelect: "none",
   },
 
   glyphicon: {
     fontSize: "25px",
-    color: "white",
+    color: "var(--reverse-color)",
   },
 
   glyphiconHover: {
     fontSize: "29px",
-    color: "#44C6FF",
+    color: "var(--accent-color-light)",
   },
 
   hover: {
-    backgroundColor: "#444444",
-    color: "#0277BD",
+    backgroundColor: "var(--background-color-dark)",
+    color: "var(--accent-color)",
     cursor: "pointer",
     display: "block",
     textAlign: "center",
@@ -79,7 +79,7 @@ var style = {
   },
 
   StatusBar: {
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     height: "30px",
     width: "100%",
     fontSize: "16px",
@@ -90,8 +90,8 @@ var style = {
     float: "right",
     marginTop: "50vh",
     zIndex: "999",
-    color: "#fff",
-    backgroundColor: "#000",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
     padding: "10px 0",
     marginRight: "-15px",
     borderRadius: "0 5px 5px 0"
@@ -101,8 +101,8 @@ var style = {
     float: "left",
     marginTop: "50vh",
     zIndex: "999",
-    color: "#fff",
-    backgroundColor: "#000",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
     padding: "10px 0",
     marginRight: "-15px",
     borderRadius: "0 5px 5px 0"

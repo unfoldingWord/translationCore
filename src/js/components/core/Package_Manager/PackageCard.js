@@ -6,7 +6,7 @@
 const api = window.ModuleApi;
 const React = api.React;
 const RB = api.ReactBootstrap;
-const {Glyphicon, Button, FormGroup, FormControl} = RB;
+const {Glyphicon, FormGroup, FormControl} = RB;
 const style = require("./Style");
 
 var mounted = false;
@@ -21,11 +21,11 @@ class PackageCard extends React.Component{
     var versionDisplay = <span style={style.versionText}>{" " + this.props.packVersion}</span>
     if(this.props.buttonDisplay === "updatePack"){
       buttons.push(
-        <Button key={this.props.buttonDisplay} bsStyle="success"
+        <button key={this.props.buttonDisplay} className="btn-prime"
                 disabled={this.props.updateStatus !== 'Update'}
                 title={this.props.updateStatus + " " + this.props.packName} onClick={this.props.update}>
                 <Glyphicon glyph="cloud-download" /> {this.props.updateStatus+" to " + this.props.newPackVersion}
-        </Button>);
+        </button>);
     }else if (this.props.buttonDisplay === "downloadPack") {
       for (var versions in this.props.packVersion) {
         var versionNumber = this.props.packVersion[versions];
@@ -37,23 +37,23 @@ class PackageCard extends React.Component{
                           </FormControl>
                         </FormGroup>);
       buttons.push(
-        <Button key={this.props.buttonDisplay} bsStyle="primary"
+        <button key={this.props.buttonDisplay} className="btn-prime"
                 style={style.packCardButton} title={"Install " + this.props.packName}
                 onClick={this.props.install} disabled={this.props.installStatus !== 'Install'}>
                 <Glyphicon glyph="cloud-download" /> {this.props.installStatus}
-        </Button>);
+        </button>);
     }else if (this.props.buttonDisplay === "installedPack") {
       buttons.push(
-        <Button key={this.props.buttonDisplay} bsStyle="danger"
+        <button key={this.props.buttonDisplay} className="btn-second"
                 title={this.props.removeStatus + " " + this.props.packName} disabled={this.props.removeStatus !== 'Uninstall'}
                 onClick={this.props.uninstall}>
                 <Glyphicon glyph="trash" /> {this.props.removeStatus}
-        </Button>);
+        </button>);
     }
     return(
         <div style={style.cardLayout}>
           <div className="pull-right" style={style.cardBody} title="Number of Downloads">
-            <Glyphicon glyph="cloud-download" style={{color: "#555555"}}/>{" " + this.props.numOfDownloads}
+            <Glyphicon glyph="cloud-download" style={{color: "var(--text-color-light)"}}/>{" " + this.props.numOfDownloads}
           </div>
           <h4 style={{marginTop: "0px"}}>
             {this.props.packName}

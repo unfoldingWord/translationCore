@@ -1,7 +1,6 @@
 const api = window.ModuleApi;
 const React = api.React;
 const Chevron = require('./Chevron');
-const style = require("./Style");
 const CoreActionsRedux = require('../../../actions/CoreActionsRedux.js');
 const Grid = require('react-bootstrap/lib/Grid.js');
 const Row = require('react-bootstrap/lib/Row.js');
@@ -13,7 +12,7 @@ class SideBarContainer extends React.Component {
     var chevrons = document.getElementById('fixedChevrons') || { clientHeight: 228 };
     if (chevrons) {
       var sideBarContainerStyle = {
-        backgroundColor: "#333333",
+        backgroundColor: "var(--background-color-dark)",
         zIndex: "98",
         fontSize: "12px",
         overflowX: "hidden",
@@ -25,7 +24,7 @@ class SideBarContainer extends React.Component {
     }
       sideBarContent = (
           <Grid fluid style={sideBarContainerStyle}>
-            <Col style={{width:"300px", position: "fixed", padding: 0, backgroundColor: "#333333", height: "100%", overflowY: "scroll" }}>
+            <Col style={{width:"300px", position: "fixed", padding: 0, backgroundColor: "var(--background-color-dark)", height: "100%", overflowY: "scroll" }}>
               <MenuHeaders ref='menuheaders' subMenuProps={this.props.subMenuProps} currentToolNamespace={this.props.currentToolNamespace} currentGroupObjects={this.props.currentGroupObjects}
                 isCurrentHeader={this.props.isCurrentHeader} currentCheckIndex={this.props.currentCheckIndex}
                 currentGroupIndex={this.props.currentGroupIndex} menuClick={this.props.menuClick} currentBookName={this.props.currentBookName}

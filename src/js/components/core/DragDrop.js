@@ -1,7 +1,6 @@
 const React = require('react');
 const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 const Dropzone = require('react-dropzone');
-const Button = require('react-bootstrap/lib/Button.js');
 
 const style = {
   div: {
@@ -12,14 +11,14 @@ const style = {
   },
   dropzone: {
     active: {
-      border: '2px solid #0277BD',
-      backgroundColor: '#747474'
+      border: '2px solid var(--accent-color)',
+      backgroundColor: 'var(--background-color)'
     },
     main: {
       width: '100%',
-      color: '#FFFFFF',
+      color: 'var(--reverse-color)',
       height: '200px',
-      border: '2px dashed #0277BD',
+      border: '2px dashed var(--accent-color)',
       borderRadius: '10px',
       fontStyle: 'italic',
       padding: "5px",
@@ -29,7 +28,7 @@ const style = {
     },
     welcome: {
       width: '100%',
-      color: '#212121',
+      color: 'var(--text-color)',
       height: '200px',
       borderRadius: '5px',
       fontSize: '25px'
@@ -72,10 +71,10 @@ class DragDrop extends React.Component {
             </div>
           </Dropzone>
         </div>
-        {this.props.validFile ? <Button bsStyle="primary" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
+        {this.props.validFile ? <button className="btn-prime" onClick={this.props.loadProject} style={{ marginLeft: '45%', marginTop: 20 }}>
           <Glyphicon glyph="folder-open" />
           <span style={{ marginLeft: '15px', fontWeight: 'bold' }}>Load</span>
-        </Button> : null}
+        </button> : null}
       </div>
     );
   }

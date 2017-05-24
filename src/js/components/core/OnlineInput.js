@@ -4,7 +4,7 @@
 
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {FormGroup, FormControl, Button, Glyphicon, InputGroup} from 'react-bootstrap';
+import {FormGroup, FormControl, Glyphicon, InputGroup} from 'react-bootstrap';
 import {CircularProgress} from 'material-ui';
 
 class OnlineInput extends React.Component {
@@ -22,9 +22,9 @@ class OnlineInput extends React.Component {
               value={importLink}
               onChange={onChange}
             />
-            <Button bsStyle="prime" disabled={!importLink} onClick={load}>
+            <button className="btn-prime" disabled={!importLink} onClick={load}>
               <span style={{marginLeft: '10px'}}>Import & Select</span>
-            </Button>
+            </button>
           </InputGroup>
         </FormGroup>
       </MuiThemeProvider>

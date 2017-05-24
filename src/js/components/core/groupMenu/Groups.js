@@ -25,7 +25,7 @@ class Groups extends React.Component {
     let {groupsIndex} = this.props.groupsIndexReducer
 
     return (
-      <div style={{color: "#FFF", width:"100%"}}>
+      <div style={{color: "var(--reverse-color)", width:"100%"}}>
         {this.groups(groupsIndex)}
       </div>
     )

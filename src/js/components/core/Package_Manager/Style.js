@@ -1,6 +1,6 @@
 var style = {
   layout:{
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     width: "100%",
     height: "100vh",
     marginLeft: "0px",
@@ -8,7 +8,7 @@ var style = {
     zIndex: "100",
     left: "0px",
     fontSize: "12px",
-    color: "white",
+    color: "var(--reverse-color)",
     overflowX: "hidden",
     overflowY: "scroll",
     paddingRight: "25px",
@@ -20,7 +20,7 @@ var style = {
   },
 
   removeGlypcIcon:{
-    color:"red",
+    color: "var(--warning-color)",
     cursor: "pointer",
     position: "fixed",
     fontSize: "18px",
@@ -37,7 +37,7 @@ var style = {
     padding: "15px",
     borderRadius: "4px",
     border: "1px solid rgba(0, 0, 0, 0.5)",
-    backgroundColor: "#303337",
+    backgroundColor: "var(--background-color-dark)",
     overflow: "hidden",
     boxSizing: "border-box",
     display: "block",
@@ -51,7 +51,7 @@ var style = {
     padding: "15px",
     borderRadius: "4px",
     border: "1px solid rgba(0, 0, 0, 0.5)",
-    backgroundColor: "#aaaaaa",
+    backgroundColor: "var(--border-color)",
     overflow: "hidden",
     cursor: "pointer",
     boxSizing: "border-box",
@@ -59,7 +59,7 @@ var style = {
   },
 
   sideBar:{
-    backgroundColor: "#303337",
+    backgroundColor: "var(--background-color-dark)",
     width: "180px",
     height: "100vh",
     marginLeft: "0px",
@@ -70,7 +70,7 @@ var style = {
     overflowX: "hidden",
     overflowY: "auto",
     border: "1px solid rgba(0, 0, 0, 0.5)",
-    color: "#aaaaaa",
+    color: "var(--border-color)",
   },
 
   sideBarButton:{
@@ -91,14 +91,14 @@ var style = {
     padding: "10px 13px",
     position: "relative",
     cursor: "pointer",
-    backgroundColor: "#44c6ff",
-    color: "white",
+    backgroundColor: "var(--accent-color-light)",
+    color: "var(--reverse-color)",
     borderRight: "1px solid rgba(0, 0, 0, 0.5)",
     borderLeft: "1px solid rgba(0, 0, 0, 0.5)",
   },
 
   header:{
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     width:"100%",
     height: "125px",
     padding: "40px 180px 40px 18px",
@@ -113,15 +113,15 @@ var style = {
 
   heading:{
     fontSize: "18px",
-    color: "white",
+    color: "var(--reverse-color)",
   },
 
   sideBarGlyph:{
-    color: "#aaaaaa"
+    color: "var(--border-color)"
   },
 
   sideBarGlyphHover:{
-    color: "white",
+    color: "var(--reverse-color)",
   },
 
   imgSize:{
@@ -136,14 +136,14 @@ var style = {
   },
 
   cardBody:{
-    color: "#aaaaaa",
+    color: "var(--border-color)",
     fontSize: "16px",
   },
 
   versionText:{
     fontSize: "12px",
     fontWeight: "normal",
-    color: "#aaaaaa",
+    color: "var(--border-color)",
   },
 
   packIcon:{
@@ -155,10 +155,10 @@ var style = {
   },
 
   packCardButton:{
-    color: "#ffffff",
-    backgroundColor: "#006ab3",
-    backgroundImage: "-webkit-linear-gradient(#007acc, #006ab3)",
-    borderColor: "#006ab3",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--accent-color)",
+    backgroundImage: "-webkit-linear-gradient(var(--accent-color), var(--accent-color))",
+    borderColor: "var(--accent-color)",
   },
 
 };

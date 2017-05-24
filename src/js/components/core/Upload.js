@@ -3,8 +3,6 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 const React = require('react');
-
-const Button = require('react-bootstrap/lib/Button.js');
 const Nav = require('react-bootstrap/lib/Nav.js');
 const NavItem = require('react-bootstrap/lib/NavItem.js');
 
@@ -26,13 +24,13 @@ class UploadModal extends React.Component {
       <div>
         <Nav bsStyle="tabs" activeKey={parseInt(this.props.active)}
              onSelect={this.props.changeActive}
-             style={{padding: "2px 2px 0px 2px", backgroundColor: "#333333"}}>
+             style={{padding: "2px 2px 0px 2px", backgroundColor: "var(--background-color-dark)"}}>
           <NavItem eventKey={1}>{IMPORT_ONLINE}</NavItem>
           <NavItem eventKey={2}>{IMPORT_LOCAL}</NavItem>
           <NavItem eventKey={3}>{IMPORT_USFM}</NavItem>
           <NavItem eventKey={4}>{IMPORT_RECENT}</NavItem>
         </Nav>
-        <div style={{color: "#FFFFFF", padding: "20px", backgroundColor: "#333333"}}>
+        <div style={{color: "var(--reverse-color)", padding: "20px", backgroundColor: "var(--background-color-dark)"}}>
           {this.props.children}
         </div>
       </div>

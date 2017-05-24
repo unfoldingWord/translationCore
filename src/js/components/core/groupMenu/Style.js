@@ -8,9 +8,9 @@
         paddingBottom: "10px",
         paddingLeft: '15px',
         cursor: "pointer",
-        borderBottom: "1px solid #747474",
+        borderBottom: "1px solid var(--background-color)",
         fontWeight: 'normal',
-        color: 'white'
+        color: 'var(--reverse-color)'
       },
       current: {
         display: "block",
@@ -19,37 +19,37 @@
         paddingBottom: "10px",
         paddingLeft: '15px',
         cursor: "pointer",
-        borderBottom: "1px solid #747474",
-        backgroundColor: "#0277BD",
+        borderBottom: "1px solid var(--background-color)",
+        backgroundColor: "var(--accent-color)",
         fontWeight: 'bold',
-        color: 'white'
+        color: 'var(--reverse-color)'
       }
     },
     statusIcon: {
       correct: {
-        color: '#4EBA67',
+        color: 'var(--completed-color)',
         display: 'initial',
         padding: '0 10px 0 20px'
       },
       comment: {
-        color: '#f9c000',
+        color: 'var(--highlight-color)',
         display: 'initial',
         padding: '0 10px 0 20px'
       },
       verseEdit: {
-        color: '#FFFFFF',
+        color: 'var(--reverse-color)',
         display: 'initial',
         padding: '0 10px 0 20px'
       },
       flagged: {
-        color: '#FDD910',
+        color: 'var(--highlight-color)',
         display: 'initial'
       },
       unchecked: {
         display: 'none'
       },
       bookmark: {
-        color: '#FFFFFF',
+        color: 'var(--reverse-color)',
         display: 'initial',
         padding: '0 10px 0 20px'
       },
@@ -65,18 +65,18 @@
     display: "block",
     padding: "10px 0",
     cursor: "pointer",
-    borderBottom: "1px solid #333333",
-    color: "#FFF",
-    backgroundColor: "#666666",
+    borderBottom: "1px solid var(--background-color-dark)",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--background-color)",
   },
 
   activeSubMenuItem:  {
     display: "block",
     padding: "10px 0",
     cursor: "pointer",
-    borderBottom: "1px solid #333333",
-    color: "#FFF",
-    backgroundColor: "#0277BD",
+    borderBottom: "1px solid var(--background-color-dark)",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--accent-color)",
   },
 
 };

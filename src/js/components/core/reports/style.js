@@ -1,12 +1,12 @@
 var style = {
   ReportSideBar:{
     layout:{
-      backgroundColor: "#333333",
+      backgroundColor: "var(--background-color-dark)",
       width: "100%",
       height: "100%",
       margin: "0px",
       fontSize: "12px",
-      color: "white",
+      color: "var(--reverse-color)",
     },
     FormGroup:{
       margin: "0px",
@@ -14,15 +14,15 @@ var style = {
       padding: "15px",
     },
     FormControl:{
-      backgroundColor: "#333333",
-      color: "#ffffff",
+      backgroundColor: "var(--background-color-dark)",
+      color: "var(--reverse-color)",
       width: "100%",
       float: "right",
     }
   },
 
   reportContainer:{
-    backgroundColor: "#333333",
+    backgroundColor: "var(--background-color-dark)",
     width: "100%",
     height: "100%",
     margin: "0px",
@@ -31,11 +31,11 @@ var style = {
     overflowX: "hidden",
     overflowY: "auto",
     padding: "15px 5px 5px 5px",
-    border: "1px solid rgba(0, 0, 0, 0.5)",
+    border: "1px solid var(--border-color)",
   },
 
   hidePageGlyph:{
-    color:"red",
+    color: "var(--warning-color)",
     cursor: "pointer",
     position: "fixed",
     fontSize: "18px",
@@ -50,9 +50,9 @@ var style = {
     fontSize: "16px",
     width: "100%",
     borderRadius: "5px",
-    backgroundColor: "#5c5c5c",
-    color: "#FFFFFF",
-    borderColor: "#000000",
+    backgroundColor: "var(--background-color)",
+    color: "var(--reverse-color)",
+    borderColor: "var(--border-color)",
   },
 
 

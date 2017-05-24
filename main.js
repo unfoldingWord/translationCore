@@ -1,4 +1,5 @@
 const electron = require('electron')
+const ipcMain = electron.ipcMain;
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -12,6 +13,7 @@ const exec = require('child_process').exec;
 // be closed automatically when the JavaScript object is garbage collected.
 
 let mainWindow;
+let helperWindow;
 let splashScreen;
 
 function createMainWindow () {
@@ -87,6 +89,34 @@ function createMainSplash() {
   });
 }
 
+function createHelperWindow(url) {
+  helperWindow = new BrowserWindow({
+    width: 950,
+    height: 660,
+    minWidth: 950,
+    minHeight: 580,
+    useContentSize: true,
+    center: true,
+    autoHideMenuBar: true,
+    show: true,
+    frame: true
+  });
+
+  helperWindow.loadURL(url);
+
+  helperWindow.on('closed', () => {
+    helperWindow = null;
+  });
+
+  helperWindow.on('maximize', () => {
+    helperWindow.webContents.send('maximize');
+  });
+
+  helperWindow.on('unmaximize', () => {
+    helperWindow.webContents.send('unmaximize');
+  });
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -114,3 +144,12 @@ app.on('activate', function () {
     createMainWindow()
   }
 })
+
+ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
+    if (helperWindow) {
+        helperWindow.show();
+        helperWindow.loadURL(url);
+    } else {
+        createHelperWindow(url);
+    }
+});

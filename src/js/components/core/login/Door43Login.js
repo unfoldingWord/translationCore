@@ -36,7 +36,7 @@ class Door43Login extends React.Component {
               <b>{"Log in with Door43"}</b>&nbsp;
               <Glyphicon
                 glyph="info-sign"
-                style={{fontSize: "20px"}}
+                style={{fontSize: "20px", cursor: 'pointer'}}
                 onClick={
                   (e) => {
                     let positionCoord = e.target;

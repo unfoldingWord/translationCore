@@ -1,8 +1,5 @@
 const React = require('react');
 const Table = require('reactable').Table;
-const path = require('path-extra');
-const Button = require('react-bootstrap/lib/Button.js');
-const Glyphicon = require('react-bootstrap/lib/Glyphicon.js');
 
 class RecentProjects extends React.Component {
   render() {

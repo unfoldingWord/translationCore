@@ -9,7 +9,7 @@ import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 import {toggleMenu} from '../actions/SideBarActions.js'
 
 const sideBarContainerStyle = {
-  backgroundColor: "#333333",
+  backgroundColor: "var(--background-color-dark)",
   zIndex: "98",
   fontSize: "12px",
   overflowX: "hidden",
@@ -42,7 +42,7 @@ class SideBarContainer extends React.Component {
                 width: "250px",
                 position: "fixed",
                 padding: 0,
-                backgroundColor: "#333333",
+                backgroundColor: "var(--background-color-dark)",
                 height: "95%",
                 overflowY: "scroll"
               }

@@ -16,8 +16,8 @@ class SnackbarComponent extends Component{
          message={message}
          autoHideDuration={duration}
          onRequestClose={hideNotification}
-         bodyStyle={{ background: '#000000' }}
-         contentStyle={{ color: '#ffffff' }}
+         bodyStyle={{ background: 'var(--background-color-dark)' }}
+         contentStyle={{ color: 'var(--reverse-color)' }}
        />
       );
     }
