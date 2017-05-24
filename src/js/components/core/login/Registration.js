@@ -12,7 +12,6 @@ const { connect  } = require('react-redux');
 const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
-const Button = require('react-bootstrap/lib/Button.js');
 var Token = window.ModuleApi.getAuthToken('gogs');
 const CoreActions = require('../../../actions/CoreActions.js');
 import GogsApi from './GogsApi';
@@ -141,17 +140,15 @@ const Registration = React.createClass({
             <FormControl type="password" placeholder={ENTER.confirm} onChange={this.handleConfirm}/>
             <FormControl.Feedback />
           </FormGroup>
-          <Button
-          style={{width: '100%', fontWeight: 'bold'}}
-          onClick={this.createUser} bsStyle="primary">
+          <button
+          onClick={this.createUser} className="btn-prime">
             Create Account
-          </Button>
+          </button>
           <h5 style={{marginTop: '25px',marginBottom: '-5px', fontWeight: 'bold'}}>Already have an account?</h5>
-          <Button
-          style={{fontWeight: 'bold'}}
-          onClick={this.props.back} bsStyle="link">
+          <button
+          onClick={this.props.back} className="btn-second">
             Sign In
-          </Button>
+          </button>
         </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {Grid, Row, Col, Button, utils } from 'react-bootstrap';
+import {Grid, Row, Col, utils } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
@@ -22,10 +22,6 @@ import * as recentProjectActions from '../actions/RecentProjectsActions';
 import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
 const api = window.ModuleApi;
-const bootstrapUtils = utils.bootstrapUtils;
-bootstrapUtils.addStyle(Button, 'prime');
-bootstrapUtils.addStyle(Button, 'second');
-
 
 class Main extends Component {
 

@@ -10,7 +10,7 @@ export default class PopoverComponent extends Component {
       return (
         <div>
           <Popover
-            style={{padding: '10px 0', backgroundColor: "#f5f5f5"}}
+            style={{padding: '10px 0', backgroundColor: "var(--background-color-light)"}}
             open={popoverVisibility}
             anchorEl={positionCoord}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}

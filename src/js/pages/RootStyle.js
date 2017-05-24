@@ -8,7 +8,7 @@ var RootStyles = {
     textAlign: 'center'
   },
   WelcomeFrame: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: 'var(--completed-color)',
     height: '100%'
   },
   WelcomePage: {

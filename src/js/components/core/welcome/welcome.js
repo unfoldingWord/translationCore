@@ -1,15 +1,16 @@
 const React = require('react');
 
 const RB = require('react-bootstrap');
-const {Glyphicon, Button, Popover} = RB;
+const {Glyphicon, Popover} = RB;
 const CoreActions = require('../../../actions/CoreActions.js');
 const Login = require('../login/Login');
 const StatusBar = require('../SideBar/StatusBar');
 const SideBarContainer = require('../SideBar/SideBarContainer');
 const Upload = require('../Upload');
-const loadOnline = require('../LoadOnline');
 
 const NUM_OF_SLIDES = 2;
+
+// ToDo This file appears to be obsolete. It should be removed.
 
 const Styles = {
   navButtons: {
@@ -18,7 +19,7 @@ const Styles = {
     height: '50px',
     alignSelf: 'center',
     fontSize: '200%',
-    color: '#fff'
+    color: 'var(--reverse-color)'
   },
   menuButtons: {
     width: '25%',
@@ -29,31 +30,31 @@ const Styles = {
     margin: 'auto',
     alignSelf: 'center',
     textAlign: 'center',
-    color: '#fff'
+    color: 'var(--reverse-color)'
   },
   tutorialPage: {
-    backgroundColor: '#4d4d4d',
+    backgroundColor: 'var(--background-color)',
     height: '100%'
   },
   skipTutorialButton: {
-    color: '#fff',
+    color: 'var(--reverse-color)',
     float: 'right',
     margin: '20px'
   },
   nextTutorialButton: {
-    color: '#000',
+    color: 'var(--text-color-dark)',
     float: 'right'
   },
   tutorialPopover: {
     maxWidth: '200px'
   },
   welcomeFrame: {
-    backgroundColor: '#1a2133',
+    backgroundColor: 'var(--background-color-dark)',
     height: '100%',
     display: 'flex'
   },
   bigGlyph: {
-    color: '#fff',
+    color: 'var(--reverse-color)',
     fontSize: '1000%'
   },
   loginBox: {
@@ -63,7 +64,7 @@ const Styles = {
   uploadBox: {
     width: '50%',
     margin: 'auto',
-    backgroundColor: '#fff',
+    backgroundColor: 'var(--reverse-color)',
     borderRadius: '5px'
   },
   tutorialInfo: {
@@ -137,7 +138,7 @@ class Welcome extends React.Component{
         <Glyphicon style={Styles.bigGlyph} glyph="cloud-download" />
           <h1>Load your first project</h1>
           <p style={Styles.tutorialInfo}>You can load in your first project from Door43 or from your local storage.</p>
-            <Button onClick={this.props.initialize}>Load Project</Button>
+            <button onClick={this.props.initialize}>Load Project</button>
         </div>
       </div>
     );
@@ -157,12 +158,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to log in or log out to your Door43 account. Additionally giving you access to more information about your account.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
               {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -177,12 +178,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to save or update a copy of your project to your Door43 account.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
               {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -197,12 +198,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to generate a report for all of the checks performed in the currently opened project.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
             {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -217,12 +218,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to access various settings options to make translationCore look and perform according to your needs.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
               {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -237,12 +238,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to download, update or remove tools to perform different types of checks.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
               {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -257,12 +258,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>{"Clicking this button allows you to import your own or someone else's translationStudio project as well as open an existing translationCore project."}</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={() => {_this.setState({tutorialIndex: this.state.tutorialIndex+1})}}
-              bsStyle="link">
+              >
               {'Next'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -277,12 +278,12 @@ class Welcome extends React.Component{
             <div style={Styles.tutorialPopover}>
               <p>Clicking this button allows you to start using a tool to perform a check on your project draft.</p>
             </div>
-            <Button
+            <button
               style={Styles.nextTutorialButton}
               onClick={this.skipToProjectPage.bind(this)}
-              bsStyle="link">
+              >
               {'Done'} <Glyphicon glyph="chevron-right" />
-            </Button>
+            </button>
           </Popover>
         )
       break;
@@ -305,20 +306,19 @@ class Welcome extends React.Component{
          <StatusBar />
          <SideBarContainer initShow={true}/>
           {this.getTutorialOverlay(this.state.tutorialIndex)}
-          <Button
+          <button
             style={Styles.skipTutorialButton}
             onClick={this.skipToProjectPage.bind(this)}
-            bsStyle="link">
+            >
             {'Skip'} <Glyphicon glyph="chevron-right" />
-          </Button>
+          </button>
         </div>
       )
     } else {
       return(
         <div style={Styles.welcomeFrame}>
 
-          <Button
-            bsStyle='link'
+          <button
             onClick={
               ()=>{
                 //If you are on the first slide you cant go backwards
@@ -335,12 +335,11 @@ class Welcome extends React.Component{
                        style={{
                          display: this.state.index == 1 ? "none" : "inline"
                        }}/>
-          </Button>
+          </button>
 
           {this.getPage(this.state.index)}
 
-          <Button
-            bsStyle='link'
+          <button
             onClick={ () => {
                 if(this.state.index == NUM_OF_SLIDES){
                   _this.setState({tutorial: true})
@@ -352,7 +351,7 @@ class Welcome extends React.Component{
             style={Styles.navButtons}
           >
             <Glyphicon glyph='chevron-right' />
-          </Button>
+          </button>
 
         </div>
       )

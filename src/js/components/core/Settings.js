@@ -3,9 +3,6 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 const React = require('react');
-
-const CoreStore = require('../../stores/CoreStore.js');
-const Button = require('react-bootstrap/lib/Button.js');
 const Modal = require('react-bootstrap/lib/Modal.js');
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');

@@ -9,7 +9,7 @@ const ReactBootstrap = api.ReactBootstrap;
 const SideBarButton = require("./SideBarButton");
 
 const RB = api.ReactBootstrap;
-const {Glyphicon, FormGroup, FormControl, ControlLabel, InputGroup, Button} = RB;
+const {Glyphicon, FormControl} = RB;
 const Style = require("./Style");
 const PackageCard = require("./PackageCard");
 const PackManagerSideBar = require("./PackManagerSideBar");
@@ -235,7 +235,7 @@ class PackageManagerView extends React.Component{
                 type="text"
                 placeholder="Search Packages by Name"
                 onChange={this.handleChange.bind(this)}
-                style={{backgroundColor: "#303337", border: "1px solid rgba(0, 0, 0, 0.5)", width: "66%"}}
+                style={{backgroundColor: "var(--background-color-dark", border: "1px solid var(--background-color)", width: "66%"}}
             />
           </div>
           <Glyphicon glyph="remove" title="Close Package Manager" style={Style.removeGlypcIcon}
