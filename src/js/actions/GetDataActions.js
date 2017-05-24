@@ -73,6 +73,13 @@ export function openProject(projectPath, projectLink, exporting = false) {
       // No USFM detected, initiating 'standard' loading process
       projectPath = LoadHelpers.correctSaveLocation(projectPath);
       let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+
+      if (!manifest) {
+        dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load does not have a valid manifest and cannot be opened! Please contact Help Desk (help@door43.org) for assistance."));
+        dispatch(clearPreviousData());
+        return;
+      }
+
       manifest = LoadHelpers.verifyChunks(projectPath, manifest);
       LoadHelpers.migrateAppsToDotApps(projectPath);
       let conflictsFound = LoadHelpers.findMergeConflicts(manifest.finished_chunks, projectPath);
