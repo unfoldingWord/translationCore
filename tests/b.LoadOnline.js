@@ -2,8 +2,14 @@ const assert = require('chai').assert;
 const loadOnline = require('../src/js/components/core/LoadOnline.js');
 const path = require('path-extra');
 const fs = require('fs-extra');
-
 const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
+import React from 'react';
+import {mount} from 'enzyme';
+import ImportOnlineContainer from '../src/js/containers/ImportOnlineContainer';
+import configureStore from '../src/js/utils/configureStore';
+import { loadState} from '../src/js/utils/localStorage';
+const persistedState = loadState();
+const mainStore = configureStore(persistedState);
 
 
 describe('loadOnline.openManifest', function() {
@@ -48,5 +54,66 @@ describe('loadOnline.openManifest', function() {
       assert.equal(url, expectedURL);
       done();
     });
+  });
+});
+
+describe('<ImportOnlineContainer />', function() {
+  const loggedInState = {
+    ...persistedState,
+    loginReducer: {
+      loggedInUser: true,
+      userdata: {
+        username: 'ihoegen'
+      }
+    }
+  };
+  const loggedInWithProjects = {
+    ...loggedInState,
+    importOnlineReducer: {
+      repos: [
+        {
+          project: "48-GAL",
+          repo: 'ihoegen/48-GAL',
+          user: 'ihoegen'
+        },
+        {
+          project: "Test-Project",
+          repo: 'ihoegen/Test-Project',
+          user: 'ihoegen'
+        }
+      ]
+    }
+  };
+  let projectStore = configureStore(loggedInWithProjects);
+  let importOnline = mount(<ImportOnlineContainer store={mainStore}/>);
+  let importOnlineLoggedIn = mount(<ImportOnlineContainer store={configureStore(loggedInState)}/>);
+  let importOnlineProjects = mount(<ImportOnlineContainer store={projectStore}/>);
+  let importOnlineHTML = importOnline.html();
+  let importOnlineLoggedInHTML = importOnlineLoggedIn.html();
+  let importOnlineProjectsHTML = importOnlineProjects.html();
+  it('should render eight <div /> elements', function() {
+    assert.equal(importOnline.find('div').length, 8);
+  });
+
+  it('should render instructions', function() {
+    assert.isTrue(importOnlineHTML.indexOf('Select one of your projects above or enter the URL of a project below') >= 0);
+  });
+
+  it('should tell the user they must log in to see Door43 projects', function() {
+    assert.equal(importOnline.find('button').length, 2);
+    assert.isTrue(importOnlineHTML.indexOf('Unable to connect to the online projects. Please log in to your Door43 account.') >= 0);
+    assert.isTrue(importOnlineHTML.indexOf('No Projects Found') < 0);
+  });
+
+  it('should tell the user they have no projects when logged in but have no Door43 projects', function() {
+    assert.equal(importOnlineLoggedIn.find('button').length, 2);
+    assert.isTrue(importOnlineLoggedInHTML.indexOf('Unable to connect to the online projects. Please log in to your Door43 account.') < 0);
+    assert.isTrue(importOnlineLoggedInHTML.indexOf('No Projects Found') >= 0);
+  });
+  it('should display Door43 Projects when a user is logged in and they have projects', function() {
+    assert.equal(importOnlineProjects.find('button').length, 4);
+    assert.isTrue(importOnlineProjectsHTML.indexOf('Unable to connect to the online projects. Please log in to your Door43 account.') < 0);
+    assert.isTrue(importOnlineProjectsHTML.indexOf('No Projects Found') < 0);
+    assert.isTrue(importOnlineProjectsHTML.indexOf('Test-Project') >= 0);
   });
 });
