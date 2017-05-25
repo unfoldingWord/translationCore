@@ -35,7 +35,7 @@ class CreativeCommonsPage extends Component {
           <h4><b>Under the following terms:</b></h4>
           <p>
             <b>Attribution</b> —  You must attribute the work as follows: "Original work available&nbsp;
-            at https://door43.org/." Attribution statements in derivative works should not in any way&nbsp;
+            at https://git.door43.org/." Attribution statements in derivative works should not in any way&nbsp;
             suggest that we endorse you or your use of this work
           </p>
           <p>
