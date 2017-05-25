@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {Grid, Row, Col, utils } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
