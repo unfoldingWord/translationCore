@@ -305,7 +305,8 @@ export function setModuleView(identifier, view) {
 function loadProjectDataFromFileSystem(toolName) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
-      let { projectSaveLocation, params } = getState().projectDetailsReducer;
+      let { toolsReducer, projectDetailsReducer } = getState();
+      let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
@@ -317,12 +318,16 @@ function loadProjectDataFromFileSystem(toolName) {
               dispatch(ResourcesActions.loadBiblesFromFS());
               delayTime = 800;
             }
+            if (toolsReducer.switchingTool) {
+              dispatch(startModuleFetchData())
+            }
             delay(delayTime)
               .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
                 dispatch(BodyUIActions.toggleHomeView(false))
               )
-              .then(dispatch({ type: consts.DONE_LOADING }));
+              .then(dispatch({ type: consts.DONE_LOADING }))
+              .then(dispatch({ type: consts.SET_SWITCHING_TOOL_TO_FALSE }));
           })
 
           .catch(err => {
