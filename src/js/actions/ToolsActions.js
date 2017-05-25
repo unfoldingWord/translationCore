@@ -10,6 +10,7 @@ const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 
 export function loadTool(folderName, toolName) {
   return ((dispatch, getState) => {
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(modalActions.showModalContainer(false));
     dispatch(GetDataActions.loadModuleAndDependencies(folderName, toolName));
