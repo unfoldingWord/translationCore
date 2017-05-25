@@ -24,7 +24,7 @@ class LoadModalContainer extends React.Component {
           bsStyle="pills"
           style={{ borderBottom: "none", backgroundColor: "var(--accent-color)", color: 'var(--text-color)', width: "100%" }}>
           <Tab eventKey={1} title="My Projects">
-            <RecentProjectsContainer />
+            <RecentProjectsContainer {...this.props}/>
           </Tab>
           <Tab eventKey={3} title="Import Online Project">
             <ImportOnlineContainer />
@@ -41,7 +41,8 @@ function mapStateToProps(state) {
     ...state.recentProjectsReducer,
     ...state.reportsReducer,
     ...state.toolsReducer,
-    ...state.importOnlineReducer
+    ...state.importOnlineReducer,
+    ...state.projectDetailsReducer
   };
 }
 
