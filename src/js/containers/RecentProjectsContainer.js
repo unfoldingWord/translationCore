@@ -26,11 +26,12 @@ class RecentProjectsContainer extends React.Component {
     }
   }
 
-  generateButton(projectPath) {
+  generateButton(projectPath, currentPath) {
     return (
       <span>
         <button className="btn-prime"
           style={{width: "100px", margin: "10px 5px 10px 0"}}
+          disabled={projectPath === currentPath}
           onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}
         >
           <Glyphicon glyph={'folder-open'} />
@@ -56,6 +57,7 @@ class RecentProjectsContainer extends React.Component {
 
   getRecentProjects() {
     let projectPaths = this.props.recentProjects;
+    let { projectSaveLocation } = this.props;
     let projects = [];
     for (let project in projectPaths) {
       let projectPath = path.join(DEFAULT_SAVE, projectPaths[project]);
@@ -77,7 +79,7 @@ class RecentProjectsContainer extends React.Component {
       }
       let mtime = new Date(stats.mtime);
       let difference = mtime.getMonth() + 1 + '/' + mtime.getDate() + '/' + mtime.getFullYear();
-      let buttonSpan = (this.generateButton(projectPath));
+      let buttonSpan = (this.generateButton(projectPath, projectSaveLocation));
       projects.push(
         {
           '':
