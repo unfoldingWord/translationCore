@@ -1,16 +1,11 @@
-const assert = require('chai').assert;
-const loadOnline = require('../src/js/components/core/LoadOnline.js');
-const path = require('path-extra');
-const fs = require('fs-extra');
+// LoadOnline.js Test
+const loadOnline = require('../../out/js/components/core/LoadOnline.js');
 const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
-import React from 'react';
-import {mount} from 'enzyme';
-import ImportOnlineContainer from '../src/js/containers/ImportOnlineContainer';
-import configureStore from '../src/js/utils/configureStore';
-import { loadState} from '../src/js/utils/localStorage';
+import ImportOnlineContainer from '../../out/js/containers/ImportOnlineContainer';
+import configureStore from '../../out/js/utils/configureStore';
+import { loadState} from '../../out/js/utils/localStorage';
 const persistedState = loadState();
 const mainStore = configureStore(persistedState);
-
 
 describe('loadOnline.openManifest', function() {
   it('loadOnline.openManifest should return an error if no link is specified', function(done) {

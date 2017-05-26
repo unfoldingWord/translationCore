@@ -1,10 +1,11 @@
+// PackageManager.js Tests
 /**
 const assert = require('chai').assert;
 const React = require('react');
 const {mount, shallow} = require('enzyme');
-const PackageManager = require('../src/js/components/core/Package_Manager/PackageManager.js');
-const PackageManagerView = require('../src/js/components/core/Package_Manager/PackageManagerView.js');
-const PackageCard = require('../src/js/components/core/Package_Manager/PackageCard.js');
+const PackageManager = require('../../out/js/components/core/Package_Manager/PackageManager.js');
+const PackageManagerView = require('../../out/js/components/core/Package_Manager/PackageManagerView.js');
+const PackageCard = require('../../out/js/components/core/Package_Manager/PackageCard.js');
 var totalPackages = 0;
 describe('PackageManager.list', function() {
   it('getPackageList should retrieve a list of available packages', function(done) {

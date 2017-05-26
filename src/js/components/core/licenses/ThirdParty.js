@@ -1,5 +1,5 @@
 import React from "react"
-import Licenses from "./newLicenses.json"
+import Licenses from "../../../../../static/licenses/newLicenses.json"
 
 class ThirdParty extends React.Component {
   render() {

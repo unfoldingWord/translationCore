@@ -16,6 +16,8 @@ before_script:
   fi'
 script:
 - xvfb-maybe npm test
+after_success:
+- npm run coverage
 before_deploy:
 - npm i -g babel-cli
 - npm i -g electron-builder@5.26.0 ;
