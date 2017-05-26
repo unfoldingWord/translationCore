@@ -39,6 +39,13 @@ export function uploadProject(projectPath, user) {
       AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
     );
 
+    if (!user.token) {
+      dispatch(
+          AlertModalActions.openAlertDialog("Your login has become invalid. Please log out and log back in.", false)
+      );
+      return;
+    }
+
     gogs(user.token).createRepo(user, projectName).then(repo => {
       var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
