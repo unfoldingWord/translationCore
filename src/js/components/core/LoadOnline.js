@@ -32,10 +32,10 @@ module.exports = (function() {
       url+='.git';
     }
 
-    var expression = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/.]+).git$/);
+    var expression = new RegExp(/^https?:\/\/(git.door43.org|door43.org\/u)\/[^\/]+\/([^\/.]+).git$/);
 
     if (expression.test(url)) {
-      var projectName = expression.exec(url)[1];
+      var projectName = expression.exec(url)[2];
       var savePath = path.join(pathex.homedir(), 'translationCore', projectName);
     } else {
       if (callback) {
