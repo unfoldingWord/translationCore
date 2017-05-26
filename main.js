@@ -135,7 +135,7 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
+});
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
@@ -143,7 +143,12 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createMainWindow()
   }
-})
+});
+
+ipcMain.on('save-as', function (event, arg) {
+  var input = dialog.showSaveDialog(mainWindow, arg.options);
+  event.returnValue = input || false;
+});
 
 ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
     if (helperWindow) {
