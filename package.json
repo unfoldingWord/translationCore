@@ -7,7 +7,7 @@
   "scripts": {
     "pretest": "npm run concat-tests && babel src --out-dir out && babel test --out-dir _test",
     "test": "floss --path ./_test --coveragePattern out/**/*/*.js --coverageHtmlReporter --coverageSourceMaps",
-    "coverage": "coveralls",
+    "coverage": "istanbul report text-lcov | coveralls",
     "compile": "babel src --out-dir src",
     "compile-submodules": "babel tC_apps --out-dir tC_apps",
     "concat-tests": "concat -o test/tests/index.js test/tests/a.ModuleApi.js test/tests/b.LoadOnline.js test/tests/c.PackageManager.js test/tests/d.ReportFilters.js test/tests/e.ProjectManifest.js test/tests/f.translationCore.js test/tests/g.GitApi.js",
@@ -60,6 +60,7 @@
     "eslint": "^2.13.1",
     "eslint-config-google": "^0.6.0",
     "floss": "^2.0.1",
+    "istanbul": "^0.4.5",
     "react-addons-test-utils": "15.4.2",
     "redux-test-utils": "^0.1.1",
     "sinon": "^2.3.1"
