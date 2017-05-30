@@ -1,5 +1,5 @@
 import React from 'react'
-import {Glyphicon} from 'react-bootstrap'
+import { Glyphicon } from 'react-bootstrap'
 import style from './Style'
 import isEqual from 'lodash/isEqual'
 
@@ -13,15 +13,21 @@ class GroupItem extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  componentWillReceiveProps(nextProps, context){
+  componentDidMount() {
+    if (this.props.active) {
+      this.props.scrollIntoView(this);
+    }
+  }
+
+  componentWillReceiveProps(nextProps, context) {
     if (isEqual(nextProps.contextId, nextProps.contextIdReducer.contextId)) {
-       this.props.scrollIntoView(this);
+      this.props.scrollIntoView(this);
     }
   }
 
   statusGlyph() {
     let statusBooleans = this.getGroupData()
-    let {comments, reminders, selections, verseEdits} = statusBooleans
+    let { comments, reminders, selections, verseEdits } = statusBooleans
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
     )
@@ -44,12 +50,12 @@ class GroupItem extends React.Component {
     }
     return statusGlyph
   }
-/**
- * @description gets the group data for the groupItem.
- * @return {object} groud data object.
- */
+  /**
+   * @description gets the group data for the groupItem.
+   * @return {object} groud data object.
+   */
   getGroupData() {
-    let {groupsData} = this.props.groupsDataReducer
+    let { groupsData } = this.props.groupsDataReducer
     let groupId = this.props.groupIndex.id
 
     let groupData = groupsData[groupId].filter(groupData => {
@@ -59,21 +65,18 @@ class GroupItem extends React.Component {
     return groupData[0];
   }
 
-  onClick(){
+  onClick() {
     this.props.actions.changeCurrentContextId(this.props.contextId);
-    this.props.scrollIntoView(this);
   }
 
   render() {
-    let {reference} = this.props.contextId;
-    let active = isEqual(this.props.contextId, this.props.contextIdReducer.contextId)
-
+    let { reference } = this.props.contextId;
     return (
       <div onClick={this.onClick}
-          style={active ? style.activeSubMenuItem : style.subMenuItem}
-          title="Click to select this check">
-          {this.statusGlyph()}
-          {" " + this.props.projectDetailsReducer.bookName + " " + reference.chapter + ":" + reference.verse}
+        style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}
+        title="Click to select this check">
+        {this.statusGlyph()}
+        {" " + this.props.projectDetailsReducer.bookName + " " + reference.chapter + ":" + reference.verse}
       </div>
     );
   }
