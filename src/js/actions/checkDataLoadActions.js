@@ -42,6 +42,7 @@ function generateLoadPath(state, checkDataName) {
 /**
  * @description loads checkdata beased on given.
  * @param {string} loadPath - load path.
+ * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
  */
 function loadCheckData(loadPath, contextId) {
@@ -54,7 +55,7 @@ function loadCheckData(loadPath, contextId) {
       return path.extname(file) === '.json'
     })
     let sorted = files.sort().reverse() // sort the files to use latest
-    let checkDataObjects = sorted.map( file => {
+    let checkDataObjects = sorted.map(file => {
       // get the json of all files to later filter by contextId
       try {
         let readPath = path.join(loadPath, file)
@@ -65,7 +66,7 @@ function loadCheckData(loadPath, contextId) {
         return undefined;
       }
     })
-    checkDataObjects = checkDataObjects.filter( _checkDataObject => {
+    checkDataObjects = checkDataObjects.filter(_checkDataObject => {
       // filter the checkDataObjects to only use the ones that match the current contextId
       let keep = _checkDataObject &&
                 _checkDataObject.contextId.groupId === contextId.groupId &&
