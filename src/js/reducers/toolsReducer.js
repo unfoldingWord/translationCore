@@ -12,12 +12,12 @@ const toolsReducer = (state = initialState, action) => {
       return { ...state, toolsMetadatas: action.val }
     case consts.LOAD_TOOL:
       return { ...state, toolLoaded: action.val }
-    case consts.SET_SWITCHING_TOOL_TO_TRUE:
+    case consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE:
       return {
         ...state,
         switchingTool: true
       };
-    case consts.SET_SWITCHING_TOOL_TO_FALSE:
+    case consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_FALSE:
       return {
         ...state,
         switchingTool: false

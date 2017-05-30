@@ -12,7 +12,7 @@ export function loadTool(folderName, toolName) {
   return ((dispatch, getState) => {
     let currentTooName = getState().currentToolReducer.toolName;
     if (currentTooName && currentTooName !== toolName) {
-      dispatch({ type: consts.SET_SWITCHING_TOOL_TO_TRUE });
+      dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
     }
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch(BodyUIActions.toggleHomeView(true));

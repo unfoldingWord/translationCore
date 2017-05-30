@@ -59,6 +59,11 @@ export function clearPreviousData() {
  */
 export function openProject(projectPath, projectLink, exporting = false) {
   return ((dispatch, getState) => {
+    // temp fix. TODO: will be removed after private beta.
+    let projectBookName = getState().projectDetailsReducer.bookName;
+    if (projectBookName.length > 0) {
+      dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
+    }
     if (!projectPath && !projectLink) return;
     // TODO: this action may stay here temporary until the home screen implementation.
     dispatch(BodyUIActions.toggleHomeView(true));
@@ -319,6 +324,7 @@ function loadProjectDataFromFileSystem(toolName) {
               delayTime = 800;
             }
             if (toolsReducer.switchingTool) {
+              // Switching project and/or tool
               dispatch(startModuleFetchData())
             }
             delay(delayTime)
@@ -327,7 +333,7 @@ function loadProjectDataFromFileSystem(toolName) {
                 dispatch(BodyUIActions.toggleHomeView(false))
               )
               .then(dispatch({ type: consts.DONE_LOADING }))
-              .then(dispatch({ type: consts.SET_SWITCHING_TOOL_TO_FALSE }));
+              .then(dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_FALSE }));
           })
 
           .catch(err => {
