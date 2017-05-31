@@ -49,9 +49,9 @@ export function loadModulesSettings() {
   }
 }
 // TODO: change readJson to readJsonSync
-export function loadGroupsDataToExport(tool, dataFolder, params) {
+export function loadGroupsDataToExport(tool, dataFolder, projectId) {
   return new Promise((resolve, reject) => {
-    let groupDataFolderPath = path.join(dataFolder, 'index', tool, params.bookAbbr);
+    let groupDataFolderPath = path.join(dataFolder, 'index', tool, projectId);
     fs.readdir(groupDataFolderPath, (err, groupDataFolderObjs) => {
       if (!err) {
         var allGroupsObjects = {};
@@ -85,11 +85,11 @@ export function loadGroupsDataToExport(tool, dataFolder, params) {
   });
 }
 
-export function loadProjectDataByTypeToExport(dataFolder, params, type) {
+export function loadProjectDataByTypeToExport(dataFolder, projectId, type) {
   return new Promise((resolve, reject) => {
     let checkDataArray = [];
     try {
-      let chapterFolder = path.join(dataFolder, 'checkData', type, params.bookAbbr);
+      let chapterFolder = path.join(dataFolder, 'checkData', type, projectId);
       let chapters = fs.readdirSync(chapterFolder);
       for (var chapter of chapters) {
         if (!parseInt(chapter)) continue;

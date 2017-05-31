@@ -11,7 +11,7 @@ import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-const { dialog } = remote;
+const ipcRenderer = require('electron').ipcRenderer;
 
 
 /**
@@ -38,6 +38,13 @@ export function uploadProject(projectPath, user) {
     dispatch(
       AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
     );
+
+    if (!user.token) {
+      dispatch(
+          AlertModalActions.openAlertDialog("Your login has become invalid. Please log out and log back in.", false)
+      );
+      return;
+    }
 
     gogs(user.token).createRepo(user, projectName).then(repo => {
       var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
@@ -119,33 +126,64 @@ export function getProjectsFromFolder() {
  * @param {string} projectPath - Path to current project
  */
 export function exportToCSV(projectPath) {
-  return ((dispatch, getState) => {
-    var loadedSuccessfully = true;
-    const { groupsDataReducer, remindersReducer, commentsReducer, selectionsReducer, verseEditsReducer } = getState();
-    dispatch(getDataActions.openProject(projectPath, null, true));
-    const { params, manifest } = getState().projectDetailsReducer;
-    const projectName = `${params.bookAbbr.toUpperCase()}_${manifest.target_language.name}`;
-    dispatch(getDataActions.clearPreviousData());
-
-    let toolPaths = getToolFolderNames(projectPath);
-    if (!toolPaths) dispatch(AlertModalActions.openAlertDialog('No checks have been performed in this project.'));
+  return ((dispatch) => {
+    const projectName = projectPath.split(path.sep).pop();
+    var projectId = "";
     let dataFolder = path.join(projectPath, '.apps', 'translationCore');
-    var fn = function (newPaths) {
-      saveAllCSVDataByToolName(newPaths[0], dataFolder, params, (result) => {
-        loadedSuccessfully = result && loadedSuccessfully;
-        newPaths.shift();
-        if (newPaths.length) fn(newPaths);
-        else {
-          saveDialog(dataFolder, projectName, (result) => {
-            fs.remove(path.join(dataFolder, 'output'));
-            if (loadedSuccessfully && result) dispatch(AlertModalActions.openAlertDialog('Export Successful'));
-            else if (!result) dispatch(AlertModalActions.openAlertDialog('Export Cancelled'));
-            else dispatch(AlertModalActions.openAlertDialog('Failed To Export'));
-          })
-        }
-      })
+    let tempFolder = path.join(dataFolder, 'output');
+    let defaultPath = projectPath + '.zip';
+    var filePath = ipcRenderer.sendSync('save-as', {options: {defaultPath: defaultPath, filters: [{name: 'Zip Files', extensions: ['zip']}], title: 'Save CSV Export As'}});
+    if (!filePath) {
+      dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
+      return;
     }
-    fn(toolPaths);
+
+    dispatch(
+        AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true)
+    );
+
+    Promise.resolve(true)
+        .then(() => {
+          try {
+            var manifestPath = path.join(projectPath, 'manifest.json');
+            var manifest = JSON.parse(fs.readFileSync(manifestPath));
+            projectId = manifest.project.id;
+            return true;
+          } catch (error) {
+            throw 'Cannot read project manifest';
+          }
+        })
+        .then(() => {
+          let toolPaths = getToolFolderNames(projectPath);
+          if (!toolPaths || !toolPaths.length) {
+            throw 'No checks have been performed in this project.';
+          }
+          return toolPaths;
+        })
+        .then((toolPaths) => {
+          var promises = Promise.resolve(true);
+
+          toolPaths.forEach((toolpath) => {
+            promises = promises.then(() => {
+              return saveAllCSVDataByToolName(toolpath, dataFolder, projectId);
+            });
+          });
+          return promises;
+        })
+        .then(() => {
+          zipFolder(tempFolder, filePath, (err) => {
+            if (err) {
+              dispatch(AlertModalActions.openAlertDialog("Export failed: Could not create zip file.", false));
+            } else {
+              dispatch(AlertModalActions.openAlertDialog(projectName + " has been successfully exported.", false));
+            }
+            fs.remove(path.join(tempFolder));
+          })
+        })
+        .catch((err) => {
+          dispatch(AlertModalActions.openAlertDialog("Export failed: " + err, false));
+          fs.remove(path.join(tempFolder));
+        });
   });
 }
 
@@ -310,42 +348,23 @@ export function getToolFolderNames(projectPath) {
  *
  * @param {string} toolName - current tool name
  * @param {string} dataFolder - path of the folder to load csv from
- * @param {object} params - params of current project
- * @param {function} callback - called when all promises completed
+ * @param {object} projectId - project Id of current project
  */
-export function saveAllCSVDataByToolName(toolName, dataFolder, params, callback) {
-  if (toolName == '.DS_Store') callback(true);
-  else {
-    loadGroupsDataToExport(toolName, dataFolder, params).then((obj) => saveGroupsCSVToFs(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, params, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, toolName))
-      .then(callback);
+export function saveAllCSVDataByToolName(toolName, dataFolder, projectId) {
+  if (toolName == '.DS_Store') {
+    return Promise.resolve(true);
+  } else {
+    return loadGroupsDataToExport(toolName, dataFolder, projectId).then((obj) => saveGroupsCSVToFs(obj, dataFolder, toolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, toolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, toolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, toolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, toolName))
+      .then(() => {
+        return Promise.resolve(true);
+      })
+      .catch((err) => {
+        throw "Problem saving data for " + toolName;
+      });
   }
 }
 
-/**
- * @description - method to save csv output from user selection by dialoag
- *
- * @param {string} toolName - current tool name
- * @param {string} dataFolder - path of the folder to load csv from
- * @param {function} callback - function to call when complete
- */
-export function saveDialog(dataFolder, projectName, callback) {
-  let source = path.join(dataFolder, 'output');
-  let defaultPath = `${path.homedir()}/Desktop/${projectName}.zip`;
-  let title = `Project CSV Save Location`;
-  dialog.showSaveDialog({
-    title: title,
-    defaultPath: defaultPath,
-    extensions: ['zip']
-  }, (fileName) => {
-    if (fileName) {
-      zipFolder(source, fileName, function (err) {
-        if (!err) callback(true);
-        else callback(false);
-      })
-    } else callback(false)
-  })
-}
