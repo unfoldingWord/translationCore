@@ -61,6 +61,7 @@ export function openProject(projectPath, projectLink, exporting = false) {
   return ((dispatch, getState) => {
     // temp fix. TODO: will be removed after private beta.
     let projectBookName = getState().projectDetailsReducer.bookName;
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     if (projectBookName.length > 0) {
       dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
     }
