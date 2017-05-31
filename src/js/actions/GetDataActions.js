@@ -59,6 +59,12 @@ export function clearPreviousData() {
  */
 export function openProject(projectPath, projectLink, exporting = false) {
   return ((dispatch, getState) => {
+    // temp fix. TODO: will be removed after private beta.
+    let projectBookName = getState().projectDetailsReducer.bookName;
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    if (projectBookName.length > 0) {
+      dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
+    }
     if (!projectPath && !projectLink) return;
     // TODO: this action may stay here temporary until the home screen implementation.
     dispatch(BodyUIActions.toggleHomeView(true));
@@ -305,7 +311,8 @@ export function setModuleView(identifier, view) {
 function loadProjectDataFromFileSystem(toolName) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
-      let { projectSaveLocation, params } = getState().projectDetailsReducer;
+      let { toolsReducer, projectDetailsReducer } = getState();
+      let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
       loadGroupIndexFromFS(dispatch, dataDirectory)
@@ -317,12 +324,17 @@ function loadProjectDataFromFileSystem(toolName) {
               dispatch(ResourcesActions.loadBiblesFromFS());
               delayTime = 800;
             }
+            if (toolsReducer.switchingTool) {
+              // Switching project and/or tool
+              dispatch(startModuleFetchData())
+            }
             delay(delayTime)
               .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
                 dispatch(BodyUIActions.toggleHomeView(false))
               )
-              .then(dispatch({ type: consts.DONE_LOADING }));
+              .then(dispatch({ type: consts.DONE_LOADING }))
+              .then(dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_FALSE }));
           })
 
           .catch(err => {
