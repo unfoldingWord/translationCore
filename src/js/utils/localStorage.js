@@ -47,9 +47,11 @@ export const loadState = () => {
 export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
-    saveResources(newState);
     saveLocalUserdata(newState);
     saveModuleSettings(newState);
+    if (Object.keys(newState.resourcesReducer.bibles).length > 0) {
+      saveResources(newState);
+    }
     // only save checkData reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
       if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);
