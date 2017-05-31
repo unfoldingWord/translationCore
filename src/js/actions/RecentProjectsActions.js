@@ -119,6 +119,10 @@ export function getProjectsFromFolder() {
   }
 }
 
+export function csvTextCleanUp(text){
+  return text.replace ? `"${text.replace('"', '""')}"` : `"${text}"`;
+}
+
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -201,9 +205,9 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
         let currentRowArray = [];
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
-        currentRowArray.push(`"${currentRow.after.replace('"', '""')}"`);
-        currentRowArray.push(`"${currentRow.before.replace('"', '""')}"`);
-        currentRowArray.push(`"${currentRow.tags}"`);
+        currentRowArray.push(csvTextCleanUp(currentRow.after));
+        currentRowArray.push(csvTextCleanUp(currentRow.before));
+        currentRowArray.push(csvTextCleanUp(currentRow.tags));
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time);
         csvString += currentRowArray.join(',') + "\n";
       }
@@ -227,7 +231,7 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
         let currentRowArray = [];
-        currentRowArray.push(currentRow.text);
+        currentRowArray.push(csvTextCleanUp(currentRow.text));
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
@@ -252,7 +256,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
         const { time, username } = currentRowObject;
         for (var currentSelection of col.selections) {
           let currentRowArray = [];
-          currentRowArray.push(currentSelection.text);
+          currentRowArray.push(csvTextCleanUp(currentSelection.text));
           currentRowArray.push(currentSelection.occurrence);
           currentRowArray.push(currentSelection.occurrences);
           addContextIdToCSV(currentRowArray, col.contextId, username, time)
@@ -324,18 +328,22 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
 export function addContextIdToCSV(currentRowArray, contextId, username, datetime) {
   currentRowArray.push(contextId.groupId);
   currentRowArray.push(contextId.occurrence);
-  currentRowArray.push(`"${contextId.quote}"`);
+  currentRowArray.push(csvTextCleanUp(contextId.quote));
   currentRowArray.push(contextId.reference.bookId);
   currentRowArray.push(contextId.reference.chapter);
   currentRowArray.push(contextId.reference.verse);
   if (username) currentRowArray.push(username);
   if (datetime) {
-    let date = datetime.split("T");
-    let time = datetime.split("T");
-    if (date) currentRowArray.push(date[0].split("-").splice(1, 2).concat(date[0].split("-").shift()).join("/"));
+    datetime = datetime.replace(/_/g, ":");
+    function pad(num) {
+      return num < 10 ? 0 + `${num}` : num;
+    }
+    let dateObj = new Date(datetime)
+    let date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
+    currentRowArray.push(date);
     //Converts to format as such DD/MM/YYYY
-    if (time) currentRowArray.push(time[1].split(".")[0].split(/_\d\d\b/)[0].replace("_", ":"));
-    //Converts to format as such HH:MM
+    currentRowArray.push(new Date(datetime).toString().split(" ")[4]);
+    //Converts to format as such HH:MM:SS
   }
 }
 
