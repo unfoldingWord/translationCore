@@ -1,18 +1,16 @@
-/**
-  * @description Testing for the ModuleApi.
-  * @author: Ian Hoegen and Jay Scott
-  *****************************************************************************/
-const chai = require('chai');
-const assert = chai.assert;
-require('../src/js/pages/index');
-const ModuleApi = require('../src/js/ModuleApi.js');
-const CoreActions = require('../src/js/actions/CoreActions.js');
-const dispatch = require('../src/js/pages/root.js').dispatch;
-const AlertModalActions = require('../src/js/actions/AlertModalActions.js');
+// ModuleApi.js Test
+const CoreActions = require('../../out/js/actions/CoreActions.js');
+const dispatch = require('../../out/js/pages/root.js').dispatch;
+const AlertModalActions = require('../../out/js/actions/AlertModalActions.js');
 var testObj = {test: 'abcd'};
 var testNumber = 42;
 var unexpectedValue = 'abc';
 
+
+/**
+  * @description Testing for the ModuleApi.
+  * @author: Ian Hoegen and Jay Scott
+  *****************************************************************************/
 function addDataToCommon() {
   ModuleApi.putDataInCommon('testString', 'This is a test string');
   ModuleApi.putDataInCommon('testObject', { id: 'Test object' });
@@ -145,7 +143,7 @@ describe('ModuleApi.updateManifest', function() {
     });
   });
   it('updateManifest should update the manifest and write it to a file with a projectSaveLocation present', function(done) {
-    ModuleApi.putDataInCommon('projectSaveLocation', './tests/testIO/');
+    ModuleApi.putDataInCommon('projectSaveLocation', './test/testIO/');
     ModuleApi.putDataInCommon('tcManifest', {name: 'tcManifest', type: 'project'});
     ModuleApi.updateManifest('type', 'test', function(err) {
       if (err) {
@@ -165,7 +163,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
     id: 'IOtests'
   };
   it('outputJson should be able to write a json object to a file', function(done){
-    ModuleApi.outputJson('./tests/testIO/test.json', sampleObject, function(err) {
+    ModuleApi.outputJson('./test/testIO/test.json', sampleObject, function(err) {
       if (err) {
         assert.equal(true, false);
       } else {
@@ -197,7 +195,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
     }
   });
   it('inputJson should be able to read a json manifest from a file', function(done){
-    ModuleApi.inputJson('./tests/testIO/manifest.json', function(err, data) {
+    ModuleApi.inputJson('./test/testIO/manifest.json', function(err, data) {
       if (err || !data) {
         assert.equal(true, false);
       } else {
@@ -209,7 +207,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
     });
   });
   it('inputJson should be able to read a json object from a file', function(done){
-    ModuleApi.inputJson('./tests/testIO/test.json', function(err, data) {
+    ModuleApi.inputJson('./test/testIO/test.json', function(err, data) {
       if (err || !data) {
         assert.equal(true, false);
       } else {
@@ -236,7 +234,7 @@ describe('ModuleApi.inputJson and ModuleApi.outputJson', function() {
 describe('ModuleApi.inputText and ModuleApi.outputText', function() {
   var sampleText = "Hello world, I am translationCore";
   it('outputText should be able to write a json object to a file', function(done){
-    ModuleApi.outputText('./tests/testIO/test.txt', sampleText, function(err) {
+    ModuleApi.outputText('./test/testIO/test.txt', sampleText, function(err) {
       if (err) {
         assert.equal(true, false);
       } else {
@@ -257,7 +255,7 @@ describe('ModuleApi.inputText and ModuleApi.outputText', function() {
     }
   });
   it('inputText should be able to read from a file', function(done){
-    ModuleApi.inputText('./tests/testIO/test.txt', function(err, data) {
+    ModuleApi.inputText('./test/testIO/test.txt', function(err, data) {
       if (err || !data) {
         assert.equal(true, false);
       } else {
@@ -376,7 +374,7 @@ describe('ModuleApi.createAlert', function () {
 });
 
 describe('ModuleApi Checkstore Functions', function () {
-  var CheckStore = require('../src/js/stores/CheckStore.js');
+  var CheckStore = require('../../out/js/stores/CheckStore.js');
   const sampleWord = 'ORANGE';
   it('putDataInCheckStore should not fail putting undefined data in the checkstore', function() {
     try {

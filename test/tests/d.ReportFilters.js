@@ -1,10 +1,7 @@
-// Last one
+// Reportfilters.js Test
 // exports.searchText = searchText
-const fs = require('fs-extra');
-const ReportFilters = require('../src/js/components/core/reports/ReportFilters.js');
-const testData = fs.readJsonSync('./tests/static/3john/checkdata/TranslationWordsChecker.tc').groups;
-const assert = require('chai').assert;
-
+const ReportFilters = require('../../out/js/components/core/reports/ReportFilters.js');
+const testData = fs.readJsonSync('./test/static/3john/checkdata/TranslationWordsChecker.tc').groups;
 const searchGroup = ['call.txt', 'earth.txt', 'lord.txt', 'sponge.txt'];
 const searchStatus = ['CORRECT', 'FLAGGED']
 const searchRetained = ['Retained', '']

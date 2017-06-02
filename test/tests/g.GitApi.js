@@ -3,10 +3,7 @@
  * @description Tests for Git Api.
  ******************************************************************************/
 
-const assert = require('chai').assert;
-const GitApi = require('../src/js/components/core/GitApi.js');
-const CoreStore = require('../src/js/stores/CoreStore.js');
-const fs = require('fs-extra');
+const GitApi = require('../../out/js/components/core/GitApi.js');
 
 describe('GitApi.status', function() {
   it ('status should give an error when not in an existing directory ', function(done) {
