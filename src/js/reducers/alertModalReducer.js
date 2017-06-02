@@ -1,18 +1,18 @@
 import consts from '../actions/CoreActionConsts';
 
 const initialState = {
-    visibility: false,
-    title: null,
-    content: null,
-    leftButtonText: null,
-    rightButtonText: null,
-    moreInfo: null,
-    response: null,
-    callback: null,
-    moreInfoOpen: false,
-    alertDialogVisibility: false,
-    alertDialogLoading: false,
-    alertText: null
+  visibility: false,
+  title: null,
+  content: null,
+  leftButtonText: null,
+  rightButtonText: null,
+  moreInfo: null,
+  response: null,
+  callback: null,
+  moreInfoOpen: false,
+  alertDialogVisibility: false,
+  alertDialogLoading: false,
+  alertText: null
 };
 
 const alertModalReducer = (state = initialState, action) => {
@@ -26,7 +26,7 @@ const alertModalReducer = (state = initialState, action) => {
         rightButtonText: action.rightButtonText,
         moreInfo: action.moreInfo,
         visibility: action.visibility,
-        callback: action.callback,
+        callback: action.callback
       }
     case consts.TOGGLE_MORE_INFO:
       return {
@@ -47,7 +47,7 @@ const alertModalReducer = (state = initialState, action) => {
       return {
         ...state,
         alertDialogVisibility: false,
-        alertDialogLoading: false,
+        alertDialogLoading: false
       }
     case consts.OPEN_OPTION_DIALOG:
       return {
