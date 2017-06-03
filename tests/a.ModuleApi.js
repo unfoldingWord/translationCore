@@ -357,11 +357,6 @@ describe('ModuleApi.getLoggedInUser', function () {
   it('getLoggedInUser should return undefined if no user is logged in', function() {
     assert.isUndefined(ModuleApi.getLoggedInUser());
   });
-  it('getLoggedInUser should return an object of the current user', function (done) {
-    CoreActions.login({ full_name: "Jay Scott", username: "royalsix" });
-    assert.deepEqual(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
-    done();
-  });
 });
 
 describe('ModuleApi.createAlert', function () {
