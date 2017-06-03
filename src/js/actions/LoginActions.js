@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import * as CoreActions from './CoreActions.js';
 import * as AlertModalActions from './AlertModalActions';
 import * as GetDataActions from './GetDataActions';

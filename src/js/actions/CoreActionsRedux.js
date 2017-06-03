@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import sudo from 'sudo-prompt';
 // actions
 import * as CheckStoreActions from './CheckStoreActions.js';

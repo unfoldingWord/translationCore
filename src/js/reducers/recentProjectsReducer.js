@@ -1,4 +1,4 @@
-const consts = require('../actions/CoreActionConsts');
+import consts from '../actions/ActionTypes';
 
 const initialState = {
     recentProjects: null,

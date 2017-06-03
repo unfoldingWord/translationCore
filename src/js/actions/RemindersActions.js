@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 
 /**

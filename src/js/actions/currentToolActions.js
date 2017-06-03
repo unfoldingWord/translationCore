@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description this action sets current tool name
