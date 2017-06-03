@@ -233,7 +233,6 @@ class ModuleApi {
   */
   createAlert(obj, callback = () => { }) {
     // const dispatch = require('./pages/root.js').dispatch;
-    // dispatch(AlertModalActions.showAlert(obj, callback));
   }
 
   updateManifest(field, data, callback = () => { }) {
