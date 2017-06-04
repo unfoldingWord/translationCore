@@ -6,7 +6,6 @@ const chai = require('chai');
 const assert = chai.assert;
 require('../src/js/pages/index');
 const ModuleApi = require('../src/js/ModuleApi.js');
-const CoreActions = require('../src/js/actions/CoreActions.js');
 const dispatch = require('../src/js/pages/root.js').dispatch;
 const AlertModalActions = require('../src/js/actions/AlertModalActions.js');
 var testObj = {test: 'abcd'};

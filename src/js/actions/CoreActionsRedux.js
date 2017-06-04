@@ -152,26 +152,26 @@ export function setToolNamespace(currentCheckNamespace) {
   })
 }
 
-export function setUpGroupObjectsFromIndex(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
-  return ((dispatch) => {
-    try {
-      var groupObjects = JSON.parse(JSON.stringify(oldGroupObjects));
-      for (var el in groupObjects) {
-        groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
-      }
-      dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
-      //populating the checkstore field for groupobjects
-      let subGroupObjects = groupObjects[currentGroupIndex]['checks'];
-      let currentCheck = subGroupObjects[currentCheckIndex];
-      let groupName = groupObjects[currentGroupIndex]['groupName'].trim();
-      dispatch(CheckStoreActions.setSubgroupObjects(subGroupObjects));
-      dispatch(CheckStoreActions.updateCurrentCheck(currentCheck));
-      dispatch(CheckStoreActions.setGroupName(groupName));
-    } catch (e) {
-      console.warn(e)
-    }
-  })
-}
+// export function setUpGroupObjectsFromIndex(oldGroupObjects, currentCheckIndex, currentGroupIndex) {
+//   return ((dispatch) => {
+//     try {
+//       var groupObjects = JSON.parse(JSON.stringify(oldGroupObjects));
+//       for (var el in groupObjects) {
+//         groupObjects[el].currentGroupprogress = this.getGroupProgress(groupObjects[el]);
+//       }
+//       dispatch(CheckStoreActions.setGroupsObjects(groupObjects));
+//       //populating the checkstore field for groupobjects
+//       let subGroupObjects = groupObjects[currentGroupIndex]['checks'];
+//       let currentCheck = subGroupObjects[currentCheckIndex];
+//       let groupName = groupObjects[currentGroupIndex]['groupName'].trim();
+//       dispatch(CheckStoreActions.setSubgroupObjects(subGroupObjects));
+//       dispatch(CheckStoreActions.updateCurrentCheck(currentCheck));
+//       dispatch(CheckStoreActions.setGroupName(groupName));
+//     } catch (e) {
+//       console.warn(e)
+//     }
+//   })
+// }
 
 
 export function updateTools(namespace) {
