@@ -39,7 +39,7 @@ class RecentProjectsContainer extends React.Component {
         </button>
         <button className="btn-second"
           style={{width: "120px", margin: "10px 5px 10px 0"}}
-          onClick={()=> this.props.exportToCSV(projectPath)}
+          onClick={()=> this.props.exportToCSV(projectPath, this.props.csvSaveLocation)}
         >
           <Glyphicon glyph={'download'} />
           <span style={{ marginLeft: '5px' }}>Export (csv)</span>
@@ -113,7 +113,8 @@ const mapStateToProps = state => {
     manifest: state.projectDetailsReducer.manifest,
     loggedInUser: state.loginReducer.loggedInUser,
     userdata: state.loginReducer.userdata,
-    modalReducer: state.newModalReducer
+    modalReducer: state.newModalReducer,
+    csvSaveLocation: state.settingsReducer.csvSaveLocation
   };
 };
 
@@ -140,8 +141,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getProjectsFromFolder: () => {
       dispatch(recentProjectsActions.getProjectsFromFolder());
     },
-    exportToCSV: (projectPath) => {
-      dispatch(recentProjectsActions.exportToCSV(projectPath));
+    exportToCSV: (projectPath, defaultPath) => {
+      dispatch(recentProjectsActions.exportToCSV(projectPath, defaultPath));
     }
   };
 };

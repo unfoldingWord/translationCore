@@ -12,7 +12,8 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ipcRenderer = require('electron').ipcRenderer;
-
+const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
+const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
 /**
  * @description - Initiate a project load
@@ -129,17 +130,30 @@ export function csvTextCleanUp(text){
  *
  * @param {string} projectPath - Path to current project
  */
-export function exportToCSV(projectPath) {
+export function exportToCSV(projectPath, csvSaveLocation) {
   return ((dispatch) => {
     const projectName = projectPath.split(path.sep).pop();
     var projectId = "";
     let dataFolder = path.join(projectPath, '.apps', 'translationCore');
     let tempFolder = path.join(dataFolder, 'output');
-    let defaultPath = projectPath + '.zip';
+    let defaultPath;
+    if (csvSaveLocation) {
+      defaultPath = path.join(csvSaveLocation, projectName + '.zip');
+    }
+    else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + '.zip');
+    } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+      defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
+    }
+    else {
+      defaultPath = path.join(path.homedir(), projectName + '.zip');
+    }
     var filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
     if (!filePath) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
+    } else {
+      dispatch({type:"CSV_SAVE_LOCATION", csvSaveLocation: filePath.split(projectName)[0]})
     }
 
     dispatch(
