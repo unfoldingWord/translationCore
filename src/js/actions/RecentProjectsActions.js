@@ -129,9 +129,11 @@ export function csvTextCleanUp(text){
  * @description - Wrapper function to handle exporting to CSV
  *
  * @param {string} projectPath - Path to current project
+ * @param {string} csvSaveLocation - Path to CSV location
  */
-export function exportToCSV(projectPath, csvSaveLocation) {
-  return ((dispatch) => {
+export function exportToCSV(projectPath) {
+  return ((dispatch, getState) => {
+    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
     const projectName = projectPath.split(path.sep).pop();
     var projectId = "";
     let dataFolder = path.join(projectPath, '.apps', 'translationCore');
