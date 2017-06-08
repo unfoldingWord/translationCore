@@ -133,11 +133,11 @@ export function csvTextCleanUp(text){
  */
 export function exportToCSV(projectPath) {
   return ((dispatch, getState) => {
-    let csvSaveLocation = getState().settingsReducer.csvSaveLocation;
+    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
     const projectName = projectPath.split(path.sep).pop();
     let projectId = "";
-    let dataFolder = path.join(projectPath, '.apps', 'translationCore');
-    let tempFolder = path.join(dataFolder, 'output');
+    const dataFolder = path.join(projectPath, '.apps', 'translationCore');
+    const tempFolder = path.join(dataFolder, 'output');
     let defaultPath;
     if (csvSaveLocation) {
       defaultPath = path.join(csvSaveLocation, projectName + '.zip');
