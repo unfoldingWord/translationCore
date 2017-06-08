@@ -1,20 +1,18 @@
-const api = window.ModuleApi;
-const React = api.React;
-const RB = api.ReactBootstrap;
-const {Glyphicon} = RB;
-const CoreStore = require('../../../stores/CoreStore.js');
-const OnlineStatus = require("./OnlineStatus");
+import React from 'react';
+import {Glyphicon} from 'react-bootstrap';
+// components
+import OnlineStatus from "./OnlineStatus";
 
 class StatusBar extends React.Component {
-    constructor() {
+  constructor() {
     super();
     this.state = {
-      hovered:null,
+      hovered: null,
       pressed: null
-    }
+    };
   }
   onHover(id) {
-    this.setState({hovered:id})
+    this.setState({hovered: id});
   }
 
   onPress(tab) {
@@ -106,7 +104,7 @@ class StatusBar extends React.Component {
       childRight: {
         width: 'auto',
         float: 'right',
-        paddingRight: 10,
+        paddingRight: 10
       }
     }
     return (
@@ -119,7 +117,7 @@ class StatusBar extends React.Component {
             <Glyphicon glyph={"home"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
             Home
           </button>
-          <button  onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered != 3 ? styles.child : styles.childActive}>
+          <button onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered != 3 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
             <div style={{ float: 'left' }}>
               Tool: {this.props.currentCheckNamespace}
@@ -129,7 +127,7 @@ class StatusBar extends React.Component {
             <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
             Project: {this.props.bookName}
           </button>
-          <button  onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
+          <button onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
             User: {this.props.currentUser}
           </button>
@@ -139,5 +137,4 @@ class StatusBar extends React.Component {
   }
 }
 
-
-module.exports = StatusBar;
+export default StatusBar;

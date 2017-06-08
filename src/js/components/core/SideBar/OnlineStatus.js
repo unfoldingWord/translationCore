@@ -1,24 +1,23 @@
 
-const api = window.ModuleApi;
-const React = api.React;
-const RB = api.ReactBootstrap;
-const {Glyphicon} = RB;
+import React from 'react';
+import {Glyphicon} from 'react-bootstrap';
+// constant declaration
 const style = {
   textOffline: {
     color: "var(--warning-color)",
     display: "inline",
     backgroundColor: 'var(--background-color-dark)',
     outline: 'none',
-    border: 0,
+    border: 0
   },
   textOnline: {
     color: "var(--completed-color)",
     display: "inline",
     backgroundColor: 'var(--background-color-dark)',
     outline: 'none',
-    border: 0,
+    border: 0
   }
-}
+};
 
 class OnlineStatus extends React.Component {
   constructor() {
@@ -53,14 +52,14 @@ class OnlineStatus extends React.Component {
     this.setState({online: false});
   }
 
-  toggleVisibility(){
+  toggleVisibility() {
     this.setState({showToggle: !this.state.showToggle});
   }
 
-  render(){
+  render() {
     const textStatusColor = this.state.online ? style.textOnline : style.textOffline;
     const status = this.state.online ? "Online " : "Offline ";
-    return(
+    return (
       <div style={textStatusColor} onClick={this.toggleVisibility}>
           Status: {status}
           <Glyphicon glyph={"triangle-bottom"}
@@ -82,9 +81,8 @@ class OnlineStatus extends React.Component {
             Switch to {this.state.online ? "Offline" : "Online"}
           </div>
       </div>
-      );
+    );
   }
 }
 
-
-module.exports = OnlineStatus;
+export default OnlineStatus;
