@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import {editTargetVerseSource} from '../helpers/editTargetVerseSource';

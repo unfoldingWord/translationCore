@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 // actions
 import * as CheckStoreActions from './CheckStoreActions';
 

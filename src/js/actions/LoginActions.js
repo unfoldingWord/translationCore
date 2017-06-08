@@ -1,5 +1,4 @@
-import consts from './CoreActionConsts';
-import * as CoreActions from './CoreActions.js';
+import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as GetDataActions from './GetDataActions';
 import * as BodyUIActions from './BodyUIActions';
@@ -30,7 +29,6 @@ export function loginUser(newUserdata) {
   return (dispatch => {
     var Token = api.getAuthToken('gogs');
     gogs(Token).login(newUserdata).then(newUserdata => {
-      CoreActions.login(newUserdata);
       dispatch({
         type: consts.RECEIVE_LOGIN,
         userdata: newUserdata

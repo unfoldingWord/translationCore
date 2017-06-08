@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // consts declaration

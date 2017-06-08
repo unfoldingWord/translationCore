@@ -6,7 +6,6 @@ const chai = require('chai');
 const assert = chai.assert;
 require('../src/js/pages/index');
 const ModuleApi = require('../src/js/ModuleApi.js');
-const CoreActions = require('../src/js/actions/CoreActions.js');
 const dispatch = require('../src/js/pages/root.js').dispatch;
 const AlertModalActions = require('../src/js/actions/AlertModalActions.js');
 var testObj = {test: 'abcd'};
@@ -356,11 +355,6 @@ describe('ModuleApi Event Listeners', function () {
 describe('ModuleApi.getLoggedInUser', function () {
   it('getLoggedInUser should return undefined if no user is logged in', function() {
     assert.isUndefined(ModuleApi.getLoggedInUser());
-  });
-  it('getLoggedInUser should return an object of the current user', function (done) {
-    CoreActions.login({ full_name: "Jay Scott", username: "royalsix" });
-    assert.deepEqual(ModuleApi.getLoggedInUser(), { fullName: "Jay Scott", userName: "royalsix" });
-    done();
   });
 });
 
