@@ -1,5 +1,5 @@
 import alertModalReducer from '../src/js/reducers/alertModalReducer';
-import consts from '../src/js/actions/CoreActionConsts';
+import consts from '../src/js/actions/ActionTypes';
 import { expect, assert } from 'chai';
 
 const initialState = {

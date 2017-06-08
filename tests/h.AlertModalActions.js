@@ -1,4 +1,4 @@
-import consts from '../src/js/actions/CoreActionConsts';
+import consts from '../src/js/actions/ActionTypes';
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 import { expect, assert } from 'chai';
 
