@@ -3,7 +3,7 @@
  * @description This module creates a project manifest.
  ******************************************************************************/
 const TimeStamp = require('./Timestamp').generate()[1];
-import {convertToFullBookName} from '../../../helpers/LoadHelpers';
+const LoadHelpers = require('../../../helpers/LoadHelpers');
 
 var template = {
   generator: {
@@ -81,7 +81,7 @@ function populate(data, tsManifest) {
       projectManifest.ts_project = tsManifest.project || tsManifest.ts_project;
       if (projectManifest.ts_project) {
         if (!projectManifest.ts_project.name || projectManifest.ts_project.name.length < 1) {
-          projectManifest.ts_project.name = convertToFullBookName(projectManifest.ts_project.id);
+          projectManifest.ts_project.name = LoadHelpers.convertToFullBookName(projectManifest.ts_project.id);
         }
       }
       projectManifest.translators = tsManifest.translators;

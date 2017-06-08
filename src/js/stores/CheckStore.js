@@ -9,7 +9,7 @@
 
 const EventEmitter = require('events').EventEmitter;
 const Dispatcher = require('../dispatchers/Dispatcher');
-const fs = require(window.__base + 'node_modules/fs-extra');
+const fs = require('fs-extra');
 const utils = require("../utils.js");
 const pathModule = require('path');
 

@@ -8,7 +8,7 @@ const {dialog} = remote;
 
 const path = require('path');
 const pathex = require('path-extra');
-const fs = require(window.__base + 'node_modules/fs-extra');
+const fs = require('fs-extra');
 const git = require('./GitApi.js');
 
 module.exports = (function() {
