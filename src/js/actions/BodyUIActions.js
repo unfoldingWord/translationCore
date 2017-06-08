@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description toggles the home view based on param.

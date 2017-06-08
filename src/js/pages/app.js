@@ -16,7 +16,6 @@ import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
-import CoreActions from '../actions/CoreActions.js';
 import * as recentProjectActions from '../actions/RecentProjectsActions';
 import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations

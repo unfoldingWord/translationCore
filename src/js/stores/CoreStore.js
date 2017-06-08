@@ -1,7 +1,7 @@
 var CHANGE_EVENT = 'change';
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatchers/Dispatcher');
-var consts = require('../actions/CoreActionConsts');
+// var consts = require('../actions/ActionTypes');
 var CheckStore = require('./CheckStore');
 var CHANGE_EVENT = 'change';
 var path = require('path');

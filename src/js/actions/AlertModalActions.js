@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description opens the alert dialog with the specified alert message.

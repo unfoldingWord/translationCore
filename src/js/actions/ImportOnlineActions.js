@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import Gogs from '../components/core/login/GogsApi';
 import rimraf from 'rimraf';
 import * as getDataActions from './GetDataActions';

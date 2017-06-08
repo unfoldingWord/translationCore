@@ -1,8 +1,6 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-// actions
-import * as coreActions from './CoreActionsRedux';
 // constant declaraton
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 
@@ -16,11 +14,6 @@ export const addNewBible = (bibleName, bibleData) => {
 
 export const addNewResource = (resourceName, resourceData, namespace) => {
   return ((dispatch, getState) => {
-    const currentCheckIndex = getState().checkStoreReducer.currentCheckIndex || 0;
-    const currentGroupIndex = getState().checkStoreReducer.currentGroupIndex || 0;
-    if (resourceName == 'groups') {
-      dispatch(coreActions.setUpGroupObjectsFromIndex(resourceData, currentCheckIndex, currentGroupIndex));
-    }
     dispatch({
       type: consts.ADD_NEW_RESOURCE,
       resourceName,

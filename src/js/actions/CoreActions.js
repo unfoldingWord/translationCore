@@ -1,5 +1,5 @@
 var Dispatcher = require('../dispatchers/Dispatcher');
-var consts = require('./CoreActionConsts');
+// var consts = require('./ActionTypes');
 /**
 How to use the actions:
 Just require this file in your component, call
