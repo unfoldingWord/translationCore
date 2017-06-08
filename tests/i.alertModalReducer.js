@@ -91,6 +91,6 @@ describe('alertModalReducer', () => {
           type: consts.CLOSE_ALERT_DIALOG
         }
       )
-    ).to.deep.equal(initialState);
+    ).to.eql(initialState);
   });
 });
