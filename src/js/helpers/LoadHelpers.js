@@ -98,9 +98,9 @@ export function fixManifestVerThree (oldManifest) {
  *
  * @param {string} bookAbbr - The book abbreviation to convert
  */
-export function convertToFullBookName (bookAbbr) {
-    if (!bookAbbr) return;
-    return BooksOfBible[bookAbbr.toString().toLowerCase()];
+export function convertToFullBookName(bookAbbr) {
+  if (!bookAbbr) return;
+  return BooksOfBible[bookAbbr.toString().toLowerCase()];
 }
 
 /**
