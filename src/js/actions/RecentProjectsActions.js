@@ -12,7 +12,8 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ipcRenderer = require('electron').ipcRenderer;
-
+const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
+const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
 /**
  * @description - Initiate a project load
@@ -128,18 +129,33 @@ export function csvTextCleanUp(text){
  * @description - Wrapper function to handle exporting to CSV
  *
  * @param {string} projectPath - Path to current project
+ * @param {string} csvSaveLocation - Path to CSV location
  */
 export function exportToCSV(projectPath) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
     const projectName = projectPath.split(path.sep).pop();
-    var projectId = "";
-    let dataFolder = path.join(projectPath, '.apps', 'translationCore');
-    let tempFolder = path.join(dataFolder, 'output');
-    let defaultPath = projectPath + '.zip';
-    var filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
+    let projectId = "";
+    const dataFolder = path.join(projectPath, '.apps', 'translationCore');
+    const tempFolder = path.join(dataFolder, 'output');
+    let defaultPath;
+    if (csvSaveLocation) {
+      defaultPath = path.join(csvSaveLocation, projectName + '.zip');
+    }
+    else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + '.zip');
+    } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+      defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
+    }
+    else {
+      defaultPath = path.join(path.homedir(), projectName + '.zip');
+    }
+    let filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
     if (!filePath) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
+    } else {
+      dispatch({type:consts.SET_CSV_SAVE_LOCATION, csvSaveLocation: filePath.split(projectName)[0]})
     }
 
     dispatch(
@@ -149,8 +165,8 @@ export function exportToCSV(projectPath) {
     Promise.resolve(true)
       .then(() => {
         try {
-          var manifestPath = path.join(projectPath, 'manifest.json');
-          var manifest = JSON.parse(fs.readFileSync(manifestPath));
+          let manifestPath = path.join(projectPath, 'manifest.json');
+          let manifest = JSON.parse(fs.readFileSync(manifestPath));
           projectId = manifest.project.id;
           return true;
         } catch (error) {
@@ -165,7 +181,7 @@ export function exportToCSV(projectPath) {
         return toolPaths;
       })
       .then((toolPaths) => {
-        var promises = Promise.resolve(true);
+        let promises = Promise.resolve(true);
 
         toolPaths.forEach((toolpath) => {
           promises = promises.then(() => {
