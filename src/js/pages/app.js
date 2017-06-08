@@ -12,12 +12,10 @@ import KonamiContainer from "../containers/KonamiContainer";
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
 import LoaderContainer from '../containers/LoaderContainer';
-import AlertModalContainer from '../containers/AlertModalContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
-import CoreActions from '../actions/CoreActions.js';
 import * as recentProjectActions from '../actions/RecentProjectsActions';
 import * as DragDropActions from '../actions/DragDropActions';
 // constant declarations
@@ -79,7 +77,6 @@ class Main extends Component {
         <PopoverContainer />
         <NotificationContainer />
         <LoaderContainer />
-        <AlertModalContainer />
         <Grid fluid style={{ padding: 0 }}>
           <Row style={{ margin: 0 }}>
             <StatusBarContainer />

@@ -6,7 +6,7 @@ import Dialog from 'material-ui/Dialog';
 class Alert extends Component {
   render() {
     let {alertText, alertDialogVisibility, alertDialogLoading, callback, button1, button2} = this.props.alertModalReducer;
-    let {closeAlertDialog} =this.props.actions;
+    let {closeAlertDialog} = this.props.actions;
 
     const actions = [
       <button

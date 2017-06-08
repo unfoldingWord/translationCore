@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description sets the project save location in the projectDetailReducer.

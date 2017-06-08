@@ -11,7 +11,7 @@ import Path from 'path-extra';
 import usfm from 'usfm-parser';
 import BOOKS from '../components/core/BooksOfBible.js';
 // actions
-import * as consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';

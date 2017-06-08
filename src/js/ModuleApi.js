@@ -10,7 +10,6 @@ const fs = require(window.__base + 'node_modules/fs-extra');
 //user imports
 const CheckStore = require('./stores/CheckStore.js');
 const CoreStore = require('./stores/CoreStore.js');
-const CoreActions = require('./actions/CoreActions.js');
 const Door43DataFetcher = require('./components/core/parsers/Door43DataFetcher.js');
 const BooksOfBible = require('./components/core/BooksOfBible');
 const CheckModule = require('./components/core/CheckModule');
@@ -233,7 +232,6 @@ class ModuleApi {
   */
   createAlert(obj, callback = () => { }) {
     // const dispatch = require('./pages/root.js').dispatch;
-    // dispatch(AlertModalActions.showAlert(obj, callback));
   }
 
   updateManifest(field, data, callback = () => { }) {

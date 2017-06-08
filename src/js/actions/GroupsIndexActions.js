@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description This action sends all of the group Ids and

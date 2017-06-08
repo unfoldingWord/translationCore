@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import { remote } from 'electron';
 // actions
 import * as SettingsActions from './SettingsActions.js';

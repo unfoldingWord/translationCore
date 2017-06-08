@@ -4,16 +4,13 @@
  **/
 
 const React = require('react');
-
 const remote = require('electron').remote;
 const {dialog} = remote;
 const { connect  } = require('react-redux');
-
-const updateLoginModal = require('../../../actions/CoreActionsRedux.js').updateLoginModal;
 const FormGroup = require('react-bootstrap/lib/FormGroup.js');
 const FormControl = require('react-bootstrap/lib/FormControl.js');
 var Token = window.ModuleApi.getAuthToken('gogs');
-const CoreActions = require('../../../actions/CoreActions.js');
+import * as LoginActions from '../../../actions/LoginActions';
 import GogsApi from './GogsApi';
 const ACCOUNT_CREATION_ERROR = 'Account Creation Error';
 const UNKNOWN_ERROR = 'Unknown Error';
@@ -79,9 +76,7 @@ const Registration = React.createClass({
       GogsApi(Token)
       .createAccount(user)
       .then(function(data) {
-        CoreActions.login(data);
-        this.props.dispatch(updateLoginModal(false));
-        CoreActions.updateOnlineStatus(true);
+        LoginActions.loginUser(data);
       })
       .catch(function(reason) {
         console.log(reason);

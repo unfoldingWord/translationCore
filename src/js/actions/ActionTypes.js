@@ -1,4 +1,4 @@
-module.exports = {
+const ActionTypes = {
   ADD_TO_TEXT: "ADD_TO_TEXT",
   ACCOUNT_LOGIN: "ACCOUNT_LOGIN",
   CHANGE_ONLINE_STATUS: "CHANGE_ONLINE_STATUS",
@@ -59,8 +59,6 @@ module.exports = {
   LOADER_TOO_LONG: "LOADER_TOO_LONG",
   FETCH_DATA_NUMBER: "FETCH_DATA_NUMBER",
   UPDATE_PROGRESS: "UPDATE_PROGRESS",
-  SHOW_ALERT_MODAL: "SHOW_ALERT_MODAL",
-  TOGGLE_MORE_INFO: "TOGGLE_MORE_INFO",
   DONE_MODULES: "DONE_MODULES",
   UPDATE_LOADER: "UPDATE_LOADER",
   UPDATE_MODULE_DATA_SELECTION_ID: "UPDATE_MODULE_DATA_SELECTION_ID",
@@ -128,14 +126,4 @@ module.exports = {
   CSV_SAVE_LOCATION: "CSV_SAVE_LOCATION"
 };
 
-/**
-Object that maps words to consts for use in actions
-For example, in a register callback in a Store, it is recommended
-that when you check the action type, you do it in the following manner:
-var consts = require("CoreActionConsts.js");
-...
-if (action == consts.ADD_CHECK)
-rather than
-if (action == "ADD_CHECK")
-
-*/
+export default ActionTypes;

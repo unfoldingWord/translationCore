@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts'
+import consts from '../actions/ActionTypes';
 import {getToggledGroupData} from '../helpers/getToggledGroupData'
 
 const initialState = {

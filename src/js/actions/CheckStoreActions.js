@@ -1,5 +1,4 @@
 import BooksOfBible from '../components/core/BooksOfBible';
-import CoreStore from '../stores/CoreStore.js';
 import * as CoreActionsRedux from './CoreActionsRedux.js';
 
 

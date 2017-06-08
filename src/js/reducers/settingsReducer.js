@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts'
+import consts from '../actions/ActionTypes';
 
 const initialState = {
   currentSettings: {

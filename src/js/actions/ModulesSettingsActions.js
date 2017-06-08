@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description helper function that Updates/changes a tools'/modules' settings.
