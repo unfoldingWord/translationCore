@@ -133,9 +133,9 @@ export function csvTextCleanUp(text){
  */
 export function exportToCSV(projectPath) {
   return ((dispatch, getState) => {
-    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
+    let csvSaveLocation = getState().settingsReducer.csvSaveLocation;
     const projectName = projectPath.split(path.sep).pop();
-    var projectId = "";
+    let projectId = "";
     let dataFolder = path.join(projectPath, '.apps', 'translationCore');
     let tempFolder = path.join(dataFolder, 'output');
     let defaultPath;
@@ -150,7 +150,7 @@ export function exportToCSV(projectPath) {
     else {
       defaultPath = path.join(path.homedir(), projectName + '.zip');
     }
-    var filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
+    let filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
     if (!filePath) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
@@ -165,8 +165,8 @@ export function exportToCSV(projectPath) {
     Promise.resolve(true)
       .then(() => {
         try {
-          var manifestPath = path.join(projectPath, 'manifest.json');
-          var manifest = JSON.parse(fs.readFileSync(manifestPath));
+          let manifestPath = path.join(projectPath, 'manifest.json');
+          let manifest = JSON.parse(fs.readFileSync(manifestPath));
           projectId = manifest.project.id;
           return true;
         } catch (error) {
@@ -181,7 +181,7 @@ export function exportToCSV(projectPath) {
         return toolPaths;
       })
       .then((toolPaths) => {
-        var promises = Promise.resolve(true);
+        let promises = Promise.resolve(true);
 
         toolPaths.forEach((toolpath) => {
           promises = promises.then(() => {
