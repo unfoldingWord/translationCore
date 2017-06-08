@@ -13,7 +13,7 @@ const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SETTINGS:
       return { ...state, currentSettings: action.val }
-    case consts.CSV_SAVE_LOCATION:
+    case consts.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation }
     default:
       return state;

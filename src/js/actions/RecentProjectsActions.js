@@ -153,7 +153,7 @@ export function exportToCSV(projectPath, csvSaveLocation) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
     } else {
-      dispatch({type:"CSV_SAVE_LOCATION", csvSaveLocation: filePath.split(projectName)[0]})
+      dispatch({type:consts.SET_CSV_SAVE_LOCATION, csvSaveLocation: filePath.split(projectName)[0]})
     }
 
     dispatch(
