@@ -58,7 +58,7 @@ class Alert extends Component {
               <tbody>
               <tr>
                 <td>
-                  <img className={alertDialogLoading ? "App-logo" : ""} src={window.__base + "images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
+                  <img className={alertDialogLoading ? "App-logo" : ""} src={window.__base + "src/images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
                 </td>
                 <td>
                   <div style={{color: "var(--text-color-dark)"}}>

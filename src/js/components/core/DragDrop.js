@@ -51,7 +51,6 @@ class DragDrop extends React.Component {
 
   onDrop(files) {
     if (files !== undefined) {
-      this.props.sendFilePath(files[0].path);
     }
   }
 

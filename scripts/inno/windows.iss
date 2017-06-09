@@ -9,7 +9,7 @@
 #define BuildPath RootPath + "dist/translationCore-win32-ia32/"
 #define BuildContents BuildPath + "*"
 #define ExecPath BuildPath + "translationCore.exe"
-#define IconPath RootPath + "build/icon.ico"
+#define IconPath RootPath + "builds/assets/icon.ico"
 #define LicenseFile RootPath + "LICENSE"
 #define OutputDir BuildPath + "/installer/"
 #ifndef Version

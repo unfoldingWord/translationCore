@@ -5,7 +5,6 @@
 
 const assert = require('chai').assert;
 const GitApi = require('../src/js/components/core/GitApi.js');
-const CoreStore = require('../src/js/stores/CoreStore.js');
 const fs = require('fs-extra');
 
 describe('GitApi.status', function() {
