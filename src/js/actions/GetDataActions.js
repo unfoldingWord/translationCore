@@ -15,7 +15,6 @@ import consts from './ActionTypes';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
-import * as NotificationActions from './NotificationActions';
 import * as ModalActions from './ModalActions';
 import * as ToolsActions from './ToolsActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -184,7 +183,6 @@ export function displayToolsToLoad(manifest) {
   return ((dispatch, getState) => {
     const currentState = getState();
     if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
-      dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
       dispatch(ToolsActions.getToolsMetadatas());
       dispatch(ModalActions.selectModalTab(3, 1, true));
     } else {
