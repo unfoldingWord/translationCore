@@ -3,12 +3,10 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   doneLoading: true,
   currentCheckNamespace: null,
-  fetchDatas: 0,
   doneModules: 0,
   modules: {},
   currentModuleFetchData: null,
   moduleData: {},
-  toolsArray: []
 };
 
 const coreStoreReducer = (state = initialState, action) => {

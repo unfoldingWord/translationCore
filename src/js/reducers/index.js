@@ -1,20 +1,15 @@
 import { combineReducers } from 'redux'
 // List of reducers
 import coreStoreReducer from './coreStoreReducer'
-import modalReducers from './modalReducers'
-import newModalReducer from './newModalReducer'
+import modalReducer from './modalReducer'
 import loginReducer from './loginReducer'
 import settingsReducer from './settingsReducer'
-import dragDropReducer from './dragDropReducer'
 import toolsReducer from './toolsReducer'
 import recentProjectsReducer from './recentProjectsReducer'
 import importOnlineReducer from './importOnlineReducer'
-import reportsReducer from './reportsReducer'
-import checkStoreReducer from './checkStoreReducer'
-import sideBarReducer from './sideBarReducer'
+import groupMenuReducer from './groupMenuReducer'
 import statusBarReducer from './statusBarReducer'
 import loaderReducer from './loaderReducer'
-import notificationsReducer from './notificationsReducer'
 import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
 import projectDetailsReducer from './projectDetailsReducer'
@@ -32,20 +27,15 @@ import BodyUIReducer from './BodyUIReducer'
 // combining reducers
 const rootReducers = combineReducers({
   coreStoreReducer,
-  modalReducers,
-  newModalReducer,
+  modalReducer,
   loginReducer,
   settingsReducer,
-  dragDropReducer,
   toolsReducer,
   recentProjectsReducer,
   importOnlineReducer,
-  reportsReducer,
-  checkStoreReducer,
-  sideBarReducer,
+  groupMenuReducer,
   statusBarReducer,
   loaderReducer,
-  notificationsReducer,
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,

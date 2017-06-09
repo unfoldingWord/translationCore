@@ -6,7 +6,7 @@ const initialState = {
   openCheck:0
 };
 
-module.exports = (state = initialState, action) => {
+const groupMenuReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_SUBMENU:
       return {
@@ -20,3 +20,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 }
+
+export default groupMenuReducer;

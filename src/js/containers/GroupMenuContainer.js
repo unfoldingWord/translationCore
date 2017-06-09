@@ -31,7 +31,7 @@ class GroupMenuContainer extends React.Component {
 
   render() {
     let { onToggleMenu } = this.props.actions
-    let { menuVisibility, currentCheckNamespace } = this.props.sideBarReducer
+    let { menuVisibility, currentCheckNamespace } = this.props.groupMenuReducer
     let { toolName } = this.props.currentToolReducer
     return (
       <div>
@@ -70,7 +70,7 @@ const mapStateToProps = (state) => {
     contextIdReducer: state.contextIdReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    sideBarReducer: state.sideBarReducer,
+    groupMenuReducer: state.groupMenuReducer,
     currentToolReducer: state.currentToolReducer,
     remindersReducer: state.remindersReducer
   };

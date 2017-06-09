@@ -20,4 +20,4 @@ const settingsReducer = (state = initialState, action) => {
   }
 }
 
-export default settingsReducer
+export default settingsReducer;

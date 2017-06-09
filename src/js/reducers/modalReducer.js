@@ -5,7 +5,8 @@ const initialState = {
     currentTab: 1,
     currentSection: 0
 }
-module.exports = (state = initialState, action) => {
+
+const modalReducer = (state = initialState, action) => {
     switch (action.type) {
       case consts.SHOW_MODAL_CONTAINER:
         return {
@@ -30,3 +31,5 @@ module.exports = (state = initialState, action) => {
           return state;
     }
 }
+
+export default modalReducer;

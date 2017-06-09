@@ -8,9 +8,10 @@ const initialState = {
 const groupsIndexReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_GROUPS_INDEX: {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         groupsIndex: action.groupsIndex
-      });
+      };
     }
     case consts.LOAD_GROUPS_INDEX_FROM_FS:
       return {
