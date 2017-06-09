@@ -7,7 +7,7 @@ import settingsReducer from './settingsReducer'
 import toolsReducer from './toolsReducer'
 import recentProjectsReducer from './recentProjectsReducer'
 import importOnlineReducer from './importOnlineReducer'
-import sideBarReducer from './sideBarReducer'
+import groupMenuReducer from './groupMenuReducer'
 import statusBarReducer from './statusBarReducer'
 import loaderReducer from './loaderReducer'
 import popoverReducer from './popoverReducer'
@@ -33,7 +33,7 @@ const rootReducers = combineReducers({
   toolsReducer,
   recentProjectsReducer,
   importOnlineReducer,
-  sideBarReducer,
+  groupMenuReducer,
   statusBarReducer,
   loaderReducer,
   popoverReducer,

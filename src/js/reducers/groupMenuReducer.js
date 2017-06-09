@@ -6,7 +6,7 @@ const initialState = {
   openCheck:0
 };
 
-const sideBarReducer = (state = initialState, action) => {
+const groupMenuReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_SUBMENU:
       return {
@@ -21,4 +21,4 @@ const sideBarReducer = (state = initialState, action) => {
   }
 }
 
-export default sideBarReducer;
+export default groupMenuReducer;
