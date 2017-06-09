@@ -5,10 +5,10 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
 // Actions
-import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
-import * as ModalActions from '../actions/ModalActions';
+import * as recentProjectsActions from '../../actions/RecentProjectsActions.js';
+import * as ModalActions from '../../actions/ModalActions';
 
-class LoadModalContainer extends React.Component {
+class LoadProjectContainer extends React.Component {
 
   render() {
     let { selectSectionTab } = this.props;
@@ -55,4 +55,4 @@ function mapDispatchToProps(dispatch, ownProps) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoadModalContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LoadProjectContainer);

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Components
-import Projects from '../components/login/Projects';
-import OnlineInput from '../components/OnlineInput';
+import Projects from '../../components/login/Projects';
+import OnlineInput from '../../components/OnlineInput';
 // Actions
-import * as importOnlineActions from '../actions/ImportOnlineActions.js';
+import * as importOnlineActions from '../../actions/ImportOnlineActions.js';
 
 class ImportOnlineContainer extends React.Component {
 

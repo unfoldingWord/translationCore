@@ -8,7 +8,7 @@ import * as style from '../components/SideBar/Style'
 import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 import {toggleMenu} from '../actions/SideBarActions.js'
 
-const sideBarContainerStyle = {
+const groupMenuContainerStyle = {
   backgroundColor: "var(--background-color-dark)",
   zIndex: "98",
   fontSize: "12px",
@@ -19,7 +19,7 @@ const sideBarContainerStyle = {
   width: "250px"
 };
 
-class SideBarContainer extends React.Component {
+class GroupMenuContainer extends React.Component {
 
   menu(toolName) {
     let menu = <div />
@@ -36,7 +36,7 @@ class SideBarContainer extends React.Component {
     return (
       <div>
         <div style={{display: menuVisibility ? "block" : "none"}}>
-          <Grid fluid style={sideBarContainerStyle}>
+          <Grid fluid style={groupMenuContainerStyle}>
             <Col style={
               {
                 width: "250px",
@@ -92,4 +92,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SideBarContainer);
+)(GroupMenuContainer);
