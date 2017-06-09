@@ -1,5 +1,5 @@
 import React from 'react';
-import AppDescription from './AppDescription';
+import ToolDescription from './ToolDescription';
 
 class SwitchCheck extends React.Component {
 
@@ -25,10 +25,10 @@ class SwitchCheck extends React.Component {
         if (metadata.name == "ToolsTester") {
           if (this.props.currentSettings.developerMode) {
             // Removing tool tester for beta
-            // buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
+            // buttons.push(<ToolDescription key={i} metadata={metadata} {...this.props} />);
           }
         } else {
-          buttons.push(<AppDescription key={i} metadata={metadata} {...this.props} />);
+          buttons.push(<ToolDescription key={i} metadata={metadata} {...this.props} />);
         }
       }
     }

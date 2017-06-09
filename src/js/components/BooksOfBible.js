@@ -1,6 +1,7 @@
 /**
   * @description - The mapping of the book abbreviations to the full names.
   * @author - RoyalSix
+  * @TODO: Move to a reducer not components
 **/
 const Books = {
 gen: 'Genesis',

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Col } from 'react-bootstrap';
 // containers
 import HomeContainer from './HomeContainer';
-import SideBarContainer from '../SideBarContainer';
+import GroupMenuContainer from '../GroupMenuContainer';
 import ToolsContainer from '../ToolsContainer';
 
 
@@ -19,7 +19,7 @@ class BodyContainer extends Component {
             ) : (
               <div style={{display: 'flex', flex: 'auto'}}>
                 <div style={{ flex: "0 0 250px" }}>
-                  <SideBarContainer />
+                  <GroupMenuContainer />
                 </div>
                 <div style={{flex: 'auto', display: 'flex'}}>
                   <ToolsContainer />

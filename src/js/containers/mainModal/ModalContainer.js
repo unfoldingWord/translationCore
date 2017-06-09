@@ -3,14 +3,13 @@ import { connect  } from 'react-redux';
 import { Modal, Tabs, Tab, Glyphicon } from 'react-bootstrap';
 // container
 import Application from './ApplicationModalContainer';
-import Load from './LoadModalContainer';
+import LoadProject from './LoadProjectContainer';
 import Tools from './ToolsModalContainer';
 // components
-import SvgLogo from '../components/core/svg_components/svgLogo.js';
-import packageJson from '../../../package.json';
+import packageJson from '../../../../package.json';
 // actions
-import { openAlertDialog } from '../actions/AlertModalActions.js';
-import * as modalActions from '../actions/ModalActions.js';
+import { openAlertDialog } from '../../actions/AlertModalActions.js';
+import * as modalActions from '../../actions/ModalActions.js';
 
 class ModalContainer extends React.Component {
 
@@ -47,7 +46,7 @@ class ModalContainer extends React.Component {
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
             <Tab eventKey={2} title={projectsGlyph}>
-                <Load currentSection={this.props.currentSection}
+                <LoadProject currentSection={this.props.currentSection}
                   selectSectionTab={this.props.selectSectionTab}/>
             </Tab>
             <Tab eventKey={3} title={toolsGlyph}>

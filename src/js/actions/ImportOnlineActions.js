@@ -1,10 +1,10 @@
 import consts from './ActionTypes';
-import Gogs from '../components/core/login/GogsApi';
+import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
 import * as getDataActions from './GetDataActions';
 import * as AlertModalActions from './AlertModalActions';
 // constant declaration
-const loadOnline = require('../components/core/LoadOnline');
+const loadOnline = require('../components/LoadOnline');
 
 export function changeShowOnlineView(val) {
     return ((dispatch, getState) => {
