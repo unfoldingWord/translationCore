@@ -2,9 +2,7 @@ const assert = require('chai').assert;
 const loadOnline = require('../src/js/components/LoadOnline.js');
 const path = require('path-extra');
 const fs = require('fs-extra');
-require('../src/js/pages/index');
 const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
-
 
 describe('loadOnline.openManifest', function() {
   it('loadOnline.openManifest should return an error if no link is specified', function(done) {
