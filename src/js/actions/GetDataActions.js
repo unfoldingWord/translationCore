@@ -32,7 +32,7 @@ const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
-const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
+const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/originalLanguage');
 
 /**
  * @description This method will set the corestore reducer store state back to the inital state.
