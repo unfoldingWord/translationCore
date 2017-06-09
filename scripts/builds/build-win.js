@@ -7,7 +7,7 @@ packager({
   platform: 'win32',
   asar: true,
   'build-version': appVersion,
-  icon: './build/icon.ico',
+  icon: './builds/assets/icon.ico',
   name: 'translationCore',
   overwrite: 'true',
   'app-copyright': 'Copyright (C) 2016 Wycliffe Associates',
