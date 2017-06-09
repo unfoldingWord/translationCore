@@ -3,8 +3,8 @@
  * @description This module creates a project manifest.
  * @TODO: Move to utils instead of components
  ******************************************************************************/
-import * as LoadHelpers from '../../../helpers/LoadHelpers';
-import {generateTimestamp} from '../../../helpers/index';
+import * as LoadHelpers from '../../helpers/LoadHelpers';
+import {generateTimestamp} from '../../helpers/index';
 
 var template = {
   generator: {

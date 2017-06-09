@@ -1,7 +1,7 @@
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import ManifestGenerator from '../components/core/createProject/ProjectManifest';
-import BooksOfBible from '../components/core/BooksOfBible';
+import ManifestGenerator from '../components/createProject/ProjectManifest';
+import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-parser';
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');

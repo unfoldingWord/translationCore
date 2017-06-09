@@ -2,9 +2,9 @@ import React from 'react';
 import { connect  } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
-import Login from '../components/core/login/Login';
-import Profile from '../components/core/login/Profile';
-import Licenses from '../components/core/licenses/Licenses';
+import Login from '../components/login/Login';
+import Profile from '../components/login/Profile';
+import Licenses from '../components/licenses/Licenses';
 // Actions
 import * as LoginActions from '../actions/LoginActions';
 import * as SettingsActions from '../actions/SettingsActions';

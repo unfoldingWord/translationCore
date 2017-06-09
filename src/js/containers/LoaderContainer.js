@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Components
-import Loader from '../components/core/loader/Loader';
+import Loader from '../components/loader/Loader';
 // Actions
 import * as LoaderActions from '../actions/LoaderActions.js';
 

@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as GetDataActions from './GetDataActions';
 import * as BodyUIActions from './BodyUIActions';
-import gogs from '../components/core/login/GogsApi.js';
+import gogs from '../components/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
 const { dialog } = remote;

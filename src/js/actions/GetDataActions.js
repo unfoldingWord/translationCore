@@ -9,7 +9,7 @@
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
 import usfm from 'usfm-parser';
-import BOOKS from '../components/core/BooksOfBible.js';
+import BOOKS from '../components/BooksOfBible.js';
 // actions
 import consts from './ActionTypes';
 import * as LoaderActions from './LoaderActions';

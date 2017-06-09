@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // components
-import Popover from '../components/core/Popover.js'
+import Popover from '../components/Popover.js'
 // actions
 import { closePopover } from '../actions/PopoverActions.js'
 

@@ -1,4 +1,4 @@
-import BooksOfBible from '../components/core/BooksOfBible';
+import BooksOfBible from '../components/BooksOfBible';
 import * as CoreActionsRedux from './CoreActionsRedux.js';
 
 
