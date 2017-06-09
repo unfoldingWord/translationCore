@@ -2,8 +2,8 @@
  * @author Ian Hoegen
  * @description This module creates a project manifest.
  ******************************************************************************/
-const TimeStamp = require('./Timestamp').generate()[1];
-const LoadHelpers = require('../../../helpers/LoadHelpers');
+import * as LoadHelpers from '../../../helpers/LoadHelpers';
+import {generateTimestamp} from '../../../helpers/index';
 
 var template = {
   generator: {
@@ -48,7 +48,7 @@ var template = {
  ******************************************************************************/
 function populate(data, tsManifest) {
   var projectManifest = template;
-  projectManifest.time_created = TimeStamp;
+  projectManifest.time_created = generateTimestamp();
   if (data) {
     projectManifest.repo = data.repo;
   }
