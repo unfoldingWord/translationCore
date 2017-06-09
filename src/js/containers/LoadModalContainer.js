@@ -5,7 +5,6 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
 // Actions
-import * as dragDropActions from '../actions/DragDropActions.js';
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import * as ModalActions from '../actions/ModalActions';
 
@@ -49,9 +48,6 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
-    },
-    sendFilePath: filePath => {
-      dispatch(dragDropActions.sendFilePath(filePath));
     },
     selectModalTab: (e, section, visible) => {
       dispatch(ModalActions.selectModalTab(e, section, visible));
