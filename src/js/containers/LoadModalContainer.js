@@ -47,9 +47,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    dragDropOnClick: (open, properties) => {
-      dispatch(dragDropActions.onClick(open, properties));
-    },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
     },
