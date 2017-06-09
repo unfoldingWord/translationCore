@@ -1,10 +1,10 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import gogs from '../components/core/login/GogsApi';
+import gogs from '../components/login/GogsApi';
 import { remote } from 'electron';
 import zipFolder from 'zip-folder';
-import git from '../components/core/GitApi.js'
+import git from '../components/GitApi.js'
 // actions
 import * as getDataActions from './GetDataActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';

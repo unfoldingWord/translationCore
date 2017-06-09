@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Components
-import Projects from '../components/core/login/Projects';
-import OnlineInput from '../components/core/OnlineInput';
+import Projects from '../components/login/Projects';
+import OnlineInput from '../components/OnlineInput';
 // Actions
 import * as importOnlineActions from '../actions/ImportOnlineActions.js';
 

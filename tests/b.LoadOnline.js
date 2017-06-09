@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const loadOnline = require('../src/js/components/core/LoadOnline.js');
+const loadOnline = require('../src/js/components/LoadOnline.js');
 const path = require('path-extra');
 const fs = require('fs-extra');
 const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');

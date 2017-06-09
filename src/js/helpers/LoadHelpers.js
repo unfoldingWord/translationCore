@@ -1,7 +1,7 @@
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import ManifestGenerator from '../components/core/create_project/ProjectManifest';
-import BooksOfBible from '../components/core/BooksOfBible';
+import ManifestGenerator from '../components/createProject/ProjectManifest';
+import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-parser';
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
@@ -438,7 +438,7 @@ const expectedVerses = {
         length: 6,
         1: 23,
         2: 22,
-        3: 21, 
+        3: 21,
         4: 32,
         5: 33,
         6: 24
