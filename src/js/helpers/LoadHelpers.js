@@ -1,6 +1,6 @@
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import ManifestGenerator from '../components/core/create_project/ProjectManifest';
+import ManifestGenerator from '../components/core/createProject/ProjectManifest';
 import BooksOfBible from '../components/core/BooksOfBible';
 import usfm from 'usfm-parser';
 
@@ -438,7 +438,7 @@ const expectedVerses = {
         length: 6,
         1: 23,
         2: 22,
-        3: 21, 
+        3: 21,
         4: 32,
         5: 33,
         6: 24

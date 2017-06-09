@@ -7,7 +7,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
-import NotificationContainer from '../containers/NotificationContainer';
 import KonamiContainer from "../containers/KonamiContainer";
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
@@ -38,7 +37,6 @@ class Main extends Component {
         <KonamiContainer />
         <ModalContainer />
         <PopoverContainer />
-        <NotificationContainer />
         <LoaderContainer />
         <Grid fluid style={{ padding: 0 }}>
           <Row style={{ margin: 0 }}>

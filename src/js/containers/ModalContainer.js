@@ -6,7 +6,6 @@ import Application from './ApplicationModalContainer';
 import Load from './LoadModalContainer';
 import Tools from './ToolsModalContainer';
 // components
-import SvgLogo from '../components/core/svg_components/svgLogo.js';
 import packageJson from '../../../package.json';
 // actions
 import { openAlertDialog } from '../actions/AlertModalActions.js';
