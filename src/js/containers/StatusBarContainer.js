@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect  } from 'react-redux';
 // Components
-import StatusBar from '../components/core/SideBar/StatusBar.js';
+import StatusBar from '../components/SideBar/StatusBar.js';
 // Actions
 import * as modalActions from '../actions/ModalActions.js';
 import { openAlertDialog } from '../actions/AlertModalActions.js';

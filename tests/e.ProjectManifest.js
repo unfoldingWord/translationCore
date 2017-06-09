@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import ManifestGenerator from '../src/js/components/core/create_project/ProjectManifest.js';
+import ManifestGenerator from '../src/js/components/createProject/ProjectManifest.js';
 
 const sampleData = {
   repo: 'https://github.com/unfoldingWord-dev/translationCore/',

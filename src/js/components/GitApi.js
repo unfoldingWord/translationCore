@@ -4,6 +4,7 @@
  *              git installed on an users computer.
  * @param {string} directory - The path of the git repo.
  * @return {Object} An internal api
+ * @TODO: Move to utils not components
  **/
 function GitApi(directory) {
   var remote = require('electron').remote;

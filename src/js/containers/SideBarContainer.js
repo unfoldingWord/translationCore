@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Grid, Row, Col, Glyphicon} from 'react-bootstrap'
 // components
-import Groups from '../components/core/groupMenu/Groups'
-import * as style from '../components/core/SideBar/Style'
+import Groups from '../components/groupMenu/Groups'
+import * as style from '../components/SideBar/Style'
 // actions
 import {changeCurrentContextId} from '../actions/ContextIdActions.js'
 import {toggleMenu} from '../actions/SideBarActions.js'

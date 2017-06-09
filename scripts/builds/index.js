@@ -5,8 +5,8 @@
   const React = require('react');
   const remote = require('electron').remote;
   const {Menu} = remote;
-  window.BooksOfBible = require('../components/core/BooksOfBible.js');
-  const MenuBar = require('../components/core/MenuBar');
+  window.BooksOfBible = require('../components/BooksOfBible.js');
+  const MenuBar = require('../components/MenuBar');
 
   var App = {
     init: function () {

@@ -49,7 +49,7 @@ const tT ={
   }
 };
 
-class AppDescription extends React.Component {
+class ToolDescription extends React.Component {
   render() {
     let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
     let { toolName } = this.props;
@@ -86,4 +86,4 @@ class AppDescription extends React.Component {
   }
 }
 
-export default AppDescription;
+export default ToolDescription;
