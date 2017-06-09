@@ -12,7 +12,7 @@ import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
 import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
-import ModalContainer from '../containers/ModalContainer';
+import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 
 class Main extends Component {

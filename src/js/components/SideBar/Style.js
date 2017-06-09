@@ -1,6 +1,6 @@
 
 var style = {
-  sideBarcontainer: {
+  groupMenuContainer: {
     backgroundColor: "var(--background-color-dark)",
     zIndex: "98",
     fontSize: "12px",

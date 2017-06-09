@@ -2,14 +2,14 @@ import React from 'react';
 import { connect  } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
-import Login from '../components/login/Login';
-import Profile from '../components/login/Profile';
-import Licenses from '../components/licenses/Licenses';
+import Login from '../../components/login/Login';
+import Profile from '../../components/login/Profile';
+import Licenses from '../../components/licenses/Licenses';
 // Actions
-import * as LoginActions from '../actions/LoginActions';
-import * as SettingsActions from '../actions/SettingsActions';
-import * as modalActions from '../actions/ModalActions';
-import * as PopoverActions from '../actions/PopoverActions';
+import * as LoginActions from '../../actions/LoginActions';
+import * as SettingsActions from '../../actions/SettingsActions';
+import * as modalActions from '../../actions/ModalActions';
+import * as PopoverActions from '../../actions/PopoverActions';
 
 class ApplicationModalContainer extends React.Component {
 
