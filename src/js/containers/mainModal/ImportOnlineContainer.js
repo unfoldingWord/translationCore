@@ -92,7 +92,7 @@ class ImportOnlineContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     importOnlineReducer: state.importOnlineReducer,
-    modalReducer: state.newModalReducer,
+    modalReducer: state.modalReducer,
     loginReducer: state.loginReducer
   };
 };

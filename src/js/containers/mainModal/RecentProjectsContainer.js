@@ -113,7 +113,7 @@ const mapStateToProps = state => {
     manifest: state.projectDetailsReducer.manifest,
     loggedInUser: state.loginReducer.loggedInUser,
     userdata: state.loginReducer.userdata,
-    modalReducer: state.newModalReducer
+    modalReducer: state.modalReducer
   };
 };
 

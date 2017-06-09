@@ -9,17 +9,19 @@ const initialState = {
 const remindersReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_REMINDER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         enabled: !state.enabled,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
-      });
+      };
     case consts.SET_REMINDER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         enabled: action.enabled,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
-      });
+      };
     default:
       return state;
   }

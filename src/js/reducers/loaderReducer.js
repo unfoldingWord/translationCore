@@ -6,7 +6,7 @@ const initialState = {
   reloadContent: null
 };
 
-module.exports = (state = initialState, action) => {
+const loaderReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_LOADER_MODAL:
       return {
@@ -37,3 +37,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 };
+
+export default loaderReducer;

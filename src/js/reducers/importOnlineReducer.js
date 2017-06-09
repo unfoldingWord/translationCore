@@ -11,7 +11,7 @@ const initialState = {
   err: null
 };
 
-module.exports = (state = initialState, action) => {
+const importOnlineReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGED_IMPORT_VIEW:
       return { ...state, showOnlineButton: action.view }
@@ -37,3 +37,5 @@ module.exports = (state = initialState, action) => {
       return state;
   }
 };
+
+export default importOnlineReducer;

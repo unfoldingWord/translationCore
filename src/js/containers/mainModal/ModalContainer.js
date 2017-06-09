@@ -62,7 +62,7 @@ class ModalContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    ...state.newModalReducer,
+    ...state.modalReducer,
     loginReducer: state.loginReducer
   };
 }
