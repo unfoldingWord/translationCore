@@ -235,7 +235,7 @@ export function getParams(path, manifest) {
     if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
         return null;
     }
-    const ogPath = Path.join(window.__base, 'static', 'taggedULB');
+    const ogPath = Path.join(window.__base, 'static', 'originalLanguage');
     let params = {
         'originalLanguagePath': ogPath
     }
