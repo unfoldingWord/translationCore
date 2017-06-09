@@ -29,11 +29,6 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         params: action.params
       };
-    case consts.DRAG_DROP_SENDPATH:
-      return {
-        ...state,
-        projectSaveLocation: action.filePath
-      };
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:
