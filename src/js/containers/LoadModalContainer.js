@@ -5,8 +5,6 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
 // Actions
-import * as dragDropActions from '../actions/DragDropActions.js';
-import * as ReportsActions from '../actions/ReportsActions.js';
 import * as recentProjectsActions from '../actions/RecentProjectsActions.js';
 import * as ModalActions from '../actions/ModalActions';
 
@@ -48,17 +46,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    dragDropOnClick: (open, properties) => {
-      dispatch(dragDropActions.onClick(open, properties));
-    },
-    onLoadReports: () => {
-      dispatch(ReportsActions.loadReports());
-    },
     loadProject: () => {
       dispatch(recentProjectsActions.startLoadingNewProject());
-    },
-    sendFilePath: filePath => {
-      dispatch(dragDropActions.sendFilePath(filePath));
     },
     selectModalTab: (e, section, visible) => {
       dispatch(ModalActions.selectModalTab(e, section, visible));
