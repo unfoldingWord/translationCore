@@ -10,8 +10,6 @@ import CryptoJS from "crypto-js";
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
-const api = window.ModuleApi;
-
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
@@ -125,7 +123,7 @@ export function loadUserdata() {
   let localUserdata = JSON.parse(localStorage.getItem('localUser'));
 
   if (localStorage.getItem('user')) {
-    let phrase = api.getAuthToken('phrase') != undefined ? api.getAuthToken('phrase') : "tc-core";
+    let phrase = "tc-core";
     let decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
     let userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
     loginReducer.userdata = userdata;

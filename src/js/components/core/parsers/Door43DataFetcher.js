@@ -21,7 +21,7 @@ const suppress = true;
 // ONLY USE getBook()
 class Door43DataFetcher {
 	constructor() {
-		this.AUTHENTICATION = 'access_token=' + window.ModuleApi.getAuthToken('git');
+		this.AUTHENTICATION = '';
 		this.bookList = null;
 	}
 

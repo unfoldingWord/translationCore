@@ -6,8 +6,6 @@ import gogs from '../components/core/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
 const { dialog } = remote;
-const api = window.ModuleApi;
-
 
 export function displayLogin(val) {
   return {
@@ -27,8 +25,7 @@ export function loginLocalUser(localUsername) {
 
 export function loginUser(newUserdata) {
   return (dispatch => {
-    var Token = api.getAuthToken('gogs');
-    gogs(Token).login(newUserdata).then(newUserdata => {
+    gogs().login(newUserdata).then(newUserdata => {
       dispatch({
         type: consts.RECEIVE_LOGIN,
         userdata: newUserdata

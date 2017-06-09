@@ -1,5 +1,5 @@
 /*global javascripture*/
-const fs = require(window.__base + 'node_modules/fs-extra');
+const fs = require('fs-extra');
 const path = require('path');
 //const morphParse = require('./morph.js');
 
