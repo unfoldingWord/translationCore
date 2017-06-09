@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, utils } from 'react-bootstrap/lib';
+import { Row, Col } from 'react-bootstrap';
 
 const iW = {
   appWindow: {
