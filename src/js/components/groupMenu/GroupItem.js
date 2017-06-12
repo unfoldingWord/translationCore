@@ -1,7 +1,10 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import { Glyphicon } from 'react-bootstrap'
 import style from './Style'
 import isEqual from 'lodash/isEqual'
+const MENU_BAR_HEIGHT = 30;
+const MENU_ITEM_HEIGHT = 38;
 
 class GroupItem extends React.Component {
   /**
@@ -15,14 +18,31 @@ class GroupItem extends React.Component {
 
   componentDidMount() {
     if (this.props.active) {
-      this.props.scrollIntoView(this);
+      if (this.inView(this.props.groupMenuHeader, this)) {
+        this.props.scrollIntoView(this.props.groupMenuHeader);
+      }
+      else {
+        this.props.scrollIntoView(this);
+      }
     }
   }
 
   componentWillReceiveProps(nextProps, context) {
-    if (isEqual(nextProps.contextId, nextProps.contextIdReducer.contextId)) {
-      this.props.scrollIntoView(this);
+    if (nextProps.active) {
+      if (this.inView(nextProps.groupMenuHeader, this)) {
+        nextProps.scrollIntoView(nextProps.groupMenuHeader);
+      }
+      else {
+        nextProps.scrollIntoView(this);
+      }
     }
+  }
+
+  inView(groupMenu, currentItem) {
+    var rectGroup = ReactDOM.findDOMNode(groupMenu).getBoundingClientRect();
+    var rectItem = ReactDOM.findDOMNode(currentItem).getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return Math.abs(rectGroup.top - rectItem.top) + MENU_BAR_HEIGHT + MENU_BAR_HEIGHT <= viewHeight;
   }
 
   statusGlyph() {
