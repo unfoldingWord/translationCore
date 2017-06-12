@@ -74,6 +74,7 @@
     "marked": "^0.3.5",
     "material-ui": "^0.17.0",
     "natural": "^0.4.0",
+    "node-fetch": "^1.7.1",
     "npm": "2.14.12",
     "path-extra": "3.0.0",
     "prop-types": "^15.5.8",
