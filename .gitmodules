@@ -4,8 +4,8 @@
 [submodule "tC_apps/ScripturePane"]
 	path = tC_apps/ScripturePane
 	url = https://github.com/translationCoreApps/ScripturePane.git
-[submodule "tC_apps/TranslationHelps"]
-	path = tC_apps/TranslationHelps
+[submodule "tC_apps/translationHelps"]
+	path = tC_apps/translationHelps
 	url = https://github.com/translationCoreApps/translationHelps.git
 [submodule "tC_apps/translationNotes"]
 	path = tC_apps/translationNotes
