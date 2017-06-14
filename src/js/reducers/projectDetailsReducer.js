@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts';
+import consts from '../actions/ActionTypes';
 
 const initialState = {
   projectSaveLocation: '',
@@ -28,11 +28,6 @@ const projectDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         params: action.params
-      };
-    case consts.DRAG_DROP_SENDPATH:
-      return {
-        ...state,
-        projectSaveLocation: action.filePath
       };
     case consts.RESET_PROJECT_DETAIL:
       return initialState;

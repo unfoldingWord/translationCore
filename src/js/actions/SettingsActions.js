@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 
 /**
  * @description initializes settings. In other words ,creates a

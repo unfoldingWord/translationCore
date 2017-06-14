@@ -1,5 +1,5 @@
 var node_xj = require("xls-to-json");
-const fs = require(window.__base + 'node_modules/fs-extra');
+const fs = require('fs-extra');
 const path = require('path');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 

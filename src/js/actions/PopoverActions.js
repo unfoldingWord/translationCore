@@ -1,4 +1,4 @@
-import consts from './CoreActionConsts'
+import consts from './ActionTypes';
 
 export const showPopover = (title, bodyText, positionCoord) => {
   return {

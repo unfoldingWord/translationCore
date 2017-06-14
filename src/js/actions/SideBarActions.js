@@ -1,6 +1,4 @@
-import consts from './CoreActionConsts';
-// actions
-import * as CheckStoreActions from './CheckStoreActions';
+import consts from './ActionTypes';
 
 export function toggleSubmenu(id) {
   return {
@@ -13,11 +11,4 @@ export function toggleMenu() {
   return {
     type: consts.TOGGLE_MENU_DRAWER
   }
-}
-
-export function menuHeaderClicked(currentGroupIndex, currentCheckIndex) {
-  return ((dispatch) => {
-    dispatch(CheckStoreActions.goToCheck(currentGroupIndex, currentCheckIndex));
-    dispatch(this.toggleSubmenu(currentGroupIndex));
-  })
 }

@@ -1,9 +1,7 @@
-const chai = require('chai');
-const assert = chai.assert;
+import {assert} from 'chai';
+import ManifestGenerator from '../src/js/components/createProject/ProjectManifest.js';
 
-const ManifestGenerator = require('../src/js/components/core/create_project/ProjectManifest.js');
-
-var sampleData = {
+const sampleData = {
   repo: 'https://github.com/unfoldingWord-dev/translationCore/',
   user: [{
     full_name: 'Ian Hoegen',

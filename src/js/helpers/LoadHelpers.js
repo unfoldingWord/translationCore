@@ -1,7 +1,7 @@
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import ManifestGenerator from '../components/core/create_project/ProjectManifest';
-import BooksOfBible from '../components/core/BooksOfBible';
+import ManifestGenerator from '../components/createProject/ProjectManifest';
+import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-parser';
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
@@ -98,9 +98,9 @@ export function fixManifestVerThree (oldManifest) {
  *
  * @param {string} bookAbbr - The book abbreviation to convert
  */
-export function convertToFullBookName (bookAbbr) {
-    if (!bookAbbr) return;
-    return BooksOfBible[bookAbbr.toString().toLowerCase()];
+export function convertToFullBookName(bookAbbr) {
+  if (!bookAbbr) return;
+  return BooksOfBible[bookAbbr.toString().toLowerCase()];
 }
 
 /**
@@ -235,7 +235,7 @@ export function getParams(path, manifest) {
     if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
         return null;
     }
-    const ogPath = Path.join(window.__base, 'static', 'taggedULB');
+    const ogPath = Path.join(window.__base, 'static', 'originalLanguage');
     let params = {
         'originalLanguagePath': ogPath
     }
@@ -438,7 +438,7 @@ const expectedVerses = {
         length: 6,
         1: 23,
         2: 22,
-        3: 21, 
+        3: 21,
         4: 32,
         5: 33,
         6: 24

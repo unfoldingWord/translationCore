@@ -6,7 +6,7 @@ import Dialog from 'material-ui/Dialog';
 class Alert extends Component {
   render() {
     let {alertText, alertDialogVisibility, alertDialogLoading, callback, button1, button2} = this.props.alertModalReducer;
-    let {closeAlertDialog} =this.props.actions;
+    let {closeAlertDialog} = this.props.actions;
 
     const actions = [
       <button
@@ -58,7 +58,7 @@ class Alert extends Component {
               <tbody>
               <tr>
                 <td>
-                  <img className={alertDialogLoading ? "App-logo" : ""} src={window.__base + "images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
+                  <img className={alertDialogLoading ? "App-logo" : ""} src={window.__base + "src/images/TC_Icon.png"} height="100px" style={{margin: "25px 20px 0px 55px"}}/>
                 </td>
                 <td>
                   <div style={{color: "var(--text-color-dark)"}}>

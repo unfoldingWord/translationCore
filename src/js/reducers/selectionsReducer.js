@@ -1,4 +1,4 @@
-import consts from '../actions/CoreActionConsts.js';
+import consts from '../actions/ActionTypes';
 
 const initialState = {
   selections: [],

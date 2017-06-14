@@ -11,10 +11,8 @@
   const React = require('react');
   const remote = require('electron').remote;
   const {Menu} = remote;
-  var moduleApi = require('../ModuleApi');
-  window.BooksOfBible = require('../components/core/BooksOfBible.js');
-  window.ModuleApi = moduleApi;
-  const MenuBar = require('../components/core/MenuBar');
+  window.BooksOfBible = require('../components/BooksOfBible.js');
+  const MenuBar = require('../components/MenuBar');
   var App = {
     init: function () {
       var menu = Menu.buildFromTemplate(MenuBar.template);

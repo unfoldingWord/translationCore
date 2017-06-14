@@ -1,14 +1,11 @@
-import consts from './CoreActionConsts';
-import * as CoreActions from './CoreActions.js';
+import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as GetDataActions from './GetDataActions';
 import * as BodyUIActions from './BodyUIActions';
-import gogs from '../components/core/login/GogsApi.js';
+import gogs from '../components/login/GogsApi.js';
 import { remote } from 'electron';
 // const delclarations
 const { dialog } = remote;
-const api = window.ModuleApi;
-
 
 export function displayLogin(val) {
   return {
@@ -28,9 +25,7 @@ export function loginLocalUser(localUsername) {
 
 export function loginUser(newUserdata) {
   return (dispatch => {
-    var Token = api.getAuthToken('gogs');
-    gogs(Token).login(newUserdata).then(newUserdata => {
-      CoreActions.login(newUserdata);
+    gogs().login(newUserdata).then(newUserdata => {
       dispatch({
         type: consts.RECEIVE_LOGIN,
         userdata: newUserdata

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // actions
-import { showNotification } from '../actions/NotificationActions';
 import { showPopover } from '../actions/PopoverActions';
 import { addNewResource, addNewBible } from '../actions/ResourcesActions';
 import { addComment } from '../actions/CommentsActions';
@@ -76,9 +75,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       goToPrevious: () => {
         dispatch(changeToPreviousContextId());
-      },
-      showNotification: (message, duration) => {
-        dispatch(showNotification(message, duration));
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));

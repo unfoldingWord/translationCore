@@ -1,10 +1,10 @@
-import consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import gogs from '../components/core/login/GogsApi';
+import gogs from '../components/login/GogsApi';
 import { remote } from 'electron';
 import zipFolder from 'zip-folder';
-import git from '../components/core/GitApi.js'
+import git from '../components/GitApi.js'
 // actions
 import * as getDataActions from './GetDataActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
@@ -12,7 +12,8 @@ import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ipcRenderer = require('electron').ipcRenderer;
-
+const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
+const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
 /**
  * @description - Initiate a project load
@@ -41,7 +42,7 @@ export function uploadProject(projectPath, user) {
 
     if (!user.token) {
       dispatch(
-          AlertModalActions.openAlertDialog("Your login has become invalid. Please log out and log back in.", false)
+        AlertModalActions.openAlertDialog("Your login has become invalid. Please log out and log back in.", false)
       );
       return;
     }
@@ -90,19 +91,19 @@ export function uploadProject(projectPath, user) {
         }
       })
     }).catch(err => {
-        if (user.localUser) {
-          dispatch(
-              AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
-          );
-        } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
-          dispatch(
-              AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
-          );
-        } else {
-          dispatch (
-            AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
-          )
-        }
+      if (user.localUser) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Error Uploading: You must be logged in with a Door43 account to upload projects.')
+        );
+      } else if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
+        dispatch(
+          AlertModalActions.openAlertDialog('Unable to connect to the server. Please check your Internet connection.')
+        );
+      } else {
+        dispatch(
+          AlertModalActions.openAlertDialog("Unknown error while trying to create the repository.")
+        )
+      }
     });
   });
 }
@@ -119,71 +120,90 @@ export function getProjectsFromFolder() {
   }
 }
 
+export function csvTextCleanUp(text){
+  return text.replace ? `"${text.replace('"', '""')}"` : `"${text}"`;
+}
+
 
 /**
  * @description - Wrapper function to handle exporting to CSV
  *
  * @param {string} projectPath - Path to current project
+ * @param {string} csvSaveLocation - Path to CSV location
  */
 export function exportToCSV(projectPath) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
     const projectName = projectPath.split(path.sep).pop();
-    var projectId = "";
-    let dataFolder = path.join(projectPath, '.apps', 'translationCore');
-    let tempFolder = path.join(dataFolder, 'output');
-    let defaultPath = projectPath + '.zip';
-    var filePath = ipcRenderer.sendSync('save-as', {options: {defaultPath: defaultPath, filters: [{name: 'Zip Files', extensions: ['zip']}], title: 'Save CSV Export As'}});
+    let projectId = "";
+    const dataFolder = path.join(projectPath, '.apps', 'translationCore');
+    const tempFolder = path.join(dataFolder, 'output');
+    let defaultPath;
+    if (csvSaveLocation) {
+      defaultPath = path.join(csvSaveLocation, projectName + '.zip');
+    }
+    else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + '.zip');
+    } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+      defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
+    }
+    else {
+      defaultPath = path.join(path.homedir(), projectName + '.zip');
+    }
+    let filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ name: 'Zip Files', extensions: ['zip'] }], title: 'Save CSV Export As' } });
     if (!filePath) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
+    } else {
+      dispatch({type:consts.SET_CSV_SAVE_LOCATION, csvSaveLocation: filePath.split(projectName)[0]})
     }
 
     dispatch(
-        AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true)
+      AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true)
     );
 
     Promise.resolve(true)
-        .then(() => {
-          try {
-            var manifestPath = path.join(projectPath, 'manifest.json');
-            var manifest = JSON.parse(fs.readFileSync(manifestPath));
-            projectId = manifest.project.id;
-            return true;
-          } catch (error) {
-            throw 'Cannot read project manifest';
-          }
-        })
-        .then(() => {
-          let toolPaths = getToolFolderNames(projectPath);
-          if (!toolPaths || !toolPaths.length) {
-            throw 'No checks have been performed in this project.';
-          }
-          return toolPaths;
-        })
-        .then((toolPaths) => {
-          var promises = Promise.resolve(true);
+      .then(() => {
+        try {
+          let manifestPath = path.join(projectPath, 'manifest.json');
+          let manifest = JSON.parse(fs.readFileSync(manifestPath));
+          projectId = manifest.project.id;
+          return true;
+        } catch (error) {
+          throw 'Cannot read project manifest';
+        }
+      })
+      .then(() => {
+        let toolPaths = getToolFolderNames(projectPath);
+        if (!toolPaths || !toolPaths.length) {
+          throw 'No checks have been performed in this project.';
+        }
+        return toolPaths;
+      })
+      .then((toolPaths) => {
+        let promises = Promise.resolve(true);
 
-          toolPaths.forEach((toolpath) => {
-            promises = promises.then(() => {
-              return saveAllCSVDataByToolName(toolpath, dataFolder, projectId);
-            });
+        toolPaths.forEach((toolpath) => {
+          promises = promises.then(() => {
+            return saveAllCSVDataByToolName(toolpath, dataFolder, projectId);
           });
-          return promises;
-        })
-        .then(() => {
-          zipFolder(tempFolder, filePath, (err) => {
-            if (err) {
-              dispatch(AlertModalActions.openAlertDialog("Export failed: Could not create zip file.", false));
-            } else {
-              dispatch(AlertModalActions.openAlertDialog(projectName + " has been successfully exported.", false));
-            }
-            fs.remove(path.join(tempFolder));
-          })
-        })
-        .catch((err) => {
-          dispatch(AlertModalActions.openAlertDialog("Export failed: " + err, false));
-          fs.remove(path.join(tempFolder));
         });
+        return promises;
+      })
+      .then(() => {
+        zipFolder(tempFolder, filePath, (err) => {
+          if (err) {
+            dispatch(AlertModalActions.openAlertDialog("Export failed: Could not create zip file.", false));
+          } else {
+            dispatch(AlertModalActions.openAlertDialog(projectName + " has been successfully exported.", false));
+          }
+          fs.remove(path.join(tempFolder));
+        })
+      })
+      .catch((err) => {
+        dispatch(AlertModalActions.openAlertDialog("Export failed: " + err, false));
+        fs.remove(path.join(tempFolder));
+      });
   });
 }
 
@@ -196,19 +216,19 @@ export function exportToCSV(projectPath) {
 export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         let currentRowArray = [];
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
-        currentRowArray.push(`"${currentRow.after.replace('"', '""')}"`);
-        currentRowArray.push(`"${currentRow.before.replace('"', '""')}"`);
-        currentRowArray.push(`"${currentRow.tags}"`);
+        currentRowArray.push(csvTextCleanUp(currentRow.after));
+        currentRowArray.push(csvTextCleanUp(currentRow.before));
+        currentRowArray.push(csvTextCleanUp(currentRow.tags));
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time);
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
-    } catch (e) {   reject(false) };
+    } catch (e) { reject(false) };
     resolve(true);
   });
 }
@@ -222,17 +242,17 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
 export function saveCommentsToCSV(obj, dataFolder, toolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
         let currentRowArray = [];
-        currentRowArray.push(currentRow.text);
+        currentRowArray.push(csvTextCleanUp(currentRow.text));
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
-    } catch (e) {  reject(false) };
+    } catch (e) { reject(false) };
     resolve(true);
   });
 }
@@ -246,13 +266,13 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
 export function saveSelectionsToCSV(obj, dataFolder, toolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse, username, time\n";
+      let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const col = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
         for (var currentSelection of col.selections) {
           let currentRowArray = [];
-          currentRowArray.push(currentSelection.text);
+          currentRowArray.push(csvTextCleanUp(currentSelection.text));
           currentRowArray.push(currentSelection.occurrence);
           currentRowArray.push(currentSelection.occurrences);
           addContextIdToCSV(currentRowArray, col.contextId, username, time)
@@ -260,7 +280,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
-    } catch (e) {  reject(false) };
+    } catch (e) { reject(false) };
     resolve(true);
   });
 }
@@ -274,17 +294,17 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
 export function saveRemindersToCSV(obj, dataFolder, toolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse, username, time\n";
+      let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const currentRow = currentRowObject.dataObject;
-       const { time, username } = currentRowObject;
+        const { time, username } = currentRowObject;
         let currentRowArray = [];
         currentRowArray.push(currentRow.enabled);
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
-    } catch (e) {  reject(false) };
+    } catch (e) { reject(false) };
     resolve(true);
   });
 }
@@ -310,7 +330,7 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
-    } catch (e) {  reject(false) };
+    } catch (e) { reject(false) };
     resolve(true);
   });
 }
@@ -321,15 +341,26 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
  */
-export function addContextIdToCSV(currentRowArray, contextId, username, time) {
+export function addContextIdToCSV(currentRowArray, contextId, username, datetime) {
   currentRowArray.push(contextId.groupId);
   currentRowArray.push(contextId.occurrence);
-  currentRowArray.push(`"${contextId.quote}"`);
+  currentRowArray.push(csvTextCleanUp(contextId.quote));
   currentRowArray.push(contextId.reference.bookId);
   currentRowArray.push(contextId.reference.chapter);
   currentRowArray.push(contextId.reference.verse);
   if (username) currentRowArray.push(username);
-  if (time) currentRowArray.push(time);
+  if (datetime) {
+    datetime = datetime.replace(/_/g, ":");
+    function pad(num) {
+      return num < 10 ? 0 + `${num}` : num;
+    }
+    let dateObj = new Date(datetime)
+    let date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
+    currentRowArray.push(date);
+    //Converts to format as such DD/MM/YYYY
+    currentRowArray.push(new Date(datetime).toString().split(" ")[4]);
+    //Converts to format as such HH:MM:SS
+  }
 }
 
 /**

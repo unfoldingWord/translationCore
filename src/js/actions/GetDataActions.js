@@ -6,16 +6,15 @@
  * @version 1.0.0
  */
 
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import Path from 'path-extra';
 import usfm from 'usfm-parser';
-import BOOKS from '../components/core/BooksOfBible.js';
+import BOOKS from '../components/BooksOfBible.js';
 // actions
-import * as consts from './CoreActionConsts';
+import consts from './ActionTypes';
 import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
-import * as NotificationActions from './NotificationActions';
 import * as ModalActions from './ModalActions';
 import * as ToolsActions from './ToolsActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -32,7 +31,7 @@ const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
 const extensionRegex = new RegExp('(\\.\\w+)', 'i');
-const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/taggedULB');
+const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/originalLanguage');
 
 /**
  * @description This method will set the corestore reducer store state back to the inital state.
@@ -184,7 +183,6 @@ export function displayToolsToLoad(manifest) {
   return ((dispatch, getState) => {
     const currentState = getState();
     if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
-      dispatch(NotificationActions.showNotification('Info: Your project is ready to be loaded once you select a tool', 5));
       dispatch(ToolsActions.getToolsMetadatas());
       dispatch(ModalActions.selectModalTab(3, 1, true));
     } else {
