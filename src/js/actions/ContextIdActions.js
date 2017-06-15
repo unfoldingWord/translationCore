@@ -4,7 +4,7 @@ import path from 'path-extra';
 // helpers
 import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers';
 // actions
-import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './CheckDataLoadActions';
+import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions';
 import {saveContextId} from '../utils/saveMethods';
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
