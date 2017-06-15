@@ -7,6 +7,7 @@ const initialState = {
 const resourcesReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.ADD_NEW_BIBLE_TO_RESOURCES:
+    console.log(action)
       return {
         ...state,
         bibles: {
