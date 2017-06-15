@@ -13,6 +13,7 @@ class Group extends React.Component {
    * @param {string} groupId - string name of a group.
    * @return {array} groupData - array of groupData objects
    */
+
   groupData(groupsData, groupId) {
     let groupData
     if (groupsData !== undefined) {
@@ -51,7 +52,7 @@ class Group extends React.Component {
     let index = 0;
     for (var groupItemData of groupData) {
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      items.push(<GroupItem active={active} scrollIntoView={this.scrollIntoView} {...this.props} {...groupItemData} key={index} />)
+      items.push(<GroupItem groupMenuHeader={this} scrollIntoView={this.scrollIntoView} {...this.props} active={active} {...groupItemData} key={index} />)
       index++
     }
     return items;
@@ -67,19 +68,14 @@ class Group extends React.Component {
     let groupId = this.props.groupIndex.id
     let groupData = this.groupData(groupsData, groupId)
 
-    let active = false
-    if (contextId !== null) {
-      active = contextId.groupId == groupId
-    }
-
-    let style = active ? Style.menuItem.heading.current : Style.menuItem.heading.normal
+    let style = this.props.active ? Style.menuItem.heading.current : Style.menuItem.heading.normal
     let expandedGlyph = <Glyphicon glyph="chevron-down" style={{ float: 'right', marginTop: '3px' }} />
     let collapsedGlyph = <Glyphicon glyph="chevron-right" style={{ float: 'right', marginTop: '3px' }} />
     let progress = this.generateProgress();
     return (
       <div>
         <div style={style} onClick={() => this.props.actions.changeCurrentContextId(groupData[0].contextId)} >
-          {active ? expandedGlyph : collapsedGlyph}
+          {this.props.active ? expandedGlyph : collapsedGlyph}
           <Circle
             progress={progress}
             options={{ strokeWidth: 15, color: "var(--accent-color-light)", trailColor: "var(--reverse-color)", trailWidth: 15 }}
@@ -88,7 +84,7 @@ class Group extends React.Component {
           />
           {this.props.groupIndex.name}
         </div>
-        {active && groupData ? this.groupItems(groupData) : null}
+        {this.props.active && groupData ? this.groupItems(groupData) : null}
       </div>
     );
   }
