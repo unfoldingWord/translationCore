@@ -25,6 +25,7 @@ import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ModulesSettingsActions from './ModulesSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
+import * as TargetLanguageActions from './TargetLanguageActions';
 // constant declarations
 const PARENT = Path.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
@@ -78,7 +79,7 @@ export function openProject(projectPath, projectLink, exporting = false) {
       // No USFM detected, initiating 'standard' loading process
       projectPath = LoadHelpers.correctSaveLocation(projectPath);
       let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-
+      dispatch(projectDetailsActions.setProjectDetail("unparsedFinishedChunks", manifest.finished_chunks));
       if (!manifest) {
         dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load does not have a valid manifest and cannot be opened! Please contact Help Desk (help@door43.org) for assistance."));
         dispatch(clearPreviousData());
@@ -118,6 +119,9 @@ export function openProject(projectPath, projectLink, exporting = false) {
         if (!exporting) dispatch(displayToolsToLoad(manifest));
       }
     }
+    // TODO: clean the action above
+    // the folloiwng action will live below until above action clean up.
+    dispatch(TargetLanguageActions.generateAndLoadTargetLangBible(projectPath));
   });
 }
 
