@@ -25,6 +25,7 @@ import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ModulesSettingsActions from './ModulesSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
+import * as TargetLanguageActions from './TargetLanguageActions';
 // constant declarations
 const PARENT = Path.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
@@ -52,18 +53,11 @@ export function clearPreviousData() {
 
 /**
  * @description Starter function to load a project from a folder path or link.
- *
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
  */
 export function openProject(projectPath, projectLink, exporting = false) {
   return ((dispatch, getState) => {
-    // temp fix. TODO: will be removed after private beta.
-    let projectBookName = getState().projectDetailsReducer.bookName;
-    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    if (projectBookName.length > 0) {
-      dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
-    }
     if (!projectPath && !projectLink) return;
     // TODO: this action may stay here temporary until the home screen implementation.
     dispatch(BodyUIActions.toggleHomeView(true));
@@ -78,7 +72,7 @@ export function openProject(projectPath, projectLink, exporting = false) {
       // No USFM detected, initiating 'standard' loading process
       projectPath = LoadHelpers.correctSaveLocation(projectPath);
       let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-
+      dispatch(projectDetailsActions.setProjectDetail("unparsedFinishedChunks", manifest.finished_chunks));
       if (!manifest) {
         dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load does not have a valid manifest and cannot be opened! Please contact Help Desk (help@door43.org) for assistance."));
         dispatch(clearPreviousData());
@@ -313,26 +307,26 @@ function loadProjectDataFromFileSystem(toolName) {
       let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
+      dispatch(TargetLanguageActions.generateAndLoadTargetLangBible(projectSaveLocation));
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
           loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
           .then((successMessage) => {
             let delayTime = 0;
-            if (successMessage === "success") {
-              dispatch(ResourcesActions.loadBiblesFromFS());
-              delayTime = 800;
-            }
-            if (toolsReducer.switchingTool) {
-              // Switching project and/or tool
-              dispatch(startModuleFetchData())
-            }
+            // if (successMessage === "success") {
+            //   dispatch(ResourcesActions.loadBiblesFromFS());
+            //   delayTime = 800;
+            // }
+            // if (toolsReducer.switchingTool) {
+            //   // Switching project and/or tool
+            //   dispatch(startModuleFetchData())
+            // }
             delay(delayTime)
               .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
                 dispatch(BodyUIActions.toggleHomeView(false))
               )
               .then(dispatch({ type: consts.DONE_LOADING }))
-              .then(dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_FALSE }));
           })
 
           .catch(err => {
@@ -372,14 +366,11 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
         resolve("success");
       } catch (err) {
         console.log(err);
-        dispatch(startModuleFetchData()).then(successMessage => {
-          resolve(successMessage);
-        });
+        resolve();
       }
     } else {
-      dispatch(startModuleFetchData()).then(successMessage => {
-        resolve(successMessage);
-      });
+      console.log("No directory for group index was found.")
+      resolve();
     }
   });
 }
@@ -398,7 +389,7 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
     let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     if (fs.existsSync(groupDataDirectory)) {
       let groupDataFolderObjs = fs.readdirSync(groupDataDirectory);
-      let allGroupsObjects = {};
+      let allGroupsData = {};
       let total = groupDataFolderObjs.length;
       let i = 0;
       for (let groupId in groupDataFolderObjs) {
@@ -409,19 +400,21 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
         let groupName = groupDataFolderObjs[groupId].split('.')[0];
         let groupData = loadGroupData(groupName, groupDataDirectory);
         if (groupData) {
-          allGroupsObjects[groupName] = groupData;
+          allGroupsData[groupName] = groupData;
         }
         dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
         i++;
       }
-      dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+      dispatch({
+        type: consts.LOAD_GROUPS_DATA_FROM_FS,
+        allGroupsData
+      });
       dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       console.log('Loaded group data from fs');
-      resolve("success");
+      resolve(true);
     } else {
-      dispatch(startModuleFetchData()).then(successMessage => {
-        resolve(successMessage);
-      });
+      console.log("No directory for groups data was found.")
+      resolve(false);
     }
   });
 }
@@ -443,75 +436,6 @@ function loadGroupData(groupName, groupDataFolderPath) {
     console.warn('failed loading group data for ' + groupName);
   }
   return groupData;
-}
-
-/**
- * @description this function handles running the tools fetchdata when needed.
- * @return {object} action object.
- */
-export function startModuleFetchData() {
-  return ((dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      let {
-        coreStoreReducer,
-        projectDetailsReducer,
-        resourcesReducer,
-        modulesSettingsReducer,
-        groupsDataReducer,
-        groupsIndexReducer
-      } = getState();
-
-      let currentModuleFetchData = coreStoreReducer.currentModuleFetchData;
-
-      const addNewBible = (bibleName, bibleData) => {
-        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
-      };
-      const setModuleSettings = (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-        dispatch(ModulesSettingsActions.setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-      };
-      const progress = (label, progress) => {
-        dispatch(LoaderActions.sendProgressForKey(label, progress));
-      };
-      const addGroupData = (groupId, groupData) => {
-        dispatch(GroupsDataActions.addGroupData(groupId, groupData));
-      };
-      const setGroupsIndex = (groupsIndex) => {
-        dispatch(GroupsIndexActions.setGroupsIndex(groupsIndex));
-      };
-      const setProjectDetail = (key, value) => {
-        dispatch(projectDetailsActions.setProjectDetail(key, value));
-      };
-
-      let props = {
-        actions: {
-          addNewBible,
-          setModuleSettings,
-          progress,
-          addGroupData,
-          setGroupsIndex,
-          setProjectDetail
-        },
-        projectDetailsReducer,
-        resourcesReducer,
-        progress,
-        modulesSettingsReducer,
-        groupsDataReducer,
-        groupsIndexReducer
-      };
-
-      currentModuleFetchData(props)
-      .then(dispatch({type: consts.DONE_LOADING}))
-      .then(() => {
-        // TODO: this action may stay here temporary until the home screen implementation.
-        dispatch(BodyUIActions.toggleHomeView(false));
-        resolve();
-      })
-      .then(() => {
-        dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-        resolve();
-      });
-    });
-  });
 }
 
 /**

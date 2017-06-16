@@ -19,12 +19,6 @@ export const addGroupData = (groupId, groupsData) => {
   };
 };
 
-export const loadGroupsDataFromFS = allGroupsData => {
-  return {
-    type: consts.LOAD_GROUPS_DATA_FROM_FS,
-    allGroupsData
-  };
-};
 /**
  * @description verifies that the data in the checkdata folder is reflected in the menu.
  * @return {object} action object.
