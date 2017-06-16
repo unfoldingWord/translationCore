@@ -125,7 +125,7 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
  *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
- export function correctSaveLocation(projectPath) {
+ export function saveProjectInHomeFolder(projectPath) {
    const parsedPath = Path.parse(projectPath);
    const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
 
@@ -389,7 +389,7 @@ export function createCheckArray(dataObject, moduleFolderName) {
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
-export function checkMissingVerses(book, projectSaveLocation) {
+export function projectIsMissingVerses(book, projectSaveLocation) {
     let chapterArray = [];
     let hash = {};
     let chapters = fs.readdirSync(projectSaveLocation);
