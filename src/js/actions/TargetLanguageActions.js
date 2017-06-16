@@ -1,17 +1,20 @@
 import consts from './ActionTypes';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import path from 'path-extra';
 // constant declarations
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
 
 /**
  * @description loads a target langugae bible chapter from file system.
- * @param {string} bibleId - 
  * @param {string} chapterNumber - chapter number to be loaded to resources reducer.
  */
-export function loadTargetLanguageChapter(targetBiblePath, chapterNumber) {
+export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
-    let bibleName = getState().projectDetailsReducer.manifest.target_language.name;
+    let projectDetailsReducer = getState().projectDetailsReducer;
+    let bookAbbreviation = projectDetailsReducer.params.bookAbbr;
+    let projectPath = projectDetailsReducer.projectSaveLocation;
+    let targetBiblePath = path.join(projectPath, bookAbbreviation);
+    let bibleName = "targetLanguage"
     let targetLanguageChapter;
     let fileName = chapterNumber + '.json';
     if (fs.existsSync(targetBiblePath)) {
@@ -34,7 +37,7 @@ export function generateAndLoadTargetLangBible(projectPath) {
     let bookAbbreviation = getState().projectDetailsReducer.params.bookAbbr;
     let targetBiblePath = path.join(projectPath, bookAbbreviation);
     generateTargetBible(getState, projectPath, targetBiblePath);
-    dispatch(loadTargetLanguageChapter(targetBiblePath, '1'));
+    dispatch(loadTargetLanguageChapter('1'));
   })
 }
 
