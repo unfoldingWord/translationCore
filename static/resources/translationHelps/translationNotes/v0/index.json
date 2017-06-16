@@ -1,0 +1,5966 @@
+[
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_pastforfuture",
+        "name": "Predictive Past"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_pastforfuture",
+        "name": "Predictive Past"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_pastforfuture",
+        "name": "Predictive Past"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_parables",
+        "name": "Parables"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "writing_endofstory",
+        "name": "End of Story"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "writing_proverbs",
+        "name": "Proverbs"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "translate_textvariants",
+        "name": "Textual Variants"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "translate_manuscripts",
+        "name": "Original Manuscripts"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "translate_textvariants",
+        "name": "Textual Variants"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_youdual",
+        "name": "Forms of 'You' - Dual/Plural"
+    },
+    {
+        "id": "writing_proverbs",
+        "name": "Proverbs"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_sentences",
+        "name": "Sentence Structure"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_parables",
+        "name": "Parables"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_pastforfuture",
+        "name": "Predictive Past"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "translate_textvariants",
+        "name": "Textual Variants"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_possession",
+        "name": "Possession"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_youdual",
+        "name": "Forms of 'You' - Dual/Plural"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "figs_parables",
+        "name": "Parables"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "translate_hebrewmonths",
+        "name": "Hebrew Months"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "writing_proverbs",
+        "name": "Proverbs"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_parables",
+        "name": "Parables"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "writing_quotations",
+        "name": "Quotations and Quote Margins"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "writing_proverbs",
+        "name": "Proverbs"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "writing_quotations",
+        "name": "Quotations and Quote Margins"
+    },
+    {
+        "id": "figs_quotesinquotes",
+        "name": "Quotes within Quotes"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "writing_proverbs",
+        "name": "Proverbs"
+    },
+    {
+        "id": "writing_endofstory",
+        "name": "End of Story"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_parables",
+        "name": "Parables"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_apostrophe",
+        "name": "Apostrophe"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_declarative",
+        "name": "Statements - Other Uses"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "writing_intro",
+        "name": "Writing Styles"
+    },
+    {
+        "id": "figs_imperative",
+        "name": "Imperatives - Other Uses"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_textvariants",
+        "name": "Textual Variants"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "translate_bweight",
+        "name": "Biblical Weight"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "writing_newevent",
+        "name": "Introduction of a New Event"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "writing_participants",
+        "name": "Introduction of New and Old Participants"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "translate_textvariants",
+        "name": "Textual Variants"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_quotations",
+        "name": "Direct and Indirect Quotations"
+    },
+    {
+        "id": "writing_endofstory",
+        "name": "End of Story"
+    },
+    {
+        "id": "translate_bmoney",
+        "name": "Biblical Money"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "translate_transliterate",
+        "name": "Copy or Borrow Words"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_pastforfuture",
+        "name": "Predictive Past"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_euphemism",
+        "name": "Euphemism"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_pronouns",
+        "name": "Pronouns"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "writing_connectingwords",
+        "name": "Connecting Words"
+    },
+    {
+        "id": "figs_litotes",
+        "name": "Litotes"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_hypo",
+        "name": "Hypothetical Situations"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_nominaladj",
+        "name": "Nominal Adjectives"
+    },
+    {
+        "id": "figs_exclamations",
+        "name": "Exclamations"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "figs_gendernotations",
+        "name": "When Masculine Words Include Women"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_inclusive",
+        "name": "Inclusive \"We\""
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_exclusive",
+        "name": "Exclusive \"We\""
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_hendiadys",
+        "name": "Hendiadys"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_irony",
+        "name": "Irony"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_rpronouns",
+        "name": "Reflexive Pronouns"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "figs_hyperbole",
+        "name": "Hyperbole"
+    },
+    {
+        "id": "figs_123person",
+        "name": "First, Second or Third Person"
+    },
+    {
+        "id": "figs_genericnoun",
+        "name": "Generic Noun Phrases"
+    },
+    {
+        "id": "figs_abstractnouns",
+        "name": "Abstract Nouns"
+    },
+    {
+        "id": "figs_metaphor",
+        "name": "Metaphor"
+    },
+    {
+        "id": "writing_symlanguage",
+        "name": "Symbolic Language"
+    },
+    {
+        "id": "guidelines_sonofgodprinciples",
+        "name": "Translating Son and Father"
+    },
+    {
+        "id": "figs_metonymy",
+        "name": "Metonymy"
+    },
+    {
+        "id": "writing_quotations",
+        "name": "Quotations and Quote Margins"
+    },
+    {
+        "id": "figs_you",
+        "name": "Forms of You"
+    },
+    {
+        "id": "figs_idiom",
+        "name": "Idiom"
+    },
+    {
+        "id": "figs_simile",
+        "name": "Simile"
+    },
+    {
+        "id": "translate_names",
+        "name": "How to Translate Names"
+    },
+    {
+        "id": "figs_synecdoche",
+        "name": "Synecdoche"
+    },
+    {
+        "id": "figs_doublet",
+        "name": "Doublet"
+    },
+    {
+        "id": "figs_events",
+        "name": "Order of Events"
+    },
+    {
+        "id": "figs_merism",
+        "name": "Merism"
+    },
+    {
+        "id": "figs_ellipsis",
+        "name": "Ellipsis"
+    },
+    {
+        "id": "figs_explicit",
+        "name": "Assumed Knowledge and Implicit Information"
+    },
+    {
+        "id": "translate_unknown",
+        "name": "Translate Unknowns"
+    },
+    {
+        "id": "translate_numbers",
+        "name": "Numbers"
+    },
+    {
+        "id": "translate_symaction",
+        "name": "Symbolic Action"
+    },
+    {
+        "id": "figs_go",
+        "name": "Go and Come"
+    },
+    {
+        "id": "figs_activepassive",
+        "name": "Active or Passive"
+    },
+    {
+        "id": "translate_ordinal",
+        "name": "Ordinal Numbers"
+    },
+    {
+        "id": "translate_bvolume",
+        "name": "Biblical Volume"
+    },
+    {
+        "id": "translate_fraction",
+        "name": "Fractions"
+    },
+    {
+        "id": "figs_personification",
+        "name": "Personification"
+    },
+    {
+        "id": "figs_parallelism",
+        "name": "Parallelism"
+    },
+    {
+        "id": "figs_distinguish",
+        "name": "Distinguishing versus Informing or Reminding"
+    },
+    {
+        "id": "figs_rquestion",
+        "name": "Rhetorical Question"
+    },
+    {
+        "id": "translate_bdistance",
+        "name": "Biblical Distance"
+    },
+    {
+        "id": "writing_background",
+        "name": "Background Information"
+    },
+    {
+        "id": "figs_doublenegatives",
+        "name": "Double Negatives"
+    }
+]
