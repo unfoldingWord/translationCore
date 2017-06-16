@@ -125,7 +125,7 @@ class StatusBar extends React.Component {
           </button>
           <button onMouseOver={()=>this.onHover(2)} onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 && this.state.hovered  != 2 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3, }} />
-            Project: {this.props.bookName}
+            Project: {this.props.projectName}
           </button>
           <button onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3, }} />
