@@ -66,7 +66,7 @@ function generateTargetBible(getState, projectPath, targetBiblePath) {
     fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
   }
   // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
-  // archiveSourceFiles(finishedChunks, projectPath);
+  archiveSourceFiles(finishedChunks, projectPath);
 }
 
 /**
