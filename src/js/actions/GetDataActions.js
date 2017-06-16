@@ -82,6 +82,14 @@ export function verifyProject(projectPath, projectLink, callback) {
     const { username } = getState().loginReducer.userdata;
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+    if (!manifest || !manifest.tcInitialized) {
+      manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, username);
+    } else {
+      let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
+      if (oldManifest) {
+        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, username);
+      }
+    }
 
     if (!manifest) {
       dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load does not have a valid manifest and cannot be opened! Please contact Help Desk (help@door43.org) for assistance."));
@@ -94,14 +102,6 @@ export function verifyProject(projectPath, projectLink, callback) {
       dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
       return dispatch(clearPreviousData());
     }
-    if (!manifest || !manifest.tcInitialized) {
-      manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, username);
-    } else {
-      let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-      if (oldManifest) {
-        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, username);
-      }
-    }
     if (LoadHelpers.projectIsMissingVerses(manifest.project.name, projectPath)) {
       dispatch(AlertModalActions.openOptionDialog('Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
         (option) => {
@@ -112,8 +112,8 @@ export function verifyProject(projectPath, projectLink, callback) {
           return callback(manifest, projectPath);
         }, "Continue Without Fixing", "Cancel"));
     }
-    else  {
-     return callback(manifest, projectPath);
+    else {
+      return callback(manifest, projectPath);
     }
   });
 }
