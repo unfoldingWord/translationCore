@@ -6,6 +6,7 @@ import * as TargetLanguageActions from './TargetLanguageActions'
 // constant declaraton
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const BIBLE_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources/bibles');
+const STATIC_RESOURCES_BIBLES_PATH = path.datadir()
 
 export const addNewBible = (bibleName, bibleData) => {
   return {
@@ -58,7 +59,12 @@ export function loadBiblesChapter(contextId) {
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
   });
 }
-
+// TODO  
+export function getBibleFromStaticPackage(bibleId) {
+  return ((dispatch, getState) => {
+    fs.moveSync();
+  });
+}
 /**
  * @description loads bibles from the filesystem and saves them in the resources reducer.
  */
