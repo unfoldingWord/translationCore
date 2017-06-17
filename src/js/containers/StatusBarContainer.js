@@ -16,7 +16,8 @@ class StatusBarContainer extends React.Component {
   }
 
   render() {
-    let { bookName } = this.props.projectDetailsReducer;
+    let projectName = this.props.projectDetailsReducer.projectSaveLocation.split("/").pop();
+    //Expecting a folder path as such: "~/project_name"
     let { toolTitle } = this.props.currentToolReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
@@ -24,7 +25,7 @@ class StatusBarContainer extends React.Component {
     return (
       <div>
         <StatusBar
-            bookName={bookName}
+            projectName={projectName}
             currentCheckNamespace={toolTitle}
             open={this.props.openModalAndSpecificTab}
             online={this.props.online}

@@ -1,30 +1,28 @@
 import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
-import {editTargetVerseSource} from '../helpers/editTargetVerseSource';
 
 /**
  * @description This action updates or adds the data needed to
- * @param {string} before - Previous text version of the verse.
- * @param {string} after - New edited text version of the verse.
+ * @param {string} beforeEdit - Previous text version of the verse.
+ * @param {string} afterEdit - New edited text version of the verse.
  * @param {array} tags - Array of tags used for verse Edit check boxes.
  * @param {string} userName - Alias name.
  * @return {object} New state for verse Edit reducer.
  */
-export const addVerseEdit = (before, after, tags, userName) => {
+export const addVerseEdit = (beforeEdit, afterEdit, tags, userName) => {
   return ((dispatch, getState) => {
     let state = getState()
     let contextId = state.contextIdReducer.contextId
     dispatch({
       type: consts.ADD_VERSE_EDIT,
-      before,
-      after,
+      beforeEdit,
+      afterEdit,
       tags,
       userName,
       modifiedTimestamp: generateTimestamp()
     });
-    editTargetVerseSource(state, after);
-    dispatch(editTargetVerseInBiblesReducer(after));
+    dispatch(editTargetVerseInBiblesReducer(afterEdit));
     dispatch({
       type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId
@@ -34,7 +32,7 @@ export const addVerseEdit = (before, after, tags, userName) => {
 
 /**
  * @description dispatches an action that updates the a verse for the target
- * language bible in  the reosurces reducer.
+ * language bible in the reosurces reducer.
  * @param {string} editedText - new edited version of the verse.
  * @return {object} action object to be handle by the reducer.
  */

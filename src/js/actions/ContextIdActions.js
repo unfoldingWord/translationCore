@@ -6,6 +6,7 @@ import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers'
 // actions
 import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions';
 import {saveContextId} from '../utils/saveMethods';
+import * as ResourcesActions from './ResourcesActions';
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
@@ -29,6 +30,7 @@ export const changeCurrentContextId = contextId => {
     })
     if (contextId) {
       loadCheckData(dispatch)
+      dispatch(ResourcesActions.loadBiblesChapter(contextId));
       let state = getState()
       saveContextId(state, contextId)
     }
@@ -80,6 +82,7 @@ export const changeToNextContextId = () => {
       contextId
     })
     loadCheckData(dispatch)
+    dispatch(ResourcesActions.loadBiblesChapter(contextId));
   })
 }
 
@@ -107,6 +110,7 @@ export const changeToPreviousContextId = () => {
       contextId
     })
     loadCheckData(dispatch)
+    dispatch(ResourcesActions.loadBiblesChapter(contextId));
   })
 }
 /**
@@ -136,6 +140,7 @@ export function loadCurrentContextId() {
             contextId
           })
           loadCheckData(dispatch)
+          dispatch(ResourcesActions.loadBiblesChapter(contextId));
         }
       } catch (err) {
         // The object is undefined because the file wasn't found in the directory

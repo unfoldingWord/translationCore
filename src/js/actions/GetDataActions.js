@@ -25,6 +25,7 @@ import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ModulesSettingsActions from './ModulesSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
+import * as TargetLanguageActions from './TargetLanguageActions';
 // constant declarations
 const PARENT = Path.datadir('translationCore');
 const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
@@ -46,7 +47,6 @@ export function clearPreviousData() {
     dispatch({ type: consts.CLEAR_CURRENT_TOOL });
     dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_TRUE });
     dispatch(CurrentToolActions.setToolTitle(""));
     dispatch(saveModuleFetchData(null));
     dispatch(BodyUIActions.toggleHomeView(true));
@@ -55,13 +55,12 @@ export function clearPreviousData() {
 
 /**
  * @description Starter function to load a project from a folder path or link.
- *
  * @param {string} projectPath - Path in which the project is being loaded from
  * @param {string} projectLink - Link given to load project if taken from online
  */
 export function openProject(projectPath, projectLink, exporting = false) {
   return ((dispatch, getState) => {
-    if (LoadHelpers.checkIfUSFMFileOrProject(projectPath)) {
+    if (LoadHelpers.isUSFMProject(projectPath)) {
       // USFM detected, initiating separate loading process, this will need to be refactored when we start supporting USFM
       dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, exporting));
     } else {
@@ -97,7 +96,7 @@ export function verifyProject(projectPath, projectLink, callback) {
     }
     manifest = LoadHelpers.verifyChunks(projectPath, manifest);
     LoadHelpers.migrateAppsToDotApps(projectPath);
-    let conflictsFound = LoadHelpers.findMergeConflicts(manifest.finished_chunks, projectPath);
+    let conflictsFound = LoadHelpers.projectHasMergeConfilcts(manifest.finished_chunks, projectPath);
     if (conflictsFound) {
       dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
       return dispatch(clearPreviousData());
@@ -312,27 +311,27 @@ function loadProjectDataFromFileSystem(toolName) {
       let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
+      dispatch(TargetLanguageActions.generateAndLoadTargetLangBible(projectSaveLocation));
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
           loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
-            .then((successMessage) => {
-              let delayTime = 0;
-              if (successMessage === "success") {
-                dispatch(ResourcesActions.loadBiblesFromFS());
-                delayTime = 800;
-              }
-              if (toolsReducer.switchingTool) {
-                // Switching project and/or tool
-                dispatch(startModuleFetchData())
-              }
-              delay(delayTime)
-                .then(
+          .then((successMessage) => {
+            let delayTime = 0;
+            // if (successMessage === "success") {
+            //   dispatch(ResourcesActions.loadBiblesFromFS());
+            //   delayTime = 800;
+            // }
+            // if (toolsReducer.switchingTool) {
+            //   // Switching project and/or tool
+            //   dispatch(startModuleFetchData())
+            // }
+            delay(delayTime)
+              .then(
                 // TODO: this action may stay here temporary until the home screen implementation.
                 dispatch(BodyUIActions.toggleHomeView(false))
-                )
-                .then(dispatch({ type: consts.DONE_LOADING }))
-                .then(dispatch({ type: consts.SET_SWITCHING_TOOL_OR_PROJECT_TO_FALSE }));
-            })
+              )
+              .then(dispatch({ type: consts.DONE_LOADING }))
+          })
 
             .catch(err => {
               console.warn(err);
@@ -371,14 +370,11 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
         resolve("success");
       } catch (err) {
         console.log(err);
-        dispatch(startModuleFetchData()).then(successMessage => {
-          resolve(successMessage);
-        });
+        resolve();
       }
     } else {
-      dispatch(startModuleFetchData()).then(successMessage => {
-        resolve(successMessage);
-      });
+      console.log("No directory for group index was found.")
+      resolve();
     }
   });
 }
@@ -397,7 +393,7 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
     let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     if (fs.existsSync(groupDataDirectory)) {
       let groupDataFolderObjs = fs.readdirSync(groupDataDirectory);
-      let allGroupsObjects = {};
+      let allGroupsData = {};
       let total = groupDataFolderObjs.length;
       let i = 0;
       for (let groupId in groupDataFolderObjs) {
@@ -408,19 +404,21 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
         let groupName = groupDataFolderObjs[groupId].split('.')[0];
         let groupData = loadGroupData(groupName, groupDataDirectory);
         if (groupData) {
-          allGroupsObjects[groupName] = groupData;
+          allGroupsData[groupName] = groupData;
         }
         dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
         i++;
       }
-      dispatch(GroupsDataActions.loadGroupsDataFromFS(allGroupsObjects));
+      dispatch({
+        type: consts.LOAD_GROUPS_DATA_FROM_FS,
+        allGroupsData
+      });
       dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       console.log('Loaded group data from fs');
-      resolve("success");
+      resolve(true);
     } else {
-      dispatch(startModuleFetchData()).then(successMessage => {
-        resolve(successMessage);
-      });
+      console.log("No directory for groups data was found.")
+      resolve(false);
     }
   });
 }
@@ -445,6 +443,7 @@ function loadGroupData(groupName, groupDataFolderPath) {
 }
 
 /**
+<<<<<<< HEAD
  * @description this function handles running the tools fetchdata when needed.
  * @return {object} action object.
  */
@@ -514,6 +513,8 @@ export function startModuleFetchData() {
 }
 
 /**
+=======
+>>>>>>> develop
  * @description handles erros when loading a project.
  * @param {object} err - Message object of the alert to be shown
  * @return {object} action object.
