@@ -308,7 +308,6 @@ function loadGroupData(groupName, groupDataFolderPath) {
 }
 
 /**
-<<<<<<< HEAD
  * @description this function handles running the tools fetchdata when needed.
  * @return {object} action object.
  */
