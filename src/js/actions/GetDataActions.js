@@ -16,9 +16,7 @@ import * as LoaderActions from './LoaderActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ResourcesActions from './ResourcesActions';
 import * as ModalActions from './ModalActions';
-import * as ToolsActions from './ToolsActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
-import * as RecentProjectsActions from './RecentProjectsActions';
 import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
@@ -27,95 +25,7 @@ import * as ModulesSettingsActions from './ModulesSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 // constant declarations
-const PARENT = Path.datadir('translationCore');
-const PACKAGE_COMPILE_LOCATION = Path.join(PARENT, 'packages-compiled');
-const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
-const extensionRegex = new RegExp('(\\.\\w+)', 'i');
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/originalLanguage');
-
-/**
- * @description This method will set the corestore reducer store state back to the inital state.
- * @return {object} returns a bunch of action dispatch.
- */
-export function clearPreviousData() {
-  return ((dispatch) => {
-    dispatch(projectDetailsActions.resetProjectDetail());
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-    dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-    dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
-    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch(CurrentToolActions.setToolTitle(""));
-    dispatch(saveModuleFetchData(null));
-    dispatch(BodyUIActions.toggleHomeView(true));
-  });
-}
-
-/**
- * @description Starter function to load a project from a folder path or link.
- * @param {string} projectPath - Path in which the project is being loaded from
- * @param {string} projectLink - Link given to load project if taken from online
- */
-export function openProject(projectPath, projectLink, exporting = false) {
-  return ((dispatch, getState) => {
-    if (LoadHelpers.isUSFMProject(projectPath)) {
-      // USFM detected, initiating separate loading process, this will need to be refactored when we start supporting USFM
-      dispatch(openUSFMProject(usfmFilePath, projectPath, 'ltr', projectLink, exporting));
-    } else {
-      // No USFM detected, initiating 'standard' loading process
-      dispatch(verifyProject(projectPath, projectLink, (manifest, newProjectPath) => {
-        dispatch(clearPreviousData());
-        dispatch(addLoadedProjectToStore(newProjectPath, manifest));
-        if (!exporting) dispatch(displayToolsToLoad(manifest));
-      }))
-
-    }
-
-  });
-}
-
-export function verifyProject(projectPath, projectLink, callback) {
-  return ((dispatch, getState) => {
-    const { username } = getState().loginReducer.userdata;
-    projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
-    let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-    if (!manifest || !manifest.tcInitialized) {
-      manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, username);
-    } else {
-      let oldManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-      if (oldManifest) {
-        manifest = LoadHelpers.setUpManifest(projectPath, projectLink, oldManifest, username);
-      }
-    }
-
-    if (!manifest) {
-      dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load does not have a valid manifest and cannot be opened! Please contact Help Desk (help@door43.org) for assistance."));
-      return dispatch(clearPreviousData());
-    }
-    manifest = LoadHelpers.verifyChunks(projectPath, manifest);
-    LoadHelpers.migrateAppsToDotApps(projectPath);
-    let conflictsFound = LoadHelpers.projectHasMergeConfilcts(manifest.finished_chunks, projectPath);
-    if (conflictsFound) {
-      dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
-      return dispatch(clearPreviousData());
-    }
-    if (LoadHelpers.projectIsMissingVerses(manifest.project.name, projectPath)) {
-      dispatch(AlertModalActions.openOptionDialog('Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
-        (option) => {
-          if (option === "Cancel") {
-            return dispatch(AlertModalActions.closeAlertDialog());
-          }
-          dispatch(AlertModalActions.closeAlertDialog());
-          return callback(manifest, projectPath);
-        }, "Continue Without Fixing", "Cancel"));
-    }
-    else {
-      return callback(manifest, projectPath);
-    }
-  });
-}
 
 /**
  * @description Initiates the loading of a usfm file into current project, puts the target language, params,
@@ -143,51 +53,6 @@ export function openUSFMProject(usfmFilePath, projectPath, direction, projectLin
     }
     dispatch(addLoadedProjectToStore(projectSaveLocation, manifest));
     if (!exporting) dispatch(displayToolsToLoad(manifest));
-  });
-}
-
-
-/**
- * @description Starts loading a project that has a standard manifest created.
- * Adds manifest, params, book name, and target language bible
- * (if usfm), and project data from file to store.
- *
- * @param {string} projectPath - Path in which the project is being loaded from
- * @param {object} manifest - Manifest specified for tC load
- */
-export function addLoadedProjectToStore(projectPath, manifest) {
-  return ((dispatch) => {
-    dispatch(projectDetailsActions.setSaveLocation(projectPath));
-    dispatch(projectDetailsActions.setProjectManifest(manifest));
-    dispatch(projectDetailsActions.setProjectDetail("bookName", manifest.project.name));
-    const params = LoadHelpers.getParams(projectPath, manifest);
-    if (params) {
-      dispatch(projectDetailsActions.setProjectParams(params));
-    } else {
-      // no finished_chunks in manifest
-      dispatch(manifestError('No finished chunks specified in project manifest'))
-    }
-  });
-}
-
-/**
- * @description Displays the currently loaded tools in the app, if
- * project is a titus or ephisians, or if the userdata
- * is in developer mode.
- *
- * @param {object} manifest - Manifest specified for tC load, already formatted.
- */
-export function displayToolsToLoad(manifest) {
-  return ((dispatch, getState) => {
-    const currentState = getState();
-    if (LoadHelpers.checkIfValidBetaProject(manifest) || (currentState.settingsReducer.currentSettings && currentState.settingsReducer.currentSettings.developerMode)) {
-      dispatch(ToolsActions.getToolsMetadatas());
-      dispatch(ModalActions.selectModalTab(3, 1, true));
-    } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Ephesians or Titus projects for now.', false));
-      dispatch(RecentProjectsActions.getProjectsFromFolder());
-      dispatch(clearPreviousData());
-    }
   });
 }
 

@@ -14,27 +14,46 @@ import * as projectDetailsActions from './projectDetailsActions';
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
         const { username } = getState().loginReducer.userdata;
-        if (!isValidProject(projectPath, projectLink, username)) return;
-        else {
-            clearLastProject();
-            loadProjectIntoApp();
-            displayTools();
+        const confirmDialog = (message, callback, bt1, bt2) => {
+            dispatch(AlertModalActions.openOptionDialog(message, callback, bt1, bt2));
         }
+        dispatch(isValidProject(projectPath, projectLink, username, confirmDialog)).then((validProjectObject) => {
+            const { manifest, projectPath } = validProjectObject;
+            dispatch(clearLastProject());
+            dispatch(loadProjectIntoApp(projectPath, manifest));
+            dispatch(displayTools(manifest));
+        }).catch((err) => {
+            dispatch(AlertModalActions.openAlertDialog(err))
+        })
     });
 }
 
-export function isValidProject(projectPath, projectLink, username) {
-    if (!projectPath) {
-        return false;
-    } else if (LoadHelpers.isUSFMProject(projectPath)) {
-        return false;
-    } else {
-        let manifest = getProjectManifest(projectPath, projectLink, username);
-        if (!manifest) return false;
-        if (LoadHelpers.projectHasMergeConfilcts(manifest.finished_chunks, projectPath)) return false;
-        if (LoadHelpers.projectIsMissingVerses(manifest.project.name, projectPath)) return false;
-    }
-    return true;
+export function isValidProject(projectPath, projectLink, username, confirmDialog) {
+    return ((dispatch) => {
+        return new Promise((resolve, reject) => {
+            if (!projectPath) {
+                reject("No project path specified");
+            } else if (LoadHelpers.isUSFMProject(projectPath)) {
+                reject("translationCore does not support USFM importing");
+            } else {
+                let manifest = getProjectManifest(projectPath, projectLink, username);
+                if (!manifest) reject("No valid manifest found in project");
+                if (LoadHelpers.projectHasMergeConfilcts(manifest.finished_chunks, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
+                if (LoadHelpers.projectIsMissingVerses(manifest.project.name, projectPath)) {
+                    const callback = (option) => {
+                        if (option != "Cancel") {
+                            resolve( { manifest, projectPath });
+                        }
+                        return dispatch(AlertModalActions.closeAlertDialog());
+                    }
+                    confirmDialog("Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
+                        callback, "Continue Without Fixing", "Cancel");
+                } else {
+                    return resolve( { manifest, projectPath });
+                }
+            }
+        })
+    })
 }
 
 export function getProjectManifest(projectPath, projectLink, username) {
@@ -47,23 +66,9 @@ export function getProjectManifest(projectPath, projectLink, username) {
     return manifest;
 }
 
-export function clearLastProject() {
-    return ((dispatch) => {
-        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-        dispatch({ type: consts.CLEAR_CONTEXT_ID });
-        dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-        dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
-        dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-        dispatch(projectDetailsActions.resetProjectDetail());
-        dispatch(CurrentToolActions.setToolTitle(""));
-        dispatch(BodyUIActions.toggleHomeView(true));
-        dispatch(saveModuleFetchData(null));
-    });
-}
-
 export function loadProjectIntoApp(projectPath, manifest) {
     return ((dispatch) => {
+        LoadHelpers.migrateAppsToDotApps(projectPath);
         projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
         dispatch(projectDetailsActions.setSaveLocation(projectPath));
         dispatch(projectDetailsActions.setProjectManifest(manifest));
@@ -73,7 +78,7 @@ export function loadProjectIntoApp(projectPath, manifest) {
     });
 }
 
-export function displayTools() {
+export function displayTools(manifest) {
     return ((dispatch, getState) => {
         const { currentSettings } = getState().settingsReducer;
         if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
@@ -84,5 +89,20 @@ export function displayTools() {
             dispatch(RecentProjectsActions.getProjectsFromFolder());
             dispatch(clearLastProject())
         }
+    });
+}
+
+export function clearLastProject() {
+    return ((dispatch) => {
+    dispatch(projectDetailsActions.resetProjectDetail());
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+    dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+    dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch(CurrentToolActions.setToolTitle(""));
+    dispatch({type: consts.SAVE_MODULE_FETCHDATA});
+    dispatch(BodyUIActions.toggleHomeView(true));
     });
 }
