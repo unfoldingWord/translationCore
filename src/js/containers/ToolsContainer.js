@@ -14,7 +14,7 @@ import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSetting
 import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
-import { openAlertDialog } from '../actions/AlertModalActions';
+import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
 
 class ToolsContainer extends React.Component {
@@ -138,6 +138,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       openAlertDialog: (message) => {
         dispatch(openAlertDialog(message));
+      },
+      openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
+        dispatch(openOptionDialog(alertMessage, callback, button1Text, button2Text));
+      },
+      closeAlertDialog: () => {
+        dispatch(closeAlertDialog());
       }
     }
   };
