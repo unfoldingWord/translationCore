@@ -102,7 +102,6 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch(CurrentToolActions.setToolTitle(""));
-    dispatch({type: consts.SAVE_MODULE_FETCHDATA});
     dispatch(BodyUIActions.toggleHomeView(true));
     });
 }
