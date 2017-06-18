@@ -9,7 +9,7 @@ import RecentProjects from '../../components/RecentProjects';
 import * as recentProjectsActions from '../../actions/RecentProjectsActions.js';
 import * as ModalActions from '../../actions/ModalActions.js';
 import * as AlertModalActions from '../../actions/AlertModalActions.js';
-import { openProject } from '../../actions/GetDataActions.js';
+import { openProject } from '../../actions/openProjectActions.js';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 

@@ -125,7 +125,7 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
  *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
- export function correctSaveLocation(projectPath) {
+ export function saveProjectInHomeFolder(projectPath) {
    const parsedPath = Path.parse(projectPath);
    const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
 
@@ -136,7 +136,7 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
      return tCProjectsSaveLocation;
    } else {
      let newPath = tCProjectsSaveLocation
-     if (checkIfUSFMFileOrProject(projectPath) !== false) {
+     if (isUSFMProject(projectPath) !== false) {
        newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
      }
      fs.copySync(projectPath, newPath);
@@ -302,7 +302,7 @@ export function formatTargetLanguage(parsedUSFM) {
  *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
-export function checkIfUSFMFileOrProject(projectPath) {
+export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
         const ext = projectPath.split(".")[1];
@@ -389,7 +389,7 @@ export function createCheckArray(dataObject, moduleFolderName) {
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
-export function checkMissingVerses(book, projectSaveLocation) {
+export function projectIsMissingVerses(book, projectSaveLocation) {
     let chapterArray = [];
     let hash = {};
     let chapters = fs.readdirSync(projectSaveLocation);
@@ -456,7 +456,7 @@ const expectedVerses = {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function findMergeConflicts(projectChunks, projectPath) {
+export function projectHasMergeConfilcts(projectChunks, projectPath) {
     for (let chapterVerse in projectChunks) {
         let splitID = projectChunks[chapterVerse].split('-');
         let chapter = splitID[0];
