@@ -125,28 +125,12 @@ export function saveModules(checkArray) {
     for (let module of checkArray) {
       try {
         const viewObj = require(Path.join(module.location, 'Container'));
-        const moduleFetchData = viewObj.fetchData;
-        if (moduleFetchData) {
-          dispatch(saveModuleFetchData(moduleFetchData));
-        }
         dispatch(setModuleView(module.name, viewObj.view || viewObj.container));
       } catch (e) {
         console.log(e);
       }
     }
   });
-}
-
-/**
- * @description this function saves a modules fethdata files in the reducer.
- * @param {function} moduleFetchData - module fethdata code.
- * @return {object} action being dispatched.
- */
-export function saveModuleFetchData(moduleFetchData) {
-  return {
-    type: consts.SAVE_MODULE_FETCHDATA,
-    moduleFetchData
-  };
 }
 
 /**
@@ -180,40 +164,20 @@ function loadProjectDataFromFileSystem(toolName) {
       loadGroupIndexFromFS(dispatch, dataDirectory)
         .then((successMessage) => {
           loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
-          .then((successMessage) => {
-            let delayTime = 0;
-            // if (successMessage === "success") {
-            //   dispatch(ResourcesActions.loadBiblesFromFS());
-            //   delayTime = 800;
-            // }
-            // if (toolsReducer.switchingTool) {
-            //   // Switching project and/or tool
-            //   dispatch(startModuleFetchData())
-            // }
-            delay(delayTime)
-              .then(
-                // TODO: this action may stay here temporary until the home screen implementation.
-                dispatch(BodyUIActions.toggleHomeView(false))
-              )
-              .then(dispatch({ type: consts.DONE_LOADING }))
+          .then(() => {
+            // TODO: this action may stay here temporary until the home screen implementation.
+            dispatch(BodyUIActions.toggleHomeView(false))
+            dispatch({ type: consts.DONE_LOADING })
           })
-
-            .catch(err => {
-              console.warn(err);
-              // TODO: this action may stay here temporary until the home screen implementation.
-              dispatch(BodyUIActions.toggleHomeView(false));
-              AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
-            });
         })
-
-        .catch(err => {
-          console.warn(err);
-          // TODO: this action may stay here temporary until the home screen implementation.
-          dispatch(BodyUIActions.toggleHomeView(false));
-          AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
-        });
+    })
+    .catch(err => {
+      console.warn(err);
+      // TODO: this action may stay here temporary until the home screen implementation.
+      dispatch(BodyUIActions.toggleHomeView(false));
+      AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
     });
-  });
+  })
 }
 
 /**
@@ -308,77 +272,6 @@ function loadGroupData(groupName, groupDataFolderPath) {
 }
 
 /**
- * @description this function handles running the tools fetchdata when needed.
- * @return {object} action object.
- */
-export function startModuleFetchData() {
-  return ((dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      let {
-        coreStoreReducer,
-        projectDetailsReducer,
-        resourcesReducer,
-        modulesSettingsReducer,
-        groupsDataReducer,
-        groupsIndexReducer
-      } = getState();
-
-      let currentModuleFetchData = coreStoreReducer.currentModuleFetchData;
-
-      const addNewBible = (bibleName, bibleData) => {
-        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
-      };
-      const setModuleSettings = (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-        dispatch(ModulesSettingsActions.setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-      };
-      const progress = (label, progress) => {
-        dispatch(LoaderActions.sendProgressForKey(label, progress));
-      };
-      const addGroupData = (groupId, groupData) => {
-        dispatch(GroupsDataActions.addGroupData(groupId, groupData));
-      };
-      const setGroupsIndex = (groupsIndex) => {
-        dispatch(GroupsIndexActions.setGroupsIndex(groupsIndex));
-      };
-      const setProjectDetail = (key, value) => {
-        dispatch(projectDetailsActions.setProjectDetail(key, value));
-      };
-
-      let props = {
-        actions: {
-          addNewBible,
-          setModuleSettings,
-          progress,
-          addGroupData,
-          setGroupsIndex,
-          setProjectDetail
-        },
-        projectDetailsReducer,
-        resourcesReducer,
-        progress,
-        modulesSettingsReducer,
-        groupsDataReducer,
-        groupsIndexReducer
-      };
-
-      currentModuleFetchData(props)
-        .then(dispatch({ type: consts.DONE_LOADING }))
-        .then(() => {
-          // TODO: this action may stay here temporary until the home screen implementation.
-          dispatch(BodyUIActions.toggleHomeView(false));
-          resolve();
-        })
-        .then(() => {
-          dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-          resolve();
-        });
-    });
-  });
-}
-
-/**
-=======
->>>>>>> develop
  * @description handles erros when loading a project.
  * @param {object} err - Message object of the alert to be shown
  * @return {object} action object.
