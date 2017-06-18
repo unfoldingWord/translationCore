@@ -5,7 +5,6 @@ const initialState = {
   currentCheckNamespace: null,
   doneModules: 0,
   modules: {},
-  currentModuleFetchData: null,
   moduleData: {},
 };
 
@@ -50,11 +49,6 @@ const coreStoreReducer = (state = initialState, action) => {
     case consts.STORE_TOOLS_ARRAY:
       return {
         ...state
-      };
-    case consts.SAVE_MODULE_FETCHDATA:
-      return {
-        ...state,
-        currentModuleFetchData: action.moduleFetchData
       };
     default:
       return state;
