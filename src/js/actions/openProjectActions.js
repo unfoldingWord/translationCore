@@ -23,7 +23,7 @@ export function openProject(projectPath, projectLink) {
             dispatch(loadProjectIntoApp(projectPath, manifest));
             dispatch(displayTools(manifest));
         }).catch((err) => {
-            dispatch(AlertModalActions.openAlertDialog(err))
+            dispatch(AlertModalActions.openAlertDialog(err.message || err))
         })
     });
 }

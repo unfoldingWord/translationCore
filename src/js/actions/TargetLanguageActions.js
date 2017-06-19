@@ -53,13 +53,16 @@ function generateTargetBible(getState, projectPath, targetBiblePath) {
     let reference = element.split('-');
     let chapterNumber = reference[0];
     let fileName = reference[1] + ".txt";
-    let text = fs.readFileSync(path.join(projectPath, chapterNumber, fileName));
-    let currentChunk = parseTargetLanguage(text.toString());
-    Object.keys(currentChunk.verses).forEach(function(key) {
-      if(parseInt(key) === 1) joinedChunk = {};
-      joinedChunk[key] = currentChunk.verses[key];
-      entireBook[parseInt(chapterNumber)] = joinedChunk;
-    });
+    let filePath = path.join(projectPath, chapterNumber, fileName);
+    if (fs.existsSync(filePath)) {
+      let text = fs.readFileSync(existsSync);
+      let currentChunk = parseTargetLanguage(text.toString());
+      Object.keys(currentChunk.verses).forEach(function (key) {
+        if (parseInt(key) === 1) joinedChunk = {};
+        joinedChunk[key] = currentChunk.verses[key];
+        entireBook[parseInt(chapterNumber)] = joinedChunk;
+      });
+    }
   });
   for (var chapter in entireBook) {
     let fileName = chapter + '.json';
@@ -110,7 +113,7 @@ function archiveSourceFiles(finishedChunks, projectPath) {
     let sourcePath = path.join(projectPath, chapterNumber);
     try {
       fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, chapterNumber));
-    } catch(err) {
+    } catch (err) {
     }
   });
 }
