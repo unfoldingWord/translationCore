@@ -29,7 +29,7 @@ class Main extends Component {
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
     }
-    this.props.actions.getBibleFromStaticPackage();
+    this.props.actions.getResourcesFromStaticPackage();
   }
 
   render() {
@@ -59,8 +59,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      getBibleFromStaticPackage: () => {
-        dispatch(ResourcesActions.getBibleFromStaticPackage());
+      getResourcesFromStaticPackage: () => {
+        dispatch(ResourcesActions.getResourcesFromStaticPackage());
       }
     }
   };
