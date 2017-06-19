@@ -38,18 +38,18 @@ export function isValidProject(projectPath, projectLink, username, confirmDialog
             } else {
                 let manifest = getProjectManifest(projectPath, projectLink, username);
                 if (!manifest) reject("No valid manifest found in project");
-                if (LoadHelpers.projectHasMergeConfilcts(manifest.finished_chunks, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
+                if (LoadHelpers.projectHasMergeConflicts(manifest.finished_chunks, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
                 if (LoadHelpers.projectIsMissingVerses(manifest.project.name, projectPath)) {
                     const callback = (option) => {
                         if (option != "Cancel") {
-                            resolve( { manifest, projectPath });
+                            resolve({ manifest, projectPath });
                         }
                         return dispatch(AlertModalActions.closeAlertDialog());
                     }
                     confirmDialog("Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
                         callback, "Continue Without Fixing", "Cancel");
                 } else {
-                    return resolve( { manifest, projectPath });
+                    return resolve({ manifest, projectPath });
                 }
             }
         })
@@ -94,14 +94,14 @@ export function displayTools(manifest) {
 
 export function clearLastProject() {
     return ((dispatch) => {
-    dispatch(projectDetailsActions.resetProjectDetail());
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-    dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-    dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
-    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch(CurrentToolActions.setToolTitle(""));
-    dispatch(BodyUIActions.toggleHomeView(true));
+        dispatch(projectDetailsActions.resetProjectDetail());
+        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+        dispatch({ type: consts.CLEAR_CONTEXT_ID });
+        dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+        dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
+        dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+        dispatch(CurrentToolActions.setToolTitle(""));
+        dispatch(BodyUIActions.toggleHomeView(true));
     });
 }
