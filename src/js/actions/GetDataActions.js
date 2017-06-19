@@ -209,7 +209,6 @@ function getGroupsIndex(dispatch, toolName, dataDirectory) {
       ResourcesHelpers.copyGroupsIndexToProjectResources(toolName, dataDirectory)
       // then read in the groupIndex file
       groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
-      console.log(groupIndexData)
       // load groupIndex to reducer
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       console.log('Generated and Loaded group index data from fs');
@@ -230,24 +229,10 @@ function getGroupsIndex(dispatch, toolName, dataDirectory) {
 function getGroupData(dispatch, dataDirectory, toolName, params) {
   return new Promise((resolve, reject) => {
     let groupsDataDirectory = Path.join(dataDirectory, params.bookAbbr);
+    let allGroupsData = {};
     if (fs.existsSync(groupsDataDirectory)) {
       let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
-      let allGroupsData = {};
-      let total = groupDataFolderObjs.length;
-      let i = 0;
-      for (let groupId in groupDataFolderObjs) {
-        if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
-          total--;
-          continue;
-        }
-        let groupName = groupDataFolderObjs[groupId].split('.')[0];
-        let groupData = loadGroupData(groupName, groupsDataDirectory);
-        if (groupData) {
-          allGroupsData[groupName] = groupData;
-        }
-        dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
-        i++;
-      }
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
         allGroupsData
@@ -259,11 +244,37 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
       // The groups data files were not found in the directory thus copy
       // them from User resources folder to project resources folder.
       ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, params.bookAbbr);
-      
-      console.log("No directory for groups data was found.")
-      resolve(false);
+      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      dispatch({
+        type: consts.LOAD_GROUPS_DATA_FROM_FS,
+        allGroupsData
+      });
+      console.log('Generated and Loaded group data data from fs');
+      resolve(true);
     }
   });
+}
+
+
+function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName) {
+  let allGroupsData = {};
+  let total = groupDataFolderObjs.length;
+  let i = 0;
+  for (let groupId in groupDataFolderObjs) {
+    if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+      total--;
+      continue;
+    }
+    let groupName = groupDataFolderObjs[groupId].split('.')[0];
+    let groupData = loadGroupData(groupName, groupsDataDirectory);
+    if (groupData) {
+      allGroupsData[groupName] = groupData;
+    }
+    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
+    i++;
+  }
+  return allGroupsData;
 }
 
 /**
