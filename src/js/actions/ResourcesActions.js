@@ -2,11 +2,13 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import * as TargetLanguageActions from './TargetLanguageActions'
+import * as TargetLanguageActions from './TargetLanguageActions';
+import * as AlertModalActions from './AlertModalActions';
+// helpers
+import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 // constant declaraton
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const BIBLE_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources/bibles');
-const STATIC_RESOURCES_BIBLES_PATH = './static/resources/bibles';
 
 export const addNewBible = (bibleName, bibleData) => {
   return {
@@ -15,18 +17,6 @@ export const addNewBible = (bibleName, bibleData) => {
     bibleData
   };
 };
-
-export const addNewResource = (resourceName, resourceData, namespace) => {
-  return ((dispatch, getState) => {
-    dispatch({
-      type: consts.ADD_NEW_RESOURCE,
-      resourceName,
-      resourceData,
-      namespace
-    });
-  });
-};
-
 
 export function loadBiblesChapter(contextId) {
   return ((dispatch, getState) => {
@@ -60,50 +50,9 @@ export function loadBiblesChapter(contextId) {
   });
 }
 
-/**
- * @description moves all bibles from the static folder to the local user translationCore folder.
- */
-export function getBibleFromStaticPackage() {
+export function getResourcesFromStaticPackage() {
   return ((dispatch, getState) => {
-    let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
-    bibleNames.forEach((bibleName) => {
-      let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
-      let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
-      if(!fs.existsSync(bibleDestinationPath)) {
-        fs.copySync(bibleSourcePath, bibleDestinationPath);
-      }
-    });
-  });
-}
-
-/**
- * @description loads bibles from the filesystem and saves them in the resources reducer.
- */
-export function loadBiblesFromFS() {
-  return ((dispatch, getState) => {
-    const projectSaveLocation = getState().projectDetailsReducer.projectSaveLocation;
-    const biblesDirectory = path.join(projectSaveLocation, RESOURCES_DATA_DIR, 'bibles');
-
-    if (fs.existsSync(biblesDirectory)) {
-      let biblesObjects = fs.readdirSync(biblesDirectory);
-
-      biblesObjects = biblesObjects.filter(file => { // filter the filenames to only use .json
-        return path.extname(file) === '.json';
-      });
-
-      for (let bibleName in biblesObjects) {
-        if (biblesObjects.hasOwnProperty(bibleName)) {
-          let currentBibleName = biblesObjects[bibleName].replace('.json', '');
-          let bibleData = fs.readJsonSync(path.join(biblesDirectory, biblesObjects[bibleName]));
-          if (bibleData) {
-            dispatch(addNewBible(currentBibleName, bibleData));
-          } else {
-            console.warn("Couldn't load " + currentBibleName + "bible");
-          }
-        }
-      }
-    } else {
-      console.warn(biblesDirectory + " directory: doesnt exist");
-    }
+    ResourcesHelpers.getBibleFromStaticPackage();
+    ResourcesHelpers.getTHelpsFromStaticPackage();
   });
 }

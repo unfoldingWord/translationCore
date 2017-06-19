@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 // actions
 import { showPopover } from '../actions/PopoverActions';
-import { addNewResource, addNewBible } from '../actions/ResourcesActions';
 import { addComment } from '../actions/CommentsActions';
 import { addVerseEdit } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
@@ -16,6 +15,7 @@ import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
+import * as ResourcesActions from '../actions/ResourcesActions';
 
 class ToolsContainer extends React.Component {
 
@@ -79,14 +79,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
       },
-      addNewResource: (resourceName, resourceData) => {
-        dispatch(addNewResource(resourceName, resourceData));
-      },
       addNewBible: (bibleName, bibleData) => {
-        dispatch(addNewBible(bibleName, bibleData));
-      },
-      progress: (label, progress) => {
-        dispatch(sendProgressForKey(label, progress));
+        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
       },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
