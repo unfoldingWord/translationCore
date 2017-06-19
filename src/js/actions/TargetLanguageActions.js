@@ -55,7 +55,7 @@ function generateTargetBible(getState, projectPath, targetBiblePath) {
     let fileName = reference[1] + ".txt";
     let filePath = path.join(projectPath, chapterNumber, fileName);
     if (fs.existsSync(filePath)) {
-      let text = fs.readFileSync(existsSync);
+      let text = fs.readFileSync(filePath);
       let currentChunk = parseTargetLanguage(text.toString());
       Object.keys(currentChunk.verses).forEach(function (key) {
         if (parseInt(key) === 1) joinedChunk = {};
