@@ -48,7 +48,7 @@ function generateTargetBible(getState, projectPath, targetBiblePath) {
   let manifest = getState().projectDetailsReducer.manifest;
   let entireBook = {};
   let joinedChunk = {};
-  let finishedChunks = getState().projectDetailsReducer.unparsedFinishedChunks;
+  let finishedChunks = getState().projectDetailsReducer.manifest.finished_chunks;
   finishedChunks.forEach((element, index) => {
     let reference = element.split('-');
     let chapterNumber = reference[0];

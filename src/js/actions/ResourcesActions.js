@@ -6,7 +6,7 @@ import * as TargetLanguageActions from './TargetLanguageActions'
 // constant declaraton
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const BIBLE_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources/bibles');
-const STATIC_RESOURCES_BIBLES_PATH = path.datadir()
+const STATIC_RESOURCES_BIBLES_PATH = './static/resources/bibles';
 
 export const addNewBible = (bibleName, bibleData) => {
   return {
@@ -59,12 +59,23 @@ export function loadBiblesChapter(contextId) {
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
   });
 }
-// TODO  
-export function getBibleFromStaticPackage(bibleId) {
+
+/**
+ * @description moves all bibles from the static folder to the local user translationCore folder.
+ */
+export function getBibleFromStaticPackage() {
   return ((dispatch, getState) => {
-    fs.moveSync();
+    let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
+    bibleNames.forEach((bibleName) => {
+      let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
+      let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
+      if(!fs.existsSync(bibleDestinationPath)) {
+        fs.copySync(bibleSourcePath, bibleDestinationPath);
+      }
+    });
   });
 }
+
 /**
  * @description loads bibles from the filesystem and saves them in the resources reducer.
  */
