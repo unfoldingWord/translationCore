@@ -231,8 +231,11 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
     let groupsDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     let allGroupsData = {};
     if (fs.existsSync(groupsDataDirectory)) {
+      // read in the groupsData files
       let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      // read in the groupsData files
       allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      // then load groupsData to reducer
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
         allGroupsData
@@ -244,8 +247,11 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
       // The groups data files were not found in the directory thus copy
       // them from User resources folder to project resources folder.
       ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, params.bookAbbr);
+      // read in the groupsData files
       let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      // read in the groupsData files
       allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      // then load groupsData to reducer
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
         allGroupsData
