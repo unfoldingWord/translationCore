@@ -82,6 +82,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       addNewBible: (bibleName, bibleData) => {
         dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
       },
+      loadResourceArticle: (resourceType, articleId) => {
+        dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId));
+      },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },
