@@ -24,6 +24,8 @@ import * as BodyUIActions from './BodyUIActions';
 import * as ModulesSettingsActions from './ModulesSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
+// helpers
+import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 // constant declarations
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static/originalLanguage');
 
@@ -148,8 +150,8 @@ export function setModuleView(identifier, view) {
 }
 
 /**
- * @description function that handles both loadGroupIndexFromFS and
- * loadGroupDataFromFS with promises.
+ * @description function that handles both getGroupsIndex and
+ * getGroupData with promises.
  * @param {string} toolName - name of the tool being loaded.
  * @return {object} object action.
  */
@@ -161,9 +163,9 @@ function loadProjectDataFromFileSystem(toolName) {
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
       dispatch(TargetLanguageActions.generateAndLoadTargetLangBible(projectSaveLocation));
-      loadGroupIndexFromFS(dispatch, dataDirectory)
+      getGroupsIndex(dispatch, toolName, dataDirectory)
         .then((successMessage) => {
-          loadGroupDataFromFS(dispatch, dataDirectory, toolName, params)
+          getGroupData(dispatch, dataDirectory, toolName, params)
           .then(() => {
             // TODO: this action may stay here temporary until the home screen implementation.
             dispatch(BodyUIActions.toggleHomeView(false))
@@ -187,22 +189,29 @@ function loadProjectDataFromFileSystem(toolName) {
  * location in the filesystem.
  * @return {object} object action / Promises.
  */
-function loadGroupIndexFromFS(dispatch, dataDirectory) {
+function getGroupsIndex(dispatch, toolName, dataDirectory) {
   return new Promise((resolve, reject) => {
     const groupIndexDataDirectory = Path.join(dataDirectory, 'index.json');
     let groupIndexData;
     if (fs.existsSync(groupIndexDataDirectory)) {
       try {
         groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
-        dispatch(GroupsIndexActions.loadGroupsIndexFromFS(groupIndexData));
+        dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
         console.log('Loaded group index data from fs');
-        resolve("success");
+        resolve();
       } catch (err) {
         console.log(err);
         resolve();
       }
     } else {
-      console.log("No directory for group index was found.")
+      // The groupIndex file was not found in the directory thus copy
+      // it from User resources folder to project resources folder.
+      ResourcesHelpers.copyGroupsIndexToProjectResources(toolName, dataDirectory)
+      // then read in the groupIndex file
+      groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
+      // load groupIndex to reducer
+      dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
+      console.log('Generated and Loaded group index data from fs');
       resolve();
     }
   });
@@ -217,27 +226,16 @@ function loadGroupIndexFromFS(dispatch, dataDirectory) {
  * @param {object} params - object of project details params.
  * @return {object} object action / Promises.
  */
-function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
+function getGroupData(dispatch, dataDirectory, toolName, params) {
   return new Promise((resolve, reject) => {
-    let groupDataDirectory = Path.join(dataDirectory, params.bookAbbr);
-    if (fs.existsSync(groupDataDirectory)) {
-      let groupDataFolderObjs = fs.readdirSync(groupDataDirectory);
-      let allGroupsData = {};
-      let total = groupDataFolderObjs.length;
-      let i = 0;
-      for (let groupId in groupDataFolderObjs) {
-        if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
-          total--;
-          continue;
-        }
-        let groupName = groupDataFolderObjs[groupId].split('.')[0];
-        let groupData = loadGroupData(groupName, groupDataDirectory);
-        if (groupData) {
-          allGroupsData[groupName] = groupData;
-        }
-        dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
-        i++;
-      }
+    let groupsDataDirectory = Path.join(dataDirectory, params.bookAbbr);
+    let allGroupsData = {};
+    if (fs.existsSync(groupsDataDirectory)) {
+      // read in the groupsData files
+      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      // read in the groupsData files
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      // then load groupsData to reducer
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
         allGroupsData
@@ -246,10 +244,43 @@ function loadGroupDataFromFS(dispatch, dataDirectory, toolName, params) {
       console.log('Loaded group data from fs');
       resolve(true);
     } else {
-      console.log("No directory for groups data was found.")
-      resolve(false);
+      // The groups data files were not found in the directory thus copy
+      // them from User resources folder to project resources folder.
+      ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, params.bookAbbr);
+      // read in the groupsData files
+      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      // read in the groupsData files
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      // then load groupsData to reducer
+      dispatch({
+        type: consts.LOAD_GROUPS_DATA_FROM_FS,
+        allGroupsData
+      });
+      console.log('Generated and Loaded group data data from fs');
+      resolve(true);
     }
   });
+}
+
+
+function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName) {
+  let allGroupsData = {};
+  let total = groupDataFolderObjs.length;
+  let i = 0;
+  for (let groupId in groupDataFolderObjs) {
+    if (Path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+      total--;
+      continue;
+    }
+    let groupName = groupDataFolderObjs[groupId].split('.')[0];
+    let groupData = loadGroupData(groupName, groupsDataDirectory);
+    if (groupData) {
+      allGroupsData[groupName] = groupData;
+    }
+    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
+    i++;
+  }
+  return allGroupsData;
 }
 
 /**

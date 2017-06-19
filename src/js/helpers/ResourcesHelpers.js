@@ -1,4 +1,3 @@
-
 import fs from 'fs-extra';
 import path from 'path-extra';
 // constant declarations
@@ -33,4 +32,25 @@ export function getTHelpsFromStaticPackage() {
       fs.copySync(tHelpSourcePath, tHelpDestinationPath);
     }
   });
+}
+
+export function copyGroupsIndexToProjectResources(toolName, projectGroupsIndexPath) {
+  let version = 'v0';
+  let groupsIndexSourcePath = path.join(THELPS_RESOURCES_PATH, toolName, version, 'index.json');
+  let groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
+  if(fs.existsSync(groupsIndexSourcePath)) {
+    fs.copySync(groupsIndexSourcePath, groupsIndexDestinationPath);
+  } else {
+    console.log("translationHelps resources path was not found, " + groupsIndexSourcePath);
+  }
+}
+
+export function copyGroupsDataToProjectResources(toolName, groupsDataDirectory, bookAbbreviation) {
+  let version = 'v0';
+  let groupsDataSourcePath = path.join(THELPS_RESOURCES_PATH, toolName, version, 'groups', bookAbbreviation);
+  if(fs.existsSync(groupsDataSourcePath)) {
+    fs.copySync(groupsDataSourcePath, groupsDataDirectory);
+  } else {
+    console.log("translationHelps resources path was not found, " + groupsDataSourcePath);
+  }
 }
