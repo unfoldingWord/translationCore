@@ -35,44 +35,6 @@ export const saveModuleSettings = state => {
     console.warn(err);
   }
 };
-/**
- * @description this function saves bibles, tN and tW reosuces into the file system.
- * @param {object} state - store state object.
- */
-export const saveResources = state => {
-  try {
-    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let biblesObject = state.resourcesReducer.bibles;
-    let resourcesObject = state.resourcesReducer.resources;
-    if (PROJECT_SAVE_LOCATION) {
-      for (var keyName in biblesObject) {
-        let bibleVersion = keyName + '.json';
-        let savePath = path.join(
-          PROJECT_SAVE_LOCATION,
-          RESOURCES_DATA_DIR,
-          'bibles',
-          bibleVersion
-        );
-        fs.outputJsonSync(savePath, biblesObject[keyName]);
-      }
-      if (PROJECT_SAVE_LOCATION) {
-        for (var resources in resourcesObject) {
-          for (var file in resourcesObject[resources]) {
-            let savePath = path.join(
-              PROJECT_SAVE_LOCATION,
-              RESOURCES_DATA_DIR,
-              resources,
-              file
-            );
-            fs.outputJsonSync(savePath, resourcesObject[resources][file]);
-          }
-        }
-      }
-    }
-  } catch (err) {
-    console.warn(err)
-  }
-};
 
 /**
  * @description abstracted function to hanlde data saving.
@@ -97,35 +59,6 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
   } catch (err) {
     console.warn(err);
   }
-}
-
-/**
- *@description recursively generetes directory to fix windows specific issue.
- *@param {string} path - filepath of where you want to create a directory
- *@param {function} callback - callback function.
- */
-
-function mkdirRecursive(path, callback) {
-  let controlledPaths = []
-  let paths = path.split(
-    '/' // Put each path in an array
-  ).filter(
-    p => p != '.' // Skip root path indicator (.)
-  ).reduce((memo, item) => {
-    // Previous item prepended to each item so we preserve realpaths
-    const prevItem = memo.length > 0 ? memo.join('/').replace(/\.\//g, '')+'/' : ''
-    controlledPaths.push('./'+prevItem+item)
-    return [...memo, './'+prevItem+item]
-  }, []).map(dir => {
-    fs.mkdir(dir, err => {
-      if (err && err.code != 'EEXIST') throw err
-      // Delete created directory (or skipped) from controlledPath
-      controlledPaths.splice(controlledPaths.indexOf(dir), 1)
-      if (controlledPaths.length === 0) {
-        return callback()
-      }
-    })
-  })
 }
 
 /**
