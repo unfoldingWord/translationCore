@@ -49,7 +49,7 @@ export const saveState = (prevState, newState) => {
     saveSettings(newState);
     saveLocalUserdata(newState);
     saveModuleSettings(newState);
-    if (Object.keys(newState.resourcesReducer.bibles).length > 0) {
+    if (Object.keys(newState.resourcesReducer.bibles.targetLanguage).length > 0) {
       saveTargetLanguage(newState);
     }
     // only save checkData reducers if contextId hasn't changed
