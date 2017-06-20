@@ -13,7 +13,6 @@ import * as projectDetailsActions from './projectDetailsActions';
 
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
-        debugger;
         const { username } = getState().loginReducer.userdata;
         const confirmDialog = (message, callback, bt1, bt2) => {
             dispatch(AlertModalActions.openOptionDialog(message, callback, bt1, bt2));
