@@ -2,7 +2,7 @@ import isEqual from 'lodash/isEqual';
 import {loadSettings, loadModulesSettings, loadUserdata} from './loadMethods';
 import {
   saveSettings,
-  saveResources,
+  saveTargetLanguage,
   saveComments,
   saveVerseEdit,
   saveSelections,
@@ -49,6 +49,9 @@ export const saveState = (prevState, newState) => {
     saveSettings(newState);
     saveLocalUserdata(newState);
     saveModuleSettings(newState);
+    if (Object.keys(newState.resourcesReducer.bibles).length > 0) {
+      saveTargetLanguage(newState);
+    }
     // only save checkData reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
       if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);

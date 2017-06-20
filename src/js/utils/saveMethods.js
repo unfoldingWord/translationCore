@@ -62,6 +62,25 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
 }
 
 /**
+ * @description this function saves the current target language chapter into the file system.
+ * @param {object} state - store state object.
+ */
+export const saveTargetLanguage = state => {
+  try {
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    let bookAbbr = state.projectDetailsReducer.params.bookAbbr;
+    let currentTargetLanguageChapter = state.resourcesReducer.bibles.targetLanguage;
+    for (let chapter in currentTargetLanguageChapter) {
+      let fileName = chapter + '.json';
+      let savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
+      fs.outputJsonSync(savePath, currentTargetLanguageChapter[chapter]);
+    }
+  } catch (err) {
+    console.warn(err)
+  }
+};
+
+/**
  * @description generates the output directory.
  * @param {object} state - store state object.
  * @param {string} checkDataName - checkDate folder name where data is saved.
