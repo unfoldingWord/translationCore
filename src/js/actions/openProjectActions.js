@@ -13,6 +13,7 @@ import * as projectDetailsActions from './projectDetailsActions';
 
 export function openProject(projectPath, projectLink) {
     return ((dispatch, getState) => {
+        debugger;
         const { username } = getState().loginReducer.userdata;
         const confirmDialog = (message, callback, bt1, bt2) => {
             dispatch(AlertModalActions.openOptionDialog(message, callback, bt1, bt2));
@@ -94,6 +95,7 @@ export function displayTools(manifest) {
 
 export function clearLastProject() {
     return ((dispatch) => {
+        dispatch(BodyUIActions.toggleHomeView(true));
         dispatch(projectDetailsActions.resetProjectDetail());
         dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
         dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
@@ -102,6 +104,5 @@ export function clearLastProject() {
         dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
         dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
         dispatch(CurrentToolActions.setToolTitle(""));
-        dispatch(BodyUIActions.toggleHomeView(true));
     });
 }
