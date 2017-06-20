@@ -94,6 +94,7 @@ export function displayTools(manifest) {
 
 export function clearLastProject() {
     return ((dispatch) => {
+        dispatch(BodyUIActions.toggleHomeView(true));
         dispatch(projectDetailsActions.resetProjectDetail());
         dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
         dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
@@ -102,6 +103,5 @@ export function clearLastProject() {
         dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
         dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
         dispatch(CurrentToolActions.setToolTitle(""));
-        dispatch(BodyUIActions.toggleHomeView(true));
     });
 }
