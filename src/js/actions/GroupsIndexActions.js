@@ -6,27 +6,22 @@ import consts from './ActionTypes';
  * @param {string} groupIndex - The object of group indecies
  * @return {object} action object.
  */
-export const setGroupsIndex = (groupsIndex) => {
-  // Alphabetize the groups order
-  groupsIndex = groupsIndex.sort((a, b) => {
-    if (a.id.toUpperCase() < b.id.toUpperCase()) {
-      return -1;
-    }
-    if (a.id.toUpperCase() > b.id.toUpperCase()) {
-      return 1;
-    }
-    return 0;
-  })
-
-  return {
-    type: consts.SET_GROUPS_INDEX,
-    groupsIndex
-  };
-};
-
-export const loadGroupsIndexFromFS = (groups) => {
+export const loadGroupsIndex = (groupsIndex) => {
   return ((dispatch) => {
-    dispatch(setGroupsIndex(groups))
-    dispatch({ type: consts.LOAD_GROUPS_INDEX_FROM_FS})
-  })
-}
+    // Alphabetize the groups order
+    groupsIndex = groupsIndex.sort((a, b) => {
+      if (a.id.toUpperCase() < b.id.toUpperCase()) {
+        return -1;
+      }
+      if (a.id.toUpperCase() > b.id.toUpperCase()) {
+        return 1;
+      }
+      return 0;
+    })
+
+    dispatch({
+      type: consts.LOAD_GROUPS_INDEX,
+      groupsIndex
+    });
+  });
+};

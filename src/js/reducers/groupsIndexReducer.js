@@ -7,17 +7,13 @@ const initialState = {
 
 const groupsIndexReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SET_GROUPS_INDEX: {
+    case consts.LOAD_GROUPS_INDEX: {
       return {
         ...state,
-        groupsIndex: action.groupsIndex
-      };
-    }
-    case consts.LOAD_GROUPS_INDEX_FROM_FS:
-      return {
-        ...state,
+        groupsIndex: action.groupsIndex,
         loadedFromFileSystem: true
       };
+    }
     case consts.CLEAR_PREVIOUS_GROUPS_INDEX:
       return initialState;
     default:

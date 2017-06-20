@@ -1,7 +1,8 @@
 import consts from '../actions/ActionTypes';
 
 const initialState = {
-  bibles: {}
+  bibles: {},
+  translationHelps: {}
 };
 
 const resourcesReducer = (state = initialState, action) => {
@@ -14,14 +15,20 @@ const resourcesReducer = (state = initialState, action) => {
           [action.bibleName]: action.bibleData
         }
       };
-    case consts.ADD_NEW_RESOURCE:
-      return {
-        ...state,
-        [action.resourceName]: action.resourceData
-      };
     case consts.UPDATE_EDITED_TARGET_VERSE:
       state.bibles.targetLanguage[action.chapter][action.verse] = action.editedText;
       return state;
+    case consts.ADD_TRANSLATIONHELPS_ARTICLE:
+      return {
+        ...state,
+        translationHelps: {
+          ...state.translationHelps,
+          [action.resourceType]: {
+            ...state.translationHelps[action.resourceType],
+            [action.articleId]: action.articleData
+          }
+        }
+      }
     case consts.CLEAR_RESOURCES_REDUCER:
       return initialState;
     default:

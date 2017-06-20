@@ -6,7 +6,7 @@ import { remote } from 'electron';
 import zipFolder from 'zip-folder';
 import git from '../components/GitApi.js'
 // actions
-import * as getDataActions from './GetDataActions';
+import * as openPojectActions from './GetDataActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
@@ -22,7 +22,7 @@ const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
  */
 export function onLoad(filePath) {
   return (dispatch => {
-    dispatch(getDataActions.openProject(filePath));
+    dispatch(openPojectActions.openProject(filePath));
   });
 }
 

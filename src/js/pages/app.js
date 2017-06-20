@@ -14,6 +14,8 @@ import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
+// actions
+import * as ResourcesActions from '../actions/ResourcesActions';
 
 class Main extends Component {
 
@@ -27,6 +29,7 @@ class Main extends Component {
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
     }
+    this.props.actions.getResourcesFromStaticPackage();
   }
 
   render() {
@@ -53,6 +56,17 @@ const mapStateToProps = state => {
   return state;
 };
 
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    actions: {
+      getResourcesFromStaticPackage: () => {
+        dispatch(ResourcesActions.getResourcesFromStaticPackage());
+      }
+    }
+  };
+};
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Main);

@@ -11,7 +11,7 @@ const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
  *
  * @param {string} projectBook - Book abbreviation
  */
-export function isOldTestament (projectBook) {
+export function isOldTestament(projectBook) {
     var passedBook = false;
     for (var book in BooksOfBible) {
         if (book == projectBook) passedBook = true;
@@ -45,7 +45,7 @@ export function loadFile(path, file) {
  * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
  * studio project
  */
-export function saveManifest (projectSaveLocation, link, oldManifest, currentUser) {
+export function saveManifest(projectSaveLocation, link, oldManifest, currentUser) {
     var data = {
         user: [currentUser],
         repo: link
@@ -71,7 +71,7 @@ export function saveManifest (projectSaveLocation, link, oldManifest, currentUse
  * @desription - Uses the tc-standard format for projects to make package_version 3 compatible
  * @param {object} oldManifest - The name of an employee.
  */
-export function fixManifestVerThree (oldManifest) {
+export function fixManifestVerThree(oldManifest) {
     var newManifest = {};
     try {
         for (var oldElements in oldManifest) {
@@ -99,8 +99,8 @@ export function fixManifestVerThree (oldManifest) {
  * @param {string} bookAbbr - The book abbreviation to convert
  */
 export function convertToFullBookName(bookAbbr) {
-  if (!bookAbbr) return;
-  return BooksOfBible[bookAbbr.toString().toLowerCase()];
+    if (!bookAbbr) return;
+    return BooksOfBible[bookAbbr.toString().toLowerCase()];
 }
 
 /**
@@ -125,24 +125,24 @@ export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
  *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
- export function correctSaveLocation(projectPath) {
-   const parsedPath = Path.parse(projectPath);
-   const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
+export function saveProjectInHomeFolder(projectPath) {
+    const parsedPath = Path.parse(projectPath);
+    const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
 
-   if (!fs.existsSync(projectPath)) {
-     return false;
-   }
-   if (fs.existsSync(tCProjectsSaveLocation)) {
-     return tCProjectsSaveLocation;
-   } else {
-     let newPath = tCProjectsSaveLocation
-     if (checkIfUSFMFileOrProject(projectPath) !== false) {
-       newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
-     }
-     fs.copySync(projectPath, newPath);
-     return tCProjectsSaveLocation;
-   }
- }
+    if (!fs.existsSync(projectPath)) {
+        return false;
+    }
+    if (fs.existsSync(tCProjectsSaveLocation)) {
+        return tCProjectsSaveLocation;
+    } else {
+        let newPath = tCProjectsSaveLocation
+        if (isUSFMProject(projectPath) !== false) {
+            newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
+        }
+        fs.copySync(projectPath, newPath);
+        return tCProjectsSaveLocation;
+    }
+}
 
 /**
  * @description Sets up the folder in the tC save location for a USFM project
@@ -302,7 +302,7 @@ export function formatTargetLanguage(parsedUSFM) {
  *
  * @param {string} projectPath - Path in which the project is being loaded from
  */
-export function checkIfUSFMFileOrProject(projectPath) {
+export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
         const ext = projectPath.split(".")[1];
@@ -389,7 +389,7 @@ export function createCheckArray(dataObject, moduleFolderName) {
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
-export function checkMissingVerses(book, projectSaveLocation) {
+export function projectIsMissingVerses(book, projectSaveLocation) {
     let chapterArray = [];
     let hash = {};
     let chapters = fs.readdirSync(projectSaveLocation);
@@ -399,7 +399,7 @@ export function checkMissingVerses(book, projectSaveLocation) {
         }
     }
     if (expectedVerses[book]) {
-        if (expectedVerses[book].length !== chapterArray.length-1) {
+        if (expectedVerses[book].length !== chapterArray.length - 1) {
             return true;
         }
     }
@@ -420,11 +420,11 @@ export function checkMissingVerses(book, projectSaveLocation) {
             }
         }
         if (expectedVerses[book]) {
-            if (expectedVerses[book][i] !== hash[i].length-1) {
+            if (expectedVerses[book][i] !== hash[i].length - 1) {
                 return true;
             }
         }
-        for (let j = 1; j < hash[i].length; j++ ) {
+        for (let j = 1; j < hash[i].length; j++) {
             if (!hash[i][j] || hash[i][j] === "") {
                 return true;
             }
@@ -434,7 +434,7 @@ export function checkMissingVerses(book, projectSaveLocation) {
 }
 
 const expectedVerses = {
-    "Ephesians" : {
+    "Ephesians": {
         length: 6,
         1: 23,
         2: 22,
@@ -456,15 +456,17 @@ const expectedVerses = {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function findMergeConflicts(projectChunks, projectPath) {
+export function projectHasMergeConflicts(projectChunks, projectPath) {
     for (let chapterVerse in projectChunks) {
         let splitID = projectChunks[chapterVerse].split('-');
         let chapter = splitID[0];
         let verse = splitID[1];
         let filePath = Path.join(projectPath, chapter, verse + ".txt");
-        let fileContents = fs.readFileSync(filePath).toString();
-        if (~fileContents.indexOf('<<<<<<<')) {
-            return true;
+        if (fs.existsSync(filePath)) {
+            let fileContents = fs.readFileSync(filePath).toString();
+            if (~fileContents.indexOf('<<<<<<<')) {
+                return true;
+            }
         }
     }
     return false;
