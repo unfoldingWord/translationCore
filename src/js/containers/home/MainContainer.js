@@ -50,6 +50,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       goToPrevStep: () => {
         dispatch(BodyUIActions.goToPrevStep());
+      },
+      changeHomeInstructions: (instructions) => {
+        dispatch(BodyUIActions.changeHomeInstructions(instructions));
       }
     }
   };
