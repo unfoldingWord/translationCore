@@ -12,9 +12,7 @@ class BodyContainer extends Component {
     return (
         <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
           {displayHomeView ? (
-              <div style={{flex: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <HomeContainer />
-              </div>
             ) : (
               <div style={{display: 'flex', flex: 'auto'}}>
                 <div style={{ flex: "0 0 250px" }}>

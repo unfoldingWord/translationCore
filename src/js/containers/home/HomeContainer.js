@@ -14,7 +14,7 @@ class HomeContainer extends Component {
   render() {
     let {showWelcomeSplash} = this.props.BodyUIReducer;
     return (
-      <div>
+      <div style={{width: '100%'}}>
         {showWelcomeSplash ? (
           <WelcomeSplash {...this.props} />
         ) : (
