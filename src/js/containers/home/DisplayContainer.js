@@ -10,19 +10,19 @@ import ToolsManagementContainer from './ToolsManagementContainer';
 
 class DisplayContainer extends Component {
   render() {
-    let displayMode = 'Overview';
+    let {stepIndex} = this.props.BodyUIReducer.stepper;
     let displayContainer = <div />;
-    switch (displayMode) {
-      case 'Overview':
+    switch (stepIndex) {
+      case 0:
         displayContainer = <OverviewContainer {...this.props} />;
         break;
-      case 'UsersManagement':
+      case 1:
         displayContainer = <UsersManagementContainer {...this.props} />;
         break;
-      case 'ProjectsManagement':
+      case 2:
         displayContainer = <ProjectsManagementContainer {...this.props} />;
         break;
-      case 'ToolsManagement':
+      case 3:
         displayContainer = <ToolsManagementContainer {...this.props} />;
         break;
       default:
