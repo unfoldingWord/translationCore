@@ -1,10 +1,7 @@
 {
-  "sourceName": "UDB",
-  "dir": "ltr",
-  "heading": {
-    "headingDescription": "Gateway Language",
-    "language_name": "English",
-    "resource_id": "udb-en",
-    "resource_name": "Unlocked Dynamic Bible"
-  }
+  "language_name": "English",
+  "resource_id": "udb-en",
+  "resource_name": "Unlocked Dynamic Bible",
+  "direction": "ltr",
+  "language_description": "Gateway Language"
 }

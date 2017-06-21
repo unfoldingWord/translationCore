@@ -1,10 +1,7 @@
 {
-  "sourceName": "originalLanguage",
-  "dir": "ltr",
-  "heading": {
-    "headingDescription": "Original Language",
-    "language_name": "Greek",
-    "resource_id": "ugnt",
-    "resource_name": "Unlocked Greek New Testament"
-  }
+  "language_name": "Greek",
+  "resource_id": "ugnt",
+  "resource_name": "Unlocked Greek New Testament",
+  "direction": "ltr",
+  "language_description": "Original Language"
 }
