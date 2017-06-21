@@ -5,15 +5,20 @@ import Login from '../../components/home/usersManagement/Login'
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
-const UserManagementContainer = () => {
-  return (
-    <Login {...this.props} />
-  );
+class UsersManagementContainer extends Component {
+  render() {
+    return (
+      <div>
+        UsersManagementContainer
+        <Login {...this.props} />
+      </div>
+    );
+  }
 };
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    // props: ''
   };
 };
 
@@ -28,4 +33,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserManagementContainer);
+)(UsersManagementContainer);

@@ -4,7 +4,7 @@ class ToolsCards extends Component {
   render() {
     return (
       <div>
-        
+        ToolsCards
       </div>
     );
   }
