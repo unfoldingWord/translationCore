@@ -15,23 +15,23 @@ import packagefile from '../../../../package.json';
 class MainContainer extends Component {
   render() {
     return (
-      <Grid>
-        <Row>
-          <StepperContainer {...this.props} />
-        </Row>
-        <Row>
-          <Col>
-            <Instructions {...this.props} />
-          </Col>
-          <Col>
-            <DisplayContainer {...this.props} />
-          </Col>
-        </Row>
-        <Row>
-          <BackNavigation {...this.props} />
-          <div>traslationCore <span>{packagefile.version}</span> (i)</div>
-        </Row>
-      </Grid>
+      <div>
+        <StepperContainer {...this.props} />
+        <Grid>
+          <Row>
+            <Col>
+              <Instructions {...this.props} />
+            </Col>
+            <Col>
+              <DisplayContainer {...this.props} />
+            </Col>
+          </Row>
+          <Row>
+            <BackNavigation {...this.props} />
+            <div>traslationCore <span>{packagefile.version}</span> (i)</div>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }
