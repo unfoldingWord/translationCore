@@ -10,7 +10,7 @@ class WelcomeSplash extends Component {
         <div style={{margin: "10px 0 50px", fontSize: "18px"}}>Version <span>{packagefile.version}</span></div>
         <button
           className="btn-prime"
-          onClick={this.props.actions.toggleModal}>
+          onClick={this.props.actions.toggleWelcomeSplash}>
           Get Started!
         </button>
       </div>

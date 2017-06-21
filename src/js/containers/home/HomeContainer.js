@@ -14,7 +14,7 @@ class HomeContainer extends Component {
   render() {
     let {showWelcomeSplash} = this.props.BodyUIReducer;
     return (
-      <div>
+      <div style={{width: '100%'}}>
         {showWelcomeSplash ? (
           <WelcomeSplash {...this.props} />
         ) : (
@@ -40,7 +40,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(modalActions.selectModalTab(1, 1, true));
       },
       toggleWelcomeSplash: () => {
-        dispatch(BodyUIActions.toggleWelcomeSplash())
+        dispatch(BodyUIActions.toggleWelcomeSplash());
+      },
+      changeHomeDisplayMode: (mode) => {
+        dispatch(BodyUIActions.changeHomeDisplayMode(mode));
       }
     }
   };
