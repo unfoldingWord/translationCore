@@ -41,9 +41,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       toggleWelcomeSplash: () => {
         dispatch(BodyUIActions.toggleWelcomeSplash());
-      },
-      changeHomeDisplayMode: (mode) => {
-        dispatch(BodyUIActions.changeHomeDisplayMode(mode));
       }
     }
   };

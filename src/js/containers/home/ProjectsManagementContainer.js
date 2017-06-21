@@ -8,6 +8,14 @@ import OnlineImportModal from '../../components/home/projectsManagement/OnlineIm
 // import {actionCreator} from 'actionCreatorPath'
 
 class ProjectsManagementContainer extends Component {
+
+  componentWillMount() {
+    let instructions = <div>ProjectsManagementInstructions</div>;
+    if (this.props.BodyUIReducer.homeInstructions !== instructions) {
+      this.props.actions.changeHomeInstructions(instructions);
+    }
+  }
+
   render() {
     return (
       <div>

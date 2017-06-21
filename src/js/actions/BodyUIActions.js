@@ -19,10 +19,10 @@ export const toggleWelcomeSplash = () => {
   };
 };
 
-export const changeHomeDisplayMode = mode => {
+export const changeHomeInstructions = instructions => {
   return {
-    type: consts.CHANGE_HOME_DISPLAY_MODE,
-    mode
+    type: consts.CHANGE_HOME_INSTRUCTIONS,
+    instructions
   };
 };
 

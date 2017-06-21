@@ -8,6 +8,14 @@ import ToolCard from '../../components/home/overview/ToolCard'
 // import {actionCreator} from 'actionCreatorPath'
 
 class OverviewContainer extends Component {
+
+  componentWillMount() {
+    let instructions = <div>OverviewInstructions</div>;
+    if (this.props.BodyUIReducer.homeInstructions !== instructions) {
+      this.props.actions.changeHomeInstructions(instructions);
+    }
+  }
+
   render() {
     return (
       <div>

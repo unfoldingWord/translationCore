@@ -6,6 +6,14 @@ import Login from '../../components/home/usersManagement/Login'
 // import {actionCreator} from 'actionCreatorPath'
 
 class UsersManagementContainer extends Component {
+  
+  componentWillMount() {
+    let instructions = <div>UsersManagementInstructions</div>;
+    if (this.props.BodyUIReducer.homeInstructions !== instructions) {
+      this.props.actions.changeHomeInstructions(instructions);
+    }
+  }
+
   render() {
     return (
       <div>
