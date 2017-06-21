@@ -11,6 +11,7 @@ class ProjectsManagementContainer extends Component {
   render() {
     return (
       <div>
+        ProjectsManagementContainer
         {/*
         <MyProjects />
         <ProjectsFAB />

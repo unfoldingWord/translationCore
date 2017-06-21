@@ -121,6 +121,7 @@ export function getProjectsFromFolder() {
 }
 
 export function csvTextCleanUp(text){
+  if (!text) return "";
   return text.replace ? `"${text.replace('"', '""')}"` : `"${text}"`;
 }
 
@@ -228,7 +229,9 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { 
+      console.warn(e);
+      reject(false) };
     resolve(true);
   });
 }
@@ -252,7 +255,9 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { 
+      console.warn(e);
+      reject(false) };
     resolve(true);
   });
 }
@@ -280,7 +285,9 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { 
+      console.warn(e);
+      reject(false) };
     resolve(true);
   });
 }
@@ -304,7 +311,9 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { 
+      console.warn(e);
+      reject(false) };
     resolve(true);
   });
 }
@@ -330,7 +339,9 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
-    } catch (e) { reject(false) };
+    } catch (e) { 
+      console.warn(e);
+      reject(false) };
     resolve(true);
   });
 }

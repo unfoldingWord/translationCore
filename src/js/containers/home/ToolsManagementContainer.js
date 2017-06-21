@@ -8,7 +8,10 @@ import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
 class ToolsManagementContainer extends Component {
   render() {
     return (
-      <ToolsCards {...this.props}/>
+      <div>
+        ToolsManagementContainer
+        <ToolsCards {...this.props}/>
+      </div>
     );
   }
 }
