@@ -1,25 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Grid, Row, Col } from 'react-bootstrap';
 // components
-import Instructions from '../../components/home/instructions/Instructions'
-import BackNavigation from '../../components/home/BackNavigation'
+import Instructions from '../../components/home/instructions/Instructions';
+import BackNavigation from '../../components/home/BackNavigation';
 // containers
-import StepperContainer from './StepperContainer'
-import DisplayContainer from './DisplayContainer'
+import StepperContainer from './StepperContainer';
+import DisplayContainer from './DisplayContainer';
 // actions
-import * as BodyUIActions from '../../actions/BodyUIActions'
+import * as BodyUIActions from '../../actions/BodyUIActions';
+// info
+import packagefile from '../../../../package.json';
 
 class MainContainer extends Component {
   render() {
     return (
-      <div>
-        <StepperContainer {...this.props} />
-        {/*
-        <Instructions {...this.props} />
-        <DisplayContainer {...this.props} />
-        */}
-        <BackNavigation {...this.props} />
-      </div>
+      <Grid>
+        <Row>
+          <StepperContainer {...this.props} />
+        </Row>
+        <Row>
+          <Col>
+            <Instructions {...this.props} />
+          </Col>
+          <Col>
+            <DisplayContainer {...this.props} />
+          </Col>
+        </Row>
+        <Row>
+          <BackNavigation {...this.props} />
+          <div>traslationCore <span>{packagefile.version}</span> (i)</div>
+        </Row>
+      </Grid>
     );
   }
 }

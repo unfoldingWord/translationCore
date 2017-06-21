@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Col } from 'react-bootstrap';
 // containers
 import HomeContainer from './HomeContainer';
 import GroupMenuContainer from '../GroupMenuContainer';

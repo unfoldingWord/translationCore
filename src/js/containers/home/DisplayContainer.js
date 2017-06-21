@@ -1,21 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 // containers
-import OverviewContainer from './OverviewContainer'
-import UsersManagementContainer from './UsersManagementContainer'
-import ProjectsManagementContainer from './ProjectsManagementContainer'
-import ToolsManagementContainer from './ToolsManagementContainer'
+import OverviewContainer from './OverviewContainer';
+import UsersManagementContainer from './UsersManagementContainer';
+import ProjectsManagementContainer from './ProjectsManagementContainer';
+import ToolsManagementContainer from './ToolsManagementContainer';
 // actions
 // import {actionCreator} from 'actionCreatorPath'
 
 class DisplayContainer extends Component {
   render() {
+    let displayMode = 'Overview';
+    let displayContainer = <div />;
+    switch (displayMode) {
+      case 'Overview':
+        displayContainer = <OverviewContainer {...this.props} />;
+        break;
+      case 'UsersManagement':
+        displayContainer = <UsersManagementContainer {...this.props} />;
+        break;
+      case 'ProjectsManagement':
+        displayContainer = <ProjectsManagementContainer {...this.props} />;
+        break;
+      case 'ToolsManagement':
+        displayContainer = <ToolsManagementContainer {...this.props} />;
+        break;
+      default:
+        break;
+    }
     return (
       <div>
-        <OverviewContainer {...this.props} />
-        <UsersManagementContainer {...this.props} />
-        <ProjectsManagementContainer {...this.props} />
-        <ToolsManagementContainer {...this.props} />
+        DisplayContainer
+        {displayContainer}
       </div>
     );
   }

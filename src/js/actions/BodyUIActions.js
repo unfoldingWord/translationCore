@@ -17,6 +17,13 @@ export const toggleWelcomeSplash = () => {
   };
 };
 
+export const changeHomeDisplayMode = mode => {
+  return {
+    type: consts.CHANGE_HOME_DISPLAY_MODE,
+    mode
+  };
+};
+
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const {stepIndex} = getState().BodyUIReducer.stepper;

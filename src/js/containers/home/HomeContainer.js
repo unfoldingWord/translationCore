@@ -40,7 +40,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(modalActions.selectModalTab(1, 1, true));
       },
       toggleWelcomeSplash: () => {
-        dispatch(BodyUIActions.toggleWelcomeSplash())
+        dispatch(BodyUIActions.toggleWelcomeSplash());
+      },
+      changeHomeDisplayMode: (mode) => {
+        dispatch(BodyUIActions.changeHomeDisplayMode(mode));
       }
     }
   };
