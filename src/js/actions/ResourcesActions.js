@@ -7,11 +7,15 @@ import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 // constant declaraton
-const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
 const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_DIR, 'bibles');
 const TRANSLATIONHELPS_RESOURCES_PATH = path.join(USER_RESOURCES_DIR, '/translationHelps');
 
+/**
+ * @description adds a bible to the resoiurces reducer' bibles property.
+ * @param {string} bibleName - name/label for bible.
+ * @param {object} bibleData - data being saved in the bible property.
+ */
 export const addNewBible = (bibleName, bibleData) => {
   return {
     type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
@@ -20,6 +24,10 @@ export const addNewBible = (bibleName, bibleData) => {
   };
 };
 
+/**
+ * @description loads a bibles chapter based on contextId
+ * @param {object} contextId - object with all data for current check.
+ */
 export const loadBiblesChapter = (contextId) => {
   return ((dispatch, getState) => {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
@@ -38,6 +46,10 @@ export const loadBiblesChapter = (contextId) => {
           let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
           let bibleData = {};
           bibleData[chapter] = bibleChapterData;
+          // get bibles manifest file
+          let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+          // save manifest dat in bibleData object to then be saved in reducer.
+          bibleData["manifest"] = bibleManifest;
           dispatch({
             type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
             bibleName: bibleID,
@@ -67,7 +79,9 @@ export const loadResourceArticle = (resourceType, articleId) => {
     });
   });
 }
-
+/**
+ * @description gets the resources from the static folder located in the tC codebase.
+ */
 export const getResourcesFromStaticPackage = () => {
   return ((dispatch, getState) => {
     ResourcesHelpers.getBibleFromStaticPackage();
