@@ -3,6 +3,7 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   displayHomeView: true,
   showWelcomeSplash: true,
+  homeDisplayMode: 'Overview',
   stepper: {
     finished: false,
     stepIndex: 0
@@ -19,7 +20,12 @@ const BodyUIReducer = (state = initialState, action) => {
     case consts.TOGGLE_WELCOME_SPLASH:
       return {
         ...state,
-        showWelcomeSplash: !state.displayHomeView
+        showWelcomeSplash: !state.showWelcomeSplash
+      };
+    case consts.CHANGE_HOME_DISPLAY_MODE:
+      return {
+        ...state,
+        homeDisplayMode: action.mode
       };
     case consts.GO_TO_NEXT_STEP:
       return {
