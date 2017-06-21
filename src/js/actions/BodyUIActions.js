@@ -1,4 +1,6 @@
 import consts from './ActionTypes';
+// actions
+import * as AlertModalActions from './AlertModalActions';
 
 /**
  * @description toggles the home view based on param.
@@ -27,11 +29,15 @@ export const changeHomeInstructions = instructions => {
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const {stepIndex} = getState().BodyUIReducer.stepper;
-    dispatch({
-      type: consts.GO_TO_NEXT_STEP,
-      stepIndex: stepIndex + 1,
-      finished: stepIndex >= 2
-    });
+    if (stepIndex < 3) {
+      dispatch({
+        type: consts.GO_TO_NEXT_STEP,
+        stepIndex: stepIndex + 1,
+        finished: stepIndex >= 2
+      });
+    } else {
+      dispatch(AlertModalActions.openAlertDialog("You're at the last step"));
+    }
   });
 };
 
