@@ -8,7 +8,7 @@ import ToolsContainer from '../ToolsContainer';
 
 class BodyContainer extends Component {
   render() {
-    let {displayHomeView} = this.props.BodyUIReducer;
+    let {displayHomeView} = this.props.reducers.BodyUIReducer;
     return (
         <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
           {displayHomeView ? (
@@ -31,7 +31,13 @@ class BodyContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    BodyUIReducer: state.BodyUIReducer
+    reducers: {
+      BodyUIReducer: state.BodyUIReducer,
+      projectDetailsReducer: state.projectDetailsReducer,
+      toolsReducer: state.toolsReducer,
+      currentToolReducer: state.currentToolReducer,
+      loginReducer: state.loginReducer
+    }
   };
 };
 

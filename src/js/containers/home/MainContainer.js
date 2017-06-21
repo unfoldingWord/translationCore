@@ -15,22 +15,24 @@ import packagefile from '../../../../package.json';
 class MainContainer extends Component {
   render() {
     return (
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
         <StepperContainer {...this.props} />
-        <Grid>
-          <Row>
-            <Col>
-              <Instructions {...this.props} />
-            </Col>
-            <Col>
-              <DisplayContainer {...this.props} />
-            </Col>
-          </Row>
-          <Row>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
+          <div style={{ width: '400px', padding: '0 20px' }}>
+            <Instructions {...this.props} />
+          </div>
+          <div style={{ width: '600px', padding: '0 20px' }}>
+            <DisplayContainer {...this.props} />
+          </div>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <BackNavigation {...this.props} />
-            <div>traslationCore <span>{packagefile.version}</span> (i)</div>
-          </Row>
-        </Grid>
+            <div>
+              traslationCore <span>{packagefile.version}</span> (i)
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

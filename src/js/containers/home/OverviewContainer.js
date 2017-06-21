@@ -9,20 +9,39 @@ import ToolCard from '../../components/home/overview/ToolCard'
 
 class OverviewContainer extends Component {
 
+  instructions() {
+    return (
+      <div>
+        <p>
+          Welcome to translationCore!
+          <br/>
+          To get started, please:
+        </p>
+        <ol>
+          <li>Log in</li>
+          <li>Select a Project</li>
+          <li>Select a Tool</li>
+          <li>Launch</li>
+        </ol>
+      </div>
+    );
+  }
+
   componentWillMount() {
-    let instructions = <div>OverviewInstructions</div>;
-    if (this.props.BodyUIReducer.homeInstructions !== instructions) {
-      this.props.actions.changeHomeInstructions(instructions);
+    if (this.props.BodyUIReducer.homeInstructions !== this.instructions()) {
+      this.props.actions.changeHomeInstructions(this.instructions());
     }
   }
 
   render() {
     return (
-      <div>
-        OverviewContainer
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <UserCard {...this.props} />
         <ProjectCard {...this.props} />
         <ToolCard {...this.props} />
+        <div style={{ textAlign: 'center', paddingTop: '20px'}}>
+          <button>Launch</button>
+        </div>
       </div>
     );
   }

@@ -30,7 +30,6 @@ class DisplayContainer extends Component {
     }
     return (
       <div>
-        DisplayContainer
         {displayContainer}
       </div>
     );
