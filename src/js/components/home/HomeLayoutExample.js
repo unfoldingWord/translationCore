@@ -5,7 +5,6 @@
   <WelcomeSplash />
   <MainContainer>
     <StepperContainer>
-      <HomeButton />
       <Stepper />
     </StepperContainer>
     <Instructions>

@@ -11,6 +11,7 @@ class OverviewContainer extends Component {
   render() {
     return (
       <div>
+        OverviewContainer
         <UserCard {...this.props} />
         <ProjectCard {...this.props} />
         <ToolCard {...this.props} />
@@ -27,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
+    dispatch: () => {
       // dispatch(actionCreator);
     }
   };
