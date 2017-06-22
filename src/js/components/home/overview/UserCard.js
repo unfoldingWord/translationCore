@@ -3,29 +3,38 @@ import TemplateCard from './TemplateCard'
 
 class UserCard extends Component {
 
-  heading() {
-    return (<span>Current User <a>Log out</a></span>);
+  heading(callback) {
+    return (
+      <span>Current User <a onClick={callback}>Log out</a></span>
+    );
   }
 
   content() {
-    let content = (
-      <div>
-        <strong>username</strong>
-        <p>email@address.com</p>
-      </div>
-    );
-    content = (
-      <div style={{ textAlign: 'center' }}>
-        Please log in to continue<br/>
-        <button>Login</button>
-      </div>
-    );
+    let content;
+    let { loggedInUser, userdata } = this.props.reducers.loginReducer;
+    if (loggedInUser) {
+      content = (
+        <div>
+          <strong>{userdata.username}</strong>
+          <p>{userdata.email}</p>
+        </div>
+      );
+    }
     return content;
   }
 
   render() {
+    let emptyMessage = 'Please log in to continue';
+    let emptyButtonLabel = 'Login';
+    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
-      <TemplateCard heading={this.heading()} content={this.content()} />
+      <TemplateCard
+        heading={this.heading(emptyButtonOnClick)}
+        content={this.content()}
+        emptyMessage={emptyMessage}
+        emptyButtonLabel={emptyButtonLabel}
+        emptyButtonOnClick={emptyButtonOnClick}
+      />
     )
   }
 }

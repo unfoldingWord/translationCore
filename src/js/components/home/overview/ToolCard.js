@@ -3,29 +3,38 @@ import TemplateCard from './TemplateCard'
 
 class ToolCard extends Component {
 
-  heading() {
-    return (<span>Current Tool <a>Change Tool</a></span>);
+  heading(callback) {
+    return (
+      <span>Current Tool <a onClick={callback}>Change Tool</a></span>
+    );
   }
 
   content() {
-    let content = (
-      <div>
-        <strong>Tool Name</strong>
-        <p>Tool Details</p>
-      </div>
-    );
-    content = (
-      <div style={{ textAlign: 'center' }}>
-        Select a tool<br/>
-        <button>Tool</button>
-      </div>
-    );
+    let content;
+    let { toolName } = this.props.reducers.toolsReducer;
+    if (toolName) {
+      content = (
+        <div>
+          <strong>{toolName}</strong>
+          <p>details</p>
+        </div>
+      );
+    }
     return content;
   }
 
   render() {
+    let emptyMessage = 'Select a tool';
+    let emptyButtonLabel = 'Tool';
+    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
-      <TemplateCard heading={this.heading()} content={this.content()} />
+      <TemplateCard
+        heading={this.heading(emptyButtonOnClick)}
+        content={this.content()}
+        emptyMessage={emptyMessage}
+        emptyButtonLabel={emptyButtonLabel}
+        emptyButtonOnClick={emptyButtonOnClick}
+      />
     )
   }
 }

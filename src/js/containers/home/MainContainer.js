@@ -40,7 +40,7 @@ class MainContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    // prop: state.prop
   };
 };
 

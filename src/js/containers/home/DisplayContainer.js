@@ -10,7 +10,7 @@ import ToolsManagementContainer from './ToolsManagementContainer';
 
 class DisplayContainer extends Component {
   render() {
-    let {stepIndex} = this.props.BodyUIReducer.stepper;
+    let {stepIndex} = this.props.reducers.BodyUIReducer.stepper;
     let displayContainer = <div />;
     switch (stepIndex) {
       case 0:
@@ -38,15 +38,15 @@ class DisplayContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    // prop: state.prop
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator);
-    }
+    // dispatch1: () => {
+    //   // dispatch(actionCreator);
+    // }
   };
 };
 

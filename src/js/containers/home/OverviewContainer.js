@@ -28,9 +28,20 @@ class OverviewContainer extends Component {
   }
 
   componentWillMount() {
-    if (this.props.BodyUIReducer.homeInstructions !== this.instructions()) {
+    if (this.props.reducers.BodyUIReducer.homeInstructions !== this.instructions()) {
       this.props.actions.changeHomeInstructions(this.instructions());
     }
+  }
+
+  button() {
+    let disabled = true;
+    let className = 'btn-second'
+    let onClick = () => {}
+    return (
+      <button className={className} disabled={disabled} onClick={onClick}>
+        Launch
+      </button>
+    )
   }
 
   render() {
@@ -39,8 +50,8 @@ class OverviewContainer extends Component {
         <UserCard {...this.props} />
         <ProjectCard {...this.props} />
         <ToolCard {...this.props} />
-        <div style={{ textAlign: 'center', paddingTop: '20px'}}>
-          <button>Launch</button>
+        <div style={{ textAlign: 'center' }}>
+          {this.button()}
         </div>
       </div>
     );
@@ -49,15 +60,15 @@ class OverviewContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    // prop: state.prop
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch: () => {
-      // dispatch(actionCreator);
-    }
+    // dispatch: () => {
+    //   // dispatch(actionCreator);
+    // }
   };
 };
 

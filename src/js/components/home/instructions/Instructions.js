@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Instructions extends Component {
   render() {
-    let { homeInstructions } = this.props.BodyUIReducer;
+    let { homeInstructions } = this.props.reducers.BodyUIReducer;
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Instructions
