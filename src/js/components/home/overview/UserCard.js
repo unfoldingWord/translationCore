@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from './TemplateCard'
 
 class UserCard extends Component {
@@ -15,9 +16,14 @@ class UserCard extends Component {
     let { loggedInUser, userdata } = this.props.reducers.loginReducer;
     if (loggedInUser) {
       content = (
-        <div>
-          <strong>{userdata.username}</strong>
-          <p>{userdata.email ? userdata.email : 'no email address'}</p>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-16px 20px 0 -16px', overflow: 'hidden'}}>
+            <Glyphicon glyph="user" style={{fontSize: "142px", marginLeft: '-23px'}} />
+          </div>
+          <div style={{ marginTop: '-10px' }}>
+            <strong style={{ fontSize: 'x-large' }}>{userdata.username}</strong>
+            <p>{userdata.email ? userdata.email : 'no email address'}</p>
+          </div>
         </div>
       );
     }
