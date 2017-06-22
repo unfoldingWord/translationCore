@@ -162,7 +162,7 @@ function loadProjectDataFromFileSystem(toolName) {
       let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
 
-      dispatch(TargetLanguageActions.generateAndLoadTargetLangBible(projectSaveLocation));
+      dispatch(TargetLanguageActions.generateTargetBible(projectSaveLocation));
       getGroupsIndex(dispatch, toolName, dataDirectory)
         .then((successMessage) => {
           getGroupData(dispatch, dataDirectory, toolName, params)
