@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
 // components
 import Instructions from '../../components/home/instructions/Instructions';
 import BackNavigation from '../../components/home/BackNavigation';
@@ -28,8 +28,13 @@ class MainContainer extends Component {
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <BackNavigation {...this.props} />
-            <div>
-              traslationCore <span>{packagefile.version}</span> (i)
+            <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+              <strong>traslationCore {packagefile.version} </strong>
+              <Glyphicon
+                glyph="info-sign"
+                style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
+                onClick={ (e) => {} }
+              />
             </div>
           </div>
         </div>
