@@ -31,7 +31,7 @@ class OverviewContainer extends Component {
 
   button() {
     return (
-      <button className='btn-second' disabled={true} onClick={() => {}}>
+      <button className='btn-prime' disabled={true} onClick={() => {}}>
         Launch
       </button>
     )

@@ -28,6 +28,11 @@ class ProjectCard extends Component {
     return content;
   }
 
+  disabled() {
+    let { loggedInUser } = this.props.reducers.loginReducer;
+    return !loggedInUser;
+  }
+
   render() {
     let emptyMessage = 'Select a project';
     let emptyButtonLabel = 'Project';
@@ -39,6 +44,7 @@ class ProjectCard extends Component {
         emptyMessage={emptyMessage}
         emptyButtonLabel={emptyButtonLabel}
         emptyButtonOnClick={emptyButtonOnClick}
+        disabled={this.disabled()}
       />
     )
   }

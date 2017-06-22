@@ -24,6 +24,11 @@ class ToolCard extends Component {
     return content;
   }
 
+  disabled() {
+    let { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    return !projectSaveLocation;
+  }
+
   render() {
     let emptyMessage = 'Select a tool';
     let emptyButtonLabel = 'Tool';
@@ -35,6 +40,7 @@ class ToolCard extends Component {
         emptyMessage={emptyMessage}
         emptyButtonLabel={emptyButtonLabel}
         emptyButtonOnClick={emptyButtonOnClick}
+        disabled={this.disabled()}
       />
     )
   }
