@@ -1,7 +1,11 @@
 {
-  "language_name": "Hebrew",
-  "resource_id": "uhb",
-  "resource_name": "Unlocked Hebrew Bible",
-  "direction": "ltr",
-  "language_description": "Original Language"
+  "language": {
+    "identifier": "he",
+    "title": "Hebrew",
+    "direction": "rtl"
+  },
+  "subject": "Bible",
+  "identifier": "uhb",
+  "title": "Unlocked Hebrew Bible",
+  "description": "Original Language"
 }

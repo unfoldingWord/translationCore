@@ -1,7 +1,11 @@
 {
-  "language_name": "English",
-  "resource_id": "ulb-en",
-  "resource_name": "Unlocked Literal Bible",
-  "direction": "ltr",
-  "language_description": "Gateway Language"
+  "language": {
+    "identifier": "en",
+    "title": "English",
+    "direction": "ltr"
+  },
+  "subject": "Bible",
+  "identifier": "ulb-en",
+  "title": "Unlocked Literal Bible",
+  "description": "Gateway Language"
 }
