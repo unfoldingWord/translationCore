@@ -4,8 +4,9 @@ import TemplateCard from './TemplateCard'
 class UserCard extends Component {
 
   heading(callback) {
+    let link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>
     return (
-      <span>Current User <a onClick={callback}>Log out</a></span>
+      <span>Current User {link}</span>
     );
   }
 

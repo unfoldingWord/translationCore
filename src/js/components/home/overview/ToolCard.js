@@ -4,8 +4,9 @@ import TemplateCard from './TemplateCard'
 class ToolCard extends Component {
 
   heading(callback) {
+    let link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>
     return (
-      <span>Current Tool <a onClick={callback}>Change Tool</a></span>
+      <span>Current Tool {link}</span>
     );
   }
 

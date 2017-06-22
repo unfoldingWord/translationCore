@@ -4,8 +4,9 @@ import TemplateCard from './TemplateCard'
 class ProjectCard extends Component {
 
   heading(callback) {
+    let link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>
     return (
-      <span>Current Project <a onClick={callback}>Change Project</a></span>
+      <span>Current Project {link}</span>
     );
   }
 
