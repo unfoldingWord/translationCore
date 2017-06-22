@@ -17,7 +17,7 @@ class UserCard extends Component {
       content = (
         <div>
           <strong>{userdata.username}</strong>
-          <p>{userdata.email}</p>
+          <p>{userdata.email ? userdata.email : 'no email address'}</p>
         </div>
       );
     }

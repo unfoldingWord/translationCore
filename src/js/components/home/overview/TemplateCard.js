@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Card, CardText} from 'material-ui/Card';
 
 class UserCard extends Component {
 
@@ -28,9 +29,11 @@ class UserCard extends Component {
     return (
       <div style={{ padding: '0 0 20px 0' }}>
         {this.props.heading}
-        <div style={{ width: '100%', background: 'white', padding: '20px', marginTop: '10px' }}>
-          {content}
-        </div>
+        <Card style={{ marginTop: '5px' }}>
+          <CardText>
+            {content}
+          </CardText>
+        </Card>
       </div>
     )
   }

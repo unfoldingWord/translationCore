@@ -12,11 +12,7 @@ class OverviewContainer extends Component {
   instructions() {
     return (
       <div>
-        <p>
-          Welcome to translationCore!
-          <br/>
-          To get started, please:
-        </p>
+        <p>Welcome to translationCore!<br/> To get started, please:</p>
         <ol>
           <li>Log in</li>
           <li>Select a Project</li>
@@ -34,11 +30,8 @@ class OverviewContainer extends Component {
   }
 
   button() {
-    let disabled = true;
-    let className = 'btn-second'
-    let onClick = () => {}
     return (
-      <button className={className} disabled={disabled} onClick={onClick}>
+      <button className='btn-second' disabled={true} onClick={() => {}}>
         Launch
       </button>
     )
