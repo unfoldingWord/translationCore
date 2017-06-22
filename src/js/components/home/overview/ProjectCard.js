@@ -1,11 +1,51 @@
 import React, { Component } from 'react'
+import TemplateCard from './TemplateCard'
 
 class ProjectCard extends Component {
-  render() {
+
+  heading(callback) {
+    let link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>
     return (
-      <div>
-        ProjectCard
-      </div>
+      <span>Current Project {link}</span>
+    );
+  }
+
+  content() {
+    let content;
+    let { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    let projectName;
+    if (projectSaveLocation) {
+      projectName = projectSaveLocation.split("/").pop();
+    }
+    if (projectName) {
+      content = (
+        <div>
+          <strong>{projectName}</strong>
+          <p>details</p>
+        </div>
+      );
+    }
+    return content;
+  }
+
+  disabled() {
+    let { loggedInUser } = this.props.reducers.loginReducer;
+    return !loggedInUser;
+  }
+
+  render() {
+    let emptyMessage = 'Select a project';
+    let emptyButtonLabel = 'Project';
+    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    return (
+      <TemplateCard
+        heading={this.heading(emptyButtonOnClick)}
+        content={this.content()}
+        emptyMessage={emptyMessage}
+        emptyButtonLabel={emptyButtonLabel}
+        emptyButtonOnClick={emptyButtonOnClick}
+        disabled={this.disabled()}
+      />
     )
   }
 }

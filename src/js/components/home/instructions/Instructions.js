@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Card, CardText} from 'material-ui/Card';
 
 class Instructions extends Component {
+
   render() {
-    let { homeInstructions } = this.props.BodyUIReducer;
+    let { homeInstructions } = this.props.reducers.BodyUIReducer;
     return (
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Instructions
-        {homeInstructions}
+        <Card style={{ height: '100%', marginTop: '5px' }}>
+          <CardText>
+            {homeInstructions}
+          </CardText>
+        </Card>
       </div>
-    )
+    );
   }
 }
 
