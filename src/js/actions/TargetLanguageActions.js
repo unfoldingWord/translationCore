@@ -65,7 +65,7 @@ export function generateTargetBible(projectPath) {
       fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
     }
     // generating and saving manifest file for target language bible.
-    generateTartgetLangManifest(manifest, targetBiblePath);
+    generateTartgetLanguageManifest(manifest, targetBiblePath);
     // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
     archiveSourceFiles(finishedChunks, projectPath);
   });
@@ -106,7 +106,7 @@ function parseTargetLanguage(usfm) {
  * @param {object} projectManifest - projects manifest file.
  * @param {string} targetBiblePath - path where the target language bible is saved in the file system.
  */
-function generateTartgetLangManifest(projectManifest, targetBiblePath) {
+function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   let bibleManifest = {};
   let manifestLanguage = {};
   manifestLanguage.identifier = projectManifest.target_language.id;
