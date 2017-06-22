@@ -16,7 +16,7 @@ import packagefile from '../../../../package.json';
 class MainContainer extends Component {
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider style={{ fontSize: '1.1em' }}>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
           <StepperContainer {...this.props} />
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
