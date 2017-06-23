@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import TemplateCard from './TemplateCard'
+import React, { Component } from 'react';
+import { Glyphicon } from 'react-bootstrap';
+import TemplateCard from './TemplateCard';
 
 class ProjectCard extends Component {
 
@@ -12,16 +13,42 @@ class ProjectCard extends Component {
 
   content() {
     let content;
-    let { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    let { projectDetailsReducer } = this.props.reducers;
+    let { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
     let projectName;
     if (projectSaveLocation) {
       projectName = projectSaveLocation.split("/").pop();
     }
-    if (projectName) {
+    if (projectName && params && manifest.target_language) {
+      let { bookAbbr } = params;
+      let { target_language } = manifest;
       content = (
-        <div>
-          <strong>{projectName}</strong>
-          <p>details</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
+          <div style={{ display: 'flex' }}>
+            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
+              <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px'}} />
+            </div>
+            <div>
+              <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '375px', marginTop: '18px' }}>
+                <div>
+                  <Glyphicon glyph="time" style={{ marginRight: '5px', top: '2px' }} />
+                  <span>1 day ago</span>
+                </div>
+                <div>
+                  <Glyphicon glyph="book" style={{ marginRight: '5px', top: '2px' }} />
+                  <span>{bookName} ({bookAbbr})</span>
+                </div>
+                <div>
+                  <Glyphicon glyph="globe" style={{ marginRight: '5px', top: '2px' }} />
+                  <span>{target_language.name} ({target_language.id})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ marginRight: '-5px' }}>
+            <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
+          </div>
         </div>
       );
     }
