@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { shell } from 'electron';
 import Login from '../../components/home/usersManagement/Login';
 import Logout from '../../components/home/usersManagement/Logout';
+import LocalUser from '../../components/home/usersManagement/LocalUser';
 import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
@@ -11,6 +12,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card } from 'material-ui/Card';
 
 class UsersManagementContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      localUserView: false
+    };
+    this.showLocalUserView = this.showLocalUserView.bind(this)
+  }
+
   instructions() {
     return (
       <div>
@@ -20,8 +29,15 @@ class UsersManagementContainer extends Component {
       </div>
     )
   }
+
   handleLoginSubmit() {
     this.props.loginUser();
+  }
+
+  showLocalUserView() {
+    this.setState({
+      localUserView: !this.state.localUserView
+    })
   }
 
   componentWillMount() {
@@ -39,16 +55,16 @@ class UsersManagementContainer extends Component {
       <div style={{ height: '100%', width: '100%' }}>
         User
       <MuiThemeProvider>
-          <Card style={{
-            width: '100%', height: '100%', background: 'white', padding: '20px', marginTop: '10px', display: 'flex',
-            alignItems: 'center', justifyContent: 'center'
+          <Card style={{height:'100%', width:'100%'}}
+          containerStyle={{
+            width: '100%', height: '100%', background: 'white', padding: '20px', marginTop: '10px', display: 'flex'
           }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
-              {!loggedInUser ?
-                <Login {...this.props} /> :
+            {!loggedInUser && !this.state.localUserView ?
+              <Login {...this.props} showLocalUserView={this.showLocalUserView} /> :
+              !loggedInUser && this.state.localUserView ?
+                <LocalUser /> :
                 <Logout username={username} email={email} {...this.props} />
-              }
-            </div>
+            }
           </Card>
         </MuiThemeProvider>
       </div>
@@ -79,12 +95,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     goToNextStep: () => {
       dispatch(BodyUIActions.goToNextStep());
     },
-    openDoor43AccountWindow: ()=> {
+    openDoor43AccountWindow: () => {
       shell.openExternal('https://git.door43.org/user/sign_up')
     },
-    showLocalUserView: () => {
-      dispatch(LoginActions.)
-    }
   };
 };
 

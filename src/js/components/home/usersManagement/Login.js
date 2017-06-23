@@ -33,7 +33,7 @@ class Login extends Component {
     let p = this.state.password
     let disabledButton = (u == null || u == "") || (p == null || p == "")
     return (
-      <div>
+      <div style={{display:'flex',  alignItems: 'center', flexDirection:'column', margin:'auto'}}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 350 }}>
           <img style={{ height: 64, width: 64 }} src="src/images/D43_LOGO.png" />
           <div>
@@ -62,7 +62,7 @@ class Login extends Component {
             onChange={e => this.setState({ password: e.target.value })}
           />
         </div>
-        <div>
+        <div style={{width:'100%'}}>
           <button
             className={disabledButton ? "btn-prime-reverse" : "btn-prime"}
             disabled={disabledButton}
@@ -82,8 +82,8 @@ class Login extends Component {
             )}>
             Create Door43 Account
             </button>
-            <a onClick={()=>this.props.showLocalUserView()}>Continue Offline</a>
         </div>
+        <a style={{textAlign:'center', cursor: 'pointer'}} onClick={()=>this.props.showLocalUserView()}>Continue Offline</a>
       </div>
     )
   }

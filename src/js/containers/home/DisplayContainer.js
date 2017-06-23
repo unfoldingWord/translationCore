@@ -28,11 +28,7 @@ class DisplayContainer extends Component {
       default:
         break;
     }
-    return (
-      <div style={{height:'100%', width:'100%'}}>
-        {displayContainer}
-      </div>
-    );
+    return displayContainer;
   }
 }
 
