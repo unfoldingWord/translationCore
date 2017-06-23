@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Login from '../../components/home/usersManagement/Login';
+import Logout from '../../components/home/usersManagement/Logout';
 import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
+import * as BodyUIActions from '../../actions/BodyUIActions';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Card } from 'material-ui/Card';
 
 class UsersManagementContainer extends Component {
   instructions() {
@@ -15,9 +19,8 @@ class UsersManagementContainer extends Component {
       </div>
     )
   }
-  handleLoginSubmit(){
+  handleLoginSubmit() {
     this.props.loginUser();
-    dispatch(this.props.goToNextStep());
   }
 
   componentWillMount() {
@@ -28,10 +31,25 @@ class UsersManagementContainer extends Component {
   }
 
   render() {
+    const { loggedInUser } = this.props.loginReducer;
+    const userdata = this.props.loginReducer.userdata || {};
+    const {username, email} = userdata;
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
+      <div style={{height:'100%', width:'100%'}}>
         User
-        <Login {...this.props} />
+      <MuiThemeProvider>
+          <Card style={{
+            width: '100%', height: '100%', background: 'white', padding: '20px', marginTop: '10px', display: 'flex',
+            alignItems: 'center', justifyContent: 'center'
+          }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
+              {!loggedInUser ?
+                <Login {...this.props} /> :
+                <Logout username={username} email={email} {...this.props} />
+              }
+            </div>
+          </Card>
+        </MuiThemeProvider>
       </div>
     );
   }
@@ -39,6 +57,7 @@ class UsersManagementContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    loginReducer: state.loginReducer
   };
 };
 
@@ -53,8 +72,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     logoutUser: () => {
       dispatch(LoginActions.logoutUser());
     },
-    showAlert:(message) => {
-      dispatch(AlertModalActions.openAlertDialog(message))
+    showAlert: (message) => {
+      dispatch(AlertModalActions.openAlertDialog(message));
+    },
+    goToNextStep: () => {
+      dispatch(BodyUIActions.goToNextStep());
     }
   };
 };
