@@ -27,7 +27,7 @@ class Login extends Component {
       <br />for creators and translators of biblical content.
       </p>
       </div>);
-    this.props.showPopover(title, text, positionCoord)
+    this.props.showPopover(title, text, positionCoord);
   }
 
   openDoor43AccountWindow(){
@@ -35,7 +35,7 @@ class Login extends Component {
   }
 
   render() {
-    const underLineColor = "var(--accent-color-dark)"
+    const underLineColor = "var(--accent-color-dark)";
     let u = this.state.username
     let p = this.state.password
     let disabledButton = (u == null || u == "") || (p == null || p == "")
