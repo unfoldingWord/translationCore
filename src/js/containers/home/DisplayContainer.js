@@ -29,7 +29,7 @@ class DisplayContainer extends Component {
         break;
     }
     return (
-      <div>
+      <div style={{height:'100%', width:'100%'}}>
         {displayContainer}
       </div>
     );
