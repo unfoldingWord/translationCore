@@ -25,10 +25,10 @@ class TemplateCard extends Component {
     let { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
     let emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
     let content = this.props.content ? this.props.content : emptyContent;
-    let cardStyle = { marginTop: '5px', height: '110px' }
+    let cardStyle = { marginTop: '5px' }
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
-      <div style={{ padding: '0 0 20px 0' }}>
+      <div style={{flex:1}}>
         {this.props.heading}
         <Card style={cardStyle}>
           <CardText>
