@@ -108,14 +108,12 @@ function parseTargetLanguage(usfm) {
  */
 function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   let bibleManifest = {};
-  let manifestLanguage = {};
-  manifestLanguage.identifier = projectManifest.target_language.id;
-  manifestLanguage.title = projectManifest.target_language.name;
-  manifestLanguage.direction = projectManifest.target_language.direction;
-  bibleManifest.language = manifestLanguage;
+  bibleManifest.language_id = projectManifest.target_language.id;  
+  bibleManifest.language_name = projectManifest.target_language.name;
+  bibleManifest.direction = projectManifest.target_language.direction;
   bibleManifest.subject = "Bible";
-  bibleManifest.identifier = "targetLanguage";
-  bibleManifest.title = "";
+  bibleManifest.resource_id = "targetLanguage";
+  bibleManifest.resource_title = "";
   bibleManifest.description = "Target Language";
   // savings target language bible manifest file in project target language bible path.
   let fileName = "manifest.json";

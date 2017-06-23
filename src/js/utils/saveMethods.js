@@ -7,7 +7,7 @@ import path from 'path-extra';
 // consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
+const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'toolsSettings.json');
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -68,12 +68,14 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
 export const saveTargetLanguage = state => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let bookAbbr = state.projectDetailsReducer.params.bookAbbr;
+    const bookAbbr = state.projectDetailsReducer.params.bookAbbr;
     let currentTargetLanguageChapter = state.resourcesReducer.bibles.targetLanguage;
-    for (let chapter in currentTargetLanguageChapter) {
-      let fileName = chapter + '.json';
-      let savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
-      fs.outputJsonSync(savePath, currentTargetLanguageChapter[chapter]);
+    if (PROJECT_SAVE_LOCATION & bookAbbr & currentTargetLanguageChapter) {
+      for (let chapter in currentTargetLanguageChapter) {
+        let fileName = chapter + '.json';
+        let savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
+        fs.outputJsonSync(savePath, currentTargetLanguageChapter[chapter]);
+      }
     }
   } catch (err) {
     console.warn(err)

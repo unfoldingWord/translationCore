@@ -9,7 +9,7 @@ import CryptoJS from "crypto-js";
 //  consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'modulesSettings.json');
+const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'toolsSettings.json');
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must

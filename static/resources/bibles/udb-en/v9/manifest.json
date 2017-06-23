@@ -1,11 +1,9 @@
 {
-  "language": {
-    "identifier": "en",
-    "title": "English",
-    "direction": "ltr"
-  },
+  "language_id": "en",
+  "language_name": "English",
+  "direction": "ltr",
   "subject": "Bible",
-  "identifier": "udb-en",
-  "title": "Unlocked Dynamic Bible",
+  "resource_id": "udb-en",
+  "resource_title": "Unlocked Dynamic Bible",
   "description": "Gateway Language"
 }
