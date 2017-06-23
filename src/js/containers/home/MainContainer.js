@@ -35,7 +35,7 @@ class MainContainer extends Component {
                 <Glyphicon
                   glyph="info-sign"
                   style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
-                  onClick={ (e) => {} }
+                  onClick={ () => {} }
                 />
               </div>
             </div>

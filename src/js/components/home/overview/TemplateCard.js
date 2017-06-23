@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import {Card, CardText} from 'material-ui/Card';
 
-class UserCard extends Component {
+class TemplateCard extends Component {
 
   button(text, onclick, disabled) {
     return (
@@ -39,4 +40,13 @@ class UserCard extends Component {
   }
 }
 
-export default UserCard
+TemplateCard.propTypes = {
+  heading: PropTypes.object.isRequired,
+  content: PropTypes.element,
+  emptyMessage: PropTypes.string.isRequired,
+  emptyButtonLabel: PropTypes.string.isRequired,
+  emptyButtonOnClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
+}
+
+export default TemplateCard
