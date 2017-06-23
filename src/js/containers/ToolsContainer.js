@@ -6,10 +6,10 @@ import { addComment } from '../actions/CommentsActions';
 import { addVerseEdit } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
 import { changeSelections, validateSelections } from '../actions/SelectionsActions';
-import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions';
-import {addGroupData, verifyGroupDataMatchesWithFs} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
-import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions';
+import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
+import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDataActions';
+import { setGroupsIndex } from '../actions/GroupsIndexActions';
+import { setModuleSettings } from '../actions/ModulesSettingsActions';
 import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
@@ -117,9 +117,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-      },
-      changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-        dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
       },
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));
