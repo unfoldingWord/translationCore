@@ -5,7 +5,6 @@ import UserCard from '../../components/home/overview/UserCard'
 import ProjectCard from '../../components/home/overview/ProjectCard'
 import ToolCard from '../../components/home/overview/ToolCard'
 // actions
-// import {actionCreator} from 'actionCreatorPath'
 
 class OverviewContainer extends Component {
 

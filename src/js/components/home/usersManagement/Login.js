@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { shell } from 'electron';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//components
 import { Card } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import { Glyphicon } from 'react-bootstrap';
+
 class Login extends Component {
   constructor(props) {
     super(props);
