@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import path from 'path-extra';
+import moment from 'moment';
+import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from './TemplateCard';
 
 class ProjectCard extends Component {
 
   heading(callback) {
-    let link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>
+    let link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>;
     return (
       <span>Current Project {link}</span>
     );
@@ -15,9 +19,12 @@ class ProjectCard extends Component {
     let content;
     let { projectDetailsReducer } = this.props.reducers;
     let { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
-    let projectName;
+    let projectName, accessTimeAgo;
     if (projectSaveLocation) {
       projectName = projectSaveLocation.split("/").pop();
+      let projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
+      let accessTime = fs.statSync(projectDataLocation).atime;
+      accessTimeAgo = moment().to(accessTime);
     }
     if (projectName && params && manifest.target_language) {
       let { bookAbbr } = params;
@@ -30,10 +37,10 @@ class ProjectCard extends Component {
             </div>
             <div>
               <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '375px', marginTop: '18px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
                 <div>
                   <Glyphicon glyph="time" style={{ marginRight: '5px', top: '2px' }} />
-                  <span>1 day ago</span>
+                  <span>{accessTimeAgo}</span>
                 </div>
                 <div>
                   <Glyphicon glyph="book" style={{ marginRight: '5px', top: '2px' }} />
@@ -75,6 +82,11 @@ class ProjectCard extends Component {
       />
     )
   }
+}
+
+ProjectCard.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 export default ProjectCard

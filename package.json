@@ -43,6 +43,7 @@
   "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
   "devDependencies": {
     "babel-cli": "^6.11.4",
+    "babel-eslint": "^7.2.3",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.11.0",
     "babel-register": "^6.11.6",
@@ -55,6 +56,7 @@
     "enzyme-redux": "^0.1.6",
     "eslint": "^2.13.1",
     "eslint-config-google": "^0.6.0",
+    "eslint-plugin-react": "^7.1.0",
     "react-addons-test-utils": "15.4.2",
     "redux-test-utils": "^0.1.1"
   },
@@ -77,6 +79,7 @@
     "lodash.padstart": "^4.6.1",
     "marked": "^0.3.5",
     "material-ui": "^0.17.0",
+    "moment": "^2.18.1",
     "natural": "^0.4.0",
     "npm": "2.14.12",
     "path-extra": "3.0.0",

@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import TemplateCard from './TemplateCard'
+import TemplateCard from './TemplateCard';
 
 class UserCard extends Component {
 
@@ -41,9 +42,15 @@ class UserCard extends Component {
         emptyMessage={emptyMessage}
         emptyButtonLabel={emptyButtonLabel}
         emptyButtonOnClick={emptyButtonOnClick}
+        disabled={false}
       />
     )
   }
+}
+
+UserCard.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 export default UserCard
