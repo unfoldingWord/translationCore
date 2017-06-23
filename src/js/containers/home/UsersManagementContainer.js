@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { shell } from 'electron';
 import Login from '../../components/home/usersManagement/Login';
 import Logout from '../../components/home/usersManagement/Logout';
 import * as PopoverActions from '../../actions/PopoverActions';
@@ -33,9 +34,9 @@ class UsersManagementContainer extends Component {
   render() {
     const { loggedInUser } = this.props.loginReducer;
     const userdata = this.props.loginReducer.userdata || {};
-    const {username, email} = userdata;
+    const { username, email } = userdata;
     return (
-      <div style={{height:'100%', width:'100%'}}>
+      <div style={{ height: '100%', width: '100%' }}>
         User
       <MuiThemeProvider>
           <Card style={{
@@ -77,6 +78,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     goToNextStep: () => {
       dispatch(BodyUIActions.goToNextStep());
+    },
+    openDoor43AccountWindow: ()=> {
+      shell.openExternal('https://git.door43.org/user/sign_up')
+    },
+    showLocalUserView: () => {
+      dispatch(LoginActions.)
     }
   };
 };

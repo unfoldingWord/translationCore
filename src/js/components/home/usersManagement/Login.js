@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { shell } from 'electron';
 import TextField from 'material-ui/TextField';
 import { Glyphicon } from 'react-bootstrap';
 class Login extends Component {
@@ -26,10 +25,6 @@ class Login extends Component {
       </p>
       </div>);
     this.props.showPopover(title, text, positionCoord)
-  }
-
-  openDoor43AccountWindow() {
-    shell.openExternal('https://git.door43.org/user/sign_up')
   }
 
   render() {
@@ -82,11 +77,12 @@ class Login extends Component {
               <div>
                 <p style={{ fontSize: 20, fontWeight: 'bold' }}>Coming Soon...</p>
                 <p>TranslationCore does not currently support creating a Door43 account.
-                You may create an account online at: <br /><a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a> </p>
+                You may create an account online at: <br /><a onClick={this.props.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a> </p>
               </div>
             )}>
             Create Door43 Account
             </button>
+            <a onClick={()=>this.props.showLocalUserView()}>Continue Offline</a>
         </div>
       </div>
     )

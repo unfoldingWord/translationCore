@@ -114,7 +114,6 @@ export function loadProjectDataByTypeToExport(dataFolder, projectId, type) {
 export function loadUserdata() {
   let loginReducer = {
     loggedInUser: false,
-    displayLogin: true,
     userdata: {},
     feedback: '',
     subject: 'Bug Report'
