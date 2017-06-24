@@ -77,7 +77,7 @@ class LocalUser extends Component {
                         className={!disabledButton ? "btn-prime-reverse" : "btn-prime"}
                         disabled={disabledButton}
                         style={{ width: "100%", margin: "40px 0px 10px" }}
-                        onClick={() => this.props.loginUser(this.state)}>
+                        onClick={() => this.props.actions.loginUser(this.state)}>
                         Log In
                     </button>
                 </div>
