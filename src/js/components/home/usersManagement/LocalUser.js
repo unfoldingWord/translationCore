@@ -94,13 +94,13 @@ class LocalUser extends Component {
                     {this.agreeCheckBox()}
                     <span>
                         I have read and agree to the
-                </span>
+                    </span>
                     &nbsp;
-                <a
+                    <a
                         style={{ cursor: "pointer", textDecoration: "none", }}
                         onClick={() => this.showInfoPage("termsAndConditions")}>
                         terms and conditions
-                </a>
+                    </a>
                     {this.loginButton(loginEnabled)}
                 </div>
             </div>
