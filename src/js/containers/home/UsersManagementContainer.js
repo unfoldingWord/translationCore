@@ -31,23 +31,23 @@ class UsersManagementContainer extends Component {
   }
 
   render() {
-    const { loggedInUser } = this.props.loginReducer;
-    const userdata = this.props.loginReducer.userdata || {};
-    const {username, email} = userdata;
+    const { loggedInUser } = this.props.reducers.loginReducer;
+    const userdata = this.props.reducers.loginReducer.userdata || {};
+    const { username, email } = userdata;
+    const userCardManagementCardStyle = {
+      width: '100%', height: '100%',
+      background: 'white', padding: '20px',
+      marginTop: '10px', display: 'flex'
+    }
     return (
-      <div style={{height:'100%', width:'100%'}}>
+      <div style={{ height: '100%', width: '100%' }}>
         User
       <MuiThemeProvider>
-          <Card style={{
-            width: '100%', height: '100%', background: 'white', padding: '20px', marginTop: '10px', display: 'flex',
-            alignItems: 'center', justifyContent: 'center'
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
-              {!loggedInUser ?
-                <Login {...this.props} /> :
-                <Logout username={username} email={email} {...this.props} />
-              }
-            </div>
+          <Card containerStyle={userCardManagementCardStyle}>
+            {!loggedInUser ?
+              <Login {...this.props} /> :
+              <Logout username={username} email={email} {...this.props} />
+            }
           </Card>
         </MuiThemeProvider>
       </div>
@@ -55,33 +55,32 @@ class UsersManagementContainer extends Component {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    loginReducer: state.loginReducer
-  };
-};
-
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    loginUser: (userDataSumbit) => {
-      dispatch(LoginActions.loginUser(userDataSumbit));
-    },
-    showPopover: (title, bodyText, positionCoord) => {
-      dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
-    },
-    logoutUser: () => {
-      dispatch(LoginActions.logoutUser());
-    },
-    showAlert: (message) => {
-      dispatch(AlertModalActions.openAlertDialog(message));
-    },
-    goToNextStep: () => {
-      dispatch(BodyUIActions.goToNextStep());
+    actions: {
+      ...ownProps.actions,
+      loginUser: (userDataSumbit) => {
+        dispatch(LoginActions.loginUser(userDataSumbit));
+      },
+      showPopover: (title, bodyText, positionCoord) => {
+        dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+      },
+      logoutUser: () => {
+        dispatch(LoginActions.logoutUser());
+      },
+      showAlert: (message) => {
+        dispatch(AlertModalActions.openAlertDialog(message));
+      },
+      goToNextStep: () => {
+        dispatch(BodyUIActions.goToNextStep());
+      }
     }
-  };
+  }
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UsersManagementContainer);
+const mapStateToProps = (state, ownProps) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersManagementContainer);

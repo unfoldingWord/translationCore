@@ -13,13 +13,13 @@ class Logout extends Component {
                 <button
                     className={"btn-prime"}
                     style={{ width: "100%", margin: "40px 0px 10px" }}
-                    onClick={() => this.props.goToNextStep()}>
+                    onClick={() => this.props.actions.goToNextStep()}>
                     Continue to Project
             </button>
                 <button
                     className="btn-second"
                     style={{ width: "100%", margin: "10px 0px 20px" }}
-                    onClick={() => this.props.logoutUser()}>
+                    onClick={() => this.props.actions.logoutUser()}>
                     Logout
             </button>
             </div>

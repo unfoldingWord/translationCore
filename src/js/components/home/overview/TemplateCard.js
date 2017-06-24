@@ -24,7 +24,7 @@ class UserCard extends Component {
     let { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
     let emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
     let content = this.props.content ? this.props.content : emptyContent;
-    let cardStyle = { marginTop: '5px' }
+    let cardStyle = { marginTop: '5px', height: '110px' }
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
       <div style={{flex:1}}>

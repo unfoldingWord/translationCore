@@ -25,18 +25,28 @@ class Login extends Component {
       <br />for creators and translators of biblical content.
       </p>
       </div>);
-    this.props.showPopover(title, text, positionCoord)
+    this.props.actions.showPopover(title, text, positionCoord)
   }
 
   openDoor43AccountWindow() {
     shell.openExternal('https://git.door43.org/user/sign_up')
   }
 
+  door43Popup() {
+    return (
+      <div>
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>Coming Soon...</p>
+        <p>TranslationCore does not currently support creating a Door43 account.
+        You may create an account online at: <br />
+          <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
+        </p>
+      </div>)
+  }
+
   render() {
     const underLineColor = "var(--accent-color-dark)"
-    let u = this.state.username
-    let p = this.state.password
-    let disabledButton = (u == null || u == "") || (p == null || p == "")
+    let { username, password } = this.state;
+    let disabledButton = !username || !password;
     return (
       <div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 350 }}>
@@ -72,19 +82,13 @@ class Login extends Component {
             className={disabledButton ? "btn-prime-reverse" : "btn-prime"}
             disabled={disabledButton}
             style={{ width: "100%", margin: "40px 0px 10px" }}
-            onClick={() => this.props.loginUser(this.state)}>
+            onClick={() => this.props.actions.loginUser(this.state)}>
             Log In
             </button>
           <button
             className="btn-second"
             style={{ width: "100%", margin: "10px 0px 20px" }}
-            onClick={() => this.props.showAlert(
-              <div>
-                <p style={{ fontSize: 20, fontWeight: 'bold' }}>Coming Soon...</p>
-                <p>TranslationCore does not currently support creating a Door43 account.
-                You may create an account online at: <br /><a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a> </p>
-              </div>
-            )}>
+            onClick={() => this.props.actions.showAlert(this.door43Popup())}>
             Create Door43 Account
             </button>
         </div>
