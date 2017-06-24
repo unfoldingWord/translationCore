@@ -64,7 +64,7 @@ class UsersManagementContainer extends Component {
             {!loggedInUser && !this.state.localUserView ?
               <Login {...this.props} showLocalUserView={this.showLocalUserView} /> :
               !loggedInUser && this.state.localUserView ?
-                <LocalUser /> :
+                <LocalUser {...this.props} /> :
                 <Logout username={username} email={email} {...this.props} />
             }
           </Card>
@@ -80,6 +80,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       ...ownProps.actions,
       loginUser: (userDataSumbit) => {
         dispatch(LoginActions.loginUser(userDataSumbit));
+      },
+      loginLocalUser:(username) => {
+        dispatch(LoginActions.loginLocalUser(username))
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));

@@ -8,18 +8,66 @@ class LocalUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            localUsername: "",
+            localUsername: "This is publicly visible",
             checkBoxChecked: false,
             infoPage: ""
         };
+        this.typing = this.typing.bind(this);
         this.switchInfoPage = this.switchInfoPage.bind(this);
     }
     switchInfoPage(pageName) {
         this.setState({ infoPage: pageName });
     }
 
+    typing(e) {
+        if (e.target.value == "This is publicly visible") this.setState({ localUsername: "" });
+        else this.setState({ localUsername: e.target.value });
+    }
+
+    localUsernameInput() {
+        return (
+            <input
+                onFocus={this.typing}
+                onChange={this.typing}
+                value={this.state.localUsername}
+                style={{
+                    color: this.state.localUsername == "This is publicly visible" ? 'grey' : 'black',
+                    fontStyle: this.state.localUsername == "This is publicly visible" ? 'italic' : 'normal',
+                    border: '1px solid black', outline: 'none', borderRadius: 2,
+                    height: 30, width: 250, padding: 5, marginTop: 5
+                }}>
+            </input>
+        )
+    }
+
+    agreeCheckBox() {
+        return (
+            <Checkbox
+                checked={this.state.checkBoxChecked}
+                style={{ width: "0px", marginRight: -10 }}
+                iconStyle={{ fill: 'black' }}
+                labelStyle={{ color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500" }}
+                onCheck={(e) => {
+                    this.setState({ checkBoxChecked: !this.state.checkBoxChecked });
+                }}
+            />
+        )
+    }
+
+    loginButton(loginEnabled) {
+        return (
+            <button
+                className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
+                disabled={!loginEnabled}
+                style={{ width: "100%", margin: "40px 0px 10px" }}
+                onClick={() => this.props.actions.loginLocalUser(this.state.localUsername)}>
+                Log In
+           </button>
+        )
+    }
 
     render() {
+        const loginEnabled = this.state.checkBoxChecked;
         let infoPageView = <div />
         switch (this.state.infoPage) {
             case "termsAndConditions":
@@ -34,36 +82,16 @@ class LocalUser extends Component {
             default:
                 break;
         }
-        let disabledButton = this.state.checkBoxChecked;
         return (
             <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
                 <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
                 <div>
                     <span style={{ color: 'grey' }}>Username</span>
                     <br />
-                    <input
-                        onFocus={this.focus}
-                        onChange={(e) => this.setState({ localUsername: e.target.value.replace("This is publicly visible", "") })}
-                        value={this.state.localUsername || "This is publicly visible"}
-                        style={{
-                            color: this.state.localUsername ? 'black' : 'grey',
-                            fontStyle: this.state.localUsername ? 'normal' : 'italic',
-                            border: '1px solid black', outline: 'none', borderRadius: 2,
-                            height: 30, width: 250, padding: 5, marginTop: 5
-                        }}>
-                    </input>
+                    {this.localUsernameInput()}
                 </div>
                 <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center' }}>
-                    <Checkbox
-                        disabled={!this.state.localUsername}
-                        checked={this.state.checkBoxChecked}
-                        style={{ width: "0px", marginRight: -10 }}
-                        iconStyle={{ fill: 'black' }}
-                        labelStyle={{ color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500" }}
-                        onCheck={(e, isInputChecked) => {
-                            this.setState({ checkBoxChecked: isInputChecked });
-                        }}
-                    />
+                    {this.agreeCheckBox()}
                     <span>
                         I have read and agree to the
                 </span>
@@ -73,13 +101,7 @@ class LocalUser extends Component {
                         onClick={() => this.showInfoPage("termsAndConditions")}>
                         terms and conditions
                 </a>
-                    <button
-                        className={!disabledButton ? "btn-prime-reverse" : "btn-prime"}
-                        disabled={disabledButton}
-                        style={{ width: "100%", margin: "40px 0px 10px" }}
-                        onClick={() => this.props.actions.loginUser(this.state)}>
-                        Log In
-                    </button>
+                    {this.loginButton(loginEnabled)}
                 </div>
             </div>
         );
