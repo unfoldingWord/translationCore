@@ -66,10 +66,3 @@ export function submitFeedback() {
     type: consts.SUBMIT_FEEDBACK
   };
 }
-
-export function setLocalUserMode() {
-  return {
-    type:consts.SET_LOCAL_USER_MODE,
-
-  }
-}
