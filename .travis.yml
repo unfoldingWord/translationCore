@@ -5,9 +5,6 @@ os:
   - linux
   - osx
 before_script:
-# - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install build-essential libssl-dev ; fi
-# - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-# - nvm install 4.3.0
 - travis_retry npm install
 - export DISPLAY=:99.0
 - npm i -g xvfb-maybe@0.1.3
