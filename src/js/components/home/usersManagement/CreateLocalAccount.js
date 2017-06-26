@@ -58,8 +58,28 @@ class CreateLocalAccount extends Component {
         )
     }
 
+    localUserWarning() {
+        return (
+            <div>
+                <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
+                <p>You are being chosen to be known as "
+                <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
+                    ". This will be available publicly<br /><br />
+                    If you are not comfortable with being known as "
+                <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
+                    ", You may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Go Back </span>
+                    and enter a new name.
+                </p>
+            </div>
+        )
+    }
+
     loginButtons() {
         const loginEnabled = this.state.checkBoxChecked;
+        const callback = (result) => {
+            if (result == "Create Account") this.props.actions.loginLocalUser(this.state.localUsername);
+            this.props.actions.closeAlert();
+        }
         return (
             <div style={{ display: 'flex', width: '100%', justifyContent: 'flex-end' }}>
                 <button
@@ -67,14 +87,14 @@ class CreateLocalAccount extends Component {
                     style={{ width: 150, margin: "40px 10px 0px 0px" }}
                     onClick={() => this.props.setView('main')}>
                     Go Back
-            </button>
+                </button>
                 <button
                     className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
                     disabled={!loginEnabled}
                     style={{ width: 200, margin: "40px 0px 0px 10px" }}
-                    onClick={() => this.props.actions.loginLocalUser(this.state.localUsername)}>
+                    onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, "Create Account", "Go Back")}>
                     Create
-           </button>
+                </button>
             </div>
         )
     }
@@ -120,13 +140,11 @@ class CreateLocalAccount extends Component {
 
     render() {
         return (
-            <div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width: '100%' }}>
-                    <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
-                    {this.localUsernameInput()}
-                    {this.termsAndConditionsAgreement()}
-                    {this.loginButtons()}
-                </div>
+            <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width: '100%' }}>
+                <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
+                {this.localUsernameInput()}
+                {this.termsAndConditionsAgreement()}
+                {this.loginButtons()}
                 <Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })} bsSize="lg">
                     <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
                         <Modal.Title>
@@ -137,6 +155,7 @@ class CreateLocalAccount extends Component {
                         {this.state.modalContent}
                     </Modal.Body>
                 </Modal>
+
             </div>
         );
     }

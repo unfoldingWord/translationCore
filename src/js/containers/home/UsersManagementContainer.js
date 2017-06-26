@@ -21,17 +21,13 @@ class UsersManagementContainer extends Component {
     )
   }
 
-  handleLoginSubmit() {
-    this.props.loginUser();
-  }
-
   componentWillMount() {
     let instructions = this.instructions();
     if (this.props.reducers.BodyUIReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
   }
-  
+
   render() {
     const userCardManagementCardStyle = {
       width: '100%', height: '100%',
@@ -45,7 +41,7 @@ class UsersManagementContainer extends Component {
       <div style={{ height: '100%', width: '100%' }}>
         User
       <MuiThemeProvider>
-          <Card style={{height:'100%'}} containerStyle={userCardManagementCardStyle}>
+          <Card style={{ height: '100%' }} containerStyle={userCardManagementCardStyle}>
             {!loggedInUser ?
               <LoginContainer {...this.props} /> :
               <Logout username={username} email={email} {...this.props} />
@@ -78,6 +74,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       goToNextStep: () => {
         dispatch(BodyUIActions.goToNextStep());
+      },
+      openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
+        dispatch(AlertModalActions.openOptionDialog(alertMessage, callback, button1Text, button2Text));
+      },
+      closeAlert: () => {
+        dispatch(AlertModalActions.closeAlertDialog());
       }
     }
   }

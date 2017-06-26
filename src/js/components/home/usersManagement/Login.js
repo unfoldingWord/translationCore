@@ -42,7 +42,8 @@ class Login extends Component {
         You may create an account online at: <br />
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
-      </div>)
+      </div>
+      )
   }
 
   loginHeaderDoor43() {
