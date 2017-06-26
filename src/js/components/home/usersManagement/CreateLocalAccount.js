@@ -58,22 +58,30 @@ class CreateLocalAccount extends Component {
         )
     }
 
-    loginButton() {
+    loginButtons() {
         const loginEnabled = this.state.checkBoxChecked;
         return (
+            <div style={{display:'flex', width:'100%', justifyContent:'flex-end'}}>
+            <button
+                    className="btn-second"
+                    style={{ width: 150, margin: "40px 10px 0px 0px" }}
+                    onClick={() => this.props.setView('main')}>
+                    Go Back
+            </button>
             <button
                 className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
                 disabled={!loginEnabled}
-                style={{ width: "100%", margin: "40px 0px 10px" }}
+                style={{ width: 200, margin: "40px 0px 0px 10px" }}
                 onClick={() => this.props.actions.loginLocalUser(this.state.localUsername)}>
-                Log In
+                Create
            </button>
+            </div>
         )
     }
 
     termsAndConditionsAgreement() {
         return (
-            <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center' }}>
+            <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center', width:'100%' }}>
                 {this.agreeCheckBox()}
                 <span>
                     I have read and agree to the
@@ -104,11 +112,11 @@ class CreateLocalAccount extends Component {
                 break;
         }
         return (
-            <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width:'100%' }}>
                 <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
                 {this.localUsernameInput()}
                 {this.termsAndConditionsAgreement()}
-                {this.loginButton()}
+                {this.loginButtons()}
             </div>
         );
     }

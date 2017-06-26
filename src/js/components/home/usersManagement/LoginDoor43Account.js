@@ -6,11 +6,11 @@ class LoginDoor43Account extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:null,
-            password:null
+            username: null,
+            password: null
         };
     }
-    
+
     infoClickDoor43(e) {
         let positionCoord = e.target;
         let title = <strong>Door43 Information</strong>
@@ -67,7 +67,7 @@ class LoginDoor43Account extends Component {
         )
     }
 
-    loginButton() {
+    loginButtons() {
         return (
             <div style={{ width: '100%' }}>
                 <button
@@ -75,6 +75,12 @@ class LoginDoor43Account extends Component {
                     style={{ width: "100%", margin: "40px 0px 10px" }}
                     onClick={() => this.props.actions.loginUser(this.state)}>
                     Log in
+            </button>
+                <button
+                    className="btn-second"
+                    style={{ width: "100%", margin: "10px 0px 20px" }}
+                    onClick={() => this.props.setView('main')}>
+                    Go Back
             </button>
             </div>
         )
@@ -85,7 +91,7 @@ class LoginDoor43Account extends Component {
             <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: 'auto', width: 250 }}>
                 {this.loginHeaderDoor43()}
                 {this.loginTextFields()}
-                {this.loginButton()}
+                {this.loginButtons()}
             </div>
         );
     }

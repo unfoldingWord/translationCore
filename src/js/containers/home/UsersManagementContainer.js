@@ -45,7 +45,7 @@ class UsersManagementContainer extends Component {
       <div style={{ height: '100%', width: '100%' }}>
         User
       <MuiThemeProvider>
-          <Card containerStyle={userCardManagementCardStyle}>
+          <Card style={{height:'100%'}} containerStyle={userCardManagementCardStyle}>
             {!loggedInUser ?
               <LoginContainer {...this.props} /> :
               <Logout username={username} email={email} {...this.props} />
