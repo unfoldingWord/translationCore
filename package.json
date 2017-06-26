@@ -51,6 +51,7 @@
     "electron": "^1.6.11",
     "electron-builder": "^19.8.0",
     "electron-mocha": "^3.5.0",
+    "electron-packager": "^8.7.2",
     "enzyme": "^2.6.0",
     "enzyme-redux": "^0.1.6",
     "eslint": "^2.13.1",
