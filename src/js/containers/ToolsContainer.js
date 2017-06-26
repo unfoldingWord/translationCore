@@ -10,7 +10,6 @@ import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, ch
 import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDataActions';
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
 import { setModuleSettings } from '../actions/ModulesSettingsActions';
-import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
@@ -21,17 +20,17 @@ class ToolsContainer extends React.Component {
 
   componentDidMount() {
     this.props.actions.verifyMenuChecksReflectFS();
+    let { contextId } = this.props.contextIdReducer;
+    if (!contextId) this.props.actions.loadCurrentContextId();
   }
 
   componentWillReceiveProps(nextProps) {
-    let { contextId } = nextProps.contextIdReducer
-    let { toolName } = nextProps.currentToolReducer
+    let { contextId } = nextProps.contextIdReducer;
+    let { toolName } = nextProps.currentToolReducer;
     // if contextId does not match current tool, then remove contextId
     if (contextId && contextId.tool !== toolName) {
-      nextProps.actions.changeCurrentContextId(undefined)
+      nextProps.actions.changeCurrentContextId(undefined);
     }
-    // check to see if groupData and groupIndex
-    if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {

@@ -63,6 +63,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
+      },
+      toggleHomeView: () => {
+        dispatch(BodyUIActions.toggleHomeView());
       }
     }
   };
