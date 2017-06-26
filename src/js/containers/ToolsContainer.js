@@ -21,17 +21,17 @@ class ToolsContainer extends React.Component {
 
   componentDidMount() {
     this.props.actions.verifyMenuChecksReflectFS();
+    let { contextId } = this.props.contextIdReducer;
+    if (!contextId) this.props.actions.loadCurrentContextId();
   }
 
   componentWillReceiveProps(nextProps) {
-    let { contextId } = nextProps.contextIdReducer
-    let { toolName } = nextProps.currentToolReducer
+    let { contextId } = nextProps.contextIdReducer;
+    let { toolName } = nextProps.currentToolReducer;
     // if contextId does not match current tool, then remove contextId
     if (contextId && contextId.tool !== toolName) {
-      nextProps.actions.changeCurrentContextId(undefined)
+      nextProps.actions.changeCurrentContextId(undefined);
     }
-    // check to see if groupData and groupIndex
-    if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {
