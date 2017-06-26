@@ -44,7 +44,7 @@ class TemplateCard extends Component {
     const cardStyle = { marginTop: '5px', height: '110px' }
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
-      <div style={{ padding: '0 0 20px 0' }}>
+      <div style={{flex:1}}>
         {this.props.heading}
         <Card style={cardStyle}>
           <CardText>

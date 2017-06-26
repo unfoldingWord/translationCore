@@ -48,9 +48,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onSwitchToLoginPage: (displayLoginBool) => {
-      dispatch(LoginActions.displayLogin(displayLoginBool));
-    },
     handleSubmit: (userDataSumbit) => {
       dispatch(LoginActions.loginUser(userDataSumbit));
     },

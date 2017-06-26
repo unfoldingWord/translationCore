@@ -66,7 +66,7 @@ class LocalLogin extends Component {
                   checked={this.state.checkBoxChecked}
                   style={{width: "0px"}}
                   iconStyle={{fill: 'white'}}
-                  labelStyle={{color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500"}}
+                  labelStyle={{color: "black", opacity: "0.7", fontWeight: "500"}}
                   onCheck={(e, isInputChecked) => {
                     this.setState({checkBoxChecked: isInputChecked});
                   }}
