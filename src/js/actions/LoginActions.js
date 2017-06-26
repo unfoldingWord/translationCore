@@ -7,13 +7,6 @@ import { remote } from 'electron';
 // const delclarations
 const { dialog } = remote;
 
-export function displayLogin(val) {
-  return {
-    type: consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN,
-    val: val
-  };
-}
-
 export function loginLocalUser(localUsername) {
   return ((dispatch, getState) => {
     dispatch({

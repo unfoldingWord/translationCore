@@ -23,7 +23,7 @@ class MainContainer extends Component {
             <div style={{ width: '400px', padding: '0 20px' }}>
               <Instructions {...this.props} />
             </div>
-            <div style={{ width: '600px', padding: '0 20px' }}>
+            <div style={{ width: '600px', padding: '0 20px', marginBottom:30 }}>
               <DisplayContainer {...this.props} />
             </div>
           </div>
