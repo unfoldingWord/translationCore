@@ -168,7 +168,7 @@ function loadProjectDataFromFileSystem(toolName) {
           getGroupData(dispatch, dataDirectory, toolName, params)
           .then(() => {
             // TODO: this action may stay here temporary until the home screen implementation.
-            dispatch(BodyUIActions.toggleHomeView(false))
+            // dispatch(BodyUIActions.toggleHomeView(false))
             dispatch({ type: consts.DONE_LOADING })
           })
         })

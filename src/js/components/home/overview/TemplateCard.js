@@ -1,17 +1,33 @@
+// external
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import {Card, CardText} from 'material-ui/Card';
 
 class TemplateCard extends Component {
 
-  button(text, onclick, disabled) {
+  /**
+  * @description generates the button for fallback
+  * @param {string} buttonLabel - text in the button
+  * @param {function} onClick - callback used if button clicked
+  * @param {bool} disabled - disable the button
+  * @return {component} - component returned
+  */
+  button(buttonLabel, onClick, disabled) {
     return (
-      <button className='btn-prime' disabled={disabled} onClick={onclick} style={{ marginBottom: '0' }}>
-        {text}
+      <button className='btn-prime' disabled={disabled} onClick={onClick} style={{ marginBottom: '0' }}>
+        {buttonLabel}
       </button>
     );
   }
 
+  /**
+  * @description generates the button for fallback
+  * @param {string} message - message above the button
+  * @param {string} buttonLabel - text in the button
+  * @param {function} onClick - callback used if button clicked
+  * @param {bool} disabled - disable the button
+  * @return {component} - component returned
+  */
   emptyContent(message, buttonLabel, onClick, disabled) {
     return (
       <div style={{ textAlign: 'center', paddingBottom: '0px' }}>
@@ -22,10 +38,10 @@ class TemplateCard extends Component {
   }
 
   render() {
-    let { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
-    let emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
-    let content = this.props.content ? this.props.content : emptyContent;
-    let cardStyle = { marginTop: '5px', height: '110px' }
+    const { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
+    const emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
+    const content = this.props.content ? this.props.content : emptyContent;
+    const cardStyle = { marginTop: '5px', height: '110px' }
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
       <div style={{flex:1}}>
