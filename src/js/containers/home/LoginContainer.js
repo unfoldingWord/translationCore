@@ -8,7 +8,7 @@ class LoginContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            viewType:'main'
+            viewType: 'main'
         };
         this.setView = this.setView.bind(this);
     }
@@ -20,7 +20,7 @@ class LoginContainer extends Component {
     }
 
     getView() {
-        switch(this.state.viewType) {
+        switch (this.state.viewType) {
             case 'main': return <Login setView={this.setView} {...this.props} />;
             case 'local': return <CreateLocalAccount setView={this.setView} {...this.props} />;
             case 'create': return <CreateDoor43Account setView={this.setView} {...this.props} />;

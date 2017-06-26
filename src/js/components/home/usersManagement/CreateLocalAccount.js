@@ -63,10 +63,11 @@ class CreateLocalAccount extends Component {
             <div>
                 <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
                 <p>You are being chosen to be known as "
-                <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-                    ". This will be available publicly<br /><br />
+                    <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
+                    ". This will be available publicly
+                    <br /><br />
                     If you are not comfortable with being known as "
-                <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
+                    <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
                     ", You may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Go Back </span>
                     and enter a new name.
                 </p>
@@ -155,7 +156,6 @@ class CreateLocalAccount extends Component {
                         {this.state.modalContent}
                     </Modal.Body>
                 </Modal>
-
             </div>
         );
     }

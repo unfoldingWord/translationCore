@@ -7,31 +7,34 @@ class Login extends Component {
   infoClickDoor43(e) {
     let positionCoord = e.target;
     let title = <strong>Door43 Information</strong>
-    let text =
-      (<div style={{ padding: "0 20px" }}>
+    let text = (
+      <div style={{ padding: "0 20px" }}>
         <p>
           Door43 is a free, online, revision-controlled content management
-      <br />system for open-licensed biblical material.
-      </p>
+        <br />system for open-licensed biblical material.
+        </p>
         <p>
-          It provides free, remote storage and collaboration services
-      <br />for creators and translators of biblical content.
-      </p>
-      </div>);
-    this.props.actions.showPopover(title, text, positionCoord)
+            It provides free, remote storage and collaboration services
+        <br />for creators and translators of biblical content.
+        </p>
+      </div>
+    );
+    this.props.actions.showPopover(title, text, positionCoord);
   }
 
   infoClickLocalUser(e) {
     let positionCoord = e.target;
-    let title = <strong>Door43 Information</strong>
-    let text =
-      (<div style={{ padding: "0 20px" }}>
-      </div>);
-    this.props.actions.showPopover(title, text, positionCoord)
+    let title = <strong>Local User Information</strong>
+    let text = (
+    <div style={{ padding: "0 20px" }}>
+      You can choose to be a local user and keep your identity anonymous.
+    </div>
+    );
+    this.props.actions.showPopover(title, text, positionCoord);
   }
 
   openDoor43AccountWindow() {
-    shell.openExternal('https://git.door43.org/user/sign_up')
+    shell.openExternal('https://git.door43.org/user/sign_up');
   }
 
   door43Popup() {
