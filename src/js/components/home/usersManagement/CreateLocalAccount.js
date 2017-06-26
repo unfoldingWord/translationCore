@@ -4,7 +4,7 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
 
-class LocalUser extends Component {
+class CreateLocalAccount extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ class LocalUser extends Component {
         this.switchInfoPage = this.switchInfoPage.bind(this);
     }
     switchInfoPage(pageName) {
-        this.setState({ infoPage: pageName });
+        
     }
 
     typing(e) {
@@ -26,17 +26,21 @@ class LocalUser extends Component {
 
     localUsernameInput() {
         return (
-            <input
-                onFocus={this.typing}
-                onChange={this.typing}
-                value={this.state.localUsername}
-                style={{
-                    color: this.state.localUsername == "This is publicly visible" ? 'grey' : 'black',
-                    fontStyle: this.state.localUsername == "This is publicly visible" ? 'italic' : 'normal',
-                    border: '1px solid black', outline: 'none', borderRadius: 2,
-                    height: 30, width: 250, padding: 5, marginTop: 5
-                }}>
-            </input>
+            <div>
+                <span style={{ color: 'grey' }}>Username</span>
+                <br />
+                <input
+                    onFocus={this.typing}
+                    onChange={this.typing}
+                    value={this.state.localUsername}
+                    style={{
+                        color: this.state.localUsername == "This is publicly visible" ? 'grey' : 'black',
+                        fontStyle: this.state.localUsername == "This is publicly visible" ? 'italic' : 'normal',
+                        border: '1px solid black', outline: 'none', borderRadius: 2,
+                        height: 30, width: 250, padding: 5, marginTop: 5
+                    }}>
+                </input>
+            </div>
         )
     }
 
@@ -54,7 +58,8 @@ class LocalUser extends Component {
         )
     }
 
-    loginButton(loginEnabled) {
+    loginButton() {
+        const loginEnabled = this.state.checkBoxChecked;
         return (
             <button
                 className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
@@ -66,8 +71,24 @@ class LocalUser extends Component {
         )
     }
 
+    termsAndConditionsAgreement() {
+        return (
+            <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center' }}>
+                {this.agreeCheckBox()}
+                <span>
+                    I have read and agree to the
+                    </span>
+                &nbsp;
+                    <a
+                    style={{ cursor: "pointer", textDecoration: "none", }}
+                    onClick={() => this.showInfoPage("termsAndConditions")}>
+                    terms and conditions
+                    </a>
+            </div>
+        )
+    }
+
     render() {
-        const loginEnabled = this.state.checkBoxChecked;
         let infoPageView = <div />
         switch (this.state.infoPage) {
             case "termsAndConditions":
@@ -85,27 +106,12 @@ class LocalUser extends Component {
         return (
             <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
                 <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
-                <div>
-                    <span style={{ color: 'grey' }}>Username</span>
-                    <br />
-                    {this.localUsernameInput()}
-                </div>
-                <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center' }}>
-                    {this.agreeCheckBox()}
-                    <span>
-                        I have read and agree to the
-                    </span>
-                    &nbsp;
-                    <a
-                        style={{ cursor: "pointer", textDecoration: "none", }}
-                        onClick={() => this.showInfoPage("termsAndConditions")}>
-                        terms and conditions
-                    </a>
-                    {this.loginButton(loginEnabled)}
-                </div>
+                {this.localUsernameInput()}
+                {this.termsAndConditionsAgreement()}
+                {this.loginButton()}
             </div>
         );
     }
 }
 
-export default LocalUser;
+export default CreateLocalAccount;

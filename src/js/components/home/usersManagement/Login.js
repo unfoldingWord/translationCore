@@ -2,15 +2,7 @@ import React, { Component } from 'react'
 import TextField from 'material-ui/TextField';
 import { Glyphicon } from 'react-bootstrap';
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: null,
-      password: null
-    };
-  }
-
-  infoClick(e) {
+  infoClickDoor43(e) {
     let positionCoord = e.target;
     let title = <strong>Door43 Information</strong>
     let text =
@@ -23,6 +15,15 @@ class Login extends Component {
           It provides free, remote storage and collaboration services
       <br />for creators and translators of biblical content.
       </p>
+      </div>);
+    this.props.actions.showPopover(title, text, positionCoord)
+  }
+
+  infoClickLocalUser(e) {
+    let positionCoord = e.target;
+    let title = <strong>Door43 Information</strong>
+    let text =
+      (<div style={{ padding: "0 20px" }}>
       </div>);
     this.props.actions.showPopover(title, text, positionCoord)
   }
@@ -42,74 +43,72 @@ class Login extends Component {
       </div>)
   }
 
-  loginHeader() {
+  loginHeaderDoor43() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 350 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <img style={{ height: 64, width: 64 }} src="src/images/D43_LOGO.png" />
         <div>
           <span style={{ fontSize: 20, fontWeight: 'bold' }}>Log in With Door43</span>
           <Glyphicon
             glyph="info-sign"
             style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
-            onClick={(e) => this.infoClick(e)}
+            onClick={(e) => this.infoClickDoor43(e)}
           />
         </div>
       </div>
     )
   }
 
-  loginTextFields() {
-    const underLineColor = "var(--accent-color-dark)";
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-        <TextField
-          fullWidth={true}
-          floatingLabelText="Username"
-          underlineFocusStyle={{ borderColor: underLineColor }}
-          floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500" }}
-          onChange={e => this.setState({ username: e.target.value })}
-        />
-        <TextField
-          fullWidth={true}
-          floatingLabelText="Password"
-          type="password"
-          underlineFocusStyle={{ borderColor: underLineColor }}
-          floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500" }}
-          onChange={e => this.setState({ password: e.target.value })}
-        />
-      </div>
-    )
-  }
-
-  loginButtons() {
-    let { username, password } = this.state;
-    let disabledButton = !username || !password;
+  loginButtonsDoor43() {
     return (
       <div style={{ width: '100%' }}>
         <button
-          className={disabledButton ? "btn-prime-reverse" : "btn-prime"}
-          disabled={disabledButton}
+          className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
-          onClick={() => this.props.actions.loginUser(this.state)}>
-          Log In
+          onClick={() => this.props.setView('login')}>
+          Log in with Door43
             </button>
         <button
           className="btn-second"
           style={{ width: "100%", margin: "10px 0px 20px" }}
           onClick={() => this.props.actions.showAlert(this.door43Popup())}>
-          Create Door43 Account
+          Create New Account
             </button>
       </div>
     )
   }
 
+  loginHeaderLocalUser() {
+    return (
+      <div>
+        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Create Local User</span>
+        <Glyphicon
+          glyph="info-sign"
+          style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
+          onClick={(e) => this.infoClickLocalUser(e)}
+        />
+      </div>
+    )
+  }
+
+  loginButtonLocalUser() {
+    return (
+      <button
+        className="btn-second"
+        style={{ width: "100%", margin: "40px 0px 20px" }}
+        onClick={() => this.props.setView('local')}>
+        Create Local Account
+      </button>
+    )
+  }
+
   render() {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: 'auto' }}>
-        {this.loginHeader()}
-        {this.loginTextFields()}
-        {this.loginButtons()}
-        <a style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => this.props.showLocalUserView()}>Continue Offline</a>
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: 'auto', width: 250 }}>
+        {this.loginHeaderDoor43()}
+        {this.loginButtonsDoor43()}
+        {this.loginHeaderLocalUser()}
+        {this.loginButtonLocalUser()}
       </div>
     )
   }
