@@ -9,7 +9,7 @@ import consts from './ActionTypes';
  * @param {object} moduleSettingsData - settings data.
  * @return {object} acton object.
  */
-function updateModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData) {
+export function setModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData) {
   return {
     type: consts.UPDATE_MODULE_SETTINGS,
     moduleNamespace,
@@ -17,11 +17,3 @@ function updateModuleSettings(moduleNamespace, settingsPropertyName, moduleSetti
     moduleSettingsData
   };
 }
-
-export const setModuleSettings = (moduleNamespace, settingsPropertyName, moduleSettingsData) => {
-  return updateModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData);
-};
-
-export const changeModuleSettings = (moduleNamespace, settingsPropertyName, moduleSettingsData) => {
-  return updateModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData);
-};

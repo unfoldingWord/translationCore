@@ -1,9 +1,10 @@
+import React from 'react';
 import consts from '../actions/ActionTypes';
 
 const initialState = {
   displayHomeView: true,
   showWelcomeSplash: true,
-  homeDisplayMode: 'Overview',
+  homeInstructions: <div></div>,
   stepper: {
     finished: false,
     stepIndex: 0
@@ -22,10 +23,10 @@ const BodyUIReducer = (state = initialState, action) => {
         ...state,
         showWelcomeSplash: !state.showWelcomeSplash
       };
-    case consts.CHANGE_HOME_DISPLAY_MODE:
+    case consts.CHANGE_HOME_INSTRUCTIONS:
       return {
         ...state,
-        homeDisplayMode: action.mode
+        homeInstructions: action.instructions
       };
     case consts.GO_TO_NEXT_STEP:
       return {

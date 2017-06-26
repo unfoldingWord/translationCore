@@ -54,3 +54,20 @@ export function copyGroupsDataToProjectResources(toolName, groupsDataDirectory, 
     console.log("translationHelps resources path was not found, " + groupsDataSourcePath);
   }
 }
+
+/**
+ * @description Helper function to get a bibles manifest file from the bible resources folder.
+ * @param {string} bibleVersionPath - path to a bibles version folder.
+ * @param {string} bibleID - bible name. ex. ugnt, uhb, udb-en, ulb-en.
+ */
+export function getBibleManifest(bibleVersionPath, bibleID) {
+  let fileName = 'manifest.json';
+  let bibleManifestPath = path.join(bibleVersionPath, fileName);
+  let manifest;
+  if(fs.existsSync(bibleManifestPath)) {
+    manifest = fs.readJsonSync(bibleManifestPath);
+  } else {
+    console.error("Could not find manifest for " + bibleID)
+  }
+  return manifest;
+}

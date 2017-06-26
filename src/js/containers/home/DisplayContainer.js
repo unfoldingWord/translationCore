@@ -10,44 +10,39 @@ import ToolsManagementContainer from './ToolsManagementContainer';
 
 class DisplayContainer extends Component {
   render() {
-    let displayMode = 'Overview';
+    let {stepIndex} = this.props.reducers.BodyUIReducer.stepper;
     let displayContainer = <div />;
-    switch (displayMode) {
-      case 'Overview':
+    switch (stepIndex) {
+      case 0:
         displayContainer = <OverviewContainer {...this.props} />;
         break;
-      case 'UsersManagement':
+      case 1:
         displayContainer = <UsersManagementContainer {...this.props} />;
         break;
-      case 'ProjectsManagement':
+      case 2:
         displayContainer = <ProjectsManagementContainer {...this.props} />;
         break;
-      case 'ToolsManagement':
+      case 3:
         displayContainer = <ToolsManagementContainer {...this.props} />;
         break;
       default:
         break;
     }
-    return (
-      <div>
-        DisplayContainer
-        {displayContainer}
-      </div>
-    );
+    return displayContainer;
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    // prop: state.prop
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator);
-    }
+    // dispatch1: () => {
+    //   // dispatch(actionCreator);
+    // }
   };
 };
 

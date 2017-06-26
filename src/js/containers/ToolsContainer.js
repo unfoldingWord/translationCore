@@ -6,11 +6,10 @@ import { addComment } from '../actions/CommentsActions';
 import { addVerseEdit } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
 import { changeSelections, validateSelections } from '../actions/SelectionsActions';
-import {changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId} from '../actions/ContextIdActions';
-import {addGroupData, verifyGroupDataMatchesWithFs} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
-import {setModuleSettings, changeModuleSettings} from '../actions/ModulesSettingsActions';
-import { sendProgressForKey } from '../actions/LoaderActions';
+import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
+import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDataActions';
+import { setGroupsIndex } from '../actions/GroupsIndexActions';
+import { setModuleSettings } from '../actions/ModulesSettingsActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
@@ -21,17 +20,17 @@ class ToolsContainer extends React.Component {
 
   componentDidMount() {
     this.props.actions.verifyMenuChecksReflectFS();
+    let { contextId } = this.props.contextIdReducer;
+    if (!contextId) this.props.actions.loadCurrentContextId();
   }
 
   componentWillReceiveProps(nextProps) {
-    let { contextId } = nextProps.contextIdReducer
-    let { toolName } = nextProps.currentToolReducer
+    let { contextId } = nextProps.contextIdReducer;
+    let { toolName } = nextProps.currentToolReducer;
     // if contextId does not match current tool, then remove contextId
     if (contextId && contextId.tool !== toolName) {
-      nextProps.actions.changeCurrentContextId(undefined)
+      nextProps.actions.changeCurrentContextId(undefined);
     }
-    // check to see if groupData and groupIndex
-    if (!contextId) nextProps.actions.loadCurrentContextId()
   }
 
   render() {
@@ -117,9 +116,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
         dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
-      },
-      changeModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-        dispatch(changeModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
       },
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));

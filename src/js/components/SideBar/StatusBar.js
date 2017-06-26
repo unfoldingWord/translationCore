@@ -42,6 +42,10 @@ class StatusBar extends React.Component {
   }
 
   render() {
+    const {stepper, showWelcomeSplash} = this.props.BodyUIReducer;
+    let {stepIndex} = stepper;
+    // Setting step index to null if in welcome screen.
+    stepIndex = showWelcomeSplash ? null : stepIndex;
     const styles = {
       container: {
         backgroundColor: 'var(--background-color-dark)',
@@ -56,13 +60,13 @@ class StatusBar extends React.Component {
       home: {
         width: 'auto',
         float: 'left',
-        color: 'var(--reverse-color)',
+        color: stepIndex === 0 ? 'var(--text-color-dark)' : 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: 'var(--background-color-dark)',
+        backgroundColor: stepIndex === 0 ? 'var(--reverse-color)' : 'var(--background-color-dark)',
         height: '100%'
       },
       homeActive: {

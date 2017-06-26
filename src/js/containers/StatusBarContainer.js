@@ -25,13 +25,14 @@ class StatusBarContainer extends React.Component {
     return (
       <div>
         <StatusBar
-            projectName={projectName}
-            currentCheckNamespace={toolTitle}
-            open={this.props.openModalAndSpecificTab}
-            online={this.props.online}
-            changeOnlineStatus={this.props.changeOnlineStatus}
-            currentUser={username}
-            loggedInUser={loggedInUser}
+          {...this.props}
+          projectName={projectName}
+          currentCheckNamespace={toolTitle}
+          open={this.props.openModalAndSpecificTab}
+          online={this.props.online}
+          changeOnlineStatus={this.props.changeOnlineStatus}
+          currentUser={username}
+          loggedInUser={loggedInUser}
         />
       </div>
     );
@@ -43,7 +44,8 @@ const mapStateToProps = (state) => {
     statusBarReducer: state.statusBarReducer,
     currentToolReducer: state.currentToolReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    loginReducer: state.loginReducer
+    loginReducer: state.loginReducer,
+    BodyUIReducer: state.BodyUIReducer
   };
 };
 

@@ -6,9 +6,20 @@ import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
 // import {actionCreator} from 'actionCreatorPath'
 
 class ToolsManagementContainer extends Component {
+
+  componentWillMount() {
+    let instructions = <div>ToolsManagementInstructions</div>;
+    if (this.props.reducers.BodyUIReducer.homeInstructions !== instructions) {
+      this.props.actions.changeHomeInstructions(instructions);
+    }
+  }
+
   render() {
     return (
-      <ToolsCards {...this.props}/>
+      <div>
+        ToolsManagementContainer
+        <ToolsCards {...this.props}/>
+      </div>
     );
   }
 }

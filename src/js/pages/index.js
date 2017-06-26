@@ -1,4 +1,3 @@
-  /** @jsx React.DOM */
 (function () {
   require("babel-register")({
     extensions: [".js", ".jsx"],
