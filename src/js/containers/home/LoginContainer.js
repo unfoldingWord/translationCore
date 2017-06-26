@@ -25,6 +25,7 @@ class LoginContainer extends Component {
             case 'local': return <CreateLocalAccount setView={this.setView} {...this.props} />;
             case 'create': return <CreateDoor43Account setView={this.setView} {...this.props} />;
             case 'login': return <LoginDoor43Account setView={this.setView} {...this.props} />;
+            default: return <Login setView={this.setView} {...this.props} />;
         }
     }
 
