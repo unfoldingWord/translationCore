@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'material-ui';
+import { Modal } from 'react-bootstrap';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
@@ -10,13 +11,12 @@ class CreateLocalAccount extends Component {
         this.state = {
             localUsername: "This is publicly visible",
             checkBoxChecked: false,
-            infoPage: ""
+            showModal: false,
+            modalTitle: null,
+            modalContent: null
         };
+        this.infoPopup = this.infoPopup.bind(this);
         this.typing = this.typing.bind(this);
-        this.switchInfoPage = this.switchInfoPage.bind(this);
-    }
-    switchInfoPage(pageName) {
-        
     }
 
     typing(e) {
@@ -61,19 +61,19 @@ class CreateLocalAccount extends Component {
     loginButtons() {
         const loginEnabled = this.state.checkBoxChecked;
         return (
-            <div style={{display:'flex', width:'100%', justifyContent:'flex-end'}}>
-            <button
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'flex-end' }}>
+                <button
                     className="btn-second"
                     style={{ width: 150, margin: "40px 10px 0px 0px" }}
                     onClick={() => this.props.setView('main')}>
                     Go Back
             </button>
-            <button
-                className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
-                disabled={!loginEnabled}
-                style={{ width: 200, margin: "40px 0px 0px 10px" }}
-                onClick={() => this.props.actions.loginLocalUser(this.state.localUsername)}>
-                Create
+                <button
+                    className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
+                    disabled={!loginEnabled}
+                    style={{ width: 200, margin: "40px 0px 0px 10px" }}
+                    onClick={() => this.props.actions.loginLocalUser(this.state.localUsername)}>
+                    Create
            </button>
             </div>
         )
@@ -81,7 +81,7 @@ class CreateLocalAccount extends Component {
 
     termsAndConditionsAgreement() {
         return (
-            <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center', width:'100%' }}>
+            <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center', width: '100%' }}>
                 {this.agreeCheckBox()}
                 <span>
                     I have read and agree to the
@@ -89,34 +89,54 @@ class CreateLocalAccount extends Component {
                 &nbsp;
                     <a
                     style={{ cursor: "pointer", textDecoration: "none", }}
-                    onClick={() => this.showInfoPage("termsAndConditions")}>
+                    onClick={() =>
+                        this.infoPopup("Terms and Conditions")
+                    }>
                     terms and conditions
                     </a>
             </div>
         )
     }
 
-    render() {
-        let infoPageView = <div />
-        switch (this.state.infoPage) {
-            case "termsAndConditions":
-                infoPageView = <TermsAndConditionsPage switchInfoPage={this.switchInfoPage} />
+    infoPopup(type) {
+        let show = !!type;
+        let content;
+        let title = <strong>{type}</strong>
+        switch (type) {
+            case "Terms and Conditions":
+                content = <TermsAndConditionsPage infoPopup={this.infoPopup} />;
                 break;
-            case "statementOfFaith":
-                infoPageView = <StatementOfFaithPage switchInfoPage={this.switchInfoPage} />;
+            case "Creative Commons":
+                content = <CreativeCommonsPage infoPopup={this.infoPopup} />;
                 break;
-            case "creativeCommons":
-                infoPageView = <CreativeCommonsPage switchInfoPage={this.switchInfoPage} />;
+            case "Statement Of Faith":
+                content = <StatementOfFaithPage infoPopup={this.infoPopup} />;
                 break;
-            default:
+            default: content = <div />;
                 break;
         }
+        this.setState({ showModal: show, modalTitle: title, modalContent: content })
+    }
+
+    render() {
         return (
-            <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width:'100%' }}>
-                <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
-                {this.localUsernameInput()}
-                {this.termsAndConditionsAgreement()}
-                {this.loginButtons()}
+            <div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width: '100%' }}>
+                    <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
+                    {this.localUsernameInput()}
+                    {this.termsAndConditionsAgreement()}
+                    {this.loginButtons()}
+                </div>
+                <Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })} bsSize="lg">
+                    <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
+                        <Modal.Title>
+                            {this.state.modalTitle}
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body style={{ backgroundColor: "var(--reverse-color)", color: "var(--accent-color-dark)", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        {this.state.modalContent}
+                    </Modal.Body>
+                </Modal>
             </div>
         );
     }

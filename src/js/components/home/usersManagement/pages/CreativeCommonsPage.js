@@ -7,15 +7,15 @@ class CreativeCommonsPage extends Component {
       <div>
         <button
           className="btn-second"
-          onClick={() => this.props.switchInfoPage("termsAndConditions")}>
+          onClick={() => this.props.infoPopup("Terms and Conditions")}>
           <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
           Go Back
         </button>
-        <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <div style={{color: "black", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
           <h4><b>Creative Commons Attribution-ShareAlike 4.0 License</b></h4>
           <p style={{padding: "15px"}}>
             This is a human-readable summary of (and not a substitute for) the&nbsp;
-            <a style={{color: "var(--reverse-color)",cursor: "pointer", textDecoration: "underline"}}
+            <a style={{color: "black",cursor: "pointer", textDecoration: "underline"}}
               href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
               license
             </a>

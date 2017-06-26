@@ -7,11 +7,11 @@ class StatementOfFaithPage extends Component {
       <div>
         <button
           className="btn-second"
-          onClick={() => this.props.switchInfoPage("termsAndConditions")}>
+          onClick={() => this.props.infoPopup("Terms and Conditions")}>
           <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
           Go Back
         </button>
-        <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <div style={{color: "black", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
           <h4><b>Statement of Faith</b></h4>
           <p>
             <i>

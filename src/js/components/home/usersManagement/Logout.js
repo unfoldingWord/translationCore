@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Logout extends Component {
     render() {
         return (
-            <div style={{ height: '100%', marginBottom: 0 }}>
+            <div style={{ height: '100%', marginBottom: 0, width:350, margin:'auto' }}>
                 <p style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>
                     {this.props.username}
                 </p>

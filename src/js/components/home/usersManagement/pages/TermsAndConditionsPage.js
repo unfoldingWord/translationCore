@@ -7,11 +7,11 @@ class TermsAndConditionsPage extends Component {
       <div>
         <button
           className="btn-second"
-          onClick={() => this.props.switchInfoPage("")}>
+          onClick={() => this.props.infoPopup(null)}>
           <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
           Go Back
         </button>
-        <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <div style={{color: "black", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
           <h4 style={{marginTop: "40px"}}><b>Terms and Conditions</b></h4>
           <div>
             <p style={{padding: "15px"}}>
@@ -25,7 +25,7 @@ class TermsAndConditionsPage extends Component {
               <li>
                 Only add content to Door43 that does not conflict with the&nbsp;
                 <span
-                  onClick={() => this.props.switchInfoPage("statementOfFaith")}
+                  onClick={() => this.props.infoPopup("Statement Of Faith")}
                   style={{cursor: "pointer", textDecoration: "underline"}}>
                   Statement of Faith.
                 </span>
@@ -33,7 +33,7 @@ class TermsAndConditionsPage extends Component {
               <li>
                 Release your contributions to the content on Door43's website under a&nbsp;
                 <span
-                  onClick={() => this.props.switchInfoPage("creativeCommons")}
+                  onClick={() => this.props.infoPopup("Creative Commons", this.props.CreativeCommonsPage)}
                   style={{cursor: "pointer", textDecoration: "underline"}}>
                   Creative Commons Attribution-ShareAlike 4.0 International License.
                 </span>
