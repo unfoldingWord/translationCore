@@ -1,4 +1,6 @@
+// external
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Card, CardText} from 'material-ui/Card';
 
 class Instructions extends Component {
@@ -8,7 +10,7 @@ class Instructions extends Component {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Instructions
-        <Card style={{ height: '100%', marginTop: '5px' }}>
+        <Card style={{ height: '100%', marginTop: '5px', lineHeight: '2em' }}>
           <CardText>
             {homeInstructions}
           </CardText>
@@ -16,6 +18,11 @@ class Instructions extends Component {
       </div>
     );
   }
+}
+
+Instructions.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 export default Instructions

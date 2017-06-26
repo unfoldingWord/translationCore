@@ -1,53 +1,84 @@
+// external
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import { Line } from 'react-progressbar.js';
 import PropTypes from 'prop-types';
+// components
 import TemplateCard from './TemplateCard';
 
 class ToolCard extends Component {
 
+  /**
+  * @description generates the heading for the component
+  * @param {function} callback - action for link
+  * @return {component} - component returned
+  */
   heading(callback) {
-    let link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>
+    const link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>
     return (
       <span>Current Tool {link}</span>
     );
   }
 
+  /**
+  * @description generates the progress percentage
+  * @param {object} groupsData - all of the data to calculate percentage from
+  * @return {double} - percentage number returned
+  */
   progress(groupsData) {
     let percent;
-    let groupIds = Object.keys(groupsData);
+    const groupIds = Object.keys(groupsData);
     let totalChecks = 0, completedChecks = 0;
-    groupIds.map( groupId => {
-      let groupData = groupsData[groupId];
+    // Loop through all checks and tally completed and totals
+    groupIds.forEach( groupId => {
+      const groupData = groupsData[groupId];
       groupData.forEach( check => {
         totalChecks += 1;
+        // checks are considered completed if selections
         completedChecks += (check.selections) ? 1 : 0;
       });
     });
+    // calculate percentage by dividing total by completed
     percent = Math.round(completedChecks / totalChecks * 100) / 100;
     return percent;
   }
 
-  content() {
-    let content;
-    let { toolTitle } = this.props.reducers.currentToolReducer;
+  /**
+  * @description generates a detail for the content
+  * @param {string} glyph - name of the glyph to be used
+  * @param {string} text - text used for the detail
+  * @return {component} - component returned
+  */
+  progressBar(progress) {
+    const options = {
+      strokeWidth: 1, easing: 'easeInOut', duration: 1000,
+      color: 'var(--accent-color-dark)', trailColor: 'var(--background-color-light)',
+      trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
+    };
+    const containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
+    return (
+      <Line
+        progress={progress}
+        text={ progress * 100 + '%'}
+        options={options}
+        initialAnimate={true}
+        containerStyle={containerStyle}
+      />
+    );
+  }
 
-    if (toolTitle) {
-      let { groupsData } = this.props.reducers.groupsDataReducer;
+  /**
+  * @description generates the content for the component, conditionally empty
+  * @return {component} - component returned
+  */
+  content() {
+    let content; // content can be empty to fallback to empty button/message
+    const { toolTitle } = this.props.reducers.currentToolReducer;
+
+    if (toolTitle) { // once toolTitle is there then we can get groupsData
+      const { groupsData } = this.props.reducers.groupsDataReducer;
       let progress = 0;
       if (groupsData) progress = this.progress(groupsData);
-
-      let options = {
-        strokeWidth: 1,
-        easing: 'easeInOut',
-        duration: 1000,
-        color: 'var(--accent-color-dark)',
-        trailColor: 'var(--background-color-light)',
-        trailWidth: 1,
-        svgStyle: {width: '100%', height: '100%'}
-      };
-
-      let containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
           <div style={{ display: 'flex' }}>
@@ -56,13 +87,7 @@ class ToolCard extends Component {
             </div>
             <div style={{ width: '400px' }}>
               <strong style={{ fontSize: 'x-large' }}>{toolTitle}</strong>
-              <Line
-                progress={progress}
-                text={ progress * 100 + '%'}
-                options={options}
-                initialAnimate={true}
-                containerStyle={containerStyle}
-              />
+              {this.progressBar(progress)}
             </div>
           </div>
         </div>
@@ -71,15 +96,19 @@ class ToolCard extends Component {
     return content;
   }
 
+  /**
+  * @description determines if fallback should be disabled
+  * @return {bool} - return true/false
+  */
   disabled() {
-    let { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     return !projectSaveLocation;
   }
 
   render() {
-    let emptyMessage = 'Select a tool';
-    let emptyButtonLabel = 'Tool';
-    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    const emptyMessage = 'Select a tool';
+    const emptyButtonLabel = 'Tool';
+    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}

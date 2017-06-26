@@ -10,6 +10,10 @@ import ToolCard from '../../components/home/overview/ToolCard'
 
 class OverviewContainer extends Component {
 
+  /**
+  * @description generates the instructions to show in instructions area
+  * @return {component} - component returned
+  */
   instructions() {
     return (
       <div>
@@ -25,12 +29,20 @@ class OverviewContainer extends Component {
   }
 
   componentWillMount() {
+    // update instructions if they don't match current instructions
     if (this.props.reducers.BodyUIReducer.homeInstructions !== this.instructions()) {
       this.props.actions.changeHomeInstructions(this.instructions());
     }
   }
 
-  button(disabled, callback) {
+  /**
+  * @description generates the launch button
+  * @param {bool} disabled - disable the button
+  * @return {component} - component returned
+  */
+  launchButton(disabled) {
+    const _this = this;
+    const callback = () => { _this.props.actions.toggleHomeView(); }
     return (
       <button className='btn-prime' disabled={disabled} onClick={callback}>
         Launch
@@ -39,12 +51,8 @@ class OverviewContainer extends Component {
   }
 
   render() {
-    let { toolTitle } = this.props.reducers.currentToolReducer;
-    let launchButtonDisabled = !toolTitle;
-    let _this = this;
-    let launchButtonCallback = () => {
-      _this.props.actions.toggleHomeView();
-    }
+    const { toolTitle } = this.props.reducers.currentToolReducer;
+    const launchButtonDisabled = !toolTitle;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -52,7 +60,7 @@ class OverviewContainer extends Component {
         <ProjectCard {...this.props} />
         <ToolCard {...this.props} />
         <div style={{ textAlign: 'center' }}>
-          {this.button(launchButtonDisabled, launchButtonCallback)}
+          {this.launchButton(launchButtonDisabled)}
         </div>
       </div>
     );

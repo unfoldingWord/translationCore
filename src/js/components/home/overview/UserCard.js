@@ -1,20 +1,31 @@
+// external
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
+// components
 import TemplateCard from './TemplateCard';
 
 class UserCard extends Component {
 
+  /**
+  * @description generates the heading for the component
+  * @param {function} callback - action for link
+  * @return {component} - component returned
+  */
   heading(callback) {
-    let link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>
+    const link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>
     return (
       <span>Current User {link}</span>
     );
   }
 
+  /**
+  * @description generates the content for the component, conditionally empty
+  * @return {component} - component returned
+  */
   content() {
-    let content;
-    let { loggedInUser, userdata } = this.props.reducers.loginReducer;
+    let content; // content can be empty to fallback to empty button/message
+    const { loggedInUser, userdata } = this.props.reducers.loginReducer;
     if (loggedInUser) {
       content = (
         <div style={{ display: 'flex' }}>
@@ -32,9 +43,9 @@ class UserCard extends Component {
   }
 
   render() {
-    let emptyMessage = 'Please log in to continue';
-    let emptyButtonLabel = 'Login';
-    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    const emptyMessage = 'Please log in to continue';
+    const emptyButtonLabel = 'Login';
+    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}
