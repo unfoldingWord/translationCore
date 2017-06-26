@@ -28,11 +28,7 @@ class DisplayContainer extends Component {
       default:
         break;
     }
-    return (
-      <div>
-        {displayContainer}
-      </div>
-    );
+    return displayContainer;
   }
 }
 

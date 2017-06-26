@@ -2,7 +2,6 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   loggedInUser: false,
-  displayLogin: true,
   userdata: {},
   feedback: '',
   subject: 'Bug Report',
@@ -11,11 +10,6 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.TOGGLE_ACOUNT_VIEW_TO_LOGIN:
-      return {
-        ...state,
-        displayLogin: action.val
-      };
     case consts.RECEIVE_LOGIN:
       return {
         ...state,
