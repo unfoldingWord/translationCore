@@ -1,58 +1,85 @@
+// external
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import moment from 'moment';
 import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
+// components
 import TemplateCard from './TemplateCard';
 
 class ProjectCard extends Component {
 
+  /**
+  * @description generates the heading for the component
+  * @param {function} callback - action for link
+  * @return {component} - component returned
+  */
   heading(callback) {
-    let link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>;
+    const link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>;
     return (
       <span>Current Project {link}</span>
     );
   }
 
+  /**
+  * @description generates a detail for the contentDetails
+  * @param {string} glyph - name of the glyph to be used
+  * @param {string} text - text used for the detail
+  * @return {component} - component returned
+  */
+  detail(glyph, text) {
+    return (
+      <div>
+        <Glyphicon glyph={glyph} style={{ marginRight: '5px', top: '2px' }} />
+        <span>{text}</span>
+      </div>
+    );
+  }
+
+  /**
+  * @description generates the details for the content
+  * @param {string} projectSaveLocation - path of the project
+  * @param {string} text - text used for the detail
+  * @return {component} - component returned
+  */
+  contentDetails(projectSaveLocation, bookName, params, manifest) {
+    const projectName = projectSaveLocation.split("/").pop();
+    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
+    const accessTime = fs.statSync(projectDataLocation).atime;
+    const accessTimeAgo = moment().to(accessTime);
+
+    const { bookAbbr } = params;
+    const { target_language } = manifest;
+    return (
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
+          <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px'}} />
+        </div>
+        <div>
+          <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
+            {this.detail('time', accessTimeAgo)}
+            {this.detail('book', bookName + ' (' + bookAbbr + ')')}
+            {this.detail('globe', target_language.name + ' (' + target_language.id + ')')}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+  * @description generates the content for the component, conditionally empty
+  * @return {component} - component returned
+  */
   content() {
-    let content;
-    let { projectDetailsReducer } = this.props.reducers;
-    let { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
-    let projectName, accessTimeAgo;
-    if (projectSaveLocation) {
-      projectName = projectSaveLocation.split("/").pop();
-      let projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-      let accessTime = fs.statSync(projectDataLocation).atime;
-      accessTimeAgo = moment().to(accessTime);
-    }
-    if (projectName && params && manifest.target_language) {
-      let { bookAbbr } = params;
-      let { target_language } = manifest;
+    let content; // content can be empty to fallback to empty button/message
+    const { projectDetailsReducer } = this.props.reducers;
+    const { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
+    if (projectSaveLocation && params && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
-          <div style={{ display: 'flex' }}>
-            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-              <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px'}} />
-            </div>
-            <div>
-              <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
-                <div>
-                  <Glyphicon glyph="time" style={{ marginRight: '5px', top: '2px' }} />
-                  <span>{accessTimeAgo}</span>
-                </div>
-                <div>
-                  <Glyphicon glyph="book" style={{ marginRight: '5px', top: '2px' }} />
-                  <span>{bookName} ({bookAbbr})</span>
-                </div>
-                <div>
-                  <Glyphicon glyph="globe" style={{ marginRight: '5px', top: '2px' }} />
-                  <span>{target_language.name} ({target_language.id})</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {this.contentDetails(projectSaveLocation, bookName, params, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
           </div>
@@ -62,15 +89,19 @@ class ProjectCard extends Component {
     return content;
   }
 
+  /**
+  * @description determines if fallback should be disabled
+  * @return {bool} - return true/false
+  */
   disabled() {
-    let { loggedInUser } = this.props.reducers.loginReducer;
+    const { loggedInUser } = this.props.reducers.loginReducer;
     return !loggedInUser;
   }
 
   render() {
-    let emptyMessage = 'Select a project';
-    let emptyButtonLabel = 'Project';
-    let emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    const emptyMessage = 'Select a project';
+    const emptyButtonLabel = 'Project';
+    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}

@@ -30,10 +30,11 @@ const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
       BodyUIReducer: state.BodyUIReducer,
+      loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,
       currentToolReducer: state.currentToolReducer,
-      loginReducer: state.loginReducer
+      groupsDataReducer: state.groupsDataReducer
     }
   };
 };
