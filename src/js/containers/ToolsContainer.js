@@ -10,7 +10,6 @@ import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, ch
 import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDataActions';
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
 import { setModuleSettings } from '../actions/ModulesSettingsActions';
-import { sendProgressForKey } from '../actions/LoaderActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
 import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
