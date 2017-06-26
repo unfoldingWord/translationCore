@@ -10,11 +10,11 @@ packager({
   icon: './builds/assets/icon.ico',
   name: 'translationCore',
   overwrite: 'true',
-  'app-copyright': 'Copyright (C) 2016 Wycliffe Associates',
+  'app-copyright': 'Copyright (C) 2017 unfoldingWord',
   out: './dist/',
   prune: true,
   'version-string': {
-    CompanyName: 'Wycliffe Associates',
+    CompanyName: 'unfoldingWord',
     FileDescription: 'translationCore',
     OriginalFilename: 'translationCore.exe',
     ProductName: 'translationCore',

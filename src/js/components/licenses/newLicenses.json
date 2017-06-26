@@ -19,10 +19,6 @@
     "licenses": "MIT",
     "repository": "https://github.com/medikoo/event-emitter"
   },
-  "flux":{
-    "licenses": "BSD-3-Clause",
-    "repository": "https://github.com/facebook/flux"
-  },
   "fs-extra":{
     "licenses": "MIT",
     "repository": "https://github.com/jprichardson/node-fs-extra"
@@ -54,10 +50,6 @@
   "material-ui":{
     "licenses": "MIT",
     "repository": "https://github.com/callemall/material-ui"
-  },
-  "natural":{
-    "licenses": "MIT",
-    "repository": "https://github.com/NaturalNode/natural"
   },
   "npm":{
     "licenses": "Artistic-2.0",
