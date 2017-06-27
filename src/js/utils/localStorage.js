@@ -65,7 +65,7 @@ export const saveState = (prevState, newState) => {
       // make sure project has not changed
       isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
       // make sure tool has not changed
-      isEqual(prevState.currentToolReducer.toolName, newState.currentToolReducer.toolName)
+      isEqual(prevState.toolsReducer.currentToolName, newState.toolsReducer.currentToolName)
     ) {
       saveGroupsIndex(newState);
       saveGroupsData(newState);

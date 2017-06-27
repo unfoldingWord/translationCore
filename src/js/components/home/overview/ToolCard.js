@@ -73,9 +73,9 @@ class ToolCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const { toolTitle } = this.props.reducers.currentToolReducer;
+    const { currentToolTitle } = this.props.reducers.toolsReducer;
 
-    if (toolTitle) { // once toolTitle is there then we can get groupsData
+    if (currentToolTitle) { // once currentToolTitle is there then we can get groupsData
       const { groupsData } = this.props.reducers.groupsDataReducer;
       let progress = 0;
       if (groupsData) progress = this.progress(groupsData);
@@ -86,7 +86,7 @@ class ToolCard extends Component {
               <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
             </div>
             <div style={{ width: '400px' }}>
-              <strong style={{ fontSize: 'x-large' }}>{toolTitle}</strong>
+              <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
               {this.progressBar(progress)}
             </div>
           </div>

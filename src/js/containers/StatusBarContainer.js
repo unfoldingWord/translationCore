@@ -18,7 +18,7 @@ class StatusBarContainer extends React.Component {
   render() {
     let projectName = this.props.projectDetailsReducer.projectSaveLocation.split("/").pop();
     //Expecting a folder path as such: "~/project_name"
-    let { toolTitle } = this.props.currentToolReducer;
+    let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
 
@@ -27,7 +27,7 @@ class StatusBarContainer extends React.Component {
         <StatusBar
           {...this.props}
           projectName={projectName}
-          currentCheckNamespace={toolTitle}
+          currentCheckNamespace={currentToolTitle}
           open={this.props.openModalAndSpecificTab}
           online={this.props.online}
           changeOnlineStatus={this.props.changeOnlineStatus}
@@ -42,7 +42,7 @@ class StatusBarContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     settingsReducer: state.settingsReducer,
-    currentToolReducer: state.currentToolReducer,
+    toolsReducer: state.toolsReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     loginReducer: state.loginReducer,
     homeScreenReducer: state.homeScreenReducer

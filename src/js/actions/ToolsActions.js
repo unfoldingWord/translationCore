@@ -8,11 +8,11 @@ import * as BodyUIActions from './BodyUIActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 
-export function loadTool(folderName, toolName) {
+export function loadTool(folderName, currentToolName) {
   return ((dispatch, getState) => {
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(modalActions.showModalContainer(false));
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName, toolName));
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName, currentToolName));
   });
 }
 

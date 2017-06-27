@@ -21,9 +21,9 @@ const groupMenuContainerStyle = {
 
 class GroupMenuContainer extends React.Component {
 
-  menu(toolName) {
+  menu(currentToolName) {
     let menu = <div />
-    if (toolName !== null) {
+    if (currentToolName !== null) {
       menu = <Groups {...this.props} />
     }
     return menu
@@ -32,7 +32,7 @@ class GroupMenuContainer extends React.Component {
   render() {
     let { onToggleMenu } = this.props.actions
     let { menuVisibility, currentCheckNamespace } = this.props.groupMenuReducer
-    let { toolName } = this.props.currentToolReducer
+    let { currentToolName } = this.props.toolsReducer
     return (
       <div>
         <div style={{display: menuVisibility ? "block" : "none"}}>
@@ -47,7 +47,7 @@ class GroupMenuContainer extends React.Component {
                 overflowY: "scroll"
               }
             }>
-              {this.menu(toolName)}
+              {this.menu(currentToolName)}
             </Col>
           </Grid>
         </div>
@@ -71,7 +71,7 @@ const mapStateToProps = (state) => {
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     groupMenuReducer: state.groupMenuReducer,
-    currentToolReducer: state.currentToolReducer,
+    toolsReducer: state.toolsReducer,
     remindersReducer: state.remindersReducer
   };
 };

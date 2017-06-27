@@ -51,8 +51,8 @@ class OverviewContainer extends Component {
   }
 
   render() {
-    const { toolTitle } = this.props.reducers.currentToolReducer;
-    const launchButtonDisabled = !toolTitle;
+    const { currentToolTitle } = this.props.reducers.toolsReducer;
+    const launchButtonDisabled = !currentToolTitle;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>

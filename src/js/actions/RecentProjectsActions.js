@@ -214,7 +214,7 @@ export function exportToCSV(projectPath) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
+export function saveVerseEditsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
@@ -228,7 +228,7 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time);
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'VerseEdits.csv'), csvString);
     } catch (e) { 
       console.warn(e);
       reject(false) };
@@ -242,7 +242,7 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveCommentsToCSV(obj, dataFolder, toolName) {
+export function saveCommentsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
@@ -254,7 +254,7 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Comments.csv'), csvString);
     } catch (e) { 
       console.warn(e);
       reject(false) };
@@ -268,7 +268,7 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveSelectionsToCSV(obj, dataFolder, toolName) {
+export function saveSelectionsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse, username, date, time\n";
@@ -284,7 +284,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
           csvString += currentRowArray.join(',') + "\n";
         }
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Selections.csv'), csvString);
     } catch (e) { 
       console.warn(e);
       reject(false) };
@@ -298,7 +298,7 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveRemindersToCSV(obj, dataFolder, toolName) {
+export function saveRemindersToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
@@ -310,7 +310,7 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
         addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
         csvString += currentRowArray.join(',') + "\n";
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Reminders.csv'), csvString);
     } catch (e) { 
       console.warn(e);
       reject(false) };
@@ -324,7 +324,7 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  */
-export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
+export function saveGroupsCSVToFs(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       var time = "";
@@ -338,7 +338,7 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
           csvString += currentRowArray.join(',') + "\n";
         }
       }
-      fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
+      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'CheckInformation.csv'), csvString);
     } catch (e) { 
       console.warn(e);
       reject(false) };
@@ -388,24 +388,24 @@ export function getToolFolderNames(projectPath) {
 
 /**
  *
- * @param {string} toolName - current tool name
+ * @param {string} currentToolName - current tool name
  * @param {string} dataFolder - path of the folder to load csv from
  * @param {object} projectId - project Id of current project
  */
-export function saveAllCSVDataByToolName(toolName, dataFolder, projectId) {
-  if (toolName == '.DS_Store') {
+export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId) {
+  if (currentToolName == '.DS_Store') {
     return Promise.resolve(true);
   } else {
-    return loadGroupsDataToExport(toolName, dataFolder, projectId).then((obj) => saveGroupsCSVToFs(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, toolName))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, toolName))
+    return loadGroupsDataToExport(currentToolName, dataFolder, projectId).then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, currentToolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, currentToolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, currentToolName))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, currentToolName))
       .then(() => {
         return Promise.resolve(true);
       })
       .catch((err) => {
-        throw "Problem saving data for " + toolName;
+        throw "Problem saving data for " + currentToolName;
       });
   }
 }

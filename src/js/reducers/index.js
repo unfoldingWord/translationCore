@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux'
 // List of reducers
-import coreStoreReducer from './coreStoreReducer'
+import toolsReducer from './toolsReducer'
 import modalReducer from './modalReducer'
 import loginReducer from './loginReducer'
-import toolsReducer from './toolsReducer'
 import recentProjectsReducer from './recentProjectsReducer'
 import importOnlineReducer from './importOnlineReducer'
 import groupMenuReducer from './groupMenuReducer'
@@ -21,15 +20,13 @@ import groupsDataReducer from './groupsDataReducer'
 import groupsIndexReducer from './groupsIndexReducer'
 import verseEditReducer from './verseEditReducer'
 import modulesSettingsReducer from './modulesSettingsReducer'
-import currentToolReducer from './currentToolReducer'
 import homeScreenReducer from './homeScreenReducer'
 // combining reducers
 const rootReducers = combineReducers({
-  coreStoreReducer,
+  toolsReducer,
   modalReducer,
   loginReducer,
   settingsReducer,
-  toolsReducer,
   recentProjectsReducer,
   importOnlineReducer,
   groupMenuReducer,
@@ -46,7 +43,6 @@ const rootReducers = combineReducers({
   groupsIndexReducer,
   verseEditReducer,
   modulesSettingsReducer,
-  currentToolReducer,
   homeScreenReducer
 });
 

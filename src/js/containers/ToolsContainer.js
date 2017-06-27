@@ -11,7 +11,6 @@ import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDat
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
 import { setModuleSettings } from '../actions/ModulesSettingsActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
-import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
@@ -26,27 +25,26 @@ class ToolsContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer;
-    let { toolName } = nextProps.currentToolReducer;
+    let { currentToolName } = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
-    if (contextId && contextId.tool !== toolName) {
+    if (contextId && contextId.tool !== currentToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
     }
   }
 
   render() {
-    let {modules} = this.props.coreStoreReducer;
-    let {toolName} = this.props.currentToolReducer;
-    let Tool = modules[toolName];
+    let {toolViews, currentToolName} = this.props.toolsReducer;
+    let Tool = toolViews[currentToolName];
 
     return (
-      <Tool {...this.props} modules={modules} />
+      <Tool {...this.props} toolViews={toolViews} />
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    coreStoreReducer: state.coreStoreReducer,
+    toolsReducer: state.toolsReducer,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -61,7 +59,7 @@ const mapStateToProps = state => {
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer,
     modulesSettingsReducer: state.modulesSettingsReducer,
-    currentToolReducer: state.currentToolReducer
+
   };
 };
 
@@ -118,12 +116,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));
-      },
-      isDataFetched: val => {
-        dispatch(setDataFetched(val));
-      },
-      doneLoading: () => {
-        dispatch({type: "DONE_LOADING"})
       },
       verifyMenuChecksReflectFS: () => {
         dispatch(verifyGroupDataMatchesWithFs());

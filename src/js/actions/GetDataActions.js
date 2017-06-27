@@ -84,22 +84,21 @@ const delay = (ms) => new Promise(resolve =>
  * @description Loads the tool into the main app view, and initates the
  * tool Container component
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
- * @param {string} toolName - name of the current tool being loaded.
+ * @param {string} currentToolName - name of the current tool being loaded.
  * @return {object} action object.
  */
-export function loadModuleAndDependencies(moduleFolderName, toolName) {
+export function loadModuleAndDependencies(moduleFolderName, currentToolName) {
   return ((dispatch, getState) => {
     try {
       dispatch({ type: consts.START_LOADING });
-      dispatch({ type: consts.CLEAR_CURRENT_TOOL });
+      dispatch({ type: consts.CLEAR_TOOL_DATA });
       delay(1000)
         .then(() => {
-          dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
+          dispatch({ type: consts.CLEAR_TOOL_DATA });
           dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
           dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
           dispatch({ type: consts.CLEAR_CONTEXT_ID });
-          dispatch(CurrentToolActions.setToolName(toolName));
-          dispatch(CurrentToolActions.setDataFetched(false));
+          dispatch(CurrentToolActions.setToolName(currentToolName));
           const modulePath = Path.join(moduleFolderName, 'package.json');
           const dataObject = fs.readJsonSync(modulePath);
           const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
@@ -152,24 +151,24 @@ export function setModuleView(identifier, view) {
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupData with promises.
- * @param {string} toolName - name of the tool being loaded.
+ * @param {string} currentToolName - name of the tool being loaded.
  * @return {object} object action.
  */
-function loadProjectDataFromFileSystem(toolName) {
+function loadProjectDataFromFileSystem(currentToolName) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
       let { toolsReducer, projectDetailsReducer } = getState();
       let { projectSaveLocation, params } = projectDetailsReducer;
-      const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
+      const dataDirectory = Path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
 
       dispatch(TargetLanguageActions.generateTargetBible(projectSaveLocation));
-      getGroupsIndex(dispatch, toolName, dataDirectory)
+      getGroupsIndex(dispatch, currentToolName, dataDirectory)
         .then((successMessage) => {
-          getGroupData(dispatch, dataDirectory, toolName, params)
+          getGroupData(dispatch, dataDirectory, currentToolName, params)
           .then(() => {
             // TODO: this action may stay here temporary until the home screen implementation.
             // dispatch(BodyUIActions.toggleHomeView(false))
-            dispatch({ type: consts.DONE_LOADING })
+            dispatch({ type: consts.TOGGLE_LOADER_MODAL, show:false })
           })
         })
     })
@@ -189,7 +188,7 @@ function loadProjectDataFromFileSystem(toolName) {
  * location in the filesystem.
  * @return {object} object action / Promises.
  */
-function getGroupsIndex(dispatch, toolName, dataDirectory) {
+function getGroupsIndex(dispatch, currentToolName, dataDirectory) {
   return new Promise((resolve, reject) => {
     const groupIndexDataDirectory = Path.join(dataDirectory, 'index.json');
     let groupIndexData;
@@ -206,7 +205,7 @@ function getGroupsIndex(dispatch, toolName, dataDirectory) {
     } else {
       // The groupIndex file was not found in the directory thus copy
       // it from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsIndexToProjectResources(toolName, dataDirectory)
+      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory)
       // then read in the groupIndex file
       groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
       // load groupIndex to reducer
@@ -222,11 +221,11 @@ function getGroupsIndex(dispatch, toolName, dataDirectory) {
  * @param {function} dispatch - redux action dispatcher.
  * @param {string} dataDirectory - group data path or save
  * location in the filesystem.
- * @param {string} toolName - name if the tool being loaded.
+ * @param {string} currentToolName - name if the tool being loaded.
  * @param {object} params - object of project details params.
  * @return {object} object action / Promises.
  */
-function getGroupData(dispatch, dataDirectory, toolName, params) {
+function getGroupData(dispatch, dataDirectory, currentToolName, params) {
   return new Promise((resolve, reject) => {
     let groupsDataDirectory = Path.join(dataDirectory, params.bookAbbr);
     let allGroupsData = {};
@@ -234,7 +233,7 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
       // read in the groupsData files
       let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
       // read in the groupsData files
-      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, currentToolName);
       // then load groupsData to reducer
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
@@ -246,11 +245,11 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
     } else {
       // The groups data files were not found in the directory thus copy
       // them from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, params.bookAbbr);
+      ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, params.bookAbbr);
       // read in the groupsData files
       let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
       // read in the groupsData files
-      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName);
+      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, currentToolName);
       // then load groupsData to reducer
       dispatch({
         type: consts.LOAD_GROUPS_DATA_FROM_FS,
@@ -263,7 +262,7 @@ function getGroupData(dispatch, dataDirectory, toolName, params) {
 }
 
 
-function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName) {
+function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, currentToolName) {
   let allGroupsData = {};
   let total = groupDataFolderObjs.length;
   let i = 0;
@@ -277,7 +276,7 @@ function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, t
     if (groupData) {
       allGroupsData[groupName] = groupData;
     }
-    dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100));
+    dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100));
     i++;
   }
   return allGroupsData;
@@ -309,7 +308,7 @@ function loadGroupData(groupName, groupDataFolderPath) {
  */
 export function errorLoadingProject(err) {
   return ((dispatch) => {
-    dispatch({ type: consts.DONE_LOADING });
+    dispatch({ type: consts.TOGGLE_LOADER_MODAL, show:false });
     dispatch(
       AlertModalActions.openAlertDialog(
         "Problem Loading Your Project" + err.message

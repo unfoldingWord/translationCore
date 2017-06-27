@@ -33,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
       loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,
-      currentToolReducer: state.currentToolReducer,
+      toolsReducer: state.toolsReducer,
       groupsDataReducer: state.groupsDataReducer
     }
   };
