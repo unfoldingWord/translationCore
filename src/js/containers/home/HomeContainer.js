@@ -12,7 +12,7 @@ import * as modalActions from '../../actions/ModalActions';
 class HomeContainer extends Component {
 
   render() {
-    let {showWelcomeSplash} = this.props.reducers.BodyUIReducer;
+    let {showWelcomeSplash} = this.props.reducers.homeScreenReducer;
     return (
       <div style={{width: '100%'}}>
         {showWelcomeSplash ? (
@@ -29,7 +29,7 @@ class HomeContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
-      BodyUIReducer: state.BodyUIReducer,
+      homeScreenReducer: state.homeScreenReducer,
       loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,

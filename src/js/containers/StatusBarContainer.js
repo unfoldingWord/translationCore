@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
     currentToolReducer: state.currentToolReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     loginReducer: state.loginReducer,
-    BodyUIReducer: state.BodyUIReducer
+    homeScreenReducer: state.homeScreenReducer
   };
 };
 

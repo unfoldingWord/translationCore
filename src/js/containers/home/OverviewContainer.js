@@ -30,7 +30,7 @@ class OverviewContainer extends Component {
 
   componentWillMount() {
     // update instructions if they don't match current instructions
-    if (this.props.reducers.BodyUIReducer.homeInstructions !== this.instructions()) {
+    if (this.props.reducers.homeScreenReducer.homeInstructions !== this.instructions()) {
       this.props.actions.changeHomeInstructions(this.instructions());
     }
   }
