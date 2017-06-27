@@ -18,8 +18,8 @@ export function loadTool(folderName, currentToolName) {
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
-    getDefaultModules((moduleFolderPathList) => {
-      fillDefaultModules(moduleFolderPathList, (metadatas) => {
+    getDefaultTools((moduleFolderPathList) => {
+      fillDefaultTools(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
         dispatch({
           type: consts.GET_TOOLS_METADATAS,
@@ -30,8 +30,8 @@ export function getToolsMetadatas() {
   })
 }
 
-const getDefaultModules = (callback) => {
-  let defaultModules = [];
+const getDefaultTools = (callback) => {
+  let defaultTools = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
   let folders = fs.readdirSync(moduleBasePath);
@@ -52,7 +52,7 @@ const getDefaultModules = (callback) => {
             }
           }
           if (dependencies) {
-            defaultModules.push(manifestPath);
+            defaultTools.push(manifestPath);
           }
         }
       } catch (e) {
@@ -60,7 +60,7 @@ const getDefaultModules = (callback) => {
       }
     }
   }
-  callback(defaultModules);
+  callback(defaultTools);
 };
 
 const sortMetadatas = (metadatas) => {
@@ -69,7 +69,7 @@ const sortMetadatas = (metadatas) => {
   });
 }
 
-const fillDefaultModules = (moduleFilePathList, callback) => {
+const fillDefaultTools = (moduleFilePathList, callback) => {
   let tempMetadatas = [];
   // This makes sure we're done with all the files first before we call the callback
   let totalFiles = moduleFilePathList.length;

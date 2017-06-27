@@ -80,9 +80,6 @@ export function uploadProject(projectPath, user) {
                 );
               }
             } else {
-              dispatch({
-                type: consts.UPLOAD_PROJECT
-              });
               dispatch(
                 AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
               )

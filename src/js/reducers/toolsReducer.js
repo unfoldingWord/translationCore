@@ -9,7 +9,7 @@ const initialState = {
 
 const toolsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SAVE_MODULE_VIEW:
+    case consts.SAVE_TOOL_VIEW:
       return {
         ...state,
         toolViews: {

@@ -6,14 +6,14 @@ import consts from './ActionTypes';
  * as a property of the modulesSettingsReducer object.
  * @param {string} settingsPropertyName - is he property name to be used
  *  to save multiple settings names for a tool/module.
- * @param {object} moduleSettingsData - settings data.
+ * @param {object} toolSettingsData - settings data.
  * @return {object} acton object.
  */
-export function setModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData) {
+export function setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData) {
   return {
     type: consts.UPDATE_TOOL_SETTINGS,
     moduleNamespace,
     settingsPropertyName,
-    moduleSettingsData
+    toolSettingsData
   };
 }

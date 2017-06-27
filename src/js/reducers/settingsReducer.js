@@ -26,7 +26,7 @@ const settingsReducer = (state = initialState, action) => {
           ...state.toolSettings,
           [action.moduleNamespace]: {
             ...state[action.moduleNamespace],
-            [action.settingsPropertyName]: action.moduleSettingsData
+            [action.settingsPropertyName]: action.toolSettingsData
           }
         }
       };

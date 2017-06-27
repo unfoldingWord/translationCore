@@ -21,7 +21,7 @@ import * as CurrentToolActions from './currentToolActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ModulesSettingsActions from './ModulesSettingsActions';
+import * as toolsSettingsActions from './ToolsSettingsActions';
 import * as projectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 // helpers
@@ -102,7 +102,7 @@ export function loadModuleAndDependencies(moduleFolderName, currentToolName) {
           const modulePath = Path.join(moduleFolderName, 'package.json');
           const dataObject = fs.readJsonSync(modulePath);
           const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-          dispatch(saveModules(checkArray));
+          dispatch(saveToolViews(checkArray));
           dispatch(CurrentToolActions.setToolTitle(dataObject.title));
           delay(2000)
             .then(
@@ -121,7 +121,7 @@ export function loadModuleAndDependencies(moduleFolderName, currentToolName) {
  * @param {Array} checkArray - Array of the checks that the views should be loaded.
  * @return {object} action object.
  */
-export function saveModules(checkArray) {
+export function saveToolViews(checkArray) {
   return (dispatch => {
     for (let module of checkArray) {
       try {
@@ -142,7 +142,7 @@ export function saveModules(checkArray) {
  */
 export function setModuleView(identifier, view) {
   return {
-    type: consts.SAVE_MODULE_VIEW,
+    type: consts.SAVE_TOOL_VIEW,
     identifier: identifier,
     module: view
   };
