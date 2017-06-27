@@ -50,7 +50,6 @@ const mapStateToProps = state => {
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
-    statusBarReducer: state.statusBarReducer,
     loaderReducer: state.loaderReducer,
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,

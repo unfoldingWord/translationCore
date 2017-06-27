@@ -3,12 +3,11 @@ import { combineReducers } from 'redux'
 import coreStoreReducer from './coreStoreReducer'
 import modalReducer from './modalReducer'
 import loginReducer from './loginReducer'
-import settingsReducer from './settingsReducer'
 import toolsReducer from './toolsReducer'
 import recentProjectsReducer from './recentProjectsReducer'
 import importOnlineReducer from './importOnlineReducer'
 import groupMenuReducer from './groupMenuReducer'
-import statusBarReducer from './statusBarReducer'
+import settingsReducer from './settingsReducer'
 import loaderReducer from './loaderReducer'
 import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
@@ -34,7 +33,6 @@ const rootReducers = combineReducers({
   recentProjectsReducer,
   importOnlineReducer,
   groupMenuReducer,
-  statusBarReducer,
   loaderReducer,
   popoverReducer,
   resourcesReducer,

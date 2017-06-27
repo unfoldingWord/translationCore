@@ -41,7 +41,7 @@ class StatusBarContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    statusBarReducer: state.statusBarReducer,
+    settingsReducer: state.settingsReducer,
     currentToolReducer: state.currentToolReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     loginReducer: state.loginReducer,
