@@ -57,8 +57,7 @@ const mapStateToProps = state => {
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
-    groupsDataReducer: state.groupsDataReducer,
-    modulesSettingsReducer: state.modulesSettingsReducer,
+    groupsDataReducer: state.groupsDataReducer
 
   };
 };

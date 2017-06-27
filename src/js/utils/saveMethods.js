@@ -7,7 +7,6 @@ import path from 'path-extra';
 // consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'toolsSettings.json');
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -19,18 +18,6 @@ const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 export const saveSettings = state => {
   try {
     fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer);
-  } catch (err) {
-    console.warn(err);
-  }
-};
-/**
- * @description save all the modules settings in a json file in the specified directory.
- * @param {object} state - object of reducers (objects).
- * @const {string} MODULES_SETTINGS_DIRECTORY - directory where module settigns is being saved.
- */
-export const saveModuleSettings = state => {
-  try {
-    fs.outputJsonSync(MODULES_SETTINGS_DIRECTORY, state.modulesSettingsReducer);
   } catch (err) {
     console.warn(err);
   }

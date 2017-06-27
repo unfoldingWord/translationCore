@@ -11,7 +11,7 @@ import consts from './ActionTypes';
  */
 export function setModuleSettings(moduleNamespace, settingsPropertyName, moduleSettingsData) {
   return {
-    type: consts.UPDATE_MODULE_SETTINGS,
+    type: consts.UPDATE_TOOL_SETTINGS,
     moduleNamespace,
     settingsPropertyName,
     moduleSettingsData

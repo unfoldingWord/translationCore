@@ -19,7 +19,6 @@ import contextIdReducer from './contextIdReducer'
 import groupsDataReducer from './groupsDataReducer'
 import groupsIndexReducer from './groupsIndexReducer'
 import verseEditReducer from './verseEditReducer'
-import modulesSettingsReducer from './modulesSettingsReducer'
 import homeScreenReducer from './homeScreenReducer'
 // combining reducers
 const rootReducers = combineReducers({
@@ -42,7 +41,6 @@ const rootReducers = combineReducers({
   groupsDataReducer,
   groupsIndexReducer,
   verseEditReducer,
-  modulesSettingsReducer,
   homeScreenReducer
 });
 
