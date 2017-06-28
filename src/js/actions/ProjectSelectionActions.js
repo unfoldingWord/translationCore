@@ -84,12 +84,11 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL });
-    dispatch({ type: consts.CLEAR_PREVIOUS_DATA });
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch({
-      type: consts.SET_TOOL_TITLE,
-      toolTitle: ""
+      type: consts.SET_CURRENT_TOOL_TITLE,
+      currentToolTitle: ""
     });
   });
 }

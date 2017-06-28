@@ -19,12 +19,12 @@ export function selectTool(moduleFolderName, currentToolName) {
     const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
     try {
       dispatch({ type: consts.START_LOADING });
-      dispatch({ type: consts.CLEAR_TOOL_DATA });
+      dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
       dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
       dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
       dispatch({ type: consts.CLEAR_CONTEXT_ID });
       dispatch( {
-        type: consts.SET_TOOL_NAME,
+        type: consts. SET_CURRENT_TOOL_NAME,
         currentToolName
       });
       dispatch({
