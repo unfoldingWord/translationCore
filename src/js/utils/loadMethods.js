@@ -17,7 +17,7 @@ export const loadSettings = () => {
   try {
     if (fs.existsSync(SETTINGS_DIRECTORY)) {
       settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      if (!settings.toolSettings) settings.toolSettings = {};
+      if (!settings.toolsSettings) settings.toolsSettings = {};
     } else {
       console.log("No settings file found therefore it will be created when the settings reducer is fully loaded");
     }

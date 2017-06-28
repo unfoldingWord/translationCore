@@ -100,7 +100,6 @@ export function clearLastProject() {
         dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
         dispatch({ type: consts.CLEAR_CONTEXT_ID });
         dispatch({ type: consts.CLEAR_TOOL_DATA });
-        dispatch({ type: consts.CLEAR_TOOL_DATA });
         dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
         dispatch(CurrentToolActions.setToolTitle(""));
     });

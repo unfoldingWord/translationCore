@@ -7,7 +7,7 @@ const initialState = {
     developerMode: false,
     csvSaveLocation: null,
     online: true,
-    toolSettings: {}
+    toolsSettings: {}
   }
 };
 
@@ -22,8 +22,8 @@ const settingsReducer = (state = initialState, action) => {
     case consts.UPDATE_TOOL_SETTINGS:
       return {
         ...state,
-        toolSettings: {
-          ...state.toolSettings,
+        toolsSettings: {
+          ...state.toolsSettings,
           [action.moduleNamespace]: {
             ...state[action.moduleNamespace],
             [action.settingsPropertyName]: action.toolSettingsData
