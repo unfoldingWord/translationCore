@@ -1,19 +1,25 @@
-var exec = require('child_process').exec;
-var versionNumber = process.argv[2];
+const exec = require('child_process').exec;
+const versionNumber = process.argv[2];
 if (!versionNumber) {
   console.log("No version number specified");
   return;
 }
-var script = "git pull && \
-  npm version --git-tag-version=false " + versionNumber + ' && sleep 1s && \
-  git commit package.json package-lock.json -m "Update version to ' + versionNumber + '" && sleep 1s && \
-  git push && sleep 1s && \
-  git checkout master && sleep 1s && \
-  git merge develop --ff && sleep 1s && \
-  git push && sleep 1s && \
-  git tag v' + versionNumber + ' && sleep 1s && \
-  git push origin v' + versionNumber + ' && sleep 1s && \
-  git checkout develop';
+const commands = [
+  'git pull',
+  'npm version --git-tag-version=false "' + versionNumber + '"',
+  'npm install',
+  'git commit package.json package-lock.json -m "Update version to ' + versionNumber + '"',
+  'git push',
+  'git checkout master',
+  'git merge develop --ff',
+  'git push',
+  'git tag v' + versionNumber,
+  'git push origin v' + versionNumber,
+  'git checkout develop'
+]
+
+const betweenCommand = ' && sleep 1s && '
+const script = commands.join(betweenCommand);
 
   exec(script, (err, data) => {
   if (err) {
