@@ -9,7 +9,6 @@ import CryptoJS from "crypto-js";
 //  consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'toolsSettings.json');
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
@@ -18,6 +17,7 @@ export const loadSettings = () => {
   try {
     if (fs.existsSync(SETTINGS_DIRECTORY)) {
       settings = fs.readJsonSync(SETTINGS_DIRECTORY);
+      if (!settings.toolsSettings) settings.toolsSettings = {};
     } else {
       console.log("No settings file found therefore it will be created when the settings reducer is fully loaded");
     }
@@ -27,25 +27,6 @@ export const loadSettings = () => {
   return settings;
 };
 
-/**
- * @description loads the modules settings from file system.
- * @const MODULES_SETTINGS_DIRECTORY - directory where module settings is located.
- * @return {object} action object.
- */
-export function loadModulesSettings() {
-  try {
-    if (fs.existsSync(MODULES_SETTINGS_DIRECTORY)) {
-      let modulesSettings = fs.readJsonSync(MODULES_SETTINGS_DIRECTORY);
-      return modulesSettings;
-    } else {
-      // no module settings file found and/or directory not found.
-      return {};
-    }
-  } catch (err) {
-    console.warn(err);
-    return {};
-  }
-}
 // TODO: change readJson to readJsonSync
 export function loadGroupsDataToExport(tool, dataFolder, projectId) {
   return new Promise((resolve, reject) => {

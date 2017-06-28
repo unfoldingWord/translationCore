@@ -9,7 +9,7 @@ import {
 
 class StepperComponent extends Component {
   render() {
-    const {stepIndex} = this.props.BodyUIReducer.stepper;
+    const {stepIndex} = this.props.homeScreenReducer.stepper;
     // colors
     let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
     let userColor = stepIndex >= 1 ? "var(--accent-color-dark)" : "";

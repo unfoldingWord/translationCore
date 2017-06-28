@@ -23,7 +23,7 @@ export function loadProjectData(toolName) {
       ProjectLoadingHelpers.getGroupsIndex(dispatch, toolName, dataDirectory)
         .then(() => {
           ProjectLoadingHelpers.getGroupData(dispatch, dataDirectory, toolName, params)
-          .then(dispatch({ type: consts.TOGGLE_LOADER_MODAL, show:false }))
+          .then(dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false }))
         });
     })
     .catch(err => {

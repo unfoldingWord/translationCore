@@ -23,7 +23,7 @@ class UsersManagementContainer extends Component {
 
   componentWillMount() {
     let instructions = this.instructions();
-    if (this.props.reducers.BodyUIReducer.homeInstructions !== instructions) {
+    if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
   }

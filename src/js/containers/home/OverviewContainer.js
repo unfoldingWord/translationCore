@@ -30,7 +30,7 @@ class OverviewContainer extends Component {
 
   componentWillMount() {
     // update instructions if they don't match current instructions
-    if (this.props.reducers.BodyUIReducer.homeInstructions !== this.instructions()) {
+    if (this.props.reducers.homeScreenReducer.homeInstructions !== this.instructions()) {
       this.props.actions.changeHomeInstructions(this.instructions());
     }
   }
@@ -51,8 +51,8 @@ class OverviewContainer extends Component {
   }
 
   render() {
-    const { toolTitle } = this.props.reducers.currentToolReducer;
-    const launchButtonDisabled = !toolTitle;
+    const { currentToolTitle } = this.props.reducers.toolsReducer;
+    const launchButtonDisabled = !currentToolTitle;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>

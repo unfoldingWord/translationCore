@@ -6,7 +6,7 @@ if (!versionNumber) {
 }
 const commands = [
   'git pull',
-  'npm version --git-tag-version=false ' + versionNumber,
+  'npm version --git-tag-version=false "' + versionNumber + '"',
   'npm install',
   'git commit package.json package-lock.json -m "Update version to ' + versionNumber + '"',
   'git push',

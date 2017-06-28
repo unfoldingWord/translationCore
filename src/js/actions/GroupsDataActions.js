@@ -49,7 +49,7 @@ export function verifyGroupDataMatchesWithFs() {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestObjects = getUniqueObjectsFromFolder(filePath);
             latestObjects.forEach(object => {
-              if (object.contextId.tool === state.currentToolReducer.toolName) {
+              if (object.contextId.tool === state.toolsReducer.currentToolName) {
                 toggleGroupDataItems(folderName, object, dispatch);
               }
             });

@@ -12,7 +12,7 @@ class BackNavigation extends Component {
 
   render() {
     let { goToNextStep, goToPrevStep} = this.props.actions
-    let {stepIndex} = this.props.reducers.BodyUIReducer.stepper;
+    let {stepIndex} = this.props.reducers.homeScreenReducer.stepper;
     let backDisabled = false, nextDisabled = false;
     switch (stepIndex) {
       case 0:

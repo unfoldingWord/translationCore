@@ -146,7 +146,7 @@
 //       AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
 //     });
 //   })
-// }
+//
 
 // /**
 //  * @description loads the group index from the filesystem.
@@ -227,7 +227,6 @@
 //     }
 //   });
 // }
-
 
 // function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, dispatch, toolName) {
 //   let allGroupsData = {};

@@ -9,9 +9,8 @@ import { changeSelections, validateSelections } from '../actions/SelectionsActio
 import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
 import { addGroupData, verifyGroupDataMatchesWithFs } from '../actions/GroupsDataActions';
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
-import { setModuleSettings } from '../actions/ModulesSettingsActions';
+import { setToolSettings } from '../actions/ToolsSettingsActions';
 import { setProjectDetail } from '../actions/projectDetailsActions';
-import { setDataFetched } from '../actions/currentToolActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
@@ -26,31 +25,29 @@ class ToolsContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let { contextId } = nextProps.contextIdReducer;
-    let { toolName } = nextProps.currentToolReducer;
+    let { currentToolName } = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
-    if (contextId && contextId.tool !== toolName) {
+    if (contextId && contextId.tool !== currentToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
     }
   }
 
   render() {
-    let {modules} = this.props.coreStoreReducer;
-    let {toolName} = this.props.currentToolReducer;
-    let Tool = modules[toolName];
+    let {currentToolViews, currentToolName} = this.props.toolsReducer;
+    let Tool = currentToolViews[currentToolName];
 
     return (
-      <Tool {...this.props} modules={modules} />
+      <Tool {...this.props} currentToolViews={currentToolViews} />
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    coreStoreReducer: state.coreStoreReducer,
+    toolsReducer: state.toolsReducer,
     checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
-    statusBarReducer: state.statusBarReducer,
     loaderReducer: state.loaderReducer,
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,
@@ -60,9 +57,8 @@ const mapStateToProps = state => {
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
-    groupsDataReducer: state.groupsDataReducer,
-    modulesSettingsReducer: state.modulesSettingsReducer,
-    currentToolReducer: state.currentToolReducer
+    groupsDataReducer: state.groupsDataReducer
+
   };
 };
 
@@ -114,17 +110,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       setGroupsIndex: (groupsIndex) => {
         dispatch(setGroupsIndex(groupsIndex));
       },
-      setModuleSettings: (NAMESPACE, settingsPropertyName, moduleSettingsData) => {
-        dispatch(setModuleSettings(NAMESPACE, settingsPropertyName, moduleSettingsData));
+      setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
+        dispatch(setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
       },
       setProjectDetail: (key, value) => {
         dispatch(setProjectDetail(key, value));
-      },
-      isDataFetched: val => {
-        dispatch(setDataFetched(val));
-      },
-      doneLoading: () => {
-        dispatch({type: "DONE_LOADING"})
       },
       verifyMenuChecksReflectFS: () => {
         dispatch(verifyGroupDataMatchesWithFs());

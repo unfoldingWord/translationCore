@@ -19,26 +19,6 @@ export function killLoading() {
   });
 }
 
-export function update(show, progess) {
-  return ((dispatch) => {
-    if (!show) {
-      setTimeout(() => {
-        dispatch({
-          type: consts.UPDATE_LOADER,
-          reloadContent: <h3>Taking too long? <a onClick={this.killLoading}>Cancel loading</a></h3>
-        });
-      }, 10000);
-    }
-
-    dispatch({
-      type: consts.UPDATE_LOADER,
-      progress: progess,
-      reloadContent: null
-    })
-    dispatch(this.toggleLoader());
-  });
-}
-
 /**
  * @description gets the progress for a specific process.
  * @param {string} processName - label name for the specific process that the progress is being loaded for.

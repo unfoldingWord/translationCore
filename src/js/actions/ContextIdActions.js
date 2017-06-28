@@ -122,14 +122,14 @@ export function loadCurrentContextId() {
   return (dispatch, getState) => {
     let state = getState();
     let {projectSaveLocation, params} = state.projectDetailsReducer
-    let {toolName} = state.currentToolReducer
+    let {currentToolName} = state.toolsReducer
     let bookId = params ? params.bookAbbr : undefined
     let fileName = "contextId.json"
 
-    if (projectSaveLocation && toolName && bookId) {
+    if (projectSaveLocation && currentToolName && bookId) {
       let contextId
       try {
-        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
+        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName)
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath)
         } else {

@@ -23,11 +23,6 @@ const loaderReducer = (state = initialState, action) => {
         },
         reloadContent: action.reloadContent ? action.reloadContent : null
       };
-    case consts.DONE_LOADING:
-      return {
-        ...state,
-        show: false
-      };
     case consts.START_LOADING:
       return {
         ...state,
