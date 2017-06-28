@@ -20,7 +20,7 @@ class StepperContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    BodyUIReducer: state.BodyUIReducer
+    homeScreenReducer: state.homeScreenReducer
   };
 };
 

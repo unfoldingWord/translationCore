@@ -43,8 +43,8 @@ describe('ProjectManifest.populate', function() {
     var generatedManifest = ManifestGenerator(sampleData);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
-    assert.isArray(generatedManifest.check_modules);
-    assert.isString(generatedManifest.check_modules[0]);
+    assert.isArray(generatedManifest.tools);
+    assert.isString(generatedManifest.tools[0]);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);
@@ -55,8 +55,8 @@ describe('ProjectManifest.populate', function() {
     var generatedManifest = ManifestGenerator(sampleData, sampleTS);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
-    assert.isArray(generatedManifest.check_modules);
-    assert.isString(generatedManifest.check_modules[0]);
+    assert.isArray(generatedManifest.tools);
+    assert.isString(generatedManifest.tools[0]);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);

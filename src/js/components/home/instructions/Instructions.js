@@ -6,7 +6,7 @@ import {Card, CardText} from 'material-ui/Card';
 class Instructions extends Component {
 
   render() {
-    let { homeInstructions } = this.props.reducers.BodyUIReducer;
+    let { homeInstructions } = this.props.reducers.homeScreenReducer;
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Instructions

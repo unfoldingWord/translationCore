@@ -28,7 +28,7 @@ var template = {
   translators: [],
   checkers: [],
   time_created: '',
-  check_modules: [],
+  tools: [],
   repo: ''
 };
 
@@ -69,7 +69,7 @@ function populate(data, tsManifest) {
   if (data && data.checkLocations) {
     for (var item in data.checkLocations) {
       var currentItem = data.checkLocations[item];
-      projectManifest.check_modules.push(currentItem.name);
+      projectManifest.tools.push(currentItem.name);
     }
   }
   try {

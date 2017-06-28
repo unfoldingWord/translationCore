@@ -1,5 +1,5 @@
 import isEqual from 'lodash/isEqual';
-import {loadSettings, loadModulesSettings, loadUserdata} from './loadMethods';
+import {loadSettings, loadUserdata} from './loadMethods';
 import {
   saveSettings,
   saveTargetLanguage,
@@ -9,7 +9,6 @@ import {
   saveReminders,
   saveGroupsIndex,
   saveGroupsData,
-  saveModuleSettings,
   saveLocalUserdata
 } from './saveMethods';
 
@@ -22,7 +21,6 @@ export const loadState = () => {
   try {
     const serializedState = {
       settingsReducer: loadSettings(),
-      modulesSettingsReducer: loadModulesSettings(),
       loginReducer: loadUserdata()
     };
     if (serializedState === null) {
@@ -48,7 +46,6 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
-    saveModuleSettings(newState);
     let {targetLanguage} = newState.resourcesReducer.bibles;
     if (targetLanguage && Object.keys(targetLanguage).length > 0) {
       saveTargetLanguage(newState);
@@ -65,7 +62,7 @@ export const saveState = (prevState, newState) => {
       // make sure project has not changed
       isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
       // make sure tool has not changed
-      isEqual(prevState.currentToolReducer.toolName, newState.currentToolReducer.toolName)
+      isEqual(prevState.toolsReducer.currentToolName, newState.toolsReducer.currentToolName)
     ) {
       saveGroupsIndex(newState);
       saveGroupsData(newState);

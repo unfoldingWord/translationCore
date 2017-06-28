@@ -10,7 +10,7 @@ import ToolsManagementContainer from './ToolsManagementContainer';
 
 class DisplayContainer extends Component {
   render() {
-    let {stepIndex} = this.props.reducers.BodyUIReducer.stepper;
+    let {stepIndex} = this.props.reducers.homeScreenReducer.stepper;
     let displayContainer = <div />;
     switch (stepIndex) {
       case 0:

@@ -34,9 +34,9 @@ export function getTHelpsFromStaticPackage() {
   });
 }
 
-export function copyGroupsIndexToProjectResources(toolName, projectGroupsIndexPath) {
+export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {
   let version = 'v0';
-  let groupsIndexSourcePath = path.join(THELPS_RESOURCES_PATH, toolName, version, 'index.json');
+  let groupsIndexSourcePath = path.join(THELPS_RESOURCES_PATH, currentToolName, version, 'index.json');
   let groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
   if(fs.existsSync(groupsIndexSourcePath)) {
     fs.copySync(groupsIndexSourcePath, groupsIndexDestinationPath);
@@ -45,9 +45,9 @@ export function copyGroupsIndexToProjectResources(toolName, projectGroupsIndexPa
   }
 }
 
-export function copyGroupsDataToProjectResources(toolName, groupsDataDirectory, bookAbbreviation) {
+export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   let version = 'v0';
-  let groupsDataSourcePath = path.join(THELPS_RESOURCES_PATH, toolName, version, 'groups', bookAbbreviation);
+  let groupsDataSourcePath = path.join(THELPS_RESOURCES_PATH, currentToolName, version, 'groups', bookAbbreviation);
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
   } else {

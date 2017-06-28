@@ -52,7 +52,7 @@ const tT ={
 class ToolDescription extends React.Component {
   render() {
     let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
-    let { toolName } = this.props;
+    let { currentToolName } = this.props;
     let Styles;
     switch (name) {
       case "translationWords":
@@ -73,7 +73,7 @@ class ToolDescription extends React.Component {
           </h4><span>{"Version " + version}</span><br />
           <span style={{color: "var(--reverse-color)", marginBottom: ""}}>{description}</span><br /><br /><br />
           <button className="btn-second" onClick={() => this.props.handleLoadTool(folderName, this.props.loggedInUser, name)}
-                  title={"Click to load tool"} disabled={toolName === name}>
+                  title={"Click to load tool"} disabled={currentToolName === name}>
             Select
           </button>
         </Col>

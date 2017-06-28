@@ -2,45 +2,32 @@ import consts from './ActionTypes';
 
 /**
  * @description this action sets current tool name
- * @param {string} toolName - name of current tool
+ * @param {string} currentToolName - name of current tool
  * @return {object} New state for currentTool reducer.
  */
-export const setToolName = (toolName) => {
-  if (!toolName || toolName === ' ') {
+export const setToolName = (currentToolName) => {
+  if (!currentToolName || currentToolName === ' ') {
     return {
-      type: consts.SET_TOOL_NAME
+      type: consts.SET_CURRENT_TOOL_NAME
     };
   }
   return {
-    type: consts.SET_TOOL_NAME,
-    toolName
+    type: consts.SET_CURRENT_TOOL_NAME,
+    currentToolName
   };
 };
 
 /**
  * @description this action sets current tool title
- * @param {string} toolTitle - title of current tool
+ * @param {string} currentToolTitle - title of current tool
  * @return {object} New state for currentTool reducer.
  */
-export const setToolTitle = (toolTitle) => {
-  if (!toolTitle) {
-    toolTitle = "";
+export const setToolTitle = (currentToolTitle) => {
+  if (!currentToolTitle) {
+    currentToolTitle = "";
   }
   return {
-    type: consts.SET_TOOL_TITLE,
-    toolTitle
+    type: consts.SET_CURRENT_TOOL_TITLE,
+    currentToolTitle
   };
 };
-
-/**
- * @description This action should be used to set whether or not a tool
- * should run a 'fetchData' in the componentWillReceiveProps function
- * @param {boolean} val - Designates if the data has been fetched from a tool load
- * @return {object} action object.
- */
-export const setDataFetched = (val) => {
-  return {
-    type: consts.SET_FETCHED_DATA,
-    isDataFetched: val
-  }
-}

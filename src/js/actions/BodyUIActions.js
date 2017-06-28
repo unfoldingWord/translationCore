@@ -28,7 +28,7 @@ export const changeHomeInstructions = instructions => {
 
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
-    const {stepIndex} = getState().BodyUIReducer.stepper;
+    const {stepIndex} = getState().homeScreenReducer.stepper;
     if (stepIndex < 3) {
       dispatch({
         type: consts.GO_TO_NEXT_STEP,
@@ -43,7 +43,7 @@ export const goToNextStep = () => {
 
 export const goToPrevStep = () => {
   return ((dispatch, getState) => {
-    const {stepIndex} = getState().BodyUIReducer.stepper;
+    const {stepIndex} = getState().homeScreenReducer.stepper;
     if (stepIndex > 0) {
       dispatch({
         type: consts.GO_TO_PREVIOUS_STEP,

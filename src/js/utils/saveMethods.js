@@ -7,7 +7,6 @@ import path from 'path-extra';
 // consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const MODULES_SETTINGS_DIRECTORY = path.join(PARENT, 'toolsSettings.json');
 const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -19,18 +18,6 @@ const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 export const saveSettings = state => {
   try {
     fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer);
-  } catch (err) {
-    console.warn(err);
-  }
-};
-/**
- * @description save all the modules settings in a json file in the specified directory.
- * @param {object} state - object of reducers (objects).
- * @const {string} MODULES_SETTINGS_DIRECTORY - directory where module settigns is being saved.
- */
-export const saveModuleSettings = state => {
-  try {
-    fs.outputJsonSync(MODULES_SETTINGS_DIRECTORY, state.modulesSettingsReducer);
   } catch (err) {
     console.warn(err);
   }
@@ -198,15 +185,15 @@ export const saveReminders = state => {
 export const saveGroupsIndex = state => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let toolName = state.contextIdReducer.contextId ?
+    let currentToolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
     let fileName = "index.json";
     let groupsIndex = state.groupsIndexReducer.groupsIndex;
     // Not saving if the array is empty.
     // without this if it will overwrite the data in the filesystem.
     if (groupsIndex.length > 0) {
-      if (toolName && PROJECT_SAVE_LOCATION && groupsIndex) {
-        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, fileName);
+      if (currentToolName && PROJECT_SAVE_LOCATION && groupsIndex) {
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, fileName);
         fs.outputJsonSync(savePath, groupsIndex);
       } else {
         // saveGroupsIndex: missing required data
@@ -223,15 +210,15 @@ export const saveGroupsIndex = state => {
 export const saveGroupsData = state => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let toolName = state.contextIdReducer.contextId ?
+    let currentToolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
     let bookAbbreviation = state.contextIdReducer.contextId ?
                            state.contextIdReducer.contextId.reference.bookId : undefined;
-    if (PROJECT_SAVE_LOCATION && toolName && bookAbbreviation) {
+    if (PROJECT_SAVE_LOCATION && currentToolName && bookAbbreviation) {
       let groupsData = state.groupsDataReducer.groupsData;
       for (let groupID in groupsData) {
         let fileName = groupID + ".json";
-        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
+        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
         fs.outputJsonSync(savePath, groupsData[groupID]);
       }
     } else {
@@ -248,11 +235,11 @@ export const saveGroupsData = state => {
 export const saveContextId = (state, contextId) => {
   try {
     let {projectSaveLocation} = state.projectDetailsReducer
-    let toolName = contextId ? contextId.tool : undefined
+    let currentToolName = contextId ? contextId.tool : undefined
     let bookId = contextId ? contextId.reference.bookId : undefined
-    if (projectSaveLocation && toolName && bookId) {
+    if (projectSaveLocation && currentToolName && bookId) {
       let fileName = "contextId.json"
-      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName)
+      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName)
       fs.outputJsonSync(savePath, contextId)
     } else {
       // saveCurrentContextId: missing required data
