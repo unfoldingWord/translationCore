@@ -46,8 +46,10 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
-    let {targetLanguage} = newState.resourcesReducer.bibles;
-    if (targetLanguage && Object.keys(targetLanguage).length > 0) {
+    // only save targetLanguage when data has changed and not empty
+    const {targetLanguage} = newState.resourcesReducer.bibles;
+    const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0)
+    if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
       saveTargetLanguage(newState);
     }
     // only save checkData reducers if contextId hasn't changed
