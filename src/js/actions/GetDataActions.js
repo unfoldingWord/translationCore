@@ -91,10 +91,10 @@ export function loadModuleAndDependencies(moduleFolderName, currentToolName) {
   return ((dispatch, getState) => {
     try {
       dispatch({ type: consts.START_LOADING });
-      dispatch({ type: consts.CLEAR_TOOL_DATA });
+      dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
       delay(1000)
         .then(() => {
-          dispatch({ type: consts.CLEAR_TOOL_DATA });
+          dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
           dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
           dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
           dispatch({ type: consts.CLEAR_CONTEXT_ID });

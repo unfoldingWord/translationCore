@@ -33,11 +33,11 @@ class ToolsContainer extends React.Component {
   }
 
   render() {
-    let {toolViews, currentToolName} = this.props.toolsReducer;
-    let Tool = toolViews[currentToolName];
+    let {currentToolViews, currentToolName} = this.props.toolsReducer;
+    let Tool = currentToolViews[currentToolName];
 
     return (
-      <Tool {...this.props} toolViews={toolViews} />
+      <Tool {...this.props} currentToolViews={currentToolViews} />
     );
   }
 }

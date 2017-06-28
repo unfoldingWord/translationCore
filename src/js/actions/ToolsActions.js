@@ -22,7 +22,7 @@ export function getToolsMetadatas() {
       fillDefaultTools(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
         dispatch({
-          type: consts.GET_TOOLS_METADATAS,
+          type: consts.GET_CURRENT_TOOL_METADATA,
           val: metadatas
         });
       })

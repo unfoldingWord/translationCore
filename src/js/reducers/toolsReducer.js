@@ -1,10 +1,10 @@
 import consts from '../actions/ActionTypes';
 
 const initialState = {
-  toolViews: {},
+  currentToolViews: {},
   currentToolName: null,
   currentToolTitle: null,
-  toolMetadatas:[]
+  currentToolMetadata:[]
 };
 
 const toolsReducer = (state = initialState, action) => {
@@ -12,27 +12,27 @@ const toolsReducer = (state = initialState, action) => {
     case consts.SAVE_TOOL_VIEW:
       return {
         ...state,
-        toolViews: {
-          ...state.toolViews,
+        currentToolViews: {
+          ...state.currentToolViews,
           [action.identifier]: action.module
         }
       }
-    case consts.SET_TOOL_NAME:
+    case consts.SET_CURRENT_TOOL_NAME:
       return {
         ...state,
         currentToolName: action.currentToolName
       }
-    case consts.SET_TOOL_TITLE:
+    case consts.SET_CURRENT_TOOL_TITLE:
       return {
         ...state,
         currentToolTitle: action.currentToolTitle
       }
-    case consts.GET_TOOLS_METADATAS:
+    case consts.GET_CURRENT_TOOL_METADATA:
       return {
         ...state,
-        toolMetadatas: action.val
+        currentToolMetadata: action.val
       }
-    case consts.CLEAR_TOOL_DATA:
+    case consts.CLEAR_CURRENT_TOOL_DATA:
       return initialState;
     default:
       return state;

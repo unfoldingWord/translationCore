@@ -8,11 +8,11 @@ import consts from './ActionTypes';
 export const setToolName = (currentToolName) => {
   if (!currentToolName || currentToolName === ' ') {
     return {
-      type: consts.SET_TOOL_NAME
+      type: consts.SET_CURRENT_TOOL_NAME
     };
   }
   return {
-    type: consts.SET_TOOL_NAME,
+    type: consts.SET_CURRENT_TOOL_NAME,
     currentToolName
   };
 };
@@ -27,7 +27,7 @@ export const setToolTitle = (currentToolTitle) => {
     currentToolTitle = "";
   }
   return {
-    type: consts.SET_TOOL_TITLE,
+    type: consts.SET_CURRENT_TOOL_TITLE,
     currentToolTitle
   };
 };

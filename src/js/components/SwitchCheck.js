@@ -4,9 +4,9 @@ import ToolDescription from './ToolDescription';
 class SwitchCheck extends React.Component {
 
   render() {
-    let { toolMetadatas } = this.props;
+    let { currentToolMetadata } = this.props;
     let buttons = [];
-    if (toolMetadatas.length == 0 ) {
+    if (currentToolMetadata.length == 0 ) {
       return (
           <div style={{backgroundColor: "var(--reverse-color)", textAlign: "center", verticalAlign: "middle", height: "520px"}}>No tC default tools found.</div>
       );
@@ -20,8 +20,8 @@ class SwitchCheck extends React.Component {
       </div>
       );
     } else {
-      for (let i in toolMetadatas) {
-        const metadata = toolMetadatas[i];
+      for (let i in currentToolMetadata) {
+        const metadata = currentToolMetadata[i];
         if (metadata.name == "ToolsTester") {
           if (this.props.currentSettings.developerMode) {
             // Removing tool tester for beta
