@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.11",
+  "version": "0.7.1-beta.14",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -79,6 +79,7 @@
     "marked": "^0.3.5",
     "material-ui": "^0.17.0",
     "moment": "^2.18.1",
+    "natural": "^0.4.0",
     "npm": "2.14.12",
     "path-extra": "3.0.0",
     "prop-types": "^15.5.8",
