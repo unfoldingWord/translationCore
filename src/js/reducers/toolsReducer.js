@@ -4,7 +4,7 @@ const initialState = {
   currentToolViews: {},
   currentToolName: null,
   currentToolTitle: null,
-  currentToolMetadata:[]
+  toolsMetadata:[]
 };
 
 const toolsReducer = (state = initialState, action) => {
@@ -27,10 +27,10 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         currentToolTitle: action.currentToolTitle
       }
-    case consts.GET_CURRENT_TOOL_METADATA:
+    case consts.GET_TOOLS_METADATA:
       return {
         ...state,
-        currentToolMetadata: action.val
+        toolsMetadata: action.val
       }
     case consts.CLEAR_CURRENT_TOOL_DATA:
       return initialState;
