@@ -6,7 +6,7 @@ import { remote } from 'electron';
 import zipFolder from 'zip-folder';
 import git from '../components/GitApi.js'
 // actions
-import * as openPojectActions from './GetDataActions';
+// import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
@@ -15,16 +15,16 @@ const ipcRenderer = require('electron').ipcRenderer;
 const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
-/**
- * @description - Initiate a project load
- *
- * @param {string} filePath - Path to the project to open i.e. ~/translationCore/{PROJECT_NAME}
- */
-export function onLoad(filePath) {
-  return (dispatch => {
-    dispatch(openPojectActions.openProject(filePath));
-  });
-}
+// /**
+//  * @description - Initiate a project load
+//  *
+//  * @param {string} filePath - Path to the project to open i.e. ~/translationCore/{PROJECT_NAME}
+//  */
+// export function onLoad(filePath) {
+//   return (dispatch => {
+//     dispatch(ProjectLoadingActions.selectProject(filePath));
+//   });
+// }
 
 /**
  * Upload project to door 43, based on currently logged in user.
@@ -80,9 +80,6 @@ export function uploadProject(projectPath, user) {
                 );
               }
             } else {
-              dispatch({
-                type: consts.UPLOAD_PROJECT
-              });
               dispatch(
                 AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
               )
@@ -229,9 +226,10 @@ export function saveVerseEditsToCSV(obj, dataFolder, toolName) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'VerseEdits.csv'), csvString);
-    } catch (e) { 
+    } catch (e) {
       console.warn(e);
-      reject(false) };
+      reject(false)
+    }
     resolve(true);
   });
 }
@@ -255,9 +253,10 @@ export function saveCommentsToCSV(obj, dataFolder, toolName) {
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Comments.csv'), csvString);
-    } catch (e) { 
+    } catch (e) {
       console.warn(e);
-      reject(false) };
+      reject(false)
+    }
     resolve(true);
   });
 }
@@ -285,9 +284,10 @@ export function saveSelectionsToCSV(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Selections.csv'), csvString);
-    } catch (e) { 
+    } catch (e) {
       console.warn(e);
-      reject(false) };
+      reject(false)
+    }
     resolve(true);
   });
 }
@@ -313,7 +313,8 @@ export function saveRemindersToCSV(obj, dataFolder, toolName) {
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'Reminders.csv'), csvString);
     } catch (e) { 
       console.warn(e);
-      reject(false) };
+      reject(false)
+    }
     resolve(true);
   });
 }
@@ -339,9 +340,10 @@ export function saveGroupsCSVToFs(obj, dataFolder, toolName) {
         }
       }
       fs.outputFileSync(path.join(dataFolder, 'output', toolName, 'CheckInformation.csv'), csvString);
-    } catch (e) { 
+    } catch (e) {
       console.warn(e);
-      reject(false) };
+      reject(false)
+    }
     resolve(true);
   });
 }
@@ -404,8 +406,8 @@ export function saveAllCSVDataByToolName(toolName, dataFolder, projectId) {
       .then(() => {
         return Promise.resolve(true);
       })
-      .catch((err) => {
-        throw "Problem saving data for " + toolName;
+      .catch(err => {
+        throw "Problem saving data for " + toolName + "\n Error:" + err ;
       });
   }
 }

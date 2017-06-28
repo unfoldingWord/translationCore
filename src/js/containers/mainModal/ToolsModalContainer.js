@@ -4,6 +4,7 @@ import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import SwitchCheck from '../../components/SwitchCheck.js';
 // actions
+import * as ToolSelectionActions from '../../actions/ToolSelectionActions.js';
 import * as ToolsActions from '../../actions/ToolsActions.js';
 import * as modalActions from '../../actions/ModalActions.js';
 import * as AlertModalActions from '../../actions/AlertModalActions.js';
@@ -50,7 +51,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
         return;
       }
-      dispatch(ToolsActions.loadTool(toolFolderPath, toolName));
+      dispatch(ToolSelectionActions.selectTool(toolFolderPath, toolName));
     },
     showLoad: () => {
       dispatch(modalActions.selectModalTab(2, 1, true))

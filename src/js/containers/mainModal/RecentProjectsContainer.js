@@ -6,10 +6,10 @@ import { Glyphicon } from 'react-bootstrap/lib';
 // components
 import RecentProjects from '../../components/RecentProjects';
 // actions
-import * as recentProjectsActions from '../../actions/RecentProjectsActions.js';
-import * as ModalActions from '../../actions/ModalActions.js';
-import * as AlertModalActions from '../../actions/AlertModalActions.js';
-import { openProject } from '../../actions/openProjectActions.js';
+import * as recentProjectsActions from '../../actions/RecentProjectsActions';
+import * as ModalActions from '../../actions/ModalActions';
+import * as AlertModalActions from '../../actions/AlertModalActions';
+import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -32,7 +32,7 @@ class RecentProjectsContainer extends React.Component {
         <button className="btn-prime"
           style={{width: "100px", margin: "10px 5px 10px 0"}}
           disabled={projectPath === currentPath}
-          onClick={() => this.props.onLoad(projectPath, this.props.loggedInUser)}
+          onClick={() => this.props.selectProject(projectPath, this.props.loggedInUser)}
         >
           <Glyphicon glyph={'folder-open'} />
           <span style={{ marginLeft: '10px' }}>Select</span>
@@ -119,13 +119,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onLoad: (projectPath, loggedInUser) => {
+    selectProject: (projectPath, loggedInUser) => {
       if (!loggedInUser) {
         dispatch(ModalActions.selectModalTab(1, 1, true));
         dispatch(AlertModalActions.openAlertDialog("Please log in before loading a project"));
         return;
       }
-      dispatch(openProject(projectPath));
+      dispatch(ProjectLoadingActions.selectProject(projectPath));
     },
     uploadProject: (projectPath, user) => {
       if(user.localUser){
@@ -133,9 +133,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       } else {
         dispatch(recentProjectsActions.uploadProject(projectPath, user));
       }
-    },
-    loadProject: () => {
-      dispatch(recentProjectsActions.startLoadingNewProject());
     },
     getProjectsFromFolder: () => {
       dispatch(recentProjectsActions.getProjectsFromFolder());

@@ -1,10 +1,10 @@
 import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
-import * as getDataActions from './GetDataActions';
-import * as openProjectActions from './openProjectActions'
+// actions
+import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
 import * as AlertModalActions from './AlertModalActions';
-// constant declaration
+// constants
 const loadOnline = require('../components/LoadOnline');
 
 export function changeShowOnlineView(val) {
@@ -87,7 +87,7 @@ export function importOnlineProject(link) {
             } else {
                 dispatch(clearLink());
                 dispatch(AlertModalActions.closeAlertDialog());
-                dispatch(openProjectActions.openProject(savePath, url));
+                dispatch(ProjectLoadingActions.selectProject(savePath, url));
             }
         });
     })
