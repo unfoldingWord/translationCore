@@ -20,8 +20,7 @@
     "start": "electron ."
   },
   "build": {
-    "appId": "uw.translation_core.desktop",
-    "category": "public.app-category.bible.tools"
+    "appId": "uw.translation_core.desktop"
   },
   "repository": {
     "type": "git",
