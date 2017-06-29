@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux'
 // List of reducers
-import coreStoreReducer from './coreStoreReducer'
+import toolsReducer from './toolsReducer'
 import modalReducer from './modalReducer'
 import loginReducer from './loginReducer'
-import settingsReducer from './settingsReducer'
-import toolsReducer from './toolsReducer'
 import recentProjectsReducer from './recentProjectsReducer'
 import importOnlineReducer from './importOnlineReducer'
 import groupMenuReducer from './groupMenuReducer'
-import statusBarReducer from './statusBarReducer'
+import settingsReducer from './settingsReducer'
 import loaderReducer from './loaderReducer'
 import popoverReducer from './popoverReducer'
 import resourcesReducer from './resourcesReducer'
@@ -21,20 +19,16 @@ import contextIdReducer from './contextIdReducer'
 import groupsDataReducer from './groupsDataReducer'
 import groupsIndexReducer from './groupsIndexReducer'
 import verseEditReducer from './verseEditReducer'
-import modulesSettingsReducer from './modulesSettingsReducer'
-import currentToolReducer from './currentToolReducer'
-import BodyUIReducer from './BodyUIReducer'
+import homeScreenReducer from './homeScreenReducer'
 // combining reducers
 const rootReducers = combineReducers({
-  coreStoreReducer,
+  toolsReducer,
   modalReducer,
   loginReducer,
   settingsReducer,
-  toolsReducer,
   recentProjectsReducer,
   importOnlineReducer,
   groupMenuReducer,
-  statusBarReducer,
   loaderReducer,
   popoverReducer,
   resourcesReducer,
@@ -47,9 +41,7 @@ const rootReducers = combineReducers({
   groupsDataReducer,
   groupsIndexReducer,
   verseEditReducer,
-  modulesSettingsReducer,
-  currentToolReducer,
-  BodyUIReducer
+  homeScreenReducer
 });
 
 export default rootReducers;

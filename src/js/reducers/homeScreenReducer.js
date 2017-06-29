@@ -11,7 +11,7 @@ const initialState = {
   }
 };
 
-const BodyUIReducer = (state = initialState, action) => {
+const homeScreenReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.TOGGLE_HOME_VIEW:
       return {
@@ -49,4 +49,4 @@ const BodyUIReducer = (state = initialState, action) => {
   }
 };
 
-export default BodyUIReducer;
+export default homeScreenReducer;

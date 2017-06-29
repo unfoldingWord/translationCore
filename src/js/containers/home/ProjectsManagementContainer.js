@@ -11,7 +11,7 @@ class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
     let instructions = <div>ProjectsManagementInstructions</div>;
-    if (this.props.reducers.BodyUIReducer.homeInstructions !== instructions) {
+    if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
   }

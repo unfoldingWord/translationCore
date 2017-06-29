@@ -34,8 +34,7 @@ const mapStateToProps = state => {
     ...state.toolsReducer,
     ...state.settingsReducer,
     ...state.projectDetailsReducer,
-    ...state.loginReducer,
-    ...state.currentToolReducer
+    ...state.loginReducer
   };
 };
 
@@ -44,13 +43,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getToolsMetadatas: () => {
       dispatch(ToolsActions.getToolsMetadatas());
     },
-    handleLoadTool: (toolFolderPath, loggedInUser, toolName) => {
+    handleLoadTool: (toolFolderPath, loggedInUser, currentToolName) => {
       if (!loggedInUser) {
         dispatch(modalActions.selectModalTab(1, 1, true));
         dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
         return;
       }
-      dispatch(ToolsActions.loadTool(toolFolderPath, toolName));
+      dispatch(ToolsActions.loadTool(toolFolderPath, currentToolName));
     },
     showLoad: () => {
       dispatch(modalActions.selectModalTab(2, 1, true))

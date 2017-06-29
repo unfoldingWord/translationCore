@@ -8,21 +8,21 @@ import * as BodyUIActions from './BodyUIActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
 
-export function loadTool(folderName, toolName) {
+export function loadTool(folderName, currentToolName) {
   return ((dispatch, getState) => {
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(modalActions.showModalContainer(false));
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName, toolName));
+    dispatch(GetDataActions.loadModuleAndDependencies(folderName, currentToolName));
   });
 }
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
-    getDefaultModules((moduleFolderPathList) => {
-      fillDefaultModules(moduleFolderPathList, (metadatas) => {
+    getDefaultTools((moduleFolderPathList) => {
+      fillDefaultTools(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
         dispatch({
-          type: consts.GET_TOOLS_METADATAS,
+          type: consts.GET_TOOLS_METADATA,
           val: metadatas
         });
       })
@@ -30,8 +30,8 @@ export function getToolsMetadatas() {
   })
 }
 
-const getDefaultModules = (callback) => {
-  let defaultModules = [];
+const getDefaultTools = (callback) => {
+  let defaultTools = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
   let folders = fs.readdirSync(moduleBasePath);
@@ -52,7 +52,7 @@ const getDefaultModules = (callback) => {
             }
           }
           if (dependencies) {
-            defaultModules.push(manifestPath);
+            defaultTools.push(manifestPath);
           }
         }
       } catch (e) {
@@ -60,7 +60,7 @@ const getDefaultModules = (callback) => {
       }
     }
   }
-  callback(defaultModules);
+  callback(defaultTools);
 };
 
 const sortMetadatas = (metadatas) => {
@@ -69,7 +69,7 @@ const sortMetadatas = (metadatas) => {
   });
 }
 
-const fillDefaultModules = (moduleFilePathList, callback) => {
+const fillDefaultTools = (moduleFilePathList, callback) => {
   let tempMetadatas = [];
   // This makes sure we're done with all the files first before we call the callback
   let totalFiles = moduleFilePathList.length;

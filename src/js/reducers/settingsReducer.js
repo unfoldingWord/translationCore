@@ -5,7 +5,9 @@ const initialState = {
     showTutorial: false,
     textSelect: 'drag',
     developerMode: false,
-    csvSaveLocation: null
+    csvSaveLocation: null,
+    online: true,
+    toolsSettings: {}
   }
 };
 
@@ -15,6 +17,19 @@ const settingsReducer = (state = initialState, action) => {
       return { ...state, currentSettings: action.val }
     case consts.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation }
+    case consts.CHANGE_ONLINE_STATUS:
+      return { ...state, online: action.online }
+    case consts.UPDATE_TOOL_SETTINGS:
+      return {
+        ...state,
+        toolsSettings: {
+          ...state.toolsSettings,
+          [action.moduleNamespace]: {
+            ...state[action.moduleNamespace],
+            [action.settingsPropertyName]: action.toolSettingsData
+          }
+        }
+      };
     default:
       return state;
   }
