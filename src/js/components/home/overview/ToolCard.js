@@ -4,7 +4,7 @@ import { Glyphicon } from 'react-bootstrap';
 import { Line } from 'react-progressbar.js';
 import PropTypes from 'prop-types';
 // components
-import TemplateCard from './TemplateCard';
+import TemplateCard from '../TemplateCard';
 
 class ToolCard extends Component {
 
@@ -80,15 +80,13 @@ class ToolCard extends Component {
       let progress = 0;
       if (groupsData) progress = this.progress(groupsData);
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
-          <div style={{ display: 'flex' }}>
-            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-              <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
-            </div>
-            <div style={{ width: '400px' }}>
-              <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
-              {this.progressBar(progress)}
-            </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
+          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
+            <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
+          </div>
+          <div style={{ width: '400px' }}>
+            <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
+            {this.progressBar(progress)}
           </div>
         </div>
       );
@@ -125,6 +123,6 @@ class ToolCard extends Component {
 ToolCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};
 
 export default ToolCard;

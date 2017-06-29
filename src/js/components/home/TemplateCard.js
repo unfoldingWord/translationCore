@@ -41,7 +41,7 @@ class TemplateCard extends Component {
     const { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
     const emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
     const content = this.props.content ? this.props.content : emptyContent;
-    const cardStyle = { marginTop: '5px', height: '110px' }
+    const cardStyle = { marginTop: '5px' }
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
       <div style={{flex:1}}>
@@ -59,10 +59,10 @@ class TemplateCard extends Component {
 TemplateCard.propTypes = {
   heading: PropTypes.object.isRequired,
   content: PropTypes.element,
-  emptyMessage: PropTypes.string.isRequired,
-  emptyButtonLabel: PropTypes.string.isRequired,
-  emptyButtonOnClick: PropTypes.func.isRequired,
+  emptyMessage: PropTypes.string,
+  emptyButtonLabel: PropTypes.string,
+  emptyButtonOnClick: PropTypes.func,
   disabled: PropTypes.bool
-}
+};
 
 export default TemplateCard
