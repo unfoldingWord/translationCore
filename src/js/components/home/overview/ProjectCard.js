@@ -46,8 +46,15 @@ class ProjectCard extends Component {
   contentDetails(projectSaveLocation, bookName, params, manifest) {
     const projectName = projectSaveLocation.split("/").pop();
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    const accessTime = fs.statSync(projectDataLocation).atime;
-    const accessTimeAgo = moment().to(accessTime);
+    let accessTime;
+    let accessTimeAgo;
+    if (fs.existsSync(projectDataLocation)) {
+      accessTime = fs.statSync(projectDataLocation).atime;
+      accessTimeAgo = moment().to(accessTime);
+    } else {
+      accessTime = "";
+      accessTimeAgo = "Never Opened"
+    }
 
     const { bookAbbr } = params;
     const { target_language } = manifest;
