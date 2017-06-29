@@ -9,7 +9,7 @@ import RecentProjects from '../../components/RecentProjects';
 import * as recentProjectsActions from '../../actions/RecentProjectsActions';
 import * as ModalActions from '../../actions/ModalActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
-import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
+import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 // constant declaration
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
@@ -125,7 +125,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(AlertModalActions.openAlertDialog("Please log in before loading a project"));
         return;
       }
-      dispatch(ProjectLoadingActions.selectProject(projectPath));
+      dispatch(ProjectSelectionActions.selectProject(projectPath));
     },
     uploadProject: (projectPath, user) => {
       if(user.localUser){
