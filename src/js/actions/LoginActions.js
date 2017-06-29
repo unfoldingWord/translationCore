@@ -1,6 +1,6 @@
 import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
-import * as GetDataActions from './GetDataActions';
+import * as ProjecSelectionActions from './ProjecSelectionActions';
 import * as BodyUIActions from './BodyUIActions';
 import gogs from '../components/login/GogsApi.js';
 import { remote } from 'electron';
@@ -42,7 +42,7 @@ export function logoutUser(val) {
     dispatch({
       type: consts.LOGOUT_USER
     });
-    dispatch(GetDataActions.clearPreviousData());
+    dispatch(ProjecSelectionActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
   });
 }

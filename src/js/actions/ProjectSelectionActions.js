@@ -2,10 +2,10 @@ import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ModalActions from './ModalActions';
-import * as ToolsActions from './ToolsActions';
+import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as projectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -69,18 +69,18 @@ export function loadProjectDetails(projectPath, manifest) {
   return ((dispatch) => {
     LoadHelpers.migrateAppsToDotApps(projectPath);
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
-    dispatch(projectDetailsActions.setSaveLocation(projectPath));
-    dispatch(projectDetailsActions.setProjectManifest(manifest));
-    dispatch(projectDetailsActions.setProjectDetail("bookName", manifest.project.name));
+    dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+    dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+    dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
     const params = LoadHelpers.getParams(projectPath, manifest);
-    dispatch(projectDetailsActions.setProjectParams(params));
+    dispatch(ProjectDetailsActions.setProjectParams(params));
   });
 }
 
 export function clearLastProject() {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleHomeView(true));
-    dispatch(projectDetailsActions.resetProjectDetail());
+    dispatch(ProjectDetailsActions.resetProjectDetail());
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
@@ -97,7 +97,7 @@ export function displayTools(manifest) {
   return ((dispatch, getState) => {
     const { currentSettings } = getState().settingsReducer;
     if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
-      dispatch(ToolsActions.getToolsMetadatas());
+      dispatch(ToolsMetadataActions.getToolsMetadatas());
       dispatch(ModalActions.selectModalTab(3, 1, true));
     } else {
       dispatch(AlertModalActions.openAlertDialog('You can only load Ephesians or Titus projects for now.', false));
