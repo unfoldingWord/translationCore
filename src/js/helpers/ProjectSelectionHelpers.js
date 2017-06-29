@@ -1,5 +1,4 @@
-import * as LoadHelpers from '../helpers/LoadHelpers';
-
+import * as LoadHelpers from './LoadHelpers';
 
 export function getProjectManifest(projectPath, projectLink, username) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
