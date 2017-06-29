@@ -47,7 +47,6 @@ export const loadBiblesChapter = (contextId) => {
           let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
           let bibleData = {};
           bibleData[chapter] = bibleChapterData;
-          console.log(bibleData)
           // get bibles manifest file
           let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
           // save manifest dat in bibleData object to then be saved in reducer.
