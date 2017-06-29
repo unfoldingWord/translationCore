@@ -10,19 +10,19 @@ import {generateTimestamp} from '../helpers/index';
  * @param {string} userName - Alias name.
  * @return {object} New state for verse Edit reducer.
  */
-export const addVerseEdit = (beforeEdit, afterEdit, tags, userName) => {
+export const addVerseEdit = (verseBefore, verseAfter, tags, userName) => {
   return ((dispatch, getState) => {
     let state = getState()
     let contextId = state.contextIdReducer.contextId
     dispatch({
       type: consts.ADD_VERSE_EDIT,
-      beforeEdit,
-      afterEdit,
+      verseBefore,
+      verseAfter,
       tags,
       userName,
       modifiedTimestamp: generateTimestamp()
     });
-    dispatch(editTargetVerseInBiblesReducer(afterEdit));
+    dispatch(editTargetVerseInBiblesReducer(verseAfter));
     dispatch({
       type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId

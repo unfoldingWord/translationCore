@@ -16,8 +16,19 @@ const resourcesReducer = (state = initialState, action) => {
         }
       };
     case consts.UPDATE_EDITED_TARGET_VERSE:
-      state.bibles.targetLanguage[action.chapter][action.verse] = action.editedText;
-      return state;
+      return {
+        ...state,
+        bibles: {
+          ...state.bibles,
+          targetLanguage: {
+            ...state.bibles.targetLanguage,
+            [action.chapter]: {
+              ...state.bibles.targetLanguage[action.chapter],
+              [action.verse]: action.editedText
+            }
+          }
+        }
+      }
     case consts.ADD_TRANSLATIONHELPS_ARTICLE:
       return {
         ...state,
