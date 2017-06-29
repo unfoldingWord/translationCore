@@ -1,8 +1,9 @@
 import consts from './ActionTypes';
+import React from 'react'
 import fs from 'fs-extra';
 import path from 'path-extra';
 import gogs from '../components/login/GogsApi';
-import { remote } from 'electron';
+import { shell } from 'electron';
 import zipFolder from 'zip-folder';
 import git from '../components/GitApi.js'
 // actions
@@ -81,7 +82,17 @@ export function uploadProject(projectPath, user) {
               }
             } else {
               dispatch(
-                AlertModalActions.openAlertDialog(projectName + " has been successfully uploaded.")
+                AlertModalActions.openAlertDialog(
+                  <div>
+                    <span>
+                      <span style={{fontWeight: 'bold'}}>{user.username + ", "}</span>
+                      {"your project was uploaded successfully to:"}
+                      <a onClick={() => {shell.openExternal('https://git.door43.org/' + user.username)}}>
+                      {"https://git.door43.org/" + user.username}
+                      </a>
+                    </span>
+                  </div>
+                  )
               )
             }
           })
