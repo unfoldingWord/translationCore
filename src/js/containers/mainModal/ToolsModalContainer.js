@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
 // components
-import SwitchCheck from '../../components/SwitchCheck;
+import SwitchCheck from '../../components/SwitchCheck';
 // actions
-import * as ToolSelectionActions from '../../actions/ToolSelectionActions;
-import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions;
-import * as modalActions from '../../actions/ModalActions;
-import * as AlertModalActions from '../../actions/AlertModalActions;
+import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
+import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
+import * as modalActions from '../../actions/ModalActions';
+import * as AlertModalActions from '../../actions/AlertModalActions';
 
 class ToolsModalContainer extends React.Component {
 
