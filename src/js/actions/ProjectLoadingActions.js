@@ -12,7 +12,7 @@ import * as ContextIdActions from '../actions/ContextIdActions';
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 /**
  * @description function that handles both getGroupsIndex and
- * getGroupData with promises.
+ * getGroupsData with promises.
  * @param {string} currentToolName - name of the tool being loaded.
  * @return {object} object action.
  */
@@ -26,7 +26,7 @@ export function loadProjectData(currentToolName) {
       dispatch(TargetLanguageActions.generateTargetBible(projectSaveLocation));
       getGroupsIndex(dispatch, dataDirectory, currentToolName)
         .then(() => {
-          getGroupData(dispatch, dataDirectory, currentToolName, params)
+          getGroupsData(dispatch, dataDirectory, currentToolName, params)
           .then(() => {
             dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
             dispatch(ContextIdActions.loadCurrentContextId());
@@ -83,7 +83,7 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
  * @param {object} params - object of project details params.
  * @return {object} object action / Promises.
  */
-export function getGroupData(dispatch, dataDirectory, currentToolName, params) {
+export function getGroupsData(dispatch, dataDirectory, currentToolName, params) {
   return new Promise((resolve, reject) => {
     let groupsDataDirectory = path.join(dataDirectory, params.bookAbbr);
     let allGroupsData = {};
