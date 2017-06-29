@@ -9,11 +9,12 @@ const initialState = {
 const selectionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.CHANGE_SELECTIONS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         selections: action.selections,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
-      });
+      }
     default:
       return state;
   }

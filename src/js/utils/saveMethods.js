@@ -53,20 +53,21 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
  * @param {object} state - store state object.
  */
 export const saveTargetLanguage = state => {
-  try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
     const bookAbbr = state.projectDetailsReducer.params.bookAbbr;
-    let currentTargetLanguageChapter = state.resourcesReducer.bibles.targetLanguage;
-    if (PROJECT_SAVE_LOCATION & bookAbbr & currentTargetLanguageChapter) {
-      for (let chapter in currentTargetLanguageChapter) {
-        let fileName = chapter + '.json';
-        let savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
-        fs.outputJsonSync(savePath, currentTargetLanguageChapter[chapter]);
+    let currentTargetLanguageChapters = state.resourcesReducer.bibles.targetLanguage;
+    if (PROJECT_SAVE_LOCATION && bookAbbr && currentTargetLanguageChapters) {
+      for (let chapter in currentTargetLanguageChapters) {
+        const fileName = chapter + '.json';
+        const savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
+        const chapterData = currentTargetLanguageChapters[chapter];
+        try {
+          fs.outputJsonSync(savePath, chapterData);
+        } catch (err) {
+          console.warn(err)
+        }
       }
     }
-  } catch (err) {
-    console.warn(err)
-  }
 };
 
 /**

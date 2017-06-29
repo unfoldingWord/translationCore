@@ -46,16 +46,18 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
-    let {targetLanguage} = newState.resourcesReducer.bibles;
-    if (targetLanguage && Object.keys(targetLanguage).length > 0) {
-      saveTargetLanguage(newState);
-    }
-    // only save checkData reducers if contextId hasn't changed
+    // only save checkData and targetLanguage reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
       if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);
       if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) saveSelections(newState);
       if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) saveVerseEdit(newState);
       if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
+      // only save targetLanguage when data has changed and not empty
+      const {targetLanguage} = newState.resourcesReducer.bibles;
+      const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0)
+      if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
+        saveTargetLanguage(newState);
+      }
     }
     // TODO: only save groupsIndex and groupsData if project and tool have not changed
     if (

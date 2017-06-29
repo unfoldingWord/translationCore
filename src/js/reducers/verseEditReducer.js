@@ -11,13 +11,14 @@ const initialState = {
 const verseEditReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.ADD_VERSE_EDIT:
-      return Object.assign({}, state, {
-        before: action.before,
-        after: action.after,
+      return {
+        ...state,
+        verseBefore: action.verseBefore,
+        verseAfter: action.verseAfter,
         tags: action.tags,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
-      });
+      }
     default:
       return state;
   }
