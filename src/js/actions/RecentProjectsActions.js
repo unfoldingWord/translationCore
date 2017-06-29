@@ -6,7 +6,6 @@ import { remote } from 'electron';
 import zipFolder from 'zip-folder';
 import git from '../components/GitApi.js'
 // actions
-// import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations

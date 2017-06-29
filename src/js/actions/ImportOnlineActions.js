@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
 // actions
-import * as ProjectLoadingActions from '../../actions/ProjectLoadingActions';
+import * as ProjectLoadingActions from './ProjectLoadingActions';
 import * as AlertModalActions from './AlertModalActions';
 // constants
 const loadOnline = require('../components/LoadOnline');
