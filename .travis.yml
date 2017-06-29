@@ -1,17 +1,12 @@
 language: node_js
 node_js:
-  - '8.1.2'
+  - 'node'
 os:
   - linux
   - osx
-env:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+cache:
+  directories:
+    - "node_modules"
 before_script:
 - travis_retry npm install
 - export DISPLAY=:99.0
