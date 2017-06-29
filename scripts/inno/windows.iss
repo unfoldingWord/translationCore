@@ -5,13 +5,13 @@
 #define AppPublisher "unfoldingWord"
 #define Website "https://unfoldingword.org"
 #define AppExe "translationCore.exe"
-#define RootPath "../../"
-#define BuildPath RootPath + "dist/translationCore-win32-ia32/"
+#define RootPath "..\..\"
+#define BuildPath RootPath + "dist\translationCore-win32-ia32\"
 #define BuildContents BuildPath + "*"
 #define ExecPath BuildPath + "translationCore.exe"
-#define IconPath RootPath + "scripts/builds/assets/icon.ico"
+#define IconPath RootPath + "scripts\builds\assets\icon.ico"
 #define LicenseFile RootPath + "LICENSE"
-#define OutputDir BuildPath + "/installer/"
+#define OutputDir BuildPath + "\installer\"
 #ifndef Version
   #define Version "0.0.0"
 #endif
