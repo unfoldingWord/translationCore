@@ -86,32 +86,17 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
 export function getGroupsData(dispatch, dataDirectory, currentToolName, params) {
   return new Promise((resolve, reject) => {
     let groupsDataDirectory = path.join(dataDirectory, params.bookAbbr);
-    let allGroupsData = {};
     if (fs.existsSync(groupsDataDirectory)) {
-      // read in the groupsData files
-      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
-      // read in the groupsData files
-      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, currentToolName, dispatch);
-      // then load groupsData to reducer
-      dispatch({
-        type: consts.LOAD_GROUPS_DATA_FROM_FS,
-        allGroupsData
-      });
+      // read in the groupsData files and load groupsData to reducer
+      loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch);
       console.log('Loaded group data from fs');
       resolve(true);
     } else {
       // The groups data files were not found in the directory thus copy
       // them from User resources folder to project resources folder.
       ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, params.bookAbbr);
-      // read in the groupsData files
-      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
-      // read in the groupsData files
-      allGroupsData = loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, currentToolName, dispatch);
-      // then load groupsData to reducer
-      dispatch({
-        type: consts.LOAD_GROUPS_DATA_FROM_FS,
-        allGroupsData
-      });
+      // read in the groupsData files and load groupsData to reducer
+      loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch);
       console.log('Generated and Loaded group data data from fs');
       resolve(true);
     }
@@ -126,7 +111,9 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, params) 
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, currentToolName, dispatch) {
+function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
+  // read in the groupsData files
+  let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};
   let total = groupDataFolderObjs.length;
   let i = 0;
@@ -143,7 +130,11 @@ function loadAllGroupsData(groupDataFolderObjs, groupsDataDirectory, currentTool
     dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100));
     i++;
   }
-  return allGroupsData;
+  // load groupsData to reducer
+  dispatch({
+    type: consts.LOAD_GROUPS_DATA_FROM_FS,
+    allGroupsData
+  });
 }
 
 /**
