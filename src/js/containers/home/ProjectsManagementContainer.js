@@ -1,30 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
 // components
-import MyProjects from '../../components/home/projectsManagement/MyProjects'
-import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB'
-import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal'
+import MyProjects from '../../components/home/projectsManagement/MyProjects';
+import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
+// import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal'
 // actions
-// import {actionCreator} from 'actionCreatorPath'
+import * as BodyUIActions from '../../actions/BodyUIActions';
 
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
-    let instructions = <div>ProjectsManagementInstructions</div>;
+    let instructions = this.instructions();
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
   }
 
-  render() {
+  instructions() {
     return (
       <div>
-        ProjectsManagementContainer
-        {/*
-        <MyProjects />
+        <p>Select a project from the list.</p>
+        <p>To import a project, click (=)</p>
+        <p>Only projects that have been saved with the latest version of translationStudio can be opened in translationCore at this time.</p>
+      </div>
+    );
+  }
+
+  render() {
+    const {projectDetailsReducer} = this.props.reducers;
+    const myProjects = [];
+    if (projectDetailsReducer.projectSaveLocation) {
+      myProjects.push(projectDetailsReducer);
+      myProjects.push(projectDetailsReducer);
+    }
+
+    return (
+      <div>
+        <MyProjects myProjects={myProjects} actions={this.props.actions} />
         <ProjectsFAB />
-        <OnlineImportModal />
-        */}
       </div>
     );
   }
@@ -32,16 +46,26 @@ class ProjectsManagementContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
-  }
-}
+    reducers: {
+      projectDetailsReducer: state.projectDetailsReducer,
+      homeScreenReducer: state.homeScreenReducer
+    }
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    dispatch1: () => {
-      // dispatch(actionCreator)
+    actions: {
+      changeHomeInstructions: (instructions) => {
+        dispatch(BodyUIActions.changeHomeInstructions(instructions));
+      }
     }
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsManagementContainer)
+ProjectsManagementContainer.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsManagementContainer);

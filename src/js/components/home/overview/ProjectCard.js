@@ -6,7 +6,7 @@ import moment from 'moment';
 import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
 // components
-import TemplateCard from './TemplateCard';
+import TemplateCard from '../TemplateCard';
 
 class ProjectCard extends Component {
 
@@ -44,7 +44,7 @@ class ProjectCard extends Component {
   * @return {component} - component returned
   */
   contentDetails(projectSaveLocation, bookName, params, manifest) {
-    const projectName = projectSaveLocation.split("/").pop();
+    const projectName = path.basename(projectSaveLocation);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     const accessTime = fs.statSync(projectDataLocation).atime;
     const accessTimeAgo = moment().to(accessTime);
@@ -78,7 +78,7 @@ class ProjectCard extends Component {
     const { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
     if (projectSaveLocation && params && manifest.target_language) {
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           {this.contentDetails(projectSaveLocation, bookName, params, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
@@ -118,6 +118,6 @@ class ProjectCard extends Component {
 ProjectCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};
 
-export default ProjectCard
+export default ProjectCard;

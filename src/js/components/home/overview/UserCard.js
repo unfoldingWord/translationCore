@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 // components
-import TemplateCard from './TemplateCard';
+import TemplateCard from '../TemplateCard';
 
 class UserCard extends Component {
 
@@ -28,11 +28,11 @@ class UserCard extends Component {
     const { loggedInUser, userdata } = this.props.reducers.loginReducer;
     if (loggedInUser) {
       content = (
-        <div style={{ display: 'flex' }}>
-          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-16px 20px 0 -16px', overflow: 'hidden'}}>
-            <Glyphicon glyph="user" style={{fontSize: "142px", marginLeft: '-23px'}} />
+        <div style={{ display: 'flex', margin: '-10px 0 -24px 0' }}>
+          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px -10px -16px', overflow: 'hidden'}}>
+            <Glyphicon glyph="user" style={{fontSize: "100px"}} />
           </div>
-          <div style={{ marginTop: '-10px' }}>
+          <div style={{ width: '400px' }}>
             <strong style={{ fontSize: 'x-large' }}>{userdata.username}</strong>
             <p>{userdata.email ? userdata.email : 'no email address'}</p>
           </div>
@@ -62,6 +62,6 @@ class UserCard extends Component {
 UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};
 
-export default UserCard
+export default UserCard;
