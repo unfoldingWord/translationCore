@@ -52,3 +52,9 @@ export const goToPrevStep = () => {
     }
   });
 };
+
+export const toggleProjectsFAB = () => {
+  return {
+    type: consts.TOGGLE_PROJECTS_FAB,
+  };
+} 
