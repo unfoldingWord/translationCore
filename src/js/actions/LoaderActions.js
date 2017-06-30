@@ -1,22 +1,10 @@
 import consts from './ActionTypes';
-import * as ModalActions from './ModalActions.js';
-import * as GetDataActions from './GetDataActions';
-
 
 export function toggleLoader(val) {
   return {
     type: consts.TOGGLE_LOADER_MODAL,
     show: val
   }
-}
-
-export function killLoading() {
-  return ((dispatch) => {
-    dispatch(GetDataActions.clearPreviousData());
-    dispatch(this.toggleLoader());
-    dispatch(ModalActions.showModalContainer(true));
-    dispatch(ModalActions.selectModalTab(2));
-  });
 }
 
 /**

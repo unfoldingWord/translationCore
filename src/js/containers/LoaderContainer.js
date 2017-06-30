@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 // Components
 import Loader from '../components/loader/Loader';
-// Actions
-import * as LoaderActions from '../actions/LoaderActions.js';
 
 class LoaderContainer extends React.Component {
   render() {
@@ -21,11 +19,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    reloadContent: () => {
-      dispatch(LoaderActions.killLoading());
-    }
-  };
+  return {};
 };
 
 export default connect(
