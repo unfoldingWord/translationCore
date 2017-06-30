@@ -1,24 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import path from 'path-extra';
-import moment from 'moment';
-import fs from 'fs-extra';
 // components
 import TemplateCard from '../TemplateCard';
 
 let Project = (props) => {
-  const {projectSaveLocation, bookName, params, manifest} = props.projectDetails;
+  const { projectName, projectDataLocation, accessTimeAgo, bookAbbr, bookName, target_language} = props.projectDetails;
   let content = <div />;
 
-  if (projectSaveLocation && bookName && params && manifest) {
-    const projectName = path.basename(projectSaveLocation);
-    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    const accessTime = fs.statSync(projectDataLocation).atime;
-    const accessTimeAgo = moment().to(accessTime);
-    const { bookAbbr } = params;
-    const { target_language } = manifest;
-
+  if (projectName && projectDataLocation && accessTimeAgo && bookAbbr && bookName && target_language) {
     /**
     * @description generates a detail for the contentDetails
     * @param {string} glyph - name of the glyph to be used
