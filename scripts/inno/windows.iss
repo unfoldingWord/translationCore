@@ -5,7 +5,7 @@
 #define AppPublisher "unfoldingWord"
 #define Website "https://unfoldingword.org"
 #define AppExe "translationCore.exe"
-#define RootPath "..\..\"
+#define RootPath "Z:\home\travis\build\unfoldingWord-dev\translationCore\"
 #define BuildPath RootPath + "dist\translationCore-win32-ia32\"
 #define BuildContents BuildPath + "*"
 #define ExecPath BuildPath + "translationCore.exe"
