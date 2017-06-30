@@ -1,24 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import path from 'path-extra';
-import moment from 'moment';
-import fs from 'fs-extra';
 // components
 import TemplateCard from '../TemplateCard';
 
 let Project = (props) => {
-  const {projectSaveLocation, bookName, params, manifest} = props.projectDetails;
+  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language} = props.projectDetails;
   let content = <div />;
 
-  if (projectSaveLocation && bookName && params && manifest) {
-    const projectName = path.basename(projectSaveLocation);
-    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    const accessTime = fs.statSync(projectDataLocation).atime;
-    const accessTimeAgo = moment().to(accessTime);
-    const { bookAbbr } = params;
-    const { target_language } = manifest;
-
+  if (projectName && projectSaveLocation && accessTimeAgo && bookAbbr && bookName && target_language) {
     /**
     * @description generates a detail for the contentDetails
     * @param {string} glyph - name of the glyph to be used
@@ -50,7 +40,7 @@ let Project = (props) => {
             <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
           </div>
           <div>
-            <button className='btn-prime' disabled={true} onClick={()=>{}} style={{ width: '90px', marginBottom: '0' }}>
+            <button className='btn-prime' disabled={false} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
               Select
             </button>
           </div>
