@@ -14,7 +14,7 @@ export function getDirectories(directory) {
 }
 
 /**
- *  Reads projects from the fs in ~/translationCore/
+ *  @description: Reads projects from the fs in ~/translationCore/
  */
 export function getMyProjects() {
   const folders = getDirectories(DEFAULT_SAVE);
@@ -41,7 +41,7 @@ export function getMyProjects() {
 
     return {
       projectName,
-      projectDataLocation,
+      projectSaveLocation,
       accessTimeAgo,
       bookAbbr,
       bookName,
