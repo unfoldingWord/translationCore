@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Checkbox } from 'material-ui';
-import { Modal } from 'react-bootstrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { TextField, Checkbox } from 'material-ui';
+import { Modal, Glyphicon } from 'react-bootstrap';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
@@ -9,37 +10,25 @@ class CreateLocalAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      localUsername: "This is publicly visible",
+      localUsername: "",
       checkBoxChecked: false,
       showModal: false,
       modalTitle: null,
       modalContent: null
     };
     this.infoPopup = this.infoPopup.bind(this);
-    this.typing = this.typing.bind(this);
-  }
-
-  typing(e) {
-    if (e.target.value == "This is publicly visible") this.setState({ localUsername: "" });
-    else this.setState({ localUsername: e.target.value });
   }
 
   localUsernameInput() {
     return (
       <div>
-        <span style={{ color: 'grey' }}>Username</span>
-        <br />
-        <input
-          onFocus={this.typing}
-          onChange={this.typing}
+         <TextField
           value={this.state.localUsername}
-          style={{
-            color: this.state.localUsername == "This is publicly visible" ? 'grey' : 'black',
-            fontStyle: this.state.localUsername == "This is publicly visible" ? 'italic' : 'normal',
-            border: '1px solid black', outline: 'none', borderRadius: 2,
-            height: 30, width: 250, padding: 5, marginTop: 5
-          }}>
-        </input>
+          floatingLabelText="Username"
+          underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+          floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
+          onChange={e => this.setState({localUsername: e.target.value})}
+        />
       </div>
     )
   }
@@ -62,13 +51,13 @@ class CreateLocalAccount extends Component {
     return (
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
-        <p>You are being chosen to be known as "
+        <p>You have chosen to be known as "
                     <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-          ". This will be available publicly
+          ". This username will be publicly viewable.
                     <br /><br />
           If you are not comfortable with being known as "
                     <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-          ", You may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Go Back </span>
+          ", You may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
           and enter a new name.
                 </p>
       </div>
@@ -76,13 +65,13 @@ class CreateLocalAccount extends Component {
   }
 
   loginButtons() {
-    const loginEnabled = this.state.checkBoxChecked;
+    const loginEnabled = this.state.localUsername && this.state.checkBoxChecked ? true : false;
     const callback = (result) => {
       if (result == "Create Account") this.props.actions.loginLocalUser(this.state.localUsername);
       this.props.actions.closeAlert();
     }
     return (
-      <div style={{ display: 'flex', width: '100%', justifyContent: 'flex-end' }}>
+      <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
         <button
           className="btn-second"
           style={{ width: 150, margin: "40px 10px 0px 0px" }}
@@ -93,7 +82,7 @@ class CreateLocalAccount extends Component {
           className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
           disabled={!loginEnabled}
           style={{ width: 200, margin: "40px 0px 0px 10px" }}
-          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, "Create Account", "Go Back")}>
+          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, "Create Account", "Cancel")}>
           Create
                 </button>
       </div>
@@ -102,7 +91,7 @@ class CreateLocalAccount extends Component {
 
   termsAndConditionsAgreement() {
     return (
-      <div style={{ display: 'flex', padding: '30px 0 0 0', alignItems: 'center', width: '100%' }}>
+      <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
         {this.agreeCheckBox()}
         <span>
           I have read and agree to the
@@ -141,22 +130,31 @@ class CreateLocalAccount extends Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column', width: '100%' }}>
-        <div style={{ fontSize: 25, fontWeight: 100, padding: '20px 0 20px 0' }}>New Local User</div>
+      <MuiThemeProvider>
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
+        <div style={{ fontSize: 25, fontWeight: 100, padding: '0px' }}>New Local User</div>
+        <span style={{ color: 'grey' }}>This is publicly visible</span>
         {this.localUsernameInput()}
         {this.termsAndConditionsAgreement()}
         {this.loginButtons()}
         <Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })} bsSize="lg">
           <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
-            <Modal.Title>
+            <Modal.Title id="contained-modal-title-sm"
+              style={{ textAlign: "center", color: "var(--reverse-color)" }}>
               {this.state.modalTitle}
+              <Glyphicon
+                  onClick={() => this.setState({ showModal: false })}
+                  glyph={"remove"}
+                  style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
+              />
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{ backgroundColor: "var(--reverse-color)", color: "var(--accent-color-dark)", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <Modal.Body style={{ height: "550px", backgroundColor: "var(--reverse-color)", color: "var(--accent-color-dark)", overflow: "auto" }}>
             {this.state.modalContent}
           </Modal.Body>
         </Modal>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
