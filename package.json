@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.15",
+  "version": "0.7.1-beta.21",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -20,8 +20,7 @@
     "start": "electron ."
   },
   "build": {
-    "appId": "uw.translation_core.desktop",
-    "category": "public.app-category.bible.tools"
+    "appId": "uw.translation_core.desktop"
   },
   "repository": {
     "type": "git",
@@ -29,8 +28,10 @@
   },
   "keywords": [
     "Translation",
-    "core",
-    "Wycliffe"
+    "Bible",
+    "DSM",
+    "Wycliffe",
+    "unfoldingWord"
   ],
   "author": {
     "name": "Wycliffe Associates",
