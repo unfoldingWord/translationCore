@@ -4,7 +4,7 @@ import path from 'path-extra';
 // helpers
 import {shiftGroupIndex, shiftGroupDataItem} from '../helpers/navigationHelpers';
 // actions
-import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './checkDataLoadActions';
+import {loadComments, loadReminders, loadSelections, loadVerseEdit} from './CheckDataLoadActions';
 import {saveContextId} from '../utils/saveMethods';
 import * as ResourcesActions from './ResourcesActions';
 // constant declaration

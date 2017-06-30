@@ -36,7 +36,12 @@ class ProjectsManagementContainer extends Component {
     return (
       <div>
         <MyProjects myProjects={myProjects} actions={this.props.actions} />
-        <ProjectsFAB />
+        <div style={{ position: "absolute", bottom:"50px", right: "50px"}}>
+          <ProjectsFAB
+            homeScreenReducer={this.props.reducers.homeScreenReducer}
+            actions={this.props.actions}
+          />
+        </div>
       </div>
     );
   }
@@ -57,6 +62,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     actions: {
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
+      },
+      toggleProjectsFAB: () => {
+        dispatch(BodyUIActions.toggleProjectsFAB());
       },
       getMyProjects: () => {
         dispatch(MyProjectsActions.getMyProjects());

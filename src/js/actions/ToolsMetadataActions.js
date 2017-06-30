@@ -1,20 +1,8 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
-// actions
-import * as modalActions from './ModalActions.js';
-import * as GetDataActions from './GetDataActions.js';
-import * as BodyUIActions from './BodyUIActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
-
-export function loadTool(folderName, currentToolName) {
-  return ((dispatch, getState) => {
-    dispatch(BodyUIActions.toggleHomeView(true));
-    dispatch(modalActions.showModalContainer(false));
-    dispatch(GetDataActions.loadModuleAndDependencies(folderName, currentToolName));
-  });
-}
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
