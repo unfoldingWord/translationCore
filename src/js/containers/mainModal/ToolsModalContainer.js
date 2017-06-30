@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
 // components
-import SwitchCheck from '../../components/SwitchCheck.js';
+import SwitchCheck from '../../components/SwitchCheck';
 // actions
-import * as ToolsActions from '../../actions/ToolsActions.js';
-import * as modalActions from '../../actions/ModalActions.js';
-import * as AlertModalActions from '../../actions/AlertModalActions.js';
+import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
+import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
+import * as modalActions from '../../actions/ModalActions';
+import * as AlertModalActions from '../../actions/AlertModalActions';
 
 class ToolsModalContainer extends React.Component {
 
@@ -41,7 +42,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     getToolsMetadatas: () => {
-      dispatch(ToolsActions.getToolsMetadatas());
+      dispatch(ToolsMetadataActions.getToolsMetadatas());
     },
     handleLoadTool: (toolFolderPath, loggedInUser, currentToolName) => {
       if (!loggedInUser) {
@@ -49,7 +50,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
         return;
       }
-      dispatch(ToolsActions.loadTool(toolFolderPath, currentToolName));
+      dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
     },
     showLoad: () => {
       dispatch(modalActions.selectModalTab(2, 1, true))

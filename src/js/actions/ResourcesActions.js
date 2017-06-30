@@ -30,12 +30,13 @@ export const addNewBible = (bibleName, bibleData) => {
  */
 export const loadBiblesChapter = (contextId) => {
   return ((dispatch, getState) => {
+    try {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
       let biblesFolders = fs.readdirSync(BIBLE_RESOURCES_PATH).filter(folder => { // filter out .DS_Store
         return folder !== '.DS_Store'
       })
-      biblesFolders.forEach((bibleID, index) => {
+      biblesFolders.forEach((bibleID) => {
         let bibleFolderPath = path.join(BIBLE_RESOURCES_PATH, bibleID); // ex. user/NAME/translationCore/resources/bibles/ulb-en
         let versionNumber = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
           return folder !== '.DS_Store'
@@ -61,6 +62,9 @@ export const loadBiblesChapter = (contextId) => {
       });
       // then load target language bible
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+    } catch(err) {
+      console.warn(err);
+    }
   });
 }
 

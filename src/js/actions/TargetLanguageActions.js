@@ -10,26 +10,30 @@ const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
  */
 export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
-    let projectDetailsReducer = getState().projectDetailsReducer;
-    let bookAbbreviation = projectDetailsReducer.params.bookAbbr;
-    let projectPath = projectDetailsReducer.projectSaveLocation;
-    let targetBiblePath = path.join(projectPath, bookAbbreviation);
-    let bibleName = "targetLanguage"
-    let targetLanguageChapter;
-    let fileName = chapterNumber + '.json';
-    if (fs.existsSync(targetBiblePath)) {
-      targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
-    } else {
-      console.log("Target Bible was not found in the project root folder");
+    try {
+      let projectDetailsReducer = getState().projectDetailsReducer;
+      let bookAbbreviation = projectDetailsReducer.params.bookAbbr;
+      let projectPath = projectDetailsReducer.projectSaveLocation;
+      let targetBiblePath = path.join(projectPath, bookAbbreviation);
+      let bibleName = "targetLanguage"
+      let targetLanguageChapter;
+      let fileName = chapterNumber + '.json';
+      if (fs.existsSync(targetBiblePath)) {
+        targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
+      } else {
+        console.log("Target Bible was not found in the project root folder");
+      }
+      let bibleData = {};
+      bibleData[chapterNumber] = targetLanguageChapter;
+      bibleData['manifest'] = fs.readJsonSync(path.join(targetBiblePath, "manifest.json"));
+      dispatch({
+        type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
+        bibleName,
+        bibleData
+      });
+    } catch(err) {
+      console.warn(err);
     }
-    let bibleData = {};
-    bibleData[chapterNumber] = targetLanguageChapter;
-    bibleData['manifest'] = fs.readJsonSync(path.join(targetBiblePath, "manifest.json"));
-    dispatch({
-      type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-      bibleName,
-      bibleData
-    })
   });
 }
 
