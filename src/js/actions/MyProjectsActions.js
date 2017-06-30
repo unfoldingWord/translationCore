@@ -28,8 +28,11 @@ export function getMyProjects() {
     const projectName = folder;
     const projectSaveLocation = path.join(DEFAULT_SAVE, folder);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    const accessTime = fs.statSync(projectDataLocation).atime;
-    const accessTimeAgo = moment().to(accessTime);
+    let accessTime = "", accessTimeAgo = "Never Opened";
+    if (fs.existsSync(projectDataLocation)) {
+      accessTime = fs.statSync(projectDataLocation).atime;
+      accessTimeAgo = moment().to(accessTime);
+    }
     const manifestPath = path.join(DEFAULT_SAVE, folder, 'manifest.json');
     const manifest = fs.readJsonSync(manifestPath);
     const { target_language } = manifest;
