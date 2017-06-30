@@ -7,10 +7,13 @@ import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
 // import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal'
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
+import * as MyProjectsActions from '../../actions/MyProjectsActions';
+import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
+    this.props.actions.getMyProjects();
     let instructions = this.instructions();
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
@@ -28,12 +31,8 @@ class ProjectsManagementContainer extends Component {
   }
 
   render() {
-    const {projectDetailsReducer} = this.props.reducers;
-    const myProjects = [];
-    if (projectDetailsReducer.projectSaveLocation) {
-      myProjects.push(projectDetailsReducer);
-      myProjects.push(projectDetailsReducer);
-    }
+    const {projectDetailsReducer, myProjectsReducer} = this.props.reducers;
+    const myProjects = myProjectsReducer.projects;
 
     return (
       <div>
@@ -53,7 +52,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
       projectDetailsReducer: state.projectDetailsReducer,
-      homeScreenReducer: state.homeScreenReducer
+      homeScreenReducer: state.homeScreenReducer,
+      myProjectsReducer: state.myProjectsReducer
     }
   };
 };
@@ -66,6 +66,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       toggleProjectsFAB: () => {
         dispatch(BodyUIActions.toggleProjectsFAB());
+      },
+      getMyProjects: () => {
+        dispatch(MyProjectsActions.getMyProjects());
+      },
+      selectProject: (projectPath) => {
+        dispatch(ProjectSelectionActions.selectProject(projectPath));
       }
     }
   };
