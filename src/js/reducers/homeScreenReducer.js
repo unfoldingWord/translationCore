@@ -8,7 +8,8 @@ const initialState = {
   stepper: {
     finished: false,
     stepIndex: 0
-  }
+  },
+  showFABOptions: false
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -44,6 +45,11 @@ const homeScreenReducer = (state = initialState, action) => {
           stepIndex: action.stepIndex
         }
       };
+    case consts.TOGGLE_PROJECTS_FAB:
+      return {
+        ...state,
+        showFABOptions: !state.showFABOptions
+      }
     default:
       return state;
   }
