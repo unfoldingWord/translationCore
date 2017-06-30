@@ -7,7 +7,6 @@ import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as LoaderActions from './LoaderActions';
-import * as ContextIdActions from '../actions/ContextIdActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 /**
@@ -29,7 +28,6 @@ export function loadProjectData(currentToolName) {
           getGroupsData(dispatch, dataDirectory, currentToolName, params)
           .then(() => {
             dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-            dispatch(ContextIdActions.loadCurrentContextId());
             dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
           });
         });

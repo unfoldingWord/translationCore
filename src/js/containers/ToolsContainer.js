@@ -17,6 +17,20 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 
 class ToolsContainer extends React.Component {
 
+  componentDidMount() {
+    let { contextId } = this.props.contextIdReducer;
+    if (!contextId) this.props.actions.loadCurrentContextId();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let { contextId } = nextProps.contextIdReducer;
+    let { currentToolName } = nextProps.toolsReducer;
+    // if contextId does not match current tool, then remove contextId
+    if (contextId && contextId.tool !== currentToolName) {
+      nextProps.actions.changeCurrentContextId(undefined);
+    }
+  }
+
   render() {
     let { currentToolViews, currentToolName } = this.props.toolsReducer;
     let Tool = currentToolViews[currentToolName];
@@ -43,7 +57,6 @@ const mapStateToProps = state => {
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer
-
   };
 };
 
