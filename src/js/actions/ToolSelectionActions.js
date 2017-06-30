@@ -5,6 +5,7 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 import * as ModalActions from './ModalActions';
+import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
 
@@ -22,6 +23,7 @@ export function selectTool(moduleFolderName, currentToolName) {
     try {
       // TODO: Remove after homescreen implementation
       dispatch(ModalActions.showModalContainer(false))
+      dispatch(BodyUIActions.toggleHomeView(true));
       dispatch({ type: consts.START_LOADING });
       dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
       dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
