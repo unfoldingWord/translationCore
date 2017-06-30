@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.21",
+  "version": "0.7.1-beta.22",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
@@ -20,7 +20,13 @@
     "start": "electron ."
   },
   "build": {
-    "appId": "uw.translation_core.desktop"
+    "appId": "uw.translation_core.desktop",
+    "mac": {
+      "icon": "scripts/builds/assets/icon.icns"
+    },
+    "dmg": {
+      "icon": "scripts/builds/assets/icon.icns"
+    }
   },
   "repository": {
     "type": "git",
