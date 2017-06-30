@@ -6,23 +6,32 @@ import moment from 'moment';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 
-
-export function getDirectories(directory) {
-  return fs.readdirSync(directory).filter( file =>
-    fs.lstatSync(path.join(directory, file)).isDirectory()
-  );
+/**
+ * @description - Will get the directories inside of a directory and return them
+ * @return {array} projectDirectories
+ */
+export function getProjectDirectories() {
+  const directories = fs.readdirSync(DEFAULT_SAVE);
+  const projectDirectories = directories.filter( directory => {
+    // we need to only get files not directories
+    const isDirectory = fs.lstatSync(path.join(DEFAULT_SAVE, directory)).isDirectory()
+    // if it is a directory check to see if it has a manifest
+    let isProject = false;
+    if (isDirectory) {
+      const manifestPath = path.join(DEFAULT_SAVE, directory, 'manifest.json');
+      isProject = fs.existsSync(manifestPath);
+    }
+    return isProject; // filter to only show projects
+  });
+  // return the list of project directories
+  return projectDirectories;
 }
 
 /**
- *  @description: Reads projects from the fs in ~/translationCore/
+ *  @description: With the list of project directories, generates an array of project detail objects
  */
 export function getMyProjects() {
-  const folders = getDirectories(DEFAULT_SAVE);
-  // filter to show folders with manifest
-  const projectFolders = folders.filter( folder => {
-    const manifestPath = path.join(DEFAULT_SAVE, folder, 'manifest.json');
-    return fs.existsSync(manifestPath);
-  });
+  const projectFolders = getProjectDirectories();
   // generate properties needed
   const projects = projectFolders.map( folder => {
     const projectName = folder;
