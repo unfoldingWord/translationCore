@@ -94,7 +94,7 @@ export const changeToNextContextId = () => {
       var currentGroupIndex = Object.keys(groupsData).findIndex((groupIndex) => {
         return (groupIndex === contextId.groupId)
       })
-      if (currentGroupIndex + 1 >= Object.keys(groupsData).length - 1)
+      if (currentGroupIndex + 1 > Object.keys(groupsData).length - 1)
         contextId = firstContextId(state);
 
       else {
@@ -110,6 +110,8 @@ export const changeToNextContextId = () => {
         newGroupDataItem = newGroupData[0] // get the first one since we're incrementing 1
         contextId = newGroupDataItem.contextId
       }
+    } else {
+      contextId = newGroupDataItem.contextId
     }
     dispatch({
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
@@ -132,7 +134,7 @@ export const changeToPreviousContextId = () => {
       var currentGroupIndex = Object.keys(groupsData).findIndex((groupIndex) => {
         return (groupIndex === contextId.groupId)
       })
-      if (currentGroupIndex - 1 <= 0)
+      if (currentGroupIndex - 1 < 0)
         contextId = lastContextId(state);
       else {
         let newGroupIndex, newGroupData
@@ -146,6 +148,8 @@ export const changeToPreviousContextId = () => {
         newGroupDataItem = newGroupData[newGroupData.length - 1] // get the first one since we're incrementing 1
         contextId = newGroupDataItem.contextId
       }
+    } else {
+      contextId = newGroupDataItem.contextId
     }
     dispatch({
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
