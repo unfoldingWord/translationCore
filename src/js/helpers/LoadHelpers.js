@@ -403,8 +403,9 @@ export function projectIsMissingVerses(bookAbbr, projectSaveLocation) {
         chapterLength++;
         let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
         let verseLength = 0;
-        for (var verse in currentChapterObject) {
-            verseLength++;
+        for (var verseIndex in currentChapterObject) {
+            let verse = currentChapterObject[verseIndex];
+            if (verse && verseIndex > 0) verseLength++;
         }
         actualVersesObject[currentChapter] = verseLength;
     }
