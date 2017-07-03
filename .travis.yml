@@ -18,7 +18,11 @@ script:
 before_deploy:
 - npm i -g babel-cli
 - npm i -g electron-builder@19.8.0 ;
-- 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+- 'if [[ "$TRAVIS_OS_NAME" == "mac" ]]; then
+    babel src --out-dir src ;
+    babel tC_apps --out-dir tC_apps ;
+    build --prerelease --draft --mac ;
+  else
     sudo add-apt-repository --yes ppa:ubuntu-wine/ppa ;
     sudo add-apt-repository --yes ppa:arx/release ;
     sudo apt-get update -d ;
@@ -32,12 +36,6 @@ before_deploy:
     rm -rf tmp ;
     chmod +x ./scripts/builds/windows.sh ;
     "./scripts/builds/windows.sh" ;
-  else
-    cp ./scripts/builds/index.js ./src/js/pages/index.js ;
-    cp ./scripts/builds/index.html ./index.html ;
-    babel src --out-dir src ;
-    babel tC_apps --out-dir tC_apps ;
-    build --prerelease --draft --mac ;
   fi'
 deploy:
 - provider: releases
