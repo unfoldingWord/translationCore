@@ -48,6 +48,8 @@ deploy:
     condition: "$TRAVIS_OS_NAME == linux"
 - provider: releases
   skip_cleanup: true
+  file_glob: true
+  file: "./dist/mac/translationCore-*.dmg"
   on:
     repo: unfoldingWord-dev/translationCore
     branch: master
