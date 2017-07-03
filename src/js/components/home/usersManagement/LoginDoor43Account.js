@@ -69,10 +69,13 @@ class LoginDoor43Account extends Component {
   }
 
   loginButtons() {
+    let disabledButton = (this.state.username == null || this.state.username == "") ||
+    (this.state.password == null || this.state.password == "");
     return (
       <div style={{ width: '100%' }}>
         <button
-          className={"btn-prime"}
+          className={disabledButton ? "btn-prime-reverse" : "btn-prime"}
+          disabled={disabledButton}
           style={{ width: "100%", margin: "40px 0px 10px" }}
           onClick={() => this.props.actions.loginUser(this.state)}>
           Log in

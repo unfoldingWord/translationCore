@@ -7,9 +7,6 @@ class Logout extends Component {
         <p style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>
           {this.props.username}
         </p>
-        <p style={{ textAlign: 'center' }}>
-          {this.props.email}
-        </p>
         <button
           className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
