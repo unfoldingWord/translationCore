@@ -4,6 +4,7 @@ import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import FABLabelCard from './FABLabelCard';
+import SpotlightComponent from './SpotlightComponent';
 
 class ProjectFAB extends Component {
 
@@ -30,7 +31,7 @@ class ProjectFAB extends Component {
 
     return (
       <MuiThemeProvider>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-end", zIndex: "999" }}>
           {showFABOptions ? (
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
               <table>
@@ -44,7 +45,7 @@ class ProjectFAB extends Component {
                         <td>
                           <FloatingActionButton
                             onClick={() => {metadata.action()}}
-                            style={{ margin: "5px", alignSelf: "flex-end" }}
+                            style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
                             backgroundColor={"var(--accent-color-dark)"}
                           >
                             <Glyphicon style={{ fontSize: "26px" }} glyph={metadata.glyph} />
@@ -66,7 +67,7 @@ class ProjectFAB extends Component {
                 <td>
                   <FloatingActionButton
                     onClick={() => this.props.actions.toggleProjectsFAB()}
-                    style={{ margin: "5px", alignSelf: "flex-end" }}
+                    style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
                     backgroundColor={showFABOptions ? "var(--reverse-color)" : "var(--accent-color-dark)"}
                   >
                     <Glyphicon
@@ -78,6 +79,7 @@ class ProjectFAB extends Component {
                </tr>
             </tbody>
           </table>
+          {showFABOptions ? <SpotlightComponent /> : <div />}
         </div>
       </MuiThemeProvider>
     );
