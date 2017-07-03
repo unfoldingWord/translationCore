@@ -48,3 +48,10 @@ deploy:
     branch: master
     tags: true
     condition: "$TRAVIS_OS_NAME == linux"
+- provider: releases
+  skip_cleanup: true
+  on:
+    repo: unfoldingWord-dev/translationCore
+    branch: master
+    tags: true
+    condition: "$TRAVIS_OS_NAME == osx"
