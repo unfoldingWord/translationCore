@@ -18,7 +18,7 @@ script:
 before_deploy:
 - npm i -g babel-cli
 - npm i -g electron-builder@19.8.0 ;
-- 'if [[ "$TRAVIS_OS_NAME" == "mac" ]]; then
+- 'if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     babel src --out-dir src ;
     babel tC_apps --out-dir tC_apps ;
     build --prerelease --draft --mac ;
