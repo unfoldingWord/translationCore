@@ -34,11 +34,12 @@ class ProjectCardMenu extends React.Component {
     const menuItemStyle = { padding: '4px', display: 'flex', margin: '4px 4px 0 0' };
     const glyphStyle = { fontSize: 'large', margin: '0 14px 0 4px' };
     return (
-      <div>
+      <div style={{ cursor: 'pointer' }}>
         <div onTouchTap={(e) => {this.handleTouchTap(e)}}>
           <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
         </div>
         <Popover
+          style={{ cursor: 'pointer' }}
           open={this.state.open}
           anchorEl={this.state.anchorEl}
           anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
