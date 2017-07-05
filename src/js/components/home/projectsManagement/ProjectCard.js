@@ -6,7 +6,7 @@ import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu'
 
 let ProjectCard = (props) => {
-  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language } = props.projectDetails;
+  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
   let content = <div />;
 
   if (projectName && projectSaveLocation && accessTimeAgo && bookAbbr && bookName && target_language) {
@@ -39,7 +39,7 @@ let ProjectCard = (props) => {
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
           <ProjectCardMenu {...props} />
           <div>
-            <button className='btn-prime' disabled={false} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
+            <button className='btn-prime' disabled={isSelected} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
               Select
             </button>
           </div>
