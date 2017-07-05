@@ -14,10 +14,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
     const { username } = getState().loginReducer.userdata;
-    const confirmDialog = (message, callback, bt1, bt2) => {
-      dispatch(AlertModalActions.openOptionDialog(message, callback, bt1, bt2));
-    }
-    dispatch(isValidProject(projectPath, projectLink, username, confirmDialog)).then((validProjectObject) => {
+    isValidProject(projectPath, projectLink, username, dispatch).then((validProjectObject) => {
       const { manifest, projectPath } = validProjectObject;
       dispatch(clearLastProject());
       dispatch(loadProjectDetails(projectPath, manifest));
@@ -28,8 +25,7 @@ export function selectProject(projectPath, projectLink) {
   });
 }
 
-export function isValidProject(projectPath, projectLink, username, confirmDialog) {
-  return ((dispatch) => {
+export function isValidProject(projectPath, projectLink, username, dispatch) {
     return new Promise((resolve, reject) => {
       if (!projectPath) {
         reject("No project path specified");
@@ -46,18 +42,17 @@ export function isValidProject(projectPath, projectLink, username, confirmDialog
             }
             return dispatch(AlertModalActions.closeAlertDialog());
           }
-          confirmDialog(
+          dispatch(AlertModalActions.openOptionDialog(
             "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
             callback,
             "Continue Without Fixing",
             "Cancel"
-          );
+          ));
         } else {
           return resolve({ manifest, projectPath });
         }
       }
     })
-  })
 }
 
 /**
