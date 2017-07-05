@@ -22,8 +22,7 @@ describe('Valid Project Actions', () => {
         })
     })
     it('should return action on a project with missing verses', function () {
-        projectSelectionActions.isValidProject(missingVerseExpectedPath, null, 'RoyalSix', store.dispatch).then(function (projectObject) {
-        })
+        projectSelectionActions.isValidProject(missingVerseExpectedPath, null, 'RoyalSix', store.dispatch)
         expect(store.getActions()[0]).to.deep.include({
             type: 'OPEN_OPTION_DIALOG',
             alertMessage: 'Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
