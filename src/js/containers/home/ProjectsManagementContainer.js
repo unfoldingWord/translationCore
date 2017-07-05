@@ -9,6 +9,7 @@ import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
+import * as ImportLocalActions from '../../actions/ImportLocalActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -72,6 +73,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       selectProject: (projectPath) => {
         dispatch(ProjectSelectionActions.selectProject(projectPath));
+      },
+      selectLocalProjectToLoad: () => {
+        dispatch(ImportLocalActions.selectLocalProjectToLoad());
       }
     }
   };
