@@ -23,19 +23,21 @@ describe('Valid Project Actions', () => {
     })
     it('should return action on a project with missing verses', function () {
         projectSelectionActions.isValidProject(missingVerseExpectedPath, null, 'RoyalSix', store.dispatch)
-        expect(store.getActions()[0]).to.deep.include({
-            type: 'OPEN_OPTION_DIALOG',
-            alertMessage: 'Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
-            button1Text: 'Continue Without Fixing',
-            button2Text: 'Cancel'
-        })
+        setTimeout(() => {
+            expect(store.getActions()[0]).to.deep.include({
+                type: 'OPEN_OPTION_DIALOG',
+                alertMessage: 'Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
+                button1Text: 'Continue Without Fixing',
+                button2Text: 'Cancel'
+            })
+        }, 100)
     })
     it('fail on a project with git merge conflicts', function () {
-        return projectSelectionActions.isValidProject(mergeConflictExpectedPath, null, 'RoyalSix', store.dispatch).then(function(result){
+        return projectSelectionActions.isValidProject(mergeConflictExpectedPath, null, 'RoyalSix', store.dispatch).then(function (result) {
             throw new Error('Promise was unexpectedly fulfilled. Result: ' + result);
         })
-        .catch(function(err){
-            expect(err).to.equal("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.")
-        })
+            .catch(function (err) {
+                expect(err).to.equal("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.")
+            })
     })
 })
