@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { shell } from 'electron';
 import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
@@ -32,7 +31,7 @@ class UsersManagementContainer extends Component {
     const userCardManagementCardStyle = {
       width: '100%', height: '100%',
       background: 'white', padding: '20px',
-      marginTop: '10px', display: 'flex'
+      marginTop: '5px', display: 'flex'
     }
     const { loggedInUser } = this.props.reducers.loginReducer;
     const userdata = this.props.reducers.loginReducer.userdata || {};
@@ -51,7 +50,7 @@ class UsersManagementContainer extends Component {
       </div>
     );
   }
-};
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

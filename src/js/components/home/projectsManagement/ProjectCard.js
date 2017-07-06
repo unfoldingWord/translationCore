@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
+import ProjectCardMenu from './ProjectCardMenu'
 
-let Project = (props) => {
-  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language} = props.projectDetails;
+let ProjectCard = (props) => {
+  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
   let content = <div />;
 
   if (projectName && projectSaveLocation && accessTimeAgo && bookAbbr && bookName && target_language) {
@@ -36,11 +37,9 @@ let Project = (props) => {
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
+          <ProjectCardMenu {...props} />
           <div>
-            <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
-          </div>
-          <div>
-            <button className='btn-prime' disabled={false} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
+            <button className='btn-prime' disabled={isSelected} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
               Select
             </button>
           </div>
@@ -63,9 +62,9 @@ let Project = (props) => {
   );
 }
 
-Project.propTypes = {
+ProjectCard.propTypes = {
   projectDetails: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
-export default Project;
+export default ProjectCard;

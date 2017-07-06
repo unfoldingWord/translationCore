@@ -10,6 +10,7 @@ import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
+import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -36,7 +37,7 @@ class ProjectsManagementContainer extends Component {
     const myProjects = myProjectsReducer.projects;
 
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         <MyProjects myProjects={myProjects} actions={this.props.actions} />
         <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "2000"}}>
           <ProjectsFAB
@@ -76,6 +77,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       selectLocalProjectToLoad: () => {
         dispatch(ImportLocalActions.selectLocalProjectToLoad());
+      },
+      exportToCSV: (projectPath) => {
+        dispatch(RecentProjectsActions.exportToCSV(projectPath));
+      },
+      uploadProject: (projectPath) => {
+        const {userdata} = ownProps.reducers.loginReducer
+        dispatch(RecentProjectsActions.uploadProject(projectPath, userdata));
       }
     }
   };
