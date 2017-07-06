@@ -6,6 +6,7 @@ import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
+import * as TargetLanguageActions from './TargetLanguageActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -14,45 +15,38 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
     const { username } = getState().loginReducer.userdata;
-    isValidProject(projectPath, projectLink, username, dispatch).then((validProjectObject) => {
-      const { manifest, projectPath } = validProjectObject;
+    if (!projectPath) {
+      console.error("No project path specified");
+    } else if (LoadHelpers.isUSFMProject(projectPath)) {
+      console.error("translationCore does not support USFM importing");
+    } else {
+      projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+      let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
+      if (!manifest) console.error("No valid manifest found in project");
       dispatch(clearLastProject());
       dispatch(loadProjectDetails(projectPath, manifest));
-      dispatch(displayTools(manifest));
-    }).catch((err) => {
-      dispatch(AlertModalActions.openAlertDialog(err.message || err))
-    })
-  });
-}
-
-export function isValidProject(projectPath, projectLink, username, dispatch) {
-    return new Promise((resolve, reject) => {
-      if (!projectPath) {
-        reject("No project path specified");
-      } else if (LoadHelpers.isUSFMProject(projectPath)) {
-        reject("translationCore does not support USFM importing");
-      } else {
-        let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
-        if (!manifest) reject("No valid manifest found in project");
-        if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
-        if (LoadHelpers.projectIsMissingVerses(manifest.project.id, projectPath)) {
-          const callback = (option) => {
-            if (option != "Cancel") {
-              resolve({ manifest, projectPath });
-            }
-            return dispatch(AlertModalActions.closeAlertDialog());
+      dispatch(TargetLanguageActions.generateTargetBible(projectPath));
+      if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) console.err("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
+      if (LoadHelpers.projectIsMissingVerses(manifest.project.id, projectPath)) {
+        const callback = (option) => {
+          if (option != "Cancel") {
+            dispatch(displayTools(manifest));
+          } else {
+            dispatch(clearLastProject());
           }
-          dispatch(AlertModalActions.openOptionDialog(
-            "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
-            callback,
-            "Continue Without Fixing",
-            "Cancel"
-          ));
-        } else {
-          return resolve({ manifest, projectPath });
+          return dispatch(AlertModalActions.closeAlertDialog());
         }
+        dispatch(AlertModalActions.openOptionDialog(
+          "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
+          callback,
+          "Continue Without Fixing",
+          "Cancel"
+        ));
+      } else {
+        dispatch(displayTools(manifest));
       }
-    })
+    }
+  })
 }
 
 /**
@@ -63,7 +57,6 @@ export function isValidProject(projectPath, projectLink, username, dispatch) {
 export function loadProjectDetails(projectPath, manifest) {
   return ((dispatch) => {
     LoadHelpers.migrateAppsToDotApps(projectPath);
-    projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));

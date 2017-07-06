@@ -1,59 +1,44 @@
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
-import * as projectSelectionActions from '../src/js/actions/ProjectSelectionActions';
+import * as LoadHelpers from '../src/js/helpers/LoadHelpers';
 import consts from '../src/js/actions/ActionTypes';
 import { expect, assert } from 'chai';
 const path = require('path-extra');
 const fs = require('fs-extra');
 const loadOnline = require('../src/js/components/LoadOnline.js');
-var workingProjectExpectedPath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
 var missingVerseExpectedPath = path.join(path.homedir(), 'translationCore', 'bes_tit_text_reg');
 var mergeConflictExpectedPath = path.join(path.homedir(), 'translationCore', 'ceb_2ti_text_ulb_L2');
 
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
-const store = mockStore({});
-
-var workingProjectURL = 'https://git.door43.org/royalsix/id_-co_text_reg';
 var missingVerseProjectURL = 'https://git.door43.org/royalsix/bes_tit_text_reg.git';
 var mergeConflictProjectURL = 'https://git.door43.org/royalsix/ceb_2ti_text_ulb_L2.git';
 function getProjects() {
     return new Promise((resolve, reject) => {
-        loadOnline(workingProjectURL, () => {
-            loadOnline(missingVerseProjectURL, () => {
-                loadOnline(mergeConflictProjectURL, resolve);
-            });
+        loadOnline(missingVerseProjectURL, () => {
+            loadOnline(mergeConflictProjectURL, resolve);
         });
-    })
+    });
 }
 
-getProjects().then(() => {
-    describe('Valid Project Actions', () => {
-        it('should select a valid project', function () {
-            return projectSelectionActions.isValidProject(workingProjectExpectedPath, null, 'RoyalSix', store.dispatch).then(function (projectObject) {
-                expect(projectObject).to.have.all.keys(['manifest', 'projectPath']);
-                expect(projectObject).to.deep.include({ projectPath: workingProjectExpectedPath });
-            })
-        })
-        it('should return action on a project with missing verses', function (done) {
-            projectSelectionActions.isValidProject(missingVerseExpectedPath, null, 'RoyalSix', store.dispatch)
-            setTimeout(() => {
-                expect(store.getActions()[0]).to.deep.include({
-                    type: 'OPEN_OPTION_DIALOG',
-                    alertMessage: 'Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly',
-                    button1Text: 'Continue Without Fixing',
-                    button2Text: 'Cancel'
-                })
+getProjects()
+    .then(() => {
+        describe('Valid Project Actions', () => {
+            it('should return project is missing verses', function (done) {
+                var isMissing = LoadHelpers.projectIsMissingVerses('tit', missingVerseExpectedPath);
+                expect(isMissing).to.be.true;
                 done();
-            }, 100)
-        })
-        it('fail on a project with git merge conflicts', function () {
-            return projectSelectionActions.isValidProject(mergeConflictExpectedPath, null, 'RoyalSix', store.dispatch).then(function (result) {
-                throw new Error('Promise was unexpectedly fulfilled. Result: ' + result);
             })
-                .catch(function (err) {
-                    expect(err).to.equal("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.")
-                })
+            it('should return project is not missing verses', function (done) {
+                var isMissing = LoadHelpers.projectIsMissingVerses('tit', mergeConflictExpectedPath);
+                expect(isMissing).to.be.false;
+                done();
+            })
+            it('should return project has merge conflicts', function (done) {
+                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts('2ti', mergeConflictExpectedPath);
+                expect(hasMergeConflict).to.be.true;
+                done();
+            })
+            it('should return project has no merge conflicts', function (done) {
+                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts('tit', missingVerseExpectedPath);
+                expect(hasMergeConflict).to.be.false;
+                done();
+            })
         })
-    })
-}).catch((err)=>console.log(err))
+    }).catch((err) => console.log(err))
