@@ -26,26 +26,38 @@ export function selectProject(projectPath, projectLink) {
       dispatch(clearLastProject());
       dispatch(loadProjectDetails(projectPath, manifest));
       dispatch(TargetLanguageActions.generateTargetBible(projectPath));
-      if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
-      if (LoadHelpers.projectIsMissingVerses(manifest.project.id, projectPath)) {
-        const callback = (option) => {
-          if (option != "Cancel") {
-            dispatch(displayTools(manifest));
-          } else {
-            dispatch(clearLastProject());
-          }
-          return dispatch(AlertModalActions.closeAlertDialog());
-        }
-        dispatch(AlertModalActions.openOptionDialog(
-          "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
-          callback,
-          "Continue Without Fixing",
-          "Cancel"
-        ));
+      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+      if (LoadHelpers.projectIsMissingVerses(projectPath, manifest.project.id)) {
+        dispatch(confirmOpenMissingVerseProjectDialog(projectPath, manifest))
       } else {
         dispatch(displayTools(manifest));
       }
     }
+  })
+}
+
+/**
+ * @description - This action creates a confirm dialog that ensures 
+ * if the user wants to use a project with missing verses
+ * @param {string} projectPath - path location in the filesystem for the project.
+ * @param {object} manifest project manifest.
+ */
+export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
+  return ((dispatch) => {
+    const callback = (option) => {
+      if (option != "Cancel") {
+        dispatch(displayTools(manifest));
+      } else {
+        dispatch(clearLastProject());
+      }
+      return dispatch(AlertModalActions.closeAlertDialog());
+    }
+    dispatch(AlertModalActions.openOptionDialog(
+      "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
+      callback,
+      "Continue Without Fixing",
+      "Cancel"
+    ));
   })
 }
 

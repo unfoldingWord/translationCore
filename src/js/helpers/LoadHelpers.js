@@ -390,7 +390,7 @@ export function createCheckArray(dataObject, moduleFolderName) {
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
-export function projectIsMissingVerses(bookAbbr, projectSaveLocation) {
+export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
         let expectedVerses = fs.readJSONSync(Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json'));
         let actualVersesObject = {};
@@ -424,7 +424,7 @@ export function projectIsMissingVerses(bookAbbr, projectSaveLocation) {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function projectHasMergeConflicts(bookAbbr, projectPath) {
+export function projectHasMergeConflicts(projectPath, bookAbbr) {
     let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
     for (var currentChapterFile of currentFolderChapters) {
         let currentChapter = Path.parse(currentChapterFile).name;

@@ -1,9 +1,9 @@
 import * as LoadHelpers from '../src/js/helpers/LoadHelpers';
-import consts from '../src/js/actions/ActionTypes';
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 const path = require('path-extra');
 const fs = require('fs-extra');
 const loadOnline = require('../src/js/components/LoadOnline.js');
+var workingProjectExpectedPath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
 var missingVerseExpectedPath = path.join(path.homedir(), 'translationCore', 'bes_tit_text_reg');
 var mergeConflictExpectedPath = path.join(path.homedir(), 'translationCore', 'ceb_2ti_text_ulb_L2');
 
@@ -21,23 +21,26 @@ getProjects()
     .then(() => {
         describe('Valid Project Actions', () => {
             it('should return project is missing verses', function (done) {
-                var isMissing = LoadHelpers.projectIsMissingVerses('tit', missingVerseExpectedPath);
+                var isMissing = LoadHelpers.projectIsMissingVerses(missingVerseExpectedPath, 'tit');
                 expect(isMissing).to.be.true;
                 done();
             })
             it('should return project is not missing verses', function (done) {
-                var isMissing = LoadHelpers.projectIsMissingVerses('tit', mergeConflictExpectedPath);
+                var isMissing = LoadHelpers.projectIsMissingVerses(mergeConflictExpectedPath, 'tit');
                 expect(isMissing).to.be.false;
                 done();
             })
             it('should return project has merge conflicts', function (done) {
-                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts('2ti', mergeConflictExpectedPath);
+                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts(mergeConflictExpectedPath, '2ti');
                 expect(hasMergeConflict).to.be.true;
                 done();
             })
             it('should return project has no merge conflicts', function (done) {
-                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts('tit', missingVerseExpectedPath);
+                var hasMergeConflict = LoadHelpers.projectHasMergeConflicts(missingVerseExpectedPath, 'tit');
                 expect(hasMergeConflict).to.be.false;
+                fs.removeSync(missingVerseExpectedPath);
+                fs.removeSync(mergeConflictExpectedPath);
+                fs.removeSync(workingProjectExpectedPath);
                 done();
             })
         })
