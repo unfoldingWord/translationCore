@@ -9,12 +9,12 @@ const STATIC_RESOURCES_THELPS_PATH = path.join(window.__base,'./static/resources
 /**
  * @description moves all bibles from the static folder to the local user translationCore folder.
  */
-export function getBibleFromStaticPackage() {
+export function getBibleFromStaticPackage(force = false) {
   let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
   bibleNames.forEach((bibleName) => {
     let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
     let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
-    if(!fs.existsSync(bibleDestinationPath)) {
+    if(!fs.existsSync(bibleDestinationPath) || force) {
       fs.copySync(bibleSourcePath, bibleDestinationPath);
     }
   });
@@ -23,12 +23,12 @@ export function getBibleFromStaticPackage() {
 /**
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
-export function getTHelpsFromStaticPackage() {
+export function getTHelpsFromStaticPackage(force = false) {
   let tHelpsNames = fs.readdirSync(STATIC_RESOURCES_THELPS_PATH);
   tHelpsNames.forEach((tHelpName) => {
     let tHelpSourcePath = path.join(STATIC_RESOURCES_THELPS_PATH, tHelpName);
     let tHelpDestinationPath = path.join(THELPS_RESOURCES_PATH, tHelpName);
-    if(!fs.existsSync(tHelpDestinationPath)) {
+    if(!fs.existsSync(tHelpDestinationPath) || force) {
       fs.copySync(tHelpSourcePath, tHelpDestinationPath);
     }
   });
