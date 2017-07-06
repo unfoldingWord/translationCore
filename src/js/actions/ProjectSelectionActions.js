@@ -5,7 +5,7 @@ import * as ModalActions from './ModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ProjectDetailsActions from './ProjectDetailsActions';
+import * as ProjectDetailsActions from './projectDetailsActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
