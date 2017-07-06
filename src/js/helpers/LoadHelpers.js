@@ -34,7 +34,6 @@ export function loadFile(path, file) {
         return manifest;
     }
     catch (e) {
-        console.log(e)
         return null
     }
 }
@@ -115,9 +114,7 @@ export function convertToFullBookName(bookAbbr) {
  */
 export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
     const verifiedManifest = verifyChunks(projectPath, manifest);
-    console.log('verified chunks')
     let newManifest = saveManifest(projectPath, projectLink, verifiedManifest, currentUser);
-    console.log('got new manifest', newManifest)
     return newManifest;
 }
 
