@@ -3,6 +3,8 @@ import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/createProject/ProjectManifest';
 import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-parser';
+import * as ResourcesHelpers from './ResourcesHelpers';
+const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
@@ -389,84 +391,51 @@ export function createCheckArray(dataObject, moduleFolderName) {
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
-export function projectIsMissingVerses(book, projectSaveLocation) {
-    let chapterArray = [];
-    let hash = {};
-    let chapters = fs.readdirSync(projectSaveLocation);
-    for (let chapter of chapters) {
-        if (chapter.length < 4 && !isNaN(parseInt(chapter))) {
-            chapterArray[parseInt(chapter)] = chapter;
-        }
-    }
-    if (expectedVerses[book]) {
-        if (expectedVerses[book].length !== chapterArray.length - 1) {
-            return true;
-        }
-    }
-    for (let i = 1; i < chapterArray.length; i++) {
-        if (!chapterArray[i]) {
-            return true;
-        }
-        hash[i] = [];
-        let verses = fs.readdirSync(Path.join(projectSaveLocation, chapterArray[i]));
-        for (let chunk in verses) {
-            let chunkContents = fs.readFileSync(Path.join(projectSaveLocation, chapterArray[i], verses[chunk])).toString();
-            chunkContents = chunkContents.replace(/\\c \d+/g, '').trim();
-            let splitChunks = chunkContents.split('\\v');
-            for (let verse in splitChunks) {
-                let current = splitChunks[verse].trim();
-                let currentVerse = current.match(/^\d+/);
-                hash[i][currentVerse] = current.replace(/\d/g, "").trim();
+export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
+    try {
+        let indexLocation = Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json');
+        //if (!fs.existsSync(indexLocation)) ResourcesHelpers.getBibleFromStaticPackage(true)
+        let expectedVerses = fs.readJSONSync(indexLocation);
+        let actualVersesObject = {};
+        let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
+        let chapterLength = 0;
+        actualVersesObject = {};
+        for (var currentChapterFile of currentFolderChapters) {
+            let currentChapter = Path.parse(currentChapterFile).name;
+            if (!parseInt(currentChapter)) continue;
+            chapterLength++;
+            let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
+            let verseLength = 0;
+            for (var verseIndex in currentChapterObject) {
+                let verse = currentChapterObject[verseIndex];
+                if (verse && verseIndex > 0) verseLength++;
             }
+            actualVersesObject[currentChapter] = verseLength;
         }
-        if (expectedVerses[book]) {
-            if (expectedVerses[book][i] !== hash[i].length - 1) {
-                return true;
-            }
-        }
-        for (let j = 1; j < hash[i].length; j++) {
-            if (!hash[i][j] || hash[i][j] === "") {
-                return true;
-            }
-        }
+        actualVersesObject.chapters = chapterLength;
+        let currentExpectedVerese = expectedVerses[bookAbbr];
+        return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
+    } catch (e) {
+        console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
+        return false;
     }
-    return false;
 }
 
-const expectedVerses = {
-    "Ephesians": {
-        length: 6,
-        1: 23,
-        2: 22,
-        3: 21,
-        4: 32,
-        5: 33,
-        6: 24
-    },
-    "Titus": {
-        length: 3,
-        1: 16,
-        2: 15,
-        3: 15
-    }
-}
 /**
  * This method reads in all the chunks of a project, and determines if there is any merge conflicts.
  * @param {Array} projectChunks - An array of finished chunks, as defined by the manfest
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function projectHasMergeConflicts(projectChunks, projectPath) {
-    for (let chapterVerse in projectChunks) {
-        let splitID = projectChunks[chapterVerse].split('-');
-        let chapter = splitID[0];
-        let verse = splitID[1];
-        let filePath = Path.join(projectPath, chapter, verse + ".txt");
-        if (fs.existsSync(filePath)) {
-            let fileContents = fs.readFileSync(filePath).toString();
+export function projectHasMergeConflicts(projectPath, bookAbbr) {
+    let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+    for (var currentChapterFile of currentFolderChapters) {
+        let currentChapter = Path.parse(currentChapterFile).name;
+        if (!parseInt(currentChapter)) continue;
+        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+            let fileContents = JSON.stringify(currentChapterObject);
             if (~fileContents.indexOf('<<<<<<<')) {
                 return true;
-            }
         }
     }
     return false;

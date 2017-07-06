@@ -4,8 +4,10 @@ class Logout extends Component {
   render() {
     return (
       <div style={{ height: '100%', marginBottom: 0, width: 350, margin: 'auto' }}>
-        <p style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>
-          {this.props.username}
+        <p style={{ fontSize: 16, textAlign: 'center' }}>
+          You are logged in as:<br />
+          <span style={{ fontWeight: 'bold' }}>{this.props.username}</span><br /><br />
+          How would you like to proceed?
         </p>
         <button
           className={"btn-prime"}
