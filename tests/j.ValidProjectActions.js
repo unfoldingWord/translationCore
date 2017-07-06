@@ -21,7 +21,7 @@ getProjects()
     .then(() => {
         describe('Valid Project Actions', () => {
             it('should return project is missing verses', function (done) {
-                this.timeout(5000)
+                this.timeout(10000)
                 var isMissing = LoadHelpers.projectIsMissingVerses(missingVerseExpectedPath, 'tit');
                 expect(isMissing).to.be.true;
                 done();
