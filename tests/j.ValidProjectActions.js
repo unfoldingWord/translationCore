@@ -21,7 +21,7 @@ describe('Valid Project Actions', () => {
             expect(projectObject).to.deep.include({ projectPath: workingProjectExpectedPath });
         })
     })
-    it('should return action on a project with missing verses', function () {
+    it('should return action on a project with missing verses', function (done) {
         projectSelectionActions.isValidProject(missingVerseExpectedPath, null, 'RoyalSix', store.dispatch)
         setTimeout(() => {
             expect(store.getActions()[0]).to.deep.include({
@@ -30,6 +30,7 @@ describe('Valid Project Actions', () => {
                 button1Text: 'Continue Without Fixing',
                 button2Text: 'Cancel'
             })
+            done();
         }, 100)
     })
     it('fail on a project with git merge conflicts', function () {

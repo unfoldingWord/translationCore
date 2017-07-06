@@ -34,6 +34,7 @@ export function loadFile(path, file) {
         return manifest;
     }
     catch (e) {
+        console.log(e)
         return null
     }
 }
@@ -114,7 +115,9 @@ export function convertToFullBookName(bookAbbr) {
  */
 export function setUpManifest(projectPath, projectLink, manifest, currentUser) {
     const verifiedManifest = verifyChunks(projectPath, manifest);
+    console.log('verified chunks')
     let newManifest = saveManifest(projectPath, projectLink, verifiedManifest, currentUser);
+    console.log('got new manifest', newManifest)
     return newManifest;
 }
 
@@ -392,27 +395,27 @@ export function createCheckArray(dataObject, moduleFolderName) {
  */
 export function projectIsMissingVerses(bookAbbr, projectSaveLocation) {
     try {
-    let expectedVerses = fs.readJSONSync(Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json'));
-    let actualVersesObject = {};
-    let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
-    let chapterLength = 0;
-    actualVersesObject = {};
-    for (var currentChapterFile of currentFolderChapters) {
-        let currentChapter = Path.parse(currentChapterFile).name;
-        if (!parseInt(currentChapter)) continue;
-        chapterLength++;
-        let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
-        let verseLength = 0;
-        for (var verseIndex in currentChapterObject) {
-            let verse = currentChapterObject[verseIndex];
-            if (verse && verseIndex > 0) verseLength++;
+        let expectedVerses = fs.readJSONSync(Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json'));
+        let actualVersesObject = {};
+        let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
+        let chapterLength = 0;
+        actualVersesObject = {};
+        for (var currentChapterFile of currentFolderChapters) {
+            let currentChapter = Path.parse(currentChapterFile).name;
+            if (!parseInt(currentChapter)) continue;
+            chapterLength++;
+            let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
+            let verseLength = 0;
+            for (var verseIndex in currentChapterObject) {
+                let verse = currentChapterObject[verseIndex];
+                if (verse && verseIndex > 0) verseLength++;
+            }
+            actualVersesObject[currentChapter] = verseLength;
         }
-        actualVersesObject[currentChapter] = verseLength;
-    }
-    actualVersesObject.chapters = chapterLength;
-    let currentExpectedVerese = expectedVerses[bookAbbr];
-    return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
-    } catch(e) {
+        actualVersesObject.chapters = chapterLength;
+        let currentExpectedVerese = expectedVerses[bookAbbr];
+        return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
+    } catch (e) {
         console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
         return false;
     }
@@ -424,17 +427,15 @@ export function projectIsMissingVerses(bookAbbr, projectSaveLocation) {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function projectHasMergeConflicts(projectChunks, projectPath) {
-    for (let chapterVerse in projectChunks) {
-        let splitID = projectChunks[chapterVerse].split('-');
-        let chapter = splitID[0];
-        let verse = splitID[1];
-        let filePath = Path.join(projectPath, chapter, verse + ".txt");
-        if (fs.existsSync(filePath)) {
-            let fileContents = fs.readFileSync(filePath).toString();
+export function projectHasMergeConflicts(bookAbbr, projectPath) {
+    let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+    for (var currentChapterFile of currentFolderChapters) {
+        let currentChapter = Path.parse(currentChapterFile).name;
+        if (!parseInt(currentChapter)) continue;
+        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+            let fileContents = JSON.stringify(currentChapterObject);
             if (~fileContents.indexOf('<<<<<<<')) {
                 return true;
-            }
         }
     }
     return false;

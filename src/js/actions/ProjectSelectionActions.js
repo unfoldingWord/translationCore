@@ -34,7 +34,7 @@ export function isValidProject(projectPath, projectLink, username, dispatch) {
       } else {
         let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
         if (!manifest) reject("No valid manifest found in project");
-        if (LoadHelpers.projectHasMergeConflicts(manifest.finished_chunks, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
+        if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) reject("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
         if (LoadHelpers.projectIsMissingVerses(manifest.project.id, projectPath)) {
           const callback = (option) => {
             if (option != "Cancel") {
