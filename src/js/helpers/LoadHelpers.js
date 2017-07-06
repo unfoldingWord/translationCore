@@ -3,6 +3,7 @@ import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/createProject/ProjectManifest';
 import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-parser';
+import * as ResourcesHelpers from './ResourcesHelpers';
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
@@ -392,7 +393,9 @@ export function createCheckArray(dataObject, moduleFolderName) {
  */
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
-        let expectedVerses = fs.readJSONSync(Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json'));
+        let indexLocation = Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json');
+        if (!fs.existsSync(indexLocation)) ResourcesHelpers.getBibleFromStaticPackage(true)
+        let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
         let chapterLength = 0;

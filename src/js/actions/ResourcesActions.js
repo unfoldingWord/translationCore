@@ -86,9 +86,9 @@ export const loadResourceArticle = (resourceType, articleId) => {
 /**
  * @description gets the resources from the static folder located in the tC codebase.
  */
-export const getResourcesFromStaticPackage = () => {
+export const getResourcesFromStaticPackage = (force) => {
   return ((dispatch, getState) => {
-    ResourcesHelpers.getBibleFromStaticPackage();
-    ResourcesHelpers.getTHelpsFromStaticPackage();
+    ResourcesHelpers.getBibleFromStaticPackage(force);
+    ResourcesHelpers.getTHelpsFromStaticPackage(force);
   });
 }
