@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 import ProjectCard from './ProjectCard';
 
 let MyProjects = (props) => {
-  let {myProjects} = props;
-
+  const {myProjects} = props;
   const projects = myProjects.map( (projectDetails, index) =>
     <ProjectCard key={index} projectDetails={projectDetails} actions={props.actions} />
   );
 
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       Projects
-      {projects}
+      <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
+        {projects}
+      </div>
     </div>
   );
 }
