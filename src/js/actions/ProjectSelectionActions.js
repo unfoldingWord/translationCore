@@ -16,17 +16,17 @@ export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
     const { username } = getState().loginReducer.userdata;
     if (!projectPath) {
-      console.error("No project path specified");
+      dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     } else if (LoadHelpers.isUSFMProject(projectPath)) {
-      console.error("translationCore does not support USFM importing");
+      dispatch(AlertModalActions.openAlertDialog("translationCore does not support USFM importing"));
     } else {
       projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
       let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
-      if (!manifest) console.error("No valid manifest found in project");
+      if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
       dispatch(clearLastProject());
       dispatch(loadProjectDetails(projectPath, manifest));
       dispatch(TargetLanguageActions.generateTargetBible(projectPath));
-      if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) console.err("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance.");
+      if (LoadHelpers.projectHasMergeConflicts(manifest.project.id, projectPath)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
       if (LoadHelpers.projectIsMissingVerses(manifest.project.id, projectPath)) {
         const callback = (option) => {
           if (option != "Cancel") {
