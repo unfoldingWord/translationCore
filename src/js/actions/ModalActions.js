@@ -25,5 +25,4 @@ export function selectSectionTab(tabKey, sectionKey) {
       section: sectionKey
     })
   })
-  if (sectionKey==2) dispatch(ImportOnlineActions.updateRepos());
 }
