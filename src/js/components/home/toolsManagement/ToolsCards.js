@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+// components
+import ToolCard from './ToolCard';
+
 class ToolsCards extends Component {
   render() {
     return (
       <div>
-        ToolsCards
+        <ToolCard {...this.props} />
       </div>
     );
   }
