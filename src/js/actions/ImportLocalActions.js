@@ -36,7 +36,6 @@ export function selectLocalProjectToLoad() {
       } else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
         dispatch(unzipTStudioProject(sourcePath, fileName));
-        dispatch(selectAndLoadProject(newProjectPath));
       } else if(verifyIsValidProject(sourcePath)) {
         fs.copySync(sourcePath, newProjectPath)
         dispatch(selectAndLoadProject(newProjectPath));
@@ -61,6 +60,7 @@ function unzipTStudioProject(projectSourcePath, fileName) {
     const newProjectPath = path.join(DEFAULT_SAVE, fileName);
     if (!fs.existsSync(newProjectPath)) {
       zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+      dispatch(selectAndLoadProject(newProjectPath));
     } else {
       dispatch(AlertModalActions.openAlertDialog(
         `A project with the name ${fileName} already exists. Reimporting 
