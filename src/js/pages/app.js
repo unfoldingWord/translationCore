@@ -16,6 +16,7 @@ import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import * as ResourcesActions from '../actions/ResourcesActions';
+import * as OnlineModeActions from '../actions/OnlineModeActions';
 
 class Main extends Component {
 
@@ -30,6 +31,7 @@ class Main extends Component {
       localStorage.setItem('version', packageJson.version);
     }
     this.props.actions.getResourcesFromStaticPackage();
+    this.props.actions.getATags()
   }
 
   render() {
@@ -61,6 +63,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     actions: {
       getResourcesFromStaticPackage: () => {
         dispatch(ResourcesActions.getResourcesFromStaticPackage());
+      },
+      getATags: () => {
+        OnlineModeActions.getATags(dispatch);
       }
     }
   };
