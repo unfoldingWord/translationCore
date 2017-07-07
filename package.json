@@ -69,6 +69,7 @@
     "redux-test-utils": "^0.1.1"
   },
   "dependencies": {
+    "adm-zip": "^0.4.7",
     "babel-core": "^6.13.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "bootstrap": "^3.3.7",
