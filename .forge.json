@@ -10,6 +10,11 @@
       "deb"
     ]
   },
+  "electronPackagerConfig": {
+    "asar": false,
+    "quiet": true,
+    "icon": "src/images/icon.ico"
+  },
   "electronInstallerDMG": {
     "icon": "src/images/icon.icns"
   },

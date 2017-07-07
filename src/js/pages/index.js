@@ -1,4 +1,13 @@
 (function () {
+  try {
+    require("babel-register")({
+      extensions: [".js", ".jsx"],
+      presets: ["es2015", "react"],
+      plugins: ["transform-object-rest-spread"]
+    });
+  } catch (error) {
+    console.log('Bypass babel in production');
+  }
   const path = require('path');
   window.__base = path.join(__dirname, '../../../');
   const ReactDOM = require('react-dom');
