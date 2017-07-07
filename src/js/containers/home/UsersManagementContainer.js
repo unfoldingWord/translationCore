@@ -10,20 +10,32 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card } from 'material-ui/Card';
 
 class UsersManagementContainer extends Component {
-  instructions() {
-    return (
-      <div>
-        <div style={{ margin: 15 }}>Please login with you Door43 Account</div>
-        <div style={{ margin: 15 }}>If you do not have an account already, you may create an account.</div>
-        <div style={{ margin: 15 }}>If you would rather work offline, you may select continue offline.</div>
-      </div>
-    )
-  }
 
   componentWillMount() {
     let instructions = this.instructions();
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
+    }
+  }
+
+  instructions() {
+    const { loggedInUser } = this.props.reducers.loginReducer;
+    if (!loggedInUser) {
+      return (
+        <div>
+          <div style={{ margin: 15 }}>Please login with your Door43 Account</div>
+          <div style={{ margin: 15 }}>If you do not have an account already, you may create an account.</div>
+          <div style={{ margin: 15 }}>If you would rather work offline, you may select continue offline.</div>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <div style={{ margin: 15 }}>You are currently logged in.</div>
+          <div style={{ margin: 15 }}>To continue to Projects, click "Continue to Project"</div>
+          <div style={{ margin: 15 }}>To log out, click "Log out"</div>
+        </div>
+      )
     }
   }
 

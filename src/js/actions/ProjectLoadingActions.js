@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
-import * as TargetLanguageActions from './TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
@@ -22,7 +21,6 @@ export function loadProjectData(currentToolName) {
       let { projectSaveLocation, params } = projectDetailsReducer;
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
 
-      dispatch(TargetLanguageActions.generateTargetBible(projectSaveLocation));
       getGroupsIndex(dispatch, dataDirectory, currentToolName)
         .then(() => {
           getGroupsData(dispatch, dataDirectory, currentToolName, params)
