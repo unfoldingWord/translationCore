@@ -18,7 +18,7 @@ class ProjectFAB extends Component {
         glyph: "link"
       },
       {
-        action: () => {console.log("hello2")},
+        action: () => {this.props.actions.selectLocalProjectToLoad()},
         buttonLabel: "Import Local Project",
         glyph: "folder-open"
       },
