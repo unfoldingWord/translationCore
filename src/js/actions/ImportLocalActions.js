@@ -35,7 +35,7 @@ export function selectLocalProjectToLoad() {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
-        unzipTStudioProject(sourcePath)
+        dispatch(unzipTStudioProject(sourcePath, fileName));
         dispatch(selectAndLoadProject(newProjectPath));
       } else if(verifyIsValidProject(sourcePath)) {
         fs.copySync(sourcePath, newProjectPath)
@@ -55,9 +55,19 @@ export function selectLocalProjectToLoad() {
   });
 }
 
-function unzipTStudioProject(projectSourcePath) {
-  const zip = new AdmZip(projectSourcePath);
-  zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+function unzipTStudioProject(projectSourcePath, fileName) {
+  return ((dispatch) => {
+    const zip = new AdmZip(projectSourcePath);
+    const newProjectPath = path.join(DEFAULT_SAVE, fileName);
+    if (!fs.existsSync(newProjectPath)) {
+      zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+    } else {
+      dispatch(AlertModalActions.openAlertDialog(
+        `A project with the name ${fileName} already exists. Reimporting 
+         existing projects is not currently supported.`
+      ));
+    }
+  });
 }
 
 function verifyIsValidProject(projectSourcePath) {
