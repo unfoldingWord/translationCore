@@ -9,6 +9,13 @@ cache:                      # Speed up builds by caching things
 before_deploy:              # Run these before attempting to deploy
   - npm install -g electron-forge@3.0.5 # Install electron-forge, may move to dev-dependencies in package.json
   - electron-forge make     # Command that builds the app for the architecture
+addons:
+  apt:
+    packages:
+      - xvfb                # Dependency for headless testing via virtual frame buffer
+install:
+  - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
 deploy:                     # Configuration for releases
   provider: releases
   file_glob: true           # Set the mode for file to use *
