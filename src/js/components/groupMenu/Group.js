@@ -5,6 +5,7 @@ import { Circle } from 'react-progressbar.js'
 import GroupItem from './GroupItem'
 import * as Style from './Style'
 import isEqual from 'lodash/isEqual'
+import * as LoadHelpers from '../../helpers/LoadHelpers';
 
 class Group extends React.Component {
   /**
@@ -13,6 +14,11 @@ class Group extends React.Component {
    * @param {string} groupId - string name of a group.
    * @return {array} groupData - array of groupData objects
    */
+  constructor(props) {
+    super(props);
+    this.getItemGroupData = this.getItemGroupData.bind(this);
+  }
+  
 
   groupData(groupsData, groupId) {
     let groupData
@@ -52,7 +58,17 @@ class Group extends React.Component {
     let index = 0;
     for (var groupItemData of groupData) {
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      items.push(<GroupItem groupMenuHeader={this} scrollIntoView={this.scrollIntoView} {...this.props} active={active} {...groupItemData} key={index} />)
+      let bookName = this.props.projectDetailsReducer.bookName;
+      if (active){
+        let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
+        bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
+      }
+      items.push(<GroupItem 
+        statusGlyph={this.statusGlyph(groupItemData.contextId)} 
+        groupMenuHeader={this} 
+        scrollIntoView={this.scrollIntoView} {...this.props} 
+        active={active} {...groupItemData} 
+        key={index} bookName={bookName} />)
       index++
     }
     return items;
@@ -60,6 +76,51 @@ class Group extends React.Component {
 
   scrollIntoView(element) {
     ReactDOM.findDOMNode(element).scrollIntoView({ block: 'end', behavior: 'smooth' });
+  }
+
+  statusGlyph(contextId) {
+    let statusBooleans = this.getItemGroupData(contextId)
+    let { comments, reminders, selections, verseEdits } = statusBooleans
+    let statusGlyph = (
+      <Glyphicon glyph="" style={Style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
+    )
+    if (reminders) {
+      statusGlyph = (
+        <Glyphicon glyph="bookmark" style={Style.menuItem.statusIcon.bookmark} />
+      )
+    } else if (selections) {
+      statusGlyph = (
+        <Glyphicon glyph="ok" style={Style.menuItem.statusIcon.correct} />
+      )
+    } else if (verseEdits) {
+      statusGlyph = (
+        <Glyphicon glyph="pencil" style={Style.menuItem.statusIcon.verseEdit} />
+      )
+    } else if (comments) {
+      statusGlyph = (
+        <Glyphicon glyph="comment" style={Style.menuItem.statusIcon.comment} />
+      )
+    }
+    return statusGlyph
+  }
+
+  /**
+ * @description gets the group data for the groupItem.
+ * @return {object} groud data object.
+ */
+  getItemGroupData(contextId) {
+    let { groupsData } = this.props.groupsDataReducer
+    let groupId = this.props.groupIndex.id
+
+    let groupData = groupsData[groupId].filter(groupData => {
+      return isEqual(groupData.contextId, contextId)
+    })
+
+    return groupData[0];
+  }
+
+  onClick() {
+    this.props.actions.changeCurrentContextId(this.props.contextId);
   }
 
   render() {
