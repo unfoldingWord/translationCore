@@ -32,7 +32,7 @@ class LoginDoor43Account extends Component {
   loginHeaderDoor43() {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-        <img style={{ height: 64, width: 64 }} src="src/images/D43_LOGO.png" />
+        <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
           <span style={{ fontSize: 20, fontWeight: 'bold' }}>Log in With Door43</span>
           <Glyphicon

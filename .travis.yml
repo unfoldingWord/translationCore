@@ -1,57 +1,23 @@
-language: node_js
-node_js:
-  - 'node'
-os:
-  - linux
-  - osx
-cache:
-  directories:
-    - "node_modules"
-before_script:
-- export DISPLAY=:99.0
-- npm i -g xvfb-maybe@0.2.1
-- 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    sh -e /etc/init.d/xvfb start ;
-  fi'
-script:
-- xvfb-maybe npm test
-before_deploy:
-- npm i -g babel-cli
-- npm i -g electron-builder@19.8.0 ;
-- 'if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    babel src --out-dir src ;
-    babel tC_apps --out-dir tC_apps ;
-    build --prerelease --draft --mac ;
-  else
-    sudo add-apt-repository --yes ppa:ubuntu-wine/ppa ;
-    sudo add-apt-repository --yes ppa:arx/release ;
-    sudo apt-get update -d ;
-    sudo apt-get install -y -q innoextract wine python-software-properties ;
-    mkdir installers ;
-    curl -L https://github.com/git-for-windows/git/releases/download/v2.9.2.windows.1/Git-2.9.2-32-bit.exe > ./installers/GitInstaller-32.exe ;
-    curl -L https://github.com/git-for-windows/git/releases/download/v2.9.2.windows.1/Git-2.9.2-64-bit.exe > ./installers/GitInstaller-64.exe ;
-    chmod +x ./scripts/inno/InnoInstall.sh ;
-    "./scripts/inno/InnoInstall.sh" ;
-    cd /home/travis/build/unfoldingWord-dev/translationCore ;
-    rm -rf tmp ;
-    chmod +x ./scripts/builds/windows.sh ;
-    "./scripts/builds/windows.sh" ;
-  fi'
-deploy:
-- provider: releases
-  skip_cleanup: true
-  file: "./dist/translationCore-win32-ia32/installer/translationCoreSetup.exe"
-  on:
-    repo: unfoldingWord-dev/translationCore
-    branch: master
-    tags: true
-    condition: "$TRAVIS_OS_NAME == linux"
-- provider: releases
-  skip_cleanup: true
-  file_glob: true
-  file: "./dist/mac/translationCore-*.dmg"
-  on:
-    repo: unfoldingWord-dev/translationCore
-    branch: master
-    tags: true
-    condition: "$TRAVIS_OS_NAME == osx"
+language: node_js           # Set language for the environment
+node_js: node               # Use latest version of node.js
+os:                         # Simultaneous environments
+  - linux                   # Linux - for testing and future builds
+  - osx                     # Mac - for testing and builds
+cache:                      # Speed up builds by caching things
+  directories:              # Add directories relative to root
+  - node_modules            # cache node modules to save 1-3 minutes
+before_deploy:              # Run these before attempting to deploy
+  - npm install -g electron-forge@3.0.5 # Install electron-forge, may move to dev-dependencies in package.json
+  - electron-forge make     # Command that builds the app for the architecture
+deploy:                     # Configuration for releases
+  provider: releases
+  file_glob: true           # Set the mode for file to use *
+  file: out/make/*          # Upload all files generated during make/build
+  overwrite: true           # Overwrite the file if it exists
+  skip_cleanup: true        # Don't wait to cleanup
+  prerelease: true          # Don't make this the latest release, mark it as prerelease
+  draft: true               # Don't publish this to the public, make it a draft
+  on:                       # Tell it when to deploy/release
+    tags: true              # We only create a release on tags
+  api_key:                  # Github personal access token encrypted with travis encrypt command
+   secure: TtJKGLRP2I8gZXgef0TS0CClNbDzQdHMBhmZyCrMCkU/sVGLfqmEm1r79vMAFS+7wObRbKya84BWUdzfX295FC/yyrBYJyjsd9Dd0srTKM4HU282AZsjlHlXU3Xx+wNlSoJCNt6SqnxMAOnQHjvJe1bO4VCa1u/Njb9KjxyRJdzQ6g9o/EL/AUBEynNQwQZAygQqKTEooerIqAc+QHjqjB6oOQjm7yHb3X4BsCPfqXhP87wnCzIuS9NLRb/obr2UjiOejLoxoReHfyAQoEAKLcHADKNQFbbK8sWekmg+8fxLv4ac1JhUcSZg6E9gwyrFN9P23jX0cl7bCxfZfYBMTAG3pPl98k3SVDCPsu11D+WmFI2wtQXY2GjUOschbQrekeU7iiGv53+T6YCiNZSsryMND1D8aXnyhtNgoRVttWlGyZKqfxF8olw/y0chGKjcs4gvNhlQPwqCJfmuhpJ5DSt3ALHY7opyxXuxGQzEk+wRj4i4+DOWS2LHYLnUXJVSOKrWV95iEIiEDSAy//RnZGS8rzmBl5dW6IPddKdYjQig/9+xUkbX9AzQ3Cjg4eYdN2SgbEOMZ7gqIib/82QvE4ickYzbVgSEfhCFreL3F3td/gVHs26awf9Uhrn2N8ogzaSWr8zqo7EJ04KqNQ1s1l6C5lnopqMpM4DigBS6UiA=

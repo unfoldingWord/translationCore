@@ -18,9 +18,9 @@ let splashScreen;
 
 function createMainWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({icon: 'src/images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   var gitFile = 'GitInstaller-32.exe';
   if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
     gitFile = 'GitInstaller-64.exe';
@@ -74,7 +74,7 @@ function createMainSplash() {
     height: 600,
     resizable: false,
     autoHideMenuBar: true,
-    icon: 'src/images/TC_Icon.png',
+    icon: 'images/TC_Icon.png',
     frame: false,
     center: true,
     show: false
@@ -82,7 +82,7 @@ function createMainSplash() {
 
   //splashScreen.webContents.openDevTools();
 
-  splashScreen.loadURL(`file://${__dirname}/src/html/splash.html`);
+  splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
 
   splashScreen.on('closed', function() {
     splashScreen = null;

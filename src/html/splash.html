@@ -19,7 +19,7 @@
     <script>
       (function () {
         var versiondiv = document.getElementById('version');
-        var pack = require('./package.json');
+        var pack = require('../../package.json');
 
         versiondiv.innerHTML = "Version " + pack.version;
       })();

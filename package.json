@@ -3,34 +3,24 @@
   "productName": "translationCore",
   "version": "0.7.1-beta.29",
   "description": "A bridge between TS and TM",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "update-version": "node ./scripts/versionScript.js",
     "test": "electron-mocha --renderer ./tests",
-    "compile": "babel src --out-dir src",
-    "compile-submodules": "babel tC_apps --out-dir tC_apps",
-    "build-win": ".\\\\scripts\\builds\\build-win.cmd",
-    "build-winstaller": "node scripts/builds/build-win-installer.js",
-    "build-mac": "npm run compile && build --mac",
-    "build-lin": "npm run compile && build --linux",
     "install-apps": "git submodule update --init --recursive",
     "pull-apps": "npm run apps-master && npm run git-pull",
     "git-pull": "git submodule foreach --recursive git pull",
-    "apps-master": "git submodule foreach --recursive git checkout master",
-    "update-version": "node ./scripts/builds/VersionScripts.js",
-    "start": "electron ."
+    "apps-master": "git submodule foreach --recursive git checkout master"
   },
-  "build": {
-    "appId": "uw.translation_core.desktop",
-    "mac": {
-      "icon": "scripts/builds/assets/icon.icns"
-    },
-    "dmg": {
-      "icon": "scripts/builds/assets/icon.icns"
-    }
+  "config": {
+    "forge": "./.forge.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unfoldingWord-dev/translationCore.git"
+    "url": "git+https://github.com/klappy/translationCore.git"
   },
   "keywords": [
     "Translation",
@@ -40,7 +30,7 @@
     "unfoldingWord"
   ],
   "author": {
-    "name": "Wycliffe Associates",
+    "name": "unfoldingWord",
     "email": "info@unfoldingword.org"
   },
   "license": "GPL2",
@@ -51,17 +41,13 @@
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-eslint": "^7.2.3",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.11.0",
-    "babel-register": "^6.11.6",
     "chai": "^3.5.0",
-    "electron": "^1.6.11",
-    "electron-builder": "^19.8.0",
     "electron-mocha": "^3.5.0",
-    "electron-packager": "^8.7.2",
+    "electron-prebuilt-compile": "1.6.11",
     "enzyme": "^2.6.0",
     "enzyme-redux": "^0.1.6",
     "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^15.0.2",
     "eslint-config-google": "^0.6.0",
     "eslint-plugin-react": "^7.1.0",
     "react-addons-test-utils": "15.4.2",
@@ -71,9 +57,17 @@
   "dependencies": {
     "adm-zip": "^0.4.7",
     "babel-core": "^6.13.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.11.6",
     "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.8",
+    "electron-compile": "^6.4.1",
+    "electron-devtools-installer": "^2.2.0",
     "event-emitter": "^0.3.4",
     "fs-extra": "^3.0.1",
     "gogs-client": "^0.5.2",
@@ -116,5 +110,6 @@
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
     "redux": "^2.0.0 || ^3.0.0"
-  }
+  },
+  "false": {}
 }

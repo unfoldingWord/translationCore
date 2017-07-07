@@ -21,7 +21,7 @@ class Door43Login extends React.Component {
     return (
         <MuiThemeProvider>
           <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-            <img src="src/images/D43_LOGO.png" style={{margin: "30px 0px 0px"}} /><br/>
+            <img src="images/D43_LOGO.png" style={{margin: "30px 0px 0px"}} /><br/>
             <h4>
               <b>{"Log in with Door43"}</b>&nbsp;
               <Glyphicon
