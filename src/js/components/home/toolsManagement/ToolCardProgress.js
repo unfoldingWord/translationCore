@@ -8,7 +8,7 @@ const ToolCardProgress = ({ progress }) => {
     color: 'var(--accent-color-dark)', trailColor: 'var(--background-color-light)',
     trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
   };
-  const containerStyle = { margin: "18px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
+  const containerStyle = { margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
 
   return (
     <Line

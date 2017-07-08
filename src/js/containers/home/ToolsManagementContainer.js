@@ -20,10 +20,20 @@ class ToolsManagementContainer extends Component {
   }
 
   render() {
+    const { toolsMetadata } = this.props.reducers.toolsReducer;
+    const { loggedInUser } = this.props.reducers.loginReducer;
+    const { bookName, projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         ToolsManagementContainer
-        <ToolsCards {...this.props}/>
+        <ToolsCards
+          actions={this.props.actions}
+          toolsMetadata={toolsMetadata}
+          bookName={bookName}
+          loggedInUser={loggedInUser}
+          projectSaveLocation={projectSaveLocation}
+        />
       </div>
     );
   }
@@ -47,16 +57,20 @@ const mapDispatchToProps = (dispatch) => {
       getToolsMetadatas: () => {
         dispatch(ToolsMetadataActions.getToolsMetadatas());
       },
-      handleSelectTool: (toolFolderPath, loggedInUser, currentToolName) => {
+      launchTool: (toolFolderPath, loggedInUser, currentToolName) => {
         if (!loggedInUser) {
           //dispatch(modalActions.selectModalTab(1, 1, true));
           dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
           return;
         }
         dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
+        dispatch(BodyUIActions.toggleHomeView());
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
+      },
+      goToStep: (stepNumber) => {
+        dispatch(BodyUIActions.goToStep(stepNumber));
       }
     }
   }

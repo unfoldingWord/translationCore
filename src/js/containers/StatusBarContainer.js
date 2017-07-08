@@ -1,18 +1,18 @@
 import React from 'react';
-import { connect  } from 'react-redux';
+import { connect } from 'react-redux';
 // Components
-import StatusBar from '../components/SideBar/StatusBar.js';
+import StatusBar from '../components/SideBar/StatusBar';
 // Actions
-import * as modalActions from '../actions/ModalActions.js';
-import { openAlertDialog } from '../actions/AlertModalActions.js';
-import * as coreStoreActions from '../actions/CoreActionsRedux.js';
-
+import * as modalActions from '../actions/ModalActions';
+import * as AlertModalActions from '../actions/AlertModalActions';
+import * as coreStoreActions from '../actions/CoreActionsRedux';
+import * as BodyUIActions from '../actions/BodyUIActions';
 
 class StatusBarContainer extends React.Component {
 
   componentWillMount() {
     let online = window.navigator.onLine;
-    this.props.changeOnlineStatus(online, true);
+    this.props.actions.changeOnlineStatus(online, true);
   }
 
   render() {
@@ -26,11 +26,12 @@ class StatusBarContainer extends React.Component {
       <div>
         <StatusBar
           {...this.props}
+          toggleHomeScreen={this.props.actions.toggleHomeScreen}
           projectName={projectName}
           currentCheckNamespace={currentToolTitle}
-          open={this.props.openModalAndSpecificTab}
+          open={this.props.actions.openModalAndSpecificTab}
           online={this.props.online}
-          changeOnlineStatus={this.props.changeOnlineStatus}
+          changeOnlineStatus={this.props.actions.changeOnlineStatus}
           currentUser={username}
           loggedInUser={loggedInUser}
         />
@@ -49,19 +50,26 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    openModalAndSpecificTab: (loggedInUser, tabkey, sectionKey, visible) => {
-      if (!loggedInUser) {
-        if (tabkey !== 1) {
-          dispatch(openAlertDialog("You must be logged in to use translationCore"));
-          return;
+    actions: {
+      openModalAndSpecificTab: (loggedInUser, tabkey, sectionKey, visible) => {
+        if (!loggedInUser) {
+          if (tabkey !== 1) {
+            dispatch(AlertModalActions.openAlertDialog("You must be logged in to use translationCore"));
+            return;
+          }
         }
+        dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
+      },
+      changeOnlineStatus: (val, first) => {
+        dispatch(coreStoreActions.changeOnlineStatus(val, first));
+      },
+      toggleHomeScreen: () => {
+        dispatch(BodyUIActions.toggleHomeView(true));
+        // Go to overview page
+        dispatch(BodyUIActions.goToStep(0));
       }
-      dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
-    },
-    changeOnlineStatus: (val, first) => {
-      dispatch(coreStoreActions.changeOnlineStatus(val, first));
     }
   };
 };

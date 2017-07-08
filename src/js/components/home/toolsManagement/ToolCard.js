@@ -13,35 +13,31 @@ export default class ToolsCard extends Component {
     }
 
   render() {
-    // let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
-    // let { currentToolName } = this.props;
-    const currentToolName = "translationWords";
+    let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
+    let { loggedInUser } = this.props;
+
     return (
       <MuiThemeProvider>
-        <Card>
+        <Card style={{ margin: "6px 0px 10px" }}>
           <img
             style={{ float: "left", height: "90px", margin: "10px" }}
-            src={window.__base + `src/images/${currentToolName}Banner.png`}
+            src={badgeImagePath}
           />
           <CardHeader
-            title={currentToolName}
+            title={title}
             titleStyle={{ fontWeight: "bold" }}
-            subtitle="Version 1.0.0"
+            subtitle={version}
           /><br />
-          <ToolCardProgress progress={0.5} /><br />
-          <span style={{ fontWeight: "bold", fontSize: "16px", margin: "10px" }}>Description</span>
-          
+          <ToolCardProgress progress={0.5} />
+          <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>Description</span>
           {this.state.showDescription ? 
             (<p style={{ padding: "10px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+              {description}
             </p>) : (<div />)
           }
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div
-              style={{ padding: "10px", fontSize: "18px", cursor: "pointer" }}
+              style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
               onClick={() => this.setState({ showDescription: !this.state.showDescription})}
             >
               <span>{this.state.showDescription ? "See less" : "See more"}</span>
@@ -52,10 +48,10 @@ export default class ToolsCard extends Component {
             </div>
             <button
               className='btn-prime'
-              onClick={() => {this.props.actions.handleSelectTool()}}
+              onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
               style={{ width: '90px', margin: '10px' }}
             >
-              Select
+              Launch
             </button>
           </div>
         </Card>
