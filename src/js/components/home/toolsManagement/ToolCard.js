@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardText } from 'material-ui'
-import { Glyphicon } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// components
+import { Card, CardHeader } from 'material-ui'
+import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 
 export default class ToolsCard extends Component {
-    constructor() {
-      super();
-      this.state = {
-        showDescription: false
-      }
+  constructor() {
+    super();
+    this.state = {
+      showDescription: false
     }
+  }
+
+  componentWillMount() {
+    this.props.actions.getProjectProgressForTools(this.props.metadata.name)
+  }
 
   render() {
-    let { title, version, description, badgeImagePath, folderName, name} = this.props.metadata;
-    let { loggedInUser } = this.props;
+    let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
+    let { loggedInUser, currentProjectToolsProgress } = this.props;
+    let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
 
     return (
       <MuiThemeProvider>
@@ -28,7 +35,7 @@ export default class ToolsCard extends Component {
             titleStyle={{ fontWeight: "bold" }}
             subtitle={version}
           /><br />
-          <ToolCardProgress progress={0.5} />
+          <ToolCardProgress progress={progress} />
           <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>Description</span>
           {this.state.showDescription ? 
             (<p style={{ padding: "10px" }}>
@@ -58,4 +65,11 @@ export default class ToolsCard extends Component {
       </MuiThemeProvider>
     );
   }
+}
+
+ToolsCard.propTypes = {
+  actions: PropTypes.object.isRequired,
+  loggedInUser: PropTypes.bool.isRequired,
+  currentProjectToolsProgress: PropTypes.object.isRequired,
+  metadata: PropTypes.object.isRequired
 }

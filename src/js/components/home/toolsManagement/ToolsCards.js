@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class ToolsCards extends Component {
   render() {
-    const { toolsMetadata, bookName, projectSaveLocation, loggedInUser } = this.props;
+    const {
+      toolsMetadata,
+      bookName,
+      projectSaveLocation,
+      loggedInUser,
+      currentProjectToolsProgress
+    } = this.props;
 
-    if (toolsMetadata.length == 0 ) {
+    if (toolsMetadata.length == 0 || !toolsMetadata) {
       return (
         <MuiThemeProvider>
           <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -45,6 +52,7 @@ class ToolsCards extends Component {
                   actions={this.props.actions}
                   loggedInUser={loggedInUser}
                   metadata={metadata}
+                  currentProjectToolsProgress={currentProjectToolsProgress}
                 />
               );
             })
@@ -53,6 +61,15 @@ class ToolsCards extends Component {
       );
     }
   }
+}
+
+ToolsCards.propTypes = {
+  actions: PropTypes.object.isRequired,
+  toolsMetadata: PropTypes.array.isRequired,
+  bookName: PropTypes.string.isRequired,
+  projectSaveLocation: PropTypes.string.isRequired,
+  loggedInUser: PropTypes.bool.isRequired,
+  currentProjectToolsProgress: PropTypes.object.isRequired
 }
 
 export default ToolsCards;

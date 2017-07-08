@@ -7,11 +7,11 @@ import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
 class ToolsManagementContainer extends Component {
 
   componentWillMount() {
-    this.props.actions.getToolsMetadatas();
     // get instructions
     let instructions = <div>ToolsManagementInstructions</div>;
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
@@ -22,7 +22,7 @@ class ToolsManagementContainer extends Component {
   render() {
     const { toolsMetadata } = this.props.reducers.toolsReducer;
     const { loggedInUser } = this.props.reducers.loginReducer;
-    const { bookName, projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    const { bookName, projectSaveLocation, currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
 
     return (
       <div style={{ height: '100%' }}>
@@ -33,6 +33,7 @@ class ToolsManagementContainer extends Component {
           bookName={bookName}
           loggedInUser={loggedInUser}
           projectSaveLocation={projectSaveLocation}
+          currentProjectToolsProgress={currentProjectToolsProgress}
         />
       </div>
     );
@@ -56,6 +57,9 @@ const mapDispatchToProps = (dispatch) => {
     actions: {
       getToolsMetadatas: () => {
         dispatch(ToolsMetadataActions.getToolsMetadatas());
+      },
+      getProjectProgressForTools: (toolsMetadata) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolsMetadata));
       },
       launchTool: (toolFolderPath, loggedInUser, currentToolName) => {
         if (!loggedInUser) {
