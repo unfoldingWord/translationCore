@@ -15,10 +15,10 @@ test_script:
   - node --version                  # Helpful debugging info
   - npm --version
   - npm test                        # run tests
-before_deploy:                         # run build after tests
+after_test:                         # run build after tests, so that it creates artifacts in time
   - npm install -g electron-forge@3.0.5 # install electron-forge cli
   - npm run make                    # Script to package/compile
-artifacts:                          # Add artifacts to upload
+artifacts:                          # Add artifacts to upload, collected after tests and before deploy
   - path: 'out\make\**\*.exe'       # upload all exe files in ./out/make
     name: exe                       # name to be used in deploy
 deploy:                             # Deploy settings
