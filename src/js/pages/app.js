@@ -62,7 +62,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
       getResourcesFromStaticPackage: () => {
-        dispatch(ResourcesActions.getResourcesFromStaticPackage());
+        ResourcesActions.getResourcesFromStaticPackage();
       }
     }
   };
