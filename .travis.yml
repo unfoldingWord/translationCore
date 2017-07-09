@@ -18,6 +18,7 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
 deploy:                     # Configuration for releases
   provider: releases
+  name: $TRAVIS_TAG         # Name for the release to upload the files
   file_glob: true           # Set the mode for file to use *
   file: out/make/*          # Upload all files generated during make/build
   overwrite: true           # Overwrite the file if it exists
@@ -27,4 +28,4 @@ deploy:                     # Configuration for releases
   on:                       # Tell it when to deploy/release
     tags: true              # We only create a release on tags
   api_key:                  # Github personal access token encrypted with travis encrypt command. Will need to re-encrypt for each repository, not useful for others.
-   secure:                   TBHqs3ecfGX7s3lYsR3zfey/xJYClM9+Vkh+nibiK0HkZRfTLNI/1pHKntf0Mrlr3wH2mVYFRzKa3HSoM1EKiYzoPp2k9NYTUimB+JE+f7wr72asY/Asoo8uZKwR0SaqLIzrXmCgn44xmQO2oVGPSO0/kZ0V7lMik40rBJfc1DHXfpO0vz9dK1Fn17LORG6/FEpqdrIt51GCp4UD867CJUtsD1GUZxOnvrrIG805jV3m0ms37POzKBxFWi3SEn3KBwbmS0aB+vcsphjtvAgIh81D5FKtd8TIj4nAyqcAal8sFjcOOFENhYuhuUOXxnIN3B0YJpPah8pzHpTSU4+VAwvliwl3Jr0xQRU/RRl5eCtbV8pkvu5xYbzL9gfCHS9MIcoGf1npyBB6/SbO8J0/4Gfvi+ZmhjzavoxK5WhrySm3YF4noVxP3kn/Z3bBtXPeCdO1E9csYvvVw8fkwV6UaiBxllhbOUUtnlh4OTrMxord/uu5ZauyD0bMfajFM+6/Md5mHh7JzjLWA37Jnuqs3YSkrs/N8Vq9bfKuBu5saPnXRFIujCwe17u27GUqUTYXd1Hs9V4hOv+K8ZMPn49bcnkggVswNJx1VObpE97Rqu4by81e1BOq1uAGDUVljICkMDubjk/e4NyHhkcSumdTnysyw2DzB=zadmk0Dc7W85Rs=
+   secure: TBHqs3ecfGX7s3lYsR3zfey/xJYClM9+Vkh+nibiK0HkZRfTLNI/1pHKntf0Mrlr3wH2mVYFRzKa3HSoM1EKiYzoPp2k9NYTUimB+JE+f7wr72asY/Asoo8uZKwR0SaqLIzrXmCgn44xmQO2oVGPSO0/kZ0V7lMik40rBJfc1DHXfpO0vz9dK1Fn17LORG6/FEpqdrIt51GCp4UD867CJUtsD1GUZxOnvrrIG805jV3m0ms37POzKBxFWi3SEn3KBwbmS0aB+vcsphjtvAgIh81D5FKtd8TIj4nAyqcAal8sFjcOOFENhYuhuUOXxnIN3B0YJpPah8pzHpTSU4+VAwvliwl3Jr0xQRU/RRl5eCtbV8pkvu5xYbzL9gfCHS9MIcoGf1npyBB6/SbO8J0/4Gfvi+ZmhjzavoxK5WhrySm3YF4noVxP3kn/Z3bBtXPeCdO1E9csYvvVw8fkwV6UaiBxllhbOUUtnlh4OTrMxord/uu5ZauyD0bMfajFM+6/Md5mHh7JzjLWA37Jnuqs3YSkrs/N8Vq9bfKuBu5saPnXRFIujCwe17u27GUqUTYXd1Hs9V4hOv+K8ZMPn49bcnkggVswNJx1VObpE97Rqu4by81e1BOq1uAGDUVljICkMDubjk/e4NyHhkcSumdTnysyw2DzB=zadmk0Dc7W85Rs=
