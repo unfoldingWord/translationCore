@@ -23,7 +23,7 @@ artifacts:                          # Add artifacts to upload
     name: exe                       # name to be used in deploy
 deploy:                             # Deploy settings
   release: $(appveyor_repo_tag_name)  # Use the tag name
-  description: 'Release description'  # Placeholder for prepopulating release description
+  description: $(appveyor_repo_tag_name)  # Placeholder for prepopulating release description
   provider: GitHub                  # Release to Github
   artifacts: exe                    # Release the exe from named artifacts
   draft: true                       # Draft release so it's not public
