@@ -16,7 +16,7 @@ addons:
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
-  - npm install -g electron@1.6.11 # Install electron so that env variables are set
+  - npm install             # Run npm install
   - npm install -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
 deploy:                     # Configuration for releases
   provider: releases
