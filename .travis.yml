@@ -3,9 +3,9 @@ node_js: node               # Use latest version of node.js
 os:                         # Simultaneous environments
   - linux                   # Linux - for testing and future builds
   - osx                     # Mac - for testing and builds
-cache:                      # Speed up builds by caching things
-  directories:              # Add directories relative to root
-  - node_modules            # cache node modules to save 1-3 minutes
+#cache:                      # Speed up builds by caching things
+#  directories:              # Add directories relative to root
+#  - node_modules            # cache node modules to save 1-3 minutes
 before_deploy:              # Run these before attempting to deploy
   - npm install -g electron-forge@3.0.5 # Install electron-forge for build/make
   - npm run make            # Command that builds the app for the architecture
