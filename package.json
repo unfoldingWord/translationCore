@@ -42,6 +42,7 @@
     "babel-cli": "^6.11.4",
     "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
+    "electron-forge": "^3.0.5",
     "electron-mocha": "^4.0.0",
     "electron-prebuilt-compile": "1.6.11",
     "enzyme": "^2.6.0",
