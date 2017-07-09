@@ -16,7 +16,33 @@
     "apps-master": "git submodule foreach --recursive git checkout master"
   },
   "config": {
-    "forge": "./.forge.json"
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": ""
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": ""
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -40,6 +66,9 @@
   "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "chai": "^3.5.0",
     "electron-forge": "^3.0.5",
     "electron-mocha": "^4.0.0",
@@ -55,7 +84,6 @@
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "crypto-js": "^3.1.8",
     "electron-compile": "^6.4.1",
