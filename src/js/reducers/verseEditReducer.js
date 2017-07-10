@@ -1,8 +1,8 @@
 import consts from '../actions/ActionTypes';
 
 const initialState = {
-  before: null,
-  after: null,
+  verseBefore: null,
+  verseAfter: null,
   tags: null,
   userName: null,
   modifiedTimestamp: null
