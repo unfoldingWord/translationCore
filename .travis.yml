@@ -7,7 +7,7 @@ os:                         # Simultaneous environments
 #  directories:              # Add directories relative to root
 #  - node_modules            # cache node modules to save 1-3 minutes
 before_deploy:              # Run these before attempting to deploy
-  - npm install -g electron-forge@3.0.5 # Install electron-forge for build/make
+  - npm run install-electron-forge # Install electron-forge for build/make
   - npm run make            # Command that builds the app for the architecture
 addons:
   apt:

@@ -11,6 +11,7 @@
     "update-version": "node ./scripts/versionScript.js",
     "test": "electron-mocha --renderer ./tests",
     "install-apps": "git submodule update --init --recursive",
+    "install-electron-forge": "npm i -g electron-forge@3.0.5",
     "pull-apps": "npm run apps-master && npm run git-pull",
     "git-pull": "git submodule foreach --recursive git pull",
     "apps-master": "git submodule foreach --recursive git checkout master"
@@ -41,7 +42,6 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
-    "electron-forge": "^3.0.5",
     "electron-mocha": "^4.0.0",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^2.13.1",
