@@ -12,6 +12,7 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 class ToolsManagementContainer extends Component {
 
   componentWillMount() {
+    this.props.actions.getToolsMetadatas();
     // get instructions
     let instructions = <div>ToolsManagementInstructions</div>;
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {

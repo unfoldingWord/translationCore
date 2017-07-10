@@ -56,10 +56,12 @@ class ToolCard extends Component {
       trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
     };
     const containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
+    let progressPercentage = progress * 100 ;
+
     return (
       <Line
         progress={progress}
-        text={ progress * 100 + '%'}
+        text={ progressPercentage.toFixed() + '%'}
         options={options}
         initialAnimate={true}
         containerStyle={containerStyle}

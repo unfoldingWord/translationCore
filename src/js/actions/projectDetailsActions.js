@@ -99,8 +99,6 @@ function getToolProgress(pathToCheckDataFiles) {
       allGroupDataObjects[groupDataFileName.replace('.json', '')] = groupData;
     });
     progress = calculateProgress(allGroupDataObjects);
-  } else {
-    console.error(pathToCheckDataFiles + ", Doesn't exist.");
   }
   return progress;
 }

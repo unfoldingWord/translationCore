@@ -43,7 +43,7 @@ class ToolsCards extends Component {
       );
     } else {
       return (
-        <div style={{ height: '100%', overflowY: 'auto' }}>
+        <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
           {
             toolsMetadata.map((metadata, i) => {
               return (
