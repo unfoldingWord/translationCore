@@ -18,7 +18,7 @@ class Group extends React.Component {
     super(props);
     this.getItemGroupData = this.getItemGroupData.bind(this);
   }
-  
+
 
   groupData(groupsData, groupId) {
     let groupData
@@ -56,19 +56,25 @@ class Group extends React.Component {
   groupItems(groupData) {
     let items = [];
     let index = 0;
+    let selections = [];
+    this.props.selectionsReducer.selections.forEach((selection)=>{
+      selections.push(selection.text);
+    });
     for (var groupItemData of groupData) {
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
       let bookName = this.props.projectDetailsReducer.bookName;
-      if (active){
+      if (active) {
+        //Convert the book name to the abbreviation tit -> Tit
         let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
       }
-      items.push(<GroupItem 
-        statusGlyph={this.statusGlyph(groupItemData.contextId)} 
-        groupMenuHeader={this} 
-        scrollIntoView={this.scrollIntoView} {...this.props} 
-        active={active} {...groupItemData} 
-        key={index} bookName={bookName} />)
+      items.push(<GroupItem
+        statusGlyph={this.statusGlyph(groupItemData.contextId)}
+        groupMenuHeader={this}
+        scrollIntoView={this.scrollIntoView} {...this.props}
+        active={active} {...groupItemData}
+        key={index} bookName={bookName}
+        selectionText={selections.join(" ")} />)
       index++
     }
     return items;
