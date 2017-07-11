@@ -1,16 +1,5 @@
 
 var style = {
-  groupMenuContainer: {
-    backgroundColor: "var(--background-color-dark)",
-    zIndex: "98",
-    fontSize: "12px",
-    overflowX: "hidden",
-    height: "100%",
-    padding: 0,
-    position:"fixed",
-    width:"300px"
-  },
-
   container: {
     backgroundColor: "var(--background-color-dark)",
     height: "100vh",
@@ -85,28 +74,6 @@ var style = {
     fontSize: "16px",
     zIndex: "97",
   },
-
-  slideButton: {
-    float: "right",
-    marginTop: "50vh",
-    zIndex: "999",
-    color: "var(--reverse-color)",
-    backgroundColor: "var(--text-color-dark)",
-    padding: "10px 0",
-    marginRight: "-15px",
-    borderRadius: "0 5px 5px 0"
-  },
-
-  slideButtonCollapsed: {
-    float: "left",
-    marginTop: "50vh",
-    zIndex: "999",
-    color: "var(--reverse-color)",
-    backgroundColor: "var(--text-color-dark)",
-    padding: "10px 0",
-    marginRight: "-15px",
-    borderRadius: "0 5px 5px 0"
-  }
 
 };
 

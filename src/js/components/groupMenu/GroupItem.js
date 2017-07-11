@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { Glyphicon } from 'react-bootstrap'
 import style from './Style';
-const MENU_BAR_HEIGHT = 30;
-const MENU_ITEM_HEIGHT = 38;
 
 class GroupItem extends React.Component {
   /**
@@ -17,7 +15,7 @@ class GroupItem extends React.Component {
 
   componentDidMount() {
     if (this.props.active) {
-      if (this.inView(this.props.groupMenuHeader, this)) {
+      if (this.props.inView(this.props.groupMenuHeader, this)) {
         //If the menu and current check are able to be rendered in the 
         //same window scroll to the group menu item
         this.props.scrollIntoView(this.props.groupMenuHeader);
@@ -31,7 +29,7 @@ class GroupItem extends React.Component {
 
   componentWillReceiveProps(nextProps, context) {
     if (nextProps.active) {
-      if (this.inView(nextProps.groupMenuHeader, this)) {
+      if (this.props.inView(nextProps.groupMenuHeader, this)) {
         //If the menu and current check are able to be rendered in the 
         //same window scroll to the group menu item
         nextProps.scrollIntoView(nextProps.groupMenuHeader);
@@ -41,19 +39,6 @@ class GroupItem extends React.Component {
         nextProps.scrollIntoView(this);
       }
     }
-  }
-
-  /**
-   * @description - Tests if the the two elements are in the scope of the window (scroll bar)
-   * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity 
-   * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
-   * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
-   */
-  inView(groupMenu, currentItem) {
-    var rectGroup = ReactDOM.findDOMNode(groupMenu).getBoundingClientRect();
-    var rectItem = ReactDOM.findDOMNode(currentItem).getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return Math.abs(rectGroup.top - rectItem.top) + MENU_BAR_HEIGHT + MENU_ITEM_HEIGHT <= viewHeight;
   }
 
   onClick() {

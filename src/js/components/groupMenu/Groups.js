@@ -2,38 +2,11 @@ import React from 'react'
 import Group from './Group'
 
 class Groups extends React.Component {
-  /**
-   * @description converts groupsIndex into array of Group components
-   * @param {array} groupsIndex - array of all groupIndex objects
-   * @return {array} groups - array of Group components
-   */
-  groups(groupsIndex) {
-    let groups = <div /> // leave an empty container when required data isn't available
-    let { groupsData } = this.props.groupsDataReducer
-    if (groupsIndex !== undefined) {
-      groups = groupsIndex.filter(groupIndex => {
-        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id)
-      })
-      groups = groups.map(groupIndex => {
-        let { contextId } = this.props.contextIdReducer
-        let groupId = groupIndex.id
-        let active = false
-        if (contextId !== null) {
-          active = contextId.groupId == groupId
-        }
-        return <Group {...this.props} active={active} groupIndex={groupIndex} key={groupIndex.id} />
-      }
-      )
-    }
-    return groups
-  }
 
   render() {
-    let { groupsIndex } = this.props.groupsIndexReducer
-
     return (
       <div style={{ color: "var(--reverse-color)", width: "100%" }}>
-        {this.groups(groupsIndex)}
+        {this.props.groups}
       </div>
     )
   }

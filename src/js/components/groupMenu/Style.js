@@ -1,4 +1,4 @@
- var style = {
+var style = {
   menuItem: {
     heading: {
       normal: {
@@ -62,7 +62,7 @@
   },
 
   subMenuItem: {
-    height:38,
+    height: 38,
     alignItems: 'center',
     display: "flex",
     padding: "10px 0",
@@ -72,8 +72,8 @@
     backgroundColor: "var(--background-color)",
   },
 
-  activeSubMenuItem:  {
-    height:38,
+  activeSubMenuItem: {
+    height: 38,
     alignItems: 'center',
     display: "flex",
     padding: "10px 0",
@@ -81,16 +81,37 @@
     borderBottom: "1px solid var(--background-color-dark)",
     color: "var(--reverse-color)",
     backgroundColor: "var(--accent-color)",
-    zIndex:1
+    zIndex: 1
   },
 
   groupItemText: {
-    textOverflow:'ellipsis',
-    padding:'0px 20px 0px 0px',
-    display:'block',
-    whiteSpace:'nowrap',
-    overflow:'hidden',
-    zIndex:1
+    textOverflow: 'ellipsis',
+    padding: '0px 20px 0px 0px',
+    display: 'block',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    zIndex: 1
+  },
+  slideButton: {
+    float: "right",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
+  },
+
+  slideButtonCollapsed: {
+    float: "left",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
   }
 
 };
