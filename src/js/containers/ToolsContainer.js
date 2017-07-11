@@ -44,7 +44,6 @@ class ToolsContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     toolsReducer: state.toolsReducer,
-    checkStoreReducer: state.checkStoreReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
     loaderReducer: state.loaderReducer,
