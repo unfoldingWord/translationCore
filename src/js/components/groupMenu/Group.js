@@ -131,9 +131,6 @@ class Group extends React.Component {
     return groupData[0];
   }
 
-  onClick() {
-    this.props.actions.changeCurrentContextId(this.props.contextId);
-  }
 
   render() {
     let { groupsData } = this.props.groupsDataReducer
