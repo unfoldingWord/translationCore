@@ -81,6 +81,7 @@
     borderBottom: "1px solid var(--background-color-dark)",
     color: "var(--reverse-color)",
     backgroundColor: "var(--accent-color)",
+    zIndex:1
   },
 
   groupItemText: {
@@ -88,7 +89,8 @@
     padding:'0px 20px 0px 0px',
     display:'block',
     whiteSpace:'nowrap',
-    overflow:'hidden'
+    overflow:'hidden',
+    zIndex:1
   }
 
 };

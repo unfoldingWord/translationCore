@@ -63,9 +63,8 @@ class GroupItem extends React.Component {
   render() {
     let { reference } = this.props.contextId;
     return (
-      <div onClick={this.onClick}
-        style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}
-        title="Click to select this check">
+      <div className="hint--medium" aria-label={this.props.selectionText} onClick={this.onClick} 
+        style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusGlyph}
         <span style={style.groupItemText}>{" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}</span>
       </div>
