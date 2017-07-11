@@ -98,7 +98,8 @@ export function displayTools(manifest) {
     const { currentSettings } = getState().settingsReducer;
     if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(ToolsMetadataActions.getToolsMetadatas());
-      dispatch(ModalActions.selectModalTab(3, 1, true));
+      // Go to toolsCards page
+      dispatch(BodyUIActions.goToStep(3));
     } else {
       dispatch(AlertModalActions.openAlertDialog('You can only load Ephesians or Titus projects for now.', false));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
