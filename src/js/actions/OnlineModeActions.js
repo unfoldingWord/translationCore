@@ -29,7 +29,7 @@ export function checkBox(val) {
  * @description - Intercepts on clicks and checks for http methods
  * @param {function} dispatch - The dispatcher
  */
-export function getATags(dispatch) {
+export function getAnchorTags(dispatch) {
   document.body.onclick = (e) => {
     e = e || event;
     var isLink = findParent('a', e.target || e.srcElement) && e.target.href && e.target.href.includes('http');

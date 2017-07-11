@@ -31,7 +31,7 @@ class Main extends Component {
       localStorage.setItem('version', packageJson.version);
     }
     this.props.actions.getResourcesFromStaticPackage();
-    this.props.actions.getATags()
+    this.props.actions.getAnchorTags()
   }
 
   render() {
@@ -64,8 +64,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       getResourcesFromStaticPackage: () => {
         ResourcesActions.getResourcesFromStaticPackage();
       },
-      getATags: () => {
-        OnlineModeActions.getATags(dispatch);
+      getAnchorTags: () => {
+        OnlineModeActions.getAnchorTags(dispatch);
       }
     }
   };
