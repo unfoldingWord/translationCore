@@ -17,33 +17,36 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
  */
 export function selectTool(moduleFolderName, currentToolName) {
   return ((dispatch) => {
-    const modulePath = path.join(moduleFolderName, 'package.json');
-    const dataObject = fs.readJsonSync(modulePath);
-    const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-    try {
-      // TODO: Remove after homescreen implementation
-      dispatch(ModalActions.showModalContainer(false))
-      dispatch(BodyUIActions.toggleHomeView(true));
-      dispatch({ type: consts.START_LOADING });
-      dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
-      dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-      dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-      dispatch({ type: consts.CLEAR_CONTEXT_ID });
-      dispatch( {
-        type: consts. SET_CURRENT_TOOL_NAME,
-        currentToolName
-      });
-      dispatch({
-        type: consts.SET_CURRENT_TOOL_TITLE,
-        currentToolTitle: dataObject.title
-      });
-      dispatch(saveToolViews(checkArray));
-      // load project data
-      dispatch(ProjectLoadingActions.loadProjectData(currentToolName));
-    } catch (e) {
-      console.warn(e);
-      AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
-    }
+    // TODO: Remove after homescreen implementation
+    dispatch(ModalActions.showModalContainer(false))
+    dispatch(BodyUIActions.toggleHomeView(true));
+    dispatch({ type: consts.START_LOADING });
+    setTimeout(() => {
+      try {
+        const modulePath = path.join(moduleFolderName, 'package.json');
+        const dataObject = fs.readJsonSync(modulePath);
+        const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+        dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
+        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+        dispatch({ type: consts.CLEAR_CONTEXT_ID });
+        dispatch( {
+          type: consts. SET_CURRENT_TOOL_NAME,
+          currentToolName
+        });
+        dispatch({
+          type: consts.SET_CURRENT_TOOL_TITLE,
+          currentToolTitle: dataObject.title
+        });
+        dispatch(saveToolViews(checkArray));
+        // load project data
+        dispatch(ProjectLoadingActions.loadProjectData(currentToolName));
+        dispatch(BodyUIActions.toggleHomeView(false));
+      } catch (e) {
+        console.warn(e);
+        AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
+      }
+    }, 100);
   });
 }
 
