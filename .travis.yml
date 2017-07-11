@@ -8,6 +8,7 @@ os:                         # Simultaneous environments
 #  - node_modules            # cache node modules to save 1-3 minutes
 before_deploy:              # Run these before attempting to deploy
   - npm run install-electron-forge # Install electron-forge for build/make
+  - npm dedupe              # Trim down the dependencies to save space on the end package and dmg
   - npm run make            # Command that builds the app for the architecture
 addons:
   apt:
