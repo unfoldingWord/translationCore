@@ -62,7 +62,9 @@
   },
 
   subMenuItem: {
-    display: "block",
+    height:38,
+    alignItems: 'center',
+    display: "flex",
     padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid var(--background-color-dark)",
@@ -71,13 +73,23 @@
   },
 
   activeSubMenuItem:  {
-    display: "block",
+    height:38,
+    alignItems: 'center',
+    display: "flex",
     padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid var(--background-color-dark)",
     color: "var(--reverse-color)",
     backgroundColor: "var(--accent-color)",
   },
+
+  groupItemText: {
+    textOverflow:'ellipsis',
+    padding:'0px 20px 0px 0px',
+    display:'block',
+    whiteSpace:'nowrap',
+    overflow:'hidden'
+  }
 
 };
 

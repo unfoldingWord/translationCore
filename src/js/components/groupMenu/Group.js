@@ -6,6 +6,7 @@ import GroupItem from './GroupItem'
 import * as Style from './Style'
 import isEqual from 'lodash/isEqual'
 import * as LoadHelpers from '../../helpers/LoadHelpers';
+import * as CheckDataLoadActions from '../../actions/CheckDataLoadActions';
 
 class Group extends React.Component {
   /**
@@ -56,14 +57,19 @@ class Group extends React.Component {
   groupItems(groupData) {
     let items = [];
     let index = 0;
-    let selections = [];
-    this.props.selectionsReducer.selections.forEach((selection)=>{
-      selections.push(selection.text);
-    });
+    let selectionState = JSON.parse(JSON.stringify(this.props));
     for (var groupItemData of groupData) {
+      let selectionsArray = [];
+      selectionState.contextIdReducer.contextId = groupItemData.contextId;
+      let loadPath = CheckDataLoadActions.generateLoadPath(selectionState, 'selections');
+      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId)
+      if (selectionsObject) selectionsObject.selections.forEach((selection) => {
+        selectionsArray.push(selection.text);
+      });
+      let selections = selectionsArray.join(" ")
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
       let bookName = this.props.projectDetailsReducer.bookName;
-      if (active) {
+      if (selections) {
         //Convert the book name to the abbreviation tit -> Tit
         let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
@@ -74,7 +80,7 @@ class Group extends React.Component {
         scrollIntoView={this.scrollIntoView} {...this.props}
         active={active} {...groupItemData}
         key={index} bookName={bookName}
-        selectionText={selections.join(" ")} />)
+        selectionText={selections} />)
       index++
     }
     return items;

@@ -11,7 +11,7 @@ const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
  * @return {string} save path
  */
-function generateLoadPath(state, checkDataName) {
+export function generateLoadPath(state, checkDataName) {
   /**
   * @description output directory
   *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
@@ -45,7 +45,7 @@ function generateLoadPath(state, checkDataName) {
  * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
  */
-function loadCheckData(loadPath, contextId) {
+export function loadCheckData(loadPath, contextId) {
   let checkDataObject
 
   if (loadPath && contextId && fs.existsSync(loadPath)) {
