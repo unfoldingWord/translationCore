@@ -23,7 +23,7 @@ class DisplayContainer extends Component {
         displayContainer = <ProjectsManagementContainer {...this.props} />;
         break;
       case 3:
-        displayContainer = <ToolsManagementContainer {...this.props} />;
+        displayContainer = <ToolsManagementContainer />;
         break;
       default:
         break;
