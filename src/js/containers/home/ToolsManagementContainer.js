@@ -69,7 +69,6 @@ const mapDispatchToProps = (dispatch) => {
           return;
         }
         dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
-        dispatch(BodyUIActions.toggleHomeView());
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
