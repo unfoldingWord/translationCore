@@ -9,6 +9,7 @@ import git from '../components/GitApi.js'
 // actions
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
+import * as CSVExportActions from './CSVExportActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ipcRenderer = require('electron').ipcRenderer;
@@ -220,6 +221,8 @@ export function exportToCSV(projectPath) {
  *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveVerseEditsToCSV(obj, dataFolder, currentToolName, indexObject) {
   return new Promise((resolve, reject) => {
@@ -249,6 +252,8 @@ export function saveVerseEditsToCSV(obj, dataFolder, currentToolName, indexObjec
  *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveCommentsToCSV(obj, dataFolder, currentToolName, indexObject) {
   return new Promise((resolve, reject) => {
@@ -276,6 +281,8 @@ export function saveCommentsToCSV(obj, dataFolder, currentToolName, indexObject)
  *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveSelectionsToCSV(obj, dataFolder, currentToolName, indexObject) {
   return new Promise((resolve, reject) => {
@@ -307,6 +314,8 @@ export function saveSelectionsToCSV(obj, dataFolder, currentToolName, indexObjec
  *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveRemindersToCSV(obj, dataFolder, currentToolName, indexObject) {
   return new Promise((resolve, reject) => {
@@ -334,6 +343,8 @@ export function saveRemindersToCSV(obj, dataFolder, currentToolName, indexObject
  *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject) {
   return new Promise((resolve, reject) => {
@@ -363,9 +374,9 @@ export function saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject)
  *
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
+ * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function addContextIdToCSV(currentRowArray, contextId, username, datetime, indexObject) {
-  if (contextId.groupId == 'astray') debugger;
   let groupName = getGroupName(indexObject, contextId);
   currentRowArray.push(contextId.groupId);
   currentRowArray.push(csvTextCleanUp(groupName));
