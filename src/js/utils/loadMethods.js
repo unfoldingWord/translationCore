@@ -118,9 +118,9 @@ export function loadUserdata() {
 }
 /**
  * @description - Returns the corresponding group name i.e. Metaphor 
- * given the group id such as figs_metaphpr
+ * given the group id such as figs_metaphor
  * @param {array} indexObject - Array of index.json with {id, name} keys
- * @param {object} contextId 
+ * @param {string} groupId - The id of the index object corresponding to tHelps i.e. figs_metaphor
  */
 export function getGroupName(indexObject, groupId) {
   try {
