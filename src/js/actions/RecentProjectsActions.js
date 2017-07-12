@@ -9,7 +9,6 @@ import git from '../components/GitApi.js'
 // actions
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
-import * as CSVExportActions from './CSVExportActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ipcRenderer = require('electron').ipcRenderer;
