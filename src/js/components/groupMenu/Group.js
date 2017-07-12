@@ -22,7 +22,7 @@ class Group extends React.Component {
           />
           {this.props.groupIndex.name}
         </div>
-        {this.props.active && this.props.groupItems ? this.props.groupItems : null}
+        {this.props.active ? this.props.getGroupItems(this)  : null}
       </div>
     );
   }

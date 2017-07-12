@@ -134,14 +134,15 @@ class GroupMenuContainer extends React.Component {
  * @param {bool} active - whether or not the group is active/current
  * @return {array} groupItems - array of groupData mapped to GroupItem components
  */
-  getGroupItemComponents(groupData, groupIndex) {
+  getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
     let items = [];
     let index = 0;
-    let selectionState = JSON.parse(JSON.stringify(this.props));
+    let contextIdReducer = {...this.props.contextIdReducer};
+    let projectDetailsReducer = {...this.props.projectDetailsReducer};
     for (var groupItemData of groupData) {
       let selectionsArray = [];
-      selectionState.contextIdReducer.contextId = groupItemData.contextId;
-      let loadPath = CheckDataLoadActions.generateLoadPath(selectionState, 'selections');
+      contextIdReducer.contextId = groupItemData.contextId;
+      let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
       let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId)
       if (selectionsObject) selectionsObject.selections.forEach((selection) => {
         selectionsArray.push(selection.text);
@@ -156,7 +157,7 @@ class GroupMenuContainer extends React.Component {
       }
       items.push(<GroupItem
         statusGlyph={this.getStatusGlyph(groupItemData.contextId, groupIndex)}
-        groupMenuHeader={this}
+        groupMenuHeader={groupHeaderComponent}
         scrollIntoView={this.scrollIntoView} {...this.props}
         active={active} {...groupItemData}
         key={index} bookName={bookName}
@@ -189,7 +190,10 @@ class GroupMenuContainer extends React.Component {
         }
         let progress = this.generateProgress(groupIndex);
         let currentGroupData = this.getGroupData(groupsData, groupId);
-        return <Group groupItems={this.getGroupItemComponents(currentGroupData, groupIndex)}
+        const getGroupItems = (groupHeaderComponent) => {
+          return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent)
+        }
+        return <Group getGroupItems={getGroupItems}
          {...this.props} groupIndex={groupIndex} active={active} key={groupIndex.id} progress={progress}
          openGroup={() => this.props.actions.changeCurrentContextId(currentGroupData[0].contextId)}
          />
