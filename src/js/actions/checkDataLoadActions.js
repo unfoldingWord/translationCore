@@ -11,7 +11,7 @@ const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
  * @return {string} save path
  */
-function generateLoadPath(state, checkDataName) {
+export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName) {
   /**
   * @description output directory
   *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
@@ -22,11 +22,11 @@ function generateLoadPath(state, checkDataName) {
   * @example chapter - /1
   * @example verse - /3
   */
-  const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-  if (PROJECT_SAVE_LOCATION && state) {
-    let bookAbbreviation = state.contextIdReducer.contextId.reference.bookId;
-    let chapter = state.contextIdReducer.contextId.reference.chapter.toString();
-    let verse = state.contextIdReducer.contextId.reference.verse.toString();
+  const PROJECT_SAVE_LOCATION = projectDetailsReducer.projectSaveLocation;
+  if (PROJECT_SAVE_LOCATION) {
+    let bookAbbreviation = contextIdReducer.contextId.reference.bookId;
+    let chapter = contextIdReducer.contextId.reference.chapter.toString();
+    let verse = contextIdReducer.contextId.reference.verse.toString();
     let loadPath = path.join(
       PROJECT_SAVE_LOCATION,
       CHECKDATA_DIRECTORY,
@@ -45,7 +45,7 @@ function generateLoadPath(state, checkDataName) {
  * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
  */
-function loadCheckData(loadPath, contextId) {
+export function loadCheckData(loadPath, contextId) {
   let checkDataObject
 
   if (loadPath && contextId && fs.existsSync(loadPath)) {
@@ -92,7 +92,7 @@ function loadCheckData(loadPath, contextId) {
 export function loadComments() {
   return (dispatch, getState) => {
     let state = getState();
-    let loadPath = generateLoadPath(state, 'comments');
+    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
     let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (commentsObject) {
       dispatch({
@@ -120,7 +120,7 @@ export function loadComments() {
 export function loadReminders() {
   return (dispatch, getState) => {
     let state = getState();
-    let loadPath = generateLoadPath(state, 'reminders');
+    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
     let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (remindersObject) {
       dispatch({
@@ -148,7 +148,7 @@ export function loadReminders() {
 export function loadSelections() {
   return (dispatch, getState) => {
     let state = getState();
-    let loadPath = generateLoadPath(state, 'selections');
+    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
     let selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (selectionsObject) {
       dispatch({
@@ -176,7 +176,7 @@ export function loadSelections() {
 export function loadVerseEdit() {
   return (dispatch, getState) => {
     let state = getState();
-    let loadPath = generateLoadPath(state, 'verseEdits');
+    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'verseEdits');
     let verseEditsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     if (verseEditsObject) {
       dispatch({
