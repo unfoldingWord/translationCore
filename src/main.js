@@ -18,7 +18,7 @@ let splashScreen;
 
 function createMainWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({icon: 'images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
   mainWindow.webContents.openDevTools();
   var gitFile = 'GitInstaller-32.exe';
@@ -74,7 +74,7 @@ function createMainSplash() {
     height: 600,
     resizable: false,
     autoHideMenuBar: true,
-    icon: 'images/TC_Icon.png',
+    icon: './images/TC_Icon.png',
     frame: false,
     center: true,
     show: false
