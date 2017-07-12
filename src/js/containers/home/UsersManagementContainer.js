@@ -4,6 +4,7 @@ import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
+import * as OnlineModeActions from '../../actions/OnlineModeActions';
 import LoginContainer from './LoginContainer';
 import Logout from '../../components/home/usersManagement/Logout';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -91,6 +92,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       closeAlert: () => {
         dispatch(AlertModalActions.closeAlertDialog());
+      },
+      confirmOnlineAction: (callback) => {
+        dispatch(OnlineModeActions.confirmOnlineAction(callback));
       }
     }
   }
