@@ -117,10 +117,8 @@ export function loadUserdata() {
   return loginReducer;
 }
 
-export function getGroupName(dataFolder, contextId) {
+export function getGroupName(indexObject, contextId) {
   try {
-    let filePath = path.join(dataFolder, 'index' ,contextId.tool, 'index.json')
-    let indexObject = fs.readJsonSync(filePath);
     let groupNameIndex = Object.keys(indexObject).find((index) => {
       return indexObject[index].id == contextId.groupId;
     })
