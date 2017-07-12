@@ -374,10 +374,12 @@ export function saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject)
  *
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
+ * @param {string} username - name coming from projectDetailsReducer i.e. RoyalSix
+ * @param {Date} datetime - Date() object to be parsed which includes time/date
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function addContextIdToCSV(currentRowArray, contextId, username, datetime, indexObject) {
-  let groupName = getGroupName(indexObject, contextId);
+  let groupName = getGroupName(indexObject, contextId.groupId);
   currentRowArray.push(contextId.groupId);
   currentRowArray.push(csvTextCleanUp(groupName));
   currentRowArray.push(contextId.occurrence);

@@ -116,15 +116,20 @@ export function loadUserdata() {
 
   return loginReducer;
 }
-
-export function getGroupName(indexObject, contextId) {
+/**
+ * @description - Returns the corresponding group name i.e. Metaphor 
+ * given the group id such as figs_metaphpr
+ * @param {array} indexObject - Array of index.json with {id, name} keys
+ * @param {object} contextId 
+ */
+export function getGroupName(indexObject, groupId) {
   try {
     let groupNameIndex = Object.keys(indexObject).find((index) => {
-      return indexObject[index].id == contextId.groupId;
+      return indexObject[index].id == groupId;
     })
     return indexObject[groupNameIndex].name;
   } catch (e) {
-    console.warn('Could not find group name for id: ', contextId.groupId)
+    console.warn('Could not find group name for id: ', groupId)
     return "";
   }
 }
