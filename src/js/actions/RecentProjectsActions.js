@@ -7,7 +7,7 @@ import { shell } from 'electron';
 import zipFolder from 'zip-folder';
 import git from '../components/GitApi.js'
 // actions
-import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
+import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
@@ -224,15 +224,15 @@ export function exportToCSV(projectPath) {
 export function saveVerseEditsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "after, before, tags, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
+      let csvString = "after, before, tags, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         let currentRowArray = [];
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
-        currentRowArray.push(csvTextCleanUp(currentRow.after));
-        currentRowArray.push(csvTextCleanUp(currentRow.before));
+        currentRowArray.push(csvTextCleanUp(currentRow.verseAfter));
+        currentRowArray.push(csvTextCleanUp(currentRow.verseBefore));
         currentRowArray.push(csvTextCleanUp(currentRow.tags));
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time);
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, dataFolder);
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'VerseEdits.csv'), csvString);
@@ -253,13 +253,13 @@ export function saveVerseEditsToCSV(obj, dataFolder, currentToolName) {
 export function saveCommentsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
+      let csvString = "text, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
         let currentRowArray = [];
         currentRowArray.push(csvTextCleanUp(currentRow.text));
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, dataFolder)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Comments.csv'), csvString);
@@ -280,7 +280,7 @@ export function saveCommentsToCSV(obj, dataFolder, currentToolName) {
 export function saveSelectionsToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "text, selection/occurrence, selection/occurrences, groupId, contextId/occurrence, quote, bookId, chapter, verse, username, date, time\n";
+      let csvString = "text, selection/occurrence, selection/occurrences, groupId, groupName, contextId/occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const col = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
@@ -289,7 +289,7 @@ export function saveSelectionsToCSV(obj, dataFolder, currentToolName) {
           currentRowArray.push(csvTextCleanUp(currentSelection.text));
           currentRowArray.push(currentSelection.occurrence);
           currentRowArray.push(currentSelection.occurrences);
-          addContextIdToCSV(currentRowArray, col.contextId, username, time)
+          addContextIdToCSV(currentRowArray, col.contextId, username, time, dataFolder)
           csvString += currentRowArray.join(',') + "\n";
         }
       }
@@ -311,13 +311,13 @@ export function saveSelectionsToCSV(obj, dataFolder, currentToolName) {
 export function saveRemindersToCSV(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
-      let csvString = "enabled, groupId, occurrence, quote, bookId, chapter, verse, username, date, time\n";
+      let csvString = "enabled, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
       for (var currentRowObject of obj) {
         const currentRow = currentRowObject.dataObject;
         const { time, username } = currentRowObject;
         let currentRowArray = [];
         currentRowArray.push(currentRow.enabled);
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time)
+        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, dataFolder)
         csvString += currentRowArray.join(',') + "\n";
       }
       fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Reminders.csv'), csvString);
@@ -339,13 +339,13 @@ export function saveGroupsCSVToFs(obj, dataFolder, currentToolName) {
   return new Promise((resolve, reject) => {
     try {
       var time = "";
-      let csvString = "priority, groupId, occurrence, quote, bookId, chapter, verse\n";
+      let csvString = "priority, groupId, groupName, occurrence, quote, bookId, chapter, verse\n";
       for (var col in obj) {
         for (var row in obj[col]) {
           const currentRow = obj[col][row];
           let currentRowArray = [];
           currentRowArray.push(currentRow.priority);
-          addContextIdToCSV(currentRowArray, currentRow.contextId);
+          addContextIdToCSV(currentRowArray, currentRow.contextId, null, null, dataFolder);
           csvString += currentRowArray.join(',') + "\n";
         }
       }
@@ -364,8 +364,10 @@ export function saveGroupsCSVToFs(obj, dataFolder, currentToolName) {
  * @param {object} currentRowArray - current csv row
  * @param {object} contextId - contextID object that needs to go onto the csv row
  */
-export function addContextIdToCSV(currentRowArray, contextId, username, datetime) {
+export function addContextIdToCSV(currentRowArray, contextId, username, datetime, dataFolder) {
+  let groupName = getGroupName(dataFolder, contextId);
   currentRowArray.push(contextId.groupId);
+  currentRowArray.push(csvTextCleanUp(groupName));
   currentRowArray.push(contextId.occurrence);
   currentRowArray.push(csvTextCleanUp(contextId.quote));
   currentRowArray.push(contextId.reference.bookId);

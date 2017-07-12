@@ -8,6 +8,7 @@ import path from 'path-extra';
 import CryptoJS from "crypto-js";
 //  consts declaration
 const PARENT = path.datadir('translationCore');
+const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources/translationHelps');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 export const loadSettings = () => {
@@ -82,7 +83,7 @@ export function loadProjectDataByTypeToExport(dataFolder, projectId, type) {
             let dataObject = fs.readJsonSync(currentDataObjectPath);
             time = time.split('.json')[0];
             const username = dataObject.userName || "Anonymous";
-            checkDataArray.push({dataObject, time, username});
+            checkDataArray.push({ dataObject, time, username });
           }
         }
       }
@@ -114,4 +115,18 @@ export function loadUserdata() {
   }
 
   return loginReducer;
+}
+
+export function getGroupName(dataFolder, contextId) {
+  try {
+    let filePath = path.join(dataFolder, 'index' ,contextId.tool, 'index.json')
+    let indexObject = fs.readJsonSync(filePath);
+    let groupNameIndex = Object.keys(indexObject).find((index) => {
+      return indexObject[index].id == contextId.groupId;
+    })
+    return indexObject[groupNameIndex].name;
+  } catch (e) {
+    console.warn('Could not find group name for id: ', contextId.groupId)
+    return "";
+  }
 }
