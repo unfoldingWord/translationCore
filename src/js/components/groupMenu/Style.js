@@ -89,8 +89,7 @@ var style = {
     padding: '0px 20px 0px 0px',
     display: 'block',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    zIndex: 1
+    overflow: 'hidden'
   },
   slideButton: {
     float: "right",

@@ -7,7 +7,8 @@ var style = {
     zIndex: "99",
     fontSize: "12px",
     overflowY: "auto",
-    width:"100%"
+    width:"100%",
+    overflowX:'hidden'
   },
 
   fixedChevrons: {
