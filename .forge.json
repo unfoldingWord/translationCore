@@ -1,0 +1,31 @@
+{
+  "make_targets": {
+    "win32": [
+      "squirrel"
+    ],
+    "darwin": [
+      "dmg"
+    ],
+    "linux": [
+      "deb"
+    ]
+  },
+  "electronPackagerConfig": {
+    "asar": false,
+    "quiet": true,
+    "icon": "src/images/icon.ico"
+  },
+  "electronInstallerDMG": {
+    "icon": "src/images/icon.icns"
+  },
+  "electronWinstallerConfig": {
+    "name": "translationCore",
+    "setupIcon": "src/images/icon.ico"
+  },
+  "github_repository": {
+    "owner": "klappy",
+    "name": "translationCore",
+    "draft": "true",
+    "prerelease": "true"
+  }
+}
