@@ -7,6 +7,7 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -14,26 +15,32 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
-    debugger;
     const { username } = getState().loginReducer.userdata;
     if (!projectPath) {
-      dispatch(AlertModalActions.openAlertDialog("No project path specified"));
-    } else if (LoadHelpers.isUSFMProject(projectPath)) {
-      dispatch(AlertModalActions.openAlertDialog("translationCore does not support USFM importing"));
+      return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
+    }
+    projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    let manifest, params;
+    let USFMFilePath = LoadHelpers.isUSFMProject(projectPath);
+    if (USFMFilePath) {
+      let {parsedUSFM, direction, targetLanguage} = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
+      dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
+      manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
+      params = LoadHelpers.getUSFMParams(manifest.ts_project.id, projectPath, manifest.target_language.direction);
     } else {
-      projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
-      let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
+      manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
+      params = LoadHelpers.getParams(projectPath, manifest);
+    }
       dispatch(clearLastProject());
-      dispatch(loadProjectDetails(projectPath, manifest));
-      dispatch(TargetLanguageActions.generateTargetBible(projectPath));
-      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+      dispatch(loadProjectDetails(projectPath, manifest, params));
+      if (!USFMFilePath) dispatch(TargetLanguageActions.generateTargetBible(projectPath));
+      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id, USFMFilePath)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
       if (LoadHelpers.projectIsMissingVerses(projectPath, manifest.project.id)) {
         dispatch(confirmOpenMissingVerseProjectDialog(projectPath, manifest))
       } else {
         dispatch(displayTools(manifest));
       }
-    }
   })
 }
 
@@ -67,13 +74,12 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
  */
-export function loadProjectDetails(projectPath, manifest) {
+export function loadProjectDetails(projectPath, manifest, params) {
   return ((dispatch) => {
     LoadHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
-    const params = LoadHelpers.getParams(projectPath, manifest);
     dispatch(ProjectDetailsActions.setProjectParams(params));
   });
 }
