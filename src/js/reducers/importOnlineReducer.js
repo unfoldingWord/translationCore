@@ -13,8 +13,6 @@ const initialState = {
 
 const importOnlineReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGED_IMPORT_VIEW:
-      return { ...state, showOnlineButton: action.view }
     case consts.IMPORT_LINK:
       return { ...state, importLink: action.importLink }
     case consts.RECIEVE_REPOS:

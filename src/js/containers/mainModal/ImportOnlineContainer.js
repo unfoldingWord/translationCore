@@ -100,9 +100,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      changeShowOnlineView: val => {
-        dispatch(importOnlineActions.changeShowOnlineView(val));
-      },
       handleOnlineChange: e => {
         dispatch(importOnlineActions.getLink(e));
       },
