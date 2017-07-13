@@ -1,4 +1,4 @@
- var style = {
+var style = {
   menuItem: {
     heading: {
       normal: {
@@ -62,7 +62,9 @@
   },
 
   subMenuItem: {
-    display: "block",
+    height: 38,
+    alignItems: 'center',
+    display: "flex",
     padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid var(--background-color-dark)",
@@ -70,14 +72,46 @@
     backgroundColor: "var(--background-color)",
   },
 
-  activeSubMenuItem:  {
-    display: "block",
+  activeSubMenuItem: {
+    height: 38,
+    alignItems: 'center',
+    display: "flex",
     padding: "10px 0",
     cursor: "pointer",
     borderBottom: "1px solid var(--background-color-dark)",
     color: "var(--reverse-color)",
     backgroundColor: "var(--accent-color)",
+    zIndex: 1
   },
+
+  groupItemText: {
+    textOverflow: 'ellipsis',
+    padding: '0px 20px 0px 0px',
+    display: 'block',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden'
+  },
+  slideButton: {
+    float: "right",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
+  },
+
+  slideButtonCollapsed: {
+    float: "left",
+    marginTop: "50vh",
+    zIndex: "999",
+    color: "var(--reverse-color)",
+    backgroundColor: "var(--text-color-dark)",
+    padding: "10px 0",
+    marginRight: "-15px",
+    borderRadius: "0 5px 5px 0"
+  }
 
 };
 
