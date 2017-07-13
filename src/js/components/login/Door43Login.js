@@ -69,7 +69,11 @@ class Door43Login extends React.Component {
             <button
               className="btn-second"
               style={{width: "100%", margin: "20px 0px 20px"}}
-              onClick={() => shell.openExternal('https://git.door43.org/user/sign_up')}>
+              onClick={() => {
+                this.props.confirmOnlineAction(()=>{
+                shell.openExternal('https://git.door43.org/user/sign_up')
+                });
+              }}>
                 Create Door43 Account
             </button>
           </div>

@@ -3,6 +3,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as BodyUIActions from './BodyUIActions';
 import gogs from '../components/login/GogsApi.js';
+import * as OnlineModeActions from './OnlineModeActions';
 import { remote } from 'electron';
 // const delclarations
 const { dialog } = remote;
@@ -18,22 +19,24 @@ export function loginLocalUser(localUsername) {
 
 export function loginUser(newUserdata) {
   return (dispatch => {
-    gogs().login(newUserdata).then(newUserdata => {
-      dispatch({
-        type: consts.RECEIVE_LOGIN,
-        userdata: newUserdata
+    dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      gogs().login(newUserdata).then(newUserdata => {
+        dispatch({
+          type: consts.RECEIVE_LOGIN,
+          userdata: newUserdata
+        });
+      }).catch(function (err) {
+        var errmessage = "An error occurred while trying to login";
+        if (err.syscall === "getaddrinfo") {
+          errmessage = "Unable to connect to server";
+        } else if (err.status === 404) {
+          errmessage = "Incorrect Username";
+        } else if (err.status === 401) {
+          errmessage = "Incorrect Password";
+        }
+        dispatch(AlertModalActions.openAlertDialog(errmessage));
       });
-    }).catch(function(err) {
-      var errmessage = "An error occurred while trying to login";
-      if (err.syscall === "getaddrinfo") {
-        errmessage = "Unable to connect to server";
-      } else if (err.status === 404) {
-        errmessage = "Incorrect Username";
-      } else if (err.status === 401) {
-        errmessage = "Incorrect Password";
-      }
-      dispatch(AlertModalActions.openAlertDialog(errmessage));
-    });
+    }));
   });
 }
 
@@ -62,7 +65,11 @@ export function subjectChange(subject) {
 }
 
 export function submitFeedback() {
-  return {
-    type: consts.SUBMIT_FEEDBACK
-  };
+  return ((dispatch) => {
+    dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      dispatch({
+        type: consts.SUBMIT_FEEDBACK
+      });
+    }));
+  });
 }

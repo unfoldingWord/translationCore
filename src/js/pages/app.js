@@ -16,6 +16,7 @@ import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import * as ResourcesActions from '../actions/ResourcesActions';
+import * as OnlineModeActions from '../actions/OnlineModeActions';
 
 import packageJson from '../../../package.json';
 
@@ -30,8 +31,9 @@ class Main extends Component {
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
     }
-    // TODO: Figure out why this breaks thunkMiddleware
-    // this.props.actions.getResourcesFromStaticPackage();
+
+    this.props.actions.getResourcesFromStaticPackage();
+    this.props.actions.getAnchorTags()
   }
 
   render() {
@@ -63,6 +65,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     actions: {
       getResourcesFromStaticPackage: () => {
         ResourcesActions.getResourcesFromStaticPackage();
+      },
+      getAnchorTags: () => {
+        OnlineModeActions.getAnchorTags(dispatch);
       }
     }
   };

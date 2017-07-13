@@ -7,7 +7,8 @@ const initialState = {
     developerMode: false,
     csvSaveLocation: null,
     online: true,
-    toolsSettings: {}
+    toolsSettings: {},
+    onlineMode: false
   }
 };
 
@@ -30,6 +31,8 @@ const settingsReducer = (state = initialState, action) => {
           }
         }
       };
+    case consts.UPDATE_ONLINE_MODE:
+      return { ...state, onlineMode: action.val }
     default:
       return state;
   }
