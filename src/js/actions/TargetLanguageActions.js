@@ -40,6 +40,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
 /**
  * @description generates a target language bible and saves it in the filesystem devided into chapters.
  * @param {string} projectPath - path where the project is located in the filesystem.
+ * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
 export function generateTargetBible(projectPath, USFMTargetLanguage) {
   return ((dispatch, getState) => {
@@ -65,6 +66,7 @@ export function generateTargetBible(projectPath, USFMTargetLanguage) {
         }
       });
     } else {
+      /** USFMTargetLanguage is already parsed in the same format */
       entireBook = USFMTargetLanguage;
     }
     for (var chapter in entireBook) {

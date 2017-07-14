@@ -34,9 +34,9 @@ export function getProjectDirectories() {
       }
     }
   });
-  // return the list of project directories
   return projectDirectories;
 }
+
 
 /**
  *  @description: With the list of project directories, generates an array of project detail objects
@@ -45,7 +45,8 @@ export function getMyProjects() {
   return ((dispatch, getState) => {
     const state = getState();
     const { projectDetailsReducer } = state;
-
+    
+    /**@type {{directoryName: {usfmPath: (false|string)}}} */
     const projectFolders = getProjectDirectories();
     // generate properties needed
     const projects = Object.keys(projectFolders).map(folder => {
@@ -61,6 +62,7 @@ export function getMyProjects() {
       let bookName;
       let target_language = {};
 
+      //Basically checks if the project object is a usfm one
       if (!projectFolders[projectName].usfmPath) {
         const manifestPath = path.join(DEFAULT_SAVE, folder, 'manifest.json');
         const manifest = fs.readJsonSync(manifestPath);
@@ -68,13 +70,13 @@ export function getMyProjects() {
         bookAbbr = manifest.project.id;
         bookName = manifest.project.name;
       } else {
-        
+
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
         const usfmObject = usfmHelper.toJSON(usfmText);
         bookAbbr = usfmObject.headers.id.split(" ")[0];
         bookName = LoadHelpers.convertToFullBookName(bookAbbr);
         target_language.id = usfmObject.headers.id.split(" ")[1];
-        target_language.name =  usfmObject.headers.id.split(" ")[2];
+        target_language.name = usfmObject.headers.id.split(" ")[2];
       }
       const isSelected = projectSaveLocation === projectDetailsReducer.projectSaveLocation;
 
