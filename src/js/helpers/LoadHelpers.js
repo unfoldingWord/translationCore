@@ -167,8 +167,7 @@ export function loadUSFMData(usfmFilePath) {
  * @param {objet} user - The current user loaded
  */
 export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
-    let id = parsedUSFM.headers.id.split(" ")[1];
-    let name = parsedUSFM.headers.id.split(" ")[2];
+    let { id, name } = getIDsFromUSFM(parsedUSFM);
     const defaultManifest = {
         "source_translations": [
             {
@@ -484,4 +483,28 @@ export function getUSFMParams(bookAbbr, projectPath, direction) {
         params.originalLanguage = "greek";
     }
     return params;
+}
+
+export function getIDsFromUSFM(usfmObject) {
+    let bookAbbr, bookName, id, name, direction;
+    try {
+        if (usfmObject.headers.tc) {
+            bookAbbr = usfmObject.headers.id.split(",")[0].trim();
+            bookName = convertToFullBookName(bookAbbr);
+            let languageCodeArray = usfmObject.headers.id.split(",")[1].trim().split('_');
+            id = languageCodeArray[0];
+            name = languageCodeArray[1];
+            direction = languageCodeArray[2];
+        } else {
+            bookAbbr = usfmObject.headers.id.split(" ")[0].trim();
+            bookName = convertToFullBookName(bookAbbr);
+            id = "";
+            name = usfmObject.headers.id.split(" ")[2].trim();
+            direction = 'ltr';
+        }
+    } catch (e) {
+        console.warn(e);
+        return null;
+    }
+    return { bookAbbr, bookName, id, name, direction };
 }

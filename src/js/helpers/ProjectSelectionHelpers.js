@@ -63,9 +63,8 @@ export function getProjectDetailsFromUSFM(usfmFilePath) {
 export function setUpUSFMFolderPath(usfmFilePath) {
   const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-  const bookName = parsedUSFM.book;
-  const language_id = parsedUSFM.headers.id.split(" ")[1].toLowerCase();
-  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${language_id}_${bookName}`);
+  const {name, bookName} = LoadHelpers.getIDsFromUSFM(parsedUSFM);
+  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${name}_${bookName}`);
   const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookName) + '.usfm';
   fs.outputFileSync(newUSFMFilePath, usfmData);
   return newUSFMProjectFolder;
