@@ -1,7 +1,5 @@
 import React from 'react';
 import {Glyphicon} from 'react-bootstrap';
-// components
-import OnlineStatus from "./OnlineStatus";
 
 class StatusBar extends React.Component {
   constructor() {
@@ -83,7 +81,7 @@ class StatusBar extends React.Component {
       },
       child: {
         width: 'auto',
-        float: 'right',
+        float: 'left',
         color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
@@ -95,7 +93,7 @@ class StatusBar extends React.Component {
       },
       childActive: {
         width: 'auto',
-        float: 'right',
+        float: 'left',
         color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
@@ -107,16 +105,13 @@ class StatusBar extends React.Component {
       },
       childRight: {
         width: 'auto',
-        float: 'right',
+        float: 'left',
         paddingRight: 10
       }
     }
     return (
       <div style={styles.container}>
         <div style={styles.inner}>
-          <div style={styles.childRight}>
-            <OnlineStatus {...this.props}/>
-          </div>
           <button onMouseOver={()=>this.onHover(1)} onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1  && this.state.hovered != 1 ? styles.home : styles.homeActive}>
             <Glyphicon glyph={"home"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
             Home

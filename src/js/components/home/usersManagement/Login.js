@@ -4,6 +4,11 @@ import { Glyphicon } from 'react-bootstrap';
 import { shell } from 'electron';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.openDoor43AccountWindow = this.openDoor43AccountWindow.bind(this);
+  }
+  
   infoClickDoor43(e) {
     let positionCoord = e.target;
     let title = <strong>Door43 Information</strong>
@@ -14,7 +19,7 @@ class Login extends Component {
         <br />system for open-licensed biblical material.
         </p>
         <p>
-            It provides free, remote storage and collaboration services
+          It provides free, remote storage and collaboration services
         <br />for creators and translators of biblical content.
         </p>
       </div>
@@ -26,15 +31,17 @@ class Login extends Component {
     let positionCoord = e.target;
     let title = <strong>Local User Information</strong>
     let text = (
-    <div style={{ padding: "0 20px" }}>
-      You can choose to be a local user and keep your identity anonymous.
+      <div style={{ padding: "0 20px" }}>
+        You can choose to be a local user and keep your identity anonymous.
     </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
   }
 
   openDoor43AccountWindow() {
-    shell.openExternal('https://git.door43.org/user/sign_up');
+    this.props.actions.confirmOnlineAction(() => {
+      shell.openExternal('https://git.door43.org/user/sign_up');
+    })
   }
 
   door43Popup() {
@@ -46,13 +53,13 @@ class Login extends Component {
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
-      )
+    )
   }
 
   loginHeaderDoor43() {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-        <img style={{ height: 64, width: 64 }} src="src/images/D43_LOGO.png" />
+        <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
           <span style={{ fontSize: 20, fontWeight: 'bold' }}>Log in With Door43</span>
           <Glyphicon

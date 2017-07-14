@@ -4,54 +4,45 @@ import rimraf from 'rimraf';
 // actions
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as OnlineModeActions from './OnlineModeActions';
 // constants
 const loadOnline = require('../components/LoadOnline');
-
-export function changeShowOnlineView(val) {
-    return ((dispatch, getState) => {
-        var user = getState().loginReducer.userdata
-            dispatch({
-                type: consts.CHANGED_IMPORT_VIEW,
-                view: val,
-                user:user
-            });
-            dispatch(this.updateRepos());
-    });
-}
 
 export function updateRepos() {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata;
-        if (user) {
-            var _this = this;
+        dispatch(OnlineModeActions.confirmOnlineAction(() => {
+            if (user) {
+                var _this = this;
 
-            dispatch(clearLink());
-            dispatch(
-                AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
-            );
+                dispatch(clearLink());
+                dispatch(
+                    AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
+                );
 
-            Gogs().listRepos(user).then((repos) => {
-                dispatch(AlertModalActions.closeAlertDialog());
-                dispatch({
-                    type: consts.RECIEVE_REPOS,
-                    repos: repos
+                Gogs().listRepos(user).then((repos) => {
+                    dispatch(AlertModalActions.closeAlertDialog());
+                    dispatch({
+                        type: consts.RECIEVE_REPOS,
+                        repos: repos
+                    });
+                    dispatch({ type: consts.GOGS_SERVER_ERROR, err: null }); //Equivalent of saying "there is no error, successfull fetch"
+                }).catch((e) => {
+                    console.log(e);
+                    dispatch(AlertModalActions.closeAlertDialog());
+                    dispatch({
+                        type: consts.GOGS_SERVER_ERROR,
+                        err: e
+                    })
                 });
-                dispatch({type: consts.GOGS_SERVER_ERROR, err: null}); //Equivalent of saying "there is no error, successfull fetch"
-            }).catch((e)=>{
-              console.log(e);
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch({
-                type: consts.GOGS_SERVER_ERROR,
-                err: e
-              })
-            });
-        }
+            }
+        }))
     })
 }
 
 export function importOnlineProject(link) {
     return ((dispatch) => {
-
+        dispatch(OnlineModeActions.confirmOnlineAction(() => {
         dispatch(
             AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
         );
@@ -78,8 +69,8 @@ export function importOnlineProject(link) {
                 // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
                 if (!err.text || !err.text.includes("project already exists")) {
                     try {
-                        rimraf(savePath, function () {});
-                    } catch (e) {}
+                        rimraf(savePath, function () { });
+                    } catch (e) { }
                 }
 
                 dispatch(AlertModalActions.openAlertDialog(errmessage));
@@ -90,14 +81,15 @@ export function importOnlineProject(link) {
                 dispatch(ProjectLoadingActions.selectProject(savePath, url));
             }
         });
+        }));
     })
 }
 
 export function getLink(e) {
-  return {
-    type: consts.IMPORT_LINK,
-    importLink: e.target.value
-  };
+    return {
+        type: consts.IMPORT_LINK,
+        importLink: e.target.value
+    };
 }
 
 export function clearLink() {
