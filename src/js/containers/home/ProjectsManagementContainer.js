@@ -11,6 +11,7 @@ import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
+import * as USFMExportActions from '../../actions/USFMExportActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -33,13 +34,13 @@ class ProjectsManagementContainer extends Component {
   }
 
   render() {
-    const {projectDetailsReducer, myProjectsReducer} = this.props.reducers;
+    const { projectDetailsReducer, myProjectsReducer } = this.props.reducers;
     const myProjects = myProjectsReducer.projects;
 
     return (
       <div style={{ height: '100%' }}>
         <MyProjects myProjects={myProjects} actions={this.props.actions} />
-        <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "2000"}}>
+        <div style={{ position: "absolute", bottom: "50px", right: "50px", zIndex: "2000" }}>
           <ProjectsFAB
             homeScreenReducer={this.props.reducers.homeScreenReducer}
             actions={this.props.actions}
@@ -82,9 +83,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(RecentProjectsActions.exportToCSV(projectPath));
       },
       uploadProject: (projectPath) => {
-        const {userdata} = ownProps.reducers.loginReducer
+        const { userdata } = ownProps.reducers.loginReducer
         dispatch(RecentProjectsActions.uploadProject(projectPath, userdata));
-      }
+      },
+      exportToUSFM: (projectPath) => {
+        dispatch(USFMExportActions.exportToUSFM(projectPath));
+      },
     }
   };
 };
