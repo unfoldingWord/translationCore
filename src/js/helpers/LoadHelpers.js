@@ -151,11 +151,9 @@ export function saveProjectInHomeFolder(projectPath) {
  * @description Sets up the folder in the tC save location for a USFM project
  *
  * @param {string} usfmFilePath - Path of the usfm file that has been loaded
- * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
  */
-export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
+export function loadUSFMData(usfmFilePath) {
     const parsedPath = Path.parse(usfmFilePath);
-    const saveFile = Path.join(projectSaveLocation, parsedPath.base);
     const usfmData = fs.readFileSync(usfmFilePath).toString();
     return usfmData
 }

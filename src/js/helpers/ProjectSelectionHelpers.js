@@ -1,5 +1,10 @@
+//fs modules
+import * as fs from 'fs-extra';
+import Path from 'path-extra';
+//constants
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
+//helpers
 import * as LoadHelpers from './LoadHelpers';
-
 
 /**
  * Retrieves tC manifest and returns it or if not available looks for tS manifest. 
@@ -40,14 +45,28 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
  * Gets neccesarry details in order to load a project from usfm that are not available
  * through the standard loading process.
  * @param {string} usfmFilePath - File path to the usfm being selected for the project
- * @param {string} projectPath - Path location in the filesystem for the project.
  * @return
  */
-export function getProjectDetailsFromUSFM(usfmFilePath, projectPath) {
-  const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectPath);
+export function getProjectDetailsFromUSFM(usfmFilePath) {
+  const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
   const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
   /** hard coded due to unknown direction type from usfm */
   const direction = 'ltr';
   return { parsedUSFM, direction, targetLanguage };
+}
+
+/**
+ * Sets up and returns a tC project folder in ~/translationCore/{languageID_bookName}/{bookName}.usfm
+ * @param {string} usfmFilePath - File path to the usfm being selected for the project
+ */
+export function setUpUSFMFolderPath(usfmFilePath) {
+  const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
+  const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
+  const bookName = parsedUSFM.book;
+  const language_id = parsedUSFM.headers.id.split(" ")[1].toLowerCase();
+  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${language_id}_${bookName}`);
+  const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookName) + '.usfm';
+  fs.outputFileSync(newUSFMFilePath, usfmData);
+  return newUSFMProjectFolder;
 }
