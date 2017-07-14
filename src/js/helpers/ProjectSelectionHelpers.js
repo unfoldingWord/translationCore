@@ -1,5 +1,13 @@
 import * as LoadHelpers from './LoadHelpers';
 
+
+/**
+ * Retrieves tC manifest and returns it or if not available looks for tS manifest. 
+ * If neither are available tC has no way to load the project, unless its a usfm project.
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * @param {string} username - Current username of user logged in.
+ */
 export function getProjectManifest(projectPath, projectLink, username) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
@@ -10,6 +18,15 @@ export function getProjectManifest(projectPath, projectLink, username) {
   return manifest;
 }
 
+/**
+ * Retrieves tC manifest and returns it or if not available creates
+ * tC manifest from data available in usfm.
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
+ * @param {object} parsedUSFM - USFM parsed using usfm-parser module includes headers and usfm chapter content.
+ * @param {string} direction - Direction of target language reading style i.e. 'ltr'.
+ * @param {string} username - Current username of user logged in.
+ */
 export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
@@ -19,11 +36,18 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   return manifest;
 }
 
+/**
+ * Gets neccesarry details in order to load a project from usfm that are not available
+ * through the standard loading process.
+ * @param {string} usfmFilePath - File path to the usfm being selected for the project
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ * @return
+ */
 export function getProjectDetailsFromUSFM(usfmFilePath, projectPath) {
   const usfmData = LoadHelpers.setUpUSFMProject(usfmFilePath, projectPath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
   const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
+  /** hard coded due to unknown direction type from usfm */
   const direction = 'ltr';
-  //No way to know for now
-  return {parsedUSFM, direction, targetLanguage};
+  return { parsedUSFM, direction, targetLanguage };
 }

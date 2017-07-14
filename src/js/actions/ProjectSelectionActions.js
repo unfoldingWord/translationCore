@@ -7,12 +7,16 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
-import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 
 
+/**
+ * Wrapper function to initate selection of a project from path.
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
+ */
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
     const { username } = getState().loginReducer.userdata;
@@ -21,15 +25,17 @@ export function selectProject(projectPath, projectLink) {
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, params, targetLanguage;
+    /**@type {String} */
     let USFMFilePath = LoadHelpers.isUSFMProject(projectPath);
+    //If present proceed to usfm loading process
     if (USFMFilePath) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let {parsedUSFM, direction} = usfmProjectObject;
       targetLanguage = usfmProjectObject.targetLanguage;
-      dispatch(ResourcesActions.addNewBible('targetLanguage', targetLanguage));
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
       params = LoadHelpers.getUSFMParams(manifest.ts_project.id, projectPath, manifest.target_language.direction);
     } else {
+      //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
       params = LoadHelpers.getParams(projectPath, manifest);
