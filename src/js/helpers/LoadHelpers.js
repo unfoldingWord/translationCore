@@ -8,6 +8,7 @@ const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources'
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
+const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static', 'originalLanguage');
 
 /**
  *
@@ -150,11 +151,9 @@ export function saveProjectInHomeFolder(projectPath) {
  * @description Sets up the folder in the tC save location for a USFM project
  *
  * @param {string} usfmFilePath - Path of the usfm file that has been loaded
- * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
  */
-export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
+export function loadUSFMData(usfmFilePath) {
     const parsedPath = Path.parse(usfmFilePath);
-    const saveFile = Path.join(projectSaveLocation, parsedPath.base);
     const usfmData = fs.readFileSync(usfmFilePath).toString();
     return usfmData
 }
@@ -167,8 +166,9 @@ export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {objet} user - The current user loaded
  */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
-    const name = user ? user.username : 'Unknown';
+export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
+    let id = parsedUSFM.headers.id.split(" ")[1];
+    let name = parsedUSFM.headers.id.split(" ")[2];
     const defaultManifest = {
         "source_translations": [
             {
@@ -182,14 +182,21 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
         tcInitialized: true,
         target_language: {
             direction: direction,
-            id: "",
-            name: name
+            id,
+            name
         },
         project_id: parsedUSFM.book,
+        project: {
+            id: parsedUSFM.book,
+            name: convertToFullBookName(parsedUSFM.book)
+        },
         ts_project: {
             id: parsedUSFM.book,
             name: convertToFullBookName(parsedUSFM.book)
-        }
+        },
+        "checkers": [
+            username
+        ]
     }
     return defaultManifest;
 }
@@ -237,9 +244,9 @@ export function getParams(path, manifest) {
     if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
         return null;
     }
-    const ogPath = Path.join(window.__base, 'static', 'originalLanguage');
+
     let params = {
-        'originalLanguagePath': ogPath
+        'originalLanguagePath': ORIGINAL_LANGUAGE_PATH
     }
     const UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
     params.targetLanguagePath = path;
@@ -307,14 +314,14 @@ export function formatTargetLanguage(parsedUSFM) {
 export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
-        const ext = projectPath.split(".")[1];
-        if (ext == "usfm" || ext == "sfm") return projectPath;
+        const ext = projectPath.split(".")[1].toLowerCase();
+        if (ext == "usfm" || ext == "sfm" || ext == "txt") return projectPath;
     } catch (e) {
         try {
             let dir = fs.readdirSync(projectPath);
             for (let i in dir) {
-                const ext = dir[i].split(".")[1];
-                if (ext == "usfm" || ext == "sfm") return Path.join(projectPath, dir[i]);
+                const ext = dir[i].split(".")[1].toLowerCase();
+                if (ext == "usfm" || ext == "sfm" || ext == "txt") return Path.join(projectPath, dir[i]);
             }
             return false;
         } catch (err) {
@@ -427,16 +434,21 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function projectHasMergeConflicts(projectPath, bookAbbr) {
-    let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
-    for (var currentChapterFile of currentFolderChapters) {
-        let currentChapter = Path.parse(currentChapterFile).name;
-        if (!parseInt(currentChapter)) continue;
-        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+export function projectHasMergeConflicts(projectPath, bookAbbr, usfmFilePath) {
+    if (!usfmFilePath) {
+        let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+        for (var currentChapterFile of currentFolderChapters) {
+            let currentChapter = Path.parse(currentChapterFile).name;
+            if (!parseInt(currentChapter)) continue;
+            let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
             let fileContents = JSON.stringify(currentChapterObject);
             if (~fileContents.indexOf('<<<<<<<')) {
                 return true;
+            }
         }
+    } else {
+        let usfmText = fs.readFileSync(usfmFilePath);
+        return ~usfmText.indexOf('<<<<<<<');
     }
     return false;
 }
@@ -449,4 +461,27 @@ export function migrateAppsToDotApps(projectPath) {
     if (projectDir.includes('apps')) {
         fs.renameSync(Path.join(projectPath, 'apps'), Path.join(projectPath, '.apps'));
     }
+}
+
+
+/**
+* @description Set ups a tC project parameters for a usfm project
+* @param {string} bookAbbr - Book abbreviation
+* @param {path} projectPath - Path of the usfm project being loaded
+* @param {path} direction - Reading direction of the project books
+* @return {object} action object.
+*/
+export function getUSFMParams(bookAbbr, projectPath, direction) {
+    let params = {
+        originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
+        targetLanguagePath: projectPath,
+        direction: direction,
+        bookAbbr: bookAbbr
+    };
+    if (isOldTestament(bookAbbr)) {
+        params.originalLanguage = "hebrew";
+    } else {
+        params.originalLanguage = "greek";
+    }
+    return params;
 }
