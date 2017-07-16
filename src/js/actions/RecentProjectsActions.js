@@ -73,8 +73,8 @@ export function uploadProject(projectPath, user) {
                     <div>
                       <span>
                         <span style={{ fontWeight: 'bold' }}>{user.username + ", "}</span>
-                        {"your project was uploaded successfully to:"}
-                        <a onClick={() => {
+                        {"your project was uploaded successfully to: "}
+                        <a style={{cursor: 'pointer'}} onClick={() => {
                           dispatch(OnlineModeActions.confirmOnlineAction(() => {
                             shell.openExternal('https://git.door43.org/' + user.username + '/' + projectName)
                           }))
