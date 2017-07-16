@@ -313,14 +313,14 @@ export function formatTargetLanguage(parsedUSFM) {
 export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
-        const ext = projectPath.split(".")[1];
-        if (ext == "usfm" || ext == "sfm") return projectPath;
+        const ext = projectPath.split(".")[1].toLowerCase();
+        if (ext == "usfm" || ext == "sfm" || ext == "txt") return projectPath;
     } catch (e) {
         try {
             let dir = fs.readdirSync(projectPath);
             for (let i in dir) {
-                const ext = dir[i].split(".")[1];
-                if (ext == "usfm" || ext == "sfm") return Path.join(projectPath, dir[i]);
+                const ext = dir[i].split(".")[1].toLowerCase();
+                if (ext == "usfm" || ext == "sfm" || ext == "txt") return Path.join(projectPath, dir[i]);
             }
             return false;
         } catch (err) {

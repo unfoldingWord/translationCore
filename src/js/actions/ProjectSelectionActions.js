@@ -81,6 +81,7 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  * @description loads and set the projects details into the projectDetailsReducer.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
+ * @param {object} params - parameters defining a projects detals, similiar to metadata.
  */
 export function loadProjectDetails(projectPath, manifest, params) {
   return ((dispatch) => {
