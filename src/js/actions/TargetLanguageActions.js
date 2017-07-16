@@ -1,6 +1,8 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+// helpers
+import {getBibleIndex} from '../helpers/ResourcesHelpers';
 // constant declarations
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
 
@@ -42,42 +44,48 @@ export function loadTargetLanguageChapter(chapterNumber) {
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
-export function generateTargetBible(projectPath, USFMTargetLanguage) {
+export function generateTargetBible(projectPath, bookData = {}) {
   return ((dispatch, getState) => {
-    let bookAbbreviation = getState().projectDetailsReducer.params.bookAbbr;
-    let manifest = getState().projectDetailsReducer.manifest;
-    let targetBiblePath = path.join(projectPath, bookAbbreviation);
-    let entireBook, joinedChunk = {};
-    let finishedChunks = getState().projectDetailsReducer.manifest.finished_chunks;
-    if (!USFMTargetLanguage) {
-      finishedChunks.forEach((element, index) => {
-        let reference = element.split('-');
-        let chapterNumber = reference[0];
-        let fileName = reference[1] + ".txt";
-        let filePath = path.join(projectPath, chapterNumber, fileName);
-        if (fs.existsSync(filePath)) {
-          let text = fs.readFileSync(filePath);
-          let currentChunk = parseTargetLanguage(text.toString());
-          Object.keys(currentChunk.verses).forEach(function (key) {
-            if (parseInt(key) === 1) joinedChunk = {};
-            joinedChunk[key] = currentChunk.verses[key];
-            entireBook[parseInt(chapterNumber)] = joinedChunk;
+    const state = getState();
+    const bookAbbreviation = state.projectDetailsReducer.params.bookAbbr;
+    /** USFMTargetLanguage is already parsed in the same format */
+    if (Object.keys(bookData).length == 0) {
+      const bibleIndex = getBibleIndex('ulb-en', 'v6');
+      const chapters = Object.keys(bibleIndex[bookAbbreviation]);
+      chapters.forEach( chapterNumber => {
+        let chapterData = {};
+        const chapterNumberString = (chapterNumber < 10) ? '0' + chapterNumber.toString() : chapterNumber.toString();
+        const chapterPath = path.join(projectPath, chapterNumberString);
+        const chapterPathExists = fs.existsSync(chapterPath);
+        if (chapterPathExists) {
+          const files = fs.readdirSync(chapterPath);
+          files.forEach( file => {
+            if (file.match(/\d+.txt/)) {
+              const chunkPath = path.join(chapterPath, file);
+              const text = fs.readFileSync(chunkPath);
+              const currentChunk = parseTargetLanguage(text.toString());
+              Object.keys(currentChunk.verses).forEach(function (key) {
+                chapterData[key] = currentChunk.verses[key];
+                bookData[parseInt(chapterNumber)] = chapterData;
+              });
+            }
           });
         }
       });
-    } else {
-      /** USFMTargetLanguage is already parsed in the same format */
-      entireBook = USFMTargetLanguage;
     }
-    for (var chapter in entireBook) {
+    const manifest = state.projectDetailsReducer.manifest;
+    const targetBiblePath = path.join(projectPath, bookAbbreviation);
+    debugger
+    for (var chapter in bookData) {
       if (!parseInt(chapter)) continue;
       let fileName = chapter + '.json';
-      fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
+      const targetBiblePath = path.join(projectPath, bookAbbreviation);
+      fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter]);
     }
     // generating and saving manifest file for target language bible.
     generateTartgetLanguageManifest(manifest, targetBiblePath);
     // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
-    archiveSourceFiles(finishedChunks, projectPath);
+    archiveSourceFiles(projectPath, bookAbbreviation);
   });
 }
 
@@ -132,17 +140,26 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
 
 /**
  * @description helper function that Moves bible source files from project's root folder to '.apps/translationCore/importedSource'.
- * @param {array} finishedChunks - list of all finished chunks.
  * @param {string} projectPath - project save location / path.
+ * @param {string} bookAbbreviation - the directory name of the book so we don't move it
  */
-function archiveSourceFiles(finishedChunks, projectPath) {
-  if (finishedChunks) finishedChunks.forEach((element, index) => {
-    let reference = element.split('-');
-    let chapterNumber = reference[0];
-    let sourcePath = path.join(projectPath, chapterNumber);
-    try {
-      fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, chapterNumber));
-    } catch (err) {
-    }
-  });
+function archiveSourceFiles(projectPath, bookAbbreviation) {
+  fs.readdirSync(projectPath)
+    // make sure it is a directory and a chapter number
+    .forEach( file => {
+      const isDirectory = fs.lstatSync(path.join(projectPath, file)).isDirectory()
+      const isBookAbbreviation = file === bookAbbreviation;
+      const isDotFile = !!file.match(/^\./);
+      const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm')
+      const shouldMove = isUSFM || (isDirectory && !isBookAbbreviation && !isDotFile);
+      if (shouldMove) {
+        const directory = file;
+        const sourcePath = path.join(projectPath, directory);
+        try {
+          fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, directory));
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    });
 }
