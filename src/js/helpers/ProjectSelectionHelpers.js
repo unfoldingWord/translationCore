@@ -50,10 +50,9 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
 export function getProjectDetailsFromUSFM(usfmFilePath) {
   const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-  const targetLanguage = LoadHelpers.formatTargetLanguage(parsedUSFM);
   /** hard coded due to unknown direction type from usfm */
   const direction = 'ltr';
-  return { parsedUSFM, direction, targetLanguage };
+  return { parsedUSFM, direction };
 }
 
 /**
@@ -63,10 +62,9 @@ export function getProjectDetailsFromUSFM(usfmFilePath) {
 export function setUpUSFMFolderPath(usfmFilePath) {
   const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-  const bookName = parsedUSFM.book;
-  const language_id = parsedUSFM.headers.id.split(" ")[1].toLowerCase();
-  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${language_id}_${bookName}`);
-  const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookName) + '.usfm';
+  const {id, bookName, bookAbbr} = LoadHelpers.getIDsFromUSFM(parsedUSFM);
+  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${id.toLowerCase()}_${bookAbbr.toLowerCase()}_usfm`);
+  const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookAbbr) + '.usfm';
   fs.outputFileSync(newUSFMFilePath, usfmData);
   return newUSFMProjectFolder;
 }

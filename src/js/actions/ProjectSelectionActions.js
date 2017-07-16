@@ -31,7 +31,7 @@ export function selectProject(projectPath, projectLink) {
     if (USFMFilePath) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let {parsedUSFM, direction} = usfmProjectObject;
-      targetLanguage = usfmProjectObject.targetLanguage;
+      targetLanguage = parsedUSFM;
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
       params = LoadHelpers.getUSFMParams(manifest.ts_project.id, projectPath, manifest.target_language.direction);
     } else {

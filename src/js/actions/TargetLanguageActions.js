@@ -70,7 +70,7 @@ export function generateTargetBible(projectPath, USFMTargetLanguage) {
       entireBook = USFMTargetLanguage;
     }
     for (var chapter in entireBook) {
-      if (!parseInt(chapter)) continue;
+      if (isNaN(chapter)) continue;
       let fileName = chapter + '.json';
       fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
     }
