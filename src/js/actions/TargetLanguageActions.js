@@ -40,27 +40,31 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 /**
- * @description generates a target language bible and saves it in the filesystem devided into chapters.
+ * @description generates a target language bible and saves it in the filesystem devided into chapters, assumes tS project
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
 export function generateTargetBible(projectPath, bookData = {}) {
+  /** bookData is already parsed in the same format passed from USFM */
   return ((dispatch, getState) => {
     const state = getState();
     const bookAbbreviation = state.projectDetailsReducer.params.bookAbbr;
-    /** USFMTargetLanguage is already parsed in the same format */
+    // only parse if bookData isn't already populated
     if (Object.keys(bookData).length == 0) {
+      // get the bibleIndex to get the list of expected chapters
       const bibleIndex = getBibleIndex('ulb-en', 'v6');
       const chapters = Object.keys(bibleIndex[bookAbbreviation]);
       chapters.forEach( chapterNumber => {
-        let chapterData = {};
+        let chapterData = {}; // empty chapter to populate
+        // 0 padding for single digit chapters
         const chapterNumberString = (chapterNumber < 10) ? '0' + chapterNumber.toString() : chapterNumber.toString();
         const chapterPath = path.join(projectPath, chapterNumberString);
+        // the chapter may not be populated and there is a key called 'chapters' in the index
         const chapterPathExists = fs.existsSync(chapterPath);
         if (chapterPathExists) {
-          const files = fs.readdirSync(chapterPath);
+          const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
           files.forEach( file => {
-            if (file.match(/\d+.txt/)) {
+            if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
               const chunkPath = path.join(chapterPath, file);
               const text = fs.readFileSync(chunkPath);
               const currentChunk = parseTargetLanguage(text.toString());
@@ -75,9 +79,9 @@ export function generateTargetBible(projectPath, bookData = {}) {
     }
     const manifest = state.projectDetailsReducer.manifest;
     const targetBiblePath = path.join(projectPath, bookAbbreviation);
-    debugger
+    // now that bookData is populated or passed in, let's save it to the fs as chapter level json files
     for (var chapter in bookData) {
-      if (!parseInt(chapter)) continue;
+      if (!parseInt(chapter)) continue; // only import integer based data, there are other files
       let fileName = chapter + '.json';
       const targetBiblePath = path.join(projectPath, bookAbbreviation);
       fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter]);
@@ -144,17 +148,20 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
  * @param {string} bookAbbreviation - the directory name of the book so we don't move it
  */
 function archiveSourceFiles(projectPath, bookAbbreviation) {
+  // get all of the directories/files in the projectPath
   fs.readdirSync(projectPath)
-    // make sure it is a directory and a chapter number
     .forEach( file => {
+      // check for conditions in which we need to archive
       const isDirectory = fs.lstatSync(path.join(projectPath, file)).isDirectory()
       const isBookAbbreviation = file === bookAbbreviation;
       const isDotFile = !!file.match(/^\./);
       const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm')
+      // build the condition to move
       const shouldMove = isUSFM || (isDirectory && !isBookAbbreviation && !isDotFile);
       if (shouldMove) {
         const directory = file;
         const sourcePath = path.join(projectPath, directory);
+        // try to move the directories and log the errors
         try {
           fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, directory));
         } catch (err) {
