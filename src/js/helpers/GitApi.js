@@ -4,13 +4,12 @@
  *              git installed on an users computer.
  * @param {string} directory - The path of the git repo.
  * @return {Object} An internal api
- * @TODO: Move to utils not components
+ * @TODO: Refactor using https://github.com/nodegit/nodegit
  **/
-function GitApi(directory) {
-  var remote = require('electron').remote;
-  var {dialog} = remote;
-  var git = require('simple-git')(directory);
+import simpleGit from 'simple-git';
 
+function GitApi(directory) {
+  var git = simpleGit(directory);
 
   return {
     /**
@@ -18,6 +17,7 @@ function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     init: function(callback) {
+      console.log('Initializing Git repository for project.');
       git.init(false, callback);
     },
     /**
@@ -125,19 +125,14 @@ function GitApi(directory) {
      */
     save: function(user, message, path, callback) {
       var _this = this;
-        _this.add(function(err, data) {
-          if (err) {
-            callback(err);
-          }
-          _this.commit(user, message, function(err) {
-            if (err) {
-              callback(err);
-            }
-            if (callback) {
-              callback(null);
-            }
-          });
+      _this.init();
+      _this.add(function(err) {
+        if (err) callback(err);
+        _this.commit(user, message, function(err) {
+          if (err) callback(err);
+          if (callback) callback(null);
         });
+      });
     },
     revparse: function(options, callback){
       return git.revparse(options, callback);
