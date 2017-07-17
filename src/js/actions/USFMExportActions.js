@@ -24,7 +24,7 @@ export function exportToUSFM(projectPath) {
       /**Name of project*/
       let projectName = Path.parse(projectPath).base;
       /**File path from save dialog*/
-      let filePath = getFilePath(projectPath, projectName, usfmSaveLocation);
+      let filePath = getFilePath(projectName, usfmSaveLocation);
       /**Getting new projet name to save incase the user changed the save file name*/
       projectName = Path.parse(filePath).base.replace('.usfm', '');
       dispatch(displayLoadingUSFMAlert(filePath, projectName));
@@ -61,7 +61,7 @@ export function setUpUSFMJSONObject(projectPath) {
   let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;
   let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.id}_${manifest.target_language.direction}`
   /**Date object when project was las changed in FS */
-  let lastEdited = fs.statSync(projectPath).atime;
+  let lastEdited = fs.statSync(path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   usfmJSONObject.book = LoadHelpers.convertToFullBookName(bookName);
   usfmJSONObject.id = `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}`;
@@ -99,12 +99,11 @@ export function displayLoadingUSFMAlert(filePath, projectName) {
 /**
  * Prompts the user to enter a location/name to save the usfm project.
  * Returns the path to save.
- * @param {string} projectPath - Path location in the filesystem for the project.
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
  * when saving)
  * @param {string} usfmSaveLocation - The last save loccation from the user. Coming from the settings reducer.
  */
-export function getFilePath(projectPath, projectName, usfmSaveLocation) {
+export function getFilePath(projectName, usfmSaveLocation) {
   /**Path to save the usfm file @type {string}*/
   let defaultPath;
   if (usfmSaveLocation) {
