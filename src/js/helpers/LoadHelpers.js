@@ -7,7 +7,7 @@ import * as ResourcesHelpers from './ResourcesHelpers';
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
 const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static', 'originalLanguage');
 
 /**

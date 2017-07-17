@@ -12,7 +12,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the

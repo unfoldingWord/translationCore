@@ -23,7 +23,7 @@ import packageJson from '../../../package.json';
 class Main extends Component {
 
   componentWillMount() {
-    const tCDir = path.join(path.homedir(), 'translationCore');
+    const tCDir = path.join(path.homedir(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 

@@ -33,7 +33,7 @@ module.exports = (function() {
 
     if (expression.test(url)) {
       var projectName = expression.exec(url)[2];
-      var savePath = path.join(pathex.homedir(), 'translationCore', projectName);
+      var savePath = path.join(pathex.homedir(), 'translationCore','projects', projectName);
     } else {
       if (callback) {
         callback({type: "custom", text: 'The URL does not reference a valid project'}, null, url)
