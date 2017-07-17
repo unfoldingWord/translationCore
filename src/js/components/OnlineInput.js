@@ -1,16 +1,11 @@
-/**
- * @description: The file handles the submit box for a git url to be cloned.
- */
-
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {FormGroup, FormControl, Glyphicon, InputGroup} from 'react-bootstrap';
-import {CircularProgress} from 'material-ui';
 
 class OnlineInput extends React.Component {
 
   render() {
-    let {load, onChange, importLink} = this.props;
+    let { load, onChange, importLink } = this.props;
     return (
       <MuiThemeProvider>
         <FormGroup controlId="onlineInput">

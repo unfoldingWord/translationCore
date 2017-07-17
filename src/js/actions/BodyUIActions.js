@@ -70,6 +70,18 @@ export const goToStep = stepNumber => {
 
 export const toggleProjectsFAB = () => {
   return {
-    type: consts.TOGGLE_PROJECTS_FAB,
+    type: consts.TOGGLE_PROJECTS_FAB
   };
 } 
+
+export const openOnlineImportModal = () => {
+  return {
+    type: consts.OPEN_ONLINE_IMPORT_MODAL
+  };
+}
+
+export const closeOnlineImportModal = () => {
+  return {
+    type: consts.CLOSE_ONLINE_IMPORT_MODAL
+  };
+}

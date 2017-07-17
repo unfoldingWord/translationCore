@@ -9,7 +9,8 @@ const initialState = {
     finished: false,
     stepIndex: 0
   },
-  showFABOptions: false
+  showFABOptions: false,
+  onlineImportModalVisibility: true
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -49,6 +50,16 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         showFABOptions: !state.showFABOptions
+      }
+    case consts.OPEN_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: true
+      }
+    case consts.CLOSE_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: false
       }
     default:
       return state;

@@ -13,17 +13,12 @@ class ProjectFAB extends Component {
 
     const buttonsMetadata = [
       {
-        action: () => {console.log("hello1")},
-        buttonLabel: "Import From URL",
-        glyph: "link"
-      },
-      {
         action: () => {this.props.actions.selectLocalProjectToLoad()},
         buttonLabel: "Import Local Project",
         glyph: "folder-open"
       },
       {
-        action: () => {console.log("hello3")},
+        action: () => {this.props.actions.openOnlineImportModal()},
         buttonLabel: "Import Online Project",
         glyph: "cloud-download"
       }
