@@ -90,7 +90,10 @@ export const toggleProjectsFAB = () => {
     type: consts.TOGGLE_PROJECTS_FAB,
   };
 }
-
+/**
+ * Determines if the next button is diabled or not, dispatches result based on 
+ * user completed actions relevant to step
+ */
 export const getStepperNextButtonIsDisabled = () => {
   return ((dispatch, getState) => {
     let state = getState();
