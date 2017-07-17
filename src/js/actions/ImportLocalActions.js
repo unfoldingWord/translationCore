@@ -7,13 +7,16 @@ import { remote } from 'electron';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
+//helpers
+import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
-    <span style={{ color: 'var(--accent-color-dark)', fontWeight: "bold"}}>
+    <span style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>
       &nbsp;Import Local Project&nbsp;
     </span>
     button again and select the project you want to load.
@@ -24,27 +27,32 @@ const ALERT_MESSAGE = (
  * @description selects a project from the filesystem and loads it up to tC.
  */
 export function selectLocalProjectToLoad() {
-  return ((dispatch)=> {
-    dialog.showOpenDialog({properties: ['openFile', 'openDirectory']}, (filePaths) => {
+  return ((dispatch) => {
+    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.
-      const newProjectPath = path.join(DEFAULT_SAVE, fileName);
+      let newProjectPath = path.join(DEFAULT_SAVE, fileName);
+      let usfmFilePath = LoadHelpers.isUSFMProject(sourcePath)
       dispatch(BodyUIActions.toggleProjectsFAB());
-      if(filePaths === undefined){
+      if (filePaths === undefined) {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else if (path.extname(sourcePath) === '.tstudio') {
+      } else if (usfmFilePath) {
+        newProjectPath = ProjectSelectionHelpers.setUpUSFMFolderPath(usfmFilePath);
+        dispatch(selectAndLoadProject(newProjectPath));
+      }
+      else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
         dispatch(unzipTStudioProject(sourcePath, fileName));
-      } else if(verifyIsValidProject(sourcePath)) {
+      } else if (verifyIsValidProject(sourcePath)) {
         fs.copySync(sourcePath, newProjectPath)
         dispatch(selectAndLoadProject(newProjectPath));
       } else {
         dispatch(
           AlertModalActions.openAlertDialog(
             <div>
-              There is something wrong with the project you are trying to load.<br/>
-              Please verify you are importing a valid project.<br/>
+              There is something wrong with the project you are trying to load.<br />
+              Please verify you are importing a valid project.<br />
               Filename: {fileName}
             </div>
           )
@@ -74,14 +82,14 @@ function verifyIsValidProject(projectSourcePath) {
   const projectManifestPath = path.join(projectSourcePath, "manifest.json");
   if (fs.existsSync(projectManifestPath)) {
     const projectManifest = fs.readJsonSync(projectManifestPath);
-    if(projectManifest.target_language && projectManifest.ts_project) {
+    if (projectManifest.target_language && projectManifest.ts_project) {
       return true;
     }
   }
   return false;
 }
 
-function selectAndLoadProject (projectPath) {
+function selectAndLoadProject(projectPath) {
   return ((dispatch) => {
     // select project and load it.
     dispatch(ProjectSelectionActions.selectProject(projectPath));

@@ -31,7 +31,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
         bibleName,
         bibleData
       });
-    } catch(err) {
+    } catch (err) {
       console.warn(err);
     }
   });
@@ -40,31 +40,37 @@ export function loadTargetLanguageChapter(chapterNumber) {
 /**
  * @description generates a target language bible and saves it in the filesystem devided into chapters.
  * @param {string} projectPath - path where the project is located in the filesystem.
+ * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
-export function generateTargetBible(projectPath) {
+export function generateTargetBible(projectPath, USFMTargetLanguage) {
   return ((dispatch, getState) => {
     let bookAbbreviation = getState().projectDetailsReducer.params.bookAbbr;
     let manifest = getState().projectDetailsReducer.manifest;
     let targetBiblePath = path.join(projectPath, bookAbbreviation);
-    let entireBook = {};
-    let joinedChunk = {};
+    let entireBook, joinedChunk = {};
     let finishedChunks = getState().projectDetailsReducer.manifest.finished_chunks;
-    finishedChunks.forEach((element, index) => {
-      let reference = element.split('-');
-      let chapterNumber = reference[0];
-      let fileName = reference[1] + ".txt";
-      let filePath = path.join(projectPath, chapterNumber, fileName);
-      if (fs.existsSync(filePath)) {
-        let text = fs.readFileSync(filePath);
-        let currentChunk = parseTargetLanguage(text.toString());
-        Object.keys(currentChunk.verses).forEach(function (key) {
-          if (parseInt(key) === 1) joinedChunk = {};
-          joinedChunk[key] = currentChunk.verses[key];
-          entireBook[parseInt(chapterNumber)] = joinedChunk;
-        });
-      }
-    });
+    if (!USFMTargetLanguage) {
+      finishedChunks.forEach((element, index) => {
+        let reference = element.split('-');
+        let chapterNumber = reference[0];
+        let fileName = reference[1] + ".txt";
+        let filePath = path.join(projectPath, chapterNumber, fileName);
+        if (fs.existsSync(filePath)) {
+          let text = fs.readFileSync(filePath);
+          let currentChunk = parseTargetLanguage(text.toString());
+          Object.keys(currentChunk.verses).forEach(function (key) {
+            if (parseInt(key) === 1) joinedChunk = {};
+            joinedChunk[key] = currentChunk.verses[key];
+            entireBook[parseInt(chapterNumber)] = joinedChunk;
+          });
+        }
+      });
+    } else {
+      /** USFMTargetLanguage is already parsed in the same format */
+      entireBook = USFMTargetLanguage;
+    }
     for (var chapter in entireBook) {
+      if (!parseInt(chapter)) continue;
       let fileName = chapter + '.json';
       fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
     }
@@ -112,7 +118,7 @@ function parseTargetLanguage(usfm) {
  */
 function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   let bibleManifest = {};
-  bibleManifest.language_id = projectManifest.target_language.id;  
+  bibleManifest.language_id = projectManifest.target_language.id;
   bibleManifest.language_name = projectManifest.target_language.name;
   bibleManifest.direction = projectManifest.target_language.direction;
   bibleManifest.subject = "Bible";
@@ -130,7 +136,7 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
  * @param {string} projectPath - project save location / path.
  */
 function archiveSourceFiles(finishedChunks, projectPath) {
-  finishedChunks.forEach((element, index) => {
+  if (finishedChunks) finishedChunks.forEach((element, index) => {
     let reference = element.split('-');
     let chapterNumber = reference[0];
     let sourcePath = path.join(projectPath, chapterNumber);
