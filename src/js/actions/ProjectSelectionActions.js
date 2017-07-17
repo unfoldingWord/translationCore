@@ -19,6 +19,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
  */
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
+    debugger;
     const { username } = getState().loginReducer.userdata;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
