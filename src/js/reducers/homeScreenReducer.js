@@ -9,7 +9,8 @@ const initialState = {
     finished: false,
     stepIndex: 0,
     nextStepName: 'Go To User',
-    previousStepName: ''
+    previousStepName: '',
+    nextDisabled: false
   },
   showFABOptions: false
 };
@@ -55,6 +56,14 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         showFABOptions: !state.showFABOptions
+      }
+    case consts.UPDATE_NEXT_BUTTON_STATUS:
+      return {
+        ...state,
+        stepper: {
+          ...state.stepper,
+          nextDisabled: action.nextDisabled
+        }
       }
     default:
       return state;

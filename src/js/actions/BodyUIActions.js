@@ -67,7 +67,7 @@ export const goToPrevStep = () => {
 };
 
 export const goToStep = stepNumber => {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
     let previousStepName = homeStepperIndex[stepNumber - 1];
     if (stepNumber >= 0 && stepNumber <= 3) {
@@ -89,4 +89,56 @@ export const toggleProjectsFAB = () => {
   return {
     type: consts.TOGGLE_PROJECTS_FAB,
   };
-} 
+}
+/**
+ * Determines if the next button is diabled or not, dispatches result based on 
+ * user completed actions relevant to step
+ */
+export const getStepperNextButtonIsDisabled = () => {
+  return ((dispatch, getState) => {
+    let state = getState();
+    let { stepIndex, nextDisabled } = state.homeScreenReducer.stepper;
+    let { loggedInUser } = state.loginReducer;
+    let {projectSaveLocation} = state.projectDetailsReducer;
+    let lastNextButtonStatus = nextDisabled;
+    let currentNextButtonStatus;
+    switch (stepIndex) {
+      case 0:
+      //home
+        currentNextButtonStatus = false;
+        if (lastNextButtonStatus != currentNextButtonStatus) {
+          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+        }
+        return;
+      case 1:
+      //user
+        currentNextButtonStatus = !loggedInUser;
+        if (lastNextButtonStatus != currentNextButtonStatus) {
+          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+        }
+        return;
+      case 2:
+      //projects
+        currentNextButtonStatus = !projectSaveLocation;
+        if (lastNextButtonStatus != currentNextButtonStatus) {
+          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+        }
+        return;
+      case 3:
+      //tools
+        currentNextButtonStatus = true;
+        if (lastNextButtonStatus != currentNextButtonStatus) {
+          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+        }
+        return;
+      default:
+        currentNextButtonStatus = false;
+        if (lastNextButtonStatus != currentNextButtonStatus) {
+          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+        }
+        return;
+    }
+  })
+}
+
+
