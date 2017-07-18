@@ -33,7 +33,7 @@ export function exportToUSFM(projectPath) {
       writeUSFMJSONToFS(filePath, usfmJSONObject);
       dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
     } catch (err) {
-      dispatch(AlertModalActions.openAlertDialog(err, false));
+      dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
     }
   })
 }
@@ -63,7 +63,7 @@ export function setUpUSFMJSONObject(projectPath) {
    * This will make it easier to read for tC later on */
   let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}`
   /**Date object when project was las changed in FS */
-  let lastEdited = fs.statSync(path.join(projectPath), bookName).atime;
+  let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   usfmJSONObject.book = LoadHelpers.convertToFullBookName(bookName);
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/

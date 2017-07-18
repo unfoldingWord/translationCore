@@ -431,21 +431,16 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
  * @param {String} projectPath - The current save location of the project
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
-export function projectHasMergeConflicts(projectPath, bookAbbr, usfmFilePath) {
-    if (!usfmFilePath) {
-        let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
-        for (var currentChapterFile of currentFolderChapters) {
-            let currentChapter = Path.parse(currentChapterFile).name;
-            if (!parseInt(currentChapter)) continue;
-            let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
-            let fileContents = JSON.stringify(currentChapterObject);
-            if (~fileContents.indexOf('<<<<<<<')) {
-                return true;
-            }
+export function projectHasMergeConflicts(projectPath, bookAbbr) {
+    let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+    for (var currentChapterFile of currentFolderChapters) {
+        let currentChapter = Path.parse(currentChapterFile).name;
+        if (!parseInt(currentChapter)) continue;
+        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+        let fileContents = JSON.stringify(currentChapterObject);
+        if (~fileContents.indexOf('<<<<<<<')) {
+            return true;
         }
-    } else {
-        let usfmText = fs.readFileSync(usfmFilePath);
-        return ~usfmText.indexOf('<<<<<<<');
     }
     return false;
 }
