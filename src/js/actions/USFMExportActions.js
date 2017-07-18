@@ -59,12 +59,15 @@ export function setUpUSFMJSONObject(projectPath) {
   /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
   let sourceTranslation = manifest.source_translations[0];
   let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;
-  let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.id}_${manifest.target_language.direction}`
+  /**This will look like: ar_العربية_rtl to be included in the usfm id.
+   * This will make it easier to read for tC later on */
+  let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}`
   /**Date object when project was las changed in FS */
   let lastEdited = fs.statSync(path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   usfmJSONObject.book = LoadHelpers.convertToFullBookName(bookName);
-  usfmJSONObject.id = `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}`;
+  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
+  usfmJSONObject.id = `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}, tc`;
 
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
   for (var currentChapterFile of currentFolderChapters) {

@@ -485,19 +485,28 @@ export function getUSFMParams(bookAbbr, projectPath, direction) {
 
 export function getIDsFromUSFM(usfmObject) {
     let bookAbbr, bookName, id, name, direction;
+    bookAbbr = bookName = direction = id = name = '';
     try {
         if (usfmObject.headers.id.includes(',')) {
             bookAbbr = usfmObject.headers.id.split(",")[0].trim().toLowerCase();
             bookName = convertToFullBookName(bookAbbr);
-            let languageCodeArray = usfmObject.headers.id.split(",")[1].trim().split('_');
-            id = languageCodeArray[0];
-            name = languageCodeArray[1];
-            direction = languageCodeArray[2];
+            let commaSeperated = usfmObject.headers.id.split(",");
+            let tcField = commaSeperated[commaSeperated.length - 1] || '';
+            if (tcField.trim() == 'tc') {
+                let languageCodeArray = commaSeperated[1].trim().split('_');
+                if (languageCodeArray.length > 2) {
+                    id = languageCodeArray[0].toLowerCase();
+                    name = languageCodeArray[1];
+                    direction = languageCodeArray[2].toLowerCase();
+                }
+            }
         } else {
-            bookAbbr = usfmObject.headers.id.split(" ")[0].trim().toLowerCase();
+            if (usfmObject.headers.id.split(" ").length > 1) {
+                bookAbbr = usfmObject.headers.id.split(" ")[0].trim().toLowerCase();
+            } else {
+                bookAbbr = usfmObject.headers.id.toLowerCase();
+            }
             bookName = convertToFullBookName(bookAbbr);
-            id = "";
-            name = usfmObject.headers.id.split(" ")[2].trim();
             direction = 'ltr';
         }
     } catch (e) {

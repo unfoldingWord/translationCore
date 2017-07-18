@@ -63,7 +63,11 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
   const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
   const {id, bookName, bookAbbr} = LoadHelpers.getIDsFromUSFM(parsedUSFM);
-  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${id.toLowerCase()}_${bookAbbr.toLowerCase()}_usfm`);
+  /**If there is no bookAbbr then ultimately the usfm import should fail */
+  if (!bookAbbr) console.warn('No book abbreviation detected in USFM');
+  let fileNameIdMarker = id ? `${id}_` : '';
+  let bookAbbrMarker = `${bookAbbr}_`;
+  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${fileNameIdMarker}${bookAbbrMarker}usfm`);
   const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookAbbr) + '.usfm';
   fs.outputFileSync(newUSFMFilePath, usfmData);
   return newUSFMProjectFolder;
