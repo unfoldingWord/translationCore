@@ -7,7 +7,9 @@ const initialState = {
   homeInstructions: <div></div>,
   stepper: {
     finished: false,
-    stepIndex: 0
+    stepIndex: 0,
+    nextStepName: 'Go To User',
+    previousStepName: ''
   },
   showFABOptions: false
 };
@@ -34,7 +36,9 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           finished: action.finished,
-          stepIndex: action.stepIndex
+          stepIndex: action.stepIndex,
+          previousStepName: action.previousStepName,
+          nextStepName: action.nextStepName
         }
       };
     case consts.GO_TO_PREVIOUS_STEP:
@@ -42,7 +46,9 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           finished: false,
-          stepIndex: action.stepIndex
+          stepIndex: action.stepIndex,
+          previousStepName: action.previousStepName,
+          nextStepName: action.nextStepName
         }
       };
     case consts.TOGGLE_PROJECTS_FAB:
