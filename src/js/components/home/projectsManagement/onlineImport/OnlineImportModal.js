@@ -84,7 +84,7 @@ export default class OnlineImportModal extends Component {
             </p>
           </div>
           <URLInput
-            handleURLInputChange={(e) => handleURLInputChange(e.target.value)}
+            handleURLInputChange={handleURLInputChange}
             importLink={importLink}
           />
           <SearchOptions
