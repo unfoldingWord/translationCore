@@ -1,6 +1,8 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+// helpers
+import {getBibleIndex} from '../helpers/ResourcesHelpers';
 // constant declarations
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
 
@@ -38,46 +40,56 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 /**
- * @description generates a target language bible and saves it in the filesystem devided into chapters.
+ * @description generates a target language bible and saves it in the filesystem devided into chapters, assumes tS project
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
-export function generateTargetBible(projectPath, USFMTargetLanguage) {
+export function generateTargetBible(projectPath, bookData = {}) {
+  /** bookData is already parsed in the same format passed from USFM */
   return ((dispatch, getState) => {
-    let bookAbbreviation = getState().projectDetailsReducer.params.bookAbbr;
-    let manifest = getState().projectDetailsReducer.manifest;
-    let targetBiblePath = path.join(projectPath, bookAbbreviation);
-    let entireBook, joinedChunk = {};
-    let finishedChunks = getState().projectDetailsReducer.manifest.finished_chunks;
-    if (!USFMTargetLanguage) {
-      finishedChunks.forEach((element, index) => {
-        let reference = element.split('-');
-        let chapterNumber = reference[0];
-        let fileName = reference[1] + ".txt";
-        let filePath = path.join(projectPath, chapterNumber, fileName);
-        if (fs.existsSync(filePath)) {
-          let text = fs.readFileSync(filePath);
-          let currentChunk = parseTargetLanguage(text.toString());
-          Object.keys(currentChunk.verses).forEach(function (key) {
-            if (parseInt(key) === 1) joinedChunk = {};
-            joinedChunk[key] = currentChunk.verses[key];
-            entireBook[parseInt(chapterNumber)] = joinedChunk;
+    const state = getState();
+    const bookAbbreviation = state.projectDetailsReducer.params.bookAbbr;
+    // only parse if bookData isn't already populated
+    if (Object.keys(bookData).length == 0) {
+      // get the bibleIndex to get the list of expected chapters
+      const bibleIndex = getBibleIndex('ulb-en', 'v6');
+      const chapters = Object.keys(bibleIndex[bookAbbreviation]);
+      chapters.forEach( chapterNumber => {
+        let chapterData = {}; // empty chapter to populate
+        // 0 padding for single digit chapters
+        const chapterNumberString = (chapterNumber < 10) ? '0' + chapterNumber.toString() : chapterNumber.toString();
+        const chapterPath = path.join(projectPath, chapterNumberString);
+        // the chapter may not be populated and there is a key called 'chapters' in the index
+        const chapterPathExists = fs.existsSync(chapterPath);
+        if (chapterPathExists) {
+          const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
+          files.forEach( file => {
+            if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+              const chunkPath = path.join(chapterPath, file);
+              const text = fs.readFileSync(chunkPath);
+              const currentChunk = parseTargetLanguage(text.toString());
+              Object.keys(currentChunk.verses).forEach(function (key) {
+                chapterData[key] = currentChunk.verses[key];
+                bookData[parseInt(chapterNumber)] = chapterData;
+              });
+            }
           });
         }
       });
-    } else {
-      /** USFMTargetLanguage is already parsed in the same format */
-      entireBook = USFMTargetLanguage;
     }
-    for (var chapter in entireBook) {
-      if (!parseInt(chapter)) continue;
+    const manifest = state.projectDetailsReducer.manifest;
+    const targetBiblePath = path.join(projectPath, bookAbbreviation);
+    // now that bookData is populated or passed in, let's save it to the fs as chapter level json files
+    for (var chapter in bookData) {
+      if (!parseInt(chapter)) continue; // only import integer based data, there are other files
       let fileName = chapter + '.json';
-      fs.outputJsonSync(path.join(targetBiblePath, fileName), entireBook[chapter]);
+      const targetBiblePath = path.join(projectPath, bookAbbreviation);
+      fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter]);
     }
     // generating and saving manifest file for target language bible.
     generateTartgetLanguageManifest(manifest, targetBiblePath);
     // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
-    archiveSourceFiles(finishedChunks, projectPath);
+    archiveSourceFiles(projectPath, bookAbbreviation);
   });
 }
 
@@ -132,17 +144,29 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
 
 /**
  * @description helper function that Moves bible source files from project's root folder to '.apps/translationCore/importedSource'.
- * @param {array} finishedChunks - list of all finished chunks.
  * @param {string} projectPath - project save location / path.
+ * @param {string} bookAbbreviation - the directory name of the book so we don't move it
  */
-function archiveSourceFiles(finishedChunks, projectPath) {
-  if (finishedChunks) finishedChunks.forEach((element, index) => {
-    let reference = element.split('-');
-    let chapterNumber = reference[0];
-    let sourcePath = path.join(projectPath, chapterNumber);
-    try {
-      fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, chapterNumber));
-    } catch (err) {
-    }
-  });
+function archiveSourceFiles(projectPath, bookAbbreviation) {
+  // get all of the directories/files in the projectPath
+  fs.readdirSync(projectPath)
+    .forEach( file => {
+      // check for conditions in which we need to archive
+      const isDirectory = fs.lstatSync(path.join(projectPath, file)).isDirectory()
+      const isBookAbbreviation = file === bookAbbreviation;
+      const isDotFile = !!file.match(/^\./);
+      const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm')
+      // build the condition to move
+      const shouldMove = isUSFM || (isDirectory && !isBookAbbreviation && !isDotFile);
+      if (shouldMove) {
+        const directory = file;
+        const sourcePath = path.join(projectPath, directory);
+        // try to move the directories and log the errors
+        try {
+          fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, directory));
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    });
 }
