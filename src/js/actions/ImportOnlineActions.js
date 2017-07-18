@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
 // actions
-import * as ProjectLoadingActions from './ProjectLoadingActions';
+import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 // constants
@@ -78,7 +78,7 @@ export function importOnlineProject() {
         } else {
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
-          dispatch(ProjectLoadingActions.selectProject(savePath, url));
+          dispatch(ProjectSelectionActions.selectProject(savePath, url));
         }
       });
     }));
