@@ -12,6 +12,7 @@ import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions'
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
 import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
+import * as OnlineModeActions from '../../actions/OnlineModeActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -104,14 +105,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(BodyUIActions.closeOnlineImportModal());
       },
       openOnlineImportModal: () => {
-        dispatch(BodyUIActions.toggleProjectsFAB());
-        dispatch(BodyUIActions.openOnlineImportModal());
+        dispatch(OnlineModeActions.confirmOnlineAction(() => {
+          dispatch(BodyUIActions.toggleProjectsFAB());
+          dispatch(BodyUIActions.openOnlineImportModal());
+        }));
       },
       handleURLInputChange: importLink => {
         dispatch(ImportOnlineActions.getLink(importLink));
       },
       loadProjectFromLink: () => {
-        console.log("hello")
         dispatch(ImportOnlineActions.importOnlineProject());
       },
       searchReposByUser: (user) => {

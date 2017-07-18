@@ -8,9 +8,9 @@ export default class SearchOptions extends Component {
     super();
     this.state = {
       userBoxValue: "",
-      dropDownMenuValue: ""
+      laguageIdValue: "",
+      bookIdValue: ""
     };
-    this.searchReposByQuery = this.searchReposByQuery.bind(this);
   }
 
   componentWillMount() {
@@ -19,15 +19,21 @@ export default class SearchOptions extends Component {
     this.props.actions.searchReposByUser(username);
   }
 
-  searchReposByQuery(bibleId) {
-    this.props.actions.searchReposByQuery(bibleId, this.state.userBoxValue);
-    this.setState({ dropDownMenuValue: bibleId })
+  searchProject() {
+    const query = {
+      user: this.state.userBoxValue,
+      bookId: this.state.bookIdValue,
+      laguageId: this.state.laguageIdValue
+    }
+    this.props.actions.searchReposByQuery(query)
   }
 
   render() {
     return (
       <div>
-        <span style={{ display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}>- Or -</span>
+        <span style={{ display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}>
+          - Or -
+        </span>
         <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
           <TextField
             value={this.state.userBoxValue}
@@ -37,19 +43,20 @@ export default class SearchOptions extends Component {
             onChange={e => this.setState({userBoxValue: e.target.value})}
           />&nbsp;&nbsp;
           <TextField
+            value={this.state.laguageIdValue}
             floatingLabelText="Language Id"
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
-            onChange={e => this.props.actions.searchReposByQuery(e.target.value)}
+            onChange={e => this.setState({laguageIdValue: e.target.value})}
           />&nbsp;&nbsp;
           <BookDropDownMenu
-            searchReposByQuery={(value) => this.searchReposByQuery(value)}
-            dropDownMenuValue={this.state.dropDownMenuValue}
+            updateBookIdValue={bookIdValue => this.setState({ bookIdValue })}
+            bookIdValue={this.state.bookIdValue}
           />&nbsp;&nbsp;
           <button
             label="Search"
             className="btn-prime"
-            onClick={() => console.log("search")}
+            onClick={() => this.searchProject()}
             style={{ margin: "0px 0px -20px", width: "400px" }}
           >
             Search

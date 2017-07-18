@@ -110,27 +110,79 @@ export function searchReposByUser(user) {
   });
 }
 
-export function searchReposByQuery(query, user) {
+export function searchReposByQuery(query) {
   return ((dispatch) => {
+    console.log(query);
     if (query) {
-      if (user) {
-        Gogs().searchReposByUser(user).then(repos => {
+      if (query.user && query.bookId && query.laguageId) {
+        // search by user, bookId and laguageId
+        Gogs().searchReposByUser(query.user).then(repos => {
           let filteredRepos = repos.data.filter((repo) => {
-            return repo.full_name.includes(query);
+            return repo.full_name.includes(query.bookId) && repo.full_name.includes(query.laguageId)
           });
           dispatch({
             type: consts.SET_REPOS_DATA,
             repos: filteredRepos
           });
         });
-      } else {
-        Gogs().searchRepos(query).then((repos) => {
+      } else if (query.user && query.bookId) {
+        // search by user and bookId
+        Gogs().searchReposByUser(query.user).then(repos => {
+          let filteredRepos = repos.data.filter((repo) => {
+            return repo.full_name.includes(query.bookId);
+          });
+          dispatch({
+            type: consts.SET_REPOS_DATA,
+            repos: filteredRepos
+          });
+        });
+      } else if (query.user && query.laguageId) {
+        // search by user and laguageId
+        Gogs().searchReposByUser(query.user).then(repos => {
+          let filteredRepos = repos.data.filter((repo) => {
+            return repo.full_name.includes(query.laguageId);
+          });
+          dispatch({
+            type: consts.SET_REPOS_DATA,
+            repos: filteredRepos
+          });
+        });
+      } else if (query.bookId && query.laguageId) {
+        // search by bookId and laguageId
+        Gogs().searchRepos(query.bookId).then((repos) => {
+          let filteredRepos = repos.filter((repo) => {
+            return repo.full_name.includes(query.laguageId);
+          });
+          dispatch({
+            type: consts.SET_REPOS_DATA,
+            repos: filteredRepos
+          });
+        });
+      } else if (query.bookId) {
+        // search only by bookId
+        Gogs().searchRepos(query.bookId).then((repos) => {
           dispatch({
             type: consts.SET_REPOS_DATA,
             repos: repos
           });
         });
+      } else if (query.laguageId) {
+        // search only by laguageId
+        Gogs().searchRepos(query.laguageId).then((repos) => {
+          dispatch({
+            type: consts.SET_REPOS_DATA,
+            repos: repos
+          });
+        });
+      } else if (query.user) {
+        // search by user only
+        dispatch(searchReposByUser(query.user));
       }
     }
   });
+}
+
+
+function searchAndFilter(searchBy, filterBy) {
+
 }

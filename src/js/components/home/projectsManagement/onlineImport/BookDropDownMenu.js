@@ -4,16 +4,16 @@ import { SelectField, MenuItem } from 'material-ui';
 import BooksOfTheBible from './BooksOfTheBible';
 
 const BookDropDownMenu = ({
-  dropDownMenuValue,
-  searchReposByQuery
+  bookIdValue,
+  updateBookIdValue
 }) => {
   return (
     <div>
       <SelectField
         floatingLabelText="Book"
-        value={dropDownMenuValue}
+        value={bookIdValue}
         onChange={(event, index, value) => {
-          searchReposByQuery(value);
+          updateBookIdValue(value);
         }}
       >
       <MenuItem value={""} primaryText={""} />
@@ -31,8 +31,8 @@ const BookDropDownMenu = ({
 }
 
 BookDropDownMenu.propTypes = {
-  dropDownMenuValue: PropTypes.string.isRequired,
-  searchReposByQuery: PropTypes.func.isRequired
+  bookIdValue: PropTypes.string.isRequired,
+  updateBookIdValue: PropTypes.func.isRequired
 };
 
 export default BookDropDownMenu;

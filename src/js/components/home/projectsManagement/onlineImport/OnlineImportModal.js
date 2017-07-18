@@ -65,20 +65,20 @@ export default class OnlineImportModal extends Component {
     return (
       <MuiThemeProvider>
         <Dialog
+          contentStyle={{ minHeight: "550px", height: "550px", width: "900px", maxWidth: "900px" }}
           style={{ padding: "0px" }}
-          actions={buttonActions}
-          modal={false}
-          contentStyle={{ height: "550px" }}
           autoDetectWindowHeight={true}
           autoScrollBodyContent={true}
           open={onlineImportModalVisibility}
+          actions={buttonActions}
+          modal={false}
         >
           <CardHeader
             style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
           >
             {headerContent}
           </CardHeader><br />
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 20px 0px" }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
               In this version of translationCore, only New Testament projects can be loaded.
             </p>
