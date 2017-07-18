@@ -4,7 +4,7 @@ const initialState = {
   showOnlineButton: true,
   showBack: false,
   importLink: "",
-  repos: null,
+  repos: [],
   onlineProjects: null,
   loggedIn: false,
   showLoadingCircle: false,
@@ -31,6 +31,11 @@ const importOnlineReducer = (state = initialState, action) => {
         ...state,
         showLoadingCircle: false
       };
+    case consts.SET_REPOS_DATA:
+      return {
+        ...state,
+        repos: action.repos
+      }
     default:
       return state;
   }

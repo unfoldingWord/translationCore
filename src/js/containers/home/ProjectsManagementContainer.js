@@ -63,7 +63,7 @@ class ProjectsManagementContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reducers: {
       projectDetailsReducer: state.projectDetailsReducer,
@@ -107,11 +107,18 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(BodyUIActions.toggleProjectsFAB());
         dispatch(BodyUIActions.openOnlineImportModal());
       },
-      handleURLInputChange: e => {
-        dispatch(ImportOnlineActions.getLink(e));
+      handleURLInputChange: importLink => {
+        dispatch(ImportOnlineActions.getLink(importLink));
       },
-      loadProjectFromLink: (link) => {
-        dispatch(ImportOnlineActions.importOnlineProject(link.trim()));
+      loadProjectFromLink: () => {
+        console.log("hello")
+        dispatch(ImportOnlineActions.importOnlineProject());
+      },
+      searchReposByUser: (user) => {
+        dispatch(ImportOnlineActions.searchReposByUser(user));
+      },
+      searchReposByQuery: (query, user) => {
+        dispatch(ImportOnlineActions.searchReposByQuery(query, user));
       }
     }
   };

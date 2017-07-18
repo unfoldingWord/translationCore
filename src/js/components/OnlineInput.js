@@ -15,7 +15,7 @@ class OnlineInput extends React.Component {
               style={{width: '400px', borderRadius: '4px'}}
               placeholder="Enter URL"
               value={importLink}
-              onChange={onChange}
+              onChange={e => handleOnlineChange(e.target.value)}
             />
             <button className="btn-prime" disabled={!importLink} onClick={load}>
               <span style={{marginLeft: '10px'}}>Import & Select</span>

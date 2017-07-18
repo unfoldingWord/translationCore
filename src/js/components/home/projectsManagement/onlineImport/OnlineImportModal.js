@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import { Dialog, CardHeader } from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Door43ProjectSearch from './Door43ProjectSearch';
+// components
+import SearchOptions from './SearchOptions';
+import URLInput from './URLInput';
+import SearchResults from './SearchResults';
 
 export default class OnlineImportModal extends Component {
   render() {
     let {
       importOnlineReducer: {
-        importLink
+        importLink,
+        repos
       },
       loginReducer: {
         userdata
@@ -18,7 +22,9 @@ export default class OnlineImportModal extends Component {
         onlineImportModalVisibility
       },
       actions: {
-        closeOnlineImportModal
+        closeOnlineImportModal,
+        handleURLInputChange,
+        loadProjectFromLink
       }
     } = this.props;
 
@@ -27,7 +33,6 @@ export default class OnlineImportModal extends Component {
         key={1}
         label="Cancel"
         className="btn-second"
-        // disabled={}
         onClick={closeOnlineImportModal}
       >
         Cancel
@@ -36,8 +41,11 @@ export default class OnlineImportModal extends Component {
         key={2}
         label="Import"
         className="btn-prime"
-        // disabled={}
-        onClick={() => { console.log("Import button") }}
+        disabled={importLink ? false : true}
+        onClick={() => {
+          closeOnlineImportModal();
+          loadProjectFromLink();
+        }}
       >
        <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;Import
       </button>
@@ -59,8 +67,10 @@ export default class OnlineImportModal extends Component {
         <Dialog
           style={{ padding: "0px" }}
           actions={buttonActions}
-          modal={true}
-          // bodyStyle={{ height: "550px" }}
+          modal={false}
+          contentStyle={{ height: "550px" }}
+          autoDetectWindowHeight={true}
+          autoScrollBodyContent={true}
           open={onlineImportModalVisibility}
         >
           <CardHeader
@@ -68,16 +78,21 @@ export default class OnlineImportModal extends Component {
           >
             {headerContent}
           </CardHeader><br />
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
-            <p syle={{ width: "70%"}}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 20px 0px" }}>
+            <p>
               In this version of translationCore, only New Testament projects can be loaded.
             </p>
           </div>
-          <Door43ProjectSearch
+          <URLInput
+            handleURLInputChange={(e) => handleURLInputChange(e.target.value)}
+            importLink={importLink}
+          />
+          <SearchOptions
             actions={this.props.actions}
             importLink={importLink}
             username={userdata.username}
           />
+          <SearchResults repos={repos} importLink={importLink} handleURLInputChange={this.props.actions.handleURLInputChange} />
         </Dialog>
       </MuiThemeProvider>
     );

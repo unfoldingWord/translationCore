@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from 'material-ui';
-import URLInput from './URLInput';
+import BookDropDownMenu from './BookDropDownMenu';
 
-export default class Door43ProjectSearch extends Component {
+export default class SearchOptions extends Component {
   constructor() {
     super();
     this.state = {
-      userBoxValue: ""
-    }
+      userBoxValue: "",
+      dropDownMenuValue: ""
+    };
+    this.searchReposByQuery = this.searchReposByQuery.bind(this);
   }
 
   componentWillMount() {
     let { username } = this.props;
     this.setState({userBoxValue: username ? username : "" })
+    this.props.actions.searchReposByUser(username);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -23,23 +26,15 @@ export default class Door43ProjectSearch extends Component {
     }
   }
 
-  render() {
-    let {
-      actions: {
-        handleURLInputChange,
-        loadProjectFromLink
-      },
-      importLink
-    } = this.props;
+  searchReposByQuery(bibleId) {
+    this.props.actions.searchReposByQuery(bibleId, this.state.userBoxValue);
+    this.setState({ dropDownMenuValue: bibleId })
+  }
 
+  render() {
     return (
       <div>
-        <URLInput
-          handleURLInputChange={handleURLInputChange}
-          importLink = {importLink}
-          load={loadProjectFromLink}
-        />
-        <h4 style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>- Or -</h4>
+        <span style={{ display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}>- Or -</span>
         <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
           <TextField
             value={this.state.userBoxValue}
@@ -49,12 +44,21 @@ export default class Door43ProjectSearch extends Component {
             onChange={e => this.setState({userBoxValue: e.target.value})}
           />&nbsp;&nbsp;
           <TextField
-            floatingLabelText="Book/Language"
+            floatingLabelText="Language Id"
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
-            onChange={e => console.log(e.target.value)}
-          />&nbsp;&nbsp;&nbsp;
-          <button label="Search" className="btn-prime" onClick={() => console.log("search")} style={{ margin: "0px 0px -20px" }}>
+            onChange={e => this.props.actions.searchReposByQuery(e.target.value)}
+          />&nbsp;&nbsp;
+          <BookDropDownMenu
+            searchReposByQuery={(value) => this.searchReposByQuery(value)}
+            dropDownMenuValue={this.state.dropDownMenuValue}
+          />&nbsp;&nbsp;
+          <button
+            label="Search"
+            className="btn-prime"
+            onClick={() => console.log("search")}
+            style={{ margin: "0px 0px -20px", width: "400px" }}
+          >
             Search
           </button>
         </div>
@@ -63,7 +67,8 @@ export default class Door43ProjectSearch extends Component {
   }
 }
 
-Door43ProjectSearch.propTypes = {
+SearchOptions.propTypes = {
   actions: PropTypes.object.isRequired,
-  importLink: PropTypes.string.isRequired
+  importLink: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
 };

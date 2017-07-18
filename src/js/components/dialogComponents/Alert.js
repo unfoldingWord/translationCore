@@ -44,15 +44,16 @@ class Alert extends Component {
     return (
       <div>
         <Dialog
-          style={{padding: "0px"}}
+          style={{ padding: "0px", zIndex: 2000 }}
           actions={actions}
           modal={false}
           open={alertDialogVisibility}
         >
-        <CardHeader
+          <CardHeader
             style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
-            children={headerContent}
-          /><br /><br />
+          >
+            {headerContent}
+          </CardHeader><br /><br />
           <div style={{minHeight: "80px"}}>
             <table>
               <tbody>
