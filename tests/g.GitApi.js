@@ -4,7 +4,7 @@
  ******************************************************************************/
 
 const assert = require('chai').assert;
-const GitApi = require('../src/js/components/GitApi.js');
+const GitApi = require('../src/js/helpers/GitApi.js');
 const fs = require('fs-extra');
 
 describe('GitApi.status', function() {
