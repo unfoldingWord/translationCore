@@ -41,50 +41,48 @@ export function updateRepos() {
 }
 
 export function importOnlineProject() {
-    return ((dispatch, getState) => {
-      const link = getState().importOnlineReducer.importLink;
-      console.log(link)
-        dispatch(OnlineModeActions.confirmOnlineAction(() => {
-        dispatch(
-            AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
-        );
+  return ((dispatch, getState) => {
+    const link = getState().importOnlineReducer.importLink;
+    dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      dispatch(
+        AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
+      );
 
-        loadOnline(link, function (err, savePath, url) {
-            if (err) {
-                var errmessage = "An unknown problem occurred during import";
+      loadOnline(link, function (err, savePath, url) {
+        if (err) {
+          var errmessage = "An unknown problem occurred during import";
 
-                if (err.toString().includes("fatal: unable to access")) {
-                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
-                } else if (err.toString().includes("fatal: The remote end hung up")) {
-                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
-                } else if (err.toString().includes("Failed to load")) {
-                    errmessage = "Unable to connect to the server. Please check your Internet connection.";
-                } else if (err.toString().includes("fatal: repository")) {
-                    errmessage = "The URL does not reference a valid project";
-                } else if (err.type && err.type === "custom") {
-                    errmessage = err.text;
-                }
+          if (err.toString().includes("fatal: unable to access")) {
+              errmessage = "Unable to connect to the server. Please check your Internet connection.";
+          } else if (err.toString().includes("fatal: The remote end hung up")) {
+              errmessage = "Unable to connect to the server. Please check your Internet connection.";
+          } else if (err.toString().includes("Failed to load")) {
+              errmessage = "Unable to connect to the server. Please check your Internet connection.";
+          } else if (err.toString().includes("fatal: repository")) {
+              errmessage = "The URL does not reference a valid project";
+          } else if (err.type && err.type === "custom") {
+              errmessage = err.text;
+          }
 
-                // If the import fails for any reason except for the project already existing,
-                // we need to remove the partial project folder that may have been created
-                // rimraf works best when deleting a folder with subfolders
-                // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
-                if (!err.text || !err.text.includes("project already exists")) {
-                    try {
-                        rimraf(savePath, function () { });
-                    } catch (e) { }
-                }
-
-                dispatch(AlertModalActions.openAlertDialog(errmessage));
-                dispatch({ type: "LOADED_ONLINE_FAILED" });
-            } else {
-                dispatch(clearLink());
-                dispatch(AlertModalActions.closeAlertDialog());
-                dispatch(ProjectLoadingActions.selectProject(savePath, url));
-            }
-        });
-        }));
-    })
+          // If the import fails for any reason except for the project already existing,
+          // we need to remove the partial project folder that may have been created
+          // rimraf works best when deleting a folder with subfolders
+          // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
+          if (!err.text || !err.text.includes("project already exists")) {
+              try {
+                  rimraf(savePath, function () { });
+              } catch (e) { }
+          }
+          dispatch(AlertModalActions.openAlertDialog(errmessage));
+          dispatch({ type: "LOADED_ONLINE_FAILED" });
+        } else {
+          dispatch(clearLink());
+          dispatch(AlertModalActions.closeAlertDialog());
+          dispatch(ProjectLoadingActions.selectProject(savePath, url));
+        }
+      });
+    }));
+  })
 }
 
 export function getLink(importLink) {
@@ -104,7 +102,6 @@ export function clearLink() {
 export function searchReposByUser(user) {
   return ((dispatch) => {
     Gogs().searchReposByUser(user).then((repos) => {
-      console.log(repos)
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
@@ -121,7 +118,6 @@ export function searchReposByQuery(query, user) {
           let filteredRepos = repos.data.filter((repo) => {
             return repo.full_name.includes(query);
           });
-          console.log(filteredRepos)
           dispatch({
             type: consts.SET_REPOS_DATA,
             repos: filteredRepos
@@ -129,7 +125,6 @@ export function searchReposByQuery(query, user) {
         });
       } else {
         Gogs().searchRepos(query).then((repos) => {
-          console.log(repos)
           dispatch({
             type: consts.SET_REPOS_DATA,
             repos: repos

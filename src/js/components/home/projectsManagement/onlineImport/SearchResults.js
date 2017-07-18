@@ -21,7 +21,6 @@ const SearchResults = ({
           let disabledCheckBox = false;
           if (project.html_url === importLink) {
             disabledCheckBox = false;
-            {/* importLink && project.html_url === importLink ? true : false */}
           } else if (importLink) {
             disabledCheckBox = true;
           }
