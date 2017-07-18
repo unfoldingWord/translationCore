@@ -53,7 +53,7 @@ export function selectProject(projectPath, projectLink) {
 }
 
 /**
- * @description - This action creates a confirm dialog that ensures 
+ * @description - This action creates a confirm dialog that ensures
  * if the user wants to use a project with missing verses
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest project manifest.
