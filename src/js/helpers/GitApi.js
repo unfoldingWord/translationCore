@@ -17,7 +17,6 @@ function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     init: function(callback) {
-      console.log('Initializing Git repository for project.');
       git.init(false, callback);
     },
     /**
