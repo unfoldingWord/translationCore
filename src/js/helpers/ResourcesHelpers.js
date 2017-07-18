@@ -71,3 +71,20 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
   }
   return manifest;
 }
+
+/**
+ * @description Helper function to get a bibles index from the bible resources folder.
+ * @param {string} bibleId - bible name. ex. ugnt, uhb, udb-en, ulb-en.
+ * @param {string} bibleVersion - release version.
+ */
+export function getBibleIndex(bibleId, bibleVersion) {
+  let fileName = 'index.json';
+  let bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
+  let index;
+  if(fs.existsSync(bibleIndexPath)) {
+    index = fs.readJsonSync(bibleIndexPath);
+  } else {
+    console.error("Could not find manifest for " + bibleId + ' ' + bibleVersion)
+  }
+  return index;
+}
