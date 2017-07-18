@@ -19,13 +19,6 @@ export default class SearchOptions extends Component {
     this.props.actions.searchReposByUser(username);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props != nextProps) {
-      let { username } = nextProps;
-      this.setState({userBoxValue: username ? username : "" })
-    }
-  }
-
   searchReposByQuery(bibleId) {
     this.props.actions.searchReposByQuery(bibleId, this.state.userBoxValue);
     this.setState({ dropDownMenuValue: bibleId })
