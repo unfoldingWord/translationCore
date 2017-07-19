@@ -10,12 +10,13 @@ export default class SpotlightComponent extends Component {
           x={0}
           y={0}
           radius={0}
-          color="white"
+          zIndex={0}
           responsive
+          color="white"
+          borderWidth={10}
           animSpeed={1000}
           borderColor="#ddd"
-          borderWidth={10}
-          zIndex={0}>
+         >
           {this.props.children}
         </Spotlight>
       </div>
