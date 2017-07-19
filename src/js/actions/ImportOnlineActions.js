@@ -160,7 +160,6 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
 function searchAndFilter(searchBy, filterBy, secondFilter) {
   return ((dispatch) => {
     Gogs().searchRepos(searchBy).then((repos) => {
-      console.log(repos)
       let filteredRepos = repos.filter((repo) => {
         if (!secondFilter) {
           return repo.name.includes(filterBy);
