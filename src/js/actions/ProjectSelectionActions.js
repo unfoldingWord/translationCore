@@ -60,12 +60,12 @@ export function selectProject(projectPath, projectLink) {
 export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
   return ((dispatch) => {
     const callback = (option) => {
+      dispatch(AlertModalActions.closeAlertDialog());
       if (option != "Cancel") {
         dispatch(displayTools(manifest));
       } else {
         dispatch(clearLastProject());
       }
-      return dispatch(AlertModalActions.closeAlertDialog());
     }
     dispatch(AlertModalActions.openOptionDialog(
       "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
@@ -116,7 +116,7 @@ export function displayTools(manifest) {
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
     } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.', false));
+      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject())
     }
