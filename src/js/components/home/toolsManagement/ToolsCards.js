@@ -46,15 +46,17 @@ class ToolsCards extends Component {
         <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
           {
             toolsMetadata.map((metadata, i) => {
-              return (
-                <ToolCard
-                  key={i}
-                  actions={this.props.actions}
-                  loggedInUser={loggedInUser}
-                  metadata={metadata}
-                  currentProjectToolsProgress={currentProjectToolsProgress}
-                />
-              );
+              if (metadata.title === "translationWords (Part 1)") {
+                return (
+                  <ToolCard
+                    key={i}
+                    actions={this.props.actions}
+                    loggedInUser={loggedInUser}
+                    metadata={metadata}
+                    currentProjectToolsProgress={currentProjectToolsProgress}
+                  />
+                );
+              }
             })
           }
         </div>
