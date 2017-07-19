@@ -1,5 +1,4 @@
 import consts from './ActionTypes';
-import * as ImportOnlineActions from './ImportOnlineActions';
 
 export function showModalContainer(val) {
   return {
