@@ -12,7 +12,7 @@ import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } f
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 // contant declarations
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
