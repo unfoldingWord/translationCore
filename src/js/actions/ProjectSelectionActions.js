@@ -117,7 +117,7 @@ export function displayTools(manifest) {
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
     } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Ephesians or Titus projects for now.', false));
+      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.', false));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject())
     }
