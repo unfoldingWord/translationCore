@@ -67,7 +67,7 @@ export const goToPrevStep = () => {
 };
 
 export const goToStep = stepNumber => {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
     let previousStepName = homeStepperIndex[stepNumber - 1];
     if (stepNumber >= 0 && stepNumber <= 3) {
@@ -87,9 +87,22 @@ export const goToStep = stepNumber => {
 
 export const toggleProjectsFAB = () => {
   return {
-    type: consts.TOGGLE_PROJECTS_FAB,
+    type: consts.TOGGLE_PROJECTS_FAB
   };
-}
+};
+
+export const openOnlineImportModal = () => {
+  return {
+    type: consts.OPEN_ONLINE_IMPORT_MODAL
+  };
+};
+
+export const closeOnlineImportModal = () => {
+  return {
+    type: consts.CLOSE_ONLINE_IMPORT_MODAL
+  };
+};
+
 /**
  * Determines if the next button is diabled or not, dispatches result based on 
  * user completed actions relevant to step

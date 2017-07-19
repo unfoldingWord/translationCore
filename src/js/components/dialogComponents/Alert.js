@@ -5,10 +5,17 @@ import Dialog from 'material-ui/Dialog';
 
 class Alert extends Component {
   render() {
-    let {alertText, alertDialogVisibility, alertDialogLoading, callback, button1, button2} = this.props.alertModalReducer;
-    let {closeAlertDialog} = this.props.actions;
+    let {
+      alertText,
+      alertDialogVisibility,
+      alertDialogLoading,
+      callback,
+      button1,
+      button2
+    } = this.props.alertModalReducer;
+    let { closeAlertDialog } = this.props.actions;
 
-    const actions = [
+    const buttonActions = [
       <button
         label="Cancel"
         className="btn-prime"
@@ -18,7 +25,7 @@ class Alert extends Component {
       </button>
     ];
     if (this.props.alertModalReducer.button1) {
-      actions.unshift(
+      buttonActions.unshift(
         <button
         label="Cancel"
         className="btn-second"
@@ -44,15 +51,17 @@ class Alert extends Component {
     return (
       <div>
         <Dialog
-          style={{padding: "0px"}}
-          actions={actions}
+          style={{ padding: "0px", zIndex: 2501 }}
+          contentStyle={{ opacity: "1" }}
+          actions={buttonActions}
           modal={false}
           open={alertDialogVisibility}
         >
-        <CardHeader
+          <CardHeader
             style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
-            children={headerContent}
-          /><br /><br />
+          >
+            {headerContent}
+          </CardHeader><br /><br />
           <div style={{minHeight: "80px"}}>
             <table>
               <tbody>

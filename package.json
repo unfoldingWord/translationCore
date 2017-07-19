@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
+    "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

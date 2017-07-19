@@ -217,13 +217,13 @@ export function getParsedUSFM(usfmData) {
 }
 
 /**
- * @description Check if project is ephesians or titus, or if user is in developer mode.
+ * @description Check if project is titus, or if user is in developer mode.
  *
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
-    if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
-    else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
+    if (manifest && manifest.project) return manifest.project.id == "tit";
+    else if (manifest && manifest.ts_project) return manifest.ts_project.id == "tit";
 }
 
 

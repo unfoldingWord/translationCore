@@ -12,7 +12,8 @@ const initialState = {
     previousStepName: '',
     nextDisabled: false
   },
-  showFABOptions: false
+  showFABOptions: false,
+  onlineImportModalVisibility: false
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -56,6 +57,16 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         showFABOptions: !state.showFABOptions
+      }
+    case consts.OPEN_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: true
+      }
+    case consts.CLOSE_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: false
       }
     case consts.UPDATE_NEXT_BUTTON_STATUS:
       return {
