@@ -14,6 +14,10 @@ import * as BodyUIActions from '../../actions/BodyUIActions';
 import packagefile from '../../../../package.json';
 
 class MainContainer extends Component {
+  componentWillReceiveProps(nextProps) {
+    this.props.actions.getStepperNextButtonIsDisabled();
+  }
+
   render() {
     return (
       <MuiThemeProvider style={{ fontSize: '1.1em' }}>
@@ -34,8 +38,8 @@ class MainContainer extends Component {
                 <strong>traslationCore {packagefile.version} </strong>
                 <Glyphicon
                   glyph="info-sign"
-                  style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
-                  onClick={ () => {} }
+                  style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
+                  onClick={() => { }}
                 />
               </div>
             </div>
@@ -48,7 +52,6 @@ class MainContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // prop: state.prop
   };
 };
 
@@ -66,6 +69,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       toggleHomeView: () => {
         dispatch(BodyUIActions.toggleHomeView());
+      },
+      getStepperNextButtonIsDisabled: () => {
+        dispatch(BodyUIActions.getStepperNextButtonIsDisabled());
       }
     }
   };
