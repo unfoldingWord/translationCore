@@ -104,7 +104,12 @@ export function migrateResourcesFolder() {
   for (var folder of directories) {
     let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory()
     let hasManifest = fs.existsSync(path.join(OLD_DEFAULT_SAVE, folder, 'manifest.json'));
-    if (folder != 'resources' && folder != 'projects' && isDirectory && hasManifest) {
+    let notDuplicate = !(fs.existsSync(path.join(DEFAULT_SAVE, folder)));
+    if (folder != 'resources'
+        && folder != 'projects'
+        && isDirectory
+        && hasManifest
+        && notDuplicate) {
       fs.moveSync(path.join(OLD_DEFAULT_SAVE, folder), path.join(DEFAULT_SAVE, folder));
     }
   }
