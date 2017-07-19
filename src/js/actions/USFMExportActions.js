@@ -8,6 +8,7 @@ const ipcRenderer = require('electron').ipcRenderer;
 //actions
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as AlertModalActions from './AlertModalActions';
+import * as TargetLanguageActions from './TargetLanguageActions';
 //consts
 const OSX_DOCUMENTS_PATH = Path.join(Path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
@@ -19,7 +20,6 @@ const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
     try {
-      if (fs.existsSync())
       /**Last place the user saved usfm */
       const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
       /**Name of project*/
@@ -57,6 +57,9 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let usfmJSONObject = {};
   let bookName = manifest.project.id;
+  debugger;
+  if (!fs.existsSync(Path.join(projectPath, bookName)))
+    TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
   /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
   let sourceTranslation = manifest.source_translations[0];
   let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;

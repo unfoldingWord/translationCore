@@ -102,11 +102,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         const { userdata } = ownProps.reducers.loginReducer
         dispatch(RecentProjectsActions.uploadProject(projectPath, userdata));
       },
-<<<<<<< HEAD
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
-=======
       closeOnlineImportModal: () => {
         dispatch(BodyUIActions.closeOnlineImportModal());
       },
@@ -128,7 +126,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       searchReposByQuery: (query, user) => {
         dispatch(ImportOnlineActions.searchReposByQuery(query, user));
       }
->>>>>>> develop
     }
   };
 };
