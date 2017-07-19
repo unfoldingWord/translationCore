@@ -2,7 +2,7 @@
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
 //constants
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
 //helpers
 import * as LoadHelpers from './LoadHelpers';
 

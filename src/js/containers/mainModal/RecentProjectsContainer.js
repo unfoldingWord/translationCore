@@ -11,7 +11,7 @@ import * as ModalActions from '../../actions/ModalActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 // constant declaration
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 
 class RecentProjectsContainer extends React.Component {

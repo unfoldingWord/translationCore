@@ -7,7 +7,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import CryptoJS from "crypto-js";
 //  consts declaration
-const PARENT = path.datadir('translationCore');
+const PARENT = path.datadir('translationCore', 'projects');
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources/translationHelps');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 

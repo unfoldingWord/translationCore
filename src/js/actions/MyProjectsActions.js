@@ -7,8 +7,8 @@ import usfmHelper from 'usfm-parser';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 //helpers
 // contant declarations
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
+const OLD_DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 /**
  * @description - Will get the directories inside of a directory and return them
  * @return {array} projectDirectories
@@ -43,6 +43,7 @@ export function getProjectDirectories() {
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {
+    migrateResourcesFolder()
     const state = getState();
     const { projectDetailsReducer } = state;
     
@@ -96,4 +97,20 @@ export function getMyProjects() {
       projects: projects
     });
   });
+}
+
+export function migrateResourcesFolder() {
+  const directories = fs.readdirSync(OLD_DEFAULT_SAVE);
+  for (var folder of directories) {
+    let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory()
+    let hasManifest = fs.existsSync(path.join(OLD_DEFAULT_SAVE, folder, 'manifest.json'));
+    let notDuplicate = !(fs.existsSync(path.join(DEFAULT_SAVE, folder)));
+    if (folder != 'resources'
+        && folder != 'projects'
+        && isDirectory
+        && hasManifest
+        && notDuplicate) {
+      fs.moveSync(path.join(OLD_DEFAULT_SAVE, folder), path.join(DEFAULT_SAVE, folder));
+    }
+  }
 }
