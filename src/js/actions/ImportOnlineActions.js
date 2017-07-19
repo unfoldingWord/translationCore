@@ -144,9 +144,9 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
     Gogs().searchReposByUser(user).then((repos) => {
       let filteredRepos = repos.data.filter((repo) => {
         if (!secondFilter) {
-          return repo.full_name.includes(filterBy);
+          return repo.name.includes(filterBy);
         } else {
-          return repo.full_name.includes(filterBy) && repo.full_name.includes(secondFilter)
+          return repo.name.includes(filterBy) && repo.name.includes(secondFilter)
         }
       });
       dispatch({
@@ -160,11 +160,12 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
 function searchAndFilter(searchBy, filterBy, secondFilter) {
   return ((dispatch) => {
     Gogs().searchRepos(searchBy).then((repos) => {
+      console.log(repos)
       let filteredRepos = repos.filter((repo) => {
         if (!secondFilter) {
-          return repo.full_name.includes(filterBy);
+          return repo.name.includes(filterBy);
         } else {
-          return repo.full_name.includes(filterBy) && repo.full_name.includes(secondFilter)
+          return repo.name.includes(filterBy) && repo.name.includes(secondFilter)
         }
       });
       dispatch({
