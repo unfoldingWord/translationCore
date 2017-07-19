@@ -19,6 +19,7 @@ const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
     try {
+      if (fs.existsSync())
       /**Last place the user saved usfm */
       const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
       /**Name of project*/

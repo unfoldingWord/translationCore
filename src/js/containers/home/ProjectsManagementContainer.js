@@ -36,9 +36,6 @@ class ProjectsManagementContainer extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { projectDetailsReducer, myProjectsReducer } = this.props.reducers;
-=======
     const {
       projectDetailsReducer,
       importOnlineReducer,
@@ -46,17 +43,12 @@ class ProjectsManagementContainer extends Component {
       homeScreenReducer,
       loginReducer
     } = this.props.reducers;
->>>>>>> develop
     const myProjects = myProjectsReducer.projects;
 
     return (
       <div style={{ height: '100%' }}>
         <MyProjects myProjects={myProjects} actions={this.props.actions} />
-<<<<<<< HEAD
-        <div style={{ position: "absolute", bottom: "50px", right: "50px", zIndex: "2000" }}>
-=======
         <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
->>>>>>> develop
           <ProjectsFAB
             homeScreenReducer={this.props.reducers.homeScreenReducer}
             actions={this.props.actions}
