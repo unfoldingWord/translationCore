@@ -1,7 +1,6 @@
 import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as ModalActions from './ModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';

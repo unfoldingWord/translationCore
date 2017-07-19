@@ -100,8 +100,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      handleOnlineChange: e => {
-        dispatch(importOnlineActions.getLink(e));
+      handleOnlineChange: importLink => {
+        dispatch(importOnlineActions.getLink(importLink));
       },
       updateRepos: () => {
         dispatch(importOnlineActions.updateRepos());

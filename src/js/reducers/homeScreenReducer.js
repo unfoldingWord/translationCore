@@ -13,7 +13,7 @@ const initialState = {
     nextDisabled: false
   },
   showFABOptions: false,
-  onlineImportModalVisibility: true
+  onlineImportModalVisibility: false
 };
 
 const homeScreenReducer = (state = initialState, action) => {
