@@ -2,7 +2,7 @@ import Path from 'path-extra';
 import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/createProject/ProjectManifest';
 import BooksOfBible from '../components/BooksOfBible';
-import usfm from 'usfm-parser';
+import usfm from 'usfm-js';
 import * as ResourcesHelpers from './ResourcesHelpers';
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 

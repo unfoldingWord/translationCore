@@ -28,7 +28,7 @@ export function getProjectManifest(projectPath, projectLink, username) {
  * tC manifest from data available in usfm.
  * @param {string} projectPath - Path location in the filesystem for the project.
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
- * @param {object} parsedUSFM - USFM parsed using usfm-parser module includes headers and usfm chapter content.
+ * @param {object} parsedUSFM - USFM parsed using usfm-js module includes headers and usfm chapter content.
  * @param {string} direction - Direction of target language reading style i.e. 'ltr'.
  * @param {string} username - Current username of user logged in.
  */

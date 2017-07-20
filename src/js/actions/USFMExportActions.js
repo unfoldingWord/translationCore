@@ -1,7 +1,7 @@
 //action types
 import consts from './ActionTypes';
 //modules
-import usfm from 'usfm-parser';
+import usfm from 'usfm-js';
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
 const ipcRenderer = require('electron').ipcRenderer;

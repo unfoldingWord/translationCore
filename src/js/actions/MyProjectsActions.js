@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import moment from 'moment';
-import usfmHelper from 'usfm-parser';
+import usfmHelper from 'usfm-js';
 // actions
 import * as LoadHelpers from '../helpers/LoadHelpers';
 //helpers
