@@ -55,22 +55,13 @@ export function writeUSFMJSONToFS(filePath, usfmJSONObject) {
  */
 export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-  let usfmJSONObject = {};
   let bookName = manifest.project.id;
   if (!fs.existsSync(Path.join(projectPath, bookName)))
     TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
-  /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
-  let sourceTranslation = manifest.source_translations[0];
-  let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;
-  /**This will look like: ar_العربية_rtl to be included in the usfm id.
-   * This will make it easier to read for tC later on */
-  let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}`
-  /**Date object when project was las changed in FS */
-  let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
-  let bookNameUppercase = bookName.toUpperCase();
+
+  let usfmJSONObject = {};
   usfmJSONObject.book = LoadHelpers.convertToFullBookName(bookName);
-  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
-  usfmJSONObject.id = `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}, tc`;
+  usfmJSONObject.id = getUSFMIdTag(projectPath, manifest, bookName)
 
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
   for (var currentChapterFile of currentFolderChapters) {
@@ -125,4 +116,25 @@ export function getFilePath(projectName, usfmSaveLocation) {
     defaultPath = Path.join(Path.homedir(), projectName + '.usfm');
   }
   return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: ['usfm'] }], title: 'Save USFM Export As' } });
+}
+
+/**
+ * This function uses the manifest to populate the usfm JSON object id key in preparation 
+ * of usfm to JSON conversion
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ * @param {object} manifest - Metadata of the project details 
+ * @param {string} bookName - Book abbreviation for book to be converted
+ */
+export function getUSFMIdTag(projectPath, manifest, bookName) {
+  /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
+  let sourceTranslation = manifest.source_translations[0];
+  let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;
+  /**This will look like: ar_العربية_rtl to be included in the usfm id.
+   * This will make it easier to read for tC later on */
+  let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}`
+  /**Date object when project was las changed in FS */
+  let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
+  let bookNameUppercase = bookName.toUpperCase();
+  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
+  return `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}, tc`;
 }
