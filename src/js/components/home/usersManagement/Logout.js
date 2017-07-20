@@ -19,7 +19,7 @@ class Logout extends Component {
           className="btn-second"
           style={{ width: "100%", margin: "10px 0px 20px" }}
           onClick={() => this.props.logoutUser()}>
-          Logout
+          Log out
             </button>
       </div>
     );
