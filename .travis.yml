@@ -13,10 +13,11 @@ addons:
   apt:
     packages:
       - xvfb                # Dependency for headless testing via virtual frame buffer
+before_install:
+  - npm i -g npm@5.2.0      # Update to a known working version of npm
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
-  - npm install -g npm@5.2.0 # Update to a known working version of npm
   - npm install             # Run npm install
   - npm install -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
 deploy:                     # Configuration for releases
