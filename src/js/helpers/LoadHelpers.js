@@ -270,33 +270,6 @@ export function getParams(path, manifest) {
 }
 
 /**
- * @description Formated the target language accoring to tC standards
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- */
-export function formatTargetLanguage(parsedUSFM) {
-    let targetLanguage = {};
-    targetLanguage.title = parsedUSFM.book;
-    const chapters = parsedUSFM.chapters;
-    for (let ch in chapters) {
-        targetLanguage[chapters[ch].number] = {};
-        const verses = chapters[ch].verses;
-        for (let v in verses) {
-            const verseText = verses[v].text.trim();
-            targetLanguage[chapters[ch].number][verses[v].number] = verseText;
-        }
-    }
-    if (parsedUSFM.headers) {
-        const parsedHeaders = parsedUSFM.headers;
-        if (parsedHeaders['mt1']) {
-            targetLanguage.title = parsedHeaders['mt1'];
-        } else if (parsedHeaders['id']) {
-            targetLanguage.title = BooksOfBible[parsedHeaders['id'].toLowerCase()];
-        }
-    }
-    return targetLanguage;
-}
-
-/**
  * @description Checks if the folder/file specified is a usfm project
  *
  * @param {string} projectPath - Path in which the project is being loaded from

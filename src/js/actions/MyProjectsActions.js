@@ -69,7 +69,7 @@ export function getMyProjects() {
         const manifest = fs.readJsonSync(manifestPath);
         target_language = manifest.target_language;
         bookAbbr = manifest.project.id;
-        bookName = manifest.project.name;
+        bookName = LoadHelpers.convertToFullBookName(bookAbbr);
       } else {
 
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
@@ -80,7 +80,6 @@ export function getMyProjects() {
         target_language.name = usfmHeadersObject.name
       }
       const isSelected = projectSaveLocation === projectDetailsReducer.projectSaveLocation;
-
       return {
         projectName,
         projectSaveLocation,
