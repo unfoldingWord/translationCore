@@ -57,7 +57,6 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let usfmJSONObject = {};
   let bookName = manifest.project.id;
-  debugger;
   if (!fs.existsSync(Path.join(projectPath, bookName)))
     TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
   /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/

@@ -20,7 +20,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
       let bibleName = "targetLanguage"
       let targetLanguageChapter;
       let fileName = chapterNumber + '.json';
-      if (fs.existsSync(targetBiblePath)) {
+      if (fs.existsSync(targetBiblePath, fileName)) {
         targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
       } else {
         console.log("Target Bible was not found in the project root folder");

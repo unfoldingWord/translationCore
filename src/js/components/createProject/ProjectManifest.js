@@ -16,7 +16,7 @@ var template = {
     name: '',
     direction: ''
   },
-  ts_project: {
+  project: {
     id: '',
     name: ''
   },
@@ -79,10 +79,10 @@ function populate(data, tsManifest) {
       if (tsManifest.source_translations) {
         projectManifest.source_translations = tsManifest.source_translations;
       }
-      projectManifest.ts_project = tsManifest.project || tsManifest.ts_project;
-      if (projectManifest.ts_project) {
-        if (!projectManifest.ts_project.name || projectManifest.ts_project.name.length < 1) {
-          projectManifest.ts_project.name = LoadHelpers.convertToFullBookName(projectManifest.ts_project.id);
+      projectManifest.project = tsManifest.project || tsManifest.project;
+      if (projectManifest.project) {
+        if (!projectManifest.project.name || projectManifest.project.name.length < 1) {
+          projectManifest.project.name = LoadHelpers.convertToFullBookName(projectManifest.project.id);
         }
       }
       projectManifest.translators = tsManifest.translators;

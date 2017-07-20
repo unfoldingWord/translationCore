@@ -81,9 +81,9 @@ export function fixManifestVerThree(oldManifest) {
             newManifest[oldElements] = oldManifest[oldElements];
         }
         newManifest.finished_chunks = oldManifest.finished_frames;
-        newManifest.ts_project = {};
-        newManifest.ts_project.id = oldManifest.project_id;
-        newManifest.ts_project.name = this.convertToFullBookName(oldManifest.project_id);
+        newManifest.project = {};
+        newManifest.project.id = oldManifest.project_id;
+        newManifest.project.name = this.convertToFullBookName(oldManifest.project_id);
         for (var el in oldManifest.source_translations) {
             newManifest.source_translations = oldManifest.source_translations[el];
             var parameters = el.split("-");
@@ -188,10 +188,6 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
             id: bookAbbr,
             name: bookName
         },
-        ts_project: {
-            id: bookAbbr,
-            name: bookName
-        },
         "checkers": [
             username
         ]
@@ -220,7 +216,7 @@ export function getParsedUSFM(usfmData) {
  */
 export function checkIfValidBetaProject(manifest) {
     if (manifest && manifest.project) return manifest.project.id == "tit";
-    else if (manifest && manifest.ts_project) return manifest.ts_project.id == "tit";
+    else return false;
 }
 
 
@@ -249,10 +245,7 @@ export function getParams(path, manifest) {
     params.targetLanguagePath = path;
     params.gatewayLanguageUDBPath = UDBPath;
     try {
-        if (manifest.ts_project) {
-            params.bookAbbr = manifest.ts_project.id;
-        }
-        else if (manifest.project) {
+        if (manifest.project) {
             params.bookAbbr = manifest.project.id;
         }
         else {
@@ -398,7 +391,6 @@ export function createCheckArray(dataObject, moduleFolderName) {
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
         let indexLocation = Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json');
-        //if (!fs.existsSync(indexLocation)) ResourcesHelpers.getBibleFromStaticPackage(true)
         let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
@@ -408,12 +400,14 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
             let currentChapter = Path.parse(currentChapterFile).name;
             if (!parseInt(currentChapter)) continue;
             chapterLength++;
-            let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
-            let verseLength = 0;
-            for (var verseIndex in currentChapterObject) {
-                let verse = currentChapterObject[verseIndex];
-                if (verse && verseIndex > 0) verseLength++;
-            }
+            try {
+                let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
+                let verseLength = 0;
+                for (var verseIndex in currentChapterObject) {
+                    let verse = currentChapterObject[verseIndex];
+                    if (verse && verseIndex > 0) verseLength++;
+                }
+            } catch (e) { }
             actualVersesObject[currentChapter] = verseLength;
         }
         actualVersesObject.chapters = chapterLength;
@@ -436,11 +430,13 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
     for (var currentChapterFile of currentFolderChapters) {
         let currentChapter = Path.parse(currentChapterFile).name;
         if (!parseInt(currentChapter)) continue;
-        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
-        let fileContents = JSON.stringify(currentChapterObject);
-        if (~fileContents.indexOf('<<<<<<<')) {
-            return true;
-        }
+        try {
+            let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+            let fileContents = JSON.stringify(currentChapterObject);
+            if (~fileContents.indexOf('<<<<<<<')) {
+                return true;
+            }
+        } catch (e) { }
     }
     return false;
 }
@@ -463,7 +459,11 @@ export function migrateAppsToDotApps(projectPath) {
 * @param {path} direction - Reading direction of the project books
 * @return {object} action object.
 */
-export function getUSFMParams(bookAbbr, projectPath, direction) {
+export function getUSFMParams(projectPath, manifest) {
+    let bookAbbr;
+    if (manifest.project) bookAbbr = manifest.project.id;
+    else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
+    let direction = manifest.target_language.direction;
     let params = {
         originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
         targetLanguagePath: projectPath,

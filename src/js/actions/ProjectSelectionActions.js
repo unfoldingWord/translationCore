@@ -32,7 +32,7 @@ export function selectProject(projectPath, projectLink) {
       let {parsedUSFM, direction} = usfmProjectObject;
       targetLanguage = parsedUSFM;
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
-      params = LoadHelpers.getUSFMParams(manifest.ts_project.id, projectPath, manifest.target_language.direction);
+      params = LoadHelpers.getUSFMParams(projectPath, manifest);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
