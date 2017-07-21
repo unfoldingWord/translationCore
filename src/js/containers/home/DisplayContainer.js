@@ -5,12 +5,10 @@ import OverviewContainer from './OverviewContainer';
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import ToolsManagementContainer from './ToolsManagementContainer';
-// actions
-// import {actionCreator} from 'actionCreatorPath'
 
 class DisplayContainer extends Component {
   render() {
-    let {stepIndex} = this.props.reducers.homeScreenReducer.stepper;
+    let { stepIndex } = this.props.reducers.homeScreenReducer.stepper;
     let displayContainer = <div />;
     switch (stepIndex) {
       case 0:

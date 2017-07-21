@@ -2,31 +2,38 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // components
 import WelcomeSplash from '../../components/home/WelcomeSplash'
-import LicenseModal from '../../components/home/LicenseModal'
+import LicenseModal from '../../components/home/license/LicenseModal'
 // containers
 import MainContainer from './MainContainer'
 // actions
-import * as BodyUIActions from '../../actions/BodyUIActions'
-import * as modalActions from '../../actions/ModalActions';
+import * as BodyUIActions from '../../actions/BodyUIActions';
+// info
+import packagefile from '../../../../package.json';
 
 class HomeContainer extends Component {
 
   render() {
-    let {showWelcomeSplash} = this.props.reducers.homeScreenReducer;
+    let { showWelcomeSplash, showLicenseModal } = this.props.reducers.homeScreenReducer;
     return (
       <div style={{width: '100%'}}>
-        {showWelcomeSplash ? (
-          <WelcomeSplash {...this.props} />
-        ) : (
-          <MainContainer {...this.props} />
-        )}
-        <LicenseModal {...this.props} />
+        {
+          showWelcomeSplash ? (
+            <WelcomeSplash {...this.props} />
+          ) : (
+            <MainContainer {...this.props} version={packagefile.version} />
+          )
+        }
+        <LicenseModal
+          version={packagefile.version}
+          actions={this.props.actions}
+          showLicenseModal={showLicenseModal}
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
@@ -38,15 +45,14 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      toggleModal: () => {
-        // temporary action being dispatched until we move to home screen implementation.
-        dispatch(modalActions.selectModalTab(1, 1, true));
-      },
       toggleWelcomeSplash: () => {
         dispatch(BodyUIActions.toggleWelcomeSplash());
+      },
+      closeLicenseModal: () => {
+        dispatch(BodyUIActions.closeLicenseModal());
       }
     }
   };

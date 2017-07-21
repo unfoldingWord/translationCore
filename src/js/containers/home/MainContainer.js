@@ -10,10 +10,9 @@ import StepperContainer from './StepperContainer';
 import DisplayContainer from './DisplayContainer';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
-// info
-import packagefile from '../../../../package.json';
 
 class MainContainer extends Component {
+
   componentWillReceiveProps(nextProps) {
     this.props.actions.getStepperNextButtonIsDisabled();
   }
@@ -35,11 +34,11 @@ class MainContainer extends Component {
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <BackNavigation {...this.props} />
               <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-                <strong>traslationCore {packagefile.version} </strong>
+                <strong>traslationCore {this.props.version} </strong>
                 <Glyphicon
                   glyph="info-sign"
                   style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
-                  onClick={() => { }}
+                  onClick={() => { this.props.actions.openLicenseModal() }}
                 />
               </div>
             </div>
@@ -55,7 +54,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       goToNextStep: () => {
@@ -72,6 +71,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       getStepperNextButtonIsDisabled: () => {
         dispatch(BodyUIActions.getStepperNextButtonIsDisabled());
+      },
+      openLicenseModal: () => {
+        dispatch(BodyUIActions.openLicenseModal());
       }
     }
   };

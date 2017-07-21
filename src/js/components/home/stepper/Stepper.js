@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import {Glyphicon} from 'react-bootstrap'
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import { Card } from 'material-ui/Card';
 import {
   Step,
   Stepper,
-  StepLabel,
+  StepLabel
 } from 'material-ui/Stepper';
 
 class StepperComponent extends Component {
   render() {
-    const {stepIndex} = this.props.homeScreenReducer.stepper;
+    const { stepIndex } = this.props.homeScreenReducer.stepper;
     // colors
     let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
     let userColor = stepIndex >= 1 ? "var(--accent-color-dark)" : "";

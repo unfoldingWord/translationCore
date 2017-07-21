@@ -8,7 +8,7 @@ import ToolsContainer from '../ToolsContainer';
 
 class BodyContainer extends Component {
   render() {
-    let {displayHomeView} = this.props.homeScreenReducer;
+    let { displayHomeView } = this.props.homeScreenReducer;
     return (
         <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
           {displayHomeView ? (
@@ -29,13 +29,13 @@ class BodyContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     homeScreenReducer: state.homeScreenReducer
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {}
   };
