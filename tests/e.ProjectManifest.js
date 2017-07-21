@@ -61,7 +61,7 @@ describe('ProjectManifest.populate', function() {
     assert.isArray(generatedManifest.checkers);
     assert.isObject(generatedManifest.checkers[0]);
     assert.equal(generatedManifest.translators[0], 'royalsix');
-    assert.equal(generatedManifest.ts_project.name, 'Mark');
+    assert.equal(generatedManifest.project.name, 'Mark');
     assert.isString(generatedManifest.otherData);
   });
 });

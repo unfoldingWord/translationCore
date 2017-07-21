@@ -11,7 +11,6 @@ check_data.json
 .vscode/
 report.html
 jsconfig.json
-package-lock.json
 
 # Needed for Webstorm
 .idea

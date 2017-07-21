@@ -69,7 +69,7 @@ class RecentProjectsContainer extends React.Component {
         manifest = require(manifestLocation);
       } catch (err) {
         // Happens with USFM projects
-        manifest = { target_language: {}, ts_project: {} }
+        manifest = { target_language: {}, project: {} }
       }
       let stats;
       try {

@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import moment from 'moment';
-import usfmHelper from 'usfm-parser';
+import usfmHelper from 'usfm-js';
 // actions
 import * as LoadHelpers from '../helpers/LoadHelpers';
 //helpers
@@ -69,18 +69,17 @@ export function getMyProjects() {
         const manifest = fs.readJsonSync(manifestPath);
         target_language = manifest.target_language;
         bookAbbr = manifest.project.id;
-        bookName = manifest.project.name;
+        bookName = LoadHelpers.convertToFullBookName(bookAbbr);
       } else {
 
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
         const usfmObject = usfmHelper.toJSON(usfmText);
-        bookAbbr = usfmObject.headers.id.split(" ")[0];
-        bookName = LoadHelpers.convertToFullBookName(bookAbbr);
-        target_language.id = usfmObject.headers.id.split(" ")[1];
-        target_language.name = usfmObject.headers.id.split(" ")[2];
+        let usfmHeadersObject = LoadHelpers.getIDsFromUSFM(usfmObject);
+        bookName = usfmHeadersObject.bookName;
+        target_language.id = usfmHeadersObject.id;
+        target_language.name = usfmHeadersObject.name
       }
       const isSelected = projectSaveLocation === projectDetailsReducer.projectSaveLocation;
-
       return {
         projectName,
         projectSaveLocation,
