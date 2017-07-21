@@ -28,7 +28,7 @@ const ALERT_MESSAGE = (
  */
 export function selectLocalProjectToLoad() {
   return ((dispatch) => {
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
+    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {      
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.
@@ -82,7 +82,7 @@ function verifyIsValidProject(projectSourcePath) {
   const projectManifestPath = path.join(projectSourcePath, "manifest.json");
   if (fs.existsSync(projectManifestPath)) {
     const projectManifest = fs.readJsonSync(projectManifestPath);
-    if (projectManifest.target_language && projectManifest.ts_project) {
+    if (projectManifest.target_language && projectManifest.project) {
       return true;
     }
   }
