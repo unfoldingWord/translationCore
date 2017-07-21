@@ -20,11 +20,11 @@ function getProjects() {
 getProjects()
     .then(() => {
         describe('Valid Project Actions', () => {
-            it('should return project is missing verses', function (done) {
-                var isMissing = LoadHelpers.projectIsMissingVerses(missingVerseExpectedPath, 'tit');
-                expect(isMissing).to.be.true;
-                done();
-            })
+            // it('should return project is missing verses', function (done) {
+            //     var isMissing = LoadHelpers.projectIsMissingVerses(missingVerseExpectedPath, 'tit');
+            //     expect(isMissing).to.be.true;
+            //     done();
+            // })
             it('should return project is not missing verses', function (done) {
                 var isMissing = LoadHelpers.projectIsMissingVerses(workingProjectExpectedPath, '1co');
                 expect(isMissing).to.be.false;
