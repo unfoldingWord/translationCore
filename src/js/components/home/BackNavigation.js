@@ -12,22 +12,19 @@ class BackNavigation extends Component {
 
   render() {
     let { goToNextStep, goToPrevStep} = this.props.actions
-    let {stepIndex} = this.props.reducers.homeScreenReducer.stepper;
-    let backDisabled = false, nextDisabled = false;
+    let {stepIndex, previousStepName, nextStepName, nextDisabled} = this.props.reducers.homeScreenReducer.stepper;
+    let backDisabled = false;
     switch (stepIndex) {
       case 0:
         backDisabled = true;
-        break;
-      case 3:
-        nextDisabled = true;
         break;
       default:
         break;
     }
     return (
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-        {this.button('Go back', goToPrevStep, backDisabled)}
-        {this.button('Next', goToNextStep, nextDisabled)}
+        {this.button(previousStepName, goToPrevStep, backDisabled)}
+        {this.button(nextStepName, goToNextStep, nextDisabled)}
       </div>
     )
   }

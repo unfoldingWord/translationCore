@@ -7,9 +7,13 @@ const initialState = {
   homeInstructions: <div></div>,
   stepper: {
     finished: false,
-    stepIndex: 0
+    stepIndex: 0,
+    nextStepName: 'Go To User',
+    previousStepName: '',
+    nextDisabled: false
   },
-  showFABOptions: false
+  showFABOptions: false,
+  onlineImportModalVisibility: false
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -34,7 +38,9 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           finished: action.finished,
-          stepIndex: action.stepIndex
+          stepIndex: action.stepIndex,
+          previousStepName: action.previousStepName,
+          nextStepName: action.nextStepName
         }
       };
     case consts.GO_TO_PREVIOUS_STEP:
@@ -42,13 +48,33 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           finished: false,
-          stepIndex: action.stepIndex
+          stepIndex: action.stepIndex,
+          previousStepName: action.previousStepName,
+          nextStepName: action.nextStepName
         }
       };
     case consts.TOGGLE_PROJECTS_FAB:
       return {
         ...state,
         showFABOptions: !state.showFABOptions
+      }
+    case consts.OPEN_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: true
+      }
+    case consts.CLOSE_ONLINE_IMPORT_MODAL:
+      return {
+        ...state,
+        onlineImportModalVisibility: false
+      }
+    case consts.UPDATE_NEXT_BUTTON_STATUS:
+      return {
+        ...state,
+        stepper: {
+          ...state.stepper,
+          nextDisabled: action.nextDisabled
+        }
       }
     default:
       return state;

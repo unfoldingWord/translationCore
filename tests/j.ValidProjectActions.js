@@ -3,9 +3,9 @@ import { expect } from 'chai';
 const path = require('path-extra');
 const fs = require('fs-extra');
 const loadOnline = require('../src/js/components/LoadOnline.js');
-var workingProjectExpectedPath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
-var missingVerseExpectedPath = path.join(path.homedir(), 'translationCore', 'bes_tit_text_reg');
-var mergeConflictExpectedPath = path.join(path.homedir(), 'translationCore', 'ceb_2ti_text_ulb_L2');
+var workingProjectExpectedPath = path.join(path.homedir(), 'translationCore', 'projects', 'id_-co_text_reg');
+var missingVerseExpectedPath = path.join(path.homedir(), 'translationCore', 'projects', 'bes_tit_text_reg');
+var mergeConflictExpectedPath = path.join(path.homedir(), 'translationCore', 'projects', 'ceb_2ti_text_ulb_L2');
 
 var missingVerseProjectURL = 'https://git.door43.org/royalsix/bes_tit_text_reg.git';
 var mergeConflictProjectURL = 'https://git.door43.org/royalsix/ceb_2ti_text_ulb_L2.git';

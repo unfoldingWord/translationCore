@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const loadOnline = require('../src/js/components/LoadOnline.js');
 const path = require('path-extra');
 const fs = require('fs-extra');
-const badSave = path.join(path.homedir(), 'translationCore', 'id_-cfksl');
+const badSave = path.join(path.homedir(), 'translationCore', 'projects', 'id_-cfksl');
 
 describe('loadOnline.openManifest', function() {
   it('loadOnline.openManifest should return an error if no link is specified', function(done) {
@@ -27,7 +27,7 @@ describe('loadOnline.openManifest', function() {
 
   it('loadOnline.openManifest should not deny a non .git link.', function(done){
     this.timeout(50000);
-    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
+    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'projects', 'id_-co_text_reg');
     var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg';
     loadOnline(expectedURL, function(err, savePath, url) {
       assert.equal(savePath, expectedSavePath);
@@ -39,7 +39,7 @@ describe('loadOnline.openManifest', function() {
 
   it('loadOnline.openManifest should return the home directory and url', function(done){
     this.timeout(50000);
-    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'id_-co_text_reg');
+    var expectedSavePath = path.join(path.homedir(), 'translationCore', 'projects', 'id_-co_text_reg');
     var expectedURL = 'https://git.door43.org/royalsix/id_-co_text_reg.git';
     loadOnline(expectedURL, function(err, savePath, url) {
       assert.equal(savePath, expectedSavePath);

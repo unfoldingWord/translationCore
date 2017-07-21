@@ -5,14 +5,14 @@ import path from 'path-extra';
 import gogs from '../components/login/GogsApi';
 import { shell } from 'electron';
 import zipFolder from 'zip-folder';
-import git from '../components/GitApi.js'
+import git from '../helpers/GitApi.js';
+import {ipcRenderer} from 'electron';
 // actions
 import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 // contant declarations
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
-const ipcRenderer = require('electron').ipcRenderer;
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
@@ -37,15 +37,11 @@ export function uploadProject(projectPath, user) {
   return (dispatch => {
     dispatch(OnlineModeActions.confirmOnlineAction(() => {
       var projectName = projectPath.split(path.sep).pop();
-
-      dispatch(
-        AlertModalActions.openAlertDialog("Uploading " + projectName + " to Door43. Please wait...", true)
-      );
-
+      const message = "Uploading " + projectName + " to Door43. Please wait...";
+      dispatch(AlertModalActions.openAlertDialog(message, true));
       if (!user.token) {
-        dispatch(
-          AlertModalActions.openAlertDialog("Your login has become invalid. Please log out and log back in.", false)
-        );
+        const message = "Your login has become invalid. Please log out and log back in.";
+        dispatch(AlertModalActions.openAlertDialog(message, false));
         return;
       }
 
@@ -54,32 +50,22 @@ export function uploadProject(projectPath, user) {
 
         git(projectPath).save(user, 'Commit before upload', projectPath, err => {
           if (err) {
-            dispatch(
-              AlertModalActions.openAlertDialog("Error saving project: " + err)
-            )
+            dispatch(AlertModalActions.openAlertDialog("Error saving project: " + err));
           } else {
             git(projectPath).push(newRemote, "master", err => {
               if (err) {
                 if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
-                  dispatch(
-                    AlertModalActions.openAlertDialog("Unable to connect to the server. Please check your Internet connection.")
-                  );
+                  const message = "Unable to connect to the server. Please check your Internet connection.";
+                  dispatch(AlertModalActions.openAlertDialog(message));
                 } else if (err.toString().includes("rejected because the remote contains work")) {
-                  dispatch(
-                    AlertModalActions.openAlertDialog(projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.')
-                  );
+                  const message = projectName + ' cannot be uploaded because there have been changes to the translation of that project on your Door43 account.';
+                  dispatch(AlertModalActions.openAlertDialog(message));
                 } else if (err.hasOwnProperty('message')) {
-                  dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.message)
-                  );
+                  dispatch(AlertModalActions.openAlertDialog('Error Uploading: ' + err.message));
                 } else if (err.hasOwnProperty('data') && err.data) {
-                  dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: ' + err.data)
-                  );
+                  dispatch(AlertModalActions.openAlertDialog('Error Uploading: ' + err.data));
                 } else {
-                  dispatch(
-                    AlertModalActions.openAlertDialog('Error Uploading: Unknown error')
-                  );
+                  dispatch(AlertModalActions.openAlertDialog('Error Uploading: Unknown error'));
                 }
               } else {
                 dispatch(
@@ -87,13 +73,13 @@ export function uploadProject(projectPath, user) {
                     <div>
                       <span>
                         <span style={{ fontWeight: 'bold' }}>{user.username + ", "}</span>
-                        {"your project was uploaded successfully to:"}
-                        <a onClick={() => {
+                        {"your project was uploaded successfully to: "}
+                        <a style={{cursor: 'pointer'}} onClick={() => {
                           dispatch(OnlineModeActions.confirmOnlineAction(() => {
-                            shell.openExternal('https://git.door43.org/' + user.username)
+                            shell.openExternal('https://git.door43.org/' + user.username + '/' + projectName)
                           }))
                         }}>
-                          {"https://git.door43.org/" + user.username}
+                          {"https://git.door43.org/" + user.username + '/' + projectName}
                         </a>
                       </span>
                     </div>

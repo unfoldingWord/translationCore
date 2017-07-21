@@ -9,7 +9,7 @@ const {dialog} = remote;
 const path = require('path');
 const pathex = require('path-extra');
 const fs = require('fs-extra');
-const git = require('./GitApi.js');
+const git = require('../helpers/GitApi.js');
 
 module.exports = (function() {
   /**
@@ -33,7 +33,7 @@ module.exports = (function() {
 
     if (expression.test(url)) {
       var projectName = expression.exec(url)[2];
-      var savePath = path.join(pathex.homedir(), 'translationCore', projectName);
+      var savePath = path.join(pathex.homedir(), 'translationCore','projects', projectName);
     } else {
       if (callback) {
         callback({type: "custom", text: 'The URL does not reference a valid project'}, null, url)

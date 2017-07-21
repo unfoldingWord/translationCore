@@ -11,7 +11,7 @@ import * as ModalActions from '../../actions/ModalActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 // constant declaration
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 
 class RecentProjectsContainer extends React.Component {
@@ -69,7 +69,7 @@ class RecentProjectsContainer extends React.Component {
         manifest = require(manifestLocation);
       } catch (err) {
         // Happens with USFM projects
-        manifest = { target_language: {}, ts_project: {} }
+        manifest = { target_language: {}, project: {} }
       }
       let stats;
       try {

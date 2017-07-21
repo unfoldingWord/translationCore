@@ -2,12 +2,13 @@ import Path from 'path-extra';
 import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/createProject/ProjectManifest';
 import BooksOfBible from '../components/BooksOfBible';
-import usfm from 'usfm-parser';
+import usfm from 'usfm-js';
 import * as ResourcesHelpers from './ResourcesHelpers';
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore');
+const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
+const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static', 'originalLanguage');
 
 /**
  *
@@ -80,9 +81,9 @@ export function fixManifestVerThree(oldManifest) {
             newManifest[oldElements] = oldManifest[oldElements];
         }
         newManifest.finished_chunks = oldManifest.finished_frames;
-        newManifest.ts_project = {};
-        newManifest.ts_project.id = oldManifest.project_id;
-        newManifest.ts_project.name = this.convertToFullBookName(oldManifest.project_id);
+        newManifest.project = {};
+        newManifest.project.id = oldManifest.project_id;
+        newManifest.project.name = this.convertToFullBookName(oldManifest.project_id);
         for (var el in oldManifest.source_translations) {
             newManifest.source_translations = oldManifest.source_translations[el];
             var parameters = el.split("-");
@@ -150,11 +151,9 @@ export function saveProjectInHomeFolder(projectPath) {
  * @description Sets up the folder in the tC save location for a USFM project
  *
  * @param {string} usfmFilePath - Path of the usfm file that has been loaded
- * @param {string} projectSaveLocation - Folder path containing the usfm file loaded
  */
-export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
+export function loadUSFMData(usfmFilePath) {
     const parsedPath = Path.parse(usfmFilePath);
-    const saveFile = Path.join(projectSaveLocation, parsedPath.base);
     const usfmData = fs.readFileSync(usfmFilePath).toString();
     return usfmData
 }
@@ -167,8 +166,8 @@ export function setUpUSFMProject(usfmFilePath, projectSaveLocation) {
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {objet} user - The current user loaded
  */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
-    const name = user ? user.username : 'Unknown';
+export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
+    let { id, name, bookAbbr, bookName } = getIDsFromUSFM(parsedUSFM);
     const defaultManifest = {
         "source_translations": [
             {
@@ -182,14 +181,16 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
         tcInitialized: true,
         target_language: {
             direction: direction,
-            id: "",
-            name: name
+            id,
+            name
         },
-        project_id: parsedUSFM.book,
-        ts_project: {
-            id: parsedUSFM.book,
-            name: convertToFullBookName(parsedUSFM.book)
-        }
+        project: {
+            id: bookAbbr,
+            name: bookName
+        },
+        "checkers": [
+            username
+        ]
     }
     return defaultManifest;
 }
@@ -202,7 +203,6 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, user) {
 export function getParsedUSFM(usfmData) {
     try {
         let parsedUSFM = usfm.toJSON(usfmData);
-        parsedUSFM.book = parsedUSFM.headers['id'].split(" ")[0].toLowerCase();
         return parsedUSFM;
     } catch (e) {
         console.error(e);
@@ -210,13 +210,13 @@ export function getParsedUSFM(usfmData) {
 }
 
 /**
- * @description Check if project is ephesians or titus, or if user is in developer mode.
+ * @description Check if project is titus, or if user is in developer mode.
  *
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
-    if (manifest && manifest.project) return manifest.project.id == "eph" || manifest.project.id == "tit";
-    else if (manifest && manifest.ts_project) return manifest.ts_project.id == "eph" || manifest.ts_project.id == "tit";
+    if (manifest && manifest.project) return manifest.project.id == "tit";
+    else return false;
 }
 
 
@@ -237,18 +237,15 @@ export function getParams(path, manifest) {
     if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
         return null;
     }
-    const ogPath = Path.join(window.__base, 'static', 'originalLanguage');
+
     let params = {
-        'originalLanguagePath': ogPath
+        'originalLanguagePath': ORIGINAL_LANGUAGE_PATH
     }
     const UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
     params.targetLanguagePath = path;
     params.gatewayLanguageUDBPath = UDBPath;
     try {
-        if (manifest.ts_project) {
-            params.bookAbbr = manifest.ts_project.id;
-        }
-        else if (manifest.project) {
+        if (manifest.project) {
             params.bookAbbr = manifest.project.id;
         }
         else {
@@ -273,33 +270,6 @@ export function getParams(path, manifest) {
 }
 
 /**
- * @description Formated the target language accoring to tC standards
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- */
-export function formatTargetLanguage(parsedUSFM) {
-    let targetLanguage = {};
-    targetLanguage.title = parsedUSFM.book;
-    const chapters = parsedUSFM.chapters;
-    for (let ch in chapters) {
-        targetLanguage[chapters[ch].number] = {};
-        const verses = chapters[ch].verses;
-        for (let v in verses) {
-            const verseText = verses[v].text.trim();
-            targetLanguage[chapters[ch].number][verses[v].number] = verseText;
-        }
-    }
-    if (parsedUSFM.headers) {
-        const parsedHeaders = parsedUSFM.headers;
-        if (parsedHeaders['mt1']) {
-            targetLanguage.title = parsedHeaders['mt1'];
-        } else if (parsedHeaders['id']) {
-            targetLanguage.title = BooksOfBible[parsedHeaders['id'].toLowerCase()];
-        }
-    }
-    return targetLanguage;
-}
-
-/**
  * @description Checks if the folder/file specified is a usfm project
  *
  * @param {string} projectPath - Path in which the project is being loaded from
@@ -307,14 +277,14 @@ export function formatTargetLanguage(parsedUSFM) {
 export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
-        const ext = projectPath.split(".")[1];
-        if (ext == "usfm" || ext == "sfm") return projectPath;
+        const ext = projectPath.split(".")[1].toLowerCase();
+        if (ext == "usfm" || ext == "sfm" || ext == "txt") return projectPath;
     } catch (e) {
         try {
             let dir = fs.readdirSync(projectPath);
             for (let i in dir) {
-                const ext = dir[i].split(".")[1];
-                if (ext == "usfm" || ext == "sfm") return Path.join(projectPath, dir[i]);
+                const ext = dir[i].split(".")[1].toLowerCase();
+                if (ext == "usfm" || ext == "sfm" || ext == "txt") return Path.join(projectPath, dir[i]);
             }
             return false;
         } catch (err) {
@@ -394,7 +364,6 @@ export function createCheckArray(dataObject, moduleFolderName) {
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
         let indexLocation = Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json');
-        //if (!fs.existsSync(indexLocation)) ResourcesHelpers.getBibleFromStaticPackage(true)
         let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
@@ -404,12 +373,14 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
             let currentChapter = Path.parse(currentChapterFile).name;
             if (!parseInt(currentChapter)) continue;
             chapterLength++;
-            let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
-            let verseLength = 0;
-            for (var verseIndex in currentChapterObject) {
-                let verse = currentChapterObject[verseIndex];
-                if (verse && verseIndex > 0) verseLength++;
-            }
+            try {
+                let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
+                let verseLength = 0;
+                for (var verseIndex in currentChapterObject) {
+                    let verse = currentChapterObject[verseIndex];
+                    if (verse && verseIndex > 0) verseLength++;
+                }
+            } catch (e) { }
             actualVersesObject[currentChapter] = verseLength;
         }
         actualVersesObject.chapters = chapterLength;
@@ -432,11 +403,13 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
     for (var currentChapterFile of currentFolderChapters) {
         let currentChapter = Path.parse(currentChapterFile).name;
         if (!parseInt(currentChapter)) continue;
-        let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+        try {
+            let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
             let fileContents = JSON.stringify(currentChapterObject);
             if (~fileContents.indexOf('<<<<<<<')) {
                 return true;
-        }
+            }
+        } catch (e) { }
     }
     return false;
 }
@@ -449,4 +422,64 @@ export function migrateAppsToDotApps(projectPath) {
     if (projectDir.includes('apps')) {
         fs.renameSync(Path.join(projectPath, 'apps'), Path.join(projectPath, '.apps'));
     }
+}
+
+
+/**
+* @description Set ups a tC project parameters for a usfm project
+* @param {string} bookAbbr - Book abbreviation
+* @param {path} projectPath - Path of the usfm project being loaded
+* @param {path} direction - Reading direction of the project books
+* @return {object} action object.
+*/
+export function getUSFMParams(projectPath, manifest) {
+    let bookAbbr;
+    if (manifest.project) bookAbbr = manifest.project.id;
+    else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
+    let direction = manifest.target_language.direction;
+    let params = {
+        originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
+        targetLanguagePath: projectPath,
+        direction: direction,
+        bookAbbr: bookAbbr
+    };
+    if (isOldTestament(bookAbbr)) {
+        params.originalLanguage = "hebrew";
+    } else {
+        params.originalLanguage = "greek";
+    }
+    return params;
+}
+
+export function getIDsFromUSFM(usfmObject) {
+    let bookAbbr, bookName, id, name, direction;
+    bookAbbr = bookName = direction = id = name = '';
+    try {
+        if (usfmObject.headers.id.includes(',')) {
+            bookAbbr = usfmObject.headers.id.split(",")[0].trim().toLowerCase();
+            bookName = convertToFullBookName(bookAbbr);
+            let commaSeperated = usfmObject.headers.id.split(",");
+            let tcField = commaSeperated[commaSeperated.length - 1] || '';
+            if (tcField.trim() == 'tc') {
+                let languageCodeArray = commaSeperated[1].trim().split('_');
+                if (languageCodeArray.length > 2) {
+                    id = languageCodeArray[0].toLowerCase();
+                    name = languageCodeArray[1];
+                    direction = languageCodeArray[2].toLowerCase();
+                }
+            }
+        } else {
+            if (usfmObject.headers.id.split(" ").length > 1) {
+                bookAbbr = usfmObject.headers.id.split(" ")[0].trim().toLowerCase();
+            } else {
+                bookAbbr = usfmObject.headers.id.toLowerCase();
+            }
+            bookName = convertToFullBookName(bookAbbr);
+            direction = 'ltr';
+        }
+    } catch (e) {
+        console.warn(e);
+        return null;
+    }
+    return { bookAbbr, bookName, id, name, direction };
 }

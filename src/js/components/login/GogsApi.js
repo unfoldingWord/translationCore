@@ -5,6 +5,7 @@
 const Gogs = require('gogs-client');
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 var CryptoJS = require("crypto-js");
+var axios = require('axios');
 
 function UserManager(auth) {
   return {
@@ -81,6 +82,20 @@ function UserManager(auth) {
           return {repo: repo.full_name, user: user, project: project};
         }).filter( repo => {
           return repo.user === user.username;
+        });
+      });
+    },
+    searchReposByUser: function (user) {
+      return axios.get(`https://git.door43.org/api/v1/users/${user}/repos`);
+    },
+    searchRepos: function (query) {
+      var uid = 0;
+      var limit = 100;
+      return api.searchRepos(query, uid, limit).then((repos) => {
+        return repos.map(repo => {
+          return repo;
+        }).filter(repo => {
+          return repo.description.includes("ts-desktop")
         });
       });
     }
