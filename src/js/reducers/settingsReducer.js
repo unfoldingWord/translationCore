@@ -18,6 +18,8 @@ const settingsReducer = (state = initialState, action) => {
       return { ...state, currentSettings: action.val }
     case consts.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation }
+    case consts.SET_USFM_SAVE_LOCATION:
+      return { ...state, usfmSaveLocation: action.usfmSaveLocation }
     case consts.CHANGE_ONLINE_STATUS:
       return { ...state, online: action.online }
     case consts.UPDATE_TOOL_SETTINGS:

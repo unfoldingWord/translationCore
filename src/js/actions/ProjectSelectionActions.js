@@ -30,9 +30,9 @@ export function selectProject(projectPath, projectLink) {
     if (USFMFilePath) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let {parsedUSFM, direction} = usfmProjectObject;
-      targetLanguage = usfmProjectObject.targetLanguage;
+      targetLanguage = parsedUSFM;
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
-      params = LoadHelpers.getUSFMParams(manifest.ts_project.id, projectPath, manifest.target_language.direction);
+      params = LoadHelpers.getUSFMParams(projectPath, manifest);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
@@ -41,8 +41,8 @@ export function selectProject(projectPath, projectLink) {
     }
       dispatch(clearLastProject());
       dispatch(loadProjectDetails(projectPath, manifest, params));
-      dispatch(TargetLanguageActions.generateTargetBible(projectPath, targetLanguage));
-      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id, USFMFilePath)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+      TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
+      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
       if (LoadHelpers.projectIsMissingVerses(projectPath, manifest.project.id)) {
         dispatch(confirmOpenMissingVerseProjectDialog(projectPath, manifest))
       } else {
