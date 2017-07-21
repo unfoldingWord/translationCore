@@ -7,7 +7,7 @@ environment:
   nodejs_version: "8"               # Test against the latest version of this Node.js version
 install:                            # Install scripts. (runs after repo cloning)
   - ps: Install-Product node $env:nodejs_version # Get the latest stable version of Node.js or io.js
-  - npm install -g npm@5.2.0        # Update to a known working version of npm
+  - npm install -g npm@5.1.0        # Update to a known working version of npm
   - node --version                  # Helpful debugging info
   - npm --version
   - npm install                     # install modules

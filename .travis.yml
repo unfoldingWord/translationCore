@@ -14,7 +14,7 @@ addons:
     packages:
       - xvfb                # Dependency for headless testing via virtual frame buffer
 before_install:
-  - npm i -g npm@5.2.0      # Specify version of npm
+  - npm i -g npm@5.1.0      # Specify version of npm
   - npm --version           # See what the running version of npm is
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
