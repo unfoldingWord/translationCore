@@ -12,6 +12,7 @@ import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions'
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
 import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
+import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeActions from '../../actions/OnlineModeActions';
 
 class ProjectsManagementContainer extends Component {
@@ -98,8 +99,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(RecentProjectsActions.exportToCSV(projectPath));
       },
       uploadProject: (projectPath) => {
-        const {userdata} = ownProps.reducers.loginReducer
+        const { userdata } = ownProps.reducers.loginReducer
         dispatch(RecentProjectsActions.uploadProject(projectPath, userdata));
+      },
+      exportToUSFM: (projectPath) => {
+        dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
       closeOnlineImportModal: () => {
         dispatch(BodyUIActions.closeOnlineImportModal());
