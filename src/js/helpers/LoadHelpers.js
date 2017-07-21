@@ -373,14 +373,14 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
             let currentChapter = Path.parse(currentChapterFile).name;
             if (!parseInt(currentChapter)) continue;
             chapterLength++;
+            let verseLength = 0;
             try {
                 let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
-                let verseLength = 0;
                 for (var verseIndex in currentChapterObject) {
                     let verse = currentChapterObject[verseIndex];
                     if (verse && verseIndex > 0) verseLength++;
                 }
-            } catch (e) { }
+            } catch (e) {}
             actualVersesObject[currentChapter] = verseLength;
         }
         actualVersesObject.chapters = chapterLength;
