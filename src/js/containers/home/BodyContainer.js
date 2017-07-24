@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // containers
 import HomeContainer from './HomeContainer';
 import GroupMenuContainer from '../GroupMenuContainer';
 import ToolsContainer from '../ToolsContainer';
 
-
 class BodyContainer extends Component {
   render() {
-    let {displayHomeView} = this.props.homeScreenReducer;
+    let { displayHomeView } = this.props.reducers.homeScreenReducer;
     return (
         <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
           {displayHomeView ? (
@@ -29,21 +29,18 @@ class BodyContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    homeScreenReducer: state.homeScreenReducer
+    reducers: {
+      homeScreenReducer: state.homeScreenReducer
+    }
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    actions: {}
-  };
-};
-
-
+BodyContainer.propTypes = {
+  reducers: PropTypes.object.isRequired
+}
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(BodyContainer);

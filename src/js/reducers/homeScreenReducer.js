@@ -13,6 +13,7 @@ const initialState = {
     nextDisabled: false
   },
   showFABOptions: false,
+  showLicenseModal: false,
   onlineImportModalVisibility: false
 };
 
@@ -75,6 +76,16 @@ const homeScreenReducer = (state = initialState, action) => {
           ...state.stepper,
           nextDisabled: action.nextDisabled
         }
+      }
+    case consts.OPEN_LICENSE_MODAL:
+      return {
+        ...state,
+        showLicenseModal: true
+      }
+    case consts.CLOSE_LICENSE_MODAL:
+      return {
+        ...state,
+        showLicenseModal: false
       }
     default:
       return state;

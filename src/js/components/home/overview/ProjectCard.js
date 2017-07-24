@@ -108,7 +108,7 @@ class ProjectCard extends Component {
   render() {
     const emptyMessage = 'Select a project';
     const emptyButtonLabel = 'Project';
-    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}
