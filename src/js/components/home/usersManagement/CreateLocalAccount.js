@@ -67,7 +67,7 @@ class CreateLocalAccount extends Component {
   loginButtons() {
     const loginEnabled = this.state.localUsername && this.state.checkBoxChecked ? true : false;
     const callback = (result) => {
-      if (result == "Create Account") this.props.actions.loginLocalUser(this.state.localUsername);
+      if (result == "Create Account") this.props.loginLocalUser(this.state.localUsername);
       this.props.actions.closeAlert();
     }
     return (
@@ -98,7 +98,7 @@ class CreateLocalAccount extends Component {
                     </span>
         &nbsp;
                     <a
-          style={{ cursor: "pointer", textDecoration: "none", }}
+          style={{ cursor: "pointer", textDecoration: "none" }}
           onClick={() =>
             this.infoPopup("Terms and Conditions")
           }>

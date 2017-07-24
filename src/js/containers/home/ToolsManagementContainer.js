@@ -14,7 +14,7 @@ class ToolsManagementContainer extends Component {
   componentWillMount() {
     this.props.actions.getToolsMetadatas();
     // get instructions
-    let instructions = <div>ToolsManagementInstructions</div>;
+    let instructions = <div>Select a tool from the list</div>;
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
