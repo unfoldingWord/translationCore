@@ -57,7 +57,7 @@ class ProjectFAB extends Component {
             <tbody>
               <tr>
                 <td>
-                  {showFABOptions ? <FABLabelCard label={"close"} /> : <div />}
+                  {showFABOptions ? <FABLabelCard label={"Close"} /> : <div />}
                 </td>
                 <td>
                   <FloatingActionButton
