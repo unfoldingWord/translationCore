@@ -116,6 +116,9 @@ const mapDispatchToProps = (dispatch) => {
       goToPrevStep: () => {
         dispatch(BodyUIActions.goToPrevStep());
       },
+      goToStep: (stepNumber) => {
+        dispatch(BodyUIActions.goToStep(stepNumber));
+      },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
       },

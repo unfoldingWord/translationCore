@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // actions
 import * as PopoverActions from '../../actions/PopoverActions';
@@ -86,7 +87,6 @@ class UsersManagementContainer extends Component {
                   this.showLoggedInInstructions();
                 }}
                 loginLocalUser={(localUsername) => {
-                  console.log("local")
                   this.props.actions.loginLocalUser(localUsername);
                   this.showLoggedInInstructions();
                 }}
@@ -154,6 +154,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       }
     }
   }
+};
+
+UsersManagementContainer.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 export default connect(

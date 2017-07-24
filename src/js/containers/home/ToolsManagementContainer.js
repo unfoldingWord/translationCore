@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // components
 import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
 // actions
@@ -64,7 +65,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       launchTool: (toolFolderPath, loggedInUser, currentToolName) => {
         if (!loggedInUser) {
-          //dispatch(modalActions.selectModalTab(1, 1, true));
           dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
           return;
         }
@@ -79,6 +79,11 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
+
+ToolsManagementContainer.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
 
 export default connect(
   mapStateToProps,
