@@ -22,12 +22,7 @@ class SwitchCheck extends React.Component {
     } else {
       for (let i in toolsMetadata) {
         const metadata = toolsMetadata[i];
-        if (metadata.name == "ToolsTester") {
-          if (this.props.currentSettings.developerMode) {
-            // Removing tool tester for beta
-            // buttons.push(<ToolDescription key={i} metadata={metadata} {...this.props} />);
-          }
-        } else {
+        if (metadata.title == "translationWords (Part 1)") {
           buttons.push(<ToolDescription key={i} metadata={metadata} {...this.props} />);
         }
       }
