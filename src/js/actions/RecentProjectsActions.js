@@ -16,17 +16,6 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
 
-// /**
-//  * @description - Initiate a project load
-//  *
-//  * @param {string} filePath - Path to the project to open i.e. ~/translationCore/{PROJECT_NAME}
-//  */
-// export function onLoad(filePath) {
-//   return (dispatch => {
-//     dispatch(ProjectLoadingActions.selectProject(filePath));
-//   });
-// }
-
 /**
  * Upload project to door 43, based on currently logged in user.
  *
