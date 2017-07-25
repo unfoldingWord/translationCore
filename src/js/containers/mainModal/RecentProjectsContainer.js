@@ -6,7 +6,9 @@ import { Glyphicon } from 'react-bootstrap/lib';
 // components
 import RecentProjects from '../../components/RecentProjects';
 // actions
-import * as recentProjectsActions from '../../actions/RecentProjectsActions';
+import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
+import * as CSVExportActions from '../../actions/CSVExportActions';
+import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
 import * as ModalActions from '../../actions/ModalActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
@@ -131,14 +133,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       if(user.localUser){
         dispatch(AlertModalActions.openAlertDialog("Please log in to Door43 to upload your projects"))
       } else {
-        dispatch(recentProjectsActions.uploadProject(projectPath, user));
+        dispatch(ProjectUploadActions.uploadProject(projectPath, user));
       }
     },
     getProjectsFromFolder: () => {
-      dispatch(recentProjectsActions.getProjectsFromFolder());
+      dispatch(RecentProjectsActions.getProjectsFromFolder());
     },
     exportToCSV: (projectPath) => {
-      dispatch(recentProjectsActions.exportToCSV(projectPath));
+      dispatch(CSVExportActions.exportToCSV(projectPath));
     }
   };
 };

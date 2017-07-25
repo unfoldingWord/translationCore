@@ -5,7 +5,6 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 import RecentProjectsContainer from './RecentProjectsContainer';
 import ImportOnlineContainer from './ImportOnlineContainer';
 // Actions
-import * as recentProjectsActions from '../../actions/RecentProjectsActions.js';
 import * as ModalActions from '../../actions/ModalActions';
 
 class LoadProjectContainer extends React.Component {
@@ -46,9 +45,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    loadProject: () => {
-      dispatch(recentProjectsActions.startLoadingNewProject());
-    },
     selectModalTab: (e, section, visible) => {
       dispatch(ModalActions.selectModalTab(e, section, visible));
     }

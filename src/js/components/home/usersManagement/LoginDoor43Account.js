@@ -9,6 +9,7 @@ class LoginDoor43Account extends Component {
       username: null,
       password: null
     };
+    this._handleKeyPress = this._handleKeyPress.bind(this);
   }
 
   infoClickDoor43(e) {
@@ -48,7 +49,7 @@ class LoginDoor43Account extends Component {
   loginTextFields() {
     const underLineColor = "var(--accent-color-dark)";
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+      <div onKeyPress={this._handleKeyPress} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <TextField
           fullWidth={true}
           floatingLabelText="Username"
@@ -70,7 +71,7 @@ class LoginDoor43Account extends Component {
 
   loginButtons() {
     let disabledButton = (this.state.username == null || this.state.username == "") ||
-    (this.state.password == null || this.state.password == "");
+      (this.state.password == null || this.state.password == "");
     return (
       <div style={{ width: '100%' }}>
         <button
@@ -88,6 +89,12 @@ class LoginDoor43Account extends Component {
             </button>
       </div>
     )
+  }
+
+  _handleKeyPress (e) {
+    if (e.key === 'Enter') {
+      this.props.loginUser(this.state)
+    }
   }
 
   render() {
