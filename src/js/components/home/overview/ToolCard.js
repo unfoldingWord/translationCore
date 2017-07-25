@@ -108,7 +108,7 @@ class ToolCard extends Component {
   render() {
     const emptyMessage = 'Select a tool';
     const emptyButtonLabel = 'Tool';
-    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+    const emptyButtonOnClick = () => { this.props.actions.goToStep(3) };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}

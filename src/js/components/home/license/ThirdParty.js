@@ -6,7 +6,7 @@ class ThirdParty extends React.Component {
     let libraries = []
     for(let license in Licenses){
       libraries.push(
-        <div key={license} style={{padding: "10px", borderTop: "1px solid var(--border-color)"}}>
+        <div key={license} style={{paddingBottom: "50px", borderTop: "1px solid var(--border-color)"}}>
           <center>{license}</center>
           <center>{Licenses[license].licenses}</center>
           <center><a href={Licenses[license].repository}>link to license</a></center>

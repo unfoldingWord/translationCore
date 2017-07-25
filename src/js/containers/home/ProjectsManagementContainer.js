@@ -37,7 +37,6 @@ class ProjectsManagementContainer extends Component {
 
   render() {
     const {
-      projectDetailsReducer,
       importOnlineReducer,
       myProjectsReducer,
       homeScreenReducer,
@@ -68,7 +67,6 @@ class ProjectsManagementContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     reducers: {
-      projectDetailsReducer: state.projectDetailsReducer,
       importOnlineReducer: state.importOnlineReducer,
       homeScreenReducer: state.homeScreenReducer,
       myProjectsReducer: state.myProjectsReducer,
@@ -135,4 +133,7 @@ ProjectsManagementContainer.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsManagementContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProjectsManagementContainer);

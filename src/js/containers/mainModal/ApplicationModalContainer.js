@@ -4,7 +4,6 @@ import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import Login from '../../components/login/Login';
 import Profile from '../../components/login/Profile';
-import Licenses from '../../components/licenses/Licenses';
 // Actions
 import * as LoginActions from '../../actions/LoginActions';
 import * as SettingsActions from '../../actions/SettingsActions';
@@ -29,9 +28,6 @@ class ApplicationModalContainer extends React.Component {
           style={{ borderBottom: "none", backgroundColor: "var(--accent-color)", color: 'var(--text-color)', width: "100%" }}>
           <Tab eventKey={1} title="Account">
             {accountDisplay}
-          </Tab>
-          <Tab eventKey={2} title="Licenses" style={{ backgroundColor: "var(--reverse-color)" }}>
-            <Licenses />
           </Tab>
         </Tabs>
       </div>

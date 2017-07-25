@@ -154,4 +154,14 @@ export const getStepperNextButtonIsDisabled = () => {
   })
 }
 
+export const openLicenseModal = () => {
+  return {
+    type: consts.OPEN_LICENSE_MODAL
+  }
+}
 
+export const closeLicenseModal = () => {
+  return {
+    type: consts.CLOSE_LICENSE_MODAL
+  }
+}

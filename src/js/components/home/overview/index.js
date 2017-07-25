@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 // components
-import UserCard from '../../components/home/overview/UserCard'
-import ProjectCard from '../../components/home/overview/ProjectCard'
-import ToolCard from '../../components/home/overview/ToolCard'
-// actions
-// import {actionCreator} from 'actionCreatorPath'
+import UserCard from './UserCard';
+import ProjectCard from './ProjectCard';
+import ToolCard from './ToolCard';
 
-class OverviewContainer extends Component {
+export default class Overview extends Component {
 
   /**
   * @description generates the instructions to show in instructions area
@@ -67,26 +64,7 @@ class OverviewContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    // prop: state.prop
-  };
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    // dispatch: () => {
-    //   // dispatch(actionCreator);
-    // }
-  };
-};
-
-OverviewContainer.propTypes = {
+Overview.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(OverviewContainer);

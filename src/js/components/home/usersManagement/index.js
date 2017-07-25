@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import Login from '../../components/home/usersManagement/Login';
-import LoginDoor43Account from '../../components/home/usersManagement/LoginDoor43Account';
-import CreateLocalAccount from '../../components/home/usersManagement/CreateLocalAccount';
-import CreateDoor43Account from '../../components/home/usersManagement/CreateDoor43Account';
+import React, { Component } from 'react';
+// components
+import Login from './Login';
+import LoginDoor43Account from './LoginDoor43Account';
+import CreateLocalAccount from './CreateLocalAccount';
+import CreateDoor43Account from './CreateDoor43Account';
 
 class LoginContainer extends Component {
   constructor(props) {
