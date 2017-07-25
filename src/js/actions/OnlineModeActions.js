@@ -10,9 +10,9 @@ export function confirmOnlineAction(callback) {
       dispatch(AlertModalActions.openOptionDialog(OnlineDialog((val) => dispatch(checkBox(val))),
         (result) => {
           if (result != 'Cancel') {
+            dispatch(AlertModalActions.closeAlertDialog())
             callback();
-          }
-          dispatch(AlertModalActions.closeAlertDialog())
+          } else dispatch(AlertModalActions.closeAlertDialog())
         }, 'Access Internet', 'Cancel'))
     } else callback()
   })
