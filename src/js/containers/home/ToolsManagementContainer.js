@@ -24,16 +24,26 @@ class ToolsManagementContainer extends Component {
   render() {
     const { toolsMetadata } = this.props.reducers.toolsReducer;
     const { loggedInUser } = this.props.reducers.loginReducer;
-    const { bookName, projectSaveLocation, currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
+    const {
+      currentSettings: {
+        developerMode
+      }
+    } = this.props.reducers.settingsReducer;
+    const {
+      bookName,
+      projectSaveLocation,
+      currentProjectToolsProgress
+    } = this.props.reducers.projectDetailsReducer;
 
     return (
       <div style={{ height: '100%' }}>
         ToolsManagementContainer
         <ToolsCards
-          actions={this.props.actions}
-          toolsMetadata={toolsMetadata}
           bookName={bookName}
           loggedInUser={loggedInUser}
+          actions={this.props.actions}
+          developerMode={developerMode}
+          toolsMetadata={toolsMetadata}
           projectSaveLocation={projectSaveLocation}
           currentProjectToolsProgress={currentProjectToolsProgress}
         />
