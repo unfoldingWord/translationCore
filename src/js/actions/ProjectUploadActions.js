@@ -1,12 +1,11 @@
 import React from 'react'
 import path from 'path-extra';
 import gogs from '../components/login/GogsApi';
-import { shell } from 'electron';
 import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
-
+var open = require("open");
 
 /**
  * Upload project to door 43, based on currently logged in user.
@@ -57,7 +56,7 @@ export function uploadProject(projectPath, user) {
                         {"your project was uploaded successfully to: "}
                         <a style={{cursor: 'pointer'}} onClick={() => {
                           dispatch(OnlineModeActions.confirmOnlineAction(() => {
-                            shell.openExternal('https://git.door43.org/' + user.username + '/' + projectName)
+                            open('https://git.door43.org/' + user.username + '/' + projectName)
                           }))
                         }}>
                           {"https://git.door43.org/" + user.username + '/' + projectName}
