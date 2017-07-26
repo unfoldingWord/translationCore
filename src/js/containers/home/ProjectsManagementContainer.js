@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
+import { Glyphicon } from 'react-bootstrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { FloatingActionButton } from 'material-ui'
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
@@ -29,7 +32,22 @@ class ProjectsManagementContainer extends Component {
     return (
       <div>
         <p>Select a project from the list.</p>
-        <p>To import a project, click (=)</p>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <p style={{margin:0}}>To import a project, click </p>
+          <MuiThemeProvider>
+            <FloatingActionButton
+              disabled={true}
+              disabledColor={"var(--accent-color-dark)"}
+              mini={true}
+              style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
+            >
+              <Glyphicon
+                style={{ fontSize: "18px", color: "var(--reverse-color)" }}
+                glyph={"menu-hamburger"}
+              />
+            </FloatingActionButton>
+          </MuiThemeProvider>
+        </div>
         <p>Only projects that have been saved with the latest version of translationStudio can be opened in translationCore at this time.</p>
       </div>
     );
@@ -47,7 +65,7 @@ class ProjectsManagementContainer extends Component {
     return (
       <div style={{ height: '100%' }}>
         <MyProjects myProjects={myProjects} actions={this.props.actions} />
-        <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
+        <div style={{ position: "absolute", bottom: "50px", right: "50px", zIndex: "999" }}>
           <ProjectsFAB
             homeScreenReducer={this.props.reducers.homeScreenReducer}
             actions={this.props.actions}
