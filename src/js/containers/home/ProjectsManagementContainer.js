@@ -30,11 +30,12 @@ class ProjectsManagementContainer extends Component {
 
   instructions() {
     return (
-      <div>
-        <p>Select a project from the list.</p>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <p style={{margin:0}}>To import a project, click </p>
-          <MuiThemeProvider>
+      <MuiThemeProvider>
+        <div>
+          <p>Select a project from the list.</p>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <p style={{ margin: 0 }}>To import a project, click </p>
+
             <FloatingActionButton
               disabled={true}
               disabledColor={"var(--accent-color-dark)"}
@@ -46,10 +47,18 @@ class ProjectsManagementContainer extends Component {
                 glyph={"menu-hamburger"}
               />
             </FloatingActionButton>
-          </MuiThemeProvider>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <p style={{ margin: 0 }}>To upload or export a project click </p>
+            <div
+              style={{ margin: "5px", zIndex: "999", height:35, width:35, borderRadius:22.5, border:'1px dashed black', display:'flex' }}
+            >
+              <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'auto' }} />
+            </div>
+          </div>
+          <p>Only projects that have been saved with version 11 or greater in translationStudio can be opened in translationCore at this time.</p>
         </div>
-        <p>Only projects that have been saved with the latest version of translationStudio can be opened in translationCore at this time.</p>
-      </div>
+      </MuiThemeProvider>
     );
   }
 
