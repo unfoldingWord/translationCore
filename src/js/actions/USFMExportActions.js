@@ -136,5 +136,5 @@ export function getUSFMIdTag(projectPath, manifest, bookName) {
   let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
-  return `${bookNameUppercase}, ${targetLanguageCode}, ${resourceName}, ${lastEdited}, tc`;
+  return `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`;
 }
