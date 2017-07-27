@@ -1,5 +1,5 @@
 import React from 'react';
-var open = require("open");
+import open from 'open';
 import { Glyphicon, Col} from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';

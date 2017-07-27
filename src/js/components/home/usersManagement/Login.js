@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
-var open = require("open");
+import open from 'open';
 
 class Login extends Component {
   constructor(props) {

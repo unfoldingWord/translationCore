@@ -5,7 +5,7 @@ import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
-var open = require("open");
+import open from 'open';
 
 /**
  * Upload project to door 43, based on currently logged in user.
