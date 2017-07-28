@@ -380,7 +380,7 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
                     let verse = currentChapterObject[verseIndex];
                     if (verse && verseIndex > 0) verseLength++;
                 }
-            } catch (e) {}
+            } catch (e) { }
             actualVersesObject[currentChapter] = verseLength;
         }
         actualVersesObject.chapters = chapterLength;
@@ -451,33 +451,63 @@ export function getUSFMParams(projectPath, manifest) {
     return params;
 }
 
+/**
+ * Most important funciton for creating a project from a USFM file alone. This function gets the 
+ * book name, id, language name and direction for starting a tC project.
+ * 
+ * @param {object} usfmObject - Object created by USFM to JSON module. Contains information
+ * for parsing and using in tC such as book name.
+ */
 export function getIDsFromUSFM(usfmObject) {
     let bookAbbr, bookName, id, name, direction;
-    bookAbbr = bookName = direction = id = name = '';
+    bookAbbr = bookName = id = name = '';
+    direction = 'ltr';
+    let headerIDArray = [];
     try {
-        if (usfmObject.headers.id.includes(',')) {
-            bookAbbr = usfmObject.headers.id.split(",")[0].trim().toLowerCase();
+        /** Conditional to determine how USFM should be parsed*/
+        let isSpaceDelimited = usfmObject.headers.id.split(" ").length > 1;
+        let isCommaDelimited = usfmObject.headers.id.split(",").length > 1;
+        if (isCommaDelimited) {
+            /**i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc */
+            headerIDArray = usfmObject.headers.id.split(",");
+        }
+        else if (isSpaceDelimited) {
+            /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
+            headerIDArray = usfmObject.headers.id.split(" ");
+        }
+        else {
+            /**i.e. EPH */
+            bookAbbr = usfmObject.headers.id.toLowerCase();
             bookName = convertToFullBookName(bookAbbr);
-            let commaSeperated = usfmObject.headers.id.split(",");
-            let tcField = commaSeperated[commaSeperated.length - 1] || '';
-            if (tcField.trim() == 'tc') {
-                let languageCodeArray = commaSeperated[1].trim().split('_');
-                if (languageCodeArray.length > 2) {
+            return { bookAbbr, bookName, id, name, direction };
+        }
+
+        bookAbbr = headerIDArray[0].trim().toLowerCase();
+        bookName = convertToFullBookName(bookAbbr);
+
+        let tcField = headerIDArray[headerIDArray.length - 1] || '';
+        if (tcField.trim() == 'tc') {
+            /**Checking for tC field to parse with more information than standard usfm */
+            for (var index in headerIDArray) {
+                /**The language code and resource name field were wrongly parsed in
+                 * the first implementation. In order to account for usfm files exported
+                 * from tC with this format this is checking for the string that 
+                 * contains three pieces of information delimited with underscores
+                 * Therefore deeming it as the langauge code field i.e. 'sw_Kiswahili_ltr'
+                 * rather than the resource field i.e. 'EN_ULB'
+                 */
+                let languageCodeArray = headerIDArray[index].trim().split('_');
+                if (languageCodeArray.length == 3) {
                     id = languageCodeArray[0].toLowerCase();
                     name = languageCodeArray[1];
                     direction = languageCodeArray[2].toLowerCase();
                 }
             }
-        } else {
-            if (usfmObject.headers.id.split(" ").length > 1) {
-                bookAbbr = usfmObject.headers.id.split(" ")[0].trim().toLowerCase();
-            } else {
-                bookAbbr = usfmObject.headers.id.toLowerCase();
-            }
-            bookName = convertToFullBookName(bookAbbr);
-            direction = 'ltr';
         }
     } catch (e) {
+        /** Suspecting error to be caught on non-standard formatting.
+         * Cannot do much here expect for deem USFM unusable
+         */
         console.warn(e);
         return null;
     }
