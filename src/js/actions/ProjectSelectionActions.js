@@ -6,6 +6,7 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -29,7 +30,7 @@ export function selectProject(projectPath, projectLink) {
     //If present proceed to usfm loading process
     if (USFMFilePath) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
-      let {parsedUSFM, direction} = usfmProjectObject;
+      let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
       params = LoadHelpers.getUSFMParams(projectPath, manifest);
@@ -39,15 +40,22 @@ export function selectProject(projectPath, projectLink) {
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
       params = LoadHelpers.getParams(projectPath, manifest);
     }
-      dispatch(clearLastProject());
-      dispatch(loadProjectDetails(projectPath, manifest, params));
-      TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
-      if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
-      if (LoadHelpers.projectIsMissingVerses(projectPath, manifest.project.id)) {
-        dispatch(confirmOpenMissingVerseProjectDialog(projectPath, manifest))
-      } else {
+    dispatch(clearLastProject());
+    dispatch(loadProjectDetails(projectPath, manifest, params));
+    TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
+    dispatch(ProjectValidationActions.validateProject((isValidProject) => {
+      if (isValidProject) {
         dispatch(displayTools(manifest));
+      } else {
+        dispatch(ProjectValidationActions.showStepper(true));
       }
+    }));
+    // if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
+    // if (LoadHelpers.projectIsMissingVerses(projectPath, manifest.project.id)) {
+    //   dispatch(confirmOpenMissingVerseProjectDialog(projectPath, manifest))
+    // } else {
+    //   dispatch(displayTools(manifest));
+    // }
   })
 }
 
