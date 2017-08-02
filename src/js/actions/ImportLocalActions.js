@@ -39,7 +39,10 @@ export function selectLocalProjectToLoad() {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (usfmFilePath) {
         newProjectPath = ProjectSelectionHelpers.setUpUSFMFolderPath(usfmFilePath);
-        dispatch(selectAndLoadProject(newProjectPath));
+        if(newProjectPath) dispatch(selectAndLoadProject(newProjectPath));
+        else {
+          dispatch(AlertModalActions.openAlertDialog('You cannot import a usfm project thats already been imported.'))
+        }
       }
       else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
