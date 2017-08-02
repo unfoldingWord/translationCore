@@ -70,6 +70,7 @@
     "material-ui": "^0.17.0",
     "moment": "^2.18.1",
     "npm": "^5.1.0",
+    "open": "0.0.5",
     "path-extra": "3.0.0",
     "prop-types": "^15.5.8",
     "react": "15.4.2",
@@ -87,7 +88,7 @@
     "rimraf": "^2.6.1",
     "simple-git": "1.43.0",
     "sudo-prompt": "^6.2.1",
-    "usfm-js": "0.0.2",
+    "usfm-js": "0.0.5",
     "xregexp": "^3.1.1",
     "zip-folder": "^1.0.0"
   },

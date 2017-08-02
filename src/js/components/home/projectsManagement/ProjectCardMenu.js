@@ -73,7 +73,7 @@ class ProjectCardMenu extends React.Component {
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.uploadProject(projectSaveLocation);
+                this.props.actions.uploadProject(projectSaveLocation, this.props.user);
               }}
             >
               <Glyphicon glyph='cloud-upload' style={glyphStyle} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
-import { shell } from 'electron';
+import open from 'open';
 
 class Login extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Login extends Component {
 
   openDoor43AccountWindow() {
     this.props.actions.confirmOnlineAction(() => {
-      shell.openExternal('https://git.door43.org/user/sign_up');
+      open('https://git.door43.org/user/sign_up');
     })
   }
 
