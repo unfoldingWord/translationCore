@@ -17,6 +17,7 @@ import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
+import * as SettingsActions from '../actions/SettingsActions';
 
 import packageJson from '../../../package.json';
 
@@ -31,9 +32,10 @@ class Main extends Component {
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
     }
-
+    // migration logic for toolsSettings in settings.json
+    this.props.actions.migrateToolsSettings();
     this.props.actions.getResourcesFromStaticPackage();
-    this.props.actions.getAnchorTags()
+    this.props.actions.getAnchorTags();
   }
 
   render() {
@@ -60,14 +62,17 @@ const mapStateToProps = state => {
   return state;
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       getResourcesFromStaticPackage: () => {
         ResourcesActions.getResourcesFromStaticPackage();
       },
       getAnchorTags: () => {
-        OnlineModeActions.getAnchorTags(dispatch);
+        dispatch(OnlineModeActions.getAnchorTags());
+      },
+      migrateToolsSettings: () => {
+        dispatch(SettingsActions.migrateToolsSettings());
       }
     }
   };

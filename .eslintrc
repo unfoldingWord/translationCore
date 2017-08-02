@@ -20,5 +20,11 @@
         "jsx": true,
         "modules": true
     }
+  },
+  "globals": {
+    "console": true,
+    "window": true,
+    "setTimeout": true,
+    "Promise": true
   }
 }
