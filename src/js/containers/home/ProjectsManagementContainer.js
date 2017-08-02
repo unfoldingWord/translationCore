@@ -14,7 +14,8 @@ import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
-import * as RecentProjectsActions from '../../actions/RecentProjectsActions';
+import * as CSVExportActions from '../../actions/CSVExportActions';
+import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeActions from '../../actions/OnlineModeActions';
 
@@ -73,8 +74,8 @@ class ProjectsManagementContainer extends Component {
 
     return (
       <div style={{ height: '100%' }}>
-        <MyProjects myProjects={myProjects} actions={this.props.actions} />
-        <div style={{ position: "absolute", bottom: "50px", right: "50px", zIndex: "999" }}>
+        <MyProjects myProjects={myProjects} user={loginReducer.userdata} actions={this.props.actions} />
+        <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
           <ProjectsFAB
             homeScreenReducer={this.props.reducers.homeScreenReducer}
             actions={this.props.actions}
@@ -121,11 +122,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(ImportLocalActions.selectLocalProjectToLoad());
       },
       exportToCSV: (projectPath) => {
-        dispatch(RecentProjectsActions.exportToCSV(projectPath));
+        dispatch(CSVExportActions.exportToCSV(projectPath));
       },
-      uploadProject: (projectPath) => {
-        const { userdata } = ownProps.reducers.loginReducer
-        dispatch(RecentProjectsActions.uploadProject(projectPath, userdata));
+      uploadProject: (projectPath, userdata) => {
+        dispatch(ProjectUploadActions.uploadProject(projectPath, userdata));
       },
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
