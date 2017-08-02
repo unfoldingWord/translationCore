@@ -5,7 +5,6 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 import * as ModalActions from './ModalActions';
-import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
 
@@ -19,7 +18,6 @@ export function selectTool(moduleFolderName, currentToolName) {
   return ((dispatch) => {
     // TODO: Remove after homescreen implementation
     dispatch(ModalActions.showModalContainer(false))
-    dispatch(BodyUIActions.toggleHomeView(true));
     dispatch({ type: consts.START_LOADING });
     setTimeout(() => {
       try {
@@ -41,7 +39,6 @@ export function selectTool(moduleFolderName, currentToolName) {
         dispatch(saveToolViews(checkArray));
         // load project data
         dispatch(ProjectLoadingActions.loadProjectData(currentToolName));
-        dispatch(BodyUIActions.toggleHomeView(false));
       } catch (e) {
         console.warn(e);
         AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
