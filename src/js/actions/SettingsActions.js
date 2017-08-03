@@ -1,9 +1,5 @@
 import consts from './ActionTypes';
-import fs from 'fs-extra';
-import path from 'path-extra';
-// constants
-const PARENT = path.datadir('translationCore');
-const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
+
 /**
  * @description initializes settings. In other words ,creates a
  * settings property and assign a value to it.
@@ -53,28 +49,4 @@ export function setToolSettings(moduleNamespace, settingsPropertyName, toolSetti
     settingsPropertyName,
     toolSettingsData
   };
-}
-
-/**
- * @description migrates the toolsSettings to use 'ulb' in the currentPaneSettings instead of 'ulb-en'
- */
-export function migrateToolsSettings() {
-  return ((dispatch) => {
-    if (fs.existsSync(SETTINGS_DIRECTORY)) {
-      let settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      if (settings.toolsSettings.ScripturePane && settings.toolsSettings.ScripturePane.currentPaneSettings.includes('ulb-en')) {
-        let newCurrentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings.map((bibleId) => {
-          switch (bibleId) {
-            case 'ulb-en':
-              return 'ulb';
-            case 'udb-en':
-              return 'udb';
-            default:
-              return bibleId
-          }
-        });
-        dispatch(setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
-      }
-    }
-  });
 }

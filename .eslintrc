@@ -27,6 +27,7 @@
     "setTimeout": true,
     "Promise": true,
     "process": true,
-    "__dirname": true
+    "__dirname": true,
+    "localStorage": true
   }
 }

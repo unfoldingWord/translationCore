@@ -17,7 +17,7 @@ import AlertDialogContainer from '../containers/AlertDialogContainer';
 // actions
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
-import * as SettingsActions from '../actions/SettingsActions';
+import * as MigrationActions from '../actions/MigrationActions';
 
 import packageJson from '../../../package.json';
 
@@ -31,6 +31,8 @@ class Main extends Component {
   componentDidMount() {
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
+      // the users resources folder will be deleted for every new app version and then regenerated.
+      this.props.actions.migrateResourcesFolder();
     }
     // migration logic for toolsSettings in settings.json
     this.props.actions.migrateToolsSettings();
@@ -72,7 +74,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(OnlineModeActions.getAnchorTags());
       },
       migrateToolsSettings: () => {
-        dispatch(SettingsActions.migrateToolsSettings());
+        dispatch(MigrationActions.migrateToolsSettings());
+      },
+      migrateResourcesFolder: () => {
+        dispatch(MigrationActions.migrateResourcesFolder());
       }
     }
   };
