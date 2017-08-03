@@ -10,7 +10,7 @@ const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 export function migrateResourcesFolder() {
   return (() => {
     // remove resources folder from tC user directory so that it is regenerated.
-    fs.rmdirSync(USER_RESOURCES_PATH)
+    fs.removeSync(USER_RESOURCES_PATH)
   })
 }
 
