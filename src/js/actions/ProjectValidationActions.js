@@ -1,10 +1,11 @@
 import consts from './ActionTypes';
+import * as ProjectSelectionActions from './ProjectSelectionActions';
 /**Names for the index of steps */
 const projectValidationStepIndex = [
   'Previous',
   'Copyright',
   'Project Information',
-  'Merge Conflict',
+  'Merge Conflicts',
   'Missing Verses',
   'Done'
 ]
@@ -73,7 +74,10 @@ export function goToNextProjectValidationStep() {
       nextStepName: nextStepName,
       previousStepName: previousStepName,
     });
-    if (stepIndex === 4) dispatch(showStepper(false));
+    if (stepIndex === 4) {
+      dispatch(showStepper(false));
+      dispatch(ProjectSelectionActions.displayTools());
+    }
   })
 }
 

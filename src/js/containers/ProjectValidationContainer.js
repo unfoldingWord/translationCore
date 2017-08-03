@@ -56,7 +56,7 @@ class ProjectValidationContainer extends Component {
           open={showProjectValidationStepper}>
           <div style={{ height: '80vh' }}>
             <ProjectValidationStepper {...this.props} />
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '85%', marginTop:10 }}>
+            <div style={{ display: 'flex', flexDirection: 'row', height: '85%', margin:'10px 0px 0px 65px' }}>
               <div style={{ width: '400px', height: '100%' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>

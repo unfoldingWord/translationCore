@@ -45,7 +45,7 @@ export function selectProject(projectPath, projectLink) {
     TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
     dispatch(ProjectValidationActions.validateProject((isValidProject) => {
       if (isValidProject) {
-        dispatch(displayTools(manifest));
+        dispatch(displayTools());
       } else {
         dispatch(ProjectValidationActions.showStepper(true));
       }
@@ -71,7 +71,7 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
     const callback = (option) => {
       dispatch(AlertModalActions.closeAlertDialog());
       if (option != "Cancel") {
-        dispatch(displayTools(manifest));
+        dispatch(displayTools());
       } else {
         dispatch(clearLastProject());
       }
@@ -117,9 +117,10 @@ export function clearLastProject() {
   });
 }
 
-export function displayTools(manifest) {
+export function displayTools() {
   return ((dispatch, getState) => {
     const { currentSettings } = getState().settingsReducer;
+    const { manifest } = getState().projectDetailsReducer;
     if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(ToolsMetadataActions.getToolsMetadatas());
       // Go to toolsCards page
