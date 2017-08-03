@@ -33,7 +33,7 @@ export const changeCurrentContextId = contextId => {
       loadCheckData(dispatch);
       dispatch(ResourcesActions.loadBiblesChapter(contextId));
       let state = getState();
-      const isValidContextId = contextIdHelpers.validateContextIdQuote(state, contextId, 'ulb-en');
+      const isValidContextId = contextIdHelpers.validateContextIdQuote(state, contextId, 'ulb');
       if (isValidContextId) {
         saveContextId(state, contextId);
       } else {
