@@ -2,10 +2,11 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 //actions
-import ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+//components
+import Stepper from '../components/projectValidation/Stepper';
 
 class ProjectValidationContainer extends Component {
     constructor(props) {
@@ -13,26 +14,32 @@ class ProjectValidationContainer extends Component {
         this.state = {
             open: false,
         };
+        this.handleClose = this.handleClose.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
 
     handleOpen() {
-        this.onClick()
+        this.props.actions.showStepper(false);
     };
 
     handleClose() {
-        this.onClick()
+        this.props.actions.showStepper(false);
     };
 
     render() {
         const actions = [
-            <FlatButton
-                label="Cancel"
+            <RaisedButton
+                buttonStyle={{ backgroundColor: 'var(--accent-color-dark)' }}
+                style={{ margin: '0px 30px' }}
+                label="Previous"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
-            <FlatButton
-                label="Submit"
+            <RaisedButton
+                buttonStyle={{ backgroundColor: 'var(--accent-color-dark)' }}
+                style={{ margin: '0px 30px' }}
+                label="Next"
                 primary={true}
                 onTouchTap={this.handleClose}
             />,
@@ -40,27 +47,30 @@ class ProjectValidationContainer extends Component {
 
 
         const customContentStyle = {
-            opacity: "1"
+            opacity: "1",
+            width: '90%',
+            maxWidth: 'none',
+            height: '100%',
+            maxHeight: 'none',
+            padding: 0,
+            top: -30
         };
 
         const { showProjectValidationStepper } = this.props.projectValidationReducer;
         return (
-            <div>
-                {showProjectValidationStepper ?
-                    <MuiThemeProvider>
-                        <Dialog
-                            title="Project Validation Stepper"
-                            actions={actions}
-                            modal={true}
-                            style={{ padding: "0px", zIndex: 2501 }}
-                            contentStyle={customContentStyle}
-                            open={showProjectValidationStepper}
-                        >
-                        </Dialog>
-                    </MuiThemeProvider> :
-                    null
-                }
-            </div>
+            <MuiThemeProvider>
+                <Dialog
+                    actions={actions}
+                    modal={true}
+                    style={{ padding: "0px", zIndex: 2501 }}
+                    contentStyle={customContentStyle}
+                    bodyStyle={{ padding: 0, minHeight: '80vh' }}
+                    open={showProjectValidationStepper}>
+                    <div>
+                        <Stepper />
+                    </div>
+                </Dialog>
+            </MuiThemeProvider>
         );
     }
 }
