@@ -21,7 +21,7 @@ const ProjectValidationNavigation = (props) => {
 }
 
 
-ProjectValidationStepper.propTypes = {
+ProjectValidationNavigation.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
