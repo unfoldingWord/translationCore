@@ -73,9 +73,10 @@ export const loadBiblesChapter = (contextId) => {
 export const loadResourceArticle = (resourceType, articleId) => {
   return ((dispatch) => {
     let languageId = 'en';
+    let resourceVersion = resourceType === 'translationWords' ? 'v6' : 'v0';
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
-    let resourceVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType, 'v0/content', resourceFilename);
+    let resourceVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType, resourceVersion,'content', resourceFilename);
     let articleData = fs.readFileSync(resourceVersionPath, 'utf8'); // get file from fs
     // populate reducer with markdown data
     dispatch({

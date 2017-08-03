@@ -363,7 +363,7 @@ export function createCheckArray(dataObject, moduleFolderName) {
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
         let languageId = 'en';
-        let indexLocation = Path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v6', 'index.json');
+        let indexLocation = Path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v10', 'index.json');
         let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));

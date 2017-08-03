@@ -43,7 +43,7 @@ export function getTHelpsFromStaticPackage(force = false) {
 
 export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {
   const languageId = 'en';
-  const version = 'v0';
+  let version = currentToolName === 'translationWords' ? 'v6' : 'V0';
   let groupsIndexSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, 'index.json');
   let groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
   if(fs.existsSync(groupsIndexSourcePath)) {
@@ -55,7 +55,7 @@ export function copyGroupsIndexToProjectResources(currentToolName, projectGroups
 
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = 'en';
-  let version = 'v0';
+  const version = currentToolName === 'translationWords' ? 'v6' : 'V0';
   let groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, 'groups', bookAbbreviation);
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
@@ -86,8 +86,8 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleId - bible name. ex. ugnt, uhb, udb, ulb.
  * @param {string} bibleVersion - release version.
  */
-export function getBibleIndex(languagesId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './static/resources', languagesId, 'bibles');
+export function getBibleIndex(languageId, bibleId, bibleVersion) {
+  const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './static/resources', languageId, 'bibles');
   let fileName = 'index.json';
   let bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   let index;

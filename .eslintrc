@@ -25,6 +25,8 @@
     "console": true,
     "window": true,
     "setTimeout": true,
-    "Promise": true
+    "Promise": true,
+    "process": true,
+    "__dirname": true
   }
 }
