@@ -1,10 +1,12 @@
 import consts from './ActionTypes';
+/**Names for the index of steps */
 const projectValidationStepIndex = [
   'Previous',
   'Copyright',
   'Project Information',
   'Merge Conflict',
-  'Missing Verses'
+  'Missing Verses',
+  'Done'
 ]
 
 export function showStepper(val) {
@@ -14,6 +16,11 @@ export function showStepper(val) {
   }
 }
 
+/**
+ * Wrapper function for handling the initial checking of steps before the UI is displayed.
+ * @param {function} callback - Called when the checks for each step are complete, has 
+ * value of true or false depending on is all checks passed
+ */
 export function validateProject(callback) {
   return ((dispatch) => {
     //list of actions to check for readiness of each step
@@ -63,7 +70,7 @@ export function goToNextProjectValidationStep() {
     dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex + 1,
-      nextStepName: nextStepName || 'Done',
+      nextStepName: nextStepName,
       previousStepName: previousStepName,
     });
     if (stepIndex === 4) dispatch(showStepper(false));
@@ -78,8 +85,8 @@ export function goToPreviousProjectValidationStep() {
     dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       nextStepName: nextStepName,
-      previousStepName: previousStepName || 'Back',
-      stepIndex: stepIndex - 1 || 1,
+      previousStepName: previousStepName,
+      stepIndex: stepIndex - 1,
       nextDisabled: false
     });
     if (stepIndex === 1) dispatch(showStepper(false));

@@ -1,44 +1,24 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Dialog from 'material-ui/Dialog';
-import {Glyphicon} from 'react-bootstrap';
 //actions
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 //components
+import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../components/projectValidation/ProjectValidationInstructions';
 import CopyRightCheck from '../components/projectValidation/CopyRightCheck';
 import ProjectInformationCheck from '../components/projectValidation/ProjectInformationCheck';
 import MergeConflictsCheck from '../components/projectValidation/MergeConflictsCheck';
 import MissingVersesCheck from '../components/projectValidation/MissingVersesCheck';
+import ProjectValidationNavigation from '../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-    };
-  }
-
   render() {
-    let { stepIndex, previousStepName, nextStepName, nextDisabled } = this.props.reducers.projectValidationReducer.stepper;
+    let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
+    const { showProjectValidationStepper } = this.props.reducers.projectValidationReducer;
 
-    const actions = [
-      <button className='btn-second'
-        onClick={this.props.actions.previousStep}>
-        <Glyphicon glyph='share-alt' style={{ marginRight: '10px', transform: 'scaleX(-1)' }} />
-        {previousStepName}
-      </button>,
-      <button className='btn-prime'
-          onClick={this.props.actions.nextStep}>
-        {nextStepName}
-        <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
-      </button>
-    ];
-
-
-    const customContentStyle = {
+    const projectValidationContentStyle = {
       opacity: "1",
       width: '90%',
       maxWidth: 'none',
@@ -47,8 +27,6 @@ class ProjectValidationContainer extends Component {
       padding: 0,
       top: -30
     };
-
-    const { showProjectValidationStepper } = this.props.reducers.projectValidationReducer;
 
     let displayContainer = <div />;
     switch (stepIndex) {
@@ -70,19 +48,21 @@ class ProjectValidationContainer extends Component {
     return (
       <MuiThemeProvider>
         <Dialog
-          actions={actions}
+          actions={<ProjectValidationNavigation {...this.props}/>}
           modal={true}
           style={{ padding: "0px", zIndex: 2501 }}
-          contentStyle={customContentStyle}
+          contentStyle={projectValidationContentStyle}
           bodyStyle={{ padding: 0, minHeight: '80vh' }}
           open={showProjectValidationStepper}>
-          <ProjectValidationStepper {...this.props} />
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
-            <div style={{ width: '400px' }}>
-              <ProjectValidationInstructions {...this.props} />
-            </div>
-            <div style={{ width: '600px', marginBottom: '25px' }}>
-              {displayContainer}
+          <div style={{ height: '80vh' }}>
+            <ProjectValidationStepper {...this.props} />
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '85%', marginTop:10 }}>
+              <div style={{ width: '400px', height: '100%' }}>
+                <ProjectValidationInstructions {...this.props} />
+              </div>
+              <div style={{ width: '600px', padding: '0 20px', marginBottom: '25px', height:'100%' }}>
+                {displayContainer}
+              </div>
             </div>
           </div>
         </Dialog>
