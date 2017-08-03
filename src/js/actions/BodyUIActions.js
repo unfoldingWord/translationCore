@@ -42,7 +42,6 @@ export const goToNextStep = () => {
         stepIndex: stepIndex + 1,
         nextStepName: nextStepName,
         previousStepName: previousStepName,
-        finished: stepIndex >= 2
       });
     } else {
       dispatch(AlertModalActions.openAlertDialog("You're at the last step"));
