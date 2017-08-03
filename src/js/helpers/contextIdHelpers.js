@@ -6,7 +6,7 @@ import * as selectionHelpers from './selectionHelpers';
  * @param {object} state - current state to get the verse out of
  * @param {object} contextId - the contextId object.
  * @param {string} bibleId - the id/name of the bible to get the chapter/verse text to check for the string occurrences
- * @return {object} New state for contextId reducer.
+ * @return {bool} returns if the contextId is valid.
  */
 export const validateContextIdQuote = (state, contextId, bibleId) => {
   let valid = false
