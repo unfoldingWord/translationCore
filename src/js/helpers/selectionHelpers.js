@@ -7,7 +7,7 @@
   * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
   * modified to fit our use cases, return zero for '' substring, and no use case for overlapping.
   */
-const occurrences = (string, subString) => {
+export const occurrences = (string, subString) => {
   if (subString.length <= 0) return 0
   var n = 0, pos = 0, step = subString.length
   while (true) {
