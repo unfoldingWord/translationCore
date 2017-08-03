@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const ProjectValidationNavigation = (props) => {
     let { previousStepName, nextStepName } = props.reducers.projectValidationReducer.stepper;
@@ -17,6 +18,12 @@ const ProjectValidationNavigation = (props) => {
             </button>
         </div>
     )
+}
+
+
+ProjectValidationStepper.propTypes = {
+  reducers: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 export default ProjectValidationNavigation;
