@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import {Glyphicon} from 'react-bootstrap';
 //actions
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 //components
@@ -25,11 +25,15 @@ class ProjectValidationContainer extends Component {
     let { stepIndex, previousStepName, nextStepName, nextDisabled } = this.props.reducers.projectValidationReducer.stepper;
 
     const actions = [
-      <button className='btn-prime' onClick={this.props.actions.previousStep}>
+      <button className='btn-second'
+        onClick={this.props.actions.previousStep}>
+        <Glyphicon glyph='share-alt' style={{ marginRight: '10px', transform: 'scaleX(-1)' }} />
         {previousStepName}
       </button>,
-      <button className='btn-prime' disabled={nextDisabled} onClick={this.props.actions.nextStep}>
+      <button className='btn-prime'
+          onClick={this.props.actions.nextStep}>
         {nextStepName}
+        <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
       </button>
     ];
 
@@ -73,9 +77,11 @@ class ProjectValidationContainer extends Component {
           bodyStyle={{ padding: 0, minHeight: '80vh' }}
           open={showProjectValidationStepper}>
           <ProjectValidationStepper {...this.props} />
-          <div>
-            <ProjectValidationInstructions {...this.props} />
-            <div>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
+            <div style={{ width: '400px' }}>
+              <ProjectValidationInstructions {...this.props} />
+            </div>
+            <div style={{ width: '600px', marginBottom: '25px' }}>
               {displayContainer}
             </div>
           </div>

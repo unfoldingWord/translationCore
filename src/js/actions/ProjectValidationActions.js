@@ -1,6 +1,6 @@
 import consts from './ActionTypes';
 const projectValidationStepIndex = [
-  'Back',
+  'Previous',
   'Copyright',
   'Project Information',
   'Merge Conflict',
