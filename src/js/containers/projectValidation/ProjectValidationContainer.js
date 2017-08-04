@@ -2,16 +2,16 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //actions
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 //components
 import Dialog from 'material-ui/Dialog';
-import ProjectValidationStepper from '../components/projectValidation/ProjectValidationStepper';
-import ProjectValidationInstructions from '../components/projectValidation/ProjectValidationInstructions';
-import CopyRightCheck from '../components/projectValidation/CopyRightCheck';
-import ProjectInformationCheck from '../components/projectValidation/ProjectInformationCheck';
-import MergeConflictsCheck from '../components/projectValidation/MergeConflictsCheck';
-import MissingVersesCheck from '../components/projectValidation/MissingVersesCheck';
-import ProjectValidationNavigation from '../components/projectValidation/ProjectValidationNavigation';
+import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
+import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
+import CopyRightCheck from '../../components/projectValidation/CopyRightCheck';
+import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
+import MergeConflictsCheckContainer from './MergeConflictsCheckContainer';
+import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
+import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
   render() {
@@ -37,7 +37,7 @@ class ProjectValidationContainer extends Component {
         displayContainer = <ProjectInformationCheck {...this.props} />;
         break;
       case 3:
-        displayContainer = <MergeConflictsCheck {...this.props} />;
+        displayContainer = <MergeConflictsCheckContainer {...this.props} />;
         break;
       case 4:
         displayContainer = <MissingVersesCheck {...this.props} />;
@@ -91,6 +91,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       nextStep: () => {
         dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+      },
+      changeProjectValidationInstructions: (instructions) => {
+        dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
       }
     }
   }

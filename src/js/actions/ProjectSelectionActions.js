@@ -44,11 +44,11 @@ export function selectProject(projectPath, projectLink) {
     dispatch(loadProjectDetails(projectPath, manifest, params));
     dispatch(ProjectValidationActions.validateProject((isValidProject) => {
       if (isValidProject) {
+        TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
         dispatch(displayTools());
       } else {
         dispatch(ProjectValidationActions.showStepper(true));
       }
-      TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
     }));
     //TODO: Factor back into project opening workflow
     // if (LoadHelpers.projectHasMergeConflicts(projectPath, manifest.project.id)) dispatch(AlertModalActions.openAlertDialog("Oops! The project you are trying to load has a merge conflict and cannot be opened in this version of translationCore! Please contact Help Desk (help@door43.org) for assistance."));
