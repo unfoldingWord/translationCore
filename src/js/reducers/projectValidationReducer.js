@@ -28,7 +28,7 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
         ...state,
-        homeInstructions: action.instructions
+        instructions: action.instructions
       };
     case consts.GO_TO_PROJECT_VALIDATION_STEP:
       return {

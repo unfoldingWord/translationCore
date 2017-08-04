@@ -48,11 +48,12 @@ class ProjectValidationContainer extends Component {
     return (
       <MuiThemeProvider>
         <Dialog
+          actionsContainerStyle={{backgroundColor:'var(--background-color-light)'}}
           actions={<ProjectValidationNavigation {...this.props}/>}
           modal={true}
           style={{ padding: "0px", zIndex: 2501 }}
           contentStyle={projectValidationContentStyle}
-          bodyStyle={{ padding: 0, minHeight: '80vh' }}
+          bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor:'var(--background-color-light)' }}
           open={showProjectValidationStepper}>
           <div style={{ height: '80vh' }}>
             <ProjectValidationStepper {...this.props} />
