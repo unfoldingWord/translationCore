@@ -6,7 +6,6 @@ const initialState = {
   showWelcomeSplash: true,
   homeInstructions: <div></div>,
   stepper: {
-    finished: false,
     stepIndex: 0,
     nextStepName: 'Go To User',
     previousStepName: '',
@@ -38,7 +37,6 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         stepper: {
-          finished: action.finished,
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName
@@ -48,7 +46,6 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         stepper: {
-          finished: false,
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName
