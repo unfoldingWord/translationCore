@@ -1,5 +1,7 @@
 import consts from './ActionTypes';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as fs from 'fs-extra';
+import Path from 'path-extra';
 /**Names for the index of steps */
 const projectValidationStepIndex = [
   'Previous',
@@ -23,11 +25,11 @@ export function showStepper(val) {
  * value of true or false depending on is all checks passed
  */
 export function validateProject(callback) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     //list of actions to check for readiness of each step
     let copyRightCheck = this.copyRightCheck()
     let projectInformationCheck = this.projectInformationCheck();
-    let mergeConflictCheck = this.mergeConflictCheck();
+    let mergeConflictCheck = this.mergeConflictCheck(getState());
     let missingVersesCheck = this.missingVersesCheck()
 
     //array to send to reducer for step related information to display
@@ -55,8 +57,14 @@ export function projectInformationCheck() {
   return { passed: false };
 }
 
-export function mergeConflictCheck() {
-  return { passed: false };
+export function mergeConflictCheck(state) {
+  const {projectSaveLocation, manifest} = state.projectDetailsReducer;
+  let usfmData = fs.readFileSync(Path.join(projectSaveLocation, manifest.project.id + '.usfm')).toString();
+  //TODO: parse out merge conflict sections
+  debugger;
+  return {
+    passed: false
+  };
 }
 
 export function missingVersesCheck() {
