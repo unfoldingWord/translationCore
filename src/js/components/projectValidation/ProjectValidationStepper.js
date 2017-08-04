@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {Glyphicon} from 'react-bootstrap';
+import EditIcon from 'material-ui/svg-icons/image/edit';
+import CopyrightSVG from 'material-ui/svg-icons/action/copyright';
+import WarningSVG from 'material-ui/svg-icons/alert/warning';
+import FormatListSVG from 'material-ui/svg-icons/editor/format-list-numbered';
 import { Card } from 'material-ui/Card';
 import {
   Step,
@@ -19,10 +22,10 @@ class ProjectValidationStepper extends Component {
     let mergeConflictsColor = stepIndex > 2 ? "var(--accent-color-dark)" : "";
     let missingVersesColor = stepIndex > 3 ? "var(--accent-color-dark)" : "";
     //icons
-    const copyrightIcon = <Glyphicon glyph={"copyright-mark"} style={{color: copyrightColor, fontSize: "25px"}}/> // step 1
-    const projectInformationIcon = <Glyphicon glyph={"education"} style={{color: projectInformationColor, fontSize: "25px"}}/> // step 2
-    const mergeConflictsIcon = <Glyphicon glyph={"warning-sign"} style={{color: mergeConflictsColor, fontSize: "25px"}}/> // step 3
-    const missingVersesIcon = <Glyphicon glyph={"tasks"} style={{color: missingVersesColor, fontSize: "25px"}}/> // step 4
+    const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/> // step 1
+    const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/> // step 2
+    const mergeConflictsIcon = <WarningSVG style={{color: mergeConflictsColor, marginTop:5}}/> // step 3
+    const missingVersesIcon = <FormatListSVG style={{color: missingVersesColor, marginTop:5}}/> // step 4
 
     return (
       <MuiThemeProvider>
