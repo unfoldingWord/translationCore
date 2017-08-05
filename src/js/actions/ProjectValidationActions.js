@@ -103,9 +103,10 @@ export function mergeConflictCheck(state) {
         text
       })
     }
+    mergeConflicts.push(mergeArray)
     return {
       passed: false,
-      conflicts: mergeArray
+      conflicts: mergeConflicts
     }
   } else {
     return {

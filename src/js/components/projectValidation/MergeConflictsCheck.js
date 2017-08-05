@@ -13,6 +13,7 @@ class MergeConflictsCheck extends Component {
     render() {
         return (
             <div>
+                {this.props.conflictCards}
             </div>
         );
     }
