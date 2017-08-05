@@ -24,7 +24,7 @@ class MergeConflictsCheckContainer extends Component {
     }
     onCheck(e, mergeConflictIndex, versionIndex) {
         let otherVersion = Number(! + versionIndex);
-        let newState = JSON.parse(JSON.stringify(this.state));
+        let newState = JSON.parse(JSON.stringify(this.state.mergeConflictSettings));
         if (!newState[mergeConflictIndex]) {
             newState[mergeConflictIndex] = {};
             newState[mergeConflictIndex][versionIndex] = true;
@@ -73,13 +73,13 @@ class MergeConflictsCheckContainer extends Component {
                         </div>
                         {mergeConflictObject.open ?
                             <div
-                                style={{ display:'flex', justifyContent: 'center', alignItems:'center', height: 40, width: 40, borderRadius: '50%', border: '1px solid black', margin: '15px 15px 0px auto' }}
+                                style={{ display:'flex', justifyContent: 'center', alignItems:'center', height: 40, width: 40, borderRadius: '50%', border: '2px solid black', margin: '15px 15px 0px auto' }}
                                 onClick={() => this.openMergeCard(mergeConflictIndex, false)}>
                                 <RightArrow style={{ height: 60, width: 60}} />
                             </div>
                             :
                             <div
-                                style={{ display:'flex', justifyContent: 'center', alignItems:'center', height: 40, width: 40, borderRadius: '50%', border: '1px solid black', margin: '15px 15px 0px auto' }}
+                                style={{ display:'flex', justifyContent: 'center', alignItems:'center', height: 40, width: 40, borderRadius: '50%', border: '2px solid black', margin: '15px 15px 0px auto' }}
                                 onClick={() => this.openMergeCard(mergeConflictIndex, true)}>
                                 <DownArrow style={{ height: 60, width: 60}} />
                             </div>
