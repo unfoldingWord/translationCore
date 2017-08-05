@@ -69,37 +69,56 @@ export function projectInformationCheck() {
 
 export function mergeConflictCheck(state) {
   const { projectSaveLocation, manifest } = state.projectDetailsReducer;
+  const regex = /<<<<<<<\s?\w+:\w+([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
   let passed = true;
   let mergeConflicts = [];
+  let matches = [];
   let usfmData = fs.readFileSync(Path.join(projectSaveLocation, manifest.project.id + '.usfm')).toString();
   if (usfmData.includes('<<<<<<<')) {
-    let matches = (/<<<<<<<\s?\w+:\w+([\s\S]*)=======([\s\S]*)>>>>>>>/gm).exec(usfmData);
-    //<<<<<<<\s?(.*)([\s\S]*)=======([\s\S]*)>>>>>>>\s?(.*) // not matching commit and branch currently
-    matches.shift();
-    let mergeArray = [];
-    for (var mergeText of matches) {
-      let textObject = usfmParser.toJSON(mergeText.trim());
-      let verseKeysArray = Object.keys(textObject);
-      let verses = `${verseKeysArray[0]}-${verseKeysArray[verseKeysArray.length - 1]}`;
-      let allUsfmParsedObject = usfmParser.toJSON(usfmData);
-      let chapter;
-      for (var chapterNum in allUsfmParsedObject) {
-        if (!parseInt(chapterNum)) continue;
-        let chapterObject = allUsfmParsedObject[chapterNum];
-        for (var verseNum in chapterObject) {
-          let verseObject = chapterObject[verseNum];
-          if (verseObject.includes(textObject[verseKeysArray[0]])) {
-            chapter = chapterNum;
+    let m;
+    while ((m = regex.exec(usfmData)) !== null) {
+      // This is necessary to avoid infinite loops with zero-width matches
+      if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+      }
+      //removes full match
+      m.shift();
+
+      m.forEach((match, groupIndex) => {
+        matches.push(match);
+      });
+    }
+    //<<<<<<<\s?(.*)([\s\S]*?)=======([\s\S]*?)>>>>>>>\s?(.*) // not matching commit and branch currently
+    if (matches.length % 2 !== 0) return console.error('Problem parsing merge conflicts');
+    for (let match in matches) {
+      let mergeArray = [];
+      let currentMergeConflict = [];
+      currentMergeConflict.push(matches.shift());
+      currentMergeConflict.push(matches.shift());
+      for (var mergeText of currentMergeConflict) {
+        let textObject = usfmParser.toJSON(mergeText.trim());
+        let verseKeysArray = Object.keys(textObject);
+        let verses = `${verseKeysArray[0]}-${verseKeysArray[verseKeysArray.length - 1]}`;
+        let allUsfmParsedObject = usfmParser.toJSON(usfmData);
+        let chapter;
+        for (var chapterNum in allUsfmParsedObject) {
+          if (!parseInt(chapterNum)) continue;
+          let chapterObject = allUsfmParsedObject[chapterNum];
+          for (var verseNum in chapterObject) {
+            let verseObject = chapterObject[verseNum];
+            if (verseObject.includes(textObject[verseKeysArray[0]])) {
+              chapter = chapterNum;
+            }
           }
         }
+        mergeArray.push({
+          chapter,
+          verses,
+          textObject
+        })
       }
-      mergeArray.push({
-        chapter,
-        verses,
-        textObject
-      })
+      mergeConflicts.push(mergeArray)
     }
-    mergeConflicts.push(mergeArray)
     return {
       passed: false,
       conflicts: mergeConflicts
