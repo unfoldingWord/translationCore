@@ -79,10 +79,6 @@ export function mergeConflictCheck(state) {
     let mergeArray = [];
     for (var mergeText of matches) {
       let textObject = usfmParser.toJSON(mergeText.trim());
-      let text = '';
-      for (var textString in textObject) {
-        text += textObject[textString];
-      }
       let verseKeysArray = Object.keys(textObject);
       let verses = `${verseKeysArray[0]}-${verseKeysArray[verseKeysArray.length - 1]}`;
       let allUsfmParsedObject = usfmParser.toJSON(usfmData);
@@ -100,7 +96,7 @@ export function mergeConflictCheck(state) {
       mergeArray.push({
         chapter,
         verses,
-        text
+        textObject
       })
     }
     mergeConflicts.push(mergeArray)

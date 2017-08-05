@@ -62,42 +62,40 @@ class ProjectValidationContainer extends Component {
               <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>
-              <div style={{ height: '100%', width:'100%', padding: '20px 65px 0 20px'}}>
-                <Card style={{ width: '100%', height: '100%' }}>
-                  {displayContainer}
-                </Card>
+              <div style={{ height: '100%', width: '100%', padding: '20px 65px 0 20px' }}>
+                {displayContainer}
               </div>
             </div>
-            </div>
+          </div>
         </Dialog>
       </MuiThemeProvider>
-        );
+    );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-          reducers: {
-          projectValidationReducer: state.projectValidationReducer
+    reducers: {
+      projectValidationReducer: state.projectValidationReducer
     }
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-          actions: {
-          showStepper: (val) => {
-          dispatch(ProjectValidationActions.showStepper(val));
-        },
+    actions: {
+      showStepper: (val) => {
+        dispatch(ProjectValidationActions.showStepper(val));
+      },
       previousStep: () => {
-          dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
-        },
+        dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
+      },
       nextStep: () => {
-          dispatch(ProjectValidationActions.goToNextProjectValidationStep());
-        },
+        dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+      },
       changeProjectValidationInstructions: (instructions) => {
-          dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
-        }
+        dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
+      }
     }
   }
 }
