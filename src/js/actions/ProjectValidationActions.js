@@ -1,10 +1,10 @@
 import consts from './ActionTypes';
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
-import usfmParser from 'usfm-js';
 //actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
@@ -67,61 +67,54 @@ export function projectInformationCheck() {
   return { passed: false };
 }
 
+/**
+ * Wrapper action for handling merge conflict detection
+ * @param {object} state - State object from reducers to get usfm data
+ */
 export function mergeConflictCheck(state) {
   const { projectSaveLocation, manifest } = state.projectDetailsReducer;
-  const regex = /<<<<<<<\s?\w+:\w+([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
-  let passed = true;
-  let mergeConflicts = [];
-  let matches = [];
-  let usfmData = fs.readFileSync(Path.join(projectSaveLocation, manifest.project.id + '.usfm')).toString();
-  if (usfmData.includes('<<<<<<<')) {
-    let m;
-    while ((m = regex.exec(usfmData)) !== null) {
-      // This is necessary to avoid infinite loops with zero-width matches
-      if (m.index === regex.lastIndex) {
-        regex.lastIndex++;
-      }
-      //removes full match
-      m.shift();
+  /**
+   * Object that will be sent back to reducers with the chapter, 
+   * verse and text info  of each merge conflict version.
+   * An array of arrays of an object.
+   * */
+  let parsedAllMergeConflictsFoundArray = [];
 
-      m.forEach((match, groupIndex) => {
-        matches.push(match);
-      });
-    }
-    //<<<<<<<\s?(.*)([\s\S]*?)=======([\s\S]*?)>>>>>>>\s?(.*) // not matching commit and branch currently
-    if (matches.length % 2 !== 0) return console.error('Problem parsing merge conflicts');
-    for (let match in matches) {
-      let mergeArray = [];
-      let currentMergeConflict = [];
-      currentMergeConflict.push(matches.shift());
-      currentMergeConflict.push(matches.shift());
-      for (var mergeText of currentMergeConflict) {
-        let textObject = usfmParser.toJSON(mergeText.trim());
-        let verseKeysArray = Object.keys(textObject);
-        let verses = `${verseKeysArray[0]}-${verseKeysArray[verseKeysArray.length - 1]}`;
-        let allUsfmParsedObject = usfmParser.toJSON(usfmData);
-        let chapter;
-        for (var chapterNum in allUsfmParsedObject) {
-          if (!parseInt(chapterNum)) continue;
-          let chapterObject = allUsfmParsedObject[chapterNum];
-          for (var verseNum in chapterObject) {
-            let verseObject = chapterObject[verseNum];
-            if (verseObject.includes(textObject[verseKeysArray[0]])) {
-              chapter = chapterNum;
-            }
-          }
-        }
-        mergeArray.push({
-          chapter,
-          verses,
-          textObject
-        })
+  let usfmData = fs.readFileSync(Path.join(projectSaveLocation, manifest.project.id + '.usfm')).toString();
+  /**Searching for string as indication of a merge conflict present in the text */
+  if (usfmData.includes('<<<<<<<')) {
+    /**
+     * @example ["1 this is the first version", "1 This is the second version"]
+     * @type {[string]}
+     * extracting merge conflicts from usfm data
+    */
+    let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
+    for (let matchIndex in allMergeConflictsFoundArray) {
+      /** Array representing the diffferent versions for a merge conflict parsedinto a more consumable format */
+      let parsedMergeConflictVersionsArray = [];
+      /** Array representing current versions to be parsed*/
+      let mergeConflictVersionsArray = [];
+      /**
+       * Getting the first to matched elements from all merge conflicts array
+       * These elements are paired because they represent one 'merge conflict'
+       * They are the two different version histories of the conflict
+       */
+      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+      for (var versionText of mergeConflictVersionsArray) {
+        /**
+         * Parsing the merge conflict version text in an object more easily
+         * consumable for the displaying container
+         * @type {{chapter,verses,text}}
+         */
+        let parsedMergeConflictVersionObject = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
+        parsedMergeConflictVersionsArray.push(parsedMergeConflictVersionObject);
       }
-      mergeConflicts.push(mergeArray)
+      parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
     }
     return {
       passed: false,
-      conflicts: mergeConflicts
+      conflicts: parsedAllMergeConflictsFoundArray
     }
   } else {
     return {

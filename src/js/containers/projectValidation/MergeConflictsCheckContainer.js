@@ -58,7 +58,7 @@ class MergeConflictsCheckContainer extends Component {
                                 label={`Version ${Number(version) + 1}`}
                                 onCheck={(e) => this.onCheck(e, mergeConflictIndex, version)}
                             />
-                            {this.textObjectSection(conflict[version].textObject)}
+                            {this.textObjectSection(conflict[version].text)}
                         </div>
                     </div>
                 )
