@@ -25,41 +25,36 @@ class MergeConflictsCheckContainer extends Component {
     }
     mergeConflictCards(conflictObject) {
         let conflicts = conflictObject.conflicts;
-        let cards = [];
-        var conflictsCount = 0;
-        for (var conflictIndex in conflicts) {
-            let conflict = conflicts[conflictIndex];
-            let chapter = conflict[conflictsCount].chapter;
-            let verses = conflict[conflictsCount].verses;
-            cards.push(
-                <div key={`${chapter}-${verses}-${conflictsCount}`}>
-                    <div style={{ padding:'15px 15px 0px 15px' }}>
-                        <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>Merge Conflict #{conflictsCount + 1}</div>
+        let conflictCards = [];
+        for (let mergeConflictIndex in conflicts) {
+            let versionCards = [];
+            let conflict = conflicts[mergeConflictIndex];
+            let chapter = conflict[mergeConflictIndex].chapter;
+            let verses = conflict[mergeConflictIndex].verses;
+            for (let version in conflict) {
+                let otherVersion = Number(! + version);
+                versionCards.push(
+                    <div style={{ padding: 15 }} key={`${chapter}-${verses}-${version}`}>
+                        <RadioButton
+                            checked={this.state.mergeConflictSelections[`${chapter}-${verses}-${version}`]}
+                            label={`Version ${Number(version) + 1}`}
+                            onCheck={(e) => this.onCheck(e, `${chapter}-${verses}-${version}`, `${chapter}-${verses}-${otherVersion}`)}
+                        />
+                        {this.textObjectSection(conflict[version].textObject)}
+                    </div>
+                )
+            }
+            conflictCards.push(
+                <div key={`${chapter}-${verses}`}>
+                    <div style={{ padding: '15px 15px 0px 15px' }}>
+                        <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>Merge Conflict #{Number(mergeConflictIndex) + 1}</div>
                         <div>This is a merge conflict for chapter {chapter}, verse {verses}.</div>
                     </div>
-                    <div style={{ padding: 15 }}>
-                        <RadioButton
-                            checked={this.state.mergeConflictSelections[`${chapter}-${verses}-0`]}
-                            value={conflictsCount}
-                            label={'Version 1'}
-                            onCheck={(e) => this.onCheck(e, `${chapter}-${verses}-0`, `${chapter}-${verses}-1`)}
-                        />
-                        {this.textObjectSection(conflict[conflictsCount].textObject)}
-                    </div>
-                    <div style={{ borderTop: '1px solid black', padding: 15, borderBottom: '1px solid black' }}>
-                        <RadioButton
-                            checked={this.state.mergeConflictSelections[`${chapter}-${verses}-1`]}
-                            value={conflictsCount}
-                            label={'Version 2'}
-                            onCheck={(e) => this.onCheck(e, `${chapter}-${verses}-1`, `${chapter}-${verses}-0`)}
-                        />
-                        {this.textObjectSection(conflict[conflictsCount].textObject)}
-                    </div>
+                    {versionCards}
                 </div>
             )
-            conflictsCount++;
         }
-        return cards;
+        return conflictCards;
     }
 
     textObjectSection(textObject) {
@@ -80,7 +75,7 @@ class MergeConflictsCheckContainer extends Component {
         let conflictCards = this.mergeConflictCards(mergeConflictObject)
         return (
             <Card style={{ width: '100%', height: '100%' }}
-                containerStyle={{overflowY:'auto', height:'100%'}}>
+                containerStyle={{ overflowY: 'auto', height: '100%' }}>
                 <MergeConflictsCheck conflictCards={conflictCards} {...this.props} />
             </Card>
         );
