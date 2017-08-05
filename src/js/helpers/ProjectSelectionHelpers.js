@@ -70,6 +70,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   let textType = oldFileName.includes('_usfm') ? '' : '_usfm';
   let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${folderNamePrefix}${textType}`);
   const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookAbbr) + '.usfm';
+  if (fs.existsSync(newUSFMProjectFolder)) return;
   fs.outputFileSync(newUSFMFilePath, usfmData);
   return newUSFMProjectFolder;
 }
