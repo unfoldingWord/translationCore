@@ -257,25 +257,3 @@ main modal. They basically override bootstrap styling for these components
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.bottom-arrow {
-  display: inline-block;
-  width: 4em;
-  height: 4em;
-  border: 0.5em solid #333;
-  border-radius: 50%;
-  margin-left: 0.75em;
-}
-
-.bottom-arrow:after {
-  content: '';
-	display: inline-block;
-  margin-top: 0.6em;
-  width: 1.4em;
-  height: 1.4em;
-  border-top: 0.5em solid #333;
-  border-right: 0.5em solid #333;
-  -moz-transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
