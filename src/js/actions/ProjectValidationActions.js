@@ -169,3 +169,21 @@ export function goToProjectValidationStep(step) {
     dispatch({ type: consts.GO_TO_PROJECT_VALIDATION_STEP, step: step })
   })
 }
+
+export function toggleNextButton(nextDisabled) {
+  return {
+    type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
+    nextDisabled: nextDisabled
+  }
+}
+
+export function updateStepData(stepIndex, data) {
+  return ((dispatch, getState) => {
+    let newStepsArray = getState().projectValidationReducer.projectValidationStepsArray.splice();
+    newStepsArray[stepIndex] = data;
+    dispatch({
+      type: consts.VALIDATE_PROJECT_STEPS,
+      projectValidationStepsArray: newStepsArray
+    });
+  });
+}

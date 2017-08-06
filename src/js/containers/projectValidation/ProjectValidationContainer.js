@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Card } from 'material-ui/Card';
 //actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 //components
+import { Card } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
@@ -95,9 +96,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeProjectValidationInstructions: (instructions) => {
         dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
+      },
+      toggleNextDisabled: (isDisabled) => {
+        dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
+      },
+      updateStepData:(stepIndex, data) => {
+        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
       }
     }
   }
+}
+
+ProjectValidationContainer.propTypes = {
+  actions: PropTypes.object.isRequired,
+  reducers: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)
