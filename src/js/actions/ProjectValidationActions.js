@@ -79,8 +79,8 @@ export function mergeConflictCheck(state) {
    * An array of arrays of an object.
    * */
   let parsedAllMergeConflictsFoundArray = [];
-
-  let usfmData = fs.readFileSync(Path.join(projectSaveLocation, manifest.project.id + '.usfm')).toString();
+  let usfmFilePath = Path.join(projectSaveLocation, manifest.project.id + '.usfm');
+  let usfmData = fs.readFileSync(usfmFilePath).toString();
   /**Searching for string as indication of a merge conflict present in the text */
   if (usfmData.includes('<<<<<<<')) {
     /**
@@ -114,7 +114,8 @@ export function mergeConflictCheck(state) {
     }
     return {
       passed: false,
-      conflicts: parsedAllMergeConflictsFoundArray
+      conflicts: parsedAllMergeConflictsFoundArray,
+      filePath:usfmFilePath
     }
   } else {
     return {
@@ -128,6 +129,7 @@ export function missingVersesCheck() {
   return { passed: false };
 }
 
+
 export function goToNextProjectValidationStep() {
   return ((dispatch, getState) => {
     let { stepIndex } = getState().projectValidationReducer.stepper;
@@ -140,10 +142,7 @@ export function goToNextProjectValidationStep() {
       previousStepName: previousStepName,
     });
     if (stepIndex === 4) {
-      dispatch(showStepper(false));
-      let projectDetails = getState().projectDetailsReducer;
-      TargetLanguageActions.generateTargetBible(projectDetails.projectSaveLocation, {}, projectDetails.manifest);
-      dispatch(ProjectSelectionActions.displayTools());
+      dispatch(finishStepper())
     }
   })
 }
@@ -167,6 +166,17 @@ export function goToPreviousProjectValidationStep() {
 export function goToProjectValidationStep(step) {
   return ((dispatch) => {
     dispatch({ type: consts.GO_TO_PROJECT_VALIDATION_STEP, step: step })
+  })
+}
+
+export function finishStepper() {
+  return ((dispatch, getState) => {
+    const projectValidationStepsArray = getState().projectValidationReducer.projectValidationStepsArray;
+    dispatch(MergeConflictHelpers.merge(projectValidationStepsArray[2]))
+    dispatch(showStepper(false));
+    let projectDetails = getState().projectDetailsReducer;
+    TargetLanguageActions.generateTargetBible(projectDetails.projectSaveLocation, {}, projectDetails.manifest);
+    dispatch(ProjectSelectionActions.displayTools());
   })
 }
 

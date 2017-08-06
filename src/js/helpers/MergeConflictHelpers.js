@@ -1,5 +1,7 @@
 import usfmParser from 'usfm-js';
+import * as fs from 'fs-extra';
 const regex = /<<<<<<<\s?\w+:\w+([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
+const replaceRegex = /(<<<<<<<\s?\w+:\w+[\s\S]*?>>>>>>>\s?.*)/;
 
 /**
  * Seaches usfm data with regex and returns all merge conflicts found separated by string.
@@ -11,26 +13,26 @@ const regex = /<<<<<<<\s?\w+:\w+([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
  * @returns {[string]}
  */
 export function getMergeConflicts(usfmData) {
-    let allMergeConflictsFoundArray = [];
-    let regexMatchedMergeConflicts;
-    while ((regexMatchedMergeConflicts = regex.exec(usfmData)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width allMergeConflictsFoundArray
-        if (regexMatchedMergeConflicts.index === regex.lastIndex) {
-            regex.lastIndex++;
-        }
-        //removes unneeded full match in first index
-        regexMatchedMergeConflicts.shift();
-
-        regexMatchedMergeConflicts.forEach((match, groupIndex) => {
-            allMergeConflictsFoundArray.push(match);
-        });
+  let allMergeConflictsFoundArray = [];
+  let regexMatchedMergeConflicts;
+  while ((regexMatchedMergeConflicts = regex.exec(usfmData)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width allMergeConflictsFoundArray
+    if (regexMatchedMergeConflicts.index === regex.lastIndex) {
+      regex.lastIndex++;
     }
-    /*
-    * If there is an odd amount of total versions at least one version
-    * is not matched with a corresponding version with different history
-    */ 
-    if (allMergeConflictsFoundArray.length % 2 !== 0) return console.error('Problem parsing merge conflicts');
-    return allMergeConflictsFoundArray;
+    //removes unneeded full match in first index
+    regexMatchedMergeConflicts.shift();
+
+    regexMatchedMergeConflicts.forEach((match, groupIndex) => {
+      allMergeConflictsFoundArray.push(match);
+    });
+  }
+  /*
+  * If there is an odd amount of total versions at least one version
+  * is not matched with a corresponding version with different history
+  */
+  if (allMergeConflictsFoundArray.length % 2 !== 0) return console.error('Problem parsing merge conflicts');
+  return allMergeConflictsFoundArray;
 }
 
 /**
@@ -39,30 +41,45 @@ export function getMergeConflicts(usfmData) {
  * @param {string} usfmData - The selected usfm file being parsed
  */
 export function parseMergeConflictVersion(versionText, usfmData) {
-    /**
-     * Parsing usfm string to get verse numbers
-     * @type {{1:"Verse one", 2:"Verse 1"}}
-     */
-    let parsedTextObject = usfmParser.toJSON(versionText.trim());
-    /**@example {['1', '2', '3']} */
-    let verseNumbersArray = Object.keys(parsedTextObject);
-    let verses = `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}`;
-    let entireUSFMObjectParsed = usfmParser.toJSON(usfmData);
-    let chapter;
-    //Determining the chaper the verse string is coming from
-    for (var chapterNum in entireUSFMObjectParsed) {
-        if (!parseInt(chapterNum)) continue;
-        let chapterObject = entireUSFMObjectParsed[chapterNum];
-        for (var verseNum in chapterObject) {
-            let verseObject = chapterObject[verseNum];
-            if (verseObject.includes(parsedTextObject[verseNumbersArray[0]])) {
-                chapter = chapterNum;
-            }
-        }
+  /**
+   * Parsing usfm string to get verse numbers
+   * @type {{1:"Verse one", 2:"Verse 1"}}
+   */
+  let parsedTextObject = usfmParser.toJSON(versionText.trim());
+  /**@example {['1', '2', '3']} */
+  let verseNumbersArray = Object.keys(parsedTextObject);
+  let verses = `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}`;
+  let entireUSFMObjectParsed = usfmParser.toJSON(usfmData);
+  let chapter;
+  //Determining the chaper the verse string is coming from
+  for (var chapterNum in entireUSFMObjectParsed) {
+    if (!parseInt(chapterNum)) continue;
+    let chapterObject = entireUSFMObjectParsed[chapterNum];
+    for (var verseNum in chapterObject) {
+      let verseObject = chapterObject[verseNum];
+      if (verseObject.includes(parsedTextObject[verseNumbersArray[0]])) {
+        chapter = chapterNum;
+      }
     }
-    return {
-        chapter,
-        verses,
-        text: parsedTextObject
+  }
+  return {
+    chapter,
+    verses,
+    text: parsedTextObject
+  }
+}
+
+export function merge(mergeConflictsObject) {
+  let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
+  for (var conflict of mergeConflictsObject.conflicts) {
+    let chosenText;
+    for (var version of conflict) {
+      if (version.checked) {
+        chosenText = version.text;
+      }
     }
+    let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
+    usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
+    fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
+  }
 }
