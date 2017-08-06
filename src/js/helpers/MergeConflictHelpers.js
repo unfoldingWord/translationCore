@@ -70,6 +70,8 @@ export function parseMergeConflictVersion(versionText, usfmData) {
 }
 
 export function merge(mergeConflictsObject) {
+  try {
+    if (!mergeConflictsObject.filePath) return;
   let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
   for (var conflict of mergeConflictsObject.conflicts) {
     let chosenText;
@@ -82,4 +84,5 @@ export function merge(mergeConflictsObject) {
     usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
     fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
   }
+  } catch (e) {}
 }

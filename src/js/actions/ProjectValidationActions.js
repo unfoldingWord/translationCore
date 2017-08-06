@@ -81,7 +81,15 @@ export function mergeConflictCheck(state) {
    * */
   let parsedAllMergeConflictsFoundArray = [];
   let usfmFilePath = Path.join(projectSaveLocation, manifest.project.id + '.usfm');
-  let usfmData = fs.readFileSync(usfmFilePath).toString();
+  let usfmData;
+  try {
+    usfmData = fs.readFileSync(usfmFilePath).toString();
+  } catch (e) {
+    return {
+      passed: true,
+      conflicts: []
+    }
+  }
   /**Searching for string as indication of a merge conflict present in the text */
   if (usfmData.includes('<<<<<<<')) {
     /**
