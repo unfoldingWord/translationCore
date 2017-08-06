@@ -1,7 +1,8 @@
 import usfmParser from 'usfm-js';
 import * as fs from 'fs-extra';
-const regex = /<<<<<<<\s?\w+:\w+([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
-const replaceRegex = /(<<<<<<<\s?\w+:\w+[\s\S]*?>>>>>>>\s?.*)/;
+import * as ProjectSelectionHelpers from './ProjectSelectionHelpers';
+const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
+const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 
 /**
  * Seaches usfm data with regex and returns all merge conflicts found separated by string.
@@ -48,7 +49,9 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   let parsedTextObject = usfmParser.toJSON(versionText.trim());
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
-  let verses = `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}`;
+  let verses = verseNumbersArray.length > 1 ?
+    `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
+    `${verseNumbersArray[0]}`;
   let entireUSFMObjectParsed = usfmParser.toJSON(usfmData);
   let chapter;
   //Determining the chaper the verse string is coming from
@@ -69,20 +72,22 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   }
 }
 
-export function merge(mergeConflictsObject) {
+export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
   try {
     if (!mergeConflictsObject.filePath) return;
-  let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
-  for (var conflict of mergeConflictsObject.conflicts) {
-    let chosenText;
-    for (var version of conflict) {
-      if (version.checked) {
-        chosenText = version.text;
+    let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
+    for (var conflict of mergeConflictsObject.conflicts) {
+      let chosenText;
+      for (var version of conflict) {
+        if (version.checked) {
+          chosenText = version.text;
+        }
       }
+      let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
+      usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
+      fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
+      let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
+      TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     }
-    let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
-    usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
-    fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
-  }
-  } catch (e) {}
+  } catch (e) { }
 }

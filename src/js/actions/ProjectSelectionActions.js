@@ -41,7 +41,7 @@ export function selectProject(projectPath, projectLink) {
       params = LoadHelpers.getParams(projectPath, manifest);
     }
     dispatch(clearLastProject());
-    dispatch(loadProjectDetails(projectPath, manifest, params, targetLanguage));
+    dispatch(loadProjectDetails(projectPath, manifest, params));
     dispatch(ProjectValidationActions.validateProject((isValidProject) => {
       if (isValidProject) {
         TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
@@ -91,14 +91,13 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  * @param {object} manifest - project manifest.
  * @param {object} params - parameters defining a projects detals, similiar to metadata.
  */
-export function loadProjectDetails(projectPath, manifest, params, targetLanguage) {
+export function loadProjectDetails(projectPath, manifest, params) {
   return ((dispatch) => {
     LoadHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
     dispatch(ProjectDetailsActions.setProjectParams(params));
-    dispatch(ProjectDetailsActions.setTargetLanguageBible(targetLanguage))
   });
 }
 

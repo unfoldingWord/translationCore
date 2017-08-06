@@ -1,11 +1,13 @@
 import consts from './ActionTypes';
 import * as fs from 'fs-extra';
-import Path from 'path-extra';
+import Path from 'Path-extra';
+import usfm from 'usfm-js';
 //actions
 import git from '../helpers/GitApi.js';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as ProjectDetailsActions from './projectDetailsActions';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
@@ -40,7 +42,7 @@ export function validateProject(callback) {
     //list of actions to check for readiness of each step
     let copyRightCheck = this.copyRightCheck()
     let projectInformationCheck = this.projectInformationCheck();
-    let mergeConflictCheck = this.mergeConflictCheck(getState());
+    let mergeConflictCheck = this.mergeConflictCheck(getState(), dispatch);
     let missingVersesCheck = this.missingVersesCheck()
 
     //array to send to reducer for step related information to display
@@ -72,7 +74,7 @@ export function projectInformationCheck() {
  * Wrapper action for handling merge conflict detection
  * @param {object} state - State object from reducers to get usfm data
  */
-export function mergeConflictCheck(state) {
+export function mergeConflictCheck(state, dispatch) {
   const { projectSaveLocation, manifest } = state.projectDetailsReducer;
   /**
    * Object that will be sent back to reducers with the chapter, 
@@ -82,55 +84,73 @@ export function mergeConflictCheck(state) {
   let parsedAllMergeConflictsFoundArray = [];
   let usfmFilePath = Path.join(projectSaveLocation, manifest.project.id + '.usfm');
   let usfmData;
-  try {
+  if (fs.existsSync(usfmFilePath)) {
     usfmData = fs.readFileSync(usfmFilePath).toString();
-  } catch (e) {
-    return {
+    if (!usfmData.includes('<<<<<<<')) return {
       passed: true,
       conflicts: []
-    }
-  }
-  /**Searching for string as indication of a merge conflict present in the text */
-  if (usfmData.includes('<<<<<<<')) {
-    /**
-     * @example ["1 this is the first version", "1 This is the second version"]
-     * @type {[string]}
-     * extracting merge conflicts from usfm data
-    */
-    let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
-    for (let matchIndex in allMergeConflictsFoundArray) {
-      /** Array representing the diffferent versions for a merge conflict parsedinto a more consumable format */
-      let parsedMergeConflictVersionsArray = [];
-      /** Array representing current versions to be parsed*/
-      let mergeConflictVersionsArray = [];
-      /**
-       * Getting the first to matched elements from all merge conflicts array
-       * These elements are paired because they represent one 'merge conflict'
-       * They are the two different version histories of the conflict
-       */
-      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
-      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
-      for (var versionText of mergeConflictVersionsArray) {
-        /**
-         * Parsing the merge conflict version text in an object more easily
-         * consumable for the displaying container
-         * @type {{chapter,verses,text}}
-         */
-        let parsedMergeConflictVersionObject = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
-        parsedMergeConflictVersionsArray.push(parsedMergeConflictVersionObject);
-      }
-      parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
-    }
-    return {
-      passed: false,
-      conflicts: parsedAllMergeConflictsFoundArray,
-      filePath: usfmFilePath
     }
   } else {
-    return {
-      passed: true,
-      conflicts: []
+    try {
+      usfmData = '';
+      const chapters = fs.readdirSync(projectSaveLocation); // get the chunk files in the chapter Path
+      for (var chapterFileNumber of chapters) {
+        let chapterNumber = Number(chapterFileNumber);
+        if (chapterNumber) {
+          usfmData += '\\c ' + chapterNumber + '\n';
+          usfmData += '\\p' + '\n';
+          const files = fs.readdirSync(Path.join(projectSaveLocation, chapterFileNumber)); // get the chunk files in the chapter path
+          files.forEach(file => {
+            if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+              const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
+              const text = fs.readFileSync(chunkPath).toString();
+              usfmData += text + '\n';
+            }
+          });
+        };
+      };
+      if (usfmData.includes('<<<<<<<')) {
+        fs.outputFileSync(usfmFilePath, usfmData);
+      }
+      else return {
+        passed: true,
+        conflicts: []
+      }
+    } catch (e) { }
+  }
+  /**
+   * @example ["1 this is the first version", "1 This is the second version"]
+   * @type {[string]}
+   * extracting merge conflicts from usfm data
+  */
+  let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
+  for (let matchIndex in allMergeConflictsFoundArray) {
+    /** Array representing the diffferent versions for a merge conflict parsedinto a more consumable format */
+    let parsedMergeConflictVersionsArray = [];
+    /** Array representing current versions to be parsed*/
+    let mergeConflictVersionsArray = [];
+    /**
+     * Getting the first to matched elements from all merge conflicts array
+     * These elements are paired because they represent one 'merge conflict'
+     * They are the two different version histories of the conflict
+     */
+    mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+    mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+    for (var versionText of mergeConflictVersionsArray) {
+      /**
+       * Parsing the merge conflict version text in an object more easily
+       * consumable for the displaying container
+       * @type {{chapter,verses,text}}
+       */
+      let parsedMergeConflictVersionObject = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
+      parsedMergeConflictVersionsArray.push(parsedMergeConflictVersionObject);
     }
+    parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
+  }
+  return {
+    passed: false,
+    conflicts: parsedAllMergeConflictsFoundArray,
+    filePath: usfmFilePath
   }
 }
 
@@ -182,13 +202,10 @@ export function finishStepper() {
   return ((dispatch, getState) => {
     const state = getState();
     const { projectValidationStepsArray } = state.projectValidationReducer;
-    const { projectSaveLocation, manifest, targetLanguageBible } = state.projectDetailsReducer;
+    const { projectSaveLocation, manifest } = state.projectDetailsReducer;
     const { username } = state.loginReducer.userdata;
-
-    MergeConflictHelpers.merge(projectValidationStepsArray[2]);
+    MergeConflictHelpers.merge(projectValidationStepsArray[2], projectSaveLocation, manifest);
     git(projectSaveLocation).save(username, "Project Import Check", projectSaveLocation)
-    TargetLanguageActions.generateTargetBible(projectSaveLocation, targetLanguageBible, manifest);
-
     dispatch(showStepper(false));
     dispatch(ProjectSelectionActions.displayTools());
   })

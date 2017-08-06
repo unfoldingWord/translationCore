@@ -277,14 +277,14 @@ export function getParams(path, manifest) {
 export function isUSFMProject(projectPath) {
     try {
         fs.readFileSync(projectPath);
-        const ext = projectPath.split(".")[1].toLowerCase();
-        if (ext == "usfm" || ext == "sfm" || ext == "txt") return projectPath;
+        const ext = Path.extname(projectPath);
+        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return projectPath;
     } catch (e) {
         try {
             let dir = fs.readdirSync(projectPath);
             for (let i in dir) {
-                const ext = dir[i].split(".")[1].toLowerCase();
-                if (ext == "usfm" || ext == "sfm" || ext == "txt") return Path.join(projectPath, dir[i]);
+                const ext = Path.extname(dir[i]);
+                if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return Path.join(projectPath, dir[i]);
             }
             return false;
         } catch (err) {
