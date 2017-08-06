@@ -5,7 +5,8 @@ const initialState = {
   bookName: '',
   manifest: {},
   params: {},
-  currentProjectToolsProgress: {}
+  currentProjectToolsProgress: {},
+  targetLanguageBible: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
@@ -29,6 +30,11 @@ const projectDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         params: action.params
+      };
+    case consts.SET_TARGET_LANGUAGE_BIBLE:
+      return {
+        ...state,
+        targetLanguageBible: action.bible
       };
     case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
       return {

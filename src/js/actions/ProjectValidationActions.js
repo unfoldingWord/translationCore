@@ -2,6 +2,7 @@ import consts from './ActionTypes';
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
 //actions
+import git from '../helpers/GitApi.js';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
@@ -115,7 +116,7 @@ export function mergeConflictCheck(state) {
     return {
       passed: false,
       conflicts: parsedAllMergeConflictsFoundArray,
-      filePath:usfmFilePath
+      filePath: usfmFilePath
     }
   } else {
     return {
@@ -171,11 +172,16 @@ export function goToProjectValidationStep(step) {
 
 export function finishStepper() {
   return ((dispatch, getState) => {
-    const projectValidationStepsArray = getState().projectValidationReducer.projectValidationStepsArray;
-    dispatch(MergeConflictHelpers.merge(projectValidationStepsArray[2]))
+    const state = getState();
+    const { projectValidationStepsArray } = state.projectValidationReducer;
+    const { projectSaveLocation, manifest, targetLanguageBible } = state.projectDetailsReducer;
+    const { username } = state.loginReducer.userdata;
+
+    MergeConflictHelpers.merge(projectValidationStepsArray[2]);
+    git(projectSaveLocation).save(username, "Project Import Check", projectSaveLocation)
+    TargetLanguageActions.generateTargetBible(projectSaveLocation, targetLanguageBible, manifest);
+
     dispatch(showStepper(false));
-    let projectDetails = getState().projectDetailsReducer;
-    TargetLanguageActions.generateTargetBible(projectDetails.projectSaveLocation, {}, projectDetails.manifest);
     dispatch(ProjectSelectionActions.displayTools());
   })
 }
