@@ -46,7 +46,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let parsedTextObject = usfmParser.toJSON(versionText.trim());
+  let parsedTextObject = usfmParser.toJSON(versionText);
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
   let verses = verseNumbersArray.length > 1 ?
@@ -72,6 +72,14 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   }
 }
 
+/**
+ * This method takes the chosen git history and uses it for merging the input usfm data
+ * note: this function writes the merged data to the fs.
+ * @param {object} mergeConflictsObject - Object to be parsed that contains the information
+ * of the chosen text to merge
+ * @param {string} projectSaveLocation - Path of the project
+ * @param {object} manifest - Metadata of the project details 
+ */
 export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
   try {
     if (!mergeConflictsObject.filePath) return;
@@ -89,5 +97,28 @@ export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
       TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     }
-  } catch (e) { }
+  } catch (e) { console.warn('Problem merging conflicts') }
+}
+
+export function createUSFMFromTsProject(projectSaveLocation) {
+  let usfmData = '';
+  try {
+    const chapters = fs.readdirSync(projectSaveLocation); // get the chunk files in the chapter path
+    for (var chapterFileNumber of chapters) {
+      let chapterNumber = Number(chapterFileNumber);
+      if (chapterNumber) {
+        usfmData += '\\c ' + chapterNumber + '\n';
+        usfmData += '\\p' + '\n';
+        const files = fs.readdirSync(Path.join(projectSaveLocation, chapterFileNumber)); // get the chunk files in the chapter path
+        files.forEach(file => {
+          if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+            const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
+            const text = fs.readFileSync(chunkPath).toString();
+            usfmData += text + '\n';
+          }
+        })
+      }
+    }
+  } catch (e) { console.warn('Problem getting merge conflicts') }
+  return usfmData;
 }

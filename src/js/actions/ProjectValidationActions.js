@@ -4,6 +4,7 @@ import Path from 'Path-extra';
 import usfm from 'usfm-js';
 //actions
 import git from '../helpers/GitApi.js';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
@@ -75,48 +76,35 @@ export function projectInformationCheck() {
  * @param {object} state - State object from reducers to get usfm data
  */
 export function mergeConflictCheck(state, dispatch) {
-  const { projectSaveLocation, manifest } = state.projectDetailsReducer;
+  const { projectSaveLocation } = state.projectDetailsReducer;
   /**
    * Object that will be sent back to reducers with the chapter, 
    * verse and text info  of each merge conflict version.
    * An array of arrays of an object.
    * */
   let parsedAllMergeConflictsFoundArray = [];
-  let usfmFilePath = Path.join(projectSaveLocation, manifest.project.id + '.usfm');
+  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation);
   let usfmData;
-  if (fs.existsSync(usfmFilePath)) {
+  if (fs.existsSync(usfmFilePath)) { //is usfm file
     usfmData = fs.readFileSync(usfmFilePath).toString();
-    if (!usfmData.includes('<<<<<<<')) return {
-      passed: true,
-      conflicts: []
-    }
-  } else {
+    if (!usfmData.includes('<<<<<<<'))  //usfm file does not contain merge conflicts
+      return {
+        passed: true,  
+        conflicts: []
+      }
+  } else { //Not usfm file, checking for tS project
     try {
-      usfmData = '';
-      const chapters = fs.readdirSync(projectSaveLocation); // get the chunk files in the chapter Path
-      for (var chapterFileNumber of chapters) {
-        let chapterNumber = Number(chapterFileNumber);
-        if (chapterNumber) {
-          usfmData += '\\c ' + chapterNumber + '\n';
-          usfmData += '\\p' + '\n';
-          const files = fs.readdirSync(Path.join(projectSaveLocation, chapterFileNumber)); // get the chunk files in the chapter path
-          files.forEach(file => {
-            if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
-              const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
-              const text = fs.readFileSync(chunkPath).toString();
-              usfmData += text + '\n';
-            }
-          });
-        };
-      };
-      if (usfmData.includes('<<<<<<<')) {
+      usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation)
+      if (usfmData.includes('<<<<<<<')) { //Creating usfm file for later use in handling merge conflicts
+        //This file gets archived later when generating a tC project in TargetLanguageActions.generateTargetBible
         fs.outputFileSync(usfmFilePath, usfmData);
       }
       else return {
+        //A project thats not usfm and merge conflicts not detected
         passed: true,
         conflicts: []
       }
-    } catch (e) { }
+    } catch (e) { console.warn('Problem getting merge conflicts') }
   }
   /**
    * @example ["1 this is the first version", "1 This is the second version"]
@@ -158,7 +146,6 @@ export function missingVersesCheck() {
   return { passed: false };
 }
 
-
 export function goToNextProjectValidationStep() {
   return ((dispatch, getState) => {
     let { stepIndex } = getState().projectValidationReducer.stepper;
@@ -192,12 +179,19 @@ export function goToPreviousProjectValidationStep() {
   });
 }
 
+/**Directly jump to a step at the specified index */
 export function goToProjectValidationStep(step) {
   return ((dispatch) => {
     dispatch({ type: consts.GO_TO_PROJECT_VALIDATION_STEP, step: step })
   })
 }
 
+/**
+ * Warapper function to handles actions for each checking step after the 
+ * user decides to finish the stepper. 
+ * note: We may need an alert dialog here informing the user that 
+ * they are about to make irreversible changes.
+ */
 export function finishStepper() {
   return ((dispatch, getState) => {
     const state = getState();
@@ -211,6 +205,7 @@ export function finishStepper() {
   })
 }
 
+/**Disables and enables next button in project validation stepper */
 export function toggleNextButton(nextDisabled) {
   return {
     type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
@@ -218,6 +213,12 @@ export function toggleNextButton(nextDisabled) {
   }
 }
 
+/**
+ * Updates the data in a given step index to save in the reducer
+ * @param {number} stepIndex - Index of the step being updated, starting index is 0 (Copyright check)
+ * @param {object} data - Object containing relevant data for check such as if it passed or not.
+ * note this object must contain the key passed
+ */
 export function updateStepData(stepIndex, data) {
   return ((dispatch, getState) => {
     let newStepsArray = getState().projectValidationReducer.projectValidationStepsArray.splice();
