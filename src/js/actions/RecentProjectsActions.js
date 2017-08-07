@@ -1,3 +1,4 @@
+import * as fs from 'fs-extra';
 /**
  *  Reads projects from the fs in ~/translationCore/
  */

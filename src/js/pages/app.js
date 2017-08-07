@@ -14,6 +14,7 @@ import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
+import ProjectValidationContainer from '../containers/ProjectValidationContainer';
 // actions
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
@@ -44,6 +45,7 @@ class Main extends Component {
 
     return (
       <div className="fill-height">
+        <ProjectValidationContainer />
         <AlertDialogContainer />
         <KonamiContainer />
         <ModalContainer />
