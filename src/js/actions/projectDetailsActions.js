@@ -66,13 +66,6 @@ export function setProjectParams(params) {
   };
 }
 
-export function setTargetLanguageBible(bible) {
-  return {
-    type: consts.SET_TARGET_LANGUAGE_BIBLE,
-    bible
-  }
-}
-
 export function getProjectProgressForTools(toolName) {
   return ((dispatch, getState) => {
     const {
