@@ -1,0 +1,114 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 43 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 44 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 45 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 46 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "philip",
+      "quote": "Philip, the evangelist",
+      "occurrence": 1
+    }
+  }
+]

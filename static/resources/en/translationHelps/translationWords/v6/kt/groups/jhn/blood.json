@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 53 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 54 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 56 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 34 },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "blood",
+      "occurrence": 1
+    }
+  }
+]

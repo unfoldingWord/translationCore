@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "royal",
+      "quote": "royal",
+      "occurrence": 1
+    }
+  }
+]

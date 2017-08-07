@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "wrong",
+      "quote": "wrong, mistreat, hurt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 16, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "wrong",
+      "quote": "wrong, mistreat, hurt",
+      "occurrence": 1
+    }
+  }
+]

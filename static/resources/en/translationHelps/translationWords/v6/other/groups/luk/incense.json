@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "incense",
+      "quote": "incense",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "incense",
+      "quote": "incense",
+      "occurrence": 1
+    }
+  }
+]

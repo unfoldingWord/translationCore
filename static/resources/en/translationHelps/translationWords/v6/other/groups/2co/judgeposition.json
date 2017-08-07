@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "judgeposition",
+      "quote": "judge",
+      "occurrence": 1
+    }
+  }
+]

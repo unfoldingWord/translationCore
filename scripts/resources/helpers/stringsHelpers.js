@@ -1,4 +1,3 @@
-
 export function getResourceType(resourceId) {
   switch (resourceId) {
     case 'ulb':

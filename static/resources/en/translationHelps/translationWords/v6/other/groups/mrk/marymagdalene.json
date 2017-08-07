@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 40 },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Mary Magdalene",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 47 },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Mary Magdalene",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 16, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Mary Magdalene",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 16, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Mary Magdalene",
+      "occurrence": 1
+    }
+  }
+]

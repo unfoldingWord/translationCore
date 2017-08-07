@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 3, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 3, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 10, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 12, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 12, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  }
+]

@@ -76,8 +76,16 @@ export const loadResourceArticle = (resourceType, articleId) => {
     let resourceVersion = resourceType === 'translationWords' ? 'v6' : 'v0';
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
-    let resourceVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType, resourceVersion,'content', resourceFilename);
-    let articleData = fs.readFileSync(resourceVersionPath, 'utf8'); // get file from fs
+    let articlesPath = resourceType === 'translationWords' ? path.join('kt', 'articles', resourceFilename) : path.join('content', resourceFilename);
+    let resourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType, resourceVersion, articlesPath);
+    let articleData
+    if (fs.existsSync(resourcePath)) {
+      articleData = fs.readFileSync(resourcePath, 'utf8'); // get file from fs
+    } else {
+      // if article isnt found in the kt folder (key terms) then try to find it in the other folder.
+      resourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType, resourceVersion, 'other', 'articles', resourceFilename);
+      articleData = fs.readFileSync(resourcePath, 'utf8'); // get file from fs
+    }
     // populate reducer with markdown data
     dispatch({
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 2, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "last day, last days, latter days",
+      "occurrence": 1
+    }
+  }
+]

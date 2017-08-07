@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 5, "verse": 37 },
+      "tool": "translationWords",
+      "groupId": "census",
+      "quote": "census",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 31 },
+      "tool": "translationWords",
+      "groupId": "solomon",
+      "quote": "Solomon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 27 },
+      "tool": "translationWords",
+      "groupId": "solomon",
+      "quote": "Solomon",
+      "occurrence": 1
+    }
+  }
+]

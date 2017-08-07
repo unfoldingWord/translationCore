@@ -43,9 +43,11 @@ export function getTHelpsFromStaticPackage(force = false) {
 
 export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {
   const languageId = 'en';
-  let version = currentToolName === 'translationWords' ? 'v6' : 'V0';
-  let groupsIndexSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, 'index.json');
-  let groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
+  const version = currentToolName === 'translationWords' ? 'v6' : 'V0';
+  const groupsIndexPath = currentToolName === 'translationWords' ? path.join('kt', 'index.json') : 'index.json';
+  const groupsIndexSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsIndexPath);
+  const groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
+
   if(fs.existsSync(groupsIndexSourcePath)) {
     fs.copySync(groupsIndexSourcePath, groupsIndexDestinationPath);
   } else {
@@ -56,7 +58,9 @@ export function copyGroupsIndexToProjectResources(currentToolName, projectGroups
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = 'en';
   const version = currentToolName === 'translationWords' ? 'v6' : 'V0';
-  let groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, 'groups', bookAbbreviation);
+  const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
+  const groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsFolderPath);
+
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
   } else {
@@ -73,6 +77,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
   let fileName = 'manifest.json';
   let bibleManifestPath = path.join(bibleVersionPath, fileName);
   let manifest;
+
   if(fs.existsSync(bibleManifestPath)) {
     manifest = fs.readJsonSync(bibleManifestPath);
   } else {
@@ -88,9 +93,10 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
   const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './static/resources', languageId, 'bibles');
-  let fileName = 'index.json';
-  let bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
+  const fileName = 'index.json';
+  const bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   let index;
+
   if(fs.existsSync(bibleIndexPath)) {
     index = fs.readJsonSync(bibleIndexPath);
   } else {

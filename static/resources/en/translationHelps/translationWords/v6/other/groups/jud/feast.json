@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jud", "chapter": 1, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "feast",
+      "occurrence": 1
+    }
+  }
+]

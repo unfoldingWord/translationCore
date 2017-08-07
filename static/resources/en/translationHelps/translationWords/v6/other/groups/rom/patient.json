@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "patient, patience",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "patient, patience",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "patient, patience",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "patient, patience",
+      "occurrence": 1
+    }
+  }
+]

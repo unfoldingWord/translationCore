@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 38 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 39 },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "magistrate, magistrates",
+      "occurrence": 1
+    }
+  }
+]

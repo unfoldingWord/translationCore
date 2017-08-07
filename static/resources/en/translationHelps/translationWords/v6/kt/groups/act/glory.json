@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "glory, glorious",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "glory, glorious",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 12, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "glory, glorious",
+      "occurrence": 1
+    }
+  }
+]

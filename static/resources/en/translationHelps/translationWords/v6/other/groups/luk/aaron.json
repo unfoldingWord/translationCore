@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "aaron",
+      "quote": "Aaron",
+      "occurrence": 1
+    }
+  }
+]

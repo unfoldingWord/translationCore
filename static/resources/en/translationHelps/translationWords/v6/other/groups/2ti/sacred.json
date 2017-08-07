@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2ti", "chapter": 3, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "sacred",
+      "quote": "sacred",
+      "occurrence": 1
+    }
+  }
+]

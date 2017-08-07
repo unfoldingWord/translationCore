@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "vision",
+      "quote": "vision",
+      "occurrence": 1
+    }
+  }
+]

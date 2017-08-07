@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "joram",
+      "quote": "Joram",
+      "occurrence": 1
+    }
+  }
+]

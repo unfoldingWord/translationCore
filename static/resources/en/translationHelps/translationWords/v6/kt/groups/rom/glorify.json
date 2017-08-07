@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "glorify",
+      "quote": "glorify, glorifies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "glorify",
+      "quote": "glorify, glorifies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "glorify",
+      "quote": "glorify, glorifies",
+      "occurrence": 1
+    }
+  }
+]

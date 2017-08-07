@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 11, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeyear",
+      "quote": "year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 18, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeyear",
+      "quote": "year",
+      "occurrence": 1
+    }
+  }
+]

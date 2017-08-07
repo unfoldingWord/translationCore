@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "image",
+      "quote": "image, carved image, carved figure, cast metal figure",
+      "occurrence": 1
+    }
+  }
+]

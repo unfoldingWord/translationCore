@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 3, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "water, waters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "water, waters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "water, waters",
+      "occurrence": 1
+    }
+  }
+]

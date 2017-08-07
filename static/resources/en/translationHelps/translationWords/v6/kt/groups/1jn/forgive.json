@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1jn", "chapter": 1, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "forgive, forgives, forgiven, forgiveness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1jn", "chapter": 1, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "forgive, forgives, forgiven, forgiveness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "forgive, forgives, forgiven, forgiveness",
+      "occurrence": 1
+    }
+  }
+]

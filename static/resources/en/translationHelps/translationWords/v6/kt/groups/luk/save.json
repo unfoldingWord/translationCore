@@ -1,0 +1,198 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 50 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 33 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 44 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 37 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 39 },
+      "tool": "translationWords",
+      "groupId": "save",
+      "quote": "save, saves, saved, safe",
+      "occurrence": 1
+    }
+  }
+]
