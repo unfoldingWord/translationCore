@@ -1,12 +1,10 @@
 import consts from './ActionTypes';
 import * as fs from 'fs-extra';
 import Path from 'Path-extra';
-import usfm from 'usfm-js';
 //actions
 import git from '../helpers/GitApi.js';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as TargetLanguageActions from './TargetLanguageActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as ProjectDetailsActions from './projectDetailsActions';
 
@@ -76,33 +74,33 @@ export function projectInformationCheck() {
  * @param {object} state - State object from reducers to get usfm data
  */
 export function mergeConflictCheck(state, dispatch) {
-  const { projectSaveLocation } = state.projectDetailsReducer;
+  const { projectSaveLocation, manifest } = state.projectDetailsReducer;
   /**
    * Object that will be sent back to reducers with the chapter, 
    * verse and text info  of each merge conflict version.
    * An array of arrays of an object.
    * */
   let parsedAllMergeConflictsFoundArray = [];
-  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation);
+  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) || 
+    Path.join(projectSaveLocation, manifest.project.id + '.usfm');
   let usfmData;
   if (fs.existsSync(usfmFilePath)) { //is usfm file
     usfmData = fs.readFileSync(usfmFilePath).toString();
     if (!usfmData.includes('<<<<<<<'))  //usfm file does not contain merge conflicts
       return {
         passed: true,  
-        conflicts: []
+        conflicts: [],
+        filePath:usfmFilePath
       }
   } else { //Not usfm file, checking for tS project
     try {
       usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation)
-      if (usfmData.includes('<<<<<<<')) { //Creating usfm file for later use in handling merge conflicts
-        //This file gets archived later when generating a tC project in TargetLanguageActions.generateTargetBible
-        fs.outputFileSync(usfmFilePath, usfmData);
-      }
-      else return {
+      fs.outputFileSync(usfmFilePath, usfmData);
+      if (!usfmData.includes('<<<<<<<')) return {
         //A project thats not usfm and merge conflicts not detected
         passed: true,
-        conflicts: []
+        conflicts: [],
+        filePath:usfmFilePath
       }
     } catch (e) { console.warn('Problem getting merge conflicts') }
   }

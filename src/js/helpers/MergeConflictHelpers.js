@@ -1,6 +1,8 @@
 import usfmParser from 'usfm-js';
 import * as fs from 'fs-extra';
+import Path from 'Path-extra';
 import * as ProjectSelectionHelpers from './ProjectSelectionHelpers';
+import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 
@@ -82,17 +84,18 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  */
 export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
   try {
-    if (!mergeConflictsObject.filePath) return;
-    let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
-    for (var conflict of mergeConflictsObject.conflicts) {
-      let chosenText;
-      for (var version of conflict) {
-        if (version.checked) {
-          chosenText = version.text;
+    if (mergeConflictsObject.filePath) {
+      let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
+      for (var conflict of mergeConflictsObject.conflicts) {
+        let chosenText;
+        for (var version of conflict) {
+          if (version.checked) {
+            chosenText = version.text;
+          }
         }
+        let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
+        usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
-      let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
-      usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
       TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
