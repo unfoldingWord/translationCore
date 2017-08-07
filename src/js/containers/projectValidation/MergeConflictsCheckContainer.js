@@ -6,9 +6,7 @@ import DownArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import { Card } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck'
-//actions
-import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
+import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
 
 
 class MergeConflictsCheckContainer extends Component {
@@ -29,25 +27,29 @@ class MergeConflictsCheckContainer extends Component {
     if (!this.allVersionsSelected()) this.props.actions.toggleNextDisabled(true);
   }
 
+  /**Determine if the user has selected all merge conlficts history which will need to be merged */
   allVersionsSelected() {
     let allMergeConflictsHandled = true;
     let mergeConflictsObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
     for (var conflict of mergeConflictsObject.conflicts) {
-      let versionsHandled = false
+      let mergeHistorySelected = false
       for (var version of conflict){
-        versionsHandled = version.checked || versionsHandled;
+        //if current check is selected or the previous one was
+        mergeHistorySelected = version.checked || mergeHistorySelected;
       }
-      allMergeConflictsHandled = allMergeConflictsHandled && versionsHandled;
+      //All merge conflicts have been handled previously and for the current conflict
+      allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
     }
     return allMergeConflictsHandled;
   }
 
   onCheck(e, mergeConflictIndex, versionIndex) {
-    let otherVersion = Number(! + versionIndex);
+    let otherVersion = Number(! + versionIndex); // i.e. 0 -> 1 and 1 -> 0
     let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
-    let newObject = Object.assign({}, mergeConflictObject);
+    let newObject = Object.assign({}, mergeConflictObject); //Replicating state
     let currentCheckStatus = newObject.conflicts[mergeConflictIndex][versionIndex].checked;
     newObject.conflicts[mergeConflictIndex][versionIndex].checked = !currentCheckStatus;
+    //The user can only select one merge conlfict to merge with for now.
     newObject.conflicts[mergeConflictIndex][otherVersion].checked = currentCheckStatus;
     this.props.actions.updateStepData(2, newObject)
     this.props.actions.toggleNextDisabled(!this.allVersionsSelected());
@@ -121,7 +123,7 @@ class MergeConflictsCheckContainer extends Component {
 
   openMergeCard(mergeConflictIndex, open) {
     let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
-    let newObject = Object.assign({}, mergeConflictObject);
+    let newObject = Object.assign({}, mergeConflictObject); //Replicating state in new object
     newObject.conflicts[mergeConflictIndex].open = open;
     this.props.actions.updateStepData(2, newObject)
   }

@@ -5,8 +5,7 @@ const initialState = {
   bookName: '',
   manifest: {},
   params: {},
-  currentProjectToolsProgress: {},
-  targetLanguageBible: {}
+  currentProjectToolsProgress: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
