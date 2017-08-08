@@ -7,11 +7,11 @@ import { Card } from 'material-ui/Card';
 class CopyRightCheck extends Component {
 
   componentDidMount() {
-    // this.props.actions.changeProjectValidationInstructions(
-    //   <div>
-    //     <span>Please select the copyright status for this project.</span>
-    //   </div>
-    // )
+    this.props.actions.changeProjectValidationInstructions(
+      <div>
+        <span>Please select the copyright status for this project.</span>
+      </div>
+    )
   }
 
   render() {
