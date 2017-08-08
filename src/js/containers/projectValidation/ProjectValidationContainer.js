@@ -1,17 +1,17 @@
-import { connect } from 'react-redux'
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //actions
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 //components
 import Dialog from 'material-ui/Dialog';
-import ProjectValidationStepper from '../components/projectValidation/ProjectValidationStepper';
-import ProjectValidationInstructions from '../components/projectValidation/ProjectValidationInstructions';
-import CopyRightCheck from '../components/projectValidation/CopyRightCheck';
-import ProjectInformationCheck from '../components/projectValidation/ProjectInformationCheck';
-import MergeConflictsCheck from '../components/projectValidation/MergeConflictsCheck';
-import MissingVersesCheck from '../components/projectValidation/MissingVersesCheck';
-import ProjectValidationNavigation from '../components/projectValidation/ProjectValidationNavigation';
+import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
+import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
+import CopyrightCheck from '../../components/projectValidation/CopyrightCheck';
+import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
+import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
+import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
+import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
   render() {
@@ -31,7 +31,7 @@ class ProjectValidationContainer extends Component {
     let displayContainer = <div />;
     switch (stepIndex) {
       case 1:
-        displayContainer = <CopyRightCheck {...this.props} />;
+        displayContainer = <CopyrightCheck {...this.props} />;
         break;
       case 2:
         displayContainer = <ProjectInformationCheck {...this.props} />;
