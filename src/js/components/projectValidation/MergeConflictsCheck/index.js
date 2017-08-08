@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 //icons
 import RightArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import DownArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
@@ -6,7 +7,7 @@ import DownArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import { Card } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
+import MergeConflictsCheck from './MergeConflictsCheck.js';
 
 
 class MergeConflictsCheckContainer extends Component {
@@ -137,6 +138,17 @@ class MergeConflictsCheckContainer extends Component {
         <MergeConflictsCheck conflictCards={conflictCards} {...this.props} />
       </Card>
     );
+  }
+}
+
+MergeConflictsCheckContainer.propTypes = {
+  actions: {
+    updateStepData: PropTypes.func.isRequired,
+    toggleNextDisabled: PropTypes.func.isRequired,
+    changeProjectValidationInstructions: PropTypes.func.isRequired,
+  },
+  reducers:{
+    projectValidationReducer:PropTypes.object.isRequired
   }
 }
 

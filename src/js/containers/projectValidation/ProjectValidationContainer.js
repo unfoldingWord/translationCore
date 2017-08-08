@@ -11,8 +11,8 @@ import ProjectValidationStepper from '../../components/projectValidation/Project
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
 import CopyRightCheck from '../../components/projectValidation/CopyRightCheck';
 import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
-import MergeConflictsCheckContainer from './MergeConflictsCheckContainer';
 import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
+import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
@@ -39,7 +39,7 @@ class ProjectValidationContainer extends Component {
         displayContainer = <ProjectInformationCheck {...this.props} />;
         break;
       case 3:
-        displayContainer = <MergeConflictsCheckContainer {...this.props} />;
+        displayContainer = <MergeConflictsCheck {...this.props} />;
         break;
       case 4:
         displayContainer = <MissingVersesCheck {...this.props} />;
