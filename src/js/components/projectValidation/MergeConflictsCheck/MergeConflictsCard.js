@@ -37,7 +37,7 @@ class MergeConflictsCheck extends Component {
           </div>
         </div>
       )
-    })
+    }, this)
   }
 
   render() {

@@ -65,8 +65,7 @@ class MergeConflictsCheckContainer extends Component {
         versions.push({
           index: versionIndex,
           textSectionData: this.textObjectSection(conflict[versionIndex].text),
-          checked: checked,
-          onCheck: this.onCheck
+          checked: checked
         })
       }
       conflictCards.push(
@@ -77,7 +76,8 @@ class MergeConflictsCheckContainer extends Component {
           mergeConflictIndex={mergeConflictIndex}
           conflict={conflict}
           versions={versions}
-          openMergeCard={this.openMergeCard} />
+          openMergeCard={this.openMergeCard}
+          onCheck={this.onCheck} />
       )
     }
     return conflictCards;
