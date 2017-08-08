@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
@@ -49,20 +50,20 @@ class ProjectValidationContainer extends Component {
     return (
       <MuiThemeProvider>
         <Dialog
-          actionsContainerStyle={{backgroundColor:'var(--background-color-light)'}}
-          actions={<ProjectValidationNavigation {...this.props}/>}
+          actionsContainerStyle={{ backgroundColor: 'var(--background-color-light)' }}
+          actions={<ProjectValidationNavigation {...this.props} />}
           modal={true}
           style={{ padding: "0px", zIndex: 2501 }}
           contentStyle={projectValidationContentStyle}
-          bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor:'var(--background-color-light)' }}
+          bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor: 'var(--background-color-light)' }}
           open={showProjectValidationStepper}>
           <div style={{ height: '80vh' }}>
             <ProjectValidationStepper {...this.props} />
-            <div style={{ display: 'flex', flexDirection: 'row', height: '85%', margin:'10px 0px 0px 65px' }}>
-              <div style={{ width: '400px', height: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', height: '85%', marginTop: '10px' }}>
+              <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>
-              <div style={{ width: '600px', padding: '0 20px', marginBottom: '25px', height:'100%' }}>
+              <div style={{ height: '100%', width: '100%', padding: '20px 65px 0 20px' }}>
                 {displayContainer}
               </div>
             </div>
@@ -96,9 +97,23 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       selectProjectLicense: (selectedProjectLicense) => {
         dispatch(CopyrightCheckActions.selectProjectLicense(selectedProjectLicense));
+      },
+      changeProjectValidationInstructions: (instructions) => {
+        dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
+      },
+      toggleNextDisabled: (isDisabled) => {
+        dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
+      },
+      updateStepData:(stepIndex, data) => {
+        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
       }
     }
   }
+}
+
+ProjectValidationContainer.propTypes = {
+  actions: PropTypes.object.isRequired,
+  reducers: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)

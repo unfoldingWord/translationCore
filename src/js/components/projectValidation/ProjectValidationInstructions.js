@@ -10,7 +10,7 @@ class ProjectValidationInstructions extends Component {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Instructions
-        <Card style={{ height: '100%', marginTop: '5px', lineHeight: '2em' }}>
+        <Card style={{ height: '100%', lineHeight: '2em' }}>
           <CardText style={{height: '100%'}}>
             {instructions}
           </CardText>
