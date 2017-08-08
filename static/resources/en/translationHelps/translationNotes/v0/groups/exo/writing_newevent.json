@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main event. Here the author starts to tell a new part of the narrative. If you have a way of doing this in your language, consider using it here. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

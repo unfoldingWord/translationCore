@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the person offering the sacrifice. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you will bring it in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "commanded you to do",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"You\" refers to Aaron. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You and your sons and daughters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "When you have come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural and refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "for you",
+      "occurrence": 1
+    }
+  }
+]

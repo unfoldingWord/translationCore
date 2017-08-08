@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means all people, whether they are still alive or have died. AT: \"every person\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the living and the dead",
+      "occurrence": 1
+    }
+  }
+]

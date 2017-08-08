@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"large\" and \"mighty\" share similar meanings here and emphasize the strength of the army. AT: \"A huge swarm of locusts\" (UDB) or \"a very large human army.\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a large and mighty army",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the people of Israel, who are God's special people (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "your inheritance",
+      "occurrence": 1
+    }
+  }
+]

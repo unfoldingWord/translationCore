@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The gods were believed to shine brightly with light. AT: \"Man four is shining brightly with light as a son of the gods would shine\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "The brilliance of the fourth is like a son of the gods",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the number three ruler\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third highest ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the number three ruler\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third highest ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the number three ruler\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third highest ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"year 3 of the rule of Cyrus the king of Persia\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third year of Cyrus king of Persia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"after them a fourth king will come into power who will have more money than the three before him\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "a fourth will be far richer than all the others",
+      "occurrence": 1
+    }
+  }
+]

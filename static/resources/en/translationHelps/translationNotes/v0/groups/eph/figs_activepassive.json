@@ -1,0 +1,227 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"When it is the right time for him to finish doing everything he has planned to do\" or \"When God has finished doing all that he wanted to do to complete his plan\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n\n",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "When the times are fulfilled for the completion of his plan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: Possible meanings are 1) \"every name that man gives\" or 2) \"every name that God gives\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "every name that is named",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in an active form. AT: \"God saved us because of his great kindness toward us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It is by grace that you have been saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's kindness to us is the reason he made it possible for us to be saved from judgment if we simply trust in Jesus. AT: \"God saved you by grace because of your faith in him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For by grace you have been saved through faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in the active tense. AT: \"by what people call\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "by what is called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in the active tense. AT: \"God has built you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "You have been built",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"what God revealed to me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "according to the revelation made known to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God did not make these things known to people in the past\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "In other generations this truth was not made known to the sons of men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in the active form. AT: \"those whom God has set apart for himself\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "those set apart for God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. \"that God, who created all things, had kept hidden for long ages in the past\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that had been hidden for ages in the past by God, who created all things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"also God called you to have one hope in your calling\" or \"there is one thing that God also chose you to be confident in and expect him to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "also you were called in one confident expectation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated using an active form. AT: \"God has given a gift to each one of us\" or \"God gave a gift to each believer\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "To each one of us has been given a gift",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Because they do not know God, they cannot live the way God wants his people to live\" or \"They have cut themselves off from the life of God by their ignorance\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They are alienated from the life of God by the ignorance that is in them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is saying that the Holy Spirit has provided assurance for the believers that they will receive what God has promised them. The Spirit is also like a mark that God has put on his people to show that he owns them. AT: \"It is the Spirit whom God has given you to show that he owns you and will redeem you at the proper time\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and  [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It is by him that you have been sealed for the day of redemption",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that God might give me the word\" or \"God might give me the message\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that a message might be given to me",
+      "occurrence": 1
+    }
+  }
+]

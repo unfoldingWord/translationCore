@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"300 kilometers\" or \"200 miles\" (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "rev", "chapter": 14, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "1,600 stadia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A stadium measures 185 meters. (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "stadia",
+      "occurrence": 1
+    }
+  }
+]

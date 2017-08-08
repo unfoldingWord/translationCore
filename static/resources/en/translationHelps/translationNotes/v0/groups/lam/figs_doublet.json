@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Wormwood is a plant that gives a liquid which is very bitter to drink. \"Wormwood\" and \"bitterness\" have similar meanings and emphasize that this is something that is very bitter. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "wormwood and bitterness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"filthy scum\" and \"refuse\" both refer to things that people have rejected and thrown away. AT: \"You have thrown us away as if we were just trash.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "You have made us like filthy scum and refuse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words share similar meanings and refer to destruction of Jerusalem. AT: \"total destruction.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "ruin and destruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize that these are people who desired to harm Jerusalem. AT: \"any kind of enemy\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "enemies or opponents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize the intensity of gladness. The writer uses these words sarcastically. AT: \"Be very glad.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Rejoice and be glad",
+      "occurrence": 1
+    }
+  }
+]

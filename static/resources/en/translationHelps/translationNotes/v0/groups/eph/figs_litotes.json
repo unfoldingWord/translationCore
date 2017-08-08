@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses \"not stopped\" to emphasize that he continues to thank God. AT: \"I continue to thank God\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I have not stopped thanking God",
+      "occurrence": 1
+    }
+  }
+]

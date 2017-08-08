@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "clean, cleans, cleaned, cleanse, cleansed, cleansing, wash, washing, washed, washes",
+      "occurrence": 1
+    }
+  }
+]

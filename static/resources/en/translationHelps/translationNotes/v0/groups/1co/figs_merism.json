@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"the world\" consists of both supernatural (\"angels\") and natural (\"human beings\") or 2) the list consists of three items: \"to the world, to angels, and to human beings.\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "to the world—to angels, and to human beings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a merism for all homosexual activity or 2) Paul is naming two different activities. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "male prostitutes, those who practice homosexuality",
+      "occurrence": 1
+    }
+  }
+]

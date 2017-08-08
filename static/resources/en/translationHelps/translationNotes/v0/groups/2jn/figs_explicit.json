@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, \"beginning\" refers to \"when we first believed.\" AT: \"but I am writing to you what Christ commanded us to do when we first believed. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2jn", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "but one that we have had from the beginning",
+      "occurrence": 1
+    }
+  }
+]

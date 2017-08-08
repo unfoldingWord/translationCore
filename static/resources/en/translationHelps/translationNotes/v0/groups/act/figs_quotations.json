@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he told them to instruct Silas and Timothy.\" This can also be stated as a direct quotation as in the UDB. (See: [[:en:ta:vol2:translate:figs_quotations]])\n\n",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "they received from him instructions for Silas and Timothy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quotation. AT: \"he asked Paul, 'What province are you from?'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "he asked what province Paul was from",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quotation. AT: \"But Festus said, 'Paul is a prisoner in Caesarea, and I myself will soon return there'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "But Festus answered that Paul was a prisoner in Caesarea, and that he himself was soon to return there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quotation. AT: \"and said, 'This man must be a god'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "and said that he was a god",
+      "occurrence": 1
+    }
+  }
+]

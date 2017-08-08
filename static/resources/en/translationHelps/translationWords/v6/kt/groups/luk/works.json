@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "works, deeds, work, acts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "works, deeds, work, acts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "works, deeds, work, acts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 37 },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "works, deeds, work, acts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "works, deeds, work, acts",
+      "occurrence": 1
+    }
+  }
+]

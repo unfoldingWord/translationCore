@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase uses two negative thoughts to express a positive thought. AT: \"we use the word of God correctly\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "we do not mishandle the word of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a positive. AT: \"So we remain confident\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "So we do not become discouraged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive terms. AT: \"Only be tied together with believers\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 6, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "Do not be tied together with unbelievers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"I will boast only of my weaknesses\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I will not boast, except about my weaknesses",
+      "occurrence": 1
+    }
+  }
+]

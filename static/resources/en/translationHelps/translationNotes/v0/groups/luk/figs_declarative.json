@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "By saying this, Jesus healed her. So it can be expressed with a sentence that shows that he was causing it to happen: \"Woman, I now free you from your weakness,\" or by a command \"Woman, be freed from your weakness\" (See: [[:en:ta:vol2:translate:figs_declarative]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_declarative",
+      "quote": "Woman, you are freed from your weakness",
+      "occurrence": 1
+    }
+  }
+]

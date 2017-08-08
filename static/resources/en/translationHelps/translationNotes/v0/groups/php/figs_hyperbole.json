@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"they\" refers to a group of people Paul does not feel he can trust to send to Philippi. Paul is also expressing his displeasure with the group, who should have been able to go, but Paul does not trust them to fulfill their mission. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "For they all",
+      "occurrence": 1
+    }
+  }
+]

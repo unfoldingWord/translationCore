@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some will walk slowly and fall down easily, like a person who is starving, and others will here and there quickly. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "They will stagger ... they will run",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "For a person standing at Bethel, this could be a circle: Dead Sea (south) to the Mediterranean (west) to north to east. (See: [[:en:ta:vol2:translate:figs_merism]])\n \n",
+      "reference": { "bookId": "amo", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from sea to sea ... from the north to the east",
+      "occurrence": 1
+    }
+  }
+]

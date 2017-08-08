@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit was a unit of measure, a little less than half a meter long. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"138 meters.\" You may use the Hebrew measuring units from the ULB or the metric units from the UDB or your own culture's units if you know how they compare to the metric units. You may also write a footnote that says: \"Three hundred cubits is about 138 meters.\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "three hundred cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"fourteen meters\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "thirty cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit was a little less than half a meter long. See how you translated this in [[:en:bible:notes:gen:06:13|6:15]]. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubit",
+      "occurrence": 1
+    }
+  }
+]

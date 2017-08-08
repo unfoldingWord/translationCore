@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be reworded to remove the nominal adjective. AT: \"with those who were dead\" or \"with those they had killed\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n \n \n",
+      "reference": { "bookId": "jer", "chapter": 41, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "with the dead",
+      "occurrence": 1
+    }
+  }
+]

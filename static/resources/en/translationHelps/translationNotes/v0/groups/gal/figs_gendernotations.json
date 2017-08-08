@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here this means fellow Christians, including both men and women, since all believers in Christ are members of one spiritual family, with God as their heavenly Father. AT: \"brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

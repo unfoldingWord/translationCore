@@ -1,0 +1,767 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of \"joy\" as if it were a person. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "joy resides in your presence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Sheol,\" the place of the dead, and \"death\" are spoken of as if they were people who could surround and trap him. These two clauses have similar meanings and the idea is repeated for emphasis. AT: \"I felt trapped and thought I was going to die\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The cords of Sheol surrounded me; the snares of death trapped me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Though Yahweh does not actually have feet, the Psalmist gives him human characteristics. AT: \"thick darkness was beneath him\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "thick darkness was under his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What is beautiful about creation is compared to speaking, as if creation were a person. Then those words are compared to water that flows everywhere. AT: \"creation is like a person speaking to everyone\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "speech pours out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words are described as if they were people who go out with a message. AT: \"the words that creation speaks are like people who go out\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "their words go out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God is spirit, but he is here spoken of as if he has hands. Here \"your hands\" refers to Yahweh's care. AT: \"Into your care\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Into your hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Evil is described as if it were a man who can kill people. AT: \"The evil deeds of wicked people will kill them\" deeds\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 34, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Evil will kill the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Destruction is spoken of as if it was a dangerous animal that would suddenly attack them. AT: \"Let them be destroyed suddenly\" or \"Let them be surprised because you destroy them suddenly\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let destruction overtake them by surprise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sin is described as if it were a false prophet. AT: \"Sin is like a false prophet who speaks\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Sin speaks like an oracle",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "His enemies speak of \"disease\" as if it were a person who has captured him. AT: \"He is sick with a fatal disease\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 41, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "An evil disease ... to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase describes \"gladness and rejoicing\" as a person who leads others to celebrate. This can be stated in active form. AT: \"Gladness and rejoicing will lead them\" or \"They will proceed with gladness and rejoicing\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 45, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "They will be led by gladness and rejoicing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of the kings' fear as if it were a person who caused the kings and their armies to tremble. AT: \"There they trembled with fear\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 48, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Trembling took hold of them there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of Mount Zion as if it were a person who could be glad. The phrase refers to the people who live in Jerusalem. AT: \"Let those who live on Mount Zion be glad\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 48, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let Mount Zion be glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of Sheol, the place of the dead, as if it were a person or animal. He speaks of the decay of dead bodies as if Sheol were eating them. AT: \"their bodies will decompose in the grave\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "their bodies will be consumed in Sheol",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of praise as if it were a person who could act on its own. AT: \"To you alone, God in Zion, we will offer our praise\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "For you, God in Zion, our praise waits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks about iniquity as if it were a person that is able to defeat or oppress. AT: \"It is as if our own sins were defeating us\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Iniquities prevail against us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The pastures, hills and valleys are so bountiful, that they seem to shout and sing for joy. AT: \"they are like joyful singing people\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "they shout for joy, and they sing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the writer speaks of \"the earth\" as if it has chosen to provide a harvest to the people. AT: \"We have reaped a bountiful harvest from our crops\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n\n",
+      "reference": { "bookId": "psa", "chapter": 67, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The earth has yielded its harvest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here heaven and earth and the seas are spoken of as if they are people who are able to praise God. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let heaven and earth praise him ... the seas",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Asaph speaks of the water as if it were a person who saw something that terrified him. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The waters saw you ... they were afraid ... the depths trembled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Asaph speaks of the clouds as if they were people pouring water out of containers. AT: \"Much rain fell\" or \"It rained very hard\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The clouds poured down water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is personification, referring to the thunder as the voice of God. AT: \"voice, which was as loud as thunder\" or \"very loud voice\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "thunderous voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Asaph is speaking of Yahweh as if Yahweh was a person with feet. While this is personification, it should be translated literally, if possible. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "your footprints",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"because he was angry, he attacked Israel\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "his anger attacked Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Asaph speaks of the skies as if they were a person who could hear and obey God's commands. AT: \"he spoke to the sky\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "he commanded the skies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"God was angry and attacked them.\" See how \"his anger attacked Israel\" is translated in [[:en:bible:notes:psa:078:021|78:21]]. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "God's anger attacked them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Asaph speaks of God's fierceness as if it were a person who could attack another person. AT: \"He was angry with them, so he suddenly and fiercely attacked them\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The fierceness of his anger lashed out against them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of illness as if it were a person who went about at night killing other people. AT: \"You will not be afraid of dying from illness\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 91, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "or of the plague that roams",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks as if splendor and majesty are people who can stand before a king. AT: \"Everyone knows of his splendor and majesty\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 96, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Splendor and majesty are in his presence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) that the psalmist speaks as if \"the heavens\" and \"the earth\" have emotions like people. \"Let it be as if the heavens are glad and the earth rejoices\" or 2) \"Let those who live in the heavens be glad and let those who live on the earth rejoice\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 96, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let the heavens be glad, and let the earth rejoice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Let the fields and all that is in them rejoice.\" The psalmist speaks as if \"the fields\" and the animals that live in them have emotions like people. AT: \"Let it be as if the fields themselves and all the animals that live in them are rejoicing\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 96, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let the fields rejoice and all that is in them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks as if fire were a person walking before King Yahweh and telling people that the king was coming. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 97, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Fire goes before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the psalmist speaks as if the skies are Yahweh's messengers who declare that Yahweh is just. AT: \"Everyone can see that God is just, the same way that everyone can see the skies\" or 2) the skies refer to the beings that live in the heavens. AT: \"All those who live in heaven declare that Yahweh is just\" (UDB) (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 97, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The skies declare his justice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks as if the sea were a person who could shout to God. AT: \"Let it be as if the sea and everything in it shout\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 98, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let the sea shout and everything in it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David describes \"evil\" as if it were something unable to cling to him. This means that he would avoid evil things and people doing evil things. AT: \"I will completely avoid evil\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 101, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "it will not cling to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) he causes the wind to be able to carry a message like a messenger, \"He makes the winds to be like his messengers\" or 2) \"He makes his messengers swift like the wind\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "He makes the winds his messengers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the psalmist speaks of God causing the mountains and valleys to move and change as if they chose to move themselves. They are described this way to emphasize God's power. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The mountains rose, and the valleys spread out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the psalmist speaks of God causing the waters not to cross the boundary that he created for them as if the waters themselves chose not to cross it. They are described this way to emphasize God's authority over them. AT: \"a boundary for them that they cannot cross\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "a boundary for them that they will not cross",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here how the ground opens up and buries the people is being compared to how a creature swallows something. AT: \"The earth opened and buried\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 106, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The earth opened and swallowed up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David describes playing his instruments as waking them up from sleep. AT: \"I will praise you by playing the lute and the harp\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 108, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Wake up, lute and harp",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of the Sea of Reeds as if it were a person who fled away as Yahweh led the people of Israel through on dry ground. AT: \"It was as though the sea looked and fled\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 114, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The sea looked and fled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of the mountains and hills as if they are alive. He is probably speaking of an earthquake when he describes their fear at the presence of Yahweh as if they were jumping like rams and lambs. See how you translated similar phrases in [[:en:bible:notes:psa:114:003|114:3-4]]. AT: \"shake like jumping rams ... shake like jumping lambs\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 114, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "skip like rams ... skip like lambs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the writer is speaking to the earth as if it were a person and commands it to tremble with fear before God or 2) the word \"earth\" is a metonym for those who live on the earth. AT: \"Tremble, everyone one earth\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "psa", "chapter": 114, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Tremble, earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of death as if it were a person who could capture him and bind him with ropes. See how you translated this in [[:en:bible:notes:psa:018:004|18:4]]. AT: \"I felt like I was about to die\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 116, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The cords of death surrounded me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of distress and anguish as if they were people. AT: \"I have become distressed and anguished\" or \"my body and my mind are suffering\" (See: [[:en:ta:vol2:translate:figs_personification]])\n \n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 143 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "distress and anguish have found me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks as if Jerusalem is listening to him. AT: \"If I act as if I did not remember you, Jerusalem\" or \"If I try to forget you, Jerusalem\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 137, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "If I ignore the memory of you, Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks as if Yahweh were a person who needed to come from another place to help him. What the psalmist wanted Yahweh to do can be stated clearly. AT: \"come quickly to help me\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 141, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "come quickly to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I am weak\" or \"I am very discouraged\" (UDB) (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 143, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "my spirit faints",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks to Jerusalem, which he also calls Zion, as if it were a person. The names of the city are metonyms for the people who live in it. AT: \"people of Jerusalem ... people of Zion\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 147, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Jerusalem ... Zion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks to the sun and moon as if they were people and commands them to praise Yahweh. AT: \"Praise Yahweh, sun and moon, as people do\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 148, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Praise him, sun and moon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"highest heaven\" is an idiom that refers to heaven itself. The writer speaks to heaven as if it were a person and commands it to praise Yahweh. AT: \"Praise Yahweh, highest heaven, as people do\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 148, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Praise him, highest heaven",
+      "occurrence": 1
+    }
+  }
+]

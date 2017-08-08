@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "snare",
+      "quote": "snare, trap",
+      "occurrence": 1
+    }
+  }
+]

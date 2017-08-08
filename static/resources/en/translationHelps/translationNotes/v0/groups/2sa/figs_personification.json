@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Saul's suffering is spoken of as something terrible that has grabbed hold of him. AT: \"I am suffering terribly\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "great suffering has taken hold of me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Saul's sword is spoken of as if it were a living thing that could return on its own. Rather than return empty, it was carrying the blood of Saul's enemies that it killed. (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the sword of Saul did not return empty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David speaks of misery as if it were a dangerous animal that the Benjamite unleashed on him. (See: [[:en:ta:vol2:translate:figs_personification]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the misery unleashed on me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the forest\" is described as if it were alive and could act. \"The sword\" refers to David's soldiers who fought with swords. AT: \"dangerous things in the forest killed more men than David's soldiers killed with their swords\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]]) \n \n",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "more men were consumed by the forest than by the sword",
+      "occurrence": 1
+    }
+  }
+]

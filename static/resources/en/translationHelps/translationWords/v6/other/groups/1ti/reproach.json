@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 3, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "reproach",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "reproach",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "reproach",
+      "occurrence": 1
+    }
+  }
+]

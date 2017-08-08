@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ten times\" is an exaggeration representing great quality. AT: \"much better\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "ten times better",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase uses the word \"all\" as a generalization that represents a large number. AT: \"a great number of people, of different nations and languages,\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all peoples, nations, and languages",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Daniel is exaggerating to show his great sorrow about Jerusalem. Many cities had been totally destroyed. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "For under the whole of heaven ... what has been done to Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

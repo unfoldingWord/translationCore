@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you owe me your own life.\" Paul was implying that Philemon should not say that Onesimus or Paul owed him anything because Philemon owed Paul even more. The reason Philemon owed Paul his life can be made explicit. AT: \"you owe me much because I saved your life\" or \"you owe me your own life because what I told you saved your life\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you owe me your own self",
+      "occurrence": 1
+    }
+  }
+]

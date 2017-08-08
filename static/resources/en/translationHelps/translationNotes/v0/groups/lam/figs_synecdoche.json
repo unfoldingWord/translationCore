@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"so many of my people\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My virgins and my vigorous men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"The people of Jerusalem shout from their innermost being\" or 2) the speaker wants the walls to shout to Yahweh. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Their heart cried out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"cause them to feel no shame\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 65 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "let their hearts be shameless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) they looked for people to help them, but no help ever came or 2) they kept on looking for help from people who would never have been able to help them. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Our eyes failed, looking in vain for help",
+      "occurrence": 1
+    }
+  }
+]

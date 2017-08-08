@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all believers whether male or female. (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "the brothers",
+      "occurrence": 1
+    }
+  }
+]

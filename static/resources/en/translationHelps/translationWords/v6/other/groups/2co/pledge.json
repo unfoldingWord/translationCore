@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "pledge",
+      "quote": "pledge",
+      "occurrence": 1
+    }
+  }
+]

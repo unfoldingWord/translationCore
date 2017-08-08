@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "wild pigs that ruin gardens and farms and attack people. If your readers do not know what these are, use the word for a wild animal that ruins gardens and farms and attacks people. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 80, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "boars",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a musical instrument with a head like a drum that can be hit and with pieces of metal around the side that sound when the instrument is shaken (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are types of birds. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 84, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "sparrow ... swallow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A tambourine is a musical instrument with a head like a drum that can be hit and with pieces of metal around the side that sound when the instrument is shaken. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 150, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourines",
+      "occurrence": 1
+    }
+  }
+]

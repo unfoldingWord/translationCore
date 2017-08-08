@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. The direct quotation can be stated as an indirect quotation. AT: \"and say to the people there that you have come to sacrifice to Yahweh.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "and say, 'I have come to sacrifice to Yahweh.'",
+      "occurrence": 1
+    }
+  }
+]

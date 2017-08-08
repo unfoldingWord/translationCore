@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the people brought the ark of the covenant of Yahweh to the city of David\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the ark of the covenant of Yahweh came to the city of David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Everything on earth brings glory to God. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 16, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "all the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The sea will make a very loud shout.\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 16, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let the sea roar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about the trees as if they were people who could shout for joy. (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 16, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "let the trees in the forest shout for joy",
+      "occurrence": 1
+    }
+  }
+]

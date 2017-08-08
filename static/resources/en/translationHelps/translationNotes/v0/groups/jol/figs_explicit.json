@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people of Israel will leave the places where they were slaves and come back to the land of Israel. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "out of the place where you sold them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"gather yourselves together for battle.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "gather yourselves together",
+      "occurrence": 1
+    }
+  }
+]

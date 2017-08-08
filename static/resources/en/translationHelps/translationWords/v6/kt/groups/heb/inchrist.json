@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "in Christ, in Jesus, in the Lord, in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 3, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "in Christ, in Jesus, in the Lord, in him",
+      "occurrence": 1
+    }
+  }
+]

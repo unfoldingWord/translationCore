@@ -1,0 +1,114 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 10, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 13, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "right hand",
+      "occurrence": 1
+    }
+  }
+]

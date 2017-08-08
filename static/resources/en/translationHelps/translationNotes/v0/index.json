@@ -1,0 +1,274 @@
+[
+  {
+    "id": "figs_imperative",
+    "name": "Imperatives - Other Uses"
+  },
+  {
+    "id": "figs_merism",
+    "name": "Merism"
+  },
+  {
+    "id": "figs_activepassive",
+    "name": "Active or Passive"
+  },
+  {
+    "id": "figs_personification",
+    "name": "Personification"
+  },
+  {
+    "id": "figs_doublet",
+    "name": "Doublet"
+  },
+  {
+    "id": "figs_pronouns",
+    "name": "Pronouns"
+  },
+  {
+    "id": "figs_parallelism",
+    "name": "Parallelism"
+  },
+  {
+    "id": "figs_idiom",
+    "name": "Idiom"
+  },
+  {
+    "id": "translate_names",
+    "name": "How to Translate Names"
+  },
+  {
+    "id": "figs_distinguish",
+    "name": "Distinguishing versus Informing or Reminding"
+  },
+  {
+    "id": "translate_unknown",
+    "name": "Translate Unknowns"
+  },
+  {
+    "id": "figs_you",
+    "name": "Forms of You"
+  },
+  {
+    "id": "figs_rquestion",
+    "name": "Rhetorical Question"
+  },
+  {
+    "id": "figs_explicit",
+    "name": "Assumed Knowledge and Implicit Information"
+  },
+  {
+    "id": "figs_metonymy",
+    "name": "Metonymy"
+  },
+  {
+    "id": "figs_synecdoche",
+    "name": "Synecdoche"
+  },
+  {
+    "id": "figs_euphemism",
+    "name": "Euphemism"
+  },
+  {
+    "id": "translate_numbers",
+    "name": "Numbers"
+  },
+  {
+    "id": "figs_metaphor",
+    "name": "Metaphor"
+  },
+  {
+    "id": "translate_bdistance",
+    "name": "Biblical Distance"
+  },
+  {
+    "id": "figs_go",
+    "name": "Go and Come"
+  },
+  {
+    "id": "translate_ordinal",
+    "name": "Ordinal Numbers"
+  },
+  {
+    "id": "translate_hebrewmonths",
+    "name": "Hebrew Months"
+  },
+  {
+    "id": "figs_doublenegatives",
+    "name": "Double Negatives"
+  },
+  {
+    "id": "figs_ellipsis",
+    "name": "Ellipsis"
+  },
+  {
+    "id": "writing_background",
+    "name": "Background Information"
+  },
+  {
+    "id": "translate_bvolume",
+    "name": "Biblical Volume"
+  },
+  {
+    "id": "figs_123person",
+    "name": "First, Second or Third Person"
+  },
+  {
+    "id": "figs_exclusive",
+    "name": "Exclusive \"We\""
+  },
+  {
+    "id": "figs_abstractnouns",
+    "name": "Abstract Nouns"
+  },
+  {
+    "id": "figs_simile",
+    "name": "Simile"
+  },
+  {
+    "id": "figs_nominaladj",
+    "name": "Nominal Adjectives"
+  },
+  {
+    "id": "figs_rpronouns",
+    "name": "Reflexive Pronouns"
+  },
+  {
+    "id": "figs_quotesinquotes",
+    "name": "Quotes within Quotes"
+  },
+  {
+    "id": "writing_newevent",
+    "name": "Introduction of a New Event"
+  },
+  {
+    "id": "translate_symaction",
+    "name": "Symbolic Action"
+  },
+  {
+    "id": "writing_symlanguage",
+    "name": "Symbolic Language"
+  },
+  {
+    "id": "figs_hypo",
+    "name": "Hypothetical Situations"
+  },
+  {
+    "id": "writing_connectingwords",
+    "name": "Connecting Words"
+  },
+  {
+    "id": "translate_bweight",
+    "name": "Biblical Weight"
+  },
+  {
+    "id": "figs_quotations",
+    "name": "Direct and Indirect Quotations"
+  },
+  {
+    "id": "figs_events",
+    "name": "Order of Events"
+  },
+  {
+    "id": "figs_hyperbole",
+    "name": "Hyperbole"
+  },
+  {
+    "id": "figs_litotes",
+    "name": "Litotes"
+  },
+  {
+    "id": "figs_inclusive",
+    "name": "Inclusive \"We\""
+  },
+  {
+    "id": "figs_irony",
+    "name": "Irony"
+  },
+  {
+    "id": "translate_fraction",
+    "name": "Fractions"
+  },
+  {
+    "id": "figs_exclamations",
+    "name": "Exclamations"
+  },
+  {
+    "id": "translate_transliterate",
+    "name": "Copy or Borrow Words"
+  },
+  {
+    "id": "translate_bmoney",
+    "name": "Biblical Money"
+  },
+  {
+    "id": "figs_gendernotations",
+    "name": "When Masculine Words Include Women"
+  },
+  {
+    "id": "figs_pastforfuture",
+    "name": "Predictive Past"
+  },
+  {
+    "id": "figs_possession",
+    "name": "Possession"
+  },
+  {
+    "id": "figs_hendiadys",
+    "name": "Hendiadys"
+  },
+  {
+    "id": "figs_genericnoun",
+    "name": "Generic Noun Phrases"
+  },
+  {
+    "id": "figs_apostrophe",
+    "name": "Apostrophe"
+  },
+  {
+    "id": "figs_parables",
+    "name": "Parables"
+  },
+  {
+    "id": "writing_participants",
+    "name": "Introduction of New and Old Participants"
+  },
+  {
+    "id": "writing_endofstory",
+    "name": "End of Story"
+  },
+  {
+    "id": "writing_proverbs",
+    "name": "Proverbs"
+  },
+  {
+    "id": "translate_textvariants",
+    "name": "Textual Variants"
+  },
+  {
+    "id": "translate_manuscripts",
+    "name": "Original Manuscripts"
+  },
+  {
+    "id": "figs_youdual",
+    "name": "Forms of 'You' - Dual/Plural"
+  },
+  {
+    "id": "figs_sentences",
+    "name": "Sentence Structure"
+  },
+  {
+    "id": "guidelines_sonofgodprinciples",
+    "name": "Translating Son and Father"
+  },
+  {
+    "id": "writing_quotations",
+    "name": "Quotations and Quote Margins"
+  },
+  {
+    "id": "figs_declarative",
+    "name": "Statements - Other Uses"
+  },
+  {
+    "id": "writing_intro",
+    "name": "Writing Styles"
+  }
+]

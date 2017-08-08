@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A bath is a unit of volume equal to about 22 liters. AT: \"about 88 liters\" or \"about 90 liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "forty baths",
+      "occurrence": 1
+    }
+  }
+]

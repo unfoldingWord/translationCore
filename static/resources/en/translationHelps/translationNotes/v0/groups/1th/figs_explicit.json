@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The UDB makes clear that it was Paul who wrote this letter. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Paul, Silvanus, and Timothy to the church",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is referring to preaching the gospel message. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "We speak",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that this refers to faith in Christ. This can be made explicit. AT: \"a good report of your faith\"  (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the good news of your faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to faith in Christ. This can be made explicit. AT: \"because of your faith in Christ\" (See [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "because of your faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made explicit. AT: \"the Lord will punish the one who transgressed and will defend the one who was wronged\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the Lord is an avenger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"dead in Christ\" are those believers who have passed away. AT: \"those who believe in Jesus Christ, but who have already died, will rise first\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the dead in Christ will rise first",
+      "occurrence": 1
+    }
+  }
+]

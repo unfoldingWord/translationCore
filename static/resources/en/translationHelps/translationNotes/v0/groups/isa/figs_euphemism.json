@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated explicitly that Isaiah is married to the prophetess. AT: \"I slept with my wife, the prophetess\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I went to the prophetess",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"shame\" is a euphemism for one's private parts. This can be translated in active form. AT: \"people will see your shame\" or \"people will see your private parts\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 47, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "your shame will be seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to sleeping with prostitutes as a part of worshiping false gods. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "You prepared your bed",
+      "occurrence": 1
+    }
+  }
+]

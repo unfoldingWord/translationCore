@@ -1,0 +1,737 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a synecdoche for \"he knows what has happened to you while you have been walking.\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he has known your walking",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the hand of Yahweh\" refers to Yahweh's power. AT: \"Yahweh used his power against\" or \"Yahweh punished\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the hand of Yahweh was against",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses is referring to the people of Israel as if they were Moses himself. AT: \"sell to me and my people ... we may eat ... give us ... we may drink\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "sell me ... I may eat ... give me ... I may drink",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" refers to Joshua. AT: \"You have seen\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Your eyes have seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" refers to the people of Israel. AT: \"You saw\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Your eyes have seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"men's hands\" refers the men themselves, and \"the work ... wood and stone\" to the idols that they have created. AT: \"the wood and stone idols that men have made\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n \n",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the work of men's hands, wood and stone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ears\" refers to the whole person. This metaphor emphasizes that the people know what Moses has said to them, so they cannot sin and then say they did not know they were sinning. AT: \"that I will speak to you today\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "that I will speak in your ears today",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" is a reference to the city itself. AT: \"within your community\" or \"inside your city\" or \"living with you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" means \"the control of.\" AT: \"control of Pharaoh\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "hand of Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" refers to what the people saw. AT: \"that you saw\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "that your eyes saw",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your eyes\" is a synecdoche for the people of Israel. AT: \"I broke them right in front of you\" or \"I broke them where you could see them\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I broke them before your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" represents the whole person. AT: \"But you have seen\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "But your eyes have seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the sole of your foot\" represents the whole person. AT: \"Every place you go\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Every place where the sole of your foot will tread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" represents the whole person. AT: \"the offerings that you present\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the offerings presented by your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"put your hand to\" represents the whole person and work that he has done. AT: \"rejoice about all the work you have done\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "rejoice about everything that you have put your hand to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" is a reference to the city itself. AT: \"the Levites who live inside your city\" or \"the Levites living with you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Levites who are within your gate",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to Levi. Levi represents all of his descendants. AT: \"they have no portion\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he has no portion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" represents the whole city. AT: \"inside your city\" or \"at your homes\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gate\" represents the whole city AT: \"any Levite who lives inside your city\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Levite who is within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"put your hand to\" represents the whole person and work that he has done. AT: \"rejoice about all the work you have done\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "everything to which you put your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"soul\" refers to the whole person. AT: \"as you desire\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "as your soul desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your eye\" refers to the whole person. AT: \"Neither will you look at him with pity\" or \"Neither will you show him mercy\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Neither must your eye pity him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he was to throw the first stone at the guilty person. The word \"hand\" represents the whole person. AT: \"you must be the first to strike him to kill him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 13, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your hand will be the first on him to put him to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"edge\" represents the whole sword. AT: \"with your swords\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 13, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "with the edge of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gate\" represents the entire city or town. AT: \"Any Levite who lives in your towns\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Levite who is within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" represents the whole person. This refers to the work that someone does. AT: \"in all the work you do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in all the work of your hand that you do",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" represents the entire city or town. AT: \"within any of your towns\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within any of your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" represents the whole person. AT: \"you should not regret it\" or \"you should be happy\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your heart must not be sorry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" represents the city or town. AT: \"within your community\" or \"inside your city\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" represents the whole person. AT: \"and you will give your free will offering\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "with the contribution of a freewill offering from your hand that you will give",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"gates\" represents cities or towns. AT: \"within your towns\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within your gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" represents the whole person. AT: \"all the work you do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "all the work of your hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" represents a city or town. AT: \"within all your towns\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within all your city gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" represents the entire group of witnesses. AT: \"The witnesses themselves must be the first ones to throw stones. Then all the people will execute the person by throwing stones at him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The hand of the witnesses must be the first to put him to death, and afterward the hand of all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"city gates\" represents cities or towns. AT: \"within your towns\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 17, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within your city gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" refers to the whole person. An Israelite king who marries foreign wives and starts to worship their false gods is spoken of as if his heart were to turn away from Yahweh. AT: \"so that they do not cause him to turn from Yahweh and start worshiping false gods\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "so that his heart does not turn away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your eye\" represents the whole person. AT: \"Do not show him mercy\" or \"Do not feel sorry for him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Your eye must not pity him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" are a synecdoche for the whole person and \"shed this blood\" is a metonym for killing an innocent person. AT: \"We did not kill this innocent person\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "deu", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Our hands have not shed this blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eye\" means the whole person. AT: \"you should not feel sorry for her\" or \"you must not show her mercy\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 25, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your eye must have no pity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates\" means towns or cities. AT: \"so that those within your towns may have enough food to eat\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 26, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "eat within your city gates and be filled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hand\" is a synecdoche for the whole person. AT: \"all the work that you do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "all the work of your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"city gates\" represents the cities themselves. AT: \"all your cities\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "all your city gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"the bottoms of your feet\" refer to the whole person. AT: \"you will have to continually wander because you have no permanent home where you can rest\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 65 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "there will be no rest for the bottoms of your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" refers to the whole person. AT: \"the terrifying things I will force you to see\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 67 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the things your eyes will have to see",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" emphasizes that Yahweh expected them to remember that they had seen it. AT: \"You have seen all that Yahweh did so that you would see and remember what he did\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "You have seen everything that Yahweh did before your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" refers to the whole person, and \"turning away\" means to stop obeying. AT: \"who no longer obeys Yahweh our God\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "whose heart is turning away today from Yahweh our God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Sihon\" and \"Og\" refer to two Kings of the Amorites and their armies. Translate these names as in [[:en:bible:notes:deu:01:03|1:4]]. AT: \"he did to Sihon and Og, the kings of the Amorites, and to their armies\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he did to Sihon and to Og, the kings of the Amorites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"city gates\" represents the cities themselves. Moses speaks to the Israelites as if they were one man, so the instances of \"your\" here are singular. AT: \"your foreigners who live in your cities\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your foreigner who is within your city gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ears\" represents the people themselves and emphasizes that Moses wanted to make sure they heard the song clearly. AT: \"to the people so they would be sure to hear it\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in the ears of the people",
+      "occurrence": 1
+    }
+  }
+]

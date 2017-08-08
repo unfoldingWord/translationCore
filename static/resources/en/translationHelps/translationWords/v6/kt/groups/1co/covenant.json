@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 11, "verse": 25 },
+      "tool": "translationWords",
+      "groupId": "covenant",
+      "quote": "covenant, covenants",
+      "occurrence": 1
+    }
+  }
+]

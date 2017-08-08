@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"everyone will be so terrified that they will not be able to stand.\" This is an exaggeration. Another possible translation is, \"every knee will flow with water,\" a euphemism for all the people losing control of their bladders because they are so frightened. (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 7, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "every knee will be weak as water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"all\" here is a generalization. It means that many people will die. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n \n",
+      "reference": { "bookId": "ezk", "chapter": 30, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "will all fall by the sword",
+      "occurrence": 1
+    }
+  }
+]

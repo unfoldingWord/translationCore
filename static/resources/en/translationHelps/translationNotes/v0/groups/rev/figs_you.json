@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These refer to the believers in the seven churches. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your ... you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You\" refers to God. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You are righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "to testify to you",
+      "occurrence": 1
+    }
+  }
+]

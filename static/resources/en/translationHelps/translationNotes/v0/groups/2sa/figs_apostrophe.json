@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks directly to the \"Mountains of Gilboa\" as if they were listening to his song. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Mountains of Gilboa",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This marks the beginning of another parable. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "Now, no one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"May God stop it from happening!\" or \"May it never happen!\" The people understood this parable to mean that God would remove them from Jerusalem because they would reject the Messiah. They strongly expressed their desire that this terrible thing would not happen. (See: [[:en:ta:vol1:translate:figs_parables]])\n",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "God forbid!",
+      "occurrence": 1
+    }
+  }
+]

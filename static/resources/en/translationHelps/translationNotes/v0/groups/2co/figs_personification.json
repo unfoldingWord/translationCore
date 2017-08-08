@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the Old Testament law as a person who kills. Following that law leads to spiritual death. AT: \"the written law leads to death\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "2co", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the letter kills",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of \"joy\" and \"poverty\" as if they were living things that can produce generosity. AT: \"because of the people's great joy and extreme poverty, they have become very generous\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the abundance of their joy and the extremity of their poverty have produced great riches of generosity",
+      "occurrence": 1
+    }
+  }
+]

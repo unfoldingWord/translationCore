@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This litotes can be translated in positive form. AT: \"we will need a long time to do all this work\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "ezr", "chapter": 10, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "this is not only one or two days of work",
+      "occurrence": 1
+    }
+  }
+]

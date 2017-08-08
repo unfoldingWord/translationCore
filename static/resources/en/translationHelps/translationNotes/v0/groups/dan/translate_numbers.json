@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"when he was about 62 years old\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "when he was about sixty-two years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"one hundred and twenty provincial governors\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "120 provincial governors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"for 30 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "for thirty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"evenings and mornings\" is a  merism that refers to everything in between, which means full days. AT: \"2,300 sunsets and sunrises\" or \"2,300 days\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "2,300 evenings and mornings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"from the time Jerusalem was destroyed, it would remain in ruins for 70 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "there would be seventy years until Jerusalem's abandonment would end",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"days\" is referring to a period of time most commonly rendered as days. However, it can also imply years. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the 1,335 days",
+      "occurrence": 1
+    }
+  }
+]

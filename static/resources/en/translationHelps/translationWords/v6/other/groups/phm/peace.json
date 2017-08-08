@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" means any person in general. AT: \"Those who ... are not worthy\" or \"If you ... you are not worthy\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "He who ... is not worthy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" refers to anyone, male or female, who obeys the King. AT: \"my brothers and sisters here\" or \"these who are like my brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "of these brothers of mine",
+      "occurrence": 1
+    }
+  }
+]

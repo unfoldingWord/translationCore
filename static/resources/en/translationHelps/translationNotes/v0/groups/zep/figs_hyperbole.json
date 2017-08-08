@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are deliberate exaggerations by Yahweh to express his anger at the people's sin. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I will utterly destroy everything from off the surface of the earth ... I will cut off man from the surface of the earth",
+      "occurrence": 1
+    }
+  }
+]

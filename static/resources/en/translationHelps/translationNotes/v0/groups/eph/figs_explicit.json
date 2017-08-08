@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in God's beloved one, Jesus Christ, we\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in his beloved one we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"access into God's presence with confidence\" or \"freedom to enter into God's presence with confidence\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "access with confidence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Because God has done all this for you\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "For this cause",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The one to whom Christ gave the gifts can be stated clearly. AT: \"Christ gave to the church gifts like these\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Christ gave gifts like these",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "That people love their own bodies may be stated explicitly. AT: \"as husbands love their own bodies\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 5, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "as their own bodies",
+      "occurrence": 1
+    }
+  }
+]

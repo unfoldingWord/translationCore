@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"despise\" is a strong word for \"hate.\" Together the two words emphasize the intensity of Yahweh's hatred for their religious festivals. AT: \"I hate your festivals very much.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I hate, I despise your festivals",
+      "occurrence": 1
+    }
+  }
+]

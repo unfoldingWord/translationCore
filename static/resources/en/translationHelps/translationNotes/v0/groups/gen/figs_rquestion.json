@@ -1,0 +1,707 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The snake is pretending to be surprised that God has made this rule. This rhetorical question can be translated as a statement. AT: \"I am surprised that God said, 'You ... garden.'\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Has God really said, 'You ... garden'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God knew the answer to this question. He asked it in order to force Adam to confess that he had disobeyed God. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who told you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Again, God knew this had happened. Translate this question in a form that shows God was accusing Adam of disobedience. The sentence can be translated as a statement. AT: \"You must have eaten ... from.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you eaten ... from?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God already knew what the woman had done. When he asked this question, he was giving her the opportunity to tell him about it, and he was expressing his disappointment with what she had done. Many languages use rhetorical questions for scolding or rebuking. If possible, use a form that expresses this disappointment. It can also be translated as a statement. AT: \"You have done a terrible thing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this you have done?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God used these rhetorical questions to tell Cain that he was wrong to be angry and scowl. They may also have been intended to give Cain an opportunity to confess that he was wrong. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you angry and why are you scowling?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God knew that Cain had killed Abel, but he asked Cain this question so that Cain would have to answer. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Where is Abel your brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Cain used this rhetorical question in order to avoid telling the truth. This can be translated as a statement. AT: \"I am not my brother's keeper!\" or \"Taking care of my brother is not my job!\" (See [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Am I my brother's keeper?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh used this rhetorical question to show how angry he was about what Abram had done to him. It can also be stated as an exclamation. AT: \"You have done a terrible thing to me!\" (UDB). (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this that you have done to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a positive statement. AT: \"The whole land is available for you to use.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not the whole land before you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham used this rhetorical question because he did not believe that this could happen. AT: \"Surely a man who is a hundred years old cannot father a child!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can a child be born to a man who is a hundred years old?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Again Abraham used a rhetorical question because he did not believe this could happen. The phrase \"who is ninety years old\" tells why Abraham did not believe that Sarah could bear a son. AT: \"Sarah is ninety years old. Could she bear a son?\" or \"Sarah is ninety years old. Surely she could not bear a son!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and  [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can Sarah, who is ninety years old, bear a son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may want to add \"of having a baby\" (UDB). Sarah used this rhetorical question because she did not believe that she could have a child. AT: \"I cannot believe that I will experience the joy of having a child. My master is also too old\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "After I am worn-out and my master is old, will I now have this pleasure?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God used this rhetorical question to show that he knew what Sarah was thinking and that he was not pleased with it. He repeats Sarah's rhetorical question ([[:en:bible:notes:gen:18:11|18:12]]) using different words. AT: \"Sarah was wrong to laugh and say, 'I will not bear a child because I am too old!'\"(See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did Sarah laugh and say, 'Will I really bear a child, when I am old'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God used this rhetorical question to say that he was going to talk to Abraham about something very important and that it was best for him to do so. AT: \"I should not and will not hide from Abraham what I am about to do ... him.\" or \"I should and will tell Abraham what I am about to do ... him\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should I hide from Abraham what I am about to do ... him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham was hoping that Yahweh would say, \"I will not sweep it away.\" AT: \"I think you would not sweep it away. Instead, you would spare the place for the sake of the fifty righteous that are there\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will you sweep it away and not spare the place for the sake of the fifty righteous that are there?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham used this rhetorical question to say what he expected God to do. AT: \"The Judge of all the earth will certainly do what is just\" or \"Since you are the Judge of all the earth, you will surely do what is right!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will not the Judge of all the earth do what is just?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lot used this rhetorical question to get the angels to notice that the city really is a small one. AT: \"let me escape there. You can see how small it is. If you let us go there we will live\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "let me escape there (is it not a little one?), and my life will be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abimelech used this rhetorical question to accuse Abraham. AT: \"You have done something bad to us!\" or \"Look what you have done to us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have you done to us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abimelech used this rhetorical question to remind Abraham that he had not sinned against Abraham. AT: \"I have done nothing against you to cause you to bring ... sin.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How have I sinned against you, that you have brought ... sin?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"No one would have ever said to Abraham that Sarah will nurse children\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who would have said to Abraham that Sarah would nurse children",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ephron meant that since he and Abraham were both so wealthy, 400 pieces of silver was a small amount. This rhetorical question can be translated as a statement. AT: \"The piece of land is worth only four hundred shekels of silver. For you and me, that is nothing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "A piece of land worth four hundred shekels of silver, what is that between me and you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Laban used this question to invite Abraham's servant into his house. This question can be translated as a statement. AT: \"You do not need to stay outside.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you standing outside?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abimelech used this question to scold Isaac. AT: \"You should not have done this to us!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this you have done to us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Esau uses a question to emphasize his anger at Jacob. AT: \"Jacob is certainly the right name for my brother!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is he not rightly named Jacob?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaac uses a question to emphasize that there is nothing else he can do. AT: \"There is nothing else I can do for you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What more can I do for you, my son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Laban uses a question to emphasize that he should pay Jacob for working for him. The question can be translated as a statement. This can also be stated in positive form.  AT: \"It is certainly right that I should pay you for working for me even though you are my relative.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should you serve me for nothing ... my relative?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob uses a question to express his anger and surprise. AT: \"I cannot believe you did this to me!\" This rhetorical question can be translated as a statement. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this you have done to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a rhetorical question that Jacob uses to scold Rachel. It can be translated as a statement. AT: \"I am not God! I am not the one who is preventing you from having children!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Am I in the place of God, who has kept you from having children?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Do you not care ... my husband?\" This is a rhetorical question used to scold Rachel. This question can be translated as a statement. AT: \"It is bad enough ... my husband.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it a small matter to you ... my husband?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now when will I take care of my own family?\" Jacob uses a question to emphasize that he wants to start providing for his own family. This question can be translated as a statement. AT: \"Now I want to take care of my family!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Now when will I provide for my own household also?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rachel and Leah use a question to emphasize that there is nothing left for their father to give. AT: \"There is absolutely nothing left for us to inherit from our father!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is there any portion or inheritance for us in our father's house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Laban uses a question to emphasize that there is nothing he can do. This rhetorical question can be translated as a statement. AT: \"But, there is nothing I can do to bring my daughters and grandchildren back with me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But what can I do today to these my daughters, or to their children whom they have borne?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He said, 'Why would you ask about my name?'\" This rhetorical question was meant to shock, rebuke and cause Jacob to ponder over what just happened between him and the other man he just wrestled with. AT: \"Do not ask me for my name!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "He said, \"Why is it that you ask my name?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob uses a question to emphasize that Esau does not need to leave men. AT: \"Do not do that!\" or \"You do not need to do that!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do that?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Shechem uses a question to emphasize that Jacob's livestock and property will belong to the people of Shechem. This can be translated as a statement. AT: \"All of their animals and property will be ours.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will not their livestock and their property—all their animals be ours?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Israel uses questions to correct Joseph. This can be written as statements. AT: \"This dream you had is not real. Your mother, brothers, and I will not bow down before you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this dream that you have dreamed? Will your mother ... to the ground to you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Israel uses a question to begin a conversation. This can be written as a statement. AT: \"You brothers are tending the flock in Shechem.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are not your brothers tending the flock in Shechem?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph uses a question for emphasis. This can be written as a statement. AT: \"I certainly cannot do such a wicked thing and sin against God.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then can I do this great wickedness and sin against God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph uses a question for emphasis. This can be written as a statement. AT: \"Interpretations belong to God!\" or \"It is God who can tell the meaning of dreams!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do not interpretations belong to God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob uses a question to scold his sons for not doing anything about the grain. AT: \"Do not just sit here!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you look at one another?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Reuben uses a question to scold his brothers. AT: \"I told you not to hurt the boy, but you would not listen!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not tell you, 'Do not sin against the boy,' but you would not listen?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sons use a question emphasize that the did not know what the man would tell them to do. This rhetorical question can be translated as a statement. AT: \"We did not know he would say ... down!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How could we have known that he would say ... down?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Joseph is truly asking a question to confirm that this man is Benjamin, or 2) it is a rhetorical question. AT: \"So this is your youngest brother ... me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])  \n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this your youngest brother ... me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to scold the brothers. AT: \"You already know that this is the cup that my master uses for drinking and for fortune telling!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this not the cup from which my master drinks, and the cup that he uses for divination?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The brothers use a question to emphasize that they would not steal from the lord of Egypt. AT: \"So we would never take anything from your master's house!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then could we steal out of your master's house silver or gold?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah uses a question to emphasize the grief he would have if Benjamin did not return home. AT: \"I cannot return to my father if the boy is not with me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For how can I go up to my father if the boy is not with me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people used a question to emphasize how desperate they are to buy food. This question can be translated as a statement. AT: \"Please, do not let us die because we have used up all of our money!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should we die in your presence because our money is gone?",
+      "occurrence": 1
+    }
+  }
+]

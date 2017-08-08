@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"It came about.\" This is marking a new storyline. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "It happened",
+      "occurrence": 1
+    }
+  }
+]

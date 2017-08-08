@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "humble",
+      "quote": "humble, humbles, humbled, humility",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "humble",
+      "quote": "humble, humbles, humbled, humility",
+      "occurrence": 1
+    }
+  }
+]

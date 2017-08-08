@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh speaks about himself in the third person. AT: \"until I, Yahweh, have sent all the people far away from their land, so that no one is left\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n\n",
+      "reference": { "bookId": "isa", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "until Yahweh has sent the people far away, and the solitude of the land is great",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Your\" refers to the people of Moab. It can be stated in third person to be consistent with the previous verse. AT: \"Their high fortress\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n\n",
+      "reference": { "bookId": "isa", "chapter": 25, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your high fortress",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"they\" refers to the people of Israel. This would include Isaiah. AT: \"we looked to you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "they looked to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the people of Israel. AT: \"you call yourselves\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 48, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "they call themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of himself in the third person. This can be stated in first person. AT: \"this is what I, Yahweh, declare\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "isa", "chapter": 54, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "this is Yahweh's declaration",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This still refers to the people of Israel. This can be stated in second person. AT: \"you will rejoice over your share ... you will ... your land ... will be yours\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 61, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "they will rejoice over their share ... they will ... their land ... will be theirs",
+      "occurrence": 1
+    }
+  }
+]

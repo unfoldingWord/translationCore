@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative can be stated in positive form. AT: \"Yahweh can save\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing can stop Yahweh from saving",
+      "occurrence": 1
+    }
+  }
+]

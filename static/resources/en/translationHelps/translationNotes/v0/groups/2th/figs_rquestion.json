@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a rhetorical question to remind them of his teaching when he was with them previously. This can be expressed as a statement. AT: \"I am sure you remember ... these things.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not remember ... these things?",
+      "occurrence": 1
+    }
+  }
+]

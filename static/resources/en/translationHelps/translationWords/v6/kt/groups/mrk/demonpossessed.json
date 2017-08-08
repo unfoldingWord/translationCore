@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "demon-possessed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "demon-possessed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "demon-possessed",
+      "occurrence": 1
+    }
+  }
+]

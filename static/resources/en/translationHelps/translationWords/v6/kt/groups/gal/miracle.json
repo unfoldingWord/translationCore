@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "miracle, miracles, wonder, wonders, sign, signs",
+      "occurrence": 1
+    }
+  }
+]

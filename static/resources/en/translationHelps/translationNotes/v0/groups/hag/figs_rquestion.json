@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You must certainly think it is not important at all.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_doublenegatives]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it not like nothing in your eyes?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The expected answer is 'no'. This question is used to highlight what the readers already knew. (See: [[:en:ta:vol1:translate:figs_rquestion]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is there still seed in the storehouse?",
+      "occurrence": 1
+    }
+  }
+]

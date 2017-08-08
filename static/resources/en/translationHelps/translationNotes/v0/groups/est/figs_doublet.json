@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words have similar meaning and emphasize how great his kingdom was. AT: \"the great wealth of his kingdom\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the wealth of the splendor of his kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize how much she pleased him. AT: \"The young girl greatly pleased him\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "The young girl pleased him, and she found favor with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"petition\" and \"request\" mean the same thing. She probably used these words together as a way of speaking very formally and respectfully to the king. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "My petition and my request",
+      "occurrence": 1
+    }
+  }
+]

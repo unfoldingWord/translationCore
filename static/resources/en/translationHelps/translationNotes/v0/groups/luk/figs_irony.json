@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some people thought they were righteous. Jesus referred to them by the way they thought about themselves even though he knew that they were not righteous. AT: \"people who think they are righteous\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "luk", "chapter": 5, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "righteous people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"from people who are wise and have understanding.\" Because God had concealed truth from them, these people were not actually wise and understanding, even though they thought they were. AT: \"from people who think they are wise and educated\" (See: [[:en:ta:vol1:translate:figs_irony]] and [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "the wise and understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jewish leaders claimed to serve God. And yet their ancestors killed many of God's prophets in Jerusalem, and Jesus knew that they would kill him there too. AT: \"it is in Jerusalem that the Jewish leaders kill God's messengers\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "it is not acceptable to kill a prophet away from Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The guards did not believe that Jesus was a prophet. Rather they believed that a real prophet would know who hit him even if he could not see it. They called Jesus a prophet, but they wanted to show that he was not a prophet. AT: \"Prove that you are a prophet. Tell us who hit you!\" or \"Hey prophet, who hit you?\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 64 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Prophesy! Who is the one who hit you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Luke records the ironic words of the rulers. The only way Jesus could save others was by dying instead of saving himself. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "He saved others. Let him save himself",
+      "occurrence": 1
+    }
+  }
+]

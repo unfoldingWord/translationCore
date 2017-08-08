@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 20, "verse": 30 },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "corrupt, corruption",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "five cubits",
+      "occurrence": 1
+    }
+  }
+]

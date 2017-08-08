@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 25, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  }
+]

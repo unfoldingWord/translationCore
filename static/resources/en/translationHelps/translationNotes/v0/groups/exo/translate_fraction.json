@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"500 shekels ... 250 shekels.\" A shekel is about 11 grams. Translators may use units that people know and round numbers: \"5.7 kilograms ... 11.4 kilograms\" or \"six kilograms ... three kilograms\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "five hundred shekels ... 250 shekels",
+      "occurrence": 1
+    }
+  }
+]

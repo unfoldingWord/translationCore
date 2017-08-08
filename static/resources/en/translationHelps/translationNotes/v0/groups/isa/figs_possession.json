@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the scroll of Yahweh\" means that it contains the messages spoken by Yahweh. AT: \"Read carefully what is written in this scroll that contains the messages of Yahweh\" (See: [[:en:ta:vol2:translate:figs_possession]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 34, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_possession",
+      "quote": "Search through the scroll of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they land is full of natural resources, such as grain. AT: \"a land where there is plenty of grain ... a land where there is plenty of bread\" (See: [[:en:ta:vol2:translate:figs_possession]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_possession",
+      "quote": "a land of grain ... a land of bread",
+      "occurrence": 1
+    }
+  }
+]

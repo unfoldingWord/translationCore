@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers only to Daniel. He may have used to plural form in humility to avoid taking credit for knowing the meaning of the dream that God had revealed to him. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Now we will tell the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since the tree represents Nebuchadnezzar, the masculine pronouns \"his\" and \"him\" in verse 16 refer to the same tree as the neuter pronoun \"it\" in verse 15. AT: \"The man's mind will change from a man's mind to an animal's mind for a period of seven years\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "dan", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Let his mind be changed ... seven years pass by",
+      "occurrence": 1
+    }
+  }
+]

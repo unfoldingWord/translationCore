@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in modern measurements. AT: \"a fourth part of a liter\" or \"a quarter of a liter\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "the fourth part of a kab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"measure\" translates the word \"seah,\" which is a unit of dry measurement equal to about 7 liters. AT: \"14 liters of barley ... 7 liters of fine flour\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 7, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "two measures of barley ... a measure of fine flour",
+      "occurrence": 1
+    }
+  }
+]

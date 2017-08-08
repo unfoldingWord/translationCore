@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These refer to fear caused by thinking about future events. Habakkuk uses several parts of his body to express that every part of him is afraid. (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my inner parts trembled! My lips quivered ... Decay comes into my bones ... under myself I tremble",
+      "occurrence": 1
+    }
+  }
+]

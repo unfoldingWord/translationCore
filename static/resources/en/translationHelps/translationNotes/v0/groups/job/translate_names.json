@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible locations are 1) a place in ancient Edom east of the Jordan River in modern western Jordan or 2) a place east of the Euphrates River in modern Iran. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "land of Uz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a region located in modern day Yemen. Here it represents a group of raiders or bandits from Sheba. (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sheba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eliphaz is a man's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliphaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. The people of these places used caravans to trade things with people from other lands. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tema ... Sheba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate this man's name as in [[:en:bible:notes:job:02:11|2:11]]. AT: \"Zophar from the region of Naamah\" (UDB) (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zophar the Naamathite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. People from Teman are known as Temanites. Translate as in [[:en:bible:notes:job:02:11|2:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliphaz the Temanite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate this man's name as in [[:en:bible:notes:job:02:11|2:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliphaz the Temanite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a people-group. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 32, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Buzite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate this man's name the same as in [[:en:bible:notes:job:32:01|32:2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Elihu",
+      "occurrence": 1
+    }
+  }
+]

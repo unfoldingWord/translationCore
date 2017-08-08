@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus spoke as if the people of the cities of Chorazin and Bethsaida were there listening to him, but they were not. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Woe to you, Chorazin! Woe to you, Bethsaida!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus now speaks to the people in the city of Capernaum as if they were listening to him, but they were not. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "You, Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus speaks as if the people of Jerusalem were there listening to him. Jesus said this twice to show how sad he was for them. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Jerusalem, Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

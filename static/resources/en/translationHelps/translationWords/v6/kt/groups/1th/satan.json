@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "satan",
+      "quote": "Satan, devil, evil one",
+      "occurrence": 1
+    }
+  }
+]

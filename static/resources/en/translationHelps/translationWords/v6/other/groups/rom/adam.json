@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "adam",
+      "quote": "Adam",
+      "occurrence": 1
+    }
+  }
+]

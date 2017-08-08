@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in the land of Israel\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the name of one of the women\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the name of one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"while Naomi was living in Moab she heard.\" It is implied that the news came from Israel. AT: \"she heard from Israel while in the region of Moab\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "she had heard in the region of Moab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ruth clung to her.\" AT: \"Ruth refused to leave her\" or \"Ruth would not leave her\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Ruth held on to her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ruth is referring to Naomi's people, the Israelites. AT: \"I will consider the people of your country as being my own people\" or \"I will consider your relatives as my own relatives\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "your people will be my people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Ruth carried the grain home. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "She lifted it up and went into the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"female workers you have been working with\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "female workers you have been with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"if he will not marry his kinsman's widow and father children for his dead relative\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "if he will not do the duty of a kinsman",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What Ruth meant by this question can be made more clear. AT: \"What happened, my daughter?\" or \"How did Boaz act toward you?\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "How did you do, my daughter?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"father of King David.\" Though \"king\" is not stated, it was clear to the original audience that David was King David. (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "rut", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "father of David",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" here refers to God. God was saying what he intended to do. The pronoun \"us\" is plural. Possible reasons for the plural use are 1) the plural form suggests that God is discussing something with the angels that make up his heavenly court or 2) the plural form foreshadows the later New Testament implications that God exists in the form of the Holy Trinity. Some translate it as \"Let me make\" or \"I will make.\" If you do this, consider adding a footnote to say that the word is plural. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Let us make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"he\" and \"his\" refer to the woman's descendant. If \"seed\" was translated as plural, this can be translated as \"they will bruise ... their heel\"; in this case, consider inserting footnotes to say that the \"they\" and \"their\" are used to translate a singular pronoun. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "He will bruise ... his heel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means that God made mankind to be like him. This verse does not tell in what ways God made people to be like himself. God does not have a body, so it does not mean that people would look like God. AT: \"to truly be like us.\" See how \"after our likeness\" is translated in [[:en:bible:notes:gen:01:26|1:26]]. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "in his own likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" is plural even though it refers to God. Some translate it as \"let me go down\" or \"I will go down.\" If you do this, consider adding a footnote to say that the pronoun is plural. See the note on \"Let us make\" in [[:en:bible:notes:gen:01:26|1:26]]. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "let us go down",
+      "occurrence": 1
+    }
+  }
+]

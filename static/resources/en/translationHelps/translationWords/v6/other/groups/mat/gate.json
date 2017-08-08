@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "gate, gate bar",
+      "occurrence": 1
+    }
+  }
+]

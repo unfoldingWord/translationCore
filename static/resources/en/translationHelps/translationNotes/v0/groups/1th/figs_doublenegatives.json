@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"God called us to cleanness and holiness\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "God did not call us to uncleanness, but to holiness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"We want you to understand\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "We do not want you to misunderstand",
+      "occurrence": 1
+    }
+  }
+]

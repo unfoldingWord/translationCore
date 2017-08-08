@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"To you, my strength\" can be combined as one clause. AT: \"You are my strength, so I will sing praises to you\" (See: [[:en:ta:vol2:translate:figs_sentences]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 59, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_sentences",
+      "quote": "To you, my strength, I will sing praises",
+      "occurrence": 1
+    }
+  }
+]

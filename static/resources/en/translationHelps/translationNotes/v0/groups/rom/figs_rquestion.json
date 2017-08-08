@@ -1,0 +1,722 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. You can also translate this question as a strong negative statement. AT: \"You will certainly not escape God's judgment!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will you escape from the judgment of God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. You can also translate this as a strong statement. AT: \"You should not act like it does not matter that God is good and that he patiently waits a long time before he punishes people, so that his goodness will cause them to repent!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Or do you think so little of the riches of his goodness, his delayed punishment, and his patience ... repentance?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. You can also translate this as a strong statement. AT: \"You must know that God shows you he is good so that you might repent!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not know that his goodness is meant to lead you to repentance?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using a question to scold his listener. You can translate this as a strong negative statement. AT: \"You do not teach yourself while you are teaching others!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You, then, who teach another, do you not teach yourself?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using a question to scold his listener. You can translate this as a strong statement. AT: \"You tell people not to commit adultery, but you commit adultery!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You who say not to commit adultery, do you commit adultery?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question to scold his listener. You can translate this as a strong statement. AT: \"It is wicked that you claim to be proud of the law, while at the same time you disobey it and bring shame to God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You who proudly rejoice in the law, do you dishonor God through your transgression of the law?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses these questions to capture the attention of his readers. You can translate this as a strong statement. AT: \"Then Jewish people have no benefit from God's covenant, even though God promised that they would!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then what advantage does the Jew have? And what is the benefit of circumcision?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses these questions to make people think. AT: \"Some Jews have not been faithful to God. Should we conclude from this that God will not fulfill his promise?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what if some Jews were without faith? Will their unbelief make God's faithfulness invalid?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"But some men argue that when we do wrong, people can see more clearly how God does right. What can we say about that?\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But if our unrighteousness shows the righteousness of God, what can we say?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to show that the arguments against the gospel are not valid, since the Jews believe that God will judge all people. AT: \"We all know that God will in fact judge the world!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For then how would God judge the world?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul imagines someone continuing to reject the Christian gospel. That adversary argues, because his sin shows the righteousness of God, then God should not declare that he is a sinner on judgment day if, for example, he tells lies. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But if the truth of God through my lie provides abundant praise for him, why am I still being judged as a sinner?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks these questions to emphasize his point. AT: \"We Jews should not try to imagine we are going to escape God's judgment, just because we are Jewish!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then? Are we excusing ourselves?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks this question to show that there is no reason for people to boast about obeying the law. AT: \"So there is no way that we can boast that God favors us because we obeyed those laws. Boasting is excluded\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Where then is boasting? It is excluded",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks and answers these  rhetorical questions to emphasize that each point he is making is certainly true. You can translate this by including the words that Paul implies, and by using an active form. AT: \"On what grounds should we exclude boasting? Should we exclude it because of our good works? No, rather, we should exclude it because of faith\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "On what grounds? Of works? No, but on the grounds of faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks this question for emphasis. AT: \"You who are Jews certainly should not think that you are the only ones whom God will accept!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Or is God the God of Jews only?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks this question to add emphasis. AT: \"Should we ignore the law because we have faith?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do we then nullify the law through faith?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression gives the strongest possible negative answer to the preceding rhetorical question. You may have a similar express in your language that you could use here. AT: \"This is certainly not true!\" or \"Certainly not!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "May it never be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses the question to catch the attention of the reader and to start talking about something new. AT: \"This is what Abraham our physical ancestor found\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then will we say that Abraham, our forefather according to the flesh, found?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"Does God bless only those who are circumcised, or also those who are not circumcised?\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then is this blessing pronounced only on those of the circumcision, or also on those of the uncircumcision?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks these questions to add emphasis to his remarks. AT: \"When did God consider Abraham to be righteous? Was it before his circumcision, or after it?\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "So how was it counted? When Abraham was in circumcision, or in uncircumcision?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks these rhetorical questions to get the attention of his readers. AT: \"So, what should we say about all of this? We certainly should not keep on sinning so that God will give us more and more grace! (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then will we say? Should we continue in sin so that grace may abound?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using a question to emphasize that living under grace is not a reason to sin. AT: \"However, just because we are bound to grace instead of the law of Moses certainly does not mean we are allowed to sin\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then? Shall we sin because we are not under law, but under grace? May it never be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question to scold anyone who may think God's grace is a reason to keep sinning. You can translate this as a strong statement. AT: \"You should know that you are slaves to the master you choose to obey!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not know that the one to whom you present yourselves as servants is the one to which you are obedient, the one you must obey?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks this question to add emphasis. AT: \"So you certainly know that people have to obey laws only while they are alive\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "do you not know, brothers ... that the law controls a person for as long as he lives?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is introducing a new topic. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What will we say then?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to add emphasis. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "did what is good become death to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression gives the strongest possible negative answer to the preceding rhetorical question. You may have a similar expression in your language that you could use here. AT: \"Of course that is not true!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "May it never be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to express great emotion. If your language has a way of showing great emotion through an exclamation or a question, use it here. AT: \"I want someone to set me free from the control of what my body desires!\" (UDB)  (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will deliver me from this body of death?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question to help his audience understand what \"confidence\" is. AT: \"But if we are confidently waiting, that means we do not yet have what we want. No one can confidently wait if he already has what he wants\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But what we are confident will happen has not yet been seen, for who confidently waits for what he already sees?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses questions to emphasize the main point of what he said previously. AT: \"This is what we should know from all of this: since God is helping us, no one can defeat us\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then shall we say about these things? If God is for us, who is against us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using a question for emphasis. AT: \"he will certainly and freely give us all things!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how will he not also with him freely give us all things?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question for emphasis. AT: \"No one can accuse us before God because he is the one who makes us right with him\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will bring any accusation against God's chosen ones? God is the one who justifies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question seems to ask about a person, but the following answer presents events, not persons. So Paul is perhaps speaking of events as if they were people. AT: \"No one will ever be able to separate us from the love of Christ\" or \"Nothing will ever be able to separate us from the love of Christ\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_personification]]).\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will separate us from the love of Christ?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using the question to get the attention of his readers. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then will we say?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses a question to teach his audience. His previous instruction of, \"Do not say\" requires a negative answer to this question. You can translate this question as a statement. AT: \"No one is able to go up to heaven\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will ascend into heaven?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses a question to teach his audience. His previous instruction of, \"Do not say\" requires a negative answer to this question. You can translate this as a statement. AT: \"No person can go down and enter the place where the spirits of dead persons are\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will descend into the abyss",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question to emphasize the importance of taking the good news of Christ to those who have not heard. The word \"they\" refers to those who do not yet belong to God. AT: \"Those who do not believe in God cannot call on him\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then can they call on him in whom they have not believed?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using this question to emphasize that Isaiah prophesied in the Scriptures that many Jews would not believe in Jesus. You can translate this as a statement. AT: \"Lord, so many of them do not believe our message\" (See: [[:en:ta:vol1:translate:figs_rquestion]])  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Lord, who has believed our message?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question for emphasis. You can translate this as a statement. AT: \"But, I say the Jews certainly have heard the message about Christ\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But I say, \"Did they not hear?\" Yes, most certainly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a question for emphasis. The word \"Israel\" is a metonym for the people who lived in the nation of Israel. AT: \"Again I tell you the people of Israel did know the message\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Moreover, I say, \"Did Israel not know?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul asks this question so that he can answer the questions of other Jews who are upset that God has included the Gentiles among his people, while the hearts of the Jewish people have been hardened. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "did God reject his people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"Surely you know what the Scriptures record about when Elijah pleaded with God against Israel\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not know what the scripture says about Elijah, how he pleaded with God against Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using this question to bring the reader to his next point. AT: \"How does God answer him?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But what does God's answer say to him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"What should we conclude?\" Paul asks this question to move his reader to his next point. You can translate this as a statement. AT: \"This is what we need to remember\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What then?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to add emphasis. AT: \"Has God rejected them forever because they sinned?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did they stumble so as to fall?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to emphasize his point. You can translate this as a statement. AT: \"No one has ever known what the Lord thinks\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For who has known the mind of the Lord?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to emphasize his point. You can translate this as a statement. AT: \"Let me tell you how you can be unafraid of the government!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you desire to be unafraid of authority?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using a question to scold those who are judging others. You can translate this as a statement. AT: \"You are not God, and you are not allowed to judge one of his servants!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who are you, you who judge a servant belonging to someone else?",
+      "occurrence": 1
+    }
+  }
+]

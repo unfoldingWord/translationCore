@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "ungodly",
+      "quote": "ungodly, godless, ungodliness, godlessness",
+      "occurrence": 1
+    }
+  }
+]

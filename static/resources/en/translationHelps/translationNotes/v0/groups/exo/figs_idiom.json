@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a customary way of saying \"the one who started the fight.\" AT: \"the one who was guilty of starting the fight\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the one who was in the wrong",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Pharaoh hardened his heart.\" Here \"hardened\" means that he became stubborn. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he hardened his heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a customary way of saying \"in the presence of someone.\" AT: \"in their presence\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "right before their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"pass over\" were a customary way of saying to not visit or enter. AT: \"I will not enter your house\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I will pass over you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"land\" refers to Canaan. The expression \"born in the land\" means a person who is a native Israelite. AT: \"those who are Israelites by birth\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the people who were born in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"Call ... to mind\" were a customary way of telling someone to remember something. AT: \"Remember and celebrate this day\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Call this day to mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. If you have a way of saying this in your language, you can use it here. AT: \"has stolen his neighbor's property\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "has put his own hand on his neighbor's property",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means the people were in complete agreement. AT: \"together\" or \"in agreement\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "with one voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that indicates a person's desire to give an offering. AT: \"who wants to give an offering\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 25, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "who is motivated by a willing heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"go in and out from one entrance of the camp to the other entrance\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n\n\n",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "go back and forth from entrance to entrance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To know someone by name is to know them well. AT: \"I know you well\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 33, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I know you by name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is part of what Moses was saying to God. AT: \"Now If  you are pleased with me\" or \"Now if you approve of me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 33, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Now if I have found favor in your sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means that God is pleased with him. See how you translated this in [[:en:bible:notes:exo:33:12|33:12]]. AT: \"I am pleased with you\" or \"I approve of you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 33, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you have found favor in my sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being pleasing to someone is spoken of as finding favor in their sight. See how you translated this in [[:en:bible:notes:exo:33:12|33:12]]. AT: \"Now If you are pleased with me\" or \"Now if you approve of me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "If now I have found favor in your sight",
+      "occurrence": 1
+    }
+  }
+]

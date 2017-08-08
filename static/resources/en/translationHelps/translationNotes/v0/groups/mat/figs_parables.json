@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a parable to describe the people who were alive at that time. He compares them to a group of children who are trying to get the other children to play with them. But, no matter way they do, the other children will not join them. Jesus means that it does not matter if God sends someone like John the Baptist, who lives in the desert and fasts, or someone like Jesus, who celebrates with sinners and does not fast. The people, most specifically the Pharisees and religious leaders, still remain stubborn and refuse to accept God's truth.  (See: [[:en:ta:vol1:translate:figs_parables]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "It is like children playing in the marketplace ... and you did not weep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a parable to continue his response to the Pharisees. Jesus means he can drive out demons because he is more powerful than Satan. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "How can anyone enter the house ... belongings from his house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus tells a parable to warn the people of the danger of not believing him. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "When an unclean spirit ... with this evil generation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This introduces a parable. See how you translated a similar parable introduction in [[:en:bible:notes:mat:13:24|13:24]]. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "the kingdom of heaven is similar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the beginning of a parable. See how you translated the introduction to the parable in [[:en:bible:notes:mat:13:24|13:24]]. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "For the kingdom of heaven is like",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a parable of a master and servants to illustrate that his disciples should be prepared for his return. (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "that if the master of the house ... broken into",
+      "occurrence": 1
+    }
+  }
+]

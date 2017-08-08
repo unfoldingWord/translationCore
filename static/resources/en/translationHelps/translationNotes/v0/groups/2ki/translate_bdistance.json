@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit was 46 centimeters. AT: \"about 8.3 meters ... about 1.4 meters\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "eighteen cubits ... three cubits",
+      "occurrence": 1
+    }
+  }
+]

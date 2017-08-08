@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two small copper coins\" (UDB). These were the least valuable coins available. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "two mites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"300 denarii.\" Denarii are Roman silver coins. (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "three hundred denarii",
+      "occurrence": 1
+    }
+  }
+]

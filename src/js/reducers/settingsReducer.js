@@ -7,9 +7,9 @@ const initialState = {
     developerMode: false,
     csvSaveLocation: null,
     online: true,
-    toolsSettings: {},
     onlineMode: false
-  }
+  },
+  toolsSettings: {}
 };
 
 const settingsReducer = (state = initialState, action) => {

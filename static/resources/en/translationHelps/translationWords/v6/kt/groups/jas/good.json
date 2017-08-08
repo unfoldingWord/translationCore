@@ -1,0 +1,114 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  }
+]

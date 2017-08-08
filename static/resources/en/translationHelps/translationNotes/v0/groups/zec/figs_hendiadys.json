@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases describe words that are both good and comforting. AT: \"encouraged me\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "talked with me, with good words, words of comfort",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"there will only be one God, Yahweh, who will be worshiped.\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "there will be Yahweh, the one God, and his name alone",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob and Israel were two names for one man, and these two phrases refer to the same group of people. AT: \"all you descendants of Jacob\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "house of Jacob and every family in the house of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases share similar meanings and emphasize that they are fully aware of their shameful behavior. AT: \"Let us be completely humiliated.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 3, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Let us lie down in shame. May our shame cover us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meanings. The second one strengthens the thought in the first. AT: \"I wish this war would end soon.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 4, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "How long will I see the standard? Will I hear the sound of the horn?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These four clauses each mean about the same thing and are repeated for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "do not pray for this people, and do not lift up a lamenting wail or say a prayer on their behalf, and do not petition me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences say the same thing, The second emphasizes the message of the first. AT: \"Tell them my message but the will not listen and change their evil ways.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "So proclaim all these words to them, but they will not listen to you. Proclaim these things to them, but they will not answer you.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meanings. The second one strengthens the thought in the first. AT: \"The people tell only lies\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_metonymy]])\n \n \n",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Truth is destroyed and cut off from their mouths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is Jeremiah speaking. AT: \"I wish I could make more tears!\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "If only my head could produce water, and my eyes be a fountain of tears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize the command to listen to what Yahweh says. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 9, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "hear Yahweh's word; pay attention to the messages that come from his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of forcing the people to leave their land and destroying their nation as if they were plants that he was uprooting. These two sentences have the same meaning and may be combined. AT: \"I will certainly and completely exile and destroy that nation\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 12, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will uproot that nation. It will certainly be uprooted and destroyed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have the same meaning and are used together to emphasize that they undergarment was destroyed. AT: \"The undergarment was spoiled and useless\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "jer", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The undergarment was destroyed; it was no good at all",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrase have the same meaning and emphasize that these are the things that Yahweh has decided to happen to the people of Judah. AT: \"This is what I am making happen to you\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 13, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "This is what I have given to you, the portion I have decreed for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Send them away from me! Let them go forth!\" He repeats this idea for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 15, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Send them out from before me, for them to go away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have a similar meaning. It was customary to take food or wine to people whose relative had died. Yahweh has removed all comfort from the people because of their sin. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "No one must share any food in mourning to comfort them because of the deaths ... none must give a comforting cup to his father or his mother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"They\" and \"them\" refer to the false gods that the ancestors taught them to believe in. The two phrases mean basically the same thing, with the second explaining how they \"are empty.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "They are empty; there is no profit in them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means basically the same thing and the previous one and is used for emphasis. AT: \"Make them very afraid, but do not make me afraid\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "May they be dismayed, but do not let me be dismayed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these sentences describe the same thing to emphasize how dangerous this warning is. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 18, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I am about to form disaster against you. I am about to devise a plan against you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means basically the same thing as the previous phrase. AT: \"I will allow those who want to kill them to kill them\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "by the hand of the ones seeking their lives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh repeats the same basic idea four times for emphasis. That is Babylon will take away all the wealth of Israel, including the King's possessions. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "all the wealth ... all of its riches, all of its precious items and all the treasures",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses the word \"Woe\" several times for emphasis. He addresses the various people who would normally show great sadness when someone dies. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 22, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Woe, my brother! ... Woe, my sister! ... Woe, master! ... Woe, majesty!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meanings. (See: [[:en:ta:vol2:translate:figs_parallelism]]) \n  ",
+      "reference": { "bookId": "jer", "chapter": 23, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Judah will be rescued, and Israel will live in security",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meanings. The second one strengthens the thought in the first. (See\" [[:en:ta:vol2:translate:figs_parallelism]]) AT: \"I will help them to prosper in Chaldea.\"\n  ",
+      "reference": { "bookId": "jer", "chapter": 24, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will build them up, and not tear them down. I will plant them, and not uproot them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these two clauses refer to Yahweh freeing his people of Israel from slavery. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 30, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will break the yoke off your neck, and I will shatter your chains",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meanings. The second one strengthens the thought in the first. AT: \"All the nations that have made you slaves will be made slaves.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 30, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "So everyone who consumes you will be consumed, and all of your adversaries will go into captivity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The speaker repeats the phrase to show either that Yahweh punished him severely or that Ephraim learned what Yahweh wanted to teach him through punishing him. The words \"I have been punished\" can be translated in active form. AT: \"You punished me. Yes, you punished me severely\" or \"You punished me, and I have learned from that punishment\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 31, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You punished me, and I have been punished",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings and emphasize that Yahweh's law will become a part of them, rather than merely written on stone. Here \"heart\" represents \"emotions\" or \"mind.\" AT: \"My law will be part of their thoughts and emotions.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 31, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will place my law within them and will write it on their heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Yahweh did what he told you he would do\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 40, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Yahweh brought it about. He did just as he had decreed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of these statements mean basically the same thing and emphasize how badly the nations will treat the people of Judah after Yahweh punishes them. AT: \"People will be terrified when they see what has happened to you. They will curse and mock you\" (See [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 42, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You will become an object of cursing and a horror, an object for speaking curses, and something dishonorable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these metaphors mean the same thing. Yahweh destroying the people of the nation of Judah is spoken of as if the nation were a building he would tear down or a plant that he will pull up. AT: \"this nation is like a building that I built, but I am now tearing down. It is like a plant that I planted, but I am now pulling out of the ground\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 45, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "what I built, I am now tearing down. What I planted, I am now pulling up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The two phrases have similar meaning and are combined for emphasis. The \"waters\" and \"river\" both represent the army coming from the north (probably the Babylonians). (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 47, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "floods of water are rising in the north. They will be like an overflowing river!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean basically the same thing and emphasize that Moab's destruction will happen very soon. AT: \"Moab's enemies will destroy her very soon.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 48, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Moab's disaster is soon to happen; calamity is hurrying quickly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The repetition of this phrase emphasizes the importance of the command. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 50, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "cause them to listen ... cause them to listen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize the intensity of her embarrassment. The words \"mother\" and \"the one who bore you\" refer either to Babylonia or to the city of Babylon. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 50, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "So your mother will be greatly ashamed; the one who bore you will be embarrassed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The same thought is expressed in two different ways for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]]) \n  ",
+      "reference": { "bookId": "jer", "chapter": 51, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "A shout of distress came from Babylon, a great collapse from the land of the Chaldeans",
+      "occurrence": 1
+    }
+  }
+]

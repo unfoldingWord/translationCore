@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to go into her house to sleep with her, as one would with a prostitute. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "go in to her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"springs\" and \"streams of water\" are likely euphemisms for male reproductive fluids. Possible meanings for these metaphorical phrases are 1) sleeping with women other than one's wife is spoken of as if it were allowing one's water to flow in the public streets or 2) having children with women other than one's wife is spoken of as if it were allowing one's water to flow in the public streets. (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Should your springs ... your streams of water flow in the public squares?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "spend much time drinking wine and so drink much wine (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "linger over wine",
+      "occurrence": 1
+    }
+  }
+]

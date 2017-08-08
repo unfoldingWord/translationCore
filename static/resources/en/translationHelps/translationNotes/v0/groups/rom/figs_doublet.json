@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wrath\" and \"fierce anger\" mean basically the same thing and emphasize God's anger. AT: \"God will show his terrible anger\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "wrath and fierce anger will come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"tribulation\" and \"distress\" mean basically the same thing here and emphasize how bad God's punishment will be. AT: \"awful punishments will happen to\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "tribulation and distress on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words both mean the same thing. (See [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Tribulation, or distress",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two expressions mean basically the same thing. Paul uses them to emphasize that he is telling the truth. (See: [[:en:ta:vol2:translate:figs_doublet]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I tell the truth in Christ. I do not lie",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean basically the same thing. If you need to, you can combine them in your translation. AT: \"when the Jews failed spiritually, the result was that God abundantly blessed the non-Jews\" (See: [[:en:ta:vol2:translate:figs_doublet]])  \n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "if their failure is the riches of the world, and if their loss is the riches of the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"wisdom\" and \"knowledge\" mean basically the same thing. AT: \"How amazing are the many benefits of both God's wisdom and knowledge!\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Oh, the depth of the riches both of the wisdom and the knowledge of God!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"stumbling block\" and \"snare\" mean basically the same thing. AT: \"but instead make it your goal not to do or say anything that might cause a fellow believer to sin\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "but instead decide this, that no one will place a stumbling block or a snare for his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"know\" and \"am persuaded\" mean basically the same thing; Paul uses them to emphasize his certainty. AT: \"I am certain because of my relationship with the Lord Jesus\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I know and am persuaded in the Lord Jesus",
+      "occurrence": 1
+    }
+  }
+]

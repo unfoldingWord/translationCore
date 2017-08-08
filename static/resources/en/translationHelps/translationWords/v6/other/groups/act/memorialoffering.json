@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 10, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "memorialoffering",
+      "quote": "memorial, memorial offering",
+      "occurrence": 1
+    }
+  }
+]

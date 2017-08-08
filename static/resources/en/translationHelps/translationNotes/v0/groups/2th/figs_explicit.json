@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the implicit information. AT: \"whether by what we taught you in person or by what we wrote to you in a letter\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "whether by word or by our letter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make explicit that this is Paul's prayer for the Thessalonians. AT: \"I pray that the Lord of peace himself gives you ... \" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "May the Lord of peace himself give you",
+      "occurrence": 1
+    }
+  }
+]

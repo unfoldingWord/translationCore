@@ -1,0 +1,362 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the numerical order of David's sons. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fourth son ... fifth son ... the sixth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents the number of men David killed so that Saul would allow him to marry Michal. The \"foreskin\" is the fold of skin that covers the male reproductive organ. (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one hundred Philistine foreskins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the age of Jonathan's son at the time of his father's death. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "five years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"20,000 footmen\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty thousand footmen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 chariots\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "2sa", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "a hundred chariots",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"18,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "eighteen thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"15 sons and 20 servants\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifteen sons and twenty servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"20,000 ... 1,000 ... 12,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty thousand ... a thousand ... twelve thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"700 ... 40,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven hundred ... forty thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The amount the rich man was required to pay back to the poor man was to be four times what the little lamb cost. \"He must pay the poor man four times the price of the lamb\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "He must pay back the lamb four times over",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"600 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "six hundred men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"200 loaves ... 100 clusters ... 100 bunches\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two hundred loaves ... one hundred clusters ... one hundred bunches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"half\" refers to one out of two equal parts. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "half of us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"20,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1,000 men ... 15 sons ... 20 servants\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one thousand men ... fifteen sons ... twenty servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"80 years old\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "eighty years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"300 shekels.\" This is about 3.4 kilograms. (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 21, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three hundred shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"800\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "eight hundred",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 30\" or \"the thirty bravest Israelite soldiers.\" The full meaning of this statement can be made clear. (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the thirty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"300 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three hundred men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means \"produce 100 more people for every one person there is now.\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "multiply ... hundred times",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"9 months and 20 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "nine months and twenty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"eight hundred thousand ... five hundred thousand\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "800,000 ... 500,000",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"70,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seventy thousand",
+      "occurrence": 1
+    }
+  }
+]

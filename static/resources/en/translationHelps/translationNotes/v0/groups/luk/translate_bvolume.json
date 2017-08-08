@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was about 3,000 liters of olive oil. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "A hundred baths of olive oil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"twenty thousand liters of wheat\" or \"a thousand baskets of wheat\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "A hundred cor of wheat",
+      "occurrence": 1
+    }
+  }
+]

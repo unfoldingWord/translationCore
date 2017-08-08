@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "teach, teaching, teaches, taught",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "teach, teaching, teaches, taught",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "teach, teaching, teaches, taught",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "teach, teaching, teaches, taught",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "teach, teaching, teaches, taught",
+      "occurrence": 1
+    }
+  }
+]

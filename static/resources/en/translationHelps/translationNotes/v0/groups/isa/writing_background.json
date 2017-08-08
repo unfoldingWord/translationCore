@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. This gives background information about Isaiah and Hezekiah. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,617 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mountainous area south of the Dead Sea. The area is also called \"Edom.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Seir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of kings. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sihon ... Og",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a valley in the Hebron region, which is south of Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Valley of Eshcol",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Caleb's father. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jephunneh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hormah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mountainous area south of the Dead Sea. The area is also called \"Edom.\" See how you translated this in [[:en:bible:notes:deu:01:01|1:2]] (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Seir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Elath ... Ezion Geber",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Moab. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This stream flows into the Dead Sea from the southeast and creates the border between Edom and Moab. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the brook Zered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Avvites ... Caphtorim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. It may be another name for the island of Crete located in the Mediterranean Sea. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Caphtor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the valley of the Arnon River. It creates the border between Moab and the Amorites. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Valley of the Arnon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. See how you translated this in [[:en:bible:notes:deu:01:03|1:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Heshbon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place near the valley of Arnon. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "wilderness of Kedemoth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of a man and a place. See how you translated them in [[:en:bible:notes:deu:01:03|1:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sihon ... Heshbon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. See how you translated this in [[:en:bible:notes:deu:02:09|2:9]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:deu:01:03|1:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sihon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city on the north bank of the Arnon River. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aroer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a river that created the border between Sihon's land and the land of the Ammonites. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jabbok River",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of kings. See how you translated these in [[:en:bible:notes:deu:01:03|1:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Og ... Sihon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a region within Bashan. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the region of Argob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a king. See how you translated this in [[:en:bible:notes:deu:01:03|1:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sihon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of the same mountain which is at the northern border of Bashan. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Hermon ... Sirion ... Senir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city near Edrei. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Salecah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jair",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Machir was the son of Manasseh. He had died before Moses gave this land. The name is a metonym for the descendants of the person. AT: \"to the descendants of Machir.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "to Machir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a river that created the border between Sihon's land and the land of the Ammonites. See how you translated this in [[:en:bible:notes:deu:02:36|2:37]]. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jabbok River",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the Sea of Chinnereth.\" This is the same place as \"the Sea of Galilee\" or \"the Lake of Gennesaret.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Chinnereth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town in Moab near Mount Pisgah. (See: [[:en:ta:vol1:translate:translate_names]])\n \n \n",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Peor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezer ... Ramoth ... Golan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town in Moab near Mount Pisgah. See how you translated this in [[:en:bible:notes:deu:03:28|3:29]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Peor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place in the desert. The translator may add a footnote that says: \"The name 'Massah' means 'testing.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Massah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of places that the people of Israel went through while they were in the wilderness. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Taberah ... Massah ... Kibroth Hattaavah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of mountains on the west side of the Jordan River. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Gerizim ... Mount Ebal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"near Gilgal\" This may not be the same place as the city near Jericho. Moses may be referring to a place that is near Shechem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 11, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "over against Gilgal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities that Yahweh destroyed along with Sodom and Gomorrah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Admah and Zeboiim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of the Israelites as if they were a well-fed animal whose owner named it Jeshurun. You may add a footnote that says, \"The name 'Jeshurun' means 'upright one.'\" If your language cannot speak of the Israelites as Jeshurun, you may refer to the Israelites as many people, as the UDB does. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeshurun",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a mountain range in Moab. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "mountains of Abarim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the highest place in the Abarim Mountains. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Nebo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another name for the people of Israel. It means \"upright one.\" Translate as in [[:en:bible:notes:deu:32:15|32:15]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 33, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeshurun",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another name for Jericho. (See: [[:en:ta:vol1:translate:translate_names]])\n \n \n",
+      "reference": { "bookId": "deu", "chapter": 34, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the City of Palms",
+      "occurrence": 1
+    }
+  }
+]

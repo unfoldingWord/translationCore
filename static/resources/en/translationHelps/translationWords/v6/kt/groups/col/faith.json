@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "col", "chapter": 1, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "col", "chapter": 1, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "col", "chapter": 2, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "col", "chapter": 2, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "col", "chapter": 2, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "faith",
+      "occurrence": 1
+    }
+  }
+]

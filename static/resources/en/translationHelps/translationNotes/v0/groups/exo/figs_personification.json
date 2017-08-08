@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The cries of the Israelites are spoken of as if they were a person and were able to travel up to where God is. AT: \"God heard their pleas\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "their pleas went up to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"shouts\" are spoken of as if they were persons who are capable of moving on their own. AT: \"I have heard the cries of the people of Israel\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the shouts of the people of Israel have come to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a \"bribe\" is described as if it were a person. AT: \"bribe discredits ... undermines\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "bribe blinds ... perverts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bezalel placed the statues of the cherubim as if they were real cherubim which were spreading their wings and overshadowing the atonement lid. AT: \"They placed the winged creatures so that their wings touched each other and spread out over\" (UDB) (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The cherubim spread out their wings upward and overshadowed",
+      "occurrence": 1
+    }
+  }
+]

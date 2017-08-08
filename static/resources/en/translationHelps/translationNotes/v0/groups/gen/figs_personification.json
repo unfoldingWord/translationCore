@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"to direct the daytime as a ruler directs a group of people\" or \"to mark the times of the day\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "to rule the day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of sin as if it were a person. AT: \"But if you do not do what is right, you will desire to sin even more, and then you will do sinful things. You must refuse to obey it\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "But if you do not ... you must rule over it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of Cain's desire to sin as if it were a person over whom Cain should rule. AT: \"you must control it so you do not sin\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "you must rule over it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being unable to get far enough away from Sodom when God destroys the city is spoken of as if \"disaster\" is a person that will chase and catch up with Lot. AT: \"My family and I will certainly die when God destroys the people of Sodom, because the mountains are too far away for us to get there safely\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "I cannot escape to the mountains, because the disaster will overtake me, and I will die",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"integrity\" means \"honesty.\" This speaks about integrity as if it were a person who could testify for or against another person. AT: \"And later you will know if I have been honest with you or not\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "My integrity will testify for me later on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The stones do not actually bear witness as a person. AT: \"This pile will be a reminder between me and you\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "This pile is a witness between me and you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These piles of stones were to act as a remembrance and a boundary marker for Jacob and Laban regarding their peace agreement. They are spoken of as if they are human witnesses. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "This pile is a witness, and the pillar is a witness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the bundles of grain are standing and kneeling as if they were people. These bundle represent Joseph and his brothers. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "my bundle rose and stood upright ... your bundles came around and bowed down",
+      "occurrence": 1
+    }
+  }
+]

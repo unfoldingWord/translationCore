@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Yahweh. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You will",
+      "occurrence": 1
+    }
+  }
+]

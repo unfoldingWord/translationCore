@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1/4 of a shekel.\" A shekel is a type of money used in the Old Testament. (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_fraction]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "one-fourth of a shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The shekel is divided into 3 parts, 2 of 3 parts are given. \"2/3 of a shekel\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 13, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "two-thirds of a shekel",
+      "occurrence": 1
+    }
+  }
+]

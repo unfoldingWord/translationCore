@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "tit", "chapter": 1, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "circumcise",
+      "quote": "circumcise, circumcised, circumcision",
+      "occurrence": 1
+    }
+  }
+]

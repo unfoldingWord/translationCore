@@ -1,0 +1,1082 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to someone from the city of Tishbe. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Tishbite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nebat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the capital of Moab. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Kir Hareseth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shunem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gehazi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 4, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Baal Shalishah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. ([[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "2ki", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dothan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The name of the king of Aram. His name means \"son of Hadad.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 6, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ben Hadad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the king of Aram. His name means \"son of Hadad.\" Translate this man's name the same as you did in [[:en:bible:notes:2ki:06:24|6:24]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ben Hadad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Athaliah is the name of a woman. Omri is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Athaliah ... Omri",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the name of this city the same as you did in [[:en:bible:notes:2ki:08:28|8:28]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ramoth Gilead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the name of this man the same as you did in [[:en:bible:notes:2ki:09:01|9:2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nimshi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the name of this man the same as you did in [[:en:bible:notes:2ki:08:07|8:8]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hazael",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Naboth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bidkar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Haggan ... Gur ... Ibleam ... Megiddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to someone from the city of Tishbe. See how you translated this in [[:en:bible:notes:2ki:01:03|1:3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Tishbite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of a place where sheep were sheared. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 10, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Eked of the shepherd",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 10, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jonadab son of Rechab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 10, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aroer ... Bashan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of people. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Athaliah ... Jehosheba ... Joash",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a male priest. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mattan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zibiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 12, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jozacar ... Shimeath ... Jehozabad ... Shomer ... Amaziah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of kings. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hazael ... Ben Hadad ... Jehoash ... Jehoahaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Azariah's mother. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jechiliah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of two men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Menahem ... Gadi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. Some versions have \"Tappuah,\" which is the name of another city. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tiphsah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This a man's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pekahiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pekah ... Remaliah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of cities or regions. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ijon ... Abel Beth Maacah ... Janoah ... Kedesh ... Hazor ... Gilead ... Galilee ... Naphtali",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hoshea ... Elah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. Pekah was the king of Israel. See how you translated them in [[:en:bible:notes:2ki:15:37]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pekah ... Remaliah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Elah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "So",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a people group. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Medes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are places in the Assyrian empire. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Cuthah ... Avva ... Hamath ... Sepharvaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of gods, both male and female. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Succoth Benoth ... Nergal ... Ashima ... Nibhaz ... Tartak ... Adrammelech ... Anammelech",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 17, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Avvites ... Sepharvites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hoshea ... Elah ... Zechariah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bronze Serpent Idol\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nehushtan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]]) \n\n",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hoshea ... Elah ... Shalmaneser",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Halah ... Habor River ... Gozan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sennacherib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some Bibles translate these as proper names. Other versions of the Bible translate them as titles. AT: \"the Tartan ... the Rabsaris\" or \"the leader of the soldier ... a court official\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tartan ... Rabsaris",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Hilkiah ... Shebna ... Joah ... Asaph",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the names of these men as in [[:en:bible:notes:2ki:18:16|18:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Hilkiah ... Shebnah ... Joah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Shebna ... Joah ... Asaph",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Shebna ... Isaiah ... Amoz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The names of cities in the kingdom of Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Libnah ... Lachish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all place names. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gozan ... Haran ... Rezeph ... Eden ... Telassar ... Hamath ... Arpad ... Sepharvaim ... Hena ... Ivvah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nisroch ... Adrammelech ... Sharezer ... Esarhaddon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of the king of Babylon and his son. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Merodach Baladan ... Baladan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The mother of King Manasseh (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hephzibah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a man's name (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "2ki", "chapter": 21, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 21, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amon ... Haruz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 21, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jotbah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adaiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:2ki:18:16|18:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hilkiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ahikam ... Shaphan ... Achbor ... Micaiah ... Asaiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a woman's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Huldah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Neco is the name of a man. Megiddo is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "2ki", "chapter": 23, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Neco ... Megiddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 23, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Libnah ... Riblah ... Hamath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "woman's name (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 23, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zebidah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "place name (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 23, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Rumah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nehushta is the name of a woman. Elnathan is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 24, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nehushta ... Elnathan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a man's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 24, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeremiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Riblah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nebuzaradan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Seraiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gedaliah ... Ahikam ... Shaphan ... Ishmael ... Nethaniah ... Johanan ... Kareah ... Seraiah ... Tanhumeth ... Jaazaniah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a person who is a descendant of a man named Netophah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Netophathite",
+      "occurrence": 1
+    }
+  }
+]

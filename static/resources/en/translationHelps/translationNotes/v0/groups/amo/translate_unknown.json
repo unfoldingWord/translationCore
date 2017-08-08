@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "groups of stars (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the Pleiades and Orion",
+      "occurrence": 1
+    }
+  }
+]

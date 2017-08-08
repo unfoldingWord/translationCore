@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter asks this question to emphasize that there is nothing praiseworthy about suffering for doing something wrong. AT: \"For there is no credit ... while being punished\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For how much credit is there ... while being punished?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter asks this question to emphasize that it is unlikely that someone would harm them if they do good things. AT: \"No one will harm you if you do good things\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is the one who will harm you if you desire what is good?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter use this question to emphasize that God's judgment will be more severe for people who reject the gospel than for believers. AT: \"If it begins with us, the outcome for those who do not obey God's gospel will be much worse.\" (See [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "If it begins with us, what will be the outcome for those who do not obey God's gospel?",
+      "occurrence": 1
+    }
+  }
+]

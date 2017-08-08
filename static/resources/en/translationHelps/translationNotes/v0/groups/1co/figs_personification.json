@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of food as though it were a person who could make God welcome us. AT: \"food does not give us favor with God\" or \"the food we eat does not make God pleased with us\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "food will not present us to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul speaks about love as if it were a person. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Love is patient and kind ... endures all things",
+      "occurrence": 1
+    }
+  }
+]

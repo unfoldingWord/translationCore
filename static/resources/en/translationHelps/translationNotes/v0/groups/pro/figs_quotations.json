@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed as an indirect quotation. AT: \"and says that it is not a sin,\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "and says, \"That is no sin,\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "saying that good things have happened to her because she has done good things. This can be translated as a direct quote. AT: \"congratulate her\" or \"say, 'Yay, Mom!'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 31, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "call her blessed",
+      "occurrence": 1
+    }
+  }
+]

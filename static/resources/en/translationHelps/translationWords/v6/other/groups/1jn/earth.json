@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1jn", "chapter": 5, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "earth, earthly",
+      "occurrence": 1
+    }
+  }
+]

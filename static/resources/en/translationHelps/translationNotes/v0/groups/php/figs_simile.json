@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of Timothy, who served Christ with Paul, as if he were a child serving his father. Paul is emphasizing the close father-son relationship he has with Timothy in serving Christ. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as a child serves his father, so he served with me",
+      "occurrence": 1
+    }
+  }
+]

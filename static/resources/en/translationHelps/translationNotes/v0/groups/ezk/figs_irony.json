@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking with irony. Normally people sacrificed animals to God. Here, God is sacrificing people to animals. AT: \"as if they were male sheep, lambs, goats, and bulls\" (UDB) (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 39, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "they will be rams, lambs, goats, and bulls",
+      "occurrence": 1
+    }
+  }
+]

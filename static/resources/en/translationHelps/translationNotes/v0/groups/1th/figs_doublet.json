@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"labor\" and \"toil\" mean basically the same thing. Paul uses them to emphasize how hard they worked. AT: \"how hard we worked\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "our labor and toil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses \"encourage\" and \"exhort\" to emphasize how strongly they encourage the believers. AT: \"we strongly encourage you\" (See:  [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "we encourage and exhort you",
+      "occurrence": 1
+    }
+  }
+]

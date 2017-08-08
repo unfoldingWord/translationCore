@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying \"had died.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "were gone from the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying that he had an emission of semen. AT: \"any man who is unclean because he had an emission of semen while he was asleep\" (See: [[:en:ta:vol2:translate:figs_euphemism]]) \n\n",
+      "reference": { "bookId": "deu", "chapter": 23, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "any man who is unclean because of what happened to him at night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying to defecate. AT: \"when you squat down to defecate\" (See: [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "deu", "chapter": 23, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "when you squat down to relieve yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are that Moses 1) openly forbids women and men to perform sexual acts as part of temple service or 2) uses a euphemism to forbid women and men to perform sexual acts to receive money. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "cultic prostitute ... among any of the daughters ... among the sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way to say \"you will die.\" AT: \"you will die and join your ancestors who have died before you\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "you will sleep with your fathers",
+      "occurrence": 1
+    }
+  }
+]

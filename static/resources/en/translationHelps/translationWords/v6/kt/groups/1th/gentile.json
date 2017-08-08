@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "gentile",
+      "quote": "Gentile, Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "gentile",
+      "quote": "Gentile, Gentiles",
+      "occurrence": 1
+    }
+  }
+]

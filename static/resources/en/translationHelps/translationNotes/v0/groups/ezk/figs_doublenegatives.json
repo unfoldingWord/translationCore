@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh asks this rhetorical question to rebuke the people of Israel. AT: \"It is your way that is not fair.\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 18, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "How is your way not unfair?",
+      "occurrence": 1
+    }
+  }
+]

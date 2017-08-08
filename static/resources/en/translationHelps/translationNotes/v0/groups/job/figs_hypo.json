@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes something that might have happened but did not happen. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "job", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Or I would have been lying ... that never see the light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The imperative in the first part of the sentence functions as a hypothetical condition. AT: \"But if you were to ask the beasts, they would teach you\" (See: [[:en:ta:vol2:translate:figs_imperative]] an [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "job", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "But now ask the beasts, and they will teach you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In 31:5-40 Job describes different situations in which he would deserve God's punishment. But, he knows that they are not true and he is innocent. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "job", "chapter": 31, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If I have",
+      "occurrence": 1
+    }
+  }
+]

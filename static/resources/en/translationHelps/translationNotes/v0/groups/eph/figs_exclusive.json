@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul refers to the Jewish believers who first heard the good news, not the believers at Ephesus. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We were the first",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of destruction as a person who bore a son whose goal is to totally destroy everything. AT: \"the one who destroys everything he can\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the son of destruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking of God allowing something to happen to people as if he is sending them something. AT: \"God is allowing the man of lawlessness to deceive them\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "God is sending them a work of error so that they would believe a lie",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"traditions\" refers to the truths of Christ that Paul and the other apostles taught. Paul speaks of them as if his readers could hold on to them with their hands. AT: \"Remember the truths\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Grasp the traditions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God's word spreading as if it were running from place to place. AT: \"that more and more people will soon hear our message about our Lord Jesus and honor it\" (UDB)  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the word of the Lord may rush and be glorified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul describes the Lord motivating Christians to love God as if the Lord were guiding them down a path. AT: \"help you know \" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "direct your hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God's love and Christ's endurance as if they were destinations on a path. AT: \"how much God loves you and how much Christ has endured for you\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to the love of God and to the endurance of Christ",
+      "occurrence": 1
+    }
+  }
+]

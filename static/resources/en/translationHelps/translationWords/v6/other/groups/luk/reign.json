@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 33 },
+      "tool": "translationWords",
+      "groupId": "reign",
+      "quote": "reign",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 3, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "reign",
+      "quote": "reign",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 27 },
+      "tool": "translationWords",
+      "groupId": "reign",
+      "quote": "reign",
+      "occurrence": 1
+    }
+  }
+]

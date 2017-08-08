@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are dried grapes, a small fruit that grows on a vine (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "raisins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "musical instruments with a head like a drum that can be hit and with pieces of metal around the side that sound when the instruments are shaken (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are dried grapes, a small fruit that grows on a vine. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 16, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "raisins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a wooden sled with rocks or metal fitted underneath, used to separate grain from its stalks by pulling it over wheat placed on the threashing floor. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "threshing sledges",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a type of tree. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "sycamore",
+      "occurrence": 1
+    }
+  }
+]

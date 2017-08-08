@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Peter and the other apostles, but not to those to whom he is writing. AT: \"we apostles have received\" (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we have received",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Peter and the other apostles, but not to his readers. AT: \"For we apostles did not follow cleverly made-up stories\" (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "For we did not follow cleverly invented myths",
+      "occurrence": 1
+    }
+  }
+]

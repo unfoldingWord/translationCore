@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that Shammah passed by Samuel. AT: \"Jesse then made Shammah pass before Samuel\" or \"Jesse then told Shammah to go to Samuel\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Jesse then made Shammah pass by",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that they were waiting to sit down and eat. AT: \"we will not sit down to eat\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "we will not sit down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb may be supplied from the previous line. AT: \"and David has killed his ten thousands\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and David his ten thousands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb for the second phrase may be supplied from the first. AT: \"The king does not desire any dowry; he desires only that you bring to him 100 foreskins\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The king does not desire any dowry, only one hundred foreskins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a complete sentence. AT: \"Your men may eat it if they have not slept with women recently\" (UDB) (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "if the young men have kept themselves from women",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may make clear the understood information. AT: \"sent men to speak to Abigail and tell her that David wanted to take her to be his wife\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "sent and spoke to Abigail, to take her to himself as wife",
+      "occurrence": 1
+    }
+  }
+]

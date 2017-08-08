@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "crete",
+      "quote": "Crete, Cretan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "crete",
+      "quote": "Crete, Cretan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "crete",
+      "quote": "Crete, Cretan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "crete",
+      "quote": "Crete, Cretan",
+      "occurrence": 1
+    }
+  }
+]
