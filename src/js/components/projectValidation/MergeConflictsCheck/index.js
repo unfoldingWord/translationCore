@@ -5,7 +5,7 @@ import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
 
 
-class MergeConflictsCheckContainer extends Component {
+class MergeConflictsCheck extends Component {
   constructor(props) {
     super(props);
     this.onCheck = this.onCheck.bind(this);
@@ -113,7 +113,7 @@ class MergeConflictsCheckContainer extends Component {
   }
 }
 
-MergeConflictsCheckContainer.propTypes = {
+MergeConflictsCheck.propTypes = {
   actions: PropTypes.shape({
     updateStepData: PropTypes.func.isRequired,
     toggleNextDisabled: PropTypes.func.isRequired,
@@ -124,4 +124,4 @@ MergeConflictsCheckContainer.propTypes = {
   })
 }
 
-export default MergeConflictsCheckContainer;
+export default MergeConflictsCheck;

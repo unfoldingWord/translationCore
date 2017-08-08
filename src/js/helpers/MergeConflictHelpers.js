@@ -100,14 +100,19 @@ export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
       let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
       TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     }
-  } catch (e) { console.warn('Problem merging conflicts') }
+  } catch (e) { console.warn('Problem merging conflicts', e) }
 }
 
+/**
+ * This method will take a tS project and convert it to a usfm file.
+ * @param {string} projectSaveLocation - path to the project
+ */
 export function createUSFMFromTsProject(projectSaveLocation) {
   let usfmData = '';
   try {
-    const chapters = fs.readdirSync(projectSaveLocation); // get the chunk files in the chapter path
+    const chapters = fs.readdirSync(projectSaveLocation);
     for (var chapterFileNumber of chapters) {
+      //only want the chapter number folders
       let chapterNumber = Number(chapterFileNumber);
       if (chapterNumber) {
         usfmData += '\\c ' + chapterNumber + '\n';
@@ -122,6 +127,31 @@ export function createUSFMFromTsProject(projectSaveLocation) {
         })
       }
     }
-  } catch (e) { console.warn('Problem getting merge conflicts') }
+  } catch (e) { console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e) }
+  return usfmData;
+}
+
+/**
+ * Determines whether or not there is usfm to parse for merge conflicts 
+ * and if there is return the data it contains
+ * @param {string} usfmFilePath - path to the usfm file of the project, note this may not exist
+ * @param {string} projectSaveLocation - path to the projects location
+ * @returns {string}
+ */
+export function checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation) {
+  let usfmData;
+  if (fs.existsSync(usfmFilePath)) { //is usfm file
+    usfmData = fs.readFileSync(usfmFilePath).toString();
+    if (!usfmData.includes('<<<<<<<'))  //usfm file does not contain merge conflicts
+      return false;
+  } else { //Not usfm file, checking for tS project
+    try {
+      usfmData = createUSFMFromTsProject(projectSaveLocation)
+      if (!usfmData.includes('<<<<<<<'))
+        return false; //A project thats not usfm and merge conflicts not detected
+      /** Used for merging conflicts later, see MergeConflictHelpers.merge() */
+      else fs.outputFileSync(usfmFilePath, usfmData);
+    } catch (e) { console.warn('Problem getting merge conflicts', e) }
+  }
   return usfmData;
 }

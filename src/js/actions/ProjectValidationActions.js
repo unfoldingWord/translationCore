@@ -1,5 +1,4 @@
 import consts from './ActionTypes';
-import * as fs from 'fs-extra';
 import Path from 'Path-extra';
 //actions
 import git from '../helpers/GitApi.js';
@@ -71,7 +70,7 @@ export function projectInformationCheck() {
 
 /**
  * Wrapper action for handling merge conflict detection
- * @param {object} state - State object from reducers to get usfm data
+ * @param {object} state - State object from reducers to get usfm meta data
  */
 export function mergeConflictCheck(state, dispatch) {
   const { projectSaveLocation, manifest } = state.projectDetailsReducer;
@@ -81,28 +80,17 @@ export function mergeConflictCheck(state, dispatch) {
    * An array of arrays of an object.
    * */
   let parsedAllMergeConflictsFoundArray = [];
-  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) || 
+  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) ||
     Path.join(projectSaveLocation, manifest.project.id + '.usfm');
-  let usfmData;
-  if (fs.existsSync(usfmFilePath)) { //is usfm file
-    usfmData = fs.readFileSync(usfmFilePath).toString();
-    if (!usfmData.includes('<<<<<<<'))  //usfm file does not contain merge conflicts
-      return {
-        passed: true,  
-        conflicts: [],
-        filePath:usfmFilePath
-      }
-  } else { //Not usfm file, checking for tS project
-    try {
-      usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation)
-      fs.outputFileSync(usfmFilePath, usfmData);
-      if (!usfmData.includes('<<<<<<<')) return {
-        //A project thats not usfm and merge conflicts not detected
-        passed: true,
-        conflicts: [],
-        filePath:usfmFilePath
-      }
-    } catch (e) { console.warn('Problem getting merge conflicts') }
+  
+  /**@type {string} */
+  let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
+  if (!usfmData) {
+    return {
+      passed: true,
+      conflicts:[],
+      filePath:usfmFilePath
+    }
   }
   /**
    * @example ["1 this is the first version", "1 This is the second version"]
@@ -111,7 +99,7 @@ export function mergeConflictCheck(state, dispatch) {
   */
   let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
   for (let matchIndex in allMergeConflictsFoundArray) {
-    /** Array representing the diffferent versions for a merge conflict parsedinto a more consumable format */
+    /** Array representing the different versions for a merge conflict parsed into a more consumable format */
     let parsedMergeConflictVersionsArray = [];
     /** Array representing current versions to be parsed*/
     let mergeConflictVersionsArray = [];
