@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"darkness\" and \"gloom\" share similar meanings and emphasize the intensity of darkness. Both words refer to a time of disaster or divine judgment. AT: \"a day that is full of darkness\" or \"a day of terrible judgment.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "day of darkness and gloom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"at that time\" means the same thing as, and intensifies the phrase \"in those days.\" AT: \"in those very days\" or \"at that very time.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "in those days and at that time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases emphasize how Yahweh views Israel as his own precious people. AT: \"the people of Israel, who are my inheritance.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "my people and my inheritance Israel",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"heaven\" and \"earth\" represent everything that exists. AT: \"Master over everyone and everything in heaven and earth\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Lord of heaven and earth",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came\" can be translated as \"went.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Paul also came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came\" can be translated as \"went.\" (See: [[:en:ta:vol2:translate:figs_go]])\n\n",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "they came down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came to\" can be translated as \"went to\" or \"arrived at.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "we came to Neapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came\" can be translated as \"went\" or \"arrived.\" AT: \"they came to the city\" or \"they arrived at the city\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "they came to the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came\" can be translated as \"went.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "act", "chapter": 22, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "The chief captain came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"I came\" can be translated as \"I went.\" AT: \"I went to help my people by bringing them money as a gift\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "I came to bring help to my nation and gifts of money",
+      "occurrence": 1
+    }
+  }
+]

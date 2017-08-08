@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make it explicit that God is the one who returns relief. AT: \"and for God to return relief to you\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and relief to you",
+      "occurrence": 1
+    }
+  }
+]

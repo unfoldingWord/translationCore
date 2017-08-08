@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in the positive. AT: \"with complete certainty that God will answer\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "in faith, doubting nothing",
+      "occurrence": 1
+    }
+  }
+]

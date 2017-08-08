@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Abba\" is \"Father\" in the Aramaic language. (See: [[:en:ta:vol1:translate:translate_unknown]] and [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Abba, Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol1:translate:translate_unknown]])  \n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Andronicus ... Ampliatus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could be either 1) Junia, a woman's name, or, much less likely, 2) Junias, a man's name. (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Junias",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Rufus ... Asyncritus ... Phlegon ... Hermes ... Patrobas ... Hermas",
+      "occurrence": 1
+    }
+  }
+]

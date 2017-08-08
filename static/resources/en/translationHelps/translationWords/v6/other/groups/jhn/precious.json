@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "precious",
+      "quote": "precious",
+      "occurrence": 1
+    }
+  }
+]

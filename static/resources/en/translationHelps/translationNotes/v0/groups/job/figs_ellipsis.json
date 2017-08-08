@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"another messenger also came\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "another also came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "After \"spider\" the phrase \"builds his web\" is understood. AT: \"as a spider builds its web\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "job", "chapter": 27, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "He builds his house like a spider",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing word may be added. AT: \"a child's flesh\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "job", "chapter": 33, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "a child's",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may need to add the omitted words. AT: \"more than the first part of his life\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "job", "chapter": 42, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "more than the first",
+      "occurrence": 1
+    }
+  }
+]

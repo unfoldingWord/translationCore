@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" is plural and refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to God. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "that you desired",
+      "occurrence": 1
+    }
+  }
+]

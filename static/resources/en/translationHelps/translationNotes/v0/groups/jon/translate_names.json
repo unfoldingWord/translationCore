@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Jonah's father. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amittai",
+      "occurrence": 1
+    }
+  }
+]

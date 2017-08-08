@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"what people call God's foolishness is really wiser than what people call wisdom, and what people call God's weakness is really stronger than people's strength\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the foolishness of God is wiser than people, and the weakness of God is stronger than people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul wants the Corinthians to answer the question in their minds so he does not have to tell them. AT: \"You know that I am not saying that food sacrificed to an idol is not important.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Or that food sacrificed to an idol is anything?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"but then we will see Christ face to face\" This means that we will be physically present with Christ.  (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but then face to face",
+      "occurrence": 1
+    }
+  }
+]

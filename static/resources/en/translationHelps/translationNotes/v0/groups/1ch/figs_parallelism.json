@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases share similar meanings and mphasize their commitment to follow David. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "We are yours, David. We are on your side, son of Jesse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases have the same meaning. If your language only has one way to express \"honor\" and \"recognition\" then this can be translated as one phrase. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You have honored your servant. You have given your servant special recognition",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Means the same thing, repeated here for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "blessed it, and it will be blessed forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that Yahweh knows the thoughts and motives of every person. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "searches all hearts and understands every motivation of everyone's thoughts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases emphasize that Solomon received special favor from Yahweh, which made him Israel's greatest and most powerful king. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 29, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Yahweh greatly honored Solomon before all Israel and bestowed on him greater power",
+      "occurrence": 1
+    }
+  }
+]

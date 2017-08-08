@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wings\" and \"seraph\" are understood. AT: \"with two wings each seraph covered his face, and with two wings he covered his feet, and with two wings he flew\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n\n",
+      "reference": { "bookId": "isa", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "with two each covered his face, and with two he covered his feet, and with two he flew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"there is\" are understood. The phrases \"multitude\" and \"many people\" mean the same thing. AT: \"There is the noise of many people in the mountains\" or \"There is the noise of a great crowd of people in the mountains\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The noise of a multitude in the mountains, as of many people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"how and \"has\" are understood. AT: \"how the proud fury has ended\" or \"his pride and fury have ended\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the proud fury ended",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"my inward being\" represents Yahweh. The word \"sighs\" is understood from the previous phrase. See how you translated Kir Hareseth in [[:en:bible:notes:isa:16:06|16:7]]. AT: \"my inward being sighs for Kir Hareseth\" or \"I am very sad for the people of Kir Hareseth\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "my inward being for Kir Hareseth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"will disappear\" are understood from the previous phrase. Damascus was where the king of Aram ruled from. The kingdom disappearing represents the king no longer having royal power. AT: \"the kingdom will disappear from Damascus\" or \"there will be no royal power in Damascus\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the kingdom from Damascus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"olives\" is understood from the phrase before this. AT: \"four or five olives\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 17, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "four or five",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"will fight\" are understood from the previous phrase. AT: \"a man will fight against his neighbor\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "a man against his neighbor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"them\" is understood in this phrase. AT: \"afflicting them and healing them\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "afflicting and healing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that they are to attack the Babylonians. AT: \"Go up and attack the Babylonians, you soldiers of Elam; go and besiege the Babylonians, you soldiers of Media\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Go up and attack, Elam; besiege, Media",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What Yahweh will do is not stated here, but it is understood. This shows that God will treat all people the same way. AT: \"as Yahweh scatters ... so he will scatter\"(See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "as with ... so with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that Yahweh is not angry with his people any longer. AT: \"I am not angry with my people any longer\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I am not angry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The translator can supply the verb \"will be.\" AT: \"the soldiers who show you no mercy will be as chaff\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the ruthless ones as chaff",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"fruitful\" refers to the forest being dense and full of healthy trees. The missing words may be added to make the meaning clear. AT: \"and into its most fruitful forest\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "its most fruitful forest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb may be supplied from the previous phrase, with which this phrase is parallel. The noun \"humiliation\" can be translated with a verbal phrase. AT: \"I will allow the enemy to abuse and humiliate Israel\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Israel to abusive humiliation",
+      "occurrence": 1
+    }
+  }
+]

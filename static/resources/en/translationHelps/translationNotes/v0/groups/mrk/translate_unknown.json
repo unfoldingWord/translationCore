@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a jar made from alabaster. Alabaster was a very expensive yellow-white stone. AT: \"beautiful white stone jar\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "alabaster jar",
+      "occurrence": 1
+    }
+  }
+]

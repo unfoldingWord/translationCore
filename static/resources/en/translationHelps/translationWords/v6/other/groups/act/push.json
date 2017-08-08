@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 27 },
+      "tool": "translationWords",
+      "groupId": "push",
+      "quote": "push",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 39 },
+      "tool": "translationWords",
+      "groupId": "push",
+      "quote": "push",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 46 },
+      "tool": "translationWords",
+      "groupId": "push",
+      "quote": "push",
+      "occurrence": 1
+    }
+  }
+]

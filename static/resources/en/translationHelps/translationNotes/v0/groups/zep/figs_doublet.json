@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The repetition of the word \"near,\" along with the phrase \"hurrying quickly\" emphasize that the day when Yahweh judges the people will soon happen. AT: \"close and will be here soon.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "near, near and hurrying quickly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"distress\" and \"anguish\" mean about the same thing and emphasize the intensity of the people's distress. AT: \"a day when people feel terrible distress.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a day of distress and anguish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"trumpets\" and \"alarms\" mean basically the same thing here. Both are means to call soldiers to prepare for battle. AT: \"a day when people sound the alarm for battle.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a day of trumpets and alarms",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. Together they intensify the command for the people to gather together in order to repent of their sins. AT: \"gather yourselves together.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Rally yourselves together and gather",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"anger\" and \"fierce wrath\" mean basically the same thing and emphasize the intensity of Yahweh's anger. AT: \"my very fierce wrath.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "my anger, all my fierce wrath",
+      "occurrence": 1
+    }
+  }
+]

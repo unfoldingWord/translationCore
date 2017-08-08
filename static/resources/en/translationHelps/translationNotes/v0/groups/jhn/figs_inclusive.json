@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"We\" includes both Jesus and the disciples he is talking to. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "We",
+      "occurrence": 1
+    }
+  }
+]

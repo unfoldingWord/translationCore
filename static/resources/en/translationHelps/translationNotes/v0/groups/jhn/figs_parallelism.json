@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The second phrase says in negative terms the same thing that the first phrase says in positive terms. This emphasizes that John was telling the truth. AT: \"He told them the truth freely\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He freely stated, and did not deny",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses mean nearly the same thing, said twice for emphasis, first in the negative and then in the positive. Some languages may indicate emphasis in a different way. AT: God's real reason for sending his Son into the world was to save it\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "For God did not send the Son into the world in order to condemn the world, but in order to save the world through him",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meaning and are used together to emphasize that he would not pay any attention to Joram. AT: \"I would not have anything at all to do with you\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n\n",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I would not pay any attention to you, or even look at you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these sentences urge Yahweh to pay attention to the things that Sennacherib is saying. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Turn your ear, Yahweh, and listen. Open your eyes, Yahweh, and see",
+      "occurrence": 1
+    }
+  }
+]

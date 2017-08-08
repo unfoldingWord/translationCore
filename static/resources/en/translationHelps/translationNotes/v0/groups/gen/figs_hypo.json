@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"But if the woman refuses to come with you.\" Abraham was answering the servant's question from [[:en:bible:notes:gen:24:05|24:5]]. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "But if the woman is not willing to follow you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is something that could possibly happen. AT: \"What if the woman will not come back with me.\" or \"What should I do if the woman will not come back with me?\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Perhaps the woman will not follow me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical situation that Abraham did not think was likely to happen. Possible meanings are 1) \"There is only one way for you to be free from my oath: if you come to my relatives and they will not give her to you, then you will be free from my oath\" or, 2) building on verse 40, \"If you go to my father's family and ask for a girl, you will have done what I told you to do. If they will not give her to you, then you will be free from the oath you swore to me.\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "But you will be free from my oath if you come to my relatives and they will not give her to you. Then you will be free from my oath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah is describing something that could have happened in the past but did not. Judah is scolding his father for waiting so long to send his sons to Egypt to get more food. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "For if we had not delayed",
+      "occurrence": 1
+    }
+  }
+]

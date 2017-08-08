@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to David and the people he is speaking to. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n \n",
+      "reference": { "bookId": "psa", "chapter": 62, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "refuge for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to David and the people he is speaking to. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "We will be",
+      "occurrence": 1
+    }
+  }
+]

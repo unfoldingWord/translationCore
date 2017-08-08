@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "sackcloth",
+      "quote": "sackcloth",
+      "occurrence": 1
+    }
+  }
+]

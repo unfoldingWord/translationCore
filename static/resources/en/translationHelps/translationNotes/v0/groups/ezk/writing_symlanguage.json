@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the huge creature that lives in the water.\" Yahweh calls Pharaoh a monster that lives in the water. The monster is probably a crocodile. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n",
+      "reference": { "bookId": "ezk", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "the great sea monster",
+      "occurrence": 1
+    }
+  }
+]

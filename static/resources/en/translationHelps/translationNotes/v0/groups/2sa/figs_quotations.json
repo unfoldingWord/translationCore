@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These direct quotations could be stated as indirect speech. AT: \"He asked me who I was, and I told him that I am an Amalekite\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "He said to me, 'Who are you?' I answered him, 'I am an Amalekite.'",
+      "occurrence": 1
+    }
+  }
+]

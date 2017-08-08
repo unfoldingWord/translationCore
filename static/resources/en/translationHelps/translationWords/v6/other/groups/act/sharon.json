@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 9, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "sharon",
+      "quote": "Sharon, Plain of Sharon",
+      "occurrence": 1
+    }
+  }
+]

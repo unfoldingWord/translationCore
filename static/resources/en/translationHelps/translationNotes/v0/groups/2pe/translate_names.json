@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Tartarus\" is a term from Greek religion that refers to the place where evil spirits and wicked men who have died are punished. AT: \"he cast them into hell\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "he handed them down to Tartarus",
+      "occurrence": 1
+    }
+  }
+]

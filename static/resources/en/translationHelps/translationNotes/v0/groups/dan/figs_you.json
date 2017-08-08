@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"your\" here refers to Daniel. The people are the Israelites and the holy city is Jerusalem. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your people and your holy city",
+      "occurrence": 1
+    }
+  }
+]

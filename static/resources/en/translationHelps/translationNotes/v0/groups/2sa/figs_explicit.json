@@ -1,0 +1,782 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to explicitly state that this was the large battle that followed the contest of the young men. AT: \"Then the others started to fight also. It was a very fierce battle that day\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The battle was very severe that day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the handle, which is not sharp or designed to pierce anything. It can be implied that Abner was only trying to stop Asahel from following him, and did not intend to kill him. (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the blunt end of his spear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Trumpets were used to signal orders to the armies across great distances. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "blew the trumpet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that they are taking the ark to Jerusalem. AT: \"from Baalah in Judah to take to Jerusalem the ark of God\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "from Baalah in Judah to bring up from there the ark of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It was a sin for Uzzah to touch the ark because Yahweh had commanded that no one should touch the ark. (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for his sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Cedar is a kind of tree that is known for its strength. If you have an equivalent type of tree in your culture, you use that name, otherwise you can reword this. AT: \"I am living in a strong, permanent house\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I am living in a house of cedar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A recorder was a person who spoke to the people and told them the king's announcements. AT: \"Ahilud was the herald\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Ahilud was recorder",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This act was meant as an insult to humiliate the men. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "shaved off half their beards",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David sent them out to war. This can be stated clearly. Also, the word \"his\" refers to David. AT: \"David sent Joab, his servants, and all the army of Israel to war\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "David sent out Joab, his servants, and all the army of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman was not on the roof, she would have been bathing outside in the courtyard of her house. AT: \"a woman who was bathing in the courtyard of her house\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a woman who was bathing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It was for his visitor to eat. AT: \"for his visitor to eat\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for his visitor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expresses that David was swearing an oath or serious promise. AT: \"I declare, as surely as Yahweh lives\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "As Yahweh lives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David went into his room when he was alone. AT: \"went inside his room\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "went inside",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Amnon was frustrated because he desired to sleep with his sister Tamar. AT:  \"Amnon was so frustrated with desire for his sister Tamar that he felt sick\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Amnon was so frustrated that he became sick because of his sister Tamar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If they put the guilty brother to death there would not be a son left to inherit the family's possessions. The full meaning of this statement can be made clear. AT: \"if they did this, they would be destroying our family's heir\" (See: [[:en:ta:vol1:translate:figs_explicit]])  \n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "they would also destroy the heir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that if people say that the king was wrong for helping the woman's family that the king should not be guilty. The full meaning of this statement can be made explicit. AT: \"if anyone blames you for helping our family, may my family be considered guilty instead\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "may the guilt be on me and on my father's family",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"are innocent.\" This implies that in the future if anyone accuses the king of wrongdoing, he will be innocent in the matter. AT: \"will be innocent regarding the matter\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "are guiltless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the king had Joab brought before him so that he could speak to him. The full meaning of this can be made clear. AT: \"Then the king summoned Joab and said to him\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So the king said to Joab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to what Joab wants the king to do. The full meaning of this statement can be made clear. AT: \"what you want me to do\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "this thing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Absalom wanted Joab to come to him to see him and to intercede for him so that he would be allowed to see the king. The full meaning of this can be made clear. AT:  \"to come to him and to intercede for him so that he could see the king\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to send him to the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The message here for the king is written as if Absalom were the speaker. Absalom was asking Joab to speak the message on his behalf. The full meaning of this statement can be made clear. AT: \"to say to the king on my behalf\" or \"to ask the king for me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to the king to say",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the person told his case to Absalom. This can be stated clearly. AT: \"Absalom would ask him what his problem was, and the man would then explain to Absalom why he sought justice. Absalom would then say to him\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So Absalom would say to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to four years after he returned to Jerusalem. AT: \"fours years after Absalom had returned to Jerusalem, he\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "at the end of four years that Absalom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the last house they would come to when leaving the city. AT: \"at the last house as they were leaving the city\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "at the last house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the king implies he is to receive a message informing him about what is happening in Jerusalem. AT: \"to tell me what is happening in Jerusalem\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n \n \n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to inform me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"top\" is used here because David went up in elevation and is at the top of a hill. AT: \"at the top of the hill\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "at the top of the road",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David describes his son this way to emphasize the close bond between a father and his son. AT: \"my own son\" or \"my dear son\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "my son, who was born from my body",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that he intends to kill the king. This can be stated clearly. AT: \"I will kill only the king\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will attack only the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that his has fought in many battles and knows well the ways of war. AT: \"has fought in many battles\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "is a man of war",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the soldiers would tear down the city walls and drag the pieces to river. AT: \"will destroy the city and drag the stones to the river with ropes\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will bring ropes to that city and we will drag it into the river",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that they found out that the young man had told Absalom about them being there. This can be stated clearly. AT: \"Jonathan and Ahimaaz found out what the young man had done, so they went away\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So Jonathan and Ahimaaz went away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he will go out with them to battle. This can be stated clearly. AT: \"I myself will go with you to battle\" (UDB) or \"I personally will go with you into battle\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will certainly go out with you myself, too",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the enemy army considering killing David of greater worth than killing 10,000 of the other men. The number 10,000 here is an exaggeration used to emphasize a very great number of people. AT: \"they would rather kill you than to kill 10,000 of us\" or \"killing you is worth more to them than killing a great number of us\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you are worth ten thousand of us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David could help them from the city by advising them and sending men to help them. This can be stated clearly. AT: \"that you stay here in the city and send help to us\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n \n \n",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that you be ready to help us from the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they went out and fought against them in battle. AT: \"went out into the countryside and fought against Israel\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "went out into the countryside against Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an event that happened during the battle. This can be stated clearly. AT: \"During the battle, Absalom happened to meet some of David's soldiers\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Absalom happened to meet some of David's soldiers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab meant that he should not continue talking to the man. AT: \"I will not waste anymore time talking to you\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will not wait for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes what Joab commanded by blowing the trumpet. AT: \"Then Joab blew the trumpet to call back the army, and the army returned from pursuing Israel\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then Joab blew the trumpet, and the army returned from pursuing Israel, for Joab held back the army",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "After putting his body in the pit they covered it with a pile of stones. This can be stated more clearly. AT: \"they covered his body with a huge pile of stones\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "they buried his body under a very large pile of stones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to not bearing the news to the king. AT: \"you will not tell the news to the king\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you will bear no news",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab is making a very strong oath. AT: \"I swear, as surely as Yahweh is alive\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I swear by Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he had left the country fleeing from Absalom. This can be stated clearly. AT: \"out of the country fleeing from Absalom\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "out of the land because of Absalom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the king was there and was aware of what was happening. AT: \"at the place where the king was\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in the presence of the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is asking Mephibosheth why he did not go with David when David and all the people who followed him left Jerusalem. AT: \"Why did you not go with me when I left Jerusalem, Mephibosheth?\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Why did you not go with me, Mephibosheth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not mean that he wants to die right next to their graves, but rather, that he wants to die in the city where they are buried. This can be stated clearly. AT: \"where my father's and my mother's graves are\" or \"where my father and my mother are buried\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "by the grave of my father and my mother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to crossing the Jordan River. This can be stated clearly. AT: \"Kimham will cross the river with me\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Kimham will go over with me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Sheba and his men will enter these cities to hide from David's army. The word \"he\" represents Sheba but refers to both him and his men. AT: \"he and his men will hide in fortified cities\" or \"he and his men will take refuge in fortified cities\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he will find fortified cities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab let the sword fall out to fool Amasa into thinking that he Joab was unarmed, so that Amasa would allow him to walk closer to him. AT: \"he allowed the sword to fall on the ground so Amasa would think he was unarmed\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the sword fell out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Amasa lay squirming in his blood.\" Amasa may have still been alive and rolling in his blood, but he was probably dead by this time. It is described this way to show how gruesome his body looked. AT: \"Amasa lay dead in his blood\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Amasa lay wallowing in his blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they used a battering ram to knock down the wall. A battering ram was a cut tree or large log with a sharpened end or an end covered in metal. It was held by several men who would pound the end against a wall. AT: \"used a battering ram to knock down the wall\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "battered the wall to knock it down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the army returned after Eleazar returned from battle. AT: \"The Israeli army returned to the battle field after Eleazer had already won the battle\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The army returned after Eleazar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In the law of Moses, God prohibited the kings of Israel from taking a census of fighting men. The full meaning of this statement can be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Go, count Israel and Judah",
+      "occurrence": 1
+    }
+  }
+]

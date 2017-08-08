@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "evil, wicked, wickedness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "evil, wicked, wickedness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "evil, wicked, wickedness",
+      "occurrence": 1
+    }
+  }
+]

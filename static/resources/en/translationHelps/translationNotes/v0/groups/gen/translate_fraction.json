@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fifth\" is a fraction. AT: \"Let them divide the crops of Egypt into five equal parts, then take one of those parts\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "Let them take a fifth of the crops of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fifth\" is a fraction. AT: \"At harvest time you will divide the crops into five parts. You will give one part back to Pharaoh for payment and the four parts are for your own\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "At the harvest, you must give a fifth to Pharaoh, and four parts will be your own",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 32 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 46 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "like, likeness",
+      "occurrence": 1
+    }
+  }
+]

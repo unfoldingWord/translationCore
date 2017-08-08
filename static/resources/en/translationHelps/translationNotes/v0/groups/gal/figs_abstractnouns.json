@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"those who have faith.\" The meaning of the noun \"faith\" can be expressed with the verb \"believe\". AT: \"those who believe\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "those of faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"curse\" can be expressed with the verb \"curse.\" AT:  \"by being cursed for us\" or \"when God cursed him instead of us\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "by becoming a curse for us",
+      "occurrence": 1
+    }
+  }
+]

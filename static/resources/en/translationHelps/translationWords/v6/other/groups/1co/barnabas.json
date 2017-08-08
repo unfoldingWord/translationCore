@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 9, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Barnabas",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"us\" and \"we\" refer to Elihu, Eliphaz, Bildad, and Zophar, but not to Job. Elihu uses this phrase sarcastically. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "job", "chapter": 37, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "Teach us what we should say to him",
+      "occurrence": 1
+    }
+  }
+]

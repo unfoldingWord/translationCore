@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"lightly esteemed\" is an ironic euphemism for \"greatly despised.\" This can be stated in active form. AT: \"I will lightly esteem those who despise me\" or \"I will greatly despise those who despise me\" (See: [[:en:ta:vol1:translate:figs_irony]] and [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "those who despise me will be lightly esteemed",
+      "occurrence": 1
+    }
+  }
+]

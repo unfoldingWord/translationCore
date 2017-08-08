@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"the word that Yahweh God spoke\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh that came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"head\" refers to the part of the plant where the grain is. A stalk with no head has nothing to give to the farmer. In the same way, Israel's actions will result in nothing good.  (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The standing grain has no heads",
+      "occurrence": 1
+    }
+  }
+]

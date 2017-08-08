@@ -1,0 +1,3337 @@
+{
+  "1": [
+    {
+      "word": "Τεκνία",
+      "strong": "5040",
+      "brief": "a little child",
+      "long": "a little child."
+    },
+    {
+      "word": "μου",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    {
+      "word": "ταῦτα",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ἵνα",
+      "strong": "2443",
+      "brief": "in order that, so that",
+      "long": "in order that, so that."
+    },
+    {
+      "word": "μή",
+      "strong": "3361",
+      "brief": "not, lest",
+      "long": "not, lest."
+    },
+    {
+      "word": "ἁμάρτητε",
+      "strong": "264",
+      "brief": "I sin",
+      "long": "originally: I miss the mark, hence (a) I make a mistake, (b) I sin, commit a sin (against God); sometimes the idea of sinning against a fellow-creature is present."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "τις",
+      "strong": "5100",
+      "brief": "any one, some one",
+      "long": "any one, some one, a certain one or thing."
+    },
+    {
+      "word": "ἁμάρτῃ",
+      "strong": "264",
+      "brief": "I sin",
+      "long": "originally: I miss the mark, hence (a) I make a mistake, (b) I sin, commit a sin (against God); sometimes the idea of sinning against a fellow-creature is present."
+    },
+    {
+      "word": "Παράκλητον",
+      "strong": "3875",
+      "brief": "an advocate, comforter, helper, Paraclete",
+      "long": "(a) an advocate, intercessor, (b) a consoler, comforter, helper, (c) Paraclete."
+    },
+    {
+      "word": "ἔχομεν",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "πρός",
+      "strong": "4314",
+      "brief": "to, towards, with",
+      "long": "to, towards, with."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατέρα",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "Ἰησοῦν",
+      "strong": "2424",
+      "brief": "Jesus",
+      "long": "Jesus; the Greek form of Joshua; Jesus, son of Eliezer; Jesus, surnamed Justus."
+    },
+    {
+      "word": "Χριστόν",
+      "strong": "5547",
+      "brief": "anointed, the Messiah, the Christ",
+      "long": "anointed; the Messiah, the Christ."
+    },
+    {
+      "word": "δίκαιον",
+      "strong": "1342",
+      "brief": "just, righteous, impartial",
+      "long": "just; especially, just in the eyes of God; righteous; the elect (a Jewish idea)."
+    }
+  ],
+  "2": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "αὐτός",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἱλασμός",
+      "strong": "2434",
+      "brief": "a propitiation, atoning sacrifice",
+      "long": "a propitiation (of an angry god), atoning sacrifice."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "περί",
+      "strong": "4012",
+      "brief": "about, concerning, around",
+      "long": "(a) gen: about, concerning, (b) acc: around."
+    },
+    {
+      "word": "τῶν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἁμαρτιῶν",
+      "strong": "266",
+      "brief": "a sin",
+      "long": "prop: missing the mark; hence: (a) guilt, sin, (b) a fault, failure (in an ethical sense), sinful deed."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    { "word": "οὐ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "περί",
+      "strong": "4012",
+      "brief": "about, concerning, around",
+      "long": "(a) gen: about, concerning, (b) acc: around."
+    },
+    {
+      "word": "τῶν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἡμετέρων",
+      "strong": "2251",
+      "brief": "our, our own",
+      "long": "our, our own."
+    },
+    {
+      "word": "δέ",
+      "strong": "1161",
+      "brief": "but, on the other hand, and",
+      "long": "a weak adversative particle, generally placed second in its clause; but, on the other hand, and."
+    },
+    {
+      "word": "μόνον",
+      "strong": "3440",
+      "brief": "alone, but, only",
+      "long": "alone, but, only."
+    },
+    {
+      "word": "ἀλλά",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "περί",
+      "strong": "4012",
+      "brief": "about, concerning, around",
+      "long": "(a) gen: about, concerning, (b) acc: around."
+    },
+    {
+      "word": "ὅλου",
+      "strong": "3650",
+      "brief": "all, the whole, entire",
+      "long": "all, the whole, entire, complete."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμου",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    }
+  ],
+  "3": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τούτῳ",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "γινώσκομεν",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐγνώκαμεν",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "αὐτόν",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "τάς",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐντολάς",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "τηρῶμεν",
+      "strong": "5083",
+      "brief": "I keep, guard, observe",
+      "long": "I keep, guard, observe, watch over."
+    }
+  ],
+  "4": [
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λέγων",
+      "strong": "3004",
+      "brief": "I say, speak",
+      "long": "(denoting speech in progress), (a) I say, speak; I mean, mention, tell, (b) I call, name, especially in the pass., (c) I tell, command."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "Ἔγνωκα",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "αὐτόν",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "τάς",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐντολάς",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "μή",
+      "strong": "3361",
+      "brief": "not, lest",
+      "long": "not, lest."
+    },
+    {
+      "word": "τηρῶν",
+      "strong": "5083",
+      "brief": "I keep, guard, observe",
+      "long": "I keep, guard, observe, watch over."
+    },
+    {
+      "word": "ψεύστης",
+      "strong": "5583",
+      "brief": "a liar, deceiver",
+      "long": "a liar, deceiver."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τούτῳ",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀλήθεια",
+      "strong": "225",
+      "brief": "truth",
+      "long": "truth, but not merely truth as spoken; truth of idea, reality, sincerity, truth in the moral sphere, divine truth revealed to man, straightforwardness."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "5": [
+    {
+      "word": "ὅς",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "δ’",
+      "strong": "1161",
+      "brief": "but, on the other hand, and",
+      "long": "a weak adversative particle, generally placed second in its clause; but, on the other hand, and."
+    },
+    {
+      "word": "ἄν",
+      "strong": "302",
+      "brief": "an untranslatable word that makes a statement contingent",
+      "long": "an untranslatable word (under the circumstances, in that case, anyhow), the general effect of which is to make a statement contingent, which would otherwise be definite: it is thus regularly used with the subjunctive mood."
+    },
+    {
+      "word": "τηρῇ",
+      "strong": "5083",
+      "brief": "I keep, guard, observe",
+      "long": "I keep, guard, observe, watch over."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λόγον",
+      "strong": "3056",
+      "brief": "a word, speech, divine utterance, analogy",
+      "long": "a word, speech, divine utterance, analogy."
+    },
+    {
+      "word": "ἀληθῶς",
+      "strong": "230",
+      "brief": "truly, really, certainly",
+      "long": "truly, really, certainly, surely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τούτῳ",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀγάπη",
+      "strong": "26",
+      "brief": "love",
+      "long": "love, benevolence, good will, esteem; plur: love-feasts."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Θεοῦ",
+      "strong": "2316",
+      "brief": "God, a god",
+      "long": "(a) God, (b) a god, generally."
+    },
+    {
+      "word": "τετελείωται",
+      "strong": "5048",
+      "brief": "I complete, accomplish, make perfect",
+      "long": "(a) as a course, a race, or the like: I complete, finish (b) as of time or prediction: I accomplish, (c) I make perfect; pass: I am perfected."
+    },
+    {
+      "word": "Ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τούτῳ",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "γινώσκομεν",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἐσμεν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "6": [
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λέγων",
+      "strong": "3004",
+      "brief": "I say, speak",
+      "long": "(denoting speech in progress), (a) I say, speak; I mean, mention, tell, (b) I call, name, especially in the pass., (c) I tell, command."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "μένειν",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ὀφείλει",
+      "strong": "3784",
+      "brief": "I owe, ought",
+      "long": "I owe, ought."
+    },
+    {
+      "word": "καθώς",
+      "strong": "2531",
+      "brief": "just as, as",
+      "long": "according to the manner in which, in the degree that, just as, as."
+    },
+    {
+      "word": "ἐκεῖνος",
+      "strong": "1565",
+      "brief": "that, that one there, yonder",
+      "long": "that, that one there, yonder."
+    },
+    {
+      "word": "περιεπάτησεν",
+      "strong": "4043",
+      "brief": "I walk, conduct my life",
+      "long": "I walk, hence Hebraistically (in an ethical sense): I conduct my life, live."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "αὐτός",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "οὕτως",
+      "strong": "3779",
+      "brief": "thus, so, in this manner",
+      "long": "thus, so, in this manner."
+    },
+    {
+      "word": "περιπατεῖν",
+      "strong": "4043",
+      "brief": "I walk, conduct my life",
+      "long": "I walk, hence Hebraistically (in an ethical sense): I conduct my life, live."
+    }
+  ],
+  "7": [
+    {
+      "word": "Ἀγαπητοί",
+      "strong": "27",
+      "brief": "loved, beloved",
+      "long": "loved, beloved, with two special applications: the Beloved, a title of the Messiah (Christ), as beloved beyond all others by the God who sent Him; of Christians, as beloved by God, Christ, and one another."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἐντολήν",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "καινήν",
+      "strong": "2537",
+      "brief": "fresh, new",
+      "long": "fresh, new, unused, novel."
+    },
+    {
+      "word": "γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ἀλλ’",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "ἐντολήν",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "παλαιάν",
+      "strong": "3820",
+      "brief": "old, ancient, worn out",
+      "long": "old, ancient, not new or recent."
+    },
+    {
+      "word": "ἥν",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "εἴχετε",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "ἀρχῆς",
+      "strong": "746",
+      "brief": "ruler, beginning",
+      "long": "(a) rule (kingly or magisterial), (b) plur: in a quasi-personal sense, almost: rulers, magistrates, (c) beginning."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐντολή",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "παλαιά",
+      "strong": "3820",
+      "brief": "old, ancient, worn out",
+      "long": "old, ancient, not new or recent."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λόγος",
+      "strong": "3056",
+      "brief": "a word, speech, divine utterance, analogy",
+      "long": "a word, speech, divine utterance, analogy."
+    },
+    {
+      "word": "ὅν",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "ἠκούσατε",
+      "strong": "191",
+      "brief": "I hear, listen",
+      "long": "I hear, listen, comprehend by hearing; pass: is heard, reported."
+    }
+  ],
+  "8": [
+    {
+      "word": "πάλιν",
+      "strong": "3825",
+      "brief": "again, further, on the other hand",
+      "long": "again, back, once more, further, on the other hand."
+    },
+    {
+      "word": "ἐντολήν",
+      "strong": "1785",
+      "brief": "an ordinance, injunction, command",
+      "long": "an ordinance, injunction, command, law."
+    },
+    {
+      "word": "καινήν",
+      "strong": "2537",
+      "brief": "fresh, new",
+      "long": "fresh, new, unused, novel."
+    },
+    {
+      "word": "γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ὅ",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἀληθές",
+      "strong": "227",
+      "brief": "unconcealed, true",
+      "long": "unconcealed, true, true in fact, worthy of credit, truthful."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σκοτία",
+      "strong": "4653",
+      "brief": "darkness",
+      "long": "darkness; fig: spiritual darkness."
+    },
+    {
+      "word": "παράγεται",
+      "strong": "3855",
+      "brief": "I pass by, depart, pass away",
+      "long": "I pass by, depart, pass away."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "φῶς",
+      "strong": "5457",
+      "brief": "light, a source of light",
+      "long": "light, a source of light, radiance."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀληθινόν",
+      "strong": "228",
+      "brief": "true, real, genuine",
+      "long": "true (lit: made of truth), real, genuine."
+    },
+    {
+      "word": "ἤδη",
+      "strong": "2235",
+      "brief": "now, already",
+      "long": "already; now at length, now after all this waiting."
+    },
+    {
+      "word": "φαίνει",
+      "strong": "5316",
+      "brief": "I shine, appear, seem",
+      "long": "(a) act: I shine, shed light, (b) pass: I shine, become visible, appear, (c) I become clear, appear, seem, show myself as."
+    }
+  ],
+  "9": [
+    {
+      "word": "Ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λέγων",
+      "strong": "3004",
+      "brief": "I say, speak",
+      "long": "(denoting speech in progress), (a) I say, speak; I mean, mention, tell, (b) I call, name, especially in the pass., (c) I tell, command."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "φωτί",
+      "strong": "5457",
+      "brief": "light, a source of light",
+      "long": "light, a source of light, radiance."
+    },
+    {
+      "word": "εἶναι",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀδελφόν",
+      "strong": "80",
+      "brief": "a brother",
+      "long": "a brother, member of the same religious community, especially a fellow-Christian."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "μισῶν",
+      "strong": "3404",
+      "brief": "I hate, detest",
+      "long": "I hate, detest, love less, esteem less."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῇ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σκοτίᾳ",
+      "strong": "4653",
+      "brief": "darkness",
+      "long": "darkness; fig: spiritual darkness."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἕως",
+      "strong": "2193",
+      "brief": "until, as far as",
+      "long": "(a) conj: until, (b) prep: as far as, up to, as much as, until."
+    },
+    {
+      "word": "ἄρτι",
+      "strong": "737",
+      "brief": "now, just now",
+      "long": "now, just now, at this moment."
+    }
+  ],
+  "10": [
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀγαπῶν",
+      "strong": "25",
+      "brief": "I love",
+      "long": "I love, wish well to, take pleasure in, long for; denotes the love of reason, esteem."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀδελφόν",
+      "strong": "80",
+      "brief": "a brother",
+      "long": "a brother, member of the same religious community, especially a fellow-Christian."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "φωτί",
+      "strong": "5457",
+      "brief": "light, a source of light",
+      "long": "light, a source of light, radiance."
+    },
+    {
+      "word": "μένει",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "σκάνδαλον",
+      "strong": "4625",
+      "brief": "a snare, stumbling-block",
+      "long": "a snare, stumbling-block, cause for error."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "11": [
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "δέ",
+      "strong": "1161",
+      "brief": "but, on the other hand, and",
+      "long": "a weak adversative particle, generally placed second in its clause; but, on the other hand, and."
+    },
+    {
+      "word": "μισῶν",
+      "strong": "3404",
+      "brief": "I hate, detest",
+      "long": "I hate, detest, love less, esteem less."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀδελφόν",
+      "strong": "80",
+      "brief": "a brother",
+      "long": "a brother, member of the same religious community, especially a fellow-Christian."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῇ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σκοτίᾳ",
+      "strong": "4653",
+      "brief": "darkness",
+      "long": "darkness; fig: spiritual darkness."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῇ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σκοτίᾳ",
+      "strong": "4653",
+      "brief": "darkness",
+      "long": "darkness; fig: spiritual darkness."
+    },
+    {
+      "word": "περιπατεῖ",
+      "strong": "4043",
+      "brief": "I walk, conduct my life",
+      "long": "I walk, hence Hebraistically (in an ethical sense): I conduct my life, live."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "οἶδεν",
+      "strong": "1492",
+      "brief": "I know, remember",
+      "long": "I know, remember, appreciate."
+    },
+    {
+      "word": "ποῦ",
+      "strong": "4225",
+      "brief": "somewhere",
+      "long": "where, somewhere, anywhere; with numerals: somewhere about."
+    },
+    {
+      "word": "ὑπάγει",
+      "strong": "5217",
+      "brief": "I go away, depart",
+      "long": "I go away, depart, begone, die."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σκοτία",
+      "strong": "4653",
+      "brief": "darkness",
+      "long": "darkness; fig: spiritual darkness."
+    },
+    {
+      "word": "ἐτύφλωσεν",
+      "strong": "5186",
+      "brief": "I make blind",
+      "long": "I make blind, physically or mentally."
+    },
+    {
+      "word": "τούς",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ὀφθαλμούς",
+      "strong": "3788",
+      "brief": "the eye",
+      "long": "the eye; fig: the mind's eye."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    }
+  ],
+  "12": [
+    {
+      "word": "Γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "τεκνία",
+      "strong": "5040",
+      "brief": "a little child",
+      "long": "a little child."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἀφέωνται",
+      "strong": "863",
+      "brief": "I send away, release, remit, forgive, permit",
+      "long": "(a) I send away, (b) I let go, release, permit to depart, (c) I remit, forgive, (d) I permit, suffer."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "αἱ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἁμαρτίαι",
+      "strong": "266",
+      "brief": "a sin",
+      "long": "prop: missing the mark; hence: (a) guilt, sin, (b) a fault, failure (in an ethical sense), sinful deed."
+    },
+    {
+      "word": "διά",
+      "strong": "1223",
+      "brief": "through, on account of",
+      "long": "(a) gen: through, throughout, by the instrumentality of, (b) acc: through, on account of, by reason of, for the sake of, because of."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ὄνομα",
+      "strong": "3686",
+      "brief": "name, character, reputation",
+      "long": "name, character, fame, reputation."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    }
+  ],
+  "13": [
+    {
+      "word": "γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "πατέρες",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐγνώκατε",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "ἀρχῆς",
+      "strong": "746",
+      "brief": "ruler, beginning",
+      "long": "(a) rule (kingly or magisterial), (b) plur: in a quasi-personal sense, almost: rulers, magistrates, (c) beginning."
+    },
+    {
+      "word": "γράφω",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "νεανίσκοι",
+      "strong": "3495",
+      "brief": "a young man",
+      "long": "a young man, youth, an attendant."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "νενικήκατε",
+      "strong": "3528",
+      "brief": "I conquer, overcome",
+      "long": "I conquer, am victorious, overcome, prevail, subdue."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "πονηρόν",
+      "strong": "4190",
+      "brief": "evil, bad, wicked",
+      "long": "evil, bad, wicked, malicious, slothful."
+    }
+  ],
+  "14": [
+    {
+      "word": "ἔγραψα",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "παιδία",
+      "strong": "3813",
+      "brief": "a little child, an infant",
+      "long": "a little child, an infant, little one."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐγνώκατε",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατέρα",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ἔγραψα",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "πατέρες",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐγνώκατε",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "ἀρχῆς",
+      "strong": "746",
+      "brief": "ruler, beginning",
+      "long": "(a) rule (kingly or magisterial), (b) plur: in a quasi-personal sense, almost: rulers, magistrates, (c) beginning."
+    },
+    {
+      "word": "ἔγραψα",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "νεανίσκοι",
+      "strong": "3495",
+      "brief": "a young man",
+      "long": "a young man, youth, an attendant."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἰσχυροί",
+      "strong": "2478",
+      "brief": "strong, mighty, powerful",
+      "long": "strong (originally and generally of physical strength); mighty, powerful, vehement, sure."
+    },
+    {
+      "word": "ἐστε",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "λόγος",
+      "strong": "3056",
+      "brief": "a word, speech, divine utterance, analogy",
+      "long": "a word, speech, divine utterance, analogy."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Θεοῦ",
+      "strong": "2316",
+      "brief": "God, a god",
+      "long": "(a) God, (b) a god, generally."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "μένει",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "νενικήκατε",
+      "strong": "3528",
+      "brief": "I conquer, overcome",
+      "long": "I conquer, am victorious, overcome, prevail, subdue."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "πονηρόν",
+      "strong": "4190",
+      "brief": "evil, bad, wicked",
+      "long": "evil, bad, wicked, malicious, slothful."
+    }
+  ],
+  "15": [
+    {
+      "word": "Μή",
+      "strong": "3361",
+      "brief": "not, lest",
+      "long": "not, lest."
+    },
+    {
+      "word": "ἀγαπᾶτε",
+      "strong": "25",
+      "brief": "I love",
+      "long": "I love, wish well to, take pleasure in, long for; denotes the love of reason, esteem."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμον",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    {
+      "word": "μηδέ",
+      "strong": "3366",
+      "brief": "and not, not even",
+      "long": "and not, not even, neitherâ¦nor."
+    },
+    {
+      "word": "τά",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμῳ",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "τις",
+      "strong": "5100",
+      "brief": "any one, some one",
+      "long": "any one, some one, a certain one or thing."
+    },
+    {
+      "word": "ἀγαπᾷ",
+      "strong": "25",
+      "brief": "I love",
+      "long": "I love, wish well to, take pleasure in, long for; denotes the love of reason, esteem."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμον",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀγάπη",
+      "strong": "26",
+      "brief": "love",
+      "long": "love, benevolence, good will, esteem; plur: love-feasts."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατρός",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    }
+  ],
+  "16": [
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "πᾶν",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμῳ",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐπιθυμία",
+      "strong": "1939",
+      "brief": "desire, eagerness for, inordinate desire, lust",
+      "long": "desire, eagerness for, inordinate desire, lust."
+    },
+    {
+      "word": "τῆς",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "σαρκός",
+      "strong": "4561",
+      "brief": "flesh, body",
+      "long": "flesh, body, human nature, materiality; kindred."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐπιθυμία",
+      "strong": "1939",
+      "brief": "desire, eagerness for, inordinate desire, lust",
+      "long": "desire, eagerness for, inordinate desire, lust."
+    },
+    {
+      "word": "τῶν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ὀφθαλμῶν",
+      "strong": "3788",
+      "brief": "the eye",
+      "long": "the eye; fig: the mind's eye."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀλαζονία",
+      "strong": "212",
+      "brief": "boasting, show, arrogant display",
+      "long": "boasting, show, arrogant display, ostentation; plur: occasions of ostentation."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "βίου",
+      "strong": "979",
+      "brief": "life, manner of life, livelihood",
+      "long": "(a) life, (b) manner of life; livelihood."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἐκ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "πατρός",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ἀλλά",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "ἐκ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμου",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "17": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "κόσμος",
+      "strong": "2889",
+      "brief": "the world, universe",
+      "long": "the world, universe; worldly affairs; the inhabitants of the world; adornment."
+    },
+    {
+      "word": "παράγεται",
+      "strong": "3855",
+      "brief": "I pass by, depart, pass away",
+      "long": "I pass by, depart, pass away."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐπιθυμία",
+      "strong": "1939",
+      "brief": "desire, eagerness for, inordinate desire, lust",
+      "long": "desire, eagerness for, inordinate desire, lust."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "δέ",
+      "strong": "1161",
+      "brief": "but, on the other hand, and",
+      "long": "a weak adversative particle, generally placed second in its clause; but, on the other hand, and."
+    },
+    {
+      "word": "ποιῶν",
+      "strong": "4160",
+      "brief": "I do, make",
+      "long": "(a) I make, manufacture, construct, (b) I do, act, cause."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "θέλημα",
+      "strong": "2307",
+      "brief": "will, wish, desire",
+      "long": "an act of will, will; plur: wishes, desires."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Θεοῦ",
+      "strong": "2316",
+      "brief": "God, a god",
+      "long": "(a) God, (b) a god, generally."
+    },
+    {
+      "word": "μένει",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "εἰς",
+      "strong": "1519",
+      "brief": "into, in, among, till, for",
+      "long": "into, in, unto, to, upon, towards, for, among."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "αἰῶνα",
+      "strong": "165",
+      "brief": "an age, a cycle of time",
+      "long": "an age, a cycle (of time), especially of the present age as contrasted with the future age, and of one of a series of ages stretching to infinity."
+    }
+  ],
+  "18": [
+    {
+      "word": "Παιδία",
+      "strong": "3813",
+      "brief": "a little child, an infant",
+      "long": "a little child, an infant, little one."
+    },
+    {
+      "word": "ἐσχάτη",
+      "strong": "2078",
+      "brief": "last, at the last, finally",
+      "long": "last, at the last, finally, till the end."
+    },
+    {
+      "word": "ὥρα",
+      "strong": "5610",
+      "brief": "an hour, season",
+      "long": "(a) a definite space of time, a season, (b) an hour, (c) the particular time for anything."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "καθώς",
+      "strong": "2531",
+      "brief": "just as, as",
+      "long": "according to the manner in which, in the degree that, just as, as."
+    },
+    {
+      "word": "ἠκούσατε",
+      "strong": "191",
+      "brief": "I hear, listen",
+      "long": "I hear, listen, comprehend by hearing; pass: is heard, reported."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἀντίχριστος",
+      "strong": "500",
+      "brief": "antichrist",
+      "long": "antichrist, either one who puts himself in the place of, or the enemy (opponent) of the Messiah."
+    },
+    {
+      "word": "ἔρχεται",
+      "strong": "2064",
+      "brief": "I come, go",
+      "long": "I come, go."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "νῦν",
+      "strong": "3568",
+      "brief": "now, already, at present",
+      "long": "adv. (a) of time: just now, even now; just at hand, immediately, (b) of logical connection: now then, (c) in commands and appeals: at this instant."
+    },
+    {
+      "word": "ἀντίχριστοι",
+      "strong": "500",
+      "brief": "antichrist",
+      "long": "antichrist, either one who puts himself in the place of, or the enemy (opponent) of the Messiah."
+    },
+    {
+      "word": "πολλοί",
+      "strong": "4183",
+      "brief": "much, many, often",
+      "long": "much, many; often."
+    },
+    {
+      "word": "γεγόνασιν",
+      "strong": "1096",
+      "brief": "I come into being, am born",
+      "long": "I come into being, am born, become, come about, happen."
+    },
+    {
+      "word": "ὅθεν",
+      "strong": "3606",
+      "brief": "whence, wherefore",
+      "long": "(a) whence, from which place, (b) wherefore."
+    },
+    {
+      "word": "γινώσκομεν",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "ἐσχάτη",
+      "strong": "2078",
+      "brief": "last, at the last, finally",
+      "long": "last, at the last, finally, till the end."
+    },
+    {
+      "word": "ὥρα",
+      "strong": "5610",
+      "brief": "an hour, season",
+      "long": "(a) a definite space of time, a season, (b) an hour, (c) the particular time for anything."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "19": [
+    {
+      "word": "ἐξ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    {
+      "word": "ἐξῆλθαν",
+      "strong": "1831",
+      "brief": "I go out, come out",
+      "long": "I go out, come out."
+    },
+    {
+      "word": "ἀλλ’",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἦσαν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἐξ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    { "word": "εἰ", "strong": "1487", "brief": "if", "long": "if." },
+    { "word": "γάρ", "strong": "1063", "brief": "for", "long": "for." },
+    {
+      "word": "ἐξ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    {
+      "word": "ἦσαν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "μεμενήκεισαν",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ἄν",
+      "strong": "302",
+      "brief": "an untranslatable word that makes a statement contingent",
+      "long": "an untranslatable word (under the circumstances, in that case, anyhow), the general effect of which is to make a statement contingent, which would otherwise be definite: it is thus regularly used with the subjunctive mood."
+    },
+    {
+      "word": "μεθ’",
+      "strong": "3326",
+      "brief": "with, after",
+      "long": "(a) gen: with, in company with, (b) acc: (1) behind, beyond, after, of place, (2) after, of time, with nouns, neut. of adjectives."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    {
+      "word": "ἀλλ’",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "ἵνα",
+      "strong": "2443",
+      "brief": "in order that, so that",
+      "long": "in order that, so that."
+    },
+    {
+      "word": "φανερωθῶσιν",
+      "strong": "5319",
+      "brief": "I make clear, visible, or manifest",
+      "long": "I make clear (visible, manifest), make known."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "εἰσίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "πάντες",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "ἐξ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "ἡμῶν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    }
+  ],
+  "20": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "ὑμεῖς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "χρῖσμα",
+      "strong": "5545",
+      "brief": "an anointing",
+      "long": "an anointing."
+    },
+    {
+      "word": "ἔχετε",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "ἀπό",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "τοῦ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Ἁγίου",
+      "strong": "40",
+      "brief": "set apart, holy, sacred",
+      "long": "set apart by (or for) God, holy, sacred."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "οἴδατε",
+      "strong": "1492",
+      "brief": "I know, remember",
+      "long": "I know, remember, appreciate."
+    },
+    {
+      "word": "πάντες",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    }
+  ],
+  "21": [
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔγραψα",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "οἴδατε",
+      "strong": "1492",
+      "brief": "I know, remember",
+      "long": "I know, remember, appreciate."
+    },
+    {
+      "word": "τήν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀλήθειαν",
+      "strong": "225",
+      "brief": "truth",
+      "long": "truth, but not merely truth as spoken; truth of idea, reality, sincerity, truth in the moral sphere, divine truth revealed to man, straightforwardness."
+    },
+    {
+      "word": "ἀλλ’",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "οἴδατε",
+      "strong": "1492",
+      "brief": "I know, remember",
+      "long": "I know, remember, appreciate."
+    },
+    {
+      "word": "αὐτήν",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "πᾶν",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "ψεῦδος",
+      "strong": "5579",
+      "brief": "a lie",
+      "long": "a lie, falsehood, untruth; false religion."
+    },
+    {
+      "word": "ἐκ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "τῆς",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀληθείας",
+      "strong": "225",
+      "brief": "truth",
+      "long": "truth, but not merely truth as spoken; truth of idea, reality, sincerity, truth in the moral sphere, divine truth revealed to man, straightforwardness."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    }
+  ],
+  "22": [
+    {
+      "word": "Τίς",
+      "strong": "5101",
+      "brief": "who, which, what",
+      "long": "who, which, what, why."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ψεύστης",
+      "strong": "5583",
+      "brief": "a liar, deceiver",
+      "long": "a liar, deceiver."
+    },
+    { "word": "εἰ", "strong": "1487", "brief": "if", "long": "if." },
+    {
+      "word": "μή",
+      "strong": "3361",
+      "brief": "not, lest",
+      "long": "not, lest."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀρνούμενος",
+      "strong": "720",
+      "brief": "I deny, repudiate",
+      "long": "(a) I deny (a statement), (b) I repudiate (a person, or belief)."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "Ἰησοῦς",
+      "strong": "2424",
+      "brief": "Jesus",
+      "long": "Jesus; the Greek form of Joshua; Jesus, son of Eliezer; Jesus, surnamed Justus."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Χριστός",
+      "strong": "5547",
+      "brief": "anointed, the Messiah, the Christ",
+      "long": "anointed; the Messiah, the Christ."
+    },
+    {
+      "word": "οὗτος",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀντίχριστος",
+      "strong": "500",
+      "brief": "antichrist",
+      "long": "antichrist, either one who puts himself in the place of, or the enemy (opponent) of the Messiah."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀρνούμενος",
+      "strong": "720",
+      "brief": "I deny, repudiate",
+      "long": "(a) I deny (a statement), (b) I repudiate (a person, or belief)."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατέρα",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Υἱόν",
+      "strong": "5207",
+      "brief": "a son, descendent",
+      "long": "a son, descendent."
+    }
+  ],
+  "23": [
+    {
+      "word": "πᾶς",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἀρνούμενος",
+      "strong": "720",
+      "brief": "I deny, repudiate",
+      "long": "(a) I deny (a statement), (b) I repudiate (a person, or belief)."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Υἱόν",
+      "strong": "5207",
+      "brief": "a son, descendent",
+      "long": "a son, descendent."
+    },
+    {
+      "word": "οὐδέ",
+      "strong": "3761",
+      "brief": "neither, nor, not even",
+      "long": "neither, nor, not even, and not."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατέρα",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ἔχει",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ὁμολογῶν",
+      "strong": "3670",
+      "brief": "I confess, profess, acknowledge, praise",
+      "long": "(a) I promise, agree, (b) I confess, (c) I publicly declare, (d) a Hebraism, I praise, celebrate."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Υἱόν",
+      "strong": "5207",
+      "brief": "a son, descendent",
+      "long": "a son, descendent."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "τόν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατέρα",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "ἔχει",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    }
+  ],
+  "24": [
+    { "word": "ὑμεῖς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ὅ",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "ἠκούσατε",
+      "strong": "191",
+      "brief": "I hear, listen",
+      "long": "I hear, listen, comprehend by hearing; pass: is heard, reported."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "ἀρχῆς",
+      "strong": "746",
+      "brief": "ruler, beginning",
+      "long": "(a) rule (kingly or magisterial), (b) plur: in a quasi-personal sense, almost: rulers, magistrates, (c) beginning."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "μενέτω",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "μείνῃ",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ὅ",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "ἀρχῆς",
+      "strong": "746",
+      "brief": "ruler, beginning",
+      "long": "(a) rule (kingly or magisterial), (b) plur: in a quasi-personal sense, almost: rulers, magistrates, (c) beginning."
+    },
+    {
+      "word": "ἠκούσατε",
+      "strong": "191",
+      "brief": "I hear, listen",
+      "long": "I hear, listen, comprehend by hearing; pass: is heard, reported."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "ὑμεῖς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Υἱῷ",
+      "strong": "5207",
+      "brief": "a son, descendent",
+      "long": "a son, descendent."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῷ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "Πατρί",
+      "strong": "3962",
+      "brief": "father, Father, ancestor",
+      "long": "father, (Heavenly) Father, ancestor, elder, senior."
+    },
+    {
+      "word": "μενεῖτε",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    }
+  ],
+  "25": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "αὕτη",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "ἐστίν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ἡ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ἐπαγγελία",
+      "strong": "1860",
+      "brief": "a promise",
+      "long": "a promise."
+    },
+    {
+      "word": "ἥν",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "αὐτός",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἐπηγγείλατο",
+      "strong": "1861",
+      "brief": "I promise, profess",
+      "long": "I promise, profess."
+    },
+    {
+      "word": "ἡμῖν",
+      "strong": "1473",
+      "brief": "I",
+      "long": "I, the first-person pronoun."
+    },
+    {
+      "word": "τήν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ζωήν",
+      "strong": "2222",
+      "brief": "life",
+      "long": "life, both of physical (present) and of spiritual (particularly future) existence."
+    },
+    {
+      "word": "τήν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "αἰώνιον",
+      "strong": "166",
+      "brief": "eternal, unending",
+      "long": "age-long, and therefore: practically eternal, unending; partaking of the character of that which lasts for an age, as contrasted with that which is brief and fleeting."
+    }
+  ],
+  "26": [
+    {
+      "word": "Ταῦτα",
+      "strong": "3778",
+      "brief": "this, he, she, it",
+      "long": "this; he, she, it."
+    },
+    {
+      "word": "ἔγραψα",
+      "strong": "1125",
+      "brief": "I write",
+      "long": "I write; pass: it is written, it stands written (in the scriptures)."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "περί",
+      "strong": "4012",
+      "brief": "about, concerning, around",
+      "long": "(a) gen: about, concerning, (b) acc: around."
+    },
+    {
+      "word": "τῶν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "πλανώντων",
+      "strong": "4105",
+      "brief": "I lead astray, deceive",
+      "long": "I lead astray, deceive, cause to wander."
+    },
+    { "word": "ὑμᾶς", "strong": "4771", "brief": "you", "long": "you." }
+  ],
+  "27": [
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "ὑμεῖς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "χρῖσμα",
+      "strong": "5545",
+      "brief": "an anointing",
+      "long": "an anointing."
+    },
+    {
+      "word": "ὅ",
+      "strong": "3739",
+      "brief": "who, which, what, that",
+      "long": "who, which, what, that."
+    },
+    {
+      "word": "ἐλάβετε",
+      "strong": "2983",
+      "brief": "I receive, take",
+      "long": "(a) I receive, get, (b) I take, lay hold of."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "μένει",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    { "word": "ὑμῖν", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "οὐ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "χρείαν",
+      "strong": "5532",
+      "brief": "need, necessity, business",
+      "long": "need, necessity, business."
+    },
+    {
+      "word": "ἔχετε",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "ἵνα",
+      "strong": "2443",
+      "brief": "in order that, so that",
+      "long": "in order that, so that."
+    },
+    {
+      "word": "τις",
+      "strong": "5100",
+      "brief": "any one, some one",
+      "long": "any one, some one, a certain one or thing."
+    },
+    {
+      "word": "διδάσκῃ",
+      "strong": "1321",
+      "brief": "I teach",
+      "long": "I teach, direct, admonish."
+    },
+    { "word": "ὑμᾶς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "ἀλλ’",
+      "strong": "235",
+      "brief": "but, except",
+      "long": "but, except, however."
+    },
+    {
+      "word": "ὡς",
+      "strong": "5613",
+      "brief": "as, like as, how, while, so that",
+      "long": "as, like as, about, as it were, according as, how, when, while, as soon as, so that."
+    },
+    {
+      "word": "τό",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "χρῖσμα",
+      "strong": "5545",
+      "brief": "an anointing",
+      "long": "an anointing."
+    },
+    {
+      "word": "διδάσκει",
+      "strong": "1321",
+      "brief": "I teach",
+      "long": "I teach, direct, admonish."
+    },
+    { "word": "ὑμᾶς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "περί",
+      "strong": "4012",
+      "brief": "about, concerning, around",
+      "long": "(a) gen: about, concerning, (b) acc: around."
+    },
+    {
+      "word": "πάντων",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "ἀληθές",
+      "strong": "227",
+      "brief": "unconcealed, true",
+      "long": "unconcealed, true, true in fact, worthy of credit, truthful."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    { "word": "οὐκ", "strong": "3756", "brief": "no, not", "long": "no, not." },
+    {
+      "word": "ἔστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "ψεῦδος",
+      "strong": "5579",
+      "brief": "a lie",
+      "long": "a lie, falsehood, untruth; false religion."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "καθώς",
+      "strong": "2531",
+      "brief": "just as, as",
+      "long": "according to the manner in which, in the degree that, just as, as."
+    },
+    {
+      "word": "ἐδίδαξεν",
+      "strong": "1321",
+      "brief": "I teach",
+      "long": "I teach, direct, admonish."
+    },
+    { "word": "ὑμᾶς", "strong": "4771", "brief": "you", "long": "you." },
+    {
+      "word": "μένετε",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    }
+  ],
+  "28": [
+    {
+      "word": "Καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "νῦν",
+      "strong": "3568",
+      "brief": "now, already, at present",
+      "long": "adv. (a) of time: just now, even now; just at hand, immediately, (b) of logical connection: now then, (c) in commands and appeals: at this instant."
+    },
+    {
+      "word": "τεκνία",
+      "strong": "5040",
+      "brief": "a little child",
+      "long": "a little child."
+    },
+    {
+      "word": "μένετε",
+      "strong": "3306",
+      "brief": "I remain, abide",
+      "long": "I remain, abide, stay, wait; with acc: I wait for, await."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "αὐτῷ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἵνα",
+      "strong": "2443",
+      "brief": "in order that, so that",
+      "long": "in order that, so that."
+    },
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "φανερωθῇ",
+      "strong": "5319",
+      "brief": "I make clear, visible, or manifest",
+      "long": "I make clear (visible, manifest), make known."
+    },
+    {
+      "word": "σχῶμεν",
+      "strong": "2192",
+      "brief": "I have, hold, possess",
+      "long": "I have, hold, possess."
+    },
+    {
+      "word": "παρρησίαν",
+      "strong": "3954",
+      "brief": "freedom, confidence",
+      "long": "freedom, openness, especially in speech; boldness, confidence."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "μή",
+      "strong": "3361",
+      "brief": "not, lest",
+      "long": "not, lest."
+    },
+    {
+      "word": "αἰσχυνθῶμεν",
+      "strong": "153",
+      "brief": "I am ashamed, am put to shame",
+      "long": "I am ashamed, am put to shame."
+    },
+    {
+      "word": "ἀπ’",
+      "strong": "575",
+      "brief": "from, away from",
+      "long": "from, away from."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "ἐν",
+      "strong": "1722",
+      "brief": "in, on, among",
+      "long": "in, on, among."
+    },
+    {
+      "word": "τῇ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "παρουσίᾳ",
+      "strong": "3952",
+      "brief": "presence, a coming, arrival, advent",
+      "long": "(a) presence, (b) a coming, an arrival, advent, especially of the second coming of Christ."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    }
+  ],
+  "29": [
+    { "word": "ἐάν", "strong": "1437", "brief": "if", "long": "if." },
+    {
+      "word": "εἰδῆτε",
+      "strong": "1492",
+      "brief": "I know, remember",
+      "long": "I know, remember, appreciate."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "δίκαιος",
+      "strong": "1342",
+      "brief": "just, righteous, impartial",
+      "long": "just; especially, just in the eyes of God; righteous; the elect (a Jewish idea)."
+    },
+    {
+      "word": "ἐστιν",
+      "strong": "1510",
+      "brief": "I am, exist",
+      "long": "I am, exist."
+    },
+    {
+      "word": "γινώσκετε",
+      "strong": "1097",
+      "brief": "I come to know, learn, realize",
+      "long": "I am taking in knowledge, come to know, learn; aor: I ascertained, realized."
+    },
+    {
+      "word": "ὅτι",
+      "strong": "3754",
+      "brief": "that, since, because",
+      "long": "that, since, because; may introduce direct discourse."
+    },
+    {
+      "word": "καί",
+      "strong": "2532",
+      "brief": "and, even, also, namely",
+      "long": "and, even, also, namely."
+    },
+    {
+      "word": "πᾶς",
+      "strong": "3956",
+      "brief": "all, the whole, every kind of",
+      "long": "all, the whole, every kind of."
+    },
+    {
+      "word": "ὁ",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "ποιῶν",
+      "strong": "4160",
+      "brief": "I do, make",
+      "long": "(a) I make, manufacture, construct, (b) I do, act, cause."
+    },
+    {
+      "word": "τήν",
+      "strong": "3588",
+      "brief": "the",
+      "long": "the, the definite article."
+    },
+    {
+      "word": "δικαιοσύνην",
+      "strong": "1343",
+      "brief": "justice, justness, righteousness",
+      "long": "(usually if not always in a Jewish atmosphere), justice, justness, righteousness, righteousness of which God is the source or author, but practically: a divine righteousness."
+    },
+    {
+      "word": "ἐξ",
+      "strong": "1537",
+      "brief": "from out, out from among, from",
+      "long": "from out, out from among, from, suggesting from the interior outwards."
+    },
+    {
+      "word": "αὐτοῦ",
+      "strong": "846",
+      "brief": "he, she, it, they, them, same",
+      "long": "he, she, it, they, them, same."
+    },
+    {
+      "word": "γεγέννηται",
+      "strong": "1080",
+      "brief": "I beget, bring forth, give birth to",
+      "long": "I beget (of the male), (of the female) I bring forth, give birth to."
+    }
+  ]
+}

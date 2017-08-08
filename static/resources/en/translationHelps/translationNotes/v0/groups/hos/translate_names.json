@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The events in this book happened during the time of these kings. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Uzziah ... Jotham ... Ahaz ... Hezekiah ... Jeroboam ... Joash",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of people. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gomer ... Diblaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"no mercy.\" The translator may choose to represent this meaning as the name. AT: \"No Mercy\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "hos", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lo Ruhamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"no mercy.\" The translator may choose to represent this meaning as the name. AT: \"No Mercy\" See how you translated this in [[:en:bible:notes:hos:01:06|1:6]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lo Ruhamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"not my people.\" The translator may choose to represent this meaning as the name. See how you translated this in [[:en:bible:notes:hos:01:08|1:9]]. AT: \"Not My People\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lo Ammi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a city on the border between the northern kingdom of Israel and the tribe of Benjamin in the southern kingdom. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Aven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a king who destroyed the city of Beth Arbel around 740 BC. His army murdered women and children in the attack. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shalman",
+      "occurrence": 1
+    }
+  }
+]

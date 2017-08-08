@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer is about to give some background information separate from the main story. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "This is why, even today",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is cultural information added by the Hebrew author. If it is not natural in your language to state this information here, it can be moved to the end of verse 11. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Formerly in Israel ... seer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These events took place before David married Abigail. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now David had also taken Ahinoam ... Saul had given Michal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer provides background information to prepare the reader for the events that follow. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 28, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Samuel ... with spirits",
+      "occurrence": 1
+    }
+  }
+]

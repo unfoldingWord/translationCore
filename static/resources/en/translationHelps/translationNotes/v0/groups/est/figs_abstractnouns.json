@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"petition\" can be expressed with the verb \"ask for\" or \"want\"? AT: \"What do you ask for?\" or \"What do you want?\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "What is your petition",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"request\" can be expressed with the verb \"ask for\" or \"want\"? AT: \"What do you ask for?\" or \"What do you want?\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "What is your request",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Splendor\" and \"riches\" are both abstract nouns. AT: \"Haman told them about how great his wealth was\" or \"Haman told them about the many great things he owned\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Haman recounted to them the splendor of his riches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"promotion\" can be expressed with the verb \"promote.\" It means that the king gave him more important work. AT: \"How the king had promoted him many times and honored him\" or \"how the king had honored him many times by giving him more important work\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "all the promotions by which the king honored him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"petition\" can be expressed with the verb \"ask for\" or \"want.\" AT: \"What do you ask for\" or \"What do you want\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "What is your petition",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"petition\" can be expressed with the verb \"ask for.\" AT: \"this is what I ask for\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "this is my petition",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"achievements\" can be expressed with the verb \"achieve\" or the phrase \"do great things. AT: \"All that he achieved because of his power and might\" or \"All the great things that he did because of his power and might\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "est", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "All the achievements of his power and might",
+      "occurrence": 1
+    }
+  }
+]

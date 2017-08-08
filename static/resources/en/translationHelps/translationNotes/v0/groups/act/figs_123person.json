@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God is speaking about himself in the third person. AT: \"may seek me, the Lord\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "may seek the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a formal introduction to the letter. The chief captain begins by referring to himself. You can translate it in the first person. The words \"am writing\" are understood. AT: \"I, Claudius Lysias, am writing to you, the most excellent Governor Felix. Greetings to you\" (See: [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Claudius Lysias to the most excellent Governor Felix, greetings",
+      "occurrence": 1
+    }
+  }
+]

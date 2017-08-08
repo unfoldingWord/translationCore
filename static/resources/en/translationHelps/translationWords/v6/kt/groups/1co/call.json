@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 5, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 8, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "call, calls, calling, called",
+      "occurrence": 1
+    }
+  }
+]

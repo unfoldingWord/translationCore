@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"fourth\" and \"eleventh\" are the ordinal forms of \"four\" and \"eleven.\" You may need to make explicit the event from which the writer counts the years. AT: \"the fourth year after Solomon became king ... the eleventh year after Solomon became king\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 6, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourth year ... the eleventh year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"eighth\" is the ordinal form of \"8.\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 66 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "eighth day",
+      "occurrence": 1
+    }
+  }
+]

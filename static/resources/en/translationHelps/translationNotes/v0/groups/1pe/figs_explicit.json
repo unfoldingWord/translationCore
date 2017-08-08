@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the day when God will judge all people. You can translate this using a verbal phrase. AT: \"when he comes to judge everyone\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "on the day of his coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Baptism is the means by which God saves people. AT: \"the baptism by which God saves you now\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the baptism that saves you now",
+      "occurrence": 1
+    }
+  }
+]

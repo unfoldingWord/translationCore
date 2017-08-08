@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this parable Jotham describes the trees doing things that humans do. (See: [[:en:ta:vol1:translate:figs_parables]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "The trees once went out to anoint a king over them. For they said to the olive tree, 'Reign over us.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this parable, Jotham describes the trees as doing things that humans do. (See: [[:en:ta:vol1:translate:figs_parables]] and [[:en:ta:vol2:translate:figs_personification|Personification]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "the olive tree said to them ... fig tree said to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this parable, Jotham describes the trees and the vine as doing things that humans do. (See: [[:en:ta:vol1:translate:figs_parables]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "The trees said to the vine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this parable, Jotham describes the thornbush and the trees as doing things that humans do. (See: [[:en:ta:vol1:translate:figs_parables]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "The thornbush said to the trees",
+      "occurrence": 1
+    }
+  }
+]

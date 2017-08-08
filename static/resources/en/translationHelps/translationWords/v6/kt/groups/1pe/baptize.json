@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "baptize",
+      "quote": "baptize, baptized, baptism",
+      "occurrence": 1
+    }
+  }
+]

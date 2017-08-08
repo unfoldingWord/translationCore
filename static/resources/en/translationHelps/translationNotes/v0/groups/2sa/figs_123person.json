@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David refers to himself as \"your servant.\" This can be stated in first person. AT: \"my family\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant's family",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David refers to himself as \"your servant.\" It can be stated in first person. AT: \"to me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is refers to himself as \"your servant.\" AT: \"to me that you will build me a house\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to your servant that you will build him a house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David refers to himself as \"your servant.\" AT: \"my house\" or \"my family\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ziba refers to himself as \"your servant\" and refers to David as \"my master.\" AT: \"I, your servant will do all that you, my king, command me to do\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your servant will do all that my master the king commands his servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Hushai is referring to Absalom in the third person to take emphasize off of him and place it on Yahweh and the people who chose him. This can be written in second person. AT: \"you are the one whom ... you are the man ... with you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the one whom ... that is the man ... with him",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases express the same idea that God has allowed the Chaldeans to treat the Israelites as if they were creatures with very little value, and not like people should be treated. (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_parallelism]])\n \n \n",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like fish in the sea ... like creeping things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The power and quickness of the Chaldeans as they attacked the people of Israel is compared to the coming of a sudden storm. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "they came like a storm",
+      "occurrence": 1
+    }
+  }
+]

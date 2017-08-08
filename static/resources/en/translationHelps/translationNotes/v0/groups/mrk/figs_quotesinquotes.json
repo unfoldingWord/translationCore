@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In these verses, Jesus is quoting what God said in the book of Genesis. AT: \"That explains why God said, \"A man ... let no man tear apart.\"\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "For this reason a man ... let no man tear apart",
+      "occurrence": 1
+    }
+  }
+]

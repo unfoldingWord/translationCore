@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to Isaiah and all righteous people who are speaking to Yahweh. (See: [[:en:ta:vol2:translate:figs_exclusive]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we wait",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to Isaiah and includes all the righteous people. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "for us",
+      "occurrence": 1
+    }
+  }
+]

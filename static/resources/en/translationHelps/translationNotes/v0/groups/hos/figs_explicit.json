@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When people sinned, they would offer sacrifices so God would forgive them. The priests were allowed to eat these sacrifices. The priests eating these sacrifices for sin is spoken of as if they would actually feed on the people's sins. (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "They feed on the sin of my people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob wanted to take his brother's place as the firstborn, so he tried to keep his brother from being born first. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "In the womb Jacob grasped his brother by the heel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Part of idol worship was kissing idol figures that were images of calves. (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "hos", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "These men who sacrifice kiss calves",
+      "occurrence": 1
+    }
+  }
+]

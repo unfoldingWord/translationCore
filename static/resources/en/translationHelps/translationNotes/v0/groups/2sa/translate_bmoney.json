@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1,000 silver shekels.\" This can be stated in modern units. AT: \"1,000 silver coins\" or \"11 kilograms of silver\" (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a thousand silver shekels",
+      "occurrence": 1
+    }
+  }
+]

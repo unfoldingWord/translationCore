@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation that expresses God's desire. AT: \"I want so much to honor you ... nation\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How I want to honor you ... nation",
+      "occurrence": 1
+    }
+  }
+]

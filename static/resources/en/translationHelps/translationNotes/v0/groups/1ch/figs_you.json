@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These pronouns are plural in 22:18-19. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 22, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your ... you",
+      "occurrence": 1
+    }
+  }
+]

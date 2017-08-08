@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the second month of the Hebrew calendar. The second day is near the middle of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the second day of the second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the Festival of Shelters which is on the fifteenth day of the seventh month of the Hebrew calendar. This is near the beginning of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "2ch", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "at the feast, which was in the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The twenty-third day is near the middle of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 7, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the twenty-third day of the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. It is during the last part of March and the first part April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The first day marks the day when Yahweh brought the people out of Egypt. This is near the middle of March on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 29, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is near the beginning of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 29, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "sixteenth day of the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the second month of the Hebrew calendar. It is during the last part of April and the first part of May on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 30, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the second month of the Hebrew calendar. It is during the last part of April and the first part of May on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is near the beginning of May on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n \n \n",
+      "reference": { "bookId": "2ch", "chapter": 30, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the fourteenth day of the second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the third month of the Hebrew calendar. It is at the end of the harvest season and the beginning of the dry season. It is during the last part of May and the first part of June on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 31, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "third month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The fourteenth day is near the beginning of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 35, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the fourteenth day of the first month",
+      "occurrence": 1
+    }
+  }
+]

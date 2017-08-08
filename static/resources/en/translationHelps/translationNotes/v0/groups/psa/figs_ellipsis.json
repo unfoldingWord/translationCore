@@ -1,0 +1,182 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that \"many\" refers to people. AT: \"many people talking about me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the whispering of many",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"save\" is implied. AT: \"save my life from the lions\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "my life from the lions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the good news that God rescues his people. AT: \"good news that because you are righteous, you rescue your people\" ([[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "good news of your righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may supply a verb for this phrase. AT: \"and the light of your face obtained the land for their possession\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and the light of your face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb may be supplied from the previous phrase. AT: \"and the places where they live will continue to all generations\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and the places where they live, to all generations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied word \"quiet\" can be added to the translation. AT: \"and quiet the commotion\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and the commotion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied words can be added to the translation. AT: \"or turned his covenant faithfulness away from me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 66, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "or his covenant faithfulness from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The omitted information may be stated clearly. AT: \"and as I declare your power to everyone who is to come\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "your power to everyone who is to come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with the understood information. AT: \"I would rather be in your courts for one day than to be somewhere else for a thousand days\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 84, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "For one day in your courts is better than a thousand elsewhere",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"the king\" are understood. AT: \"you have refused and rejected the king\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 89, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "you have refused and rejected",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he will judge the nations with fairness\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 98, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the nations with fairness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The object may be supplied from the previous phrase. AT: \"it is pleasant to sing praises\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 147, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "it is pleasant",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases have the same meaning and are repeated to emphasize how God's reign is forever. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "dan", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "His kingdom is ... generation to generation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases are parallel and they mean the same thing. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "made me afraid ... troubled me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases describe how Daniel was feeling. The second one gives more information about the first one, explaining about his grieved spirit. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "my spirit was grieved inside of me ... the visions I saw in my mind troubled me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases express one idea in two different ways for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "We have sinned and have done what is wrong",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses mean basically the same thing and are used together to emphasize how bad sin is. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "still we sinned; we have done wicked things",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words have no meaning. Copy these words into your language, and make sure that the beginning of the words, that is the letters \"Sh\" and \"S\" are translated differently. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Shibboleth ... Sibboleth",
+      "occurrence": 1
+    }
+  }
+]

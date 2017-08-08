@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. This direct quotation can be stated as an indirect quotation. AT: \"So now I tell you that I will not ... trap for you.'\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "So now I say, 'I will not ... trap for you.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. A direct quotation can be stated as an indirect quotation. AT: \"Please ask the leaders of Shechem if they would rather have all seventy sons of Jerub Baal rule over them, or if they would rather have just one of his sons rule over them.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "Please say this, so that all the leaders in Shechem may hear, 'Which is better for you: to have all seventy sons of Jerub Baal rule over you, or that just one rule over you?'",
+      "occurrence": 1
+    }
+  }
+]

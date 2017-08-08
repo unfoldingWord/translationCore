@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were signs of mourning. (See: [[:en:ta:vol2:translate:translate_symaction]])\n \n\n",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "threw dust into the air and upon his own head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he has shook his fist against God.\" This is a sign of aggression. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "he has reached out with his hand against God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Clapping the hands is a way of mocking someone. Here it represents the wind making loud noises. AT: \"It makes loud noises like someone clapping his hands to mock him\" (See: [[:en:ta:vol2:translate:translate_symaction]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "job", "chapter": 27, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "It claps its hands at him in mockery",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a sign of respect. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The princes used to refrain from talking when I came",
+      "occurrence": 1
+    }
+  }
+]

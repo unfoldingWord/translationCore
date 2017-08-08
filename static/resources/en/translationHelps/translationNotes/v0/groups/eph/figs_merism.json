@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are that 1) Paul is using these words as a merism for \"all sorts of songs to praise God\" or 2) Paul is listing specific forms of music. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "psalms and hymns and spiritual songs",
+      "occurrence": 1
+    }
+  }
+]

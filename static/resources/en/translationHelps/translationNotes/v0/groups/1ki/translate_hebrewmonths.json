@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ziv\" is the name of the second month of the Hebrew calendar. It is during the last part of April and the first part of May on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the month of Ziv, which is the second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ziv\" is the name of the second month of the Hebrew calendar. It is during the last part of April and the first part of May on Western calendars. Translate as in [[:en:bible:notes:1ki:06:01|6:1]]. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 6, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the month of Ziv",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ethanim\" is the seventh month of the Hebrew calendar. It is during the last part of September and the first part of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the month of Ethanim, which is the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the eighth month of the Hebrew calendar. The fifteenth day is near the beginning of November on Western calendars. AT: \"on the fifteenth day of the eighth month\" (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the eighth month, on the fifteenth day of the month",
+      "occurrence": 1
+    }
+  }
+]

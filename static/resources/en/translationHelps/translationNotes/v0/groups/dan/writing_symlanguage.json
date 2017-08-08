@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In the king's dream the statue's head represents the king. AT: \"The golden head symbolizes you\" or \"The golden head is a symbol of you and your power\" (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n \n\n",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "You are the statue's head of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was not an actual leopard, but a symbolic animal that was similar to a leopard. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "another animal, one that looked like a leopard",
+      "occurrence": 1
+    }
+  }
+]

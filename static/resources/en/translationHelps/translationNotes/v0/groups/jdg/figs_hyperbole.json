@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible interpretations: 1) Samson is so thirsty he could literally die. AT: \"But now I will die of thirst and my body will fall\" 2) Samson exaggerates how thirsty he is by asking if he will die of thirst. AT: \"But now will you allow me to become so weak from my thirst that I fall\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "But now will I die of thirst and fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author used a hyperbole, an exaggeration, to emphasize how miserable Sampson felt. AT: \"that he was completely miserable\" or \"that he was very unhappy\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "that he wished he would die",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"everything\" refers to everything about the source of his strength. This can be stated clearly. AT: \"told her the source of his strength\" or \"told her the truth\" (UDB) (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "told her everything",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men use a hyperbole, an exaggeration, to emphasize that it is a very desirable place to live. AT: \"where we will have everything there that we need\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])   \n  ",
+      "reference": { "bookId": "jdg", "chapter": 18, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "that does not lack anything in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Israelites are exaggerating. They had already given wives to four hundred of the Benjamites, so the tribe would not be completely destroyed. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "There must be an inheritance ... is not destroyed from Israel",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" in these verses is plural and refers to the taskmasters and foremen. (See: [[:en:ta:vol1:translate:figs_you]])\n",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you must no longer give",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Each occurrence of the word \"you\" in this verse is plural and refers to Moses and the rest of the Israelites. (See: [[:en:ta:vol1:translate:figs_you]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "he will let you go from here",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The pronoun \"you\" refers to the Israelites. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "provide for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" here refers to the Israelites. Yahweh is telling Moses what to tell the Israelites. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You have seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to Moses and the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must make it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I will meet with you at the ark.\" In 25:22 the word \"you\" is singular and refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 25, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "It is at the ark that I will meet with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking to Moses, so the word \"you\" is singular. Yahweh probably expected Moses to tell someone else to do the actual work, but Moses would be the one responsible for seeing that the work was done correctly. \"Tell a craftsman to make\" (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking to Moses, so the word \"you\" is singular. Yahweh probably expected Moses to tell someone else to do the actual work, but Moses would be the one responsible for seeing that the work was done correctly. \"Tell a craftsman to make.\" See how you translated this in [[:en:bible:notes:exo:26:01|26:1]]. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"yourself\" refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 28, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Call to yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the people. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Moses and the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "where I will meet with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"you\" refers to just Moses or 2) \"you\" refers to Moses and the leaders of Israel in future generations when they take a census. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "When you take",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Moses and the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must also make",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must anoint",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You will crush it.\" Here \"you\" refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You will grind it",
+      "occurrence": 1
+    }
+  }
+]

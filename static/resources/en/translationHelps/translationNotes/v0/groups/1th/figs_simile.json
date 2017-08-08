@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as a mother gently comforts her children, so Paul, Silvanus, and Timothy spoke gently to the Thessalonian believers. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as a mother comforting her own children",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as one does not know which night a thief may come, we do not know when the day of the Lord will come. AT: \"unexpectedly\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like a thief in the night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as a pregnant woman's birth pains come suddenly and do not stop until the birth is complete, the destruction will come, and people will not escape. (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like birth pains in a pregnant woman",
+      "occurrence": 1
+    }
+  }
+]

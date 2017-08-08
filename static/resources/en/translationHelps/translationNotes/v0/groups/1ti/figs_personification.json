@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"their sins go before those people into judgment.\" Paul speaks of sins as if they were moving. Possible meanings are 1) Their sins are so obvious that everyone will know they are guilty even before anyone testifies against them or 2) Their sins are evident, and God judges them now. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "they go before them into judgment",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"There is a river whose streams make the city of God happy.\" The imagery of a running river symbolizes peace and prosperity for the city of God. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 46, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "There is a river, the streams of which make the city of God happy",
+      "occurrence": 1
+    }
+  }
+]

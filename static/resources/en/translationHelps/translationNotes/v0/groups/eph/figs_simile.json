@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is telling believers who have not grown spiritually that they are like a child who has had very little experience in life. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "be like children",
+      "occurrence": 1
+    }
+  }
+]

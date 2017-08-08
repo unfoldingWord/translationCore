@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The stone is referred to as if it is a person who can see. AT: \"The great stone ... is still there, and people remember what happened on it\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The great stone ... remains a witness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Samuel speaks of Saul's hand as if it were a person trying to find things. AT: \"do whatever you think is right to do\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "do whatever your hand finds to do",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel speaks as if the Spirit of Yahweh were a person running up to Saul and taking complete control of him. Translate this as you did in [[:en:bible:notes:1sa:10:05|10:6]]. AT: \"the Spirit of Yahweh took complete control of him\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the Spirit of God rushed upon him",
+      "occurrence": 1
+    }
+  }
+]

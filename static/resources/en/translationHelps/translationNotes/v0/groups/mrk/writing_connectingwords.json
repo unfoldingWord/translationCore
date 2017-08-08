@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"So I tell you\" (UDB) (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Therefore I say to you",
+      "occurrence": 1
+    }
+  }
+]

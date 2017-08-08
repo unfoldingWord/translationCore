@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" means fellow Christians, including both men and women. AT: \"brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" means fellow Christians, including both men and women. AT: \"brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" means fellow Christians, including both men and women. AT: \"brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" means fellow Christians, including both men and women. AT: \"brothers and sisters\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

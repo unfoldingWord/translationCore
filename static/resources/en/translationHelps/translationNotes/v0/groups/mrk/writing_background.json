@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the author tells background information about the disciples forgetting to bring bread. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This parenthetical sentence tells background information about Peter, James, and John. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For he did not know what to say, for they were terrified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline as the author shifts to telling background information about Pilate's tradition of releasing a prisoner at feasts and about Barabbas. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about why Jesus was handed over to Pilate. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For he knew that it was because of envy ... Jesus over to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about who the passerby is. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "a man named Simon of Cyrene the father of Alexander and Rufus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"When Jesus was in Galilee these women followed him ... with him to Jerusalem.\" This is background information about the women who watched the crucifixion from a distance. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "When he was in Galilee they followed him ... with him to Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about Joseph. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "He was a respected member of the council ... for the kingdom of God",
+      "occurrence": 1
+    }
+  }
+]

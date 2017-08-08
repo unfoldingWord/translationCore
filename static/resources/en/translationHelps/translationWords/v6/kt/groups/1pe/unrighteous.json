@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "unrighteous",
+      "quote": "unrighteous, unrighteousness",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In these verse, the writer is speaking to the nation as if it were a person. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Woe to you, land ... blessed are you, land",
+      "occurrence": 1
+    }
+  }
+]

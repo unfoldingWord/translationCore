@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"You can see flowers\" or \"People can see flowers.\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The flowers have appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"that have bases of pure gold as their foundation.\" His feet are valuable and precious like bases of pure gold that support the pillars of marble. (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "set on bases of pure gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The beautiful flowers make the pile of wheat seem even more beautiful. AT: \"that has lilies all around it.\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "encircled with lilies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"people would completely despise him\" or \"people would harshly ridicule him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the offer would utterly be despised",
+      "occurrence": 1
+    }
+  }
+]

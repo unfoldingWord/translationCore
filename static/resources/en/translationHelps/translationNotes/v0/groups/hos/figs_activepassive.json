@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"are dying\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "are being taken away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"My people are perishing because you, the priests, have not properly taught them about me so that they will obey me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "My people are being destroyed because of the lack of knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"but the result will be that I will destroy the people\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "but it was only so they might be cut off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The Assyrians will destroy Israel's high places, where the people acted very wickedly\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The high places of wickedness will be destroyed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"would attack\" are left out because they are understood. This can be stated in active form. AT: \"like a bear would attack an animal that takes her cubs\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as a bear that is robbed of her cubs",
+      "occurrence": 1
+    }
+  }
+]

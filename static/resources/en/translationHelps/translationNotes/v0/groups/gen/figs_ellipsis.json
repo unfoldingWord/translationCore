@@ -1,0 +1,257 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"to other people\" are understood. AT: \"you will be a blessing to other people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "you will be a blessing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that they would swept away with the people of the city. This can be stated in active form. AT: \"or else God will destroy you along with the people of the city\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "so you are not swept away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with the understood information. AT: \"I swear to be as faithful to you and your people as you have been to me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I swear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that the straw and feed are for the camels. You can make clear this understood information. AT: \"We have plenty of straw and feed for the camels\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "We have plenty of both straw and feed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be stated clearly. AT: \"But if you are not prepared to treat my master with family faithfulness and trustworthiness\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "But if not",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"animals\" or \"property\" is understood. AT: \"I have enough animals\" (UDB) or \"I have enough property\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I have enough",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"just as you did when\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "just as when",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"of grain\" are understood. AT: \"The thin heads of grain\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The thin heads",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that he sent servants. AT: \"He sent his servants to call\" or \"He sent his servants to summon\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "He sent and called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that Pharaoh sent servants. AT: \"Pharaoh sent his servants to get Joseph\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Pharaoh sent and called for",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"of grain\" are understood. AT: \"seven heads of grain\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "seven heads",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"of grain\" are understood. See how you translated this in [[:en:bible:notes:gen:41:07|41:7]]. AT: \"The thin heads of grain\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The thin heads",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brother\" is understood. AT: \"the youngest brother is with our father right now\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the youngest is this day with our father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Canaan\" is understood. This information can be made explicit. AT: \"The famine was severe in the land of Canaan\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The famine was severe in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brother\" is understood. AT: \"in the youngest brother's sack\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "in the sack's opening of the youngest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brother\" is understood. AT: \"the oldest brother ... the youngest brother\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the oldest ... the youngest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"I will curse\" are understood. AT: \"and I will curse their fury, for it was cruel\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and their fury, for it was cruel",
+      "occurrence": 1
+    }
+  }
+]

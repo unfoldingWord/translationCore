@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This stands in an exaggerated way for worshipers weeping while they pray to Yahweh for help. This statement is meant to signal disapproval of the worshipers' false worship of Yahweh. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "You cover the altar of Yahweh with tears",
+      "occurrence": 1
+    }
+  }
+]

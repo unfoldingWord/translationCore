@@ -1,0 +1,332 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"For 7 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "For seven days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He took 600 of his best chariots\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "He took six hundred chosen chariots",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"70\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seventy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"on day 6\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "on the sixth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"on day 6\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "on the sixth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"but on day seven\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "but the seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a numeral. AT: \"For 7 days after they are born\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "For seven days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"11 ... 30 ... 4\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "eleven ... thirty ... four",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"10 cubits ... 1.5 cubits\" (See: [[:en:ta:vol2:translate:translate_numbers]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "ten cubits ... one and a half cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3000 of the people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three thousand of the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"40 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"50 gold clasps\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifty gold clasps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"made 11\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "made eleven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"50 bronze clasps\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifty bronze clasps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"40 silver bases\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty silver bases",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"16 bases in all\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "sixteen bases in all",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 ... 20\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one hundred ... twenty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 ... 20 ... 50 ... 10\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one hundred ... twenty ... fifty ... ten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"50 ... 15 ... 3\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifty ... fifteen ... three",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"20 years old\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 sons\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve sons",
+      "occurrence": 1
+    }
+  }
+]

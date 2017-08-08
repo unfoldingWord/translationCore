@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 5, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "kiss",
+      "quote": "kiss",
+      "occurrence": 1
+    }
+  }
+]

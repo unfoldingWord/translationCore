@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The land is spoken of as if it were a person that could obey the Sabbath by resting. Just as the people had to rest every seventh day, people were to honor God by not farming the land every seventh year. AT: \"you must obey the Sabbath law by letting the land rest every seventh year for Yahweh\" or \"you must obey Yahweh's Sabbath by not farming the land every seventh year\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the land must be made to keep a Sabbath for Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people were supposed to obey the Sabbath law by not farming the land every seventh year. God speaks about this as if the land were a person that would obey the Sabbath law and rest. AT: \"Then the land will rest according to the Sabbath law\" or \"Then, as required by the Sabbath law, the land will not be farmed\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Then the land will enjoy its Sabbaths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks about the  the enemies' land as if it were a wild animal that would eat the Israelites. The word \"devour\" emphasizes that most of the Israelites will die there. AT: \"you will die in your enemies' land\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "your enemies' land will itself devour you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks about the land as if it were a person who is happy about resting, because no one will be planting seed or growing crops on it. This will allow the land to become more fertile. AT: \"so it will benefit from the Sabbaths\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "so it will be pleased with its Sabbaths",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"there were 1,000 vines.\" That is, when Isaiah wrote, there were vineyards, in some of which were 1,000 vines or more each. He says that these vineyards will become full of briers and thorns. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "there were a thousand vines ... briers and thorns",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"70 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seventy years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2,000 horses\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two thousand horses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"15 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifteen years",
+      "occurrence": 1
+    }
+  }
+]

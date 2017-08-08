@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. They will emphasize to Pharaoh what will happen if Pharaoh does this. AT: \"if you continue refusing to let them go\" (UDB) (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "if you refuse to let them go, if you still keep them back",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the month in which the events of this chapter take place will be the beginning of their calendar year. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "For you, this month will be the start of months, the first month of the year to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases share similar meanings. The second explains how the tablets were \"God's own work.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The tablets were God's own work, and the writing was God's own writing",
+      "occurrence": 1
+    }
+  }
+]

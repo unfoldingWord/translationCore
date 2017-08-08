@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 19, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "camel",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative is used for emphasis. It can be expressed in a positive way. AT: \"Always judge rightly\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Do not cause judgment to be false",
+      "occurrence": 1
+    }
+  }
+]

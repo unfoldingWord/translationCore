@@ -1,0 +1,1052 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to doing something yourself. AT: \"yourself\" or \"personally\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "with your own hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" implies \"shed blood\" and is associated with death. Here \"your head\" refers to the man and means that he is responsible. AT: \"You are responsible for your own death\" or \"You have caused your own death\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Your blood is on your head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the mighty\" refers to both Saul and Jonathan. This nominal adjective is plural, and can be stated as \"the mighty ones.\"  (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_nominaladj]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the mighty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"mighty\" here refers to Saul. The shield was defiled because it fell on the ground, and because the king's blood was shed on it. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the shield of the mighty was defiled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to the authority of David as king. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "throne of David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to David's power to defeat the Philistines. AT: \"I will empower my servant David and\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "By the hand of my servant David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to power over Israel. AT: \"the power of all of their enemies\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the hand of all their enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements refer to the descendants of Benjamin, who were one of the tribes of Israel. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the people of Benjamin ... the whole house of Benjamin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means \"all of the nation of Israel.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" is associated with the death of Asahel. AT: \"the death of Asahel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the blood of Asahel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" refers to the death of Abner. See how you translated a similar phrase in [[:en:bible:notes:2sa:03:27|3:27]]. AT: \"the death of Abner\" or \"the murder of Abner\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the blood of Abner",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" refers to descendants. AT: \"all the descendants of Joab's father\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all his father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative emphasizes that there will always be someone with the problems listed. AT: \"May there always be\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "May there never fail to be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this refers to people who are truly lame and blind or 2) this is a metonym that speaks about the Jebusites inside the city of Jerusalem as if they were all weak and handicapped. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "2sa", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The 'blind and the lame'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This metonym represents the army of the nation of Israel. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the chosen men of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This metonym represents the people of Israel. AT: \"all the other Israelites with him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the house of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" represents the people of Israel. AT: \"all the other Israelites with him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the house of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" represents thoughts or emotions. AT: \"she looked at him with disdain\" or \"she sneered at him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "she despised him in her heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To bless \"in the name of Yahweh of hosts\" means to bless with Yahweh's power and authority or as his representative. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he blessed the people in the name of Yahweh of hosts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" represents the mind. AT: \"do what you think you should\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "do what is in your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his kingdom\" represents his power to rule. AT: \"I will make him to be a very powerful king\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will establish his kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"throne\" represents the person's power to rule as king. AT: \"I will make his rule over Israel to last forever\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will establish the throne of his kingdom forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" represents what Yahweh said. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all these words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word\" represents what God promised to do. AT: \"Because of what you promised to do\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "For your word's sake",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" represents the people. AT: \"for your people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "for your land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"name\" represents Yahweh's reputation. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "May your name be forever great",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the metonym \"house\" refers to David's ancestors continuing on as the rulers of Israel. In [[:en:bible:notes:2sa:07:03|7:4]] Yahweh asked David if he would be the one to build a house for Yahweh. There \"house\" represented a temple. If your language has a word that can express both ideas, use it here and in 7:4. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that you will build him a house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" represents what Yahweh says. AT: \"I trust what you say\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "your words are trustworthy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"name\" refers to David's reputation. This can be stated in active form. AT: \"David was very famous\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "David's name was well known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"whose feet are damaged.\" The word \"feet\" here refers to the ability to walk. AT: \"who is unable to walk\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "who is lame in his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my table\" represents being together with David or in his presence. Eating with the king at his table was a great honor. AT: \"you will always eat with me\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "you will always eat at my table",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my table\" represents being together with David or in his presence. Eating with the king at his table was a great honor. AT: \"must always eat with me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "must always eat at my table",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"table\" represents being together with David or in his presence. Eating with the king at his table was a great honor. AT: \"he always ate with the king at his table\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he always ate at the king's table",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to a position of authority. AT: \"leading them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "at their head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David was trying to find out who the woman was. The word \"he\" refers to David, but is a metonym for the messenger that David sent. The messenger was to ask the people for information about her. AT: \"the messenger asked the people who knew her about who she was\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he asked people who would know about the woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and he took her.\" Here it says that David took the woman, but it was actually the messengers whom he sent that took her and brought her to him. AT: \"and they brought her to him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "and took her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David sent someone to bring the gift to Uriah. This can be stated clearly. AT: \"the king sent someone to take a gift to Uriah\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the king sent a gift for Uriah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"sent word\" means that he sent a messenger to give a report. AT: \"Joab sent a messenger to David to give a report\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joab sent word to David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the sword\" refers to a person who kills someone with sword. Also, killing someone with a sword is spoken of as if the sword were \"eating\" the people. AT: \"for one man can be killed by a sword the same as another man\" or \"for any man can die in battle\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "for the sword devours one as well as another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hand\" refers to control. AT: \"out of Saul's control\" or \"from Saul's control\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of the hand of Saul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David did not kill Uriah himself, rather he arranged for him to be killed in battle. The phrase \"with the sword\" represents how Uriah died in battle. AT: \"You have arranged for Uriah the Hittite to die in battle\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "You have killed Uriah the Hittite with the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David did not kill Uriah himself, rather he arranged for him to be killed in battle when Israel was fighting against Ammon. The phrase \"with the sword\" refers to how he died in battle. AT: \"You arranged for him to die in battle against the army of Ammon\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "You killed him with the sword of the army of Ammon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David's \"house\" refers to his family. AT: \"from among your own family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of your own house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase speaks of the people of Israel knowing about what has happened to his wives as if they all actually witnessed it happening. AT: \"before all the people of Israel\" or \"and all the people of Israel will know about it\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "before all Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David did not bring out the people himself; he commanded his soldiers to bring them out. AT: \"David commanded his soldiers to bring out the people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He brought out the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the people in the cities. AT: \"all the people of the cites of Ammon\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the cities of the people of Ammon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The food is not for his sickness, but rather it is for him, because he is sick. The phrase \"in front of me\" is a request for Tamar to prepare the food in his presence. AT: \"in front of me because I am sick\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "for my sickness in front of me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he sent a messenger to speak to Tamar. AT: \"David sent a messenger\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "David sent word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Joab sent someone with a message to Tekoa and had him bring back a woman to him. This can be written in active form. AT: \"sent someone with a message to Tokoa and had him bring a wise woman back\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "sent word to Tekoa and had a wise woman brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word\" is a metonym for \"a message.\" This means that he sent a messenger to Joab with a request. AT: \"Absalom sent a messenger to Joab asking him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Absalom sent word for Joab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Hearing\" a case mean to listen to it and to make a judgement decision over it. AT: \"to judge your case\" or \"to oversee your case\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to hear your case",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the places where the tribes of Israel lived are referred to as the tribes themselves. AT: \"throughout the land of the tribes of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "throughout all the tribes of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"eyes of Yahweh\" refer to Yahweh's thoughts and opinion. If you \"find favor\" with someone it means that they are pleased with you. AT: \"Yahweh is pleased with me\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I find favor in the eyes of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to him sending a messenger to the king. AT: \"until you send a messenger to me to inform me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "until word comes from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"their hand\" refers to the sons and means that they were to serve as messengers. AT: \"their sons to tell me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "by their hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" refers to all of men he was responsible for killing in battle. AT: \"murderer\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "man of blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" refer to people who were killed from Saul's family. The king was responsible for them dying. AT: \"for killing many of Saul's family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "for the blood you shed within the family of Saul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to being under the king's authority. AT: \"under your authority\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "under you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"message\" is spoken of as coming to them, when really it is the woman who came to then bringing the message. AT: \"When she brought them a message\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "When the message came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David did not count all of the people himself, rather other men counted them. AT: \"David commanded for the soldiers who were with him to be counted and he appointed\" or \"David arranged the soldiers who were with him and appointed\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "David counted the soldiers who were with him and appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Absalom uses the phrase \"my name\" to refer to himself and his family line. AT: \"to carry on my family name, by which people would remember me\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to carry along the memory of my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the mens' loyalty is referred to as their \"hearts.\" AT: \"he won the loyalty\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he won the hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"words\" refers to the speech of the men. AT: \"the men of Judah spoke even more harshly than the men of Israel did\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the words of the men of Judah were even more harsh than the words of the men of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"face\" is a metonym for Yahweh's presence. This means David prayed to Yahweh for an answer about the famine. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "sought the face of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the hands of the Gibeonites\" is a metonym for the Gibeonite people. AT: \"He gave them to the Gibeonites\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 21, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He handed them over into the hands of the Gibeonites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This metonym means \"out of the power of.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of the hand of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the metonym \"his ears\" refers to Yahweh and his hearing of David's call for help. AT: \"he heard my prayer for help\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my call for help went into his ears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" refer to power or control. AT: \"Let Yahweh and not people punish us\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Let us fall into Yahweh's hands rather than into the hand of man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metonym \"hand\" stands for the angel's power. AT: \"Do not harm them any longer\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Now draw back your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the metonym \"land\" stands for the people of Israel. AT: \"on behalf of the people of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "on behalf of the land",
+      "occurrence": 1
+    }
+  }
+]

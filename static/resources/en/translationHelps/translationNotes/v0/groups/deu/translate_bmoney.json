@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 shekels\" (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "one hundred shekels",
+      "occurrence": 1
+    }
+  }
+]

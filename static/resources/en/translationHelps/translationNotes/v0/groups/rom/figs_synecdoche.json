@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"lusts of their hearts\" is a synecdoche that represents the evil things they wanted to do. AT: \"the morally impure things they desired greatly\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the lusts of their hearts for uncleanness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a synecdoche for the whole body. AT: \"body\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"letter\" is a synecdoche that refers to written Scripture. AT: \"through the work of the Holy Spirit, not because you know the Scriptures\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in the Spirit, not in the letter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"feet\" is a synecdoche that represents the people themselves. The word \"blood\" is a metaphor that refers to killing people. AT: \"They are in a hurry to harm and murder people\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Their feet are swift to pour out blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fear\" is a metonym that represents respect for God and willingness to honor him. AT: \"Everyone refuses to give God the respect he deserves\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "There is no fear of God before their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mouth\" is a synecdoche that means the words people speak. You can translate this in an active form. AT: \"so that no people will be able to say anything valid to defend themselves\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in order that every mouth may be shut",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The picture is of the sinner offering the \"parts of his body\" to his master or king. One's \"body parts\" are a synecdoche for the whole person. AT: \"Do not offer yourselves to sin so that you do what is not right\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Do not present the parts of your body to sin, to be tools used for unrighteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"parts of your body\" is a synecdoche that refers to the whole person. AT: \"let God use you for what is pleasing to him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "present the parts of your body to God as tools to be used for righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"body parts\" refers to the whole person. AT: \"offer yourselves as slaves to what is right before God so that he might set you apart and give you the power to serve him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "present your body parts as slaves to righteousness for sanctification",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"mouth\" is a synecdoche that refers to what a person says. AT: \"it is in what you say\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in your mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul uses the word \"bodies\" to refer to the whole person. Paul is comparing a believer in Christ who completely obeys God to the animals that the Jews killed and then offered to God. AT: \"to offer yourselves completely to God while you are alive as if you were a dead sacrifice on a temple altar\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to present your bodies a living sacrifice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"soul\" is a synecdoche for the whole person. \"Every Christian should obey\" or \"Everyone should obey\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Let every soul be obedient to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"Macedonia\" and \"Achaia\" are synecdoches for the people who live in those areas. AT: \"the believers in the provinces of Macedonia and Achaia were happy\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "it was the good pleasure of Macedonia and Achaia",
+      "occurrence": 1
+    }
+  }
+]

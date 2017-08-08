@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"when he was fiercely angry\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "on the day of his fierce anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A soldier had to bend his bow in order to shoot it. AT: \"He has made his bow ready to shoot us\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he has bent his bow toward us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I have cried until I cannot cry anymore\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "My eyes have failed from their tears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"he refuses to hear my prayer\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he shut out my prayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "abdominal organs that feed urine into the bladder. AT: \"deep into my body\" (UDB) or 2) \"into my heart.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "kidneys",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"bown down with his mouth on the ground\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "put his mouth in the dust",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the women of Jerusalem or 2) all the inhabitants of Jerusalem. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "all the daughters of my city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I have been killed\" or \"I am drowning\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I have been cut off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"not continue to accept them any longer\" or \"no longer continue to approve of them\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "not watch over them anymore",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"made a treaty with\" or \"surrendered to\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "given ourselves to",
+      "occurrence": 1
+    }
+  }
+]

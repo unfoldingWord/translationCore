@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"our\" refers to Micah and the people of Israel. AT: \"He will be a man of peace\" (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "He will be our peace",
+      "occurrence": 1
+    }
+  }
+]

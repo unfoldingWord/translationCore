@@ -1,0 +1,617 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There are words left out in this statement that can be added. AT: \"as someone who has authority taught and not as the scribes taught\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "as someone who has authority and not as the scribes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There are words missing from this statement that may be added to make it more clear. AT: \"mankind was not made for the Sabbath\" or \"God did not make mankind for the Sabbath\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "not mankind for the Sabbath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to repeat \"is it lawful,\" as that is the question Jesus is asking again in another way. AT: \"is it lawful to save a life or to kill\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "to save a life, or to kill",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"many\" refers to the large number of people Jesus had already healed. AT: \"Because Jesus had healed many people, everyone\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "For he healed many, so that",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The amount of grain produced by each plant is being compared to the single seed from which it grew. AT: \"Some plants bore thirty times as much as the seed that the man had planted\" (UDB) (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "some brought forth thirty times as much",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus continues to describe the amount of grain that was produced. Ellipsis is used here to shorten the phrases but they can be written out. AT: \"and some produced sixty times as much grain and some produced a hundred times as much grain\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and some sixty, and some a hundred",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the grain that the plants produce. AT: \"some produce thirty grains, some sixty grains, and some a hundred grains\" or \"some produce 30 times the grain that was sown, some 60 times the grain that was sown, and some 100 times the grain that was sown.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] or [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "—thirty, sixty, or a hundred times what was sown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to state that the boat was filling up with water. AT: \"the boat was in danger of being filled with water\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the boat was almost full of water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that the men gave their report to the people who were in the city and countryside. AT: \"to people in the city and in the countryside\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "in the city and in the countryside",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to state why the people were amazed. AT: \"all the people who heard what the man said were amazed\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "everyone was amazed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add information to this phrase. AT: \"the other side of the sea\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the other side",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the whole truth\" refers to how she had touched him and became well. AT: \"told him the whole truth about how she had touched him\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "told him the whole truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"They\" refers to the twelve and does not include Jesus. Also, it may be helpful to state that they went out to various towns. AT: \"They went out to various towns\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "They went out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to state that they cast the demons out of people. AT: \"They cast many demons out of people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "They cast out many demons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add some missing information. AT: \"I will give you up to half of what I own and rule, if you ask for it\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Whatever you ask ... my kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the Sea of Galilee. This can be stated clearly. AT: \"to the other side of the Sea of Galilee\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "to the other side",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the loaves\" refers to when Jesus had multiplied the loaves of bread. This can be stated more clearly. AT: \"what it meant when he had multiplied the loaves of bread\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "what the loaves meant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"that is, they ate with unwashed hands\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "that is, unwashed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"the remaining broken pieces of bread and fish, which filled seven large baskets\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the remaining broken pieces, seven large baskets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"others\" refers to other people. Also, it may be helpful to add missing information. AT: \"Other people say you are ... other people say you are\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Others say ... others",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"becomes stiff.\" It may be helpful to state that it is his body that becomes rigid. AT: \"his body becomes rigid\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "becomes rigid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"came out of the boy\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "came out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"cast the unclean spirit out.\" It may be helpful to add the missing information. AT: \"cast the unclean spirit out of the boy\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "cast it out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They respond this way, meaning that they are able to drink the same cup and endure the same baptism. (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "We are able",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"to be served by people, but to serve people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "to be served, but to serve",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"We do not know where the baptism of John came from\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mrk", "chapter": 11, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "We do not know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"They said, 'They are Caesar's likeness and inscription'\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "They said, \"Caesar's",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing information may be added. AT: \"who are raised from being dead\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "that are raised",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing information may be added. AT: \"the most important commandment of all ... The most important commandment says\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the most important of all ... The most important is",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Missing information can be added. AT: \"kingdom will rise against kingdom\" or \"kingdom will fight against kingdom\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "kingdom against kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that a father will betray his child, and this betrayal will cause the child to be killed. AT: \"a father will deliver up his child to death\" or \"a father will betray his child, handing him over to be killed\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "a father his child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to returning to his house. This can be made explicit. AT: \"not return to his house\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "not return",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to specify which \"days\" are referred to. AT: \"had shortened the days of suffering\" or \"had shortened the time of suffering\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "had shortened the days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing word may be added. AT: \"so as to deceive people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "so as to deceive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing information may be added. AT: \"if possible, they will even deceive the elect\" or \"they will even try to deceive the people whom God has chosen\" (UDB) See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "if possible, even the elect",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add the missing information. AT: \"We must not do it during the feast\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Not during the feast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I will not\" can be fully expressed as \"I will not fall away.\" The phrase \"not fall away\" is a double negative and carries a positive meaning. This can be expressed in the positive if needed. AT: \"Even if everyone else leaves you, I will stay with you\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:figs_doublenegatives]]) \n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Even if all fall away, I will not",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is asking God to do what he wants to be done and not what Jesus wants. AT: \"But do not do what I want, do what you want\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "But not my will, but yours",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing word may be added. AT: \"will build another temple\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 58 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "will build another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase can be completed. AT: \"You yourself have said that I am\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "You say so",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing information may be added. AT: \"released instead of Jesus\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n \n",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "released instead",
+      "occurrence": 1
+    }
+  }
+]

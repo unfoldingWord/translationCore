@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"godliness\" describes the word \"life.\" AT: \"for a godly life\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "for life and godliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"appearance\" refers to Jesus' second coming. Possible meanings are 1) \"the power of our Lord Jesus Christ and his coming\" or 2) \"the powerful coming of our Lord Jesus Christ.\" (See: [[:en:ta:vol2:translate:figs_hendiadys]]) \n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "the power and the appearance of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  }
+]

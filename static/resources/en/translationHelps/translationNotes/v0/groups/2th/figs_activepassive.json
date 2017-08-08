@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that God would consider you worthy to be part of his kingdom\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "2th", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that you will be considered worthy of the kingdom of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"his people will glorify him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to be glorified by his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you may glorify the name of our Lord Jesus\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that the name of our Lord Jesus may be glorified by you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"and God reveals the man of lawlessness\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and the man of lawlessness is revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God will reveal the man of lawlessness when the time is right\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he will be revealed only at the right time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Then God will allow the lawless one to show himself\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Then the lawless one will be revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"for the Lord loves you, brothers\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "brothers loved by the Lord",
+      "occurrence": 1
+    }
+  }
+]

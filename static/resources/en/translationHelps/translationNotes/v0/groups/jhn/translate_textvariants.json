@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some copies of this text say \"Son of God\"; others say \"chosen one of God\" (See: [[:en:ta:vol2:translate:translate_textvariants]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_textvariants",
+      "quote": "the Son of God",
+      "occurrence": 1
+    }
+  }
+]

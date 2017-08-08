@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"guilt\" can be stated as an adjective. AT: \"so as to cause the people to be guilty\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "so as to bring guilt on the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"atonement\" can be stated as a verb. AT: \"The priest will atone for the ruler\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "The priest will make atonement for the ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"uncleanness\" can be stated as an adjective. AT: \"if he touches anything that makes a person unclean\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "if he touches the uncleanness of someone, whatever that uncleanness is",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"atonement\" can be stated as a verb. AT: \"the priest will atone for him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the priest will make atonement for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"atonement\" can be stated as a verb. AT: \"the priest will atone for him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the priest will make atonement for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"atonement\" can be stated as a verb. AT: \"to the priest who offers the sacrifice to atone for someone's sins\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to the priest who makes atonement with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"thanks\" can be stated as a verb. AT: \"for the purpose of thanking Yahweh\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for the purpose of giving thanks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"consecration\" is an abstract noun. AT: \"the ram for setting Aaron and his sons apart for service to God\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the ram of consecration",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"possession\" can be translated as a verb. AT: \"in the land that you possess\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in the land of your possession",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"contribution\" can be translated with a verbal phrase. AT: \"the holy offerings which people have contributed\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the holy contribution offerings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"redemption\" can be expressed with the verbs \"redeem\" or \"buy back.\" AT: \"You must remember that the original owner has the right to redeem the land whenever he wants\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "You must observe the right of redemption",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"redemption\" can be expressed with the verbs \"redeem\" or \"buy back.\" AT: \"the right to redeem it\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the right of redemption",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"sins\" can be expressed with the verb \"sin.\" AT: \"according to how much you have sinned\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in proportion to your sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"sins\" can be expressed with the verb \"sin.\" AT: \"because you continue to sin against me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n\n",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "because of your sins",
+      "occurrence": 1
+    }
+  }
+]

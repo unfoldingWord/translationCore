@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"fear\" and \"terror\" mean basically the same thing and emphasize that the fear is intense. AT: \"put a terrible fear\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "put the fear and terror",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that they are to obey them. AT: \"obey them carefully\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "keep them and do them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"detest\" and \"abhor\" mean basically the same thing and emphasize the intensity of hatred. AT: \"You will completely hate\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 7, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "You will utterly detest and abhor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean basically the same thing and emphasize the greatness of Yahweh's power that he used to rescue his people. (See: [[:en:ta:vol2:translate:figs_doublet]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "by your great strength and by the display of your power",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"good\" and \"right\" have similar meanings and emphasize the importance of right behavior. AT: \"when you do what is right\" (See: [[:en:ta:vol2:translate:figs_doublet]]) \n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "when you do what is good and right",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words have similar meanings and refer to various miracles. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a sign or a wonder",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of these phrases mean basically the same thing. Moses is emphasizing that they must carefully find out what truly happened at the city. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "examine the evidence, make search, and investigate it thoroughly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"neighbor\" and \"brother\" share similar meanings and emphasize the close relationship that they have with their fellow Israelites. AT: \"his fellow Israelite\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "his neighbor or his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"needy\" and \"poor\" mean basically the same thing and emphasize that these are people who cannot help themselves. AT: \"help your fellow Israelites who cannot help themselves\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "your brother, to your needy, and to your poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean the same thing. They both refer to a person who is not an Israelite. Yahweh is emphasizing that the people of Israel should not let a foreigner rule over them. AT: \"a foreigner over yourself\" or \"a non-Israelite over yourself\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 17, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a foreigner, who is not your brother, over yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these words mean basically the same thing. AT: \"afraid to fight in battle\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "fearful or fainthearted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"takes a wife\" and \"marries her\" mean the same thing. AT: \"When a man marries a woman\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "When a man takes a wife and marries her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words have similar meanings and emphasize that this is a person who cannot help himself. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "poor and needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words have similar meanings and emphasize how tired the people were. AT: \"tired and exhausted\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 25, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "faint and weary",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean basically the same thing. They emphasize that Israel became a large and powerful nation. AT: \"very great\" (See: [[:en:ta:vol2:translate:figs_doublet]]) \n\n",
+      "reference": { "bookId": "deu", "chapter": 26, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a great, mighty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases say basically the same thing. They emphasize that the Egyptians acted very harshly. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "treated us badly and afflicted us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. AT: \"from heaven, your holy dwelling place\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "from the holy place where you live, from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This doublet is three ways of saying that Yahweh will make the Israelites' animals many and strong. AT: \"all of your animals along with the calves of the cattle and the lambs of the flocks\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the fruit of your beasts, the increase of your cattle, and the young of your flock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This doublet is two ways of saying that Yahweh will make the Israelites' animals many and strong. AT: \"the calves of the cattle and the lambs of the flocks\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the increase of your cattle, and the young of your flock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"oppressed\" and \"crushed\" mean basically the same thing. This can be stated in active form. AT: \"they will always oppress and crush you\" or \"they will oppress you continually\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "you will always be oppressed and crushed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"proverb\" and \"byword\" mean basically the same thing. This can be translated as a new sentence. AT: \"of horror. The people, in the places where Yahweh will send you, will make up proverbs and bywords about you\" or \"of horror. Yahweh will send you to peoples who will laugh at you and ridicule you\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "of horror, a proverb, and a byword, among all the peoples where Yahweh will lead you away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"commandments\" and \"regulations\" are a doublet for \"all that Yahweh has commanded you to do.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "his commandments and his regulations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"joyfulness\" and \"gladness of heart\" mean the same thing. They emphasize that the people should have been very glad to worship Yahweh. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "joyfulness and gladness of heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"signs\" and \"wonders\" both refer to the plagues that Yahweh had sent upon Egypt. AT: \"and all of the powerful things that Yahweh did\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the signs, and those great wonders",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"anger\" and \"wrath\" mean basically the same thing and can be translated as an adjective phrase. AT: \"when he was very angry\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "in his anger and wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize that Yahweh is fair and does what is right. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "He is just and upright",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"perverted\" and \"crooked\" mean basically the same thing. Moses uses them to emphasize how wicked the generation is. AT: \"a completely wicked generation\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a perverted and crooked generation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words both mean to watch over and to protect. They are often metaphors for \"obeyed,\" but here they should be translated literally because they refer to a time when the Levites literally killed people who were rebelling against Yahweh. (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 33, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "guarded ... kept",
+      "occurrence": 1
+    }
+  }
+]

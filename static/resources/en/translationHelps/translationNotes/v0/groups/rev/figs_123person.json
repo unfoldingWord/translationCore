@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John wrote this book and was referring to himself here.  AT: \"to me, John, his servant\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to his servant John",
+      "occurrence": 1
+    }
+  }
+]

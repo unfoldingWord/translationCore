@@ -1,0 +1,114 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "jew",
+      "quote": "Jew, Jewish, Jews",
+      "occurrence": 1
+    }
+  }
+]

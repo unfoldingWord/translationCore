@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "witness",
+      "quote": "witness, witnesses, eyewitness, eyewitnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "witness",
+      "quote": "witness, witnesses, eyewitness, eyewitnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 71 },
+      "tool": "translationWords",
+      "groupId": "witness",
+      "quote": "witness, witnesses, eyewitness, eyewitnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "witness",
+      "quote": "witness, witnesses, eyewitness, eyewitnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "witness",
+      "quote": "witness, witnesses, eyewitness, eyewitnesses",
+      "occurrence": 1
+    }
+  }
+]

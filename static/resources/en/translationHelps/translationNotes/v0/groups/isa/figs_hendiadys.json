@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, \"willing\" and \"obedient\" are used together to express one idea. AT: \"If you willingly obey\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "If you are willing and obedient",
+      "occurrence": 1
+    }
+  }
+]

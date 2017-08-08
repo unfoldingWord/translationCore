@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to food in general. AT: \"some food\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a loaf of bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"food\" refers to anything a person needs. AT: \"what he needs\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "his food",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" refers to food. It does not mean that John never ate food. It means he fasted often, and when he ate he did not eat good, expensive food. AT: \"frequently fasting and not drinking alcohol\" or \"not eating good food and drinking wine\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "not eating bread or drinking wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"soul\" refers to the entire person. AT: \"you will find rest for yourselves\" or \"you will be able to rest\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "you will find rest for your souls",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ears\" refer to the whole person. You can also make clear the understood information. AT: \"and you are blessed because your ears are able to hear\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "and your ears, for they hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" refers to food in general. AT: \"the children's food\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the children's bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"feet\" means they placed the sick in front of Jesus. AT: \"The crowds brought the sick people to Jesus\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "They presented them at Jesus' feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"flesh and blood\" refers to a human being. AT: \"a human did not reveal\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "flesh and blood have not revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abel was the first victim of murder, and Zechariah was probably thought to be the last to be murdered, by Jews in the temple. These two men represent all the murdered righteous people. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Abel ... Zechariah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"soul\" refers to the whole person. AT: \"I am very sad\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My soul is deeply sorrowful",
+      "occurrence": 1
+    }
+  }
+]

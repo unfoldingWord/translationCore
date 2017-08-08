@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Where Jesus comes to can be made explicit. AT: \"until Jesus comes back to the earth\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "1co", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "until he comes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"if God gives someone insight\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "if an insight is given to one",
+      "occurrence": 1
+    }
+  }
+]

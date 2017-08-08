@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" is inclusive and refers to the king and his people, the Egyptians. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "let us",
+      "occurrence": 1
+    }
+  }
+]

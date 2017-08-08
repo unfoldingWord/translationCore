@@ -1,14 +1,13 @@
+/* eslint-disable no-console */
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
 import ManifestGenerator from '../components/createProject/ProjectManifest';
 import BooksOfBible from '../components/BooksOfBible';
 import usfm from 'usfm-js';
-import * as ResourcesHelpers from './ResourcesHelpers';
-const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 
+const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
 const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
-const ORIGINAL_LANGUAGE_PATH = Path.join(window.__base, 'static', 'originalLanguage');
 
 /**
  *
@@ -239,7 +238,7 @@ export function getParams(path, manifest) {
     }
 
     let params = {
-        'originalLanguagePath': ORIGINAL_LANGUAGE_PATH
+        'originalLanguagePath': ''
     }
     const UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
     params.targetLanguagePath = path;
@@ -264,7 +263,7 @@ export function getParams(path, manifest) {
             params.originalLanguage = "greek";
         }
     } catch (e) {
-        console.error(e);
+      console.error(e);
     }
     return params;
 }
@@ -363,7 +362,8 @@ export function createCheckArray(dataObject, moduleFolderName) {
  */
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
     try {
-        let indexLocation = Path.join(USER_RESOURCES_DIR, 'bibles', 'ulb-en', 'v6', 'index.json');
+        let languageId = 'en';
+        let indexLocation = Path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v10', 'index.json');
         let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
@@ -387,8 +387,8 @@ export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
         let currentExpectedVerese = expectedVerses[bookAbbr];
         return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
     } catch (e) {
-        console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
-        return false;
+      console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
+      return false;
     }
 }
 
@@ -438,7 +438,7 @@ export function getUSFMParams(projectPath, manifest) {
     else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
     let direction = manifest.target_language.direction;
     let params = {
-        originalLanguagePath: ORIGINAL_LANGUAGE_PATH,
+        originalLanguagePath: '',
         targetLanguagePath: projectPath,
         direction: direction,
         bookAbbr: bookAbbr

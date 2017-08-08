@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be reworded so that the abstract noun \"salvation\" is expressed as the verb \"save.\" \"Yahweh is the one who saves people\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Salvation comes from Yahweh",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to remove the cloak or blanket covering his feet so that they would be exposed to the cold. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "uncover his feet",
+      "occurrence": 1
+    }
+  }
+]

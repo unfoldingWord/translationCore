@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"feet\" represents the whole person. AT: \"they run\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "their feet run",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"foot\" represents the person who is walking. The writer speaks of a person's actions as if he were walking along a path, and of planning those actions carefully as if it were making that path level. AT: \"Make a level path to walk on\" or \"Prepare well what you want to do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 4, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Make a level path for your foot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"her feet\" represent the adulteress as she walks. The writer speaks of her conduct as if she were walking along a path. AT: \"She is walking along a path that leads to death\" or \"Her lifestyle leads to death\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Her feet go down to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of these body parts refer to a whole person. You can translate each of these with \"people.\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "eyes ... tongue ... hands ... heart ... feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"soul\" refers to the person. This can be stated in positive form. AT: \"Yahweh makes sure those who do what is right have food to eat\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "pro", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Yahweh does not let the soul of the righteous person go hungry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to bend over to humbly express respect and honor toward someone. Here this one action represents all yielding to the more influential person. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 14, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "bow down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"tongue\" refers to the person who speaks. AT: \"Wise people compliment knowledge when they speak\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 15, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The tongue of wise people compliments knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"eyes\" represents Yahweh's ability to see. AT: \"Yahweh sees everything\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The eyes of Yahweh are everywhere",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"heart\" represents the person. AT: \"When a person is joyful, his face is cheerful\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 15, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "A joyful heart makes the face cheerful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"heart\" represents the person. Possible meanings are 1) the person who has a cheerful expression becomes joyful or 2) other people become joyful when they see someone with a cheerful expression. AT: \"causes a person to be joyful\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 15, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "brings joy to the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"heart\" represents the person. AT: \"everyone who is arrogant\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "everyone who has an arrogant heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"lips\" represents the person who speaks. AT: \"a person who speaks the truth\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "lips that say what is right",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"lips\" can be translated as either 1) a synecdoche for the person or 2) a metonym for the words that come out from those lips. AT:  \"a wicked person\" or \"wicked talk\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "wicked lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the man is referred to by his mouth to emphasize what he says. AT: \"of a man\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a man's mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a person is referred to by his heart to emphasize his thoughts and feelings. AT: \"a person\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a person's heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a person is referred to by his spirit to emphasize his attitude. AT: \"A person who is hopeful will survive sickness\" or \"If a person is full of hope in his inner being, he will survive being sick\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "A person's spirit will survive sickness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the intelligent person is referred to by his heart to emphasize his desires. AT: \"The intelligent desire to acquire\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The heart of the intelligent acquires",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the various things a person does. AT: \"A person's actions\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 20, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "A person's steps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"eyes\" and \"heart\" are synecdoches for a person who considers himself better than other people and wants other people to know it. AT: \"People who want others to think that they are better than other people\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Haughty eyes and a proud heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a synecdoche for a person who thinks he is better than others. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "proud heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The eyes are a synecdoche for the person. The writer speaks as if Yahweh had physical eyes like a person. AT: \"Yahweh keeps watch over\" or \"Yahweh guards knowledge\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The eyes of Yahweh keep watch over",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"ear\" represents the person who is listening. The writer speaks of listening attentively to someone as if it were leaning forward so that the ear is closer to the one speaking. See how you translated \"incline your ear\" in [[:en:bible:notes:pro:04:20|4:20]]. AT: \"Pay attention and listen\" or \"Listen attentively\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 22, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Incline your ear and listen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"heart\" is a synecdoche for the whole person. AT: \"Do not allow yourself to envy sinners\" or \"Make sure you do not envy sinners\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Do not let your heart envy sinners",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"their hearts\" refer to the whole person. AT: \"they\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "pro", "chapter": 24, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) if a drunk person holds a thornbush, a thorn will prick his hand, or 2) if a drunk person is angry, he will pick up a thornbush and swing it at people. For the second meaning, the word \"thorn\" represents a thornbush. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a thorn that goes into the hand of a drunkard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases refer to the \"mouth\" and \"lips\" as speaking because those are parts of the body that are used for speaking. AT: \"yourself ... yourself\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 27, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your own mouth ... your own lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents the whole person turning away from and rejecting God's law. AT: \"turns away from hearing and obeying the law\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "turns away his ear from hearing the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two metonyms refer to people who think that they are better than other people. Their eyes show that they are proud, and the way they look at others shows that they think they are better than those other people. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "eyes are raised up ... their eyelids lifted up",
+      "occurrence": 1
+    }
+  }
+]

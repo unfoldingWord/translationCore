@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks to the heavens and earth as if they are there listening. Possible meanings are 1) Yahweh is speaking to the inhabitants of heaven and earth or 2) Yahweh is speaking to the heavens and earth as if they are persons. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Give ear, you heavens ... Let the earth listen",
+      "occurrence": 1
+    }
+  }
+]

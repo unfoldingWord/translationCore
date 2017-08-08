@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative emphasizes that James was the only apostle whom Paul saw. AT: \"the only other apostle I saw was James\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I saw none of the other apostles except James",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses running as a metaphor for work, and he uses a double negative to emphasize that the work he had done was profitable. AT: \"I was doing, or had done, profitable work\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I was not running—or had not run—in vain",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question shows how amazed they were about the beast. AT: \"No one is as powerful as the beast!\" (ULB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is like the beast?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The angel used this question to gently scold John. AT: \"You should not be astonished!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n\n",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you astonished?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question shows the people the importance of the city of Babylon. AT: \"No other city is like the great city, Babylon\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What city is like the great city?",
+      "occurrence": 1
+    }
+  }
+]

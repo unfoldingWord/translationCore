@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about God's word as if it were a person who could know something. AT: \"God's word exposes\" (UDB) (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "It is able to know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Farmland that benefits from much rain is spoken of as if it were a person who drank in the rainwater. AT: \"the land that absorbs the rain\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the land that drinks in the rain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rain and crops are seen as proof that God has helped the farmland. The farmland is spoken of as if it were a person who could receive God's blessing. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the land that receives a blessing from God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Confidence is spoken of as if it were a person who could go into the most holy place of the temple. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "confidence that enters into the inner place behind the curtain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about scripture as if it were a person who could witness about something. AT: \"For God witnesses about him through the scriptures\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 7, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "For scripture witnesses about him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The law is spoken of as if it were a person who could act. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the law made nothing perfect",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The blood of Jesus and the blood of Abel are both spoken of as if they were two persons calling out. AT: \"the sprinkled blood of Jesus that says better things than the blood of Abel\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the sprinkled blood that speaks better than Abel's blood",
+      "occurrence": 1
+    }
+  }
+]

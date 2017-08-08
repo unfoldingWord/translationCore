@@ -1,0 +1,977 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an area in the mountains of Canaan. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezek",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Canaan. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zephath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Shan ... Taanach ... Dor ... Ibleam ... Megiddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Shemesh ... Beth Anath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a large hill on which the city of Aijalon was built. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Heres",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sela",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is what the Israelites named this place in 2:5 after the angel rebukes the people. \"Bochim\" means \"crying.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bochim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nun",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a mountain. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Gaash",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the plural of Baal. While \"Baal\" was generally the name of one false god, the word was also used for various other gods that were often worshiped along with Baal. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Baals",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the plural of Ashtoroth, who was worshiped as a goddess in many different forms. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ashtoreths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the highest mountain in Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Baal Hermon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a country. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aram Naharaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shamgar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of cities or places (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hazor ... Harosheth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lappidoth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a mountain. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Tabor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a river. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Kishon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zaanannim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of people. See how you translated Shamgar and Anath in [[:en:bible:notes:jdg:03:31|3:31]] and Jael in [[:en:bible:notes:jdg:04:17|4:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shamgar ... Anath ... Jael",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the place where the descendants of Machir live. Machir was the son of Manasseh and the grandson of Joseph. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town. (See [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ophrah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "spring of Harod ... hill of Moreh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Purah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Barah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of towns. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nobah and Jogbehah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a road that passes between two mountains. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the pass of Heres",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a false god. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Baal Berith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Millo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mountain. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Gerizim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gaal ... Ebed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zebul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Arumah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"El\" means \"god.\" This is the same false god as \"Baal Berith\" in [[:en:bible:notes:jdg:08:32|8:33]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "El Berith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a mountain. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mount Zalmon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tola ... Puah ... Dodo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a region, which is named after a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Havvoth Jair",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is someone who is from the region of Gilead. It is a coincidence that his father's name is also Gilead. See how you translated this in [[:en:bible:notes:jdg:10:03|10:3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gileadite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tob is the name of a region.  (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the land of Tob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of two rivers. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Arnon ... Jabbok",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Heshbon ... Jahaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aroer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Minnith ... Abel Keramim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man from Bethlehem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ibzan of Bethlehem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Abdon ... Hillel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pirathon is the name of a place, someone who is from that place is called a Pirathonite. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pirathonite ... Pirathon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of a town in Israel. It was in the region of Judah near the border of Dan. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zorah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Manoah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"went down\" is used here because Timnah is lower in elevation than where his father's house was. Timah is the name of a city in the Sorek Valley. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Samson went down to Timnah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"went down\" is used here because Timnah is lower in elevation than where his father's house was. Timnah was a city in the Sorek Valley. Translate the name of this city the same way you did in [[:en:bible:notes:jdg:14:01|14:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Samson went down to Timnah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a person from Timnah. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Timnite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the rocky hill country near Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]]) \n",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Etam",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town in Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lehi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. It's name means \"Jawbone Hill\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ramath Lehi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city.  (See: [[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hebron",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a valley near Samson's home. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Valley of Sorek",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a major false god of the Philistines (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dagon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Laish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a name of a town. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 18, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Rehob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Baal Tamar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. Other translations may read \"fields of Gibeah\" or \"west of Gibeah\" or \"Maareh Geba.\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Maareh Gibeah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nohah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jabesh Gilead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lebonah",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 40 },
+      "tool": "translationWords",
+      "groupId": "devour",
+      "quote": "devour",
+      "occurrence": 1
+    }
+  }
+]

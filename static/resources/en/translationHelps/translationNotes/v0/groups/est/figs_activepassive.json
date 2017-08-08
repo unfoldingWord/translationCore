@@ -1,0 +1,392 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The guests drank wine from gold cups\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Drinks were served in golden cups",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"when the king's officials told her about his command\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "at the word of the king that had been brought to her by the officials",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"When they hear the king's decree\" or \"When they hear what you have commanded\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "When the king's decree is proclaimed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"They wrote this decree\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n\n",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This decree was given",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Tell your servants to search\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Let a search be made",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Let Hegai, the king's official, who is in charge of the women, take care of them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Let them be put under the care of Hegai, the king's official, who is in charge of the women",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"After the king commanded that they search for some beautiful women\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "When the king's order and decree were proclaimed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"they brought many young women\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "many young women were brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Hegai, the overseer of the women, also began to take care of Esther when they brought her to the king's palace\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Esther also was taken into the king's palace and put under the care of Hegai, the overseer of the women",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"she could take whatever she desired\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "whatever she desired was given to her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"When Mordecai learned about what they were planning\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "When the matter was revealed to Mordecai",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The king investigated and confirmed the report, and ordered his servants to hang both men\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The report was investigated and confirmed, and both the men were hanged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the king summoned his scribes ... they wrote a decree containing all that Haman had commanded\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the king's scribes were summoned ... a decree containing all that Haman had commanded was written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"They wrote the decree in the name of King Ahasuerus and Haman sealed it with the king's signet ring\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It was written in the name of King Ahasuerus and was sealed with his ring",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The officials in every province made a copy of the letter become the law\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "A copy of the letter was made law in every province",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"They told all the people in every province\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "In every province it was made known to all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"They also distributed the decree\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The decree was also distributed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"one of the officials whom the king had assigned to serve her\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n\n",
+      "reference": { "bookId": "est", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "one of the king's officials who had been assigned to serve her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"If you ask for up to half of my kingdom, I will give it to you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Up to half of my kingdom, it will be given to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed in active form. AT: \"What did I do to give honor\" or \"What did we do to give honor \" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "What was done to give honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed in active form. However it may be good to find a way that does not give the impression that servants were accusing the king. AT: \"No one did anything for Mordecai\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Nothing was done for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"let someone bring royal robes\" or \"tell your servants to bring royal robes\"  (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "let royal robes be brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Then let them give the robes and the horse\" or \"Then tell them to give the robes and the horse\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Then let the robes and the horse be given",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"If you ask for up to half of my kingdom, I will give it to you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Up to half of the kingdom, and it will be granted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. The abstract noun \"disaster\" can be expressed with the more concrete verbs \"destroy\" or \"kill.\" AT: \"the king was deciding to cause a disaster against him\" or \"the king was deciding to destroy him\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "disaster was being decided against him by the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"where servants had served the wine\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "where the wine had been served",
+      "occurrence": 1
+    }
+  }
+]

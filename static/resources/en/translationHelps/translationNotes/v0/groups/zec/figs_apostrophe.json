@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The prophet is speaking to the land of Lebanon as if it were a person. AT: \"People of Lebanon, get ready for fire to burn up your cedar trees\" (See: [[:en:ta:vol2:translate:figs_apostrophe]]) \n  ",
+      "reference": { "bookId": "zec", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Open your doors, Lebanon, that fire may devour your cedars",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"You, sword! You must wake up.\" This is a command from Yahweh for his shepherd to be attacked and killed. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Sword! Rouse yourself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Mary used this polite expression to say that she had not engaged in sexual activity. AT: \"I am a virgin.\" (UDB) (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I have not slept with any man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism meaning \"die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "depart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"had a flow of blood.\" She was probably bleeding from her womb even when it was not the normal time for it. Some cultures may have a polite way of referring to this condition. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "had been bleeding",
+      "occurrence": 1
+    }
+  }
+]

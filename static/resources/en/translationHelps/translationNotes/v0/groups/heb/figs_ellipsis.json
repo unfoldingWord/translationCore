@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"again\" indicates that a similar question applies to the second quote. The word \"again\" can be be simply deleted or replaced with the question. AT: \"and\" or \"and about which of the angels did God ever say\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "heb", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To whom God is speaking can be stated clearly. AT: \"he also says to Christ\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "he also says",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can state clearly the understood information. AT: \"also pursue the holiness\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "also the holiness",
+      "occurrence": 1
+    }
+  }
+]

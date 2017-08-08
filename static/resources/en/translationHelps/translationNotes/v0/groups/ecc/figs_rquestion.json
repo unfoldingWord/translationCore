@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to emphasize his point that the next king will not be able to do anything more valuable that what he had already done. AT: \"For the next king can do nothing ... which has not already been done.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what can the next king do ... which has not already been done?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to emphasize his point that there is no benefit to being wise. AT: \"So it makes no difference if I am very wise.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "So what difference does it make if I am very wise?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"For no one knows whether he will be a wise man or a fool.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For who knows whether he will be a wise man or a fool?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"For the person who works so hard and tries in his heart to complete his labors under the sun gains nothing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what profit does the person gain who works so hard and tries in his heart to complete his labors under the sun?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Everything is just a breath\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "ecc", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "is not everything just a breath?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer is making a claim that animals do have a spirit. AT: \"No one knows whether the spirit ... into the earth.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who knows whether the spirit ... into the earth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "No one has raised any person or animal from the dead. AT: \"No one can bring ... after him.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "ecc", "chapter": 3, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who can bring ... after him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to emphasize his point that there is no benefit in working for the wind. AT: \"No one gets any profit in working for the wind.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "So what profit does anyone get in working for the wind?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A wise person's wisdom does not entitle him to any additional comforts. AT: \"the wise person has no advantage over the fool.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what advantage has the wise person over the fool?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"You should not be doing what you are doing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "ecc", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What are you doing?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this question to emphasize that no one know what will happen in the future. AT: \"No one knows what is coming after him.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "ecc", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who knows what is coming after him?",
+      "occurrence": 1
+    }
+  }
+]

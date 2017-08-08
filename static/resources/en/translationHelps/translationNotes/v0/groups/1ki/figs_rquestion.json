@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a rhetorical question that a father would ask to discipline his son. AT: \"You should know that what you have done is wrong.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you done this or that?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The purpose of this question is to introduce the information that Nathan wants to tell Bathsheba. AT: \"You do not seem to have heard ... it.\" or \"Have you heard ... it?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you not heard ... it?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The purpose of this question was to remind David of what he had promised Bathsheba. AT: \"you swore to your servant ... throne.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "did you not swear to your servant ... throne?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "King Solomon was angered by his mother's request. AT: \"You are wrong to ask ... Adonijah! This is the same as asking the kingdom for him also ... Zeruiah!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you ask ... Adonijah? Why do you not ask the kingdom for him also ... Zeruiah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Solomon is reminding Shimei of what Shimei had promised. AT: \"You know very well that I made you swear ... saying, 'Know ... die'!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not make you swear ... saying, 'Know ... die'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Solomon is asking for an answer or 2) AT: \"You have done wrong by breaking your oath ... you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why then have you not kept your oath ... you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings of this question are 1) Solomon is asking a real question and expecting an answer or 2) the question is rhetorical and Solomon is emphasizing that God is too big and mighty to live on earth. AT: But it surely cannot be that God will actually live on the earth!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But will God actually live on the earth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hiram is rebuking Solomon. AT: \"These cities that you have given me are good for nothing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What cities are these which you have given me, my brother?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question shows that Ahijah knew she was disguised. AT: \"Stop pretending to be someone else; I know who you are.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you pretend to be someone you are not?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Abijah is in this other book. See how you translated this in [[:en:bible:notes:1ki:14:29|14:29]]. This rhetorical question can be translated as a statement. AT: \"they are written in the book of the events of the kings of Judah.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Judah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Abijah is in this other book. See how you translated this in [[:en:bible:notes:1ki:14:29|14:29]]. This rhetorical question can be translated as a statement. AT: \"they are written in the book of the events of the kings of Judah\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Judah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Nadab is in this other book. See how you translated a similar phrase concerning Judah in [[:en:bible:notes:1ki:14:29|14:29]]. This rhetorical question can be written as a statement. AT: \"they are written in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Baasha is in this other book. This rhetorical question can be translated as a statement. See how you translated this in [[:en:bible:notes:1ki:15:31|15:31]]. AT: \"they are written in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Elah is in this other book. This rhetorical question can be translated as a statement. See how you translated this in [[:en:bible:notes:1ki:15:31|15:31]].  AT: \"they are written in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written ... kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Zimri is in this other book. This rhetorical question can be translated as a statement. See how you translated a similar phrase concerning Judah in [[:en:bible:notes:1ki:14:29|14:29]]. AT: \"they are written in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to either inform or remind the readers that the information about Omri is in this other book. This rhetorical question can be translated as a statement. See how you translated this in [[:en:bible:notes:1ki:15:31|15:31]]. AT: \"they are written in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "are they not written in the book of the events of the kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Elijah is truly asking a question. AT: \"why would you cause the widow with whom I am staying to suffer even more by killing her son\" or 2) Elijah uses a question to express how sad he is. AT: \"surely, you would not cause the widow with whom I am staying to suffer even more by killing her son\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "have you also brought disaster on the widow with whom I am staying, by killing her son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Obadiah asks this question to emphasize the danger to himself because of King Ahab's anger at Elijah. AT: \"I have not wronged you ... for him to kill me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How have I sinned ... for him to kill me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab asks the question for emphasis to be certain about Elijah's identity. AT: \"So here you are. You are the troublemaker of Israel!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it you? You are the one who brings trouble to Israel!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh asks this question to emphasize the size and strength of Ben Hadad's army. AT: \"Look at this great army.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you seen this great army?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab asks this question to express surprise. AT: \"I am surprised that he is still alive!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is he still alive?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jezebel uses this negative rhetorical question to rebuke Ahab. It can be translated as a positive statement. AT: \"You still rule the kingdom of Israel!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not still rule the kingdom of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh asks this question to scold Ahab. AT: \"You have killed Naboth and stolen his vineyard!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you killed and also taken possession?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab uses this question to express anger toward Elijah. That Elijah \"found\" Ahab likely refers to Elijah discovering Ahab's actions, not to finding his physical location. AT: \"You have found me, my enemy!\" or \"You have discovered what I have done, my enemy!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you found me, my enemy?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab asks this question to emphasize that they should have already recaptured Ramoth Gilead. AT: \"Ramoth Gilead is ours, but we have done nothing yet to take it from the hand of the king of Aram.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you know that Ramoth Gilead is ours, but that we are doing nothing to take it from the hand of the king of Aram?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab asks this question out of frustration to rebuke Micaiah. AT: \"Many times I have required ... in the name of Yahweh.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How many times must I require ... in the name of Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahab asks this question to emphasize that he had spoken the truth about Micaiah. AT: \"I told you ... but only disaster!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not tell you ... but only disaster?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Zedekiah asks this sarcastic question to insult and rebuke Micaiah. AT: \"Do not think that Yahweh's Spirit left me to speak to you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Which way did the Spirit of Yahweh take to go from me to speak to you?",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"tribe of Levi\" refers to all of the men in the tribe of Levi. AT: \"must not count the men of the tribe of Levi\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "num", "chapter": 1, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "must not count the tribe of Levi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the holy place refers to all the items that make up the holy place that Aaron and his sons covered in cloth and skins. AT: \"to carry all of the items of the holy place\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "num", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to carry the holy place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "One donkey here represents anything that a person my take from someone else. AT: \"I have not taken anything from them, not even one donkey\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I have not taken one donkey from them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" refers to the message. AT: \"told him the message from Balak\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "spoke to him Balak's words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meaning are 1) here \"spirits\" refers to all people.\" AT: \"the God over all of humanity\" or 2) the reference to \"spirits\" refers to God having given life and breath to all people. AT: \"the God who gives breath to all people\" or \"the God who give life to all humanity\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the God of the spirits of all humanity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" refers to the people of Israel who here represent the priests. The priests blew the trumpet to begin a worship service or to gather the community together. AT: \"It will be a day when the priests blow trumpets\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "It will be a day when you blow trumpets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the rash talk\" refers to the rash promise that she made. Here \"her lips\" means the woman herself. She is referred to as \"her lips\" because lips are related to what she says. AT: \"the rash things she has said\" or \"her rash promise\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the rash talk of her lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hearts\" represents the people themselves and refers to the seat of their emotions. See how you translated this in [[:en:bible:notes:num:32:06|32:7]]. AT: \"discouraged the people of Israel\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "num", "chapter": 32, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "discouraged the hearts of the people of Israel",
+      "occurrence": 1
+    }
+  }
+]

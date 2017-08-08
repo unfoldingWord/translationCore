@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used to create an exclamation, showing surprise. (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "behold",
+      "occurrence": 1
+    }
+  }
+]

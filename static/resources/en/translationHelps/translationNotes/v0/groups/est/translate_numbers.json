@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"After he had ruled for 2 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "In the third year of his reign",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"one hundred and eighty\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n\n",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "180",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"After 6 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "On the seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a different house\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "second house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"one more time\" or \"an additional time\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "a second time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"30 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "est", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thirty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"500 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "est", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "five hundred men",
+      "occurrence": 1
+    }
+  }
+]

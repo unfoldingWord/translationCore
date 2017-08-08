@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He had sex with her\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "He slept with her",
+      "occurrence": 1
+    }
+  }
+]

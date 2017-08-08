@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks to the people of this town as if they are there listening. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "But you, Bethlehem Ephrathah",
+      "occurrence": 1
+    }
+  }
+]

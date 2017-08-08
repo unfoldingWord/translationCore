@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"second\" is the ordinal number for \"two.\" AT: \"another bull\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "a second bull",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 4th day\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 7th day\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh day",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"darkness\" may refer either to the world of the dead or to something that is difficult to understand. AT: \"dies unexplainably\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "passes away in darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"darkness\" refers to death. AT: \"how many days that he will be dead.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "the coming days of darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to death. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Then man goes to his eternal home",
+      "occurrence": 1
+    }
+  }
+]

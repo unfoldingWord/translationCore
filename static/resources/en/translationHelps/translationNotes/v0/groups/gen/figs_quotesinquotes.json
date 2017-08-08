@@ -1,0 +1,182 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has quotations within quotations. They can be stated as indirect quotations. AT: \"I said to Sarah that I wanted her to be faithful to me by telling people everywhere we go that I am her brother\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "I said to her, 'You must show me this faithfulness as my wife: At every place where we go, say about me, \"He is my brother.\"'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"saying that he would give this land to my offspring\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "saying, 'To your offspring I will give this land,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. This can be expressed with an indirect quote. AT: \"When I ask a young woman to let me have a drink of water from her jar\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "When I say to a young woman, 'Please lower your pitcher so that I may drink,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. The direct quotation can be stated as an indirect quotation. AT: \"'This is what I want you to tell my master Esau. Tell him that I have been ... in his sight.'\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "This is what you will say to my master Esau: This is what your servant Jacob says: 'I have been ... in your sight.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated an an indirect quotation. AT: \"But you said that you would certainly prosper me, and that you would make my descendants ... number\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "But you said, 'I will certainly make you prosper. I will make your descendants ... number.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"asks you who your master is, where you are going, and who owns these animals that are ahead of you\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "asks you ... that are in front of you?'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"Then I want you to tell him that all of these things belong to Jacob, his servant, and he his giving them to his master, Esau. And tell him that Jacob is on the way to meet him\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "Then you will say, 'They are your servant Jacob's. They are a gift sent to my master Esau. See, he is also coming after us.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. It can be stated as an indirect quotation. AT: \"warned us that we would not see his face unless we brought our youngest brother with us\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "warned us, 'You will not see my face unless your brother is with you.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"He asked us directly if our father was still alive and if we had another brother.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "He said, 'Is your father still alive? Do you have another brother?'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation with three layers. It can be simplified to two layers. AT: \"tell him that this is what I said: 'God has ... all that you have\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "say to him, 'This is what your son Joseph says, \"God has ... all that you have",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"tell Pharaoh that my brothers ... all that they have\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "tell Pharaoh, saying, 'My brothers ... all that they have.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"and said to me that he would make me fruitful and multiply me. And, he said that he would make me an assembly of nations and he would give this land to my descendants as an everlasting possession.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "and said to me, 'Behold, I will make you fruitful, and multiply you. I will make of you an assembly of nations. I will give this land to your descendants as an everlasting possession.'",
+      "occurrence": 1
+    }
+  }
+]

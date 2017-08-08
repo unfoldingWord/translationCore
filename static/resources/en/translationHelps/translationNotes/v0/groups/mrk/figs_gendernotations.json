@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to both brothers and sisters. AT: \"Siblings ... each other\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "Brother ... brother",
+      "occurrence": 1
+    }
+  }
+]

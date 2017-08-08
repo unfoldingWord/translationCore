@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "mighty",
+      "quote": "mighty, might",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a structure used for killing people by tying one end of a rope around the top of the structure and the other end of the rope around their necks and hanging them from it. AT: \"a frame for hanging people\"  (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a gallows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a structure used for killing a person by tying one end of a a rope around the top of the structure and the other end of the rope around the person's neck and hanging him from it. See how you translated this in [[:en:bible:notes:est:02:22|2:23]]. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a gallows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The gallows was a structure that was used to kill people by hanging them from it. See how you translated \"gallows\" in [[:en:bible:notes:est:05:14|5:14]]. AT: \"the structure Haman set up for hanging Mordecai\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the gallows he set up for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This ring had the king's name or mark on it. When he put a wax seal on important papers, he would press the mark onto the seal. If a paper had this mark on its seal, people would know that what was written on the paper was written with the king's authority and had to be obeyed. See how you translated this in [[:en:bible:notes:est:03:10]]. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "signet ring",
+      "occurrence": 1
+    }
+  }
+]

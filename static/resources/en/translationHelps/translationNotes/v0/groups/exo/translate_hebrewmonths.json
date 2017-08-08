@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The fourteenth day is near the beginning of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the fourteenth day in the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the first month of the Hebrew calendar. Abib is during the last part of March and the first part of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the month of Abib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means they arrived at the wilderness on the first day of the month just as they left Egypt on the first day of the month. The first day of the third month on the Hebrew calendar is near the middle of May on Western calendars. AT: \"In the third month ... on the first day of the month\" (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "In the third month ... on the same day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the first month of the Hebrew calendar. Abib is during the last part of March and the first part of April on Western calendars. See how you translated this in [[:en:bible:notes:exo:13:03|13:4]]. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "Abib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the first month of the Hebrew calendar. Abib is during the last part of March and the first part of April on Western calendars. See how you translated \"Abib\" in [[:en:bible:notes:exo:13:03|13:4]]. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the month of Abib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The new year marks the time when God rescued his people from Egypt. This happens around the middle of March on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the first month of the new year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to exactly one year after God rescued his people from Egypt. This happens around the middle of March on Western calendars. See how you translated this in [[:en:bible:notes:exo:40:01|40:2]]. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the first month",
+      "occurrence": 1
+    }
+  }
+]

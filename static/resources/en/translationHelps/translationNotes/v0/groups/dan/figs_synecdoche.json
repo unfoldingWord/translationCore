@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to Nebuchadnezzar and his soldiers, not only to Nebuchadnezzar. AT: \"Nebuchadnezzar's soldiers\" or \"Nebuchadnezzar king of Babylonia and his soldiers\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Nebuchadnezzar king of Babylonia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to Jehoiakim and his soldiers, not only to Jehoiakim. AT: \"the army of Jehoiakim king of Judah\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Jehoiakim king of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Although Nebuchadnezzar did not do these things alone, it may easier for the reader to retain the singular pronouns. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "He brought ... he placed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The king's officials did this task for him. AT: \"The king's officials counted out for them\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The king counted out for them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mind\" refers to Daniel himself. AT: \"Daniel decided to himself\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Daniel intended in his mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mind\" refers to the king himself. AT: \"I am anxious\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my mind is anxious",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"spirit\" refers to Daniel. It means he had was unusually capable. AT: \"he was and exceptional person\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he had an extraordinary spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the horn was boasting, using its mouth to do so. AT: \"the horn had a mouth and boasted about doing great things\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a mouth that was boasting about great things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a man is being referred to by his voice. AT: \"a man calling from the Ulai Canal\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a man's voice calling between the banks of the Ulai Canal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word\" refers to the entire message. AT: \"think about this message\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "consider this word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"he\" refers to her descendant, and here it also refers to his army. AT: \"He and his army will attack the army of the king of the North\" (See [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "He will attack the army",
+      "occurrence": 1
+    }
+  }
+]

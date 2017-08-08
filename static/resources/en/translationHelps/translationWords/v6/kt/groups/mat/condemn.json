@@ -1,0 +1,100 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 37 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "condemn, condemns, condemned, condemnation",
+      "occurrence": 1
+    }
+  }
+]

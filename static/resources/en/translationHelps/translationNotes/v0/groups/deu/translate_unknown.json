@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are wild animals with long thin legs that can run quickly. AT: \"the antelope and the deer\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the gazelle and the deer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a type of deer (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the roebuck",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a type of antelope (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "ibex",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a small animal with long ears that usually lives in holes in the ground. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "rabbit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all types of birds that are either awake at night or feed on small animals and dead animals. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "raven ... cormorant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are types of birds that eat small animals and lizards. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "stork ... heron, the hoopoe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a sharp, pointed tool used to make a hole (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "awl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "thread made from the flax plant (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 22, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "linen",
+      "occurrence": 1
+    }
+  }
+]

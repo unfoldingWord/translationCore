@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of the vastness of the ocean Jonah was in. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "into the depths, into the heart of the seas",
+      "occurrence": 1
+    }
+  }
+]

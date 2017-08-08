@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the afflicted\" is a nominal adjective that can be stated as an adjective. AT: \"she has helped those who are suffering\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "has relieved the afflicted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"rich\" is a nominal adjective. It can be stated as an adjective. AT: \"Tell those who are rich\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "Tell the rich",
+      "occurrence": 1
+    }
+  }
+]

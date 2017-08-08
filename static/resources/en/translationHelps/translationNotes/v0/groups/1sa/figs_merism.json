@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a merism for completeness. AT: \"absolutely everything\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from beginning to end",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a merism for \"in every part of the land.\" AT: \"from one end of the land to the other\" or \"from Dan in the very north to Beersheba in the very south\" (See: [[:en:ta:vol2:translate:figs_merism]]) \n  ",
+      "reference": { "bookId": "1sa", "chapter": 3, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from Dan to Beersheba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a merism that refers to age. AT: \"men of all ages\" or 2) this is a merism that refers social class. AT: \"from the poorest and weakest men to the richest and most powerful men\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "both small and great",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "divination",
+      "quote": "divination, diviner, soothsaying, soothsayer",
+      "occurrence": 1
+    }
+  }
+]
