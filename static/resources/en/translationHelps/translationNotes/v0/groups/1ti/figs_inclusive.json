@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to the entire Christian community. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "to accuse us",
+      "occurrence": 1
+    }
+  }
+]

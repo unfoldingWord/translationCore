@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke his word\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stole things from Jerusalem after it was attacked\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "plundered you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke his word.\" See how you translated this in [[:en:bible:notes:zec:01:01|1:1]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke his word.\" See how you translated this in [[:en:bible:notes:zec:01:01|1:1]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke his word.\" See how you translated this in [[:en:bible:notes:zec:01:01|1:1]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This normally means running or flowing water, rather than still or stagnant water. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "living waters",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of the punishment that the false teachers will receive as if it were a reward. AT: \"They will receive what they deserve for their wrongdoing\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "They will receive the reward of their wrongdoing",
+      "occurrence": 1
+    }
+  }
+]

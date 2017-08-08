@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"your,\" is singular, and refers to a specific person, who is a particular descendant of Abraham (and that descendant is identified as \"Christ\"). See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "to your descendant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is addressing his readers as though they are one person, so \"you\" here is singular. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you are no longer a slave ... you are also an heir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"you,\" \"your,\" and \"yourself\" are all singular. (See: [[:en:ta:vol1:translate:figs_you]])\n",
+      "reference": { "bookId": "gal", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must love your neighbor as yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words treat the Galatians as though they are all one person to emphasize that he is talking to each of them. AT: \"Be concerned about yourselves\" or \"I say to each one of you, 'Be concerned about yourself'\" (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Be concerned about yourself",
+      "occurrence": 1
+    }
+  }
+]

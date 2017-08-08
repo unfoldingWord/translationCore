@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the time between 3 a.m. and sunrise. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "fourth watch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Second\" is an ordinal number. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 72 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "a second time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Third\" is a ordinal number. This refers to nine o'clock in the morning. AT: \"nine o'clock in the morning\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third hour",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares a believer's new spiritual life to Jesus coming back to life physically. The believer's new spiritual life enables that person to obey God. You can translate this in an active form. AT: \"just as the Father brought Jesus back to life after he died, we might have new spiritual life and obey God\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "just as Christ was raised from the dead ones by the glory of the Father, so also we might walk in newness of life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul compares the number of the people of Israel to the number of grains of sand in the sea. AT: \"too many to count\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as the sand of the sea",
+      "occurrence": 1
+    }
+  }
+]

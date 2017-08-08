@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical situation that Paul does not believe is possible. Paul says if it were possible that God would save people based on what they did, then God would certainly have saved him. AT: \"No one can do enough things to please God, but if anyone could do enough things to please God, I could do more good things and please God more than anyone\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "I myself could have confidence in the flesh. If anyone thinks he has confidence in the flesh, I could have even more",
+      "occurrence": 1
+    }
+  }
+]

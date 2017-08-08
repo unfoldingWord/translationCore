@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"220 liters of seed will produce only 22 liters of grain.\" One homer equals ten ephahs. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "one homer of seed will yield only an ephah",
+      "occurrence": 1
+    }
+  }
+]

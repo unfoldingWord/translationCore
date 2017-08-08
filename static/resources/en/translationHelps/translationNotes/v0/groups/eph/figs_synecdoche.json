@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bowed knees are a picture of the whole person in an attitude of prayer. AT: \"I bow down in prayer to the Father\" or \"I humbly pray to the Father\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I bend my knees to the Father",
+      "occurrence": 1
+    }
+  }
+]

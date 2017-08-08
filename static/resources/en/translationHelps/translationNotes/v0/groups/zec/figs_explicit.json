@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "By saying he will return to the people of Israel, Yahweh is saying that they will have good things happen because he is helping them. AT: \"I will bless you.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will return to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman represents wickedness. AT: \"Her name is Wickedness\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "This is Wickedness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: Then use the silver and the gold to make a crown. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then take the silver and gold, make a crown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the Israelites who remain in Babylon. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "those who are far off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to when they ate and drank at feasts to honor how Yahweh had provided for them. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "When you ate and drank",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These refer to meat with blood in it, and to meat offered to idols. The UDB makes this explicit. AT: \"I will no longer allow them to eat meat that still has blood in it, and I will forbid them to eat food that they offered to idols\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will remove their blood from their mouths and their abominations from between their teeth",
+      "occurrence": 1
+    }
+  }
+]

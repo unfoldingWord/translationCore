@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Pharisees are rebuking the Sadducees by affirming that spirits and angels do exist and can speak to people. AT: \"Maybe a spirit or an angel has spoken with him!\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "What if a spirit or an angel has spoken to him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is stating a hypothetical situation. If he were guilty, he would accept the punishment, but he knows that he is not guilty. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Though if I have done wrong ... no one may hand me over to them",
+      "occurrence": 1
+    }
+  }
+]

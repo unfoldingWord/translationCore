@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the bitter water is described as being able to bring a curse. This means that when the woman drinks the water it cause her to be unable to bear children, if she is guilty. AT: \"this bitter water can be a curse to you\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "this bitter water that can bring a curse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The group of Levites carrying the ark of the covenant went before the people of Israel as the traveled. AT: \"Men carried the ark of the covenant of Yahweh before them as they traveled\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The ark of the covenant of Yahweh went before them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the ark is spoken of as if were a person traveling. The ark was really being carried by men. AT: \"Whenever the people carrying the ark set out\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Whenever the ark set out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of sin as if it were a person who will condemn the guilty person. This means that the people cannot escape the punishment that their sin deserves. AT: \"Know for sure that Yahweh will punish you for your sin\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "num", "chapter": 32, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Be sure that your sin will find you out",
+      "occurrence": 1
+    }
+  }
+]

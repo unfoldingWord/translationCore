@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 7, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "judah",
+      "quote": "Judah",
+      "occurrence": 1
+    }
+  }
+]

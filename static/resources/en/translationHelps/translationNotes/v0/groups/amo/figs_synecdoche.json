@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "or \"I will fight against Ekron\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I will turn my hand against Ekron",
+      "occurrence": 1
+    }
+  }
+]

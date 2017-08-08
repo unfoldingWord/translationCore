@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was when he lived on earth. AT: \"and he came to live among us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1jn", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and which has been made known to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God has perfected the love of God in that person,\" \"For sure, those who obey God's commands are the people who love God in every way,\" or \"God's love for people has achieved its goal when they do what he tells them to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "truly, it is in that person that the love of God has been perfected",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form: AT: \"God has not yet revealed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it has not yet been revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Christ appeared\" or \"the Father revealed Christ\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Christ was revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Whoever God has made his child\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Whoever has been born from God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"This is how we know the children of God and the children of the devil\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "In this the children of God and children of the devil are revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made active. AT: \"By this God showed that he loved us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Because of this the love of God was revealed among us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. Possible meanings are 1) \"Because of this\" refers back to [[:en:bible:notes:1jn:04:15|4:16]]. AT: \"Because whoever lives in love is in God and God is in him, God has made his love for us complete, and so we may have complete confidence\" or 2) \"Because of this\" refers to \"we may have confidence.\" AT: \"We are confident that God will accept us on the day he judges everyone, so we know he has made his love for us complete\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Because of this, this love has been made perfect among us, so that we will have confidence",
+      "occurrence": 1
+    }
+  }
+]

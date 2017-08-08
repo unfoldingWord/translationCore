@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is using irony and a rhetorical question to say that the Galatians are acting as though someone has put a spell on them. He does not really believe that someone has put a spell on them. AT: \"You behave as if someone has put a spell on you!\" (See: [[:en:ta:vol1:translate:figs_irony]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Who has put a spell on you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking ironically here. He actually teaches that no Jew can be justified by trying to do the deeds required by the law. AT: \"all you who think you can be justified by doing the deeds required by the law\" or \"you who want to be justified by the law\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "you who would be justified by the law",
+      "occurrence": 1
+    }
+  }
+]

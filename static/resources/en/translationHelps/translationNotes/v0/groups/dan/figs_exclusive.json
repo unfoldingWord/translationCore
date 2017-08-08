@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to the men that the king is speaking to and does not include the king. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we will reveal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"our\" refers to Daniel and Israel, but not to God. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "our sins ... our ancestors",
+      "occurrence": 1
+    }
+  }
+]

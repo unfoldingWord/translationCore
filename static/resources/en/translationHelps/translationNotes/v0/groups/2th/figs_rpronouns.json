@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ourselves\" is used to emphasize Paul's boasting. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "we ourselves",
+      "occurrence": 1
+    }
+  }
+]

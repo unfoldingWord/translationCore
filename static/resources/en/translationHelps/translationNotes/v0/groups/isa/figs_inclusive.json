@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here these words refer to Isaiah and includes all the people of Judah and Jerusalem. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"let us think about this together\" or \"we need to discuss this\" or \"what are we going to do?\" Yahweh invites the people to discuss the future. Here the word \"us\" refers to Yahweh and includes the people of Judah. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "let us reason together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to Isaiah and the people of Israel. Isaiah is describing something in the future as if it has already happened. AT: \"we will hear\" (See: [[:en:ta:vol2:translate:figs_inclusive]] and [[:en:ta:vol2:translate:figs_pastforfuture]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we have heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to Isaiah and includes the people of Judah. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n\n \n",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "our ... us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What Isaiah just found out is so amazing that he wonders if the exiles will believe it. The \"we\" includes him and those in exile. AT: \"It is hard for anyone to believe what we have heard\" (See: [[:en:ta:vol2:translate:figs_inclusive]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 53, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "Who has believed what they heard from us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to Isaiah and the people of Israel. \"Far\" represents that justice is gone and difficult to get. AT: \"justice is gone and very difficult to get\" (See: [[:en:ta:vol2:translate:figs_inclusive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 59, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "justice is far from us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"our\" refers to Isaiah and the people of Israel. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 59, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "our many transgressions",
+      "occurrence": 1
+    }
+  }
+]

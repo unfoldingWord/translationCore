@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1/6 hin\" or \"a sixth part of a hin\" or \"about one-half liter\" (UDB). (See: [[:en:ta:vol2:translate:translate_bvolume]] and [[:en:ta:vol2:translate:translate_fraction]])\n",
+      "reference": { "bookId": "ezk", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "a sixth of a hin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "about 220 liters (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 45, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "homer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"twenty-two liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 45, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "ephah",
+      "occurrence": 1
+    }
+  }
+]

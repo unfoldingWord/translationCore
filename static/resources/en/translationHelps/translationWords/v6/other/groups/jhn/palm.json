@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "palm",
+      "quote": "palm",
+      "occurrence": 1
+    }
+  }
+]

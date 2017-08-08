@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh adds this phrase in the middle of another sentence to express that the punishment of Edom is shocking. AT: \"ah, you are completely destroyed.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how are you cut off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"'On that day,' says Yahweh, 'I surely will destroy ... mountain of Esau.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will I not on that day,\" says Yahweh, \"destroy ... mountain of Esau?",
+      "occurrence": 1
+    }
+  }
+]

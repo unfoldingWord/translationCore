@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \" the name\" refers to Jesus. AT: \"for they have gone out to tell people about Jesus\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "3jn", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "because it was for the sake of the name that they went out",
+      "occurrence": 1
+    }
+  }
+]

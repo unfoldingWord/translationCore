@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 5, "verse": 31 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  }
+]

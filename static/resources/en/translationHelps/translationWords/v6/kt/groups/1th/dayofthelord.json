@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": "day of the Lord, day of Yahweh",
+      "occurrence": 1
+    }
+  }
+]

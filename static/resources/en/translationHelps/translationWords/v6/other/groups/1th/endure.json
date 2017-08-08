@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "endure, endurance",
+      "occurrence": 1
+    }
+  }
+]

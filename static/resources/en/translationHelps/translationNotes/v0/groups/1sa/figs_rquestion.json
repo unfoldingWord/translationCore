@@ -1,0 +1,887 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These rhetorical questions can be translated as statements, if necessary. AT: \"Hannah, you should not weep. You should eat, and your heart should be glad because I am better to you than ten sons!\" or \"You have little reason for sadness. I favor you and that should be enough.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Hannah, why do you weep? Why do you not eat? Why is your heart sad? Am I not better to you than ten sons?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"It is terrible that you do such things!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n\n",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you such things?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"there is certainly no one who can speak for him.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "who will speak for him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"You should know that I revealed myself ... house.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not reveal myself ... house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is a rebuke. It can be translated as a statement. AT: \"You should not scorn my sacrifices ... where I live.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why, then, do you scorn my sacrifices ... live?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The priests and diviners use a rhetorical question to urge the Philistines to think very seriously about what will happen if they refuse to obey God. This can be translated as a warning. AT: \"Do not be stubborn like the Egyptians and Pharaoh were!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should you harden your hearts, as the Egyptians and Pharaoh hardened their hearts?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another rhetorical question used to remind the Philistines how the Egyptians finally sent the Israelites out of Egypt so that God would stop afflicting the Egyptians. This can be translated as a statement. AT: \"remember that the Egyptians sent the Israelites out of Egypt.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "did not the Egyptians send away the people, and they left?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a rhetorical question that expresses the people's fear of Yahweh. AT: \"There is no one who can resist Yahweh because he is so holy!\" or 2) this is a question asking for information. The phrase \"stand before Yahweh\" may refer to priests who serve Yahweh. It is implied that the people were looking for a priest whom Yahweh would permit to handle the ark. AT: \"Is there a priest among us who serves this holy God, Yahweh, and is able to handle this ark?\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 6, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is able to stand before Yahweh, this holy God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel knows the answer to his question. He is reminding Saul that Yahweh has chosen him to be king of Israel. AT: \"Yahweh has certainly anointed you to be a ruler over his inheritance.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Has not Yahweh anointed you to be a ruler over his inheritance?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the people are asking for information or 2) this is a rhetorical question that means Saul is not important. AT: \"Kish is not an important person, so it cannot be true that his son has become a prophet!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What has happened to the son of Kish?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This man uses a rhetorical question to remind people that being a prophet has nothing to do with who one's parents are. The question can be translated as a statement. AT: \"It does not matter who the parents of these other prophets are. What matters is that, amazingly, Saul is speaking messages from God.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then who is their father?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel uses another rhetorical question to say he has always been honest. AT: \"I have never cheated or bribed any man.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Whom have I defrauded?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel knows it is harvest time. He is using a rhetorical question to emphasize that it does not usually rain at this time so the people will know that the rain that will ruin their harvest is a judgment from Yahweh. AT: \"It is harvest time and does not usually rain at this time\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it not the wheat harvest today?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel was not really asking a question, but giving a rebuke to Saul. Saul sought to defend his actions even though they were wrong. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 13, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have you done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan uses this hypothetical question to state that the people should have been allowed to eat. This can be a statement. AT: \"Our victory would have been better if the people had eaten freely today of the plunder that they took from their enemies.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How much better if the people ... that they found?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people scold Saul. This rhetorical question can be translated as a statement. AT: \"Jonathan has just accomplished this great victory for Israel. He should surely not die.\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should Jonathan die, who has accomplished this great victory for Israel? Far from it!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel uses this question to remind Saul of now much God had given him. This question can be translated as a statement. AT: \"Yahweh made you the ruler of the tribes of Israel!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "were you not made the head of the tribes of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel asks this question to emphasize that obedience is much more important than sacrifice. This can be translated as a statement. AT: \"Yahweh does not delight in burnt offerings and sacrifices as much as in obeying his voice!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Has Yahweh as much delight in burnt offerings and sacrifices, as in obeying the voice of Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is a rebuke from God and can be translated as a statement. AT: \"Stop mourning that I rejected Saul from being king over Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long will you mourn for Saul, since I have rejected him from being king over Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samuel uses a question to emphasize that he is worried about going to Bethlehem. AT: \"I cannot go!\" or \"I am afraid to go.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can I go?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Why have you come to fight in battle against us?\" Goliath uses this question to mock the Israelites. AT: \"You are fools if you think you can fight in battle against us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you come out to draw up for battle?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The soldiers were saying this to draw one another's attention to the man Goliath.  AT: \"Look at this man who has come up!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you seen this man who has come up?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David said this to show his anger that this Philistine was defying God's army. AT: \"This uncircumcised Philistine certainly has no power that he should defy the armies of the living God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is this uncircumcised Philistine that he should defy the armies of the living God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eliab uses this question to show that he is angry that David came down. He was probably implying that David did not have a good reason for coming. AT: \"You had no good reason to come here\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you come down here?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eliab uses this question to insult David by making his work seem unimportant and by accusing him of not taking care of his father's sheep. AT: \"You simply had the responsibility of watching over a few sheep in the wilderness. You could not even carry out that simple responsibility!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "With whom have you left those few sheep in the wilderness?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David used these questions to express his frustration and to justify himself. AT: \"I have done nothing wrong. I was only asking a question!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have I done now? Was it not just a question?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"The only thing left for him to have is the kingship.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What more can he have but the monarchy?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David asks this rhetorical question to emphasize that he is not worthy to be the king's son-in-law. AT: \"It is a great matter to be the king's son-in-law, and I am too poor and unimportant for that.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it a small matter to you to be the king's son-in-law, since I am a poor man, and lightly esteemed?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan asks this question to rebuke Saul. This rhetorical question can be translated as a statement. AT: \"You should not sin against innocent blood and kill David without cause.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 19, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why would you sin against innocent blood by killing David for no reason?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Saul really wants to know why Michal did what she did or 2) Saul uses this question to rebuke Michal. This rhetorical question can be translated as a statement. AT: \"You should not have deceived me and let my enemy go, so that he has escaped.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you deceived me and let my enemy go, so that he has escaped?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan uses this question to emphasize that Saul would have told him if he planned to kill David. This rhetorical question can be translated as a statement. AT: \"My father has no reason to hide this thing from me\" or \"If this thing were true, my father would certainly let me know \" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should my father hide this thing from me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"then there would be no reason for you to bring me to your father\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "for why then should you bring me to your father?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"I would certainly tell you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "would I not tell you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan uses this question to emphasize that he will tell David if Saul intends to harm him. This rhetorical question can be translated as a statement. AT: \"then I will certainly send to you and make it known to you\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "will I not then send to you and make it known to you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan asks this question to confirm that David will do this. This rhetorical question can be translated as a statement. AT: \"please show me the covenant faithfulness of Yahweh, that I may not die\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "will you not show me the covenant faithfulness of Yahweh, that I may not die?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan is trying to get Saul to think carefully about what he is doing. This can be translated as a statement, and the words \"should he be put to death\" can be translated in active form. AT: \"You have no good reason to put him to death. He has done nothing wrong.\" or \"You have no good reason to kill him. He has done nothing wrong.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what reason should he be put to death? What has he done?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan uses this question to emphasize that the arrow is farther ahead of the young man. The uses of litotes also emphasizes this. The rhetorical question can be translated as a statement. AT: \"You should know that the arrow is beyond you\" or \"The arrow is far beyond you\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not the arrow beyond you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Achish demands that his servants explain why they have brought David to him or 2) Achish is scolding them with a rhetorical question. AT: \"You should have known not to bring him to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 21, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you brought him to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"Do not allow this fellow to enter my house.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 21, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will this fellow really come into my house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Saul uses a question to emphasize that David, who is from the tribe of Judah, does not desire to do this for the people of the tribe of Benjamin. AT: \"The son of Jesse will not give you fields or vineyards.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will the son of Jesse give every one of you fields and vineyards?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Saul uses a question to emphasize that David, who is from the tribe of Judah, does not desire to do this for the people of the tribe of Benjamin. AT: \"He will not make you captains ... against me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will he make you all captains ... me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"None of your servants is as faithful as David ... house.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who among all your servants is so faithful as David ... house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahimelech asks himself this question before Saul can ask it, then immediately answers it. This rhetorical question can be translated as a statement. AT: \"This is not the first time I have prayed to God to help David.\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is today the first time I have prayed to God to help him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"We will be even more fearful if we go to Keilah to fight the armies of the Philistines.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n\n\n \n",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How much more then if we go to Keilah against the armies of the Philistines?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as an exclamation. AT: \"David is hiding among us in ... Jeshimon!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not David hiding among us in ... Jeshimon?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a rhetorical question. It can be translated as a statement. AT: \"You should not listen to the men who say, 'See, David is seeking to harm you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "1sa", "chapter": 24, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you listen to the men who say, 'See, David is seeking your harm?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These rhetorical questions can be translated as  statements. When David asks the questions, he knows that he will answer the questions himself. AT: \"Let me tell you who the king of Israel has come out after. Let me tell you who it is that you are pursuing.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "After whom has the king of Israel come out? After whom do you pursue?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A rhetorical question with the answer included in the question. AT: \" For if a man finds his enemy, he will not let him go safely.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 24, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For if a man finds his enemy, will he let him go safely?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nabal probably knew who David was, but he did not want to help David. (See [[:en:bible:notes:1sa:18:06|18:6-7]]). The words \"servants ... breaking away from their masters\" in verse 10 probably refer to David breaking away from Saul. These two rhetorical questions can be translated as statements. AT: \"This David son of Jesse you speak of—I do not know him.\" or \"I do not know who this David is, so I will not do as he says. I do not know who Jesse is, so I do not care what happens to his son.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is David, and who is the son of Jesse?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as an exclamation. AT: \"David is hiding  ... Jeshimon!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not David hiding ... Jeshimon?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \" No one can strike Yahweh's anointed one and be without guilt.\" This can also be stated in positive form. AT: \"Anyone who strikes Yahweh's anointed one will be guilty of murder.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "who can extend his hand against Yahweh's anointed one and be guiltless?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses a question to shame Abner into answering. This rhetorical question can be translated as a statement. AT: \"Answer me, Abner!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not answer, Abner?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses a question to rebuke Abner for not guarding Saul. AT: \"You are a very brave man.\" (See [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are not you a courageous man?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a real question and David wants Abner to answer him or 2) this is a rhetorical question and David is rebuking Abner. AT: \"Therefore you should have kept watch over your master the king!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why then have you not kept watch over your master the king?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"I do not need to live in the city with you.\" or \"I am not important enough to live here with you in the royal city.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "for why should your servant live in the royal city with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible ways to translate this rhetorical question as a statement are AT: 1) \"You should not have allowed these Hebrews, our enemies, to be here with us.\" or 2) \"Tell us who these Hebrews are.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What are these Hebrews doing here?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Another possible translation is \"Is not this David, ... these years? I have found ... this day.\" The rhetorical question can be translated as a statement. AT: \"You should know that this is David ... these years. I have found ... this day.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not this David ... these years, and I have found ... this day?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"The best way for David to make peace with his master would be by killing our soldiers!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 29, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For how else could this fellow make peace with his master? Would it not be with the heads of our men?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement: AT: \"No one will listen to you in this matter.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 30, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will listen to you in this matter?",
+      "occurrence": 1
+    }
+  }
+]

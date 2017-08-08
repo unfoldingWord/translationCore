@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"18.7 kilograms of gold\" or \"about 20 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "1,700 shekels of gold",
+      "occurrence": 1
+    }
+  }
+]

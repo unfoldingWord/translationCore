@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "God the Father, heavenly Father, Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "God the Father, heavenly Father, Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "God the Father, heavenly Father, Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 4, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "God the Father, heavenly Father, Father",
+      "occurrence": 1
+    }
+  }
+]

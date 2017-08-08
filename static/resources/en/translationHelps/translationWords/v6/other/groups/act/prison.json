@@ -1,0 +1,184 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 12, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 27 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 40 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 22, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 23, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 25, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 25, "verse": 27 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 26, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 26, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 28, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "prison, prisoner, imprison",
+      "occurrence": 1
+    }
+  }
+]

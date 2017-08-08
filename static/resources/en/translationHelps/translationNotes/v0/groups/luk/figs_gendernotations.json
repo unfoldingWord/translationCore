@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"when all people\" or \"when everyone\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "when all men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"man\" here refers to a person, male or female. AT: \"good person\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "good man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"other people.\" The word here is the general term for a person. (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "other men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These terms refer to women as well as to men. (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "for him ... his neck ... he were ... he should",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers here to \"people\" in general. (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "man",
+      "occurrence": 1
+    }
+  }
+]

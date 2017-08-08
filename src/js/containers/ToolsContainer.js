@@ -9,7 +9,7 @@ import { changeSelections, validateSelections } from '../actions/SelectionsActio
 import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
 import { addGroupData } from '../actions/GroupsDataActions';
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
-import { setToolSettings } from '../actions/ToolsSettingsActions';
+import { setToolSettings } from '../actions/SettingsActions';
 import { setProjectDetail } from '../actions/ProjectDetailsActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';

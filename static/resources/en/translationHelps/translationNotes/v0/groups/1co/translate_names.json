@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This indicates that both Paul and the Corinthians knew Sosthenes. AT: \"Sosthenes the brother you and I know\" (See [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sosthenes our brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He was a synagogue ruler who became a Christian. (See [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Crispus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Stephanas was one of the first believers in the church at Corinth. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 16, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "household of Stephanas",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Stephanas, Fortunatus, and Achaicus",
+      "occurrence": 1
+    }
+  }
+]

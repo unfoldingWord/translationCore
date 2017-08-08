@@ -1,0 +1,917 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"countries\" represents all of the armies that have gathered to attack. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The countries are assembled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's fingers represent him. AT: \"the heavens which you have made\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your heavens, which your fingers have made",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The eyes represent him. AT: \"he looks for some helpless victim\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "his eyes look for some helpless victim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your eyes\" refers to that which Yahweh knows to be true. AT: \"you know that I am telling the truth!\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "let your eyes see what is right!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"face\" represents Yahweh in all of his being. David is confident he will see Yahweh. AT: \"because I act in the right way, I will be with you one day\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 17, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I will see your face in righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to enabling a person to run fast. AT: \"makes me run very fast\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "makes my feet swift",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my hands\" refers to the person. AT: \"He trains me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "He trains my hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my feet\" refers to the person. The writer refers to the safety of God's protection as if he were standing on a place where he will not slip or fall. AT: \"I have not slipped\" or \"I am doing well\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my feet have not slipped",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All three of these words refer to the whole person. AT: \"a person\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the soul ... the heart ... the eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" stands for the entire person. The abstract noun \"desire\" can be stated as a verb. AT: \"what you desire\" or \"what you want\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 20, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your heart's desire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hearts\" represent the whole person. AT: \"May you live forever\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "May your hearts live forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my soul\" refers to the writer. AT: \"brought me up\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "brought up my soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my glory\" refers to the writer's soul or heart or inner being. This represents the entire person of the writer, who worships God because God has made him glad. AT: \"I will sing praise to you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my glory will sing praise to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my soul\" refers to the writer. AT: \"my distress\"  (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the distress of my soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my bones\" refers to the writer. AT: \"I was wasting away\" or \"I was getting weaker\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 32, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my bones were wasting away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to Yahweh. The entire phrase is an idiom that means \"you afflicted me.\" AT: \"you made me suffer greatly\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 32, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your hand was heavy upon me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"their lives\" refers to the people. AT: \"to keep them from dying\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n \n \n",
+      "reference": { "bookId": "psa", "chapter": 33, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to deliver their lives from death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"tongue\" refers to the whole person. AT: \"Therefore, do not speak evil\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 34, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Then keep your tongue from evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both \"swords\" and \"bows\" are weapons used to attack people. The fact that they are \"drawn\" and \"bent\" means they are ready to start attacking. AT: \"have prepared their weapons in order to attack\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "have drawn out their swords ... have bent their bows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Swords are examples of weapons and \"hearts\" represent the people. To \"pierce the heart\" is an idiom that means \"to kill.\" AT: \"Their weapons will be turned against them and they will kill themselves\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_idiom]])\n\n \n \n",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Their swords will pierce their own hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my heart\" refers to the writer. It may be helpful to state that the writer desires good health. AT: \"My strongest desires\" or \"that I desire you to heal me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 38, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my heart's deepest yearnings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" represents the whole person. The anxious thoughts of the writer are spoken of as if they were a fire burning inside him. AT: \"I became very anxious when I thought about these things\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "psa", "chapter": 39, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My heart became hot ... it burned like a fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my mouth\" refers to the writer. AT: \"in me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in my mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"mouth\" refers to the whole person who speaks. AT: \"I will speak wise words\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My mouth will speak wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"life\" refers to the whole person. AT: \"God will redeem me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "God will redeem my life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"soul\" refers to the whole person. This phrase means that he considered himself to be happy and successful because of his riches. AT: \"He congratulated himself\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "He blessed his soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of a person speaking evil things as if that person's mouth is a messenger whom the person sends to do evil things. AT: \"You are always saying evil things\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "You give your mouth to evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the mouth\" represents the whole person. This can be stated in active form. AT: \"but God will silence the liars\" or \"but God will silence those who lie\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 63, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "but the mouth of those who speak lies will be stopped up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all of the people who live on the earth. AT: \"All the people on earth will worship you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 66, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "All the earth will worship you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"them\" refers to the names of the enemies. This can be stated in active form. AT: \"Wipe out their names in\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Let them be blotted out of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of his desire to praise and honor Yahweh with the words he speaks as if his mouth were full of words the way it can be full of food. AT: \"My mouth will be filled with words that praise you ... that honor you\" or \"I will always praise you ... will always honor you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My mouth will be filled with your praise ... with your honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The mouth is synecdoche for the whole person. AT: \"I will tell\" or \"I will speak with my mouth and tell\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My mouth will tell",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"tongue\" refers to the whole person. AT: \"I will also talk\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My tongue will also talk",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The right hand represents the Yahweh's power and control. AT: \"This is the root that you, Yahweh, planted\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 80, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "This is the root that your right hand planted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to Yahweh's power and control. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 80, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Joseph\" represents all of the Israelites. AT: \"to the Israelites\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in Joseph",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the burden from his shoulder\" represents the forced labor the Israelites had to do as slaves in Egypt. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "removed the burden from his shoulder",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Israel\" represents the people of Israel. AT: \"Israelites\" or \"people of Israel\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"faces\" represents the whole person. AT: \"Make them very ashamed\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 83, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Fill their faces with shame",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"courts\" represent the temple. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 84, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the courts of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gates of Zion\" represents the entire city of Jerusalem. AT: \"city of Jerusalem\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 87, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "gates of Zion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"edge\" represents the whole sword. AT: \"his sword\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 89, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the edge of his sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"control of the wicked\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 97, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "hand of the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the author refers to himself as his \"heart.\" This can be stated in active form. AT: \"I am in despair\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 102, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My heart is crushed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David is referring to himself by his heart. Also, the word \"fixed\" means to trust completely. AT: \"My heart is fixed on you, God\" or \"I am trusting completely in you, God\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 108, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My heart is fixed, God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hands\" refers to Yahweh, himself. AT: \"The works that he does\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 111, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The works of his hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"His heart is supported.\" Here the word \"heart\" refers to the person. Possible meanings are 1) \"He is at peace\" or 2) \"He is confident\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 112, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "His heart is tranquil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verbal phrase may be supplied from the previous phrase to make the meaning clear. The feet here represent the person. Stumbling here probably represents being killed by his enemies. AT: \"you have rescued me from stumbling\" or \"you have kept me from being killed by my enemies\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "psa", "chapter": 116, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my feet from stumbling",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mouth\" represents the whole person. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 108 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "of my mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"body\" represents the whole person. AT: \"I shake because I fear you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 120 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My body trembles in fear of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" represents the whole person. AT: \"I grow tired because I wait and wait\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 123 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My eyes grow tired as I wait",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"footsteps\" represents the writer as he is walking. He speaks of the way he lives, or his conduct, as if he were walking on a path. AT: \"Direct me\" or \"Teach me how to live\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 133 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Direct my footsteps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of his whole being as if it were only his heart. AT: \"completely\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 58 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "with my whole heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The hand is a synecdoche for the whole person. AT: \"Please help me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 173 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "May your hand help me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Jerusalem is referred to by the fortress walls that protects it. The terms \"walls\" and \"fortress\" refer to the same thing. AT: \"within Jerusalem\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 122, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "within the walls that defend you ... within your fortresses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"My soul\" represents the psalmist. AT: \"I\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 130, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "My soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your sons\" represents the descendants of David that would become king. AT: \"your descendants\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n \n",
+      "reference": { "bookId": "psa", "chapter": 132, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Inner parts\" refers to the interior organs of a person, but here the expression probably stands for the entire body. AT: \"You made my entire body (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 139, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "You formed my inner parts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The eyes are a synecdoche for the whole person. AT: \"I am looking to see what you will do\" or \"I expect you to help me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 141, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my eyes are on you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a request. AT: \"bring me out of prison\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 142, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Bring my soul out of prison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"princes\" represents all human leaders. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 146, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in princes",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "barren",
+      "quote": "barren",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "barren",
+      "quote": "barren",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "barren",
+      "quote": "barren",
+      "occurrence": 1
+    }
+  }
+]

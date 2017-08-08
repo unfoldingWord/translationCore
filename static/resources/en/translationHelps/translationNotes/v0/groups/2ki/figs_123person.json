@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh speaks about himself in the third person. It can be stated in first person. AT: \"this is what I declare\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n\n",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "this is the declaration of Yahweh",
+      "occurrence": 1
+    }
+  }
+]

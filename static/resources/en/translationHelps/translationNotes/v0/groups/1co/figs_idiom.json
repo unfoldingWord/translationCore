@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "an idiomatic expression for coming together to worship the Lord Jesus (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in the name of our Lord Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Because everything I have just told you is true, this is what you need to do\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "What is next then",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom by which Paul may mean that he became a Christian much later than the other apostles. Or perhaps he means that, unlike the other apostles, he did not witness Jesus' three-year-long ministry. AT: \"someone who missed the experiences of the others\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "a child born at the wrong time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Kings who won wars would put their feet on the necks of those whom they had defeated. AT: \"until God has completely destroyed all of Christ's enemies\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "until he has put all his enemies under his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Kings who won wars would put their feet on the necks of those whom they had defeated. AT: \"God has completely destroyed all of Christ's enemies.\" See how \"put ... under his feet\" is translated in [[:en:bible:notes:1co:15:24|15:25]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he has put everything under his feet",
+      "occurrence": 1
+    }
+  }
+]

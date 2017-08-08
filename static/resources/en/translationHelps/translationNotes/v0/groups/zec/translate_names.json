@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of males. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Berechiah ... Iddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Berechiah ... Iddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zerubbabel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]]).\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sharezer and Regem Melech",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the people of the land of Hadrach and the city Damascus (See: [[:en:ta:vol1:translate:translate_names]]) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the land of Hadrach and Damascus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town or village east of Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Azal",
+      "occurrence": 1
+    }
+  }
+]

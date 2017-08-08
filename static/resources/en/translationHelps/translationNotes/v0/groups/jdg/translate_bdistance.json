@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use a modern measurement of length, here are two ways of doing it. AT: \"46 centimeters\" or \"about one half meter\" (UDB) (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "one cubit",
+      "occurrence": 1
+    }
+  }
+]

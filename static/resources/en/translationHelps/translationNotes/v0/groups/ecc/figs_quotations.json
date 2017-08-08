@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I said that it is crazy to laugh at things\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "I said about laughter, \"It is crazy,\"",
+      "occurrence": 1
+    }
+  }
+]

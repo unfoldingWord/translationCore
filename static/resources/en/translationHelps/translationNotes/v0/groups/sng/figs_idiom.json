@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He is saying his affection and love now belong to her. AT: \"have captured my love.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "have stolen my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"My soul left, when he spoke.\" AT: \"When he spoke, I felt like I had died.\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "sng", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "My heart sank; I became despondent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"a man comes and wants to marry her.\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "she will be promised in marriage",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,572 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in an active form. AT: \"Someone invited Jesus and his disciples to the wedding\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Jesus and his disciples were invited to the wedding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in an active form. AT: \"someone had written\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it was written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"John was baptizing them\" or \"he was baptizing them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n\n \n",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "were being baptized",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in an active form for clarity. AT: \"Then John's disciples and a Jew began to argue\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Then there arose a dispute between some of John's disciples and a Jew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in an active form. AT: \"God sent me to arrive before him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I have been sent before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in an active form. AT: \"when the angel moves the water\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "when the water is stirred up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"so God can save you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that you might be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a passive statement that can be translated in an active form. AT: \"The prophets wrote\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It is written in the prophets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a passive phrase. You may translate it in an active form with a personal subject. AT: \"Moses wrote\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it is written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a passive statement. You can translate it in an active form. AT: \"no one has ever heard of anyone who healed a man who was blind from birth\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it has never been heard that anyone opened",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"whom they called Didymus\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "who was called Didymus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A burial custom of this time was to wrap the dead body with long strips of linen cloth. This can be stated in active form. AT: \"Someone had wrapped strips of cloth around his hands and feet. They had also tied a cloth around his face\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "his feet and hands were bound with cloths, and his face was bound about with a cloth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"when God glorified Jesus\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "when Jesus was glorified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"in order to fulfill the message of Isaiah the prophet\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that the word of Isaiah the prophet would be fulfilled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"so people would not stop them from going to the synagogue\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that they would not be banned from the synagogue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bless\" means to cause good, beneficial things to happen to a person. You can translate this in an active form. AT: \"God will bless you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you are blessed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"Now people are about to see how the Son of Man will receive honor and how God will receive honor through what the Son of Man is doing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Now the Son of Man is glorified, and God is glorified in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"my Father will love anyone who loves me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he who loves me will be loved by my Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"the fire burns them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they are burned up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"he will do it for you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it will be done for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"It causes people to honor my Father\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "My Father is glorified in this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"to fulfill the prophecy in their law\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to fulfill the word that is written in their law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"others will scatter you\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 16, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you will be scattered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"so that you can unite them just as you have united us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 17, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that they will be one, just as we are one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"Now the high priest knew that disciple so he was able to enter with Jesus\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Now that disciple was known to the high priest, and he entered with Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a special stone platform where only the important people were allowed to go. You can translate this in an active form. AT: \"in a place the people called The Pavement,\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in a place called \"The Pavement,\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"to the place that the people called 'The Place of a Skull,'\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to the place called \"The Place of a Skull,\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"the place where the soldiers crucified Jesus\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the place where Jesus was crucified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"he knew that he had done everything that God had sent him to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "knowing that everything was now completed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"to break the legs of the executed men and take their bodies down from the crosses\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to break their legs and to remove them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation from Psalm 34. You can translate this in an active form. AT: \"No one will break any of his bones\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Not one of his bones will be broken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"she saw that someone had rolled away the stone\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "she saw the stone rolled away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his head\" refers to \"Jesus' head.\" You can translate this in an active form. AT: \"cloth that someone had used to cover Jesus' face\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "cloth that had been on his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"the disciples had locked the doors where they were\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the doors of where the disciples were, were closed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will not forgive them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they are kept back",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"when they had locked the doors\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "while the doors were closed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"with Thomas whom we called Didymus\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "with Thomas called Didymus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"If someone wrote down all of them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "If each one were written down",
+      "occurrence": 1
+    }
+  }
+]

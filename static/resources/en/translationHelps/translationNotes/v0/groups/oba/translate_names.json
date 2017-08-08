@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of a region in the land of Edom. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Teman",
+      "occurrence": 1
+    }
+  }
+]

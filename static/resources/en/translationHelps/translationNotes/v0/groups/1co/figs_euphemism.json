@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"not to have sexual relations with a woman,\" speaking here of the wife of \"a man\" (See: [[:en:ta:vol2:translate:figs_euphemism]]), or 2) \"not ever to marry\" (See: [[:en:ta:vol2:translate:figs_metonymy]]).\n  ",
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "not to touch a woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both husbands and wives are obligated to regularly sleep with their spouses. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "conjugal rights",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"deprive\" means to keep from someone something that the other person has the right to receive. \"Do not refuse to have marital relations with your spouse\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Do not deprive each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is quoting the Jewish scriptures. His readers would have understood from this one word that the people were worshiping an idol by singing and dancing and engaging in sexual activities, not simply enjoying innocent fun. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "play",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This probably refers to the private parts of the body, which people keep covered. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "1co", "chapter": 12, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "unpresentable",
+      "occurrence": 1
+    }
+  }
+]

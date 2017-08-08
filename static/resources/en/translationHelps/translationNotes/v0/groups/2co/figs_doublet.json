@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) that the word \"life\" is repeated for emphasis and the phrase means \"an aroma that gives life\" or 2) \"an aroma of life that gives people live\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "aroma from life to life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fear\" and \"trembling\" share similar meanings and emphasize the intensity of fear. AT: \"you welcomed him with great reverence\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "you welcomed him with fear and trembling",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"begging\" and \"pleaded\" share similar meanings and emphasize the earnestness with which the people pleaded. AT: \"they pleaded very earnestly with us\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "with much begging they pleaded with us",
+      "occurrence": 1
+    }
+  }
+]

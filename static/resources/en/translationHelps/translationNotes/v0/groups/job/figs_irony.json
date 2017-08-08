@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bildad is speaking with irony to express that there is not any real joy for the godless person. AT: \"this is all the joy they will receive from their godless actions\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "job", "chapter": 8, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "this is the \"joy\" of such a person's behavior",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In these statements, Job is accusing Bildad. The word \"one\" refers to himself. AT: \"I am powerless and have no strength, but you act like you have helped me—but really, you have not helped me at all!\" (See: [[:en:ta:vol1:translate:figs_irony]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "How you have helped one ... the arm that has no strength!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Elihu is criticizing Job and his friends. He does not think they are actually wise. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "you wise men ... you who have knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The wicked consider darkness to be their light, because they do their evil deeds in the darkness and they are familiar with the darkness. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "job", "chapter": 38, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "their 'light'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses mocking irony to emphasize that Job does not understand light and darkness. AT: \"It is obvious that you do not know, because you were not born when I created them, and you are not very old.\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "job", "chapter": 38, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Undoubtedly ... so large",
+      "occurrence": 1
+    }
+  }
+]

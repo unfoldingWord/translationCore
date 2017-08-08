@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Again Paul speaks of obedience as if it were paying back a debt. You can include the implied word \"debtors.\" AT: \"but we are not debtors to the flesh, and we do not have to obey our sinful desires\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but not to the flesh to live according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis. You can include the implied words in your translation. Paul asks this question to get the attention of his readers. AT: \"Why could they not attain righteousness?\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Why not?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These clauses are ellipses. You can include the missing words in your translation. AT: \"pay taxes to those who require that you pay taxes. Pay duties on goods to those who require that you pay those duties. Respect those whom you ought to respect. Honor those whom you ought to honor\" (UDB) (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "tax to whom tax is due; toll to whom toll is due; fear to whom fear is due; honor to whom honor is due",
+      "occurrence": 1
+    }
+  }
+]

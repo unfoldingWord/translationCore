@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"In month one\" (See:  [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "In the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"day thirteen of month twelve\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "thirteenth day of the twelfth month",
+      "occurrence": 1
+    }
+  }
+]

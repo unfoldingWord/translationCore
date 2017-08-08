@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive terms. AT: \"we want you to know\" (See: [[:en:ta:vol2:translate:figs_litotes]]) \n  ",
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "we do not want you to be ignorant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "By stating this in a negative form Paul is emphasizing that the Corinthians should expect to meet many \"false apostles\" ([[:en:bible:notes:2co:11:12|11:13]]). AT: \"And we should expect this ... We should certainly expect that\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "And this is no surprise ... It is no great surprise if",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "By using the negative form, Paul is saying strongly that those Corinthians who think that he is inferior are wrong. AT: \"For I am just as good as\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "For I was not at all inferior to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"that you will not sin at all\" or \"that you will not refuse to listen to us when we correct you.\" Paul is emphasizing the opposite with his statement. AT: \"that you will do everything right\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "that you may not do any wrong",
+      "occurrence": 1
+    }
+  }
+]

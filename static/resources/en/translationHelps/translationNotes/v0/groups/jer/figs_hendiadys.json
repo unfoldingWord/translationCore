@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"bitter\" describes \"wicked.\" AT: \"it is bitterly wicked\" or \"it is extremely wicked\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "it is wicked and bitter",
+      "occurrence": 1
+    }
+  }
+]

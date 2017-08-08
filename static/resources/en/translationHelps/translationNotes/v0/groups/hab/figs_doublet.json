@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"terrifying\" and \"fearsome\" mean basically the same thing and emphasize that they made others very afraid. AT: \"They make others very afraid.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "They are terrifying and fearsome",
+      "occurrence": 1
+    }
+  }
+]

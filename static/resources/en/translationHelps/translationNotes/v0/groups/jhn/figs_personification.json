@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In the source language, wind and Spirit are the same word. The speaker here refers to the wind as if it were a person. AT: \"The Holy Spirit is like a wind that blows wherever it wants\" (See: [[:en:ta:vol2:translate:figs_personification]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The wind blows wherever it wishes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Jesus says that the miracles \"testify\" or \"tell the people\" about him. AT: \"What I do shows the people that God has sent me\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the very works that I do, testify about me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is personification. Jesus speaks of \"the truth\" as if it were a person. AT: \"if you obey the truth, God will set you free\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the truth will set you free",
+      "occurrence": 1
+    }
+  }
+]

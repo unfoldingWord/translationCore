@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the people who have already died.\" Naomi's husband and sons were the \"dead.\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A kinsman-redeemer was a close male relative who could rescue a childless widow from financial ruin by marrying her and having a child with her. He would also reacquire the land his relatives had lost due to poverty and redeem family members who had sold themselves into slavery. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n\n",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "kinsman-redeemers",
+      "occurrence": 1
+    }
+  }
+]

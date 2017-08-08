@@ -1,0 +1,287 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the people in the Old Testament who received God's Law. You could use the singular form of 'you' because each person was to obey it, or you could use the plural form of 'you' because all of the people were to obey it. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was speaking to the scribes and Pharisees. The word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 5, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you may know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was speaking to the crowd so \"you\" is plural. Jesus used this phrase to emphasize the truth of the surprising thing he was about to say next. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural. Jesus uses these questions to express his sadness that the people did not believe. They can be written as statements. AT: \"I have been with you so long, yet you do not believe. I wonder how long I must put up with you.\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "how long must I be with you and put up with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was speaking to the disciples. The word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus gave these commands to encourage his disciples to pray continually. Some languages may also require more information with these verbs. Use the form of \"you\" that would be most appropriate in this context. AT: \"keep asking for what you need ... keep seeking what you need from God ... keep knocking on the door\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "ask ... seek ... knock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you\" is singular because Jesus is speaking directly to the Pharisee that invited him. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "When you give",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural, so it is unclear to whom it is addressed. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "For I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was talking to a group of people, so languages that have a plural form of \"you\" would use that. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "luk", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You cannot serve",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was speaking to his disciples, so languages that have a plural form of \"you\" would use it. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you also",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is singular because Jesus was speaking to the city. But if this would be unnatural in your language, you could use a plural form of \"you\" to refer to the people of the city. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is singular because Jesus was speaking to the city. But if this would be unnatural in your language, you could use a plural form of \"you\" to refer to the people of the city. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was talking to his disciples. The word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was talking to his disciples. The word \"you\" is plural. AT: \"that you do not believe lies\" or \"that no one deceives you\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "that you are not deceived",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was talking to his disciples. The word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to all of the apostles. Languages that have different forms of \"you\" should use the plural form. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "to have you, that he might sift you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" here refers specifically to Simon. Languages that have different forms of you should use the singular form. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "But I have prayed for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural. It refers to the women and possibly the other disciples in addition. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"May you have peace\" or \"May God give you peace!\" (UDB) The word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Peace be to you",
+      "occurrence": 1
+    }
+  }
+]

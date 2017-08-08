@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They were commanded to form the hammered cups so that they resembled flower blossoms. AT: \"with hammered cups that resemble flower blossoms\" (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "num", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "with hammered cups like blossoms",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the cloud's appearance during the night. Here the cloud is compared to looking like a fire. AT: \"During the night the cloud looked like a huge fire until morning\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "It appeared like fire until morning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The cloud's appearance is compared to a huge fire. AT: \"it looked like a huge fire at night.\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "appeared like fire at night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Miriam's leprosy would cause her body to decay until she died. The flesh being decayed is spoken of as if it were eaten. AT: \"Please do not let her be like a dead newborn baby whose flesh is half decayed\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "num", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Please do not let her be like a dead newborn whose flesh is half consumed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men speak of grasshoppers to show how very small they thought themselves to be compared to the people of the land. AT: \"we are as small as grasshoppers in comparison with them\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "we were like grasshoppers in comparison with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks as if the earth were alive and the opening in the ground into which these people would fall were a large mouth that would eat them. AT: \"and they fall into it and are buried underneath the ground\" (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "that swallows them up like a large mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The way the Israelites will destroy their enemies is spoken of as if they were an ox eating up the grass in a field. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "This multitude will eat up all that is around us as an ox eats up the grass in a field",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam speaks of the Israelies as if they were numerous enough to cover entire valleys. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Like valleys they spread out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just like a small object in a person's eye or a small thorn that sticks into a person skin can cause great irritation, so even a small portion of the Canaanites, if left in the land, would cause great trouble for the Israelites. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "num", "chapter": 33, "verse": 55 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like objects in your eyes and thorns in your sides",
+      "occurrence": 1
+    }
+  }
+]

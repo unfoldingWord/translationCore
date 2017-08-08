@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 4, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "kingdom of God, kingdom of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 6, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "kingdom of God, kingdom of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 6, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "kingdom of God, kingdom of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 50 },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "kingdom of God, kingdom of heaven",
+      "occurrence": 1
+    }
+  }
+]

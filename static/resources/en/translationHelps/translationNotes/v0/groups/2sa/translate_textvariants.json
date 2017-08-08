@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some versions add \"when he was at Hebron\" and others omit it. You may want to add the phrase if it is present in your national version. (See: [[:en:ta:vol2:translate:translate_textvariants]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_textvariants",
+      "quote": "to David",
+      "occurrence": 1
+    }
+  }
+]

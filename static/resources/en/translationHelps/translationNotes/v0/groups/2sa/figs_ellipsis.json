@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that David sent messengers. (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "King David sent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that they should return to Jerusalem. (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "then return",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added to this question. Also, this rhetorical question is a request for Jehonadab to tell him why he is depressed. It may be written as a statement. AT: \"Will you not tell me why you are depressed?\" or \"Please, tell me why you are depressed.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Will you not tell me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words can be added to this phrase. AT: \"because the people have made me afraid that I have come\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "because the people have made me afraid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another place he may be hiding. AT: \"or hidden in some other place\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "or in some other place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing word may be added. AT: \"most peaceful and faithful cities in Israel\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "most peaceful and faithful in Israel",
+      "occurrence": 1
+    }
+  }
+]

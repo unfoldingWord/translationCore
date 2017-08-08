@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Saul was weak and using the spear to support himself or 2) Saul was attempting to kill himself by falling on his own spear. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Saul was leaning on his spear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fallen\" is a polite way of referring to being killed. Also, \"sword\" represents a battle. AT: \"they had died in battle\" or \"enemies had killed them in battle\" This here means \"had been killed.\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "they had fallen by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying they died. AT: \"they both died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "they fell down together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to force Joab to acknowledge that continued fighting could only result in more suffering. Here \"bitter\" is a euphemism for the terrible suffering that would occur. AT: \"You know very well that there will be a terrible result if this continues!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Do you not know it will be bitter in the end?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying that Amnon raped his sister. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Amnon violated his sister",
+      "occurrence": 1
+    }
+  }
+]

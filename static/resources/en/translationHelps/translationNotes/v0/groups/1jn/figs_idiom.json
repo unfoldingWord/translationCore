@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression means \"Christ willingly gave his life for us\" or \"Christ willingly died for us\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Christ laid down his life for us",
+      "occurrence": 1
+    }
+  }
+]

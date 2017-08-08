@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"80 to 120 liters.\" A \"metrete\" was a measure of about 40 liters of liquid. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "two to three metretes",
+      "occurrence": 1
+    }
+  }
+]

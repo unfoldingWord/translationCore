@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the words \"times\" and \"seasons\" refer to different kinds of time. AT: \"the general period of time or the specific date\" or 2) the two words are basically synonymous. AT: \"the exact time\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "act", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the times or the seasons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"apostleship\" defines what kind of \"ministry\" this is. AT: \"to take Judas' place in this apostolic ministry\" or \"to take Judas' place in serving as an apostle\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "act", "chapter": 1, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "to take the place in this ministry and apostleship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words share similar meanings. Together they emphasize the intensity of amazement. AT: \"They were greatly amazed\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "They were amazed and marveled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words share similar meanings. Together they emphasize that the people could not understand what was happening. AT: \"surprised and confused\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "amazed and perplexed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"wonder\" and \"amazement\" share similar meanings and emphasize the intensity of the people's amazement. AT: \"they were extremely amazed\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "act", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "they were filled with wonder and amazement",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"ordinary\" and \"uneducated\" share similar meanings. They emphasize that Peter and John had received no formal training in Jewish law. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "act", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "ordinary, uneducated men",
+      "occurrence": 1
+    }
+  }
+]

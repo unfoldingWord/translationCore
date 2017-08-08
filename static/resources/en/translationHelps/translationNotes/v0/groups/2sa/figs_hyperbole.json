@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This deliberate exaggeration is used to show that the nation of Israel wanted to take care of David in his grief. AT: \"Many people came\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "All the people came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is exaggeration used for emphasis. Ittai the Gittite had lived there for several years. AT: \"Since you have lived here only a short time\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Since you just left yesterday",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Many of the people of Israel wept loudly when they saw the king leaving. Here this is exaggerated by saying that the whole country wept. AT: \"All the people along the road wept\" or \"Many of the people wept\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "All the country wept with a loud voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that people were able to see the tent and Absalom walking in and out of the tent with the women. The phrase \"all of Israel\" is an exaggeration, for only people near the palace could see it. AT: \"the top of the palace where everyone could see it, and Absalom slept ... wives\" (See:  [[:en:ta:vol2:translate:figs_hyperbole]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "the top of the palace, and Absalom slept ... wives in the sight of all Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration where all the grains of sand on a beach are compared to the number of Israelite soldiers. AT: \"so many that they can barely be counted\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "as numerous as the sands that are by the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the people\" refer to the people who followed David. This is an exaggeration, it means a large number came and gathered around him. AT: \"many of the people\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the people",
+      "occurrence": 1
+    }
+  }
+]

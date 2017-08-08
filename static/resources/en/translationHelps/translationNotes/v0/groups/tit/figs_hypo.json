@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This presents an imaginary situation where someone opposes Titus and then becomes ashamed for having done so. It is not expressing something that actually happened. Your language may have a way of expressing this. (See: [[:en:ta:vol1:translate:figs_hypo]])\n",
+      "reference": { "bookId": "tit", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "so that anyone who is opposed may be put to shame",
+      "occurrence": 1
+    }
+  }
+]

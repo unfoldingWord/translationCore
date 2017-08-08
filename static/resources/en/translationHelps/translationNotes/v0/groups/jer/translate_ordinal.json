@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the fifth month of the Hebrew calendar. It is during the last part of July and the first part of August on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fifth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 25, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourth ... the first",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate as in [[:en:bible:notes:jer:25:01|25:1]]. AT: \"after Jehoiakim ... had been king of Judah for three years\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "in the fourth year of Jehoiakim ... king of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"second\" is the ordinal form of the number 2. Possible meanings are 1) \"the day after\" or 2) \"two days after\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 41, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the second day after",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in year nine\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 52, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "in the ninth year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"until year eleven\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n \n",
+      "reference": { "bookId": "jer", "chapter": 52, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "until the eleventh year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See: [[:en:ta:vol2:translate:translate_ordinal]]\n  ",
+      "reference": { "bookId": "jer", "chapter": 52, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "seventh ... eighteenth ... twenty-third",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 52, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "in the thirty-seventh year",
+      "occurrence": 1
+    }
+  }
+]

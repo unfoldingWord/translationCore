@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 19, "verse": 37 },
+      "tool": "translationWords",
+      "groupId": "courtyard",
+      "quote": "courtyard, court",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 19, "verse": 38 },
+      "tool": "translationWords",
+      "groupId": "courtyard",
+      "quote": "courtyard, court",
+      "occurrence": 1
+    }
+  }
+]

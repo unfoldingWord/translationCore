@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This probably refers to earthquakes and gives the impression that the mountains quaked because they were very afraid of Yahweh. AT: \"The mountains trembled in fear\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "jdg", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The mountains quaked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samson speaks about his strength as if it were a person who could leave him. AT: \"I will not be strong any more\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "my strength will leave me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Samson's strength is described as if it were a person who could leave him. AT: \"his strength was gone\" or \"he was no longer strong\" (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "his strength had left him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about fighting as if it were a person who could overtake someone. AT: \"But the soldiers of Israel caught up to them\" or \"But they were not able to escape the fighting\" (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "But the fighting overtook them",
+      "occurrence": 1
+    }
+  }
+]

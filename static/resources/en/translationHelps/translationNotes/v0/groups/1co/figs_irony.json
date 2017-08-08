@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"that person should be willing to have people who do not believe call him a fool\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "let him become a \"fool\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"so that people will know the most highly regarded believers among you\" or 2) \"so that people can display this approval to the others among you.\" Paul may have been using irony, saying the opposite of what he wanted the Corinthians to understand, to shame them. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "so that those who are approved may be recognized among you",
+      "occurrence": 1
+    }
+  }
+]

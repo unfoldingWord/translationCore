@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Ah\" here shows that Gideon was very frightened.  (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Ah, Lord Yahweh!",
+      "occurrence": 1
+    }
+  }
+]

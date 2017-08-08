@@ -1,0 +1,887 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Each man does not have his own personal banner; rather, this refers to the banner belonging to his tribe. AT: \"by his tribe's banner\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "by his banner",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"fire\" is used to refer to \"burning incense.\" AT: \"they burned an incense offering in a way that Yahweh did not approve of\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "they offered to him unacceptable fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"tribe\" refers to the men in the tribe. AT: \"Bring the men of the tribe of Levi\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Bring the tribe of Levi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"tribes of Israel\" refer to the people of Israel. AT: \"help the people of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "help the tribes of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"price\" refers to the shekels that Moses collected. AT: \"the money that you collected for their redemption\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 3, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the price of redemption that you paid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"camp\" refers to all of the people in the camp.  AT: \"When the people prepare\" or  (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "When the camp prepares",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"light\" is used to refer to the  \"lamps.\" AT: \"the oil for the lamps\" (See:  [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the oil for the light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The atonement is made for the man's sin. Here Yahweh refers to the man's sin as \"himself.\" AT: \"to atone for his sin\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to atone for himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"spirit\" refers to a person's attitude and emotions. His \"jealously\" is spoken of as if it were a person who spoke to him. AT: \"the husband might feel jealous and become suspicious\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "a spirit of jealousy might still inform the husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to the man's attitude and emotions of jealousy. See how you translated this in [[:en:bible:notes:num:05:13|5:14]]. AT: \"who is jealous\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "a spirit of jealousy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"head\" represents the Nazirite man's hair, which symbolizes his vow. AT: \"defiles his long hair which shows everyone he is separated to God\" or \"he becomes defiled\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "defiles his consecrated head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his voice\" refers to Yahweh. AT: \"he heard Yahweh speaking to him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 89 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he heard his voice speaking to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Yahweh commanded Moses to have someone make the trumpet. He did not make them himself. AT: \"Tell someone to make two silver trumpets\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Make two silver trumpets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking to Moses and uses the word \"you,\" but he is actually referring the people of Israel going to war. AT: \"When the people of Israel to war ... oppresses Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "When you go to war ... oppresses you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"Moses' eyes\" represents his opinion or thoughts. AT: \"in Moses' opinion\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in Moses' eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"Spirit\" here represents the power that God's Spirit had given to Moses so that Moses could do what God told him to do. AT: \"some of the power that the Spirit has given you\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "some of the Spirit that is on you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hand\" represents God's power. God uses this question to rebuke Moses for thinking that God did not have the power to provide enough meat for the people. AT: \"Do you think that I am not powerful enough to do this?\" or \"You should know I am more than strong enough to do this.\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Is my hand short?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"Yahweh's words\" represents what Yahweh had said. AT: \"what Yahweh had said\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Yahweh's words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"Spirit\" here represents the power that God's Spirit had given to Moses. AT: \"some of the power that the Spirit had given to Moses\" See how you translated a similar phrase in [[:en:bible:notes:num:11:16|11:17]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "some of the Spirit that was on Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To hold people's sin against them is to say that they are guilty for their sin. Here it represents punishing them for their sin. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "do not hold this sin against us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word\" refers to a report. AT: \"They brought back their report\" or \"They reported what they had seen\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "They brought back word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since honey is produced from flowers, it represents crops and the food produced from the crops. AT: \"food from crops\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "honey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here sight represents opinion. AT: \"In our own opinion ... in their opinion\" [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "In our own sight ... in their sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"spirit\" represents his attitude. Caleb was willing to obey God. What his attitude was can be stated clearly. AT: \"because he had a different attitude\" or \"because he was willing to obey God\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_explicit]] )\n",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "because he had another spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Their dead bodies falling represents them dying. AT: \"You will die\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Your dead bodies will fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Their dead bodies falling represents them dying. AT: \"you will die\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "your dead bodies will fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A corpse is a dead body. The end of their corpses represents the last of the them dying. AT: \"until the last one of you dies\" or \"until all of you die\" (See:  [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "until the end of your corpses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Israel was another name for Jacob. The people of Israel were his descendants. AT: \"the people of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 15, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the descendants of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Losing their lives represents dying.  AT: \"those who died\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "those who lost their lives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Anger coming from God represents God showing his anger. AT: \"Yahweh is showing us his anger\" or \"Yahweh is very angry and is acting according to his anger\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "anger is coming from Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Putting the incense in the censer here represents burning it. AT: \"he burned the incense\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he put in the incense",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the covenant decrees\" refers to the box that held the tablets that the covenant decrees were written on. AT: \"the ark of the covenant\" or \"the box that holds the covenant decrees\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the covenant decrees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the covenant decrees\" refers to the box that held the tablets that the covenant decrees were written on. AT: \"the tent of the covenant box\" or \"the tent that the covenant decrees are in\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the tent of the covenant decrees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this represents God being extremely angry with his people. AT: \"so that I do not become very angry with the people of Israel again\" or 2) this represents God punishing them because of his anger. AT: \"so that I do not punish the people of Israel again\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "so that my anger does not come on the people of Israel again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being inside the curtain represents being inside the room behind the curtain. AT: \"everything in the room behind the curtain\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "everything inside the curtain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The person would ask someone who is clean to purify him by sprinkling on him some water mixed with the cows ashes. Asking someone to purify him is spoken of as if he were to purify himself. AT: \"ask someone to purify him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 19, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "purify himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents being in front of Yahweh's tent. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in front of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"their eyes\" represents the people seeing what Moses does.   AT: \"while they watch you\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "before their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"voice\" represents their crying or what they said to him. AT:  \"he heard our cry\" or \"he heard what we asked for\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he heard our voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"turn aside\"  represents leaving the road. AT: \"We will not leave the road in any direction\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "We will not turn aside to the right hand or to the left",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he fought\" means that his army fought. AT: \"his army fought against Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he fought against Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"listen\" means that Yahweh did as they asked. AT: \"did what Israel asked\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "listened to Israel's voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Israel\" refers to the people of Israel, and especially to their leaders. AT: \"Then the Israelites\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Then Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to King Sihon's army, and \"Israel\" refers to the people of Israel. AT: \"his army fought against the Israelites\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he fought against Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Israel\" refers to the people of Israel. AT: \"The Israelites attacked\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Israel attacked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"with the sharp part of the sword.\" The \"edge of the sword\" is associated with death and complete destruction. AT: \"and completely defeated them\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "with the edge of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Opening the mouth is associated with the ability to speak. AT: \"Then Yahweh gave the donkey the ability to speak like a human would speak\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Then Yahweh opened the donkey's mouth so she could talk",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"open one's eyes\" is associated with being able to see. AT: \"Then Yahweh gave Balaam the ability to see the angel of Yahweh\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Then Yahweh opened Balaam's eyes, and he saw the angel of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abundant water is associated with God's blessing on the crops of the land. AT: \"God will bless Israel with plenty of water for their crops\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Water flows ... well-watered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jacob\" refers to the descendants of Jacob. AT: \"from among the descendants of Jacob\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of Jacob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Israel\" refers to future Israelites. AT: \"from among the Israelites in the future\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"eyes of the whole community\" refers to the to the community themselves. It is written this way to emphasize what they saw. AT: \"in front of the whole community\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "before the eyes of the whole community",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"their eyes\" refer to the people. It is written this way to emphasize what they saw. AT: \"and in front of all of them command Joshua to lead the people of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "and command him before their eyes to lead them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here what the woman said is referred to as something that came out of her lips. AT: \"then whatever she said\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "then whatever came out of her lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to listening and perceiving what the speaker is telling their audience. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 31, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"blood\" is a metonym for the murder. AT: \"The one who avenges the murder\" or \"The relative seeking vengeance\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 35, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The avenger of blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"blood\" is a metonym for the murder. Translate these words in the same way you did in [[:en:bible:notes:num:35:19|35:19]]. AT: \"the one who avenges the murder\" or \"the relative seeking vengeance\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 35, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the avenger of blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"blood\" is a metonym for the murder. Translate these words in the same way you did in [[:en:bible:notes:num:35:19|35:19]]. AT: \"the one who avenges the murder\" or \"the relative seeking vengeance\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 35, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the avenger of blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"share\" represents the portion of land that each tribe received as an inheritance. AT: \"No portion of the land\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 36, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "No share",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and Aaron was eighty-three years old\" (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and Aaron eighty-three years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the twenty-first day of the first month.\" This is near the middle of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the twenty-first day of the month",
+      "occurrence": 1
+    }
+  }
+]

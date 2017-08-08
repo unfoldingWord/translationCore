@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three phrases indicate comparisons to show what they have in common. (See: [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "walk about like blind men ... poured out like dust ... their inner parts like dung",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The chaff is the insignificant part of the plant being thrown away and so this day will pass quickly. (See: [[:en:ta:vol1:translate:figs_simile]]).\n  ",
+      "reference": { "bookId": "zep", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "that day passes like the chaff",
+      "occurrence": 1
+    }
+  }
+]

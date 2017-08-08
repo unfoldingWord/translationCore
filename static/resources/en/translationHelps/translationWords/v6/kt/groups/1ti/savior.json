@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  }
+]

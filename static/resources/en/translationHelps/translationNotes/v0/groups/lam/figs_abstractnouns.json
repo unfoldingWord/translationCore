@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"when she was desperate\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in her desperation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"because she was destroyed\" or \"while they destroyed her\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "at her destruction",
+      "occurrence": 1
+    }
+  }
+]

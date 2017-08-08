@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "two thin, round metal plates that are hit together to make a loud sound (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "cymbals",
+      "occurrence": 1
+    }
+  }
+]

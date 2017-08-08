@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus speaks to the fig tree and curses it. He speaks to it so that his disciples hear him. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "He spoke to it, \"No one will ever eat fruit from you again",
+      "occurrence": 1
+    }
+  }
+]

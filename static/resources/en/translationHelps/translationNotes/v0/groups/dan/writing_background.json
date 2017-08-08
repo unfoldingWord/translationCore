@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information to remind the reader that this is Daniel's second vision. AT: \"had a second vision appear to me\" (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "had a vision appear to me (after the one ... first)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is inserted as background information to explain where the ram was located. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "I had seen the ram standing on the bank of the canal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about who Ahasuerus was. The UDB places this in parentheses to make that clear. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "It was Ahasuerus who had been made king over the realm of the Babylonians",
+      "occurrence": 1
+    }
+  }
+]

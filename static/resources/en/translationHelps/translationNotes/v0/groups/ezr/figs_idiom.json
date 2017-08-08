@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that refers to traveling toward Jerusalem. AT: \"returned\" or \"came back\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "went up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"they were very afraid\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "dread was on them",
+      "occurrence": 1
+    }
+  }
+]

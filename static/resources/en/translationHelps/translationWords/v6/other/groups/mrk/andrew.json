@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  }
+]

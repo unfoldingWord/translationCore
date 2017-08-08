@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is expressing thanks to God that the Philippians are also preaching the gospel. AT: \"I give thanks to God that you are proclaiming the gospel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I give thanks for your fellowship in the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"chains\" is a metonym for imprisonment. AT: \"my imprisonment\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my chains",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"in chains\" is a metonym for imprisonment. AT: \"while I am imprisoned\" or \"while I am in prison\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "while I am in chains",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"flesh\" here is a metonym for the body, and \"living in the flesh\" is a metonym for being alive. AT: \"But if I am to remain alive in my body\" or \"But if I continue to live\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "But if I am to live in the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"when everyone hears the name Jesus\" (UDB) or 2) \"in honor of Jesus\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the name of Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the cross of Christ\" refers to Christ's suffering and death. The enemies are those who say they believe in Jesus but are not willing to suffer or die like Jesus did. AT: \"in a way that shows they are actually against Jesus, who was willing to suffer and die on a cross\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "as enemies of the cross of Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"earthly\" refers to everything that gives physical pleasure and does not honor God. AT: \"All they think about is what will please themselves rather than what will please God\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "They think about earthly things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses the word \"joy\" to mean that the Philippian church is the cause of his happiness. A \"crown\" was made of leaves, and a man wore it on his head as a sign of honor after he won an important game. Here the word \"crown\" means the Philippian church brought honor to Paul before God. AT: \"You give me joy because you have believed in Jesus, and you are my reward and honor for my work\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my joy and crown",
+      "occurrence": 1
+    }
+  }
+]

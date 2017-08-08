@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "judea",
+      "quote": "Judea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "judea",
+      "quote": "Judea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "judea",
+      "quote": "Judea",
+      "occurrence": 1
+    }
+  }
+]

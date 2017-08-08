@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"relief\" and \"rescue\" are spoken of as if they are living things that can rise up. AT: \"someone else will rise up from another place and rescue the Jews\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "est", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "relief and rescue will rise up for the Jews from another place",
+      "occurrence": 1
+    }
+  }
+]

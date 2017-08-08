@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to people. AT: \"the sick people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 55 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to people. AT: \"the sick people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 55 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the dead\" refers to people who are dead and \"the living\" refers to people who are alive. Also, the missing information can be added. AT: \"of people who are dead, but the God of people who are alive\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "of the dead, but of the living",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the poor\" refers to poor people. Also, the missing information may be added. AT: \"and the money given to poor people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "and given to the poor",
+      "occurrence": 1
+    }
+  }
+]

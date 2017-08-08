@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a merism that refers to both extremes and everyone in between. This probably refers to the husbands, but it is possible that it refers to the wives. (See: [[:en:ta:vol2:translate:figs_merism]])\n\n\n",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the greatest to the least significant",
+      "occurrence": 1
+    }
+  }
+]

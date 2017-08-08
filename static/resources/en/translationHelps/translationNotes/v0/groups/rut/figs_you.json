@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Naomi was talking to two people, so languages that have a dual form of \"you\" would use that throughout her talk. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "each of you",
+      "occurrence": 1
+    }
+  }
+]

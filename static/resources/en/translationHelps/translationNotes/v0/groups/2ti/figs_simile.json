@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul compares suffering  for Christ Jesus to the suffering that a good soldier endures. (See [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as a good soldier of Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"like a workman\" or \"like a worker.\" Paul presents the idea of Timothy correctly explaining God's word as if he were a skilled workman. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as one approved, a worker",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as gangrene quickly spreads in a person's body and destroys it, what those people were saying would spread from person to person and harm the faith of those who heard it. AT: \"What they say will spread like an infectious disease\" or \"Their talk will spread quickly and cause destruction like gangrene\"  (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Their talk will spread like gangrene",
+      "occurrence": 1
+    }
+  }
+]

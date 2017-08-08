@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "david",
+      "quote": "David",
+      "occurrence": 1
+    }
+  }
+]

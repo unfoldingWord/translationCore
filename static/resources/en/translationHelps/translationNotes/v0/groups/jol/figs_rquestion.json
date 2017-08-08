@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Perhaps Yahweh will turn from his anger ... God.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will he perhaps turn ... God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God uses this question to scold the people of Tyre, Sidon and Philistia. AT: \"You have no right to be angry at me\" (See: [[:en:ta:vol1:translate:figs_rquestion]]).\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why are you angry at me",
+      "occurrence": 1
+    }
+  }
+]

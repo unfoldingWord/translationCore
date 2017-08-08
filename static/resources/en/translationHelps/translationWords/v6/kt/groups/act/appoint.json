@@ -1,0 +1,100 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 3, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 6, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 14, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 15, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 17, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 26, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "appoint, appoints, appointed",
+      "occurrence": 1
+    }
+  }
+]

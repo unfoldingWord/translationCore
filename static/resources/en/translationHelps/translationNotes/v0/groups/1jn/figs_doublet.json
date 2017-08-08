@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John uses the words \"seen\" and \"known\" to say that the person who sins has never met Christ in a spiritual sense. A person behaving according to his sinful nature cannot know Christ. AT: \"No one ... has never truly believed in him\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "1jn", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "No one ... has seen him or known him",
+      "occurrence": 1
+    }
+  }
+]

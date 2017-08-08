@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"stand\" can refer to something that does not change. AT: \"remain firm in your faith\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "stand in your faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking about the way others think of him and his coworkers. AT: \"if people think we are crazy ... if people think we are sane\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "if we are out of our minds ... if we are in our right minds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you suffered no loss because we rebuked you.\" This means that although the letter caused them sorrow, they eventually benefited from the letter because it led them to repentance. AT: \"so that we did not harm you in any way\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you suffered no loss because of us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"have not boasted about things over which we have no authority\" or \"have not boasted only about things over which we have authority.\" See how these words were translated in [[:en:bible:notes:2co:10:13|10:13]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 10, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "have not boasted beyond limits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom, and is exaggerated to emphasize how often he had been beaten. AT: \"I have been beaten very many times\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in beatings beyond measure",
+      "occurrence": 1
+    }
+  }
+]

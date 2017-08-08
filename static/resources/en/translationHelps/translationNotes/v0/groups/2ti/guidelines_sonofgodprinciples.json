@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"God, who is our Father.\" This is an important title for God. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "God the Father",
+      "occurrence": 1
+    }
+  }
+]

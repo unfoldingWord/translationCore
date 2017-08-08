@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In prophecy things that will happen in the future are often referred to as if they had already happened. This emphasizes that the prophecy will certainly come true. AT: \"enemies from other countries will take my people, Israel, as slaves\" (See: [[:en:ta:vol2:translate:figs_pastforfuture]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "my people have gone into captivity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The prophet speaks of the future as if it had already happened. He does this to insist that the prophecy certainly will come about. AT: \"he will punish them with his powerful hand\" (See: [[:en:ta:vol2:translate:figs_pastforfuture]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "He has reached out with his hand against them and has punished them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaiah speaks of these future events as though they have already happened. (See: [[:en:ta:vol2:translate:figs_pastforfuture]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "has come ... has passed ... has stored ... have crossed ... lodge ... trembles ... has fled",
+      "occurrence": 1
+    }
+  }
+]

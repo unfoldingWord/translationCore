@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two opposite things are a merism that refers to everything the king does. AT: \"You must stay near the king at all times\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n\n",
+      "reference": { "bookId": "2ki", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "You must stay with the king when he goes out, and when he comes in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a merism that means \"everyone,\" which is a generalization. AT: \"from the least important to the most important\" or \"everyone\" (See: [[:en:ta:vol2:translate:figs_merism]])\n \n \n",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the least to the greatest",
+      "occurrence": 1
+    }
+  }
+]

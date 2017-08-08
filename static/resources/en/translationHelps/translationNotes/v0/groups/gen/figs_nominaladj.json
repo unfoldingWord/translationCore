@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Lot's first daughter\" or \"The older daughter\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The firstborn",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"dead\" can be stated as an adjective or a verb. AT: \"my dead wife\" or \"my wife who has died\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "my dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" AT: \"my wife who has died\" or \"my wife\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "my dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" AT: \"Go bury your wife who has died\" or \"Go bury your wife\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "Bury your dead",
+      "occurrence": 1
+    }
+  }
+]

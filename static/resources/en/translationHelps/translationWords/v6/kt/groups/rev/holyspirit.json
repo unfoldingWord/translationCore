@@ -1,0 +1,156 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit",
+      "occurrence": 1
+    }
+  }
+]

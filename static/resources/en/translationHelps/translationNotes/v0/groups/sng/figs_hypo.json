@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It would be a wonderful thing to see the woman dancing with the other dancers. (See: [[:en:ta:vol1:translate:figs_hypo]]) \n\n",
+      "reference": { "bookId": "sng", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "as if I were dancing between two rows of dancers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Even if a man ... he would be utterly despised.\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If a man gave ... the offer would utterly be despised",
+      "occurrence": 1
+    }
+  }
+]

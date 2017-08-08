@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 5, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "dishonor",
+      "quote": "dishonor, dishonorable",
+      "occurrence": 1
+    }
+  }
+]

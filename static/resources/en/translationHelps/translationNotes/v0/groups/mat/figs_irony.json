@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is using irony. He does not think there are any people who are righteous and do not need to repent. AT: \"those who think they are righteous\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Those hitting Jesus do not really think he is the Christ. They call him this to mock him. (See: [[:en:ta:vol1:translate:figs_irony]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 68 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "you Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They were saying this to mock Jesus. They were calling Jesus \"King of the Jews,\" but they did not really believe he was a king. And yet what they were saying was true. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Hail, King of the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the Jewish leaders do not believe that Jesus saved others or that he can save himself, or 2) they believe he did save others but are laughing at him because now he cannot save himself.   (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "He saved others, but he cannot save himself",
+      "occurrence": 1
+    }
+  }
+]

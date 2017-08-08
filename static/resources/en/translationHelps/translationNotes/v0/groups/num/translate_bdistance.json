@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is a unit of measurement equal to about 46 centimeters. AT: \"about 92 centimeters\" or \"about 1 meter\" (See: [[:en:ta:vol2:translate:translate_bdistance]] and  [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "about two cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2,000 cubits.\" A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "num", "chapter": 35, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "two thousand cubits",
+      "occurrence": 1
+    }
+  }
+]

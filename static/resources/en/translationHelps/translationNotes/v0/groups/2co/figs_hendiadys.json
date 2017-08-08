@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hidden\" describes the things that are \"shameful.\" AT: \"the ways that are so shameful that people hide them\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "the ways that are shameful and hidden",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Paul uses the words \"visions\" and \"revelations\" to mean the same thing in hendiadys for emphasis. AT: \"things that the Lord has allowed only me to see\" or 2) Paul is speaking of two different things. AT: \"secret things that the Lord has let me see with my eyes and other secrets that he has told me about\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "visions and revelations from the Lord",
+      "occurrence": 1
+    }
+  }
+]

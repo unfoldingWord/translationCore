@@ -1,0 +1,257 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eli tells Samuel to speak to Yahweh as if Samuel were another person so that Samuel would show respect to Yahweh. AT: \"I am\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your servant is",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Philistines worshiped many gods, so they probably believed that one of those gods, or one whom they did not worship, had come into the camp. Another possible meaning is that they were speaking the proper name of the God of Israel: \"Yahweh has come.\" Because 4:8 speaks of \"gods,\" some translations read, \"Gods have come,\" that is, \"It is gods who have come.\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "A god has come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Because the word \"god\" (or \"God\") in 4:7 is singular, many translations read \"this mighty god ... the god who attacked,\" referring to any one of many possible gods, or \"this mighty God ... the God who attacked,\" using the proper name of the God of Israel. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "these mighty gods ... the gods who attacked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonathan speaks as if Saul is another person to show Saul that Jonathan respects Saul. AT: \"Do not sin against your servant\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Do not let the king sin against his servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks of himself as if he were another person to show that he respects Jonathan. AT: \"I, your servant, will have peace\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your servant will have peace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speak of himself in the third person as a form of humility. AT: \"with me, your servant ... have brought me, your servant\" or \"with me ... have brought me\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "with your servant ... have brought your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hand\" is a metonym for power. The Ziphites speak to Saul as if he were another man to show him that they respect him. AT: \"give David to you so you can do whatever you desire with him\" (See: [[:en:ta:vol2:translate:figs_pronouns]] and [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "surrender him into the king's hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you ... my words.\" Abigail speaks of herself and David as if they are two different people to show that she respects David. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "my master ... your servant ... words of your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abigail speaks of herself and David as if they are two different people to show that she respects David. AT: \"Do not regard ... I ... your young men ... my master ... you\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Let not my master regard ... I your servant ... the young men of my master ... my master ... my master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abigail speaks of herself and David as if they are two different people to show that she respects David. AT: \"I ... you ... you ... my trespass ... you ... you\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your servant ... my master ... my master ... the trespass of your servant ... my master ... my master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks as if he and the king were other people to show respect to Saul. AT: \"you my king, listen to my words ... you\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "you, let my master the king listen to the words of his servant ... the king of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks as if Saul were another person to show that he respects Saul because Saul is king. AT: \"the one he has chosen to be king\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "his anointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to anyone. AT: \"on the way most people travel to Shur\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 27, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "as you go to Shur",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the king of Gath (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n\n",
+      "reference": { "bookId": "1sa", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Achish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks as if he is another person so that Achish will think David respects him. AT: \"I\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman speaks as if she is another person to show that she respects Saul. AT: \"my voice\" (See: [[:en:ta:vol2:translate:figs_pronouns]] or [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 28, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "the voice of your woman servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks as if Achish were another person so that Achish will think David respects him. AT: \"you, my master and king\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 29, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "my master the king",
+      "occurrence": 1
+    }
+  }
+]

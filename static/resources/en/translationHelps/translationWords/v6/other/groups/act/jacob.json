@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 2, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 28, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Jacob, Israel",
+      "occurrence": 1
+    }
+  }
+]

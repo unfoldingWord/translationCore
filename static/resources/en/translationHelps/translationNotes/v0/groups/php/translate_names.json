@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man sent by the Philippian church to minister to Paul in prison. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Epaphroditus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are women who were believers and helped Paul in the church at Philippi. AT: \"I beg Euodia, and I beg Syntyche\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "I am pleading with Euodia, and I am pleading with Syntyche",
+      "occurrence": 1
+    }
+  }
+]

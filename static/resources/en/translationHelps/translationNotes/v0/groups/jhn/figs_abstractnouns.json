@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"wrath\" can be translated with the verb \"punish.\" AT: \"God will continue to punish him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "wrath of God stays on him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"sin\" can be expressed with the verb sin. AT: \"The one among you is has never sinned\" or \"If any one of you has never sinned\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "The one among you who has no sin",
+      "occurrence": 1
+    }
+  }
+]

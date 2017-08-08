@@ -49,7 +49,7 @@ export function generateTargetBible(projectPath, bookData = {}, manifest) {
   // only parse if bookData isn't already populated
   if (Object.keys(bookData).length == 0) {
     // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = getBibleIndex('ulb-en', 'v6');
+    const bibleIndex = getBibleIndex('en', 'ulb', 'v10');
     const chapters = Object.keys(bibleIndex[bookAbbreviation]);
     chapters.forEach(chapterNumber => {
       let chapterData = {}; // empty chapter to populate

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "eternity",
+      "quote": "everlasting, eternal, eternity",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A mina is 600 grams. Each mina was worth about what someone would be paid in four months. AT: \"ten valuable coins\" or \"a large amount of money\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "ten minas",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A mina is 600 grams. Each mina was worth about what someone would be paid in four months. See how you translated this in [[:en:bible:notes:luk:19:13|19:13]]. (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "mina",
+      "occurrence": 1
+    }
+  }
+]

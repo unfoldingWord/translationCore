@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "will of God",
+      "occurrence": 1
+    }
+  }
+]

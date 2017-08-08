@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean basically the same thing. The phrase \"a great collapse\" defines what the \"disaster\" will be. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "disaster ... a great collapse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"winnow\" and \"cleanse\" both refer to taking away the bad and leaving the good. AT: \"It will not take away their sins.\" (See [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "It will not winnow or cleanse them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"tabernacle\" and \"tent\" share similar meanings. Possible meanings are \"my tent and the curtains inside my tent\" or \"the place where I live.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "jer", "chapter": 4, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "my tabernacle and my tent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean basically the same thing and emphasize the intensity of his anger. (See: [[:en:ta:vol2:translate:figs_doublet]]) \n  ",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "anger and wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"brutish\" and \"stupid\" mean basically the same thing and emphasize how foolish the people are for worshiping idols. AT: \"Every one of them is very stupid.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "They are all the same, they are brutish and stupid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these words have similar meaning and together emphasize that the servants were ashamed that they were unable to get water. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "ashamed and dishonored",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wealth\" and \"treasures\" mean the same thing and refer to anything that people consider to be valuable. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 15, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "wealth and treasures",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wealth\" and \"treasures\" mean the same thing and refer to anything that they consider valuable. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "all your wealth along with all of your treasures",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the people refused to listen. AT: \"They refused to listen\" or \"They refused to obey.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "jer", "chapter": 17, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "They did not listen or pay attention",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two expressions basically mean the same thing and emphasize how destructive God's judgment will be. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "tear it down, or destroy it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two verbs basically mean the same thing and emphasize God's blessing. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "build it up or plant it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that he proclaimed Yahweh's message boldly. AT: \"openly proclaimed\" or \"proclaimed loudly\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "called out and proclaimed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases are idiomatic expressions that refer to great power. AT: \"with very great power\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "with a raised hand and a strong arm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"unrighteousness\" and \"injustice\" have similar meanings and can be stated as actions. AT: \"unjustly forced men to build his house and his upper rooms\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 22, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "builds his house by unrighteousness, his upper rooms by injustice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings. The second one strengthens the thought in the first. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "scattering my flock and driving them away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"be shattered\" mean that someone has caused them to be afraid and mean basically the same thing as \"fear.\" This can be stated in active form. AT: \"no one will me them afraid anymore\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "they will no longer fear or be shattered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The terms \"wicked way\" and \"corruption of his practices\" mean the same thing and refer to every sinful thing that they do. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 25, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "his wicked way and the corruption of his practices",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that Yahweh is referring to everything that they have done to other nations. AT: \"everything that they have done.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "jer", "chapter": 25, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "their deeds and the works of their hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"good\" and \"right\" mean the same thing. AT: \"Do to me whatever you think is the right thing to do.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 26, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Do to me what is good and right in your eyes.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize that Yahweh will respond to their prayers. AT: \"pray to me.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 29, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "call to me ... pray to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"hissed words\" refer to a sound of strong disapproval that people make when they say bad things about others. The phrase has basically the same meaning as \"curses.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 29, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "curses and hissed words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"conduct\" and \"deeds,\" which are similar in meaning, can be translated as verbs. AT: \"and will reward everyone according to how good or evil the things they do are\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 32, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "to give to each man what his conduct and deeds deserve",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wrath\" and \"fury\" mean basically the same thing and emphasize how very angry he is. AT: \"the people of Jerusalem have made me very angry since the day they built their city.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "jer", "chapter": 32, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "this city has been a provocation of my wrath and fury since the day that they built it.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All three words mean the same thing and emphasize how very angry he is. AT: \"extreme anger\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 32, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "wrath, fury, and great anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wrath\" and \"fury\" mean basically the same thing and emphasize the intensity of his wrath. AT: \"in my extreme wrath.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 33, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "in my wrath and fury",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words share similar meanings in this context. They describe Yahweh as a witness whom no one will be able to contradict. AT: \"trustworthy\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 42, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "true and faithful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See how you translated this in [[:en:bible:notes:jer:33:14|33:15]]. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 50, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "In those days and at that time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See how you translated this in [[:en:bible:notes:jer:33:14|33:15]]. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 50, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "In those days and at that time",
+      "occurrence": 1
+    }
+  }
+]

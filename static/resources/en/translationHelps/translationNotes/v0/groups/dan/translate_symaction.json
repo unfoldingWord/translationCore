@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This symbolic act showed that the king was honoring Daniel. AT: \"lay down with his face on the ground\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fell on his face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretch yourselves out on the ground face down in worship of\" ([[:en:ta:vol2:translate:translate_symaction]])\n\n",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate yourselves to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretched themselves out on the ground face down in worship of\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrated themselves to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretch himself out on the ground face down in worship of\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n \n",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate himself to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretch themselves out on the ground face down in worship\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "stretch yourselves out on the ground face down in worship of\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate yourselves to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretch ourselves out on the ground face down in worship of\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate ourselves to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stretch themselves out on the ground face down in honor of\"  (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrate themselves to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This symbolic act showed that the king was worried about Daniel. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "he went through the night fasting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an act of worship in which someone lies flat on the ground. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "prostrated myself on the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are symbolic acts of repentance and sorrow. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fasting, wearing sackcloth, and sitting in ashes",
+      "occurrence": 1
+    }
+  }
+]

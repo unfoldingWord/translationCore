@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You must bless the people of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "May Yahweh make his face shine on you ... and give you peace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is plural. Yahweh is speaking to Moses, but he his referring to the priests. The priests will blow the trumpets, Moses will not. AT: \"When they blow a loud signal\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "When you blow a loud signal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is plural. Yahweh is speaking to Moses, but he is referring to the priests. The priests will blow the trumpets, Moses will not. AT: \"When they blow a loud signal\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "When you blow a loud signal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"be a rule for you.\" Here  \"you\" is plural and refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "be a regulation for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" is singular and refers to Moses. (See: [[:en:ta:vol1:translate:figs_you]])\n",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "make from your own clan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"They\" refers to members of the tribe of Levi; the word \"you\" is singular and refers to Aaron. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "num", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "They must serve you ... They must join you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Moses, who represents the people of Israel. AT: \"Your people may not pass ... to attack them\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You may not pass ... to attack you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" is plural and refers to the people of Israel. These men will cast lots to divide the land. Then they will distribute it to the tribes. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "num", "chapter": 34, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "divide the land for your inheritance",
+      "occurrence": 1
+    }
+  }
+]

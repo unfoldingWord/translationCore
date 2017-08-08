@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"temptation,\" an abstract noun, can be expressed as a verb. AT: \"Do not let anything tempt us\" or \"Do not let anything cause us to desire to sin\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Do not bring us into temptation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These abstract nouns can be translated with verbs. AT: \"to the place where you will die ... to the place where you will live\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to destruction ... to life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"death\" can be translated in a concrete, more detailed way. AT: \"to the courts so that the authorities can execute them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"until he succeeds in bringing my justice and salvation to the people.\" The meaning of the abstract noun \"judgment\" can be translated as \"just\" or \"save.\" AT: \"the people know that I am just, and I will save them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "he leads justice to victory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"darkness\" is an abstract noun. AT: \"it became dark over the whole land\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "darkness came over the whole land",
+      "occurrence": 1
+    }
+  }
+]

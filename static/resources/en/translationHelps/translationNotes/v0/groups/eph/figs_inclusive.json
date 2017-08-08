@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to Paul, the Ephesian church, and all believers in Christ. AT: \"God planned long ago to adopt us\" (UDB) (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "God predestined us for adoption",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" is includes of all believers. This can be stated in active form. AT: \"God chose us as his inheritance\" (See: [[:en:ta:vol2:translate:figs_inclusive]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we were chosen as God's inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to both Paul and the Ephesians, who separated the Jewish believers from the Gentile believers. (See [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "divided us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we both\" refers to Paul, the believing Jews, and the believing non-Jews. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "For through Jesus we both have access",
+      "occurrence": 1
+    }
+  }
+]

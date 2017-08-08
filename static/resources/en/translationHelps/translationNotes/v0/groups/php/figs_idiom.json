@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I love you very much\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I have you in my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"be found\" is an idiom that emphasizes the idea of \"to be.\" AT: \"and be truly united with Christ\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "and be found in him",
+      "occurrence": 1
+    }
+  }
+]

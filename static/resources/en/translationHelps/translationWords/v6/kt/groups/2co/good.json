@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 9, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "good, goodness",
+      "occurrence": 1
+    }
+  }
+]

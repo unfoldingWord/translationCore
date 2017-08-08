@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The tenth day is near the end of September on the western calendar. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the seventh month, on the tenth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The first month of the Hebrew calendar marks when Yahweh brought the Israelites out of Egypt. The fourteenth day and fifteenth day are around the beginning of April on the Western calendar. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "first month, on the fourteenth day of the month ... the fifteenth day of the same month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The first day is near the middle of September on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the seventh month, the first day of that month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The tenth day is near the end of September on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "tenth day of this seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is near the beginning of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "fifteenth day of the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The fifteenth day is near the beginning of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "fifteenth day of the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The tenth day is near the end of September on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the tenth day of the seventh month",
+      "occurrence": 1
+    }
+  }
+]

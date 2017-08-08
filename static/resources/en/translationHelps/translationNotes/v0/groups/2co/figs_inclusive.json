@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" and \"our\" include the Corinthians. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n \n",
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "comforts us in all our affliction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"us\" refers to all believers, including Paul and the Corinthians. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "Now all of us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"us\" includes the Corinthian believers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "for us to die",
+      "occurrence": 1
+    }
+  }
+]

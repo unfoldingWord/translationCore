@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When Solomon was speaking, these hypothetical situations had not happened, but Solomon knew that they might happen in the future. Use the form in your language for talking about events that have not happened but might happen in the future. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Suppose that your people go out ... suppose that they pray",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When Solomon was speaking, these hypothetical situations had not happened, but Solomon knew that they might happen in the future. Use the form in your language for talking about events that have not happened but might happen in the future. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Suppose that they sin ... suppose that you are ... suppose that they realize ... suppose that they repent ... Suppose that they say",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes something that would not happen. Yahweh had already told Micaiah that the king would not return safely. (See: [[:en:ta:vol1:translate:figs_hypo]])\n",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If you return safely",
+      "occurrence": 1
+    }
+  }
+]

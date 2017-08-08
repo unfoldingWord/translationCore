@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark the change from the lists of descendants to background information about Reuben. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "now Reuben",
+      "occurrence": 1
+    }
+  }
+]

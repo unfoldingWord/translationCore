@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a new part of the story and to introduce Nicodemus. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to introduce a new character to the story. If you have a way to do this in your language, you can use it here. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a certain man among them",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"exchanged their natural functions\" is a euphemism for immoral sexuality. AT: \"started practicing sexuality in a way God did not design\" (See: [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "exchanged their natural functions for what is against nature",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul encourages the Roman believers to give to Phoebe anything she needs. AT: \"and help her by giving her whatever she needs\" (UDB) (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "and stand by her",
+      "occurrence": 1
+    }
+  }
+]

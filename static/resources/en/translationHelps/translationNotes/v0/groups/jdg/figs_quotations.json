@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Zebul is quoting  Gaal's boast back to Gaal. This can be translated as a statement and as an indirect quote. AT: \"you who said that we should not serve Abimelech.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "you who said, 'Who is Abimelech that we should serve him?'",
+      "occurrence": 1
+    }
+  }
+]

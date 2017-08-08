@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This negative statement is used to stress that the opposite is true. AT: \"they consider themselves to be a special nation\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n",
+      "reference": { "bookId": "num", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "do not consider themselves as just an ordinary nation",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"Turn your ear\" and \"listen\" mean the same thing and add emphasis to the plea. AT: \"Yahweh, please listen to what he is saying.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 19, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Turn your ear, Yahweh, and listen",
+      "occurrence": 1
+    }
+  }
+]

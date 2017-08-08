@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words share similar meanings. AT: \"a statute of the law\" or \"a legal statute\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "num", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a statute, a law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize that this animal is to have no imperfections. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "num", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "flaw or blemish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the whole community\" emphasizes that every person who was a part of \"the people of Israel\" was present, without exception. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "The people of Israel, the whole community",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have very similar meanings. They emphasize what she has promised to do. AT: \"her vow\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "her vow and her promise",
+      "occurrence": 1
+    }
+  }
+]

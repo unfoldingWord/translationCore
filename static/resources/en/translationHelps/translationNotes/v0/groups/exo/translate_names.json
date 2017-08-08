@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are Hebrew women's names. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shiphrah ... Puah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is Reuel's daughter. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zipporah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Moses's wife. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zipporah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "exo", "chapter": 6, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hanoch ... Shaul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gershon ... Merari",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nadab ... Ithamar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Etham is located south of the route heading towards the Philistines, at the border of the wilderness. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "camped at Etham",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are towns on Egypt's eastern border. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pi Hahiroth ... Migdol ... Baal Zephon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Miriam was the older sister of Moses and Aaron. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Miriam ... Aaron",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an oasis in the desert, a place with water and shade trees. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Elim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a place in the desert whose name means \"testing\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Massah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of a place in the desert. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 17, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Rephidim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a son of Moses and Zipporah, whose name means \"God is the one who helps me.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliezer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an area on the edge of the wilderness of Sinai where the people of Israel had been camping. See how you translated this name in [[:en:bible:notes:exo:17:01|17:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Rephidim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. See how you translated these names in [[:en:bible:notes:exo:06:23|6:23]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nadab ... Abihu",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. See how you translated these names in [[:en:bible:notes:exo:06:23|6:23]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nadab ... Abihu",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hur was a man who was a friend of Moses and Aaron. See how you translated this name in [[:en:bible:notes:exo:17:08|17:10]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hur",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Oholiab ... Ahisamach",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Oholiab\" and \"Ahisamach\" are names of men. See how you translated this in [[:en:bible:notes:exo:31:06|31:6]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 35, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Oholiab son of Ahisamach, from the tribe of Dan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bezalel\" and \"uri\" are the name of men. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel son of Uri son of Hur",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Oholiab\" and \"Ahisamach\" are names of men. See how you translated this in [[:en:bible:notes:exo:31:06|31:6]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Oholiab son of Ahisamach",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:exo:31:01|31:1-2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bezalel",
+      "occurrence": 1
+    }
+  }
+]

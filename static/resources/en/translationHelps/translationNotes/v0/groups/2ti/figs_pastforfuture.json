@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks about this event as if it has already happened. It can be stated as a future event. AT: \"but also he will give it to those who are eagerly waiting for him to return\" (See: [[:en:ta:vol2:translate:figs_pastforfuture]])\n",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "but also to all those who have loved his appearing",
+      "occurrence": 1
+    }
+  }
+]

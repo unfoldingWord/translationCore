@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for God that describes the relationship between God and Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for God that describes the relationship between God and Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "my Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for God that describes the relationship between God and Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "my Father",
+      "occurrence": 1
+    }
+  }
+]

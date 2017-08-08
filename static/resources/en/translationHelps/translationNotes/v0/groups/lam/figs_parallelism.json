@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "are two expressions for God humbling the author. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He crushed ... he has pushed me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the person who seeks him\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the one who seeks him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases share similar meanings and are combined for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 60 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "their insults, all their plots against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh was very angry, and he has done everything he wanted to do to show that he was angry. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Yahweh showed all his wrath; he poured out his fierce anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines share similar meanings and emphasize that these spiritual leaders were largely responsible for the fall of Jerusalem. AT: \"the terrible sins of her prophets and priests\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the sins of her prophets and the iniquities of her priests",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"All the women, young and old, are raped in Jerusalem and in the cities of Judah\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Women are raped in Zion ... virgins in the cities of Judah",
+      "occurrence": 1
+    }
+  }
+]

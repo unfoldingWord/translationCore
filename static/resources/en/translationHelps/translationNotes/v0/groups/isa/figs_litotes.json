@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This negative statement emphasizes the positive. AT: \"every one is present\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 40, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "not one is missing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"I will spare some of them who are righteous\" (See: [[:en:ta:vol2:translate:figs_litotes]] and [[:en:ta:vol1:translate:figs_explicit]])\n\n \n",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I will not ruin them all",
+      "occurrence": 1
+    }
+  }
+]

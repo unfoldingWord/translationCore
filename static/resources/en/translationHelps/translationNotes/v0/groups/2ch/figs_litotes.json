@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"people followed the commands\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "people did not deviate from the commands",
+      "occurrence": 1
+    }
+  }
+]

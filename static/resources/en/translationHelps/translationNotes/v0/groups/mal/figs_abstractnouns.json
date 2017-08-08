@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A curse is spoken of as if it were an object that could be sent upon someone. AT: \"I will curse you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I will send a curse on you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here instruction is spoken of as if it were an object that people could look for. AT: \"want a priest to teach them truly\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "seek instruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"divorce\" stands for the act of divorce, when a man sends away his wife, so as to end his marriage to her. AT: \"I hate it when a man divorces his wife\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I hate divorce",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"judgment\" refers to the act of judging. AT: \"Then I will approach you in order to judge you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Then I will approach you for judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression refers to any book that helps people remember important things, such as events or people who lived in the past. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "book of remembrance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"possession\" refers to one's personal property. This idea can be expressed with a verb. AT: \"they will belong completely to me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "my own treasured possession",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the act of healing someone is spoken of as if it were an object that the sun carried to people by means of its wings or 2) the healing takes place under the wings, that is, in the security God gives his people. (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and  [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "healing in its wings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The contents of God's teaching are spoken of as if they were objects that God gave to Moses. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Remember the teaching of my servant Moses that I gave him",
+      "occurrence": 1
+    }
+  }
+]

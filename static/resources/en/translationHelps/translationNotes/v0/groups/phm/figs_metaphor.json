@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you encouraged believers\" or \"you have helped the believers\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the hearts of the believers have been refreshed by you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in both as a man.\" Paul is referring to Onesimus' being a trustworthy servant. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in both the flesh",
+      "occurrence": 1
+    }
+  }
+]

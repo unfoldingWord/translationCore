@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"they will throw you out toward Harmon\" or \"your enemies will force you to leave the city and go toward Harmon\" (See [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you will be thrown out toward Harmon",
+      "occurrence": 1
+    }
+  }
+]

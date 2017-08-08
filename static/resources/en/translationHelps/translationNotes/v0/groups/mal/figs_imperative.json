@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh gives a command in order to express a conditional idea. AT: \"If you present that to your governor,\" (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Present that to your governor!",
+      "occurrence": 1
+    }
+  }
+]

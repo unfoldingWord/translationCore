@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"hearts\" refers to the seat of emotions. AT: \"comfort you and strengthen you for\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "2th", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "comfort and establish your hearts in",
+      "occurrence": 1
+    }
+  }
+]

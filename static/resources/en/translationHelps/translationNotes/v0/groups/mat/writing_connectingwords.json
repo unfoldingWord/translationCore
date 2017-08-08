@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate with \"because\" to show how these two statements relate. AT: \"Watch out for people because they will\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Watch out for people! They will",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can add \"because\" to clarify why people should fear God. AT: \"fear God because he is able\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "fear him who is able",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This statement explains why the Queen of the South will condemn Jesus' generations. AT: \"For she came\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "She came",
+      "occurrence": 1
+    }
+  }
+]

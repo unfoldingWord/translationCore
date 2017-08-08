@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the author tells background information about the Moabite army preparing to meet the three kings and their armies in battle. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the author tells background information about about how Joram was wounded and went to recover in Jezreel. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Joram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark a break in the main storyline. Here the author tells background information about Ahaziah visiting Joram. (See: [[:en:ta:vol2:translate:writing_background]])\n",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Ahaziah",
+      "occurrence": 1
+    }
+  }
+]

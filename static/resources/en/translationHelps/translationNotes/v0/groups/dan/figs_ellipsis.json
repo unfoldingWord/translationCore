@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The idea of not being divided and shared out is implied here. AT: \"but it will not be divided for his own descendants\" or \"but it will not be shared by his own descendants\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but not to his own descendants",
+      "occurrence": 1
+    }
+  }
+]

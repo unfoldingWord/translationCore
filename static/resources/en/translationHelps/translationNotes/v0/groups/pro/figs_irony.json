@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses irony to show that neither he nor the reader know any person who can do what the \"who\" in the earlier questions can do. AT: \"I do not think you really know anyone who can do those things.\" (See: [[:en:ta:vol1:translate:figs_irony]])\n\n \n",
+      "reference": { "bookId": "pro", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Surely you know!",
+      "occurrence": 1
+    }
+  }
+]

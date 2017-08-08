@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"royal throne\" may refer to his rule over the kingdom. AT: \"ruled the empire\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "sat on his royal throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Speech coming out of the mouth is a metonym that represents speaking. AT: \"As soon as the king said this\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "As soon as this sentence came out of the king's mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Writing something in the king's name represents writing it with his authority, or writing it as his representative. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Write ... in the name of the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"city\" represents the people living in it. AT: \"the people of the city of Susa shouted and rejoiced\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the city of Susa shouted and rejoiced",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Laying hands on people is a metonym for fighting against them. AT: \"to fight their enemies\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to lay hands on those who tried to bring disaster on them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To impose a tax means to make people pay a tax. The land and coastlands represent the people living there. AT: \"made the people living in the land and on the coastlands along the sea pay a tax\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "est", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "imposed a tax on the land and on the coastlands along the sea",
+      "occurrence": 1
+    }
+  }
+]

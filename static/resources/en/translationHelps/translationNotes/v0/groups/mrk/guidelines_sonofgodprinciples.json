@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. The Father calls Jesus his \"beloved Son\" because of his eternal love for him. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "beloved Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son of the Most High God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus, the Son of God. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "beloved Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son of God",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "oath",
+      "quote": "oath, swear, swear by",
+      "occurrence": 1
+    }
+  }
+]
