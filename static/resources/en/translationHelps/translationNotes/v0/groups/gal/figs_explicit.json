@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"to make us slaves to the law.\" Paul is speaking about being forced to follow the Jewish rituals that the law commanded. He is speaking about this as if it were slavery. The most important ritual was circumcision. AT: \"to force us to obey the law\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to make us slaves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He was afraid that these men who required circumcision would judge that he was doing something wrong\" or \"He was afraid that these men who required circumcision would blame him for doing something wrong\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He was afraid of those",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that they had suffered these things because of people who opposed them for their faith in Christ. AT: \"Have you suffered so many things by those who opposed you for your faith in Christ for nothing\" or \"You believed in Christ, and you suffered many things by those who oppose Christ. Were your belief and suffering for nothing\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Have you suffered so many things for nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Your language may require that what the people heard and whom they trusted be stated explicitly. AT: \"because you heard the message and had faith in Jesus\" or \"because you listened to the message and trusted in Jesus\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "by hearing with faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What he calls them to can be stated clearly. AT: \"the one who calls you to be his people\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "him who calls you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The relationship between the opportunity and the sinful nature can be stated more clearly. AT: \"an opportunity for you to behave according to your sinful nature\"  (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "an opportunity for the sinful nature",
+      "occurrence": 1
+    }
+  }
+]

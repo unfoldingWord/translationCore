@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 32 },
+      "tool": "translationWords",
+      "groupId": "mosthigh",
+      "quote": "Most High",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "mosthigh",
+      "quote": "Most High",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 76 },
+      "tool": "translationWords",
+      "groupId": "mosthigh",
+      "quote": "Most High",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "mosthigh",
+      "quote": "Most High",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 28 },
+      "tool": "translationWords",
+      "groupId": "mosthigh",
+      "quote": "Most High",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The officer is describing a situation that could possibly happen to a soldier. AT: \"so that, if he dies in battle, another man will not dedicate his house instead of him\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "so that he does not die in battle and another man dedicates it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The officer is describing a situation that could possibly happen to a soldier. AT: \"so that, if he dies in battle, another man will not harvest its fruit instead of him\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "so he will not die in battle and another man enjoy its fruit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The officer is describing a situation that could possibly happen to a soldier. AT: \"so that, if he dies in battle, another man does not marry her instead of him\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "so that he does not die in battle and another man marries her",
+      "occurrence": 1
+    }
+  }
+]

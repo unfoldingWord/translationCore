@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 7, "verse": 30 },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "possess, possession",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 3, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "John (the Baptist)",
+      "occurrence": 1
+    }
+  }
+]

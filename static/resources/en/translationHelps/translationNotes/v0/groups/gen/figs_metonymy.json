@@ -1,0 +1,1757 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"it\" refers to the ground and is a metonym for the parts of the plants, which grow in the ground, that people eat. AT: \"you will eat what grows from it\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "you will eat from it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of the heart as if it were the part of the body that thinks. Your language may use a word other than \"heart\" to talk about the part of people that thinks. AT: \"their inner, secret thoughts\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the thoughts of their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" stands for sight or thoughts. AT: \"in Yahweh's sight\" or \"in Yahweh's thoughts\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the eyes of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the people who lived on the earth or 2) \"The earth itself.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) all human beings or 2) all physical beings, including humans and animal. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"breath\" represents life. AT: \"that lives\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that has in it the breath of life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"flesh\" represents animals. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Two of all flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The hand is a metonym for the control that the hand has. This can be made active. AT: \"They are given into your control\" or \"I have put them under your control\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "They are given into your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) all human beings or 2) all physical beings, including humans and animals. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) all human beings or 2) all physical beings, including humans and animals. See how this is translated in [[:en:bible:notes:gen:06:11|6:12]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "all the people on the earth (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the whole earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"judge\" is a metonym for what will happen after God makes the judgment. AT: \"I will punish\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 15, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will judge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hagar used this rhetorical question to express her amazement that she was still alive even after she met God. People expected that if they met God, they would die. AT: \"I am surprised that I am still alive, ... me.\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Do I really continue to see, ... me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"city\" stands for the people. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "of the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"from Yahweh\" stands for God's power to cause the sulfur and fire to fall on the city. AT: \"Yahweh caused sulfur and fire to fall from the sky onto Sodom and Gomorrah\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Yahweh rained down upon Sodom and Gomorrah sulfur and fire from Yahweh out of the sky",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the world\" stands for the people. AT: \"as people everywhere do\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "according to the way of all the world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" stands for his thoughts or intentions. Also \"hands\" stands for his actions. AT: \"I have done this with good intentions and actions\" or \"I have done this with no evil thoughts or actions\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I have done this in the integrity of my heart and the innocence of my hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" stands for his thoughts or intentions. AT: \"you did this with good intentions\" or \"you did this without evil intentions\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the integrity of your heart you did this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"kingdom\" stands for the people. AT: \"on the people of my kingdom\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "on my kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for Abraham's family. AT: \"my father and the rest of my family\" or \"my father's household\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what is said. AT: \"Do everything that Sarah says to you about them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Listen to her words in all she says to you about this matter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"voice\" stands for the sound of her crying. To \"life up her voice\" means to cry loudly. AT: \"she cried out loudly and wept\" or \"she wept loudly\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "she lifted up her voice and wept",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the boy's voice.\" Here \"voice\" stands for the sound of the boy crying or speaking. AT: \"the sound of Ishmael\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the voice of the lad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"voice\" stands for the sound of the boy crying or speaking. AT: \"the sound of the boy lying over there\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the voice of the lad where he is",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To make Ishmael into a great nation means God will give him many descendants who will become a great nation. AT: \"I will make his descendants become a great nation\" or \"I will make him become the ancestor of a great nation\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will make him into a great nation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This stands for a longer period of time. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "many days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fire\" stands for a pan containing burning coals or a torch or lamp. See how you translated this in [[:en:bible:notes:gen:22:04|22:6]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"voice\" stands for what God said. AT: \"you have obeyed what I said\" or \"you have obeyed me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "you have obeyed my voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"presence\" stands for the people serving as witnesses. AT: \"with the people of Heth watching as witnesses\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the presence of the sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"among whom I live.\" Here, \"I\" stands for Abraham and all of his family and servants. AT: \"among whom we live\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "among whom I make my home",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for the people in his family. AT: \"who took me from my father and the rest of my family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "who took me from my father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"household\" stands for all the people living in her mother's house. AT: \"ran to the house and told her mother and everyone there\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "ran and told her mother's household",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"among whom I live.\" Here, \"I\" stands for Abraham and all of his family and servants. AT: \"among whom we live\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in whose land I make my home",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Laban and Bethuel's words.\" Here \"words\" stands for what they said. AT: \"what Laban and Bethuel said\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "their words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"way\" stands for a journey. AT: \"Yahweh has caused me to succeed in the purpose my journey\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Yahweh has prospered my way",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Armies would break through the gate of their enemies' cities and conquer the people. AT: \"may your descendants completely defeat those who hate them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 60 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "may your descendants possess the gate of those who hate them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abimelech probably sent someone to tell Isaac that Abimelech wanted to see him. AT: \"Abimelech sent someone to bring Isaac to him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Abimelech called Isaac to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"household\" stands for workers or servants. AT: \"many servants\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "a large household",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Isaac\" stands for Isaac and his servants. AT: \"Isaac and his servants dug out\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Isaac dug out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in the days of\" stands for a person's lifetime. AT: \"when Abraham, his father, was living.\" See how this was translated in [[:en:bible:notes:gen:26:15|26:15]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the days of Abraham his father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"call on\" means to pray or to worship. Here \"name\" stands for Yahweh. AT: \"prayed to Yahweh\" or \"worshiped Yahweh\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "called on the name of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rebekah said \"my voice\" to refer to what she was saying. AT: \"obey me and do what I tell you\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "obey my voice as I command you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaac is equating Jacob's voice with Jacob himself. AT: \"You sound like Jacob\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The voice is Jacob's voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what Esau said. This can be stated in active form. AT: \"Someone told Rebekah about Esau's plan\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The words of Esau her older son were told to Rebekah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means they are directly related. AT: \"my relative\" or \"a member of my family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my bone and my flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"days\" stands for a longer period of time. The phrase \"have been completed\" can be stated in active form. The statement is emphatic. AT: \"Give me Rachel so that I may marry her, for I have worked seven years for you!\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Give me my wife, for my days have been completed—so that I may marry her!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in your eyes\" is a metonymy that represents Jacob's thoughts or opinion.  AT: \"If I have found favor with you\" or \"If you are pleased with me\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "If now I have found favor in your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word\" stands for something said. AT: \"It will be as you say\" or \"We will do what you have said\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Let it be according to your word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" stands for control or care. AT: \"had his sons take care of them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "gave them into the hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" stands for \"seeing.\" AT: \"so that the flock could see them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "before the eyes of the flock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what they were saying. AT: \"Jacob heard that Laban's sons were saying\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Jacob heard the words of Laban's sons, that they said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"flock\" stands for the female goats. AT: \"that are breeding with the female goats of the flock\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that are breeding with the flock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These instruments stand for music. AT: \"and with music\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "with tambourine and with harps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for family. AT: \"to be home with your father and the rest of your family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to your father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This stands for having nothing. AT: \"with absolutely nothing\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "empty-handed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"out of sight\" stands for no longer being in each other's presence. AT: \"when we are no longer with each other\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "when we are out of sight one from another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sight\" stands for a person's thoughts or opinion. AT: \"that you may approve of me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that I may find favor in your sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"camp\" refers to the people. AT: \"to attack the people in one camp, then the people in the other camp will escape\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to one camp and attacks it, then the camp that is left will escape",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hand\" refers to power. The two phrases mean basically the same thing. The second clarifies that the brother whom Jacob intended was Esau. AT: \"from the power of my brother, Esau\" or \"from my brother, Esau\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "from the hand of my brother, from the hand of Esau",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gifts\" stands for the servants taking the gifts. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "So the gifts went on ahead of him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sight\" stands for a person's thoughts or opinion. AT: \"So that you, my master, would be pleased with me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "To find favor in the sight of my master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"Israel\" refers to every member of Jacob's family. Israel as a people group was disgraced. AT: \"he had humiliated the family of Israel\" or \"he had brought shame on the people of Israel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he had disgraced Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" stands for a person's thoughts or opinion. AT: \"If you will approve of me, then I will give you whatever you ask\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Let me find favor in your eyes, and whatever you tell me I will give",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what was said. AT: \"Hamor and his son Shechem agreed with what Jacob's sons said\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Their words pleased Hamor and his son Shechem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"city\" stands for the people. AT: \"they attacked the people of the city\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "they attacked the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings for \"day\" are 1) the day when Jacob fled from Esau or 2) \"day\" stands for a period of time when Jacob was distressed. AT: \"when I was in a difficult situation\" or \"when I was in trouble\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the day of my distress",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"in their hand\" stands for what they own. AT: \"that were in their possession\" or \"that they had\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that were in their hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence introduces the account of Jacob's children in Genesis 37:1-50:26. Here \"Jacob\" refers to his whole family. AT: \"This is the account of Jacob's family\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "These were the events concerning Jacob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"their hand\" refers to the brothers' plan to kill him. AT: \"from them\" or \"from their plans\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "from their hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"their hand\" refers to the brothers' plan to kill him. AT: \"from them\" or \"from their plans\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of their hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bread\" is a metonym for \"food.\" AT: \"They sat down to eat food\" or \"Joseph's brothers sat down to eat\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "They sat down to eat bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The king did not put them in prison but rather he commanded for them to be imprisoned. AT: \"He had them put\" or \"He commanded his guard to put\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He put them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" stands for all the people and everything in Egypt. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Store up the grain for a time when there is little food available. AT: \"The overseers should leave soldiers there to guard the grain\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "They should preserve it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" stands for the people. This can be stated in active form. AT: \"This way the people will not starve during the famine\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "In this way the land will not be devastated by the famine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" stands for a person's thoughts or opinions. AT: \"Pharaoh and his servants thought this was a good plan\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "This advice was good in the eyes of Pharaoh and in the eyes of all his servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for Pharaoh's palace and the people in the palace. The phrase \"will be over\" means Joseph will have authority over. AT: \"You will be in charge of everyone in my palace\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "You will be over my house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" and \"foot\" stand for a person's actions. AT: \"no person in Egypt will do anything without your permission\" or \"every person in Egypt must ask your permission before they do anything\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "apart from you, no man will lift his hand or his foot in all the land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"stood before\" stands for Joseph starting to serve Pharaoh. AT: \"when he started to serve Pharaoh\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "when he stood before Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"He\" stands for Joseph's servants. AT: \"Joseph ordered his servants to gather ... They put\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He gathered up ... He put",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" stands for the people. AT: \"When all the Egyptians were starving\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 55 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "When all the land of Egypt was famished",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Joseph\" stands for Joseph's servants. AT: \"Joseph had his servants open all the storehouses and sell grain to the Egyptians\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joseph opened all the storehouses and sold to the Egyptians",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Egypt\" refers to the people selling grain. AT: \"from those selling grain in Egypt\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "from Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what was said. This can be stated in active form. AT: \"so that I may find out if you are telling the truth\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that your words may be tested, whether there is truth in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"houses\" stands for families. AT: \"carry grain home to help your family during this famine\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "carry grain for the famine of your houses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"blood\" stands for Joseph's death. His brothers thought Joseph was dead. The phrase \"is required of us\" means they must be punished for what they did. AT: \"we are getting what we deserve for his death\" or \"we are suffering for having killed him\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n \n\n",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his blood is required of us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" refers to their sight. AT: \"bound him in their sight\" or \"bound him as they watched\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "bound him before their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"houses\" stands for \"family.\" AT: \"take grain to help your family during the famine\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "take grain for the famine in your houses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what was said. The brothers refer to the steward as \"my master.\" This is a formal way of speaking to someone with greater authority. It can be stated in the second person. AT: \"Why are you saying this, my master?\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Why does my master speak such words as these?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"now\" does not mean \"at this moment,\" but is used to draw attention to the important point that follows. Also, \"words\" stands for what was said. AT: \"Very well. I will do what you said\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Now also let it be according to your words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for the people in the Pharaoh's palace. AT: \"everyone in Pharaoh's palace\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "house of Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"there will be five more years without planting or harvesting.\" Here \"neither plowing nor harvest\" stands for the fact that the crops still will not grow because of the famine. AT: \"and the famine will last five more years\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "there are still five years in which there will be neither plowing nor harvest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" stands for the people. AT: \"ruler over all the people of Egypt\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "ruler of all the land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land of Egypt\" stands for the people of Egypt. AT: \"he rules all the people of Egypt\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he is ruler over all the land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" stands for what was said. AT: \"everything that Joseph had said to them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the words of Joseph that he had said to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Joseph\" stands for his servants. AT: \"Joseph's servants prepared his chariot and Joseph went up\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joseph prepared his chariot and went up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for his family. AT: \"his father's family\" or \"his father's household\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the people living in these lands. AT: \"The people of Egypt and the people of Canaan\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The land of Egypt and the land of Canaan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Most likely Joseph ordered his servants to gather and bring the money. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n\n",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joseph gathered ... Joseph brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"lands\" stands for the people who live in the lands. This can be stated in active form. AT: \"When the people of Egypt and Canaan used up all their money\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "When all the money of the lands of Egypt and Canaan was spent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"eyes\" refers to Joseph's sight. The people use a question to emphasize how desperate they are to buy food. This question can be translated as a statement. AT: \"Please do not just watch as we die and our land is ruined!\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Why should we die before your eyes, both we and our land?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" stands for thoughts or opinions. AT: \"May you be pleased with us\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "May we find favor in your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"He\" refers to Manasseh, but it stands for his descendants. AT: \"Your older son will have many descendants, and they will become a great people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He also will become a people, and he also will be great",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sword\" and \"bow\" stands for fighting in battle. AT: \"the portion of land I fought for and took from the Amorites\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the mountain slope that I took from the Amorites with my sword and my bow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the descendants of Zebulun. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Zebulun will live",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"He\" stands for sea towns that the people of Zebulun will inhabit or build. These cities will provide shelter for ships. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He will be a harbor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Issachar\" is a metonymy that stands for his descendants. AT: \"The descendants of Issachar ... They see ... They will\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Issachar ... He sees ... He will",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Dan\" stands for his descendants. AT: \"The descendants of Dan will judge their people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Dan will judge his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These refer to the descendants of each man. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Gad ... Asher's ... Naphtali",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Joseph\" is a metonymy that stands for his descendants. Jacob speaks about them as if they were a tree branch that produces a lot of fruit. This emphasizes that they will greatly increase in number. (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joseph is a fruitful bough",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The person holding the bow steady is spoken of as if the bow itself will remain steady. It is implied he is holding it steady as he aims at his enemy. AT: \"he will hold his bow steady as he aims at his enemy\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his bow will remain steady",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" stands for the person's arms as he is holding his bow steady. AT: \"his arms will remain strong as he aims his bow\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his hands will be skillful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to Joseph who stands for his descendants. AT: \"help your descendants ... bless them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "help you ... bless you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Benjamin\" is a metonymy that stands for his descendants. Jacob speaks about Benjamin's descendants as if they were a hungry wolf. This emphasizes that they will be fierce warriors. AT: \"The descendants of Benjamin will be like hungry wolves\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n \n\n",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Benjamin is a hungry wolf",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"royal court\" stands for the officials that make up Pharaoh's royal court. AT: \"Joseph spoke to Pharaoh's officials\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Joseph spoke to Pharaoh's royal court",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here this stands for the men riding in the chariots. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Chariots",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In [[:en:bible:notes:gen:50:24|50:24/26]] the word \"you\" refers to Joseph's brothers, but it also stands for their descendants. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "surely come to you",
+      "occurrence": 1
+    }
+  }
+]

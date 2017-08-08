@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three words have similar meanings. James uses them together to emphasize that the people should be truly sorry for not obeying God. James states this like it was a command. (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Grieve, mourn, and cry",
+      "occurrence": 1
+    }
+  }
+]

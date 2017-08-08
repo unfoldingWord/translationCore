@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Conducting our lives according to God's commands is spoken of as if we were walking in them. The word \"it\" refers to love. \"And he has commanded you, since you first believed, to love one another\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "2jn", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "This is the commandment, just as you heard from the beginning, that you should walk in it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John speaks of this other church as if it were a sister to the readers' church and the believers that are a part of that church as if they were that church's children. This emphasizes that all believers are a spiritual family. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "2jn", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The children of your chosen sister",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"400 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four hundred years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"50,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifty thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2 of the centurions\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two of the centurions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"200 soldiers that are armed with spears\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two hundred spearmen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"found 20 fathoms.\" A \"fathom\" is a unit of measurement for measuring the depth of water. One fathom is about two meters. AT: \"found 40 meters\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "found twenty fathoms",
+      "occurrence": 1
+    }
+  }
+]

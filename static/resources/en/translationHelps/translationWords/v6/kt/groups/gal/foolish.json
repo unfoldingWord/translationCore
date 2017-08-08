@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "fool, fools, foolish, folly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "fool, fools, foolish, folly",
+      "occurrence": 1
+    }
+  }
+]

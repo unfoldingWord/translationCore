@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can add the words \"because we are\" to make clear the logical connection between this statement and the next statement. AT: \"because we are receiving a kingdom\" or \"because God is making us members of his kingdom\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "receiving a kingdom",
+      "occurrence": 1
+    }
+  }
+]

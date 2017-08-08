@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"330 grams of silver.\" A shekel weighed eleven grams. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "thirty shekels of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may use a unit of measure that people understand and a round number: \"the 5.5 grams of silver\" or \"the 6 grams of silver.\" See how you translated this in [[:en:bible:notes:exo:30:11|3:13]]. (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "the half shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is 11 grams. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "shekels",
+      "occurrence": 1
+    }
+  }
+]

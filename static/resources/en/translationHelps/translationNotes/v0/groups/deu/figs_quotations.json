@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"'Then Yahweh said, \"Now rise up ... Zered.' So.\" This can be translated as an indirect quote. AT: \"Then Yahweh told us to rise up ... Zered. So\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "'Now rise up ... Zered.' So",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. A direct quotation can be stated as an indirect quotation. AT: \"I command you to open your hand ... in your land\" (See: [[:en:ta:vol2:translate:figs_quotations]]) (See:[[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "I command you and say, 'You must surely open your hand ... in your land.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a direct quote. AT: \"I said, 'I will ... away, and I will ... mankind'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "I said that I would ... away, that I would ... mankind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If this direct quotation would not work well in your language, you may change it to an indirect quotation. AT: \"he will tell you to destroy them!\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n",
+      "reference": { "bookId": "deu", "chapter": 33, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "he said, \"Destroy!\"",
+      "occurrence": 1
+    }
+  }
+]

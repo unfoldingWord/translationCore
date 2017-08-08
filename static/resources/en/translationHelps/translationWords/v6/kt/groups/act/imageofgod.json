@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 19, "verse": 35 },
+      "tool": "translationWords",
+      "groupId": "imageofgod",
+      "quote": "image of God, image",
+      "occurrence": 1
+    }
+  }
+]

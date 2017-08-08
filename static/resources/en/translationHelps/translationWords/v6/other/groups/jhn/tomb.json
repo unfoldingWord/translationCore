@@ -1,0 +1,114 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 31 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "tomb, grave, burial place",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"he himself\" and \"she herself\" are used for emphasis to bring attention to Abraham and Sarah and to blame them for what happened. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Did he not himself say ... Even she herself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"himself\" emphasizes that it is God who will provide the lamb. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "God himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"himself\" emphasizes that Jacob went alone in front of the others. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "He himself went on ahead of them",
+      "occurrence": 1
+    }
+  }
+]

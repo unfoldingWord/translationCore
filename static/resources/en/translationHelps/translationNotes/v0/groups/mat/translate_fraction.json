@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a tax that Jewish men paid to support the temple in Jerusalem. AT: \"the temple tax\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "the half-shekel tax",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I did not baptize anyone else because I was afraid that they might later boast that I had baptized them\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "This was so that no one would say that you were baptized into my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a positive. AT: \"The temptations that affect you are temptations that all people experience\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "No temptation has overtaken you that is not common to all humanity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated positively. AT: \"the woman depends on the man, and the man depends on the woman\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "the woman is not independent from the man, nor is the man independent from the woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"It rejoices only in righteousness and truth\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "It does not rejoice in unrighteousness. Instead, it rejoices in the truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively and combined with the other positive statement. AT: \"only for believers\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "not for unbelievers, but for believers",
+      "occurrence": 1
+    }
+  }
+]

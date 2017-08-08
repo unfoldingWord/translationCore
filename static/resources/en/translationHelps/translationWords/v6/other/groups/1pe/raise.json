@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "raise, raises, raised, rise, risen, arise, arose",
+      "occurrence": 1
+    }
+  }
+]

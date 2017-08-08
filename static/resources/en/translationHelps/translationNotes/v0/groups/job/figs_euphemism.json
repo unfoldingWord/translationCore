@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This probably refers to a place where trash and garbage were dumped and perhaps burned. Sitting in such a place was a sign of deep mourning. AT: \"sat on the trash heap\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:translate_symaction]])\n\n \n",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "sat down in the middle of ashes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I would be resting with princes.\" (ULB) In this phrase, the words \"lying\" and \"resting\" are a polite way of saying \"no longer alive.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "job", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I would have been lying with princes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means for God to cause him to die. AT: \"would crush me and let me die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "to crush me once",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This  to his refers to him dying. AT: \"he will die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "he will go away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way to say that they died. AT: \"They both die and people bury them\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "job", "chapter": 21, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "They lie down alike in the dust",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a way of saying Job's wife will sleep with other men or 2) it means she will become a slave and work for another man. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "job", "chapter": 31, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "then let my wife grind grain for another man",
+      "occurrence": 1
+    }
+  }
+]

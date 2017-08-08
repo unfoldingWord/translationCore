@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "setapart",
+      "quote": "set apart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "setapart",
+      "quote": "set apart",
+      "occurrence": 1
+    }
+  }
+]

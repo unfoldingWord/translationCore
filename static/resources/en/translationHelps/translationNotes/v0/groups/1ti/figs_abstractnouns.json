@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"godliness\" and \"contentment\" are abstract nouns. AT: \"it is great gain for a person to do what is godly and to be content with what they have\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "godliness with contentment is great gain",
+      "occurrence": 1
+    }
+  }
+]

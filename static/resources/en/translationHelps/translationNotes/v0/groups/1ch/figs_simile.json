@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"a very large spear\" (See: [[:en:ta:vol1:translate:figs_simile]])\n\n\n",
+      "reference": { "bookId": "1ch", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "a spear like a weaver's beam",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares the size of David's army to the army of God's angels. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n\n",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like the army of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The number of the people of Israel is compared to the number of stars to show that there were so many. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like the stars of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Shadows appear and disappear quickly. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 29, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Our days on the earth are like a shadow",
+      "occurrence": 1
+    }
+  }
+]

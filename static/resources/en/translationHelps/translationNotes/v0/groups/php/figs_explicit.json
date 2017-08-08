@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Timothy. We are servants of Christ Jesus\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Timothy, servants of Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is talking about his time in prison. AT: \"that the things I suffered because I was put into prison for preaching about Jesus\" ([[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "what has happened to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fruit\" here refers to the good results of Paul's work. AT: \"that means I will be able to work and my work will produce good results\" or \"then I will have more chances to encourage people to believe in Christ\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that means fruitful labor for me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The cause of the sorrow can be made explicit. AT: \"the sorrow of losing him added to the sorrow I already have from being in prison\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "sorrow upon sorrow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"these things\" refers to Paul's teachings. You can add this alternate translation to the end of the previous sentence. AT: \"because these teachings will protect you from those who teach what is not true\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "These things will keep you safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" emphasizes how Paul has changed since he quit being a Pharisee and became a believer in Christ. AT: \"now that I have trusted in Christ, I count\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "now I count",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul means plenty of the things that he needs for himself. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I have plenty",
+      "occurrence": 1
+    }
+  }
+]

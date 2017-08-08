@@ -42,9 +42,9 @@ export function selectProject(projectPath, projectLink) {
     }
     dispatch(clearLastProject());
     dispatch(loadProjectDetails(projectPath, manifest, params));
-    TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
     dispatch(ProjectValidationActions.validateProject((isValidProject) => {
       if (isValidProject) {
+        TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
         dispatch(displayTools());
       } else {
         dispatch(ProjectValidationActions.showStepper(true));

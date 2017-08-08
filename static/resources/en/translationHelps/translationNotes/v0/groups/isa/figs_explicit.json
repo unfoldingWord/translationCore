@@ -1,0 +1,827 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Wool is the hair of a sheep or goat. How they will be like wool can be made explicit. AT: \"white like wool\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "isa", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "like wool",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning of this statement can be made clear. AT: \"Men will go ... to hide from the terror\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Men will go ... from the terror",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"instead, there was a shout for help.\" The reason people shouted out for help can be made explicit. AT: \"instead, those who were weak shouted out for someone to help them because others were attacking them\" (See [[:en:ta:vol1:translate:figs_explicit]]).\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "instead, a shout for help",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"to those who take more and more houses, and who take more and more fields.\" Isaiah assumes that his audience knows that the law forbids someone from taking land from a family permanently. The full meaning of this statement can be made clear. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to those who join house to house, who join field to field",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Yahweh will send someone to speak his message to the people of Israel. AT: \"Whom shall I send to be a messenger to my people\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Whom shall I send",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and the king of Damascus is Rezin, who is a weak man\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and the head of Damascus is Rezin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"By the time that child is old enough to eat curds and honey, he will be able to reject what is evil and choose what is good.\" This emphasizes that the child will be very young when he knows to choose what is right instead of wrong or 2) \"By the time the child is old enough to reject what is evil and choose what is good, he will be eating curds and honey.\" The people of Judah considered a child to be responsible for doing what is right when he was 12 years old. This emphasizes that within twelve years the people will be able to eat much curds and honey because most of the people of Israel will be killed or taken as captives. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He will eat curds and honey when he knows to refuse the evil and choose the good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people imagine there are conspiracies, and it makes them anxious. AT: \"Do not worry like this people who think someone is always trying to harm them\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Do not call conspiracy anything that this people calls conspiracy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What they will know can be made explicit. AT: \"All the people will know that the Lord has judged them, even those in Ephraim and Samaria\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "All the people will know, even Ephraim and the inhabitants of Samaria",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be made explicit. This can be stated in active form. AT: \"We will replace the common bricks of our destroyed cities with expensive cut stone, and we will plant great cedar trees where ordinary sycamore trees grew\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "isa", "chapter": 9, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The bricks have fallen, but we will rebuild with chiseled stone; the sycamores have been cut down, but we will put cedars in their place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The meaning of \"this\" and \"this way\" can be made explicit. AT: \"But the king of Assyria does not intend to do what I tell him, nor does he think that I am using him as my weapon\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "But this is not what he intends, nor does he think this way",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that the baby will be safe because the snake will not bite it. AT: \"Babies will play safely over the hole of the snake\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "A baby will play over the hole of the snake",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly what time is being referred to. AT: \"At that time\" or \"When the king rules\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "On that day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This alludes to the myth that many people in the Ancient Near East knew, that the Canaanite gods met in council on the top of a mountain in the northern part of Syria. Sitting on the mountain represents ruling with the gods. AT: \"I will rule on the mountain where the gods assemble\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will sit on the mount of assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What God will observe can be stated clearly.  AT: \"I will quietly observe that nation from my home\" or \"From my home, I will quietly watch what the people of that nation do\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will quietly observe from my home",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Before the grape harvest\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Before the harvest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that this refers to blossoms on grape vines. AT: \"when flowers have finished growing on the grape vines\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "when the blossoming is over",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the border\" refers to the border of Egypt. AT: \"a stone pillar to Yahweh at the border of Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a stone pillar at the border to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Who Yahweh will deliver them from can be made explicit. AT: \"Yahweh will deliver the Egyptians from their oppressors\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he will deliver them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The object of their worship can be made explicit. AT: \"They will worship Yahweh\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "They will worship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that they will first attack and capture people. AT: \"will attack Egypt and Ethiopia and capture their people and lead them away\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 20, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will lead away the captives of Egypt, and the exiles of Ethiopia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"wilderness\" refers to the wilderness of Judea. (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "from the wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"as a hired laborer would count the days of a year.\" A hired worker is careful to count the days so that he works exactly the amount of time he is paid to work. This means Kedar will be defeated in exactly one year. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "as a laborer hired for a year would see it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The term \"host\" or \"hosts\" is a word that refers to a large number of something. Here it refers to the evil spiritual beings in the heavens. AT: \"evil spiritual beings\" or \"angels who rebelled against him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the host of the high ones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This concludes the parable started in [[:en:bible:notes:isa:28:23|28:23]]. The implied lesson of the parable is that farmers are wise enough to listen to Yahweh's instructions about planting and threshing. But the leaders of Jerusalem are foolish for not listening to Yahweh's instructions that he is speaking through Isaiah. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "This too comes ... excellent in wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"yourselves\" refers to the people of Jerusalem. Why they are astonished can be made explicit. AT: \"Be astonished at what I am telling you\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Astonish yourselves and be astonished",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This possibly refers to when Yahweh called Abraham from his home country and sent him to the promised land. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "who redeemed Abraham",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit to explain what knowledge they will learn. AT: \"those who complain will begin to know that what Yahweh teaches them is true\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "complainers will learn knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is the meaning of the word \"Topheth.\" Topheth is a place in the Hinnom Valley, south of Jerusalem, where at one time people burned their children as sacrifices to a false god. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 30, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a place of burning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that their horses are only horses and not spiritual beings. AT: \"their horses are only horses; they are not powerful spirits!\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 31, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "their horses flesh and not spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"will come down\" (UDB). This refers to descending from heaven. AT: \"will come down from heaven\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 31, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will descend",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they will cry out loudly as they grieve what happens to their fruitful fields and vines. AT: \"You will wail because of what happens to your pleasant fields and fruitful vines\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You will wail for the pleasant fields, for the fruitful vines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings of \"the loud noise\" are 1) it refers to Yahweh's voice. AT: \"The peoples flee at the sound of your loud voice\" or 2) it refers the loud sounds of Yahweh's army. AT: \"The people flee at the sound of your army\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "At the loud noise the peoples flee",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means they weep because they do not succeed in making peace. AT: \"the diplomats hope for peace but they do not succeed and so they weep bitterly\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the diplomats hoping for peace weep bitterly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he will take revenge on them for how they had previously waged war against the people of Jerusalem. AT: \"he will give them the punishment they deserve for what they had done to the people of Zion\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 34, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he will pay them back for the cause of Zion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that a pool of water will appear in the hot sand. The full meaning of this statement can be made clear. AT: \"A pool will appear in the burning sand\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 35, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The burning sand will become a pool",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that springs will appear in the dry ground. The full meaning of this statement can be made clear. AT: \"springs of water will appear in the thirsty ground\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 35, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the thirsty ground springs of water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they are standing on the wall. The top of the wall was wide and a place where people could sit or stand. The full meaning of this statement can be made clear. AT: \"who are standing on the wall\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "who are on the wall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a very offensive statement. He is implying that they will need to eat these things because they will have nothing else to eat because their city will be under attack. The full meaning of this statement can be made clear. AT: \"will soon need to eat their own dung and drink their own urine, just as you will, because you will have nothing else to eat\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will have to eat their own dung and drink their own urine with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"the words which Yahweh your God has heard\" refers to what the king of Assyria had said. The full meaning of this statement can be made clear. AT: \"and Yahweh your God will rebuke the king of Assyria for what he has said\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and will rebuke the words which Yahweh your God has heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Hezekiah is speaking about Yahweh being present in the temple. The meaning of this can be made clear. AT: \"you who are here with the cherubim\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you who sit above the cherubim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hezekiah is referring to the letter from Sennacherib. The meaning of this can be made clear. AT: \"in the message he has sent\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "which he has sent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to to the servants that he had sent to Hezekiah with a message. This can be stated clearly. AT: \"In the messages you sent with your servants\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "By your servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to prepare your family and those in charge of your affairs so that they know what to do after you die. This can be written clearly. AT: \"You should tell the people in your palace what you want them to do after you die\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Set your house in order",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was used as an ointment. The meaning of this can be made clear. AT: \"use an ointment of mashed figs\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a lump of figs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit. AT: \"When the king's messengers arrived, Hezekiah was pleased with what they brought to him\" ([[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Hezekiah was pleased by these things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In these verses, Isaiah speaks of the events following the exodus from Egypt, when Yahweh divided the sea to let the Israelites walk through on dry ground but then drowned the Egyptian army. The full meaning of this statement can be made clear. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "who opened a way ... like a burning wick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this refers to the associates of the craftsman who makes the idol. AT: \"all of the craftsman's associates\" or 2) this refers to those who associate themselves with the idol by worshiping it. AT: \"all those who worship the idol\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "all his associates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means when he did not have any children yet. This can be stated clearly. AT: \"when he had no children\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "when he was a lone individual",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that by putting the cup of his anger in their hand Yahweh will be forcing them to drink what is in the cup. AT: \"I will force your tormentors to drink from the wine of the bowl of my anger\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will put it into the hand of your tormentors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is assumed knowledge that the people of Israel were slaves in Babylon. This can be stated explicitly. AT: \"go out from the land where you are slaves\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 52, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "go out from there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the flood that Yahweh caused during the time of Noah. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 54, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the waters of Noah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of these actions are associated with worshiping idols. The oaks were sacred trees to the Canaanites. People thought such activity would increase fertility for people and the land. (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You heat yourselves ... under the rocky overhangs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People often went on top of hills and mountains to worship false gods. They thought those were the best places for worship. This might even refer to Jerusalem, too. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "on a high mountain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a place where people would go to worship idols. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 66, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "enter the gardens",
+      "occurrence": 1
+    }
+  }
+]

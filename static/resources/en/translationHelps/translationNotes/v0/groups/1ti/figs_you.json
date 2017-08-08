@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Timothy. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "But you",
+      "occurrence": 1
+    }
+  }
+]

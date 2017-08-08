@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of an impossible situation. If you cannot state this in this way in your language, it can be written as a hypothetical situation. AT: \"It would be easier for a camel\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "It is easier for a camel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pilate asks what he should do with Jesus if he releases Barabbas to them; this is a hypothetical situation. This can be written clearly. AT: \"If I release Barabbas, what then should I do with the King of the Jews\" (See: [[:en:ta:vol1:translate:figs_hypo]] and [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "What then should I do with the King of the Jews",
+      "occurrence": 1
+    }
+  }
+]

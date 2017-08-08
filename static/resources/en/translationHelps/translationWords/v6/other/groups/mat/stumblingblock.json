@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "stumblingblock",
+      "quote": "stumbling block, stone of stumbling",
+      "occurrence": 1
+    }
+  }
+]

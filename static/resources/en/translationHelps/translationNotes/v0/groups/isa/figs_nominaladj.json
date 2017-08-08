@@ -1,0 +1,227 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be stated as an adjective. AT: \"those who are poor\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"refuse to do evil deeds and choose to do good deeds\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "refuse the evil and choose the good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"refuse to do evil deeds and choose to do good deeds.\" Translate as in [[:en:bible:notes:isa:07:13|7:15]]. (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "refuse the evil and choose the good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases refer to people who have these qualities. AT: \"poor people ... humble people ... wicked people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 11, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the poor ... the humble ... the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases refer to people who have these qualities. AT: \"wicked people ... proud people ... ruthless people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked ... the proud ... the ruthless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a nominal adjective. AT: \"ruthless people\" or \"those who are ruthless\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 25, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the ruthless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be reworded so that the nominal adjective \"dead\" is expressed as the verb \"have died.\" AT: \"Your people who have died will live again\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "Your dead will live",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to people who act rashly and people who stutter. AT: \"The rash person ... the stuttering person\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The rash ... the stutterer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The fool\" refers to foolish people. Also, \"folly\" and \"evil\" may be expressed as adjectives. AT: \"For the foolish person says foolish things and his heart plans evil things\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "For the fool speaks folly, and his heart plans evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The hungry\" refers to hungry people. They are hungry because they have empty stomachs. AT: \"the hungry person have an empty stomach\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the hungry empty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a person who deceives others. AT: \"The deceptive person's\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The deceiver's",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The blind\" refers to people who are blind. They are referred to by their \"eyes\" to emphasize their healing. AT: \"blind people will see\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 35, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the eyes of the blind will see",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The living\" refers to people who are alive. AT: \"in the land where people are alive\" or \"in this world where people are alive\" (UDB) (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n \n \n",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "in the land of the living",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"ransom\" means to \"rescue.\" This refers to people whom Yahweh has rescued. AT: \"Those whom Yahweh has rescued\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The ransomed of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"wicked\" refers to wicked people. Yahweh speaks of wicked people no longer sinning as if they were to stop walking along a path that they had been traveling. AT: \"Let wicked people change the way they live\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 55, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "Let the wicked leave his path",
+      "occurrence": 1
+    }
+  }
+]

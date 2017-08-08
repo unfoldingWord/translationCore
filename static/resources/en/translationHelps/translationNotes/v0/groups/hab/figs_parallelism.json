@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases say the same thing in two different ways. \"I will stand at my post on the watchtower.\" Habakkuk uses these phrases to compare himself waiting to hear from God to a soldier standing guard on a watchtower. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will stand at my guard post and station myself on the watchtower",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is saying the same thing in two different ways. \"He collects all the people from every nation\" (See: [[:en:ta:vol2:translate:figs_parallelism]]) \"He\" refers to the Chaldeans as though they are one person.\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He gathers to himself every nation and gathers up for himself all of the peoples",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases are saying the same thing in different ways. AT: \"A warning to the Chaldeans who built their cities with what they have stolen from the people they have killed\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Woe to the one who builds a city with blood, and who establishes a town in iniquity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences share similar meanings. Together they refer to Yahweh punishing the nations for their wickedness. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You have marched over the earth with indignation. In wrath you have threshed the nations.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "there is no food. These are almost all the sources of food to be found in the land of Israel. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:translate_unknown]])\n \n \n",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "fig tree ... vines ... olive tree ... fields ... flock ... cattle",
+      "occurrence": 1
+    }
+  }
+]

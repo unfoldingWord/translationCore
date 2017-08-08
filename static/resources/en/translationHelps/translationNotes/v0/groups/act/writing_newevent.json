@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mark the beginning of a new part of the story. They refer to the period of time after Jesus ascended while the disciples were meeting in the upper chamber. AT: \"During that time\" (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "In those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This marks the beginning of a new part of the story of the Samaritan's becoming believers. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now when the apostles in Jerusalem heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an expression that marks a change in the story to show something different is about to happen. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "it happened that",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is used to mark a new part of the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 9, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now it came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This marks a new part of the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This introduces the new part of the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This begins a new event in the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "act", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "It came about",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quotation. AT: \"when he had heard his sister Rebekah tell what the man had said to her\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "when he had heard the words of Rebekah his sister, \"This is what the man said to me,\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"Why did you say that she is your sister?\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Why did you say, 'She is my sister'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quotation spoken by Jacob's son, as in the UDB. (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "They were very angry ... should not have been done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"Then we said to him that we cannot go down to Egypt. We told him that if our youngest brother is with us ... is with us\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Then we said, 'We cannot go down. If our youngest brother ... is with us.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"you should say that you have ... both you and your forefathers\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "you should say, 'Your servants have ... both we, and our forefathers.'",
+      "occurrence": 1
+    }
+  }
+]

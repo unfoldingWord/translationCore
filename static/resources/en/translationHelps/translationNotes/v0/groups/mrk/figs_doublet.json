@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases are similar and used to emphasize what Jesus wanted the wind and the sea to do. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Peace! Be still!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"Listen\" and \"understand\" are related. Jesus uses them together to emphasize that his hearers should pay close attention to what he is saying. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Listen to me, all of you, and understand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two terms have a common meaning and are repeated here for emphasis. They can be combined. AT: \"Keep watch\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Keep watch and be on guard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both \"know\" and \"understand\" have the same meaning here. The meaning is repeated to add emphasis to what Peter is saying. AT: \"I really do not understand what you are talking about!\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 68 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "neither know nor understand what you are talking about",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. Some people who first read this book had probably heard of Kiriath Arba but did not know that it was the same as the city that they called Hebron. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "the name of Hebron was previously Kiriath Arba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. Some people who first read this book had probably heard of Luz but did not know that it was the same as the city that they called Bethel. (See: [[:en:ta:vol2:translate:writing_background]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 1, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "the city that was formerly called Luz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This breaks from the main storyline. The narrator gives background information about why Yahweh left some of the people groups in Canaan. AT: \"Yahweh left nations among the Israelites to teach the young men who had not fought in battle before how to fight\" (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "He did this to teach warfare to the new generation of the Israelites who had not known it before",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Now\" is used here to mark a break in the main storyline. Here the narrator tells background information about Eglon. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Eglon was a very fat man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the narrator tells background information about Deborah. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the narrator tells background information about Heber the Kenite. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the narrator tells background information about the Midianites. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The Midianites had golden earrings because they were Ishmaelites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the author tells background information about Philistine men that Delilah had waiting to capture Samson. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main story while the writer tells background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information that the author inserted to help the reader understand how the people asked Yahweh for an answer. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "for the ark of the covenant of God ... was serving before the ark in those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "From this sentence until the end of verse 41 is background information that the writer inserted to explain to the readers how the ambush defeated the Benjamites. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The men of Israel had given ground to Benjamin, because they were counting on the men ... outside Gibeah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This background information tells the reader about the promise that the Israelites made before the battle with the Benjamites. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now the men of Israel had made a promise ... marry a Benjamite.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information to explain to the reader the promise that the Israelites had made at Mizpah before they attacked the Benjamites. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For they had made an important promise concerning anyone who did not come up to Yahweh at Mizpah. They said, \"He would certainly be put to death.\"",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the reason that Isaac dug them out. Possible ways to translate this are: 1) Since this happened first, this sentence can come before the sentence about Isaac digging them out, as in the UDB. or 2) This sentence can start with \"Isaac did this because the Philistines had stopped them up.\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "The Philistines had stopped them up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaac asks this question before blessing his son. AT: \"But first Isaac asked\" (UDB) (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "He said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The UDB reorders the event with Pharaoh chronologically, whereas the ULB lists the events as the author wrote it. (See: [[:en:ta:vol1:translate:figs_events]])\n",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "He took five of his brothers",
+      "occurrence": 1
+    }
+  }
+]

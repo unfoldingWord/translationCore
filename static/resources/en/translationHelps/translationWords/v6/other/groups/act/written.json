@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 1, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 13, "verse": 33 },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 16, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "written",
+      "occurrence": 1
+    }
+  }
+]

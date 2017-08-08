@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "large groups of insects like grasshoppers that fly together and eat large areas of food crops (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the swarming locust",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a type of grass, like wheat, whose seeds can be used to make bread (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "barley",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "different types of fruit (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "jol", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "fig ... pomegranate ... apple",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A large and fast animal with four legs. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "horses",
+      "occurrence": 1
+    }
+  }
+]

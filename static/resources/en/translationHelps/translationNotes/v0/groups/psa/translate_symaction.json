@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People would show their king that they were loyal to him by kissing him, perhaps on the feet. AT: \"Show the son that you are truly loyal to him\" or \"Bow down humbly before his son\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Kiss the son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People snort at their enemies when they think that their enemies are weak and worthless. AT: \"he thinks that all his enemies are weak and worthless\" or \"he sneers at all his enemies\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "he snorts at all his enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This seems to refer to a ritual washing of hands in water to symbolize freedom from sin and guilt. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "I wash my hands in innocence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a symbol of prayer. \"with my head bent down in prayer\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with my head bowed on my chest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, to raise one's hand is a gesture of victory. This can be stated in active form. AT: \"Yahweh has exalted his right hand\" or \"Yahweh has raised his right hand in victory\" (See: [[:en:ta:vol2:translate:translate_symaction]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 118, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The right hand of Yahweh is exalted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is how people prayed or praised God. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 134, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Lift up your hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bowing down is a symbolic action that represents worship and giving honor. AT: \"I will worship you\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 138, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "I will bow down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a sign of being arrogant. AT: \"are arrogant\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 140, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "raise their heads",
+      "occurrence": 1
+    }
+  }
+]

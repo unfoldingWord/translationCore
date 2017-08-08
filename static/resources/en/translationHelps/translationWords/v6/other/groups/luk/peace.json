@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 79 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 29 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 50 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 48 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 51 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 32 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 38 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 42 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "peace, peaceful",
+      "occurrence": 1
+    }
+  }
+]

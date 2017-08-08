@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "large, swift cats (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "leopards",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This term means \"stop and reflect\" or \"lift up, exalt.\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Selah",
+      "occurrence": 1
+    }
+  }
+]

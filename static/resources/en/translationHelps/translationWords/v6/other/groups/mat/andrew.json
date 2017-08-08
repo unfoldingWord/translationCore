@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 4, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Andrew",
+      "occurrence": 1
+    }
+  }
+]

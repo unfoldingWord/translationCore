@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "delight",
+      "quote": "delight",
+      "occurrence": 1
+    }
+  }
+]

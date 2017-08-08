@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "grain",
+      "quote": "grain",
+      "occurrence": 1
+    }
+  }
+]

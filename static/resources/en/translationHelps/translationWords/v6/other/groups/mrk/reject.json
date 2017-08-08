@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "reject",
+      "occurrence": 1
+    }
+  }
+]

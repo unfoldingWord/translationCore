@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative means that he will claim them as his brothers. AT: \"is pleased to call them his brothers\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "is not ashamed to call them brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"But that message did not benefit those who did not join with the people who believed and obeyed.\" The author is talking about two groups of people, those who received God's covenant with faith, and those who heard it but did not believe. This can be stated in positive form. AT: \"But that message benefited only those who believed and obeyed it\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n \n",
+      "reference": { "bookId": "heb", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "But that message did not benefit those who did not unite in faith with those who obeyed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative can mean that God in his justice will remember what good things his people have done. AT: \"For God is just and therefore will certainly remember\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "For God is not so unjust that he would forget",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative can mean that God will tell the truth about this situation. AT: \"about which God always tells the truth\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "with which it is impossible for God to lie",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"a person can please God only if he has faith in God\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "without faith it is impossible to please him",
+      "occurrence": 1
+    }
+  }
+]

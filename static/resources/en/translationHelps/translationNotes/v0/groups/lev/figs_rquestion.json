@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses a question to rebuke Eleazar and Ithamar. This rhetorical question can be translated as a statement. AT: \"You should have eaten ... before him.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you not eaten ...  before him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These sacrifices were to be eaten with joy and happiness. Aaron uses a question to emphasize that Yahweh would not be pleased for him to eat the sacrifices since he is sad because of his sons' deaths. This question may be translated as a statement. AT: \"certainly, Yahweh would not have been pleased.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "would it have been pleasing in the sight of Yahweh?",
+      "occurrence": 1
+    }
+  }
+]

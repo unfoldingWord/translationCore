@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses this question to encourage the believers and answers it in the next verse. This rhetorical question can be positively stated. AT: \"You are our confidence for the future, our joy, and our crown of glory when our Lord Jesus Christ comes\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what is our confidence ... at his coming?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be expressed as a statement. AT: \"We cannot thank God enough for what he has done for you! We greatly rejoice over you when we pray to our God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For what thanks can we give to God for you, for all the joy that we have before our God over you?",
+      "occurrence": 1
+    }
+  }
+]

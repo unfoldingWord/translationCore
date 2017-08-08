@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 3, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 5, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  }
+]

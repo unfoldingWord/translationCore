@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be stated as adjectives. AT: \"those who are wicked ... those who are treacherous\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked ... the treacherous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to poor people. AT: \"those who are poor\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 17, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to wicked people. AT: \"those who are wicked\" or \"the wicked people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 20, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be translated as a noun phrase. AT: \"a diligent man\" or \"a man who works hard\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the diligent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be translated as a noun phrase. AT: \"wise person\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "wise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"wicked\" can be translated as a noun phrase. AT: \"the wicked person\" or \"wicked people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be translated as a noun phrase. AT: \"perverse people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 22, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the perverse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be translated as a noun phrase. AT: \"any poor person\" or \"poor people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to upright persons in general. AT: \"upright persons\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the upright",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to poor people in general. AT: \"poor people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the poor",
+      "occurrence": 1
+    }
+  }
+]

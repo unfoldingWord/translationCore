@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases refer to these animals in general, not to a specific wolf or leopard. These are all strong animals that attack and eat other animals. AT: \"Wolves ... leopards ... young lions ... bears ... Lions\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The wolf ... the leopard ... the young lion ... the bear ...  The lion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the Assyrian\" refers to a person from Assyria, but represents anyone from Assyria who comes to Egypt. AT: \"Assyrians will come\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the Assyrian will come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a person from Egypt, but represents anyone from Egypt who comes to Assyria. AT: \"Egyptians\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the Egyptian",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is not a specific city but cities in general. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "In the city",
+      "occurrence": 1
+    }
+  }
+]

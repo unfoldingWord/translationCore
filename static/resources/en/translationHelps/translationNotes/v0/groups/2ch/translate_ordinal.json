@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "In the third year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. This is during the early rain season, which would soften the land for sowing. It is during the last part of September and the first part of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 31, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "seventh month",
+      "occurrence": 1
+    }
+  }
+]

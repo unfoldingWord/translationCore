@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The imperative in the first part of the sentence functions as a hypothetical condition. AT: Or if you were to speak to the earth, it would teach you\" (See: [[:en:ta:vol2:translate:figs_imperative]] an [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "job", "chapter": 12, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Or speak to the earth, and it will teach you",
+      "occurrence": 1
+    }
+  }
+]

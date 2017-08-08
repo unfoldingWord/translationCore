@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here mentioning the city of Dan in the extreme north and the city Beersheba in the extreme south means the entire nation of Israel. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from Dan to Beersheba",
+      "occurrence": 1
+    }
+  }
+]

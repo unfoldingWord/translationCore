@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I teach the Gentiles the message of faith and truth.\" Here, Paul may be using \"faith\" and truth\" to express one idea. AT: \"I teach the Gentile about the true faith\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n\n",
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "I am a teacher of the Gentiles in faith and truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"word of God\" and \"prayer\" are used together to express one idea. The prayer is in agreement with the truth that God has revealed. AT: \"it is dedicated for God's use by praying in agreement with his word\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "it is sanctified by the word of God and prayer",
+      "occurrence": 1
+    }
+  }
+]

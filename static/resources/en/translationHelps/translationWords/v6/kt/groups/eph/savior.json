@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "eph", "chapter": 5, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Savior, savior",
+      "occurrence": 1
+    }
+  }
+]

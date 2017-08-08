@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way to speak about Reuben sleeping with father's secondary wife. The couch is the place where a man and his wife would have slept together. (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Reuben had defiled his father's couch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"kill me with it\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "thrust me through with it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Saul and his sons dead\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Saul and his sons fallen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is a mild way to describe being killed by the enemy. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "being caught by their swords",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you have killed many people\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "You have shed much blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"because I know that you have killed many people\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n \n",
+      "reference": { "bookId": "1ch", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "because you have shed much blood on the earth in my sight",
+      "occurrence": 1
+    }
+  }
+]

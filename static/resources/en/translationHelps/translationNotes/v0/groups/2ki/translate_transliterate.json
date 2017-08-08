@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. Translate the name \"Nebat\" the same as you did in [[:en:bible:notes:2ki:03:01|3:3]]. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Nebat ... Ahijah",
+      "occurrence": 1
+    }
+  }
+]

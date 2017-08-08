@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 7, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "king",
+      "quote": "king",
+      "occurrence": 1
+    }
+  }
+]

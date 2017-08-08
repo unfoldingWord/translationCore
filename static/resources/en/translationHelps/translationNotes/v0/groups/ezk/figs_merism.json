@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a merism that refers to the area to the north, and to the south, and all places in between. AT: \"in every direction\" or \"everywhere\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the south to the north",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all of Egypt. Where these places are can be stated clearly. AT: \"throughout all of Egypt, from Migdol in the north to Syene in the south and the borders of Cush further south\" (See: [[:en:ta:vol2:translate:figs_merism]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 29, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the Migdol to Syene and the borders of Cush",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 11, "verse": 32 },
+      "tool": "translationWords",
+      "groupId": "samson",
+      "quote": "Samson",
+      "occurrence": 1
+    }
+  }
+]

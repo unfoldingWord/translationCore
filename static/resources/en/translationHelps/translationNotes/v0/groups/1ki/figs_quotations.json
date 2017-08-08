@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quotation. AT: \"have you said that Adonijah will reign after you, and he will sit on your throne?\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "have you said, 'Adonijah will reign after me, and he will sit on my throne?'",
+      "occurrence": 1
+    }
+  }
+]

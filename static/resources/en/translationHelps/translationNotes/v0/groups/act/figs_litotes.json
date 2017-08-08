@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is used to emphasize what really happened. This could be said in a positive way. AT: \"there was a great disturbance among the soldiers over what had happened to Peter\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "act", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "there was no small disturbance among the soldiers over what had happened to Peter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could also be stated in positive form. AT: \"God has certainly left a witness\" or \"God has indeed testified\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he did not leave himself without witness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an understatement to emphasize that many leading women joined them. AT: \"many leading women\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "not a few of the leading women",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The town clerk uses \"not\" to emphasize that all of the people knew this. (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "who does not know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"For I did not keep silent and not tell you.\" This can be stated in positive form. AT: \"For I certainly declared to you\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "For I did not keep back from declaring to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This statement is made in the negative to emphasize the positive equivalent. AT: \"he should die immediately\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he should no longer live",
+      "occurrence": 1
+    }
+  }
+]

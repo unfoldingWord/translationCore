@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 6, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "receive",
+      "occurrence": 1
+    }
+  }
+]

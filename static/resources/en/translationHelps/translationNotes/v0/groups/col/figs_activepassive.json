@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Son created all things for himself, including thrones, dominions, principalities, and authorities. (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Whether thrones or dominions or governments or authorities, all things were created by him and for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking here of the Son controlling all things as if he were physically holding them together. \"he holds everything together\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in him all things hold together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"now God has revealed it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "now it has been revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Christ can reveal God's true wisdom and knowledge. This can be stated in active form. AT: \"God has hidden all the treasures of wisdom and knowledge in Christ\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "In him all the treasures of wisdom and knowledge are hidden",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of people's lives as if they were objects that can be hidden in containers and speaks of God as if he were a container. AT: Possible meanings are 1) \"it is as though God has taken your life and concealed it with Christ in God's presence\" or 2) \"only God knows what your true life really is, and he will reveal it when he reveals Christ\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "col", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "your life is hidden with Christ in God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made active. AT: \"as those whom God has chosen for himself, whom he desires to see live for him alone, and whom he loves\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as God's chosen ones, holy and beloved",
+      "occurrence": 1
+    }
+  }
+]

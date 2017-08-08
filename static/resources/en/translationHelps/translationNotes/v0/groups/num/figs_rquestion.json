@@ -1,0 +1,512 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men ask this question in order to complain that they are not allowed to participate in celebrating the Passover. This rhetorical question can be translated as a statement. AT: \"It is not fair that you keep us away from offering the sacrifice ... among the people of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you keep us from offering the sacrifice ... among the people of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Israelites ask this question in order to complain and to express their desire for something other than manna to eat. This can be expressed as a statement. AT: \"We wish that we had meat to eat.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will give us meat to eat?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used these questions to complain about the way God was treating him. They can be expressed as statements. AT: \"You should not treat me, your servant, so badly. You should not be angry with me\" or \"I, your servant, have done nothing wrong for you to treat me so badly.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you treated your servant so badly? Why are you not pleased with me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used these questions to get God to think about the fact that Moses was not their father. AT: \"I am not the father of all these people. So it is not fair that you should say to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I conceive all these people? Have I given them birth so that you should say to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be translated as a statement. AT: \"You should not expect me to carry them ... to give them\" or \"I am not able to carry them ... to give them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should I carry them ... to give them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used this question to complain that it was impossible for him to give meat to all the people. AT: \"I cannot possibly find enough meat to give to all these people.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Where can I find meat to give to all this people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Israelites had asked this question in order to complain and to express their desire for something other than manna to eat. It can be expressed as a statement. AT: \"We wish that we had meat to eat.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will give us meat to eat?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses these questions to express his doubt that there could be enough meat to feed all of the people. AT: \"We would have to kill entire flocks and herds and catch all the fish in the sea to satisfy them!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should we kill flocks and herds to satisfy them? Should we catch all the fish in the sea to satisfy them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this question to rebuke Joshua. It can be translated as a statement, if necessary. AT: \"You should not be jealous for my sake.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you jealous for my sake?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Miriam and Aaron use these questions to complain that Moses had so much authority and they did not. This can be expressed as a statement. AT: \"Yahweh has not spoken only with Moses. He has also spoken with us.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Has Yahweh spoken only with Moses? Has he not spoken also with us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses asks these questions to explain the kind of information that the men were to report back to him. These can be expressed as a statement. AT: \"See if the land is good or bad, what kind of cities are there, and whether those cities are only camps, or whether they have defensive walls around them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it good or bad? What cities are there? Are they like camps, or are they fortified cities?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people use this question in order to complain and accuse Yahweh of treating them unfairly. It can be translated as a statement. AT: \"Yahweh should not have brought us to this land only to die by the sword.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did Yahweh bring us to this land to die by the sword?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people use this question to encourage people to agree with them that it would be better to return to Egypt. It can be translated as a statement. AT: \"It would be better for us to return to Egypt than to try to conquer Canaan.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it not better for us to return to Egypt?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses these questions to show that he was angry and had lost patience with the people. They can be translated as statements. AT: \"This people has despised me for too long. They have failed to trust me for too long, despite all the signs ... them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long must this people despise me? How long must they fail to trust me, despite all the signs ... them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh asks this question because he has lost patience with the people. It can be translated as a statement. AT: \"I have tolerated this evil community who has criticized me long enough.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long must I tolerate this evil community that criticizes me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this question to rebuke Korah and the men with him. It can be translated as a statement. AT: \"You behave as though it it is a small thing for you ... to serve them\" or \"You should not consider it a small thing ... to serve them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "is it a small thing for you ... to serve them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this question to show them that when they complain about what Aaron does, they are really complaining against Yahweh, because Aaron was doing what Yahweh told him to do. AT: \"You are not really complaining about Aaron, but about Yahweh, whom Aaron obeys.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "So why are you complaining about Aaron, who obeys Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Dathan and Abiram use this question to rebuke Moses. It can be translated as a statement. AT: \"You behave as though it was a small thing for you to bring us ... so that we can die in the wilderness.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it a small thing that you have brought us ... to kill us in the wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people used this question to accuse Moses. It can be translated as a statement. AT: \"Now you want to blind us with empty promises.\" (See: [[:en:ta:vol1:translate:figs_rquestion]]\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Now do you want to blind us with empty promises?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people use this question in order to complain against Moses and Aaron. It can be translated as a statement. AT: \"You should not have brought Yahweh's community into this wilderness to die here, we and our animals.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you brought Yahweh's community into this wilderness to die here, we and our animals?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people used this question in order to rebuke Moses. This can be translated as a statement. AT: \"You should not made us leave Egypt to die in the wilderness!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you brought us up out of Egypt to die in the wilderness?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses a question to introduce a new topic of conversation. This rhetorical question can be translated as a statement. AT: \"Tell me about these men who came to you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who are these men who came to you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question was used to convict Balaam that his judgment of the donkey was unfair. This can be translated as a statement. AT: \"I am your donkey on which you have ridden all your life, right up to the present moment.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Am not I your donkey on which you have ridden all your life long to this present day?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to accuse Balaam of doing wrong. This can be translated as a statement. AT: \"You should not have struck your donkey these three times.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you struck your donkey these three times?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to rebuke Balaam for delaying to come. This can be translated as a statement. AT: \"Surely I sent men to summon you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not send men to you to summon you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to rebuke Balaam for delaying to come. This can be translated as a statement. AT: \"Surely you know that I am able to pay you money for coming to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Am I not able to honor you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam uses this rhetorical question to tell Balak that he will not be able to do everything that Balak asks him to do. This can be translated as a statement. AT: \"But I have no power to say anything I want\" (See: [[:en:ta:vol1:translate:figs_rquestion]]).\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do I now have any power to say anything?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balak uses this question to scold Balaam. This rhetorical question can be translated as a statement. AT: \"I cannot believe you did this to me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 23, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have you done to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam uses this rhetorical question to defend his actions. This can be translated as a statement. AT: \"I must be very careful to say only what Yahweh tells me to say.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 23, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should I not be careful to say only what Yahweh puts in my mouth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam uses this rhetorical question to remind Balak that Balaam refused to disobey God even before he came to Balak. It can be translated as a statement. AT: \"I told you before that I must say all that Yahweh tells me to say.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 23, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not tell you that I must say all that Yahweh tells me to say?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "At that time, only sons received land as an inheritance. The daughters use this question to suggest that they should receive the inheritance and continue the family clan. This can be written as a statement. AT: \"You should not remove our father's name from the clan members just because he did not have a son.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should our father's name be taken away from among his clan members because he had no son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The law was explicit on who would be permitted to live. The army violated the law by allowing all the women and children to live. This was a rebuke to the army leaders. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "num", "chapter": 31, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you let all the women live?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses asks this question to rebuke the people from the tribes of Gad and Reuben. AT: \"It is wrong for you to settle down in this land while your brothers go to war.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 32, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should your brothers go to war while you settle down here?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses asks this question to correct the people from the tribes of Gad and Reuben. AT: \"Do not discourage the hearts ... the land that Yahweh has given them.\" or \"Your actions would discourage the hearts ... the land that Yahweh has given them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "num", "chapter": 32, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why discourage the hearts ... the land that Yahweh has given them?",
+      "occurrence": 1
+    }
+  }
+]

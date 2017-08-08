@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since Moses wrote this book, it is possible he is referring to the second month of the Hebrew calendar. But this is uncertain. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the second month, on the seventeenth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Because Moses wrote this book, it is possible he is referring to the seventh month and tenth month of the Hebrew calendar, but this is uncertain. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the seventh month, on the seventeenth day of the month ... tenth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since Moses wrote this book it is possible he is referring to the first month of the Hebrew calendar, but this is uncertain. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first month, on the first day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"On the twenty seventh day of the second month.\" This may refer to the second month of the Hebrew calendar, but this is uncertain. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "In the second month, on the twenty-seventh day of the month",
+      "occurrence": 1
+    }
+  }
+]

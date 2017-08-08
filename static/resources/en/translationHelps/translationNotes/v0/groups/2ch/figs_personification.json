@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "has caused it to happen or has ensured that his promises were fulfilled (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "has fulfilled it with his own hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Yahweh was no longer angry with him and, thus, did not destroy him completely\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Yahweh's anger turned away from him, so as not to destroy him completely",
+      "occurrence": 1
+    }
+  }
+]

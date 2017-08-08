@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"inquired carefully\" mean basically the same thing as \"searched.\" Together these words emphasize how hard the prophets tried to understand this salvation. AT: \"examined very carefully\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "searched and inquired carefully",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing. Peter speaks of his readers as people who are living in foreign lands away from their home. See how you translated \"foreigners\" in [[:en:bible:notes:1pe:01:01|1:1]]. (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "foreigners and wanderers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"good\" and \"gentle\" share similar meanings and emphasize that such masters treat their servants kindly. AT: \"the very kind masters\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the good and gentle masters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize the intensity of joy. AT: \"rejoice even more\" or \"be very glad\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "rejoice and be glad",
+      "occurrence": 1
+    }
+  }
+]

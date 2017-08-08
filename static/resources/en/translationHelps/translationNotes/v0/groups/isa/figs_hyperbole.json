@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means a very long time. AT: \"an extremely long time\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration. The kings had destroyed many of the nearby lands, but not all lands. AT: \"many of the nations and their lands\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the nations and their lands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Sennachrib is exaggerating his conquest and travels across the rivers of Egypt by claiming to have dried up the rivers when he marched his army through them. AT: \"I have marched through all the rivers of Egypt as if they were dry under my feet\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I dried up all the rivers of Egypt under the soles of my feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is generalization, that means many children will lie in the street, but not necessarily on every street corner. AT: \"they lie on the street\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "they lie at every street corner",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people did not literally go to Sheol, the world of the dead. Instead, Yahweh is indicating that the people were willing to go anywhere to find new gods to worship. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "you went down to Sheol",
+      "occurrence": 1
+    }
+  }
+]

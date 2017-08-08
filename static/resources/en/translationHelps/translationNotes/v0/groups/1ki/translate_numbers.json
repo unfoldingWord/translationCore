@@ -1,0 +1,332 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"400 pomegranates.\" A pomegranate is a fruit with a hard, red rind and many juicy seeds inside. Translate as in [[:en:bible:notes:1ki:07:18|7:18]]. (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four hundred pomegranates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"five hundred and fifty of them\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "550 of them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1,400 chariots and 12,000 horsemen\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "1,400 chariots and twelve thousand horsemen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"700 royal wives and 300 concubines\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven hundred royal wives and three hundred concubines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"22 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-two years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"41 years old ... 17 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty-one years old ... seventeen years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"41 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty-one years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This may refer to two sticks or to only a few sticks. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two sticks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 prophets and hid them in groups of 50\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one hundred prophets and hid them by fifties",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 of Yahweh's prophets in groups of 50\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "one hundred of Yahweh's prophets by fifties",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"400 prophets\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four hundred prophets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"seven\" can be rendered as the numeral \"7.\" AT: \"7 times\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven times",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"that food gave him energy to travel for 40 days and 40 nights\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "he traveled in the strength of that food forty days and forty nights",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7,000 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven thousand people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two hundred and thirty-two\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "232",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"27,000\" (See: [[:en:ta:vol2:translate:translate_numbers]]) \n\n",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-seven thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "Three years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"400 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four hundred men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"32 captains\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thirty-two captains",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"35 years old\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thirty-five years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he reigned 2 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "he reigned two years",
+      "occurrence": 1
+    }
+  }
+]

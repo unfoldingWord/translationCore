@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ordinal numbers can be translated as cardinal numbers. AT: \"They had lived in the wilderness for 40 years, 11 months, and 1 day, when Moses spoke\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "It happened in the fortieth year, in the eleventh month, on the first day of the month, that Moses spoke",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7th day.\" Here \"seventh\" is the ordinal number for seven. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7th year.\" This \"seventh\" is the ordinal number for seven. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "seventh year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"first\" is the ordinal number for one. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "first day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"tenth\" is the ordinal number for ten. AT: \"even after ten generations of the illegitimate child's descendants\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "as far as to the tenth generation of his descendants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"third\" is the ordinal number for three. The full meaning of this statement can be made explicit. AT: \"If an Edomite or an Egyptian comes to live in the Israelite community, his grandchildren may become full members of that community\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "The descendants of the third generation that are born to them may belong to the assembly of Yahweh",
+      "occurrence": 1
+    }
+  }
+]

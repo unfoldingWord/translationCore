@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the pronoun \"we\" may include Christian believers and also Jews who are not Christians. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "But we know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This pronoun refers to Paul, other believers, and the readers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"us\" refers to Paul and includes all Jewish and non-Jewish believers in Christ. Abraham is the physical ancestor of the Jewish people, but he is also the spiritual father of those who have faith. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "father of us all",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All occurrences of \"we\" and \"our\" refer to all believers and should be inclusive. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we ... our",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All occurrences of \"we,\" \"our,\" and \"us\" refer to all believers and should be inclusive. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we ... our ... us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" here refers to all believers and so should be inclusive. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All occurrences of \"us\" and \"we\" refer to all believers and should be inclusive. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"us\" and \"we\" refer to Isaiah and include the Israelites. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul includes his readers and other believers with himself. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "Let us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is including his readers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"our\" refers to Paul and all believers. AT: \"our sister in Christ\" (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "our sister",
+      "occurrence": 1
+    }
+  }
+]

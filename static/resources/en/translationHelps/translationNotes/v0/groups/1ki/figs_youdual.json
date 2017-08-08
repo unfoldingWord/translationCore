@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is plural. (See: [[:en:ta:vol1:translate:figs_youdual]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_youdual",
+      "quote": "you are many people",
+      "occurrence": 1
+    }
+  }
+]

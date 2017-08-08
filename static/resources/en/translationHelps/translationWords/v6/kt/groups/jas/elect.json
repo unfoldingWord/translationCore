@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "elect",
+      "quote": "chosen one, chosen ones, choose, chosen people, Chosen One, elect",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"her face\" represents Hannah herself. You can make this a separate sentence, if needed. AT: \"and ate. She was\" or \"and ate. People could see that she was\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "and ate; her face was",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"piece of bread\" is used for \"food. \"AT: \"so I can have something to eat\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n\n",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "so I can eat a piece of bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hand\" here represents Yahweh's power and control. AT: \"Yahweh will punish you, just as he punished your ancestors\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n\n",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Yahweh's hand will be against you, as it was against your ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"eyes\" here represents the people of the nation of Israel. AT: \"out in the open where all of the nation of Israel may see\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "before your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase, \"the edge of the sword,\" here is a synecdoche that represents the army of the nation of Israel. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the edge of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"loved\" refers to the love between friends, not romantic love. The word \"soul\" represents the person or the person's life. See how you translated this in [[:en:bible:notes:1sa:18:01|18:1]]. AT: \"Jonathan loved David as much as he loved himself\" or \"Jonathan loved David as he loved his own life\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Jonathan loved him as his own soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The hand is a synecdoche for the person. Possible meanings are 1) \"May Yahweh use David's enemies to punish David if David breaks this promise\" or 2) \"May Yahweh destroy the enemies of David.\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "May Yahweh require an accounting from the hand of the enemies of David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his own soul\" refers to himself. AT: \"Jonathan loved David as much as he loved himself\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he loved him as he loved his own soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Doeg killed all the priests himself or 2) the word \"Doeg\" is a synecdoche for Doeg and the men who went with him. AT: \"Doeg and his men turned and attacked ... they killed ... they attacked ... They killed\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Doeg the Edomite turned and attacked ... he killed ... he attacked ... He killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"With a sword\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "With the edge of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer pays the most attention to David, so these words are all singular, though David's men helped him do all these things. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "went ... fought ... led ... struck ... saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize the intensity of his fear. AT: \"he was terrified\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he was afraid, and his heart trembled very much",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bitter\" is a metaphor for the desire to rebel. The word \"spirit\" is a synecdoche for the person. AT: \"all the people were ready to rebel against David\" or \"all the people were very unhappy\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "all the people were bitter in spirit",
+      "occurrence": 1
+    }
+  }
+]

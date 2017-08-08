@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 3, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "foundation, founded",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 3, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "foundation, founded",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1co", "chapter": 3, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "foundation, founded",
+      "occurrence": 1
+    }
+  }
+]

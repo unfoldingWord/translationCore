@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "beelzebul",
+      "quote": "Beelzebul",
+      "occurrence": 1
+    }
+  }
+]

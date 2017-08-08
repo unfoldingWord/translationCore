@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n \n",
+      "reference": { "bookId": "2ch", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  }
+]

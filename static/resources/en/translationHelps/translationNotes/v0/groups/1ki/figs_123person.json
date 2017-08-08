@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nathan refers to David in the third person. This is a way of showing respect to the king. It can be stated in second person. AT: \"Have you, my master the king, done this without telling us, your servants, who should sit on the throne after you?\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Has my master the king done this without telling us, your servants, who should sit on the throne after him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Solomon speaks of himself as \"your servant\" to show that he respects Yahweh. This can be stated in first person. AT: \"that I, your servant, will pray\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "that your servant will pray",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking to Baasha, and the phrase \"his family\" refers to Baasha's family. This can be translated using the words \"you\" and \"your.\" AT: \"Listen, Baasha. I will completely sweep away you and your family\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "See, I will completely sweep away Baasha and his family",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jehoshaphat refers to Ahab in the third person to show respect for him. AT: \"You should not say that\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "May the king not say that",
+      "occurrence": 1
+    }
+  }
+]

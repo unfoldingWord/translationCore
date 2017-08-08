@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These instances of \"your\" and \"you\" are singular. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "2jn", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your children ... you, lady ... writing to you",
+      "occurrence": 1
+    }
+  }
+]

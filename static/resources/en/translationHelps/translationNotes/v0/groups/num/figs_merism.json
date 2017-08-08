@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two extremes are given to emphasize the entire grape may not be eaten. AT: \"from any part of a grape\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the seeds to their skins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all places in Sihon's kingdom. This means the Israelites destroyed Sihon's entire nation. (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Heshbon ... all the way to Dibon ... all the way to Nophah ... to Medeba",
+      "occurrence": 1
+    }
+  }
+]

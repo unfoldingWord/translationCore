@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" is plural and refers to those whom the prophet tells to comfort God's people. (See: [[:en:ta:vol1:translate:figs_youdual]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 40, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_youdual",
+      "quote": "says your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_youdual]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_youdual",
+      "quote": "I will tell you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to the people of Israel. Yahweh speaks of their failure to listen to him and obey him as if they are deaf and blind. (See: [[:en:ta:vol1:translate:figs_youdual]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_youdual",
+      "quote": "you deaf ... you blind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_youdual]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 48, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_youdual",
+      "quote": "your Redeemer ... your God",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"men\" means people in general. AT: \"People who do evil things\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "Evil men",
+      "occurrence": 1
+    }
+  }
+]

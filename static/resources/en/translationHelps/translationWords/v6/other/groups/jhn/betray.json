@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 64 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 71 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 20 },
+      "tool": "translationWords",
+      "groupId": "betray",
+      "quote": "betray, betrayer",
+      "occurrence": 1
+    }
+  }
+]

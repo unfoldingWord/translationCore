@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of the truth about Jesus Christ as something that believers could actually receive, as if it were an object. (See: [[:en:ta:vol2:translate:figs_abstractnouns]]) \n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to those who have received the same precious faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The reasons that the world is doomed to be destroyed are spoken of as if they were objects in the world. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the corruption that is in the world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate \"knowledge\" using a verbal phrase. AT: \"through your knowing God and Jesus our Lord.\" See how you translated a similar phrase in [[:en:bible:notes:2pe:01:01|1:2]]. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in the knowledge of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate \"grace\" and \"knowledge\" using verbal phrases. See how you translated similar phrases in [[:en:bible:notes:2pe:01:01|1:2]] and [[:en:bible:notes:2pe:01:08|1:8]] and [[:en:bible:notes:2pe:02:20|2:20]]. AT: \"experience more and more our Lord and Savior Jesus Christ acting kindly toward you, and that you get to know him better and better\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]]).\n\n \n",
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the grace and knowledge of our Lord and Savior Jesus Christ",
+      "occurrence": 1
+    }
+  }
+]

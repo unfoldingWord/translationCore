@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 18 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "heaven",
+      "quote": "heaven, sky, skies, heavens, heavenly",
+      "occurrence": 1
+    }
+  }
+]

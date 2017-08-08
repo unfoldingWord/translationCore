@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "lawful, lawfully, unlawful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "lawful, lawfully, unlawful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 6, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "lawful, lawfully, unlawful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "lawful, lawfully, unlawful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 22 },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "lawful, lawfully, unlawful",
+      "occurrence": 1
+    }
+  }
+]

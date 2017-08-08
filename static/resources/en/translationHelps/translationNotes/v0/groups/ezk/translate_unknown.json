@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are like beans, but their seeds are very small, round, and somewhat flat. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "lentils",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "flat bread made of barley ([[:en:bible:notes:ezk:04:09|4:9]]) (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "barley cakes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a strong, smooth cloth made from a plant. It is worn by many people in places that are hot. AT: \"smooth cloth\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "linen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A dark gold-colored metal. It is made from mostly copper with tin added for strength. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "ezk", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "bronze",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a strong, smooth cloth made from a plant. It is worn by many people in places that are hot. See how you translated this in [[:en:bible:notes:ezk:09:01|9:2]]. AT: \"smooth cloth\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "linen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a strong, smooth cloth made from a plant. It is worn by many people in places that are hot. See how you translated this in [[:en:bible:notes:ezk:09:01|9:2]]. AT: \"smooth cloth\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "linen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a type of spice that comes from the bark of a tree. \"Cassia\" is another name for this spice. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "cinnamon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all precious stones of different colors. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 28, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "ruby, topaz, emerald, chrysolite, onyx, jasper, sapphire, turquoise, and beryl",
+      "occurrence": 1
+    }
+  }
+]

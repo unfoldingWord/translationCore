@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 33 },
+      "tool": "translationWords",
+      "groupId": "forever",
+      "quote": "forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "forever",
+      "quote": "forever",
+      "occurrence": 1
+    }
+  }
+]

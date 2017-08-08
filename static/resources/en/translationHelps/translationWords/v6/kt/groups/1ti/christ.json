@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 3, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "christ",
+      "quote": "Christ, Messiah",
+      "occurrence": 1
+    }
+  }
+]

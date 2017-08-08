@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to people who do nothing all day but drink alcoholic drinks. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "those who rise up early in the morning ... who linger late into the night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this emphasizes that God will completely destroy the forests and farmlands. AT: \"completely\" or 2) this means God will completely destroy the people of Assyria. The phrase \"soul and body\" refers to the spiritual part and the physical part of a person. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "both soul and body",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses the words \"far away\" and \"near\" to mean all people. The word \"might\" can be expressed with the adjective \"mighty.\" AT: \"All people everywhere hear what I have done and acknowledge that I am mighty\" (See: [[:en:ta:vol2:translate:figs_merism]] and  [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "You who are far away, hear what I have done; and, you who are near, acknowledge my might",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means all of the time. AT: \"It will burn throughout the night and the day\" or \"It will burn constantly, all night and all day\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 34, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "It will burn night and day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all activities of life. AT: \"I know everything you do\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "But I know your sitting down, your going out, your coming in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you lowest parts of the earth.\" Possible meanings are 1) that this refers to very deep places on the earth such as caves or canyons and forms a merism with \"heavens\" in the previous phrase or 2) that this refers to the place of the dead. (See: [[:en:ta:vol2:translate:figs_merism]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "you depths of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since the sun rises in the east, this phrase forms a merism and means everywhere on earth. AT: \"from every place on earth\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 45, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the rising of the sun, and from the west",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The places on the earth that are very far away are spoken of as if they were the places where the earth ends. This phrase also forms a merism and refers to everywhere in between the ends. AT \"to all the farthest places of the earth\" or \"to the entire earth\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 49, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "to the ends of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both are extremes that also represent everything between. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "new heavens and a new earth",
+      "occurrence": 1
+    }
+  }
+]

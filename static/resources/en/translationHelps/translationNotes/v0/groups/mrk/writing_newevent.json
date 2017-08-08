@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This marks the beginning of a new event in the storyline.  (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "It happened in those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is used to introduce a new event in the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "In those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now people were bringing.\" This is the next event in the story. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Then they brought",
+      "occurrence": 1
+    }
+  }
+]

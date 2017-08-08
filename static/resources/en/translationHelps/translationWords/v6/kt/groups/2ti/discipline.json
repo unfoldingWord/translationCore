@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "discipline, disciplines, disciplined, self-discipline",
+      "occurrence": 1
+    }
+  }
+]

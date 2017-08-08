@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words are what Jesus cried out in his own language. Translators usually leave these words as is. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Eli, Eli, lama sabachthani",
+      "occurrence": 1
+    }
+  }
+]

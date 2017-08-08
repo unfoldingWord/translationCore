@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means basically the same thing as the first question. This rhetorical question expresses surprise that humans are not important enough for God to care for them. AT: \"No human is worthy enough for you to care for him!\" (UDB) (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Or a son of man, that you care for him?",
+      "occurrence": 1
+    }
+  }
+]

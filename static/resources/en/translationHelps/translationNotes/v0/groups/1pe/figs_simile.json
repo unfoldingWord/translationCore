@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus died as a sacrifice so that God would forgive people's sins. AT: \"like the lambs without blemish or spot that the Jewish priests sacrificed\" (See: [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like a lamb without blemish or spot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks about his readers before they believed in Christ as if they had been similar to lost sheep wandering around aimlessly. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "you had been wandering away like lost sheep",
+      "occurrence": 1
+    }
+  }
+]

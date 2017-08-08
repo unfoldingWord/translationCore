@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 30 },
+      "tool": "translationWords",
+      "groupId": "desert",
+      "quote": "desert, wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "desert",
+      "quote": "desert, wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 38 },
+      "tool": "translationWords",
+      "groupId": "desert",
+      "quote": "desert, wilderness",
+      "occurrence": 1
+    }
+  }
+]

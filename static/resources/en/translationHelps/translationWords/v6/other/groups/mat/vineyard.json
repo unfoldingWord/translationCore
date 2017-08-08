@@ -1,0 +1,142 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 28 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 33 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 39 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 40 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "vineyard",
+      "quote": "vineyard",
+      "occurrence": 1
+    }
+  }
+]

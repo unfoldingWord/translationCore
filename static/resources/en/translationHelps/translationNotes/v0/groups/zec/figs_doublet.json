@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are both ways to refer to what God has said to the prophets. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "my words and my decrees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and refer to one animal. The second phrase clarifies that this is a young donkey. AT: \"on a young donkey.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "on a donkey, on the colt of a donkey",
+      "occurrence": 1
+    }
+  }
+]

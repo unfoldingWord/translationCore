@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated with a verbal phrase. AT: \"the ministry of reconciling people to him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the ministry of reconciliation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This noun \"obedience\" can be stated with a verb, \"obey.\" AT: \"how all of you obeyed\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the obedience of all of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated with verbal phrases. AT: \"because he feels guilty or someone is compelling him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "out of sorrow or compulsion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"humility\" and \"gentleness\" are abstract nouns, and can be expressed in another way. AT: \"I am humble and gentle as I do so, because Christ has made me that way\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "by the humility and gentleness of Christ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"we\" does not include Jesus. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is not clear whether \"us\" refers only to Peter, James, and John, or if it refers to everyone there, including Jesus, Elijah, and Moses. If possible, translate so that both options are possible. (See: [[:en:ta:vol2:translate:figs_exclusive]] and [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "it is good for us to be here",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to the speakers but not the hearers. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we",
+      "occurrence": 1
+    }
+  }
+]

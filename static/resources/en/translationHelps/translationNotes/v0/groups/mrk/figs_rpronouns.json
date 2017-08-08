@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"himself\" is a reflexive pronoun that refers back to Satan, and it is also a metonym for his evil spirits. AT: \"If Satan and his evil spirits were fighting one another\" (UDB) or \"If Satan and his evil spirits have risen up against each other and are divided\" (See: [[:en:ta:vol2:translate:figs_rpronouns]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "If Satan has risen up against himself and is divided",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"himself\" emphasizes that Jesus was alone in the stern. AT: \"Jesus himself was alone\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Jesus himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"herself\" is a reflexive pronoun used to emphasize that it was significant that it was Herodias' own daughter who danced at the dinner. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Herodias herself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word \"himself\" refers to David and is used to place emphasis on him and what he said. AT: \"It was David who\" (See:  [[:en:ta:vol2:translate:figs_rpronouns]]) \n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "David himself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize diligently he studied. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "to study and to search out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"madness\" and \"folly\" share similar meanings and refer to foolish thinking and behavior, respectively. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "madness and folly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize how difficult the person's work is. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "painful and stressful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and refer to every action that people do. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "ecc", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "every matter and every deed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"just\" and \"right\" mean basically the same thing and refer to the kind of treatment that people deserve. AT: \"fair treatment.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "just and right treatment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"good\" and \"suitable\" mean basically the same thing. The second intensifies the meaning of the first. AT: \"what I have seen to be the best thing to do.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "what I have seen to be good and suitable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing. They refer to money and the things that a person can buy with money. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "riches and wealth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing. They refer to money and the things that a person can buy with money. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "riches, wealth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the person's work may prosper, no matter what time he has done it. AT: \"whether the seed that you planted in the morning or the seed that you planted in the evening.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "whether morning or evening, or this or that",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 18, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "apollos",
+      "quote": "Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 18, "verse": 25 },
+      "tool": "translationWords",
+      "groupId": "apollos",
+      "quote": "Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 18, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "apollos",
+      "quote": "Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 18, "verse": 28 },
+      "tool": "translationWords",
+      "groupId": "apollos",
+      "quote": "Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 19, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "apollos",
+      "quote": "Apollos",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a very large number (See: [[:en:ta:vol2:translate:figs_hyperbole]]) \n\n\n",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "every ... all",
+      "occurrence": 1
+    }
+  }
+]

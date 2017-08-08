@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of God's word as if it were alive forever. In reality, it is God who lives forever, and whose commands and promises last eternally. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "through the living and remaining word of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"soul\" refers to a person's spiritual life. Peter speaks of sinful desires as soldiers that are trying to destroy the spiritual life of believers. AT: \"seek to destroy your spiritual life\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "make war against your soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"carried our sins\" means that he suffered the punishment for sins. AT: \"suffered the punishment for our sins in his body on the tree\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "carried our sins in his body to the tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the word\" refers to the gospel message. To disobey means that they do not believe. See how you translated a similar phrase in [[:en:bible:notes:1pe:02:07|2:8]]. AT: \"some men do not believe the message about Jesus\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "some men are disobedient to the word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"inner person\" and \"heart\" refer to the inward character and personality of a person. AT: \"what you really are on the inside\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the inner person of the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Resist him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Stand against him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I have written about the true grace of God.\" Here the word \"grace\" refers to the gospel message, which tells of the kind things that God has done for believers. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "what I have written is the true grace of God",
+      "occurrence": 1
+    }
+  }
+]

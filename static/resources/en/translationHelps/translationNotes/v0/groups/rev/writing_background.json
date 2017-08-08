@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The setting changes from John being in heaven to being in a wilderness. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "carried me away in the Spirit to a wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The setting changes as John is taken to a high mountain where he can see the city of Jerusalem. See how you translated this phrase in [[:en:bible:notes:rev:17:03|17:3]]. (See: [[:en:ta:vol2:translate:writing_background]])\n \n",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "carried me away in the Spirit",
+      "occurrence": 1
+    }
+  }
+]

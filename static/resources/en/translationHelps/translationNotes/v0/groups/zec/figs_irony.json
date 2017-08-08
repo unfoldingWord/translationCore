@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Zechariah probably did not really mean that the people of Hamath were wise. AT: \"though they think they are very wise\" (See: [[:en:ta:vol1:translate:figs_irony]])\n\n\n\n\n",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "though they are very wise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to say that this price was very small for a shepherd doing Yahweh's work. See UDB, which removes the irony: \"a ridiculously small amount of money.\" (See: [[[[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "the excellent price",
+      "occurrence": 1
+    }
+  }
+]

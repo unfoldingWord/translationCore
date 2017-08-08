@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This information can be given in separate sentences after the information about it being thrown down to the earth. AT: \"That dragon is the old serpent who deceives the world. He is called the devil or Satan\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n\n",
+      "reference": { "bookId": "rev", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "that old serpent called the devil or Satan, who deceives the whole world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase reminds readers of something they already know about God. It helps to explain why the people were blaspheming God. AT: \"because he has the power over these plagues\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "who has the power over these plagues",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The wine represents sexual immorality. AT: \"The people of the earth became drunk by drinking her wine, that is, they were sexually immoral\" (See: [[:en:ta:vol2:translate:figs_distinguish]] and [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "It is with the wine of her sexual immorality that the earth's inhabitants became drunk",
+      "occurrence": 1
+    }
+  }
+]

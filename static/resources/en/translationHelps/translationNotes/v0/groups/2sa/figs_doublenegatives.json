@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"they will not leave for my husband name or descendant\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "they will leave for my husband neither name nor descendant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that only if David went would his soldiers remain with him. AT: \"only if you go will any of your men remain with you\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "if you do not go, not one man will remain with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in a positive form. AT: \"I will only offer ... something that I have paid for\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I will not offer ... anything that costs me nothing",
+      "occurrence": 1
+    }
+  }
+]

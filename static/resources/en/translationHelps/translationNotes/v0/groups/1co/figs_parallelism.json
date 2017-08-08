@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul repeats many of the same words in two sentences that mean almost the same thing to emphasize the difference between God's way of doing things and how people think God should do them. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "God chose ... wise. God chose ... strong",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul says basically the same thing twice for emphasis. AT: \"he would realize that he is guilty of sin because he hears what you are saying\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and )\n  ",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "he would be convicted by all he hears. He would be judged by all that is said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is describing what he wants the Corinthians to do as if he was giving four commands to soldiers in war. These four commands mean almost the same thing and are used for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Be watchful, stand fast in the faith, act like men, be strong",
+      "occurrence": 1
+    }
+  }
+]

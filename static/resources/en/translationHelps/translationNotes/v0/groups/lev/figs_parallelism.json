@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh repeats the same idea twice in order to strengthen the command that they are not to eat any unclean animal. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You must not make yourselves unclean ... you should be made impure by them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the people must obey everything that Yahweh has commanded them to do. You can translate this parallelism into one statement that conveys the requirement to keep all of Yahweh's commands. AT: \"You must obey all of my laws and commandments\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "My laws are what you must do, and my commandments are what you must keep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh repeats this in order to emphasize the command. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 18, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "do not sleep with her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh repeats the prohibition in order to emphasize it and to clarify that it is in force for the first three years that the tree bears fruit. Translate this to clarify the period of time the trees must be left alone. AT: \"then you must not eat the fruit of the trees for the first three years\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "then you must regard the fruit they produce as forbidden to be eaten ... It must not be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"keep\" and \"carry out\" mean basically the same thing. They are used together in order to emphasize that the people must obey God. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You must keep my commands and carry them out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of these phrases mean basically the same thing. They emphasize that the people must obey everything Yahweh says. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "obey my decrees, keep my laws, and carry them out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are three ways of saying the same thing. They emphasize that the people must obey everything that God commands them to do. AT: \"If you carefully obey my laws and commands\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "walk in my laws and keep my commandments and obey them",
+      "occurrence": 1
+    }
+  }
+]
