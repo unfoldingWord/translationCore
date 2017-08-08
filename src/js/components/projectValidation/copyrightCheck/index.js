@@ -1,33 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import CopyrightCard from './CopyrightCard';
-import { Card, CardText } from 'material-ui/Card';
-
-const licenses = [
-  {
-    title: 'Creative Commons O / Public Domain',
-    description: 'description nanan na h an amsvw,nsdjh kjekj',
-    imageName: 'publicDomain.png'
-  },
-  {
-    title: 'Creative Commons BY',
-    description: 'description nanan na h an amsvw,nsdjh kjekj',
-    imageName: 'ccBy.png'
-  },
-  {
-    title: 'Creative Commons BY-SA',
-    description: 'description nanan na h an amsvw,nsdjh kjekj',
-    imageName: 'ccBySa.png'
-  },
-  {
-    title: 'None of the Above',
-    description: 'description nanan na h an amsvw,nsdjh kjekj',
-    imageName: 'noCircle.png'
-  }
-]
-
+import { Card } from 'material-ui/Card';
 
 class CopyRightCheck extends Component {
 
@@ -40,6 +15,35 @@ class CopyRightCheck extends Component {
   }
 
   render() {
+    const licenses = [
+      {
+        title: 'Creative Commons O / Public Domain',
+        description: 'description nanan na h an amsvw,nsdjh kjekj',
+        id: 'CC-0-Public-Domain',
+        imageName: 'publicDomain.png'
+      },
+      {
+        title: 'Creative Commons BY',
+        description: 'description nanan na h an amsvw,nsdjh kjekj',
+        id: 'CC-BY',
+        imageName: 'ccBy.png'
+      },
+      {
+        title: 'Creative Commons BY-SA',
+        description: 'description nanan na h an amsvw,nsdjh kjekj',
+        id: 'CC-BY-SA',
+        imageName: 'ccBySa.png'
+      },
+      {
+        title: 'None of the Above',
+        description: 'description nanan na h an amsvw,nsdjh kjekj',
+        id: 'none',
+        imageName: 'noCircle.png'
+      }
+    ];
+
+    const { selectedProjectLicense } = this.props.reducers.copyrightCheckReducer;
+
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Licenses
@@ -50,9 +54,12 @@ class CopyRightCheck extends Component {
               <CopyrightCard
                 key={index}
                 index={index}
+                id={license.id}
                 title={license.title}
-                description={license.description}
+                actions={this.props.actions}
                 imageName={license.imageName}
+                description={license.description}
+                selectedProjectLicense={selectedProjectLicense}
               />
             );
           })

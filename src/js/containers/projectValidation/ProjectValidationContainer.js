@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//actions
+// actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
-//components
+import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
+// components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
@@ -75,7 +76,8 @@ class ProjectValidationContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
-      projectValidationReducer: state.projectValidationReducer
+      projectValidationReducer: state.projectValidationReducer,
+      copyrightCheckReducer: state.copyrightCheckReducer
     }
   }
 }
@@ -91,6 +93,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       nextStep: () => {
         dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+      },
+      selectProjectLicense: (selectedProjectLicense) => {
+        dispatch(CopyrightCheckActions.selectProjectLicense(selectedProjectLicense));
       }
     }
   }
