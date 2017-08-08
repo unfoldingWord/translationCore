@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-//icons
-import RightArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
-import DownArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 //components
 import { Card } from 'material-ui/Card';
-import IconButton from 'material-ui/IconButton';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import MergeConflictsCheck from './MergeConflictsCheck.js';
+import MergeConflictsCard from './MergeConflictsCard';
 
 
 class MergeConflictsCheckContainer extends Component {
@@ -34,7 +29,7 @@ class MergeConflictsCheckContainer extends Component {
     let mergeConflictsObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
     for (var conflict of mergeConflictsObject.conflicts) {
       let mergeHistorySelected = false
-      for (var version of conflict){
+      for (var version of conflict) {
         //if current check is selected or the previous one was
         mergeHistorySelected = version.checked || mergeHistorySelected;
       }
@@ -56,54 +51,33 @@ class MergeConflictsCheckContainer extends Component {
     this.props.actions.toggleNextDisabled(!this.allVersionsSelected());
   }
 
-  mergeConflictCards(conflictObject) {
-    let conflicts = conflictObject.conflicts;
+  mergeConflictCards(conflict) {
+    let conflicts = conflict.conflicts;
     let conflictCards = [];
     for (let mergeConflictIndex in conflicts) {
-      let versionCards = [];
+      let versions = [];
       let conflict = conflicts[mergeConflictIndex];
       let chapter = conflict[mergeConflictIndex].chapter;
       let verses = conflict[mergeConflictIndex].verses;
-      for (let version in conflict) {
-        if (isNaN(version)) continue;
-        let checked = conflicts[mergeConflictIndex][version].checked;
-        versionCards.push(
-          <div key={`${mergeConflictIndex}-${version}`} style={{ borderBottom: '1px solid black' }}>
-            <div style={{ padding: 15 }}>
-              <RadioButton
-                checked={checked}
-                label={`Version ${Number(version) + 1}`}
-                onCheck={(e) => this.onCheck(e, mergeConflictIndex, version)}
-              />
-              {this.textObjectSection(conflict[version].text)}
-            </div>
-          </div>
-        )
+      for (let versionIndex in conflict) {
+        if (isNaN(versionIndex)) continue;
+        let checked = conflicts[mergeConflictIndex][versionIndex].checked;
+        versions.push({
+          index: versionIndex,
+          textSectionData: this.textObjectSection(conflict[versionIndex].text),
+          checked: checked,
+          onCheck: this.onCheck
+        })
       }
-      let borderBottom = conflict.open ? 'none' : '1px solid black';
       conflictCards.push(
-        <div key={`${mergeConflictIndex}`} style={{ borderBottom: borderBottom, paddingBottom: 20 }}>
-          <div style={{ display: 'flex', alignItems: 'center', }}>
-            <div style={{ padding: '15px 15px 0px 15px' }}>
-              <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>Merge Conflict #{Number(mergeConflictIndex) + 1}</div>
-              <div>This is a merge conflict for chapter {chapter}, verse {verses}.</div>
-            </div>
-            {conflict.open ?
-              <div
-                style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', height: 40, width: 40, borderRadius: '50%', border: '2px solid black', margin: '15px 15px 0px auto' }}
-                onClick={() => this.openMergeCard(mergeConflictIndex, false)}>
-                <RightArrow style={{ height: 60, width: 60 }} />
-              </div>
-              :
-              <div
-                style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', height: 40, width: 40, borderRadius: '50%', border: '2px solid black', margin: '15px 15px 0px auto' }}
-                onClick={() => this.openMergeCard(mergeConflictIndex, true)}>
-                <DownArrow style={{ height: 60, width: 60 }} />
-              </div>
-            }
-          </div>
-          {conflict.open ? versionCards : null}
-        </div>
+        <MergeConflictsCard
+          key={`${mergeConflictIndex}`}
+          chapter={chapter}
+          verses={verses}
+          mergeConflictIndex={mergeConflictIndex}
+          conflict={conflict}
+          versions={versions}
+          openMergeCard={this.openMergeCard} />
       )
     }
     return conflictCards;
@@ -113,11 +87,10 @@ class MergeConflictsCheckContainer extends Component {
     let verses = [];
     for (var verseNum in textObject) {
       let verse = textObject[verseNum];
-      verses.push(
-        <div style={{ fontSize: 14 }} key={verseNum}>
-          <b>{verseNum}</b>: {verse}
-        </div>
-      )
+      verses.push({
+        verseNum:verseNum,
+        verse:verse
+      })
     }
     return verses;
   }
@@ -131,25 +104,24 @@ class MergeConflictsCheckContainer extends Component {
 
   render() {
     let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
-    let conflictCards = this.mergeConflictCards(mergeConflictObject)
     return (
       <Card style={{ width: '100%', height: '100%' }}
         containerStyle={{ overflowY: 'auto', height: '100%' }}>
-        <MergeConflictsCheck conflictCards={conflictCards} {...this.props} />
+        {this.mergeConflictCards(mergeConflictObject)}
       </Card>
     );
   }
 }
 
 MergeConflictsCheckContainer.propTypes = {
-  actions: {
+  actions: PropTypes.shape({
     updateStepData: PropTypes.func.isRequired,
     toggleNextDisabled: PropTypes.func.isRequired,
     changeProjectValidationInstructions: PropTypes.func.isRequired,
-  },
-  reducers:{
-    projectValidationReducer:PropTypes.object.isRequired
-  }
+  }),
+  reducers: PropTypes.shape({
+    projectValidationReducer: PropTypes.object.isRequired
+  })
 }
 
 export default MergeConflictsCheckContainer;
