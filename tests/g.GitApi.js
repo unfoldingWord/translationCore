@@ -28,7 +28,7 @@ describe('GitApi.status', function() {
     })
   });
   it('status should give the status of the current repo', function(done) {
-    this.timeout(1000)
+    this.timeout(2000)
     GitApi().status(function(err, data) {
       assert.isNull(err);
       assert.isObject(data);
