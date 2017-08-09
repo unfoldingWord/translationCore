@@ -1,5 +1,7 @@
-import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
+import {describe, it} from 'mocha';
 import { expect } from 'chai';
+//helpers
+import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 
 //valid
 const tc_commas = window.__base + 'test/fixtures/usfm/valid/tc_commas.usfm';
