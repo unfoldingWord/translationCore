@@ -8,7 +8,6 @@ import path from 'path-extra';
 import CryptoJS from "crypto-js";
 //  consts declaration
 const PARENT = path.datadir('translationCore', 'projects');
-const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources/translationHelps');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 export const loadSettings = () => {
@@ -119,7 +118,7 @@ export function loadUserdata() {
   return loginReducer;
 }
 /**
- * @description - Returns the corresponding group name i.e. Metaphor 
+ * @description - Returns the corresponding group name i.e. Metaphor
  * given the group id such as figs_metaphor
  * @param {array} indexObject - Array of index.json with {id, name} keys
  * @param {string} groupId - The id of the index object corresponding to tHelps i.e. figs_metaphor

@@ -31,11 +31,11 @@ export function selectProject(projectPath, projectLink) {
     let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
     //If present proceed to usfm loading process
     if (USFMFilePath) {
-      let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
+      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
-      manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
-      params = LoadHelpers.getUSFMParams(projectPath, manifest);
+      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
+      params = usfmHelpers.getUSFMParams(projectPath, manifest);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);

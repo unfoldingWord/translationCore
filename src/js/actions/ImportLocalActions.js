@@ -38,7 +38,7 @@ export function selectLocalProjectToLoad() {
       if (filePaths === undefined) {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (usfmFilePath) {
-        newProjectPath = ProjectSelectionHelpers.setUpUSFMFolderPath(usfmFilePath);
+        newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
         if(newProjectPath) dispatch(selectAndLoadProject(newProjectPath));
         else {
           dispatch(AlertModalActions.openAlertDialog('You cannot import a usfm project thats already been imported.'))
