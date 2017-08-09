@@ -95,8 +95,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       nextStep: () => {
         dispatch(ProjectValidationActions.goToNextProjectValidationStep());
       },
-      selectProjectLicense: (selectedProjectLicense) => {
-        dispatch(CopyrightCheckActions.selectProjectLicense(selectedProjectLicense));
+      selectProjectLicense: (selectedLicenseId) => {
+        dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
       },
       changeProjectValidationInstructions: (instructions) => {
         dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));

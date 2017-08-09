@@ -15,39 +15,12 @@ class CopyRightCheck extends Component {
   }
 
   render() {
-    const licenses = [
-      {
-        title: 'Creative Commons O / Public Domain',
-        description: 'description nanan na h an amsvw,nsdjh kjekj',
-        id: 'CC-0-Public-Domain',
-        imageName: 'publicDomain.png'
-      },
-      {
-        title: 'Creative Commons BY',
-        description: 'description nanan na h an amsvw,nsdjh kjekj',
-        id: 'CC-BY',
-        imageName: 'ccBy.png'
-      },
-      {
-        title: 'Creative Commons BY-SA',
-        description: 'description nanan na h an amsvw,nsdjh kjekj',
-        id: 'CC-BY-SA',
-        imageName: 'ccBySa.png'
-      },
-      {
-        title: 'None of the Above',
-        description: 'description nanan na h an amsvw,nsdjh kjekj',
-        id: 'none',
-        imageName: 'noCircle.png'
-      }
-    ];
-
-    const { selectedProjectLicense } = this.props.reducers.copyrightCheckReducer;
+    const { selectedLicenseId, licenses } = this.props.reducers.copyrightCheckReducer;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Licenses
-        <Card style={{ height: '100%', marginTop: '5px', lineHeight: '2em' }}>
+        <Card style={{ height: '100%', lineHeight: '2em' }}>
         {
           licenses.map((license, index) => {
             return (
@@ -59,7 +32,7 @@ class CopyRightCheck extends Component {
                 actions={this.props.actions}
                 imageName={license.imageName}
                 description={license.description}
-                selectedProjectLicense={selectedProjectLicense}
+                selectedLicenseId={selectedLicenseId}
               />
             );
           })

@@ -26,6 +26,14 @@ const projectDetailsReducer = (state = initialState, action) => {
           [action.toolName]: action.progress
         }
       };
+    case consts.ADD_MANIFEST_PROPERTY:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          [action.propertyName]: action.value
+        }
+      }
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:

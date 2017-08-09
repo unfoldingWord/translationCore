@@ -1,11 +1,11 @@
 import consts from './ActionTypes';
 import Path from 'Path-extra';
-//actions
+// helpers
 import git from '../helpers/GitApi.js';
+// actions
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
-import * as ProjectDetailsActions from './projectDetailsActions';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
@@ -141,7 +141,7 @@ export function goToNextProjectValidationStep() {
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex + 1,
       nextStepName: nextStepName,
-      previousStepName: previousStepName,
+      previousStepName: previousStepName
     });
     if (stepIndex === 4) {
       dispatch(finishStepper())

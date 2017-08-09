@@ -13,9 +13,10 @@ const CopyrightCard = ({
   description,
   imageName,
   index,
-  selectedProjectLicense
+  selectedLicenseId
 }) => {
-  let selectedCheckbox = id === selectedProjectLicense;
+  const selectedCheckbox = id === selectedLicenseId;
+  console.log(id, selectedLicenseId)
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '10px' }}>
@@ -30,7 +31,7 @@ const CopyrightCard = ({
       </div>
       <Checkbox
         checked={selectedCheckbox}
-        disabled={selectedProjectLicense !== id && selectedProjectLicense !== null}
+        disabled={selectedLicenseId !== id && selectedLicenseId !== null}
         style={{ width: "20px", color: "#000000" }}
         iconStyle={{ fill: 'var(--accent-color-dark)' }}
         onCheck={() => selectedCheckbox ? selectProjectLicense(null) : selectProjectLicense(id)}
@@ -46,7 +47,7 @@ CopyrightCard.propTypes = {
   description: PropTypes.string.isRequired,
   imageName: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  selectedProjectLicense: PropTypes.any
+  selectedLicenseId: PropTypes.any
 }
 
 export default CopyrightCard;
