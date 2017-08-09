@@ -2,7 +2,6 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   projectSaveLocation: '',
-  bookName: '',
   manifest: {},
   currentProjectToolsProgress: {}
 };
@@ -13,11 +12,6 @@ const projectDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         projectSaveLocation: action.pathLocation
-      };
-    case consts.SET_PROJECT_DETAIL:
-      return {
-        ...state,
-        [action.key]: action.value
       };
     case consts.STORE_MANIFEST:
       return {

@@ -93,7 +93,6 @@ export function loadProjectDetails(projectPath, manifest) {
     LoadHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
-    dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
   });
 }
 

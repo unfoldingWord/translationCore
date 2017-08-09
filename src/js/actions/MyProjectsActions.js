@@ -69,7 +69,7 @@ export function getMyProjects() {
         const manifest = fs.readJsonSync(manifestPath);
         target_language = manifest.target_language;
         bookAbbr = manifest.project.id;
-        bookName = LoadHelpers.convertToFullBookName(bookAbbr);
+        bookName = manifest.project.name;
       } else {
 
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
