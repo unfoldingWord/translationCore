@@ -257,3 +257,15 @@ export function saveLocalUserdata(state) {
     localStorage.setItem('localUser', JSON.stringify(userdata));
   }
 }
+
+/**
+ * saves the current projects manifest file when the manifest state is changed.
+ * @param {object} state - app state.
+ */
+export function saveProjectManifest(state) {
+  const { manifest, projectSaveLocation } = state.projectDetailsReducer;
+  const fileName = 'manifest.json'
+  const savePath = path.join(projectSaveLocation, fileName);
+
+  fs.outputJsonSync(savePath, manifest)
+}
