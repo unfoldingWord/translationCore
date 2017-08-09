@@ -4,7 +4,6 @@ const initialState = {
   projectSaveLocation: '',
   bookName: '',
   manifest: {},
-  params: {},
   currentProjectToolsProgress: {}
 };
 
@@ -24,11 +23,6 @@ const projectDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         manifest: action.manifest
-      };
-    case consts.STORE_PARAMS:
-      return {
-        ...state,
-        params: action.params
       };
     case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
       return {

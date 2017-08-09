@@ -14,8 +14,8 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 
 /**
  * Wrapper function to initate selection of a project from path.
- * @param {string} projectPath - Path location in the filesystem for the project.
- * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
+ * @param {String} projectPath - Path location in the filesystem for the project.
+ * @param {String} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
  */
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
@@ -24,7 +24,7 @@ export function selectProject(projectPath, projectLink) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
-    let manifest, params, targetLanguage;
+    let manifest, targetLanguage;
     /**@type {String} */
     let USFMFilePath = LoadHelpers.isUSFMProject(projectPath);
     //If present proceed to usfm loading process
@@ -33,15 +33,13 @@ export function selectProject(projectPath, projectLink) {
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
       manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
-      params = LoadHelpers.getUSFMParams(projectPath, manifest);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
-      params = LoadHelpers.getParams(projectPath, manifest);
     }
     dispatch(clearLastProject());
-    dispatch(loadProjectDetails(projectPath, manifest, params));
+    dispatch(loadProjectDetails(projectPath, manifest));
     dispatch(ProjectValidationActions.validateProject((isValidProject) => {
       if (isValidProject) {
         TargetLanguageActions.generateTargetBible(projectPath, targetLanguage, manifest);
@@ -89,15 +87,13 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  * @description loads and set the projects details into the projectDetailsReducer.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
- * @param {object} params - parameters defining a projects detals, similiar to metadata.
  */
-export function loadProjectDetails(projectPath, manifest, params) {
+export function loadProjectDetails(projectPath, manifest) {
   return ((dispatch) => {
     LoadHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
-    dispatch(ProjectDetailsActions.setProjectParams(params));
   });
 }
 

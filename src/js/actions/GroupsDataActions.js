@@ -68,7 +68,7 @@ export function verifyGroupDataMatchesWithFs() {
  */
 function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
   if (PROJECT_SAVE_LOCATION && state) {
-    let bookAbbreviation = state.projectDetailsReducer.params.bookAbbr;
+    let bookAbbreviation = state.projectDetailsReducer.manifest.project.id;
     let loadPath = path.join(
       PROJECT_SAVE_LOCATION,
       CHECKDATA_DIRECTORY,

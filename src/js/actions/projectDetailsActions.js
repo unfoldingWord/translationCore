@@ -54,28 +54,16 @@ export function setProjectManifest(manifest) {
   };
 }
 
-/**
- * @description Sends project parameters to the store
- * @param {*} params - any params to be saved.
- * @return {object} action object.
- */
-export function setProjectParams(params) {
-  return {
-    type: consts.STORE_PARAMS,
-    params: params
-  };
-}
-
 export function getProjectProgressForTools(toolName) {
   return ((dispatch, getState) => {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        params
+        manifest
       }
     } = getState();
 
-    const bookId = params.bookAbbr;
+    const bookId = manifest.project.id;
     const pathToCheckDataFiles = path.join(projectSaveLocation, INDEX_FOLDER_PATH, toolName, bookId);
     const progress = getToolProgress(pathToCheckDataFiles);
 

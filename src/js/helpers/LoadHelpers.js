@@ -218,57 +218,6 @@ export function checkIfValidBetaProject(manifest) {
   else return false;
 }
 
-
-/**
- * @description Formats a default manifest according to tC standards
- *
- * @param {string} path - Path in which the project is being loaded from, also should contain
- * the target language.
- * @param {object} manifest - Manifest specified for tC load, already formatted.
- */
-export function getParams(path, manifest) {
-  const isArray = (a) => {
-    return (!!a) && (a.constructor === Array);
-  }
-  if (manifest.package_version == '3') {
-    manifest = fixManifestVerThree(manifest);
-  }
-  if (manifest.finished_chunks && manifest.finished_chunks.length == 0) {
-    return null;
-  }
-
-  let params = {
-    'originalLanguagePath': ''
-  }
-  const UDBPath = Path.join(window.__base, 'static', 'taggedUDB');
-  params.targetLanguagePath = path;
-  params.gatewayLanguageUDBPath = UDBPath;
-  try {
-    if (manifest.project) {
-      params.bookAbbr = manifest.project.id;
-    }
-    else {
-      params.bookAbbr = manifest.project_id;
-    }
-    if (isArray(manifest.source_translations)) {
-      if (manifest.source_translations.length == 0) params.gatewayLanguage = "Unknown";
-      else params.gatewayLanguage = manifest.source_translations[0].language_id;
-    } else {
-      params.gatewayLanguage = manifest.source_translations.language_id;
-    }
-    params.direction = manifest.target_language ? manifest.target_language.direction : null;
-    if (isOldTestament(params.bookAbbr)) {
-      params.originalLanguage = "hebrew";
-    } else {
-      params.originalLanguage = "greek";
-    }
-  } catch (e) {
-    console.error(e);
-  }
-  return params;
-}
-
-
 /**
  * @description Checks if the folder/file specified is a usfm project
  *
@@ -424,33 +373,6 @@ export function migrateAppsToDotApps(projectPath) {
   if (projectDir.includes('apps')) {
     fs.renameSync(Path.join(projectPath, 'apps'), Path.join(projectPath, '.apps'));
   }
-}
-
-
-/**
-* @description Set ups a tC project parameters for a usfm project
-* @param {string} bookAbbr - Book abbreviation
-* @param {path} projectPath - Path of the usfm project being loaded
-* @param {path} direction - Reading direction of the project books
-* @return {object} action object.
-*/
-export function getUSFMParams(projectPath, manifest) {
-  let bookAbbr;
-  if (manifest.project) bookAbbr = manifest.project.id;
-  else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
-  let direction = manifest.target_language.direction;
-  let params = {
-    originalLanguagePath: '',
-    targetLanguagePath: projectPath,
-    direction: direction,
-    bookAbbr: bookAbbr
-  };
-  if (isOldTestament(bookAbbr)) {
-    params.originalLanguage = "hebrew";
-  } else {
-    params.originalLanguage = "greek";
-  }
-  return params;
 }
 
 /**

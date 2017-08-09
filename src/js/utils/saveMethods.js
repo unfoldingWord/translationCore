@@ -54,7 +54,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
  */
 export const saveTargetLanguage = state => {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    const bookAbbr = state.projectDetailsReducer.params.bookAbbr;
+    const bookAbbr = state.projectDetailsReducer.manifest.project.id;
     let currentTargetLanguageChapters = state.resourcesReducer.bibles.targetLanguage;
     if (PROJECT_SAVE_LOCATION && bookAbbr && currentTargetLanguageChapters) {
       for (let chapter in currentTargetLanguageChapters) {

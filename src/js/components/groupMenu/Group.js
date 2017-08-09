@@ -1,7 +1,6 @@
 import React from 'react'
 import { Circle } from 'react-progressbar.js'
 import { Glyphicon } from 'react-bootstrap'
-import * as LoadHelpers from '../../helpers/LoadHelpers';
 import * as Style from './Style'
 
 class Group extends React.Component {
@@ -22,7 +21,7 @@ class Group extends React.Component {
           />
           {this.props.groupIndex.name}
         </div>
-        {this.props.active ? this.props.getGroupItems(this)  : null}
+        {this.props.active ? this.props.getGroupItems(this) : null}
       </div>
     );
   }

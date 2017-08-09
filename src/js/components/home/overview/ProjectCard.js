@@ -43,7 +43,7 @@ class ProjectCard extends Component {
   * @param {string} text - text used for the detail
   * @return {component} - component returned
   */
-  contentDetails(projectSaveLocation, bookName, params, manifest) {
+  contentDetails(projectSaveLocation, bookName, manifest) {
     const projectName = path.basename(projectSaveLocation);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     let accessTime;
@@ -56,8 +56,9 @@ class ProjectCard extends Component {
       accessTimeAgo = "Never Opened"
     }
 
-    const { bookAbbr } = params;
-    const { target_language } = manifest;
+    const { target_language, project } = manifest;
+    const bookAbbreviation = project.id;
+
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
@@ -67,7 +68,7 @@ class ProjectCard extends Component {
           <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
             {this.detail('time', accessTimeAgo)}
-            {this.detail('book', bookName + ' (' + bookAbbr + ')')}
+            {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}
             {this.detail('globe', target_language.name + ' (' + target_language.id + ')')}
           </div>
         </div>
@@ -82,11 +83,11 @@ class ProjectCard extends Component {
   content() {
     let content; // content can be empty to fallback to empty button/message
     const { projectDetailsReducer } = this.props.reducers;
-    const { projectSaveLocation, bookName, params, manifest } = projectDetailsReducer;
-    if (projectSaveLocation && params && manifest.target_language) {
+    const { projectSaveLocation, bookName, manifest } = projectDetailsReducer;
+    if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          {this.contentDetails(projectSaveLocation, bookName, params, manifest)}
+          {this.contentDetails(projectSaveLocation, bookName, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
           </div>
