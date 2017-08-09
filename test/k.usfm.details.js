@@ -2,15 +2,15 @@ import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 import { expect } from 'chai';
 
 //valid
-const tc_commas = window.__base + 'tests/fixtures/usfm/valid/tc_commas.usfm';
-const tc_spaces = window.__base + 'tests/fixtures/usfm/valid/tc_spaces.usfm';
-const autographaExport = window.__base + 'tests/fixtures/usfm/valid/autographa.usfm';
-const translationStudioExport = window.__base + 'tests/fixtures/usfm/valid/id_tit_text_reg.usfm';
-const justBookId = window.__base + 'tests/fixtures/usfm/valid/php_usfm.usfm';
+const tc_commas = window.__base + 'test/fixtures/usfm/valid/tc_commas.usfm';
+const tc_spaces = window.__base + 'test/fixtures/usfm/valid/tc_spaces.usfm';
+const autographaExport = window.__base + 'test/fixtures/usfm/valid/autographa.usfm';
+const translationStudioExport = window.__base + 'test/fixtures/usfm/valid/id_tit_text_reg.usfm';
+const justBookId = window.__base + 'test/fixtures/usfm/valid/php_usfm.usfm';
 //missing
-const missingIdTag = window.__base + 'tests/fixtures/usfm/missing/php_usfm_NId.usfm';
+const missingIdTag = window.__base + 'test/fixtures/usfm/missing/php_usfm_NId.usfm';
 //invalid
-const badIdTag = window.__base + 'tests/fixtures/usfm/invalid/php_usfm_badId.txt';
+const badIdTag = window.__base + 'test/fixtures/usfm/invalid/php_usfm_badId.txt';
 
 const usfmDetails = (usfmFile) => {
   const usfmRaw = usfmHelpers.loadUSFMFile(usfmFile);

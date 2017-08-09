@@ -12,6 +12,7 @@ import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as migrationHelpers from '../helpers/migrationHelpers';
 
 
 /**
@@ -95,7 +96,7 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  */
 export function loadProjectDetails(projectPath, manifest, params) {
   return ((dispatch) => {
-    LoadHelpers.migrateAppsToDotApps(projectPath);
+    migrationHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
