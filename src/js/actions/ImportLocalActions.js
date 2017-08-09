@@ -8,8 +8,8 @@ import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 //helpers
-import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
+import * as usfmHelpers from '../helpers/usfmHelpers';
 // contstants
 const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -28,12 +28,12 @@ const ALERT_MESSAGE = (
  */
 export function selectLocalProjectToLoad() {
   return ((dispatch) => {
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {      
+    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      let usfmFilePath = LoadHelpers.isUSFMProject(sourcePath)
+      let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
       dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
@@ -74,7 +74,7 @@ function unzipTStudioProject(projectSourcePath, fileName) {
       dispatch(selectAndLoadProject(newProjectPath));
     } else {
       dispatch(AlertModalActions.openAlertDialog(
-        `A project with the name ${fileName} already exists. Reimporting 
+        `A project with the name ${fileName} already exists. Reimporting
          existing projects is not currently supported.`
       ));
     }

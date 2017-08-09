@@ -6,7 +6,7 @@ import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 // constants
-const loadOnline = require('../components/LoadOnline');
+const loadOnline = require('../helpers/LoadOnlineHelpers');
 
 export function updateRepos() {
     return ((dispatch, getState) => {
