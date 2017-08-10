@@ -105,10 +105,13 @@ class MergeConflictsCheck extends Component {
   render() {
     let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
     return (
-      <Card style={{ width: '100%', height: '100%' }}
-        containerStyle={{ overflowY: 'auto', height: '100%' }}>
-        {this.mergeConflictCards(mergeConflictObject)}
-      </Card>
+      <div style={{ width: '100%', height: '100%' }}>
+        Merge Conflicts
+        <Card style={{ width: '100%', height: '100%' }}
+          containerStyle={{ overflowY: 'auto', height: '100%' }}>
+          {this.mergeConflictCards(mergeConflictObject)}
+        </Card>
+      </div>
     );
   }
 }
@@ -117,7 +120,7 @@ MergeConflictsCheck.propTypes = {
   actions: PropTypes.shape({
     updateStepData: PropTypes.func.isRequired,
     toggleNextDisabled: PropTypes.func.isRequired,
-    changeProjectValidationInstructions: PropTypes.func.isRequired,
+    changeProjectValidationInstructions: PropTypes.func.isRequired
   }),
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.object.isRequired

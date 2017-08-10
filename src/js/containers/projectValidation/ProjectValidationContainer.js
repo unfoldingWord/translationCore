@@ -63,7 +63,7 @@ class ProjectValidationContainer extends Component {
               <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>
-              <div style={{ height: '100%', width: '100%', padding: '20px 65px 0 20px' }}>
+              <div style={{ height: '100%', width: '100%', padding: '0px 50px 22px 20px' }}>
                 {displayContainer}
               </div>
             </div>
@@ -106,6 +106,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       updateStepData:(stepIndex, data) => {
         dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
+      },
+      loadProjectLicenseMarkdownFile: (licenseId) => {
+        dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       }
     }
   }

@@ -10,32 +10,38 @@ const CopyrightCard = ({
   },
   title,
   id,
-  description,
   imageName,
   index,
-  selectedLicenseId
+  selectedLicenseId,
+  toggleShowLicenseFile
 }) => {
   const selectedCheckbox = id === selectedLicenseId;
-  console.log(id, selectedLicenseId)
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '10px' }}>
-      <img src={'images/' + imageName} height="94px" />
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <img src={'images/' + imageName} height="94px" style={{ alignSelf: 'flex-start' }} />
+      <div>
         <h4 style={{ fontWeight: 'bold'}}>
           {title}
         </h4>
-        <p>
-          {description}
-        </p>
+        {
+          id === 'none' ?
+            <div/>
+          :
+            <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
+              See more
+            </span>
+        }
       </div>
-      <Checkbox
-        checked={selectedCheckbox}
-        disabled={selectedLicenseId !== id && selectedLicenseId !== null}
-        style={{ width: "20px", color: "#000000" }}
-        iconStyle={{ fill: 'var(--accent-color-dark)' }}
-        onCheck={() => selectedCheckbox ? selectProjectLicense(null) : selectProjectLicense(id)}
-      />
+      <div>
+        <Checkbox
+          checked={selectedCheckbox}
+          disabled={selectedLicenseId !== id && selectedLicenseId !== null}
+          style={{ width: "20px", color: "#000000" }}
+          iconStyle={{ fill: 'var(--accent-color-dark)' }}
+          onCheck={() => selectedCheckbox ? selectProjectLicense(null) : selectProjectLicense(id)}
+        />
+      </div>
     </div>
   );
 };
@@ -44,10 +50,10 @@ CopyrightCard.propTypes = {
   actions: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   imageName: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  selectedLicenseId: PropTypes.any
+  selectedLicenseId: PropTypes.any,
+  toggleShowLicenseFile: PropTypes.func.isRequired
 }
 
 export default CopyrightCard;

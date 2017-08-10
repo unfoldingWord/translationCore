@@ -12,7 +12,7 @@ const groupMenuReducer = (state = initialState, action) => {
       return {
         ...state,
         subMenuOpen: (action.newGroup || state.openCheck != action.openCheck) ? true: !state.subMenuOpen,
-        openCheck: action.openCheck,
+        openCheck: action.openCheck
       }
     case consts.TOGGLE_MENU_DRAWER:
       return { ...state, menuVisibility: !state.menuVisibility }
