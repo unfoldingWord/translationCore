@@ -13,6 +13,7 @@ export const getQuoteOccurrencesInVerse = (string, subString) => {
     })
     return n;
   } else {
+    if (subString.includes('...')) subString = subString.replace('...', '.*');
     const regex = new RegExp(`\\W+${subString}\\W+`,'g');
     let matchedSubstring;
     while ((matchedSubstring = regex.exec(string)) !== null) {
