@@ -1,11 +1,11 @@
 import consts from './ActionTypes';
 //actions
 import git from '../helpers/GitApi.js';
+
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
-
+import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as CopyrightActions from './CopyrightActions';
 import * as ProjectInformationActions from './ProjectInformationActions';
 import * as MergeConflictActions from './MergeConflictActions';
@@ -64,6 +64,24 @@ export function updateProjectValidationStepper() {
 export function goToNextProjectValidationStep() {
   return ((dispatch, getState) => {
     let { stepIndex } = getState().projectValidationReducer.stepper;
+    switch (stepIndex) {
+      case 1:
+        //Do action related to copyright check finish
+        break;
+      case 2:
+        //Do action related to project information check finish
+        break;
+      case 3:
+        dispatch(MergeConflictActions.finalizeMerge());
+        break;
+      case 4:
+        //Do action related to missing verses check finish
+        dispatch(ProjectSelectionActions.displayTools())
+        return dispatch({
+          type: consts.GO_TO_PROJECT_VALIDATION_STEP,
+          stepIndex: 0,
+        })
+    }
     dispatch(goToProjectValidationStep(stepIndex + 1));
   })
 }
@@ -78,15 +96,17 @@ export function goToPreviousProjectValidationStep() {
 
 /**Directly jump to a step at the specified index */
 export function goToProjectValidationStep(stepIndex) {
+  return ((dispatch) => {
     let nextStepName = projectValidationStepIndex[stepIndex + 1];
     let previousStepName = projectValidationStepIndex[stepIndex - 1];
-    return {
+    return dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex,
       nextStepName: nextStepName,
       previousStepName: previousStepName,
       nextDisabled: false
-    }
+    })
+  });
 }
 
 /**Disables and enables next button in project validation stepper */

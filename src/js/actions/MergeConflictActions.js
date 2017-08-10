@@ -3,6 +3,8 @@ import path from 'Path-extra';
 
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
+import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
@@ -98,4 +100,14 @@ export function getNextButtonStatus(newMergeConflictCheckObject) {
     //All merge conflicts have been handled previously and for the current conflict
     return allMergeConflictsHandled && mergeHistorySelected;
   }
+}
+
+export function finalizeMerge() {
+  return ((dispatch, getState) => {
+    let {projectSaveLocation, manifest} = getState().projectDetailsReducer;
+    const mergeConflictsObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
+    MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
+    let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
+    TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
+  });
 }
