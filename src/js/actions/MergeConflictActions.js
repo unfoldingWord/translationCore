@@ -82,22 +82,20 @@ export function updateVersionSelection(mergeConflictIndex, versionIndex, value) 
       key: 'mergeConflictCheck',
       data: newMergeConflictCheckObject
     });
-    dispatch(updateNextButton(newMergeConflictCheckObject));
+    let nexButtonDisabled = !getNextButtonStatus(newMergeConflictCheckObject)
+    dispatch(ProjectValidationActions.toggleNextButton(nexButtonDisabled));
   })
 }
 
-export function updateNextButton(newMergeConflictCheckObject) {
-  return ((dispatch) => {
-    let allMergeConflictsHandled = true;
-    for (var conflict of newMergeConflictCheckObject.conflicts) {
-      let mergeHistorySelected = false
-      for (var version of conflict) {
-        //if current check is selected or the previous one was
-        mergeHistorySelected = version.checked || mergeHistorySelected;
-      }
-      //All merge conflicts have been handled previously and for the current conflict
-      allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
+export function getNextButtonStatus(newMergeConflictCheckObject) {
+  let allMergeConflictsHandled = true;
+  for (var conflict of newMergeConflictCheckObject.conflicts) {
+    let mergeHistorySelected = false
+    for (var version of conflict) {
+      //if current check is selected or the previous one was
+      mergeHistorySelected = version.checked || mergeHistorySelected;
     }
-    dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
-  })
+    //All merge conflicts have been handled previously and for the current conflict
+    return allMergeConflictsHandled && mergeHistorySelected;
+  }
 }

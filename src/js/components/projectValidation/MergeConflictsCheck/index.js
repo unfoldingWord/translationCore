@@ -26,22 +26,9 @@ class MergeConflictsCheck extends Component {
         <div>Please review and resolve these conflicts before continuing.</div>
       </div>
     )
-    this.updateNextButton();
-  }
-
-  updateNextButton() {
     const mergeConflictCheckObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
-    let allMergeConflictsHandled = true;
-    for (var conflict of mergeConflictCheckObject.conflicts) {
-      let mergeHistorySelected = false
-      for (var version of conflict) {
-        //if current check is selected or the previous one was
-        mergeHistorySelected = version.checked || mergeHistorySelected;
-      }
-      //All merge conflicts have been handled previously and for the current conflict
-      allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
-    }
-    this.props.actions.toggleNextDisabled(!allMergeConflictsHandled);
+    let nextButtonEnabled = MergeConflictActions.getNextButtonStatus(mergeConflictCheckObject);
+    this.props.actions.toggleNextDisabled(!nextButtonEnabled);
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
