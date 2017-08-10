@@ -13,15 +13,19 @@ class MissingVersesCheck extends Component {
         return missingVersesObject.map((verseObject) => {
             return (
                 <div>
-                {verseObject.chapter} + verseObject.verse
+                    {verseObject.chapter} + verseObject.verse
                 </div>
             )
         })
     }
     render() {
+        let missingVersesObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[3];
         return (
             <div>
-                {this.generateVerseCards(this.props.missingVersesObject)}
+                <div style={{textAlign:'center', fontSize:30}}>
+                    Missing Verses
+            </div>
+                {this.generateVerseCards(missingVersesObject)}
             </div>
         );
     }
