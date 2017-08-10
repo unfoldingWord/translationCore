@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 //components
 import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
+const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 
 
 class MergeConflictsCheck extends Component {
@@ -26,7 +27,7 @@ class MergeConflictsCheck extends Component {
   /**Determine if the user has selected all merge conlficts history which will need to be merged */
   allVersionsSelected() {
     let allMergeConflictsHandled = true;
-    let mergeConflictsObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
+    let mergeConflictsObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
     for (var conflict of mergeConflictsObject.conflicts) {
       let mergeHistorySelected = false
       for (var version of conflict) {
@@ -41,13 +42,7 @@ class MergeConflictsCheck extends Component {
 
   onCheck(e, mergeConflictIndex, versionIndex) {
     let otherVersion = Number(! + versionIndex); // i.e. 0 -> 1 and 1 -> 0
-    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
-    let newObject = Object.assign({}, mergeConflictObject); //Replicating state
-    let currentCheckStatus = newObject.conflicts[mergeConflictIndex][versionIndex].checked;
-    newObject.conflicts[mergeConflictIndex][versionIndex].checked = !currentCheckStatus;
-    //The user can only select one merge conlfict to merge with for now.
-    newObject.conflicts[mergeConflictIndex][otherVersion].checked = currentCheckStatus;
-    this.props.actions.updateStepData(2, newObject)
+    //this.props.actions.updateMergeConflictSomethingUI()
     this.props.actions.toggleNextDisabled(!this.allVersionsSelected());
   }
 
@@ -96,14 +91,10 @@ class MergeConflictsCheck extends Component {
   }
 
   openMergeCard(mergeConflictIndex, open) {
-    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
-    let newObject = Object.assign({}, mergeConflictObject); //Replicating state in new object
-    newObject.conflicts[mergeConflictIndex].open = open;
-    this.props.actions.updateStepData(2, newObject)
   }
 
   render() {
-    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[2];
+    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
     return (
       <Card style={{ width: '100%', height: '100%' }}
         containerStyle={{ overflowY: 'auto', height: '100%' }}>
@@ -115,7 +106,6 @@ class MergeConflictsCheck extends Component {
 
 MergeConflictsCheck.propTypes = {
   actions: PropTypes.shape({
-    updateStepData: PropTypes.func.isRequired,
     toggleNextDisabled: PropTypes.func.isRequired,
     changeProjectValidationInstructions: PropTypes.func.isRequired,
   }),

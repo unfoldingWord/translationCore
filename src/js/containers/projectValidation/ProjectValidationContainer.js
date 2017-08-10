@@ -85,8 +85,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
-      showStepper: (val) => {
-        dispatch(ProjectValidationActions.showStepper(val));
+      goToProjectValidationStep: (val) => {
+        dispatch(ProjectValidationActions.goToProjectValidationStep(val));
       },
       previousStep: () => {
         dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
@@ -100,9 +100,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
-      updateStepData:(stepIndex, data) => {
-        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
-      }
+       //this.props.actions.updateMergeConflictSomethingUI()
     }
   }
 }

@@ -2,7 +2,6 @@ import usfmParser from 'usfm-js';
 import * as fs from 'fs-extra';
 import Path from 'Path-extra';
 import * as ProjectSelectionHelpers from './ProjectSelectionHelpers';
-import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 
