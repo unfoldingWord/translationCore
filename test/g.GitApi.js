@@ -1,11 +1,8 @@
-/**
- * @author Ian Hoegen
- * @description Tests for Git Api.
- ******************************************************************************/
+import {describe, it} from 'mocha';
+import { assert } from 'chai';
 
-const assert = require('chai').assert;
-const GitApi = require('../src/js/helpers/GitApi.js');
-const fs = require('fs-extra');
+import GitApi from '../src/js/helpers/GitApi.js';
+import fs from 'fs-extra';
 
 describe('GitApi.status', function() {
   it ('status should give an error when not in an existing directory ', function(done) {
