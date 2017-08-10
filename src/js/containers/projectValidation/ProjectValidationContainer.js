@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
+import * as MergeConflictActions from '../../actions/MergeConflictActions';
 //components
 import { Card } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
@@ -100,7 +101,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
-       //this.props.actions.updateMergeConflictSomethingUI()
+      updateVersionSelection:(mergeConflictIndex, versionIndex, value) => {
+        dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      }
     }
   }
 }

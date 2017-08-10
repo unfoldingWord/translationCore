@@ -36,18 +36,17 @@ export function changeProjectValidationInstructions(instructions) {
 export function validateProject(callback) {
   return ((dispatch, getState) => {
     const state = getState();
-    dispatch(CopyrightActions.validate());
-    dispatch(ProjectInformationActions.validate())
+    dispatch(CopyrightActions.validate(state));
+    dispatch(ProjectInformationActions.validate(state))
     dispatch(MergeConflictActions.validate(state));
-    dispatch(MissingVersesActions.validate());
+    dispatch(MissingVersesActions.validate(state));
 
-    dispatch(updateCheckValidation());
+    dispatch(updateProjectValidationStepper());
   });
 }
 
-export function updateCheckValidation() {
+export function updateProjectValidationStepper() {
   return ((dispatch, getState) => {
-    let stepsToShowObject = {};
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsObject } = getState().projectValidationReducer;
     let isValidProjectIndex = Object.keys(projectValidationStepsObject).findIndex((stepName) => {
