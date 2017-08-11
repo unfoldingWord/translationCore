@@ -33,7 +33,7 @@ export function changeProjectValidationInstructions(instructions) {
  * @param {function} callback - Called when the checks for each step are complete, has 
  * value of true or false depending on is all checks passed
  */
-export function validateProject(callback) {
+export function validateProject() {
   return ((dispatch, getState) => {
     const state = getState();
     dispatch(CopyrightActions.validate(state));
