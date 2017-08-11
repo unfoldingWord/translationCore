@@ -27,9 +27,8 @@ export function validate(state) {
   let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
   if (!usfmData) {
     return {
-      type: consts.VALIDATE_PROJECT_STEP,
-      key: 'mergeConflictCheck',
-      data: false
+      type: consts.MERGE_CONFLICTS_CHECK,
+      payload: false
     }
   }
   /**
@@ -62,15 +61,13 @@ export function validate(state) {
     parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
   }
   return {
-    type: consts.VALIDATE_PROJECT_STEP,
-    key: 'mergeConflictCheck',
-    data: {
+    type: consts.MERGE_CONFLICTS_CHECK,
+    payload: {
       conflicts: parsedAllMergeConflictsFoundArray,
       filePath: usfmFilePath
     }
   }
 }
-//MergeConflictHelpers.merge(projectValidationStepsObject[2], projectSaveLocation, manifest);
 
 export function updateVersionSelection(mergeConflictIndex, versionIndex, value) {
   return ((dispatch, getState) => {
@@ -80,9 +77,8 @@ export function updateVersionSelection(mergeConflictIndex, versionIndex, value) 
     newMergeConflictCheckObject.conflicts[mergeConflictIndex][versionIndex].checked = value;
     newMergeConflictCheckObject.conflicts[mergeConflictIndex][otherVersionIndex].checked = !value;
     dispatch({
-      type: consts.VALIDATE_PROJECT_STEP,
-      key: 'mergeConflictCheck',
-      data: newMergeConflictCheckObject
+      type: consts.MERGE_CONFLICTS_CHECK,
+      payload: newMergeConflictCheckObject
     });
     let nexButtonDisabled = !getNextButtonStatus(newMergeConflictCheckObject)
     dispatch(ProjectValidationActions.toggleNextButton(nexButtonDisabled));

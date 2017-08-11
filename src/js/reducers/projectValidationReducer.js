@@ -18,12 +18,12 @@ const initialState = {
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.VALIDATE_PROJECT_STEP:
+    case consts.MERGE_CONFLICTS_CHECK:
       return {
         ...state,
         projectValidationStepsObject: {
           ...state.projectValidationStepsObject,
-          [action.key]: action.data
+          mergeConflictCheck: action.payload
         }
       }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
