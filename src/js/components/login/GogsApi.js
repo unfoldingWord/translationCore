@@ -86,7 +86,12 @@ function UserManager(auth) {
       });
     },
     searchReposByUser: function (user) {
-      return axios.get(`https://git.door43.org/api/v1/users/${user}/repos`);
+      return axios.get(`https://git.door43.org/api/v1/users/${user}/repos`)
+      .catch(() => {
+        return {
+          data: []
+        }
+      });
     },
     searchRepos: function (query) {
       var uid = 0;

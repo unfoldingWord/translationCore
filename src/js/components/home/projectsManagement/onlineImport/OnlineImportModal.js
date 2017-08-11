@@ -61,7 +61,7 @@ export default class OnlineImportModal extends Component {
           />
        </div>
     );
-
+    console.log(userdata)
     return (
       <MuiThemeProvider>
         <Dialog
@@ -91,6 +91,7 @@ export default class OnlineImportModal extends Component {
             actions={this.props.actions}
             importLink={importLink}
             username={userdata.username}
+            isLocalUser={userdata.localUser}
           />
           <SearchResults repos={repos} importLink={importLink} handleURLInputChange={this.props.actions.handleURLInputChange} />
         </Dialog>

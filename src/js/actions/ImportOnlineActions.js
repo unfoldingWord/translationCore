@@ -102,6 +102,7 @@ export function clearLink() {
 export function searchReposByUser(user) {
   return ((dispatch) => {
     Gogs().searchReposByUser(user).then((repos) => {
+    console.log(repos)
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
