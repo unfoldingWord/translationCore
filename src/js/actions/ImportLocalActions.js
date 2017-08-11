@@ -41,7 +41,8 @@ export function selectLocalProjectToLoad() {
         newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
         if(newProjectPath) dispatch(selectAndLoadProject(newProjectPath));
         else {
-          dispatch(AlertModalActions.openAlertDialog('You cannot import a usfm project thats already been imported.'))
+          dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
+           Reimporting existing projects is not currently supported.'))
         }
       }
       else if (path.extname(sourcePath) === '.tstudio') {
