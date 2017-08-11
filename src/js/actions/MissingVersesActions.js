@@ -42,6 +42,8 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
   } catch (e) {
     debugger;
     console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
-    return false;
+    return {
+      type: consts.MISSING_VERSES_CHECK
+    }
   }
 }
