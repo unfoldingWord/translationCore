@@ -121,7 +121,8 @@ export function createUSFMFromTsProject(projectSaveLocation) {
         files.forEach(file => {
           if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
             const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
-            const text = fs.readFileSync(chunkPath).toString();
+            let text = fs.readFileSync(chunkPath).toString();
+            text = text.replace(/\\c\s*\d\s*/, '');
             usfmData += text + '\n';
           }
         })
