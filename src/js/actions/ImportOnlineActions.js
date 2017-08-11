@@ -75,7 +75,9 @@ export function importOnlineProject() {
           }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
           dispatch({ type: "LOADED_ONLINE_FAILED" });
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
         } else {
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
           dispatch(ProjectSelectionActions.selectProject(savePath, url));
