@@ -36,6 +36,8 @@ const importOnlineReducer = (state = initialState, action) => {
         ...state,
         repos: action.repos
       }
+    case consts.RESET_IMPORT_ONLINE_REDUCER:
+      return initialState;
     default:
       return state;
   }

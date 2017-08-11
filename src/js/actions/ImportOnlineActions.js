@@ -75,7 +75,9 @@ export function importOnlineProject() {
           }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
           dispatch({ type: "LOADED_ONLINE_FAILED" });
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
         } else {
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
           dispatch(ProjectSelectionActions.selectProject(savePath, url));
@@ -102,7 +104,6 @@ export function clearLink() {
 export function searchReposByUser(user) {
   return ((dispatch) => {
     Gogs().searchReposByUser(user).then((repos) => {
-    console.log(repos)
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
