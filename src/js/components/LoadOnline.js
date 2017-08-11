@@ -48,7 +48,7 @@ module.exports = (function() {
         });
       } else {
         if (callback)
-          callback({type: "custom", text: 'That project already exists. The reimporting of existing projects is not currently supported.'}, savePath, url);
+          callback({type: "custom", text: 'The project you selected already exists. Reimporting existing projects is not currently supported.'}, savePath, url);
       }
     });
   }
