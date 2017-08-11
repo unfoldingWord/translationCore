@@ -3,8 +3,8 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import moment from 'moment';
 import usfmHelper from 'usfm-js';
-// actions
-import * as LoadHelpers from '../helpers/LoadHelpers';
+// helpers
+import * as usfmHelpers from '../helpers/usfmHelpers';
 //helpers
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -25,7 +25,7 @@ export function getProjectDirectories() {
       const manifestPath = path.join(DEFAULT_SAVE, directory, 'manifest.json');
       isProject = fs.existsSync(manifestPath);
       if (!isProject) {
-        usfmPath = LoadHelpers.isUSFMProject(path.join(DEFAULT_SAVE, directory));
+        usfmPath = usfmHelpers.isUSFMProject(path.join(DEFAULT_SAVE, directory));
       }
     }
     if (isProject || usfmPath) {
@@ -46,7 +46,7 @@ export function getMyProjects() {
     migrateResourcesFolder()
     const state = getState();
     const { projectDetailsReducer } = state;
-    
+
     /**@type {{directoryName: {usfmPath: (false|string)}}} */
     const projectFolders = getProjectDirectories();
     // generate properties needed
@@ -71,10 +71,9 @@ export function getMyProjects() {
         bookAbbr = manifest.project.id;
         bookName = manifest.project.name;
       } else {
-
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
         const usfmObject = usfmHelper.toJSON(usfmText);
-        let usfmHeadersObject = LoadHelpers.getIDsFromUSFM(usfmObject);
+        let usfmHeadersObject = usfmHelpers.getIDsFromUSFM(usfmObject);
         bookName = usfmHeadersObject.bookName;
         target_language.id = usfmHeadersObject.id;
         target_language.name = usfmHeadersObject.name

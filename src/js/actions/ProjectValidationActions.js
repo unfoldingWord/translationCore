@@ -1,11 +1,11 @@
 import consts from './ActionTypes';
 import Path from 'Path-extra';
-// helpers
-import git from '../helpers/GitApi.js';
-// actions
-import * as LoadHelpers from '../helpers/LoadHelpers';
-import * as ProjectSelectionActions from './ProjectSelectionActions';
+//helpers
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as usfmHelpers from '../helpers/usfmHelpers';
+import git from '../helpers/GitApi.js';
+//actions
+import * as ProjectSelectionActions from './ProjectSelectionActions';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
@@ -32,7 +32,7 @@ export function changeProjectValidationInstructions(instructions) {
 }
 /**
  * Wrapper function for handling the initial checking of steps before the UI is displayed.
- * @param {function} callback - Called when the checks for each step are complete, has 
+ * @param {function} callback - Called when the checks for each step are complete, has
  * value of true or false depending on is all checks passed
  */
 export function validateProject(callback) {
@@ -75,14 +75,14 @@ export function projectInformationCheck() {
 export function mergeConflictCheck(state, dispatch) {
   const { projectSaveLocation, manifest } = state.projectDetailsReducer;
   /**
-   * Object that will be sent back to reducers with the chapter, 
+   * Object that will be sent back to reducers with the chapter,
    * verse and text info  of each merge conflict version.
    * An array of arrays of an object.
    * */
   let parsedAllMergeConflictsFoundArray = [];
-  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) ||
+  let usfmFilePath = usfmHelpers.isUSFMProject(projectSaveLocation) ||
     Path.join(projectSaveLocation, manifest.project.id + '.usfm');
-  
+
   /**@type {string} */
   let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
   if (!usfmData) {
@@ -173,9 +173,9 @@ export function goToProjectValidationStep(step) {
 }
 
 /**
- * Warapper function to handles actions for each checking step after the 
- * user decides to finish the stepper. 
- * note: We may need an alert dialog here informing the user that 
+ * Warapper function to handles actions for each checking step after the
+ * user decides to finish the stepper.
+ * note: We may need an alert dialog here informing the user that
  * they are about to make irreversible changes.
  */
 export function finishStepper() {

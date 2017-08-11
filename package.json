@@ -9,7 +9,7 @@
     "package": "electron-forge package ./",
     "make": "electron-forge make ./",
     "update-version": "node ./scripts/versionScript.js",
-    "test": "electron-mocha --renderer ./tests",
+    "test": "electron-mocha --renderer",
     "install-apps": "git submodule update --init --recursive",
     "install-electron-forge": "npm i -g electron-forge@3.0.5",
     "pull-apps": "npm run apps-master && npm run git-pull",

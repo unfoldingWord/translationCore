@@ -10,6 +10,9 @@ import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as migrationHelpers from '../helpers/migrationHelpers';
 
 
 /**
@@ -26,13 +29,13 @@ export function selectProject(projectPath, projectLink) {
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, targetLanguage;
     /**@type {String} */
-    let USFMFilePath = LoadHelpers.isUSFMProject(projectPath);
+    let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
     //If present proceed to usfm loading process
     if (USFMFilePath) {
-      let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
+      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
-      manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
+      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
@@ -90,7 +93,7 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  */
 export function loadProjectDetails(projectPath, manifest) {
   return ((dispatch) => {
-    LoadHelpers.migrateAppsToDotApps(projectPath);
+    migrationHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
   });
@@ -116,7 +119,7 @@ export function displayTools() {
   return ((dispatch, getState) => {
     const { currentSettings } = getState().settingsReducer;
     const { manifest } = getState().projectDetailsReducer;
-    if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
+    if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(ToolsMetadataActions.getToolsMetadatas());
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
