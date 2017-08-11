@@ -322,4 +322,3 @@ export function getToolFolderNames(projectPath) {
   } catch (e) {
   }
 }
-

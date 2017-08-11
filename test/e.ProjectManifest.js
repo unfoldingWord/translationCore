@@ -1,5 +1,6 @@
+import {describe, it} from 'mocha';
 import {assert} from 'chai';
-import ManifestGenerator from '../src/js/components/createProject/ProjectManifest.js';
+import {generateManifest} from '../src/js/helpers/manifestHelpers';
 
 const sampleData = {
   repo: 'https://github.com/unfoldingWord-dev/translationCore/',
@@ -34,13 +35,13 @@ var sampleTS = {
 
 describe('ProjectManifest.populate', function() {
   it('populate should populate a TC manifest, even if no data or ts manifest is specified', function() {
-    var generatedManifest = ManifestGenerator();
+    var generatedManifest = generateManifest();
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
     assert.isString(generatedManifest.time_created)
   });
   it('populate should populate a TC manifest, if only a data argument specified', function() {
-    var generatedManifest = ManifestGenerator(sampleData);
+    var generatedManifest = generateManifest(sampleData);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
     assert.isArray(generatedManifest.tools);
@@ -52,7 +53,7 @@ describe('ProjectManifest.populate', function() {
     assert.isUndefined(generatedManifest.invalidData);
   });
   it('populate should populate a TC manifest, with both arguments specified', function() {
-    var generatedManifest = ManifestGenerator(sampleData, sampleTS);
+    var generatedManifest = generateManifest(sampleData, sampleTS);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
     assert.isArray(generatedManifest.tools);
