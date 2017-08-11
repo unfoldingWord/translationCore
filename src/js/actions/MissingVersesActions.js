@@ -4,7 +4,7 @@
  * if check is passed
  */
 export function validate() {
-  return ((dispatch)=>{
-
-  })
+  return {
+    
+  }
 }

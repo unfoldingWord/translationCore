@@ -37,7 +37,7 @@ export function validateProject() {
   return ((dispatch, getState) => {
     const state = getState();
     dispatch(CopyrightActions.validate(state));
-    dispatch(ProjectInformationActions.validate(state))
+    dispatch(ProjectInformationActions.validate(state));
     dispatch(MergeConflictActions.validate(state));
     dispatch(MissingVersesActions.validate(state));
 
