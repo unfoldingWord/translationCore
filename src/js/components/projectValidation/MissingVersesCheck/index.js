@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const MISSING_VERSE_NAMESPACE = 'missingVersesCheck';
 
 class MissingVersesCheck extends Component {
     componentDidMount() {
@@ -10,7 +11,7 @@ class MissingVersesCheck extends Component {
         )
     }
     generateVerseCards(missingVersesObject) {
-        return missingVersesObject.map((verseObject) => {
+        return Object.keys(missingVersesObject).map((verseObject) => {
             return (
                 <div>
                     {verseObject.chapter} + verseObject.verse
@@ -19,7 +20,7 @@ class MissingVersesCheck extends Component {
         })
     }
     render() {
-        let missingVersesObject = this.props.reducers.projectValidationReducer.projectValidationStepsArray[3];
+        let missingVersesObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MISSING_VERSE_NAMESPACE];
         return (
             <div>
                 <div style={{textAlign:'center', fontSize:30}}>

@@ -1,6 +1,14 @@
 import * as fs from 'fs-extra';
 import path from 'Path-extra';
+import consts from './ActionTypes';
+
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
+
+export function validate() {
+  return {
+    type: consts.MISSING_VERSES_CHECK
+  }
+}
 
 /**
  * This method reads in all the chunks of a project, and determines if there are any missing verses
@@ -42,8 +50,6 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
   } catch (e) {
     debugger;
     console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
-    return {
-      type: consts.MISSING_VERSES_CHECK
-    }
+    return false;
   }
 }

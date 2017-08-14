@@ -12,7 +12,7 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 
 /**Names for the index of steps */
-const projectValidationStepIndex = [
+const projectValidationStepButtonIndex = [
   'Previous',
   'Copyright',
   'Project Information',
@@ -20,6 +20,13 @@ const projectValidationStepIndex = [
   'Missing Verses',
   'Done'
 ]
+
+const projectValidationStepObjectIndex = {
+  'copyrightCheck': 1,
+  'projectInformationCheck': 2,
+  'mergeConflictCheck': 3,
+  'missingVersesCheck':4
+}
 
 export function changeProjectValidationInstructions(instructions) {
   return {
@@ -49,14 +56,14 @@ export function updateProjectValidationStepper() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsObject } = getState().projectValidationReducer;
-    let isValidProjectIndex = Object.keys(projectValidationStepsObject).findIndex((stepName) => {
+    let failedCheckElement = Object.keys(projectValidationStepsObject).find((stepName) => {
       return projectValidationStepsObject[stepName] !== false;
     });
-    if (isValidProjectIndex === -1) {
+    if (!failedCheckElement) {
       TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
-      dispatch(goToProjectValidationStep(isValidProjectIndex + 1));
+      dispatch(goToProjectValidationStep(failedCheckElement));
     }
   })
 }
@@ -82,6 +89,7 @@ export function goToNextProjectValidationStep() {
           stepIndex: 0,
         })
     }
+    dispatch(updateProjectValidationStepper())
     dispatch(goToProjectValidationStep(stepIndex + 1));
   })
 }
@@ -97,8 +105,9 @@ export function goToPreviousProjectValidationStep() {
 /**Directly jump to a step at the specified index */
 export function goToProjectValidationStep(stepIndex) {
   return ((dispatch) => {
-    let nextStepName = projectValidationStepIndex[stepIndex + 1];
-    let previousStepName = projectValidationStepIndex[stepIndex - 1];
+    if (isNaN(stepIndex)) stepIndex = projectValidationStepObjectIndex[stepIndex];
+    let nextStepName = projectValidationStepButtonIndex[stepIndex + 1];
+    let previousStepName = projectValidationStepButtonIndex[stepIndex - 1];
     return dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex,
