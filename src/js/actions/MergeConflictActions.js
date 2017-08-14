@@ -80,27 +80,30 @@ export function updateVersionSelection(mergeConflictIndex, versionIndex, value) 
       type: consts.MERGE_CONFLICTS_CHECK,
       payload: newMergeConflictCheckObject
     });
-    let nexButtonDisabled = !getNextButtonStatus(newMergeConflictCheckObject)
-    dispatch(ProjectValidationActions.toggleNextButton(nexButtonDisabled));
+    dispatch(updateMergeConflictNextButton());
   })
 }
 
-export function getNextButtonStatus(newMergeConflictCheckObject) {
-  let allMergeConflictsHandled = true;
-  for (var conflict of newMergeConflictCheckObject.conflicts) {
-    let mergeHistorySelected = false
-    for (var version of conflict) {
-      //if current check is selected or the previous one was
-      mergeHistorySelected = version.checked || mergeHistorySelected;
+export function updateMergeConflictNextButton() {
+  return ((dispatch, getState) => {
+    let mergeConflictCheckObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE]
+    let allMergeConflictsHandled = true;
+    for (var conflict of mergeConflictCheckObject.conflicts) {
+      let mergeHistorySelected = false
+      for (var version of conflict) {
+        //if current check is selected or the previous one was
+        mergeHistorySelected = version.checked || mergeHistorySelected;
+      }
+      //All merge conflicts have been handled previously and for the current conflict
+      allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
     }
-    //All merge conflicts have been handled previously and for the current conflict
-    return allMergeConflictsHandled && mergeHistorySelected;
-  }
+    dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
+  });
 }
 
 export function finalizeMerge() {
   return ((dispatch, getState) => {
-    let {projectSaveLocation, manifest} = getState().projectDetailsReducer;
+    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     const mergeConflictsObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
     MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
     let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);

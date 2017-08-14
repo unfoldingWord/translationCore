@@ -103,6 +103,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       updateVersionSelection:(mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      },
+      updateMergeConflictNextButton: () => {
+        dispatch(MergeConflictActions.updateMergeConflictNextButton());
       }
     }
   }
