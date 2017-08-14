@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"You\" is plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You who fear",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 7, "verse": 41 },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "cow, calf, bull, cattle",
+      "occurrence": 1
+    }
+  }
+]

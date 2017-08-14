@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the left side of the bowl\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "zec", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the left side",
+      "occurrence": 1
+    }
+  }
+]

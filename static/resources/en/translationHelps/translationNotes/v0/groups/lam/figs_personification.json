@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a poetic name for Jerusalem, which is spoken of here as if it were a woman. (See: [[:en:ta:vol2:translate:figs_Personification]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_Personification",
+      "quote": "daughter of Judah",
+      "occurrence": 1
+    }
+  }
+]

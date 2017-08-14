@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ezekiel was to do this when he shaved his hair and beard ([[:en:bible:notes:ezk:05:01|5:1]]) and before he burned the hair ([[:en:bible:notes:ezk:05:01|5:2]]). You may need to place these verses before those verses. \"But when you shave off your hair and beard, and before you burn them, take ... After you have scattered the hair to the wind, then take\" (See: [[:en:ta:vol1:translate:figs_events]] and [[:en:ta:vol2:translate:translate_versebridge]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "But take ... Then take",
+      "occurrence": 1
+    }
+  }
+]

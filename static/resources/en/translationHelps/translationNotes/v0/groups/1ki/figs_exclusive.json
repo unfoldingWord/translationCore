@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" refers to Ahab, Jehoshaphat, and their armies but not to Micaiah. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "should we go",
+      "occurrence": 1
+    }
+  }
+]

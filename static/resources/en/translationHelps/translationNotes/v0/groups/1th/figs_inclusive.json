@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul includes the Thessalonian believers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n",
+      "reference": { "bookId": "1th", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "who frees us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul includes the Thessalonian believers with his ministry team. (See [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "May our God ... our Lord Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to Paul and his audience. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "if we believe",
+      "occurrence": 1
+    }
+  }
+]

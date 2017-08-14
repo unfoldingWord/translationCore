@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Because Deborah is certain of victory, she speaks as if Barak had already won the battle. AT: \"Yahweh will give you victory\" (See: [[:en:ta:vol2:translate:figs_pastforfuture]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "Yahweh has given you victory",
+      "occurrence": 1
+    }
+  }
+]

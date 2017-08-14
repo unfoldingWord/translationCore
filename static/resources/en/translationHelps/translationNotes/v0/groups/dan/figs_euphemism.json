@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fell down\" is a euphemism that means they were destroyed.\" AT: \"which destroyed the three horns\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 7, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "before which the three horns fell down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a gentle way of saying \"you will die.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "you will rest",
+      "occurrence": 1
+    }
+  }
+]

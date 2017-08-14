@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 8, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "water, waters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 10, "verse": 47 },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "water, waters",
+      "occurrence": 1
+    }
+  }
+]

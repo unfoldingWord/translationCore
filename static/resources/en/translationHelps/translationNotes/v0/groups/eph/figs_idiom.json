@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"eyes of your heart\" expresses one's ability to gain understanding. AT: \"that you may gain understanding and be enlightened\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "that the eyes of your heart may be enlightened",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"seated Christ at God's right hand\" or \"seated Christ in the place of honor\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "seated him at his right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expresses the behavior of how people live. AT: \"you once lived\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you once walked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"so believers can help each other grow in love\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "so that the whole body grows and builds itself up in love",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Walking is a metaphor for the way people live their lives. AT: \"stop living like the Gentiles with their worthless thoughts\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "no longer are you to walk as the Gentiles walk in the futility of their minds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You must stop being angry before night comes\" or \"Let go of your anger before the day ends\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Do not let the sun go down on your anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"stand firm\" are an idiom meaning to \"firmly resist.\" See how you translated \"stand firm\" in [[:en:bible:notes:eph:06:12|6:13]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Therefore stand firm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"speak\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "open my mouth",
+      "occurrence": 1
+    }
+  }
+]

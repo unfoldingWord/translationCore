@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"that I brought the Israelites to the promised land from the land of Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that I brought up Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"rescued from slavery in Egypt. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you rescued from Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Take it as a gift\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Take it as your own",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: the angel stopped killing people.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the angel put his sword back into its sheath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "For all of the other people in the list, the text specifies that there were \"twelve persons in number.\" Since this is implied, you may want to add this the statement about Joseph, as the UDB does. AT: \"the first lot fell to Joseph's family, twelve persons in number\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the first lot fell to Joseph's family",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" here refers to David. AT: \"just as you are committed this day\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "as you are this day",
+      "occurrence": 1
+    }
+  }
+]

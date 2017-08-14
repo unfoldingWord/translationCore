@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a large, thin, round metal plate that is hit with a padded stick to make a loud sound (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "gong",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were likenesses of wreaths of olive branches or laurel leaves, hammered out in gold. Examples actually made of leaves were given to victorious athletes to wear on their heads. The elders were showing that they were submitting to God's authority to rule. AT: \"they threw down their crowns before the throne to show that they were submitting to him\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "they threw down their crowns before the throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He did this to show that he was swearing by God.  (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "raised his right hand to heaven",
+      "occurrence": 1
+    }
+  }
+]

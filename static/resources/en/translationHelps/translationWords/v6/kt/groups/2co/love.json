@@ -1,0 +1,184 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 2, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 2, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 6, "verse": 6 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 1 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 24 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 9, "verse": 7 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 13, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 13, "verse": 14 },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "love, loves, loving, loved",
+      "occurrence": 1
+    }
+  }
+]

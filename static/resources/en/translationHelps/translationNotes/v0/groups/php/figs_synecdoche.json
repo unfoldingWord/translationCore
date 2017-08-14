@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"knee\" refers to the whole person, and bending the knee to kneel on the ground is a metonym for worship. AT: \"every person will worship God\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "every knee should bend",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"tongue\" refers to the whole person. AT: \"every person\" or \"every being\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "php", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "every tongue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul refers to the believers by using the word \"spirit,\" which is what enables humans to relate to God. AT: \"with you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "with your spirit",
+      "occurrence": 1
+    }
+  }
+]

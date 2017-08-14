@@ -1,0 +1,72 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "godly, godliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 9 },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "godly, godliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "godly, godliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "godly, godliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "godly, godliness",
+      "occurrence": 1
+    }
+  }
+]

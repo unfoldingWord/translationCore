@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean the same thing and could be combined if your language does not have similar terms. AT: \"very glad\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "joy and gladness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These mean the same thing, and are repeated to emphasize the completeness of his silence. AT: \"completely unable to speak\" or \"not able to speak at all\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "silent, unable to speak",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing, and are used to emphasize how excited Elizabeth was. They could be combined into one phrase. AT: \"exclaimed loudly.\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "raised her voice ... said loudly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are very similar and emphasize how excited they were about what God had done. AT: \"talking about and praising God's greatness\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "glorifying and praising God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"startled and afraid\" (UDB). These two phrases mean about the same thing, and are used together to emphasize their fear. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "terrified and filled with fear",
+      "occurrence": 1
+    }
+  }
+]

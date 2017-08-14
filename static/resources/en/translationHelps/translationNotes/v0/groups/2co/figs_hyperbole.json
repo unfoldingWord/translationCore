@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul exaggerates to show his need of clothing. AT: \"and without enough clothing to keep me warm\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "and nakedness",
+      "occurrence": 1
+    }
+  }
+]

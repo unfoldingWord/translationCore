@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These could be expressed as actions. AT: \"to live in a pure way and to do what is right\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 75 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in holiness and righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The terms \"baptism\" and \"repentance\" could be stated as actions. AT: \"and he preached that people should be baptized to show that they were repenting\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "preaching a baptism of repentance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"because of your faith, you have become well.\" \"faith\" could be stated as an action. AT: \"because you believe, you are healed\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your faith has made you well",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun  \"kingdom\" can be expressed with the verbs \"reign\" or \"rule.\" Possible meanings are 1) the kingdom of God will begin soon. AT: \"God will soon rule everywhere as king\" (UDB) or 2) the activities of kingdom of God are happening all around you. AT: \"The proof that God is reigning is all around you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "The kingdom of God has come close to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Because of your faith you have become well.\" The idea of \"faith\" can be expressed with the verb \"believe.\" AT: \"Because you believe, you are well again\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Your faith has made you well",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It was understood that salvation comes from God. AT: \"God has saved this household\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "salvation has come to this house",
+      "occurrence": 1
+    }
+  }
+]

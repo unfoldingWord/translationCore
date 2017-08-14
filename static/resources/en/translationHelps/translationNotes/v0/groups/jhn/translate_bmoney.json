@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"denarii\" is the plural of \"denarius. \"AT: \"The amount of bread that cost two hundred days' wages.\"  (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "Two hundred denarii worth of bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A denarius was the amount of silver that a common laborer could earn in one day of work. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "denarii",
+      "occurrence": 1
+    }
+  }
+]

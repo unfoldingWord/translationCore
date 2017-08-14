@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "famine",
+      "quote": "famine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 18, "verse": 8 },
+      "tool": "translationWords",
+      "groupId": "famine",
+      "quote": "famine",
+      "occurrence": 1
+    }
+  }
+]

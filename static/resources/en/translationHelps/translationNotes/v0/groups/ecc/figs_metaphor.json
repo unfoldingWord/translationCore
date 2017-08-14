@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"mist\" or \"breath.\" It does not last. AT: \"temporary\" or \"worthless.\" What people do is like vapor because it does not last and is worthless. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "vapor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In addition to being without clothing, here the word \"naked\" emphasizes that people are born without any possessions. AT: \"a man is naked and owns nothing when he is born ... he will leave this life the same way\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a man is born naked ... he will leave this life naked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"darkness\" refers to sad circumstances. Possible meanings are 1) \"During his life he eats in mourning\" or 2) \"His life is spent in mourning\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 5, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "During his days he eats with darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the person's face will show that he has wisdom. AT: \"shows on his face\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "causes his face to shine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"everything only lasts a short time, like steam that disappears.\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 12, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "everything is vanishing vapor",
+      "occurrence": 1
+    }
+  }
+]

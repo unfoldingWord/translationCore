@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to things caused by the bad water. This also can be written in positive form. AT: \"there will be no more death or problems with crops caused by this water\" or \"from now on this water will bring life and help the land become fruitful\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]]) \n  ",
+      "reference": { "bookId": "2ki", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "there will be no more death or unfruitful land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in positive form. AT: \"I pay attention to you only because I honor the presence of Jehoshaphat king of Judah\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "were it not for the fact that I honor the presence of Jehoshaphat king of Judah, I would not pay any attention to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in positive form. AT: \"will not offer burnt offering or sacrifice to any god but Yahweh\" or \"will only offer burnt offerings and sacrifices to Yahweh\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "will offer neither burnt offering nor sacrifice to any god but Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Nothing\" and \"not\" cancel each other out to make the idea positive. This exaggeration is used for emphasis. AT: \"Hezekiah showed him absolutely everything in his house and in all his kingdom\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n \n",
+      "reference": { "bookId": "2ki", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "There was nothing ... that Hezekiah did not show them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Nothing\" and \"not\" cancel each other out to make the idea positive. This exaggeration is used for emphasis. AT: \"I showed them absolutely every one of my valuable things\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 20, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "There is nothing among my valuable things that I have not shown them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a positive statement. AT: \"Only the poorest people in the land still lived there\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "No one was left except the poorest people in the land",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If your language does not allow quotes within quotes you can rewrite it as a single quote. AT: \"This man said that he is able to destroy ... days\" (See: [[:en:ta:vol2:translate:writing_quotations]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 61 },
+      "tool": "translationNotes",
+      "groupId": "writing_quotations",
+      "quote": "This man said, 'I am able to destroy ... days.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If your language does not allow quotations within quotations you may translate this as a single quote. AT: \"Tell others that Jesus' disciples came ... while you were sleeping\"  (See: [[:en:ta:vol2:translate:writing_quotations]] and [[:en:ta:vol2:translate:figs_quotations]])\n",
+      "reference": { "bookId": "mat", "chapter": 28, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_quotations",
+      "quote": "Say to others, 'Jesus' disciples came ... while we were sleeping.'",
+      "occurrence": 1
+    }
+  }
+]

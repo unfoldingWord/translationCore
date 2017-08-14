@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "bethlehem",
+      "quote": "Bethlehem, Ephrathah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "bethlehem",
+      "quote": "Bethlehem, Ephrathah",
+      "occurrence": 1
+    }
+  }
+]

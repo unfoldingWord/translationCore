@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"poor\" and \"important\" are two extremes, which together mean \"anyone.\" You can translate this to clarify the terms. AT: \"You must not show favoritism to anyone based on how much money they have\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "You must not show favoritism to someone because he is poor, and you must not show favoritism to someone because he is important",
+      "occurrence": 1
+    }
+  }
+]

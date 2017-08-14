@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mild way for Jesus to say that he will die to protect his sheep. AT: \"I die for the sheep\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I lay down my life for the sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mild way for Jesus to say he will die and then will become alive again. AT: \"I allow myself to die in order that I may bring myself back to life\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I lay down my life so that I may take it again",
+      "occurrence": 1
+    }
+  }
+]

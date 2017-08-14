@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God implies that false gods should help the people who worship them. He knows that false gods cannot help people. When he said this he was using irony to show that he was angry that his people worshiped false gods. AT:  \"You do not ask them because know you that they cannot save you in your time of troubles\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Let them arise if they wish to save you in your time of troubles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God appears to be praising his people for looking for love. But this is irony. He was showing that he was angry with them for being unfaithful to him. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "How well you make your way to look for love",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people expect guidance and gain from idol worship but only find lies. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 3, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Only lies come from the hills",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Although Yahweh required sacrifices, he no longer wanted their sacrifices because the people remained disobedient after coming to the Temple. (See: [[:en:ta:vol1:translate:figs_irony]])\n \n",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Add your burnt offerings to your sacrifices and the meat from them.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"No man has ever given birth to a child\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Ask and see if a man bears a child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jeremiah uses irony to say that the \"freedom\" they people will enjoy will actually be suffering. AT: \"I will proclaim misery to you ... misery from the sword, the plague, and famine\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 34, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I am about to proclaim freedom to you ... freedom for the sword, the plague, and famine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ironic statement. Yahweh does not really want them to fulfill their vow to a false goddess. Yahweh knows they will not listen to him so he tells them to go ahead and do what they want. AT: \"Very well! If that is what you want to do, then go fulfill your vows and do what you promised to do\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 44, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Now fulfill your vows; carry them out",
+      "occurrence": 1
+    }
+  }
+]

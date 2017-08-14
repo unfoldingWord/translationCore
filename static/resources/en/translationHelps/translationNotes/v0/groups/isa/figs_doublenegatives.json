@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a slight exaggeration as Hezekiah showed them many things, but not everything. Also, this can be expressed positively. AT: \"Hezekiah showed them almost everything in his house and in his kingdom\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "There was nothing in his house, nor in all his kingdom, that Hezekiah did not show them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"I showed them all the valuable things in my palace\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "There is nothing among my valuable things that I have not shown them",
+      "occurrence": 1
+    }
+  }
+]

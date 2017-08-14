@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 14, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "mediterranean",
+      "quote": "the sea, the Great Sea, the western sea, Mediterranean Sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 5 },
+      "tool": "translationWords",
+      "groupId": "mediterranean",
+      "quote": "the sea, the Great Sea, the western sea, Mediterranean Sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "act", "chapter": 27, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "mediterranean",
+      "quote": "the sea, the Great Sea, the western sea, Mediterranean Sea",
+      "occurrence": 1
+    }
+  }
+]

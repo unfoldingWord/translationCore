@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of death as if it were a person who ties people up with painful cords. AT: \"having freed him from the pain that death causes\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "freeing him from the pains of death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He is the One heaven must welcome.\" Peter speaks of heaven as if it were a person who welcomes Jesus into his home. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "act", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "He is the One heaven must receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The apostles used this to show that Joseph was a person who encouraged others. It is used as though encouragement were a person, Joseph's father. The literal meaning of \"Barnabas\" is difficult to translate as \"son of encouragement\" and may be more a description of Barnabas.  AT: \"a person who always encourages others\" (UDB) (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "act", "chapter": 4, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Son of Encouragement",
+      "occurrence": 1
+    }
+  }
+]

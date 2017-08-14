@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter compares the prophetic word to a lamp that gives light in the dark until light comes in the morning. The coming of morning is a reference to Christ's coming. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "It is like a lamp shining in a dark place until the morning comes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Springs flowing with water promise refreshment for thirsty people, but \"springs without water\" will leave the thirsty disappointed. In the same way, false teachers, although they promise many things, are unable to do what they promise. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "These men are like springs without water",
+      "occurrence": 1
+    }
+  }
+]

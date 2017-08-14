@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The horses of the Chaldeans are compared to fierce wolves that run after their prey in the evening when they are very hungry because they have not eaten all day. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "quicker than the evening wolves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Fishermen empty their nets in order to throw it again and catch more fish. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n \n",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "empty their fishing nets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people of Midian and Cushan who tremble or shake with fear are like tent cloth that moves when the wind blows. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the tents of Cushan in affliction, and the fabric of the tents ... of Midian trembling",
+      "occurrence": 1
+    }
+  }
+]

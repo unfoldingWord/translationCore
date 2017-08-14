@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "philippi",
+      "quote": "Philippi",
+      "occurrence": 1
+    }
+  }
+]

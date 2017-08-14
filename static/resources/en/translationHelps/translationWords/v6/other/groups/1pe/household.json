@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 17 },
+      "tool": "translationWords",
+      "groupId": "household",
+      "quote": "household",
+      "occurrence": 1
+    }
+  }
+]

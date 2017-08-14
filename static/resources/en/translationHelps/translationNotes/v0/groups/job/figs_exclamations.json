@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation showing what Job wants very much but does not really expect it to happen. AT: \"I wish that you would hide me\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "job", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh, that you would hide me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exclamation tells what Job wishes for. It can be stated in active form. AT: \"I wish that someone would write down my words\" (See: [[:en:ta:vol2:translate:figs_exclamations]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "job", "chapter": 19, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh, that my words were now written down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job uses this exclamation to express a wish. AT: \"I wish that I were as I was in past months\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh, that I were as I was in the past months",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since God will not hear the prayers of prideful, evil men, it is even less likely that he will hear Job, who is complaining against him. AT: \"So he certainly will not answer you ... that you are waiting for him!\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "job", "chapter": 35, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How much less will he answer you ... that you are waiting for him!",
+      "occurrence": 1
+    }
+  }
+]

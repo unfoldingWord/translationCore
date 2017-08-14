@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"obedience\" and \"faith\" are abstract nouns. You can use the verbs \"obey\" and \"trust\" in your translation. AT: \"so that all nations will obey God because they trust in him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for the obedience of faith among all the Gentiles",
+      "occurrence": 1
+    }
+  }
+]

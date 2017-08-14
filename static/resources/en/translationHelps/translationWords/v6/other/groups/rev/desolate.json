@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 16 },
+      "tool": "translationWords",
+      "groupId": "desolate",
+      "quote": "desolate, desolation",
+      "occurrence": 1
+    }
+  }
+]

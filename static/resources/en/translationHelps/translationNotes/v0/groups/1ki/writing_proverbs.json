@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an expression to give advice. \"Putting on armor\" is metonymy for getting prepared for battle. \"Tell Ben Hadad, 'Do not boast as if you have already won a battle that you have not yet fought.'\" (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Tell Ben Hadad, 'No one who is just putting on his armor ... as if he were taking it off.'",
+      "occurrence": 1
+    }
+  }
+]

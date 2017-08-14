@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is describing a hypothetical situation that could have happened in the past, but it did not. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "For if in Sodom ... it would still have remained until today",
+      "occurrence": 1
+    }
+  }
+]

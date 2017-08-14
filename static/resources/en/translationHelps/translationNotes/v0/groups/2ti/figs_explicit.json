@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is implicitly speaking of Christ's servants as if they were athletes. (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "as an athlete, he is not crowned unless he competes by the rules",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in the presence of God and Christ Jesus.\" It is implied that God and Jesus will be Paul's witnesses. AT: \"with God and Christ Jesus as my witnesses\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "before God and Christ Jesus",
+      "occurrence": 1
+    }
+  }
+]

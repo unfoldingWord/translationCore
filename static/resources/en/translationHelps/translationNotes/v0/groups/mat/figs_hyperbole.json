@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is exaggerating about how a person should respond to their sin to emphasize how serious he is. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "pluck it out ... cut it off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus went to many or most of the cities but not necessarily every one of them. AT: \"many of the cities\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the cities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a hyperbole to emphasize that nothing in the world is as valuable as having true life with God. AT: \"if he gains everything in the world\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "if he gains the whole world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a hyperbole here to emphasize how serious he is. Jesus means a person must do anything necessary to remove from their lives what causes them to sin. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "If your hand or your foot causes you to stumble, cut it off and throw it away from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a hyperbole here to emphasize how serious he is. Jesus means a person must do anything necessary to remove from their lives what causes them to sin. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "If your eye causes you to stumble, pluck it out and throw it away from you",
+      "occurrence": 1
+    }
+  }
+]

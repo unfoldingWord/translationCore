@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses litotes to emphasize that he is telling the truth. AT: \"I am not lying to you in the messages I write to you\" or \"in the things I write to you I am telling you the truth\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "In what I write to you, I assure you before God, that I am not lying",
+      "occurrence": 1
+    }
+  }
+]

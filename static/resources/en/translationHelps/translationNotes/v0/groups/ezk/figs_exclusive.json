@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"our\" refers to Ezekiel and the Israelites who have been in Babylon since the time the Babylonians forced King Jehoiachin to leave Jerusalem. AT: \"after we became captives\" or \"after the Babylonians took us as captives to Babylon\" (See: [[:en:ta:vol2:translate:figs_exclusive]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 33, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "of our captivity",
+      "occurrence": 1
+    }
+  }
+]

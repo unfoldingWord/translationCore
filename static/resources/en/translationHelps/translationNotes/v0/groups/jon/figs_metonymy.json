@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonah hoped that Yahweh was not present in Tarshish. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "jon", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "away from the presence of Yahweh",
+      "occurrence": 1
+    }
+  }
+]

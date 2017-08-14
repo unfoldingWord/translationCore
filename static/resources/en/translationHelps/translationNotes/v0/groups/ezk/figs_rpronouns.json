@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"wisdom\" and \"skill\" can be translated using the adjectives \"wise\" and \"skillful.\" AT: \"You have become wealthy by your own wisdom and skill\" or \"You have become wealthy by being wise and skillful\" (See: [[:en:ta:vol2:translate:figs_rpronouns]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 28, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "You have made yourself wealthy with wisdom and skill",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"myself\" adds emphasis. God would do this because the shepherds were not doing it right. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 34, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "I myself",
+      "occurrence": 1
+    }
+  }
+]

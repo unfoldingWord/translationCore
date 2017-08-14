@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The wise men addressed the king in the third person as a sign of respect. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Let the king tell us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"your servant\" and \"his\" here refer to Daniel. He speaks about himself in the third person as a sign of respect for God. (See [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant ... his pleas for mercy",
+      "occurrence": 1
+    }
+  }
+]

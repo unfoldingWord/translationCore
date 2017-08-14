@@ -1,0 +1,917 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The birth of children to the Israelites is spoken of as if they were plants that were producing fruit. AT: \"had many children\" or \"gave birth to many children\" (UDB). (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "were fruitful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The difficult lives of the Israelites are spoken of as if they were bitter food that was difficult to eat. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "made their lives bitter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a land where milk and honey flow.\" God spoke of the land being good for animals and plants as if the milk and honey from those animals and plants were flowing through the land. AT: \"a land that is excellent for raising livestock and growing crops\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a land flowing with milk and honey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a land where milk and honey flow.\" God spoke of the land being good for animals and plants as if the milk and honey from those animals and plants were flowing through the land. See how you translated this in [[:en:bible:notes:exo:03:07|3:8]]. AT: \"a land that is excellent for raising livestock and growing crops\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a land flowing with milk and honey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Words here are spoken of as if they were something that can be physically placed in a person's mouth. Here \"words\" refers to the message. AT: \"give him the message that he is to repeat\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "put the words to say into his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the people of Israel are spoken of as if they were a firstborn son who causes joy and pride. AT: \"is like my own firstborn son\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "is my son, my firstborn",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The meaning of this metaphor is unclear. It was probably a known saying in that culture. AT: \"you are related to me by this blood\" or \"you are my husband because of blood\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "you are a bridegroom to me by blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh's opposition to letting Israel go to worship Yahweh is spoken of as if he was raising himself up as a barrier to them. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "lifting yourself up against my people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of making Pharaoh and his servants stubborn as if he were making their hearts hard. See how you translated \"Yahweh hardened Pharaoh's heart\" in [[:en:bible:notes:exo:09:11|9:12]]. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "for I have hardened his heart and the hearts of his servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of extreme darkness as if it is so thick that people can grasp it in their hands. This can be stated in active form. AT: \"dense darkness that people can grasp with their hands\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 10, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "darkness that may be felt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metaphor \"cut off\" has at least three possible meanings. They can be expressed in active form: 1) \"the people of Israel must send him away\" or 2) \"I will no longer consider him to be one of the people of Israel\" or 3) \"the people of Israel must kill him.\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "that person must be cut off from Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metaphor \"cut off\" has at least three possible meanings. They can be expressed in active form: 1) \"the people of Israel must send him away\" or 2) \"I will no longer consider him to be one of the people of Israel\" or 3) \"the people of Israel must kill him.\" See how you translated \"must be cut off from Israel\" in [[:en:bible:notes:exo:12:15|12:15]]. (See: [[:en:ta:vol1:translate:figs_metaphor]]and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "must be cut off from the community of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of celebrating the festival as if it were tying an object around their hands to remind them of what Yahweh had done. AT: \"like something you tie around your hand as a reminder\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a reminder for you on your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of Egypt as if it were a house where people keep slaves. See how you translated this in [[:en:bible:notes:exo:13:03|13:3]]. AT: \"the place where you were slaves\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the house of slavery",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses sang about God causing the sea to cover and drown the horse and rider as if God had thrown them into the sea. AT: \"he has made the sea cover over the horse and rider\" or \"he has made the horse and rider drown in the sea\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the horse and its rider he has thrown into the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses sings about God causing the sea to cover Pharaohs chariots and army as if God had thrown them into the sea. AT: \"he has made the sea cover over Pharaoh's chariots and army\" or \"He has made Pharaoh's chariot riders and army drown in the sea\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He has thrown Pharaoh's chariots and army into the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks about God causing something to happen as if God reached out with his hand. AT: \"With your strong power you made it happen\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "You reached out with your right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks about God promising to give his people the mountain forever as if he were giving it to them as an inheritance. AT: \"that you have given them as an inheritance\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "of your inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Miriam sang about God causing the sea to cover and drown the horse and rider as if God had thrown them into the sea. See how you translated this in [[:en:bible:notes:exo:15:01]]. AT: \"He has made the horse and rider drown in the sea\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The horse and his rider he has thrown into the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of food coming down from heaven as if it were rain.  AT: \"I will make bread come down from heaven like rain\" or \"I will make bread fall to you from the sky\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I will rain down bread from heaven for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of obeying his law as walking in it. AT: \"obey my law\" or \"live according to my law\"  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "walk in my law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of the food that he will send as if it were bread. The Israelites would eat this food every day, just as they had eaten bread every day before this. See how you translated it in [[:en:bible:notes:exo:16:04|16:4]]. AT: \"food\" or \"food like bread\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks about teaching people to rest on the Sabbath as if the Sabbath were a gift. AT: \"I, Yahweh, have taught you to rest on the Sabbath\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Yahweh has given you the Sabbath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of destroying Amalek as if he were removing people's memory of Amalek. When a group of people is completely destroyed, there is nothing to remind people about them. AT: \"I will completely destroy Amalek\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 17, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I will completely blot out the memory of Amalek",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses writes of hardships happening to them as if hardships had come to them. AT: \"all the hardships that had happened to them\" or \"all the hardships they had experienced\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n\n",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "all the hardships that had come to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro speaks of the hard work that Moses is doing as if it were a physical burden that Moses was carrying. AT: \"This work is too much for you\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "This burden is too heavy for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro speaks of God helping Moses as if God would be with Moses. AT: \"God will help you\" or \"God will give you wisdom\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "God will be with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro speaks of Moses telling God about their disputes as if Moses were bringing their disputes to God. AT: \"`you tell God about their disputes\" or \"you tell God what they are arguing about\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "you bring their disputes to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro speaks of giving them authority over people as putting them over people. AT: You must give them authority over people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "You must put them over people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro speaks of telling Moses about the difficult cases as bringing him the difficult cases. AT: \"the difficult cases they will tell you about\" or \"when there are difficult cases, they will tell you about them so you can judge them\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the difficult cases they will bring to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses writes of the leaders of people as if they were the head of a body.  AT: \"leaders of the people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "heads over the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author writes of telling Moses about the difficult cases as bringing him the difficult cases. AT: \"the difficult cases they told Moses about\" or \"when there were difficult cases, they told Moses about them so that he would judge them\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The difficult cases they brought to Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of caring for his people while they traveled as if he were an eagle and carried them on his wings. AT: \"I helped you travel like an eagle that carries her babies on her wings\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I carried you on eagles' wings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of his people as if they were priests. AT: \"a kingdom of people who are like priests\" or \"a kingdom of people who do what priests do\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a kingdom of priests",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author writes of Moses telling people things as if he were setting the words before them. AT \"told them all these words\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "set before them all these words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God spoke about walking past the boundary as if they might break down a barrier and walk through it. See how you translated \"set bounds\" in [[:en:bible:notes:exo:19:12|19:12]].  AT: \"not to go beyond the boundary\" or \"not to go through the barrier\"(See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "not to break through",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God spoke about walking past the boundary as if they might break down a barrier and walk through it. See how you translated a similar phrase in [[:en:bible:notes:exo:19:19|19:21]]. AT: \"go beyond the boundary\" or \"go through the barrier\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "break through the barrier",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a metaphor that describes one's agreeing with a group of people as if he actually walked over and stood with that group. AT: \"doing what the crowd wants\" or \"agreeing with the majority\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "siding with the crowd",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metaphor \"cut off\" has at least three possible meanings. They can be expressed in active form: 1) \"I will no longer consider him to be one of the people of Israel\" 2)  \"the people of Israel must send him away\" or 3) \"the people of Israel must kill him.\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "that person must be cut off from his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metaphor \"cut off\" has at least three possible meanings. They can be expressed in active form: 1) \"I will no longer consider him to be one of the people of Israel\" 2)  \"the people of Israel must send him away\" or 3) \"the people of Israel must kill him.\" See how you translated this in [[:en:bible:notes:exo:30:32|30:33]]. (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "must be cut off from his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of giving Bezalel his Spirit as if Bezalel were a container and God's Spirit were a liquid. AT: \"I have given my Spirit to Bezalel\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I have filled Bezalel with my Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of obeying his instructions about the Sabbath as keeping the Sabbath. AT: \"You must certainly obey Yahweh's instructions about the Sabbath\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "You must certainly keep Yahweh's Sabbath days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of treating the Sabbath with disrespect as defiling it. AT: \"Everyone who treats the Sabbath with disrespect\" or \"Everyone who does not obey the laws about the Sabbath\"  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Everyone who defiles it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The metaphor \"cut off\" has at least three possible meanings. They can be expressed in active form: 1) \"Yahweh will no longer consider him to be one of his people\" 2)  \"you must surely send him away\" or 3) \"you must surely kill him.\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "must surely be cut off from his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of obeying his instructions about the Sabbath as keeping the Sabbath. AT: \"must obey Yahweh's instructions about the Sabbath\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "must keep the Sabbath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here understanding something is spoken of as if it were being seen. AT: \"the people realized\"  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the people saw",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here God speaks of the people disobeying what he commanded them as if he had told them to walk on a certain road and they left that road.  AT: \"stopped doing what I commanded them to do\" or \"have stopped obeying what I commanded them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "left the way that I commanded them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh compares knowing the people to seeing them. AT: \"I know this people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I have seen this people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of his anger as if it were a fire that could burn hot. AT: \"My anger towards them will be terrible\" or \"I am extremely angry with them\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "My anger will burn hot against them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used this question to to try to persuade Yahweh not to be so angry with his people. This rhetorical question can be translated as a statement. AT: \"Do not let your anger burn against your people\" or \"Do not be so angry with your people\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "why does your anger burn against your people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of God's anger as if it were a fire that was burning. AT: \"your terrible anger\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "your burning anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks about them possessing the land as if they would inherit it. AT: \"They will possess it forever\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "They will inherit it forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Aaron spoke of Moses' anger as if it were a fire that could burn. \"Do not be so angry\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Do not let your anger burn hot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The cloud had the shape of a pillar. See how you translated this in [[:en:bible:notes:exo:13:19|13:22]]. AT: \"the cloud shaped like a pillar\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 33, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the pillar of cloud",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Punishing people is spoken of as if punishment were an object that someone could bring  on people. AT: \"He will punish the children for their fathers' sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He will bring the punishment for the fathers' sin on their children",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Something that someone possesses forever is spoken of as if it were something that they had inherited. AT: \"take us as the people that you possess forever\" or \"accept us as the people who belong to you forever\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "take us as your inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People who tempt others to sin are spoken of as if they were a trap. AT: \"they will tempt you to sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "they will become a trap among you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks of people worshiping other gods as if they were prostitutes going to other men.  AT: \"for they worship other gods\" or \"because they worship other gods like prostitutes who go to other men\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "for they prostitute themselves to their gods",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Telling commands is spoken of as if the commands were objects that could be given. AT: \"all the commands that Yahweh had told him\" or \"everything that Yahweh had commanded them\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "all the commands that Yahweh had given him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here skill and ability are spoken of as if they are something that Yahweh can place inside a person. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to whom Yahweh has given skill and ability",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These four pieces of wood that supported the ark are spoken of as if they were human or animal feet. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "its four feet",
+      "occurrence": 1
+    }
+  }
+]

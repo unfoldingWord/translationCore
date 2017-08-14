@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to something that is strong. AT: \"the strong thing\" (See: [[:en:ta:vol2:translate:figs_nominaladj]]) \n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the strong",
+      "occurrence": 1
+    }
+  }
+]

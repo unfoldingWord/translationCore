@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In the vision given to Isaiah, Yahweh speaks to the armies of Elam and Media as if they are there listening to him. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Go up and attack, Elam; besiege, Media",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Isaiah speaks various parts of creation as if they were people and commands them to praise Yawheh. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Sing, you heavens ... glory in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh speaks to the city of Jerusalem as if it were listening to him. Here Jerusalem represents the people who live there. AT: \"You afflicted people of Jerusalem\" (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 54, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Afflicted one",
+      "occurrence": 1
+    }
+  }
+]

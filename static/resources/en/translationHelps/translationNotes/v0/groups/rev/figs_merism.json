@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the eternal nature of Jesus. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "I am the first and the last",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means everywhere: the place where God and the angels live, the place where people and animals live, and the place where those who have died are. (See: [[:en:ta:vol2:translate:figs_merism]]) \n  ",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "in heaven or on the earth or under the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "his means everywhere: the place where God and the angels live, the place where people and animals live, and the place where those who have died are. See how you translated this in [[:en:bible:notes:rev:05:03|5:3]]. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "in heaven and on the earth and under the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two parts of the day are used to refer to all of the time. AT: \"ever\"  (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 14, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "day or night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three phrases share similar meanings and emphasize that Jesus has and will exist for all time. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_merism]]).\n  ",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the alpha and the omega, the first and the last, the beginning and the end",
+      "occurrence": 1
+    }
+  }
+]

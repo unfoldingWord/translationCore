@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 44 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 23 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 49 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 26 },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "honor, honors, to honor",
+      "occurrence": 1
+    }
+  }
+]

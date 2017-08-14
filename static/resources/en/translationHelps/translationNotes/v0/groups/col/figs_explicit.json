@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"so that we may present to God every person\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "so that we may present every person",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nothing is excluded or left out of the rule of Christ. AT: \"Christ is all important and lives in all his people\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "col", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Christ is all, and is in all",
+      "occurrence": 1
+    }
+  }
+]

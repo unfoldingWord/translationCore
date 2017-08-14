@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a specific measure that was about one liter. AT: \"one liter\" or \"one bowl\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "A choenix of wheat",
+      "occurrence": 1
+    }
+  }
+]

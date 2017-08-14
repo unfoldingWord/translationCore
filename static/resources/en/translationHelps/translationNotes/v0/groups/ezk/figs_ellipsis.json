@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implicit information can be supplied from the previous phrase. AT: \"I said to you as you were lying in your blood\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I said to you in your blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"have oppressed people ... and plundered others\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 22, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "have oppressed ... and plundered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"same day\" refers to the previous phrase \"make my sanctuary unclean.\" AT: \"and on the same day they make my sanctuary unclean, they defile my Sabbaths\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 23, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and on the same day they defile my Sabbaths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"any sheep or goat\" is left out of this phrase, but they are intended to be understood. AT: \"any sheep or goats that are lost\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 34, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the lost",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"any sheep or goat\" is left out of this phrase, but they are intended to be understood. AT: \"any sheep or goats that are lost\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 34, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the lost",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"sheep\" is understood. AT: \"the fat sheep and the strong sheep\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n\n",
+      "reference": { "bookId": "ezk", "chapter": 34, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the fat and the strong",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may need to add the omitted word. AT: \"Then measure the south side\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 47, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Then the south side",
+      "occurrence": 1
+    }
+  }
+]

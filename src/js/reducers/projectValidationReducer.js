@@ -20,6 +20,7 @@ const projectValidationReducer = (state = initialState, action) => {
       }
     case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
       return {
+        ...state,
         showProjectValidationStepper: action.showProjectValidationStepper,
         stepper: {
           ...initialState.stepper

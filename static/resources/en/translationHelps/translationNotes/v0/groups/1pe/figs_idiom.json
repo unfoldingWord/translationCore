@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to preparing to work hard. It comes from the custom of tucking the bottom of one's robe into a belt around the waist in order to move with ease. AT: \"get ready\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "gird up the loins of your mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"heart\" refers to the seat of the emotions and indicates that they are to love completely. AT: \"love one another earnestly and completely\" or \"love one another earnestly and wholeheartedly\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "love one another earnestly from the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"sober\" refers to mental clarity and alertness. AT: \"control your thoughts\" or \"be careful about what you think.\" See how you translated this in [[:en:bible:notes:1pe:01:13|1:13]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "be sober in your thinking",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"sober\" refers to mental clarity and alertness. AT: \"Control your thoughts\" or \"Be careful about what you think.\" See how you translated this in [[:en:bible:notes:1pe:01:13|1:13]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Be sober",
+      "occurrence": 1
+    }
+  }
+]

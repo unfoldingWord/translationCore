@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"measure\" is an unknown amount. (See: [[:en:ta:vol2:translate:translate_bvolume]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "twenty measures",
+      "occurrence": 1
+    }
+  }
+]

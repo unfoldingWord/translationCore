@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"But\" connects this verse to the previous verse about the hypocrisy of the Pharisees. (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "But there is",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Because of this.\" Jesus uses this word here to refer back to everything he has said, beginning in [[:en:bible:notes:luk:21:10|21:10]]. (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Therefore",
+      "occurrence": 1
+    }
+  }
+]

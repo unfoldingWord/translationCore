@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a double negative to emphasize the positive. This can be stated as a positive. AT: \"We lived among you as those who had much discipline\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "We did not live among you as those who had no discipline",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hannah speaks of herself in the second person to show her humility. It can be stated in first person. AT: \"Do not consider me, your servant, to be\" or \"Do not consider me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Do not consider your servant to be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hannah speaks of herself in the second person to show respect for Eli, the head priest. This can be stated in the first person. AT: \"Let me, your servant, find\" or \"Let me find\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Let your servant find",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking about himself in the third person. AT: \"For I, Yahweh, do not see ... I, Yahweh, look\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "For Yahweh does not see ... Yahweh looks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The servants refer to Saul in the third person as \"our master.\" AT: \"We ask that you, our master, command\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Let our master now command",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David spoke of himself as \"your servant\" to show respect to Saul. See how you translated this in [[:en:bible:notes:1sa:17:31|17:32]]. AT: \"I, your servant, used to keep my father's sheep\"  (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your servant used to keep his father's sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ahimelech speaks of himself in the third person as the \"servant.\" Ahimelech also refers to Saul in the third person as \"the king.\" Ahimelech speaks this way to show respect to Saul. AT: \"Please, King Saul, do not consider me, your servant, or anyone in the house of my father to be guilty. For I know nothing\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Do not let the king impute anything to his servant or to all the house of my father. For your servant knows nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David speaks of Saul in third person calling him \"my master,\" and he speaks of himself in third person calling himself \"his servant.\" David speaks this way to show respect to Saul. AT: \"Why are you, my master, pursuing me, your servant?\" or \"Why are you pursuing me?\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Why does my master pursue his servant?",
+      "occurrence": 1
+    }
+  }
+]

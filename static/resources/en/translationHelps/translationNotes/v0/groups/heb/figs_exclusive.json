@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to the author and his companions. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "Pray for us",
+      "occurrence": 1
+    }
+  }
+]

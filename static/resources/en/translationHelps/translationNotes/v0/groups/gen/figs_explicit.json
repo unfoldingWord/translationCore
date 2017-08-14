@@ -1,0 +1,1937 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They did this because they were ashamed. This implicit information can be made explicit if needed as in the UDB. AT: \"and clothed themselves with them because they were ashamed\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and made coverings for themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can say what it was that they ate. AT: \"have eaten the fruit of the tree\" or \"have eaten some of the fruit of the tree\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "have eaten from the tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may want to include a footnote that says \"The name Cain sounds like the Hebrew word that means 'produce.' Eve named him Cain because she produced him.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Cain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the food that came from plants he had tended. AT: \"crops\" or \"harvest\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "fruit of the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the fatty parts of the lambs that he had killed, it was the best part of the animal. AT: \"some of their fat parts\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "some of the fat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some languages will need to add the implicit information that Cain spoke to his brother about going to the fields. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Cain spoke to Abel his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Enoch grew up and married a woman. AT: \"Enoch grew up and married and became the father of a son whom he named Irad\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "To Enoch was born Irad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first time people called God by the name Yahweh. This can be made explicit. AT: \"to worship God by using the name Yahweh\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to call on the name of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"spread pitch on it\" or \"paint tar on it.\" The reason for doing this can be made explicit: \"to make it waterproof\" (UDB). (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "cover it with pitch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implicit information, \"it started to rain\" can be made explicit (UDB). AT: \"it started to rain and the waters of the flood came upon the earth\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the waters of the flood came upon the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be stated explicitly. AT: \"after they entered the ark\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "after them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit: \"appeared above the surface of the water.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the blood is shed, or poured out, or spilled out. AT: \"if anyone causes your blood to pour out\" or \"if anyone spills your blood\" or \"if anyone kills you\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for your blood, the life that is in your blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The direction south can be stated explicitly if needed. AT: \"from Sidon city in the north as far south as Gaza town, which is near Gerar\"(See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 10, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "from Sidon, in the direction of Gerar, as far as Gaza",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The information about where he came down from can be made explicit: \"came down from heaven.\" This does not tell how he came down. Use a general word meaning \"came down.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "came down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the purpose of confusing their language. AT: \"so that they will not be able to understand what each other is saying\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "so that they may not understand each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It means that Yahweh caused the people all over the earth to no longer speak the same language. AT: \"mixed up the language of the whole earth\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "confused the language of the whole earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Abram's name is mentioned because he was the head of the family. God had given him the command to take his family and go there. AT: \"So Abram and his family went through the land\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Abram passed through the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Then Abram took his tent and continued journeying.\" (See [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then Abram continued journeying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit. AT: \"because Pharaoh intended to take Sarai, Abram's wife, to be his own wife\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "because of Sarai, Abram's wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Negev was a desert region in southern Canaan, west of Egypt. This can be made explicit. AT: \"went back to the Negev desert\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "went into the Negev",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abram and his family traveled by stages, going from place to place. This can be made explicit. AT: \"They continued on their journey\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He continued on his journey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says \"See Genesis 12:8.\" The time of his travel can be made explicit. AT: \"to the place where he had set up his tent before he went to Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to the place where his tent had been before",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The information that their armies were with them can be made explicit. AT: \"These latter five kings and their armies joined together\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "These latter five kings joined together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"joined battle\" or \"drew up battle lines.\" Some translators may need to also say that the armies fought, as the UDB does in verse 9. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "prepared for battle",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied information about where he was returning to can be made explicit. AT: \"returned to where he was living\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning of this statement can be made explicit. AT: \"the share of the recovered property that belongs to the men who helped me get it back\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the share of the men that went with me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the allies of Abram (See: [[:en:bible:notes:gen:14:13|14:13]]). Because they were Abram's allies they fought battles alongside him. The full meaning of this statement can be made explicit. AT: \"my allies Aner, Eshcol, and Mamre\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Aner, Eshcol, and Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hagar's return to Sarai and Abram is implict. You can make this more explicit. AT: \"So Hagar went back and gave birth\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 16, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Hagar gave birth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the lives of Lot's family will be saved along with his. This can also be stated in active form. AT: \"so that we will live\" or \"so that we will survive\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "my life will be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit. AT: \"cannot destroy the other cities\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "cannot do anything",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The sun had risen over the earth.\" The phrase \"upon the earth\" can be left implicit as it is in the UDB where it is not translated. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The sun had risen upon the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that their goal was to get him drunk. AT: \"drink wine until he gets drunk\" (UDB) or \"get drunk with wine\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "drink wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that their goal was to get him drunk. AT: \"drink wine until he gets drunk\" (UDB) or \"get drunk with wine\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "drink wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be stated explicitly. AT: \"because Abimelech had taken Abraham's wife Sarah\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "because of Sarah, Abraham's wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"paid attention to\" refers to Yahweh helping Sarah have a baby. AT: \"Yahweh helped Sarah\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Yahweh paid attention to Sarah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sarah was laughing because she was surprised and happy. This can be made explicit. AT: \"God has caused me to laugh joyfully\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "God has made me laugh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated explicitly that he was jeering or laughing at Isaac. AT: \"laughing at Isaac\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "mocking",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that God tests Abraham to learn if Abraham will be faithful to him. The full meaning of this statement can be made explicit. AT: God tested Abraham's faithfulness\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "God tested Abraham",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that God knows that Abraham has another son, Ishmael. This emphasizes that Isaac is the son that God promised to give Abraham. The full meaning of this statement can be made explicit. AT: \"your only son whom I have promised\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "your only son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that God knows that Abraham has another son, Ishmael. This emphasizes that Isaac is the son that God promised to give Abraham. See how you translated a similar phrase in [[:en:bible:notes:gen:22:01|22:2]]. (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "your son, your only son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that God knows that Abraham has another son, Ishmael. This emphasizes that Isaac is the son that God promised to give Abraham. See how you translated a similar phrase in [[:en:bible:notes:gen:22:01|22:2]]. (See: [[:en:ta:vol1:translate:figs_explicit]])  \n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "your son, your only son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Abraham was named because he was the father, but it was implied that his son went with him. The full meaning of this statement can be made explicit. AT: \"Abraham and his son went back\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Abraham returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Abraham was mentioned because he was the leader of his family and servants, but it was implied that they were with him. The full meaning of this statement can be made explicit. AT: \"Abraham and his people stayed in Beersheba\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he lived at Beersheba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"had fulfilled the purpose of his journey\" or \"had made his journey successful.\" You can make explicit what specifically the servant was trying to determine. AT: \"was showing him the woman who would become Isaac's wife\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "had prospered his journey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "How they could show their faithfulness and trustworthiness can be stated explicitly. AT: \"tell me if you will be faithful and trustworthy to my master by giving Rebekah to be his son's wife\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "if you are prepared to treat my master with family faithfulness and trustworthiness, tell me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can state explicitly the land to which this refers. AT: \"in the land where Isaac and his family lived\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Isaac is mentioned because he is the leader of the family, but his whole family was with him. AT: \"So Isaac and his family settled in Gerar\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So Isaac settled in Gerar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This may also include goats. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Isaac is mentioned because he is the leader, but his family and servants went with him. AT: \"So Isaac and his household left\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So Isaac departed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"for my servant Abraham\" or you can make the full meaning explicit. AT: \"because I promised my servant Abraham that I would do this\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for my servant Abraham's sake",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he married.\" You can state explicitly that he married two women. AT: \"he took two wives\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he took a wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"see here\" adds emphasis to what follows. AT: \"Listen carefully\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "See here",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A quiver is a case for holding arrows. AT: \"your quiver of arrows\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "your quiver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"delicious\" refers to something that tastes very good. AT: \"Cook for me the tasty meat that I love\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Make delicious food for me, the sort that I love",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that the clothes smelled like Esau's clothes. AT: \"he smelled his clothes and they smelled like Esau's clothes, so Isaac blessed him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he smelled the smell of his clothes and blessed him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Dew\" is drops of water that form on the plants during the night. This can be made explicit in the translation. AT: \"night mist from heaven to water your crops\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "dew of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Dew\" is drops of water that form on the plants during the night. This can be made explicit in the translation. AT: \"the night mist from the sky to water your crops\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "dew of the sky above",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that if Esau kills Jacob, then they will execute Esau as a murderer. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I lose you both in one day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to gather them together inside a fence for them to stay for the night. The full meaning of this can be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to be gathered together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob weeps because he is so happy. The full meaning of this statement can be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "wept loudly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Jacob did not know he was with Leah because it was dark and he could not see. The full meaning of this statement can be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "who slept with her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be made explicit. AT: \"and next week we will give you Rachel also\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and we will give you the other also",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "At that time, this was an acceptable way for a barren woman to have children that would legally belong to her. The full meaning of this may be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "there is my servant Bilhah ... I will have children by her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be made more explicit. AT: \"Tell me how much I have to pay to keep you here\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Name your wages",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"What can I pay you\" or \"What can I give you.\" This can be made more explicit. AT: \"What can I pay you so that you stay and work for me\" (See [[:en:ta:vol1:translate:figs_explicit]]).\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "What will I pay you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that this happened over several years. AT: \"During the several years following, Jacob separated\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Jacob separated",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"So the weaker offspring belonged to Laban, while the stronger offspring belonged to Jacob.\" You can make this even more explicit. AT: \"So the weaker offspring did not have stripes or spots and so belonged to Laban, while the stronger offspring did have stripes or spots and so belonged to Jacob\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "So the feebler animals were Laban's, and the stronger were Jacob's",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob took all of his children. It only mentions the sons because they are important as his heirs. AT: \"his children\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "his sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only Jacob is mentioned because he is the leader of the family. It can be made explicit that his family went with him. AT: \"that Jacob had fled with his wives and children\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that Jacob had fled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eating a meal together was a part of making the covenant with one another. The full meaning of this may be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then they ate there by the pile",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Eating a meal together was part of making the covenant with one another. The full meaning of this may be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "called his relatives to eat a meal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not refer to different gods, but to the one God they all worship. AT: \"Yahweh, who is God of my grandfather Abraham and my father Isaac\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "God of my father Abraham, and God of my father Isaac, Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not mean Jacob divided the children evenly so that each woman had the same amount of children with her. Jacob divided the children so that each one went with his or her mother. (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Jacob divided the children ... female servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated more explicitly. AT: \"Then Esau and Jacob cried because they were happy to see each other again\" (See [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then they wept",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This only mentions Jacob because he is the leader of the family. It is implied that his family was with him. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "When Jacob ... he arrived ... He camped",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a new sentence. It can be made explicit that Shechem knew the other men would agree to be circumcised because they greatly respected him. AT: \"Shechem knew all the men in his father's household would agree with him because he was the most honored among them\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "because he was the most honored person in all his father's household",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that no one attacked anyone in Jacob's family. But two of the sons, Simeon and Levi had attacked the Canaanites relatives of Shechem after he seized and slept with Jacob's daughter. Jacob was afraid they would seek revenge in [[:en:bible:notes:gen:34:30|34:30]]. AT: \"Jacob's family\" or \"Jacob's household\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the sons of Jacob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that they were in Bethel. AT: \"After Jacob left Paddan Aram, and while he was in Bethel\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "When Jacob came from Paddan Aram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Israel's family and servants are with him. The full meaning of this information can be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Israel traveled on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that this does not include Benjamin who was born in the land of Canaan near Bethlehem. It only mentions Paddan Aram since that is where most of them were born. The full meaning of this can be made explicit. AT: \"who were born to him in Paddan Aram, except Benjamin who was born in the land of Canaan\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "who were born to him in Paddan Aram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"These are the descendants of Esau, who is also called Edom.\" This sentence introduces the account of Esau's descendants in Genesis 36:1-8. AT: \"This is an account of the descendants of Esau, who is also called Edom.\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "These were the descendants of Esau (also called Edom)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all of the things that he had accumulated while living in the land of Canaan. AT: \"which he had accumulated while living in the land of Canaan\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "which he had gathered in the land of Canaan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The land was not large enough to support all of the livestock that Jacob and Esau owned. AT: \"was not big enough to support all of their livestock\" or \"was not big enough for both Esau's flocks and Jacob's flocks\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "could not support them because of their livestock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence introduces the account of Esau's descendants in Genesis 36:9-43. AT: \"This is an account of the descendants of Esau\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "These were the descendants of Esau",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they lived in the land of Edom. AT: \"who lived in the land of Edom\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in the land of Edom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they lived in the land of Seir. AT: \"of those who lived in the land of Seir\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n \n",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in the land of Seir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Husham lived in the land of the Temanites. AT: \"Husham who lived in the land of the Temanites\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Husham who was of the land of the Temanites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Shaul lived in Rehoboth. Rehoboth was by the Euphrates river. This information can be made clear. AT: \"then Shaul reigned in his place. He was from Rehoboth which is by the Euphrates River\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "then Shaul of Rehoboth by the river reigned in his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He is ready to leave. \"I am ready to go\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I am ready",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"bringing them down to Egypt.\" This can be made more explicit. AT: \"bringing them down to Egypt to sell them\" ([[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "traveling to carry them down to Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an act of deep distress and grief. This can be written more clearly. AT: \"He was so grieved that he tore his clothes\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He tore his clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an act of deep distress and grief. This can be written more clearly. AT: \"Jacob was so grieved that he tore his garments\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Jacob tore his garments",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The means that he be mourning from now until when he dies. AT: \"Indeed when I die and go down to Sheol I will still be mourning\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Indeed I will go down to Sheol mourning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh killed him because he was wicked. This can be made clear. AT: \"So Yahweh killed him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Yahweh killed him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means her to live in here father's house. AT: \"and live in your father's house\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in your father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah feared that if Shelah married Tamar he would also die like his brothers did. AT: \"For he feared, \"If he marries her he may also die like his brothers did\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n \n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "For he feared, \"He might also die, just like his brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that she hid herself with her clothing so that people would not recognize her. Traditionally, part of women's clothing were large pieces of cloth they wrapped themselves with. AT: \"and wrapped herself in her clothing so that people would not recognize her\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and wrapped herself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah did not think she was a prostitute just because her face was covered but also because she was sitting in the gate. AT: \"because she had covered her head and sat where prostitutes often sat\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "because she had covered her face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When people found out what had happened they would ridicule Judah and laugh at him. This can be made clear and stated in active form. AT: \"or else people will laugh at us when they find out what happened\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that we not be put to shame",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows the midwife's surprise to seeing the second baby come out first. AT: \"So this is how you break your way out first!\" or \"You have burst out first!\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "How you have broken out!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers his household and his crops and livestock. The full meaning of this statement can be made explicit. AT: \"Potiphar's household and all of his crops and livestock\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "everything that Potiphar had in the house and in the field",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He did not have to worry about anything in his household; he only had to make decisions about what he wanted to eat. This can be stated in positive form. AT: \"Potiphar only had to think about what he wanted to eat. He did not have to worry about anything else in his house\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He did not have to think about anything except the food that he ate",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Joseph's master.\" This refers to Potiphar. This information can be made explicit. AT: \"Joseph's master, Potiphar\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "his master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"behold\" here shows that Joseph was surprised by what he saw. AT: \"He was surprised to see that they were sad\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Behold, they were sad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he squeezed the juice out of them. AT: \"squeezed the juice from them\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "squeezed them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph means for the cupbearer to tell Pharaoh about him so that Pharaoh will release him from prison. AT: \"Help me get out of this prison by telling Pharaoh about me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 40, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Mention me to Pharaoh and bring me out of this prison",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This begins Pharaoh's next dream after he woke up and went back to sleep. AT: \"Then I dreamed again\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I looked in my dream",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the meanings are the same. AT: \"Both dreams mean the same thing\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The dreams of Pharaoh are the same",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that there was food because of Joseph commanded his people to store food during the seven good years. (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "but in all the land of Egypt there was food",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" refers to Egypt. AT: \"over Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "over the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"land\" includes Egypt and other surrounding countries. AT: \"all the people of all the nations that came to buy grain\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "all the people of the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be stated explicitly. AT: \"You came to find out where we are not guarding our land so that you can attack us\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You came to see the undefended parts of the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be stated explicitly. AT: \"No, you have come to find out where we are not guarding our land so that you can attack us\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "No, you have come to see the undefended parts of the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Joseph wept because he was emotional after hearing what his brothers said. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He turned from them and wept",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full meaning can be made explicit. AT: \"For my wife, Rachel, only had two children. Joseph is dead and Benjamin is the only one left\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "For his brother is dead and he alone is left",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "How Jacob will hold Judah responsible can be stated clearly. AT: \"You will make me answer to you about what happens to Benjamin\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You will hold me responsible",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This custom helped tired travelers to refresh themselves after walking long distances. The full meaning of this statement may be made explicit. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "washed their feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Joseph had arranged where each brother would sit. You can make clear the implied information. AT: \"The brothers sat across from the man, according to how he arranged their places\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The brothers sat before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah compares the master to Pharaoh to emphasize the great power that the master has. He is also implying that he does want the master to become angry and execute him. AT: \"for you are as powerful as Pharaoh and could have your soldiers kill me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for you are just like Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The meaning can be stated more explicitly. AT: \"whom you sold as a slave to the trader who brought me to Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "whom you sold into Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The meaning can be stated more explicitly. AT: \"that you sold me as a slave and sent me here to Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that you sold me here",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Joseph means that he is ruler in second place to Pharaoh, the king of Egypt. This understood information can be made clear. (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Earlier they were too afraid to speak. Now they feel they can speak freely. The full meaning of this statement can be made explicit. AT: \"After that his brothers talked freely with him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "After that his brothers talked with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Each man received a set of clothes except for Benjamin who received 5 sets of clothes. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he gave each man changes of clothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The donkeys were included as part of the gift. (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "ten donkeys ... and ten female donkeys",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that they are capable of taking care of animals. AT: \"If you know of any men among them who have great skill taking care of animals\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If you know any capable men among them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The purchase can be made explicit. AT: \"in it were purchased by Abraham\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in it were purchased",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that the members of the court spoke to Pharaoh, and now Pharaoh is replying to Joseph. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Pharaoh answered",
+      "occurrence": 1
+    }
+  }
+]

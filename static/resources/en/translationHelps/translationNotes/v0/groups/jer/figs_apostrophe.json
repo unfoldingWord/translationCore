@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks to Jerusalem as though she was a person. AT: \"Learn from your punishment, you people of Jerusalem.\" (See: [[:en:ta:vol2:translate:figs_Apostrophe]] and [[:en:ta:vol2:translate:figs_Personification]] and [[:en:ta:vol2:translate:figs_Metonymy]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_Apostrophe",
+      "quote": "Accept discipline, Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

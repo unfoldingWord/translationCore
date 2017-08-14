@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"saw\" and \"knew\" share similar meanings and emphasize that Saul knew with certainty. AT: \"Saul recognized\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Saul saw, and he knew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean almost the same thing and can be translated as one phrase. AT: \"Know for sure\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Learn and find out",
+      "occurrence": 1
+    }
+  }
+]

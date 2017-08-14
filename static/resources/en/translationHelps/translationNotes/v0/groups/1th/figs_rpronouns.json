@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"themselves\" is used to emphasize those people who had heard about the Thessalonian believers. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "they themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"you\" and \"yourselves\" refer to the Thessalonian believers. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "you yourselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"himself\" refers back to \"Father\" for emphasis. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Father himself",
+      "occurrence": 1
+    }
+  }
+]

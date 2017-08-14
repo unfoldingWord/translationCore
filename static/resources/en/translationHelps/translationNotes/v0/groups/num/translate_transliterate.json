@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Sin\" here is the Hebrew name of the wilderness. It is not the English word \"sin.\" (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "the wilderness of Sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Sin\" here is the Hebrew name of the wilderness. It is not the English word \"sin.\" (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "the wilderness of Sin",
+      "occurrence": 1
+    }
+  }
+]

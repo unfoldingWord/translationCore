@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The enemy uses a question in their song to express the surprise the rich leaders of Israel felt because God had taken their land and given it to someone else just as they had taken the land from the poor. AT: \"He has taken it from me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can he remove it from me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Micah uses a question to scold the leaders because they were not protecting the people or treating them fairly. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it not right for you to understand justice?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Micah is mocking the people, trying to make them think about why God is dealing with them in this way. AT: \"Now, you shout loudly.\" (See: [[:en:ta:vol1:translate:figs_rquestion]]and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Now, why do you shout so loudly?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Micah uses a question to emphasize that there is no else who does the things that Yahweh does. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is a God like you",
+      "occurrence": 1
+    }
+  }
+]

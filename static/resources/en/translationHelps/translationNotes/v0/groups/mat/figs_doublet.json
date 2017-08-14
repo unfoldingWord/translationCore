@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Rejoice\" and \"be very glad\" mean almost the same thing. Jesus wanted his hearers not merely to rejoice but to do even more than rejoice if possible. (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Rejoice and be very glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"meek\" and \"lowly in heart\" mean basically the same thing. Jesus combines them to emphasize that he will be much more kind than the religious leaders. AT: \"I am gentle and humble\" (UDB) or \"I am very gentle\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I am meek and lowly in heart",
+      "occurrence": 1
+    }
+  }
+]

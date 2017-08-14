@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This may be expressed in active form. AT: \"people in the other nations honor my name\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "my name will be honored among the nations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This difficult expression can be translated as \"and God will take you away with it,\" that is, with the dung. This expression continues the same metaphor of slaughtering animals for sacrifice, and it can be put in active form. AT: \"and they will throw you on the dung pile; God will make sure that they take you away when they remove all the dung\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and he will take you away with it",
+      "occurrence": 1
+    }
+  }
+]

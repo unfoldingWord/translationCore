@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 36 },
+      "tool": "translationWords",
+      "groupId": "biblicaltimemonth",
+      "quote": "month",
+      "occurrence": 1
+    }
+  }
+]

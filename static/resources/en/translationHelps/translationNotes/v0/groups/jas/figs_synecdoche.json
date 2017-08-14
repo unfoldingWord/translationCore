@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "James is referring to one's heart, emotions, and actions. AT: \"control his behavior\" or \"control his actions\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "control even his whole body",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"death\" refers to spiritual death, eternal separation from God. AT: \"will save him from spiritual death, and God will forgive the sinner for all of his sins\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 5, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "will save him from death, and will cover over a great number of sins",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" in this phrase may or may not exclude Theophilus. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "among us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not include Jesus, but only the disciples. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we saw",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"we\" refers only to the spies. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we know",
+      "occurrence": 1
+    }
+  }
+]

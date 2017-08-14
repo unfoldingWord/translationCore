@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"will\" and \"forget\" are understood to be part of the second phrase also. AT: \"Will a virgin forget her jewelry, and will a bride forget her veils\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Will a virgin forget her jewelry, a bride her veils",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"I will smash fathers and children together\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "fathers and children together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence lists all who will be powerful and wealthy. AT: \"he, his servants, and his people will ride into the palace on chariots and horses\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 22, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "he, his servants, and his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may need to make this a complete sentence. AT: \"and Jeremiah should hide himself too.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 36, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and Jeremiah, too",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"all the Judeans among the people of Ammon.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 40, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "among the people of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"of the rule\" are understood. AT: \"in the fourth year of the rule of Jehoiakim\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 45, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "in the fourth year of Jehoiakim",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"who has continued to be loyal.\" Possible meanings are 1) Boaz remembered his obligations to Naomi as a family member or 2)  Naomi is referring to Yahweh, who was acting through Boaz or 3) Yahweh has continued to be faithful to the living and the dead. (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "who has not left off his loyalty",
+      "occurrence": 1
+    }
+  }
+]

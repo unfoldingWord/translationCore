@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"was also gathered to their fathers\" means that as the people of that generation died, their souls went to the same place as their ancestors who died before them. It is a polite way of saying they died. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "All that generation was also gathered to their fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way to speak about a person having a bowel movement (defecating) or urinating. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Surely he is relieving himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism for sexual relations. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "slept with a man",
+      "occurrence": 1
+    }
+  }
+]

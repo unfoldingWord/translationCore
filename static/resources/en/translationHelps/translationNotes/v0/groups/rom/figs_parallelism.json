@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. The second intensifies the first. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "disobey the truth but obey unrighteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings. The first phrase, \"he is a Jew who is one inwardly,\" explains the second phrase, \"circumcision is that of the heart.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "he is a Jew who is one inwardly, and circumcision is that of the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that God will avenge his people. AT: \"I will certainly avenge you\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Vengeance belongs to me; I will repay",
+      "occurrence": 1
+    }
+  }
+]

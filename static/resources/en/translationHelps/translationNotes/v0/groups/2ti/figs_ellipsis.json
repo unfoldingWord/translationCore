@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"convenient\" is understood. AT: \"when it is not convenient\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "when it is not",
+      "occurrence": 1
+    }
+  }
+]

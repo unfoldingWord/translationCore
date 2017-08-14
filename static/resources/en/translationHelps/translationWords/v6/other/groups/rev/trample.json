@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "trample",
+      "quote": "trample",
+      "occurrence": 1
+    }
+  }
+]

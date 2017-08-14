@@ -1,0 +1,332 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is referring to himself. AT: \"I, the Son of Man,\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "The Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was referring to himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"someone who is more important than the temple.\" Jesus was referring to himself as the one greater. (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "one greater than the temple",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "someone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "someone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is referring to himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is referring to himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Jesus refers to himself in the third person. AT: \"I, the Son of man ... my Father ... Then I\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man ... his Father ... Then he",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and the angels will be with him.\" If you translate the first part of the sentence with Jesus speaking in the first person, you can translate this as \"and my Father's angels will be with me.\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "with his angels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is referring to himself in the third person. If necessary, you can translate these in the first person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Son of Man ... him ... he",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. If necessary, you can translate this in the first person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man ... his life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When Jesus said \"the Christ,\" he was speaking about himself in the third person. AT: \"I, the Christ, am your only teacher\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "you have only one teacher, the Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. AT: \"the time for me to come is near\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "he is near",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, \"the King\" is another title for the Son of Man. Jesus was referring to himself in the third person. AT: \"I, the King, ... my right hand\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the King ... his right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Then the King will.\" Jesus is speaking about himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Then he will",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "The Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  }
+]

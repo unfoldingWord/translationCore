@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words are used to show that there is a specific, chosen time and not just any time. AT: \"for that exact time\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  \n\n \n",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "for that hour, that day, that month, and that year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize that God will, indeed, live among men. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The dwelling place of God is with human beings, and he will live with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. The second emphasizes the brilliance of Jerusalem by naming a specific jewel. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "like a very precious jewel, like a stone of crystal-clear jasper",
+      "occurrence": 1
+    }
+  }
+]

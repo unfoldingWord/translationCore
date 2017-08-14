@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean that fear will come upon them. AT: \"Fear will come upon them\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Terror and dread will fall on them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"tabernacle\" and \"tent of meeting\" are the same thing. This can be stated in active form. AT: \"So the people of Israel finished all of the work on the tabernacle\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "So the work on the tabernacle, the tent of meeting, was finished. The people of Israel did everything",
+      "occurrence": 1
+    }
+  }
+]

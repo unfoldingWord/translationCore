@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases share similar meanings and emphasize that believers should not be afraid of those who persecute them. AT: \"Do not be afraid of what people might do to you\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Do not fear what they fear. Do not be troubled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. Peter uses them to emphasize the need to think clearly about life since the end of the world is near. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "be of sound mind, and be sober in your thinking",
+      "occurrence": 1
+    }
+  }
+]

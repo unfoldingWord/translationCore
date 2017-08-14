@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"rested\" is a polite way of referring to someone dying. After he died, his body was buried in the same place as the bodies of his forefathers. The phrase \"was buried\" can be stated in active form. AT: \"Jehoram died, and they buried him with his forefathers\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 8, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Jehoram died and rested with his fathers, and was buried with his fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here to be \"cut off\" means to be killed. AT: \"For the whole family of Ahab will perish, and I will cause every male child in his family to be killed\" or \"Every member of Ahab's family will die, including every male child\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "For the whole family of Ahab will perish, and I will cut off from Ahab every male child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The eunuchs threw Jezebel out of the high window and she died when she hit the ground. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 9, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "So they threw Jezebel down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying he \"died, as his ancestors had, and\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 21, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "slept with his ancestors and",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Anyone who doubts that God will help him is said to be like the water in the ocean or in large lakes, which keeps moving in different directions. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "For anyone who doubts is like a wave in the sea that is driven by the wind and tossed around",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the flower simile is probably continued. As flowers do not die suddenly but instead fade away over a short time, so also the rich people may not die suddenly but instead take a little time to disappear. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "the rich man will fade away in the middle of his journey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression pictures God as an unchanging light, in contrast to the sun, moon, planets, and stars, which move across the sky and are always changing in their brightness. AT: \"God does not change like the sun, moon, and stars, which appear and disappear\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "With him there is no changing or shadow because of turning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "James is using the traditional Hebrew idea of first fruits as a way to describe the value of the Christian believers to God. He implies that there will be many more believers in the future. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n\n",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "a kind of firstfruits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A person who hears God's word but does not obey it is said to be like someone who looks in the mirror and then forgets what he looks like. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "For if anyone is a hearer of the word but not a doer, he is like a man who examines his natural face in a mirror",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression continues the image of the law as a mirror.  (See: [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "the person who looks carefully into the perfect law",
+      "occurrence": 1
+    }
+  }
+]

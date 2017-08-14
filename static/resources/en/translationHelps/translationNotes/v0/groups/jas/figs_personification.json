@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here endurance is spoken of as if it were a person at work. AT: \"Learn to endure any hardship\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Let endurance complete its work",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A person's desire is spoken of as if it were someone else who was tempting him to sin. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "each person is tempted by his own desire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the law is spoken of as if it were a human judge. AT: \"guilty of breaking God's law\" (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "convicted by the law as lawbreakers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Mercy is better than\" or \"Mercy defeats.\" Here mercy and justice are spoken of as if they were persons. (See: [[:en:ta:vol2:translate:figs_personification]])\n\n\n",
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Mercy triumphs over",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "James speaks of desires as they were enemies who waged war against the believers. In reality, of course, it is the people who have these desires who fight among themselves. AT: \"You desire evil things, and you end up harming each other\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Do they not come from your desires that fight among your members?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Corrosion\" is the generic term that describes the natural decomposition of metal. James is speaking of this destruction as if it were a person in a courtroom accusing the wicked of their crimes. AT: \"And when God judges you, all of your ruined treasures will be like someone who accuses you in court\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Their corrosion will be a witness against you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The money that should have been paid is spoken of as a person who is shouting because of the injustice done to him. AT: \"the fact that you did not pay those you hired to work in your fields shows that you have done wrong\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the pay of the laborers is crying out—the pay that you have withheld from those who harvested your fields",
+      "occurrence": 1
+    }
+  }
+]

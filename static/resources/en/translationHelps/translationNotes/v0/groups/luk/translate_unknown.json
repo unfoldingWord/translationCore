@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A scorpion is similar to a spider, but it has a tail with a poisonous sting. If scorpions are not known where you are, you could translate this as \"poisonous spider\" or \"spider that stings\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "scorpion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are herbs. People put just a little bit of these leaves into their food to give it flavor. If people do not know what mint and rue are, you can use the name of herbs they know or a general expression such as \"herbs.\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "mint and rue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lilies are beautiful flowers that grow wild in the fields. If your language does not have a word for lily, you can use the name of another flower like that or translate it as \"flowers\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "lilies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Mustard seeds are very small seeds that grow into large plants. If these are not known, it can be translated with the name of another seed like it or simply as \"a small seed\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a mustard seed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a young donkey\" or \"a young riding animal\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a colt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"to greet him with a kiss\" or \"to greet him by kissing him.\" When men greeted other men who were family or friends, they would kiss them on one cheek or both cheeks. If your readers would find it embarrassing to say that a man would kiss another man, you could translate it in a more general way: \"to give him a friendly greeting\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "to kiss him",
+      "occurrence": 1
+    }
+  }
+]

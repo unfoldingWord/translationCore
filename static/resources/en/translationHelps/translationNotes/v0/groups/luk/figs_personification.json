@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"peace\" is described as a living thing that can choose where to stay. AT: \"he will have the peace you blessed him with\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "your peace will rest upon him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"peace\" is described as a living thing that can choose to leave. AT: \"you will have that peace\" or \"he will not receive the peace you blessed him with\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "it will return to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"wisdom\" is treated as if it was able to speak for God. AT: \"God in his wisdom said\" or \"God wisely said\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "God's wisdom said",
+      "occurrence": 1
+    }
+  }
+]

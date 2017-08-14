@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus will prepare a place in heaven for every person who trusts in him. The \"you\" is plural and refers to all his disciples. (See: [[:en:ta:vol1:translate:figs_you]])\n  \n",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I am going to prepare a place for you",
+      "occurrence": 1
+    }
+  }
+]

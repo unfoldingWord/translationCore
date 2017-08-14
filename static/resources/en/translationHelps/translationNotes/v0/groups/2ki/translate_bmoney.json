@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is a unit of weight equal to about 11 grams. AT: \"about 11 grams of silver\" or \"one silver coin\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is a unit of weight equal to about 11 grams. AT: \"about 11 grams of silver\" or \"one silver coin\"(See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 7, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"six hundred grams of silver\" or \"three-fifths of a kilogram of silver\" (UDB) (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "fifty shekels of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of type of weight that was used for money. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 18, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent was about 33 kilograms. AT: \"3,300 kilograms ... 33 kilograms\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n \n \n",
+      "reference": { "bookId": "2ki", "chapter": 23, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "one hundred talents ... one talent",
+      "occurrence": 1
+    }
+  }
+]

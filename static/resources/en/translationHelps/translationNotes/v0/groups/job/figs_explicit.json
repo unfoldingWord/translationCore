@@ -1,0 +1,452 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The refers to places that were east of Canaan. AT: \"all the people who live in lands that were east of Canaan\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "all the people of the East",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"cool shade.\" The implied information is that the shadows of evening provide coolness and shade from the sun (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the shadows of evening",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied information is that this is when Job would lie down to sleep at night. AT: \"When I lie down to sleep\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "When I lie down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied information can be added. AT: \"answer his charges against me\" or \"defend myself\" or \"argue my innocence with him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "answer him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What the \"secrets of wisdom\" are can be stated clearly. AT: \"that he would show you that you are suffering because of your sin\"  (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "that he would show ... secrets of wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Job's body has shriveled and become wrinkled. AT: \"You  have made my body shrivel up\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You have made me dry up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that people speak of him in a mocking way and use his name as an insult. AT: \"because of him, people use my name as an insult\" or \"because of them, people use my name as a byword\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 17, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he has made me a byword of the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job invites his friends to debate what he has said. AT: \"come on now, argue with me again\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "job", "chapter": 17, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "come on now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Job does not complete his sentence to express that he does not have any hope for his wishes. AT: \"of my heart, there is no home of them happening\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 17, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "of my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Bildad is stating that it is because of Job's anger and disobedience that his have been injured, not because of God's anger as Job has previously claimed. The word \"tear\" here means to \"injure.\" AT: \"You who have caused your own injures because of your anger\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You who tear at yourself in your anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a cry for help. This can be stated clearly. AT: \"Violence! Help!\" or \"Help! I am being attacked!\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Violence!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are that 1) Job feels very hopeful, thankful, and happy or 2) Job feels exhausted waiting to see his Redeemer. (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "job", "chapter": 19, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "My kidneys fail within me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Normally \"the fruit of his labor\" simply refers to the results of his labor. In this case it refers to the things the wicked man had stolen. AT: \"the things he had worked to get\" or \"the things he had stolen\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the fruit of his labor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job contrasts this man who dies in health and peace to the man who dies in sorrow and pain in [[:en:bible:notes:job:21:25|21:25]]. You can make this explicit. AT: \"If there are two men, one may die in his full strength\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "One man dies in his full strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. Possible meanings are 1) AT: \"The thick darkness in front of me has not made me silent\" (UDB) or 2) AT: \"It is not darkness that has cut me off\" or \"God has cut me off, not the darkness.\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "job", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I have not been brought to an end by darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They dig into the houses in order to steal from them. This can be stated explicitly. AT: \"wicked people dig into houses to steal from them\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 24, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "wicked people dig into houses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They tremble because they are afraid of God. This can be stated clearly. AT: \"tremble in fear\" or \"tremble in fear of God\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 26, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "tremble",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Those who continue to live after he dies.\" This refers to the wicked man's children. This can be stated clearly. \"Those who continue to live after their wicked father dies\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 27, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Those who survive him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. This implies that wisdom is worth much more than gold. AT: \"People cannot pay for wisdom with gold\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "It cannot be gotten for gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This implies that wisdom is much more valuable than the gold of Ophir, precious onyx and sapphire. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "It cannot be valued with ... sapphire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"It is not worth making mention of coral and jasper.\" This implies that wisdom is worth so much more than coral and jasper that there is no need for Job to say anything about them. AT: \"I will not bother to mention coral or jasper\" or \"Coral and jasper are worthless compared to wisdom\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "No mention is worth making of coral or jasper",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be stated clearly that the purpose of smiling was to encourage them. AT: \"I smiled on them to encourage them\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I smiled on them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that he considered himself innocent and believed God had been wrong to punish him. AT: \"he justified himself and claimed that God had been wrong to punish him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "job", "chapter": 32, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he justified himself rather than God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the person is experiencing such pain that he must lie in bed. AT: \"with pain so that he must lie in bed\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 33, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "with pain on his bed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the angel has found a way to pay for the sins of the man so that he does not have to die. AT: \"For I have found a way for you to keep him from dying\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "job", "chapter": 33, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I have found a ransom for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of God causing these people to die, though he does not actually strike them with a sword himself. He may cause someone else to kill them or disaster to come upon them. AT: \"he causes them to die\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he kills them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to rebellion against God. AT: \"he adds rebellion against God\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he adds rebellion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"golden splendor\" describes God's glory. This can be made explicit in translation. AT: \"God comes from the north with golden splendor\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 37, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Out of the north comes golden splendor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied information is that it is the rain that meets the needs. AT: \"so that the rain can satisfy the needs of\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 38, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in order to meet the needs of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"He\" refers to the horse. The horse paws the ground because he is very excited to begin the fight. AT: \"He paws with excitement\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "job", "chapter": 39, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He paws",
+      "occurrence": 1
+    }
+  }
+]

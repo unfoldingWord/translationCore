@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is a unit of measurement equal to about 46 centimeters. A span is a unit of measurement equal to about 23 centimeters. AT: \"about 3 meters\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "six cubits and a span",
+      "occurrence": 1
+    }
+  }
+]

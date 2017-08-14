@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David asks this question to express his gratitude that God has chosen to bless him even though he does not deserve it. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who am I, Yahweh God, and what is my family, that you have brought me to this point?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this question to express that he cannot fully express his thankfulness to God. AT: \"If I could say more to express my gratitude then I would but I do not know what else to say. \" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What more can I, David, say to you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"You should not think that David is honoring your father because he has sent men to comfort you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 19, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you think that David is honoring your father because he has sent men to comfort you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: But my master the king, they all serve you already. My master should not request this. You will only bring guilt on the people of Israel by your desire for military power.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But my master the king, do they not all serve my master? Why does my master want this? Why bring guilt on Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David means that he and his people deserve no praise for giving anything to God. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 29, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But who am I, and who are my people, that we should be able to offer so willingly these things?",
+      "occurrence": 1
+    }
+  }
+]

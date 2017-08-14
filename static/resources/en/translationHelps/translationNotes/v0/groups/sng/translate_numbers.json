@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"There are 60 queens, 80 concubines.\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "There are sixty queens, eighty concubines",
+      "occurrence": 1
+    }
+  }
+]

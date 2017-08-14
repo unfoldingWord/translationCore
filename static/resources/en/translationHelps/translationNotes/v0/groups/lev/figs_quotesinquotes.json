@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. A direct quotation can be stated as an indirect quotation. AT: \"as I commanded you to do\" (See:[[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "as I commanded, saying, 'Aaron and his sons will eat it.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses continues speaking to Aaron. This has a quotation within a quotation. A direct quotation can be stated as an indirect quotation. AT: \"And tell the people of Israel to take a male goat ... will appear to all the people\" (See:[[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "You must speak to the people of Israel and say, 'Take a male goat ... will appear to you",
+      "occurrence": 1
+    }
+  }
+]

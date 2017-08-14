@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is not distinguishing between people who cannot kill the soul and people who can kill the soul. No person can kill the soul. AT: \"Do not be afraid of people. They can kill the body, but they cannot kill the soul\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "Do not be afraid of those who kill the body but are unable to kill the soul",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"our\" and \"us\" refer to Peter and those to whom he is writing. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "our Lord Jesus Christ ... gave us a new birth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to Peter and the audience. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "suffered for us",
+      "occurrence": 1
+    }
+  }
+]

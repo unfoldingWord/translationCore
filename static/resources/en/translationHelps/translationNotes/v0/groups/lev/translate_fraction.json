@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is one part out of five equal parts. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "one-fifth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means the person must return what he owes to someone and pay an extra one-fifth of the value. See how you translated this in [[:en:bible:notes:lev:05:14|5:16]]. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "add one-fifth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is one part of ten equal parts. (See: [[:en:ta:vol2:translate:translate_fraction]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a tenth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is one part out of five equal parts. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "one-fifth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"fifth\" is a part of something that is divided into five equal parts. AT: \"he must divide the value of the house into five equal parts, add the amount equal to one of those parts, and pay all of it\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "he must add a fifth of its value to its redemption price",
+      "occurrence": 1
+    }
+  }
+]

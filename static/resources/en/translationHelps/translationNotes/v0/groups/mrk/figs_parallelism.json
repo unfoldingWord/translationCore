@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases share similar meanings and are used together to emphasize that the man told a lot of people. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "tell everyone ... spread the word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"there is nothing that is hidden ... there is nothing that is secret\" Both of the phrases have the same meaning. Jesus is emphasizing that everything that is secret will be made known. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "nothing is hidden ... nothing is secret",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences are similar in meaning,  emphasizing to his disciples that they did not need to be afraid. They can be combined into one if necessary. AT: \"Do not fear me!\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Be courageous! ... Do not be afraid!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These questions have the same meaning and are used together to emphasize that they do not understand. This can be written as one question or as a statement. AT: \"Do you not yet understand?\" or \"You should perceive and understand by now the things I say and do.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and  [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Do you not yet perceive? Do you not understand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses have similar meanings, repeated for emphasis. In some languages it is more natural to emphasize this in another way. AT: \"Be sure to allow the little children to come to me\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Permit the little children to come to me, and do not forbid them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have the same meaning to emphasize that they seized Jesus. AT: \"grabbed Jesus and seized him\" or \"seized him\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "laid hands on him and seized him",
+      "occurrence": 1
+    }
+  }
+]

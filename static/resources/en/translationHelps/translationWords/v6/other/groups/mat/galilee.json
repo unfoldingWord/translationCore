@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 3, "verse": 13 },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Galilee, Galilean",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 4, "verse": 15 },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Galilee, Galilean",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 55 },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Galilee, Galilean",
+      "occurrence": 1
+    }
+  }
+]

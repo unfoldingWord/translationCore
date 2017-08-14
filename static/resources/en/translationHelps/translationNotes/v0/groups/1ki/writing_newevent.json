@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase marks the beginning of a new part of the story and indicates that these events happened later, not that Naboth owned the vineyard later. If your language has a way marking the beginning of a new part of a story, you could consider using it here. AT: \"Now this is what happened later\" (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "Now some time later",
+      "occurrence": 1
+    }
+  }
+]

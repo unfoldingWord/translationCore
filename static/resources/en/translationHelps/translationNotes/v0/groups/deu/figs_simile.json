@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Yahweh's care for his people is compared to that of a father. AT: \"Yahweh your God has taken care of you, like a father takes care of his son\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Yahweh your God carried you, as a man carries his son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"bee\" is a small, flying insect that flies in large groups and stings people who threaten them. This means that so many Amorites  attacked the Israelite soldiers that they had to leave the battle. (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "chased you like bees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is powerful and able to destroy the armies of the other nations. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like a devouring fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This emphasizes the large number of Israelites that were with Moses. AT: \"more than you can count\" (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 10, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as many as the stars of the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You will be like blind people who grope in darkness even at noonday.\" The Israelites will have a difficult life even when everyone else is enjoying life. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "You will grope about at noonday like the blind grope in the darkness",
+      "occurrence": 1
+    }
+  }
+]

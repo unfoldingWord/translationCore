@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Something about God's hair looked like pure wool. Possible meanings are that 1) it was very white (UDB) or 2) it was thick and curly. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "the hair of his head was like pure wool",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "His body gleamed with blue or yellow light as if it were made of topaz. AT: \"his body gleamed like topaz\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "His body was like topaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "His face shone brightly as a bolt of lightning shines. AT: \"his face shone with light as bright as the flash of lightning\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "his face was like lightning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "His arms and feet were as shiny as if they were made of polished bronze. AT: \"his arms and feet shone like polished bronze that reflects the light around it\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "his arms and his feet were like polished bronze",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to God's people who will share their wisdom with those around them. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Those who are wise will shine like the brightness of the sky above",
+      "occurrence": 1
+    }
+  }
+]

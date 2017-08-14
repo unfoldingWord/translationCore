@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 16, "verse": 3 },
+      "tool": "translationWords",
+      "groupId": "job",
+      "quote": "Job",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "luk", "chapter": 16, "verse": 4 },
+      "tool": "translationWords",
+      "groupId": "job",
+      "quote": "Job",
+      "occurrence": 1
+    }
+  }
+]

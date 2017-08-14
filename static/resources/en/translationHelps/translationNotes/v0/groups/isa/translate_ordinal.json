@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 14th year\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourteenth year",
+      "occurrence": 1
+    }
+  }
+]

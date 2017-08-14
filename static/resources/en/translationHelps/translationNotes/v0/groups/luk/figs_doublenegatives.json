@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The double negatives in this statement can be stated with positive terms. AT: \"This shows that God can do anything.\" Elizabeth's pregnancy was proof that God was able to do anything—even enable Mary to become pregnant without her sleeping with a man. (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing will be impossible for God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The double negative can be replaced. AT: \"near the house\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "not far from the house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double negative means \"continues to\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]]) \n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "not stop",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This double-negative can be written as a positive statement. AT: \"everything that is hidden will be made known\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing is hidden that will not be made known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with positive verbs. AT: \"only those of you who give up all that you have can be my disciples\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "any one of you who does not give up all that he has cannot be my disciple",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could be stated in positive form. AT: \"everyone who has left ... will receive\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "there is no one who has left ... who will not receive",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If you need to translate these words as inclusive or exclusive, then inclusive is best. The disciples probably meant they wanted Jesus to save the disciples and himself from drowning. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to Jesus and the disciples. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we are going",
+      "occurrence": 1
+    }
+  }
+]

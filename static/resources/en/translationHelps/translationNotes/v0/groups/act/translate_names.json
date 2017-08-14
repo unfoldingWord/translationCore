@@ -1,0 +1,587 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Luke wrote this book to a man named Theophilus. Some translations follow their own culture's way of addressing a letter and write \"Dear Theophilus\" at the beginning of the sentence. Theophilus means \"friend of God\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Theophilus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This lists some of the many nations, regions, and cities from which they came. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Parthians ... Arabians",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a title for the queens of Ethiopia. It is similar to the way the word Pharaoh was used for the kings of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 8, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Candace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tabitha is her name in the Aramaic language, and Dorcas is her name in the Greek language. Both names mean \"gazelle.\" AT: \"Her name in the Greek language was Dorcas\" (UDB) (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 9, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tabitha, which is translated as \"Dorcas.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Luke's audience would know that Claudius was the emperor of Rome at that time. AT: \"when Claudius was the Roman emperor\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "act", "chapter": 11, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "in the days of Claudius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Simeon ... Manaen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bar Jesus\" means \"Son of Jesus.\" There is no relation between this man and Jesus Christ. Jesus was a common name at that time. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "whose name was Bar Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A district in Asia Minor (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lycaonia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A city in Asia Minor south of Iconium and Lystra (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Derbe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a province on the coast in Asia Minor north of the Island of Cyprus. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Cilicia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Thyatira",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jason",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Damaris",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of land. Rome is the capital city of Italy. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Italy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gallio",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a man who was born in the city of Alexandria.\" Possible cities are 1) Alexandria in Egypt on the north coast of Africa or 2) Alexandria on the west coast in Asia. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "an Alexandrian by birth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tyrannus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Erastus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Alexander",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sopater ... Pyrrhus ... Secundus ... Tychicus ... Trophimus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eutychus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Though this is not the same Ananias who died earlier in Acts [[:en:bible:notes:act:05:03|5:3]], you may translate it the same way though as you did in [[:en:bible:notes:act:05:01|5:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. Though this is the same name, this not the same Ananias as in [[:en:bible:notes:act:05:01|5:1]] nor the same Ananias as in [[:en:bible:notes:act:09:10|9:10]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. This is not the same Ananias as in [[:en:bible:notes:act:05:01|5:1]] nor the same Ananias as in [[:en:bible:notes:act:09:10|9:10]]. See how you translated this in [[:en:bible:notes:act:23:01|23:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tertullus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Druscilla is a woman's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Druscilla his wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the new roman Governor who replaced Felix. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Porcius Festus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Julius is a man's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "a centurion named Julius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of the battalion or army from which the centurion came. Some versions translate this as \"the Augustan Regiment.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Imperial Regiment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lycia was a Roman province, located on the southwestern coast of modern-day Turkey. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "a city of Lycia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a coastal city in Crete. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "opposite Salmone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a coastal city in Crete. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "near the city of Lasea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Phoenix is a city port on the coast of Crete. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "city of Phoenix",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This island was located on the south coast of Crete. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "a small island called Cauda",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sandbars are very shallow areas in the sea where ships can get stuck in the sand. Syrtis is located on the coast of Libya, northern Africa. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "sandbars of Syrtis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the sea between Italy and Greece. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Adriatic Sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "a man named Publius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Syracuse is a city on the southeast coast of the modern-day island of Sicily, just southwest of Italy. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "city of Syracuse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Puteoli is located in modern-day Naples on the west coast of Italy. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "city of Puteoli",
+      "occurrence": 1
+    }
+  }
+]

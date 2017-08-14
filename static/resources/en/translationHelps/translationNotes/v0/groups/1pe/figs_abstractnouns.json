@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) God had determined what would happen ahead of time. AT: \"what God the Father decided previously\" (UDB) or 2) God knew what would happen ahead of time. AT: \"what God the Father knew beforehand\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the foreknowledge of God the Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This passage speaks of grace as if it were an object that believers could possess, and of peace as if it were something that could increase in amount. Of course, grace is in reality the kind way God acts toward believers, and peace is how believers live in safety and joy with God. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "May grace be to you, and may your peace increase",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this using a verb. AT: \"so that we confidently expect to receive an inheritance\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for the confidence of an inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"faith\" refers to the fact that the believers trust in Christ. AT: \"because of your faith\"                (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "through faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"your faith will prove genuine and result\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your faith will be found to result",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the return of Christ. AT: \"when Jesus Christ appears to all people.\" See how you translated this in [[:en:bible:notes:1pe:01:06|1:7]]. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "at the revealing of Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"salvation\" refers to when God brings the salvation of his people to completion when Jesus returns. You can translate this with a verbal phrase. AT: \"you may grow up spiritually until God saves you completely\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "you may grow in salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of believers acting well as if that were an object that unbelievers could see, instead of actions they could watch the Christians do. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "they may observe your good works",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of behavior as if it were an object that could be seen, rather than the actions that people carry out. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "they will have seen your sincere behavior with respect",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,707 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a person from the city of Shunem (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shunammite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Haggith was a wife of David. (See [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adonijah son of Haggith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are men's names. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Joab ... Zeruiah ... Abiathar ... Adonijah ... Zadok ... Benaiah ... Jehoiada ... Nathan ... Shimei ... Rei",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a rocky area near Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "stone of Zoheleth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Adonijah's mother and a wife of David. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Haggith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Cherethites ... Pelethites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Cherethites ... Pelethites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a man's name (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Barzillai",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shimei ... Gera",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "place names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bahurim ... Mahanaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Achish ... Maacah ... Gath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Azariah ... Zadok ... Elihoreph ... Ahijah ... Shisha ... Jehoshaphat ... Ahilud ... Benaiah ... Jehoiada ... Abiathar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Azariah ... Nathan ... Zabud ... Ahishar ... Adoniram ... Abda",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ben Abinadab ... Ben Geber ... Jair ... Manasseh ... Ahinadab ... Iddo",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "woman's name (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Taphath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ahimaaz ... Baana ... Hushai ... Jehoshaphat ... Paruah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a woman's name (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Basemath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "name of a piece of land (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bealoth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names  (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shimei ... Ela ... Geber ... Uri ... Sihon ... Og",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "names of pieces of land  (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gilead ... Bashan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of a people group  (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amorites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men's names (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ethan ... Heman ... Calcol ... Darda ... Mahol",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "names of cities (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Succoth ... Zarethan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Moabites, Ammonites, Edomites, Sidonians, and Hittites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of false gods. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ashtoreth ... Milcom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Milcom\" is perhaps another name for the idol \"Molech.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "he followed Milcom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of false gods. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Chemosh ... Molech",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hadad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Midian ... Paran ... Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Rezon ... Eliada ... Hadadezer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeroboam ... Nebat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zeruah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ahijah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of locations and the people groups that live there. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sidonians ... Moab ... Ammon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeroboam ... Nebat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a people group from the town of Shiloh. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shilonite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adoram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the city where king Jeroboam lived. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tirzah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a woman's name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Naamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gibbethon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shemer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a people group from Tishbe. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Tishbite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a town. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zarephath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"brook\" is a small stream or watercourse. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "brook Kishon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shaphat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ben Hadad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aphek",
+      "occurrence": 1
+    }
+  }
+]

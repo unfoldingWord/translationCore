@@ -1,0 +1,30 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "sanctify",
+      "quote": "sanctify, sanctifies, sanctification",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "sanctify",
+      "quote": "sanctify, sanctifies, sanctification",
+      "occurrence": 1
+    }
+  }
+]

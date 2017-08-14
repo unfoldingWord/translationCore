@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all people, both men and women; all are born into this world. (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "job", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "Man, who is born of woman",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To lay hands on someone is an idiom which means to grab him or to hold onto him. AT: \"but no one grabbed him to arrest him\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "but no one laid hands on him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means \"everyone who does what I teach\" or \"everyone who obeys me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he who follows me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means \"to obey Jesus.\" AT: \"obey what I have said\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "remain in my word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to experience death. The Jewish leaders mistakenly assume that Jesus is speaking only about physical death. AT: \"die\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "taste death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that people used when taking an oath. AT: \"In the presence of God, tell the truth!\" or \"Speak the truth before God!\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Give glory to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"God spoke his word\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of God came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are idioms that express the close personal relationship between God and Jesus. AT: \"My Father and I are completely joined together as one\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the Father is in me and that I am in the Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to look up. AT: \"Jesus looked up toward heaven\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Jesus lifted up his eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means that God caused them to be stubborn. AT: \"he has made them stubborn\" (UDB). (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he has hardened their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"put it into the heart\" is an idiom that means to cause someone to think about something. AT: \"the devil had already caused Judas Iscariot, the son of Simon, to think about betraying Jesus\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n\n",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the devil had already put it into the heart of Judas Iscariot son of Simon, to betray Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. To have a troubled heart means to be worried or anxious. AT: \"Stop being so anxious and worried\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Do not let your heart be troubled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"To have a troubled heart\" is an idiom that means to be very anxious or afraid. Here Jesus speaks of the heart as if it were a person. AT: \"So stop being anxious, and do not be afraid\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_personification]])  \n",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Do not let your heart be troubled, and do not be afraid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means the disciples are very sad. AT: \"you are now very sad\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "sadness has filled your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that speaks of the heart as if it were a person. AT: \"you will be very happy\" or \"you will be very joyful\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 16, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "your heart will be glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to look upward. AT: \"he looked up to the sky.\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he lifted up his eyes to the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to experience God, rather than just knowing things about God. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "that they know you",
+      "occurrence": 1
+    }
+  }
+]

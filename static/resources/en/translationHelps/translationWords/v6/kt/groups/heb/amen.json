@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "amen",
+      "quote": "amen, truly",
+      "occurrence": 1
+    }
+  }
+]

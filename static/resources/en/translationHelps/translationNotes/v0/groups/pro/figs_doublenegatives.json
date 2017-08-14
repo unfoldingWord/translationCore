@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in positive and active form. AT: \"They will certainly punish a false witness\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "A false witness will not go unpunished",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in positive and active form. Translate this phrase the same as you did in [[:en:bible:notes:pro:19:05|19:5]]. AT: \"They will certainly punish a false witness\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "A false witness will not go unpunished",
+      "occurrence": 1
+    }
+  }
+]

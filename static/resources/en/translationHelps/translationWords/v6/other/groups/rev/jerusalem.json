@@ -1,0 +1,58 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 12 },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 2 },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 10 },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 11 },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

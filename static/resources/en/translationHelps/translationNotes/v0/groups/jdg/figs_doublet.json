@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words basically mean the same and emphasize how much the Israelites suffered. AT: \"terribly oppressed\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "crushed and oppressed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words basically have the same meaning repeated to emphasize how important Jephthah had became. You can combine the two words. AT: \"commander\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "leader and commander",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"advice\" and \"counsel\" refer to the same thing and are repeated for emphasis. They can be combined. AT: \"decide what we need to do about this\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "give your advice and counsel here",
+      "occurrence": 1
+    }
+  }
+]

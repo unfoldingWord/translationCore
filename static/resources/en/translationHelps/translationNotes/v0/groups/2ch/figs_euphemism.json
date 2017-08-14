@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"He died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "2ch", "chapter": 9, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "He slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Abijah died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Abijah slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Ethiopians died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Ethiopians fell",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Asa died.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Asa slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"be seriously hurt\" or \"die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 18, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the king died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "2ch", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "the king slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"So Uzziah died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 26, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "So Uzziah slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Jotham died,\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Jotham slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ahaz died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 28, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Ahaz slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"This is why our fathers have been killed in war.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "This is why our fathers have fallen by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"for our God is with us and is more powerful than them\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 32, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "for someone is with us who is greater than those with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"So Manasseh died, and his family buried him\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 33, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "So Manasseh slept with his ancestors, and they buried him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"you will die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 34, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I will gather you to your ancestors. You will be gathered to your grave",
+      "occurrence": 1
+    }
+  }
+]

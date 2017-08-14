@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Even if my father and my mother were to forsake me.\" He is not saying that they actually have done this or that they would do it. His point is that even if they did that, God would not abandon him. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Even if my father and my mother forsake me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes something that could not happen, since God does not get hungry. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If I were hungry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical situation. Yahweh did help him, so he was not lying in the place of silence. ([[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 94, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Unless Yahweh had been my help ... silence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical statement that describes a result that did not happen, because Yahweh was actually on their side.  AT: \"Yahweh was on our side ... so they were not able to swallow us up alive\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 124, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If Yahweh had not been on our side ... then they would have swallowed us up alive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This continues the hypothetical statement from the previous verse. It describes a result that did not happen, because Yahweh was actually on their side.  AT: \"The water did not sweep us away ... did not drown us\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 124, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "The water would have swept us away ... would have drowned us",
+      "occurrence": 1
+    }
+  }
+]

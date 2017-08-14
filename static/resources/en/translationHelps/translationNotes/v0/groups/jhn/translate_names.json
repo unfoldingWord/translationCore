@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word means \"springs.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aenon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bethesda\" means house of mercy. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bethesda",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to another disciple whose name was Judas, not to the disciple who was from the village of Kerioth who betrayed Jesus. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Judas (not Iscariot)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Arimathea was a small town. AT: \"Joseph from the town of Arimathea\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Joseph of Arimathea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a male name that means \"twin.\" See how this name is translated in [[:en:bible:notes:jhn:11:15|11:15]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Didymus",
+      "occurrence": 1
+    }
+  }
+]

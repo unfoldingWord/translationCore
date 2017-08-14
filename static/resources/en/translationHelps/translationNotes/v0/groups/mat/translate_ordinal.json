@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is first in order, not in rank. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "first",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The third hour is around nine in the morning. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sixth hour is around noon. The ninth hour is around three in the afternoon. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the sixth hour and again the ninth hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is about five in the afternoon. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the eleventh hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "first ... second ... third ... seventh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "second commandment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "a second time ... third time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 64 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third day",
+      "occurrence": 1
+    }
+  }
+]

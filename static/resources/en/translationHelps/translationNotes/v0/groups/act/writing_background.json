@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Most scholars believe Luke added this comment to describe the area through which Philip would travel. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "This road is in a desert",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about Sergius Paulus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 13, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "who was an intelligent man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This tells how many men were baptized. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "In all they were about twelve men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here Luke tells background information about Philip and his daughters. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 21, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about the Sadducees and Pharisees. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For the Sadducees ... but the Pharisees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about Publius' father that is important to understanding the story. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "It happened that the father of Publius ... fever and dysentery",
+      "occurrence": 1
+    }
+  }
+]

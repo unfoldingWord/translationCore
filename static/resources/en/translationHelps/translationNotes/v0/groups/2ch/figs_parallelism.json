@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 29, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "terror, of horror, and of scorn",
+      "occurrence": 1
+    }
+  }
+]

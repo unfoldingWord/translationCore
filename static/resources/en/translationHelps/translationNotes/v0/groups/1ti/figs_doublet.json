@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"peaceful\" and \"quiet\" mean the same thing. Paul wants all believers to be able to live calm lives without trouble from the authorities. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a peaceful and quiet life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these words mean basically the same thing. Paul is emphasizing that women should wear clothes that are appropriate and do not attract improper attention from men. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "with modesty and self-control",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"struggle\" and \"work very hard\" mean basically the same thing. Paul uses them together to emphasize the intensity with which they serve God. (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "struggle and work very hard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing. Paul uses them together to emphasize how much these widows pray. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "requests and prayers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"bias\" and \"favoritism\" mean basically the same thing. Paul is emphasizing that Timothy must judge honestly and be fair to everyone. AT: \"that you keep these rules without being partial or showing favor to anyone\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "you keep these commands without prejudice and that you do nothing out of favoritism",
+      "occurrence": 1
+    }
+  }
+]

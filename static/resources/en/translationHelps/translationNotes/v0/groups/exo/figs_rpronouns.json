@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that even Pharaoh will be hurt by the plagues. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "on you yourself",
+      "occurrence": 1
+    }
+  }
+]

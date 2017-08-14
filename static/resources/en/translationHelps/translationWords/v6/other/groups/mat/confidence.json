@@ -1,0 +1,16 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 21 },
+      "tool": "translationWords",
+      "groupId": "confidence",
+      "quote": "confidence, confident",
+      "occurrence": 1
+    }
+  }
+]

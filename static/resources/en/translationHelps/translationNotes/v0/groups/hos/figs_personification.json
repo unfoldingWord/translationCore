@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people of Israel are pursuing sex outside of marriage and drinking too much wine. In doing these activities they have forgotten Yahweh's commands. These actions are spoken of here as if they were someone who could prevent other people from understanding the importance of obeying Yahweh. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "sexual promiscuity, wine, and new wine, which have taken away their understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Worshiping the idols and sleeping with the temple prostitutes has developed in the people of Israel the desire to always sin against Yahweh in these ways. Here \"mind\" is spoken of as if it were a separate person who was able to convince the people to disobey Yahweh. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "a mind of promiscuity has misled them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes \"pride\" as a person who testifies against the people of Israel in court. Their prideful attitude and behavior show that they are guilty of no longer obeying Yahweh. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The pride of Israel testifies against him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people of Israel were supposed to celebrate during the new moon. Here this expression seems to describe the new moon festival as a beast that will eat the people and their fields. However, it is hard to interpret this expression; many versions translate it without making much sense of it. However, the overall meaning is certainly that God will punish the people for their unfaithfulness to him. (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "hos", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Now the new moon festivals will devour them with their fields",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes the threshing floor and the winepress as if they were humans that can feed someone. This means that the harvest will not provide enough grain for threshing to meet the needs of the people, and that it will not provide the grapes for pressing to make enough wine. (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "But the threshing floor and the winepress will not feed them",
+      "occurrence": 1
+    }
+  }
+]

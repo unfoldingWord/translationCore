@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the answer that Yahweh gives to the priests, but the full answer is only implied. This can be made explicit. AT: \"You have polluted me by saying, 'Yahweh's table is contemptible.'\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "By saying that Yahweh's table is contemptible",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression continues the same metaphor, but leaves out an idea that is implied in the text. This can begin a new sentence. AT: \"My covenant with him was also fear, and he feared me\" or \"In my covenant with him, I required him to fear me, and he did fear me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "fear, and he feared me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full thought is \"Why does he not turn toward the offering or accept it with favor from our hand?\" (See [[:en:bible:notes:mal:02:13]]) Some translators may decide to provide this entire thought in their versions. (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Why does he not?",
+      "occurrence": 1
+    }
+  }
+]
