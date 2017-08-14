@@ -1,19 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// components
+import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
-import BooksOfTheBible from '../../../../common/BooksOfTheBible';
+import BooksOfTheBible from '../../../common/BooksOfTheBible';
 
 const BookDropdownMenu = ({
-  bookIdValue,
-  updateBookIdValue
+  bookIdValue
+  //updateBookIdValue
 }) => {
   return (
     <div>
       <SelectField
-        floatingLabelText="Book"
         value={bookIdValue}
+        style={{ width: '150px' }}
+        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+        floatingLabelStyle={{ color: '#000' }}
+        floatingLabelText={
+          <div>
+            <Glyphicon glyph={"book"} style={{ color: "#000000" }} />&nbsp;
+            <span>Book</span>&nbsp;
+            <span style={{ color: '#800020'}}>*</span>
+          </div>
+        }
         onChange={(event, index, value) => {
-          updateBookIdValue(value);
+          //updateBookIdValue(value);
         }}
       >
       <MenuItem value={""} primaryText={""} />
@@ -31,8 +42,8 @@ const BookDropdownMenu = ({
 }
 
 BookDropdownMenu.propTypes = {
-  bookIdValue: PropTypes.string.isRequired,
-  updateBookIdValue: PropTypes.func.isRequired
+  bookIdValue: PropTypes.string.isRequired
+  // updateBookIdValue: PropTypes.func.isRequired
 };
 
 export default BookDropdownMenu;

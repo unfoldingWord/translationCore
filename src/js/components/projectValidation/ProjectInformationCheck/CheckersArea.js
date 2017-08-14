@@ -1,0 +1,61 @@
+/* eslint-disable no-console */
+import React from 'react';
+import PropTypes from 'prop-types';
+// components
+import { TextField } from 'material-ui';
+import GroupAddIcon from 'material-ui/svg-icons/social/group-add';
+import { Glyphicon } from 'react-bootstrap';
+
+const CheckersArea = ({
+  checkers,
+  addChecker,
+  removeChecker
+}) => {
+  return (
+    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
+      <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
+        <GroupAddIcon style={{ height: "30px", width: "30px", color: "#000000" }} />&nbsp;
+      <span>Checkers</span>
+      </div>
+      <div
+        onClick={() => addChecker()}
+        style={{ color: "var(--accent-color-dark)", cursor: "pointer", userSelect: 'none' }}
+      >
+        <Glyphicon
+          glyph="plus"
+          style={{ color: "var(--accent-color-dark)", fontSize: "18px" }}
+        />&nbsp;
+        <span>Add Checker</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {
+          checkers.map((name, index) => {
+            return (
+              <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+                <TextField
+                  id={index.toString()}
+                  value={name}
+                  underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+                  style={{ width: '150px' }}
+                />
+                <Glyphicon
+                  glyph="trash"
+                  onClick={() => removeChecker(index)}
+                  style={{ fontSize: "18px", cursor: "pointer"  }}
+                />
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+  );
+};
+
+CheckersArea.propTypes = {
+  checkers: PropTypes.array.isRequired,
+  addChecker: PropTypes.func.isRequired,
+  removeChecker: PropTypes.func.isRequired
+};
+
+export default CheckersArea;

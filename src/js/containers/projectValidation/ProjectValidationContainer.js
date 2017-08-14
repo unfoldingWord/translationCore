@@ -53,7 +53,7 @@ class ProjectValidationContainer extends Component {
           actionsContainerStyle={{ backgroundColor: 'var(--background-color-light)' }}
           actions={<ProjectValidationNavigation {...this.props} />}
           modal={true}
-          style={{ padding: "0px", zIndex: 2501 }}
+          style={{ padding: "0px" }}
           contentStyle={projectValidationContentStyle}
           bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor: 'var(--background-color-light)' }}
           open={showProjectValidationStepper}>
@@ -74,15 +74,16 @@ class ProjectValidationContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reducers: {
-      projectValidationReducer: state.projectValidationReducer
+      projectValidationReducer: state.projectValidationReducer,
+      projectDetailsReducer: state.projectDetailsReducer
     }
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       showStepper: (val) => {
