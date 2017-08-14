@@ -13,7 +13,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
-  'Previous',
+  'Cancel',
   'Copyright',
   'Project Information',
   'Merge Conflicts',

@@ -11,7 +11,7 @@ const initialState = {
   stepper: {
     stepIndex: 1,
     nextStepName: 'Project Information',
-    previousStepName: 'Previous',
+    previousStepName: 'Cancel',
     nextDisabled: false
   },
 }
