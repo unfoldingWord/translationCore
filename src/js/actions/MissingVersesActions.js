@@ -13,8 +13,6 @@ export function validate(state) {
     }
   } else return {
     type: consts.MISSING_VERSES_CHECK,
-    payload: {
-      verses: []
-    }
+    payload:false
   }
 }
