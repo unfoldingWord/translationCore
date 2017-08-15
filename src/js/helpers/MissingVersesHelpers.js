@@ -1,6 +1,6 @@
 import * as fs from 'fs-extra';
 import path from 'Path-extra';
-import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as BibleHelpers from '../helpers/bibleHelpers';
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
 
 /**
@@ -26,7 +26,7 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
     }
     allMissingVerses[chapterNumber] = currentMissingVerses;
   }
-  allMissingVerses.bookName = LoadHelpers.convertToFullBookName(bookAbbr);
+  allMissingVerses.bookName = BibleHelpers.convertToFullBookName(bookAbbr);
   return allMissingVerses;
 }
 

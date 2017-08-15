@@ -4,9 +4,11 @@ import consts from './ActionTypes';
 import usfm from 'usfm-js';
 import * as fs from 'fs-extra';
 import Path from 'path-extra';
-const ipcRenderer = require('electron').ipcRenderer;
-//actions
+import { ipcRenderer } from 'electron';
+//helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as bibleHelpers from '../helpers/bibleHelpers';
+//actions
 import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 //consts
@@ -60,7 +62,7 @@ export function setUpUSFMJSONObject(projectPath) {
     TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
 
   let usfmJSONObject = {};
-  usfmJSONObject.book = LoadHelpers.convertToFullBookName(bookName);
+  usfmJSONObject.book = bibleHelpers.convertToFullBookName(bookName);
   usfmJSONObject.id = getUSFMIdTag(projectPath, manifest, bookName)
 
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
@@ -76,7 +78,7 @@ export function setUpUSFMJSONObject(projectPath) {
 }
 
 /**
- * 
+ *
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
  * when saving)
@@ -119,10 +121,10 @@ export function getFilePath(projectName, usfmSaveLocation) {
 }
 
 /**
- * This function uses the manifest to populate the usfm JSON object id key in preparation 
+ * This function uses the manifest to populate the usfm JSON object id key in preparation
  * of usfm to JSON conversion
  * @param {string} projectPath - Path location in the filesystem for the project.
- * @param {object} manifest - Metadata of the project details 
+ * @param {object} manifest - Metadata of the project details
  * @param {string} bookName - Book abbreviation for book to be converted
  */
 export function getUSFMIdTag(projectPath, manifest, bookName) {
