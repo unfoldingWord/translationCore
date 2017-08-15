@@ -18,8 +18,8 @@ class MissingVersesCheck extends Component {
             let {bookName} = missingVersesObject;
             Object.keys(chapterObject).forEach((verseNumber) => {
                 verseCards.push(
-                    <div style={{fontSize:18}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
-                    {bookName} {chapterIndex} : {chapterObject[verseNumber]}
+                    <div style={{fontSize:18, margin:'5px 0px'}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
+                    {bookName} {chapterIndex}:{chapterObject[verseNumber]}
                     </div>
                 )
             })
