@@ -101,12 +101,13 @@ export function updateMergeConflictNextButton() {
   });
 }
 
-export function finalizeMerge() {
+export function finalize() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     const mergeConflictsObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
     MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
     let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
+    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   });
 }

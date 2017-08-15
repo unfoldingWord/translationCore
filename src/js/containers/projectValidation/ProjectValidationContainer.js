@@ -106,7 +106,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       updateMergeConflictNextButton: () => {
         dispatch(MergeConflictActions.updateMergeConflictNextButton());
-      }
+      },
+      finalizeMergeConflictCheck: () => {
+        dispatch(MergeConflictActions.finalize());
+      },
     }
   }
 }

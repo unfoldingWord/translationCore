@@ -5,7 +5,9 @@ import consts from './ActionTypes';
  * if check is passed
  */
 export function validate() {
-  return {
-    type:consts.PROJECT_INFORMATION_CHECK
-  }
+  return ((dispatch) => {
+    dispatch({
+      type: consts.COPYRIGHT_CHECK
+    })
+  })
 }

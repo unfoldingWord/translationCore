@@ -36,14 +36,15 @@ export function changeProjectValidationInstructions(instructions) {
 export function validateProject() {
   return ((dispatch, getState) => {
     const state = getState();
-    dispatch(CopyrightActions.validate(state));
-    dispatch(ProjectInformationActions.validate(state));
-    dispatch(MergeConflictActions.validate(state));
+    dispatch(CopyrightActions.validate());
+    dispatch(ProjectInformationActions.validate());
+    dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate(state));
 
     dispatch(updateProjectValidationStepper());
   });
 }
+
 
 export function updateProjectValidationStepper() {
   return ((dispatch, getState) => {
@@ -70,9 +71,6 @@ export function goToNextProjectValidationStep() {
         break;
       case 2:
         //Do action related to project information check finish
-        break;
-      case 3:
-        dispatch(MergeConflictActions.finalizeMerge());
         break;
       case 4:
         //Do action related to missing verses check finish

@@ -1,12 +1,7 @@
 import consts from '../actions/ActionTypes';
 const initialState = {
   showProjectValidationStepper: false,
-  projectValidationStepsObject: {
-      copyrightCheck:false,
-      projectInformationCheck: false,
-      mergeConflictCheck: false,
-      missingVersesCheck: false
-  },
+  projectValidationStepsArray: [],
   instructions: null,
   stepper: {
     stepIndex: 1,
@@ -18,14 +13,14 @@ const initialState = {
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.MERGE_CONFLICTS_CHECK:
-      return {
-        ...state,
-        projectValidationStepsObject: {
-          ...state.projectValidationStepsObject,
-          mergeConflictCheck: action.payload
-        }
-      }
+    // case consts.MERGE_CONFLICTS_CHECK:
+    //   return {
+    //     ...state,
+    //     projectValidationStepsArray: {
+    //       ...state.projectValidationStepsObject,
+    //       mergeConflictCheck: action.payload
+    //     }
+    //   }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
         ...state,
