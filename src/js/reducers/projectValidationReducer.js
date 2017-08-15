@@ -2,10 +2,10 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   showProjectValidationStepper: false,
   projectValidationStepsObject: {
-      copyrightCheck:false,
-      projectInformationCheck: false,
-      mergeConflictCheck: false,
-      missingVersesCheck: false
+    copyrightCheck: false,
+    projectInformationCheck: false,
+    mergeConflictCheck: false,
+    missingVersesCheck: false
   },
   instructions: null,
   stepper: {
@@ -26,6 +26,14 @@ const projectValidationReducer = (state = initialState, action) => {
           mergeConflictCheck: action.payload
         }
       }
+    case consts.MISSING_VERSES_CHECK:
+      return {
+        ...state,
+        projectValidationStepsObject: {
+          ...state.projectValidationStepsObject,
+          missingVersesCheck: action.payload
+        }
+      }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
         ...state,
@@ -34,7 +42,7 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.GO_TO_PROJECT_VALIDATION_STEP:
       return {
         ...state,
-        showProjectValidationStepper:!!action.stepIndex,
+        showProjectValidationStepper: !!action.stepIndex,
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,

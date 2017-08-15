@@ -11,22 +11,29 @@ class MissingVersesCheck extends Component {
         )
     }
     generateVerseCards(missingVersesObject) {
-        return Object.keys(missingVersesObject).map((verseObject) => {
-            return (
-                <div>
-                    {verseObject.chapter} + verseObject.verse
-                </div>
-            )
+        let verseCards = [];
+        Object.keys(missingVersesObject).forEach((chapterIndex) => {
+            let chapterObject = missingVersesObject[chapterIndex];
+            if(isNaN(chapterIndex)) return;
+            let {bookName} = missingVersesObject;
+            Object.keys(chapterObject).forEach((verseNumber) => {
+                verseCards.push(
+                    <div style={{fontSize:18}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
+                    {bookName} {chapterIndex} : {chapterObject[verseNumber]}
+                    </div>
+                )
+            })
         })
+        return verseCards;
     }
     render() {
         let missingVersesObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MISSING_VERSE_NAMESPACE];
         return (
-            <div>
-                <div style={{textAlign:'center', fontSize:30}}>
+            <div style={{display:'flex', flexDirection:'column', marginLeft:20}}>
+                <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
                     Missing Verses
             </div>
-                {this.generateVerseCards(missingVersesObject)}
+                {this.generateVerseCards(missingVersesObject.verses)}
             </div>
         );
     }
