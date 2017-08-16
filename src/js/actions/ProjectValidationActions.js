@@ -6,6 +6,7 @@ import * as usfmHelpers from '../helpers/usfmHelpers';
 //actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 
 /**Names for the index of steps */
 const projectValidationStepIndex = [
@@ -37,6 +38,7 @@ export function changeProjectValidationInstructions(instructions) {
  */
 export function validateProject(callback) {
   return ((dispatch, getState) => {
+    dispatch(ProjectInformationCheckActions.validate());
     //list of actions to check for readiness of each step
     let copyRightCheck = this.copyRightCheck()
     let projectInformationCheck = this.projectInformationCheck();
@@ -141,7 +143,7 @@ export function goToNextProjectValidationStep() {
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex + 1,
       nextStepName: nextStepName,
-      previousStepName: previousStepName,
+      previousStepName: previousStepName
     });
     if (stepIndex === 4) {
       dispatch(finishStepper())
