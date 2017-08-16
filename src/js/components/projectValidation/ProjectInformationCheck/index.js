@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card } from 'material-ui/Card';
 import BookDropdownMenu from './BookDropdownMenu';
 import LanguageTextBox from './LanguageTextBox';
-import TextDirectionTextBox from './TextDirectionTextBox';
+import LanguageDirectionTextBox from './LanguageDirectionTextBox';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
@@ -12,6 +12,9 @@ class ProjectInformationCheck extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      bookId: '',
+      languageName: '',
+      languageDirection: '',
       projectContributors: [],
       projectCheckers: []
     }
@@ -19,6 +22,9 @@ class ProjectInformationCheck extends Component {
     this.addChecker = this.addChecker.bind(this);
     this.removeContributor = this.removeContributor.bind(this);
     this.removeChecker = this.removeChecker.bind(this);
+    this.updateBookId = this.updateBookId.bind(this);
+    this.updateLanguageName = this.updateLanguageName.bind(this);
+    this.updateLanguageDirection = this.updateLanguageDirection.bind(this);
   }
 
   componentWillMount() {
@@ -78,8 +84,17 @@ class ProjectInformationCheck extends Component {
     })
   }
 
+  updateBookId(bookId) {
+    this.setState({bookId});
+  }
+  updateLanguageName(languageName) {
+    this.setState({languageName});
+  }
+  updateLanguageDirection(languageDirection) {
+    this.setState({languageDirection});
+  }
+
   render() {
-    console.log(this.state.projectContributors)
     return (
      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Project Information
@@ -91,9 +106,18 @@ class ProjectInformationCheck extends Component {
             <span style={{ color: '#800020', margin: '10px' }}>* Required</span><br />
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
-            <BookDropdownMenu bookIdValue={""} />
-            <LanguageTextBox languageValue={""} />
-            <TextDirectionTextBox textDirectionValue={""} />
+            <BookDropdownMenu
+              bookId={this.state.bookId}
+              updateBookId={this.updateBookId}
+            />
+            <LanguageTextBox
+              languageName={this.state.languageName}
+              updateLanguageName={this.updateLanguageName}
+            />
+            <LanguageDirectionTextBox
+              languageDirection={this.state.languageDirection}
+              updateLanguageDirection={this.updateLanguageDirection}
+            />
           </div><br />
           <div style={{ display: 'flex' }}>
             <ContributorsArea 

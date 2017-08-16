@@ -6,13 +6,13 @@ import { SelectField, MenuItem } from 'material-ui';
 import BooksOfTheBible from '../../../common/BooksOfTheBible';
 
 const BookDropdownMenu = ({
-  bookIdValue
-  //updateBookIdValue
+  bookId,
+  updateBookId
 }) => {
   return (
     <div>
       <SelectField
-        value={bookIdValue}
+        value={bookId}
         style={{ width: '150px' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelStyle={{ color: '#000' }}
@@ -24,7 +24,7 @@ const BookDropdownMenu = ({
           </div>
         }
         onChange={(event, index, value) => {
-          //updateBookIdValue(value);
+          updateBookId(value);
         }}
       >
       <MenuItem value={""} primaryText={""} />
@@ -42,8 +42,8 @@ const BookDropdownMenu = ({
 }
 
 BookDropdownMenu.propTypes = {
-  bookIdValue: PropTypes.string.isRequired
-  // updateBookIdValue: PropTypes.func.isRequired
+  bookId: PropTypes.string.isRequired,
+  updateBookId: PropTypes.func.isRequired
 };
 
 export default BookDropdownMenu;

@@ -7,12 +7,13 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 
 
 const LanguageTextBox = ({
-  languageValue
+  languageName,
+  updateLanguageName
 }) => {
   return (
     <div>
       <TextField
-        value={languageValue}
+        value={languageName}
         style={{ width: '150px' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "1", fontWeight: "bold"}}
@@ -23,14 +24,15 @@ const LanguageTextBox = ({
             <span style={{ color: '#800020'}}>*</span>
           </div>
         }
-        onChange={e => console.log(e.target.value)}
+        onChange={e => updateLanguageName(e.target.value)}
       />
     </div>
   );
 }
 
 LanguageTextBox.propTypes = {
-  languageValue: PropTypes.string.isRequired
+  languageName: PropTypes.string.isRequired,
+  updateLanguageName: PropTypes.func.isRequired
 };
 
 export default LanguageTextBox;

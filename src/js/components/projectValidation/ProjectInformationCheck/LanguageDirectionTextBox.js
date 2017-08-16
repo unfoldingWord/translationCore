@@ -4,24 +4,24 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
 
-const TextDirectionTextBox = ({
-  textDirectionValue
-  //updateBookIdValue
+const LanguageDirectionTextBox = ({
+  languageDirection,
+  updateLanguageDirection
 }) => {
   const ltrText = 'Left to Right';
   const rtlText = 'Right to Left';
-  let directionText;
+  let textDirection;
 
-  if (textDirectionValue) {
-    directionText = textDirectionValue === 'ltr' ? ltrText : rtlText;
+  if (languageDirection) {
+    textDirection = languageDirection === 'ltr' ? ltrText : rtlText;
   } else {
-    directionText = '';
+    textDirection = '';
   }
 
   return (
     <div>
       <SelectField
-        value={textDirectionValue}
+        value={languageDirection}
         style={{ width: '220px' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelStyle={{ color: '#000' }}
@@ -33,10 +33,10 @@ const TextDirectionTextBox = ({
           </div>
         }
         onChange={(event, index, value) => {
-          //updateBookIdValue(value);
+          updateLanguageDirection(value);
         }}
       >
-      <MenuItem value={textDirectionValue} primaryText={directionText} />
+      <MenuItem value={languageDirection} primaryText={textDirection} />
         <MenuItem value={'ltr'} primaryText={ltrText} />
         <MenuItem value={'rtl'} primaryText={rtlText} />
       </SelectField>
@@ -44,9 +44,9 @@ const TextDirectionTextBox = ({
   );
 }
 
-TextDirectionTextBox.propTypes = {
-  textDirectionValue: PropTypes.string.isRequired
-  // updateBookIdValue: PropTypes.func.isRequired
+LanguageDirectionTextBox.propTypes = {
+  languageDirection: PropTypes.string.isRequired,
+  updateLanguageDirection: PropTypes.func.isRequired
 };
 
-export default TextDirectionTextBox;
+export default LanguageDirectionTextBox;
