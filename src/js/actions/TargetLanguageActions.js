@@ -14,7 +14,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
     try {
       let projectDetailsReducer = getState().projectDetailsReducer;
-      let bookAbbreviation = projectDetailsReducer.params.bookAbbr;
+      let bookAbbreviation = projectDetailsReducer.manifest.project.id;
       let projectPath = projectDetailsReducer.projectSaveLocation;
       let targetBiblePath = path.join(projectPath, bookAbbreviation);
       let bibleName = "targetLanguage"

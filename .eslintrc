@@ -28,6 +28,7 @@
     "Promise": true,
     "process": true,
     "__dirname": true,
-    "localStorage": true
+    "localStorage": true,
+    "document": true
   }
 }

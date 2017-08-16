@@ -1,11 +1,11 @@
 import consts from './ActionTypes';
 import Path from 'Path-extra';
 //helpers
-import git from '../helpers/GitApi.js';
+import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import git from '../helpers/GitApi.js';
 //actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 
 /**Names for the index of steps */

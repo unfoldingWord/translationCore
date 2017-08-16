@@ -1,18 +1,18 @@
-import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//actions
+// actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
-//components
-import { Card } from 'material-ui/Card';
+import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
+// components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
-import CopyRightCheck from '../../components/projectValidation/CopyRightCheck';
+import CopyrightCheck from '../../components/projectValidation/CopyrightCheck';
 import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
-import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
+import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
@@ -33,7 +33,7 @@ class ProjectValidationContainer extends Component {
     let displayContainer = <div />;
     switch (stepIndex) {
       case 1:
-        displayContainer = <CopyRightCheck {...this.props} />;
+        displayContainer = <CopyrightCheck {...this.props} />;
         break;
       case 2:
         displayContainer = <ProjectInformationCheck {...this.props} />;
@@ -63,7 +63,7 @@ class ProjectValidationContainer extends Component {
               <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>
-              <div style={{ height: '100%', width: '100%', padding: '20px 65px 0 20px' }}>
+              <div style={{ height: '100%', width: '100%', padding: '0px 50px 22px 20px' }}>
                 {displayContainer}
               </div>
             </div>
@@ -78,7 +78,8 @@ const mapStateToProps = (state) => {
   return {
     reducers: {
       projectValidationReducer: state.projectValidationReducer,
-      projectDetailsReducer: state.projectDetailsReducer
+      projectDetailsReducer: state.projectDetailsReducer,
+      copyrightCheckReducer: state.copyrightCheckReducer
     }
   }
 }
@@ -95,6 +96,9 @@ const mapDispatchToProps = (dispatch) => {
       nextStep: () => {
         dispatch(ProjectValidationActions.goToNextProjectValidationStep());
       },
+      selectProjectLicense: (selectedLicenseId) => {
+        dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
+      },
       changeProjectValidationInstructions: (instructions) => {
         dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
       },
@@ -103,6 +107,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       updateStepData:(stepIndex, data) => {
         dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
+      },
+      loadProjectLicenseMarkdownFile: (licenseId) => {
+        dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       }
     }
   }

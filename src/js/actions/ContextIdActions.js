@@ -162,9 +162,9 @@ export const changeToPreviousContextId = () => {
 export function loadCurrentContextId() {
   return (dispatch, getState) => {
     let state = getState();
-    let { projectSaveLocation, params } = state.projectDetailsReducer
+    let { projectSaveLocation, manifest } = state.projectDetailsReducer
     let { currentToolName } = state.toolsReducer
-    let bookId = params ? params.bookAbbr : undefined
+    let bookId = manifest.project.id ? manifest.project.id : undefined
     let fileName = "contextId.json"
 
     if (projectSaveLocation && currentToolName && bookId) {

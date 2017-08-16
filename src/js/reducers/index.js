@@ -22,6 +22,7 @@ import verseEditReducer from './verseEditReducer'
 import homeScreenReducer from './homeScreenReducer'
 import myProjectsReducer from './myProjectsReducer'
 import projectValidationReducer from './projectValidationReducer'
+import copyrightCheckReducer from './copyrightCheckReducer'
 // combining reducers
 const rootReducers = combineReducers({
   toolsReducer,
@@ -45,7 +46,8 @@ const rootReducers = combineReducers({
   verseEditReducer,
   homeScreenReducer,
   myProjectsReducer,
-  projectValidationReducer
+  projectValidationReducer,
+  copyrightCheckReducer
 });
 
 export default rootReducers;
