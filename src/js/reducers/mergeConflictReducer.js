@@ -1,11 +1,19 @@
-const nameInitialState = {}
-export const name = (state = nameInitialState, action) => {
+import consts from '../actions/ActionTypes';
+const initialState = {
+  conflicts:null,
+  filePath: null
+}
+const mergeConflictReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_TYPE_1:
-      return state
-    case ACTION_TYPE_2:
-      return state
+    case consts.MERGE_CONFLICTS_CHECK:
+      return {
+        ...state,
+        conflicts: action.conflicts,
+        filePath: action.filePath
+      }
     default:
       return state
   }
 }
+
+export default mergeConflictReducer;

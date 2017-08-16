@@ -73,7 +73,7 @@ class MergeConflictsCheck extends Component {
   }
 
   render() {
-    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
+    let mergeConflictObject = this.props.reducers.mergeConflictReducer;
     return (
       <Card style={{ width: '100%', height: '100%' }}
         containerStyle={{ overflowY: 'auto', height: '100%' }}>

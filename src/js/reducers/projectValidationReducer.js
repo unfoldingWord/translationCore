@@ -13,14 +13,20 @@ const initialState = {
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case consts.MERGE_CONFLICTS_CHECK:
-    //   return {
-    //     ...state,
-    //     projectValidationStepsArray: {
-    //       ...state.projectValidationStepsObject,
-    //       mergeConflictCheck: action.payload
-    //     }
-    //   }
+    case consts.ADD_PROJECT_VALIDTION_STEP:
+      return {
+        ...state,
+        projectValidationStepsArray: [
+          ...state.projectValidationStepsArray.slice(),
+          action.stepName
+        ]
+      }
+    case consts.REMOVE_PROJECT_VALIDTION_STEP:
+      return {
+        ...state,
+        projectValidationStepsArray:
+        state.projectValidationStepsArray.filter((stepName) => stepName !== action.stepName)
+      }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
         ...state,
@@ -29,7 +35,7 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.GO_TO_PROJECT_VALIDATION_STEP:
       return {
         ...state,
-        showProjectValidationStepper:!!action.stepIndex,
+        showProjectValidationStepper: !!action.stepIndex,
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
@@ -43,6 +49,11 @@ const projectValidationReducer = (state = initialState, action) => {
           ...state.stepper,
           nextDisabled: action.nextDisabled
         }
+      }
+    case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
+      return {
+        ...state,
+        showProjectValidationStepper: action.showProjectValidationStepper
       }
     default:
       return state

@@ -12,81 +12,85 @@ const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
  * storing result in reducer. Returns false under step namespace
  * 'mergeConflictCheck' if check is passed
  */
-export function validate(state) {
-  const { projectSaveLocation, manifest } = state.projectDetailsReducer;
-  /**
-   * Object that will be sent back to reducers with the chapter, 
-   * verse and text info  of each merge conflict version.
-   * An array of arrays of an object.
-   * */
-  let parsedAllMergeConflictsFoundArray = [];
-  let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) ||
-    path.join(projectSaveLocation, manifest.project.id + '.usfm');
-
-  /**@type {string} */
-  let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
-  if (!usfmData) {
-    return {
-      type: consts.MERGE_CONFLICTS_CHECK,
-      payload: false
-    }
-  }
-  /**
-   * @example ["1 this is the first version", "1 This is the second version"]
-   * @type {[string]}
-   * extracting merge conflicts from usfm data
-  */
-  let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
-  for (let matchIndex in allMergeConflictsFoundArray) {
-    /** Array representing the different versions for a merge conflict parsed into a more consumable format */
-    let parsedMergeConflictVersionsArray = [];
-    /** Array representing current versions to be parsed*/
-    let mergeConflictVersionsArray = [];
+export function validate() {
+  return ((dispatch, getState) => {
+    let state = getState();
+    const { projectSaveLocation, manifest } = state.projectDetailsReducer;
     /**
-     * Getting the first to matched elements from all merge conflicts array
-     * These elements are paired because they represent one 'merge conflict'
-     * They are the two different version histories of the conflict
-     */
-    mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
-    mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
-    for (var versionText of mergeConflictVersionsArray) {
-      /**
-       * Parsing the merge conflict version text in an object more easily
-       * consumable for the displaying container
-       * @type {{chapter,verses,text}}
-       */
-      let parsedMergeConflictVersionObject = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
-      parsedMergeConflictVersionsArray.push(parsedMergeConflictVersionObject);
+     * Object that will be sent back to reducers with the chapter, 
+     * verse and text info  of each merge conflict version.
+     * An array of arrays of an object.
+     * */
+    let parsedAllMergeConflictsFoundArray = [];
+    let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) ||
+      path.join(projectSaveLocation, manifest.project.id + '.usfm');
+
+    /**@type {string} */
+    let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
+    if (!usfmData) {
+      return dispatch({
+        type: consts.MERGE_CONFLICTS_CHECK
+      })
     }
-    parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
-  }
-  return {
-    type: consts.MERGE_CONFLICTS_CHECK,
-    payload: {
+    /**
+     * @example ["1 this is the first version", "1 This is the second version"]
+     * @type {[string]}
+     * extracting merge conflicts from usfm data
+    */
+    let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
+    for (let matchIndex in allMergeConflictsFoundArray) {
+      /** Array representing the different versions for a merge conflict parsed into a more consumable format */
+      let parsedMergeConflictVersionsArray = [];
+      /** Array representing current versions to be parsed*/
+      let mergeConflictVersionsArray = [];
+      /**
+       * Getting the first to matched elements from all merge conflicts array
+       * These elements are paired because they represent one 'merge conflict'
+       * They are the two different version histories of the conflict
+       */
+      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+      mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
+      for (var versionText of mergeConflictVersionsArray) {
+        /**
+         * Parsing the merge conflict version text in an object more easily
+         * consumable for the displaying container
+         * @type {{chapter,verses,text}}
+         */
+        let parsedMergeConflictVersionObject = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
+        parsedMergeConflictVersionsArray.push(parsedMergeConflictVersionObject);
+      }
+      parsedAllMergeConflictsFoundArray.push(parsedMergeConflictVersionsArray)
+    }
+    dispatch({
+      type: consts.MERGE_CONFLICTS_CHECK,
       conflicts: parsedAllMergeConflictsFoundArray,
       filePath: usfmFilePath
-    }
-  }
+    });
+    dispatch({
+      type:consts.ADD_PROJECT_VALIDTION_STEP,
+      stepName:MERGE_CONFLICT_NAMESPACE
+    })
+  });
 }
 
 export function updateVersionSelection(mergeConflictIndex, versionIndex, value) {
   return ((dispatch, getState) => {
     let otherVersionIndex = Number(! + versionIndex);
-    const oldMergeConflictCheckObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
+    const oldMergeConflictCheckObject = getState().mergeConflictReducer;
     let newMergeConflictCheckObject = JSON.parse(JSON.stringify(oldMergeConflictCheckObject));
     newMergeConflictCheckObject.conflicts[mergeConflictIndex][versionIndex].checked = value;
     newMergeConflictCheckObject.conflicts[mergeConflictIndex][otherVersionIndex].checked = !value;
     dispatch({
       type: consts.MERGE_CONFLICTS_CHECK,
-      payload: newMergeConflictCheckObject
+      ...newMergeConflictCheckObject
     });
-    dispatch(updateMergeConflictNextButton());
+    return dispatch(updateMergeConflictNextButton());
   })
 }
 
 export function updateMergeConflictNextButton() {
   return ((dispatch, getState) => {
-    let mergeConflictCheckObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE]
+    let mergeConflictCheckObject = getState().mergeConflictReducer;
     let allMergeConflictsHandled = true;
     for (var conflict of mergeConflictCheckObject.conflicts) {
       let mergeHistorySelected = false
@@ -97,17 +101,17 @@ export function updateMergeConflictNextButton() {
       //All merge conflicts have been handled previously and for the current conflict
       allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
     }
-    dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
+    return dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
   });
 }
 
 export function finalize() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    const mergeConflictsObject = getState().projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
+    const mergeConflictsObject = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
     let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
-    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+    return dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   });
 }

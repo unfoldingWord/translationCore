@@ -21,12 +21,21 @@ const projectValidationStepIndex = [
   'Done'
 ]
 
+/**Names for the index of steps */
+const projectValidationStepObjectIndex = {
+  'copyrightCheck':1,
+  'projectInformationCheck':2,
+  'mergeConflictCheck':3,
+  'missingVersesCheck':4,
+}
+
 export function changeProjectValidationInstructions(instructions) {
   return {
     type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS,
     instructions
   };
 }
+
 /**
  * Wrapper function for handling the initial checking of steps before the UI is displayed.
  * NOTE: All step checks must be synchronous actions
@@ -35,11 +44,10 @@ export function changeProjectValidationInstructions(instructions) {
  */
 export function validateProject() {
   return ((dispatch, getState) => {
-    const state = getState();
     dispatch(CopyrightActions.validate());
     dispatch(ProjectInformationActions.validate());
     dispatch(MergeConflictActions.validate());
-    dispatch(MissingVersesActions.validate(state));
+    dispatch(MissingVersesActions.validate());
 
     dispatch(updateProjectValidationStepper());
   });
@@ -49,15 +57,12 @@ export function validateProject() {
 export function updateProjectValidationStepper() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    let { projectValidationStepsObject } = getState().projectValidationReducer;
-    let isValidProjectIndex = Object.keys(projectValidationStepsObject).findIndex((stepName) => {
-      return projectValidationStepsObject[stepName] !== false;
-    });
-    if (isValidProjectIndex === -1) {
+    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    if (projectValidationStepsArray.length === 0) {
       TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
-      dispatch(goToProjectValidationStep(isValidProjectIndex + 1));
+      dispatch(updateStepperIndex(projectValidationStepsArray[0]));
     }
   })
 }
@@ -65,44 +70,29 @@ export function updateProjectValidationStepper() {
 export function goToNextProjectValidationStep() {
   return ((dispatch, getState) => {
     let { stepIndex } = getState().projectValidationReducer.stepper;
-    switch (stepIndex) {
-      case 1:
-        //Do action related to copyright check finish
-        break;
-      case 2:
-        //Do action related to project information check finish
-        break;
-      case 4:
-        //Do action related to missing verses check finish
-        dispatch(ProjectSelectionActions.displayTools())
-        return dispatch({
-          type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-          stepIndex: 0,
-        })
-    }
-    dispatch(goToProjectValidationStep(stepIndex + 1));
+    dispatch(updateStepperIndex(stepIndex + 1));
   })
 }
 
 export function goToPreviousProjectValidationStep() {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().projectValidationReducer.stepper;
-    dispatch(goToProjectValidationStep(stepIndex - 1));
+    dispatch(updateStepperIndex(stepIndex - 1));
   });
 }
 
 
 /**Directly jump to a step at the specified index */
-export function goToProjectValidationStep(stepIndex) {
+export function updateStepperIndex(stepIndex) {
   return ((dispatch) => {
+    if (isNaN(stepIndex)) stepIndex = projectValidationStepObjectIndex[stepIndex];
     let nextStepName = projectValidationStepIndex[stepIndex + 1];
     let previousStepName = projectValidationStepIndex[stepIndex - 1];
     return dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex,
       nextStepName: nextStepName,
-      previousStepName: previousStepName,
-      nextDisabled: false
+      previousStepName: previousStepName
     })
   });
 }
@@ -112,5 +102,12 @@ export function toggleNextButton(nextDisabled) {
   return {
     type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
     nextDisabled: nextDisabled
+  }
+}
+
+export function showProjectValidationStepper(val) {
+  return {
+    type:consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+    showProjectValidationStepper: val
   }
 }

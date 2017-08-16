@@ -5,7 +5,9 @@ import consts from './ActionTypes';
  * if check is passed
  */
 export function validate() {
-  return {
-    type:consts.MISSING_VERSES_CHECK
-  }
+  return ((dispatch) => {
+    dispatch({
+      type: consts.MISSING_VERSES_CHECK
+    })
+  })
 }

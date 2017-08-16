@@ -78,7 +78,8 @@ class ProjectValidationContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
-      projectValidationReducer: state.projectValidationReducer
+      projectValidationReducer: state.projectValidationReducer,
+      mergeConflictReducer: state.mergeConflictReducer
     }
   }
 }
