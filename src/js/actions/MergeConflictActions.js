@@ -66,14 +66,7 @@ export function validate() {
       conflicts: parsedAllMergeConflictsFoundArray,
       filePath: usfmFilePath
     });
-    dispatch({
-      type:consts.ADD_PROJECT_VALIDATION_STEP,
-      stepObject:{
-        namespace:MERGE_CONFLICT_NAMESPACE,
-        buttonName:'Merge Conflicts',
-        index:3
-      }
-    })
+    dispatch(ProjectValidationActions.addProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
   });
 }
 
@@ -116,6 +109,7 @@ export function finalize() {
     MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
     let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
+    dispatch(ProjectValidationActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
     return dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   });
 }

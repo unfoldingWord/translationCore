@@ -1,4 +1,6 @@
 import consts from './ActionTypes';
+const COPYRIGHT_NAMESPACE = 'copyrightCheck';
+import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 /**
  * Wrapper action for handling copyright detection, and 
  * storing result in reducer. Returns false under step namespace
@@ -14,5 +16,6 @@ export function validate() {
 
 export function finalize() {
   return ((dispatch, getState) => {
+    dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
   })
 }

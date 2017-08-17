@@ -18,7 +18,11 @@ const projectValidationReducer = (state = initialState, action) => {
         ...state,
         projectValidationStepsArray: [
           ...state.projectValidationStepsArray.slice(),
-          action.stepObject
+          {
+            namespace: action.namespace,
+            buttonName: action.buttonName,
+            index: action.index
+          }
         ]
       }
     case consts.REMOVE_PROJECT_VALIDATION_STEP:
