@@ -13,7 +13,7 @@ const initialState = {
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.ADD_PROJECT_VALIDTION_STEP:
+    case consts.ADD_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         projectValidationStepsArray: [
@@ -21,11 +21,10 @@ const projectValidationReducer = (state = initialState, action) => {
           action.stepObject
         ]
       }
-    case consts.REMOVE_PROJECT_VALIDTION_STEP:
+    case consts.REMOVE_PROJECT_VALIDATION_STEP:
       return {
         ...state,
-        projectValidationStepsArray:
-        state.projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== action.stepObject.namespace)
+        projectValidationStepsArray: action.projectValidationStepsArray
       }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {

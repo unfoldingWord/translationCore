@@ -104,3 +104,20 @@ export function showProjectValidationStepper(val) {
     showProjectValidationStepper: val
   }
 }
+
+export function addProjectValidationStep(stepObject) {
+  return {
+    type: consts.ADD_PROJECT_VALIDTION_STEP,
+    stepObject: action.stepObject
+  }
+}
+
+export function removeProjectValidationStep(namespace) {
+  return ((dispatch, getState) => {
+    let {projectValidationStepsArray} = getState().projectValidationReducer;
+    dispatch({
+      type: consts.REMOVE_PROJECT_VALIDTION_STEP,
+      projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)
+    })
+  })
+}
