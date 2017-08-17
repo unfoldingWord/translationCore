@@ -5,7 +5,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
-// components
+import * as MergeConflictActions from '../../actions/MergeConflictActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as MissingVersesActions from '../../actions/MissingVersesActions';
+//components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
@@ -31,6 +34,7 @@ class ProjectValidationContainer extends Component {
     };
 
     let displayContainer = <div />;
+
     switch (stepIndex) {
       case 1:
         displayContainer = <CopyrightCheck {...this.props} />;
@@ -74,20 +78,21 @@ class ProjectValidationContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reducers: {
       projectValidationReducer: state.projectValidationReducer,
-      copyrightCheckReducer: state.copyrightCheckReducer
+      copyrightCheckReducer: state.copyrightCheckReducer,
+      mergeConflictReducer: state.mergeConflictReducer
     }
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      showStepper: (val) => {
-        dispatch(ProjectValidationActions.showStepper(val));
+      goToProjectValidationStep: (val) => {
+        dispatch(ProjectValidationActions.goToProjectValidationStep(val));
       },
       previousStep: () => {
         dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
@@ -104,11 +109,26 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
-      updateStepData:(stepIndex, data) => {
-        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
-      },
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
+      },
+      updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
+        dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      },
+      updateMergeConflictNextButton: () => {
+        dispatch(MergeConflictActions.updateMergeConflictNextButton());
+      },
+      finalizeCopyrightCheck: () => {
+        dispatch(CopyrightCheckActions.finalize());
+      },
+      finalizeMergeConflictCheck: () => {
+        dispatch(MergeConflictActions.finalize());
+      },
+      finalizeMissingVersesCheck: () => {
+        dispatch(MissingVersesActions.finalize());
+      },
+      finalizeProjectInformationCheck: () => {
+        dispatch(ProjectInformationCheckActions.finalize());
       }
     }
   }
@@ -116,7 +136,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 ProjectValidationContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.shape({
+    projectValidationReducer: PropTypes.shape({
+      stepper: PropTypes.shape({
+        stepIndex: PropTypes.number.isRequired
+      }),
+      showProjectValidationStepper:PropTypes.bool.isRequired
+    }),
+    mergeConflictReducer: PropTypes.object.isRequired
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)
