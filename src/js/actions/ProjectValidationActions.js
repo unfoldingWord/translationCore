@@ -88,24 +88,26 @@ export function updateStepperIndex(stepIndex) {
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
     let previousStepName = 'Cancel';
     if (!projectValidationStepsArray[0] || stepIndex > projectValidationStepsArray[projectValidationStepsArray.length - 1].index) {
-      //If the stepIndex is > the last step in the stepper arrays' index
+      //If the stepIndex is > the last step in the stepper arrays' index (Done)
       dispatch({
         type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
         showProjectValidationStepper: false
       })
-      return dispatch(ProjectSelectionActions.displayTools());
+      dispatch(ProjectSelectionActions.displayTools());
     } else if (stepIndex < projectValidationStepsArray[0].index) {
-      //If stepIndex is less than the first steps' index
+      //If stepIndex is less than the first steps' index (Cancelled)
       dispatch({
         type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
         showProjectValidationStepper: false
       })
-    } else return dispatch({
-      type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-      stepIndex: stepIndex,
-      nextStepName: nextStepName,
-      previousStepName: previousStepName
-    })
+      dispatch(ProjectSelectionActions.clearLastProject())
+    } else
+      dispatch({
+        type: consts.GO_TO_PROJECT_VALIDATION_STEP,
+        stepIndex: stepIndex,
+        nextStepName: nextStepName,
+        previousStepName: previousStepName
+      })
   });
 }
 
