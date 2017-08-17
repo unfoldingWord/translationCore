@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.44",
+  "version": "0.7.1-beta.46",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "update-version": "node ./scripts/versionScript.js",
     "test": "electron-mocha --renderer",
     "install-apps": "git submodule update --init --recursive",
-    "install-electron-forge": "npm i -g electron-forge@3.0.5",
+    "install-electron-forge": "npm i -g electron-forge@3.1.1",
     "pull-apps": "npm run apps-master && npm run git-pull",
     "git-pull": "git submodule foreach --recursive git pull",
     "apps-master": "git submodule foreach --recursive git checkout master",
