@@ -27,13 +27,13 @@ class MissingVersesCheck extends Component {
         return verseCards;
     }
     render() {
-        let missingVersesObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MISSING_VERSE_NAMESPACE];
+        let {verses} = this.props.reducers.missingVersesReducer;
         return (
             <div style={{display:'flex', flexDirection:'column', marginLeft:20}}>
                 <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
                     Missing Verses
             </div>
-                {this.generateVerseCards(missingVersesObject.verses)}
+                {this.generateVerseCards(verses)}
             </div>
         );
     }

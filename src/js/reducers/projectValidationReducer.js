@@ -1,12 +1,7 @@
 import consts from '../actions/ActionTypes';
 const initialState = {
   showProjectValidationStepper: false,
-  projectValidationStepsObject: {
-    copyrightCheck: false,
-    projectInformationCheck: false,
-    mergeConflictCheck: false,
-    missingVersesCheck: false
-  },
+  projectValidationStepsArray: [],
   instructions: null,
   stepper: {
     stepIndex: 1,
