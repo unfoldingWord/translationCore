@@ -11,24 +11,6 @@ import * as ProjectInformationActions from './ProjectInformationActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 
-/**Names for the index of steps */
-const projectValidationStepIndex = [
-  'Cancel',
-  'Copyright',
-  'Project Information',
-  'Merge Conflicts',
-  'Missing Verses',
-  'Done'
-]
-
-/**Names for the index of steps */
-const projectValidationStepObjectIndex = {
-  'copyrightCheck':1,
-  'projectInformationCheck':2,
-  'mergeConflictCheck':3,
-  'missingVersesCheck':4,
-}
-
 export function changeProjectValidationInstructions(instructions) {
   return {
     type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS,
@@ -62,7 +44,7 @@ export function updateProjectValidationStepper() {
       TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
-      dispatch(updateStepperIndex(projectValidationStepsArray[0]));
+      dispatch(updateStepperIndex(projectValidationStepsArray[0].index));
     }
   })
 }
@@ -84,11 +66,22 @@ export function goToPreviousProjectValidationStep() {
 
 /**Directly jump to a step at the specified index */
 export function updateStepperIndex(stepIndex) {
-  return ((dispatch) => {
-    if (isNaN(stepIndex)) stepIndex = projectValidationStepObjectIndex[stepIndex];
-    let nextStepName = projectValidationStepIndex[stepIndex + 1];
-    let previousStepName = projectValidationStepIndex[stepIndex - 1];
-    return dispatch({
+  return ((dispatch, getState) => {
+    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
+    let previousStepName = 'Cancel';
+    if (stepIndex > projectValidationStepsArray[projectValidationStepsArray.length - 1].index) {
+      dispatch({
+        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+        showProjectValidationStepper: false
+      })
+      return dispatch(ProjectSelectionActions.displayTools());
+    } else if (stepIndex < projectValidationStepsArray[0].index) {
+      dispatch({
+        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+        showProjectValidationStepper: false
+      })
+    } else return dispatch({
       type: consts.GO_TO_PROJECT_VALIDATION_STEP,
       stepIndex: stepIndex,
       nextStepName: nextStepName,
@@ -107,7 +100,7 @@ export function toggleNextButton(nextDisabled) {
 
 export function showProjectValidationStepper(val) {
   return {
-    type:consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+    type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
     showProjectValidationStepper: val
   }
 }

@@ -68,7 +68,11 @@ export function validate() {
     });
     dispatch({
       type:consts.ADD_PROJECT_VALIDTION_STEP,
-      stepName:MERGE_CONFLICT_NAMESPACE
+      stepObject:{
+        namespace:MERGE_CONFLICT_NAMESPACE,
+        buttonName:'Merge Conflicts',
+        index:3
+      }
     })
   });
 }

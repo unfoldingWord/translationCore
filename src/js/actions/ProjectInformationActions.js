@@ -11,3 +11,8 @@ export function validate() {
     })
   })
 }
+
+export function finalize() {
+  return ((dispatch, getState) => {
+  })
+}

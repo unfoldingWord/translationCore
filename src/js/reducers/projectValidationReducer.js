@@ -18,14 +18,14 @@ const projectValidationReducer = (state = initialState, action) => {
         ...state,
         projectValidationStepsArray: [
           ...state.projectValidationStepsArray.slice(),
-          action.stepName
+          action.stepObject
         ]
       }
     case consts.REMOVE_PROJECT_VALIDTION_STEP:
       return {
         ...state,
         projectValidationStepsArray:
-        state.projectValidationStepsArray.filter((stepName) => stepName !== action.stepName)
+        state.projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== action.stepObject.namespace)
       }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
@@ -53,7 +53,8 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
       return {
         ...state,
-        showProjectValidationStepper: action.showProjectValidationStepper
+        showProjectValidationStepper: action.showProjectValidationStepper,
+        projectValidationStepsArray: initialState.projectValidationStepsArray
       }
     default:
       return state
