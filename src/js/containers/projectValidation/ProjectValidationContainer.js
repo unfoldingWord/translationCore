@@ -107,10 +107,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
-<<<<<<< HEAD
-      updateVersionSelection:(mergeConflictIndex, versionIndex, value) => {
-        dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
-=======
       updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
       },
@@ -128,7 +124,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       finalizeProjectInformationCheck: () => {
         dispatch(ProjectInformationActions.finalize());
->>>>>>> develop
       }
     }
   }
