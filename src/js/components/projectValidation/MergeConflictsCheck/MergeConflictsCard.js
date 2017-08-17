@@ -25,7 +25,11 @@ class MergeConflictsCheck extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     let { mergeConflictIndex, versions, conflict, chapter, verses, open } = this.props;
+=======
+    let { mergeConflictIndex, versions, chapter, verses, open } = this.props;
+>>>>>>> develop
     let borderBottom = open ? 'none' : '1px solid black';
     return (
       <div style={{ borderBottom: borderBottom, paddingBottom: 20 }}>
@@ -57,6 +61,8 @@ class MergeConflictsCheck extends Component {
 MergeConflictsCheck.propTypes = {
   mergeConflictIndex: PropTypes.string.isRequired,
   versions: PropTypes.array.isRequired,
+  chapter: PropTypes.string.isRequired,
+  verses: PropTypes.string.isRequired
 }
 
 export default MergeConflictsCheck;

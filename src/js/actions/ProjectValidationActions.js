@@ -1,8 +1,4 @@
 import consts from './ActionTypes';
-//actions
-import git from '../helpers/GitApi.js';
-
-import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
@@ -11,110 +7,102 @@ import * as ProjectInformationActions from './ProjectInformationActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 
-/**Names for the index of steps */
-const projectValidationStepButtonIndex = [
-  'Previous',
-  'Copyright',
-  'Project Information',
-  'Merge Conflicts',
-  'Missing Verses',
-  'Done'
-]
+//Namespaces for each step to be referenced by
+const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
+const COPYRIGHT_NAMESPACE = 'copyrightCheck';
+const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
+const PROJECT_INFORMATION_NAMESPACE = 'projectInformationCheck';
 
-const projectValidationStepObjectIndex = {
-  'copyrightCheck': 1,
-  'projectInformationCheck': 2,
-  'mergeConflictCheck': 3,
-  'missingVersesCheck':4
-}
-
+/**
+ * 
+ * @param {object || string} instructions - string or react component to
+ * replace the old instructions in the project validation stepper 
+ */
 export function changeProjectValidationInstructions(instructions) {
   return {
     type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS,
     instructions
   };
 }
+
 /**
- * Wrapper function for handling the initial checking of steps before the UI is displayed.
- * NOTE: All step checks must be synchronous actions
- * @param {function} callback - Called when the checks for each step are complete, has 
- * value of true or false depending on is all checks passed
+ * Wrapper function for handling the initial checking of steps.
+ * Calls all corresponding validation methods
  */
 export function validateProject() {
   return ((dispatch, getState) => {
-    const state = getState();
-    dispatch(CopyrightActions.validate(state));
-    dispatch(ProjectInformationActions.validate(state));
-    //dispatch(MergeConflictActions.validate(state));
-    dispatch(MissingVersesActions.validate(state));
+    dispatch(CopyrightActions.validate());
+    dispatch(ProjectInformationActions.validate());
+    dispatch(MergeConflictActions.validate());
+    dispatch(MissingVersesActions.validate());
 
-    dispatch(updateProjectValidationStepper());
+    dispatch(initiateProjectValidationStepper());
   });
 }
 
-export function updateProjectValidationStepper() {
+/**
+ * Determines whether to show the stepper or the tools
+ */
+export function initiateProjectValidationStepper() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    let { projectValidationStepsObject } = getState().projectValidationReducer;
-    let failedCheckElement = Object.keys(projectValidationStepsObject).find((stepName) => {
-      return projectValidationStepsObject[stepName] !== false;
-    });
-    if (!failedCheckElement) {
+    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    if (projectValidationStepsArray.length === 0) {
+      //If there are no invalid checks
       TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
-      dispatch(goToProjectValidationStep(failedCheckElement));
+      //Show the checks that didn't pass
+      dispatch(updateStepperIndex(projectValidationStepsArray[0].index));
     }
   })
 }
 
+/** Simply go to the next stepper check */
 export function goToNextProjectValidationStep() {
   return ((dispatch, getState) => {
     let { stepIndex } = getState().projectValidationReducer.stepper;
-    switch (stepIndex) {
-      case 1:
-        //Do action related to copyright check finish
-        break;
-      case 2:
-        //Do action related to project information check finish
-        break;
-      case 3:
-        dispatch(MergeConflictActions.finalizeMerge());
-        break;
-      case 4:
-        //Do action related to missing verses check finish
-        dispatch(ProjectSelectionActions.displayTools())
-        return dispatch({
-          type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-          stepIndex: 0,
-        })
-    }
-    dispatch(updateProjectValidationStepper())
-    dispatch(goToProjectValidationStep(stepIndex + 1));
+    dispatch(updateStepperIndex(stepIndex + 1));
   })
 }
 
+/** Simply go to the previous stepper check */
 export function goToPreviousProjectValidationStep() {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().projectValidationReducer.stepper;
-    dispatch(goToProjectValidationStep(stepIndex - 1));
+    dispatch(updateStepperIndex(stepIndex - 1));
   });
 }
 
 
-/**Directly jump to a step at the specified index */
-export function goToProjectValidationStep(stepIndex) {
-  return ((dispatch) => {
-    if (isNaN(stepIndex)) stepIndex = projectValidationStepObjectIndex[stepIndex];
-    let nextStepName = projectValidationStepButtonIndex[stepIndex + 1];
-    let previousStepName = projectValidationStepButtonIndex[stepIndex - 1];
-    return dispatch({
-      type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-      stepIndex: stepIndex,
-      nextStepName: nextStepName,
-      previousStepName: previousStepName,
-      nextDisabled: false
-    })
+/** Directly jump to a step at the specified index */
+export function updateStepperIndex(stepIndex) {
+  return ((dispatch, getState) => {
+    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    /** The next step name is always the one after the first because we are not allow back naviagtion */
+    let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
+    let previousStepName = 'Cancel';
+    if (!projectValidationStepsArray[0] || stepIndex > projectValidationStepsArray[projectValidationStepsArray.length - 1].index) {
+      //If the stepIndex is > the last step in the stepper arrays' index (Done)
+      dispatch({
+        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+        showProjectValidationStepper: false
+      })
+      dispatch(ProjectSelectionActions.displayTools());
+    } else if (stepIndex < projectValidationStepsArray[0].index) {
+      //If stepIndex is less than the first steps' index (Cancelled)
+      dispatch({
+        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+        showProjectValidationStepper: false
+      })
+      dispatch(ProjectSelectionActions.clearLastProject())
+    } else
+      dispatch({
+        type: consts.GO_TO_PROJECT_VALIDATION_STEP,
+        stepIndex: stepIndex,
+        nextStepName: nextStepName,
+        previousStepName: previousStepName
+      })
   });
 }
 
@@ -124,4 +112,58 @@ export function toggleNextButton(nextDisabled) {
     type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
     nextDisabled: nextDisabled
   }
+}
+
+/**
+ * Adds the given step to the array of steps to be checked. 
+ * This should be called after the check deteremines it did not pass.
+ * @param {string} namespace - namespace of the step. Should be constant.
+ */
+export function addProjectValidationStep(namespace) {
+  switch (namespace) {
+    case COPYRIGHT_NAMESPACE:
+      return {
+        type: consts.ADD_PROJECT_VALIDATION_STEP,
+        namespace,
+        buttonName: 'Copy Right',
+        index: 1
+      }
+    case PROJECT_INFORMATION_NAMESPACE:
+      return {
+        type: consts.ADD_PROJECT_VALIDATION_STEP,
+        namespace,
+        buttonName: 'Project Information',
+        index: 2
+      }
+    case MERGE_CONFLICT_NAMESPACE:
+      return {
+        type: consts.ADD_PROJECT_VALIDATION_STEP,
+        namespace,
+        buttonName: 'Merge Conflicts',
+        index: 3
+      }
+    case MISSING_VERSES_NAMESPACE:
+      return {
+        type: consts.ADD_PROJECT_VALIDATION_STEP,
+        namespace,
+        buttonName: 'Missing Verses',
+        index: 4
+      }
+
+  }
+}
+/**
+ * Removes the given step from the array of steps to be checked.
+ * This should be called after the check finalizes
+ * @param {string} namespace - namespace of the step. Should be constant.
+ */
+export function removeProjectValidationStep(namespace) {
+  return ((dispatch, getState) => {
+    let projectValidationStepsArray = getState().projectValidationReducer.projectValidationStepsArray.slice();
+    //Checking which step namespace matches the one provided to remove
+    dispatch({
+      type: consts.REMOVE_PROJECT_VALIDATION_STEP,
+      projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)
+    })
+  })
 }

@@ -1,18 +1,26 @@
 import consts from './ActionTypes';
-import * as MissingVersesHelpers from '../helpers/MissingVersesHelpers'
+const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
+import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+/**
+ * Wrapper action for handling missing verse detection, and 
+ * storing result in reducer. Returns false under step namespace
+ * if check is passed
+ */
+export function validate() {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.MISSING_VERSES_CHECK
+    })
+  })
+}
 
-export function validate(state) {
-  let { projectSaveLocation, manifest } = state.projectDetailsReducer;
-  let missingVerses = MissingVersesHelpers.findMissingVerses(projectSaveLocation, manifest.project.id);
-  if (missingVerses) {
-    return {
-      type: consts.MISSING_VERSES_CHECK,
-      payload: {
-        verses: missingVerses
-      }
-    }
-  } else return {
-    type: consts.MISSING_VERSES_CHECK,
-    payload:false
-  }
+/**
+ * Called by the naviagation component on the next button click for the 
+ * corresponding step. Should handle anything that happens before moving
+ * on from this check
+ */
+export function finalize() {
+  return ((dispatch, getState) => {
+    dispatch(ProjectValidationActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
+  })
 }

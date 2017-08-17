@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
-//actions
-import * as MergeConflictActions from '../../../actions/MergeConflictActions';
 
 
 class MergeConflictsCheck extends Component {
@@ -26,9 +24,7 @@ class MergeConflictsCheck extends Component {
         <div>Please review and resolve these conflicts before continuing.</div>
       </div>
     )
-    const mergeConflictCheckObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
-    let nextButtonEnabled = MergeConflictActions.getNextButtonStatus(mergeConflictCheckObject);
-    this.props.actions.toggleNextDisabled(!nextButtonEnabled);
+    this.props.actions.updateMergeConflictNextButton();
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
@@ -77,7 +73,7 @@ class MergeConflictsCheck extends Component {
   }
 
   render() {
-    let mergeConflictObject = this.props.reducers.projectValidationReducer.projectValidationStepsObject[MERGE_CONFLICT_NAMESPACE];
+    let mergeConflictObject = this.props.reducers.mergeConflictReducer;
     return (
       <Card style={{ width: '100%', height: '100%' }}
         containerStyle={{ overflowY: 'auto', height: '100%' }}>

@@ -5,6 +5,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
+import * as CopyrightActions from '../../actions/CopyrightActions';
+import * as ProjectInformationActions from '../../actions/ProjectInformationActions';
+import * as MissingVersesActions from '../../actions/MissingVersesActions';
+
 //components
 import { Card } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
@@ -32,6 +36,7 @@ class ProjectValidationContainer extends Component {
     };
 
     let displayContainer = <div />;
+
     switch (stepIndex) {
       case 1:
         displayContainer = <CopyRightCheck {...this.props} />;
@@ -78,7 +83,8 @@ class ProjectValidationContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     reducers: {
-      projectValidationReducer: state.projectValidationReducer
+      projectValidationReducer: state.projectValidationReducer,
+      mergeConflictReducer: state.mergeConflictReducer
     }
   }
 }
@@ -101,8 +107,28 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
+<<<<<<< HEAD
       updateVersionSelection:(mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+=======
+      updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
+        dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      },
+      updateMergeConflictNextButton: () => {
+        dispatch(MergeConflictActions.updateMergeConflictNextButton());
+      },
+      finalizeCopyrightCheck: () => {
+          dispatch(CopyrightActions.finalize());
+      },
+      finalizeMergeConflictCheck: () => {
+        dispatch(MergeConflictActions.finalize());
+      },
+      finalizeMissingVersesCheck: () => {
+        dispatch(MissingVersesActions.finalize());
+      },
+      finalizeProjectInformationCheck: () => {
+        dispatch(ProjectInformationActions.finalize());
+>>>>>>> develop
       }
     }
   }
@@ -110,7 +136,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 ProjectValidationContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.shape({
+    projectValidationReducer: PropTypes.shape({
+      stepper: PropTypes.shape({
+        stepIndex: PropTypes.number.isRequired
+      }),
+      showProjectValidationStepper:PropTypes.bool.isRequired
+    }),
+    mergeConflictReducer: PropTypes.object.isRequired,
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)

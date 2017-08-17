@@ -31,7 +31,7 @@ class ProjectValidationStepper extends Component {
       <MuiThemeProvider>
         <Card>
           <div style={{width: '100%', maxWidth: '100%', margin: 'auto'}}>
-            <Stepper activeStep={stepIndex - 1} style={{padding: '0 50px'}}>
+            <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
               <Step>
                 <StepLabel icon={copyrightIcon}>
                   <span style={{color: copyrightColor}}>{" Copyright Check "}</span>
