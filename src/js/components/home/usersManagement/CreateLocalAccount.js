@@ -57,7 +57,7 @@ class CreateLocalAccount extends Component {
                     <br /><br />
           If you are not comfortable with being known as "
                     <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-          ", You may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
+          ", you may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
           and enter a new name.
                 </p>
       </div>
