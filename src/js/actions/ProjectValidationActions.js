@@ -20,7 +20,6 @@ export function changeProjectValidationInstructions(instructions) {
 
 /**
  * Wrapper function for handling the initial checking of steps before the UI is displayed.
- * NOTE: All step checks must be synchronous actions
  * @param {function} callback - Called when the checks for each step are complete, has 
  * value of true or false depending on is all checks passed
  */
@@ -107,7 +106,7 @@ export function showProjectValidationStepper(val) {
 
 export function addProjectValidationStep(stepObject) {
   return {
-    type: consts.ADD_PROJECT_VALIDTION_STEP,
+    type: consts.ADD_PROJECT_VALIDATION_STEP,
     stepObject: action.stepObject
   }
 }
@@ -116,7 +115,7 @@ export function removeProjectValidationStep(namespace) {
   return ((dispatch, getState) => {
     let {projectValidationStepsArray} = getState().projectValidationReducer;
     dispatch({
-      type: consts.REMOVE_PROJECT_VALIDTION_STEP,
+      type: consts.REMOVE_PROJECT_VALIDATION_STEP,
       projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)
     })
   })

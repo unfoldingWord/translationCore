@@ -5,9 +5,11 @@ import Path from 'path-extra';
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
 //helpers
 import * as LoadHelpers from './LoadHelpers';
+import * as ManifestHelpers from './manifestHelpers';
+import * as usfmHelpers from './usfmHelpers.js';
 
 /**
- * Retrieves tC manifest and returns it or if not available looks for tS manifest. 
+ * Retrieves tC manifest and returns it or if not available looks for tS manifest.
  * If neither are available tC has no way to load the project, unless its a usfm project.
  * @param {string} projectPath - Path location in the filesystem for the project.
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
@@ -18,7 +20,7 @@ export function getProjectManifest(projectPath, projectLink, username) {
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
-    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, username);
+    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest, username);
   }
   return manifest;
 }
@@ -35,42 +37,8 @@ export function getProjectManifest(projectPath, projectLink, username) {
 export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
-    const defaultManifest = LoadHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
-    manifest = LoadHelpers.saveManifest(projectPath, projectLink, defaultManifest);
+    const defaultManifest = usfmHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
+    manifest = ManifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
-}
-
-/**
- * Gets neccesarry details in order to load a project from usfm that are not available
- * through the standard loading process.
- * @param {string} usfmFilePath - File path to the usfm being selected for the project
- * @return
- */
-export function getProjectDetailsFromUSFM(usfmFilePath) {
-  const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
-  const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-  /** hard coded due to unknown direction type from usfm */
-  const direction = 'ltr';
-  return { parsedUSFM, direction };
-}
-
-/**
- * Sets up and returns a tC project folder in ~/translationCore/{languageID_bookName}/{bookName}.usfm
- * @param {string} usfmFilePath - File path to the usfm being selected for the project
- */
-export function setUpUSFMFolderPath(usfmFilePath) {
-  const usfmData = LoadHelpers.loadUSFMData(usfmFilePath);
-  const parsedUSFM = LoadHelpers.getParsedUSFM(usfmData);
-  const {id, bookName, bookAbbr} = LoadHelpers.getIDsFromUSFM(parsedUSFM);
-  /**If there is no bookAbbr then ultimately the usfm import should fail */
-  if (!bookAbbr) console.warn('No book abbreviation detected in USFM');
-  let oldFileName = Path.parse(usfmFilePath).name.toLowerCase();
-  let folderNamePrefix = id ? `${id}_${bookAbbr}_` : `${oldFileName}_`;
-  let textType = oldFileName.includes('_usfm') ? '' : '_usfm';
-  let newUSFMProjectFolder = Path.join(DEFAULT_SAVE, `${folderNamePrefix}${textType}`);
-  const newUSFMFilePath = Path.join(newUSFMProjectFolder, bookAbbr) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return;
-  fs.outputFileSync(newUSFMFilePath, usfmData);
-  return newUSFMProjectFolder;
 }

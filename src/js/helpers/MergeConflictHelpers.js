@@ -7,8 +7,8 @@ const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 /**
  * Seaches usfm data with regex and returns all merge conflicts found separated by string.
  * Each element in the array represents a different version of the conflict.
- * The versions are split by pair of two naturally. 
- * 
+ * The versions are split by pair of two naturally.
+ *
  * @example ["1 this is the first version", "1 This is the second version"] - represents one verse conflict
  * @param {string} usfmData - usfm string to be searched for merge conflicts
  * @returns {[string]}
@@ -78,7 +78,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  * @param {object} mergeConflictsObject - Object to be parsed that contains the information
  * of the chosen text to merge
  * @param {string} projectSaveLocation - Path of the project
- * @param {object} manifest - Metadata of the project details 
+ * @param {object} manifest - Metadata of the project details
  */
 export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
   try {
@@ -117,7 +117,8 @@ export function createUSFMFromTsProject(projectSaveLocation) {
         files.forEach(file => {
           if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
             const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
-            const text = fs.readFileSync(chunkPath).toString();
+            let text = fs.readFileSync(chunkPath).toString();
+            text = text.replace(/\\c\s*\d\s*/, '');
             usfmData += text + '\n';
           }
         })
@@ -128,7 +129,7 @@ export function createUSFMFromTsProject(projectSaveLocation) {
 }
 
 /**
- * Determines whether or not there is usfm to parse for merge conflicts 
+ * Determines whether or not there is usfm to parse for merge conflicts
  * and if there is return the data it contains
  * @param {string} usfmFilePath - path to the usfm file of the project, note this may not exist
  * @param {string} projectSaveLocation - path to the projects location
@@ -150,4 +151,26 @@ export function checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation)
     } catch (e) { console.warn('Problem getting merge conflicts', e) }
   }
   return usfmData;
+}
+
+/**
+ * This method reads in all the chunks of a project, and determines if there is any merge conflicts.
+ * @param {Array} projectChunks - An array of finished chunks, as defined by the manfest
+ * @param {String} projectPath - The current save location of the project
+ * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
+ */
+export function projectHasMergeConflicts(projectPath, bookAbbr) {
+  let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+  for (var currentChapterFile of currentFolderChapters) {
+    let currentChapter = Path.parse(currentChapterFile).name;
+    if (!parseInt(currentChapter)) continue;
+    try {
+      let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
+      let fileContents = JSON.stringify(currentChapterObject);
+      if (~fileContents.indexOf('<<<<<<<')) {
+        return true;
+      }
+    } catch (e) { }
+  }
+  return false;
 }

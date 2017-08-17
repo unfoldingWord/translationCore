@@ -5,7 +5,7 @@ import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
-import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as USFMHelpers from '../helpers/usfmHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and 
@@ -22,7 +22,7 @@ export function validate() {
      * An array of arrays of an object.
      * */
     let parsedAllMergeConflictsFoundArray = [];
-    let usfmFilePath = LoadHelpers.isUSFMProject(projectSaveLocation) ||
+    let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation) ||
       path.join(projectSaveLocation, manifest.project.id + '.usfm');
 
     /**@type {string} */
@@ -67,7 +67,7 @@ export function validate() {
       filePath: usfmFilePath
     });
     dispatch({
-      type:consts.ADD_PROJECT_VALIDTION_STEP,
+      type:consts.ADD_PROJECT_VALIDATION_STEP,
       stepObject:{
         namespace:MERGE_CONFLICT_NAMESPACE,
         buttonName:'Merge Conflicts',
@@ -114,7 +114,7 @@ export function finalize() {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     const mergeConflictsObject = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
-    let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
+    let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     return dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   });

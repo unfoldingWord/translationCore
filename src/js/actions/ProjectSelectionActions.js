@@ -10,6 +10,9 @@ import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as migrationHelpers from '../helpers/migrationHelpers';
 
 
 /**
@@ -26,19 +29,19 @@ export function selectProject(projectPath, projectLink) {
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, params, targetLanguage;
     /**@type {String} */
-    let USFMFilePath = LoadHelpers.isUSFMProject(projectPath);
+    let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
     //If present proceed to usfm loading process
     if (USFMFilePath) {
-      let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
+      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
-      manifest = ProjectSelectionHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
-      params = LoadHelpers.getUSFMParams(projectPath, manifest);
+      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
+      params = usfmHelpers.getUSFMParams(projectPath, manifest);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
-      params = LoadHelpers.getParams(projectPath, manifest);
+      params = manifestHelpers.getParams(projectPath, manifest);
     }
     dispatch(clearLastProject());
     dispatch(loadProjectDetails(projectPath, manifest, params));
@@ -79,7 +82,7 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
  */
 export function loadProjectDetails(projectPath, manifest, params) {
   return ((dispatch) => {
-    LoadHelpers.migrateAppsToDotApps(projectPath);
+    migrationHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
     dispatch(ProjectDetailsActions.setProjectDetail("bookName", manifest.project.name));
@@ -107,7 +110,7 @@ export function displayTools() {
   return ((dispatch, getState) => {
     const { currentSettings } = getState().settingsReducer;
     const { manifest } = getState().projectDetailsReducer;
-    if (LoadHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
+    if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(ToolsMetadataActions.getToolsMetadatas());
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
