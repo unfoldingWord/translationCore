@@ -131,7 +131,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 ProjectValidationContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.shape({
+    projectValidationReducer: PropTypes.shape({
+      stepper: PropTypes.shape({
+        stepIndex: PropTypes.number.isRequired
+      }),
+      showProjectValidationStepper:PropTypes.bool.isRequired
+    }),
+    mergeConflictReducer: PropTypes.object.isRequired,
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)

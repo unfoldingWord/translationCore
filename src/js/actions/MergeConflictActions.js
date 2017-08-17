@@ -102,6 +102,11 @@ export function updateMergeConflictNextButton() {
   });
 }
 
+/**
+ * Called by the naviagation component on the next button click for the 
+ * corresponding step. Should handle anything that happens before moving
+ * on from this check
+ */
 export function finalize() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;

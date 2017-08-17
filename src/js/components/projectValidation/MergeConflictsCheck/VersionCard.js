@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import PropTypes from 'prop-types';
 
 class VersionCard extends Component {
 
@@ -28,6 +29,12 @@ class VersionCard extends Component {
       </div>
     );
   }
+}
+
+VersionCard.propTypes = {
+  index: PropTypes.string.isRequired,
+  mergeConflictIndex: PropTypes.string.isRequired,
+  textData: PropTypes.object.isRequired
 }
 
 export default VersionCard;

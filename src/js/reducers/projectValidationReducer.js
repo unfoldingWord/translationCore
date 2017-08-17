@@ -42,7 +42,8 @@ const projectValidationReducer = (state = initialState, action) => {
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
-          nextStepName: action.nextStepName
+          nextStepName: action.nextStepName,
+          nextDisabled: false
         }
       };
     case consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS:
