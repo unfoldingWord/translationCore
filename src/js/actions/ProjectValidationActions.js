@@ -1,8 +1,9 @@
 import consts from './ActionTypes';
-//actions
-import git from '../helpers/GitApi.js';
 
+//helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import git from '../helpers/GitApi.js';
+//actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
@@ -11,6 +12,7 @@ import * as ProjectInformationActions from './ProjectInformationActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 
+//Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
@@ -51,9 +53,11 @@ export function initiateProjectValidationStepper() {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     if (projectValidationStepsArray.length === 0) {
+      //If there are no invalid checks
       TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
+      //Show the checks that didn't pass
       dispatch(updateStepperIndex(projectValidationStepsArray[0].index));
     }
   })
@@ -159,6 +163,7 @@ export function addProjectValidationStep(namespace) {
 export function removeProjectValidationStep(namespace) {
   return ((dispatch, getState) => {
     let projectValidationStepsArray = getState().projectValidationReducer.projectValidationStepsArray.slice();
+    //Checking which step namespace matches the one provided to remove
     dispatch({
       type: consts.REMOVE_PROJECT_VALIDATION_STEP,
       projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)

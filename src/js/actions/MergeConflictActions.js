@@ -70,6 +70,12 @@ export function validate() {
   });
 }
 
+/**
+ * Method to update the users choice of resolving the corresponding merge conflict
+ * @param {string} mergeConflictIndex - Index of the merge conflict represented in the array of conflicts
+ * @param {string} versionIndex - The version of the git difference history out of the two versions
+ * @param {boolean} value - The value of the updated version. i.e. selected or not.
+ */
 export function updateVersionSelection(mergeConflictIndex, versionIndex, value) {
   return ((dispatch, getState) => {
     let otherVersionIndex = Number(! + versionIndex);
@@ -85,6 +91,11 @@ export function updateVersionSelection(mergeConflictIndex, versionIndex, value) 
   })
 }
 
+/**
+ * Method to go through each merge conlfict and check whether the user has
+ * done all required tasks in order to continue forward with resolving the
+ * merge conflicts
+ */
 export function updateMergeConflictNextButton() {
   return ((dispatch, getState) => {
     let mergeConflictCheckObject = getState().mergeConflictReducer;
