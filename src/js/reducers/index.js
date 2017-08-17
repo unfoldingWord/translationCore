@@ -24,6 +24,7 @@ import myProjectsReducer from './myProjectsReducer'
 import projectValidationReducer from './projectValidationReducer'
 import copyrightCheckReducer from './copyrightCheckReducer'
 import mergeConflictReducer from './mergeConflictReducer'
+
 // combining reducers
 const rootReducers = combineReducers({
   toolsReducer,
