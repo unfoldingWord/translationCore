@@ -2,6 +2,7 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 // helpers
 import ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as bibleHelpers from '../helpers/bibleHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -73,4 +74,49 @@ export function addObjectPropertyToManifest(propertyName, value) {
     propertyName,
     value
   };
+}
+
+
+export function setProjectBookIdAndBookName() {
+  return ((dispatch, getState) => {
+    const { bookId } = getState().projectInformationReducer;
+    const bookName = bibleHelpers.convertToFullBookName(bookId);
+    dispatch({
+      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+      bookId,
+      bookName
+    });
+  });
+}
+
+export function setLanguageDetails() {
+  return ((dispatch, getState) => {
+    const { languageDirection, languageId, languageName } = getState().projectInformationReducer;
+    dispatch({
+      type: consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
+      languageDirection,
+      languageId,
+      languageName
+    });
+  });
+}
+
+export function updateTranslators() {
+  return ((dispatch, getState) => {
+    const { translators } = getState().projectInformationReducer;
+    dispatch({
+      type: consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
+      translators
+    });
+  });
+}
+
+export function updateCheckers() {
+  return ((dispatch, getState) => {
+    const { checkers } = getState().projectInformationReducer;
+    dispatch({
+      type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
+      checkers
+    });
+  });
 }

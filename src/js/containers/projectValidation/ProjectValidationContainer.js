@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
+import * as ProjectInformationActions from '../../actions/ProjectInformationCheckActions';
 // components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
@@ -79,7 +80,8 @@ const mapStateToProps = (state) => {
     reducers: {
       projectValidationReducer: state.projectValidationReducer,
       projectDetailsReducer: state.projectDetailsReducer,
-      copyrightCheckReducer: state.copyrightCheckReducer
+      copyrightCheckReducer: state.copyrightCheckReducer,
+      projectInformationCheckReducer: state.projectInformationCheckReducer
     }
   }
 }
@@ -110,6 +112,24 @@ const mapDispatchToProps = (dispatch) => {
       },
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
+      },
+      setBookIDInProjectInformationReducer: (bookId) => {
+        dispatch(ProjectInformationActions.setBookIDInProjectInformationReducer(bookId))
+      },
+      setLanguageIdInProjectInformationReducer: (languageId) => {
+        dispatch(ProjectInformationActions.setLanguageIdInProjectInformationReducer(languageId));
+      },
+      setLanguageNameInProjectInformationReducer: (languageName) => {
+        dispatch(ProjectInformationActions.setLanguageNameInProjectInformationReducer(languageName));
+      },
+      setLanguageDirectionInProjectInformationReducer: (languageDirection) => {
+        dispatch(ProjectInformationActions.setLanguageDirectionInProjectInformationReducer(languageDirection));
+      },
+      setContributorsInProjectInformationReducer: (contributors) => {
+        dispatch(ProjectInformationActions.setContributorsInProjectInformationReducer(contributors));
+      },
+      setCheckersInProjectInformationReducer: (checkers) => {
+        dispatch(ProjectInformationActions.setCheckersInProjectInformationReducer(checkers));
       }
     }
   }

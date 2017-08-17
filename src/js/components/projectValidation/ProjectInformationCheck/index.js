@@ -3,36 +3,26 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import BookDropdownMenu from './BookDropdownMenu';
-import LanguageTextBox from './LanguageTextBox';
+import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionTextBox from './LanguageDirectionTextBox';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
 class ProjectInformationCheck extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bookId: '',
-      languageName: '',
-      languageDirection: '',
-      projectContributors: [],
-      projectCheckers: []
-    }
-    this.addContributor = this.addContributor.bind(this);
-    this.addChecker = this.addChecker.bind(this);
-    this.removeContributor = this.removeContributor.bind(this);
-    this.removeChecker = this.removeChecker.bind(this);
-    this.updateBookId = this.updateBookId.bind(this);
-    this.updateLanguageName = this.updateLanguageName.bind(this);
-    this.updateLanguageDirection = this.updateLanguageDirection.bind(this);
-  }
-
   componentWillMount() {
-    let { translators, checkers } = this.props.reducers.projectDetailsReducer.manifest;
-    this.setState({
-      projectContributors: translators,
-      projectCheckers: checkers
-    });
+    let {
+      translators,
+      checkers,
+      project,
+      target_language
+    } = this.props.reducers.projectDetailsReducer.manifest;
+
+    this.props.actions.setBookIDInProjectInformationReducer(project.id ? project.id : '');
+    this.props.actions.setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : '');
+    this.props.actions.setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : '');
+    this.props.actions.setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : '');
+    this.props.actions.setContributorsInProjectInformationReducer(translators.length > 0 ? translators : []);
+    this.props.actions.setCheckersInProjectInformationReducer(checkers.length > 0 ? checkers : []);
   }
 
   componentDidMount() {
@@ -51,50 +41,47 @@ class ProjectInformationCheck extends Component {
   }
 
   addContributor() {
-    let newContributors = this.state.projectContributors;
-    newContributors.unshift('');
-    this.setState({
-      projectContributors: newContributors
-    })
+    let { contributors } = this.props.reducers.ProjectInformationReducer;
+    contributors.unshift('');
+
+    this.props.actions.setContributorsInProjectInformationReducer(contributors);
   }
 
   addChecker() {
-    let newCheckers = this.state.projectCheckers;
-    newCheckers.unshift('');
-    this.setState({
-      projectCheckers: newCheckers
-    })
+    let { checkers } = this.props.reducers.ProjectInformationReducer;
+    checkers.unshift('');
+
+    this.props.actions.setCheckersInProjectInformationReducer(checkers);
   }
 
   removeContributor(selectedIndex) {
-    let newContributors = this.state.projectContributors.filter((element, index) => {
+    let { contributors } = this.props.reducers.ProjectInformationReducer;
+    let newContributorsArray = contributors.filter((element, index) => {
       return index != selectedIndex;
     });
-    this.setState({
-      projectContributors: newContributors
-    })
+
+    this.props.actions.setContributorsInProjectInformationReducer(newContributorsArray);
   }
 
   removeChecker(selectedIndex) {
-    let newCheckers = this.state.projectCheckers.filter((element, index) => {
+    let { checkers } = this.props.reducers.ProjectInformationReducer;
+    let newCheckersArray = checkers.filter((element, index) => {
       return index != selectedIndex;
     });
-    this.setState({
-      projectCheckers: newCheckers
-    })
-  }
 
-  updateBookId(bookId) {
-    this.setState({bookId});
-  }
-  updateLanguageName(languageName) {
-    this.setState({languageName});
-  }
-  updateLanguageDirection(languageDirection) {
-    this.setState({languageDirection});
+    this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
   render() {
+    const {
+      bookId,
+      languageId,
+      languageName,
+      languageDirection,
+      contributors,
+      checkers
+    } = this.props.reducers.projectInformationCheckReducer
+
     return (
      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         Project Information
@@ -107,26 +94,26 @@ class ProjectInformationCheck extends Component {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
             <BookDropdownMenu
-              bookId={this.state.bookId}
-              updateBookId={this.updateBookId}
+              bookId={bookId}
+              updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
             />
-            <LanguageTextBox
-              languageName={this.state.languageName}
-              updateLanguageName={this.updateLanguageName}
+            <LanguageNameTextBox
+              languageName={languageName}
+              updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
             />
             <LanguageDirectionTextBox
-              languageDirection={this.state.languageDirection}
-              updateLanguageDirection={this.updateLanguageDirection}
+              languageDirection={languageDirection}
+              updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
             />
           </div><br />
           <div style={{ display: 'flex' }}>
             <ContributorsArea 
-              contributors={this.state.projectContributors}
+              contributors={contributors}
               addContributor={this.addContributor}
               removeContributor={this.removeContributor}
             />
             <CheckersArea
-              checkers={this.state.projectCheckers}
+              checkers={checkers}
               addChecker={this.addChecker}
               removeChecker={this.removeChecker}
             />

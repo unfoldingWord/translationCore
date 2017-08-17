@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 import { TextField } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 
-
-const LanguageTextBox = ({
+const LanguageNameTextBox = ({
   languageName,
   updateLanguageName
 }) => {
@@ -30,9 +29,9 @@ const LanguageTextBox = ({
   );
 }
 
-LanguageTextBox.propTypes = {
+LanguageNameTextBox.propTypes = {
   languageName: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired
 };
 
-export default LanguageTextBox;
+export default LanguageNameTextBox;
