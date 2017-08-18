@@ -139,6 +139,12 @@ const mapDispatchToProps = (dispatch) => {
       updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
       },
+      updateCheckerName: (checkerName, index) => {
+        dispatch(ProjectInformationCheckActions.updateCheckerName(checkerName, index));
+      },
+      updateContributorName: (contibutorName, index) => {
+        dispatch(ProjectInformationCheckActions.updateContributorName(contibutorName, index));
+      },
       finalizeCopyrightCheck: () => {
         dispatch(CopyrightCheckActions.finalize());
       },

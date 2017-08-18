@@ -9,7 +9,8 @@ import { Glyphicon } from 'react-bootstrap';
 const CheckersArea = ({
   checkers,
   addChecker,
-  removeChecker
+  removeChecker,
+  updateCheckerName
 }) => {
   return (
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
@@ -29,19 +30,21 @@ const CheckersArea = ({
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {
-          checkers.map((name, index) => {
+          checkers.map((checkerName, index) => {
             return (
               <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
                 <TextField
                   id={index.toString()}
-                  value={name}
+                  value={checkerName}
                   underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
                   style={{ width: '150px' }}
+                  onChange={e => updateCheckerName(e.target.value, index)}
+                  autoFocus={checkerName === "" ? true : false }
                 />
                 <Glyphicon
                   glyph="trash"
                   onClick={() => removeChecker(index)}
-                  style={{ fontSize: "18px", cursor: "pointer"  }}
+                  style={{ fontSize: "18px", cursor: "pointer" }}
                 />
               </div>
             )
@@ -55,7 +58,8 @@ const CheckersArea = ({
 CheckersArea.propTypes = {
   checkers: PropTypes.array.isRequired,
   addChecker: PropTypes.func.isRequired,
-  removeChecker: PropTypes.func.isRequired
+  removeChecker: PropTypes.func.isRequired,
+  updateCheckerName: PropTypes.func.isRequired
 };
 
 export default CheckersArea;

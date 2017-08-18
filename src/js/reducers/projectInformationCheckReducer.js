@@ -9,7 +9,7 @@ const InitialState = {
   checkers: []
 }
 
-const ProjectInformationCheckReducer = (state = InitialState, action) => {
+const projectInformationCheckReducer = (state = InitialState, action) => {
   switch (action.type) {
     case consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER:
       return {
@@ -48,4 +48,4 @@ const ProjectInformationCheckReducer = (state = InitialState, action) => {
   }
 }
 
-export default ProjectInformationCheckReducer;
+export default projectInformationCheckReducer;

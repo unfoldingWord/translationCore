@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
 
-const LanguageDirectionTextBox = ({
+const LanguageDirectionDropdownMenu = ({
   languageDirection,
   updateLanguageDirection
 }) => {
@@ -28,7 +28,7 @@ const LanguageDirectionTextBox = ({
         floatingLabelText={
           <div>
             <Glyphicon glyph={"eye-open"} style={{ color: "#000000" }} />&nbsp;
-            <span>Reading Direction</span>&nbsp;
+            <span>Language Direction</span>&nbsp;
             <span style={{ color: '#800020'}}>*</span>
           </div>
         }
@@ -36,7 +36,7 @@ const LanguageDirectionTextBox = ({
           updateLanguageDirection(value);
         }}
       >
-      <MenuItem value={languageDirection} primaryText={textDirection} />
+        <MenuItem value={languageDirection} primaryText={textDirection} />
         <MenuItem value={'ltr'} primaryText={ltrText} />
         <MenuItem value={'rtl'} primaryText={rtlText} />
       </SelectField>
@@ -44,9 +44,9 @@ const LanguageDirectionTextBox = ({
   );
 }
 
-LanguageDirectionTextBox.propTypes = {
+LanguageDirectionDropdownMenu.propTypes = {
   languageDirection: PropTypes.string.isRequired,
   updateLanguageDirection: PropTypes.func.isRequired
 };
 
-export default LanguageDirectionTextBox;
+export default LanguageDirectionDropdownMenu;

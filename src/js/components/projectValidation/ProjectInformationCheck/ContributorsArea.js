@@ -9,7 +9,8 @@ import { TextField } from 'material-ui';
 const ContributorsArea = ({
   contributors,
   addContributor,
-  removeContributor
+  removeContributor,
+  updateContributorName
 }) => {
   return (
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
@@ -29,14 +30,16 @@ const ContributorsArea = ({
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
         {
-          contributors.map((name, index) => {
+          contributors.map((contributorName, index) => {
             return (
               <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
                 <TextField
                   id={index.toString()}
-                  value={name}
+                  value={contributorName}
                   underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
                   style={{ width: '200px' }}
+                  onChange={e => updateContributorName(e.target.value, index)}
+                  autoFocus={contributorName === "" ? true : false }
                 />
                 <Glyphicon
                   glyph="trash"
@@ -55,7 +58,8 @@ const ContributorsArea = ({
 ContributorsArea.propTypes = {
   contributors: PropTypes.array.isRequired,
   addContributor: PropTypes.func.isRequired,
-  removeContributor: PropTypes.func.isRequired
+  removeContributor: PropTypes.func.isRequired,
+  updateContributorName: PropTypes.func.isRequired
 };
 
 export default ContributorsArea;

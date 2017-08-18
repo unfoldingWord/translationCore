@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import BookDropdownMenu from './BookDropdownMenu';
+import LanguageIdTextBox from './LanguageIdTextBox';
 import LanguageNameTextBox from './LanguageNameTextBox';
-import LanguageDirectionTextBox from './LanguageDirectionTextBox';
+import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
@@ -21,8 +22,8 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : '');
     this.props.actions.setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : '');
     this.props.actions.setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : '');
-    this.props.actions.setContributorsInProjectInformationReducer(translators.length > 0 ? translators : []);
-    this.props.actions.setCheckersInProjectInformationReducer(checkers.length > 0 ? checkers : []);
+    this.props.actions.setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []);
+    this.props.actions.setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []);
   }
 
   componentDidMount() {
@@ -41,21 +42,21 @@ class ProjectInformationCheck extends Component {
   }
 
   addContributor() {
-    let { contributors } = this.props.reducers.ProjectInformationReducer;
+    let { contributors } = this.props.reducers.projectInformationCheckReducer;
     contributors.unshift('');
 
     this.props.actions.setContributorsInProjectInformationReducer(contributors);
   }
 
   addChecker() {
-    let { checkers } = this.props.reducers.ProjectInformationReducer;
+    let { checkers } = this.props.reducers.projectInformationCheckReducer;
     checkers.unshift('');
 
     this.props.actions.setCheckersInProjectInformationReducer(checkers);
   }
 
   removeContributor(selectedIndex) {
-    let { contributors } = this.props.reducers.ProjectInformationReducer;
+    let { contributors } = this.props.reducers.projectInformationCheckReducer;
     let newContributorsArray = contributors.filter((element, index) => {
       return index != selectedIndex;
     });
@@ -64,7 +65,7 @@ class ProjectInformationCheck extends Component {
   }
 
   removeChecker(selectedIndex) {
-    let { checkers } = this.props.reducers.ProjectInformationReducer;
+    let { checkers } = this.props.reducers.projectInformationCheckReducer;
     let newCheckersArray = checkers.filter((element, index) => {
       return index != selectedIndex;
     });
@@ -97,25 +98,33 @@ class ProjectInformationCheck extends Component {
               bookId={bookId}
               updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
             />
-            <LanguageNameTextBox
-              languageName={languageName}
-              updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
-            />
-            <LanguageDirectionTextBox
+            <LanguageDirectionDropdownMenu
               languageDirection={languageDirection}
               updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
             />
           </div><br />
+          <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
+            <LanguageIdTextBox
+                languageId={languageId}
+                updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+              />
+              <LanguageNameTextBox
+                languageName={languageName}
+                updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
+              />
+          </div><br />
           <div style={{ display: 'flex' }}>
             <ContributorsArea 
               contributors={contributors}
-              addContributor={this.addContributor}
-              removeContributor={this.removeContributor}
+              addContributor={this.addContributor.bind(this)}
+              removeContributor={this.removeContributor.bind(this)}
+              updateContributorName={(contributorName, index) => this.props.actions.updateContributorName(contributorName, index)}
             />
             <CheckersArea
               checkers={checkers}
-              addChecker={this.addChecker}
-              removeChecker={this.removeChecker}
+              addChecker={this.addChecker.bind(this)}
+              removeChecker={this.removeChecker.bind(this)}
+              updateCheckerName={(checkerName, index) => this.props.actions.updateCheckerName(checkerName, index)}
             />
           </div>
         </Card>
