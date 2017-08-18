@@ -97,7 +97,5 @@ function selectAndLoadProject(projectPath) {
   return ((dispatch) => {
     // select project and load it.
     dispatch(ProjectSelectionActions.selectProject(projectPath));
-    // display ToolsCards.
-    dispatch(BodyUIActions.goToStep(3));
   });
 }

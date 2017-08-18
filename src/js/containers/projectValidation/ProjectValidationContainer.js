@@ -5,8 +5,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
-import * as ProjectInformationActions from '../../actions/ProjectInformationCheckActions';
-// components
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as MergeConflictActions from '../../actions/MergeConflictActions';
+import * as MissingVersesActions from '../../actions/MissingVersesActions';
+//components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
@@ -32,6 +34,7 @@ class ProjectValidationContainer extends Component {
     };
 
     let displayContainer = <div />;
+
     switch (stepIndex) {
       case 1:
         displayContainer = <CopyrightCheck {...this.props} />;
@@ -81,7 +84,8 @@ const mapStateToProps = (state) => {
       projectValidationReducer: state.projectValidationReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       copyrightCheckReducer: state.copyrightCheckReducer,
-      projectInformationCheckReducer: state.projectInformationCheckReducer
+      projectInformationCheckReducer: state.projectInformationCheckReducer,
+      mergeConflictReducer: state.mergeConflictReducer
     }
   }
 }
@@ -89,8 +93,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      showStepper: (val) => {
-        dispatch(ProjectValidationActions.showStepper(val));
+      goToProjectValidationStep: (val) => {
+        dispatch(ProjectValidationActions.goToProjectValidationStep(val));
       },
       previousStep: () => {
         dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
@@ -114,22 +118,40 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       },
       setBookIDInProjectInformationReducer: (bookId) => {
-        dispatch(ProjectInformationActions.setBookIDInProjectInformationReducer(bookId))
+        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId))
       },
       setLanguageIdInProjectInformationReducer: (languageId) => {
-        dispatch(ProjectInformationActions.setLanguageIdInProjectInformationReducer(languageId));
+        dispatch(ProjectInformationCheckActions.setLanguageIdInProjectInformationReducer(languageId));
       },
       setLanguageNameInProjectInformationReducer: (languageName) => {
-        dispatch(ProjectInformationActions.setLanguageNameInProjectInformationReducer(languageName));
+        dispatch(ProjectInformationCheckActions.setLanguageNameInProjectInformationReducer(languageName));
       },
       setLanguageDirectionInProjectInformationReducer: (languageDirection) => {
-        dispatch(ProjectInformationActions.setLanguageDirectionInProjectInformationReducer(languageDirection));
+        dispatch(ProjectInformationCheckActions.setLanguageDirectionInProjectInformationReducer(languageDirection));
       },
       setContributorsInProjectInformationReducer: (contributors) => {
-        dispatch(ProjectInformationActions.setContributorsInProjectInformationReducer(contributors));
+        dispatch(ProjectInformationCheckActions.setContributorsInProjectInformationReducer(contributors));
       },
       setCheckersInProjectInformationReducer: (checkers) => {
-        dispatch(ProjectInformationActions.setCheckersInProjectInformationReducer(checkers));
+        dispatch(ProjectInformationCheckActions.setCheckersInProjectInformationReducer(checkers));
+      },
+        updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
+        dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      },
+      updateMergeConflictNextButton: () => {
+        dispatch(MergeConflictActions.updateMergeConflictNextButton());
+      },
+      finalizeCopyrightCheck: () => {
+          dispatch(CopyrightCheckActions.finalize());
+      },
+      finalizeMergeConflictCheck: () => {
+        dispatch(MergeConflictActions.finalize());
+      },
+      finalizeMissingVersesCheck: () => {
+        dispatch(MissingVersesActions.finalize());
+      },
+      finalizeProjectInformationCheck: () => {
+        dispatch(ProjectInformationCheckActions.finalize());
       }
     }
   }
@@ -137,7 +159,15 @@ const mapDispatchToProps = (dispatch) => {
 
 ProjectValidationContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.shape({
+    projectValidationReducer: PropTypes.shape({
+      stepper: PropTypes.shape({
+        stepIndex: PropTypes.number.isRequired
+      }),
+      showProjectValidationStepper:PropTypes.bool.isRequired
+    }),
+    mergeConflictReducer: PropTypes.object.isRequired
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)
