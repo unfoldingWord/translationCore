@@ -24,7 +24,6 @@ class MergeConflictsCheck extends Component {
         <div>Please review and resolve these conflicts before continuing.</div>
       </div>
     )
-    this.props.actions.updateMergeConflictNextButton();
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
@@ -75,10 +74,13 @@ class MergeConflictsCheck extends Component {
   render() {
     let mergeConflictObject = this.props.reducers.mergeConflictReducer;
     return (
-      <Card style={{ width: '100%', height: '100%' }}
-        containerStyle={{ overflowY: 'auto', height: '100%' }}>
-        {this.mergeConflictCards(mergeConflictObject)}
-      </Card>
+      <div style={{ width: '100%', height: '100%' }}>
+        Merge Conflicts
+        <Card style={{ width: '100%', height: '100%' }}
+          containerStyle={{ overflowY: 'auto', height: '100%' }}>
+          {this.mergeConflictCards(mergeConflictObject)}
+        </Card>
+      </div>
     );
   }
 }
@@ -86,7 +88,7 @@ class MergeConflictsCheck extends Component {
 MergeConflictsCheck.propTypes = {
   actions: PropTypes.shape({
     toggleNextDisabled: PropTypes.func.isRequired,
-    changeProjectValidationInstructions: PropTypes.func.isRequired,
+    changeProjectValidationInstructions: PropTypes.func.isRequired
   }),
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.object.isRequired

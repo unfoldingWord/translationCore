@@ -2,9 +2,7 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   projectSaveLocation: '',
-  bookName: '',
   manifest: {},
-  params: {},
   currentProjectToolsProgress: {}
 };
 
@@ -15,20 +13,10 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         projectSaveLocation: action.pathLocation
       };
-    case consts.SET_PROJECT_DETAIL:
-      return {
-        ...state,
-        [action.key]: action.value
-      };
     case consts.STORE_MANIFEST:
       return {
         ...state,
         manifest: action.manifest
-      };
-    case consts.STORE_PARAMS:
-      return {
-        ...state,
-        params: action.params
       };
     case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
       return {
@@ -38,6 +26,14 @@ const projectDetailsReducer = (state = initialState, action) => {
           [action.toolName]: action.progress
         }
       };
+    case consts.ADD_MANIFEST_PROPERTY:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          [action.propertyName]: action.value
+        }
+      }
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:

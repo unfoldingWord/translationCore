@@ -48,8 +48,7 @@ export function saveProjectInHomeFolder(projectPath) {
     return tCProjectsSaveLocation;
   }
 }
-
-/**
+/** 
  * @description creates an array that has the data of each included tool and 'subtool'
  *
  * @param {object} dataObject - Package json of the tool being loaded,

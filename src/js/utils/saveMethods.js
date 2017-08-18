@@ -54,7 +54,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
  */
 export const saveTargetLanguage = state => {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    const bookAbbr = state.projectDetailsReducer.params.bookAbbr;
+    const bookAbbr = state.projectDetailsReducer.manifest.project.id;
     let currentTargetLanguageChapters = state.resourcesReducer.bibles.targetLanguage;
     if (PROJECT_SAVE_LOCATION && bookAbbr && currentTargetLanguageChapters) {
       for (let chapter in currentTargetLanguageChapters) {
@@ -256,4 +256,16 @@ export function saveLocalUserdata(state) {
   if (userdata.localUser) {
     localStorage.setItem('localUser', JSON.stringify(userdata));
   }
+}
+
+/**
+ * saves the current projects manifest file when the manifest state is changed.
+ * @param {object} state - app state.
+ */
+export function saveProjectManifest(state) {
+  const { manifest, projectSaveLocation } = state.projectDetailsReducer;
+  const fileName = 'manifest.json'
+  const savePath = path.join(projectSaveLocation, fileName);
+
+  fs.outputJsonSync(savePath, manifest)
 }

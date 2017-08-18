@@ -9,7 +9,8 @@ import {
   saveReminders,
   saveGroupsIndex,
   saveGroupsData,
-  saveLocalUserdata
+  saveLocalUserdata,
+  saveProjectManifest
 } from './saveMethods';
 
 /**
@@ -46,6 +47,10 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
+    // save manifest only if it is defined.
+    if (newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
+      saveProjectManifest(newState);
+    }
     // only save checkData and targetLanguage reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
       if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);

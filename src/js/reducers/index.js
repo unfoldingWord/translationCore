@@ -22,6 +22,7 @@ import verseEditReducer from './verseEditReducer'
 import homeScreenReducer from './homeScreenReducer'
 import myProjectsReducer from './myProjectsReducer'
 import projectValidationReducer from './projectValidationReducer'
+import copyrightCheckReducer from './copyrightCheckReducer'
 import mergeConflictReducer from './mergeConflictReducer'
 import missingVersesReducer from './missingVersesReducer'
 
@@ -49,6 +50,7 @@ const rootReducers = combineReducers({
   homeScreenReducer,
   myProjectsReducer,
   projectValidationReducer,
+  copyrightCheckReducer,
   mergeConflictReducer,
   missingVersesReducer
 });

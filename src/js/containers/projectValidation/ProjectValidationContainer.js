@@ -1,23 +1,21 @@
-import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//actions
+// actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
+import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
-import * as CopyrightActions from '../../actions/CopyrightActions';
-import * as ProjectInformationActions from '../../actions/ProjectInformationActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
-
 //components
-import { Card } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
 import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
-import CopyRightCheck from '../../components/projectValidation/CopyRightCheck';
+import CopyrightCheck from '../../components/projectValidation/CopyrightCheck';
 import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
-import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
+import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 
 class ProjectValidationContainer extends Component {
@@ -39,7 +37,7 @@ class ProjectValidationContainer extends Component {
 
     switch (stepIndex) {
       case 1:
-        displayContainer = <CopyRightCheck {...this.props} />;
+        displayContainer = <CopyrightCheck {...this.props} />;
         break;
       case 2:
         displayContainer = <ProjectInformationCheck {...this.props} />;
@@ -69,7 +67,7 @@ class ProjectValidationContainer extends Component {
               <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
                 <ProjectValidationInstructions {...this.props} />
               </div>
-              <div style={{ height: '100%', width: '100%', padding: '20px 65px 0 20px' }}>
+              <div style={{ height: '100%', width: '100%', padding: '0px 50px 22px 20px' }}>
                 {displayContainer}
               </div>
             </div>
@@ -80,17 +78,18 @@ class ProjectValidationContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reducers: {
       projectValidationReducer: state.projectValidationReducer,
+      copyrightCheckReducer: state.copyrightCheckReducer,
       mergeConflictReducer: state.mergeConflictReducer,
       missingVersesReducer: state.missingVersesReducer
     }
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       goToProjectValidationStep: (val) => {
@@ -102,20 +101,23 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       nextStep: () => {
         dispatch(ProjectValidationActions.goToNextProjectValidationStep());
       },
+      selectProjectLicense: (selectedLicenseId) => {
+        dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
+      },
       changeProjectValidationInstructions: (instructions) => {
         dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
       },
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
+      loadProjectLicenseMarkdownFile: (licenseId) => {
+        dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
+      },
       updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
       },
-      updateMergeConflictNextButton: () => {
-        dispatch(MergeConflictActions.updateMergeConflictNextButton());
-      },
       finalizeCopyrightCheck: () => {
-          dispatch(CopyrightActions.finalize());
+        dispatch(CopyrightCheckActions.finalize());
       },
       finalizeMergeConflictCheck: () => {
         dispatch(MergeConflictActions.finalize());
@@ -124,7 +126,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(MissingVersesActions.finalize());
       },
       finalizeProjectInformationCheck: () => {
-        dispatch(ProjectInformationActions.finalize());
+        dispatch(ProjectInformationCheckActions.finalize());
       }
     }
   }

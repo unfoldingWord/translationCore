@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
-import { Grid, Row, Col, Glyphicon } from 'react-bootstrap'
+import { Grid, Col, Glyphicon } from 'react-bootstrap'
 import * as style from '../components/groupMenu/Style'
 // components
 import Groups from '../components/groupMenu/Groups'
@@ -149,10 +149,11 @@ class GroupMenuContainer extends React.Component {
       });
       let selections = selectionsArray.join(" ")
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      let bookName = this.props.projectDetailsReducer.bookName;
+      let bookName = this.props.projectDetailsReducer.manifest.project.name;
+
       if (selections) {
         //Convert the book name to the abbreviation tit -> Tit
-        let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
+        let bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
       }
       items.push(<GroupItem
@@ -177,6 +178,7 @@ class GroupMenuContainer extends React.Component {
     let { groupsIndex } = this.props.groupsIndexReducer
     let groups = <div /> // leave an empty container when required data isn't available
     let { groupsData } = this.props.groupsDataReducer
+
     if (groupsIndex !== undefined) {
       groups = groupsIndex.filter(groupIndex => {
         return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id)
@@ -250,7 +252,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       changeCurrentContextId: contextId => {
