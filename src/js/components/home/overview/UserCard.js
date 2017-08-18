@@ -34,7 +34,6 @@ class UserCard extends Component {
           </div>
           <div style={{ width: '400px' }}>
             <strong style={{ fontSize: 'x-large' }}>{userdata.username}</strong>
-            <p>{userdata.email ? userdata.email : 'no email address'}</p>
           </div>
         </div>
       );
