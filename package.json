@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.47",
+  "version": "0.7.1-beta.48",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
+    "electron": "^1.6.11",
     "electron-mocha": "^4.0.0",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^2.13.1",
