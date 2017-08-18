@@ -17,6 +17,8 @@ const copyrightCheckReducer = (state = initialState, action) => {
         ...state,
         projectLicenseMarkdown: action.projectLicenseMarkdown
       }
+    case consts.CLEAR_COPYRIGHT_CHECK_REDUCER:
+      return initialState;
     default:
       return state;
   }

@@ -135,14 +135,11 @@ const mapDispatchToProps = (dispatch) => {
       setCheckersInProjectInformationReducer: (checkers) => {
         dispatch(ProjectInformationCheckActions.setCheckersInProjectInformationReducer(checkers));
       },
-        updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
+      updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
       },
-      updateMergeConflictNextButton: () => {
-        dispatch(MergeConflictActions.updateMergeConflictNextButton());
-      },
       finalizeCopyrightCheck: () => {
-          dispatch(CopyrightCheckActions.finalize());
+        dispatch(CopyrightCheckActions.finalize());
       },
       finalizeMergeConflictCheck: () => {
         dispatch(MergeConflictActions.finalize());

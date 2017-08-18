@@ -71,6 +71,10 @@ export function goToPreviousProjectValidationStep() {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().projectValidationReducer.stepper;
     dispatch(updateStepperIndex(stepIndex - 1));
+    // if step index is at copyright check then clear data
+    if (stepIndex === 1) {
+      dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+    }
   });
 }
 
