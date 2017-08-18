@@ -10,12 +10,11 @@ class MissingVersesCheck extends Component {
             </div>
         )
     }
-    generateVerseCards(missingVersesObject) {
+    generateVerseCards(missingVersesObject, bookName) {
         let verseCards = [];
         Object.keys(missingVersesObject).forEach((chapterIndex) => {
             let chapterObject = missingVersesObject[chapterIndex];
             if(isNaN(chapterIndex)) return;
-            let {bookName} = missingVersesObject;
             Object.keys(chapterObject).forEach((verseNumber) => {
                 verseCards.push(
                     <div style={{fontSize:18, margin:'5px 0px'}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
@@ -27,13 +26,13 @@ class MissingVersesCheck extends Component {
         return verseCards;
     }
     render() {
-        let {verses} = this.props.reducers.missingVersesReducer;
+        let {verses, bookName} = this.props.reducers.missingVersesReducer;
         return (
-            <div style={{display:'flex', flexDirection:'column', marginLeft:20}}>
+            <div style={{display:'flex', flexDirection:'column', marginLeft:20, overflowY: 'auto', height: '100%'}}>
                 <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
                     Missing Verses
             </div>
-                {this.generateVerseCards(verses)}
+                {this.generateVerseCards(verses, bookName)}
             </div>
         );
     }

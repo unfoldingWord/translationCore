@@ -2,6 +2,7 @@ import consts from './ActionTypes';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MissingVersesHelpers from '../helpers/MissingVersesHelpers';
+import * as BibleHelpers from '../helpers/bibleHelpers';
 
 /**
  * Wrapper action for handling missing verse detection, and 
@@ -12,10 +13,11 @@ export function validate() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let missingVerses = MissingVersesHelpers.findMissingVerses(projectSaveLocation, manifest.project.id);
-    if (missingVerses) {
+    if (Object.keys(missingVerses).length > 0) {
       dispatch({
         type: consts.MISSING_VERSES_CHECK,
-        verses: missingVerses
+        verses: missingVerses,
+        bookName: BibleHelpers.convertToFullBookName(manifest.project.id)
       })
       dispatch(ProjectValidationActions.addProjectValidationStep(MISSING_VERSES_NAMESPACE));
     }
@@ -30,5 +32,6 @@ export function validate() {
 export function finalize() {
   return ((dispatch, getState) => {
     dispatch(ProjectValidationActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
+    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   })
 }

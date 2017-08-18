@@ -1,6 +1,5 @@
 import * as fs from 'fs-extra';
 import path from 'Path-extra';
-import * as BibleHelpers from '../helpers/bibleHelpers';
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
 
 /**
@@ -11,9 +10,9 @@ const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources'
  */
 export function findMissingVerses(projectSaveLocation, bookAbbr) {
   let expectedBookVerses = getExpectedBookVerses(bookAbbr);
+  let allMissingVerses = {};
   if (fs.existsSync(path.join(projectSaveLocation, bookAbbr))) {
     let chapterFolders = fs.readdirSync(path.join(projectSaveLocation, bookAbbr));
-    let allMissingVerses = {};
     for (var chapterFile of chapterFolders) {
       let currentMissingVerses = [];
       let chapterNumber = path.parse(chapterFile).name;
@@ -25,13 +24,11 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
           currentMissingVerses.push(verseIndex);
         }
       }
-      allMissingVerses[chapterNumber] = currentMissingVerses;
+      if (currentMissingVerses.length > 0) allMissingVerses[chapterNumber] = currentMissingVerses;
     }
-    allMissingVerses.bookName = BibleHelpers.convertToFullBookName(bookAbbr);
-    return allMissingVerses;
-  } else {
-    return null;
+    
   }
+  return allMissingVerses;
 }
 
 export function getExpectedBookVerses(bookAbbr) {
