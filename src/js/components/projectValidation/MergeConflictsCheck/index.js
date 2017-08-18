@@ -24,7 +24,6 @@ class MergeConflictsCheck extends Component {
         <div>Please review and resolve these conflicts before continuing.</div>
       </div>
     )
-    this.props.actions.updateMergeConflictNextButton();
   }
 
   mergeConflictCards(mergeConflictCheckObject) {

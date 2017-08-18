@@ -2,8 +2,8 @@ import consts from './ActionTypes';
 //actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
-import * as CopyrightActions from './CopyrightActions';
-import * as ProjectInformationActions from './ProjectInformationActions';
+import * as CopyrightCheckActions from './CopyrightCheckActions';
+import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 
@@ -31,8 +31,8 @@ export function changeProjectValidationInstructions(instructions) {
  */
 export function validateProject() {
   return ((dispatch, getState) => {
-    dispatch(CopyrightActions.validate());
-    dispatch(ProjectInformationActions.validate());
+    dispatch(CopyrightCheckActions.validate());
+    dispatch(ProjectInformationCheckActions.validate());
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
 
@@ -71,6 +71,10 @@ export function goToPreviousProjectValidationStep() {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().projectValidationReducer.stepper;
     dispatch(updateStepperIndex(stepIndex - 1));
+    // if step index is at copyright check then clear data
+    if (stepIndex === 1) {
+      dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+    }
   });
 }
 

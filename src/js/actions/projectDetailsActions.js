@@ -1,7 +1,7 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 // helpers
-import ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 

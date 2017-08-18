@@ -7,8 +7,8 @@ const initialState = {
     stepIndex: 1,
     nextStepName: 'Project Information',
     previousStepName: 'Cancel',
-    nextDisabled: false
-  },
+    nextDisabled: true
+  }
 }
 
 const projectValidationReducer = (state = initialState, action) => {
@@ -26,6 +26,7 @@ const projectValidationReducer = (state = initialState, action) => {
         ]
       }
     case consts.REMOVE_PROJECT_VALIDATION_STEP:
+    console.log(action.projectValidationStepsArray)
       return {
         ...state,
         projectValidationStepsArray: action.projectValidationStepsArray
@@ -43,7 +44,7 @@ const projectValidationReducer = (state = initialState, action) => {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName,
-          nextDisabled: false
+          nextDisabled: true
         }
       };
     case consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS:
