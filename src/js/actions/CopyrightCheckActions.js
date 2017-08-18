@@ -9,6 +9,7 @@ import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 import * as projectDetailsActions from './projectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions.js';
 import * as AlertModalActions from './AlertModalActions';
+import * as BodyUIActions from './BodyUIActions';
 // constants
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 
@@ -34,15 +35,24 @@ export function finalize() {
       dispatch(generateProjectLicense(selectedLicenseId));
     } else {
       // close project validation stepper
-      dispatch({
-        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
-        showProjectValidationStepper: false
-      });
+      dispatch(ProjectValidationActions.cancelProjectValidationStepper())
       // show alert.
-      //dispatch(AlertModalActions.openAlertDialog(''));
+      dispatch(
+        AlertModalActions.openOptionDialog(
+        `translationCore only supports projects that are Public Domain or released under a CC0, CC BY, or CC BY-SA license.\n
+        For further questions please contact help@door43.org.`,
+        () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          dispatch(BodyUIActions.goToStep(2));
+          dispatch({ type: consts.RESET_PROJECT_DETAIL });
+        },
+        'Cancel Import'
+        )
+      );
     }
+    dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
-    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+    dispatch(ProjectValidationActions.updateStepperIndex());
   })
 }
 
