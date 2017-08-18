@@ -42,6 +42,7 @@ export function finalize() {
       //dispatch(AlertModalActions.openAlertDialog(''));
     }
     dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
+    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
   })
 }
 
