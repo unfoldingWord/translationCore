@@ -25,6 +25,7 @@ import projectValidationReducer from './projectValidationReducer'
 import copyrightCheckReducer from './copyrightCheckReducer'
 import projectInformationCheckReducer from './projectInformationCheckReducer'
 import mergeConflictReducer from './mergeConflictReducer'
+import missingVersesReducer from './missingVersesReducer'
 
 // combining reducers
 const rootReducers = combineReducers({
@@ -52,7 +53,8 @@ const rootReducers = combineReducers({
   projectValidationReducer,
   copyrightCheckReducer,
   projectInformationCheckReducer,
-  mergeConflictReducer
+  mergeConflictReducer,
+  missingVersesReducer
 });
 
 export default rootReducers;
