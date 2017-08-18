@@ -1,9 +1,4 @@
 import consts from './ActionTypes';
-
-//helpers
-import * as LoadHelpers from '../helpers/LoadHelpers';
-import git from '../helpers/GitApi.js';
-//actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';

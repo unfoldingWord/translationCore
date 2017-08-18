@@ -119,6 +119,7 @@ export function createUSFMFromTsProject(projectSaveLocation) {
             const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
             let text = fs.readFileSync(chunkPath).toString();
             text = text.replace(/\\c\s*\d\s*/, '');
+            text = text.replace(/\\p.*/, '');
             usfmData += text + '\n';
           }
         })
