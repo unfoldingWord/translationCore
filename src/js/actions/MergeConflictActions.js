@@ -126,6 +126,6 @@ export function finalize() {
     let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     dispatch(ProjectValidationActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
-    return dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+    return dispatch(ProjectValidationActions.validateProject());
   });
 }
