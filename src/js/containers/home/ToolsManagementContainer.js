@@ -30,7 +30,11 @@ class ToolsManagementContainer extends Component {
       }
     } = this.props.reducers.settingsReducer;
     const {
-      bookName,
+      manifest: {
+        project: {
+          name
+        }
+      },
       projectSaveLocation,
       currentProjectToolsProgress
     } = this.props.reducers.projectDetailsReducer;
@@ -39,7 +43,7 @@ class ToolsManagementContainer extends Component {
       <div style={{ height: '100%' }}>
         ToolsManagementContainer
         <ToolsCards
-          bookName={bookName}
+          bookName={name}
           loggedInUser={loggedInUser}
           actions={this.props.actions}
           developerMode={developerMode}

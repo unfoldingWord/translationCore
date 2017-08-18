@@ -3,9 +3,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import moment from 'moment';
 import usfmHelper from 'usfm-js';
-// actions
-import * as LoadHelpers from '../helpers/LoadHelpers';
-import * as bibleHelpers from '../helpers/bibleHelpers';
+// helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
 //helpers
 // contant declarations
@@ -71,9 +69,8 @@ export function getMyProjects() {
         const manifest = fs.readJsonSync(manifestPath);
         target_language = manifest.target_language;
         bookAbbr = manifest.project.id;
-        bookName = bibleHelpers.convertToFullBookName(bookAbbr);
+        bookName = manifest.project.name;
       } else {
-
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
         const usfmObject = usfmHelper.toJSON(usfmText);
         let usfmHeadersObject = usfmHelpers.getIDsFromUSFM(usfmObject);
