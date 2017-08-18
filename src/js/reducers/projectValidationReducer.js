@@ -6,25 +6,29 @@ const initialState = {
   stepper: {
     stepIndex: 1,
     nextStepName: 'Project Information',
-    previousStepName: 'Previous',
+    previousStepName: 'Cancel',
     nextDisabled: false
   },
 }
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.VALIDATE_PROJECT_STEPS:
+    case consts.ADD_PROJECT_VALIDATION_STEP:
+      return {
+        ...state,
+        projectValidationStepsArray: [
+          ...state.projectValidationStepsArray.slice(),
+          {
+            namespace: action.namespace,
+            buttonName: action.buttonName,
+            index: action.index
+          }
+        ]
+      }
+    case consts.REMOVE_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         projectValidationStepsArray: action.projectValidationStepsArray
-      }
-    case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
-      return {
-        ...state,
-        showProjectValidationStepper: action.showProjectValidationStepper,
-        stepper: {
-          ...initialState.stepper
-        }
       }
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
@@ -34,10 +38,12 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.GO_TO_PROJECT_VALIDATION_STEP:
       return {
         ...state,
+        showProjectValidationStepper: !!action.stepIndex,
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
-          nextStepName: action.nextStepName
+          nextStepName: action.nextStepName,
+          nextDisabled: false
         }
       };
     case consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS:
@@ -47,6 +53,12 @@ const projectValidationReducer = (state = initialState, action) => {
           ...state.stepper,
           nextDisabled: action.nextDisabled
         }
+      }
+    case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
+      return {
+        ...state,
+        showProjectValidationStepper: action.showProjectValidationStepper,
+        projectValidationStepsArray: initialState.projectValidationStepsArray
       }
     default:
       return state

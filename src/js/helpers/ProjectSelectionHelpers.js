@@ -5,6 +5,7 @@ import Path from 'path-extra';
 const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
 //helpers
 import * as LoadHelpers from './LoadHelpers';
+import * as ManifestHelpers from './manifestHelpers';
 import * as usfmHelpers from './usfmHelpers.js';
 
 /**
@@ -19,7 +20,7 @@ export function getProjectManifest(projectPath, projectLink, username) {
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
-    manifest = LoadHelpers.setUpManifest(projectPath, projectLink, manifest, username);
+    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest, username);
   }
   return manifest;
 }
@@ -37,7 +38,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
     const defaultManifest = usfmHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
-    manifest = LoadHelpers.saveManifest(projectPath, projectLink, defaultManifest);
+    manifest = ManifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
 }

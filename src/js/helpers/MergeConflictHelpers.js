@@ -1,8 +1,6 @@
 import usfmParser from 'usfm-js';
 import * as fs from 'fs-extra';
 import Path from 'Path-extra';
-import * as ProjectSelectionHelpers from './ProjectSelectionHelpers';
-import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 
@@ -97,8 +95,6 @@ export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
       fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
-      let usfmProjectObject = ProjectSelectionHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
-      TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     }
   } catch (e) { console.warn('Problem merging conflicts', e) }
 }
