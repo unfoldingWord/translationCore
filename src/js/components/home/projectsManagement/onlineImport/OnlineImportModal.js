@@ -80,7 +80,7 @@ export default class OnlineImportModal extends Component {
           </CardHeader><br />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
-              In this version of translationCore, only New Testament projects can be loaded.
+              In this version of translationCore, only Titus projects can be loaded.
             </p>
           </div>
           <URLInput
