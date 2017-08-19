@@ -26,7 +26,7 @@ const ProjectValidationNavigation = (props) => {
   return (
     <div>
       <button className='btn-second'
-        onClick={props.actions.previousStep}>
+        onClick={props.actions.cancel}>
         <Glyphicon glyph='share-alt' style={{ marginRight: '10px', transform: 'scaleX(-1)' }} />
         {previousStepName}
       </button>
