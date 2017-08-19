@@ -42,14 +42,14 @@ export function finalize() {
       // show alert.
       dispatch(
         AlertModalActions.openOptionDialog(
-        `translationCore only supports projects that are Public Domain or released under a CC0, CC BY, or CC BY-SA license.\n
-        For further questions please contact help@door43.org.`,
-        () => {
-          dispatch(AlertModalActions.closeAlertDialog());
-          dispatch(BodyUIActions.goToStep(2));
-          dispatch({ type: consts.RESET_PROJECT_DETAIL });
-        },
-        'Cancel Import'
+          `translationCore only supports projects that are Public Domain or released under a CC0, CC BY, or CC BY-SA license.\n
+          For further questions please contact help@door43.org.`,
+          () => {
+            dispatch(AlertModalActions.closeAlertDialog());
+            dispatch(BodyUIActions.goToStep(2));
+            dispatch({ type: consts.RESET_PROJECT_DETAIL });
+          },
+          'Cancel Import'
         )
       );
       dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));      

@@ -41,7 +41,7 @@ export function finalize() {
       showProjectValidationStepper: false
     });
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+    dispatch(ProjectValidationActions.updateStepperIndex());
   })
 }
 
