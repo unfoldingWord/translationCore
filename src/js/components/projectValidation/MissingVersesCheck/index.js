@@ -9,6 +9,7 @@ class MissingVersesCheck extends Component {
                 <div>You can fix these in translationStudio or Autographa</div>
             </div>
         )
+        this.props.actions.toggleNextDisabled(false);
     }
     generateVerseCards(missingVersesObject, bookName) {
         let verseCards = [];
