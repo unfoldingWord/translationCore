@@ -33,6 +33,9 @@ export function finalize() {
     const { selectedLicenseId } = getState().copyrightCheckReducer;
     if (selectedLicenseId !== 'none' && selectedLicenseId !== null) {
       dispatch(generateProjectLicense(selectedLicenseId));
+      dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+      dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
+      dispatch(ProjectValidationActions.updateStepperIndex());
     } else {
       // close project validation stepper
       dispatch(ProjectValidationActions.cancelProjectValidationStepper())
@@ -49,10 +52,8 @@ export function finalize() {
         'Cancel Import'
         )
       );
+      dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));      
     }
-    dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
-    dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
-    dispatch(ProjectValidationActions.updateStepperIndex());
   })
 }
 
