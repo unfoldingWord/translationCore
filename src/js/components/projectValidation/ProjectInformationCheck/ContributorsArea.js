@@ -32,12 +32,12 @@ const ContributorsArea = ({
         {
           contributors.map((contributorName, index) => {
             return (
-              <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+              <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
                 <TextField
                   id={index.toString()}
                   value={contributorName}
                   underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-                  style={{ width: '200px' }}
+                  style={{ width: '165px' }}
                   onChange={e => updateContributorName(e.target.value, index)}
                   autoFocus={contributorName === "" ? true : false }
                 />

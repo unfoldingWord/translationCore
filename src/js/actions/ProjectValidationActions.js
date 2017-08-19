@@ -153,5 +153,6 @@ export function cancelProjectValidationStepper() {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+    dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
   });
 }

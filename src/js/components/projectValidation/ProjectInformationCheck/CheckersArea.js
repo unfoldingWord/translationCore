@@ -33,12 +33,12 @@ const CheckersArea = ({
         {
           checkers.map((checkerName, index) => {
             return (
-              <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+              <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
                 <TextField
                   id={index.toString()}
                   value={checkerName}
                   underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-                  style={{ width: '150px' }}
+                  style={{ width: '165px' }}
                   onChange={e => updateCheckerName(e.target.value, index)}
                   autoFocus={checkerName === "" ? true : false }
                 />

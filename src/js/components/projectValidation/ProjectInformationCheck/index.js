@@ -88,31 +88,43 @@ class ProjectInformationCheck extends Component {
         Project Information
         <Card
           style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
+          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%', paddingRight: '40px' }}
         >
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <span style={{ color: '#800020', margin: '10px' }}>* Required</span><br />
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
-            <BookDropdownMenu
-              bookId={bookId}
-              updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
-            />
-            <LanguageDirectionDropdownMenu
-              languageDirection={languageDirection}
-              updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
-            />
-          </div><br />
-          <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
-            <LanguageIdTextBox
-                languageId={languageId}
-                updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-              />
-              <LanguageNameTextBox
-                languageName={languageName}
-                updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
-              />
-          </div><br />
+          <table style={{ display: 'flex', justifyContent: 'center' }}>
+            <tbody>
+              <tr>
+                <td style={{ padding: '10px 80px' }}>
+                  <BookDropdownMenu
+                    bookId={bookId}
+                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
+                  />
+                </td>
+                <td style={{ padding: '10px 0px 0px 80px' }}>
+                  <LanguageDirectionDropdownMenu
+                    languageDirection={languageDirection}
+                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '10px 80px' }}>
+                  <LanguageIdTextBox
+                    languageId={languageId}
+                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                  />
+                </td>
+                <td style={{ padding: '10px 0px 0px 80px' }}>
+                  <LanguageNameTextBox
+                    languageName={languageName}
+                    updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table><br />
           <div style={{ display: 'flex' }}>
             <ContributorsArea 
               contributors={contributors}
