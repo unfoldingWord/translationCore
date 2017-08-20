@@ -110,7 +110,7 @@ export function displayTools() {
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
     } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.'));
+      dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject())
     }
