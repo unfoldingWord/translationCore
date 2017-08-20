@@ -26,7 +26,6 @@ const projectValidationReducer = (state = initialState, action) => {
         ]
       }
     case consts.REMOVE_PROJECT_VALIDATION_STEP:
-    console.log(action.projectValidationStepsArray)
       return {
         ...state,
         projectValidationStepsArray: action.projectValidationStepsArray

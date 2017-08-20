@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Checkbox } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
-import BooksOfTheBible from './BooksOfTheBible';
+import BooksOfTheBible from '../../../../common/BooksOfTheBible';
 
 const SearchResults = ({
   repos,

@@ -5,7 +5,6 @@ import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
-import * as TargetLanguageActions from './TargetLanguageActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';

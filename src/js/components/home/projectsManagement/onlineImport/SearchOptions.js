@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from 'material-ui';
-import BookDropDownMenu from './BookDropDownMenu';
+import BookDropdownMenu from './BookDropdownMenu';
 
 export default class SearchOptions extends Component {
   constructor() {
@@ -49,7 +49,7 @@ export default class SearchOptions extends Component {
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
             onChange={e => this.setState({laguageIdValue: e.target.value})}
           />&nbsp;&nbsp;
-          <BookDropDownMenu
+          <BookDropdownMenu
             updateBookIdValue={bookIdValue => this.setState({ bookIdValue })}
             bookIdValue={this.state.bookIdValue}
           />&nbsp;&nbsp;

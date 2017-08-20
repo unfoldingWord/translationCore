@@ -24,14 +24,9 @@ const CopyrightCard = ({
         <h4 style={{ fontWeight: 'bold'}}>
           {title}
         </h4>
-        {
-          id === 'none' ?
-            <div/>
-          :
-            <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
-              See more
-            </span>
-        }
+        <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
+          See more
+        </span>
       </div>
       <div>
         <Checkbox
