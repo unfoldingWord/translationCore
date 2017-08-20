@@ -5,7 +5,6 @@ import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
-import * as TargetLanguageActions from './TargetLanguageActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -110,7 +109,7 @@ export function displayTools() {
       // Go to toolsCards page
       dispatch(BodyUIActions.goToStep(3));
     } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.'));
+      dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject())
     }

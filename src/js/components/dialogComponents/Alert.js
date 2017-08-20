@@ -24,7 +24,7 @@ class Alert extends Component {
       > {this.props.alertModalReducer.button1 || "OK"}
       </button>
     ];
-    if (this.props.alertModalReducer.button1) {
+    if (this.props.alertModalReducer.button1 && button2) {
       buttonActions.unshift(
         <button
         label="Cancel"
@@ -39,12 +39,14 @@ class Alert extends Component {
     const headerContent = (
       <div>
         <span>{"Alert"}</span>
-          {alertDialogLoading ? null :
+          {
+            alertDialogLoading || !button2 ? null :
               <Glyphicon
                   onClick={closeAlertDialog}
                   glyph={"remove"}
                   style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
-              />}
+              />
+          }
        </div>
     );
 

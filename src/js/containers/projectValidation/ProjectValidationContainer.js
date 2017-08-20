@@ -5,8 +5,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
 import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
-import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
 //components
 import Dialog from 'material-ui/Dialog';
@@ -57,7 +57,7 @@ class ProjectValidationContainer extends Component {
           actionsContainerStyle={{ backgroundColor: 'var(--background-color-light)' }}
           actions={<ProjectValidationNavigation {...this.props} />}
           modal={true}
-          style={{ padding: "0px", zIndex: 2501 }}
+          style={{ padding: "0px" }}
           contentStyle={projectValidationContentStyle}
           bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor: 'var(--background-color-light)' }}
           open={showProjectValidationStepper}>
@@ -82,7 +82,9 @@ const mapStateToProps = (state) => {
   return {
     reducers: {
       projectValidationReducer: state.projectValidationReducer,
+      projectDetailsReducer: state.projectDetailsReducer,
       copyrightCheckReducer: state.copyrightCheckReducer,
+      projectInformationCheckReducer: state.projectInformationCheckReducer,
       mergeConflictReducer: state.mergeConflictReducer,
       missingVersesReducer: state.missingVersesReducer
     }
@@ -95,11 +97,8 @@ const mapDispatchToProps = (dispatch) => {
       goToProjectValidationStep: (val) => {
         dispatch(ProjectValidationActions.goToProjectValidationStep(val));
       },
-      previousStep: () => {
-        dispatch(ProjectValidationActions.goToPreviousProjectValidationStep());
-      },
-      nextStep: () => {
-        dispatch(ProjectValidationActions.goToNextProjectValidationStep());
+      cancel:() => {
+        dispatch(ProjectValidationActions.cancelProjectValidationStepper());
       },
       selectProjectLicense: (selectedLicenseId) => {
         dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
@@ -110,11 +109,38 @@ const mapDispatchToProps = (dispatch) => {
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
       },
+      updateStepData:(stepIndex, data) => {
+        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
+      },
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       },
+      setBookIDInProjectInformationReducer: (bookId) => {
+        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId))
+      },
+      setLanguageIdInProjectInformationReducer: (languageId) => {
+        dispatch(ProjectInformationCheckActions.setLanguageIdInProjectInformationReducer(languageId));
+      },
+      setLanguageNameInProjectInformationReducer: (languageName) => {
+        dispatch(ProjectInformationCheckActions.setLanguageNameInProjectInformationReducer(languageName));
+      },
+      setLanguageDirectionInProjectInformationReducer: (languageDirection) => {
+        dispatch(ProjectInformationCheckActions.setLanguageDirectionInProjectInformationReducer(languageDirection));
+      },
+      setContributorsInProjectInformationReducer: (contributors) => {
+        dispatch(ProjectInformationCheckActions.setContributorsInProjectInformationReducer(contributors));
+      },
+      setCheckersInProjectInformationReducer: (checkers) => {
+        dispatch(ProjectInformationCheckActions.setCheckersInProjectInformationReducer(checkers));
+      },
       updateVersionSelection: (mergeConflictIndex, versionIndex, value) => {
         dispatch(MergeConflictActions.updateVersionSelection(mergeConflictIndex, versionIndex, value));
+      },
+      updateCheckerName: (checkerName, index) => {
+        dispatch(ProjectInformationCheckActions.updateCheckerName(checkerName, index));
+      },
+      updateContributorName: (contibutorName, index) => {
+        dispatch(ProjectInformationCheckActions.updateContributorName(contibutorName, index));
       },
       finalizeCopyrightCheck: () => {
         dispatch(CopyrightCheckActions.finalize());

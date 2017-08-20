@@ -11,7 +11,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
-const PROJECT_INFORMATION_NAMESPACE = 'projectInformationCheck';
+const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
 /**
  * 
@@ -53,61 +53,37 @@ export function initiateProjectValidationStepper() {
       dispatch(ProjectSelectionActions.displayTools());
     } else {
       //Show the checks that didn't pass
-      dispatch(updateStepperIndex(projectValidationStepsArray[0].index));
+      dispatch(updateStepperIndex());
     }
   })
 }
-
-/** Simply go to the next stepper check */
-export function goToNextProjectValidationStep() {
-  return ((dispatch, getState) => {
-    let { stepIndex } = getState().projectValidationReducer.stepper;
-    dispatch(updateStepperIndex(stepIndex + 1));
-  })
-}
-
-/** Simply go to the previous stepper check */
-export function goToPreviousProjectValidationStep() {
-  return ((dispatch, getState) => {
-    const { stepIndex } = getState().projectValidationReducer.stepper;
-    dispatch(updateStepperIndex(stepIndex - 1));
-    // if step index is at copyright check then clear data
-    if (stepIndex === 1) {
-      dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
-    }
-  });
-}
-
 
 /** Directly jump to a step at the specified index */
-export function updateStepperIndex(stepIndex) {
+export function updateStepperIndex() {
   return ((dispatch, getState) => {
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
     let previousStepName = 'Cancel';
-    if (!projectValidationStepsArray[0] || stepIndex > projectValidationStepsArray[projectValidationStepsArray.length - 1].index) {
-      //If the stepIndex is > the last step in the stepper arrays' index (Done)
-      dispatch({
-        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
-        showProjectValidationStepper: false
-      })
+    if (!projectValidationStepsArray[0]) {
+      //If there are no more steps (Done)
+      dispatch(toggleProjectValidationStepper(false));
       dispatch(ProjectSelectionActions.displayTools());
-    } else if (stepIndex < projectValidationStepsArray[0].index) {
-      //If stepIndex is less than the first steps' index (Cancelled)
-      dispatch({
-        type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
-        showProjectValidationStepper: false
-      })
-      dispatch(ProjectSelectionActions.clearLastProject())
     } else
       dispatch({
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-        stepIndex: stepIndex,
+        stepIndex: projectValidationStepsArray[0].index,
         nextStepName: nextStepName,
         previousStepName: previousStepName
       })
   });
+}
+
+export function toggleProjectValidationStepper(val) {
+  return {
+    type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
+    showProjectValidationStepper: val
+  }
 }
 
 /**Disables and enables next button in project validation stepper */
@@ -132,7 +108,7 @@ export function addProjectValidationStep(namespace) {
         buttonName: 'Copy Right',
         index: 1
       }
-    case PROJECT_INFORMATION_NAMESPACE:
+    case PROJECT_INFORMATION_CHECK_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
@@ -170,4 +146,13 @@ export function removeProjectValidationStep(namespace) {
       projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)
     })
   })
+}
+
+export function cancelProjectValidationStepper() {
+  return ((dispatch) => {
+    dispatch(toggleProjectValidationStepper(false));
+    dispatch(ProjectSelectionActions.clearLastProject());
+    dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+    dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+  });
 }
