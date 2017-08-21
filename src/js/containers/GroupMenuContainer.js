@@ -8,7 +8,7 @@ import Groups from '../components/groupMenu/Groups'
 import Group from '../components/groupMenu/Group'
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js'
-import { groupMenuExpandSubMenu } from '../actions/GroupMenuActions.js'
+import { expandSubMenu } from '../actions/GroupMenuActions.js'
 import GroupItem from '../components/groupMenu/GroupItem'
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 import isEqual from 'lodash/isEqual'
@@ -266,10 +266,10 @@ const mapDispatchToProps = (dispatch) => {
       },
       groupMenuChangeGroup: contextId => {
         dispatch(changeCurrentContextId(contextId));
-        dispatch(groupMenuExpandSubMenu(true));
+        dispatch(expandSubMenu(true));
       },
       groupMenuExpandSubMenu: isSubMenuExpanded => {
-        dispatch(groupMenuExpandSubMenu(isSubMenuExpanded));
+        dispatch(expandSubMenu(isSubMenuExpanded));
       }
     }
   }

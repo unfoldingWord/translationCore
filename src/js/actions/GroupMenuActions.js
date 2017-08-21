@@ -5,7 +5,7 @@ import consts from './ActionTypes';
  * @param {bool} isSubMenuExpanded - true or false
  */
 
-export const groupMenuExpandSubMenu = (isSubMenuExpanded) => {
+export const expandSubMenu = (isSubMenuExpanded) => {
   return {
     type: consts.GROUP_MENU_EXPAND_SUBMENU,
     isSubMenuExpanded
