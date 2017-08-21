@@ -19,10 +19,12 @@ export function uploadProject(projectPath, user) {
       var projectName = projectPath.split(path.sep).pop();
       const message = "Uploading " + projectName + " to Door43. Please wait...";
       dispatch(AlertModalActions.openAlertDialog(message, true));
-      if (!user.token) {
+      if (!user.token && !user.localUser) {
         const message = "Your login has become invalid. Please log out and log back in.";
-        dispatch(AlertModalActions.openAlertDialog(message, false));
-        return;
+        return dispatch(AlertModalActions.openAlertDialog(message, false));
+      } else if (user.localUser) {
+        const message = "You need to be logged in with a Door43 account to upload a project. Please log in to continue.";
+        return dispatch(AlertModalActions.openAlertDialog(message, false));
       }
 
       gogs(user.token).createRepo(user, projectName).then(repo => {
