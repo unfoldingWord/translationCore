@@ -1,7 +1,11 @@
-const { BrowserWindow } = require('electron').remote
 import consts from './ActionTypes';
-import * as AlertModalActions from './AlertModalActions';``
+import { remote } from 'electron';
+// components
 import OnlineDialog from '../components/dialogComponents/OnlineDialog';
+// actions
+import * as AlertModalActions from './AlertModalActions';
+// consts
+const { BrowserWindow } = remote;
 
 export function confirmOnlineAction(callback) {
   return ((dispatch, getState) => {
