@@ -6,6 +6,7 @@ import path from 'path-extra';
 import * as TargetLanguageActions from './TargetLanguageActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
+import * as BibleHelpers from '../helpers/bibleHelpers';
 // constant declaraton
 const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
 
@@ -32,7 +33,15 @@ export const loadBiblesChapter = (contextId) => {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
 
-      let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
+      let languagesIds = ['en']; // english, greek, hebrew.
+      // if its an old testament project then add hebrew to languagesIds array
+      if (BibleHelpers.isOldTestament(bookId)) {
+        languagesIds.push('he')
+      } else {
+        // else if its a new testament project then add greek to languagesIds array
+        languagesIds.push('grc')
+      }
+
       languagesIds.forEach((languageId) => {
         let biblesFolders = fs.readdirSync(path.join(USER_RESOURCES_PATH, languageId, 'bibles')).filter(folder => { // filter out .DS_Store
         return folder !== '.DS_Store'
@@ -50,8 +59,9 @@ export const loadBiblesChapter = (contextId) => {
             bibleData[chapter] = bibleChapterData;
             // get bibles manifest file
             let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-            // save manifest dat in bibleData object to then be saved in reducer.
+            // save manifest data in bibleData object
             bibleData["manifest"] = bibleManifest;
+            // Then save bibleData in reducer.
             dispatch({
               type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
               bibleName: bibleID,
@@ -61,7 +71,7 @@ export const loadBiblesChapter = (contextId) => {
             console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName))
           }
         });
-        // then load target language bible
+        // Then load target language bible
         dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
       });
     } catch(err) {
