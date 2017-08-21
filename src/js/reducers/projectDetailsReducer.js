@@ -34,6 +34,45 @@ const projectDetailsReducer = (state = initialState, action) => {
           [action.propertyName]: action.value
         }
       }
+    case consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          project: {
+            id: action.bookId,
+            name: action.bookName
+          }
+        }
+      }
+    case consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          target_language: {
+            id: action.languageId,
+            name: action.languageName,
+            direction: action.languageDirection
+          }
+        }
+      }
+    case consts.SAVE_CHECKERS_LIST_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          checkers: action.checkers
+        }
+      }
+    case consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          translators: action.translators
+        }
+      }
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:

@@ -1,13 +1,14 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 // helpers
+import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
 /**
  * @description sets the project save location in the projectDetailReducer.
- * @param {string} pathLocation - project save location and/or directory.
+ * @param {String} pathLocation - project save location and/or directory.
  * @return {object} action object.
  */
 export const setSaveLocation = pathLocation => {
@@ -73,4 +74,49 @@ export function addObjectPropertyToManifest(propertyName, value) {
     propertyName,
     value
   };
+}
+
+
+export function setProjectBookIdAndBookName() {
+  return ((dispatch, getState) => {
+    const { bookId } = getState().projectInformationCheckReducer;
+    const bookName = bibleHelpers.convertToFullBookName(bookId);
+    dispatch({
+      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+      bookId,
+      bookName
+    });
+  });
+}
+
+export function setLanguageDetails() {
+  return ((dispatch, getState) => {
+    const { languageDirection, languageId, languageName } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
+      languageDirection,
+      languageId,
+      languageName
+    });
+  });
+}
+
+export function updateContributors() {
+  return ((dispatch, getState) => {
+    const { contributors } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
+      translators: contributors
+    });
+  });
+}
+
+export function updateCheckers() {
+  return ((dispatch, getState) => {
+    const { checkers } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
+      checkers
+    });
+  });
 }

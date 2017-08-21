@@ -11,7 +11,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
-const PROJECT_INFORMATION_NAMESPACE = 'projectInformationCheck';
+const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
 /**
  * 
@@ -108,7 +108,7 @@ export function addProjectValidationStep(namespace) {
         buttonName: 'Copy Right',
         index: 1
       }
-    case PROJECT_INFORMATION_NAMESPACE:
+    case PROJECT_INFORMATION_CHECK_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
@@ -152,5 +152,7 @@ export function cancelProjectValidationStepper() {
   return ((dispatch) => {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectSelectionActions.clearLastProject());
+    dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
+    dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
   });
 }
