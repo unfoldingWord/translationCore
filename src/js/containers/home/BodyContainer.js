@@ -10,11 +10,11 @@ class BodyContainer extends Component {
   render() {
     let { displayHomeView } = this.props.reducers.homeScreenReducer;
     return (
-        <div style={{display: 'flex', height: 'calc(100vh - 30px)', width: '100%'}}>
+        <div style={{display: 'flex', height: '100vh', width: '100%'}}>
           {displayHomeView ? (
                 <HomeContainer />
             ) : (
-              <div style={{display: 'flex', flex: 'auto'}}>
+              <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
                 <div style={{ flex: "0 0 250px" }}>
                   <GroupMenuContainer />
                 </div>

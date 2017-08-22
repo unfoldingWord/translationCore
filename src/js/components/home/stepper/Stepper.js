@@ -28,23 +28,23 @@ class StepperComponent extends Component {
         <Card>
           <div style={{width: '100%', maxWidth: '100%', margin: 'auto'}}>
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
-              <Step>
-                <StepLabel icon={homeIcon}>
+              <Step disabled={false} style={{cursor:'pointer'}}>
+                <StepLabel onClick={()=>this.props.actions.goToStep(0)} icon={homeIcon}>
                   <span style={{color: homeColor}}>{" Home "}</span>
                 </StepLabel>
               </Step>
-              <Step>
-                <StepLabel icon={userIcon}>
+              <Step disabled={false} style={{cursor:'pointer'}}>
+                <StepLabel onClick={()=>this.props.actions.goToStep(1)} icon={userIcon}>
                   <span style={{color: userColor}}>{" User "}</span>
                 </StepLabel>
               </Step>
-              <Step>
-                <StepLabel icon={projectIcon}>
+              <Step disabled={false} style={{cursor:'pointer'}}>
+                <StepLabel onClick={()=>this.props.actions.goToStep(2)} icon={projectIcon}>
                   <span style={{color: projectColor}}>{" Project "}</span>
                 </StepLabel>
               </Step>
-              <Step>
-                <StepLabel icon={toolIcon}>
+              <Step disabled={false} style={{cursor:'pointer'}}>
+                <StepLabel onClick={()=>this.props.actions.goToStep(3)} icon={toolIcon}>
                   <span style={{color: toolColor}}>{" Tool "}</span>
                 </StepLabel>
               </Step>
