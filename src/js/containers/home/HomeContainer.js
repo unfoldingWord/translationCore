@@ -60,7 +60,7 @@ class HomeContainer extends Component {
           (
             <MuiThemeProvider style={{ fontSize: '1.1em' }}>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
-                <Stepper homeScreenReducer={this.props.reducers.homeScreenReducer} />
+                <Stepper {...this.props} homeScreenReducer={this.props.reducers.homeScreenReducer} />
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
                   <div style={{ width: '400px', padding: '0 20px' }}>
                     <Instructions {...this.props} />

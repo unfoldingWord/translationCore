@@ -14,7 +14,7 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
     const { chapter, verse } = contextId.reference;
     const { quote, occurrence } = contextId;
     const verseText = state.resourcesReducer.bibles[bibleId][chapter][verse];
-    const occurrences = selectionHelpers.occurrences(verseText, quote);
+    const occurrences = selectionHelpers.getQuoteOccurrencesInVerse(verseText, quote);
     valid = occurrence <= occurrences;
   }
   return valid;
