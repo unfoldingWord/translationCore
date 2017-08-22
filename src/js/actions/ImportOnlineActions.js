@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
@@ -5,16 +6,14 @@ import rimraf from 'rimraf';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
-// constants
-const loadOnline = require('../helpers/LoadOnlineHelpers');
+// helpers
+import * as loadOnline from '../helpers/LoadOnlineHelpers';
 
 export function updateRepos() {
     return ((dispatch, getState) => {
         var user = getState().loginReducer.userdata;
         dispatch(OnlineModeActions.confirmOnlineAction(() => {
             if (user) {
-                var _this = this;
-
                 dispatch(clearLink());
                 dispatch(
                     AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
@@ -48,9 +47,9 @@ export function importOnlineProject() {
         AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
       );
 
-      loadOnline(link, function (err, savePath, url) {
+      loadOnline.openManifest(link, function (err, savePath, url) {
         if (err) {
-          var errmessage = "An unknown problem occurred during import";
+          let errmessage = "An unknown problem occurred during import";
 
           if (err.toString().includes("fatal: unable to access")) {
               errmessage = "Unable to connect to the server. Please check your Internet connection.";
