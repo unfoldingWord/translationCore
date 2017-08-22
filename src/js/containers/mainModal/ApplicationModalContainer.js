@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     handleSubmit: (userDataSumbit) => {
       dispatch(LoginActions.loginUser(userDataSumbit));

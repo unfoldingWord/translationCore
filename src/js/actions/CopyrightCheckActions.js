@@ -52,7 +52,7 @@ export function finalize() {
           'Cancel Import'
         )
       );
-      dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));      
+      dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
     }
   })
 }

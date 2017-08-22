@@ -16,6 +16,7 @@ class StatusBarContainer extends React.Component {
   }
 
   render() {
+    const { displayHomeView } = this.props.homeScreenReducer;
     let projectName = this.props.projectDetailsReducer.projectSaveLocation.split("/").pop();
     //Expecting a folder path as such: "~/project_name"
     let { currentToolTitle } = this.props.toolsReducer;
@@ -24,6 +25,7 @@ class StatusBarContainer extends React.Component {
 
     return (
       <div>
+      {displayHomeView ? null :
         <StatusBar
           {...this.props}
           toggleHomeScreen={this.props.actions.toggleHomeScreen}
@@ -35,6 +37,7 @@ class StatusBarContainer extends React.Component {
           currentUser={username}
           loggedInUser={loggedInUser}
         />
+      }
       </div>
     );
   }

@@ -35,6 +35,11 @@ const settingsReducer = (state = initialState, action) => {
       };
     case consts.UPDATE_ONLINE_MODE:
       return { ...state, onlineMode: action.val }
+    case consts.RESET_ONLINE_MODE_WARNING_ALERT:
+      return {
+        ...state,
+        onlineMode: false
+      }
     default:
       return state;
   }

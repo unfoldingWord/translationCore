@@ -1,15 +1,15 @@
 import consts from './ActionTypes';
+// helpers
+import gogs from '../components/login/GogsApi.js';
+// actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as BodyUIActions from './BodyUIActions';
-import gogs from '../components/login/GogsApi.js';
 import * as OnlineModeActions from './OnlineModeActions';
-import { remote } from 'electron';
-// const delclarations
-const { dialog } = remote;
+
 
 export function loginLocalUser(localUsername) {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch({
       type: consts.LOGIN_LOCAL_USER,
       username: localUsername
@@ -40,13 +40,14 @@ export function loginUser(newUserdata) {
   });
 }
 
-export function logoutUser(val) {
+export function logoutUser() {
   return ((dispatch) => {
     dispatch({
       type: consts.LOGOUT_USER
     });
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
+    dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT })
   });
 }
 
