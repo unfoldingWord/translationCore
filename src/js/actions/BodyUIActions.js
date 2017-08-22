@@ -66,9 +66,16 @@ export const goToPrevStep = () => {
 };
 
 export const goToStep = stepNumber => {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
     let previousStepName = homeStepperIndex[stepNumber - 1];
+    let { indexIsAvailable, stepNeededToComplete } = canGoToIndex(stepNumber, getState());
+    if (!indexIsAvailable) {
+      return dispatch(AlertModalActions.openAlertDialog(
+        `You cannot go to this step without first completing the\
+        '${stepNeededToComplete}' step.`
+      ));
+    }
     if (stepNumber >= 0 && stepNumber <= 3) {
       dispatch({
         type: consts.GO_TO_PREVIOUS_STEP,
@@ -109,48 +116,31 @@ export const closeOnlineImportModal = () => {
 export const getStepperNextButtonIsDisabled = () => {
   return ((dispatch, getState) => {
     let state = getState();
-    let { stepIndex, nextDisabled } = state.homeScreenReducer.stepper;
-    let { loggedInUser } = state.loginReducer;
-    let {projectSaveLocation} = state.projectDetailsReducer;
-    let lastNextButtonStatus = nextDisabled;
-    let currentNextButtonStatus;
-    switch (stepIndex) {
-      case 0:
-      //home
-        currentNextButtonStatus = false;
-        if (lastNextButtonStatus != currentNextButtonStatus) {
-          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
-        }
-        return;
-      case 1:
-      //user
-        currentNextButtonStatus = !loggedInUser;
-        if (lastNextButtonStatus != currentNextButtonStatus) {
-          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
-        }
-        return;
-      case 2:
-      //projects
-        currentNextButtonStatus = !projectSaveLocation;
-        if (lastNextButtonStatus != currentNextButtonStatus) {
-          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
-        }
-        return;
-      case 3:
-      //tools
-        currentNextButtonStatus = true;
-        if (lastNextButtonStatus != currentNextButtonStatus) {
-          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
-        }
-        return;
-      default:
-        currentNextButtonStatus = false;
-        if (lastNextButtonStatus != currentNextButtonStatus) {
-          dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
-        }
-        return;
+    let { nextDisabled, stepIndex } = state.homeScreenReducer.stepper;
+    let currentNextButtonStatus = !canGoToIndex(stepIndex + 1, state).indexIsAvailable;
+    if (nextDisabled != currentNextButtonStatus) {
+      dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
     }
   })
+}
+
+export const canGoToIndex = (stepIndex, state) => {
+  let { loggedInUser } = state.loginReducer;
+  let { projectSaveLocation } = state.projectDetailsReducer;
+  let indexIsAvailable = false;
+  let stepNeededToComplete;
+  if (stepIndex >= 0) {
+    indexIsAvailable = true;
+    if (stepIndex >= 2) {
+      stepNeededToComplete = 'User';
+      indexIsAvailable = indexIsAvailable && !!loggedInUser;
+      if (stepIndex >= 3) {
+        stepNeededToComplete = 'Projects';
+        indexIsAvailable = indexIsAvailable && !!projectSaveLocation;
+      }
+    }
+  }
+  return  { indexIsAvailable , stepNeededToComplete };
 }
 
 export const openLicenseModal = () => {
