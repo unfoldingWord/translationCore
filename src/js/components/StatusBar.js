@@ -1,7 +1,8 @@
-import React from 'react';
-import {Glyphicon} from 'react-bootstrap';
+import React, { Component } from 'react';
+import PropsTypes from 'prop-types';
+import { Glyphicon } from 'react-bootstrap';
 
-class StatusBar extends React.Component {
+class StatusBar extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,28 +10,28 @@ class StatusBar extends React.Component {
       pressed: null
     };
   }
+
   onHover(id) {
     this.setState({hovered: id});
   }
 
   onPress(tab) {
-    let {loggedInUser} = this.props;
     switch (tab) {
       case 1:
         this.setState({ pressed: tab });
-        this.props.toggleHomeScreen();
+        this.props.actions.goToStep(0);
         break;
       case 2:
         this.setState({ pressed: tab });
-        this.props.open(loggedInUser, 2, 1, true);
+        this.props.actions.goToStep(1);
         break;
       case 3:
         this.setState({ pressed: tab });
-        this.props.open(loggedInUser, 3, 1, true);
+        this.props.actions.goToStep(2);
         break;
       case 4:
         this.setState({ pressed: tab });
-        this.props.open(loggedInUser, 1, 1, true);
+        this.props.actions.goToStep(3);
         break;
       default:
         this.setState({ pressed: 0 });
@@ -40,10 +41,6 @@ class StatusBar extends React.Component {
   }
 
   render() {
-    const {stepper, showWelcomeSplash} = this.props.homeScreenReducer;
-    let {stepIndex} = stepper;
-    // Setting step index to null if in welcome screen.
-    stepIndex = showWelcomeSplash ? null : stepIndex;
     const styles = {
       container: {
         backgroundColor: 'var(--background-color-dark)',
@@ -58,13 +55,13 @@ class StatusBar extends React.Component {
       home: {
         width: 'auto',
         float: 'left',
-        color: stepIndex === 0 ? 'var(--text-color-dark)' : 'var(--reverse-color)',
+        color: 'var(--reverse-color)',
         paddingLeft: 30,
         paddingRight: 30,
         minWidth: '200px',
         border: 0,
         outline: 'none',
-        backgroundColor: stepIndex === 0 ? 'var(--reverse-color)' : 'var(--background-color-dark)',
+        backgroundColor: 'var(--background-color-dark)',
         height: '100%'
       },
       homeActive: {
@@ -116,24 +113,38 @@ class StatusBar extends React.Component {
             <Glyphicon glyph={"home"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
             Home
           </button>
-          <button onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered != 3 ? styles.child : styles.childActive}>
+
+          <button onMouseOver={()=>this.onHover(2)} onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 && this.state.hovered != 2 ? styles.child : styles.childActive}>
+            <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3 }} />
+            User: {this.props.currentUser}
+          </button>
+
+          <button onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered  != 3 ? styles.child : styles.childActive}>
+            <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
+            Project: {this.props.projectName}
+          </button>
+
+          <button onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
             <div style={{ float: 'left' }}>
               Tool: {this.props.currentCheckNamespace}
             </div>
           </button>
-          <button onMouseOver={()=>this.onHover(2)} onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 && this.state.hovered  != 2 ? styles.child : styles.childActive}>
-            <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
-            Project: {this.props.projectName}
-          </button>
-          <button onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
-            <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3 }} />
-            User: {this.props.currentUser}
-          </button>
+
         </div>
       </div>
     );
   }
 }
+
+StatusBar.propTypes = {
+  actions: PropsTypes.object.isRequired,
+  currentUser: PropsTypes.string.isRequired,
+  projectName: PropsTypes.string.isRequired,
+  currentCheckNamespace: PropsTypes.string.isRequired,
+  homeScreenReducer: PropsTypes.object.isRequired
+}
+
+
 
 export default StatusBar;

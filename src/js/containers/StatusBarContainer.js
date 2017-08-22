@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Components
-import StatusBar from '../components/SideBar/StatusBar';
+import StatusBar from '../components/StatusBar';
 // Actions
 import * as modalActions from '../actions/ModalActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -68,10 +68,10 @@ const mapDispatchToProps = (dispatch) => {
       changeOnlineStatus: (val, first) => {
         dispatch(coreStoreActions.changeOnlineStatus(val, first));
       },
-      toggleHomeScreen: () => {
+      goToStep: (stepNumber) => {
+        dispatch(BodyUIActions.goToStep(stepNumber));
+         // Go to home screen / overview page
         dispatch(BodyUIActions.toggleHomeView(true));
-        // Go to overview page
-        dispatch(BodyUIActions.goToStep(0));
       }
     }
   };

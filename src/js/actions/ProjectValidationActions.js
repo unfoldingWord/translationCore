@@ -61,6 +61,7 @@ export function initiateProjectValidationStepper() {
 /** Directly jump to a step at the specified index */
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
+    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
@@ -68,6 +69,8 @@ export function updateStepperIndex() {
     if (!projectValidationStepsArray[0]) {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
+      // generate target language bible
+      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else
       dispatch({
