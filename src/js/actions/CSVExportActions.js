@@ -76,7 +76,8 @@ export function exportToCSV(projectPath) {
 
         toolPaths.forEach((toolpath) => {
           promises = promises.then(() => {
-            return saveAllCSVDataByToolName(toolpath, dataFolder, projectId);
+            return saveAllCSVDataByToolName(toolpath, dataFolder, projectId)
+              .then( () => { return promises });
           });
         });
         return promises;
@@ -110,11 +111,16 @@ export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId)
   } else {
     let filePath = path.join(dataFolder, 'index', currentToolName, 'index.json')
     let indexObject = fs.readJsonSync(filePath);
-    return loadGroupsDataToExport(currentToolName, dataFolder, projectId).then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((array) => saveRemindersToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((array) => saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((array) => saveCommentsToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((array) => saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject))
+    return loadGroupsDataToExport(currentToolName, dataFolder, projectId)
+        .then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders'))
+        .then((array) => saveRemindersToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections'))
+        .then((array) => saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments'))
+        .then((array) => saveCommentsToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits'))
+        .then((array) => saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject))
       .then(() => {
         return Promise.resolve(true);
       })
