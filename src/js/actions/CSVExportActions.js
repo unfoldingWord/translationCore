@@ -111,10 +111,10 @@ export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId)
     let filePath = path.join(dataFolder, 'index', currentToolName, 'index.json')
     let indexObject = fs.readJsonSync(filePath);
     return loadGroupsDataToExport(currentToolName, dataFolder, projectId).then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((obj) => saveRemindersToCSV(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((obj) => saveSelectionsToCSV(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((obj) => saveCommentsToCSV(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((obj) => saveVerseEditsToCSV(obj, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders')).then((array) => saveRemindersToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections')).then((array) => saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments')).then((array) => saveCommentsToCSV(array, dataFolder, currentToolName, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits')).then((array) => saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject))
       .then(() => {
         return Promise.resolve(true);
       })
@@ -126,7 +126,7 @@ export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId)
 
 /**
  * @description - Creates csv from object and saves it.
- * @param {object} array - array to save to the filesystem
+ * @param {Array} array - array to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
@@ -151,7 +151,7 @@ export function saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObj
 
 /**
  * @description - Creates csv from object and saves it.
- * @param {object} array - object to save to the filesystem
+ * @param {Array} array - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
@@ -171,7 +171,7 @@ export function saveCommentsToCSV(array, dataFolder, currentToolName, indexObjec
 
 /**
  * @description - Creates csv from object and saves it.
- * @param {object} array - object to save to the filesystem
+ * @param {Array} array - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
@@ -199,8 +199,7 @@ export function saveSelectionsToCSV(array, dataFolder, currentToolName, indexObj
 
 /**
  * @description - Creates csv from object and saves it.
- *
- * @param {object} array - object to save to the filesystem
+ * @param {Array} array - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
@@ -220,7 +219,6 @@ export function saveRemindersToCSV(array, dataFolder, currentToolName, indexObje
 
 /**
  * @description - Creates csv from object and saves it.
- *
  * @param {object} obj - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
