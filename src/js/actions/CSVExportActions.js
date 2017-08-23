@@ -1,16 +1,20 @@
+/* eslint-disable no-console */
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 // actions
-import { loadGroupsDataToExport, loadProjectDataByTypeToExport, getGroupName } from '../utils/loadMethods';
+import { loadGroupsDataToExport, loadProjectDataByTypeToExport } from '../utils/loadMethods';
 import * as AlertModalActions from './AlertModalActions';
+// helpers
+import * as csvHelpers from '../helpers/csvHelpers';
+// utils
+import * as csvMethods from '../utils/csvMethods';
+
 // contant declarations
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
-
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -61,7 +65,7 @@ export function exportToCSV(projectPath) {
         }
       })
       .then(() => {
-        let toolPaths = getToolFolderNames(projectPath);
+        let toolPaths = csvHelpers.getToolFolderNames(projectPath);
         if (!toolPaths || !toolPaths.length) {
           throw 'No checks have been performed in this project.';
         }
@@ -122,123 +126,95 @@ export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId)
 
 /**
  * @description - Creates csv from object and saves it.
- *
- * @param {object} obj - object to save to the filesystem
+ * @param {object} array - array to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveVerseEditsToCSV(obj, dataFolder, currentToolName, indexObject) {
-  return new Promise((resolve, reject) => {
-    try {
-      let csvString = "after, before, tags, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
-      for (var currentRowObject of obj) {
-        let currentRowArray = [];
-        const currentRow = currentRowObject.dataObject;
-        const { time, username } = currentRowObject;
-        currentRowArray.push(csvTextCleanUp(currentRow.verseAfter));
-        currentRowArray.push(csvTextCleanUp(currentRow.verseBefore));
-        currentRowArray.push(csvTextCleanUp(currentRow.tags));
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, indexObject);
-        csvString += currentRowArray.join(',') + "\n";
-      }
-      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'VerseEdits.csv'), csvString);
-    } catch (e) {
-      console.warn(e);
-      reject(false)
-    }
-    resolve(true);
+export function saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject) {
+  const objectArray = array.map( object => {
+    const current = object.dataObject;
+    const { time, username } = object;
+    const data = {
+      after: current.verseAfter,
+      before: current.verseBefore,
+      tags: current.tags
+    };
+    return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
+  });
+  const filePath = path.join(dataFolder, 'output', currentToolName, 'VerseEdits.csv');
+  csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+    return Promise.resolve(true);
+  });
+}
+
+
+/**
+ * @description - Creates csv from object and saves it.
+ * @param {object} array - object to save to the filesystem
+ * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
+ */
+export function saveCommentsToCSV(array, dataFolder, currentToolName, indexObject) {
+  const objectArray = array.map( object => {
+    const current = object.dataObject;
+    const { time, username } = object;
+    const data = { text: object.text }
+    return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
+  });
+  const filePath = path.join(dataFolder, 'output', currentToolName, 'Comments.csv');
+  csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+    return Promise.resolve(true);
+  });
+}
+
+/**
+ * @description - Creates csv from object and saves it.
+ * @param {object} array - object to save to the filesystem
+ * @param {string} dataFolder - folder to save to filesystem
+ * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
+ * @param {array} indexObject - Array of index.json with {id, name} keys
+ */
+export function saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject) {
+  const objectArray = [];
+  array.forEach( object => {
+    const { time, username } = object;
+    const current = object.dataObject;
+    current.selections.forEach( selection => {
+      const data = {
+        text: selection.text,
+        "selection/occurrence": selection.occurrence,
+        "selection/occurrences": selection.occurrences
+      };
+      const newObject = csvHelpers.combineData(data, current.contextId, indexObject, username, time);
+      objectArray.push(newObject);
+    });
+  });
+  const filePath = path.join(dataFolder, 'output', currentToolName, 'Selections.csv');
+  csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+    return Promise.resolve(true);
   });
 }
 
 /**
  * @description - Creates csv from object and saves it.
  *
- * @param {object} obj - object to save to the filesystem
+ * @param {object} array - object to save to the filesystem
  * @param {string} dataFolder - folder to save to filesystem
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveCommentsToCSV(obj, dataFolder, currentToolName, indexObject) {
-  return new Promise((resolve, reject) => {
-    try {
-      let csvString = "text, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
-      for (var currentRowObject of obj) {
-        const currentRow = currentRowObject.dataObject;
-        const { time, username } = currentRowObject;
-        let currentRowArray = [];
-        currentRowArray.push(csvTextCleanUp(currentRow.text));
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, indexObject)
-        csvString += currentRowArray.join(',') + "\n";
-      }
-      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Comments.csv'), csvString);
-    } catch (e) {
-      console.warn(e);
-      reject(false)
-    }
-    resolve(true);
+export function saveRemindersToCSV(array, dataFolder, currentToolName, indexObject) {
+  const objectArray = array.map( object => {
+    const current = object.dataObject;
+    const { time, username } = object;
+    const data = { enabled: object.enabled }
+    return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
   });
-}
-
-/**
- * @description - Creates csv from object and saves it.
- *
- * @param {object} obj - object to save to the filesystem
- * @param {string} dataFolder - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
- */
-export function saveSelectionsToCSV(obj, dataFolder, currentToolName, indexObject) {
-  return new Promise((resolve, reject) => {
-    try {
-      let csvString = "text, selection/occurrence, selection/occurrences, groupId, groupName, contextId/occurrence, quote, bookId, chapter, verse, username, date, time\n";
-      for (var currentRowObject of obj) {
-        const col = currentRowObject.dataObject;
-        const { time, username } = currentRowObject;
-        for (var currentSelection of col.selections) {
-          let currentRowArray = [];
-          currentRowArray.push(csvTextCleanUp(currentSelection.text));
-          currentRowArray.push(currentSelection.occurrence);
-          currentRowArray.push(currentSelection.occurrences);
-          addContextIdToCSV(currentRowArray, col.contextId, username, time, indexObject)
-          csvString += currentRowArray.join(',') + "\n";
-        }
-      }
-      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Selections.csv'), csvString);
-    } catch (e) {
-      console.warn(e);
-      reject(false)
-    }
-    resolve(true);
-  });
-}
-
-/**
- * @description - Creates csv from object and saves it.
- *
- * @param {object} obj - object to save to the filesystem
- * @param {string} dataFolder - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
- */
-export function saveRemindersToCSV(obj, dataFolder, currentToolName, indexObject) {
-  return new Promise((resolve, reject) => {
-    try {
-      let csvString = "enabled, groupId, groupName, occurrence, quote, bookId, chapter, verse, username, date, time\n";
-      for (var currentRowObject of obj) {
-        const currentRow = currentRowObject.dataObject;
-        const { time, username } = currentRowObject;
-        let currentRowArray = [];
-        currentRowArray.push(currentRow.enabled);
-        addContextIdToCSV(currentRowArray, currentRow.contextId, username, time, indexObject)
-        csvString += currentRowArray.join(',') + "\n";
-      }
-      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'Reminders.csv'), csvString);
-    } catch (e) {
-      console.warn(e);
-      reject(false)
-    }
-    resolve(true);
+  const filePath = path.join(dataFolder, 'output', currentToolName, 'Reminders.csv');
+  csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+    return Promise.resolve(true);
   });
 }
 
@@ -251,74 +227,19 @@ export function saveRemindersToCSV(obj, dataFolder, currentToolName, indexObject
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
 export function saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject) {
-  return new Promise((resolve, reject) => {
-    try {
-      var time = "";
-      let csvString = "priority, groupId, groupName, occurrence, quote, bookId, chapter, verse\n";
-      for (var col in obj) {
-        for (var row in obj[col]) {
-          const currentRow = obj[col][row];
-          let currentRowArray = [];
-          currentRowArray.push(currentRow.priority);
-          addContextIdToCSV(currentRowArray, currentRow.contextId, null, null, indexObject);
-          csvString += currentRowArray.join(',') + "\n";
-        }
-      }
-      fs.outputFileSync(path.join(dataFolder, 'output', currentToolName, 'CheckInformation.csv'), csvString);
-    } catch (e) {
-      console.warn(e);
-      reject(false)
-    }
-    resolve(true);
+  let objectArray = [];
+  const groupNames = Object.keys(obj);
+  groupNames.forEach( groupName => {
+    obj[groupName].forEach( groupData => {
+      const object = groupData;
+      const data = { priority: object.priority }
+      const flatContextId = csvHelpers.flattenContextId(object.contextId, indexObject);
+      const newObject = Object.assign({}, data, flatContextId);
+      objectArray.push(newObject);
+    });
   });
-}
-
-/**
- * @description - Creates csv from object and saves it.
- *
- * @param {object} currentRowArray - current csv row
- * @param {object} contextId - contextID object that needs to go onto the csv row
- * @param {string} username - name coming from projectDetailsReducer i.e. RoyalSix
- * @param {Date} datetime - Date() object to be parsed which includes time/date
- * @param {array} indexObject - Array of index.json with {id, name} keys
- */
-export function addContextIdToCSV(currentRowArray, contextId, username, datetime, indexObject) {
-  let groupName = getGroupName(indexObject, contextId.groupId);
-  currentRowArray.push(contextId.groupId);
-  currentRowArray.push(csvTextCleanUp(groupName));
-  currentRowArray.push(contextId.occurrence);
-  currentRowArray.push(csvTextCleanUp(contextId.quote));
-  currentRowArray.push(contextId.reference.bookId);
-  currentRowArray.push(contextId.reference.chapter);
-  currentRowArray.push(contextId.reference.verse);
-  if (username) currentRowArray.push(username);
-  if (datetime) {
-    datetime = datetime.replace(/_/g, ":");
-    function pad(num) {
-      return num < 10 ? 0 + `${num}` : num;
-    }
-    let dateObj = new Date(datetime)
-    let date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
-    currentRowArray.push(date);
-    //Converts to format as such DD/MM/YYYY
-    currentRowArray.push(new Date(datetime).toString().split(" ")[4]);
-    //Converts to format as such HH:MM:SS
-  }
-}
-
-export function csvTextCleanUp(text) {
-  if (!text) return "";
-  return text.replace ? `"${text.replace('"', '""')}"` : `"${text}"`;
-}
-
-/**
- * @description - Gets the tool folder names
- *
- * @param {string} projectPath
- */
-export function getToolFolderNames(projectPath) {
-  try {
-    return fs.readdirSync(path.join(projectPath, '.apps', 'translationCore', 'index'));
-  } catch (e) {
-  }
+  const filePath = path.join(dataFolder, 'output', currentToolName, 'CheckInformation.csv');
+  csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+    return Promise.resolve(true);
+  });
 }

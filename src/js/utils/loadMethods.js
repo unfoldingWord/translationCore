@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * @description this file holds all methods that handle preloading data into the
  *  store add your methods as needed and then import them into localstorage.js to
@@ -88,7 +89,8 @@ export function loadProjectDataByTypeToExport(dataFolder, projectId, type) {
           }
         }
       }
-    } catch (e) {
+    } catch (err) {
+      reject(err);
     }
     resolve(checkDataArray, dataFolder);
   });
