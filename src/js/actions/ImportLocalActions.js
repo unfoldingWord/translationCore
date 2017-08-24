@@ -8,7 +8,6 @@ import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 //helpers
-import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as usfmHelpers from '../helpers/usfmHelpers';
 // contstants
 const { dialog } = remote;
@@ -39,18 +38,17 @@ export function selectLocalProjectToLoad() {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (usfmFilePath) {
         newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-        if(newProjectPath) dispatch(selectAndLoadProject(newProjectPath));
+        if(newProjectPath) dispatch(ProjectSelectionActions.selectProject(newProjectPath));
         else {
           dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
            Reimporting existing projects is not currently supported.'))
         }
-      }
-      else if (path.extname(sourcePath) === '.tstudio') {
+      } else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
         dispatch(unzipTStudioProject(sourcePath, fileName));
       } else if (verifyIsValidProject(sourcePath)) {
         fs.copySync(sourcePath, newProjectPath)
-        dispatch(selectAndLoadProject(newProjectPath));
+        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       } else {
         dispatch(
           AlertModalActions.openAlertDialog(
@@ -72,7 +70,7 @@ function unzipTStudioProject(projectSourcePath, fileName) {
     const newProjectPath = path.join(DEFAULT_SAVE, fileName);
     if (!fs.existsSync(newProjectPath)) {
       zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
-      dispatch(selectAndLoadProject(newProjectPath));
+      dispatch(ProjectSelectionActions.selectProject(newProjectPath));
     } else {
       dispatch(AlertModalActions.openAlertDialog(
         `A project with the name ${fileName} already exists. Reimporting
@@ -91,11 +89,4 @@ function verifyIsValidProject(projectSourcePath) {
     }
   }
   return false;
-}
-
-function selectAndLoadProject(projectPath) {
-  return ((dispatch) => {
-    // select project and load it.
-    dispatch(ProjectSelectionActions.selectProject(projectPath));
-  });
 }

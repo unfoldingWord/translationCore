@@ -6,7 +6,7 @@ import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
-
+import * as MyProjectsActions from './MyProjectsActions';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -157,5 +157,7 @@ export function cancelProjectValidationStepper() {
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+    // updating project list
+    dispatch(MyProjectsActions.getMyProjects());
   });
 }
