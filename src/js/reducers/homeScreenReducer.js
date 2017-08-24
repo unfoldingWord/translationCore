@@ -9,7 +9,8 @@ const initialState = {
     stepIndex: 0,
     nextStepName: 'Go To User',
     previousStepName: '',
-    nextDisabled: false
+    nextDisabled: false,
+    stepIndexAvailable: [true, true, false, false]
   },
   showFABOptions: false,
   showLicenseModal: false,
@@ -33,22 +34,15 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         homeInstructions: action.instructions
       };
-    case consts.GO_TO_NEXT_STEP:
+    case consts.GO_TO_STEP:
       return {
         ...state,
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
-          nextStepName: action.nextStepName
-        }
-      };
-    case consts.GO_TO_PREVIOUS_STEP:
-      return {
-        ...state,
-        stepper: {
-          stepIndex: action.stepIndex,
-          previousStepName: action.previousStepName,
-          nextStepName: action.nextStepName
+          nextStepName: action.nextStepName,
+          stepIndexAvailable: action.stepIndexAvailable,
+          nextDisabled: action.nextDisabled
         }
       };
     case consts.TOGGLE_PROJECTS_FAB:

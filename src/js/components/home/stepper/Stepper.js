@@ -11,7 +11,8 @@ import {
 
 class StepperComponent extends Component {
   render() {
-    const { stepIndex } = this.props.homeScreenReducer.stepper;
+    const { stepIndex, stepIndexAvailable } = this.props.homeScreenReducer.stepper;
+    console.log(this.props)
     // colors
     let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
     let userColor = stepIndex >= 1 ? "var(--accent-color-dark)" : "";
@@ -28,22 +29,22 @@ class StepperComponent extends Component {
         <Card>
           <div style={{width: '100%', maxWidth: '100%', margin: 'auto'}}>
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
-              <Step disabled={false} style={{cursor:'pointer'}}>
+              <Step disabled={!stepIndexAvailable[0]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(0)} icon={homeIcon}>
                   <span style={{color: homeColor}}>{" Home "}</span>
                 </StepLabel>
               </Step>
-              <Step disabled={false} style={{cursor:'pointer'}}>
+              <Step disabled={!stepIndexAvailable[1]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(1)} icon={userIcon}>
                   <span style={{color: userColor}}>{" User "}</span>
                 </StepLabel>
               </Step>
-              <Step disabled={false} style={{cursor:'pointer'}}>
+              <Step disabled={!stepIndexAvailable[2]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(2)} icon={projectIcon}>
                   <span style={{color: projectColor}}>{" Project "}</span>
                 </StepLabel>
               </Step>
-              <Step disabled={false} style={{cursor:'pointer'}}>
+              <Step disabled={!stepIndexAvailable[3]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(3)} icon={toolIcon}>
                   <span style={{color: toolColor}}>{" Tool "}</span>
                 </StepLabel>

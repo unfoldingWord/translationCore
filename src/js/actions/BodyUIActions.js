@@ -34,34 +34,14 @@ export const changeHomeInstructions = instructions => {
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    if (stepIndex < 3) {
-      let nextStepName = homeStepperIndex[stepIndex + 2];
-      let previousStepName = homeStepperIndex[stepIndex];
-      dispatch({
-        type: consts.GO_TO_NEXT_STEP,
-        stepIndex: stepIndex + 1,
-        nextStepName: nextStepName,
-        previousStepName: previousStepName,
-      });
-    } else {
-      dispatch(AlertModalActions.openAlertDialog("You're at the last step"));
-    }
+    return dispatch(goToStep(stepIndex + 1))
   });
 };
 
 export const goToPrevStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    let nextStepName = homeStepperIndex[stepIndex];
-    let previousStepName = homeStepperIndex[stepIndex - 2];
-    if (stepIndex > 0) {
-      dispatch({
-        type: consts.GO_TO_PREVIOUS_STEP,
-        nextStepName: nextStepName,
-        previousStepName: previousStepName,
-        stepIndex: stepIndex - 1
-      });
-    }
+    return dispatch(goToStep(stepIndex - 1))
   });
 };
 
@@ -69,19 +49,16 @@ export const goToStep = stepNumber => {
   return ((dispatch, getState) => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
     let previousStepName = homeStepperIndex[stepNumber - 1];
-    let { indexIsAvailable, stepNeededToComplete } = canGoToIndex(stepNumber, getState());
-    if (!indexIsAvailable) {
-      return dispatch(AlertModalActions.openAlertDialog(
-        `You cannot go to this step without first completing the\
-        '${stepNeededToComplete}' step.`
-      ));
-    }
     if (stepNumber >= 0 && stepNumber <= 3) {
+      let stepIndexAvailable = canGoToIndex(stepNumber, getState());
+      if (!stepIndexAvailable[stepNumber]) return;
       dispatch({
-        type: consts.GO_TO_PREVIOUS_STEP,
+        type: consts.GO_TO_STEP,
         stepIndex: stepNumber,
         nextStepName: nextStepName,
-        previousStepName: previousStepName
+        previousStepName: previousStepName,
+        stepIndexAvailable: stepIndexAvailable,
+        nextDisabled: false
       });
     } else if (stepNumber < 0) {
       console.error("The min number of steps is 0. (0-3)")
@@ -117,9 +94,9 @@ export const getStepperNextButtonIsDisabled = () => {
   return ((dispatch, getState) => {
     let state = getState();
     let { nextDisabled, stepIndex } = state.homeScreenReducer.stepper;
-    let currentNextButtonStatus = !canGoToIndex(stepIndex + 1, state).indexIsAvailable;
-    if (nextDisabled != currentNextButtonStatus) {
-      dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: currentNextButtonStatus });
+    let currentNextButtonStatus = canGoToIndex(stepIndex + 1, state)
+    if (nextDisabled != !currentNextButtonStatus[stepIndex + 1]) {
+      dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: !currentNextButtonStatus[stepIndex + 1] });
     }
   })
 }
@@ -127,20 +104,17 @@ export const getStepperNextButtonIsDisabled = () => {
 export const canGoToIndex = (stepIndex, state) => {
   let { loggedInUser } = state.loginReducer;
   let { projectSaveLocation } = state.projectDetailsReducer;
-  let indexIsAvailable = false;
-  let stepNeededToComplete;
+  let availableArray = [true, false, false, false];
   if (stepIndex >= 0) {
-    indexIsAvailable = true;
+    availableArray [1] = true;
     if (stepIndex >= 2) {
-      stepNeededToComplete = 'User';
-      indexIsAvailable = indexIsAvailable && !!loggedInUser;
+      availableArray [2] = !!loggedInUser;
       if (stepIndex >= 3) {
-        stepNeededToComplete = 'Projects';
-        indexIsAvailable = indexIsAvailable && !!projectSaveLocation;
+        availableArray [3] = !!projectSaveLocation;
       }
     }
   }
-  return  { indexIsAvailable , stepNeededToComplete };
+  return availableArray;
 }
 
 export const openLicenseModal = () => {
