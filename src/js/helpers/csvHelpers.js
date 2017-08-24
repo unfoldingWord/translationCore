@@ -1,6 +1,15 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
+// data
+/**
+ * @description - To prevent these files from being read in for every groupName lookup, read them in once.
+ */
+const tHelpsPath = path.join(window.__base, '/static/resources/en/translationHelps');
+const tWIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
+const tWIndex = fs.readJsonSync(tWIndexPath);
+const tNIndexPath = path.join(tHelpsPath, 'translationNotes/v0/index.json');
+const tNIndex = fs.readJsonSync(tNIndexPath);
 /**
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
@@ -11,8 +20,8 @@ import path from 'path-extra';
  * @param {timestamp} timestamp to be converted into date and time
  * @return {object}
  */
-export function combineData(data, contextId, indexObject, username, timestamp) {
-  const flatContextId = flattenContextId(contextId, indexObject);
+export function combineData(data, contextId, username, timestamp) {
+  const flatContextId = flattenContextId(contextId);
   const userTimestamp = userTimestampObject(username, timestamp);
   const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
   return combinedData;
@@ -27,7 +36,7 @@ export const flattenContextId = (contextId) => {
   const flatContextId = {
     tool: contextId.tool,
     groupId: contextId.groupId,
-    groupName: getGroupName(contextId),
+    groupName: groupName(contextId),
     occurrence: contextId.occurrence,
     quote: contextId.quote,
     bookId: contextId.reference.bookId,
@@ -42,30 +51,28 @@ export const flattenContextId = (contextId) => {
  * given the group id such as figs_metaphor
  * @param {Object} contextId - context id to get toolName and groupName
  */
-export const getGroupName = (contextId) => {
-  let {toolName, groupId} = contextId;
-  const resourcesPath = path.join('..', '..', '..', 'static', 'resources', 'en', 'translationHelps' )
-  let indexPath;
-  switch (toolName) {
+export const groupName = (contextId) => {
+  let indexArray;
+  let {tool, groupId} = contextId;
+  switch (tool) {
     case 'translationNotes':
-      indexPath = path.join('translationNotes', 'v0', 'index.json');
+      indexArray = tNIndex;
       break;
     case 'translationWords':
-      indexPath = path.join('translationWords', 'v6', 'kt', 'index.json');
+      indexArray = tWIndex;
       break;
     default:
       // do something with other resources
   }
-  const filePath = path.join(resourcesPath, indexPath);
-  const indexArray = fs.readJsonSync(filePath);
   let indexObject = {};
   indexArray.forEach( group => {
     indexObject[group.id] = group.name;
   });
   let groupName = indexObject[groupId];
   if (!groupName) {
-    console.warn('Could not find group name for id: ', groupId, ' in tool: ', toolName);
+    console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
   }
+  console.log(tool, groupId, groupName, indexObject)
   return groupName;
 }
 /**
