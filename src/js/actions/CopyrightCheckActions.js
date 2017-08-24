@@ -62,17 +62,11 @@ export function finalize() {
  */
 export function selectProjectLicense(selectedLicenseId) {
   return ((dispatch, getState) => {
-    const {
-      stepper: {
-        nextDisabled
-      }
-    } = getState().projectValidationReducer;
-
     dispatch({
       type: consts.SELECT_PROJECT_LICENSE_ID,
       selectedLicenseId
     })
-    dispatch(ProjectValidationActions.toggleNextButton(!nextDisabled));
+    dispatch(ProjectValidationActions.toggleNextButton(false));
   });
 }
 
