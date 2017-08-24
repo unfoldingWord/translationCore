@@ -1,9 +1,6 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
-// utils
-import { getGroupName } from '../utils/loadMethods';
-
 /**
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
@@ -26,10 +23,11 @@ export function combineData(data, contextId, indexObject, username, timestamp) {
  * @param {array} indexObject - Array of index.json with {id, name} keys
  * @return {object}
  */
-export const flattenContextId = (contextId, indexObject) => {
+export const flattenContextId = (contextId) => {
   const flatContextId = {
+    tool: contextId.tool,
     groupId: contextId.groupId,
-    groupName: getGroupName(indexObject, contextId.groupId),
+    groupName: getGroupName(contextId),
     occurrence: contextId.occurrence,
     quote: contextId.quote,
     bookId: contextId.reference.bookId,
@@ -37,6 +35,38 @@ export const flattenContextId = (contextId, indexObject) => {
     verse: contextId.reference.verse
   }
   return flatContextId;
+}
+
+/**
+ * @description - Returns the corresponding group name i.e. Metaphor
+ * given the group id such as figs_metaphor
+ * @param {Object} contextId - context id to get toolName and groupName
+ */
+export const getGroupName = (contextId) => {
+  let {toolName, groupId} = contextId;
+  const resourcesPath = path.join('..', '..', '..', 'static', 'resources', 'en', 'translationHelps' )
+  let indexPath;
+  switch (toolName) {
+    case 'translationNotes':
+      indexPath = path.join('translationNotes', 'v0', 'index.json');
+      break;
+    case 'translationWords':
+      indexPath = path.join('translationWords', 'v6', 'kt', 'index.json');
+      break;
+    default:
+      // do something with other resources
+  }
+  const filePath = path.join(resourcesPath, indexPath);
+  const indexArray = fs.readJsonSync(filePath);
+  let indexObject = {};
+  indexArray.forEach( group => {
+    indexObject[group.id] = group.name;
+  });
+  let groupName = indexObject[groupId];
+  if (!groupName) {
+    console.warn('Could not find group name for id: ', groupId, ' in tool: ', toolName);
+  }
+  return groupName;
 }
 /**
  * @description - turns a username and timestamp into usable object for csv

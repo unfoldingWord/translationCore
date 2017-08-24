@@ -71,17 +71,7 @@ export function exportToCSV(projectPath) {
         }
         return toolPaths;
       })
-      .then((toolPaths) => {
-        let promises = Promise.resolve(true);
-
-        toolPaths.forEach((toolpath) => {
-          promises = promises.then(() => {
-            return saveAllCSVDataByToolName(toolpath, dataFolder, projectId)
-              .then( () => { return promises });
-          });
-        });
-        return promises;
-      })
+      .then((toolPaths) => saveAllCSVData(toolPaths, dataFolder, projectId))
       .then(() => {
         zipFolder(tempFolder, filePath, (err) => {
           if (err) {
@@ -99,28 +89,40 @@ export function exportToCSV(projectPath) {
   });
 }
 
+export const saveAllCSVData = (toolPaths, dataFolder, projectId) => {
+  let iterablePromises = [];
+  toolPaths.forEach((toolpath) => {
+    const p = new Promise((resolve) => {
+      return saveAllCSVDataByToolName(toolpath, dataFolder, projectId).then(resolve)
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders'))
+        .then((array) => saveRemindersToCSV(array, dataFolder, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections'))
+        .then((array) => saveSelectionsToCSV(array, dataFolder, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments'))
+        .then((array) => saveCommentsToCSV(array, dataFolder, indexObject))
+      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits'))
+        .then((array) => saveVerseEditsToCSV(array, dataFolder, indexObject));
+    });
+    iterablePromises.push(p);
+  });
+  Promise.all(iterablePromises)
+  .then( () => {
+    return Promise.resolve(true);
+  });
+}
+
 /**
  *
  * @param {string} currentToolName - current tool name
  * @param {string} dataFolder - path of the folder to load csv from
  * @param {object} projectId - project Id of current project
  */
-export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId) {
+export const saveAllCSVDataByToolName = (currentToolName, dataFolder, projectId) => {
   if (currentToolName == '.DS_Store') {
     return Promise.resolve(true);
   } else {
-    let filePath = path.join(dataFolder, 'index', currentToolName, 'index.json')
-    let indexObject = fs.readJsonSync(filePath);
     return loadGroupsDataToExport(currentToolName, dataFolder, projectId)
-        .then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'reminders'))
-        .then((array) => saveRemindersToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'selections'))
-        .then((array) => saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'comments'))
-        .then((array) => saveCommentsToCSV(array, dataFolder, currentToolName, indexObject))
-      .then(() => loadProjectDataByTypeToExport(dataFolder, projectId, 'verseEdits'))
-        .then((array) => saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject))
+        .then((obj) => saveGroupsCSVToFs(obj, dataFolder, currentToolName))
       .then(() => {
         return Promise.resolve(true);
       })
@@ -137,7 +139,7 @@ export function saveAllCSVDataByToolName(currentToolName, dataFolder, projectId)
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObject) {
+export const saveVerseEditsToCSV = (array, dataFolder, indexObject) => {
   const objectArray = array.map( object => {
     const current = object.dataObject;
     const { time, username } = object;
@@ -148,7 +150,7 @@ export function saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObj
     };
     return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
   });
-  const filePath = path.join(dataFolder, 'output', currentToolName, 'VerseEdits.csv');
+  const filePath = path.join(dataFolder, 'output', 'check_data', 'VerseEdits.csv');
   csvMethods.generateCSVFile(objectArray, filePath).then( () => {
     return Promise.resolve(true);
   });
@@ -162,14 +164,13 @@ export function saveVerseEditsToCSV(array, dataFolder, currentToolName, indexObj
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveCommentsToCSV(array, dataFolder, currentToolName, indexObject) {
+export const saveCommentsToCSV = (array, dataFolder, indexObject) => {
   const objectArray = array.map( object => {
-    const current = object.dataObject;
-    const { time, username } = object;
-    const data = { text: object.text }
-    return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
+    const { time, username, dataObject } = object;
+    const data = { text: dataObject.text }
+    return csvHelpers.combineData(data, dataObject.contextId, indexObject, username, time);
   });
-  const filePath = path.join(dataFolder, 'output', currentToolName, 'Comments.csv');
+  const filePath = path.join(dataFolder, 'output', 'check_data', 'Comments.csv');
   csvMethods.generateCSVFile(objectArray, filePath).then( () => {
     return Promise.resolve(true);
   });
@@ -182,7 +183,7 @@ export function saveCommentsToCSV(array, dataFolder, currentToolName, indexObjec
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveSelectionsToCSV(array, dataFolder, currentToolName, indexObject) {
+export const saveSelectionsToCSV = (array, dataFolder, indexObject) => {
   const objectArray = [];
   array.forEach( object => {
     const { time, username } = object;
@@ -197,7 +198,7 @@ export function saveSelectionsToCSV(array, dataFolder, currentToolName, indexObj
       objectArray.push(newObject);
     });
   });
-  const filePath = path.join(dataFolder, 'output', currentToolName, 'Selections.csv');
+  const filePath = path.join(dataFolder, 'output', 'check_data', 'Selections.csv');
   csvMethods.generateCSVFile(objectArray, filePath).then( () => {
     return Promise.resolve(true);
   });
@@ -210,14 +211,14 @@ export function saveSelectionsToCSV(array, dataFolder, currentToolName, indexObj
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveRemindersToCSV(array, dataFolder, currentToolName, indexObject) {
+export const saveRemindersToCSV = (array, dataFolder, indexObject) => {
   const objectArray = array.map( object => {
     const current = object.dataObject;
     const { time, username } = object;
     const data = { enabled: object.enabled }
     return csvHelpers.combineData(data, current.contextId, indexObject, username, time);
   });
-  const filePath = path.join(dataFolder, 'output', currentToolName, 'Reminders.csv');
+  const filePath = path.join(dataFolder, 'output', 'check_data', 'Reminders.csv');
   csvMethods.generateCSVFile(objectArray, filePath).then( () => {
     return Promise.resolve(true);
   });
@@ -230,14 +231,14 @@ export function saveRemindersToCSV(array, dataFolder, currentToolName, indexObje
  * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
  * @param {array} indexObject - Array of index.json with {id, name} keys
  */
-export function saveGroupsCSVToFs(obj, dataFolder, currentToolName, indexObject) {
+export const saveGroupsCSVToFs = (obj, dataFolder, currentToolName) => {
   let objectArray = [];
   const groupNames = Object.keys(obj);
   groupNames.forEach( groupName => {
     obj[groupName].forEach( groupData => {
       const object = groupData;
       const data = { priority: object.priority }
-      const flatContextId = csvHelpers.flattenContextId(object.contextId, indexObject);
+      const flatContextId = csvHelpers.flattenContextId(object.contextId);
       const newObject = Object.assign({}, data, flatContextId);
       objectArray.push(newObject);
     });
