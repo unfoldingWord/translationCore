@@ -88,21 +88,21 @@ class ProjectInformationCheck extends Component {
         Project Information
         <Card
           style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%', paddingRight: '40px' }}
+          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
         >
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <span style={{ color: '#800020', margin: '10px' }}>* Required</span><br />
           </div>
-          <table style={{ display: 'flex', justifyContent: 'center' }}>
+          <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
             <tbody>
               <tr>
-                <td style={{ padding: '10px 80px' }}>
+                <td>
                   <BookDropdownMenu
                     bookId={bookId}
                     updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
                   />
                 </td>
-                <td style={{ padding: '10px 0px 0px 80px' }}>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageDirectionDropdownMenu
                     languageDirection={languageDirection}
                     updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
@@ -110,13 +110,13 @@ class ProjectInformationCheck extends Component {
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '10px 80px' }}>
+                <td>
                   <LanguageIdTextBox
                     languageId={languageId}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                   />
                 </td>
-                <td style={{ padding: '10px 0px 0px 80px' }}>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageNameTextBox
                     languageName={languageName}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
@@ -125,7 +125,7 @@ class ProjectInformationCheck extends Component {
               </tr>
             </tbody>
           </table><br />
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', marginLeft: '-40px' }}>
             <ContributorsArea 
               contributors={contributors}
               addContributor={this.addContributor.bind(this)}

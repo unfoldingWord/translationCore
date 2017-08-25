@@ -13,12 +13,13 @@ const BookDropdownMenu = ({
     <div>
       <SelectField
         value={bookId}
-        style={{ width: '150px' }}
+        style={{ width: '200px' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelStyle={{ color: '#000' }}
+        floatingLabelFixed={true}
+        floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
           <div>
-            <Glyphicon glyph={"book"} style={{ color: "#000000" }} />&nbsp;
+            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
             <span>Book</span>&nbsp;
             <span style={{ color: '#800020'}}>*</span>
           </div>
@@ -30,7 +31,7 @@ const BookDropdownMenu = ({
       <MenuItem value={""} primaryText={""} />
       {
         Object.keys(BooksOfTheBible.newTestament).map((key, index) => {
-          const BookName = BooksOfTheBible.newTestament[key];
+          const BookName = BooksOfTheBible.newTestament[key] + ` (${key})`;
           return (
             <MenuItem key={index} value={key} primaryText={BookName} />
           );

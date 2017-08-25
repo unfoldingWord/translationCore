@@ -13,12 +13,13 @@ const LanguageNameTextBox = ({
     <div>
       <TextField
         value={languageName}
-        style={{ width: '150px' }}
+        style={{ width: '200px', height: '80px' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "1", fontWeight: "bold" }}
+        floatingLabelFixed={true}
+        floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
-          <div style={{ width: '200px' }}>
-            <TranslateIcon style={{ height: "20px", width: "20px", color: "#000000" }} />&nbsp;
+          <div style={{ width: '260px' }}>
+            <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
             <span>Language Name</span>&nbsp;
             <span style={{ color: '#800020'}}>*</span>
           </div>
