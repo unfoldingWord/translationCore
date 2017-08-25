@@ -53,7 +53,7 @@ export default class OnlineImportModal extends Component {
 
     const headerContent = (
       <div>
-        <span>{"Import From Door43"}</span>
+        <span>{"Import from Door43"}</span>
           <Glyphicon
             onClick={closeOnlineImportModal}
             glyph={"remove"}

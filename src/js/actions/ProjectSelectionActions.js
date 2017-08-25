@@ -46,7 +46,7 @@ export function selectProject(projectPath, projectLink) {
       dispatch(loadProjectDetails(projectPath, manifest));
       dispatch(ProjectValidationActions.validateProject());
     } else {
-      dispatch(AlertModalActions.openAlertDialog('You can only load Titus projects for now.'));
+      dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject());
     }
