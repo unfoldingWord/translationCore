@@ -22,6 +22,7 @@ import * as migrationHelpers from '../helpers/migrationHelpers';
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
     dispatch(BodyUIActions.resetStepLabels(2));
+    //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
     const { username } = getState().loginReducer.userdata;
     if (!projectPath) {
