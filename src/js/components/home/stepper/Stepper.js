@@ -11,7 +11,6 @@ import {
 
 class StepperComponent extends Component {
   render() {
-    console.log(this.props);
     const { stepIndex, stepIndexAvailable, stepperLabels } = this.props.homeScreenReducer.stepper;
     // colors
     let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
@@ -23,7 +22,6 @@ class StepperComponent extends Component {
     const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/> // step 1
     const projectIcon = <Glyphicon glyph={"folder-open"} style={{color: projectColor, fontSize: "25px"}}/> // step 2
     const toolIcon = <Glyphicon glyph={"wrench"} style={{color: toolColor, fontSize: "25px"}}/> // step 3
-    console.log(stepIndexAvailable)
     return (
       <MuiThemeProvider>
         <Card>

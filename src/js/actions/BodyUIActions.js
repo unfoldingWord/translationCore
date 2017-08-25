@@ -130,8 +130,9 @@ export const updateStepLabel = (index, label) => {
   }
 }
 
-export const resetStepLabels = () => {
-  return {
-    type: consts.RESET_STEPPER_LABELS
-  }
+export const resetStepLabels = (indexToStop) => {
+    return {
+      type: consts.RESET_STEPPER_LABELS,
+      indexToStop
+    }
 }

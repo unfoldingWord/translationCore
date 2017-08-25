@@ -21,6 +21,7 @@ import * as migrationHelpers from '../helpers/migrationHelpers';
  */
 export function selectProject(projectPath, projectLink) {
   return ((dispatch, getState) => {
+    dispatch(BodyUIActions.resetStepLabels(2));
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
     const { username } = getState().loginReducer.userdata;
     if (!projectPath) {

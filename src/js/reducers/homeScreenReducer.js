@@ -97,7 +97,10 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           ...state.stepper,
-          stepperLabels: initialState.stepper.stepperLabels
+          stepperLabels: [
+            ...initialState.stepper.stepperLabels.slice(0, action.indexToStop + 1),
+            ...initialState.stepper.stepperLabels.slice(action.indexToStop + 1)
+          ]
         }
       }
     default:
