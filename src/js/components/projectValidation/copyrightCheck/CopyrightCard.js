@@ -18,23 +18,24 @@ const CopyrightCard = ({
   const selectedCheckbox = id === selectedLicenseId;
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '10px' }}>
-      <img src={'images/' + imageName} height="94px" style={{ alignSelf: 'flex-start' }} />
-      <div>
-        <h4 style={{ fontWeight: 'bold'}}>
-          {title}
-        </h4>
-        <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
-          See more
-        </span>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '22px' }}>
+      <div style={{ display: 'flex' }}>
+        <img src={'images/' + imageName} height="70px" />
+        <div style={{ marginLeft: '20px' }}>
+          <h4 style={{ fontWeight: 'bold'}}>
+            {title}
+          </h4>
+          <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
+            See more
+          </span>
+        </div>
       </div>
       <div>
         <Checkbox
           checked={selectedCheckbox}
-          disabled={selectedLicenseId !== id && selectedLicenseId !== null}
           style={{ width: "20px", color: "#000000" }}
           iconStyle={{ fill: 'var(--accent-color-dark)' }}
-          onCheck={() => selectedCheckbox ? selectProjectLicense(null) : selectProjectLicense(id)}
+          onCheck={() => selectProjectLicense(id)}
         />
       </div>
     </div>
