@@ -17,7 +17,7 @@ const importOnlineReducer = (state = initialState, action) => {
       return { ...state, importLink: action.importLink }
     case consts.RECIEVE_REPOS:
       return { ...state, repos: action.repos }
-    case consts.RECEIVE_LOGIN:
+    case consts.LOGIN_USER:
       return { ...state, loggedIn: action.val ? true : false }
     case consts.GOGS_SERVER_ERROR:
       return { ...state, err: action.err }

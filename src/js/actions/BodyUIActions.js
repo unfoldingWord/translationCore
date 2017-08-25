@@ -34,17 +34,21 @@ export const changeHomeInstructions = instructions => {
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    return dispatch(goToStep(stepIndex + 1))
+    dispatch(goToStep(stepIndex + 1))
   });
 };
 
 export const goToPrevStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    return dispatch(goToStep(stepIndex - 1))
+    dispatch(goToStep(stepIndex - 1))
   });
 };
 
+/**
+ * Goes to specified step
+ * @param {number} stepNumber - Number of step to go to in home stepper
+ */
 export const goToStep = stepNumber => {
   return ((dispatch, getState) => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
@@ -87,7 +91,7 @@ export const closeOnlineImportModal = () => {
 };
 
 /**
- * Determines if the next button is diabled or not, dispatches result based on 
+ * Determines if the next button is disabled or not, dispatches result based on 
  * user completed actions relevant to step
  */
 export const getStepperNextButtonIsDisabled = () => {
@@ -101,6 +105,12 @@ export const getStepperNextButtonIsDisabled = () => {
   })
 }
 
+/**
+ * 
+ * @param {number} stepIndex - The index of the step that is being checked for met requirements
+ * @param {object} state - Entire state object of the store
+ * @returns [...bool]
+ */
 export const canGoToIndex = (stepIndex, state) => {
   let { loggedInUser } = state.loginReducer;
   let { projectSaveLocation } = state.projectDetailsReducer;
@@ -130,6 +140,12 @@ export const updateStepLabel = (index, label) => {
   }
 }
 
+/**
+ * This action resets all the header labels to a certain index.
+ * i.e. headers are => ['Home', 'royalsix', 'a_project_name']
+ * Then passing 1 as index would cause them to be ['Home', 'User', 'Project']
+ * @param {number} indexToStop - Index to reset label up until
+ */
 export const resetStepLabels = (indexToStop) => {
     return {
       type: consts.RESET_STEPPER_LABELS,

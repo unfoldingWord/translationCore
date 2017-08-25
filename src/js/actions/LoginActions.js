@@ -11,7 +11,7 @@ export function loginUser(newUserdata, local = false) {
   return (dispatch => {
     if (local) {
       dispatch({
-        type: consts.RECEIVE_LOGIN,
+        type: consts.LOGIN_USER,
         userdata: newUserdata,
         localUser: local
       });
@@ -19,7 +19,7 @@ export function loginUser(newUserdata, local = false) {
       dispatch(OnlineModeActions.confirmOnlineAction(() => {
         gogs().login(newUserdata).then(newUserdata => {
           dispatch({
-            type: consts.RECEIVE_LOGIN,
+            type: consts.LOGIN_USER,
             userdata: newUserdata
           });
           dispatch(BodyUIActions.goToStep(1));
