@@ -80,11 +80,13 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  * @param {string} projectSaveLocation - Path of the project
  * @param {object} manifest - Metadata of the project details
  */
-export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
+export function merge(mergeConflictArray, inputFile, outputFile) {
   try {
-    if (mergeConflictsObject.filePath) {
-      let usfmData = fs.readFileSync(mergeConflictsObject.filePath).toString();
-      for (var conflict of mergeConflictsObject.conflicts) {
+    if (!outputFile) outputFile = inputFile;
+    debugger;
+    if (inputFile) {
+      let usfmData = fs.readFileSync(inputFile).toString();
+      for (var conflict of mergeConflictArray) {
         let chosenText;
         for (var version of conflict) {
           if (version.checked) {
@@ -94,7 +96,7 @@ export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
         let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
-      fs.outputFileSync(mergeConflictsObject.filePath, usfmData);
+      fs.outputFileSync(outputFile, usfmData);
     }
   } catch (e) { console.warn('Problem merging conflicts', e) }
 }
@@ -103,7 +105,7 @@ export function merge(mergeConflictsObject, projectSaveLocation, manifest) {
  * This method will take a tS project and convert it to a usfm file.
  * @param {string} projectSaveLocation - path to the project
  */
-export function createUSFMFromTsProject(projectSaveLocation) {
+export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
   let usfmData = '';
   try {
     const chapters = fs.readdirSync(projectSaveLocation);
@@ -125,7 +127,10 @@ export function createUSFMFromTsProject(projectSaveLocation) {
         })
       }
     }
-  } catch (e) { console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e) }
+    if (usfmFilePath) fs.outputFileSync(usfmFilePath, usfmData);
+  } catch (e) {
+    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e) 
+  }
   return usfmData;
 }
 
@@ -133,25 +138,18 @@ export function createUSFMFromTsProject(projectSaveLocation) {
  * Determines whether or not there is usfm to parse for merge conflicts
  * and if there is return the data it contains
  * @param {string} usfmFilePath - path to the usfm file of the project, note this may not exist
- * @param {string} projectSaveLocation - path to the projects location
- * @returns {string}
+ * @returns {bool}
  */
-export function checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation) {
+export function checkUSFMForMergeConflicts(usfmFilePath) {
   let usfmData;
-  if (fs.existsSync(usfmFilePath)) { //is usfm file
+  try {
     usfmData = fs.readFileSync(usfmFilePath).toString();
-    if (!usfmData.includes('<<<<<<<'))  //usfm file does not contain merge conflicts
-      return false;
-  } else { //Not usfm file, checking for tS project
-    try {
-      usfmData = createUSFMFromTsProject(projectSaveLocation)
-      if (!usfmData.includes('<<<<<<<'))
-        return false; //A project thats not usfm and merge conflicts not detected
-      /** Used for merging conflicts later, see MergeConflictHelpers.merge() */
-      else fs.outputFileSync(usfmFilePath, usfmData);
-    } catch (e) { console.warn('Problem getting merge conflicts', e) }
+  } catch (e) {
+    return false
   }
-  return usfmData;
+  if (!usfmData.includes('<<<<<<<') || !usfmData.includes('>>>>>>>'))  //usfm file does not contain merge conflicts
+    return false;
+  return true;
 }
 
 /**
@@ -161,6 +159,7 @@ export function checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation)
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
 export function projectHasMergeConflicts(projectPath, bookAbbr) {
+  if (!fs.existsSync(Path.join(projectPath, bookAbbr))) return false;
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
   for (var currentChapterFile of currentFolderChapters) {
     let currentChapter = Path.parse(currentChapterFile).name;
@@ -168,10 +167,20 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
     try {
       let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
       let fileContents = JSON.stringify(currentChapterObject);
-      if (~fileContents.indexOf('<<<<<<<')) {
+      if (fileContents.includes('<<<<<<<') || fileContents.includes('>>>>>>>')) {
         return true;
       }
     } catch (e) { }
   }
   return false;
+}
+
+export function loadUSFM(filePath) {
+  try {
+    var usfmData = fs.readFileSync(filePath).toString();
+    return usfmData;
+  }
+  catch (e) {
+    return null
+  }
 }

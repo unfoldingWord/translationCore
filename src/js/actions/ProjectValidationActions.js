@@ -6,7 +6,7 @@ import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
-import * as MyProjectsActions from './MyProjectsActions';
+
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -61,7 +61,6 @@ export function initiateProjectValidationStepper() {
 /** Directly jump to a step at the specified index */
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
-    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
@@ -69,8 +68,6 @@ export function updateStepperIndex() {
     if (!projectValidationStepsArray[0]) {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
-      // generate target language bible
-      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else
       dispatch({
@@ -157,7 +154,5 @@ export function cancelProjectValidationStepper() {
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
-    // updating project list
-    dispatch(MyProjectsActions.getMyProjects());
   });
 }
