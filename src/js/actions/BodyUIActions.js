@@ -104,16 +104,9 @@ export const getStepperNextButtonIsDisabled = () => {
 export const canGoToIndex = (stepIndex, state) => {
   let { loggedInUser } = state.loginReducer;
   let { projectSaveLocation } = state.projectDetailsReducer;
-  let availableArray = [true, false, false, false];
-  if (stepIndex >= 0) {
-    availableArray [1] = true;
-    if (stepIndex >= 2) {
-      availableArray [2] = !!loggedInUser;
-      if (stepIndex >= 3) {
-        availableArray [3] = !!projectSaveLocation;
-      }
-    }
-  }
+  let availableArray = [true, true, false, false];
+  availableArray[2] = !!loggedInUser;
+  availableArray[3] = !!projectSaveLocation;
   return availableArray;
 }
 
@@ -126,5 +119,13 @@ export const openLicenseModal = () => {
 export const closeLicenseModal = () => {
   return {
     type: consts.CLOSE_LICENSE_MODAL
+  }
+}
+
+export const updateStepLabel = (index, label) => {
+  return {
+    type: consts.UPDATE_STEPPER_LABEL,
+    index,
+    label
   }
 }

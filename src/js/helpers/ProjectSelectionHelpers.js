@@ -42,3 +42,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   }
   return manifest;
 }
+
+export function getProjectName(projectPath) {
+  return Path.parse(projectPath).base
+}

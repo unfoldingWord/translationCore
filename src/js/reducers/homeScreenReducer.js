@@ -10,7 +10,8 @@ const initialState = {
     nextStepName: 'Go To User',
     previousStepName: '',
     nextDisabled: false,
-    stepIndexAvailable: [true, true, false, false]
+    stepIndexAvailable: [true, true, false, false],
+    stepperLabels: ['Home', 'User', 'Project', 'Tool']
   },
   showFABOptions: false,
   showLicenseModal: false,
@@ -38,6 +39,7 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         stepper: {
+          ...state.stepper,
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName,
@@ -77,6 +79,18 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         showLicenseModal: false
+      }
+    case consts.UPDATE_STEPPER_LABEL:
+      return {
+        ...state,
+        stepper: {
+          ...state.stepper,
+          stepperLabels: [
+            ...state.stepper.stepperLabels.slice(0, action.index),
+            action.label,
+            ...state.stepper.stepperLabels.slice(action.index + 1)
+          ]
+        }
       }
     default:
       return state;

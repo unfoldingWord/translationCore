@@ -11,8 +11,8 @@ import {
 
 class StepperComponent extends Component {
   render() {
-    const { stepIndex, stepIndexAvailable } = this.props.homeScreenReducer.stepper;
-    console.log(this.props)
+    console.log(this.props);
+    const { stepIndex, stepIndexAvailable, stepperLabels } = this.props.homeScreenReducer.stepper;
     // colors
     let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
     let userColor = stepIndex >= 1 ? "var(--accent-color-dark)" : "";
@@ -23,7 +23,7 @@ class StepperComponent extends Component {
     const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/> // step 1
     const projectIcon = <Glyphicon glyph={"folder-open"} style={{color: projectColor, fontSize: "25px"}}/> // step 2
     const toolIcon = <Glyphicon glyph={"wrench"} style={{color: toolColor, fontSize: "25px"}}/> // step 3
-
+    console.log(stepIndexAvailable)
     return (
       <MuiThemeProvider>
         <Card>
@@ -31,22 +31,22 @@ class StepperComponent extends Component {
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
               <Step disabled={!stepIndexAvailable[0]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(0)} icon={homeIcon}>
-                  <span style={{color: homeColor}}>{" Home "}</span>
+                  <span style={{color: homeColor}}>{` ${stepperLabels[0]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[1]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(1)} icon={userIcon}>
-                  <span style={{color: userColor}}>{" User "}</span>
+                  <span style={{color: userColor}}>{` ${stepperLabels[1]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[2]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(2)} icon={projectIcon}>
-                  <span style={{color: projectColor}}>{" Project "}</span>
+                  <span style={{color: projectColor}}>{` ${stepperLabels[2]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[3]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(3)} icon={toolIcon}>
-                  <span style={{color: toolColor}}>{" Tool "}</span>
+                  <span style={{color: toolColor}}>{` ${stepperLabels[3]} `}</span>
                 </StepLabel>
               </Step>
             </Stepper>
