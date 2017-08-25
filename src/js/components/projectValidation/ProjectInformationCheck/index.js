@@ -91,7 +91,7 @@ class ProjectInformationCheck extends Component {
           containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
         >
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <span style={{ color: '#800020', margin: '10px' }}>* Required</span><br />
+            <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* Required</span>
           </div>
           <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
             <tbody>
@@ -111,20 +111,20 @@ class ProjectInformationCheck extends Component {
               </tr>
               <tr>
                 <td>
-                  <LanguageIdTextBox
-                    languageId={languageId}
-                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageNameTextBox
                     languageName={languageName}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                   />
                 </td>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <LanguageIdTextBox
+                    languageId={languageId}
+                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                  />
+                </td>
               </tr>
             </tbody>
-          </table><br />
+          </table>
           <div style={{ display: 'flex', marginLeft: '-40px' }}>
             <ContributorsArea 
               contributors={contributors}

@@ -13,7 +13,9 @@ const BookDropdownMenu = ({
     <div>
       <SelectField
         value={bookId}
-        style={{ width: '200px' }}
+        style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
+        errorText={bookId === "" ? "This field is required." : null}
+        errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
         floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
@@ -21,7 +23,7 @@ const BookDropdownMenu = ({
           <div>
             <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
             <span>Book</span>&nbsp;
-            <span style={{ color: '#800020'}}>*</span>
+            <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
         onChange={(event, index, value) => {

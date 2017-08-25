@@ -16,7 +16,7 @@ const CheckersArea = ({
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-        <span style={{ fontWeight: 'bold' }}>Checkers</span>&nbsp;
+        <span style={{ fontWeight: 'bold' }}>Checkers</span>
       </div>
       <div
         onClick={() => addChecker()}
