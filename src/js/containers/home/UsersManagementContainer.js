@@ -20,6 +20,9 @@ class UsersManagementContainer extends Component {
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
+    if (this.props.reducers.loginReducer.userdata.username) {
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+    }
   }
 
   showLoggedInInstructions() {

@@ -22,6 +22,7 @@ export function loginUser(newUserdata, local = false) {
             type: consts.RECEIVE_LOGIN,
             userdata: newUserdata
           });
+          dispatch(BodyUIActions.goToStep(1));
         }).catch(function (err) {
           var errmessage = "An error occurred while trying to login";
           if (err.syscall === "getaddrinfo") {
@@ -35,6 +36,7 @@ export function loginUser(newUserdata, local = false) {
         });
       }));
     }
+    dispatch(BodyUIActions.goToStep(1));
   });
 }
 
@@ -46,6 +48,9 @@ export function logoutUser() {
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT })
+    dispatch(BodyUIActions.goToStep(1));
+    dispatch(BodyUIActions.updateStepLabel(1, null))
+    dispatch(BodyUIActions.resetStepLabels());
   });
 }
 

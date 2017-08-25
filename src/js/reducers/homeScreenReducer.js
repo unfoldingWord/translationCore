@@ -87,9 +87,17 @@ const homeScreenReducer = (state = initialState, action) => {
           ...state.stepper,
           stepperLabels: [
             ...state.stepper.stepperLabels.slice(0, action.index),
-            action.label,
+            action.label || initialState.stepper.stepperLabels[action.index],
             ...state.stepper.stepperLabels.slice(action.index + 1)
           ]
+        }
+      }
+    case consts.RESET_STEPPER_LABELS:
+      return {
+        ...state,
+        stepper: {
+          ...state.stepper,
+          stepperLabels: initialState.stepper.stepperLabels
         }
       }
     default:
