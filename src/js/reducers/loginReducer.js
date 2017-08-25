@@ -13,9 +13,11 @@ const loginReducer = (state = initialState, action) => {
     case consts.RECEIVE_LOGIN:
       return {
         ...state,
-        userdata: action.userdata,
+        userdata:  {
+          ...action.userdata,
+          localUser: action.localUser
+        },
         loggedInUser: true,
-        localUser: action.localUser
       };
     case consts.LOGOUT_USER:
       localStorage.removeItem('localUser');
