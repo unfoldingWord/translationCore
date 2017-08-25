@@ -1,5 +1,5 @@
 import consts from './ActionTypes';
-import path from 'Path-extra';
+import path from 'path-extra';
 //actions
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';

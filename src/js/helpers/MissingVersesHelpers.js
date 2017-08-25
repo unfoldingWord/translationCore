@@ -1,5 +1,5 @@
 import * as fs from 'fs-extra';
-import path from 'Path-extra';
+import path from 'path-extra';
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
 
 /**
