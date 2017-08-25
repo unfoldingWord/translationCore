@@ -34,17 +34,17 @@ class CopyRightCheck extends Component {
     const { selectedLicenseId, projectLicenseMarkdown } = this.props.reducers.copyrightCheckReducer;
     const licenses = [
       {
-        title: 'Creative Commons O / Public Domain',
+        title: 'CC0 / Public Domain',
         id: 'CC0 1.0 Public Domain',
         imageName: 'publicDomain.png'
       },
       {
-        title: 'Creative Commons BY',
+        title: 'Creative Commons Attribution (CC BY)',
         id: 'CC BY 4.0',
         imageName: 'ccBy.png'
       },
       {
-        title: 'Creative Commons BY-SA',
+        title: 'Creative Commons Attribution-ShareAlike (CC BY-SA)',
         id: 'CC BY-SA 4.0',
         imageName: 'ccBySa.png'
       },
