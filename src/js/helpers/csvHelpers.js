@@ -72,7 +72,6 @@ export const groupName = (contextId) => {
   if (!groupName) {
     console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
   }
-  console.log(tool, groupId, groupName, indexObject)
   return groupName;
 }
 /**
@@ -120,9 +119,46 @@ const pad = (number) => {
  * @param {string} projectPath
  */
 export function getToolFolderNames(projectPath) {
-  try {
-    return fs.readdirSync(path.join(projectPath, '.apps', 'translationCore', 'index'));
-  } catch (e) {
-    console.log(e);
+  const _dataPath = dataPath(projectPath);
+  let toolsPath = path.join(_dataPath, 'index');
+  if (fs.existsSync(toolsPath)) {
+    let toolNames = fs.readdirSync(toolsPath);
+    toolNames = toolNames.filter( (file) => {
+      return file !== '.DS_Store'
+    });
+    return toolNames;
+    // TODO! check to see if it is a directory and only return those
+  } else {
+    console.log('Could not find index path for tool information');
   }
+}
+export const dataPath = (projectPath) => {
+  return path.join(projectPath, '.apps', 'translationCore');
+}
+export const tmpPath = (projectPath) => {
+  return path.join(dataPath(projectPath), 'output');
+}
+/**
+ * @description - cleanup the temporary csv files
+ * @param {string} tmpPath - Path to cleanup
+ */
+export const cleanupTmpPath = (projectPath) => {
+  const _tmpPath = tmpPath(projectPath);
+  if (fs.existsSync(_tmpPath)) {
+    fs.removeSync(path.join(_tmpPath));
+  }
+}
+/**
+ * @description - get the project id from the manifest in the projectPath
+ * @param {string} projectPath - Path to current project
+ */
+export const getProjectId = (projectPath) => {
+  let projectId;
+  const manifestPath = path.join(projectPath, 'manifest.json');
+  if (fs.existsSync(manifestPath)) {
+    const manifest = fs.readJsonSync(manifestPath);
+    projectId = (manifest && manifest.project) ? manifest.project.id : undefined;
+    return projectId;
+  }
+  throw 'Cannot read project manifest: ', manifestPath;
 }

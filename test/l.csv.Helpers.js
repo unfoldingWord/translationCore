@@ -1,9 +1,12 @@
+/* eslint-disable no-console */
 import {describe, it} from 'mocha';
 import { expect } from 'chai';
 import isEqual from 'lodash/isEqual'
 
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
+
+const checksPerformedPath = window.__base + '/test/fixtures/projects/checks_performed/fr_eph_text_ulb';
 
 const tWContextId = {
   "reference": {
@@ -74,6 +77,24 @@ describe('csvHelpers.combineData', () => {
     const data = {enabled: true};
     const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z');
     expect(isEqual(combinedData, _combinedData)).to.equal(true);
+    done();
+  });
+});
+
+describe('csvHelpers.getToolFolderNames', () => {
+  it('should return tool folders', function (done) {
+    const toolNames = csvHelpers.getToolFolderNames(checksPerformedPath);
+    const _toolNames = [ 'translationNotes', 'translationWords' ];
+    expect(isEqual(toolNames, _toolNames)).to.equal(true);
+    done();
+  });
+});
+
+describe('csvHelpers.getProjectId', () => {
+  it('should return a projectId', function (done) {
+    const projectId = csvHelpers.getProjectId(checksPerformedPath)
+    const _projectId = 'eph';
+    expect(projectId).to.equal(_projectId);
     done();
   });
 });

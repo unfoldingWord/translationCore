@@ -1,0 +1,162 @@
+/* eslint-disable no-console */
+import {describe, it} from 'mocha';
+import { expect } from 'chai';
+import fs from 'fs-extra';
+import path from 'path-extra';
+// actions
+import * as csvExportActions from '../src/js/actions/CSVExportActions';
+// helpers
+import * as csvHelpers from '../src/js/helpers/csvHelpers';
+
+// data
+const noChecksPerformedPath = path.join(window.__base, 'test/fixtures/projects/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join(window.__base, 'test/fixtures/projects/checks_performed/fr_eph_text_ulb');
+const testOutputPath = path.join(window.__base, 'test/output');
+
+describe('csvExportActions.saveToolDataToCSV', () => {
+  it('should resolve true', function (done) {
+    csvExportActions.saveToolDataToCSV('translationWords', checksPerformedPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      const dataPath = csvHelpers.dataPath(checksPerformedPath);
+      const filePath = path.join(dataPath, 'output', 'translationWords_CheckData.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.saveVerseEditsToCSV', () => {
+  it('should resolve true', function (done) {
+    csvExportActions.saveVerseEditsToCSV(checksPerformedPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(checksPerformedPath);
+      const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.saveCommentsToCSV', () => {
+  it('should resolve true', function (done) {
+    csvExportActions.saveCommentsToCSV(checksPerformedPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(checksPerformedPath);
+      const filePath = path.join(dataPath, 'output', 'Comments.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.saveSelectionsToCSV', () => {
+  it('should resolve true', function (done) {
+    csvExportActions.saveSelectionsToCSV(checksPerformedPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(checksPerformedPath);
+      const filePath = path.join(dataPath, 'output', 'Selections.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.saveRemindersToCSV', () => {
+  it('should resolve true', function (done) {
+    csvExportActions.saveRemindersToCSV(checksPerformedPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(checksPerformedPath);
+      const filePath = path.join(dataPath, 'output', 'Reminders.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.saveAllCSVData', () => {
+  it('should resolve true for checksPerformedPath', function (done) {
+    csvExportActions.saveAllCSVData(checksPerformedPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+  it('should resolve true for noChecksPerformedPath', function (done) {
+    csvExportActions.saveAllCSVData(noChecksPerformedPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      csvHelpers.cleanupTmpPath(noChecksPerformedPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(noChecksPerformedPath);
+      done();
+    });
+  });
+});
+
+describe('csvExportActions.exportToCSVZip', () => {
+  it('should resolve true', function (done) {
+    const zipPath = path.join(testOutputPath, 'export.zip')
+    csvExportActions.exportToCSVZip(checksPerformedPath, zipPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      fs.removeSync(zipPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      done();
+    });
+  });
+});
