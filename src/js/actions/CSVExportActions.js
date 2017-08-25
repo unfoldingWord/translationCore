@@ -14,7 +14,6 @@ import * as csvMethods from '../utils/csvMethods';
 /**
  * @description - Wrapper function to handle exporting to CSV
  * @param {string} projectPath - Path to current project
- * @param {string} csvSaveLocation - Path to CSV location
  */
 export function exportToCSV(projectPath) {
   return ( (dispatch, getState) => {
@@ -95,7 +94,7 @@ export const exportToCSVZip = (projectPath, filePath) => {
 }
 /**
  * @description - Zip all of the csv files and save ot filePath
- * @param {string} tmpPath - Path of the csv files
+ * @param {string} projectPath - path of the project
  * @param {string} filePath - Path to save the zip file
  */
 export const zipCSVData = (projectPath, filePath) => {
@@ -113,7 +112,6 @@ export const zipCSVData = (projectPath, filePath) => {
 /**
  * @description - Chain of saving all csv data
  * @param {string} projectPath - Path to current project
- * @param {string} filePath - Path to save the zip file
  */
 export const saveAllCSVData = (projectPath) => {
   return new Promise((resolve, reject) => {
@@ -139,10 +137,9 @@ export const saveAllCSVData = (projectPath) => {
   });
 }
 /**
- *
- * @param {string} currentToolName - current tool name
- * @param {string} dataPath - path of the folder to load csv from
- * @param {object} projectId - project Id of current project
+ * @ description - Saves teh Tool data to csv
+ * @param {string} toolName - current tool name
+ * @param {string} projectPath - path of the project
  */
 export const saveToolDataToCSV = (toolName, projectPath) => {
   return new Promise((resolve, reject) => {
@@ -158,7 +155,11 @@ export const saveToolDataToCSV = (toolName, projectPath) => {
   });
 }
 
-// TODO: change readJson to readJsonSync
+/**
+ * @description - Loads the Groups Data for a tool
+ * @param {string} toolName - name of the tool being saved i.e. translationNotes
+ * @param {string} projectPath - path of the project
+ */
 export function loadGroupsData(toolName, projectPath) {
   return new Promise((resolve, reject) => {
     const dataPath = csvHelpers.dataPath(projectPath);
@@ -186,9 +187,8 @@ export function loadGroupsData(toolName, projectPath) {
 /**
  * @description - Creates csv from object and saves it.
  * @param {object} obj - object to save to the filesystem
- * @param {string} dataPath - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
+ * @param {string} projectPath - path of the project
+ * @param {string} toolName - name of the tool being saved i.e. translationNotes
  */
 export const saveGroupsToCSV = (obj, projectPath, toolName) => {
   return new Promise((resolve, reject) => {
@@ -217,10 +217,7 @@ export const saveGroupsToCSV = (obj, projectPath, toolName) => {
 }
 /**
  * @description - Creates csv from object and saves it.
- * @param {Array} array - array to save to the filesystem
- * @param {string} dataPath - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
+* @param {string} projectPath - path of the project
  */
 export const saveVerseEditsToCSV  = (projectPath) => {
   return new Promise ((resolve, reject) => {
@@ -245,10 +242,7 @@ export const saveVerseEditsToCSV  = (projectPath) => {
 }
 /**
  * @description - Creates csv from object and saves it.
- * @param {Array} array - object to save to the filesystem
- * @param {string} dataPath - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
+* @param {string} projectPath - path of the project
  */
 export const saveCommentsToCSV  = (projectPath) => {
   return new Promise ((resolve, reject) => {
@@ -269,10 +263,7 @@ export const saveCommentsToCSV  = (projectPath) => {
 }
 /**
  * @description - Creates csv from object and saves it.
- * @param {Array} array - object to save to the filesystem
- * @param {string} dataPath - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
+* @param {string} projectPath - path of the project
  */
 export const saveSelectionsToCSV = (projectPath) => {
   return new Promise ((resolve, reject) => {
@@ -301,10 +292,7 @@ export const saveSelectionsToCSV = (projectPath) => {
 }
 /**
  * @description - Creates csv from object and saves it.
- * @param {Array} array - object to save to the filesystem
- * @param {string} dataPath - folder to save to filesystem
- * @param {string} currentToolName - name of the tool being saved i.e. translationNotes
- * @param {array} indexObject - Array of index.json with {id, name} keys
+ * @param {string} projectPath - path of the project
  */
 export const saveRemindersToCSV = (projectPath) => {
   return new Promise ((resolve, reject) => {
