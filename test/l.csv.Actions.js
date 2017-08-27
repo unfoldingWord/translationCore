@@ -242,9 +242,37 @@ describe('csvExportActions.saveAllCSVData', () => {
 });
 
 describe('csvExportActions.exportToCSVZip', () => {
-  it('should resolve true', function (done) {
+  it('should resolve true for checksPerformedPath', function (done) {
     const zipPath = path.join(testOutputPath, 'export.zip')
     csvExportActions.exportToCSVZip(checksPerformedPath, zipPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      fs.removeSync(zipPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      done();
+    });
+  });
+  it('should resolve true for noChecksPerformedPath', function (done) {
+    const zipPath = path.join(testOutputPath, 'export.zip')
+    csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      fs.removeSync(zipPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      done();
+    });
+  });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    const zipPath = path.join(testOutputPath, 'export.zip')
+    csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath)
     .then( (resolve) => {
       expect(resolve).to.equal(true);
       fs.removeSync(zipPath);
