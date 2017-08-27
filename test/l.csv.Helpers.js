@@ -80,12 +80,15 @@ describe('csvHelpers.combineData', () => {
       groupName: "apostle, apostles, apostleship",
       quote: "apostle, apostles, apostleship",
       occurrence: 1,
-      username: 'klappy',
-      date: '08/22/2017',
-      time: '22:33:45'
+      username: 'klappy'
+      // date: '08/22/2017',
+      // time: '22:33:45'
     };
     const data = {enabled: true};
     const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z');
+    // Due to timezone issues this is a pain to test.
+    _combinedData.date = combinedData.date;
+    _combinedData.time = combinedData.time;
     if (!isEqual(combinedData, _combinedData)) {
       console.log('Received: ', combinedData)
       console.log('Expected: ', _combinedData)
