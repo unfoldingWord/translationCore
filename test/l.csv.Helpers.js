@@ -86,6 +86,10 @@ describe('csvHelpers.combineData', () => {
     };
     const data = {enabled: true};
     const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z');
+    if (!isEqual(combinedData, _combinedData)) {
+      console.log('Received: ', combinedData)
+      console.log('Expected: ', _combinedData)
+    }
     expect(isEqual(combinedData, _combinedData)).to.equal(true);
     done();
   });
