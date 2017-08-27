@@ -6,7 +6,7 @@ import isEqual from 'lodash/isEqual'
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
-const checksPerformedPath = window.__base + '/test/fixtures/projects/checks_performed/fr_eph_text_ulb';
+const checksPerformedPath = window.__base + '/test/fixtures/projects/csv/checks_performed/fr_eph_text_ulb';
 
 const tWContextId = {
   "reference": {
@@ -26,6 +26,11 @@ const tNContextId = {
   "groupId": "figs_metaphor",
   "quote": "he revealed his word",
   "occurrence": 1
+}
+const autographaContextId = {
+  "reference": { "bookId": "tit", "chapter": 1, "verse": "1" },
+  "tool": "Autographa",
+  "groupId": "1"
 }
 
 describe('csvHelpers.flattenContextId', () => {
@@ -54,6 +59,11 @@ describe('csvHelpers.groupName', () => {
   it('should return a groupName for tN', function (done) {
     const groupName = csvHelpers.groupName(tNContextId);
     expect(groupName).to.equal('Metaphor')
+    done();
+  });
+  it('should return a groupId as groupName for Autographa', function (done) {
+    const groupName = csvHelpers.groupName(autographaContextId);
+    expect(groupName).to.equal('1')
     done();
   });
 });

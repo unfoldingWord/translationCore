@@ -39,7 +39,7 @@ export function exportToCSV(projectPath) {
     let message = "Exporting " + projectName + " Please wait...";
     dispatch(AlertModalActions.openAlertDialog(message, true));
     // export the csv and zip it
-    exportToCSVZip(projectPath)
+    exportToCSVZip(projectPath, filePath)
     .then( () => {
       message = projectName + " has been successfully exported.";
       dispatch(AlertModalActions.openAlertDialog(message, false));
@@ -115,14 +115,14 @@ export const zipCSVData = (projectPath, filePath) => {
  */
 export const saveAllCSVData = (projectPath) => {
   return new Promise((resolve, reject) => {
-    const toolPaths = csvHelpers.getToolFolderNames(projectPath);
-    if (!toolPaths || !toolPaths.length) {
+    const toolNames = csvHelpers.getToolFolderNames(projectPath);
+    if (!toolNames || !toolNames.length) {
       throw 'No tools have loaded for this project.';
     }
     let iterablePromises = [];
-    toolPaths.forEach((toolPath) => {
+    toolNames.forEach((toolName) => {
       const p = new Promise((_resolve) => {
-        return saveToolDataToCSV(toolPath, projectPath)
+        return saveToolDataToCSV(toolName, projectPath)
         .then(_resolve);
       });
       iterablePromises.push(p);
@@ -144,12 +144,12 @@ export const saveAllCSVData = (projectPath) => {
 export const saveToolDataToCSV = (toolName, projectPath) => {
   return new Promise((resolve, reject) => {
     loadGroupsData(toolName, projectPath)
-    .then((object) => saveGroupsToCSV(object, projectPath, toolName))
+    .then((object) => saveGroupsToCSV(object, toolName, projectPath))
     .then(() => {
       resolve(true);
     })
     .catch(err => {
-      const message = "Problem saving data for " + toolName + "\n Error:" + err;
+      const message = "Problem saving data for tool: " + toolName + "\n Error:" + err;
       reject(message)
     });
   });
@@ -166,15 +166,14 @@ export function loadGroupsData(toolName, projectPath) {
     const projectId = csvHelpers.getProjectId(projectPath);
     const groupsDataFolderPath = path.join(dataPath, 'index', toolName, projectId);
     if (fs.existsSync(groupsDataFolderPath)) {
-      const groupDataFiles = fs.readdirSync(groupsDataFolderPath);
+      const groupDataFiles = fs.readdirSync(groupsDataFolderPath)
+      .filter(file => { return path.extname(file) == '.json' });
       var groupsData = {};
       groupDataFiles.forEach(groupDataFile => {
-        if (path.extname(groupDataFile) === '.json') {
-          const groupId = groupDataFile.split('.')[0];
-          const groupDataPath = path.join(groupsDataFolderPath, groupDataFile);
-          const groupData = fs.readJsonSync(groupDataPath);
-          groupsData[groupId] = groupData;
-        }
+        const groupId = groupDataFile.split('.')[0];
+        const groupDataPath = path.join(groupsDataFolderPath, groupDataFile);
+        const groupData = fs.readJsonSync(groupDataPath);
+        groupsData[groupId] = groupData;
       });
       resolve(groupsData);
     } else {
@@ -190,7 +189,7 @@ export function loadGroupsData(toolName, projectPath) {
  * @param {string} projectPath - path of the project
  * @param {string} toolName - name of the tool being saved i.e. translationNotes
  */
-export const saveGroupsToCSV = (obj, projectPath, toolName) => {
+export const saveGroupsToCSV = (obj, toolName, projectPath) => {
   return new Promise((resolve, reject) => {
     let objectArray = [];
     const groupNames = Object.keys(obj);
@@ -245,7 +244,7 @@ export const saveVerseEditsToCSV  = (projectPath) => {
 * @param {string} projectPath - path of the project
  */
 export const saveCommentsToCSV  = (projectPath) => {
-  return new Promise ((resolve, reject) => {
+  return new Promise ((resolve) => {
     loadProjectDataByType(projectPath, 'comments')
     .then((array) => {
       const objectArray = array.map( data => {
@@ -254,11 +253,9 @@ export const saveCommentsToCSV  = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Comments.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
-        resolve(true);
-      });
-    })
-    .catch(reject);
+      csvMethods.generateCSVFile(objectArray, filePath)
+      .then(resolve);
+    });
   })
 }
 /**
@@ -313,28 +310,38 @@ export const saveRemindersToCSV = (projectPath) => {
 }
 
 export function loadProjectDataByType(projectPath, type) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let checkDataArray = [];
     const dataPath = csvHelpers.dataPath(projectPath);
     const projectId = csvHelpers.getProjectId(projectPath);
     const chaptersPath = path.join(dataPath, 'checkData', type, projectId);
     if (fs.existsSync(chaptersPath)) {
-      let chapters = fs.readdirSync(chaptersPath);
-      for (var chapter of chapters) {
-        if (!parseInt(chapter)) continue;
-        let verses = fs.readdirSync(path.join(chaptersPath, chapter));
+      const chapters = fs.readdirSync(chaptersPath)
+      .filter(file => { return fs.lstatSync(path.join(chaptersPath, file)).isDirectory() });
+      chapters.forEach( chapter => {
+        if (!parseInt(chapter)) return;
+        const chapterPath = path.join(chaptersPath, chapter);
+        const verses = fs.readdirSync(chapterPath)
+        .filter(file => { return fs.lstatSync(path.join(chapterPath, file)).isDirectory() });
         verses.forEach(verse => {
           if (!parseInt(verse)) return;
-          let versePath = path.join(chaptersPath, chapter, verse);
-          let verseFiles = fs.readdirSync(versePath);
-          verseFiles.forEach(dataFile => {
-            const verseDataPath = path.join(versePath, dataFile);
-            let data = fs.readJsonSync(verseDataPath);
-            data.userName = data.userName || "Anonymous";
-            checkDataArray.push(data);
+          const versePath = path.join(chapterPath, verse);
+          const dataFiles = fs.readdirSync(versePath)
+          .filter(file => { return path.extname(file) == '.json' });
+          dataFiles.forEach(dataFile => {
+            const dataPath = path.join(versePath, dataFile);
+            try {
+              const data = fs.readJsonSync(dataPath);
+              data.userName = data.userName || "Anonymous";
+              checkDataArray.push(data);
+            } catch (err) {
+              console.log('loadProjectDataByType(projectPath, type) ', projectPath, type);
+              console.log('Problem reading json file: ', dataPath);
+              reject(err);
+            }
           });
         });
-      }
+      });
     }
     resolve(checkDataArray);
   });

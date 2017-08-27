@@ -9,12 +9,13 @@ import * as csvExportActions from '../src/js/actions/CSVExportActions';
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
 // data
-const noChecksPerformedPath = path.join(window.__base, 'test/fixtures/projects/no_checks_performed/fr_eph_text_ulb');
-const checksPerformedPath = path.join(window.__base, 'test/fixtures/projects/checks_performed/fr_eph_text_ulb');
+const noChecksPerformedPath = path.join(window.__base, 'test/fixtures/projects/csv/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join(window.__base, 'test/fixtures/projects/csv/checks_performed/fr_eph_text_ulb');
+const bogusFilesInCheckDataPath = path.join(window.__base, 'test/fixtures/projects/csv/bogus_files/abu_tit_text_reg');
 const testOutputPath = path.join(window.__base, 'test/output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
-  it('should resolve true', function (done) {
+  it('should resolve true for checksPerformedPath', function (done) {
     csvExportActions.saveToolDataToCSV('translationWords', checksPerformedPath)
     .then( (value) => {
       expect(value).to.equal(true);
@@ -31,10 +32,24 @@ describe('csvExportActions.saveToolDataToCSV', () => {
       done();
     });
   });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveToolDataToCSV('translationWords', bogusFilesInCheckDataPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      csvHelpers.cleanupTmpPath('translationWords', bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    });
+  });
 });
 
 describe('csvExportActions.saveVerseEditsToCSV', () => {
-  it('should resolve true', function (done) {
+  it('should resolve true for checksPerformedPath', function (done) {
     csvExportActions.saveVerseEditsToCSV(checksPerformedPath)
     .then( (value) => {
       expect(value).to.equal(true);
@@ -51,10 +66,27 @@ describe('csvExportActions.saveVerseEditsToCSV', () => {
       done();
     });
   });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
+      const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    });
+  });
 });
 
 describe('csvExportActions.saveCommentsToCSV', () => {
-  it('should resolve true', function (done) {
+  it('should resolve true for checksPerformedPath', function (done) {
     csvExportActions.saveCommentsToCSV(checksPerformedPath)
     .then( (value) => {
       expect(value).to.equal(true);
@@ -71,10 +103,27 @@ describe('csvExportActions.saveCommentsToCSV', () => {
       done();
     });
   });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveCommentsToCSV(bogusFilesInCheckDataPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
+      const filePath = path.join(dataPath, 'output', 'Comments.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    });
+  });
 });
 
 describe('csvExportActions.saveSelectionsToCSV', () => {
-  it('should resolve true', function (done) {
+  it('should resolve true for checksPerformedPath', function (done) {
     csvExportActions.saveSelectionsToCSV(checksPerformedPath)
     .then( (value) => {
       expect(value).to.equal(true);
@@ -88,6 +137,23 @@ describe('csvExportActions.saveSelectionsToCSV', () => {
       console.log(err);
       expect(err).to.equal('');
       csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveSelectionsToCSV(bogusFilesInCheckDataPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
+      const filePath = path.join(dataPath, 'output', 'Selections.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
       done();
     });
   });
@@ -108,6 +174,23 @@ describe('csvExportActions.saveRemindersToCSV', () => {
       console.log(err);
       expect(err).to.equal('');
       csvHelpers.cleanupTmpPath(checksPerformedPath);
+      done();
+    });
+  });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveRemindersToCSV(bogusFilesInCheckDataPath)
+    .then( (value) => {
+      expect(value).to.equal(true);
+      const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
+      const filePath = path.join(dataPath, 'output', 'Reminders.csv');
+      expect(fs.existsSync(filePath)).to.equal(true);
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
       done();
     });
   });
@@ -139,6 +222,20 @@ describe('csvExportActions.saveAllCSVData', () => {
       console.log(err);
       expect(err).to.equal('');
       csvHelpers.cleanupTmpPath(noChecksPerformedPath);
+      done();
+    });
+  });
+  it('should resolve true for bogusFilesInCheckDataPath', function (done) {
+    csvExportActions.saveAllCSVData(bogusFilesInCheckDataPath)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
       done();
     });
   });

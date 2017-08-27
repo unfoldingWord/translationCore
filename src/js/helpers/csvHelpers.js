@@ -62,15 +62,22 @@ export const groupName = (contextId) => {
       indexArray = tWIndex;
       break;
     default:
-      // do something with other resources
+      indexArray = undefined;
+      // do something later with other resources
   }
   let indexObject = {};
-  indexArray.forEach( group => {
-    indexObject[group.id] = group.name;
-  });
-  let groupName = indexObject[groupId];
-  if (!groupName) {
-    console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
+  let groupName;
+  if (indexArray) {
+    indexArray.forEach( group => {
+      indexObject[group.id] = group.name;
+    });
+    groupName = indexObject[groupId];
+    if (!groupName) {
+      console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
+    }
+  } else {
+    // if other tools don't have an indexArray, just return groupId as groupName
+    groupName = groupId;
   }
   return groupName;
 }
@@ -122,10 +129,8 @@ export function getToolFolderNames(projectPath) {
   const _dataPath = dataPath(projectPath);
   let toolsPath = path.join(_dataPath, 'index');
   if (fs.existsSync(toolsPath)) {
-    let toolNames = fs.readdirSync(toolsPath);
-    toolNames = toolNames.filter( (file) => {
-      return file !== '.DS_Store'
-    });
+    let toolNames = fs.readdirSync(toolsPath)
+    .filter(file => { return fs.lstatSync(path.join(toolsPath, file)).isDirectory() });
     return toolNames;
     // TODO! check to see if it is a directory and only return those
   } else {
