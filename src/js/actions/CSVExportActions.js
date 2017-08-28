@@ -161,7 +161,7 @@ export const saveToolDataToCSV = (toolName, projectPath) => {
  * @param {string} projectPath - path of the project
  */
 export function loadGroupsData(toolName, projectPath) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const dataPath = csvHelpers.dataPath(projectPath);
     const projectId = csvHelpers.getProjectId(projectPath);
     const groupsDataFolderPath = path.join(dataPath, 'index', toolName, projectId);
@@ -178,8 +178,9 @@ export function loadGroupsData(toolName, projectPath) {
       resolve(groupsData);
     } else {
       const err = 'Group Data path does not exist: ' + groupsDataFolderPath;
-      console.log(err)
-      reject(err);
+      console.warn(err);
+      // In case of Autographa or testing tools, just move on...
+      resolve(true);
     }
   });
 }

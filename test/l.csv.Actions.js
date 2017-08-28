@@ -12,6 +12,7 @@ import * as csvHelpers from '../src/js/helpers/csvHelpers';
 const noChecksPerformedPath = path.join(window.__base, 'test/fixtures/projects/csv/no_checks_performed/fr_eph_text_ulb');
 const checksPerformedPath = path.join(window.__base, 'test/fixtures/projects/csv/checks_performed/fr_eph_text_ulb');
 const bogusFilesInCheckDataPath = path.join(window.__base, 'test/fixtures/projects/csv/bogus_files/abu_tit_text_reg');
+const projectOpenedAutographa = path.join(window.__base, 'test/fixtures/projects/csv/project_opened_autographa/ar_eph_text_ulb');
 const testOutputPath = path.join(window.__base, 'test/output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
@@ -236,6 +237,20 @@ describe('csvExportActions.saveAllCSVData', () => {
       console.log(err);
       expect(err).to.equal('');
       csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+      done();
+    });
+  });
+  it('should resolve true for projectOpenedAutographa', function (done) {
+    csvExportActions.saveAllCSVData(projectOpenedAutographa)
+    .then( (resolve) => {
+      expect(resolve).to.equal(true);
+      csvHelpers.cleanupTmpPath(projectOpenedAutographa);
+      done();
+    })
+    .catch( err => {
+      console.log(err);
+      expect(err).to.equal('');
+      csvHelpers.cleanupTmpPath(projectOpenedAutographa);
       done();
     });
   });

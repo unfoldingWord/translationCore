@@ -6,8 +6,11 @@ import path from 'path-extra';
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
 const tHelpsPath = path.join(window.__base, '/static/resources/en/translationHelps');
-const tWIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
-const tWIndex = fs.readJsonSync(tWIndexPath);
+const tWktIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
+const tWotherIndexPath = path.join(tHelpsPath, 'translationWords/v6/other/index.json');
+const tWktIndex = fs.readJsonSync(tWktIndexPath);
+const tWotherIndex = fs.readJsonSync(tWotherIndexPath);
+const tWIndex = tWotherIndex.concat(tWktIndex);
 const tNIndexPath = path.join(tHelpsPath, 'translationNotes/v0/index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
 /**
@@ -73,7 +76,7 @@ export const groupName = (contextId) => {
     });
     groupName = indexObject[groupId];
     if (!groupName) {
-      console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
+      console.log('Could not find group name for id: ', groupId, ' in tool: ', tool);
     }
   } else {
     // if other tools don't have an indexArray, just return groupId as groupName
@@ -81,6 +84,7 @@ export const groupName = (contextId) => {
   }
   return groupName;
 }
+
 /**
  * @description - turns a username and timestamp into usable object for csv
  * @param {string} username

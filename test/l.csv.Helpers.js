@@ -19,6 +19,17 @@ const tWContextId = {
   "quote": "apostle, apostles, apostleship",
   "occurrence": 1
 };
+const tWotherContextId = {
+  "reference": {
+    "bookId": "tit",
+    "chapter": 1,
+    "verse": 1
+  },
+  "tool": "translationWords",
+  "groupId": "confidence",
+  "quote": "confidence, confident",
+  "occurrence": 1
+};
 const tNContextId = {
   "information": undefined,
   "reference": { "bookId": "tit", "chapter": 1, "verse": 3 },
@@ -54,6 +65,11 @@ describe('csvHelpers.groupName', () => {
   it('should return a groupName for tW', function (done) {
     const groupName = csvHelpers.groupName(tWContextId);
     expect(groupName).to.equal('apostle, apostles, apostleship')
+    done();
+  });
+  it('should return an `other` groupName for tW', function (done) {
+    const groupName = csvHelpers.groupName(tWotherContextId);
+    expect(groupName).to.equal('confidence, confident');
     done();
   });
   it('should return a groupName for tN', function (done) {
