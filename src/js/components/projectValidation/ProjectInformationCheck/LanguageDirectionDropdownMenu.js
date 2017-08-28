@@ -8,37 +8,30 @@ const LanguageDirectionDropdownMenu = ({
   languageDirection,
   updateLanguageDirection
 }) => {
-  const ltrText = 'Left to Right';
-  const rtlText = 'Right to Left';
-  let textDirection;
-
-  if (languageDirection) {
-    textDirection = languageDirection === 'ltr' ? ltrText : rtlText;
-  } else {
-    textDirection = '';
-  }
-
   return (
     <div>
       <SelectField
         value={languageDirection}
-        style={{ width: '220px' }}
+        style={{ width: '200px', marginTop: languageDirection === "" ? '30px' : '' }}
+        errorText={languageDirection === "" ? "This field is required." : null}
+        errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelStyle={{ color: '#000' }}
+        floatingLabelFixed={true}
+        floatingLabelStyle={{ color: 'var(--text-color-dark)', fontSize: '22px', fontWeight: 'bold', top: '32px' }}
         floatingLabelText={
-          <div>
-            <Glyphicon glyph={"eye-open"} style={{ color: "#000000" }} />&nbsp;
+          <div style={{ width: '270px' }}>
+            <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '28px' }} />&nbsp;
             <span>Language Direction</span>&nbsp;
-            <span style={{ color: '#800020'}}>*</span>
+            <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
         onChange={(event, index, value) => {
           updateLanguageDirection(value);
         }}
       >
-        <MenuItem value={languageDirection} primaryText={textDirection} />
-        <MenuItem value={'ltr'} primaryText={ltrText} />
-        <MenuItem value={'rtl'} primaryText={rtlText} />
+        <MenuItem value={""} primaryText={""} />
+        <MenuItem value={'ltr'} primaryText={'Left to Right'} />
+        <MenuItem value={'rtl'} primaryText={'Right to Left'} />
       </SelectField>
     </div>
   );

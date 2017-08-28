@@ -15,8 +15,8 @@ const ContributorsArea = ({
   return (
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
-        <GroupIcon style={{ height: "30px", width: "30px", color: "#000000" }} />&nbsp;
-      <span>Contributors</span>
+        <GroupIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
+        <span style={{ fontWeight: 'bold' }}>Contributors</span>
       </div>
       <div
         onClick={() => addContributor()}
