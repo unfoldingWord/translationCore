@@ -21,7 +21,7 @@ class LocalLogin extends Component {
   }
 
   render() {
-    let {loggedInUser, userdata, loginLocalUser} = this.props;
+    let {loggedInUser, userdata, loginUser} = this.props;
     let disabledButton = this.state.localUsername && this.state.checkBoxChecked ? false : true;
     let infoPage = <div />
 
@@ -84,7 +84,7 @@ class LocalLogin extends Component {
               <button
                 className={disabledButton ? "btn-second-reverse" : "btn-second"}
                 disabled={disabledButton}
-                onClick={() => loginLocalUser(this.state.localUsername)}>
+                onClick={() => loginUser({username:this.state.localUsername}, true)}>
                   Create
               </button>
             </div>

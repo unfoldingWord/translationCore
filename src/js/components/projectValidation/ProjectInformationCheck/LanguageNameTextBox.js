@@ -13,14 +13,17 @@ const LanguageNameTextBox = ({
     <div>
       <TextField
         value={languageName}
-        style={{ width: '150px' }}
+        style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
+        errorText={languageName === "" ? "This field is required." : null}
+        errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "1", fontWeight: "bold" }}
+        floatingLabelFixed={true}
+        floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
-          <div style={{ width: '200px' }}>
-            <TranslateIcon style={{ height: "20px", width: "20px", color: "#000000" }} />&nbsp;
+          <div style={{ width: '260px' }}>
+            <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
             <span>Language Name</span>&nbsp;
-            <span style={{ color: '#800020'}}>*</span>
+            <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
         onChange={e => updateLanguageName(e.target.value)}

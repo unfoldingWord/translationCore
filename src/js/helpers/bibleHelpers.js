@@ -4,7 +4,7 @@ import * as fs from 'fs-extra';
 import BooksOfBible from '../../../static/data/BooksOfBible';
 // helpers
 
-const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore/resources');
+const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore', 'resources');
 
 /**
  *

@@ -11,7 +11,7 @@ import AppVersion from '../../components/home/AppVersion';
 import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
 import Instructions from '../../components/home/instructions/Instructions';
-import BackNavigation from '../../components/home/BackNavigation';
+import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -20,6 +20,14 @@ import ToolsManagementContainer from './ToolsManagementContainer';
 import * as BodyUIActions from '../../actions/BodyUIActions';
 
 class HomeContainer extends Component {
+
+
+  componentWillMount() {
+    if (this.props.reducers.loginReducer.userdata.username) {
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+    }
+  }
+
 
   componentWillReceiveProps(nextProps) {
     this.props.actions.getStepperNextButtonIsDisabled();
@@ -54,7 +62,7 @@ class HomeContainer extends Component {
     }
 
     return (
-      <div style={{width: '100%'}}>
+      <div style={{ width: '100%' }}>
         {showWelcomeSplash ?
           <WelcomeSplash {...this.props} /> :
           (
@@ -71,7 +79,7 @@ class HomeContainer extends Component {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <BackNavigation {...this.props} />
+                    <HomeScreenNavigation {...this.props} />
                     <AppVersion actions={this.props.actions} version={packagefile.version} />
                   </div>
                 </div>
@@ -130,6 +138,8 @@ const mapDispatchToProps = (dispatch) => {
       },
       openLicenseModal: () => {
         dispatch(BodyUIActions.openLicenseModal());
+      }, updateStepLabel: (index, label) => {
+        dispatch(BodyUIActions.updateStepLabel(index, label));
       }
     }
   };
