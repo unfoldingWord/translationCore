@@ -60,7 +60,7 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && languageId && languageName && languageDirection && checkers.length > 0 && !contributors.includes("") && !checkers.includes("")) {
+  if (bookId && languageId && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
   } else {
     return false;
