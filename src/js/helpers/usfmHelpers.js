@@ -230,6 +230,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
  * @param {string} username - Current username of user logged in.
  */
 export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
+  console.log(projectPath)
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
     const defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, username);

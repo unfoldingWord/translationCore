@@ -11,7 +11,7 @@ import AppVersion from '../../components/home/AppVersion';
 import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
 import Instructions from '../../components/home/instructions/Instructions';
-import BackNavigation from '../../components/home/BackNavigation';
+import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -79,7 +79,7 @@ class HomeContainer extends Component {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <BackNavigation {...this.props} />
+                    <HomeScreenNavigation {...this.props} />
                     <AppVersion actions={this.props.actions} version={packagefile.version} />
                   </div>
                 </div>
