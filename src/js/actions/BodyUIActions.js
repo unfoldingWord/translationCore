@@ -106,7 +106,8 @@ export const getStepperNextButtonIsDisabled = () => {
 }
 
 /**
- * 
+ * Determines if the home stepper can go to the index specified based on the 
+ * requirements a user must have already completed in order to advance to selected step
  * @param {number} stepIndex - The index of the step that is being checked for met requirements
  * @param {object} state - Entire state object of the store
  * @returns [...bool]
