@@ -1,0 +1,18 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": "1"
+    },
+    "tool": "Autographa",
+    "groupId": "1"
+  },
+  "verseBefore": "Paul, Gnamien apôlièn, nin Yesu-Christ assouon pouè, kèman alié alié pouè min assanssouan ninkè min nin amin siin vô anouhalè klô nin sêssê klô. ",
+  "verseAfter": "Paul, Gnamien apôlièn, nin Yesu-Christ assouon pouè, kèman alié alié pouè min assanssouan ninkè min nin amin siin vô anouhalè klô nin sêssê klô.",
+  "tags": [
+    "draft"
+  ],
+  "userName": "klappy",
+  "modifiedTimestamp": "2017-07-26T14:29:28.578Z"
+}

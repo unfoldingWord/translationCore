@@ -11,6 +11,7 @@ check_data.json
 .vscode/
 report.html
 jsconfig.json
+test/output
 
 # Needed for Webstorm
 .idea

@@ -1,0 +1,97 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: Possible meanings are 1) \"every name that man gives\" or 2) \"every name that God gives\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "every name that is named",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's kindness to us is the reason he made it possible for us to be saved from judgment if we simply trust in Jesus. AT: \"God saved you by grace because of your faith in him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For by grace you have been saved through faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated with an active form. AT: \"by what people call\" or \"by those whom people call\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "by what is called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God did not make these things known to people in the past\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "In other generations this truth was not made known to the sons of men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that God might give me the word\" or \"God might give me the message\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that a message might be given to me",
+      "occurrence": 1
+    }
+  }
+]
