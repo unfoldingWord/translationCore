@@ -5,7 +5,10 @@ import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
+import * as AlertModalActions from './AlertModalActions';
+//helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and 
@@ -16,12 +19,41 @@ export function validate() {
   return ((dispatch, getState) => {
     let state = getState();
     const { projectSaveLocation, manifest } = state.projectDetailsReducer;
+    if (!manifest.project || !projectSaveLocation) return;
+    let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
+    if (usfmFilePath) {
+      //Has usfm file to check for merge conflicts
+      let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
+      if (hasMergeConflicts)
+        dispatch(setUpMergeConflictsData(usfmFilePath))
+    } else {
+      //Has no usfm file to check, checking as tC or tS project
+      let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);
+      //Projects should not have merge conflicts post-import
+      if (projectHasMergeConflicts) {
+        dispatch(AlertModalActions.openAlertDialog('Warning! This project has fatal errors and cannot be loaded.'));
+        return dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+      } else {
+        //Checking merge conflicts for tS project that is unconverted
+        usfmFilePath = path.join(projectSaveLocation, manifest.project.id + '.usfm');
+        let usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation, usfmFilePath);
+        let usfmHasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
+        if (usfmHasMergeConflicts)
+          dispatch(setUpMergeConflictsData(usfmFilePath))
+      }
+    }
+  });
+}
+
+export function setUpMergeConflictsData(usfmFilePath) {
+  return ((dispatch) => {
     /**
      * Object that will be sent back to reducers with the chapter, 
      * verse and text info  of each merge conflict version.
      * An array of arrays of an object.
      * */
     let parsedAllMergeConflictsFoundArray = [];
+<<<<<<< HEAD
     let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation) ||
       path.join(projectSaveLocation, manifest.project.id + '.usfm');
 
@@ -36,11 +68,14 @@ export function validate() {
         type: consts.MERGE_CONFLICTS_CHECK
       })
     }
+=======
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+>>>>>>> develop
     /**
-     * @example ["1 this is the first version", "1 This is the second version"]
-     * @type {[string]}
-     * extracting merge conflicts from usfm data
-    */
+   * @example ["1 this is the first version", "1 This is the second version"]
+   * @type {[string]}
+   * extracting merge conflicts from usfm data
+  */
     let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
     for (let matchIndex in allMergeConflictsFoundArray) {
       /** Array representing the different versions for a merge conflict parsed into a more consumable format */
@@ -125,9 +160,9 @@ export function updateMergeConflictNextButton() {
 export function finalize() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    const mergeConflictsObject = getState().mergeConflictReducer;
-    MergeConflictHelpers.merge(mergeConflictsObject, projectSaveLocation, manifest);
-    let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(mergeConflictsObject.filePath, projectSaveLocation);
+    const mergeConflictArray = getState().mergeConflictReducer;
+    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
+    let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(mergeConflictArray.filePath, projectSaveLocation);
     TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
     dispatch(ProjectValidationActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
     return dispatch(ProjectValidationActions.validateProject());
