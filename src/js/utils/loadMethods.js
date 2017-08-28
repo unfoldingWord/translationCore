@@ -39,7 +39,6 @@ export function loadUserdata() {
   };
 
   let localUserdata = JSON.parse(localStorage.getItem('localUser'));
-
   if (localStorage.getItem('user')) {
     let phrase = "tc-core";
     let decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
