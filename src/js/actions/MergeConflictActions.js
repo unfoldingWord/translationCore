@@ -1,6 +1,6 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
-//actions
+
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -38,8 +38,12 @@ export function validate() {
         usfmFilePath = path.join(projectSaveLocation, manifest.project.id + '.usfm');
         let usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation, usfmFilePath);
         let usfmHasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
-        if (usfmHasMergeConflicts)
+        if (usfmHasMergeConflicts) {
           dispatch(setUpMergeConflictsData(usfmFilePath))
+        }
+        else {
+          TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
+        }
       }
     }
   });
