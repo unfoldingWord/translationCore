@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';
 //helpers
 import {generateTimestamp} from './TimestampGenerator';
 import * as bibleHelpers from './bibleHelpers';
 
-var template = {
+let template = {
   generator: {
     name: 'tc-desktop',
     build: ''
@@ -46,18 +47,18 @@ var template = {
  * @return {json} projectManifest - A TC project manifest
  ******************************************************************************/
 export function generateManifest(data, tsManifest) {
-  var projectManifest = template;
+  let projectManifest = template;
   projectManifest.time_created = generateTimestamp();
   if (data) {
     projectManifest.repo = data.repo;
   }
-  for (var oldElements in tsManifest) {
+  for (let oldElements in tsManifest) {
     projectManifest[oldElements] = tsManifest[oldElements];
   }
 
   if (data && data.user) {
-    for (var users in data.user) {
-      var user = data.user[users];
+    for (let users in data.user) {
+      let user = data.user[users];
       if (user) {
         projectManifest.checkers.push(user);
       }
@@ -65,8 +66,8 @@ export function generateManifest(data, tsManifest) {
   }
 
   if (data && data.checkLocations) {
-    for (var item in data.checkLocations) {
-      var currentItem = data.checkLocations[item];
+    for (let item in data.checkLocations) {
+      let currentItem = data.checkLocations[item];
       projectManifest.tools.push(currentItem.name);
     }
   }
@@ -103,13 +104,13 @@ export function generateManifest(data, tsManifest) {
  * studio project
  */
 export function saveManifest(projectSaveLocation, link, oldManifest, currentUser) {
-  var data = {
+  let data = {
     user: [currentUser],
     repo: link
   }
-  var manifest;
+  let manifest;
   try {
-    var manifestLocation = path.join(projectSaveLocation, 'manifest.json');
+    let manifestLocation = path.join(projectSaveLocation, 'manifest.json');
     if (oldManifest.package_version == '3') {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = this.fixManifestVerThree(oldManifest);
@@ -117,8 +118,7 @@ export function saveManifest(projectSaveLocation, link, oldManifest, currentUser
       manifest = generateManifest(data, oldManifest);
     }
     fs.outputJsonSync(manifestLocation, manifest);
-  }
-  catch (err) {
+  } catch (err) {
     console.error(err);
   }
   return manifest;
@@ -129,18 +129,18 @@ export function saveManifest(projectSaveLocation, link, oldManifest, currentUser
  * @param {object} oldManifest - The name of an employee.
  */
 export function fixManifestVerThree(oldManifest) {
-  var newManifest = {};
+  let newManifest = {};
   try {
-    for (var oldElements in oldManifest) {
+    for (let oldElements in oldManifest) {
       newManifest[oldElements] = oldManifest[oldElements];
     }
     newManifest.finished_chunks = oldManifest.finished_frames;
     newManifest.project = {};
     newManifest.project.id = oldManifest.project_id;
     newManifest.project.name = this.convertToFullBookName(oldManifest.project_id);
-    for (var el in oldManifest.source_translations) {
+    for (let el in oldManifest.source_translations) {
       newManifest.source_translations = oldManifest.source_translations[el];
-      var parameters = el.split("-");
+      let parameters = el.split("-");
       newManifest.source_translations.language_id = parameters[1];
       newManifest.source_translations.resource_id = parameters[2];
       break;
