@@ -76,7 +76,7 @@ export const groupName = (contextId) => {
     });
     groupName = indexObject[groupId];
     if (!groupName) {
-      console.log('Could not find group name for id: ', groupId, ' in tool: ', tool);
+      console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
     }
   } else {
     // if other tools don't have an indexArray, just return groupId as groupName
