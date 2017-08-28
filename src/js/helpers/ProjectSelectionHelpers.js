@@ -42,3 +42,12 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   }
   return manifest;
 }
+
+/**
+ * Gets the base name for the project path directory, this is also the project name.
+ * i.e. '~/translationCore/projects/a_project_name' returns 'a_project_name'
+ * @param {string} projectPath - Project path directory
+ */
+export function getProjectName(projectPath) {
+  return Path.parse(projectPath).base
+}

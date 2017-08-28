@@ -45,9 +45,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleSubmit: (userDataSumbit) => {
-      dispatch(LoginActions.loginUser(userDataSumbit));
-    },
     onHandleLogout: () => {
       dispatch(LoginActions.logoutUser());
     },
@@ -62,9 +59,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     submitFeedback: () => {
       dispatch(LoginActions.submitFeedback());
-    },
-    loginLocalUser: (localUsername) => {
-      dispatch(LoginActions.loginLocalUser(localUsername));
     },
     goToProjectsTab: () => {
       dispatch(modalActions.selectModalTab(2, 1, true));

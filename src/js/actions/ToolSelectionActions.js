@@ -5,6 +5,7 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 import * as ModalActions from './ModalActions';
+import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
 
@@ -17,6 +18,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 export function selectTool(moduleFolderName, currentToolName) {
   return ((dispatch) => {
     // TODO: Remove after homescreen implementation
+    dispatch(BodyUIActions.updateStepLabel(3, currentToolName))
     dispatch(ModalActions.showModalContainer(false))
     dispatch({ type: consts.START_LOADING });
     setTimeout(() => {
