@@ -6,7 +6,7 @@ const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources'
  * This method reads in all the chunks of a project, and determines if there are any missing verses
  * @param {String} book - Full name of the book
  * @param {String} projectSaveLocation - The current save location of the project
- * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
+ * @returns {{}} Object of missing verses
  */
 export function findMissingVerses(projectSaveLocation, bookAbbr) {
   let expectedBookVerses = getExpectedBookVerses(bookAbbr);
