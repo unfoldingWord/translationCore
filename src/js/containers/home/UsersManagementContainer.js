@@ -20,6 +20,9 @@ class UsersManagementContainer extends Component {
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
+    if (this.props.reducers.loginReducer.userdata.username) {
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+    }
   }
 
   showLoggedInInstructions() {
@@ -82,12 +85,9 @@ class UsersManagementContainer extends Component {
             {!loggedInUser ?
               <LoginContainer
                 {...this.props}
-                loginUser={(loginCredentials) => {
-                  this.props.actions.loginUser(loginCredentials);
-                  this.showLoggedInInstructions();
-                }}
-                loginLocalUser={(localUsername) => {
-                  this.props.actions.loginLocalUser(localUsername);
+                loginUser={(loginCredentials, local) => {
+                  this.props.actions.loginUser(loginCredentials, local);
+                  this.props.actions.updateStepLabel(1, loginCredentials.username);
                   this.showLoggedInInstructions();
                 }}
               />
@@ -122,11 +122,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
       ...ownProps.actions,
-      loginUser: (userDataSumbit) => {
-        dispatch(LoginActions.loginUser(userDataSumbit));
-      },
-      loginLocalUser: (username) => {
-        dispatch(LoginActions.loginLocalUser(username))
+      loginUser: (userDataSumbit, local) => {
+        dispatch(LoginActions.loginUser(userDataSumbit, local));
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
@@ -151,6 +148,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
+      },
+      updateStepLabel: (index, label) => {
+        dispatch(BodyUIActions.updateStepLabel(index, label));
       }
     }
   }
