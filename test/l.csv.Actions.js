@@ -247,7 +247,11 @@ describe('csvExportActions.exportToCSVZip', () => {
     csvExportActions.exportToCSVZip(checksPerformedPath, zipPath)
     .then( (resolve) => {
       expect(resolve).to.equal(true);
-      fs.removeSync(zipPath);
+      try {
+        fs.removeSync(zipPath);
+      } catch (err) {
+        console.log(err)
+      }
       done();
     })
     .catch( err => {
@@ -261,7 +265,11 @@ describe('csvExportActions.exportToCSVZip', () => {
     csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath)
     .then( (resolve) => {
       expect(resolve).to.equal(true);
-      fs.removeSync(zipPath);
+      try {
+        fs.removeSync(zipPath);
+      } catch (err) {
+        console.log(err)
+      }
       done();
     })
     .catch( err => {
@@ -275,7 +283,11 @@ describe('csvExportActions.exportToCSVZip', () => {
     csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath)
     .then( (resolve) => {
       expect(resolve).to.equal(true);
-      fs.removeSync(zipPath);
+      try {
+        fs.removeSync(zipPath);
+      } catch (err) {
+        console.log(err)
+      }
       done();
     })
     .catch( err => {
