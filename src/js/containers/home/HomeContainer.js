@@ -21,6 +21,14 @@ import * as BodyUIActions from '../../actions/BodyUIActions';
 
 class HomeContainer extends Component {
 
+
+  componentWillMount() {
+    if (this.props.reducers.loginReducer.userdata.username) {
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+    }
+  }
+
+
   componentWillReceiveProps(nextProps) {
     this.props.actions.getStepperNextButtonIsDisabled();
   }
@@ -54,7 +62,7 @@ class HomeContainer extends Component {
     }
 
     return (
-      <div style={{width: '100%'}}>
+      <div style={{ width: '100%' }}>
         {showWelcomeSplash ?
           <WelcomeSplash {...this.props} /> :
           (
@@ -130,6 +138,8 @@ const mapDispatchToProps = (dispatch) => {
       },
       openLicenseModal: () => {
         dispatch(BodyUIActions.openLicenseModal());
+      }, updateStepLabel: (index, label) => {
+        dispatch(BodyUIActions.updateStepLabel(index, label));
       }
     }
   };

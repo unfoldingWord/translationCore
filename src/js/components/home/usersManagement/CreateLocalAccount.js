@@ -67,7 +67,7 @@ class CreateLocalAccount extends Component {
   loginButtons() {
     const loginEnabled = this.state.localUsername && this.state.checkBoxChecked ? true : false;
     const callback = (result) => {
-      if (result == "Create Account") this.props.loginLocalUser(this.state.localUsername);
+      if (result == "Create Account") this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     }
     return (
