@@ -38,8 +38,12 @@ export function validate() {
         usfmFilePath = path.join(projectSaveLocation, manifest.project.id + '.usfm');
         let usfmData = MergeConflictHelpers.createUSFMFromTsProject(projectSaveLocation, usfmFilePath);
         let usfmHasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
-        if (usfmHasMergeConflicts)
+        if (usfmHasMergeConflicts) {
           dispatch(setUpMergeConflictsData(usfmFilePath))
+        }
+        else {
+          TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
+        }
       }
     }
   });
@@ -53,24 +57,7 @@ export function setUpMergeConflictsData(usfmFilePath) {
      * An array of arrays of an object.
      * */
     let parsedAllMergeConflictsFoundArray = [];
-<<<<<<< HEAD
-    let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation) ||
-      path.join(projectSaveLocation, manifest.project.id + '.usfm');
-
-    /**@type {string} */
-    let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
-    if (!usfmData) {
-      /** Need to generate the target bible if there are no merge conflicts
-       *  to give missing verses check the bible to check from.
-       */
-      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
-      return dispatch({
-        type: consts.MERGE_CONFLICTS_CHECK
-      })
-    }
-=======
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
->>>>>>> develop
     /**
    * @example ["1 this is the first version", "1 This is the second version"]
    * @type {[string]}

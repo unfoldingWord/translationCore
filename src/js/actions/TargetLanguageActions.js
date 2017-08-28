@@ -158,7 +158,9 @@ function archiveSourceFiles(projectPath, bookAbbreviation) {
         const sourcePath = path.join(projectPath, directory);
         // try to move the directories and log the errors
         try {
-          fs.moveSync(sourcePath, path.join(projectPath, IMPORTED_SOURCE_PATH, directory));
+          let targetPath = path.join(projectPath, IMPORTED_SOURCE_PATH, directory);
+          if (!fs.existsSync(targetPath))
+          fs.moveSync(sourcePath, targetPath);
         } catch (err) {
           console.log(err);
         }
