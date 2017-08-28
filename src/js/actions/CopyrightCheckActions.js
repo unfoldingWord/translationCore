@@ -61,7 +61,7 @@ export function finalize() {
  * @param {String} selectedLicenseId 
  */
 export function selectProjectLicense(selectedLicenseId) {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch({
       type: consts.SELECT_PROJECT_LICENSE_ID,
       selectedLicenseId
