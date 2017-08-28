@@ -28,6 +28,10 @@ export function validate() {
     /**@type {string} */
     let usfmData = MergeConflictHelpers.checkProjectForMergeConflicts(usfmFilePath, projectSaveLocation);
     if (!usfmData) {
+      /** Need to generate the target bible if there are no merge conflicts
+       *  to give missing verses check the bible to check from.
+       */
+      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
       return dispatch({
         type: consts.MERGE_CONFLICTS_CHECK
       })
