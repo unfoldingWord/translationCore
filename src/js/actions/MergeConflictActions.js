@@ -26,6 +26,11 @@ export function validate() {
       let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
       if (hasMergeConflicts)
         dispatch(setUpMergeConflictsData(usfmFilePath))
+      else {
+        //usfm file with no merge conflicts
+        let usfmProjectObject = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath, projectSaveLocation);
+        TargetLanguageActions.generateTargetBible(projectSaveLocation, usfmProjectObject.parsedUSFM, manifest);
+      }
     } else {
       //Has no usfm file to check, checking as tC or tS project
       let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);
@@ -42,6 +47,7 @@ export function validate() {
           dispatch(setUpMergeConflictsData(usfmFilePath))
         }
         else {
+          //tS project with no merge conflicts
           TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
         }
       }
