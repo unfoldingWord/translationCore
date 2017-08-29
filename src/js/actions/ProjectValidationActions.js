@@ -49,7 +49,7 @@ export function initiateProjectValidationStepper() {
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
-      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
+      TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else {
       //Show the checks that didn't pass
@@ -70,7 +70,7 @@ export function updateStepperIndex() {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      TargetLanguageActions.generateTargetBible(projectSaveLocation, {}, manifest);
+      TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       dispatch(ProjectSelectionActions.displayTools());
     } else
       dispatch({

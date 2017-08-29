@@ -2,6 +2,7 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
+import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
 // constant declarations
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
@@ -39,41 +40,20 @@ export function loadTargetLanguageChapter(chapterNumber) {
   });
 }
 
+export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
+  let bookAbbreviation = manifest.project.id;
+  const targetBiblePath = path.join(projectPath, bookAbbreviation);
+  let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath, projectPath);
+  saveTargetBible(projectPath, manifest, parsedUSFM);
+}
+
 /**
  * @description generates a target language bible and saves it in the filesystem devided into chapters, assumes tS project
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
-export function generateTargetBible(projectPath, bookData = {}, manifest) {
+export function saveTargetBible(projectPath, manifest, bookData) {
   let bookAbbreviation = manifest.project.id;
-  // only parse if bookData isn't already populated
-  if (Object.keys(bookData).length == 0) {
-    // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = getBibleIndex('en', 'ulb', 'v10');
-    const chapters = Object.keys(bibleIndex[bookAbbreviation]);
-    chapters.forEach(chapterNumber => {
-      let chapterData = {}; // empty chapter to populate
-      // 0 padding for single digit chapters
-      const chapterNumberString = (chapterNumber < 10) ? '0' + chapterNumber.toString() : chapterNumber.toString();
-      const chapterPath = path.join(projectPath, chapterNumberString);
-      // the chapter may not be populated and there is a key called 'chapters' in the index
-      const chapterPathExists = fs.existsSync(chapterPath);
-      if (chapterPathExists) {
-        const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
-        files.forEach(file => {
-          if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
-            const chunkPath = path.join(chapterPath, file);
-            const text = fs.readFileSync(chunkPath);
-            const currentChunk = parseTargetLanguage(text.toString());
-            Object.keys(currentChunk.verses).forEach(function (key) {
-              chapterData[key] = currentChunk.verses[key];
-              bookData[parseInt(chapterNumber)] = chapterData;
-            });
-          }
-        });
-      }
-    });
-  }
   const targetBiblePath = path.join(projectPath, bookAbbreviation);
   // now that bookData is populated or passed in, let's save it to the fs as chapter level json files
   for (var chapter in bookData) {
@@ -86,6 +66,36 @@ export function generateTargetBible(projectPath, bookData = {}, manifest) {
   generateTartgetLanguageManifest(manifest, targetBiblePath);
   // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
   archiveSourceFiles(projectPath, bookAbbreviation);
+}
+
+export function generateTargetBibleFromProjectPath(projectPath, manifest) {
+  let bookData = {};
+  // get the bibleIndex to get the list of expected chapters
+  const bibleIndex = getBibleIndex('en', 'ulb', 'v10');
+  const chapters = Object.keys(bibleIndex[manifest.project.id]);
+  chapters.forEach(chapterNumber => {
+    let chapterData = {}; // empty chapter to populate
+    // 0 padding for single digit chapters
+    const chapterNumberString = (chapterNumber < 10) ? '0' + chapterNumber.toString() : chapterNumber.toString();
+    const chapterPath = path.join(projectPath, chapterNumberString);
+    // the chapter may not be populated and there is a key called 'chapters' in the index
+    const chapterPathExists = fs.existsSync(chapterPath);
+    if (chapterPathExists) {
+      const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
+      files.forEach(file => {
+        if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+          const chunkPath = path.join(chapterPath, file);
+          const text = fs.readFileSync(chunkPath);
+          const currentChunk = parseTargetLanguage(text.toString());
+          Object.keys(currentChunk.verses).forEach(function (key) {
+            chapterData[key] = currentChunk.verses[key];
+            bookData[parseInt(chapterNumber)] = chapterData;
+          });
+        }
+      });
+    }
+  });
+  saveTargetBible(projectPath, manifest, bookData);
 }
 
 /**
@@ -160,7 +170,7 @@ function archiveSourceFiles(projectPath, bookAbbreviation) {
         try {
           let targetPath = path.join(projectPath, IMPORTED_SOURCE_PATH, directory);
           if (!fs.existsSync(targetPath))
-          fs.moveSync(sourcePath, targetPath);
+            fs.moveSync(sourcePath, targetPath);
         } catch (err) {
           console.log(err);
         }
