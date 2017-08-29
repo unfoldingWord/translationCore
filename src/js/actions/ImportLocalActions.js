@@ -37,6 +37,8 @@ export function selectLocalProjectToLoad() {
       let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
       dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
+        //need to break out of function here so that successfull import
+        //dialog below does not dispatch
         return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (usfmFilePath) {
         newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
@@ -92,18 +94,4 @@ function verifyIsValidProject(projectSourcePath) {
     }
   }
   return false;
-}
-
-export function updateUSFMFolderName() {
-  return ((dispatch, getState) => {
-    let { manifest, projectSaveLocation } = getState().projectDetailsReducer;
-    let destinationPath = path.join(DEFAULT_SAVE, `${manifest.target_language.id}_${manifest.project.id}`);
-    try {
-      fs.copySync(projectSaveLocation, destinationPath);
-      fs.removeSync(projectSaveLocation);
-      dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
-    } catch (e) {
-      console.warn(e)
-    }
-  })
 }

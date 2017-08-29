@@ -236,3 +236,20 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   }
   return manifest;
 }
+
+/**
+ * Changes the folder name to one specified by tC in order to match convention. 
+ * Removes old folder reference.
+ * @param {object} manifest - Current project manifest
+ * @param {string} projectSaveLocation - Old project file path
+ */
+export function updateUSFMFolderName(manifest, projectSaveLocation ) {
+  let destinationPath = path.join(DEFAULT_SAVE, `${manifest.target_language.id}_${manifest.project.id}`);
+  try {
+    fs.copySync(projectSaveLocation, destinationPath);
+    fs.removeSync(projectSaveLocation);
+    return destinationPath;
+  } catch (e) {
+    console.warn(e)
+  }
+}

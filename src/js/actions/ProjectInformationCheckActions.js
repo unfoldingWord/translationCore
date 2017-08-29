@@ -4,10 +4,10 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
+import * as UsfmHelpers from '../helpers/usfmHelpers';
 // actions
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
-import * as ImportLocalActions from './ImportLocalActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'
 
@@ -30,13 +30,15 @@ export function validate() {
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    let { manifest, projectSaveLocation } = getState().projectDetailsReducer;
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    dispatch(ImportLocalActions.updateUSFMFolderName())
+    let destinationPath = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation);
+    dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
   })
