@@ -47,29 +47,29 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
   let parsedTextObject = usfmParser.toJSON(versionText);
+
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
   let verses = verseNumbersArray.length > 1 ?
     `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
     `${verseNumbersArray[0]}`;
-  let entireUSFMObjectParsed = usfmParser.toJSON(usfmData);
-  let chapter;
-  //Determining the chaper the verse string is coming from
-  for (var chapterNum in entireUSFMObjectParsed) {
-    if (!parseInt(chapterNum)) continue;
-    let chapterObject = entireUSFMObjectParsed[chapterNum];
-    for (var verseNum in chapterObject) {
-      let verseObject = chapterObject[verseNum];
-      if (verseObject.includes(parsedTextObject[verseNumbersArray[0]])) {
-        chapter = chapterNum;
-      }
-    }
-  }
+  let verseText = parsedTextObject[verseNumbersArray[0]];
+  let chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,
     verses,
     text: parsedTextObject
   }
+}
+
+export function getChapterFromVerseText(verseText, usfmData) {
+  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g')
+  let m;
+  let chapter;
+  while ((m = chapterRegex.exec(usfmData)) !== null) {
+    chapter = m[1]
+  }
+  return chapter;
 }
 
 /**
@@ -126,9 +126,9 @@ export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
         })
       }
     }
-    if (usfmFilePath) fs.outputFileSync(usfmFilePath, usfmData);
+    if (usfmFilePath && usfmData) fs.outputFileSync(usfmFilePath, usfmData);
   } catch (e) {
-    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e) 
+    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e)
   }
   return usfmData;
 }

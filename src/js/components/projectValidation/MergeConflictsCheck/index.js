@@ -32,8 +32,8 @@ class MergeConflictsCheck extends Component {
     for (let currentConflictIndex in allConflictsArray) {
       let versions = [];
       let currentConflictObject = allConflictsArray[currentConflictIndex];
-      let { chapter } = currentConflictObject[currentConflictIndex];
-      let { verses } = currentConflictObject[currentConflictIndex];
+      let { chapter } = currentConflictObject[0];
+      let { verses } = currentConflictObject[0];
       for (let versionIndex in currentConflictObject) {
         if (isNaN(versionIndex)) continue;
         let card = this.state.conflictCards[currentConflictIndex];
