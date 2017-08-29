@@ -73,10 +73,10 @@ export function getMyProjects() {
       } else {
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
         const usfmObject = usfmHelper.toJSON(usfmText);
-        let usfmHeadersObject = usfmHelpers.getIDsFromUSFM(usfmObject);
-        bookName = usfmHeadersObject.bookName;
-        target_language.id = usfmHeadersObject.id;
-        target_language.name = usfmHeadersObject.name
+        let usfmHeadersObject = usfmHelpers.getUSFMDetails(usfmObject);
+        bookName = usfmHeadersObject.book.name;
+        target_language.id = usfmHeadersObject.language.id;
+        target_language.name = usfmHeadersObject.language.name
       }
       const isSelected = projectSaveLocation === projectDetailsReducer.projectSaveLocation;
       return {

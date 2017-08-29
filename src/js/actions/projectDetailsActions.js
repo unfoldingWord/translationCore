@@ -1,8 +1,11 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
+//actions
+import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -12,10 +15,13 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
  * @return {object} action object.
  */
 export const setSaveLocation = pathLocation => {
-  return {
+  return((dispatch) => {
+    dispatch({
     type: consts.SET_SAVE_PATH_LOCATION,
     pathLocation
-  };
+  })
+  dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(pathLocation)));
+  })
 };
 
 export const resetProjectDetail = () => {

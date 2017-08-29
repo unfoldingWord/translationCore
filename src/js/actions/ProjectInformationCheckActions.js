@@ -7,6 +7,7 @@ import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCh
 // actions
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
+import * as ImportLocalActions from './ImportLocalActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'
 
@@ -35,11 +36,7 @@ export function finalize() {
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    // close project validation stepper
-    dispatch({
-      type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
-      showProjectValidationStepper: false
-    });
+    dispatch(ImportLocalActions.updateUSFMFolderName())
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
   })
