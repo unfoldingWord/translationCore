@@ -114,19 +114,27 @@ export function getUSFMDetails(usfmObject) {
     /** Conditional to determine how USFM should be parsed*/
     let isSpaceDelimited = usfmObject.headers.id.split(" ").length > 1;
     let isCommaDelimited = usfmObject.headers.id.split(",").length > 1;
-    if (isCommaDelimited) {
-      /**i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc */
-      headerIDArray = usfmObject.headers.id.split(",");
-      details.book.id = headerIDArray[0].trim().toLowerCase();
-    }
-    else if (isSpaceDelimited) {
+    if (isSpaceDelimited) {
       /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
       headerIDArray = usfmObject.headers.id.split(" ");
+      details.book.id = headerIDArray[0].trim().toLowerCase();
+    } else if (isCommaDelimited) {
+      /**i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc */
+      headerIDArray = usfmObject.headers.id.split(",");
       details.book.id = headerIDArray[0].trim().toLowerCase();
     }
     else {
       /**i.e. EPH */
       details.book.id = usfmObject.headers.id.toLowerCase();
+    }
+
+    let fullBookName = bibleHelpers.convertToFullBookName(details.book.id);
+    if (fullBookName) details.book.name = fullBookName;
+    else {
+      fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
+      if (fullBookName)
+        details.book.name = fullBookName;
+        else console.warn('could not get book from usfm')
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -140,7 +148,7 @@ export function getUSFMDetails(usfmObject) {
         * Therefore deeming it as the langauge code field i.e. 'sw_Kiswahili_ltr'
         * rather than the resource field i.e. 'EN_ULB'
         */
-        let languageCodeArray = headerIDArray[index].trim().split('_');
+        let languageCodeArray = headerIDArray[index].trim().replace(',', '').split('_');
         if (languageCodeArray.length == 3) {
           details.language.id = languageCodeArray[0].toLowerCase();
           details.language.name = languageCodeArray[1];
@@ -148,8 +156,6 @@ export function getUSFMDetails(usfmObject) {
         }
       }
     }
-
-    details.book.name = bibleHelpers.convertToFullBookName(details.book.id);
   }
   return details;
 }
