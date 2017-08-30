@@ -30,6 +30,7 @@ export function selectLocalProjectToLoad() {
   return ((dispatch) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      if (!sourcePath) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.
@@ -40,19 +41,24 @@ export function selectLocalProjectToLoad() {
         //need to break out of function here so that successfull import
         //dialog below does not dispatch
         return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+      } else if (path.extname(sourcePath) === '.tstudio') {
+        // unzip project to ~./translationCore folder.
+        dispatch(ProjectDetailsActions.setProjectType('tS'));
+        dispatch(unzipTStudioProject(sourcePath, fileName));
+      } else if (verifyIsValidProject(sourcePath)) {
+        dispatch(ProjectDetailsActions.setProjectType('tC'));
+        if (!fs.existsSync(newProjectPath))
+        fs.copySync(sourcePath, newProjectPath)
+        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       } else if (usfmFilePath) {
+        dispatch(ProjectDetailsActions.setProjectType('usfm'));
+        //If the selected project is a USFM file or contains a usfm file in the folder 
         newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
         if (newProjectPath) dispatch(ProjectSelectionActions.selectProject(newProjectPath));
         else {
           dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
            Reimporting existing projects is not currently supported.'))
         }
-      } else if (path.extname(sourcePath) === '.tstudio') {
-        // unzip project to ~./translationCore folder.
-        dispatch(unzipTStudioProject(sourcePath, fileName));
-      } else if (verifyIsValidProject(sourcePath)) {
-        fs.copySync(sourcePath, newProjectPath)
-        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       } else {
         return dispatch(
           AlertModalActions.openAlertDialog(

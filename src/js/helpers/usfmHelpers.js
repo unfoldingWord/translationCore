@@ -16,7 +16,12 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 * @param {string} usfmFilePath - Path of the usfm file that has been loaded
 */
 export function loadUSFMFile(usfmFilePath) {
-  const usfmFile = fs.readFileSync(usfmFilePath).toString();
+  let usfmFile;
+  try {
+    usfmFile = fs.readFileSync(usfmFilePath).toString();
+  } catch (e) {
+    return null;
+  }
   return usfmFile
 }
 
@@ -243,7 +248,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
  * @param {object} manifest - Current project manifest
  * @param {string} projectSaveLocation - Old project file path
  */
-export function updateUSFMFolderName(manifest, projectSaveLocation ) {
+export function updateUSFMFolderName(manifest, projectSaveLocation) {
   let destinationPath = path.join(DEFAULT_SAVE, `${manifest.target_language.id}_${manifest.project.id}`);
   try {
     fs.copySync(projectSaveLocation, destinationPath);

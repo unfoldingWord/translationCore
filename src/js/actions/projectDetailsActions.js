@@ -126,3 +126,10 @@ export function updateCheckers() {
     });
   });
 }
+
+export function setProjectType(projectType) {
+  return {
+    type:consts.SET_PROJECT_TYPE,
+    projectType
+  }
+}
