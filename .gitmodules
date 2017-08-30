@@ -13,6 +13,3 @@
 [submodule "tC_apps/VerseCheck"]
     path = tC_apps/VerseCheck
     url = https://github.com/translationCoreApps/VerseCheck.git
-[submodule "tC_apps/alignmentTool"]
-	path = tC_apps/alignmentTool
-	url = https://github.com/translationCoreApps/alignmentTool.git
