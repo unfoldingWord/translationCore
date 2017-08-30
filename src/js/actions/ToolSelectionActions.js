@@ -58,11 +58,11 @@ export function saveToolViews(checkArray) {
   return (dispatch => {
     for (let module of checkArray) {
       try {
-        const viewObj = require(path.join(module.location, 'Container'));
+        const viewObj = require(path.join(module.location, 'index')).default;
         dispatch({
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
-          module: viewObj.view || viewObj.container
+          module: viewObj.container
         })
       } catch (e) {
         console.log(e);
