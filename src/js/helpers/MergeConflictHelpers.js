@@ -62,6 +62,11 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   }
 }
 
+/**
+ * Returns the chapter that a given verse is from.
+ * @param {string} verseText - The string to search for in the usfm data
+ * @param {string} usfmData - Entire usfm data being loaded
+ */
 export function getChapterFromVerseText(verseText, usfmData) {
   let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g')
   let m;

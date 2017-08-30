@@ -30,6 +30,7 @@ export function selectLocalProjectToLoad() {
   return ((dispatch) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      //no file path given
       if (!sourcePath) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
@@ -39,18 +40,20 @@ export function selectLocalProjectToLoad() {
       dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
         //need to break out of function here so that successfull import
-        //dialog below does not dispatch
+        //dialog does not dispatch
         return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
         dispatch(ProjectDetailsActions.setProjectType('tS'));
         dispatch(unzipTStudioProject(sourcePath, fileName));
       } else if (verifyIsValidProject(sourcePath)) {
+        // not tStudio ext project, checking for tC / tS (unzipped)
         dispatch(ProjectDetailsActions.setProjectType('tC'));
         if (!fs.existsSync(newProjectPath))
         fs.copySync(sourcePath, newProjectPath)
         dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       } else if (usfmFilePath) {
+        //If USFM file path found and not tS or tC project
         dispatch(ProjectDetailsActions.setProjectType('usfm'));
         //If the selected project is a USFM file or contains a usfm file in the folder 
         newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);

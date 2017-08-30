@@ -31,14 +31,18 @@ export function validate() {
  */
 export function finalize() {
   return ((dispatch, getState) => {
-    let { manifest, projectSaveLocation } = getState().projectDetailsReducer;
+    let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    let destinationPath = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation);
-    dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
+    if (projectType === 'usfm') {
+      //Need to update the folder naming convention if the project was usfm
+      //because new data may have been supplied that enables tC to create a relevant folder name
+      let destinationPath = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation);
+      dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
+    }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
   })
@@ -135,7 +139,7 @@ export function setCheckersInProjectInformationReducer(checkers) {
  */
 export function toggleProjectInformationCheckSaveButton() {
   return ((dispatch, getState) => {
-    if(ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) {
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) {
       dispatch(ProjectValidationActions.toggleNextButton(false));
     } else {
       dispatch(ProjectValidationActions.toggleNextButton(true));

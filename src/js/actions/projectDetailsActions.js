@@ -20,6 +20,7 @@ export const setSaveLocation = pathLocation => {
     type: consts.SET_SAVE_PATH_LOCATION,
     pathLocation
   })
+  //the home stepper label may be need to be updated when setting the new path location
   dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(pathLocation)));
   })
 };
@@ -127,6 +128,10 @@ export function updateCheckers() {
   });
 }
 
+/**
+ * Sets the type of project currently being loaded
+ * @param {string} projectType 
+ */
 export function setProjectType(projectType) {
   return {
     type:consts.SET_PROJECT_TYPE,
