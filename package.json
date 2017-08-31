@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.57",
+  "version": "0.7.1-beta.59",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
@@ -94,7 +94,7 @@
     "rimraf": "^2.6.1",
     "simple-git": "1.43.0",
     "sudo-prompt": "^6.2.1",
-    "usfm-js": "0.0.7",
+    "usfm-js": "0.0.9",
     "xregexp": "^3.1.1",
     "yamljs": "^0.3.0",
     "zip-folder": "^1.0.0"

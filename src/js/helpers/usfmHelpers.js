@@ -16,7 +16,12 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 * @param {string} usfmFilePath - Path of the usfm file that has been loaded
 */
 export function loadUSFMFile(usfmFilePath) {
-  const usfmFile = fs.readFileSync(usfmFilePath).toString();
+  let usfmFile;
+  try {
+    usfmFile = fs.readFileSync(usfmFilePath).toString();
+  } catch (e) {
+    return null;
+  }
   return usfmFile
 }
 
@@ -109,19 +114,31 @@ export function getUSFMDetails(usfmObject) {
     /** Conditional to determine how USFM should be parsed*/
     let isSpaceDelimited = usfmObject.headers.id.split(" ").length > 1;
     let isCommaDelimited = usfmObject.headers.id.split(",").length > 1;
-    if (isCommaDelimited) {
+    if (isSpaceDelimited) {
+      /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
+      //Could have attached commas if both comma delimited and space delimited
+      headerIDArray = usfmObject.headers.id.split(" ");
+      headerIDArray.forEach((element, index)=> {
+        headerIDArray[index] = element.replace(',', '');
+      });
+      details.book.id = headerIDArray[0].trim().toLowerCase();
+    } else if (isCommaDelimited) {
       /**i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc */
       headerIDArray = usfmObject.headers.id.split(",");
-      details.book.id = headerIDArray[0].trim().toLowerCase();
-    }
-    else if (isSpaceDelimited) {
-      /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
-      headerIDArray = usfmObject.headers.id.split(" ");
       details.book.id = headerIDArray[0].trim().toLowerCase();
     }
     else {
       /**i.e. EPH */
       details.book.id = usfmObject.headers.id.toLowerCase();
+    }
+
+    let fullBookName = bibleHelpers.convertToFullBookName(details.book.id);
+    if (fullBookName) details.book.name = fullBookName;
+    else {
+      fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
+      if (fullBookName)
+        details.book.name = fullBookName;
+        else console.warn('could not get book from usfm')
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -143,8 +160,6 @@ export function getUSFMDetails(usfmObject) {
         }
       }
     }
-
-    details.book.name = bibleHelpers.convertToFullBookName(details.book.id);
   }
   return details;
 }
@@ -209,10 +224,9 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   const usfmDetails = getUSFMDetails(parsedUSFM);
   /**If there is no bookAbbr then ultimately the usfm import should fail */
   if (!usfmDetails.book.id) console.warn('No book abbreviation detected in USFM');
-  let oldFileName = path.parse(usfmFilePath).name.toLowerCase();
-  let folderNamePrefix = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}_` : `${oldFileName}_`;
-  let textType = oldFileName.includes('_usfm') ? '' : '_usfm';
-  let newUSFMProjectFolder = path.join(DEFAULT_SAVE, `${folderNamePrefix}${textType}`);
+  let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
+  let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
+  let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
   const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
   if (fs.existsSync(newUSFMProjectFolder)) return;
   fs.outputFileSync(newUSFMFilePath, usfmData);
@@ -236,4 +250,21 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
     manifest = manifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
+}
+
+/**
+ * Changes the folder name to one specified by tC in order to match convention. 
+ * Removes old folder reference.
+ * @param {object} manifest - Current project manifest
+ * @param {string} projectSaveLocation - Old project file path
+ */
+export function updateUSFMFolderName(manifest, projectSaveLocation) {
+  let destinationPath = path.join(DEFAULT_SAVE, `${manifest.target_language.id}_${manifest.project.id}`);
+  try {
+    fs.copySync(projectSaveLocation, destinationPath);
+    fs.removeSync(projectSaveLocation);
+    return destinationPath;
+  } catch (e) {
+    console.warn(e)
+  }
 }
