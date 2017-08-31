@@ -3,7 +3,8 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   projectSaveLocation: '',
   manifest: {},
-  currentProjectToolsProgress: {}
+  currentProjectToolsProgress: {},
+  projectType: null
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
@@ -72,6 +73,11 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest,
           translators: action.translators
         }
+      }
+    case consts.SET_PROJECT_TYPE:
+      return {
+        ...state,
+        projectType: action.projectType
       }
     case consts.RESET_PROJECT_DETAIL:
       return initialState;

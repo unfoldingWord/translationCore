@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
+import * as UsfmHelpers from '../helpers/usfmHelpers';
 // actions
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
@@ -29,17 +30,19 @@ export function validate() {
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    // close project validation stepper
-    dispatch({
-      type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
-      showProjectValidationStepper: false
-    });
+    if (projectType === 'usfm') {
+      //Need to update the folder naming convention if the project was usfm
+      //because new data may have been supplied that enables tC to create a relevant folder name
+      let destinationPath = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation);
+      dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
+    }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
   })
@@ -136,7 +139,7 @@ export function setCheckersInProjectInformationReducer(checkers) {
  */
 export function toggleProjectInformationCheckSaveButton() {
   return ((dispatch, getState) => {
-    if(ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) {
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) {
       dispatch(ProjectValidationActions.toggleNextButton(false));
     } else {
       dispatch(ProjectValidationActions.toggleNextButton(true));
