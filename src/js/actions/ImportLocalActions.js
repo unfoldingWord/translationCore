@@ -31,7 +31,7 @@ export function selectLocalProjectToLoad() {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       //no file path given
-      if (!sourcePath) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
+      if (!filePaths) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.

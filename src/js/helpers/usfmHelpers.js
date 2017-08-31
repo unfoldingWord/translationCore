@@ -116,7 +116,11 @@ export function getUSFMDetails(usfmObject) {
     let isCommaDelimited = usfmObject.headers.id.split(",").length > 1;
     if (isSpaceDelimited) {
       /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
+      //Could have attached commas if both comma delimited and space delimited
       headerIDArray = usfmObject.headers.id.split(" ");
+      headerIDArray.forEach((element, index)=> {
+        headerIDArray[index] = element.replace(',', '');
+      });
       details.book.id = headerIDArray[0].trim().toLowerCase();
     } else if (isCommaDelimited) {
       /**i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc */
@@ -148,7 +152,7 @@ export function getUSFMDetails(usfmObject) {
         * Therefore deeming it as the langauge code field i.e. 'sw_Kiswahili_ltr'
         * rather than the resource field i.e. 'EN_ULB'
         */
-        let languageCodeArray = headerIDArray[index].trim().replace(',', '').split('_');
+        let languageCodeArray = headerIDArray[index].trim().split('_');
         if (languageCodeArray.length == 3) {
           details.language.id = languageCodeArray[0].toLowerCase();
           details.language.name = languageCodeArray[1];
