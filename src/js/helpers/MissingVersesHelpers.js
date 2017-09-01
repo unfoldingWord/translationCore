@@ -18,6 +18,8 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
       try {
         chapterJSONObject = fs.readJSONSync(path.join(projectSaveLocation, bookAbbr, chapterIndex + '.json'));
       } catch(e){
+        //if chpater object not found, loop should still go through and check for verses
+        //in order to detect all missing verses
         chapterJSONObject = {};
       }
       for (var verseIndex = 1; verseIndex <= expectedBookVerses[chapterIndex]; verseIndex++) {
