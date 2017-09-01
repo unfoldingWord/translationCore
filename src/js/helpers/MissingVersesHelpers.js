@@ -12,21 +12,23 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
   let expectedBookVerses = getExpectedBookVerses(bookAbbr);
   let allMissingVerses = {};
   if (fs.existsSync(path.join(projectSaveLocation, bookAbbr))) {
-    let chapterFolders = fs.readdirSync(path.join(projectSaveLocation, bookAbbr));
-    for (var chapterFile of chapterFolders) {
+    for (var chapterIndex = 1; chapterIndex <= expectedBookVerses.chapters; chapterIndex++) {
       let currentMissingVerses = [];
-      let chapterNumber = path.parse(chapterFile).name;
-      if (!parseInt(chapterNumber)) continue;
-      let chapterJSONObject = fs.readJSONSync(path.join(projectSaveLocation, bookAbbr, chapterFile));
-      for (var verseIndex = 1; verseIndex <= expectedBookVerses[chapterNumber]; verseIndex++) {
+      let chapterJSONObject;
+      try {
+        chapterJSONObject = fs.readJSONSync(path.join(projectSaveLocation, bookAbbr, chapterIndex + '.json'));
+      } catch(e){
+        chapterJSONObject = {};
+      }
+      for (var verseIndex = 1; verseIndex <= expectedBookVerses[chapterIndex]; verseIndex++) {
         let verse = chapterJSONObject[verseIndex];
         if (!verse) {
           currentMissingVerses.push(verseIndex);
         }
       }
-      if (currentMissingVerses.length > 0) allMissingVerses[chapterNumber] = currentMissingVerses;
+      if (currentMissingVerses.length > 0) allMissingVerses[chapterIndex] = currentMissingVerses;
     }
-    
+
   }
   return allMissingVerses;
 }
