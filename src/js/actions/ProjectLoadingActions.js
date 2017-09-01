@@ -29,8 +29,8 @@ export function loadProjectData(currentToolName) {
           getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
           .then(() => {
             dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-            //dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
-            //dispatch(BodyUIActions.toggleHomeView(false));
+            dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
+            dispatch(BodyUIActions.toggleHomeView(false));
           });
         });
     })
