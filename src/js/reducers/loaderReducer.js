@@ -3,7 +3,6 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   show: false,
   toolsProgress: {},
-  reloadContent: null,
   showResetButton: false
 };
 
@@ -22,8 +21,7 @@ const loaderReducer = (state = initialState, action) => {
           [action.processName]: {
             progress: action.progress
           }
-        },
-        reloadContent: action.reloadContent ? action.reloadContent : null
+        }
       };
     case consts.TOGGLE_RESET_LOADING_BUTTON:
       return {

@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       cancelLoadingProject: () => {
         dispatch(ProjectSelectionActions.clearLastProject())
         dispatch(LoaderActions.toggleLoader(false))
+        //going to the project screen after cancel import
         dispatch(BodyUIActions.goToStep(2))
       }
     }
