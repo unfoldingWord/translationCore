@@ -29,22 +29,22 @@ class StepperComponent extends Component {
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
               <Step disabled={!stepIndexAvailable[0]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(0)} icon={homeIcon}>
-                  <span style={{color: homeColor}}>{` ${stepperLabels[0]} `}</span>
+                  <span style={{color: homeColor, maxWidth:150, whiteSpace:'nowrap', textOverflow:'ellipsis', overflow:'hidden'}}>{` ${stepperLabels[0]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[1]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(1)} icon={userIcon}>
-                  <span style={{color: userColor}}>{` ${stepperLabels[1]} `}</span>
+                  <span style={{color: userColor, maxWidth:150, whiteSpace:'nowrap', textOverflow:'ellipsis', overflow:'hidden'}}>{` ${stepperLabels[1]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[2]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(2)} icon={projectIcon}>
-                  <span style={{color: projectColor}}>{` ${stepperLabels[2]} `}</span>
+                  <span style={{color: projectColor, maxWidth:150, whiteSpace:'nowrap', textOverflow:'ellipsis', overflow:'hidden'}}>{` ${stepperLabels[2]} `}</span>
                 </StepLabel>
               </Step>
               <Step disabled={!stepIndexAvailable[3]} style={{cursor:'pointer'}}>
                 <StepLabel onClick={()=>this.props.actions.goToStep(3)} icon={toolIcon}>
-                  <span style={{color: toolColor}}>{` ${stepperLabels[3]} `}</span>
+                  <span style={{color: toolColor, maxWidth:150, whiteSpace:'nowrap', textOverflow:'ellipsis', overflow:'hidden'}}>{` ${stepperLabels[3]} `}</span>
                 </StepLabel>
               </Step>
             </Stepper>
