@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 // Components
 import Loader from '../components/loader/Loader';
 //actions
-import * as ProjectSelectionActions from '../actions/ProjectSelectionActions';
-import * as LoaderActions from '../actions/LoaderActions';
-import * as BodyUIActions from '../actions/BodyUIActions';
+import * as ProjectLoadingActions from '../actions/ProjectLoadingActions';
 
 class LoaderContainer extends React.Component {
   render() {
@@ -26,10 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
       cancelLoadingProject: () => {
-        dispatch(ProjectSelectionActions.clearLastProject())
-        dispatch(LoaderActions.toggleLoader(false))
-        //going to the project screen after cancel import
-        dispatch(BodyUIActions.goToStep(2))
+        dispatch(ProjectLoadingActions.cancelLoadingProject())
       }
     }
   };

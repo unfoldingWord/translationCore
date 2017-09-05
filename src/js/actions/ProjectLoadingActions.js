@@ -8,6 +8,7 @@ import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as LoaderActions from './LoaderActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as ProjectSelectionActions from './ProjectSelectionActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 /**
@@ -27,17 +28,18 @@ export function loadProjectData(currentToolName) {
       getGroupsIndex(dispatch, dataDirectory, currentToolName)
         .then(() => {
           getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
-          .then(() => {
-            dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-            dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
-            dispatch(BodyUIActions.toggleHomeView(false));
-          });
+            .then(() => {
+              dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+              dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
+              dispatch(BodyUIActions.toggleHomeView(false));
+            });
         });
     })
-    .catch(err => {
-      console.warn(err);
-      AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
-    });
+      .catch(err => {
+        dispatch(cancelLoadingProject())
+        console.warn(err);
+        dispatch(AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance."));
+      });
   })
 }
 
@@ -153,4 +155,11 @@ function loadGroupData(groupName, groupDataFolderPath) {
     console.warn('failed loading group data for ' + groupName);
   }
   return groupData;
+}
+
+export function cancelLoadingProject() {
+  dispatch(ProjectSelectionActions.clearLastProject())
+  dispatch(LoaderActions.toggleLoader(false))
+  //going to the project screen after cancel import
+  dispatch(BodyUIActions.goToStep(2))
 }

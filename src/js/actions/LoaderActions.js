@@ -26,16 +26,16 @@ export function sendProgressForKey(processName, progress) {
 }
 
 /**
- * Action to show the reset button on the loader modal
- * @param {boolean} showResetButton 
+ * Action to show the cancel button on the loader modal
+ * @param {boolean} showCancelButton 
  */
-export function toggleWaitingTooLongButton(showResetButton) {
+export function toggleWaitingTooLongButton(showCancelButton) {
   return ((dispatch, getState) => {
     let { show } = getState().loaderReducer;
     if (show) {
       dispatch({
-        type: consts.TOGGLE_RESET_LOADING_BUTTON,
-        showResetButton
+        type: consts.TOGGLE_CANCEL_LOADING_BUTTON,
+        showCancelButton
       })
     }
   })
