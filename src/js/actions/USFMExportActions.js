@@ -59,7 +59,7 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
   if (!fs.existsSync(Path.join(projectPath, bookName)))
-    TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
+    TargetLanguageActions.generateTargetBibleFromProjectPath(projectPath, manifest);
 
   let usfmJSONObject = {};
   usfmJSONObject.book = bibleHelpers.convertToFullBookName(bookName);
