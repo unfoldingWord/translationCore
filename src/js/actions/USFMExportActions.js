@@ -59,12 +59,11 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
   if (!fs.existsSync(Path.join(projectPath, bookName)))
-    TargetLanguageActions.generateTargetBible(projectPath, {}, manifest);
+    TargetLanguageActions.generateTargetBibleFromProjectPath(projectPath, manifest);
 
   let usfmJSONObject = {};
   usfmJSONObject.book = bibleHelpers.convertToFullBookName(bookName);
   usfmJSONObject.id = getUSFMIdTag(projectPath, manifest, bookName)
-
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
   for (var currentChapterFile of currentFolderChapters) {
     let currentChapter = Path.parse(currentChapterFile).name;
@@ -130,10 +129,14 @@ export function getFilePath(projectName, usfmSaveLocation) {
 export function getUSFMIdTag(projectPath, manifest, bookName) {
   /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
   let sourceTranslation = manifest.source_translations[0];
-  let resourceName = `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}`;
+  let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ? 
+  `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
+   'N/A';
   /**This will look like: ar_العربية_rtl to be included in the usfm id.
    * This will make it easier to read for tC later on */
-  let targetLanguageCode = `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}`
+  let targetLanguageCode = manifest.target_language ? 
+  `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}` :
+  'N/A';
   /**Date object when project was las changed in FS */
   let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
