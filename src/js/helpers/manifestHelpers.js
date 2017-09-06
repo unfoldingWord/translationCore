@@ -185,9 +185,7 @@ export function getParams(projectPath, manifest) {
   let params = {
     'originalLanguagePath': ''
   }
-  const UDBPath = path.join(window.__base, 'static', 'taggedUDB');
   params.targetLanguagePath = projectPath;
-  params.gatewayLanguageUDBPath = UDBPath;
   try {
     if (manifest.project) {
       params.bookAbbr = manifest.project.id;
