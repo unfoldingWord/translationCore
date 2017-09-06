@@ -1,7 +1,11 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
+<<<<<<< HEAD
   "version": "0.7.1-beta.61",
+=======
+  "version": "0.7.1-beta.62",
+>>>>>>> develop
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {

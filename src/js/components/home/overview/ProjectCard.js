@@ -7,6 +7,7 @@ import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
+import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
 
 class ProjectCard extends Component {
 
@@ -61,8 +62,8 @@ class ProjectCard extends Component {
 
     return (
       <div style={{ display: 'flex' }}>
-        <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-          <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px'}} />
+        <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden' }}>
+          <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px' }} />
         </div>
         <div>
           <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
@@ -83,13 +84,14 @@ class ProjectCard extends Component {
   content() {
     let content; // content can be empty to fallback to empty button/message
     const { projectDetailsReducer } = this.props.reducers;
+    const {userdata} = this.props.reducers.loginReducer
     const { projectSaveLocation, bookName, manifest } = projectDetailsReducer;
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           {this.contentDetails(projectSaveLocation, bookName, manifest)}
           <div style={{ marginRight: '-5px' }}>
-            <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
+            <ProjectCardMenu user={userdata} projectSaveLocation={projectSaveLocation} {...this.props} />
           </div>
         </div>
       );
