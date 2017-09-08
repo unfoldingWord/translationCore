@@ -30,66 +30,53 @@ export function selectLocalProjectToLoad() {
   return ((dispatch) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
-      //no file path given
-      if (!filePaths) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
-      const sourcePath = filePaths[0];
-      const fileName = path.parse(sourcePath).base.split('.')[0];
-      // project path in ~./translationCore.
-      let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
       dispatch(BodyUIActions.toggleProjectsFAB());
-      if (filePaths === undefined) {
-        //need to break out of function here so that successfull import
-        //dialog does not dispatch
-        return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else if (path.extname(sourcePath) === '.tstudio') {
-        // unzip project to ~./translationCore folder.
-        dispatch(ProjectDetailsActions.setProjectType('tS'));
-        dispatch(unzipTStudioProject(sourcePath, fileName));
-      } else if (verifyIsValidProject(sourcePath)) {
-        // not tStudio ext project, checking for tC / tS (unzipped)
-        dispatch(ProjectDetailsActions.setProjectType('tC'));
-        if (!fs.existsSync(newProjectPath))
-        fs.copySync(sourcePath, newProjectPath)
-        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
-      } else if (usfmFilePath) {
-        //If USFM file path found and not tS or tC project
-        dispatch(ProjectDetailsActions.setProjectType('usfm'));
-        //If the selected project is a USFM file or contains a usfm file in the folder 
-        newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-        if (newProjectPath) dispatch(ProjectSelectionActions.selectProject(newProjectPath));
-        else {
-          dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
-           Reimporting existing projects is not currently supported.'))
-        }
-      } else {
-        return dispatch(
-          AlertModalActions.openAlertDialog(
-            <div>
-              There is something wrong with the project you are trying to load.<br />
-              Please verify you are importing a valid project.<br />
-              Filename: {fileName}
-            </div>
-          )
-        );
-      }
+      //no file path given
+      if (!filePaths || filePaths[0]) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
+      const sourcePath = filePaths[0];
+      // project path in ~./translationCore.
+      //get project type
+      dispatch(setUpNewProject(sourcePath));
+      //display sucessful project loaded dialog
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     });
   });
 }
 
-function unzipTStudioProject(projectSourcePath, fileName) {
+function setUpNewProject(projectPath) {
+  let newProjectPath;
+  let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
+  const fileName = path.parse(sourcePath).base.split('.')[0];
+  if (path.extname(sourcePath) === '.tstudio') {
+    dispatch(ProjectDetailsActions.setProjectType('tS'));
+    newProjectPath = path.join(DEFAULT_SAVE, fileName);
+    setUpTsProject(sourcePath, fileName);
+  } else if (usfmFilePath) {
+    newProjectPath = 
+    dispatch(ProjectDetailsActions.setProjectType('usfm'));
+    dispatch(usfmHelpers.setUpUSFMProject(usfmFilePath));
+  }
+  if (!verifyIsValidProject(sourcePath)) {
+    return;
+  }
+  if (fs.existsSync(newProjectPath)) {
+    dispatch(AlertModalActions.openAlertDialog(
+      `A project with the name ${fileName} already exists. Reimporting
+       existing projects is not currently supported.`
+    ));
+  }
+}
+
+function setUpProjectByType() {
+
+
+}
+
+function setUpTsProject(projectSourcePath, fileName) {
   return ((dispatch) => {
     const zip = new AdmZip(projectSourcePath);
-    const newProjectPath = path.join(DEFAULT_SAVE, fileName);
     if (!fs.existsSync(newProjectPath)) {
       zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
-      dispatch(ProjectSelectionActions.selectProject(newProjectPath));
-    } else {
-      dispatch(AlertModalActions.openAlertDialog(
-        `A project with the name ${fileName} already exists. Reimporting
-         existing projects is not currently supported.`
-      ));
     }
   });
 }
