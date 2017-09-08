@@ -118,7 +118,7 @@ export function getUSFMDetails(usfmObject) {
       /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
       //Could have attached commas if both comma delimited and space delimited
       headerIDArray = usfmObject.headers.id.split(" ");
-      headerIDArray.forEach((element, index)=> {
+      headerIDArray.forEach((element, index) => {
         headerIDArray[index] = element.replace(',', '');
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
@@ -138,7 +138,7 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-        else console.warn('could not get book from usfm')
+      else console.warn('could not get book from usfm')
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -214,24 +214,7 @@ export function getProjectDetailsFromUSFM(usfmFilePath) {
   return { parsedUSFM, direction };
 }
 
-/**
- * Sets up and returns a tC project folder in ~/translationCore/{languageID_bookName}/{bookName}.usfm
- * @param {string} usfmFilePath - File path to the usfm being selected for the project
- */
-export function setUpUSFMFolderPath(usfmFilePath) {
-  const usfmData = loadUSFMFile(usfmFilePath);
-  const parsedUSFM = getParsedUSFM(usfmData);
-  const usfmDetails = getUSFMDetails(parsedUSFM);
-  /**If there is no bookAbbr then ultimately the usfm import should fail */
-  if (!usfmDetails.book.id) console.warn('No book abbreviation detected in USFM');
-  let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
-  let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
-  let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
-  const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return;
-  fs.outputFileSync(newUSFMFilePath, usfmData);
-  return newUSFMProjectFolder;
-}
+
 
 
 /**
