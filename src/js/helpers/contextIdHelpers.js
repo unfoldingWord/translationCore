@@ -10,12 +10,13 @@ import * as selectionHelpers from './selectionHelpers';
  */
 export const validateContextIdQuote = (state, contextId, bibleId) => {
   let valid = false
-  if (contextId && bibleId) {
+  if (contextId && bibleId && contextId.quote) {
     const { chapter, verse } = contextId.reference;
     const { quote, occurrence } = contextId;
     const verseText = state.resourcesReducer.bibles[bibleId][chapter][verse];
     const occurrences = selectionHelpers.getQuoteOccurrencesInVerse(verseText, quote);
     valid = occurrence <= occurrences;
   }
+  if (!contextId.quote) valid = true;
   return valid;
 }
