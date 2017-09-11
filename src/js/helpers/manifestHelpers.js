@@ -28,7 +28,8 @@ let template = {
   checkers: [],
   time_created: '',
   tools: [],
-  repo: ''
+  repo: '',
+  tcInitialized: true
 };
 
 /**
@@ -97,18 +98,18 @@ export function generateManifest(currentUsers, repo, tsManifest) {
  * studio project
  */
 export function setUpManifest(projectSaveLocation, link, oldManifest, user) {
-  debugger;
   let manifest;
   try {
     let manifestLocation = path.join(projectSaveLocation, 'manifest.json');
-    if (oldManifest.package_version == '3') {
+    if (oldManifest && oldManifest.package_version == '3') {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(oldManifest);
     } else {
-      manifest = generateManifest([user], link, oldManifest);
+      manifest = generateManifest([user], link, oldManifest || {});
     }
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
+    console.log(err)
     console.error(err);
   }
   return manifest;
@@ -149,4 +150,41 @@ export function fixManifestVerThree(oldManifest) {
 export function checkIfValidBetaProject(manifest) {
   if (manifest && manifest.project) return manifest.project.id == "tit";
   else return false;
+}
+
+
+/**
+ * @description Sets up a USFM project manifest according to tC standards.
+ *
+ * @param {object} parsedUSFM - The object containing usfm parsed by chapters
+ * @param {string} direction - Direction of the book being read for the project target language
+ * @param {objet} user - The current user loaded
+ */
+export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
+  let usfmDetails = getUSFMDetails(parsedUSFM);
+  const defaultManifest = {
+    "source_translations": [
+      {
+        "language_id": "en",
+        "resource_id": "ulb",
+        "checking_level": "",
+        "date_modified": new Date(),
+        "version": ""
+      }
+    ],
+    tcInitialized: true,
+    target_language: {
+      id: usfmDetails.language.id,
+      name: usfmDetails.language.name,
+      direction: usfmDetails.language.direction
+    },
+    project: {
+      id: usfmDetails.book.id,
+      name: usfmDetails.book.name
+    },
+    "checkers": [
+      username
+    ]
+  }
+  return defaultManifest;
 }

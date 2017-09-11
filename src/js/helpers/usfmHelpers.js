@@ -64,32 +64,6 @@ export function isUSFMProject(projectPath) {
 }
 
 /**
-* @description Set ups a tC project parameters for a usfm project
-* @param {string} bookAbbr - Book abbreviation
-* @param {path} projectPath - Path of the usfm project being loaded
-* @param {path} direction - Reading direction of the project books
-* @return {object} action object.
-*/
-export function getUSFMParams(projectPath, manifest) {
-  let bookAbbr;
-  if (manifest.project) bookAbbr = manifest.project.id;
-  else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
-  let direction = manifest.target_language.direction;
-  let params = {
-    originalLanguagePath: '',
-    targetLanguagePath: projectPath,
-    direction: direction,
-    bookAbbr: bookAbbr
-  };
-  if (bibleHelpers.isOldTestament(bookAbbr)) {
-    params.originalLanguage = "hebrew";
-  } else {
-    params.originalLanguage = "greek";
-  }
-  return params;
-}
-
-/**
 * Most important funciton for creating a project from a USFM file alone. This function gets the
 * book name, id, language name and direction for starting a tC project.
 *
@@ -165,42 +139,6 @@ export function getUSFMDetails(usfmObject) {
 }
 
 /**
- * @description Sets up a USFM project manifest according to tC standards.
- *
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- * @param {string} direction - Direction of the book being read for the project target language
- * @param {objet} user - The current user loaded
- */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
-  let usfmDetails = getUSFMDetails(parsedUSFM);
-  const defaultManifest = {
-    "source_translations": [
-      {
-        "language_id": "en",
-        "resource_id": "ulb",
-        "checking_level": "",
-        "date_modified": new Date(),
-        "version": ""
-      }
-    ],
-    tcInitialized: true,
-    target_language: {
-      id: usfmDetails.language.id,
-      name: usfmDetails.language.name,
-      direction: usfmDetails.language.direction
-    },
-    project: {
-      id: usfmDetails.book.id,
-      name: usfmDetails.book.name
-    },
-    "checkers": [
-      username
-    ]
-  }
-  return defaultManifest;
-}
-
-/**
  * Gets neccesarry details in order to load a project from usfm that are not available
  * through the standard loading process.
  * @param {string} usfmFilePath - File path to the usfm being selected for the project
@@ -246,7 +184,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
 export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
-    const defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, username);
+    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
     manifest = manifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
