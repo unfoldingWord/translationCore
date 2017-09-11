@@ -8,6 +8,7 @@ import * as USFMHelpers from '../src/js/helpers/usfmHelpers';
 const noMergeConflictsProjectPath = window.__base + 'test/fixtures/project/mergeConflicts/no_merge_conflicts_project';
 const oneMergeConflictsProjectPath = window.__base + 'test/fixtures/project/mergeConflicts/one_merge_conflict_project';
 const twoMergeConflictsProjectPath = window.__base + 'test/fixtures/project/mergeConflicts/two_merge_conflicts_project';
+const manyMergeConflictsUSFMPath = window.__base + 'test/fixtures/project/mergeConflicts/many_merge_conflicts_usfm';
 const noMergeConflictsUSFMPath = window.__base + 'test/fixtures/project/mergeConflicts/no_merge_conflicts_usfm';
 const oneMergeConflictsUSFMPath = window.__base + 'test/fixtures/project/mergeConflicts/one_merge_conflict_usfm';
 const twoMergeConflictsUSFMPath = window.__base + 'test/fixtures/project/mergeConflicts/two_merge_conflicts_usfm';
@@ -121,6 +122,13 @@ describe('MergeConflictHelpers.getMergeConflicts', () => {
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).to.equal(4);
+    done();
+  })
+  it('should successfully find many merge conflicts', function (done) {
+    let usfmFilePath = USFMHelpers.isUSFMProject(manyMergeConflictsUSFMPath);
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+    let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
+    expect(foundMergeConflicts.length).to.equal(10);
     done();
   })
 })

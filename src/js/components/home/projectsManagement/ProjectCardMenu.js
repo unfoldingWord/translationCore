@@ -30,7 +30,7 @@ class ProjectCardMenu extends React.Component {
   }
 
   render() {
-    const { projectSaveLocation } = this.props.projectDetails;
+    const { projectSaveLocation } = this.props;
     const menuItemStyle = { padding: '4px', display: 'flex', margin: '4px 4px 0 0' };
     const glyphStyle = { fontSize: 'large', margin: '0 14px 0 4px' };
     return (
@@ -87,7 +87,7 @@ class ProjectCardMenu extends React.Component {
 }
 
 ProjectCardMenu.propTypes = {
-  projectDetails: PropTypes.object.isRequired,
+  projectSaveLocation: PropTypes.string.isRequired,
   actions: PropTypes.object.isRequired
 };
 

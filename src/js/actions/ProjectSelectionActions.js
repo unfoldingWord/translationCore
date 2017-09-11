@@ -25,15 +25,16 @@ export function selectProject(projectPath, projectLink) {
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
     const { username } = getState().loginReducer.userdata;
+    const {projectType} = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, targetLanguage;
     /**@type {String} */
-    let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
-    //If present proceed to usfm loading process
-    if (USFMFilePath) {
+    //If usfm project proceed to usfm loading process
+    if (projectType === 'usfm') {
+      let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
       let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;

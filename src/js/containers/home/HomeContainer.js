@@ -18,6 +18,9 @@ import ProjectsManagementContainer from './ProjectsManagementContainer';
 import ToolsManagementContainer from './ToolsManagementContainer';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
+import * as CSVExportActions from '../../actions/CSVExportActions';
+import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
+import * as USFMExportActions from '../../actions/USFMExportActions';
 
 class HomeContainer extends Component {
 
@@ -140,7 +143,16 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(BodyUIActions.openLicenseModal());
       }, updateStepLabel: (index, label) => {
         dispatch(BodyUIActions.updateStepLabel(index, label));
-      }
+      },
+      exportToCSV: (projectPath) => {
+        dispatch(CSVExportActions.exportToCSV(projectPath));
+      },
+      uploadProject: (projectPath, userdata) => {
+        dispatch(ProjectUploadActions.uploadProject(projectPath, userdata));
+      },
+      exportToUSFM: (projectPath) => {
+        dispatch(USFMExportActions.exportToUSFM(projectPath));
+      },
     }
   };
 };

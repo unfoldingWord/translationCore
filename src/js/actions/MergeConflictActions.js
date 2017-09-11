@@ -71,7 +71,7 @@ export function setUpMergeConflictsData(usfmFilePath) {
    * extracting merge conflicts from usfm data
   */
     let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
-    for (let matchIndex in allMergeConflictsFoundArray) {
+    while (allMergeConflictsFoundArray.length > 0) {
       /** Array representing the different versions for a merge conflict parsed into a more consumable format */
       let parsedMergeConflictVersionsArray = [];
       /** Array representing current versions to be parsed*/
