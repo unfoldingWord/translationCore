@@ -47,7 +47,7 @@ let template = {
  * @return {json} projectManifest - A TC project manifest
  ******************************************************************************/
 export function generateManifest(data, tsManifest) {
-  let projectManifest = template;
+  let projectManifest = JSON.parse(JSON.stringify(template));
   projectManifest.time_created = generateTimestamp();
   if (data) {
     projectManifest.repo = data.repo;
