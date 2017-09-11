@@ -166,9 +166,9 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
   let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
   const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return;
+  if (fs.existsSync(newUSFMProjectFolder)) return {homeFolderPath:newUSFMProjectFolder, exists:true};
   fs.outputFileSync(newUSFMFilePath, usfmData);
-  return newUSFMProjectFolder;
+  return {homeFolderPath:newUSFMProjectFolder, exists:false};
 }
 
 
@@ -185,7 +185,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, dir
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
     const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
-    manifest = manifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
+    manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
 }

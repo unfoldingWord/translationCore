@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 //helpers
 import {generateTimestamp} from './TimestampGenerator';
 import * as bibleHelpers from './bibleHelpers';
+import * as usfmHelpers from './usfmHelpers';
 
 let template = {
   generator: {
@@ -161,7 +162,7 @@ export function checkIfValidBetaProject(manifest) {
  * @param {objet} user - The current user loaded
  */
 export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
-  let usfmDetails = getUSFMDetails(parsedUSFM);
+  let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
   const defaultManifest = {
     "source_translations": [
       {
