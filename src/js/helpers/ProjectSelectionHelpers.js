@@ -20,6 +20,7 @@ export function getProjectManifest(projectPath, projectLink, username) {
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
+    debugger;
     manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest, username);
   }
   return manifest;
