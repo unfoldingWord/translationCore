@@ -13,6 +13,7 @@ const justBookId = window.__base + 'test/fixtures/usfm/valid/php_usfm.usfm';
 const missingIdTag = window.__base + 'test/fixtures/usfm/missing/php_usfm_NId.usfm';
 const missingVerseMarkers = window.__base + 'test/fixtures/usfm/missing/many_missing_verses.usfm';
 const missingChapterMarkers = window.__base + 'test/fixtures/usfm/missing/many_missing_chapters.usfm';
+const missingAChapter = window.__base + 'test/fixtures/usfm/missing/php_usfm_NoC2.usfm';
 //invalid
 const badIdTag = window.__base + 'test/fixtures/usfm/invalid/php_usfm_badId.txt';
 //out of sequence
@@ -171,6 +172,21 @@ it('should handle \id bookId', function (done) {
     expect(usfm[3]).to.exist;
     expect(Object.keys(usfm[3])).to.have.lengthOf(21);
     expect(usfm[3][11]).to.equal('so somehow I may experience the resurrection from the dead.');
+    done();
+  });
+
+  it('should handle missing a chapter marker', function (done) {
+    // parse valid usfm file
+    const usfmFile = missingAChapter;
+    const usfmRaw = usfmHelpers.loadUSFMFile(usfmFile);
+    const usfm = usfmHelpers.getParsedUSFM(usfmRaw);
+    expect(usfm[2]).to.not.exist;
+    expect(usfm[3]).to.exist;
+
+    expect(Object.keys(usfm[1])).to.have.lengthOf(30);
+    expect(Object.keys(usfm[3])).to.have.lengthOf(21);
+    expect(Object.keys(usfm[4])).to.have.lengthOf(23);
+    expect(usfm[3][1]).to.equal('Finally, my brothers, rejoice in the Lord.  For me to write these same things to you is not a problem, and they will keep you safe.');
     done();
   });
 
