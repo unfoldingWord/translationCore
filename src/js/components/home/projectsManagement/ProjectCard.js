@@ -41,7 +41,7 @@ let ProjectCard = (props) => {
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
-        <ProjectCardMenu {...props} />
+        <ProjectCardMenu projectSaveLocation={projectSaveLocation} {...props} />
         <div>
           <button className='btn-prime' disabled={isSelected} onClick={() => {props.actions.selectProject(projectSaveLocation)}} style={{ width: '90px', marginBottom: '0' }}>
             Select
