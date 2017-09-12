@@ -34,21 +34,13 @@ let template = {
 };
 
 /**
- * @description This function populates the template manifest with the data.
- * @param {json} data - The data to be fed to the template.
- * Sample data to be passed in:
- *   let data = {
- *    local: {boolean}
- *    target_language: {filepath or url},
- *    original_language: {filepath or url},
- *    gateway_language: {filepath or url},
- *    user: [{username, email}],
- *    checkLocations: [{filepath}]
- *  }
- * @param {json=} tsManifest - A manifest from a Translation Studio project
- * @return {json} projectManifest - A TC project manifest
- ******************************************************************************/
+ * This function populates the template manifest with the data.
+ * @param {[...string]} currentUsers - users checking the current project
+ * @param {string} repo - Repository where the project came from
+ * @param {object} tsManifest - The translationStudio manifest for the selected project
+ */
 export function generateManifest(currentUsers, repo, tsManifest) {
+  //Creating new object reference to fix edge case bug
   let projectManifest = JSON.parse(JSON.stringify(template));
   projectManifest.time_created = generateTimestamp();
   if (repo) {
