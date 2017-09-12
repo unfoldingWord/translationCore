@@ -1,7 +1,7 @@
 import React from 'react';
 import path from 'path-extra';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {Circle} from 'react-progressbar.js';
+import { Circle } from 'react-progressbar.js';
 import Dialog from 'material-ui/Dialog';
 
 class Loader extends React.Component {
@@ -11,15 +11,18 @@ class Loader extends React.Component {
     return (
       <MuiThemeProvider>
         <Dialog modal={true} open={show}>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
-            <img className="App-logo" src="./images/TC_Icon.png" alt="logo" style={{height: "350px", margin: "15px"}}/>
-            <span style={{margin: "20px"}}>Loading ...</span>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px" }}>
+            <img className="App-logo" src="./images/TC_Icon.png" alt="logo" style={{ height: "350px", margin: "15px" }} />
+            <span style={{ margin: "20px" }}>Loading ...</span>
             {showCancelButton ?
-              <button
-              className={"btn-prime"}
-              onClick={cancelLoadingProject}>
-                Cancel
-            </button>
+              <div style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
+                <span>Having trouble loading this project?</span>
+                <button
+                  className={"btn-prime"}
+                  onClick={cancelLoadingProject}>
+                  Cancel
+                </button>
+              </div>
               : null}
           </div>
         </Dialog>

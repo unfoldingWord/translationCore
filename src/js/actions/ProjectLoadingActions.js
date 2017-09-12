@@ -158,8 +158,10 @@ function loadGroupData(groupName, groupDataFolderPath) {
 }
 
 export function cancelLoadingProject() {
-  dispatch(ProjectSelectionActions.clearLastProject())
-  dispatch(LoaderActions.toggleLoader(false))
-  //going to the project screen after cancel import
-  dispatch(BodyUIActions.goToStep(2))
+  return ((dispatch) => {
+    dispatch(ProjectSelectionActions.clearLastProject())
+    dispatch(LoaderActions.toggleLoader(false))
+    //going to the project screen after cancel import
+    dispatch(BodyUIActions.goToStep(2))
+  })
 }
