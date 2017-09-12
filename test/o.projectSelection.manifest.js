@@ -27,14 +27,14 @@ describe('Import/Select project manifest generation', () => {
     const { manifest } = store.getState().projectDetailsReducer
     expect(manifest.target_language).to.deep.equal({ "id": 'ha', "name": '(Hausa) هَوُسَ', direction: 'ltr' });
     expect(manifest.project).to.deep.equal({ id: 'tit', name: 'Titus' });
-    expect(manifest.source_translations).to.deep.equal(
-      [{
+    expect(manifest.source_translations[0]).to.include(
+      {
         language_id: 'en',
         resource_id: 'ulb',
         checking_level: '3',
-        date_modified: 20170329,
         version: '9'
-      }]);
+      }
+    );
     expect(manifest.tcInitialized).to.be.true;
     done()
   })
@@ -46,14 +46,13 @@ describe('Import/Select project manifest generation', () => {
     const { manifest } = store.getState().projectDetailsReducer
     expect(manifest.target_language).to.deep.equal({ id: 'cdh', name: 'Chambeali', direction: 'ltr' });
     expect(manifest.project).to.deep.equal({ id: 'tit', name: 'Titus' });
-    expect(manifest.source_translations).to.deep.equal(
-      [{
+    expect(manifest.source_translations[0]).to.include(
+      {
         language_id: 'en',
         resource_id: 'ulb',
         checking_level: '',
-        date_modified: '2017-09-11T23:45:30.709Z',
         version: ''
-      }]);
+      });
     expect(manifest.tcInitialized).to.be.true;
     done()
   })
