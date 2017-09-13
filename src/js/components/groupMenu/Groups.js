@@ -12,4 +12,4 @@ class Groups extends React.Component {
   }
 }
 
-module.exports = Groups;
+export default Groups;
