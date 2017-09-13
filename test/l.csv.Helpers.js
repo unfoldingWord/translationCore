@@ -6,7 +6,7 @@ import isEqual from 'lodash/isEqual'
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
-const checksPerformedPath = window.__base + '/test/fixtures/projects/csv/checks_performed/fr_eph_text_ulb';
+const checksPerformedPath = window.__base + '/test/fixtures/project/csv/checks_performed/fr_eph_text_ulb';
 
 const tWContextId = {
   "reference": {
