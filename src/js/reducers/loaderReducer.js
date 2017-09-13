@@ -3,7 +3,6 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   show: false,
   toolsProgress: {},
-  showCancelButton: false
 };
 
 const loaderReducer = (state = initialState, action) => {
@@ -12,7 +11,6 @@ const loaderReducer = (state = initialState, action) => {
       return {
         ...state,
         show: action.show || !state.show,
-        showCancelButton: false
       };
     case consts.UPDATE_PROGRESS:
       return {
@@ -23,11 +21,6 @@ const loaderReducer = (state = initialState, action) => {
           }
         }
       };
-    case consts.TOGGLE_CANCEL_LOADING_BUTTON:
-      return {
-        ...state,
-        showCancelButton: action.showCancelButton
-      }
     default:
       return state;
   }
