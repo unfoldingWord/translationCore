@@ -11,8 +11,11 @@
     path = tC_apps/translationNotes
     url = https://github.com/translationCoreApps/translationNotes_Check_plugin.git
 [submodule "tC_apps/VerseCheck"]
-    path = tC_apps/VerseCheck
-    url = https://github.com/translationCoreApps/VerseCheck.git
+	path = tC_apps/VerseCheck
+	url = https://github.com/translationCoreApps/VerseCheck.git
+[submodule "tC_resources"]
+	path = tC_resources
+	url = https://github.com/translationCoreApps/tC_Resources
 [submodule "tC_apps/wordAlignment"]
 	path = tC_apps/wordAlignment
 	url = https://github.com/translationCoreApps/word-alignment-tool.git
