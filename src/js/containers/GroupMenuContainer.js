@@ -6,10 +6,10 @@ import * as style from '../components/groupMenu/Style'
 // components
 import Groups from '../components/groupMenu/Groups'
 import Group from '../components/groupMenu/Group'
+import GroupItem from '../components/groupMenu/GroupItem'
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js'
 import { expandSubMenu } from '../actions/GroupMenuActions.js'
-import GroupItem from '../components/groupMenu/GroupItem'
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 import isEqual from 'lodash/isEqual'
 const MENU_BAR_HEIGHT = 30;
@@ -155,14 +155,20 @@ class GroupMenuContainer extends React.Component {
         let bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
       }
-      items.push(<GroupItem
-        statusGlyph={this.getStatusGlyph(groupItemData.contextId, groupIndex)}
-        groupMenuHeader={groupHeaderComponent}
-        scrollIntoView={this.scrollIntoView} {...this.props}
-        active={active} {...groupItemData}
-        key={index} bookName={bookName}
-        selectionText={selections}
-        inView={this.inView}/>)
+      items.push(
+        <GroupItem
+          key={index}
+          {...this.props}
+          {...groupItemData}
+          statusGlyph={this.getStatusGlyph(groupItemData.contextId, groupIndex)}
+          groupMenuHeader={groupHeaderComponent}
+          scrollIntoView={this.scrollIntoView}
+          active={active}
+          bookName={bookName}
+          selectionText={selections}
+          inView={this.inView}
+        />
+      )
       index++
     }
     return items;

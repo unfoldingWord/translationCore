@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.65",
+  "version": "0.7.1-beta.66",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
@@ -81,6 +81,8 @@
     "prop-types": "^15.5.8",
     "react": "15.4.2",
     "react-bootstrap": "^0.30.7",
+    "react-dnd": "^2.4.0",
+    "react-dnd-html5-backend": "^2.4.1",
     "react-dom": "15.4.2",
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
