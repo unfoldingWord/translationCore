@@ -6,7 +6,7 @@ import Loader from '../components/loader/Loader';
 class LoaderContainer extends React.Component {
   render() {
     return (
-      <Loader {...this.props}/>
+      <Loader {...this.props} />
     );
   }
 }
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {};
+  return {
+  };
 };
 
 export default connect(
