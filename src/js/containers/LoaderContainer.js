@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 // Components
 import Loader from '../components/loader/Loader';
-//actions
-import * as ProjectLoadingActions from '../actions/ProjectLoadingActions';
 
 class LoaderContainer extends React.Component {
   render() {
@@ -22,11 +20,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    actions: {
-      cancelLoadingProject: () => {
-        dispatch(ProjectLoadingActions.cancelLoadingProject())
-      }
-    }
   };
 };
 
