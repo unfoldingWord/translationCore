@@ -55,7 +55,7 @@ export function runGitCommand(savePath, url, callback) {
     if (err) {
       fs.removeSync(savePath);
       if (callback)
-        callback({type: "custom", text: "Cannot clone repository"}, null, null);
+        callback({type: "custom", text: "This project has fatal errors and cannot be imported. Please contact help@door43.org for further assistance."}, null, null);
     } else {
       try {
         fs.readFileSync(path.join(savePath, 'manifest.json'));

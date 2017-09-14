@@ -1,10 +1,12 @@
 import consts from './ActionTypes';
 
 export function toggleLoader(val) {
-  return {
-    type: consts.TOGGLE_LOADER_MODAL,
-    show: val
-  }
+  return ((dispatch) => {
+    dispatch({
+      type: consts.TOGGLE_LOADER_MODAL,
+      show: val
+    })
+  });
 }
 
 /**
