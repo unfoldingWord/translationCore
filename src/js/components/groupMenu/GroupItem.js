@@ -51,7 +51,15 @@ class GroupItem extends React.Component {
       <div className="hint--bottom hint--medium" aria-label={this.props.selectionText} onClick={this.onClick} 
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusGlyph}
-        <span style={style.groupItemText}>{" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}</span>
+         {reference.chapterVerseMenu ? 
+            <span style={style.groupItemText}>
+              {`${reference.text} ${reference.verse}` }
+            </span>
+          :
+            <span style={style.groupItemText}>
+              {" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}
+            </span>
+         }
       </div>
     );
   }
