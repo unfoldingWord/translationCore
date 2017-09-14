@@ -13,31 +13,33 @@ export const getToggledGroupData = (state, action, key) => {
     return isEqual(groupObject.contextId, action.contextId)
   });
   let index = groupData.indexOf(groupObject)
-  switch (key) {
-    case "comments":
+  if (groupData[index]) {
+    switch (key) {
+      case "comments":
       if (action.text.length > 0) {
         groupData[index][key] = true;
       } else {
         groupData[index][key] = false;
       }
       break;
-    case "reminders":
+      case "reminders":
       if (action.boolean) {
         groupData[index][key] = action.boolean;
       } else {
         groupData[index][key] = !groupData[index][key];
       }
       break;
-    case "selections":
+      case "selections":
       if (action.selections.length > 0) {
         groupData[index][key] = true;
       } else {
         groupData[index][key] = false;
       }
       break;
-    default:
+      default:
       groupData[index][key] = true;
       break;
+    }
   }
   return groupData;
 };
