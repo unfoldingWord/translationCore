@@ -7,7 +7,7 @@ import { remote } from 'electron';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
 // contstants

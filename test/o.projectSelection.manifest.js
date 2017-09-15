@@ -3,7 +3,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
 import * as ImportLocalActions from '../src/js/actions/ImportLocalActions';
-import * as ProjectDetailsActions from '../src/js/actions/projectDetailsActions';
+import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
 
 import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 import * as types from '../src/js/actions/ActionTypes';
