@@ -13,7 +13,6 @@ class ProjectInformationCheck extends Component {
   componentWillMount() {
     let {
       translators,
-      checkers,
       project,
       target_language
     } = this.props.reducers.projectDetailsReducer.manifest;
