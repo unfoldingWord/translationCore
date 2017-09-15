@@ -46,20 +46,28 @@ export function getParsedUSFM(usfmFile) {
  */
 export function isUSFMProject(projectPath) {
   try {
-    fs.readFileSync(projectPath);
-    const ext = path.extname(projectPath).toLowerCase();
-    if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return projectPath;
-  } catch (e) {
-    try {
+    if (fs.lstatSync(projectPath).isFile()) {
+      let usfmFilePath = projectPath;
+      let potentialUSFMData = fs.readFileSync(usfmFilePath).toString();
+      let hasUSFMMarkers = potentialUSFMData.includes('\h');
+      const ext = path.extname(projectPath).toLowerCase();
+      if (ext == ".usfm" || ext == ".sfm" || ext == ".txt" && hasUSFMMarkers) return usfmFilePath;
+    } else if (fs.lstatSync(projectPath).isDirectory()) {
       let dir = fs.readdirSync(projectPath);
       for (let i in dir) {
         const ext = path.extname(dir[i]).toLowerCase();
-        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return path.join(projectPath, dir[i]);
+        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") {
+          let usfmFilePath = path.join(projectPath, dir[i]);
+          let potentialUSFMData = fs.readFileSync(usfmFilePath).toString();
+          let hasUSFMMarkers = potentialUSFMData.includes('\h');
+          if (hasUSFMMarkers) return usfmFilePath;
+        }
       }
       return false;
-    } catch (err) {
-      return false;
     }
+  } catch (e) {
+    console.warn(e);
+    return false
   }
 }
 
@@ -92,7 +100,7 @@ export function getUSFMDetails(usfmObject) {
       /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
       //Could have attached commas if both comma delimited and space delimited
       headerIDArray = usfmObject.headers.id.split(" ");
-      headerIDArray.forEach((element, index)=> {
+      headerIDArray.forEach((element, index) => {
         headerIDArray[index] = element.replace(',', '');
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
@@ -112,7 +120,7 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-        else console.warn('could not get book from usfm')
+      else console.warn('could not get book from usfm')
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -166,9 +174,9 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
   let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
   const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return {homeFolderPath:newUSFMProjectFolder, exists:true};
+  if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, exists: true };
   fs.outputFileSync(newUSFMFilePath, usfmData);
-  return {homeFolderPath:newUSFMProjectFolder, exists:false};
+  return { homeFolderPath: newUSFMProjectFolder, exists: false };
 }
 
 

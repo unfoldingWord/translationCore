@@ -1,4 +1,5 @@
 import consts from './ActionTypes';
+import React from 'react';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
@@ -6,6 +7,7 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -25,9 +27,19 @@ export function selectProject(projectPath, projectLink) {
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
     const { username } = getState().loginReducer.userdata;
-    const {projectType} = getState().projectDetailsReducer;
+    const { projectType } = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
+    }
+    let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(projectPath, projectType);
+    if (invalidProjectTypeError) {
+      dispatch(AlertModalActions.openAlertDialog(
+        <div>
+          Project selection failed<br />
+          {invalidProjectTypeError}<br />
+        </div>
+      ));
+      return dispatch(MyProjectsActions.getMyProjects());
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, targetLanguage;

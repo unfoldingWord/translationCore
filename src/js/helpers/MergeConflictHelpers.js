@@ -109,7 +109,7 @@ export function merge(mergeConflictArray, inputFile, outputFile) {
  * This method will take a tS project and convert it to a usfm file.
  * @param {string} projectSaveLocation - path to the project
  */
-export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
+export function createUSFMFromTsProject(projectSaveLocation) {
   let usfmData = '';
   try {
     const chapters = fs.readdirSync(projectSaveLocation);
@@ -131,7 +131,6 @@ export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
         })
       }
     }
-    if (usfmFilePath && usfmData) fs.outputFileSync(usfmFilePath, usfmData);
   } catch (e) {
     console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e)
   }
@@ -186,5 +185,13 @@ export function loadUSFM(filePath) {
   }
   catch (e) {
     return null
+  }
+}
+
+export function writeUSFM(usfmFilePath, usfmData) {
+  try {
+    fs.outputFileSync(usfmFilePath, usfmData);
+  } catch (e) {
+    console.warn('could not write usfm to file system')
   }
 }
