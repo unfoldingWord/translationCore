@@ -22,7 +22,6 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : '');
     this.props.actions.setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : '');
     this.props.actions.setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []);
-    this.props.actions.setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []);
   }
 
   componentDidMount() {
