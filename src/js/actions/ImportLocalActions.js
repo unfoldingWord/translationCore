@@ -5,7 +5,6 @@ import AdmZip from 'adm-zip';
 import { remote } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 //helpers
@@ -37,7 +36,6 @@ export function selectLocalProjectToLoad() {
       // project path in ~./translationCore.
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
-      dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
         //need to break out of function here so that successfull import
         //dialog does not dispatch
