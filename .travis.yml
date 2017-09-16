@@ -1,3 +1,4 @@
+sudo: false
 language: node_js           # Set language for the environment
 node_js:
   - 6
