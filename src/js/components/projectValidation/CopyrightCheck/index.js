@@ -5,7 +5,7 @@ import LicenseMarkdown from './LicenseMarkdown';
 import CopyrightCard from './CopyrightCard';
 import { Card } from 'material-ui/Card';
 
-class CopyRightCheck extends Component {
+class CopyrightCheck extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ class CopyRightCheck extends Component {
         id: 'none',
         imageName: 'noCircle.png'
       }
-    ]
+    ];
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -91,9 +91,9 @@ class CopyRightCheck extends Component {
   }
 }
 
-CopyRightCheck.propTypes = {
+CopyrightCheck.propTypes = {
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
-}
+};
 
-export default CopyRightCheck;
+export default CopyrightCheck;
