@@ -6,7 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as UsfmHelpers from '../helpers/usfmHelpers';
 // actions
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'

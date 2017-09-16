@@ -1,14 +1,12 @@
+sudo: false
 language: node_js           # Set language for the environment
-node_js: node               # Use latest version of node.js
+node_js:
+  - 6
 os:                         # Simultaneous environments
   - linux                   # Linux - for testing and future builds
-  - osx                     # Mac - for testing and builds
-cache:                      # Speed up builds by caching things
- directories:              # Add directories relative to root
- - node_modules            # cache node modules to save 1-3 minutes
-before_deploy:              # Run these before attempting to deploy
-  - npm run install-electron-forge # Install electron-forge for build/make
-  - travis_wait 30 npm run make # Command that builds the app for the architecture, increase timeout to 30m
+#cache:                      # Speed up builds by caching things
+# directories:               # Add directories relative to root
+# - node_modules             # cache node modules to save 1-3 minutes
 addons:
   apt:
     packages:
@@ -21,6 +19,10 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm install             # Run npm install
   - npm install -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
+before_deploy:              # Run these before attempting to deploy
+  - npm run install-electron-forge
+  - travis_wait 30 electron-forge make --platform=darwin
+  - travis_wait 30 electron-forge make --platform=linux
 deploy:                     # Configuration for releases
   provider: releases
   name: $TRAVIS_TAG         # Name for the release to upload the files
@@ -33,6 +35,5 @@ deploy:                     # Configuration for releases
   draft: true               # Don't publish this to the public, make it a draft
   on:                       # Tell it when to deploy/release
     tags: true              # We only create a release on tags
-  condition: "$TRAVIS_OS_NAME == osx" # Only deploy when osx, Linux builds aren't ready
   api_key:                  # Github personal access token encrypted with travis encrypt command. Will need to re-encrypt for each repository, not useful for others.
    secure: JfttyLVoBRJoRhZ2P+QSn02NJfB8e3nwlUBh0BBz8txdvfIHcZIie5eBIqKfU6ztEE3Sdg+8aSQWfgpODBGfiGpLNtOz2joPMjM+TxI1xIz/E7p7AGWIyQpozUObmvGkyjHGvQR79T0khervXIbF4faW+OmjxJtXe0eu5mk7ZAKVDc0Ek51ZnVgIpcK+U/0MpNq7pEGWHjbVhkD6ZrQPQURV/GNUhqhXSBiZoCmdUmwpQ5oJtIlBrhpqjtNhVL5z4gya9gRdsRmsf7CCIRaLDgA3jJmSAnK4uXJ3UX5Y/qKB/hPAzdci0QMwXIzeoWsVmw7R0mQrdD5D6Uy0I5rPR+351OQZi+9ECQynlvcl62Cy2BP3sY6ul3pyPpjZw/LTQg74StCEiZBABBYnu7OpRcAe26vs1YhqY0KHZvRO4+Mul4W10di/Bw7hKLoEu4CTWzgnBhgMMqoQZkDKPFp9Q/gIf7hGypVPeHkruoS+gMeRSzF2M7cD14Ct+MoeusGwimojtO0aAzJ4jScyvHzw/Y1zlgLBIMgZBrIxtyEC7lskVFQeAYcoKvvZQlMZyprxxnW4RdvH/r2Rx4XfIvQ2e/wVtgz/1YJd+g49kpYFUHsDi1fCAXs95P9Qlz/B0CyKYqCJVw7jwoU7zl4SHcYKjB3S26Jo5z0kyLA4ykyFCYo=
