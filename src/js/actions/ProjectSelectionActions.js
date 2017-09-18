@@ -39,6 +39,8 @@ export function selectProject(projectPath, projectLink) {
           {invalidProjectTypeError}<br />
         </div>
       ));
+      dispatch(clearLastProject());
+      /** Need to re-run projects retreival because a project may have been deleted */
       return dispatch(MyProjectsActions.getMyProjects());
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
@@ -120,6 +122,7 @@ export function clearLastProject() {
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
     });
+    dispatch(BodyUIActions.resetStepLabels(1));
   });
 }
 

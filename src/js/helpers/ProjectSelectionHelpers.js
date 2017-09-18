@@ -8,6 +8,8 @@ import * as LoadHelpers from './LoadHelpers';
 import * as ManifestHelpers from './manifestHelpers';
 import * as usfmHelpers from './usfmHelpers.js';
 import * as MergeConflictHelpers from './MergeConflictHelpers';
+//static
+import books from '../../../tC_resources/resources/books';
 
 /**
  * Retrieves tC manifest and returns it or if not available looks for tS manifest.
@@ -37,6 +39,11 @@ export function getProjectName(projectPath) {
 
 export function verifyProjectType(projectPath, projectType) {
   let invalidTypeError;
+  let projectMetaFile;
+  try {
+    projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
+  } catch (e) { }
+
   if (testResourceByType(projectPath, 'obs'))
     invalidTypeError = 'You cannot load Open Bible Scriptures into tC';
   else if (testResourceByType(projectPath, 'tn'))
@@ -47,14 +54,12 @@ export function verifyProjectType(projectPath, projectType) {
     invalidTypeError = 'You cannot load translationAcademy resource content into tC';
   else if (testResourceByType(projectPath, 'tw'))
     invalidTypeError = 'You cannot load translationWords resource content into tC';
+  else if (projectMetaFile && projectMetaFile.slug === 'bible') {
+    invalidTypeError = 'You cannot load multiple books into tC';
+  }
+  else if (generalMultiBookProjectSearch(projectPath) > 1)
+    invalidTypeError = 'You cannot load multiple books into tC';
 
-  try {
-    let projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
-    if (projectMetaFile) {
-      if (projectMetaFile.slug === 'bible')
-        invalidTypeError = 'You cannot load multiple books into tC';
-    }
-  } catch (e) { }
   if (invalidTypeError) fs.removeSync(projectPath);
   return invalidTypeError;
 }
@@ -75,4 +80,20 @@ function testResourceByType(projectPath, type) {
     }
   } catch (e) { }
   return false;
+}
+
+function generalMultiBookProjectSearch(projectPath) {
+  let bookMatched = 0;
+  let booksString = JSON.stringify(books);
+  let projectSubFolders = fs.readdirSync(projectPath);
+  for (let file of projectSubFolders) {
+    let fileName = file.split('.') || [''];
+    if (fileName.length < 2 && fs.lstatSync(path.join(projectPath, file)).isDirectory())
+      bookMatched += generalMultiBookProjectSearch(path.join(projectPath, file));
+    else {
+      if (fileName[0] && booksString.includes(fileName[0])) bookMatched++;
+    }
+    if (bookMatched > 1) return bookMatched;
+  }
+  return bookMatched;
 }
