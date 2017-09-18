@@ -24,7 +24,6 @@ export function selectProject(projectPath, projectLink) {
     dispatch(BodyUIActions.resetStepLabels(2));
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
-    const { username } = getState().loginReducer.userdata;
     const {projectType} = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
@@ -41,7 +40,7 @@ export function selectProject(projectPath, projectLink) {
       manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
     } else {
       //If no usfm file found proceed to load regular loading process
-      manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
+      manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
     }
     const { currentSettings } = getState().settingsReducer;

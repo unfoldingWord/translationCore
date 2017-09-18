@@ -181,7 +181,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
  * @param {string} direction - Direction of target language reading style i.e. 'ltr'.
  * @param {string} username - Current username of user logged in.
  */
-export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
+export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
     const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction, username);
