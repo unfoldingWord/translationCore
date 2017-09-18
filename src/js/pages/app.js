@@ -42,7 +42,7 @@ class Main extends Component {
   }
 
   render() {
-
+    
     return (
       <div className="fill-height">
         <ProjectValidationContainer />
