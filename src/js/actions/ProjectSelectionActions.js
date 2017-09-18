@@ -31,18 +31,6 @@ export function selectProject(projectPath, projectLink) {
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
-    let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(projectPath, projectType);
-    if (invalidProjectTypeError) {
-      dispatch(AlertModalActions.openAlertDialog(
-        <div>
-          Project selection failed<br />
-          {invalidProjectTypeError}<br />
-        </div>
-      ));
-      dispatch(clearLastProject());
-      /** Need to re-run projects retreival because a project may have been deleted */
-      return dispatch(MyProjectsActions.getMyProjects());
-    }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     let manifest, targetLanguage;
     /**@type {String} */

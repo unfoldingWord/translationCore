@@ -10,6 +10,7 @@ import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -50,30 +51,34 @@ export function selectLocalProjectToLoad() {
         // not tStudio ext project, checking for tC / tS (unzipped)
         dispatch(ProjectDetailsActions.setProjectType('tC'));
         if (!fs.existsSync(newProjectPath))
-        fs.copySync(sourcePath, newProjectPath)
+          fs.copySync(sourcePath, newProjectPath)
         dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       } else if (usfmFilePath) {
         //If USFM file path found and not tS or tC project
         dispatch(ProjectDetailsActions.setProjectType('usfm'));
         //If the selected project is a USFM file or contains a usfm file in the folder 
-        const {homeFolderPath, exists} = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
+        const { homeFolderPath, exists } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
         if (!exists) dispatch(ProjectSelectionActions.selectProject(homeFolderPath));
         else {
           dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
            Reimporting existing projects is not currently supported.'))
         }
       } else {
-        return dispatch(
-          AlertModalActions.openAlertDialog(
+        debugger;
+        let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
+        if (invalidProjectTypeError) {
+          dispatch(AlertModalActions.openAlertDialog(
             <div>
-              There is something wrong with the project you are trying to load.<br />
-              Please verify you are importing a valid project.<br />
-              Filename: {fileName}
+              Project selection failed<br />
+              {invalidProjectTypeError}<br />
             </div>
-          )
-        );
+          ));
+          dispatch(ProjectSelectionActions.clearLastProject());
+          /** Need to re-run projects retreival because a project may have been deleted */
+          return dispatch(MyProjectsActions.getMyProjects());
+        }
+        dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
       }
-      dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     });
   });
 }

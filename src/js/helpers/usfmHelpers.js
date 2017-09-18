@@ -46,27 +46,22 @@ export function getParsedUSFM(usfmFile) {
  */
 export function isUSFMProject(projectPath) {
   let usfmProjectPath = false;
-  try {
-    let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
-    if (isProjectFolder) {
-      fs.readdirSync(projectPath).forEach(file => {
-        const ext = path.extname(file).toLowerCase();
-        if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-          let usfmData = fs.readFileSync(path.join(projectPath, file)).toString();
-          if(usfmData.includes('\h')) usfmProjectPath = path.join(projectPath, file);
-        }
-      })
-    } else {
-      let file = path.basename(projectPath);
+  let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
+  if (isProjectFolder) {
+    fs.readdirSync(projectPath).forEach(file => {
       const ext = path.extname(file).toLowerCase();
       if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-        let usfmData = fs.readFileSync(path.join(projectPath, file)).toString();
-        if(usfmData.includes('\h')) usfmProjectPath = path.join(projectPath, file);
+        let usfmData = loadUSFMFile(path.join(projectPath, file)).toString();
+        if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath, file);
       }
+    })
+  } else {
+    let file = path.basename(projectPath);
+    const ext = path.extname(file).toLowerCase();
+    if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+      let usfmData = loadUSFMFile(path.join(projectPath)).toString();
+      if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath);
     }
-  } catch (e) {
-    console.warn(e);
-    return false
   }
   return usfmProjectPath;
 }

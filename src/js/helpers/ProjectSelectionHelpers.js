@@ -37,7 +37,7 @@ export function getProjectName(projectPath) {
   return path.parse(projectPath).base
 }
 
-export function verifyProjectType(projectPath, projectType) {
+export function verifyProjectType(projectPath) {
   let invalidTypeError;
   let projectMetaFile;
   try {
@@ -84,14 +84,19 @@ function testResourceByType(projectPath, type) {
 
 function generalMultiBookProjectSearch(projectPath) {
   let bookMatched = 0;
-  let booksString = JSON.stringify(books);
   let projectSubFolders = fs.readdirSync(projectPath);
   for (let file of projectSubFolders) {
     let fileName = file.split('.') || [''];
     if (fileName.length < 2 && fs.lstatSync(path.join(projectPath, file)).isDirectory())
       bookMatched += generalMultiBookProjectSearch(path.join(projectPath, file));
     else {
-      if (fileName[0] && booksString.includes(fileName[0])) bookMatched++;
+      let fileNameBase = fileName[0].toLowerCase();
+      let usfmFilePath = usfmHelpers.isUSFMProject(path.join(projectPath, file));
+      if (usfmFilePath) {
+        let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
+        let bookId = usfmHelpers.getUSFMDetails(usfmData).book.id;
+        if (books[bookId]) bookMatched++;
+      }
     }
     if (bookMatched > 1) return bookMatched;
   }
