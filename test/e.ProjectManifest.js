@@ -31,8 +31,6 @@ describe('ProjectManifest.populate', function() {
     assert.isObject(generatedManifest);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
-    assert.isObject(generatedManifest.checkers[0]);
-    assert.isString(generatedManifest.checkers[0].token);
   });
   it('populate should populate a TC manifest, with both arguments specified', function() {
     var generatedManifest = generateManifest(sampleData.repo, sampleTS);
@@ -40,7 +38,6 @@ describe('ProjectManifest.populate', function() {
     assert.isObject(generatedManifest);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
-    assert.isObject(generatedManifest.checkers[0]);
     assert.equal(generatedManifest.translators[0], 'royalsix');
     assert.equal(generatedManifest.project.name, 'Mark');
   });
