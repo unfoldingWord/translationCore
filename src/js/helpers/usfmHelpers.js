@@ -45,30 +45,30 @@ export function getParsedUSFM(usfmFile) {
  * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function isUSFMProject(projectPath) {
+  let usfmProjectPath = false;
   try {
-    if (fs.lstatSync(projectPath).isFile()) {
-      let usfmFilePath = projectPath;
-      let potentialUSFMData = fs.readFileSync(usfmFilePath).toString();
-      let hasUSFMMarkers = potentialUSFMData.includes('\h');
-      const ext = path.extname(projectPath).toLowerCase();
-      if (ext == ".usfm" || ext == ".sfm" || ext == ".txt" && hasUSFMMarkers) return usfmFilePath;
-    } else if (fs.lstatSync(projectPath).isDirectory()) {
-      let dir = fs.readdirSync(projectPath);
-      for (let i in dir) {
-        const ext = path.extname(dir[i]).toLowerCase();
-        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") {
-          let usfmFilePath = path.join(projectPath, dir[i]);
-          let potentialUSFMData = fs.readFileSync(usfmFilePath).toString();
-          let hasUSFMMarkers = potentialUSFMData.includes('\h');
-          if (hasUSFMMarkers) return usfmFilePath;
+    let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
+    if (isProjectFolder) {
+      fs.readdirSync(projectPath).forEach(file => {
+        const ext = path.extname(file).toLowerCase();
+        if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+          let usfmData = fs.readFileSync(path.join(projectPath, file)).toString();
+          if(usfmData.includes('\h')) usfmProjectPath = path.join(projectPath, file);
         }
+      })
+    } else {
+      let file = path.basename(projectPath);
+      const ext = path.extname(file).toLowerCase();
+      if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+        let usfmData = fs.readFileSync(path.join(projectPath, file)).toString();
+        if(usfmData.includes('\h')) usfmProjectPath = path.join(projectPath, file);
       }
-      return false;
     }
   } catch (e) {
     console.warn(e);
     return false
   }
+  return usfmProjectPath;
 }
 
 /**
