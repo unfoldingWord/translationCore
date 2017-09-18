@@ -94,7 +94,8 @@ function generalMultiBookProjectSearch(projectPath) {
       let usfmFilePath = usfmHelpers.isUSFMProject(path.join(projectPath, file));
       if (usfmFilePath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
-        let bookId = usfmHelpers.getUSFMDetails(usfmData).book.id;
+        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
+        let bookId = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
         if (books[bookId]) bookMatched++;
       }
     }

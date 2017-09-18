@@ -51,7 +51,7 @@ export function isUSFMProject(projectPath) {
     fs.readdirSync(projectPath).forEach(file => {
       const ext = path.extname(file).toLowerCase();
       if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-        let usfmData = loadUSFMFile(path.join(projectPath, file)).toString();
+        let usfmData = loadUSFMFile(path.join(projectPath, file));
         if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath, file);
       }
     })
@@ -59,7 +59,7 @@ export function isUSFMProject(projectPath) {
     let file = path.basename(projectPath);
     const ext = path.extname(file).toLowerCase();
     if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-      let usfmData = loadUSFMFile(path.join(projectPath)).toString();
+      let usfmData = loadUSFMFile(path.join(projectPath));
       if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath);
     }
   }

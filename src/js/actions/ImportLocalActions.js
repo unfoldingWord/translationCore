@@ -8,6 +8,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './projectDetailsActions';
+import * as MyProjectsActions from './MyProjectsActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -64,7 +65,6 @@ export function selectLocalProjectToLoad() {
            Reimporting existing projects is not currently supported.'))
         }
       } else {
-        debugger;
         let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
         if (invalidProjectTypeError) {
           dispatch(AlertModalActions.openAlertDialog(
@@ -75,9 +75,9 @@ export function selectLocalProjectToLoad() {
           ));
           dispatch(ProjectSelectionActions.clearLastProject());
           /** Need to re-run projects retreival because a project may have been deleted */
-          return dispatch(MyProjectsActions.getMyProjects());
-        }
-        dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
+          dispatch(MyProjectsActions.getMyProjects());
+        } else
+          dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
       }
     });
   });
