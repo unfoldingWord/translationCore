@@ -13,12 +13,7 @@
   "electronPackagerConfig": {
     "asar": false,
     "quiet": true,
-    "icon": "src/images/icon.ico",
-    "ignore": [
-      "/.idea",
-      "/test",
-      "/out"
-    ]
+    "icon": "src/images/icon.ico"
   },
   "electronInstallerDMG": {
     "icon": "src/images/icon.icns"
