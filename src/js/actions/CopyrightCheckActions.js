@@ -6,7 +6,7 @@ import path from 'path-extra';
 // helpers
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 // actions
-import * as projectDetailsActions from './projectDetailsActions';
+import * as projectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions.js';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';

@@ -4,7 +4,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -35,7 +35,7 @@ export function selectProject(projectPath, projectLink) {
     //If usfm project proceed to usfm loading process
     if (projectType === 'usfm') {
       let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
-      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
+      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath);
       let { parsedUSFM, direction } = usfmProjectObject;
       targetLanguage = parsedUSFM;
       manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);

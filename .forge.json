@@ -4,7 +4,7 @@
       "squirrel"
     ],
     "darwin": [
-      "dmg"
+      "zip"
     ],
     "linux": [
       "deb"
@@ -13,7 +13,12 @@
   "electronPackagerConfig": {
     "asar": false,
     "quiet": true,
-    "icon": "src/images/icon.ico"
+    "icon": "src/images/icon.ico",
+    "ignore": [
+      "/.idea",
+      "/test",
+      "/out"
+    ]
   },
   "electronInstallerDMG": {
     "icon": "src/images/icon.icns"
@@ -23,7 +28,7 @@
     "setupIcon": "src/images/icon.ico"
   },
   "github_repository": {
-    "owner": "klappy",
+    "owner": "unfoldingWord-dev",
     "name": "translationCore",
     "draft": "true",
     "prerelease": "true"

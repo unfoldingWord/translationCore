@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import BooksOfBible from '../../../static/data/BooksOfBible';
+import BooksOfBible from '../../../tC_resources/resources/books';
 // helpers
 
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore', 'resources');

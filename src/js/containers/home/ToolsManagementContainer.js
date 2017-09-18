@@ -41,7 +41,7 @@ class ToolsManagementContainer extends Component {
 
     return (
       <div style={{ height: '100%' }}>
-        ToolsManagementContainer
+        Tools
         <ToolsCards
           bookName={name}
           loggedInUser={loggedInUser}
@@ -66,7 +66,7 @@ const mapStateToProps = (state) => {
       loginReducer: state.loginReducer
     }
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -92,7 +92,7 @@ const mapDispatchToProps = (dispatch) => {
       }
     }
   }
-}
+};
 
 ToolsManagementContainer.propTypes = {
   reducers: PropTypes.object.isRequired,

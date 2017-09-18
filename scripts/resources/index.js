@@ -31,7 +31,7 @@ const TEMP_PATH = path.join(__dirname, 'temp');
 const RESOURCE_INPUT_PATH = path.join(TEMP_PATH, 'input');
 const RESOURCE_OUTPUT_PATH = path.join(
   __dirname,
-  '../../static',
+  '../../tC_resources/',
   'resources',
   LANGUAGE_ID,
   RESOURCE_TYPE,

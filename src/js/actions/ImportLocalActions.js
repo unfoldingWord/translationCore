@@ -7,7 +7,7 @@ import { remote } from 'electron';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
 // contstants
@@ -56,8 +56,8 @@ export function selectLocalProjectToLoad() {
         //If USFM file path found and not tS or tC project
         dispatch(ProjectDetailsActions.setProjectType('usfm'));
         //If the selected project is a USFM file or contains a usfm file in the folder 
-        newProjectPath = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-        if (newProjectPath) dispatch(ProjectSelectionActions.selectProject(newProjectPath));
+        const {homeFolderPath, exists} = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
+        if (!exists) dispatch(ProjectSelectionActions.selectProject(homeFolderPath));
         else {
           dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
            Reimporting existing projects is not currently supported.'))
